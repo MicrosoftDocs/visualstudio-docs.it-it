@@ -1,59 +1,60 @@
 ---
-title: "IDebugBreakpointRequest3::GetRequestInfo2 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "IDebugBreakpointRequest3::GetRequestInfo2"
-helpviewer_keywords: 
-  - "IDebugBreakpointRequest3::GetRequestInfo2"
+title: IDebugBreakpointRequest3::GetRequestInfo2 | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology:
+- vs-ide-sdk
+ms.topic: conceptual
+f1_keywords:
+- IDebugBreakpointRequest3::GetRequestInfo2
+helpviewer_keywords:
+- IDebugBreakpointRequest3::GetRequestInfo2
 ms.assetid: 33942e4a-0a0a-49e8-a693-004954f6d38a
-caps.latest.revision: 13
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 13
+author: gregvanl
+ms.author: gregvanl
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: 76a8db9c0b8bd64d41524b7fc3a419d8f6ec4d27
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# IDebugBreakpointRequest3::GetRequestInfo2
-[!INCLUDE[vs2017banner](../../../code-quality/includes/vs2017banner.md)]
-
-Questo metodo recupera le informazioni su richiesta del punto di interruzione che descrivono la richiesta di un punto di interruzione.  
+# <a name="idebugbreakpointrequest3getrequestinfo2"></a>IDebugBreakpointRequest3::GetRequestInfo2
+Questo metodo ottiene le informazioni di richiesta di punto di interruzione che descrivono la richiesta di punto di interruzione.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp#  
-HRESULT GetRequestInfo2(  
-   BPREQI_FIELDS      dwFields,  
-   BP_REQUEST_INFO2*  bBPRequestInfo  
+```cpp  
+HRESULT GetRequestInfo2(  
+   BPREQI_FIELDS      dwFields,  
+   BP_REQUEST_INFO2*  bBPRequestInfo  
 );  
 ```  
   
-```c#  
+```csharp  
 int GetRequestInfo2(  
-   enum_BPREQI_FIELDS  dwFields,   
-   BP_REQUEST_INFO2[]  bBPRequestInfo  
+   enum_BPREQI_FIELDS  dwFields,   
+   BP_REQUEST_INFO2[]  bBPRequestInfo  
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `dwFields`  
- \[in\]  Una combinazione di flag [BPREQI\_FIELDS](../../../extensibility/debugger/reference/bpreqi-fields.md) dall'enumerazione che determinano quali campi di `pBPRequestInfo` devono essere riempiti.  
+ [in] Una combinazione di flag dal [BPREQI_FIELDS](../../../extensibility/debugger/reference/bpreqi-fields.md) enumerazione che determinano quali campi della `pBPRequestInfo` deve essere compilata.  
   
  `bBPRequestInfo`  
- \[out\]  [BP\_REQUEST\_INFO2](../../../extensibility/debugger/reference/bp-request-info2.md) la struttura da riempire.  
+ [out] Il [BP_REQUEST_INFO2](../../../extensibility/debugger/reference/bp-request-info2.md) struttura deve essere compilato.  
   
-## Valore restituito  
- Se l'operazione riesce, restituisce `S_OK`; in caso contrario, codice di errore restituito.  
+## <a name="return-value"></a>Valore restituito  
+ Se ha esito positivo, restituisce `S_OK`; in caso contrario, restituisce il codice di errore.  
   
-## Note  
- Esistono ulteriori informazioni nella richiesta che viene restituito [GetRequestInfo](../../../extensibility/debugger/reference/idebugbreakpointrequest2-getrequestinfo.md) dal metodo.  
+## <a name="remarks"></a>Note  
+ Altre informazioni di questa richiesta di restituito dal [GetRequestInfo](../../../extensibility/debugger/reference/idebugbreakpointrequest2-getrequestinfo.md) metodo.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IDebugBreakpointRequest3](../../../extensibility/debugger/reference/idebugbreakpointrequest3.md)   
  [GetRequestInfo](../../../extensibility/debugger/reference/idebugbreakpointrequest2-getrequestinfo.md)   
- [BP\_REQUEST\_INFO2](../../../extensibility/debugger/reference/bp-request-info2.md)   
- [BPREQI\_FIELDS](../../../extensibility/debugger/reference/bpreqi-fields.md)
+ [BP_REQUEST_INFO2](../../../extensibility/debugger/reference/bp-request-info2.md)   
+ [BPREQI_FIELDS](../../../extensibility/debugger/reference/bpreqi-fields.md)

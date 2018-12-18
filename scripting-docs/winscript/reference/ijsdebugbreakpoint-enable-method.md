@@ -1,37 +1,41 @@
 ---
-title: "Metodo IJsDebugBreakPoint::Enable | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/18/2017"
-ms.prod: "windows-script-interfaces"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
+title: 'Metodo ijsdebugbreakpoint:: Enable | Documenti Microsoft'
+ms.custom: 
+ms.date: 01/18/2017
+ms.prod: windows-script-interfaces
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: reference
 apiname: IJSDebugBreakPoint.Enable
 apilocation: jscript9diag.dll
 ms.assetid: f7164fc6-4463-41aa-bc79-439d61535c46
-caps.latest.revision: 4
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.openlocfilehash: 8fa66486b479f8bc3e05bad24868392ace121347
+ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/27/2017
 ---
-# Metodo IJsDebugBreakPoint::Enable
-Abilita il Punto di interruzione  
+# <a name="ijsdebugbreakpointenable-method"></a>Metodo IJsDebugBreakPoint::Enable
+Consente il punto di interruzione.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
 HRESULT Enable(void);  
 ```  
   
-## Valore restituito  
+## <a name="return-value"></a>Valore restituito  
   
-## Note  
- Restituisce E\_UNEXPECTED se chiamato su un punto di interruzione eliminato.  
+## <a name="remarks"></a>Note  
+ Restituisce E_UNEXPECTED se chiamato su un punto di interruzione eliminato.  
   
-## Requisiti  
- **Intestazione:** jscript9diag.h  
+## <a name="requirements"></a>Requisiti  
+ **Intestazione:** jscript9diag  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Interfaccia IJsDebugBreakPoint](../../winscript/reference/ijsdebugbreakpoint-interface.md)

@@ -1,69 +1,70 @@
 ---
-title: "Creazione di cartelle del contenitore padre per le soluzioni | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "soluzioni, la creazione di contenitori padre"
-  - "origine plug-in del controllo, la creazione di contenitori padre"
+title: Creazione di cartelle dei contenitori padre per soluzioni | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology:
+- vs-ide-sdk
+ms.topic: conceptual
+helpviewer_keywords:
+- solutions, creating parent containers
+- source control plug-ins, creating parent containers
 ms.assetid: 961e68ed-2603-4479-a306-330eda2b2efa
-caps.latest.revision: 15
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 15
+author: gregvanl
+ms.author: gregvanl
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: 2104c0c109db0d410cbd08683ce227c62982fd65
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# Creazione di cartelle del contenitore padre per le soluzioni
-[!INCLUDE[vs2017banner](../../code-quality/includes/vs2017banner.md)]
-
-Nella versione 1,2 di plug\-in controllo del codice sorgente API, un utente può specificare una sola destinazione radice del controllo del codice sorgente per tutti i progetti Web nella soluzione.  Questa radice viene chiamata una radice unificata super \(SUR\).  
+# <a name="creating-parent-container-folders-for-solutions"></a>Creazione di cartelle dei contenitori padre per le soluzioni
+Nell'API versione 1.2 del plug-in controllo di origine, un utente può specificare una destinazione di controllo di origine solo nodo radice per tutti i progetti Web all'interno della soluzione. Questa singola radice viene chiamata una radice unificata Super (SUR).  
   
- Nella versione 1,1 di plug\-in controllo del codice sorgente API, se l'utente aggiunge una soluzione di multiproject al controllo del codice sorgente, l'utente è stato richiesto di specificare una destinazione del controllo del codice sorgente per ogni progetto Web.  
+ Nell'API versione 1.1 del plug-in controllo di origine, se l'utente aggiunto una soluzione multiprogetto al controllo del codice sorgente, l'utente è stato richiesto di specificare una destinazione di controllo di origine per ogni progetto Web.  
   
-## nuovi flag di funzionalità  
+## <a name="new-capability-flags"></a>Nuovo flag di capacità  
  `SCC_CAP_CREATESUBPROJECT`  
   
  `SCC_CAP_GETPARENTPROJECT`  
   
-## nuove funzioni  
+## <a name="new-functions"></a>Nuove funzioni  
  [SccCreateSubProject](../../extensibility/scccreatesubproject-function.md)  
   
  [SccGetParentProjectPath](../../extensibility/sccgetparentprojectpath-function.md)  
   
- L'ide di [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] crea quasi sempre una cartella di SUR quando si aggiunge una soluzione al controllo del codice sorgente.  In particolare, viene eseguita questa operazione nei seguenti casi:  
+ Il [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] quasi sempre creata una cartella SUR durante l'aggiunta di una soluzione a controllo del codice sorgente. In particolare, esegue l'operazione nei casi seguenti:  
   
--   Il progetto è un progetto Web di condivisione di file.  
+-   Il progetto è una condivisione file di progetto Web.  
   
--   Esistono unità del progetto e il file della soluzione.  
+-   Esistono unità differenti per il progetto e il file della soluzione.  
   
--   Esistono condivisioni del progetto e il file della soluzione.  
+-   Sono disponibili diverse azioni per il progetto e il file della soluzione.  
   
--   I progetti sono stati aggiunti separatamente in una soluzione di controllo\).  
+-   Progetti sono stati aggiunti separatamente (in una soluzione di controllo del codice sorgente).  
   
- In [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] viene suggerito dal nome della cartella di SUR corrisponda al nome della soluzione senza estensione.  Nella tabella seguente viene riepilogato il comportamento delle due versioni.  
+ In [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] è consigliabile che il nome della cartella SUR coincidere con il nome della soluzione senza l'estensione. Nella tabella seguente viene riepilogato il comportamento in due versioni.  
   
-|Funzionalità|versione 1,1 del plug\-in API del controllo di tSource|Versione 1,2 di plug\-in controllo del codice sorgente API|  
-|------------------|------------------------------------------------------------|----------------------------------------------------------------|  
-|aggiungere la soluzione a SCC|SccInitialize\(\)<br /><br /> SccGetProjPath\(\)<br /><br /> SccGetProjPath\(\)<br /><br /> SccOpenProject\(\)|SccInitialize\(\)<br /><br /> SccGetProjPath\(\)<br /><br /> SccCreateSubProject\(\)<br /><br /> SccCreateSubProject\(\)<br /><br /> SccOpenProject\(\)|  
-|Aggiungere il progetto alla soluzione di controllo|SccGetProjPath\(\)<br /><br /> OpenProject\(\)|SccGetParentProjectPath\(\)<br /><br /> SccOpenProject\(\) **Note:**  Visual Studio si presuppone che una soluzione sia un elemento figlio diretto di SUR.|  
+|Funzionalità|tSource controllo plug-in API versione 1.1|API plug-in versione 1.2 di controllo del codice sorgente|  
+|-------------|----------------------------------------------|---------------------------------------------|  
+|Aggiungi soluzione al controllo del codice sorgente|SccInitialize()<br /><br /> SccGetProjPath()<br /><br /> SccGetProjPath()<br /><br /> SccOpenProject()|SccInitialize()<br /><br /> SccGetProjPath()<br /><br /> SccCreateSubProject()<br /><br /> SccCreateSubProject()<br /><br /> SccOpenProject()|  
+|Aggiungere un progetto alla soluzione di controllo del codice sorgente|SccGetProjPath()<br /><br /> OpenProject()|SccGetParentProjectPath()<br /><br /> SccOpenProject() **Nota:** Visual Studio si presuppone che una soluzione è un figlio diretto del sur il.|  
   
-## Esempi  
- Nella seguente tabella sono riportati due esempi.  In entrambi i casi, l'utente di [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] viene richiesto il percorso di destinazione per la soluzione nel controllo del codice sorgente fino a specificare *user\_choice* come destinazione. Quando il user\_choice è specificato, la soluzione e due progetti vengono aggiunti senza richiedere all'utente per le destinazioni del controllo del codice sorgente.  
+## <a name="examples"></a>Esempi  
+ Nella tabella seguente sono elencati due esempi. In entrambi i casi, il [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] utente viene richiesto un percorso di destinazione per la soluzione nel controllo del codice sorgente finché il *user_choice* viene specificato come destinazione. Quando viene specificato il user_choice, senza chiedere conferma all'utente per le destinazioni di controllo di origine vengono aggiunti alla soluzione e due progetti.  
   
-|la soluzione contiene|Le posizioni del disco|Struttura di impostazione predefinita del database|  
-|---------------------------|----------------------------|--------------------------------------------------------|  
-|sln1.sln<br /><br /> Web1<br /><br /> Web2|C\#: \\Solutions \\ sln1<br /><br /> C\#: \\Inetpub\\wwwroot\\Web 1<br /><br /> \\ \\ server \\ wwwroot$ \\ web2|$*user\_choice*\/sln1<br /><br /> $*user\_choice*\/C\/Web1<br /><br /> $*user\_choice*\/Web2|  
-|sln1.sln<br /><br /> Web1<br /><br /> Win1|C\#: \\Solutions \\ sln1<br /><br /> d: \\Inetpub\\wwwroot\\Web 1<br /><br /> C\#: \\solutions\\sln1\\Win 1|$*user\_choice*\/sln1<br /><br /> $*user\_choice*\/D\/web1<br /><br /> $*user\_choice*\/sln1\/win1|  
+|Soluzione contiene|In percorsi su disco|Struttura del database predefinito|  
+|-----------------------|-----------------------|--------------------------------|  
+|sln1.sln<br /><br /> Web1<br /><br /> WEB2|C:\Solutions\sln1<br /><br /> C:\Inetpub\wwwroot\Web1<br /><br /> \\\server\wwwroot$\web2|$/*user_choice*/sln1<br /><br /> $/*user_choice*  /C/Web1<br /><br /> $/*user_choice*/Web2|  
+|sln1.sln<br /><br /> Web1<br /><br /> Win1|C:\Solutions\sln1<br /><br /> D:\Inetpub\wwwroot\Web1<br /><br /> C:\solutions\sln1\Win1|$/*user_choice*/sln1<br /><br /> $/*user_choice*  /D/web1<br /><br /> $/*user_choice*  /sln1/win1|  
   
- La cartella e le sottocartelle di SUR vengono create indipendentemente dal fatto che l'operazione viene annullata o negativo a causa di un errore.  Automaticamente non vengono rimossi nell'annullamento o nelle condizioni di errore.  
+ Cartella SUR e delle sottocartelle vengono create indipendentemente dal fatto che l'operazione è stata annullata o ha esito negativo a causa di un errore. Vengono automaticamente rimossi nelle condizioni di errore o annullamento.  
   
- impostazioni predefinite di[!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] alla versione comportamento 1,1 se il plug\-in controllo del codice sorgente non restituisce `SCC_CAP_CREATESUBPROJECT` e i flag di funzionalità di `SCC_CAP_GETPARENTPROJECT` .  Inoltre, gli utenti di [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] possono scegliere per ripristinare il comportamento della versione 1,1 impostando il valore della chiave seguente a dword: 00000001:  
+ [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] valore predefinito è la versione 1.1 comportamento se il plug-in del controllo del codice sorgente non restituisce `SCC_CAP_CREATESUBPROJECT` e `SCC_CAP_GETPARENTPROJECT` flag di capacità. Inoltre, gli utenti di [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] possibile scegliere di ripristinare il comportamento della versione 1.1 impostando il valore della seguente chiave su DWORD: 00000001:  
   
- \[\=dword HKEY\_CURRENT\_USER \\Software\\Microsoft\\VisualStudio\\8.0\\SourceControl\] "DoNotCreateSolutionRootFolderInSourceControl ": 00000001  
+ [HKEY_CURRENT_USER\Software\Microsoft\VisualStudio\8.0\SourceControl] "DoNotCreateSolutionRootFolderInSourceControl" = DWORD: 00000001  
   
-## Vedere anche  
- [Novità di origine controllo plug\-in API versione 1.2](../../extensibility/internals/what-s-new-in-the-source-control-plug-in-api-version-1-2.md)
+## <a name="see-also"></a>Vedere anche  
+ [Novità della versione 1.2 dell'API del plug-in del controllo del codice sorgente](../../extensibility/internals/what-s-new-in-the-source-control-plug-in-api-version-1-2.md)

@@ -1,47 +1,47 @@
 ---
-title: "Controllo XMLNodes"
-ms.custom: ""
-ms.date: "02/02/2017"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "office-development"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-helpviewer_keywords: 
-  - "XMLNodes (controllo)"
-  - "XMLNodes (controllo), eventi"
-ms.assetid: 25ba7a21-aabb-4cce-b0d7-57b4add3b485
-caps.latest.revision: 36
-author: "kempb"
-ms.author: "kempb"
-manager: "ghogen"
-caps.handback.revision: 36
+title: XMLNodes (controllo) | Documenti Microsoft
+ms.custom: ''
+ms.date: 02/02/2017
+ms.technology:
+- office-development
+ms.topic: conceptual
+dev_langs:
+- VB
+- CSharp
+helpviewer_keywords:
+- XMLNodes control, events
+- XMLNodes control
+author: TerryGLee
+ms.author: tglee
+manager: douge
+ms.workload:
+- office
+ms.openlocfilehash: 0bb3451f491e4a663a99488f4b2099d58f0018eb
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# Controllo XMLNodes
-  **importante** le informazioni relative in questo argomento relative a Microsoft Word è verificato esclusivamente per il vantaggio e l'utilizzo degli utenti e le organizzazioni che si trovano fuori dagli Stati Uniti e i relativi territori, o sviluppano programmi eseguiti con prodotti, Microsoft Word che sono stati concessi in licenza da Microsoft prima del gennaio 2010, quando È stato rimosso un'implementazione di determinata funzionalità correlata alla classe personalizzata XML da Microsoft Word.  Queste informazioni relative a Microsoft Word non possono essere lette o utilizzate dagli individui o delle organizzazioni che si trovano negli Stati Uniti o nei relativi territori oppure che usano o sviluppano programmi eseguiti con prodotti Microsoft Word concessi in licenza da Microsoft dopo il 10 gennaio 2010. Questi prodotti funzioneranno in modo diverso rispetto a quelli concessi in licenza prima di tale data oppure acquistati e concessi in licenza per l'uso all'esterno degli Stati Uniti.  
+# <a name="xmlnodes-control"></a>Controllo XMLNodes
+  **Importante** le informazioni in questo argomento relative a Microsoft Word sono presentato in modo esclusivo per il vantaggio e uso di singoli utenti e organizzazioni che si trovano di fuori degli Stati Uniti e dei relativi territori o che utilizzano o lo sviluppo programmi che vengono eseguiti in, i prodotti di Microsoft Word che sono stati concessi in licenza da Microsoft prima di gennaio 2010, quando Microsoft ha rimosso un'implementazione di una funzionalità specifica relativi a XML personalizzato da Microsoft Word. Queste informazioni relative a Microsoft Word potrebbero non essere lette o utilizzate dal singoli individui o organizzazioni negli Stati Uniti o relativi territori, che utilizza o lo sviluppo di programmi eseguibili in, i prodotti di Microsoft Word che sono stati concessi in licenza da Microsoft dopo il 10 gennaio 2010 ; tali prodotti non si comporterà come prodotti con licenza prima di tale data o acquistati e concesso in licenza di fuori degli Stati Uniti.  
   
  [!INCLUDE[appliesto_wdalldoc](../vsto/includes/appliesto-wdalldoc-md.md)]  
   
- Il controllo <xref:Microsoft.Office.Tools.Word.XMLNodes> è una raccolta di oggetti nodo XML mappati che espone eventi.  Il controllo <xref:Microsoft.Office.Tools.Word.XMLNodes> viene creato solo quando un elemento ripetuto dello schema viene mappato in un documento di Microsoft Office Word.  Se l'elemento ripetuto contiene elementi figlio, questi verranno creati come controlli <xref:Microsoft.Office.Tools.Word.XMLNodes>.  
+ Il <xref:Microsoft.Office.Tools.Word.XMLNodes> controllo è una raccolta di oggetti del nodo XML mappati che espone gli eventi. Il <xref:Microsoft.Office.Tools.Word.XMLNodes> controllo viene creato solo quando un elemento ripetuto dello schema viene mappato a un documento di Microsoft Office Word. Se l'elemento ripetuto contiene elementi figlio, ognuno degli elementi figlio viene creata anche come un <xref:Microsoft.Office.Tools.Word.XMLNodes> controllo.  
   
- Una volta che Visual Studio ha creato la raccolta di nodi XML è possibile eseguire la programmazione per il controllo direttamente, senza dover passare al modello a oggetti di Word.  Il controllo <xref:Microsoft.Office.Tools.Word.XMLNodes> può essere eliminato solo rimuovendo il mapping dell'elemento dal documento.  
+ Dopo Visual Studio crea la raccolta di nodi XML, è possibile programmare il controllo direttamente senza dover passare attraverso il modello a oggetti. Il <xref:Microsoft.Office.Tools.Word.XMLNodes> controllo può essere eliminato solo eliminando il mapping dell'elemento dal documento.  
   
 > [!NOTE]  
->  Se si accede a un elemento figlio del controllo <xref:Microsoft.Office.Tools.Word.XMLNodes> mediante la proprietà <xref:Microsoft.Office.Tools.Word.XMLNodes.Item%2A>, viene restituito un oggetto <xref:Microsoft.Office.Interop.Word.XMLNode> invece di un controllo <xref:Microsoft.Office.Tools.Word.XMLNode>.  Per ulteriori informazioni, vedere [Limitazioni a livello di codice degli elementi e dei controlli host](../vsto/programmatic-limitations-of-host-items-and-host-controls.md).  
+>  Se si accede a un elemento figlio del <xref:Microsoft.Office.Tools.Word.XMLNodes> controllare tramite il <xref:Microsoft.Office.Tools.Word.XMLNodes.Item%2A> proprietà, viene restituito un <xref:Microsoft.Office.Interop.Word.XMLNode> oggetto anziché da un <xref:Microsoft.Office.Tools.Word.XMLNode> controllo. Per altre informazioni, vedere [Limitazioni a livello di codice degli elementi e dei controlli host](../vsto/programmatic-limitations-of-host-items-and-host-controls.md).  
   
-## Associazione di dati al controllo  
- Un controllo <xref:Microsoft.Office.Tools.Word.XMLNodes> non supporta l'associazione dati.  Questa condizione si verifica perché il controllo <xref:Microsoft.Office.Tools.Word.XMLNodes> non dispone della funzionalità di associazione dati complessa e l'associazione dati semplice non è in grado di rappresentare i dati ripetuti.  
+## <a name="binding-data-to-the-control"></a>Data binding al controllo  
+ Un <xref:Microsoft.Office.Tools.Word.XMLNodes> controllo non supporta l'associazione dati. In questo modo il <xref:Microsoft.Office.Tools.Word.XMLNodes> controllo non dispone di funzionalità di associazione di dati complessi e data binding semplice non può rappresentare dati ripetuti.  
   
-## Formattazione  
- La formattazione che è possibile applicare al testo all'interno del documento può essere applicata a un controllo <xref:Microsoft.Office.Tools.Word.XMLNodes>.  
+## <a name="formatting"></a>Formattazione  
+ La formattazione da applicare al testo all'interno del documento può essere applicata a un <xref:Microsoft.Office.Tools.Word.XMLNodes> controllo.  
   
-## Eventi  
- Gli eventi disponibili per il controllo <xref:Microsoft.Office.Tools.Word.XMLNodes> sono:  
+## <a name="events"></a>Eventi  
+ Gli eventi disponibili per il <xref:Microsoft.Office.Tools.Word.XMLNodes> controllo sono:  
   
 -   <xref:Microsoft.Office.Tools.Word.XMLNodes.AfterInsert>  
   
@@ -59,8 +59,8 @@ caps.handback.revision: 36
   
 -   <xref:Microsoft.Office.Tools.Word.XMLNodes.ValidationError>  
   
-## Confronto di eventi  
- È possibile acquisire un evento quando l'utente sposta il cursore nel contesto di un particolare controllo <xref:Microsoft.Office.Tools.Word.XMLNodes>.  Ad esempio, è possibile disporre di un controllo <xref:Microsoft.Office.Tools.Word.XMLNodes> denominato `Customer` che dispone di un controllo figlio <xref:Microsoft.Office.Tools.Word.XMLNodes> denominato `Company` e di un controllo `Company` che dispone di due controlli figlio <xref:Microsoft.Office.Tools.Word.XMLNodes> denominati `CompanyName` e `CompanyRegion` come illustrato di seguito.  
+## <a name="comparing-events"></a>Confronto di eventi  
+ È possibile acquisire un evento quando l'utente sposta il cursore all'interno del contesto di un determinato <xref:Microsoft.Office.Tools.Word.XMLNodes> controllo. Ad esempio, potrebbe essere un <xref:Microsoft.Office.Tools.Word.XMLNodes> controllo denominato `Customer` che include un elemento figlio <xref:Microsoft.Office.Tools.Word.XMLNodes> controllo denominato `Company`, e `Company` ha due figlio <xref:Microsoft.Office.Tools.Word.XMLNodes> controlli denominati `CompanyName` e `CompanyRegion` come indicato di seguito:  
   
 ```  
 <Customer>  
@@ -69,24 +69,24 @@ caps.handback.revision: 36
         <CompanyRegion>  
 ```  
   
- Se si desidera visualizzare un controllo nel riquadro delle azioni ogni volta che il cursore viene spostato nel nodo `Company`, la posizione del cursore in `CompanyName` o in `CompanyRegion` non è determinante, poiché questi due controlli sono entrambi nel contesto di `Company`.  In questo caso, il codice può essere creato nell'evento <xref:Microsoft.Office.Tools.Word.XMLNodes.ContextEnter> di `Company`.  
+ Se si desidera visualizzare un controllo nel riquadro azioni ogni volta che il cursore viene spostato nel `Company` nodo, non è importante se il cursore viene posizionato `CompanyName` o `CompanyRegion` perché sono entrambe all'interno del contesto di `Company`. In questo caso, è possibile scrivere codice nel <xref:Microsoft.Office.Tools.Word.XMLNodes.ContextEnter> evento di `Company`.  
   
- Nella maggior parte dei casi, quando il cursore è spostato su un controllo <xref:Microsoft.Office.Tools.Word.XMLNodes>, vengono generati gli eventi <xref:Microsoft.Office.Tools.Word.XMLNodes.Select> e <xref:Microsoft.Office.Tools.Word.XMLNodes.ContextEnter>.  Nella tabella che segue sono illustrate le differenze tra questi eventi.  
+ Nella maggior parte dei casi, quando il cursore viene spostato un <xref:Microsoft.Office.Tools.Word.XMLNodes> controllare sia la <xref:Microsoft.Office.Tools.Word.XMLNodes.Select> e <xref:Microsoft.Office.Tools.Word.XMLNodes.ContextEnter> vengono generati eventi. La tabella seguente illustra le differenze tra questi eventi.  
   
-|Evento Select|Evento ContextEnter|  
-|-------------------|-------------------------|  
-|Viene generato quando il cursore viene posizionato all'interno di uno dei nodi della raccolta <xref:Microsoft.Office.Tools.Word.XMLNodes>.|Viene generato quando il cursore viene posizionato in uno dei nodi o dei nodi di discendente della raccolta <xref:Microsoft.Office.Tools.Word.XMLNodes>, da un'area esterna del contesto del nodo.  In altre parole, l'evento viene generato solo quando il contesto cambia e può essere generato per più controlli <xref:Microsoft.Office.Tools.Word.XMLNodes> annidati.|  
+|Selezionare l'evento|Evento ContextEnter|  
+|------------------|------------------------|  
+|Si verifica quando il cursore viene posizionato all'interno di uno dei nodi del <xref:Microsoft.Office.Tools.Word.XMLNodes> insieme.|Si verifica quando il cursore viene posizionato all'interno di uno dei nodi o i relativi nodi discendenti del <xref:Microsoft.Office.Tools.Word.XMLNodes> insieme, da un'area all'esterno del contesto del nodo. In altre parole, viene generato solo quando cambia il contesto e possono essere generati per più annidato <xref:Microsoft.Office.Tools.Word.XMLNodes> controlli.|  
   
- Ad esempio, quando si sposta il cursore da `Customer` a `CompanyName`, vengono generati gli eventi <xref:Microsoft.Office.Tools.Word.XMLNodes.ContextEnter> per `Customer`, `Company` e `CompanyName`.  Se poi si sposta il cursore da `CompanyName` a `CompanyRegion`, viene generato solo l'evento <xref:Microsoft.Office.Tools.Word.XMLNodes.ContextEnter> per `CompanyRegion`, in quanto il contesto di `Company` e `Customer` è uguale.  Nel documento possono essere presenti più nodi `Company`.  Se si sposta il cursore dal nodo `CompanyName` di un nodo `Company` al nodo `CompanyName` di un altro nodo `Company`, il contesto è lo stesso, per cui viene generato solo l'evento <xref:Microsoft.Office.Tools.Word.XMLNodes.Select>.  
+ Ad esempio, quando si sposta il cursore da `Customer` in `CompanyName`, <xref:Microsoft.Office.Tools.Word.XMLNodes.ContextEnter> gli eventi per `Customer`, `Company`, e `CompanyName` vengono generati. Se poi si sposta il cursore da `CompanyName` a `CompanyRegion`, <xref:Microsoft.Office.Tools.Word.XMLNodes.ContextEnter> evento solo per `CompanyRegion` viene generato, perché il contesto è lo stesso per entrambi `Company` e `Customer`. È possibile avere più `Company` nodi nel documento. Se si sposta il cursore dal `CompanyName` nodo di uno `Company` per il `CompanyName` nodo di un altro `Company`, il contesto è lo stesso, in modo che solo il <xref:Microsoft.Office.Tools.Word.XMLNodes.Select> viene generato l'evento.  
   
- Le stesse differenze distinguono l'evento <xref:Microsoft.Office.Tools.Word.XMLNodes.ContextLeave> dall'evento <xref:Microsoft.Office.Tools.Word.XMLNodes.Deselect>.  
+ Le stesse differenze esistono tra la <xref:Microsoft.Office.Tools.Word.XMLNodes.ContextLeave> evento e <xref:Microsoft.Office.Tools.Word.XMLNodes.Deselect> evento.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Panoramica degli elementi e dei controlli host](../vsto/host-items-and-host-controls-overview.md)   
  [Automazione di Word usando oggetti estesi](../vsto/automating-word-by-using-extended-objects.md)   
- [Controllo XMLNode](../vsto/xmlnode-control.md)   
+ [XMLNode (controllo)](../vsto/xmlnode-control.md)   
  [Procedura: aggiungere controlli XMLNode ai documenti di Word](../vsto/how-to-add-xmlnodes-controls-to-word-documents.md)   
- [Procedura: effettuare il mapping degli schemi a documenti di Word in Visual Studio](../vsto/how-to-map-schemas-to-word-documents-inside-visual-studio.md)   
+ [Procedura: mappare schemi a documenti di Word in Visual Studio](../vsto/how-to-map-schemas-to-word-documents-inside-visual-studio.md)   
  [Limitazioni a livello di codice degli elementi e dei controlli host](../vsto/programmatic-limitations-of-host-items-and-host-controls.md)  
   
   

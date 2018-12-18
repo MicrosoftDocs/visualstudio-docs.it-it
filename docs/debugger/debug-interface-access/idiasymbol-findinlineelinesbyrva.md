@@ -1,53 +1,50 @@
 ---
-title: "IDiaSymbol::findInlineeLinesByRVA | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
+title: IDiaSymbol::findInlineeLinesByRVA | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology: vs-ide-debug
+ms.topic: conceptual
+dev_langs:
+- C++
 ms.assetid: ac108db1-9dbf-4dc4-bf48-159ca8d3725c
-caps.latest.revision: 3
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 3
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 0577040b0ca3551c76e10a503fcb876dac2d7339
+ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/18/2018
 ---
-# IDiaSymbol::findInlineeLinesByRVA
-[!INCLUDE[vs2017banner](../../code-quality/includes/vs2017banner.md)]
-
-Recupera un'enumerazione che consente a un client ripetere direttamente o indirettamente dalle informazioni sul numero di riga di tutte le funzioni in linea, in questo simbolo interno dell'indirizzo virtuale relativo specificato \(RVA\).  
+# <a name="idiasymbolfindinlineelinesbyrva"></a>IDiaSymbol::findInlineeLinesByRVA
+Recupera un'enumerazione che consente a un client scorrere le informazioni sul numeri di riga di tutte le funzioni che vengono impostati come inline, direttamente o indirettamente, in questo simbolo all'interno dell'indirizzo virtuale relativo specificato (RVA).  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp#  
-HRESULT findInlineeLinesByRVA (   
-   DWORD                 rva,  
-   DWORD                 length,  
-   IDiaEnumLineNumbers** ppResult  
+```C++  
+HRESULT findInlineeLinesByRVA (    DWORD                 rva,   DWORD                 length,  
+   IDiaEnumLineNumbers** ppResult  
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `rva`  
- \[in\] specifica l'indirizzo come RVA.  
+ [in] Specifica l'indirizzo come un RVA.  
   
  `length`  
- \[in\] specifica l'intervallo di indirizzi, in numero di byte, per analizzare con questa query.  
+ [in] Specifica l'intervallo di indirizzi, in numero di byte, per coprire la query.  
   
  `ppResult`  
- \[out\] utilizza un oggetto `IDiaEnumLineNumbers` che contiene l'elenco dei numeri di riga recuperati.  
+ [out] Contiene un `IDiaEnumLineNumbers` oggetto che contiene l'elenco di numeri di riga recuperati.  
   
-## Valore restituito  
- In caso di esito positivo, restituisce `S_OK`; in caso contrario, restituisce un codice errore.  
+## <a name="return-value"></a>Valore restituito  
+ Se ha esito positivo, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IDiaSession](../../debugger/debug-interface-access/idiasession.md)   
  [IDiaSymbol](../../debugger/debug-interface-access/idiasymbol.md)   
- [Enumerazione SymTagEnum](../../debugger/debug-interface-access/symtagenum.md)   
+ [SymTagEnum (enumerazione)](../../debugger/debug-interface-access/symtagenum.md)   
  [IDiaEnumLineNumbers](../../debugger/debug-interface-access/idiaenumlinenumbers.md)   
  [IDiaSession::findInlineeLines](../../debugger/debug-interface-access/idiasession-findinlineelines.md)

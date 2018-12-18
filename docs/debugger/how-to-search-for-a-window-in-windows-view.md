@@ -1,52 +1,51 @@
 ---
-title: "How to: Search for a Window in Windows View | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "windows, searching in Windows view"
+title: 'Procedura: ricerca di una finestra nella visualizzazione di Windows | Documenti Microsoft'
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology: vs-ide-debug
+ms.topic: conceptual
+helpviewer_keywords:
+- windows, searching in Windows view
 ms.assetid: 30306970-b861-4315-acf8-f86a43d4e73b
-caps.latest.revision: 4
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 4
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 4333a79e76358216ce87697975dcb54173570534
+ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/18/2018
 ---
-# How to: Search for a Window in Windows View
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
-È possibile cercare una finestra specifica nella visualizzazione finestre utilizzando come criterio di ricerca l'handle, il titolo, la classe o una combinazione di titolo e classe.  È possibile inoltre specificare la direzione iniziale della ricerca.  Nei campi della finestra di dialogo saranno visualizzati gli attributi della finestra selezionata nella struttura ad albero della finestra.  
+# <a name="how-to-search-for-a-window-in-windows-view"></a>Procedura: cercare una finestra nella visualizzazione finestre
+È possibile cercare una finestra specifica nella visualizzazione di Windows utilizzando il relativo handle, didascalia, classe o una combinazione di titolo e classe come criterio di ricerca. È inoltre possibile specificare la direzione iniziale della ricerca. I campi nella finestra di dialogo verranno visualizzati gli attributi della finestra selezionata nell'albero della finestra.  
   
- Iniziare con la struttura ad albero espansa al secondo livello \(tutte le finestre figlio del desktop\), in modo che sia possibile identificare le finestre al livello del desktop in base al nome della classe e al titolo.  Una volta scelta una finestra al livello del desktop, è possibile espandere tale livello per individuare una specifica finestra figlio.  
+ Iniziare con la struttura ad albero espansa al secondo livello (tutte le finestre sono figli del desktop), in modo che sia possibile identificare desktop a livello di windows per il proprio nome di classe e un titolo. Dopo aver scelto una finestra di livello desktop, è possibile espandere tale livello per trovare una finestra figlio specifico.  
   
-### Per cercare una finestra nella visualizzazione finestre  
+### <a name="to-search-for-a-window-in-windows-view"></a>Per cercare una finestra nella visualizzazione finestre  
   
-1.  Disporre le finestre in modo che la finestra di Spy\+\+, la finestra [Visualizzazione finestre](../debugger/windows-view.md) e quella di destinazione siano visibili.  
+1.  Disporre le finestre in modo che Spy + +, il [Windows Vista](../debugger/windows-view.md) finestra e finestra di destinazione sono visibili.  
   
-2.  Scegliere **Trova finestra** dal menu **Cerca**.  
+2.  Dal **ricerca** menu, scegliere **Trova finestra**.  
   
-     Viene visualizzata la [finestra di dialogo Ricerca finestre](../debugger/window-search-dialog-box.md).  
+     Il [finestra di dialogo ricerca](../debugger/window-search-dialog-box.md) apre.  
   
     > [!TIP]
-    >  Per semplificare l'organizzazione dello schermo, selezionare l'opzione **Nascondi Spy**.  Questa opzione consente di nascondere la finestra principale di Spy\+\+ e di mantenere solo la finestra di dialogo **Ricerca finestre** visibile in primo piano rispetto alle altre applicazioni.  La finestra principale di Spy\+\+ viene ripristinata quando si fa clic su **OK** o su **Annulla** oppure quando si deseleziona l'opzione **Nascondi Spy\+\+**.  
+    >  Per evitare confusione, selezionare il **Nascondi Spy + +** opzione. Questa opzione consente di nascondere la finestra principale di Spy + + e di lasciare solo il **ricerca finestre** la finestra di dialogo di primo piano rispetto alle altre applicazioni. La finestra principale di Spy + + viene ripristinata quando si fa clic **OK** o **Annulla**, o quando si cancella il **Nascondi Spy + +** opzione.  
   
-3.  Trascinare lo **strumento di ricerca** sulla finestra di destinazione.  Quando si trascina lo strumento, nella finestra di dialogo **Ricerca finestre** vengono visualizzati i dettagli sulla finestra selezionata.  
+3.  Trascinare il **strumento di ricerca** sulla finestra di destinazione. Quando si trascina, lo strumento di **ricerca finestre** la finestra di dialogo vengono visualizzati i dettagli sulla finestra selezionata.  
   
-     \- oppure \-  
+     - oppure -  
   
-     Se si conosce l'handle della finestra desiderata \(ad esempio dal debugger\), è possibile digitarlo nella casella **Handle**.  
+     Se si conosce l'handle della finestra di cui si desidera (ad esempio, dal debugger), è possibile digitare nel **gestire** casella.  
   
-     \- oppure \-  
+     - oppure -  
   
-     Se si conosce il titolo e\/o la classe della finestra desiderata, è possibile digitarli nelle caselle di testo **Titolo** e **Classe** e deselezionare la casella di testo **Handle**.  
+     Se si conosce il titolo e/o classe della finestra di cui si desidera, è possibile digitarli nel **didascalia** e **classe** caselle di testo e deselezionare il **gestire** casella di testo.  
   
-4.  Scegliere **Su** o **Giù** per la direzione iniziale della ricerca.  
+4.  Scegliere **backup** o **verso il basso** per la direzione iniziale della ricerca.  
   
-5.  Scegliere **OK**.  
+5.  Fare clic su **OK**.  
   
-     La finestra corrispondente eventualmente rilevata sarà evidenziata nella finestra [Visualizzazione finestre](../debugger/windows-view.md).
+     Se la finestra corrispondente viene trovata, viene evidenziato nel [Windows Vista](../debugger/windows-view.md) finestra.

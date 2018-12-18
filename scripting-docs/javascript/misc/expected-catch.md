@@ -1,36 +1,40 @@
 ---
-title: "Previsto &#39;catch&#39; | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/18/2017"
-ms.prod: "windows-client-threshold"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "javascript"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "VS.WebClient.Help.SCRIPT1033"
-dev_langs: 
-  - "JavaScript"
-  - "TypeScript"
-  - "DHTML"
+title: Previsto &#39; catch &#39; | Documenti Microsoft
+ms.custom: 
+ms.date: 01/18/2017
+ms.prod: windows-client-threshold
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- javascript
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- VS.WebClient.Help.SCRIPT1033
+dev_langs:
+- JavaScript
+- TypeScript
+- DHTML
 ms.assetid: f1cd947f-eba2-411e-8e84-8ca86f608643
-caps.latest.revision: 6
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 6
+caps.latest.revision: 
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.openlocfilehash: e6cd1e57137d220ebcf3834070e36d8257e2dca7
+ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/27/2017
 ---
-# Previsto &#39;catch&#39;
-Hai utilizzato il blocco **try**  di gestione delle eccezioni, ma non hai scritto l'istruzione collegata **catch**.  Il meccanismo di gestione delle eccezioni richiede che insieme al codice che non deve essere eseguito se si verifica un'eccezione, venga eseguito il wrapping del codice che può generare un errore in un blocco **try**.  Le eccezioni vengono generate dal blocco **try** mediante l'istruzione **throw** e vengono intercettate all'esterno del blocco **try** con una o più istruzioni **catch** .  
+# <a name="expected-39catch39"></a>Previsto &#39; catch &#39;
+È stata utilizzata la gestione delle eccezioni **provare** bloccata, ma non scritto personalmente associato **catch** istruzione. Il meccanismo di gestione delle eccezioni richiede che il codice può avere esito negativo, e il codice che non deve essere eseguita se si verifica un'eccezione, mandata a capo all'interno di un **provare** blocco. Le eccezioni vengono generate dall'interno il **provare** bloccato tramite il **generare** istruzione e rilevata di fuori di **provare** blocco con uno o più **catch**istruzioni.  
   
-### Per correggere l'errore  
+### <a name="to-correct-this-error"></a>Per correggere l'errore  
   
--   Aggiungere il blocco collegato **catch** .  
+-   Aggiungere l'oggetto associato **catch** blocco.  
   
--   Provare a utilizzare un blocco **finally** anziché un blocco **catch**.  
+-   Provare a usare un **infine** anziché il blocco una **catch** blocco.  
   
-## Vedere anche  
- [Istruzione try...catch...finally](../../javascript/reference/try-dot-dot-dot-catch-dot-dot-dot-finally-statement-javascript.md)   
+## <a name="see-also"></a>Vedere anche  
+ [try...... finally istruzione catch](../../javascript/reference/try-dot-dot-dot-catch-dot-dot-dot-finally-statement-javascript.md)   
  [Oggetto Error](../../javascript/reference/error-object-javascript.md)

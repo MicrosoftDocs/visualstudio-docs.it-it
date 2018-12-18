@@ -1,29 +1,28 @@
 ---
-title: "Sequenza temporale delle visualizzazioni dei core | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "vs.cv.cores.timeline.threads"
-helpviewer_keywords: 
-  - "Visualizzatore di concorrenze, Sequenza temporale delle visualizzazioni dei core"
+title: Sequenza temporale della visualizzazione Core | Microsoft Docs
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology: vs-ide-debug
+ms.topic: conceptual
+f1_keywords:
+- vs.cv.cores.timeline.threads
+helpviewer_keywords:
+- Concurrency Visualizer, Cores View Timeline
 ms.assetid: 10f0c666-ac2f-4ac5-9fb5-a88f660ab840
-caps.latest.revision: 5
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 5
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: ca61a511d5b65233aa0f7e979374ba5dd48d21ae
+ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/19/2018
 ---
-# Sequenza temporale delle visualizzazioni dei core
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
-Ogni riga nella sequenza temporale rappresenta un core di processore logico sul sistema profilato.  Per ogni riga l'asse orizzontale mostra il thread in esecuzione su un core logico in un determinato momento.  È possibile posizionarsi su un colore di interesse in una sequenza temporale per ottenere una descrizione di comando che identifica il thread.  Per agevolare l'identificazione del thread, la legenda nella parte inferiore della finestra mostra il valore rappresentato da ogni colore.  Utilizzare lo strumento di zoom per eseguire lo zoom in avanti e indietro, facendo clic ed effettuando un'operazione di trascinamento oppure premendo il tasto CTRL e spostando la rotellina del mouse.  La coerenza dello zoom viene mantenuta anche durante il passaggio tra la visualizzazione dei core e quella dei thread.  
+# <a name="cores-view-timeline"></a>Sequenza temporale delle visualizzazioni dei core
+Ogni riga della sequenza temporale rappresenta un core processore logico nel sistema profilato. Per ogni riga, l'asse orizzontale indica quale thread era in esecuzione su un core logico in un determinato momento. È possibile passare il mouse su un colore in una sequenza temporale per restituire una descrizione comando che identifica il thread. Per facilitare l'identificazione del thread, la legenda nella parte inferiore della finestra spiega cosa rappresenta ogni colore. Usare lo strumento Zoom per fare zoom avanti e indietro, facendo clic e trascinando o premendo CTRL e muovendo la rotellina del mouse. Quando si passa dalla visualizzazione Core alla visualizzazione thread la coerenza dello zoom viene mantenuta.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Visualizzazione Core](../profiling/cores-view.md)   
- [Controllo zoom \(visualizzazione Thread\)](../profiling/zoom-control-threads-view.md)
+ [Controllo zoom (visualizzazione Thread)](../profiling/zoom-control-threads-view.md)

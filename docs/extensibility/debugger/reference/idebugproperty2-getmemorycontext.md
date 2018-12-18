@@ -1,49 +1,50 @@
 ---
-title: "IDebugProperty2::GetMemoryContext | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "IDebugProperty2::GetMemoryContext"
-helpviewer_keywords: 
-  - "IDebugProperty2::GetMemoryContext"
+title: IDebugProperty2::GetMemoryContext | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology:
+- vs-ide-sdk
+ms.topic: conceptual
+f1_keywords:
+- IDebugProperty2::GetMemoryContext
+helpviewer_keywords:
+- IDebugProperty2::GetMemoryContext
 ms.assetid: 91793d25-790f-4881-a5c0-d0458e534514
-caps.latest.revision: 13
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 13
+author: gregvanl
+ms.author: gregvanl
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: 15bca3681c5b57d06835ff2109a4fcab2900b947
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# IDebugProperty2::GetMemoryContext
-[!INCLUDE[vs2017banner](../../../code-quality/includes/vs2017banner.md)]
-
+# <a name="idebugproperty2getmemorycontext"></a>IDebugProperty2::GetMemoryContext
 Ottiene il contesto di memoria del valore della proprietà.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp#  
-HRESULT GetMemoryContext (   
-   IDebugMemoryContext2** ppMemory  
+```cpp  
+HRESULT GetMemoryContext (   
+   IDebugMemoryContext2** ppMemory  
 );  
 ```  
   
-```c#  
+```csharp  
 int GetMemoryContext(  
-   out IDebugMemoryContext2 ppMemory  
+   out IDebugMemoryContext2 ppMemory  
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `ppMemory`  
- \[out\]  Restituisce [IDebugMemoryContext2](../../../extensibility/debugger/reference/idebugmemorycontext2.md) l'oggetto che rappresenta la memoria associata a questa proprietà.  
+ [out] Restituisce il [IDebugMemoryContext2](../../../extensibility/debugger/reference/idebugmemorycontext2.md) oggetto che rappresenta la memoria associata a questa proprietà.  
   
-## Valore restituito  
- Se l'operazione riesce, restituisce `S_OK`; in caso contrario restituisce il codice di errore.  Restituisce `S_GETMEMORYCONTEXT_NO_MEMORY_CONTEXT` se non c " è contesto di memoria da recuperare.  
+## <a name="return-value"></a>Valore restituito  
+ Se ha esito positivo, restituisce `S_OK`; in caso contrario, restituisce il codice di errore. Restituisce `S_GETMEMORYCONTEXT_NO_MEMORY_CONTEXT` se è presente alcun contesto di memoria da recuperare.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IDebugProperty2](../../../extensibility/debugger/reference/idebugproperty2.md)   
  [IDebugMemoryContext2](../../../extensibility/debugger/reference/idebugmemorycontext2.md)

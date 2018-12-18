@@ -1,36 +1,35 @@
 ---
-title: "Elemento &lt;Strings&gt; (programma di avvio automatico) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-deployment"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "MSBuild.GenerateBootstrapper.NoStringsForCulture"
-  - "MSBuild.GenerateBootstrapper.ProductCultureNotFound"
-dev_langs: 
-  - "FSharp"
-  - "VB"
-  - "CSharp"
-  - "C++"
-helpviewer_keywords: 
-  - "<Strings> (elemento) [programma di avvio automatico]"
+title: '&lt;Stringhe&gt; elemento (programma di avvio automatico) | Documenti Microsoft'
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology: vs-ide-deployment
+ms.topic: conceptual
+f1_keywords:
+- MSBuild.GenerateBootstrapper.NoStringsForCulture
+- MSBuild.GenerateBootstrapper.ProductCultureNotFound
+dev_langs:
+- FSharp
+- VB
+- CSharp
+- C++
+helpviewer_keywords:
+- <Strings> element [bootstrapper]
 ms.assetid: d5ea3613-5fc9-4a11-bef3-46a01178bf60
-caps.latest.revision: 4
-author: "stevehoag"
-ms.author: "shoag"
-manager: "wpickett"
-caps.handback.revision: 4
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: df186776e9f1fe431343c8643e5186ff522dfff6
+ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/19/2018
 ---
-# Elemento &lt;Strings&gt; (programma di avvio automatico)
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
-Definisce le stringhe localizzate per i nomi dei prodotti, i nomi dei package e i messaggi di errore relativi all'installazione.  
+# <a name="ltstringsgt-element-bootstrapper"></a>&lt;Stringhe&gt; elemento (programma di avvio automatico)
+Definisce le stringhe localizzate per i nomi dei prodotti, nomi di pacchetto e i messaggi di errore di installazione.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
 <Strings>  
@@ -41,20 +40,20 @@ Definisce le stringhe localizzate per i nomi dei prodotti, i nomi dei package e 
 </Strings>  
 ```  
   
-## Elementi e attributi  
- L'elemento `Strings` è un elemento figlio di `Package`.  Non dispone di attributi.  
+## <a name="elements-and-attributes"></a>Elementi e attributi  
+ Il `Strings` è un elemento figlio del `Package` elemento. Non dispone di attributi.  
   
-## String  
- L'elemento `String` è un elemento figlio di `Strings`.  L'elemento `Strings` può contenere uno o più elementi `String`.  
+## <a name="string"></a>Stringa  
+ Il `String` è un elemento figlio del `Strings` elemento. Oggetto `Strings` elemento può avere uno o più `String` elementi.  
   
- `String` dispone dell'attributo riportato di seguito.  
+ `String` presenta l'attributo seguente.  
   
 |Attributo|Descrizione|  
 |---------------|-----------------|  
-|`Name`|Obbligatorio.  Nome della stringa.|  
+|`Name`|Obbligatorio. Il nome della stringa.|  
   
-## Esempio  
- Nell'esempio di codice riportato di seguito vengono specificate tutte le stringhe inglesi per il programma di installazione di [!INCLUDE[dnprdnshort](../code-quality/includes/dnprdnshort_md.md)].  
+## <a name="example"></a>Esempio  
+ Esempio di codice seguente specifica tutte le stringhe in inglese per il [!INCLUDE[dnprdnshort](../code-quality/includes/dnprdnshort_md.md)] programma di installazione.  
   
 ```  
 <Strings>  
@@ -75,5 +74,5 @@ Definisce le stringhe localizzate per i nomi dei prodotti, i nomi dei package e 
 </Strings>  
 ```  
   
-## Vedere anche  
- [Elemento \<Package\>](../deployment/package-element-bootstrapper.md)
+## <a name="see-also"></a>Vedere anche  
+ [\<Pacchetto > elemento](../deployment/package-element-bootstrapper.md)

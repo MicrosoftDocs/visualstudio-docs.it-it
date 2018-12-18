@@ -1,59 +1,60 @@
 ---
-title: "IPropertyProxyEESide::CreateReplacementObject | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "IPropertyProxyEESide::CreateReplacementObject"
-helpviewer_keywords: 
-  - "IPropertyProxyEESide::CreateReplacementObject"
+title: IPropertyProxyEESide::CreateReplacementObject | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology:
+- vs-ide-sdk
+ms.topic: conceptual
+f1_keywords:
+- IPropertyProxyEESide::CreateReplacementObject
+helpviewer_keywords:
+- IPropertyProxyEESide::CreateReplacementObject
 ms.assetid: 0cfe79b8-c3f1-48b0-a225-e39dee2c92fe
-caps.latest.revision: 11
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 11
+author: gregvanl
+ms.author: gregvanl
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: 56e5001d7abd498982361a51d0386db4b2624cf7
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# IPropertyProxyEESide::CreateReplacementObject
-[!INCLUDE[vs2017banner](../../../code-quality/includes/vs2017banner.md)]
-
-Crea una copia di un oggetto dati specifico dell'analizzatore di \(EE\) espressioni.  
+# <a name="ipropertyproxyeesidecreatereplacementobject"></a>IPropertyProxyEESide::CreateReplacementObject
+Crea una copia di un oggetto dati specifico per l'analizzatore di espressioni (Java EE).  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```cpp  
-HRESULT CreateReplacementObject(  
-   IEEDataStorage*  dataIn,  
-   IEEDataStorage** dataOut  
+HRESULT CreateReplacementObject(  
+   IEEDataStorage*  dataIn,  
+   IEEDataStorage** dataOut  
 );  
 ```  
   
-```c#  
-int CreateReplacementObject(  
-   IEEDataStorage     dataIn,  
-   out IEEDataStorage dataOut  
+```csharp  
+int CreateReplacementObject(  
+   IEEDataStorage     dataIn,  
+   out IEEDataStorage dataOut  
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `dataIn`  
- \[in\]  [IEEDataStorage](../../../extensibility/debugger/reference/ieedatastorage.md) Un oggetto contenente i dati da copiare.  
+ [in] Un [IEEDataStorage](../../../extensibility/debugger/reference/ieedatastorage.md) oggetto che contiene i dati da copiare.  
   
  `dataOut`  
- \[out\]  restituisce un nuovo oggetto di `IEEDataStorage` .  
+ [out] Restituisce un nuovo `IEEDataStorage` oggetto.  
   
-## Valore restituito  
- Se l'operazione riesce, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
+## <a name="return-value"></a>Valore restituito  
+ Se ha esito positivo, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
   
-## Note  
- Questo metodo viene [IEEDataStorage](../../../extensibility/debugger/reference/ieedatastorage.md) fornito un oggetto che rappresenta una matrice di byte.  Questo oggetto dati in ingresso non viene in genere distribuito dall'EE.  Tuttavia, l'oggetto restituito da questo metodo viene implementato sempre dall'EE, in cui sarà l'EE implementare l'interfaccia di `IEEDataStorage` qualsiasi classe è desiderata.  
+## <a name="remarks"></a>Note  
+ Questo metodo riceve un [IEEDataStorage](../../../extensibility/debugger/reference/ieedatastorage.md) oggetto che rappresenta una matrice di byte. Questo oggetto dati in entrata non è in genere implementato dal motore di esecuzione. Tuttavia, l'oggetto restituito da questo metodo viene sempre implementato dal motore di esecuzione, che consente di implementare EE il `IEEDataStorage` interfaccia su qualsiasi classe desiderata.  
   
- Si noti che i dati forniti dall'oggetto in ingresso di `IEEDataStorage` devono essere gli stessi dati nell'oggetto in uscita di `IEEDataStorage` .  
+ Si noti che i dati forniti da in ingresso `IEEDataStorage` l'oggetto deve essere gli stessi dati in uscita `IEEDataStorage` oggetto.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IPropertyProxyEESide](../../../extensibility/debugger/reference/ipropertyproxyeeside.md)   
  [IEEDataStorage](../../../extensibility/debugger/reference/ieedatastorage.md)

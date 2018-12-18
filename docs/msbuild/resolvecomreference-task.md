@@ -1,13 +1,9 @@
 ---
-title: "Attività ResolveComReference | Microsoft Docs"
-ms.custom: 
+title: Attività ResolveComReference | Microsoft Docs
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- vs-ide-sdk
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.technology: msbuild
+ms.topic: reference
 f1_keywords:
 - http://schemas.microsoft.com/developer/msbuild/2003#ResolveComReference
 dev_langs:
@@ -19,30 +15,16 @@ helpviewer_keywords:
 - MSBuild, ResolveCOMReference task
 - ResolveCOMReference task [MSBuild]
 ms.assetid: c9bf5fcf-6453-40ea-b50f-a212adc3e9b5
-caps.latest.revision: 26
-author: kempb
-ms.author: kempb
-manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 11a9cee75f912c5fb31cf4a031644abe9c63d744
-ms.openlocfilehash: 2448ac7c838c9ee1a22e7923e130688d24c398f0
-ms.contentlocale: it-it
-ms.lasthandoff: 06/03/2017
-
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: ac8bf991ca4bec8befde5a11673dcb056f5e50f4
+ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/19/2018
 ---
 # <a name="resolvecomreference-task"></a>Attività ResolveComReference
 Accetta un elenco costituito da uno o più nomi di librerie dei tipi o file con estensione tlb e risolve tali librerie in percorsi sul disco.  

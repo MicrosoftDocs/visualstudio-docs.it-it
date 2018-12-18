@@ -1,56 +1,60 @@
 ---
-title: "Funzione isNaN (JavaScript) | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/18/2017"
-ms.prod: "windows-client-threshold"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-javascript"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "isNaN"
-dev_langs: 
-  - "JavaScript"
-  - "TypeScript"
-  - "DHTML"
-helpviewer_keywords: 
-  - "isNaN (metodo)"
+title: Funzione isNaN (JavaScript) | Documenti Microsoft
+ms.custom: 
+ms.date: 01/18/2017
+ms.prod: windows-client-threshold
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-javascript
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords:
+- isNaN
+dev_langs:
+- JavaScript
+- TypeScript
+- DHTML
+helpviewer_keywords:
+- isNaN method
 ms.assetid: 5af4eb29-72f6-484f-93bd-04ae1261f849
-caps.latest.revision: 14
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 14
+caps.latest.revision: 
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.openlocfilehash: 7b7e6d3687e795ea5d5e38308a8af0d73ba7f5ff
+ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/27/2017
 ---
-# Funzione isNaN (JavaScript)
-Restituisce un valore booleano che indica se un valore è il valore riservato `NaN` \(Not a Number\).  
+# <a name="isnan-function-javascript"></a>Funzione isNaN (JavaScript)
+Restituisce un valore booleano che indica se un valore è il valore riservato `NaN` (non un numero).  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
 isNaN(numValue)   
 ```  
   
-## Valore restituito  
- `true` se il valore convertito al tipo `Number` è `NaN`, altrimenti `false`.  
+## <a name="return-value"></a>Valore restituito  
+ `true` se il valore convertito nel tipo `Number` è `NaN` in caso contrario, `false`.  
   
-## Note  
- Il parametro richiesto `numValue` è il valore sui cui eseguire il test con `NaN`.  
+## <a name="remarks"></a>Note  
+ Obbligatorio `numValue` è il valore da confrontare `NaN`.  
   
- Questo metodo viene in genere utilizzato per verificare i valori restituiti dai metodi `parseInt` e `parseFloat`.  
+ In genere, si usa questo metodo per testare i valori restituiti dai metodi `parseInt` e `parseFloat`.  
   
- In alternativa, è possibile stabilire un confronto di una variabile contenente `NaN` o un altro valore con se stessa.  Se il confronto indica una differenza, significa che la variabile è uguale al valore `NaN`.  `NaN` è infatti l'unico valore che non risulta mai uguale a se stesso.  
+ In alternativa, una variabile che contiene `NaN` o un altro valore è analogo a se stesso. Se il confronto come diverso, è `NaN`. In questo modo `NaN` è l'unico valore che non è uguale a se stesso.  
   
-## Requisiti  
+## <a name="requirements"></a>Requisiti  
  [!INCLUDE[jsv1](../../javascript/misc/includes/jsv1-md.md)]  
   
- **Si applica a**: [Oggetto Global](../../javascript/reference/global-object-javascript.md)  
+ **Si applica a**: [oggetto globale](../../javascript/reference/global-object-javascript.md)  
   
-## Esempio  
+## <a name="example"></a>Esempio  
   
-```javascript  
+```JavaScript  
 // Returns false.  
 isNaN(100);  
   
@@ -70,7 +74,7 @@ isNaN("abc123");
 isNaN(Math.sqrt(-1));           
 ```  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Funzione isFinite](../../javascript/reference/isfinite-function-javascript.md)   
  [Costante NaN](../../javascript/reference/nan-constant-javascript.md)   
  [Funzione parseFloat](../../javascript/reference/parsefloat-function-javascript.md)   

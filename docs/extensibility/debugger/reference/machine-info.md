@@ -1,67 +1,68 @@
 ---
-title: "MACHINE_INFO | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "MACHINE_INFO"
-helpviewer_keywords: 
-  - "Struttura MACHINE_INFO"
+title: MACHINE_INFO | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology:
+- vs-ide-sdk
+ms.topic: conceptual
+f1_keywords:
+- MACHINE_INFO
+helpviewer_keywords:
+- MACHINE_INFO structure
 ms.assetid: e7564ff2-00b5-4750-8fd5-dc1029a16912
-caps.latest.revision: 10
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 10
+author: gregvanl
+ms.author: gregvanl
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: 4be6ee66149acb970287628289a15574894b8b26
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# MACHINE_INFO
-[!INCLUDE[vs2017banner](../../../code-quality/includes/vs2017banner.md)]
-
-Descrive un particolare computer.  
+# <a name="machineinfo"></a>MACHINE_INFO
+Descrive un determinato computer.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp#  
-typedef struct tagMACHINE_INFO {   
-   MACHINE_INFO_FIELDS Fields;  
-   BSTR                bstrName;  
-   MACHINE_INFO_FLAGS  Flags;  
+```cpp  
+typedef struct tagMACHINE_INFO {   
+   MACHINE_INFO_FIELDS Fields;  
+   BSTR                bstrName;  
+   MACHINE_INFO_FLAGS  Flags;  
 } MACHINE_INFO;  
 ```  
   
-```c#  
-public struct MACHINE_INFO {   
-   public uint   Fields;  
-   public string bstrName;  
-   public uint   Flags;  
+```csharp  
+public struct MACHINE_INFO {   
+   public uint   Fields;  
+   public string bstrName;  
+   public uint   Flags;  
 };  
 ```  
   
-## Membri  
+## <a name="members"></a>Membri  
  `Fields`  
- Una combinazione di flag [MACHINE\_INFO\_FIELDS](../../../extensibility/debugger/reference/machine-info-fields.md) dall'enumerazione che specificano i campi della struttura vengono inizializzati.  
+ Una combinazione di flag dal [MACHINE_INFO_FIELDS](../../../extensibility/debugger/reference/machine-info-fields.md) enumerazione che specificano quali campi della struttura vengono inizializzati.  
   
  `bstrName`  
- Il nome del computer.  equivalente a chiamare [GetMachineName](../../../extensibility/debugger/reference/idebugcoreserver2-getmachinename.md).  
+ Nome del computer. Equivale a chiamare [GetMachineName](../../../extensibility/debugger/reference/idebugcoreserver2-getmachinename.md).  
   
  `Flags`  
- Una combinazione di flag [MACHINE\_INFO\_FLAGS](../../../extensibility/debugger/reference/machine-info-flags.md) dall'enumerazione che descrive gli attributi del computer.  
+ Una combinazione di flag dal [MACHINE_INFO_FLAGS](../../../extensibility/debugger/reference/machine-info-flags.md) enumerazione che descrive gli attributi di computer.  
   
-## Note  
- Questa struttura viene restituita da una chiamata [GetMachineInfo](../Topic/IDebugCoreServer2::GetMachineInfo.md) al metodo.  
+## <a name="remarks"></a>Note  
+ Questa struttura viene restituita da una chiamata al [GetMachineInfo](../../../extensibility/debugger/reference/idebugcoreserver2-getmachineinfo.md) metodo.  
   
-## Requisiti  
- intestazione: msdbg.h  
+## <a name="requirements"></a>Requisiti  
+ Intestazione: msdbg.h  
   
- Spazio dei nomi: Microsoft.VisualStudio.Debugger.Interop  
+ Namespace: Microsoft.VisualStudio.Debugger.Interop  
   
  Assembly: Microsoft.VisualStudio.Debugger.Interop.dll  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Strutture e unioni](../../../extensibility/debugger/reference/structures-and-unions.md)   
- [MACHINE\_INFO\_FIELDS](../../../extensibility/debugger/reference/machine-info-fields.md)   
- [GetMachineInfo](../Topic/IDebugCoreServer2::GetMachineInfo.md)
+ [MACHINE_INFO_FIELDS](../../../extensibility/debugger/reference/machine-info-fields.md)   
+ [GetMachineInfo](../../../extensibility/debugger/reference/idebugcoreserver2-getmachineinfo.md)

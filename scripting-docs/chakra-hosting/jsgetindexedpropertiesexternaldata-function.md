@@ -1,23 +1,27 @@
 ---
-title: "Funzione JsGetIndexedPropertiesExternalData | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/18/2017"
-ms.prod: "windows-client-threshold"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
+title: Funzione JsGetIndexedPropertiesExternalData | Microsoft Docs
+ms.custom: 
+ms.date: 01/18/2017
+ms.prod: windows-client-threshold
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: reference
 ms.assetid: 2c313163-3462-42fd-8dee-3dfb3ac7f43f
-caps.latest.revision: 2
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 2
+caps.latest.revision: "2"
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.openlocfilehash: 1c3e59c7a85a9edbaae93c90c59abf214da9cc4a
+ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/27/2017
 ---
-# Funzione JsGetIndexedPropertiesExternalData
+# <a name="jsgetindexedpropertiesexternaldata-function"></a>Funzione JsGetIndexedPropertiesExternalData
 Recupera le informazioni relative ai dati esterni delle proprietà indicizzate di un oggetto.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
 STDAPI_(JsErrorCode) JsGetIndexedPropertiesExternalData(  
@@ -28,7 +32,7 @@ STDAPI_(JsErrorCode) JsGetIndexedPropertiesExternalData(
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `object`  
  Oggetto.  
   
@@ -41,14 +45,14 @@ STDAPI_(JsErrorCode) JsGetIndexedPropertiesExternalData(
  `elementLength`  
  Numero di elementi di matrice nei dati esterni.  
   
-## Valore restituito  
+## <a name="return-value"></a>Valore restituito  
  Codice `JsNoError` se l'operazione ha avuto esito positivo; in caso contrario, un codice di errore.  
   
-## Note  
+## <a name="remarks"></a>Note  
  Questa API è supportata solo in modalità Edge.  
   
-## Requisiti  
+## <a name="requirements"></a>Requisiti  
  **Intestazione:** jsrt.h  
   
-## Vedere anche  
- [Riferimenti \(Runtime JavaScript\)](../chakra-hosting/reference-javascript-runtime.md)
+## <a name="see-also"></a>Vedere anche  
+ [Riferimenti (Runtime JavaScript)](../chakra-hosting/reference-javascript-runtime.md)

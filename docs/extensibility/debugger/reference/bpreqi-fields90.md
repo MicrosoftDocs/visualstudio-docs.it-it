@@ -1,39 +1,23 @@
 ---
 title: BPREQI_FIELDS90 | Documenti Microsoft
-ms.custom: 
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - vs-ide-sdk
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: conceptual
 helpviewer_keywords:
 - BPREQI_FIELDS90 enumeration
 ms.assetid: bf6f7efc-39f2-46a2-906d-c3647bf89995
-caps.latest.revision: 8
+author: gregvanl
 ms.author: gregvanl
-manager: ghogen
-translation.priority.mt:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: ef4363b210fff059a88f80bd7377d91971ef2bce
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
 ms.translationtype: MT
-ms.sourcegitcommit: 4a36302d80f4bc397128e3838c9abf858a0b5fe8
-ms.openlocfilehash: 2de27fc0c3ea470e63c82c8116e34e450eb08bb2
-ms.contentlocale: it-it
-ms.lasthandoff: 09/26/2017
-
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="bpreqifields90"></a>BPREQI_FIELDS90
 Enumera i valori validi che specificano le informazioni da recuperare una richiesta di punto di interruzione. Questa enumerazione estende il [BPREQI_FIELDS](../../../extensibility/debugger/reference/bpreqi-fields.md) enumerazione.  

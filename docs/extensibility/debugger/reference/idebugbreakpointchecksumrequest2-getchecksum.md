@@ -1,56 +1,57 @@
 ---
-title: "IDebugBreakpointChecksumRequest2::GetChecksum | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "IDebugBreakpointChecksumRequest2::GetChecksum"
+title: IDebugBreakpointChecksumRequest2::GetChecksum | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology:
+- vs-ide-sdk
+ms.topic: conceptual
+helpviewer_keywords:
+- IDebugBreakpointChecksumRequest2::GetChecksum
 ms.assetid: ec434882-e5c0-4d76-a58b-22c260d8626e
-caps.latest.revision: 12
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 12
+author: gregvanl
+ms.author: gregvanl
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: 6ecd6d0ed9c69cad1275a399ffacf402529eebf4
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# IDebugBreakpointChecksumRequest2::GetChecksum
-[!INCLUDE[vs2017banner](../../../code-quality/includes/vs2017banner.md)]
-
-Recupera il checksum del documento per una richiesta del punto di interruzione fornita l'identificatore univoco dell'algoritmo di checksum da utilizzare.  
+# <a name="idebugbreakpointchecksumrequest2getchecksum"></a>IDebugBreakpointChecksumRequest2::GetChecksum
+Recupera il valore di checksum di documento per una richiesta di punto di interruzione specificata l'identificatore univoco dell'algoritmo di checksum da usare.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp#  
+```cpp  
 HRESULT GetChecksum(   
-   REFGUID        guidAlgorithm,  
-   CHECKSUM_DATA *pChecksumData  
+   REFGUID        guidAlgorithm,  
+   CHECKSUM_DATA *pChecksumData  
 );  
 ```  
   
-```c#  
+```csharp  
 public int GetChecksum(   
-   ref Guid               guidAlgorithm,  
-   out enum_CHECKSUM_DATA pChecksumData  
+   ref Guid               guidAlgorithm,  
+   out enum_CHECKSUM_DATA pChecksumData  
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `guidAlgorithm`  
- \[in\]  Identificatore univoco dell'algoritmo di checksum.  
+ [in] Identificatore univoco dell'algoritmo di checksum.  
   
  `pChecksumData`  
- \[out\]  Checksum del documento per la richiesta di un punto di interruzione.  
+ [out] Checksum di documento per la richiesta di punto di interruzione.  
   
-## Valore restituito  
- Se l'operazione riesce, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
+## <a name="return-value"></a>Valore restituito  
+ Se ha esito positivo, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
   
-## Esempio  
- Nell'esempio seguente viene illustrata una funzione che controlla se il checksum di un documento, che sta per essere associato, corrispondente a uno dall'interfaccia utente.  
+## <a name="example"></a>Esempio  
+ Nell'esempio seguente viene illustrata una funzione che controlla se il valore di checksum di un documento, che sta per essere associato, corrisponde a uno dall'interfaccia utente.  
   
-```cpp#  
+```cpp  
 bool CDebugProgram::DoChecksumsMatch(CDebugPendingBreakpoint *pPending, CDebugCodeContext *pContext)  
 {  
     bool fRet = false;  
@@ -102,5 +103,5 @@ bool CDebugProgram::DoChecksumsMatch(CDebugPendingBreakpoint *pPending, CDebugCo
 }  
 ```  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IDebugBreakpointChecksumRequest2](../../../extensibility/debugger/reference/idebugbreakpointchecksumrequest2.md)

@@ -1,43 +1,44 @@
 ---
-title: "IDebugGenericFieldInstance | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "Interfaccia IDebugGenericFieldInstance"
+title: IDebugGenericFieldInstance | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology:
+- vs-ide-sdk
+ms.topic: conceptual
+helpviewer_keywords:
+- IDebugGenericFieldInstance interface
 ms.assetid: f68b4761-be8b-4801-9d4b-cde90e01d95e
-caps.latest.revision: 7
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 7
+author: gregvanl
+ms.author: gregvanl
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: da0abc75fa59f19d61ee95194905be678336808b
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# IDebugGenericFieldInstance
-[!INCLUDE[vs2017banner](../../../code-quality/includes/vs2017banner.md)]
-
-rappresenta un'istanza di un campo per un tipo generico di codice gestito.  
+# <a name="idebuggenericfieldinstance"></a>IDebugGenericFieldInstance
+Rappresenta un'istanza di un campo per un tipo generico di codice gestito.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
 IDebugGenericFieldInstance : IUnknown  
 ```  
   
-## Metodi  
+## <a name="methods"></a>Metodi  
  Questa interfaccia implementa i metodi seguenti:  
   
 |Metodo|Descrizione|  
 |------------|-----------------|  
-|[GetTypeArguments](../../../extensibility/debugger/reference/idebuggenericfieldinstance-gettypearguments.md)|Recupera gli argomenti del parametro di tipo per questa istanza.|  
-|[TypeArgumentCount](../../../extensibility/debugger/reference/idebuggenericfieldinstance-typeargumentcount.md)|Restituisce il numero di argomenti del parametro di tipo per questa istanza.|  
+|[GetTypeArguments](../../../extensibility/debugger/reference/idebuggenericfieldinstance-gettypearguments.md)|Recupera gli argomenti di parametro di tipo per questa istanza.|  
+|[TypeArgumentCount](../../../extensibility/debugger/reference/idebuggenericfieldinstance-typeargumentcount.md)|Restituisce il numero del tipo di argomenti di parametro per questa istanza.|  
   
-## Requisiti  
- intestazione: Sh.h  
+## <a name="requirements"></a>Requisiti  
+ Intestazione: Sh.h  
   
- Spazio dei nomi: Microsoft.VisualStudio.Debugger.Interop  
+ Namespace: Microsoft.VisualStudio.Debugger.Interop  
   
  Assembly: Microsoft.VisualStudio.Debugger.Interop.dll

@@ -1,45 +1,44 @@
 ---
-title: "File Tracking | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "msbuild, file tracking"
+title: Rilevamento di file | Microsoft Docs
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology: msbuild
+ms.topic: conceptual
+helpviewer_keywords:
+- msbuild, file tracking
 ms.assetid: e6c66ac0-3464-451f-9192-3b98dca21b4a
-caps.latest.revision: 6
-author: "kempb"
-ms.author: "kempb"
-manager: "ghogen"
-caps.handback.revision: 6
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 51d17894025800acd9c8ab0736ebe92d7f790fc7
+ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/19/2018
 ---
-# File Tracking
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
-Il rilevamento di file registra le chiamate al file system di Windows per un processo e i relativi processi figlio.  Chiamando le funzioni elencate di seguito, i programmi controllano quando è necessario attivare e disattivare la registrazione e specificano il file di log da utilizzare.  
+# <a name="file-tracking"></a>Rilevamento di file
+Il rilevamento di file registra le chiamate al file system di Windows per un processo e i relativi processi figlio. Chiamando le funzioni elencate di seguito, i programmi stabiliscono quando attivare e disattivare la registrazione e quale file di log usare.  
   
-## In questa sezione  
+## <a name="in-this-section"></a>In questa sezione  
  [EndTrackingContext](../msbuild/endtrackingcontext.md)  
- Arresta il rilevamento del contesto corrente.  
+ Interrompe il rilevamento nel contesto corrente.  
   
  [ResumeTracking](../msbuild/resumetracking.md)  
  Riprende il rilevamento dopo una chiamata a [SuspendTracking](../msbuild/suspendtracking.md).  
   
  [SetThreadCount](../msbuild/setthreadcount.md)  
- Imposta il numero di thread da utilizzare per il rilevamento.  
+ Imposta il numero di thread da usare per il rilevamento.  
   
  [StartTrackingContext](../msbuild/starttrackingcontext.md)  
- Inizia un nuovo contesto di rilevamento.  
+ Avvia un nuovo contesto di rilevamento.  
   
  [StartTrackingContextWithRoot](../msbuild/starttrackingcontextwithroot.md)  
- Inizia un nuovo contesto di rilevamento con una radice specificata.  
+ Avvia un nuovo contesto di rilevamento con una radice specificata.  
   
  [StopTrackingAndCleanup](../msbuild/stoptrackingandcleanup.md)  
- Termina il rilevamento e rilascia le risorse utilizzate.  
+ Termina il rilevamento e rilascia le risorse usate.  
   
  [SuspendTracking](../msbuild/suspendtracking.md)  
  Sospende temporaneamente il rilevamento.  

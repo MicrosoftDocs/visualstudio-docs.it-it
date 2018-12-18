@@ -1,53 +1,51 @@
 ---
-title: "Raccolta delle statistiche dell&#39;applicazione per i servizi tramite il metodo di campionamento del profiler | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/05/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: Raccolta delle statistiche dell'applicazione per i servizi tramite il metodo di campionamento del profiler | Microsoft Docs
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology: vs-ide-debug
+ms.topic: conceptual
 ms.assetid: 07840ab2-3a92-4744-ac87-48b19e0ceecd
-caps.latest.revision: 14
-caps.handback.revision: 14
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: e030b6b770a9748363c0ddc4809baeed458af048
+ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/19/2018
 ---
-# Raccolta delle statistiche dell&#39;applicazione per i servizi tramite il metodo di campionamento del profiler
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
-In questa sezione vengono illustrate le procedure e le opzioni per la raccolta delle statistiche sulle prestazioni per i servizi Windows tramite il metodo di campionamento dalla riga di comando.  
+# <a name="collecting-application-statistics-for-services-by-using-the-profiler-sampling-method"></a>Raccolta delle statistiche dell'applicazione per i servizi tramite il metodo di campionamento del profiler
+Questa sezione descrive le procedure e le opzioni per la raccolta di statistiche sulle prestazioni per i servizi Windows tramite il metodo di campionamento dalla riga di comando.  
   
 > [!NOTE]
->  Le funzionalità di sicurezza avanzate in Windows 8 e Windows Server 2012 necessarie modifiche significative in modo che il profiler di Visual Studio consente di raccogliere dati su queste piattaforme.  Le applicazioni di archivio di Windows richiedono nuove tecniche di raccolta.  Vedere [Profilatura delle applicazioni Windows 8 e Windows Server 2012](../profiling/performance-tools-on-windows-8-and-windows-server-2012-applications.md).  
+>  Le funzionalità di sicurezza avanzate di Windows 8 e Windows Server 2012 hanno richiesto modifiche significative riguardo alla modalità di raccolta dei dati su queste piattaforme da parte del profiler di Visual Studio. Le app UWP richiedono anche nuove tecniche di raccolta. Vedere [Performance Tools on Windows 8 and Windows Server 2012 applications](../profiling/performance-tools-on-windows-8-and-windows-server-2012-applications.md) (Strumenti per le prestazioni nelle applicazioni Windows 8 e Windows Server 2012).  
   
-## Attività comuni  
+## <a name="common-tasks"></a>Attività comuni  
   
-|Task|Contenuto correlato|  
-|----------|-------------------------|  
-|**Connettere il profiler a un servizio .NET**|-   [Procedura: collegare il profiler a un servizio .NET per raccogliere statistiche dell'applicazione](../profiling/how-to-attach-the-profiler-to-a-dotnet-service-to-collect-application-statistics-by-using-the-command-line.md)|  
+|Attività|Contenuto correlato|  
+|----------|---------------------|  
+|**Connettere il profiler a un servizio .NET**|-   [How to: Attach the Profiler to a .NET Service to Collect Application Statistics](../profiling/how-to-attach-the-profiler-to-a-dotnet-service-to-collect-application-statistics-by-using-the-command-line.md) (Procedura: Connettere il profiler a un servizio .NET per raccogliere statistiche dell'applicazione)|  
 |**Aggiungere dati di interazione tra livelli**|-   [Raccolta di dati di interazione tra livelli](../profiling/adding-tier-interaction-data-from-the-command-line.md)|  
-|**Connettere il profiler a un servizio C\/C\+\+**|-   [Procedura: collegare il profiler a un servizio nativo per raccogliere statistiche dell'applicazione](../profiling/how-to-attach-the-profiler-to-a-native-service-to-collect-application-statistics-by-using-the-command-line.md)|  
+|**Connettere il profiler a un servizio C/C++**|-   [How to: Attach the Profiler to a Native Service to Collect Application Statistics](../profiling/how-to-attach-the-profiler-to-a-native-service-to-collect-application-statistics-by-using-the-command-line.md) (Procedura: Connettere il profiler a un servizio nativo per raccogliere statistiche dell'applicazione)|  
   
-## Attività correlate  
+## <a name="related-tasks"></a>Attività correlate  
   
-### Profilo dei servizi Windows  
+### <a name="profiling-windows-services"></a>Profilatura di servizi Windows  
   
-|Task|Contenuto correlato|  
-|----------|-------------------------|  
-|**Eseguire il profilo tramite il metodo di strumentazione**|-   [Raccolta di dati di intervallo dettagliati tramite strumentazione](../profiling/collecting-detailed-timing-data-for-services-by-using-the-instrumentation-method-from-the-profiler-command-line.md)|  
-|**Eseguire il profilo dell'allocazione di memoria .NET e dell'operazione di Garbage Collection**|-   [Raccolta di dati di memoria .NET](../profiling/collecting-memory-data-from-dotnet-framework-services-by-using-the-profiler-command-line.md)|  
-|**Eseguire il profilo di conflitti di risorse e attività dei thread**|-   [Raccolta di dati di concorrenza](../profiling/collecting-concurrency-data-for-a-service-by-using-the-profiler-command-line.md)|  
+|Attività|Contenuto correlato|  
+|----------|---------------------|  
+|**Sottoporre a profilatura tramite il metodo di strumentazione**|-   [Raccolta di dati di intervallo dettagliati tramite strumentazione](../profiling/collecting-detailed-timing-data-for-services-by-using-the-instrumentation-method-from-the-profiler-command-line.md)|  
+|**Sottoporre a profilatura l'allocazione di memoria .NET e la garbage collection**|-   [Collecting .NET Memory Data](../profiling/collecting-memory-data-from-dotnet-framework-services-by-using-the-profiler-command-line.md) (Raccolta di dati di memoria .NET)|  
+|**Sottoporre a profilatura i conflitti di risorse e le attività dei thread**|-   [Raccolta di dati di concorrenza](../profiling/collecting-concurrency-data-for-a-service-by-using-the-profiler-command-line.md)|  
   
-### Profilatura mediante il metodo di campionamento  
+### <a name="profiling-by-using-the-sampling-method"></a>Profilatura tramite il metodo di campionamento  
   
-|Task|Contenuto correlato|  
-|----------|-------------------------|  
-|**Eseguire il profilo di applicazioni \(client\) autonome**|-   [Raccolta di statistiche dell'applicazione tramite campionamento](../profiling/collecting-application-statistics-for-stand-alone-applications-by-using-the-profiler-command-line.md)|  
-|**Eseguire il profilo di applicazioni Web ASP.NET**|-   [Raccolta di statistiche dell'applicazione tramite campionamento](../profiling/collecting-application-statistics-for-aspnet-web-applications-using-the-profiler-sampling-method-from-the-command-line.md)|  
+|Attività|Contenuto correlato|  
+|----------|---------------------|  
+|**Sottoporre a profilatura applicazioni client autonome**|-   [Raccolta di statistiche dell'applicazione tramite campionamento](../profiling/collecting-application-statistics-for-stand-alone-applications-by-using-the-profiler-command-line.md)|  
+|**Sottoporre a profilatura applicazioni Web ASP.NET**|-   [Raccolta di statistiche dell'applicazione tramite campionamento](../profiling/collecting-application-statistics-for-aspnet-web-applications-using-the-profiler-sampling-method-from-the-command-line.md)|  
   
-### Analisi dei rapporti e delle visualizzazioni dei dati di campionamento  
- [Visualizzazioni dei dati del metodo di campionamento](../profiling/profiler-sampling-method-data-views.md)
+### <a name="analyzing-sampling-data-views-and-reports"></a>Analisi di visualizzazioni dati e di report di campionamento  
+ [Sampling Method Data Views](../profiling/profiler-sampling-method-data-views.md) (Visualizzazioni dei dati del metodo di campionamento)

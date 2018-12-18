@@ -1,41 +1,23 @@
 ---
 title: MSBuild | Microsoft Docs
-ms.custom: 
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- vs-ide-sdk
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.technology: msbuild
+ms.topic: conceptual
 helpviewer_keywords:
 - MSBuild, about MSBuild
 - MSBuild, overview
 ms.assetid: e39f13f7-1e1d-4435-95ca-0c222bca071c
-caps.latest.revision: 59
-author: kempb
-ms.author: kempb
-manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 44e9d5e7af0994c494522a043c74046c6667abeb
-ms.openlocfilehash: 3b7d14a96683da16d1c7e6bae6a5226bfbaaa616
-ms.contentlocale: it-it
-ms.lasthandoff: 06/08/2017
-
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 26646ecef952a6f4ff761f4e7239fc6e7e920ea1
+ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/19/2018
 ---
 # <a name="msbuild"></a>MSBuild
 [!INCLUDE[vstecmsbuildengine](../msbuild/includes/vstecmsbuildengine_md.md)] è una piattaforma per la compilazione di applicazioni. Questo motore, anche noto come MSBuild, fornisce un XML Schema per un file di progetto che controlla il modo in cui la piattaforma di compilazione elabora e compila il software. Visual Studio utilizza MSBuild, ma esso non dipende da Visual Studio. Richiamando msbuild.exe nel progetto o nel file della soluzione, è possibile orchestrare e compilare prodotti in ambienti in cui Visual Studio non è installato.  
@@ -65,7 +47,7 @@ ms.lasthandoff: 06/08/2017
  È possibile scrivere codice nell'IDE di Visual Studio ed eseguire le compilazioni tramite MSBuild. In alternativa, è possibile compilare il codice nell'IDE in un computer di sviluppo e usare una riga di comando di MSBuild per compilare il codice integrato da più sviluppatori.  
   
 > [!NOTE]
->  È possibile usare Team Foundation Build per compilare, testare e distribuire l'applicazione automaticamente. Il sistema di compilazione può eseguire le compilazioni automaticamente quando gli sviluppatori archiviano il codice, ad esempio come parte di una strategia di integrazione continuata, o secondo a una pianificazione, ad esempio una compilazione notturna di test di verifica compilazione. In Team Foundation Build il codice viene compilato tramite MSBuild. Per altre informazioni, vedere [Build the application](http://msdn.microsoft.com/Library/a971b0f9-7c28-479d-a37b-8fd7e27ef692) (Compilare l'applicazione).  
+>  È possibile usare Team Foundation Build per compilare, testare e distribuire l'applicazione automaticamente. Il sistema di compilazione può eseguire le compilazioni automaticamente quando gli sviluppatori archiviano il codice, ad esempio come parte di una strategia di integrazione continuata, o secondo a una pianificazione, ad esempio una compilazione notturna di test di verifica compilazione. In Team Foundation Build il codice viene compilato tramite MSBuild. Per altre informazioni, vedere [Compilazione e versione](/vsts/build-release/index).  
   
  Nel presente argomento viene fornita una panoramica di MSBuild. Per un'esercitazione introduttiva, vedere [Procedura dettagliata: Uso di MSBuild](../msbuild/walkthrough-using-msbuild.md).  
   
@@ -221,10 +203,8 @@ MSBuild.exe MyProj.proj /property:Configuration=Debug
 |[Registrazione a MSBuild](../msbuild/logging-in-msbuild.md)|Descrive come registrare eventi, messaggi ed errori.|  
 |[Risorse aggiuntive](../msbuild/additional-msbuild-resources.md)|Elenca risorse della community e di supporto che consentono di ottenere altre informazioni su MSBuild.|  
   
-## <a name="reference"></a>Riferimento  
+## <a name="reference"></a>Riferimenti  
  [Riferimenti a MSBuild](../msbuild/msbuild-reference.md)  
  Collegamenti ad argomenti che contengono informazioni di riferimento.  
   
- [Glossario](msbuild-glossary.md)
- Definisce termini comuni di MSBuild.
-
+ [Glossario](msbuild-glossary.md) Definisce i termini comuni di MSBuild.

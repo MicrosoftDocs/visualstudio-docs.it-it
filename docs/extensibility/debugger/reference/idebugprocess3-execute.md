@@ -1,60 +1,61 @@
 ---
-title: "IDebugProcess3::Execute | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "IDebugProcess3::Execute"
-helpviewer_keywords: 
-  - "IDebugProcess3::Execute"
+title: IDebugProcess3::Execute | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology:
+- vs-ide-sdk
+ms.topic: conceptual
+f1_keywords:
+- IDebugProcess3::Execute
+helpviewer_keywords:
+- IDebugProcess3::Execute
 ms.assetid: d831cd81-d7bf-4172-8517-aa699867791f
-caps.latest.revision: 10
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 10
+author: gregvanl
+ms.author: gregvanl
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: 349f792826bcfaa6ec3af1e10069e9c7182868bb
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# IDebugProcess3::Execute
-[!INCLUDE[vs2017banner](../../../code-quality/includes/vs2017banner.md)]
-
-Continua a eseguire questo processo in stato di interruzione.  Tutto lo stato precedente di esecuzione \(ad esempio un passaggio\) viene cancellato e l'avvio di processo che esegue nuovamente.  
+# <a name="idebugprocess3execute"></a>IDebugProcess3::Execute
+Continua l'esecuzione di questo processo da uno stato di arresto. Qualsiasi stato di esecuzione precedente (ad esempio un passaggio) viene cancellato e il processo inizia a eseguire di nuovo.  
   
 > [!NOTE]
->  Questo metodo deve essere utilizzato al posto di [Esegui](../../../extensibility/debugger/reference/idebugprogram2-execute.md).  
+>  Questo metodo deve essere utilizzato al posto di [Execute](../../../extensibility/debugger/reference/idebugprogram2-execute.md).  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```cpp  
-HRESULT Execute(  
-   IDebugThread2* pThread  
+HRESULT Execute(  
+   IDebugThread2* pThread  
 );  
 ```  
   
-```c#  
-int Execute(  
-   IDebugThread2 pThread  
+```csharp  
+int Execute(  
+   IDebugThread2 pThread  
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `pThread`  
- \[in\]  [IDebugThread2](../../../extensibility/debugger/reference/idebugthread2.md) Un oggetto che rappresenta il thread per l'esecuzione.  
+ [in] Un [IDebugThread2](../../../extensibility/debugger/reference/idebugthread2.md) oggetto che rappresenta l'esecuzione del thread.  
   
-## Valore restituito  
- Se l'operazione riesce, restituisce `S_OK`; in caso contrario, codice di errore restituito.  
+## <a name="return-value"></a>Valore restituito  
+ Se ha esito positivo, restituisce `S_OK`; in caso contrario, restituisce il codice di errore.  
   
-## Note  
- Quando l'utente avvia l'esecuzione da uno stato arrestato in thread di un altro processo, questo metodo viene chiamato su questo processo.  Questo metodo viene chiamato quando l'utente seleziona il comando di **Avvia** dal menu Debug dell'IDE.  L'implementazione di questo metodo può essere sufficiente chiamando [Riprendi](../../../extensibility/debugger/reference/idebugthread2-resume.md) il metodo sul thread corrente del processo.  
+## <a name="remarks"></a>Note  
+ Quando l'utente avvia l'esecuzione da uno stato di interruzione di thread di altri processi, questo metodo viene chiamato su questo processo. Questo metodo viene chiamato anche quando l'utente seleziona il **avviare** comando il **Debug** menu nell'IDE. L'implementazione di questo metodo può essere semplice come chiamare il [Resume](../../../extensibility/debugger/reference/idebugthread2-resume.md) metodo sul thread corrente del processo.  
   
 > [!WARNING]
->  Non inviare un evento bloccato o un evento \(sincrono\) immediato su [Evento](../../../extensibility/debugger/reference/idebugeventcallback2-event.md) come gestire questa chiamata, in caso contrario il debugger può bloccare.  
+>  Non inviare un evento di arresto o di un evento (sincrono) immediato [evento](../../../extensibility/debugger/reference/idebugeventcallback2-event.md) durante la gestione di questa chiamata; in caso contrario il debugger potrebbe bloccarsi.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IDebugProcess3](../../../extensibility/debugger/reference/idebugprocess3.md)   
  [IDebugThread2](../../../extensibility/debugger/reference/idebugthread2.md)   
  [Riprendi](../../../extensibility/debugger/reference/idebugthread2-resume.md)   
- [Evento](../../../extensibility/debugger/reference/idebugeventcallback2-event.md)
+ [Event](../../../extensibility/debugger/reference/idebugeventcallback2-event.md)

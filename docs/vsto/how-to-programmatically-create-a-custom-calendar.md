@@ -1,14 +1,10 @@
 ---
-title: 'How to: Programmatically Create a Custom Calendar | Microsoft Docs'
-ms.custom: 
+title: 'Procedura: creare a livello di codice un calendario personalizzato | Documenti Microsoft'
+ms.custom: ''
 ms.date: 02/02/2017
-ms.prod: visual-studio-dev14
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - office-development
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: conceptual
 dev_langs:
 - VB
 - CSharp
@@ -16,29 +12,29 @@ helpviewer_keywords:
 - custom calendars [Office development in Visual Studio]
 - calendars [Office development in Visual Studio], custom
 - appointments [Office development in Visual Studio]
-ms.assetid: 8272b53f-4cf0-46ee-b80e-93aa680cd9f5
-caps.latest.revision: 17
-author: kempb
-ms.author: kempb
-manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: eb5c9550fd29b0e98bf63a7240737da4f13f3249
-ms.openlocfilehash: 3465243537f3729760ced1adee002d11fa4d04d7
-ms.contentlocale: it-it
-ms.lasthandoff: 08/30/2017
-
+author: TerryGLee
+ms.author: tglee
+manager: douge
+ms.workload:
+- office
+ms.openlocfilehash: 30b48837ccf3bca6ea50fa7429f04a93a6c425f0
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# <a name="how-to-programmatically-create-a-custom-calendar"></a>How to: Programmatically Create a Custom Calendar
-  This example creates a new Calendar folder named **PersonalCalendar**, and then creates a new Appointment item and adds it to the Calendar folder. The code then displays the Calendar folder.  
+# <a name="how-to-programmatically-create-a-custom-calendar"></a>Procedura: creare un calendario personalizzato a livello di codice
+  Questo esempio viene creata una nuova cartella Calendario denominata **PersonalCalendar**, quindi crea un nuovo elemento appuntamento e lo aggiunge alla cartella Calendario. Il codice visualizza quindi la cartella Calendario.  
   
  [!INCLUDE[appliesto_olkallapp](../vsto/includes/appliesto-olkallapp-md.md)]  
   
-## <a name="example"></a>Example  
- [!code-csharp[Trin_OL_CustomCalendar#1](../vsto/codesnippet/CSharp/Trin_OL_CustomCalendar/backup/thisaddin.cs#1)] [!code-csharp[Trin_OL_CustomCalendar#1](../vsto/codesnippet/CSharp/Trin_OL_CustomCalendar/thisaddin.cs#1)]  
+## <a name="example"></a>Esempio  
+ [!code-csharp[Trin_OL_CustomCalendar#1](../vsto/codesnippet/CSharp/Trin_OL_CustomCalendar/backup/thisaddin.cs#1)]
+ [!code-csharp[Trin_OL_CustomCalendar#1](../vsto/codesnippet/CSharp/Trin_OL_CustomCalendar/thisaddin.cs#1)]  
   
-## <a name="see-also"></a>See Also  
- [Working with Calendar Items](../vsto/working-with-calendar-items.md)   
- [How to: Programmatically Create Appointments](../vsto/how-to-programmatically-create-appointments.md)   
- [How to: Programmatically Create a Meeting Request](../vsto/how-to-programmatically-create-a-meeting-request.md)  
+## <a name="see-also"></a>Vedere anche  
+ [Uso degli elementi di calendario](../vsto/working-with-calendar-items.md)   
+ [Procedura: creare appuntamenti](../vsto/how-to-programmatically-create-appointments.md)   
+ [Procedura: Creare una convocazione riunione a livello di codice](../vsto/how-to-programmatically-create-a-meeting-request.md)  
   
   

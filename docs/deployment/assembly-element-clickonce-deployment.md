@@ -1,53 +1,52 @@
 ---
-title: "&lt;assembly&gt; Element (ClickOnce Deployment) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-deployment"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "urn:schemas-microsoft-com:asm.v2#assembly"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-helpviewer_keywords: 
-  - "<assembly> element [ClickOnce deployment manifest]"
+title: '&lt;assembly&gt; elemento (distribuzione di ClickOnce) | Documenti Microsoft'
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology: vs-ide-deployment
+ms.topic: reference
+f1_keywords:
+- urn:schemas-microsoft-com:asm.v2#assembly
+dev_langs:
+- VB
+- CSharp
+- C++
+helpviewer_keywords:
+- <assembly> element [ClickOnce deployment manifest]
 ms.assetid: b8e3362a-f821-4696-b98d-571d4bbfe431
-caps.latest.revision: 11
-author: "stevehoag"
-ms.author: "shoag"
-manager: "wpickett"
-caps.handback.revision: 11
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 0ab58cb90f9486c3a233d5173db340be3ee5f034
+ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/19/2018
 ---
-# &lt;assembly&gt; Element (ClickOnce Deployment)
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
-Elemento di livello superiore del manifesto di distribuzione.  
+# <a name="ltassemblygt-element-clickonce-deployment"></a>&lt;assembly&gt; elemento (distribuzione di ClickOnce)
+L'elemento di primo livello per il manifesto di distribuzione.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
   
-      <assembly    
+      <assembly    
    manifestVersion  
 />  
 ```  
   
-## Elementi e attributi  
- L'elemento `assembly` è l'elemento radice ed è obbligatorio.  Il primo elemento in esso contenuto deve essere un elemento `assemblyIdentity`.  Gli elementi del manifesto devono essere inclusi nei seguenti spazi dei nomi: `urn:schemas-microsoft-com:asm.v1`, `urn:schemas-microsoft-com:asm.v2` e `http://www.w3.org/2000/09/xmldsig#`.  Anche gli elementi figlio dell'assembly devono essere presenti in questi spazi dei nomi, per ereditarietà o per codifica.  
+## <a name="elements-and-attributes"></a>Elementi e attributi  
+ Il `assembly` elemento è l'elemento radice ed è obbligatorio. Il primo elemento di contenuto deve essere un `assemblyIdentity` elemento. Gli elementi del manifesto devono essere in spazi dei nomi seguenti: `urn:schemas-microsoft-com:asm.v1`, `urn:schemas-microsoft-com:asm.v2`, e `http://www.w3.org/2000/09/xmldsig#`. Gli elementi figlio dell'assembly devono essere anche in questi spazi dei nomi, per ereditarietà o per l'assegnazione di tag.  
   
- L'elemento `assembly` presenta l'attributo seguente.  
+ Il `assembly` elemento presenta l'attributo seguente.  
   
 |Attributo|Descrizione|  
 |---------------|-----------------|  
-|`manifestVersion`|Obbligatorio.  Questo attributo deve essere impostato su `1.0`.|  
+|`manifestVersion`|Obbligatorio. Questo attributo deve essere impostato su `1.0`.|  
   
-## Esempio  
- Nell'esempio di codice riportato di seguito viene illustrato un elemento `assembly` in un manifesto di distribuzione per un'applicazione distribuita mediante [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)].  L'esempio di codice fa parte di un esempio più esaustivo fornito per l'argomento [Manifesto di distribuzione ClickOnce](../deployment/clickonce-deployment-manifest.md).  
+## <a name="example"></a>Esempio  
+ Nell'esempio di codice seguente viene illustrato un `assembly` elemento in un manifesto di distribuzione per un'applicazione distribuita mediante [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)]. Questo esempio di codice fa parte di un esempio più esaustivo disponibile per il [manifesto della distribuzione ClickOnce](../deployment/clickonce-deployment-manifest.md) argomento.  
   
 ```  
 <asmv1:assembly   
@@ -64,6 +63,6 @@ Elemento di livello superiore del manifesto di distribuzione.
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">  
 ```  
   
-## Vedere anche  
- [ClickOnce Deployment Manifest](../deployment/clickonce-deployment-manifest.md)   
- [\<assembly\> Element](../deployment/assembly-element-clickonce-application.md)
+## <a name="see-also"></a>Vedere anche  
+ [Manifesto della distribuzione ClickOnce](../deployment/clickonce-deployment-manifest.md)   
+ [\<assembly > elemento](../deployment/assembly-element-clickonce-application.md)

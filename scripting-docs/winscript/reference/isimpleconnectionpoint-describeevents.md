@@ -1,27 +1,33 @@
 ---
-title: "ISimpleConnectionPoint::DescribeEvents | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/18/2017"
-ms.prod: "windows-script-interfaces"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-apiname: ISimpleConnectionPoint.DescribeEvents
-apilocation: pdm.dll
-helpviewer_keywords: 
-  - "ISimpleConnectionPoint::DescribeEvents"
+title: ISimpleConnectionPoint::DescribeEvents | Documenti Microsoft
+ms.custom: 
+ms.date: 01/18/2017
+ms.prod: windows-script-interfaces
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: reference
+apiname:
+- ISimpleConnectionPoint.DescribeEvents
+apilocation:
+- pdm.dll
+helpviewer_keywords:
+- ISimpleConnectionPoint::DescribeEvents
 ms.assetid: 659ea05f-d41e-424a-bb38-df7672b2d135
-caps.latest.revision: 8
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: 
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.openlocfilehash: 42dab9558d46eae0fbb640c60264a79877708321
+ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/27/2017
 ---
-# ISimpleConnectionPoint::DescribeEvents
-Restituisce il DISPID e il nome di ogni evento in un intervallo specificato degli eventi.  
+# <a name="isimpleconnectionpointdescribeevents"></a>ISimpleConnectionPoint::DescribeEvents
+Restituisce il nome per ogni evento e i DISPID in un intervallo specificato di eventi.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
 HRESULT DescribeEvents(  
@@ -33,33 +39,33 @@ HRESULT DescribeEvents(
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `iEvent`  
- \[in\] indice del primo evento da recuperare.  
+ [in] Indice del primo evento da recuperare.  
   
  `cEvents`  
- \[in\] numero di eventi da recuperare.  
+ [in] Numero di eventi da recuperare.  
   
  `prgid`  
- \[out\] matrice di valori di evento DISPID.  
+ [out] Matrice di valori DISPID evento.  
   
  `prgbstr`  
- \[out\] matrice dei nomi degli eventi.  
+ [out] Matrice di nomi di evento.  
   
  `pcEventsFetched`  
- \[out\] il numero effettivo di evento recuperati.  
+ [out] Il numero effettivo di eventi recuperati.  
   
-## Valore restituito  
- Il metodo restituisce un tipo `HRESULT`.  I valori possibili sono, ma non sono limitati a, quelli nella tabella seguente.  
+## <a name="return-value"></a>Valore restituito  
+ Il metodo restituisce un tipo `HRESULT`. I valori possibili includono, ma non sono limitati a, quelli indicati nella tabella seguente.  
   
 |Valore|Descrizione|  
-|------------|-----------------|  
+|-----------|-----------------|  
 |`S_OK`|Il metodo è riuscito.|  
-|`S_FALSE`|Più eventi sono stati richiesti disponibile.  Gli eventi non sono rappresentati con DISPID\_NULL e un BSTR null.|  
-|`E_INVALIDARG`|Nessun elemento può essere recuperato.|  
+|`S_FALSE`|Numero di eventi sono stati richiesti che non erano disponibili. Gli eventi disponibili sono rappresentati con DISPID_NULL e BSTR null.|  
+|`E_INVALIDARG`|È non stato possibile recuperare alcun elemento.|  
   
-## Note  
- Questo metodo restituisce il DISPID e il nome di ogni evento in un intervallo specificato degli eventi.  
+## <a name="remarks"></a>Note  
+ Questo metodo restituisce il DISPID e il nome per ogni evento in un intervallo specificato di eventi.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Interfaccia ISimpleConnectionPoint](../../winscript/reference/isimpleconnectionpoint-interface.md)

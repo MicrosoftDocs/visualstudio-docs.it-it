@@ -1,103 +1,103 @@
 ---
-title: "Procedure dettagliate sullo sviluppo per SharePoint"
-ms.custom: ""
-ms.date: "02/02/2017"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "office-development"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "VB"
-  - "CSharp"
-helpviewer_keywords: 
-  - "sviluppo per SharePoint in Visual Studio, procedure dettagliate"
-ms.assetid: f79cefcc-da33-49df-9e03-b9d79533a9a7
-caps.latest.revision: 17
-author: "kempb"
-ms.author: "kempb"
-manager: "ghogen"
-caps.handback.revision: 16
+title: Procedure dettagliate sullo sviluppo di SharePoint | Documenti Microsoft
+ms.custom: ''
+ms.date: 02/02/2017
+ms.technology:
+- office-development
+ms.topic: conceptual
+dev_langs:
+- VB
+- CSharp
+- VB
+- CSharp
+helpviewer_keywords:
+- SharePoint development in Visual Studio, walkthroughs
+author: TerryGLee
+ms.author: tglee
+manager: douge
+ms.workload:
+- office
+ms.openlocfilehash: db3b3e1d6700640e26a46244f7db3d7f22d421c8
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# Procedure dettagliate sullo sviluppo per SharePoint
-  Nelle procedure dettagliate seguenti viene descritto come sviluppare e distribuire soluzioni SharePoint tramite [!INCLUDE[vsprvs](../sharepoint/includes/vsprvs-md.md)].  
+# <a name="sharepoint-development-walkthroughs"></a>Procedure dettagliate sullo sviluppo per SharePoint
+  Le procedure dettagliate seguenti illustrano come sviluppare e distribuire soluzioni di SharePoint utilizzando [!INCLUDE[vsprvs](../sharepoint/includes/vsprvs-md.md)].  
   
-## Generale  
-  
-|Argomento|Descrizione|  
-|---------------|-----------------|  
-|[Procedura dettagliata: aggiungere ricevitori di eventi di funzionalità](../sharepoint/walkthrough-add-feature-event-receivers.md)|Viene descritto come aggiungere ricevitori di eventi di funzionalità, ovvero metodi eseguiti quando viene installata, attivata, disattivata o rimossa una funzionalità.|  
-|[Procedura dettagliata: creare una colonna del sito, un tipo di contenuto e un elenco per SharePoint](../sharepoint/walkthrough-create-a-site-column-content-type-and-list-for-sharepoint.md)|Viene illustrato come creare un campo personalizzato, un tipo di contenuto, una definizione di elenco dal tipo di contenuto e un'istanza di elenco.|  
-|[Procedura dettagliata: Creare un progetto di definizione di sito di base](../sharepoint/walkthrough-create-a-basic-site-definition-project.md)|Viene illustrato come creare una definizione di sito di base in cui è contenuta una Web part visiva con controlli.|  
-|[Procedura dettagliata: importazione di una pagina master personalizzata e di una pagina del sito con un'immagine](../sharepoint/walkthrough-import-a-custom-master-page-and-site-page-with-an-image.md)|Viene illustrato come importare una pagina master personalizzata di SharePoint e una pagina del sito con un'immagine in un progetto SharePoint per [!INCLUDE[vsprvs](../sharepoint/includes/vsprvs-md.md)].|  
-  
-## Procedura guidata di importazione  
+## <a name="general"></a>Generale  
   
 |Argomento|Descrizione|  
-|---------------|-----------------|  
-|[Procedura dettagliata: Importare un flusso di lavoro riutilizzabile di SharePoint Designer in Visual Studio](../sharepoint/walkthrough-import-a-sharepoint-designer-reusable-workflow-into-visual-studio.md)|Viene illustrato come importare un flusso di lavoro riutilizzabile creato in SharePoint Designer 2010 in un progetto flusso di lavoro SharePoint per [!INCLUDE[vsprvs](../sharepoint/includes/vsprvs-md.md)].|  
-|[Procedura dettagliata: importare gli elementi da un sito di SharePoint esistente](../sharepoint/walkthrough-import-items-from-an-existing-sharepoint-site.md)|Viene descritto come importare elementi da un sito di SharePoint esistente in un progetto SharePoint per [!INCLUDE[vsprvs](../sharepoint/includes/vsprvs-md.md)].|  
+|-----------|-----------------|  
+|[Procedura dettagliata: aggiungere ricevitori di eventi di funzionalità](../sharepoint/walkthrough-add-feature-event-receivers.md)|Viene descritto come aggiungere ricevitori di eventi, ovvero i metodi che vengono eseguite quando una funzionalità viene installata, attivata, disattivata o rimosso.|  
+|[Procedura dettagliata: creare una colonna del sito, un tipo di contenuto e un elenco per SharePoint](../sharepoint/walkthrough-create-a-site-column-content-type-and-list-for-sharepoint.md)|Viene illustrato come creare un campo personalizzato, un tipo di contenuto, una definizione di elenco da tipo di contenuto e un'istanza di elenco.|  
+|[Procedura dettagliata: creare un progetto di definizione di sito di base](../sharepoint/walkthrough-create-a-basic-site-definition-project.md)|Viene illustrato come creare una definizione di sito di base che contiene una Web part visiva con controlli.|  
+|[Procedura dettagliata: importazione di una pagina master personalizzata e di una pagina del sito con un'immagine](../sharepoint/walkthrough-import-a-custom-master-page-and-site-page-with-an-image.md)|Viene illustrato come importare una pagina master personalizzata di SharePoint e una pagina del sito che dispone di un'immagine in un [!INCLUDE[vsprvs](../sharepoint/includes/vsprvs-md.md)] progetto SharePoint|  
   
-## Web part  
-  
-|Argomento|Descrizione|  
-|---------------|-----------------|  
-|[Procedura dettagliata: creazione di una web part per SharePoint](../sharepoint/walkthrough-creating-a-web-part-for-sharepoint.md)|Mostra come creare una web part tramite il modello di elemento **Web part** in Visual Studio.|  
-|[Procedura dettagliata: creazione di una web part per SharePoint tramite una finestra di progettazione](../sharepoint/walkthrough-creating-a-web-part-for-sharepoint-by-using-a-designer.md)|Mostra come creare visivamente una web part tramite il modello di progetto **Web part visiva** di SharePoint in Visual Studio.|  
-  
-## Flussi di lavoro  
+## <a name="import-wizard"></a>Importazione guidata  
   
 |Argomento|Descrizione|  
-|---------------|-----------------|  
-|[Procedura dettagliata: creazione e debug di una soluzione flusso di lavoro SharePoint](../sharepoint/walkthrough-creating-and-debugging-a-sharepoint-workflow-solution.md)|Viene descritto come creare un modello flusso di lavoro sequenziale di base.|  
-|[Procedura dettagliata: creazione di un flusso di lavoro con form di associazione e di avvio](../sharepoint/walkthrough-creating-a-workflow-with-association-and-initiation-forms.md)|Viene illustrato come creare un flusso di lavoro sequenziale di base che utilizza form di associazione e di avvio.|  
-|[Procedura dettagliata: aggiungere una pagina dell'applicazione a un flusso di lavoro](../sharepoint/walkthrough-add-an-application-page-to-a-workflow.md)|Viene illustrato come aggiungere a un progetto flusso di lavoro una pagina dell'applicazione in cui vengono visualizzati i dati derivati da un flusso di lavoro.|  
+|-----------|-----------------|  
+|[Procedura dettagliata: importare un flusso di lavoro riutilizzabile di SharePoint Designer in Visual Studio](../sharepoint/walkthrough-import-a-sharepoint-designer-reusable-workflow-into-visual-studio.md)|Viene illustrato come importare un flusso di lavoro riutilizzabile creati in SharePoint Designer 2010 in un [!INCLUDE[vsprvs](../sharepoint/includes/vsprvs-md.md)] progetto flusso di lavoro di SharePoint.|  
+|[Procedura dettagliata: importare gli elementi da un sito di SharePoint esistente](../sharepoint/walkthrough-import-items-from-an-existing-sharepoint-site.md)|Di seguito viene illustrato come importare elementi da un sito di SharePoint esistente in un [!INCLUDE[vsprvs](../sharepoint/includes/vsprvs-md.md)] progetto SharePoint.|  
+  
+## <a name="web-parts"></a>Web part  
+  
+|Argomento|Descrizione|  
+|-----------|-----------------|  
+|[Procedura dettagliata: creazione di una web part per SharePoint](../sharepoint/walkthrough-creating-a-web-part-for-sharepoint.md)|Viene illustrato come creare una Web Part tramite il **Web Part** modello di elemento in Visual Studio.|  
+|[Procedura dettagliata: creazione di una web part per SharePoint tramite una finestra di progettazione](../sharepoint/walkthrough-creating-a-web-part-for-sharepoint-by-using-a-designer.md)|Viene illustrato come creare una Web Part visivamente tramite SharePoint **Web Part visiva** modello di progetto in Visual Studio.|  
+  
+## <a name="workflows"></a>Flussi di lavoro  
+  
+|Argomento|Descrizione|  
+|-----------|-----------------|  
+|[Procedura dettagliata: creazione e debug di una soluzione flusso di lavoro SharePoint](../sharepoint/walkthrough-creating-and-debugging-a-sharepoint-workflow-solution.md)|Viene illustrato come creare un modello di base del flusso di lavoro sequenziale.|  
+|[Procedura dettagliata: creazione di un flusso di lavoro con form di associazione e di avvio](../sharepoint/walkthrough-creating-a-workflow-with-association-and-initiation-forms.md)|Viene illustrato come creare un flusso di lavoro sequenza base che utilizza i form di associazione e di avvio.|  
+|[Procedura dettagliata: aggiungere una pagina dell'applicazione a un flusso di lavoro](../sharepoint/walkthrough-add-an-application-page-to-a-workflow.md)|Viene illustrato come aggiungere una pagina dell'applicazione che visualizza dati derivati da un flusso di lavoro a un progetto flusso di lavoro.|  
 |[Procedura dettagliata: creare un'attività personalizzata per un flusso di lavoro del sito](../sharepoint/walkthrough-create-a-custom-site-workflow-activity.md)|Viene illustrato come creare un'attività personalizzata per un flusso di lavoro a livello di sito.|  
-|[Procedura dettagliata: Importare un flusso di lavoro riutilizzabile di SharePoint Designer in Visual Studio](../sharepoint/walkthrough-import-a-sharepoint-designer-reusable-workflow-into-visual-studio.md)|Mostra come migrare un flusso di lavoro riutilizzabile da SharePoint Designer in Visual Studio.|  
+|[Procedura dettagliata: importare un flusso di lavoro riutilizzabile di SharePoint Designer in Visual Studio](../sharepoint/walkthrough-import-a-sharepoint-designer-reusable-workflow-into-visual-studio.md)|Viene illustrato come eseguire la migrazione di un flusso di lavoro riutilizzabile da SharePoint Designer in Visual Studio.|  
   
-## Pagine applicazione  
-  
-|Argomento|Descrizione|  
-|---------------|-----------------|  
-|[Procedura dettagliata: aggiungere una pagina dell'applicazione a un flusso di lavoro](../sharepoint/walkthrough-add-an-application-page-to-a-workflow.md)|Viene illustrato come aggiungere a un progetto flusso di lavoro una pagina dell'applicazione in cui vengono visualizzati i dati derivati da un flusso di lavoro.|  
-|[Procedura dettagliata: creazione di una pagina di un'applicazione SharePoint](../sharepoint/walkthrough-creating-a-sharepoint-application-page.md)|Viene descritto come creare una pagina applicazione ed eseguire quindi il debug di tale pagina tramite un sito di SharePoint locale.|  
-  
-## Integrazione applicativa dei dati  
+## <a name="application-pages"></a>Pagine dell'applicazione  
   
 |Argomento|Descrizione|  
-|---------------|-----------------|  
+|-----------|-----------------|  
+|[Procedura dettagliata: aggiungere una pagina dell'applicazione a un flusso di lavoro](../sharepoint/walkthrough-add-an-application-page-to-a-workflow.md)|Viene illustrato come aggiungere una pagina dell'applicazione che visualizza dati derivati da un flusso di lavoro a un progetto flusso di lavoro.|  
+|[Procedura dettagliata: creazione di una pagina di un'applicazione SharePoint](../sharepoint/walkthrough-creating-a-sharepoint-application-page.md)|Viene illustrato come creare una pagina dell'applicazione e quindi eseguire il debug la pagina con un sito di SharePoint locale.|  
+  
+## <a name="business-data-connectivity"></a>Integrazione applicativa dei dati aziendali  
+  
+|Argomento|Descrizione|  
+|-----------|-----------------|  
 |[Procedura dettagliata: creazione di un elenco esterno in SharePoint tramite il servizio di integrazione applicativa dei dati](../sharepoint/walkthrough-creating-an-external-list-in-sharepoint-by-using-business-data.md)|Viene illustrato come creare un modello per il servizio di integrazione applicativa dei dati che restituisce informazioni sui contatti in un database di esempio.|  
   
-## Creazione di pacchetti e distribuzione  
+## <a name="packaging-and-deployment"></a>Creazione di pacchetti e distribuzione  
   
 |Argomento|Descrizione|  
-|---------------|-----------------|  
-|[Procedura dettagliata: distribuzione di una definizione di elenco attività del progetto](../sharepoint/walkthrough-deploying-a-project-task-list-definition.md)|Mostra come utilizzare Visual Studio per creare, personalizzare, sottoporre a debug e distribuire una definizione di elenco di SharePoint al fine di tenere traccia delle attività del progetto.|  
+|-----------|-----------------|  
+|[Procedura dettagliata: distribuzione di una definizione di elenco attività del progetto](../sharepoint/walkthrough-deploying-a-project-task-list-definition.md)|Viene illustrato come utilizzare Visual Studio per creare, personalizzare, eseguire il debug e distribuire una definizione di elenco SharePoint per tenere traccia delle attività di progetto.|  
   
-## Estensione del sistema di progetto SharePoint  
-  
-|Argomento|Descrizione|  
-|---------------|-----------------|  
-|[Walkthrough: Extending a SharePoint Project Item Type](../sharepoint/walkthrough-extending-a-sharepoint-project-item-type.md)|Viene illustrato come estendere il tipo di elemento del progetto **Modello di integrazione applicativa dei dati** incorporato.|  
-|[Walkthrough: Creating a SharePoint Project Extension](../sharepoint/walkthrough-creating-a-sharepoint-project-extension.md)|Viene illustrato come aggiungere una proprietà personalizzata a tutti i progetti SharePoint.  Gli sviluppatori possono utilizzare la proprietà per aggiungere o rimuovere una cartella mappata.|  
-|[Walkthrough: Creating a Custom Action Project Item with an Item Template, Part 1](../sharepoint/walkthrough-creating-a-custom-action-project-item-with-an-item-template-part-1.md)|Viene illustrato come definire un tipo di elemento di progetto SharePoint per creare un'azione personalizzata in SharePoint e associare un modello di elemento al nuovo tipo di elemento di progetto.|  
-|[Walkthrough: Creating a Custom Action Project Item with an Item Template, Part 2](../sharepoint/walkthrough-creating-a-custom-action-project-item-with-an-item-template-part-2.md)|Viene illustrato come creare una procedura guidata per un tipo di elemento di progetto SharePoint personalizzato associato a un modello di elemento.|  
-|[Procedura dettagliata: Creazione di un elemento di progetto Colonna del sito con un modello di progetto, parte 1](../sharepoint/walkthrough-creating-a-site-column-project-item-with-a-project-template-part-1.md)|Viene illustrato come definire un tipo di elemento di progetto SharePoint per creare una colonna del sito in SharePoint e associare un modello di progetto al nuovo tipo di elemento di progetto.|  
-|[Procedura dettagliata: Creazione di un elemento di progetto Colonna del sito con un modello di progetto, parte 2](../sharepoint/walkthrough-creating-a-site-column-project-item-with-a-project-template-part-2.md)|Viene illustrato come creare una procedura guidata per un tipo di elemento di progetto SharePoint associato a un modello di progetto.|  
-|[Walkthrough: Creating a Custom Deployment Step for SharePoint Projects](../sharepoint/walkthrough-creating-a-custom-deployment-step-for-sharepoint-projects.md)|Viene illustrato come definire un passaggio di distribuzione personalizzato utilizzabile per aggiornare soluzioni di SharePoint.|  
-  
-## Estensione del nodo Connessioni di SharePoint in Esplora server  
+## <a name="extending-the-sharepoint-project-system"></a>Estensione del sistema di progetto SharePoint  
   
 |Argomento|Descrizione|  
-|---------------|-----------------|  
-|[Walkthrough: Extending Server Explorer to Display Web Parts](../sharepoint/walkthrough-extending-server-explorer-to-display-web-parts.md)|Viene illustrato come aggiungere i nuovi nodi per la visualizzazione di Web part nei siti di SharePoint visualizzati in Esplora server.  In questa procedura dettagliata viene illustrato inoltre come creare un comando SharePoint da chiamare nel modello a oggetti del server SharePoint.|  
-|[Walkthrough: Calling into the SharePoint Client Object Model in a Server Explorer Extension](../sharepoint/walkthrough-calling-into-the-sharepoint-client-object-model-in-a-server-explorer-extension.md)|Viene illustrato come aggiungere i nuovi nodi per la visualizzazione di Web part nei siti di SharePoint visualizzati in Esplora server.  In questa procedura dettagliata viene illustrato inoltre l'utilizzo del modello a oggetti del client di SharePoint.|  
+|-----------|-----------------|  
+|[Procedura dettagliata: estensione di un tipo di elemento di progetto SharePoint](../sharepoint/walkthrough-extending-a-sharepoint-project-item-type.md)|Viene illustrato come estendere l'oggetto incorporato **modello di integrazione applicativa dei dati di Business** tipo di elemento di progetto.|  
+|[Procedura dettagliata: creazione di un'estensione di progetto SharePoint](../sharepoint/walkthrough-creating-a-sharepoint-project-extension.md)|Viene illustrato come aggiungere una proprietà personalizzata per tutti i progetti SharePoint. Gli sviluppatori possono utilizzare la proprietà per aggiungere o rimuovere una cartella mappata.|  
+|[Procedura dettagliata: creazione di un elemento di progetto Azione personalizzata con un modello di elemento, parte 1](../sharepoint/walkthrough-creating-a-custom-action-project-item-with-an-item-template-part-1.md)|Viene illustrato come definire un tipo di elemento di progetto SharePoint per la creazione di un'azione personalizzata in SharePoint e associare un modello di elemento con il nuovo tipo di elemento di progetto.|  
+|[Procedura dettagliata: creazione di un elemento di progetto Azione personalizzata con un modello di elemento, parte 2](../sharepoint/walkthrough-creating-a-custom-action-project-item-with-an-item-template-part-2.md)|Viene illustrato come creare una procedura guidata per un tipo di elemento di progetto SharePoint personalizzato associato a un modello di elemento.|  
+|[Procedura dettagliata: creazione di un elemento di progetto Colonna del sito con un modello di progetto, parte 1](../sharepoint/walkthrough-creating-a-site-column-project-item-with-a-project-template-part-1.md)|Viene illustrato come definire un tipo di elemento di progetto SharePoint per la creazione di una colonna del sito di SharePoint e associare un modello di progetto con il nuovo tipo di elemento di progetto.|  
+|[Procedura dettagliata: creazione di un elemento di progetto Colonna del sito con un modello di progetto, parte 2](../sharepoint/walkthrough-creating-a-site-column-project-item-with-a-project-template-part-2.md)|Viene illustrato come creare una procedura guidata per un tipo di elemento di progetto SharePoint personalizzato associato a un modello di progetto.|  
+|[Procedura dettagliata: creazione di un passaggio di distribuzione personalizzato per progetti SharePoint](../sharepoint/walkthrough-creating-a-custom-deployment-step-for-sharepoint-projects.md)|Di seguito viene illustrato come definire un passaggio di distribuzione personalizzato che può essere utilizzato per aggiornare le soluzioni di SharePoint.|  
   
-## Vedere anche  
+## <a name="extending-the-sharepoint-connections-node-in-server-explorer"></a>Estensione del nodo Connessioni di SharePoint in Esplora server  
+  
+|Argomento|Descrizione|  
+|-----------|-----------------|  
+|[Procedura dettagliata: estensione di Esplora server per visualizzare web part](../sharepoint/walkthrough-extending-server-explorer-to-display-web-parts.md)|Viene illustrato come aggiungere nuovi nodi per la visualizzazione Web part di SharePoint nei siti in cui vengono visualizzati in Esplora Server. Questa procedura dettagliata viene inoltre illustrato come creare un comando di SharePoint per effettuare chiamate nel modello a oggetti di SharePoint server.|  
+|[Procedura dettagliata: chiamata al modello a oggetti del client di SharePoint in un'estensione di Esplora server](../sharepoint/walkthrough-calling-into-the-sharepoint-client-object-model-in-a-server-explorer-extension.md)|Viene illustrato come aggiungere nuovi nodi per la visualizzazione Web part di SharePoint nei siti in cui vengono visualizzati in Esplora Server. Questa procedura dettagliata viene inoltre illustrato come utilizzare il modello di oggetto client di SharePoint.|  
+  
+## <a name="see-also"></a>Vedere anche  
  [Procedure dettagliate ed esempi di sviluppo di applicazioni di SharePoint](../sharepoint/sharepoint-development-samples-and-walkthroughs.md)  
   
   

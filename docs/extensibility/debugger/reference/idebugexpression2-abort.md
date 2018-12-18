@@ -1,47 +1,48 @@
 ---
-title: "IDebugExpression2::Abort | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "IDebugExpression2::Abort"
-helpviewer_keywords: 
-  - "IDebugExpression2::Abort"
+title: IDebugExpression2::Abort | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology:
+- vs-ide-sdk
+ms.topic: conceptual
+f1_keywords:
+- IDebugExpression2::Abort
+helpviewer_keywords:
+- IDebugExpression2::Abort
 ms.assetid: 4fcb712e-1bdb-4b75-a440-35cc79ee147e
-caps.latest.revision: 11
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 11
+author: gregvanl
+ms.author: gregvanl
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: 5f4809fcf8e6947309182ff595ad2784b873f529
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# IDebugExpression2::Abort
-[!INCLUDE[vs2017banner](../../../code-quality/includes/vs2017banner.md)]
-
-Questo metodo annulla la valutazione asincrona di espressione come avviato da una chiamata [EvaluateAsync](../../../extensibility/debugger/reference/idebugexpression2-evaluateasync.md) al metodo.  
+# <a name="idebugexpression2abort"></a>IDebugExpression2::Abort
+Questo metodo annulla la valutazione dell'espressione asincrono come avviata da una chiamata per il [EvaluateAsync](../../../extensibility/debugger/reference/idebugexpression2-evaluateasync.md) metodo.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp#  
+```cpp  
 HRESULT Abort(  
-   void  
+   void  
 );  
 ```  
   
-```c#  
+```csharp  
 int Abort();  
 ```  
   
-## Valore restituito  
- Se l'operazione riesce, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
+## <a name="return-value"></a>Valore restituito  
+ Se ha esito positivo, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
   
-## Note  
- Quando la valutazione asincrona di espressione viene annullata, di non [IDebugExpressionEvaluationCompleteEvent2](../../../extensibility/debugger/reference/idebugexpressionevaluationcompleteevent2.md) inviato un evento al callback di evento passati [Attach](../../../extensibility/debugger/reference/idebugprogram2-attach.md) ai [Attach](../../../extensibility/debugger/reference/idebugengine2-attach.md) metodi.  
+## <a name="remarks"></a>Note  
+ Durante la valutazione dell'espressione asincrono viene annullata, non inviate un [IDebugExpressionEvaluationCompleteEvent2](../../../extensibility/debugger/reference/idebugexpressionevaluationcompleteevent2.md) evento al callback dell'evento passato al [collegamento](../../../extensibility/debugger/reference/idebugprogram2-attach.md) o [collegamento](../../../extensibility/debugger/reference/idebugengine2-attach.md) metodi.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IDebugExpression2](../../../extensibility/debugger/reference/idebugexpression2.md)   
  [IDebugExpressionEvaluationCompleteEvent2](../../../extensibility/debugger/reference/idebugexpressionevaluationcompleteevent2.md)   
  [EvaluateAsync](../../../extensibility/debugger/reference/idebugexpression2-evaluateasync.md)

@@ -1,51 +1,50 @@
 ---
-title: "IDiaStackWalkHelper::get_registerValue | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "IDiaStackWalkHelper2::get_registerValue (metodo)"
+title: IDiaStackWalkHelper::get_registerValue | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology: vs-ide-debug
+ms.topic: conceptual
+dev_langs:
+- C++
+helpviewer_keywords:
+- IDiaStackWalkHelper2::get_registerValue method
 ms.assetid: 46ac5eee-73a3-44a1-8635-6c58ba193cb6
-caps.latest.revision: 9
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 9
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 6ccc491ec9e966b8d893b6d669aafc64ebc5c8cf
+ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/18/2018
 ---
-# IDiaStackWalkHelper::get_registerValue
-[!INCLUDE[vs2017banner](../../code-quality/includes/vs2017banner.md)]
-
-recupera il valore di un registro.  
+# <a name="idiastackwalkhelpergetregistervalue"></a>IDiaStackWalkHelper::get_registerValue
+Recupera il valore di un registro.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp#  
-HRESULT get_registerValue (   
-   DWORD      index,  
-   ULONGLONG* pRetVal  
+```C++  
+HRESULT get_registerValue (   
+   DWORD      index,  
+   ULONGLONG* pRetVal  
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `index`  
- \[in\]  un valore dal [Enumerazione CV\_HREG\_e](../../debugger/debug-interface-access/cv-hreg-e.md) specificare di enumerazione da cui registrazione per ottenere il valore.  
+ [in] Un valore di [CV_HREG_e (enumerazione)](../../debugger/debug-interface-access/cv-hreg-e.md) enumerazione che specifica quale registrare da cui per ottenere il valore.  
   
  `pRetVal`  
- \[out\]  Restituisce il valore corrente del registro.  
+ [out] Restituisce il valore corrente del registro.  
   
-## Valore restituito  
- Se l'operazione riesce, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
+## <a name="return-value"></a>Valore restituito  
+ Se ha esito positivo, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
   
-## Note  
- Nonostante la dimensione di `pRetVal` il parametro, l'implementazione deve archiviare solo gli elementi del log in genere utilizzato.  Ad esempio, un registro a 8 bit utilizza solo i 8 bit meno significativi del valore specificato.  Questo valore a 8 bit viene espanso a 64 bit una volta restituito da questo metodo.  
+## <a name="remarks"></a>Note  
+ Nonostante la dimensione del `pRetVal` parametro un'implementazione deve archiviare solo ciò che la registrazione in genere contiene. Ad esempio, un registro a 8 bit contiene solo il più basso 8 bit del valore specificato. Questo valore a 8 bit viene espanso a 64 bit quando restituito da questo metodo.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IDiaStackWalkHelper](../../debugger/debug-interface-access/idiastackwalkhelper.md)   
- [Enumerazione CV\_HREG\_e](../../debugger/debug-interface-access/cv-hreg-e.md)
+ [CV_HREG_e (enumerazione)](../../debugger/debug-interface-access/cv-hreg-e.md)

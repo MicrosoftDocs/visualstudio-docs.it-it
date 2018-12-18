@@ -1,62 +1,63 @@
 ---
-title: "PENDING_BP_STATE_FLAGS | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "PENDING_BP_STATE_FLAGS"
-helpviewer_keywords: 
-  - "Enumerazione PENDING_BP_STATE_FLAGS"
+title: PENDING_BP_STATE_FLAGS | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology:
+- vs-ide-sdk
+ms.topic: conceptual
+f1_keywords:
+- PENDING_BP_STATE_FLAGS
+helpviewer_keywords:
+- PENDING_BP_STATE_FLAGS enumeration
 ms.assetid: 85522449-3fd8-4da5-b0fe-a43160e0c33b
-caps.latest.revision: 9
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 9
+author: gregvanl
+ms.author: gregvanl
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: be5e9664d1f8a9b5432825d389a355352831002d
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# PENDING_BP_STATE_FLAGS
-[!INCLUDE[vs2017banner](../../../code-quality/includes/vs2017banner.md)]
-
-Specifica i flag in attesa dello stato del punto di interruzione.  
+# <a name="pendingbpstateflags"></a>PENDING_BP_STATE_FLAGS
+Specifica i flag di stato del punto di interruzione in sospeso.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp#  
-enum enum_PENDING_BP_STATE_FLAGS {   
-   PBPSF_NONE        = 0x0000,  
-   PBPSF_VIRTUALIZED = 0x0001  
+```cpp  
+enum enum_PENDING_BP_STATE_FLAGS {   
+   PBPSF_NONE        = 0x0000,  
+   PBPSF_VIRTUALIZED = 0x0001  
 };  
 typedef DWORD PENDING_BP_STATE_FLAGS;  
 ```  
   
-```c#  
-public enum enum_PENDING_BP_STATE_FLAGS {   
-   PBPSF_NONE        = 0x0000,  
-   PBPSF_VIRTUALIZED = 0x0001  
+```csharp  
+public enum enum_PENDING_BP_STATE_FLAGS {   
+   PBPSF_NONE        = 0x0000,  
+   PBPSF_VIRTUALIZED = 0x0001  
 };  
 ```  
   
-## Membri  
- PBPSF\_NONE  
- segnaposto.  
+## <a name="members"></a>Membri  
+ PBPSF_NONE  
+ Segnaposto.  
   
- PBPSF\_VIRTUALIZED  
- Specifica virtualizzato in attesa del punto di interruzione, ovvero di essere nuovo codice ogni volta associato viene caricato.  
+ PBPSF_VIRTUALIZED  
+ Specifica un virtualizzato in sospeso punto di interruzione, che è necessario associare ogni volta che viene caricato di nuovo codice.  
   
-## Note  
- Utilizzato per il membro di `flags` [PENDING\_BP\_STATE\_INFO](../../../extensibility/debugger/reference/pending-bp-state-info.md) della struttura.  
+## <a name="remarks"></a>Note  
+ Utilizzato per il `flags` appartenente il [PENDING_BP_STATE_INFO](../../../extensibility/debugger/reference/pending-bp-state-info.md) struttura.  
   
-## Requisiti  
- intestazione: msdbg.h  
+## <a name="requirements"></a>Requisiti  
+ Intestazione: msdbg.h  
   
- Spazio dei nomi: Microsoft.VisualStudio.Debugger.Interop  
+ Namespace: Microsoft.VisualStudio.Debugger.Interop  
   
  Assembly: Microsoft.VisualStudio.Debugger.Interop.dll  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Enumerazioni](../../../extensibility/debugger/reference/enumerations-visual-studio-debugging.md)   
- [PENDING\_BP\_STATE\_INFO](../../../extensibility/debugger/reference/pending-bp-state-info.md)
+ [PENDING_BP_STATE_INFO](../../../extensibility/debugger/reference/pending-bp-state-info.md)

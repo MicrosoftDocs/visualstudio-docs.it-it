@@ -1,47 +1,46 @@
 ---
-title: "IDiaAddressMap::get_imageAlign | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "IDiaAddressMap::get_imageAlign (metodo)"
+title: 'Idiaaddressmap:: Get_imagealign | Documenti Microsoft'
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology: vs-ide-debug
+ms.topic: conceptual
+dev_langs:
+- C++
+helpviewer_keywords:
+- IDiaAddressMap::get_imageAlign method
 ms.assetid: f1ba8071-669c-4cf7-9ac0-02f26d99f366
-caps.latest.revision: 8
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 8
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: bd085e59606b1e8598359636208cf308ff0b711d
+ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/18/2018
 ---
-# IDiaAddressMap::get_imageAlign
-[!INCLUDE[vs2017banner](../../code-quality/includes/vs2017banner.md)]
-
-recupera l'allineamento corrente di immagine.  
+# <a name="idiaaddressmapgetimagealign"></a>IDiaAddressMap::get_imageAlign
+Recupera l'allineamento dell'immagine corrente.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp#  
-HRESULT get_imageAlign (   
-   DWORD* pRetVal  
+```C++  
+HRESULT get_imageAlign (   
+   DWORD* pRetVal  
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `pRetVal`  
- \[out\]  Restituisce il valore di allineamento di immagine dall'eseguibile.  
+ [out] Restituisce il valore di allineamento dell'immagine dal file eseguibile.  
   
-## Valore restituito  
- Se l'operazione riesce, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
+## <a name="return-value"></a>Valore restituito  
+ Se ha esito positivo, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
   
-## Note  
- le immagini sono allineate ai limiti specifici di memoria dipendendo come l'immagine è stata caricata e creato stata.  L'allineamento viene in genere in 1, 2, 4, 8, 16, 32, o limiti di 64 byte.  L'allineamento immagine può essere impostato tramite una chiamata a [IDiaAddressMap::put\_imageAlign](../../debugger/debug-interface-access/idiaaddressmap-put-imagealign.md) metodo.  
+## <a name="remarks"></a>Note  
+ Le immagini sono allineate ai limiti di memoria specifico, a seconda di come l'immagine è stato caricato e creato. L'allineamento è in genere nei limiti di 1, 2, 4, 8, 16, 32 o 64 byte. L'allineamento dell'immagine può essere impostato con una chiamata al [idiaaddressmap:: Put_imagealign](../../debugger/debug-interface-access/idiaaddressmap-put-imagealign.md) metodo.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IDiaAddressMap](../../debugger/debug-interface-access/idiaaddressmap.md)   
- [IDiaAddressMap::put\_imageAlign](../../debugger/debug-interface-access/idiaaddressmap-put-imagealign.md)
+ [IDiaAddressMap::put_imageAlign](../../debugger/debug-interface-access/idiaaddressmap-put-imagealign.md)

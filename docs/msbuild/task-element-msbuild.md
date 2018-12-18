@@ -1,13 +1,9 @@
 ---
 title: Elemento Task (MSBuild) | Microsoft Docs
-ms.custom: 
+ms.custom: ''
 ms.date: 03/13/2017
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- vs-ide-sdk
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.technology: msbuild
+ms.topic: reference
 dev_langs:
 - VB
 - CSharp
@@ -17,29 +13,16 @@ helpviewer_keywords:
 - Task element [MSBuild]
 - <Task> element [MSBuild]
 ms.assetid: d82e2485-e5f0-4936-a357-745bacccc299
-caps.latest.revision: 22
-author: kempb
-ms.author: kempb
-manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: 0e5a449ef396e7b9fd23a2c018bdc7f8791b7b38
-ms.openlocfilehash: 0632ff6bf62885527158194ef317d18220bbbe89
-ms.lasthandoff: 03/13/2017
-
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: bc67d881f48c99cd8e53de086f0c8b08c96d7844
+ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/19/2018
 ---
 # <a name="task-element-msbuild"></a>Elemento Task (MSBuild)
 Crea ed esegue un'istanza di un'attività di [!INCLUDE[vstecmsbuild](../extensibility/internals/includes/vstecmsbuild_md.md)]. Il nome dell'elemento viene determinato dal nome dell'attività da creare.  
@@ -106,4 +89,3 @@ Crea ed esegue un'istanza di un'attività di [!INCLUDE[vstecmsbuild](../extensib
  [Attività](../msbuild/msbuild-tasks.md)   
  [Riferimento alle attività](../msbuild/msbuild-task-reference.md)   
  [Informazioni di riferimento sullo schema del file di progetto](../msbuild/msbuild-project-file-schema-reference.md)
-

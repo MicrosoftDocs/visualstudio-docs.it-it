@@ -1,28 +1,29 @@
 ---
-title: "Interfaccia della procedura guidata (IDTWizard) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "Interfaccia IDTWizard"
-  - "procedure guidate, interfaccia"
+title: Creazione guidata interfaccia (IDTWizard) | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology:
+- vs-ide-sdk
+ms.topic: conceptual
+helpviewer_keywords:
+- IDTWizard interface
+- wizards, interface
 ms.assetid: 09618d9d-d115-45b6-bccc-de328994b39c
-caps.latest.revision: 8
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 8
+author: gregvanl
+ms.author: gregvanl
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: 7ebb605ed61cc06ef70fde97f3d5831c6d5c4503
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# Interfaccia della procedura guidata (IDTWizard)
-[!INCLUDE[vs2017banner](../../code-quality/includes/vs2017banner.md)]
-
-L'ambiente di sviluppo \(IDE\) integrato \(IDE\) utilizza l'interfaccia di <xref:EnvDTE.IDTWizard> per comunicare con le procedure guidate.  Le procedure guidate devono implementare questa interfaccia per essere installato nell'IDE.  
+# <a name="wizard-interface-idtwizard"></a>Creazione guidata interfaccia (IDTWizard)
+Ambiente di sviluppo integrato (IDE) usa il <xref:EnvDTE.IDTWizard> interfaccia per comunicare con le procedure guidate. Procedure guidate devono implementare questa interfaccia per essere installato nell'IDE.  
   
- Il metodo di <xref:EnvDTE.IDTWizard.Execute%2A> è l'unico metodo associato con l'interfaccia di <xref:EnvDTE.IDTWizard> .  Le procedure guidate implementano questo metodo e l'ide chiama il metodo sull'interfaccia.  Nell'esempio seguente viene illustrata la firma del metodo.  
+ Il <xref:EnvDTE.IDTWizard.Execute%2A> è il solo metodo associato il <xref:EnvDTE.IDTWizard> interfaccia. Procedure guidate implementano questo metodo e l'IDE chiama il metodo sull'interfaccia. Nell'esempio seguente viene illustrata la firma del metodo.  
   
 ```  
 /* IDTWizard Method */  
@@ -35,27 +36,27 @@ STDMETHOD(Execute)(THIS_
    );  
 ```  
   
- Il meccanismo di avvio è simile per sia **nuovo progetto** che le procedure guidate di **Aggiungi nuovo elemento** .  Per avviare uno, chiama l'interfaccia di <xref:EnvDTE.IDTWizard> definita in Dteinternal.h.  L'unica differenza è il set di parametri personalizzate e di contesto passati all'interfaccia quando l'interfaccia è denominata.  
+ Il meccanismo di avvio è simile per entrambi i **nuovo progetto** e **Aggiungi nuovo elemento**procedure guidate. Per avviare uno, si chiama il <xref:EnvDTE.IDTWizard> interfaccia definita in Dteinternal.h. L'unica differenza è il set di contesto e i parametri personalizzati che vengono passati all'interfaccia quando viene chiamato l'interfaccia.  
   
- Le informazioni seguenti descrivono l'interfaccia di <xref:EnvDTE.IDTWizard> che le procedure guidate devono implementare per lavorare nell'IDE di [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] .  L'ide chiama il metodo di <xref:EnvDTE.IDTWizard.Execute%2A> nella procedura guidata, passando le operazioni seguenti:  
+ Le informazioni seguenti illustrano il <xref:EnvDTE.IDTWizard> interfaccia che devono implementare le procedure guidate per utilizzare il [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] IDE. Le chiamate a IDE il <xref:EnvDTE.IDTWizard.Execute%2A> metodo della procedura guidata, passando le operazioni seguenti:  
   
 -   L'oggetto DTE  
   
      L'oggetto DTE è la radice del modello di automazione.  
   
--   Un handle di finestra di dialogo della finestra come illustrato nel segmento di codice, `hwndOwner ([in] long)`.  
+-   L'handle di finestra di dialogo come illustrato nel segmento di codice, `hwndOwner ([in] long)`.  
   
-     La procedura guidata utilizza questo `hwndOwner` come elemento padre per la finestra di dialogo della procedura guidata.  
+     La procedura guidata utilizza questo `hwndOwner` come elemento padre per la creazione guidata finestra di dialogo.  
   
--   I parametri di contesto sono passato all'interfaccia come variant per SAFEARRAY come illustrato nel segmento di codice, `[in] SAFEARRAY (VARIANT)* ContextParams`.  
+-   Parametri di contesto passato all'interfaccia di tipo variant per SAFEARRAY come illustrato nel segmento di codice, `[in] SAFEARRAY (VARIANT)* ContextParams`.  
   
-     I parametri di contesto contengono una matrice di valori specifici del tipo di procedura guidata che viene avviata e lo stato corrente del progetto.  L'ide passa i parametri di contesto alla procedura guidata.  Per ulteriori informazioni, vedere [Parametri di contesto](../../extensibility/internals/context-parameters.md).  
+     Parametri di contesto contengono una matrice di valori che sono specifiche per il tipo di procedura guidata in corso l'avvio e lo stato corrente del progetto. L'IDE passa i parametri di contesto per la procedura guidata. Per ulteriori informazioni, vedere [parametri di contesto](../../extensibility/internals/context-parameters.md).  
   
--   Parametri personalizzati passati all'interfaccia come variant per SAFEARRAY come illustrato nel segmento di codice, `[in] SAFEARRAY (VARIANT)* CustomParams`.  
+-   Parametri personalizzati passato all'interfaccia di un tipo variant per SAFEARRAY come illustrato nel segmento di codice, `[in] SAFEARRAY (VARIANT)* CustomParams`.  
   
-     I parametri personalizzati contengono una matrice di parametri definiti dall'utente.  Un file VSZ passare i parametri personalizzati all'IDE.  I valori sono determinati dalle istruzioni di `Param=` .  Per ulteriori informazioni, vedere [Parametri personalizzati](../../extensibility/internals/custom-parameters.md).  
+     I parametri personalizzati contengono una matrice di parametri definiti dall'utente. Un file VSZ passa i parametri personalizzati all'IDE. I valori vengono determinati dalle `Param=` istruzioni. Per ulteriori informazioni, vedere [parametri personalizzati](../../extensibility/internals/custom-parameters.md).  
   
--   i valori restituiti per l'interfaccia sono  
+-   I valori restituiti per l'interfaccia da  
   
     ```  
     wizardResultSuccess = -1,  
@@ -64,8 +65,8 @@ STDMETHOD(Execute)(THIS_
     wizardResultBackout = 2  
     ```  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Parametri di contesto](../../extensibility/internals/context-parameters.md)   
  [Parametri personalizzati](../../extensibility/internals/custom-parameters.md)   
  [Procedure guidate](../../extensibility/internals/wizards.md)   
- [Procedura guidata \(. File vsz\)](../../extensibility/internals/wizard-dot-vsz-file.md)
+ [File (con estensione vsz) della procedura guidata](../../extensibility/internals/wizard-dot-vsz-file.md)

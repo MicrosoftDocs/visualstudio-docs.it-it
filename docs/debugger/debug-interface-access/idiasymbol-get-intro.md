@@ -1,50 +1,49 @@
 ---
-title: "IDiaSymbol::get_intro | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "IDiaSymbol::get_intro (metodo)"
+title: IDiaSymbol::get_intro | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology: vs-ide-debug
+ms.topic: conceptual
+dev_langs:
+- C++
+helpviewer_keywords:
+- IDiaSymbol::get_intro method
 ms.assetid: 101afe4a-4c57-45de-87b4-330394c6de10
-caps.latest.revision: 9
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 9
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: c9f43aeb33ce7727133a7ed2a4e4eba0cac53cda
+ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/18/2018
 ---
-# IDiaSymbol::get_intro
-[!INCLUDE[vs2017banner](../../code-quality/includes/vs2017banner.md)]
-
-Recupera un flag che indica se la funzione è una funzione virtuale introducente.  
+# <a name="idiasymbolgetintro"></a>IDiaSymbol::get_intro
+Recupera un flag che specifica se la funzione è una funzione virtuale introduzione.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp#  
-HRESULT get_intro (   
-   BOOL* pRetVal  
+```C++  
+HRESULT get_intro (   
+   BOOL* pRetVal  
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `pRetVal`  
- \[out\]  Restituisce `TRUE` se la funzione è introduzione virtuale; in caso contrario, restituisce  `FALSE`.  
+ [out] Restituisce `TRUE` se la funzione introduzione virtuale; in caso contrario, restituisce `FALSE`.  
   
-## Valore restituito  
- Se l'operazione riesce, restituisce `S_OK`; in caso contrario, restituisce  `S_FALSE` o codice di errore.  
+## <a name="return-value"></a>Valore restituito  
+ Se ha esito positivo, restituisce `S_OK`; in caso contrario, restituisce `S_FALSE` o codice di errore.  
   
 > [!NOTE]
->  un valore restituito di `S_FALSE` indica che la proprietà non è disponibile per il simbolo.  
+>  Valore restituito di `S_FALSE` significa che la proprietà non è disponibile per il simbolo.  
   
-## Esempio  
+## <a name="example"></a>Esempio  
   
-```cpp#  
+```C++  
 class A {  
    virtual int f1();  
 }  
@@ -53,14 +52,14 @@ class B : public A {
 }  
 ```  
   
- entrambi`A::f1` e  `B::f1` sono funzioni virtuali, ma  `A::f1` ha luogo l'introduzione virtuale.  
+ Entrambi `A::f1` e `B::f1` sono funzioni virtuali, ma `A::f1` è virtuale introduzione.  
   
-## Requisiti  
+## <a name="requirements"></a>Requisiti  
   
-|Requisiti|Descrizione|  
-|---------------|-----------------|  
-|intestazione:|dia2.h|  
-|versione:|DIA SDK v7.0|  
+|Requisito|Descrizione|  
+|-----------------|-----------------|  
+|Intestazione:|DIA2.h|  
+|Versione:|Versione 7.0 DIA SDK|  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IDiaSymbol](../../debugger/debug-interface-access/idiasymbol.md)

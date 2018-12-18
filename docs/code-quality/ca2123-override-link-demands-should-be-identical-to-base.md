@@ -1,13 +1,8 @@
 ---
-title: 'CA2123: Override link demands should be identical to base | Microsoft Docs'
-ms.custom: 
+title: 'CA2123: Le richieste di collegamento negli verrine devono essere identiche a quelle nei metodi di base'
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- vs-devops-test
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.technology: vs-ide-code-analysis
+ms.topic: reference
 f1_keywords:
 - CA2123
 - OverrideLinkDemandsShouldBeIdenticalToBase
@@ -15,58 +10,43 @@ helpviewer_keywords:
 - OverrideLinkDemandsShouldBeIdenticalToBase
 - CA2123
 ms.assetid: 4538ecd5-fc6f-4480-ab00-90b2ce4730db
-caps.latest.revision: 18
-author: stevehoag
-ms.author: shoag
-manager: wpickett
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: HT
-ms.sourcegitcommit: eb5c9550fd29b0e98bf63a7240737da4f13f3249
-ms.openlocfilehash: b5ec358a3f42e8b82240e901cdad6a5201c41e7a
-ms.contentlocale: it-it
-ms.lasthandoff: 08/30/2017
-
+author: gewarren
+ms.author: gewarren
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 7aa696c1d08b71078ff4ae3beed7283d0b0333e2
+ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/19/2018
 ---
-# <a name="ca2123-override-link-demands-should-be-identical-to-base"></a>CA2123: Override link demands should be identical to base
-|||  
-|-|-|  
-|TypeName|OverrideLinkDemandsShouldBeIdenticalToBase|  
-|CheckId|CA2123|  
-|Category|Microsoft.Security|  
-|Breaking Change|Breaking|  
-  
-## <a name="cause"></a>Cause  
- A public or protected method in a public type overrides a method or implements an interface, and does not have the same [Link Demands](/dotnet/framework/misc/link-demands) as the interface or virtual method.  
-  
-## <a name="rule-description"></a>Rule Description  
- This rule matches a method to its base method, which is either an interface or a virtual method in another type, and then compares the link demands on each. A violation is reported if either the method or the base method has a link demand and the other does not.  
-  
- If this rule is violated, a malicious caller can bypass the link demand merely by calling the unsecured method.  
-  
-## <a name="how-to-fix-violations"></a>How to Fix Violations  
- To fix a violation of this rule, apply the same link demand to the overide method or implementation. If this is not possible, mark the method with a full demand or remove the attribute altogether.  
-  
-## <a name="when-to-suppress-warnings"></a>When to Suppress Warnings  
- Do not suppress a warning from this rule.  
-  
-## <a name="example"></a>Example  
- The following example shows various violations of this rule.  
-  
- [!code-csharp[FxCop.Security.OverridesAndSecurity#1](../code-quality/codesnippet/CSharp/ca2123-override-link-demands-should-be-identical-to-base_1.cs)]  
-  
-## <a name="see-also"></a>See Also  
- [Secure Coding Guidelines](/dotnet/standard/security/secure-coding-guidelines)   
- [Link Demands](/dotnet/framework/misc/link-demands)
+# <a name="ca2123-override-link-demands-should-be-identical-to-base"></a>CA2123: Le richieste di collegamento negli verrine devono essere identiche a quelle nei metodi di base
+|||
+|-|-|
+|TypeName|OverrideLinkDemandsShouldBeIdenticalToBase|
+|CheckId|CA2123|
+|Category|Microsoft.Security|
+|Modifica importante|Interruzione|
+
+## <a name="cause"></a>Causa
+ Un metodo pubblico o protetto in un tipo pubblico esegue l'override di un metodo o implementa un'interfaccia e non avere le stesse [le richieste di collegamento](/dotnet/framework/misc/link-demands) dell'interfaccia o un metodo virtuale.
+
+## <a name="rule-description"></a>Descrizione della regola
+ Questa regola associa un metodo al relativo metodo di base che può essere un'interfaccia o un metodo virtuale in un altro tipo, quindi confronta le richieste di collegamento in ognuno. Se il metodo o il metodo di base dispone di una richiesta di collegamento e l'altro non lo fa, viene segnalata una violazione.
+
+ Se questa regola viene violata, un chiamante malintenzionato può ignorare la richiesta di collegamento chiamando semplicemente il metodo non sicuro.
+
+## <a name="how-to-fix-violations"></a>Come correggere le violazioni
+ Per correggere una violazione di questa regola, applicare la stessa richiesta di collegamento per il metodo di eseguire l'override o l'implementazione. In caso contrario, contrassegnare il metodo con una richiesta completa o rimuovere completamente l'attributo.
+
+## <a name="when-to-suppress-warnings"></a>Esclusione di avvisi
+ Non escludere un avviso da questa regola.
+
+## <a name="example"></a>Esempio
+ L'esempio seguente mostra alcune violazioni di questa regola.
+
+ [!code-csharp[FxCop.Security.OverridesAndSecurity#1](../code-quality/codesnippet/CSharp/ca2123-override-link-demands-should-be-identical-to-base_1.cs)]
+
+## <a name="see-also"></a>Vedere anche
+ [Linee guida di codice sicuro](/dotnet/standard/security/secure-coding-guidelines) [le richieste di collegamento](/dotnet/framework/misc/link-demands)

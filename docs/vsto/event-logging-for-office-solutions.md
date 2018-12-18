@@ -1,40 +1,40 @@
 ---
-title: "Registrazione degli eventi per le soluzioni Office"
-ms.custom: ""
-ms.date: "02/02/2017"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "office-development"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-helpviewer_keywords: 
-  - "applicazioni di Office [sviluppo per Office in Visual Studio], Visualizzatore eventi"
-  - "distribuzione ClickOnce [sviluppo per Office in Visual Studio], Visualizzatore eventi"
-  - "distribuzione di applicazioni [sviluppo per Office in Visual Studio], Visualizzatore eventi"
-  - "sviluppo per Office in Visual Studio, Visualizzatore eventi"
-ms.assetid: 31a246fe-ce1c-4f0e-9a21-9cf974c247fe
-caps.latest.revision: 33
-author: "kempb"
-ms.author: "kempb"
-manager: "ghogen"
-caps.handback.revision: 32
+title: La registrazione degli eventi per le soluzioni Office | Documenti Microsoft
+ms.custom: ''
+ms.date: 02/02/2017
+ms.technology:
+- office-development
+ms.topic: conceptual
+dev_langs:
+- VB
+- CSharp
+helpviewer_keywords:
+- Office applications [Office development in Visual Studio], event viewer
+- ClickOnce deployment [Office development in Visual Studio], event viewer
+- deploying applications [Office development in Visual Studio], event viewer
+- Office development in Visual Studio, event viewer
+author: TerryGLee
+ms.author: tglee
+manager: douge
+ms.workload:
+- office
+ms.openlocfilehash: 4b1319e906060a1fe4d94fbd2e6bb0a3f9d53eb9
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# Registrazione degli eventi per le soluzioni Office
-  È possibile usare il Visualizzatore eventi di Windows per visualizzare i messaggi di eccezione acquisiti da [!INCLUDE[vsto_runtime](../vsto/includes/vsto-runtime-md.md)] quando si installano o disinstallano soluzioni Office. Questi messaggi del registratore eventi possono essere usati per risolvere i problemi di installazione e di distribuzione.  
+# <a name="event-logging-for-office-solutions"></a>Registrazione degli eventi per le soluzioni Office
+  È possibile usare il Visualizzatore eventi di Windows per visualizzare i messaggi di eccezione acquisiti da [!INCLUDE[vsto_runtime](../vsto/includes/vsto-runtime-md.md)] quando si installano o disinstallano soluzioni Office. Questi messaggi del registratore eventi possono essere usati per risolvere i problemi di installazione e di distribuzione.  
   
  [!INCLUDE[appliesto_all](../vsto/includes/appliesto-all-md.md)]  
   
-## Lettura del registro eventi  
+## <a name="reading-the-event-log"></a>Lettura del registro eventi  
  Aprire il **Visualizzatore eventi** e applicare un filtro per visualizzare solo gli eventi desiderati.  
   
-#### Per leggere il registro eventi in Windows Server 2003 e Windows XP  
+#### <a name="to-read-the-event-log-in-windows-server-2003-and-windows-xp"></a>Per leggere il registro eventi in Windows Server 2003 e Windows XP  
   
-1.  Aprire **Strumenti di amministrazione** nel Pannello di controllo.  
+1.  Aprire **Strumenti di amministrazione**nel Pannello di controllo.  
   
 2.  Avviare il **Visualizzatore eventi**.  
   
@@ -48,9 +48,9 @@ caps.handback.revision: 32
   
 7.  Fare clic su **OK** per visualizzare l'elenco filtrato.  
   
-#### Per leggere il registro eventi in Windows 7, Windows Vista e Windows Server 2008  
+#### <a name="to-read-the-event-log-in-windows-7-windows-vista-and-windows-server-2008"></a>Per leggere il registro eventi in Windows 7, Windows Vista e Windows Server 2008  
   
-1.  Aprire **Strumenti di amministrazione** nel Pannello di controllo.  
+1.  Aprire **Strumenti di amministrazione**nel Pannello di controllo.  
   
 2.  Avviare il **Visualizzatore eventi**.  
   
@@ -58,7 +58,7 @@ caps.handback.revision: 32
   
 4.  Nell'elenco dei registri eventi, selezionare **Applicazione**.  
   
-5.  Scegliere  **Filtro registro corrente** dal menu **Azione**.  
+5.  Scegliere **Filtro registro corrente** dal menu **Azione**.  
   
 6.  Selezionare **VSTO 4.0** nell'elenco **Origine evento**.  
   
@@ -76,29 +76,29 @@ caps.handback.revision: 32
   
  Dopo la disinstallazione di una soluzione Office, i messaggi di eccezione rimangono nel registro eventi.  
   
- Per informazioni su come visualizzare o registrare messaggi di eccezione quando una soluzione Office è in esecuzione, vedere [Debug di progetti di Office](../vsto/debugging-office-projects.md) e [Debug di progetti di Office](../vsto/debugging-office-projects.md).  
+ Per visualizzare o registrare messaggi di eccezione durante l'esecuzione di una soluzione Office, vedere [il debug di progetti di Office](../vsto/debugging-office-projects.md) e [il debug di progetti di Office](../vsto/debugging-office-projects.md).  
   
-### Localizzazione  
+### <a name="localization"></a>Localizzazione  
  Il linguaggio del messaggio di eccezione viene determinato dal linguaggio di runtime di Visual Studio Tools per Office. Ad esempio, se nel computer dell'utente finale è stato installato il Language Pack giapponese, il messaggio di eccezione viene scritto nel registro eventi in giapponese.  
   
-## Disattivazione del registratore eventi  
- Quando si installano o disinstallano soluzioni Office, il registratore eventi viene attivato per impostazione predefinita. Per disabilitarlo è possibile impostare la variabile di ambiente VSTO\_EVENTLOGDISABLED su "1" \(uno\).  
+## <a name="disabling-the-event-logger"></a>Disattivazione del registratore eventi  
+ Quando si installano o disinstallano soluzioni Office, il registratore eventi viene attivato per impostazione predefinita. Per disabilitarlo è possibile impostare la variabile di ambiente VSTO_EVENTLOGDISABLED su "1" (uno).  
   
-#### Per disabilitare il registro eventi  
+#### <a name="to-disable-the-event-log"></a>Per disabilitare il registro eventi  
   
-1.  Aprire **Sistema** nel Pannello di controllo.  
+1.  Aprire **Sistema**nel Pannello di controllo.  
   
 2.  Nella scheda **Avanzate** fare clic su **Variabili di ambiente**.  
   
-3.  Nel riquadro **Variabili di sistema**, fare clic su **Nuovo**.  
+3.  Nel riquadro **Variabili di sistema** , fare clic su **Nuovo**.  
   
-4.  Nella finestra di dialogo **Nuova variabile di sistema**, digitare **VSTO\_EVENTLOGDISABLED** nella casella **Nome variabile**.  
+4.  Nella finestra di dialogo **Nuova variabile di sistema** , digitare **VSTO_EVENTLOGDISABLED** nella casella **Nome variabile** .  
   
-5.  Nella casella **Valore variabile**, digitare **1**.  
+5.  Nella casella **Valore variabile** , digitare **1**.  
   
 6.  Fare clic su **OK**.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Distribuzione di una soluzione Office](../vsto/deploying-an-office-solution.md)   
  [Risoluzione dei problemi relativi alla distribuzione di soluzioni Office](../vsto/troubleshooting-office-solution-deployment.md)  
   

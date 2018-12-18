@@ -1,42 +1,26 @@
 ---
 title: IDebugMessageEvent2::SetResponse | Documenti Microsoft
-ms.custom: 
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - vs-ide-sdk
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: conceptual
 f1_keywords:
 - IDebugMessageEvent2::SetResponse
 helpviewer_keywords:
 - IDebugMessageEvent2::SetResponse method
 - SetResponse method
 ms.assetid: 2a5e318d-3225-4abd-83f1-28323baff6c0
-caps.latest.revision: 10
+author: gregvanl
 ms.author: gregvanl
-manager: ghogen
-translation.priority.mt:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: 6dfb3c71b15e54a622523833f58706d24b61484d
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
 ms.translationtype: MT
-ms.sourcegitcommit: 4a36302d80f4bc397128e3838c9abf858a0b5fe8
-ms.openlocfilehash: f8b1883ab4c71d066fcdb816bc98ae9bdbb0831b
-ms.contentlocale: it-it
-ms.lasthandoff: 09/26/2017
-
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="idebugmessageevent2setresponse"></a>IDebugMessageEvent2::SetResponse
 Imposta la risposta, se presente, nella finestra di messaggio.  
@@ -57,11 +41,11 @@ int SetResponse(
   
 #### <a name="parameters"></a>Parametri  
  `dwResponse`  
- [in] Specifica la risposta, utilizzando le convenzioni di Win32 `MessageBox` (funzione). Vedere il [AfxMessageBox](http://msdn.microsoft.com/Library/d66d0328-cdcc-48f6-96a4-badf089099c8) funzione per i dettagli.  
+ [in] Specifica la risposta, utilizzando le convenzioni di Win32 `MessageBox` (funzione). Vedere il [AfxMessageBox](/cpp/mfc/reference/cstring-formatting-and-message-box-display#afxmessagebox) funzione per i dettagli.  
   
 ## <a name="return-value"></a>Valore restituito  
  Se ha esito positivo, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
   
 ## <a name="see-also"></a>Vedere anche  
  [IDebugMessageEvent2](../../../extensibility/debugger/reference/idebugmessageevent2.md)   
- [AfxMessageBox](http://msdn.microsoft.com/Library/d66d0328-cdcc-48f6-96a4-badf089099c8)
+ [AfxMessageBox](/cpp/mfc/reference/cstring-formatting-and-message-box-display#afxmessagebox)

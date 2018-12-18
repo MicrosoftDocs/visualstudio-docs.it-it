@@ -1,52 +1,53 @@
 ---
-title: "IDebugProgramPublisher2::SetDebuggerPresent | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "IDebugProgramPublisher2::SetDebuggerPresent"
-helpviewer_keywords: 
-  - "IDebugProgramPublisher2::SetDebuggerPresent"
+title: IDebugProgramPublisher2::SetDebuggerPresent | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology:
+- vs-ide-sdk
+ms.topic: conceptual
+f1_keywords:
+- IDebugProgramPublisher2::SetDebuggerPresent
+helpviewer_keywords:
+- IDebugProgramPublisher2::SetDebuggerPresent
 ms.assetid: c88c3ff4-3632-4199-b5de-83c6d21bcf75
-caps.latest.revision: 7
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 7
+author: gregvanl
+ms.author: gregvanl
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: 5725d6e143f10cd3a3fae18398ec0cb08729fa34
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# IDebugProgramPublisher2::SetDebuggerPresent
-[!INCLUDE[vs2017banner](../../../code-quality/includes/vs2017banner.md)]
-
-Indica all'entità di pubblicazione di immettere un debugger è presente e in esecuzione.  
+# <a name="idebugprogrampublisher2setdebuggerpresent"></a>IDebugProgramPublisher2::SetDebuggerPresent
+Indica il server di pubblicazione del programma che un debugger è presente e in esecuzione.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```cpp  
-HRESULT SetDebuggerPresent(  
-   BOOL fDebuggerPresent  
+HRESULT SetDebuggerPresent(  
+   BOOL fDebuggerPresent  
 );  
 ```  
   
-```c#  
-int SetDebuggerPresent(  
-   int fDebuggerPresent  
+```csharp  
+int SetDebuggerPresent(  
+   int fDebuggerPresent  
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `fDebuggerPresent`  
- \[in\]  diverso da zero \(`TRUE`\) se un debugger è presente, zero \(`FALSE`\) se non è.  
+ [in] Diverso da zero (`TRUE`) se è presente un debugger, zero (`FALSE`) in caso contrario.  
   
-## Valore restituito  
- Se l'operazione riesce, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
+## <a name="return-value"></a>Valore restituito  
+ Se ha esito positivo, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
   
-## Note  
- La presenza o l'assenza di un debugger si riflette nei dati restituiti [GetProviderProcessData](../../../extensibility/debugger/reference/idebugprogramprovider2-getproviderprocessdata.md) dal metodo: il valore restituito non è impostato o deselezionato da una chiamata precedente al metodo di `SetDebuggerPresent` .  
+## <a name="remarks"></a>Note  
+ La presenza o assenza di un debugger viene riflessa nei dati restituiti dal [GetProviderProcessData](../../../extensibility/debugger/reference/idebugprogramprovider2-getproviderprocessdata.md) metodo: il valore restituito sono è impostato o cancellato da una precedente chiamata al `SetDebuggerPresent` metodo.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IDebugProgramPublisher2](../../../extensibility/debugger/reference/idebugprogrampublisher2.md)   
  [GetProviderProcessData](../../../extensibility/debugger/reference/idebugprogramprovider2-getproviderprocessdata.md)

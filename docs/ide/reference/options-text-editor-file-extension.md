@@ -1,13 +1,10 @@
 ---
 title: Opzioni, Editor di testo, Estensione di file | Microsoft Docs
-ms.custom: 
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - vs-ide-general
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: conceptual
 f1_keywords:
 - vs.toolsoptionspages.text_editor.file_extension
 helpviewer_keywords:
@@ -16,30 +13,16 @@ helpviewer_keywords:
 - Options dialog box
 - Editing Experience, selecting
 ms.assetid: 05298fc5-fc4e-4bb2-b942-1f7d2dcdff0f
-caps.latest.revision: 12
 author: gewarren
 ms.author: gewarren
-manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 5ea9179ad37514ffad4876177b05150eecc22def
-ms.openlocfilehash: 37e5b813482eae6c4d46051ed4b261594d9e5164
-ms.contentlocale: it-it
-ms.lasthandoff: 05/24/2017
-
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 24a87480bfe7a2d60df9ccd94ac0711c71de9223
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="options-text-editor-file-extension"></a>Opzioni, Editor di testo, Estensione file
 La finestra di dialogo Opzioni consente di specificare il modo in cui tutti i file con determinate estensioni verranno gestiti nell'ambiente di sviluppo integrato (IDE) di Visual Studio. Per ogni **estensione** è possibile selezionare uno strumento di modifica. In questo modo è possibile scegliere l'editor dell'IDE o la finestra di progettazione in cui verranno aperti i documenti di un determinato tipo. Per visualizzare queste opzioni, scegliere **Opzioni** dal **Strumenti**, espandere il nodo **Editor di testo** e selezionare **Estensione di file**.  
@@ -62,7 +45,7 @@ La finestra di dialogo Opzioni consente di specificare il modo in cui tutti i fi
  **Rimuovi**  
  Elimina la voce selezionata dall'elenco delle estensioni.  
   
- Elenco estensioni  
+ **Elenco estensioni**  
  Include tutte le estensioni per cui è stato specificato uno strumento di modifica.  
   
  **Associa file senza estensione a**  

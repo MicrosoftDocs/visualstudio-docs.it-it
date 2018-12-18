@@ -1,42 +1,25 @@
 ---
 title: -Upgrade (devenv.exe) | Microsoft Docs
-ms.custom: 
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - vs-ide-general
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: conceptual
 helpviewer_keywords:
 - /upgrade Devenv switch
 - Devenv, /upgrade switch
 - upgrade Devenv switch
 ms.assetid: 3468045c-5cc9-4157-9a9d-622452145d27
-caps.latest.revision: 18
 author: gewarren
 ms.author: gewarren
-manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 5ea9179ad37514ffad4876177b05150eecc22def
-ms.openlocfilehash: 1e8f81e61121fd6779cc0f0ebdbd166bf0c27c6f
-ms.contentlocale: it-it
-ms.lasthandoff: 05/24/2017
-
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 66a28d534c9b3fa019849ac8a3ecd42b0ad7e6ff
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="upgrade-devenvexe"></a>/Upgrade (devenv.exe)
 Aggiorna il file della soluzione e tutti i relativi file di progetto oppure il file di progetto specificato ai formati di [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] correnti dei file.  

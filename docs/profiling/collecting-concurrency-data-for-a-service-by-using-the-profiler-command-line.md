@@ -1,57 +1,56 @@
 ---
-title: "Raccolta di dati di concorrenza per un servizio tramite la riga di comando del profiler | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: Raccolta di dati di concorrenza per un servizio tramite la riga di comando del profiler | Microsoft Docs
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology: vs-ide-debug
+ms.topic: conceptual
 ms.assetid: 275aacba-b2af-4d34-8931-ee30d777a256
-caps.latest.revision: 13
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 13
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 1ef4809752fcc3ce77eb185aa3fc3d8fda3856b8
+ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/19/2018
 ---
-# Raccolta di dati di concorrenza per un servizio tramite la riga di comando del profiler
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
-Il metodo di concorrenza degli strumenti di profilatura di [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] consente di raccogliere dati su conflitti di risorse e attività dei thread che mostrano l'utilizzo della CPU, i conflitti dei thread, la migrazione dei thread, i ritardi di sincronizzazione, le aree di sovrapposizione delle operazioni di I\/O e altri eventi di sistema.  
+# <a name="collecting-concurrency-data-for-a-service-by-using-the-profiler-command-line"></a>Raccolta di dati di concorrenza per un servizio tramite la riga di comando del profiler
+Il metodo di concorrenza degli strumenti di profilatura di [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] consente di raccogliere i dati relativi ai conflitti di risorse e all'attività dei thread. Questi dati illustrano l'utilizzo della CPU, nonché i conflitti e la migrazione di thread, i ritardi nella sincronizzazione, le aree di sovrapposizione delle operazioni di I/O e altri eventi di sistema.  
   
 > [!NOTE]
->  Le funzionalità di sicurezza avanzate in Windows 8 e Windows Server 2012 necessarie modifiche significative in modo che il profiler di Visual Studio consente di raccogliere dati su queste piattaforme.  Le applicazioni di archivio di Windows richiedono nuove tecniche di raccolta.  Vedere [Profilatura delle applicazioni Windows 8 e Windows Server 2012](../profiling/performance-tools-on-windows-8-and-windows-server-2012-applications.md).  
+>  Le funzionalità di sicurezza avanzate di Windows 8 e Windows Server 2012 hanno richiesto modifiche significative riguardo alla modalità di raccolta dei dati su queste piattaforme da parte del profiler di Visual Studio. Le app UWP richiedono anche nuove tecniche di raccolta. Vedere [Performance Tools on Windows 8 and Windows Server 2012 applications](../profiling/performance-tools-on-windows-8-and-windows-server-2012-applications.md) (Strumenti per le prestazioni nelle applicazioni Windows 8 e Windows Server 2012).  
   
-## Attività comuni  
+## <a name="common-tasks"></a>Attività comuni  
   
-|Task|Contenuto correlato|  
-|----------|-------------------------|  
-|**Connettersi a un servizio .NET in esecuzione**|-   [Procedura: collegare il profiler a un servizio .NET per raccogliere dati di concorrenza](../profiling/how-to-attach-the-profiler-to-a-dotnet-service-to-collect-concurrency-data-by-using-the-command-line.md)|  
+|Attività|Contenuto correlato|  
+|----------|---------------------|  
+|**Connettersi a un servizio .NET in esecuzione**|-   [How to: Attach the Profiler to a .NET Service to Collect Concurrency Data](../profiling/how-to-attach-the-profiler-to-a-dotnet-service-to-collect-concurrency-data-by-using-the-command-line.md) (Procedura: Connettere il profiler a un servizio .NET per raccogliere dati di concorrenza)|  
 |**Aggiungere dati di interazione tra livelli**|-   [Raccolta di dati di interazione tra livelli](../profiling/adding-tier-interaction-data-from-the-command-line.md)|  
-|**Connettersi a un servizio C\/C\+\+ in esecuzione**|-   [Procedura: collegare il profiler a un servizio nativo per raccogliere dati di concorrenza](../profiling/how-to-attach-the-profiler-to-a-native-service-to-collect-concurrency-data-by-using-the-command-line.md)|  
+|**Connettersi a un servizio C/C++ in esecuzione**|-   [Procedura: Connettere il profiler a un servizio nativo per raccogliere dati di concorrenza](../profiling/how-to-attach-the-profiler-to-a-native-service-to-collect-concurrency-data-by-using-the-command-line.md)|  
   
-## Attività correlate  
+## <a name="related-tasks"></a>Attività correlate  
   
-### Profilo dei servizi Windows  
+### <a name="profiling-windows-services"></a>Profilatura di servizi Windows  
   
-|Task|Contenuto correlato|  
-|----------|-------------------------|  
-|**Eseguire il profilo tramite il metodo di campionamento**|-   [Raccolta di statistiche dell'applicazione tramite campionamento](../profiling/collecting-application-statistics-for-services-by-using-the-profiler-sampling-method.md)|  
-|**Eseguire il profilo tramite il metodo di strumentazione**|-   [Raccolta di dati di intervallo dettagliati tramite strumentazione](../profiling/collecting-detailed-timing-data-for-services-by-using-the-instrumentation-method-from-the-profiler-command-line.md)|  
-|**Eseguire il profilo dell'allocazione di memoria .NET e dell'operazione di Garbage Collection**|-   [Raccolta di dati di memoria .NET](../profiling/collecting-memory-data-from-dotnet-framework-services-by-using-the-profiler-command-line.md)|  
+|Attività|Contenuto correlato|  
+|----------|---------------------|  
+|**Eseguire la profilatura tramite il metodo di campionamento**|-   [Raccolta di statistiche dell'applicazione tramite campionamento](../profiling/collecting-application-statistics-for-services-by-using-the-profiler-sampling-method.md)|  
+|**Sottoporre a profilatura tramite il metodo di strumentazione**|-   [Raccolta di dati di intervallo dettagliati tramite strumentazione](../profiling/collecting-detailed-timing-data-for-services-by-using-the-instrumentation-method-from-the-profiler-command-line.md)|  
+|**Sottoporre a profilatura l'allocazione di memoria .NET e la garbage collection**|-   [Collecting .NET Memory Data](../profiling/collecting-memory-data-from-dotnet-framework-services-by-using-the-profiler-command-line.md) (Raccolta di dati di memoria .NET)|  
   
-### Profilo dei dati di concorrenza  
+### <a name="profiling-concurrency-data"></a>Profilatura di dati di concorrenza  
   
-|Task|Contenuto correlato|  
-|----------|-------------------------|  
-|**Profilo di applicazioni autonome**|-   [Raccolta di dati di concorrenza](../profiling/collecting-concurrency-data-for-stand-alone-applications-by-using-the-profiler-command-line.md)|  
-|**Eseguire il profilo di applicazioni Web ASP.NET**|-   [Raccolta di dati di concorrenza](../profiling/collecting-concurrency-data-for-an-aspnet-web-application-using-the-profiler-command-line.md)|  
+|Attività|Contenuto correlato|  
+|----------|---------------------|  
+|**Sottoporre a profilatura applicazioni autonome**|-   [Raccolta di dati di concorrenza](../profiling/collecting-concurrency-data-for-stand-alone-applications-by-using-the-profiler-command-line.md)|  
+|**Sottoporre a profilatura applicazioni Web ASP.NET**|-   [Raccolta di dati di concorrenza](../profiling/collecting-concurrency-data-for-an-aspnet-web-application-using-the-profiler-command-line.md)|  
   
-### Analisi dei rapporti e delle visualizzazioni dei dati di concorrenza  
+### <a name="analyzing-concurrency-data-views-and-reports"></a>Analisi di visualizzazioni dati e di report di concorrenza  
  [Visualizzazioni dei dati su conflitti tra risorse](../profiling/resource-contention-data-views.md)  
   
  [Visualizzatore di concorrenze](../profiling/concurrency-visualizer.md)  
   
-## Riferimento  
+## <a name="reference"></a>Riferimenti  
  [Riferimenti agli strumenti di profilatura della riga di comando](../profiling/command-line-profiling-tools-reference.md)

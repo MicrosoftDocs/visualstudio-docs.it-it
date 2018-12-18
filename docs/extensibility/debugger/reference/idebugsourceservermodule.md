@@ -1,45 +1,46 @@
 ---
-title: "IDebugSourceServerModule | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "Interfaccia IDebugSourceServerModule"
+title: IDebugSourceServerModule | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology:
+- vs-ide-sdk
+ms.topic: conceptual
+helpviewer_keywords:
+- IDebugSourceServerModule interface
 ms.assetid: 38213060-451d-46e6-8b4a-efc123e01a2c
-caps.latest.revision: 8
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 8
+author: gregvanl
+ms.author: gregvanl
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: 5210b819d78bcec1cac5179ac679cf201279e9fc
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# IDebugSourceServerModule
-[!INCLUDE[vs2017banner](../../../code-quality/includes/vs2017banner.md)]
-
-Rappresenta le informazioni del server di origine contenute in un file PDB.  
+# <a name="idebugsourceservermodule"></a>IDebugSourceServerModule
+Rappresenta le informazioni sul server di origine che è contenuti in un file PDB.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
 IDebugSourceServerModule : IUnknown  
 ```  
   
-## Note per gli implementatori  
- Questa interfaccia viene implementata in moduli di gestione del debugger e viene utilizzata dall'interfaccia utente del debugger.  
+## <a name="notes-for-implementers"></a>Note per gli implementatori  
+ Questa interfaccia è implementata dai motori di debugger e usata dal debugger dell'interfaccia utente.  
   
-## Metodi  
- Nella tabella seguente sono elencati i metodi di `IDebugSourceServerModule`.  
+## <a name="methods"></a>Metodi  
+ Nella tabella seguente sono illustrati i metodi di `IDebugSourceServerModule`.  
   
 |Metodo|Descrizione|  
 |------------|-----------------|  
-|[GetSourceServerData](../../../extensibility/debugger/reference/idebugsourceservermodule-getsourceserverdata.md)|Recupera una matrice di informazioni del server di origine.|  
+|[GetSourceServerData](../../../extensibility/debugger/reference/idebugsourceservermodule-getsourceserverdata.md)|Recupera una matrice di informazioni sul server di origine.|  
   
-## Requisiti  
- intestazione: Msdbg.h  
+## <a name="requirements"></a>Requisiti  
+ Intestazione: Msdbg.h  
   
- Spazio dei nomi: Microsoft.VisualStudio.Debugger.Interop  
+ Namespace: Microsoft.VisualStudio.Debugger.Interop  
   
  Assembly: Microsoft.VisualStudio.Debugger.Interop.dll

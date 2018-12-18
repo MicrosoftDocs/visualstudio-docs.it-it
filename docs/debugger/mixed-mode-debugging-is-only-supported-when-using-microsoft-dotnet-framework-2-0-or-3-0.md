@@ -1,32 +1,30 @@
 ---
-title: "Supporto del debug in modalit&#224; mista solo quando si utilizza Microsoft .NET Framework 2.0 o 3.0 | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/05/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "vs.debug.error.interop_unsupported_to_old"
-dev_langs: 
-  - "FSharp"
-  - "VB"
-  - "CSharp"
-  - "C++"
+title: Debug in modalità mista è supportato solo quando si utilizza Microsoft .NET Framework 2.0 o 3.0 | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology: vs-ide-debug
+ms.topic: conceptual
+f1_keywords:
+- vs.debug.error.interop_unsupported_to_old
+dev_langs:
+- CSharp
+- VB
+- FSharp
+- C++
 ms.assetid: f607af6f-57fe-472a-a32e-b6202067aa96
-caps.latest.revision: 5
-caps.handback.revision: 5
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- dotnet
+ms.openlocfilehash: 5492c79fa15582c5aeaf9b7794958a37bd569313
+ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/18/2018
 ---
-# Supporto del debug in modalit&#224; mista solo quando si utilizza Microsoft .NET Framework 2.0 o 3.0
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
-Le versioni di Microsoft .NET Framework precedenti alla 2.0 non forniscono alcun supporto per il debug in modalità mista di processi a 64 bit.  Ciò significa che non è possibile passare dal codice gestito al codice nativo o viceversa durante l'esecuzione del debug.  
+# <a name="mixed-mode-debugging-is-only-supported-when-using-microsoft-net-framework-20-or-30"></a>Supporto del debug in modalità mista solo quando si utilizza Microsoft .NET Framework 2.0 o 3.0
+Le versioni di Microsoft .NET Framework precedenti alla 2.0 non forniscono alcun supporto per il debug in modalità mista di processi a 64 bit. Ciò significa che non è possibile passare dal codice gestito al codice nativo o viceversa durante l'esecuzione del debug.  
   
  Per aggirare il problema è possibile:  
   
@@ -36,25 +34,25 @@ Le versioni di Microsoft .NET Framework precedenti alla 2.0 non forniscono alcun
   
 -   Eseguire il debug del codice misto come processo a 32 bit, come descritto nelle procedure che seguono.  
   
-### Per modificare il sistema operativo a 32 bit \(Visual Basic o C\#\)  
+### <a name="to-change-the-operating-system-to-32-bit-visual-basic-or-c"></a>Per modificare il sistema operativo a 32 bit (Visual Basic o C#)  
   
-1.  In **Esplora soluzioni** fare clic con il pulsante destro del mouse sul progetto, quindi fare clic su **Proprietà** nel menu di scelta rapida.  
+1.  In **Esplora**mouse sul progetto e quindi fare clic su **proprietà** nel menu di scelta rapida.  
   
-2.  Nella pagina delle proprietà fare clic sulla scheda **Compilazione** o **Debug**.  
+2.  Nelle pagine delle proprietà, fare clic su di **compilare** o **Debug** scheda.  
   
-3.  Fare clic su **Piattaforma**, quindi selezionare **x86** dall'elenco delle piattaforme.  
+3.  Fare clic su **piattaforma**, quindi selezionare **x86** dall'elenco di piattaforme.  
   
-     Per impostazione predefinita, i compilatori di Visual Basic e C\# producono codice eseguibile in qualsiasi CPU.  In un computer a 64 bit, questi binari sono eseguiti come processi a 64 bit.  Per l'esecuzione in un processo a 32 bit, è necessario scegliere **Win32** anziché **AnyCPU**.  
+     Per impostazione predefinita, i compilatori di Visual Basic e C# producono codice eseguibile in qualsiasi CPU. In un computer a 64 bit, questi binari sono eseguiti come processi a 64 bit. Per eseguire in un processo a 32 bit, è necessario scegliere **Win32**, non **AnyCPU**.  
   
-### Per modificare il sistema operativo a 32 bit \(C\/C\+\+\)  
+### <a name="to-change-the-operating-system-to-32-bit-cc"></a>Per modificare il sistema operativo a 32 bit (C/C++)  
   
-1.  In **Esplora soluzioni** fare clic con il pulsante destro del mouse sul progetto, quindi fare clic su **Proprietà** nel menu di scelta rapida.  
+1.  In **Esplora**mouse sul progetto e quindi fare clic su **proprietà** nel menu di scelta rapida.  
   
-     Nella pagina delle proprietà fare clic su **Piattaforma**, quindi selezionare **Win32** dall'elenco delle piattaforme.  
+     Nelle pagine delle proprietà, fare clic su **piattaforma**, quindi selezionare **Win32** dall'elenco di piattaforme.  
   
-### Per correggere l'errore  
+### <a name="to-correct-this-error"></a>Per correggere l'errore  
   
--   Vedere [Setting Up SQL Debugging](http://msdn.microsoft.com/it-it/3db09e68-edcc-42de-9c22-4e97cfd55ab3).  
+-   Vedere [impostazione del debug SQL](http://msdn.microsoft.com/en-us/3db09e68-edcc-42de-9c22-4e97cfd55ab3).  
   
-## Vedere anche  
- [Eseguire il debug di applicazioni a 64 bit](../debugger/debug-64-bit-applications.md)
+## <a name="see-also"></a>Vedere anche  
+ [Eseguire il debug di applicazioni a 64 Bit](../debugger/debug-64-bit-applications.md)

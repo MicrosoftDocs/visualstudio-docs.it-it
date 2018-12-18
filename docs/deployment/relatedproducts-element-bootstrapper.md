@@ -1,39 +1,38 @@
 ---
-title: "Elemento &lt;RelatedProducts&gt; (programma di avvio automatico) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-deployment"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "MSBuild.GenerateBootstrapper.MissingDependency"
-  - "MSBuild.GenerateBootstrapper.DuplicateItems"
-  - "MSBuild.GenerateBootstrapper.IncludedProductIncluded"
-  - "MSBuild.GenerateBootstrapper.DependencyNotFound"
-  - "MSBuild.GenerateBootstrapper.PackageFileNotFound"
-dev_langs: 
-  - "FSharp"
-  - "VB"
-  - "CSharp"
-  - "C++"
-helpviewer_keywords: 
-  - "<RelatedProducts> (elemento) [programma di avvio automatico]"
+title: '&lt;RelatedProducts&gt; elemento (programma di avvio automatico) | Documenti Microsoft'
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology: vs-ide-deployment
+ms.topic: conceptual
+f1_keywords:
+- MSBuild.GenerateBootstrapper.MissingDependency
+- MSBuild.GenerateBootstrapper.DuplicateItems
+- MSBuild.GenerateBootstrapper.IncludedProductIncluded
+- MSBuild.GenerateBootstrapper.DependencyNotFound
+- MSBuild.GenerateBootstrapper.PackageFileNotFound
+dev_langs:
+- FSharp
+- VB
+- CSharp
+- C++
+helpviewer_keywords:
+- <RelatedProducts> element [bootstrapper]
 ms.assetid: bf152712-4c1e-48bd-9b7f-311cf0fdb832
-caps.latest.revision: 12
-author: "stevehoag"
-ms.author: "shoag"
-manager: "wpickett"
-caps.handback.revision: 12
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 574b7180efb7495b755d823c798ffa0c21339390
+ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/19/2018
 ---
-# Elemento &lt;RelatedProducts&gt; (programma di avvio automatico)
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
-L'elemento `RelatedProducts` definisce i prodotti inclusi nel prodotto corrente o che dipendono da quest'ultimo.  
+# <a name="ltrelatedproductsgt-element-bootstrapper"></a>&lt;RelatedProducts&gt; elemento (programma di avvio automatico)
+Il `RelatedProducts` elemento definisce i prodotti che dipendono o sono inclusi nel prodotto corrente.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
 <RelatedProducts>  
@@ -51,32 +50,32 @@ L'elemento `RelatedProducts` definisce i prodotti inclusi nel prodotto corrente 
 </RelatedProducts>  
 ```  
   
-## Elementi e attributi  
- L'elemento `RelatedProducts` è un elemento figlio di `Product`.  Non dispone di attributi.  
+## <a name="elements-and-attributes"></a>Elementi e attributi  
+ Il `RelatedProducts` è un elemento figlio del `Product` elemento. Non dispone di attributi.  
   
-## DependsOnProduct  
- L'elemento `DependsOnProduct` indica che il prodotto corrente dipende dal prodotto specificato, che pertanto deve essere installato prima di quello corrente.  È un elemento figlio dell'elemento `RelatedProducts`.  Un elemento `RelatedProducts` può contenere uno o più elementi `DependsOnProduct`.  
+## <a name="dependsonproduct"></a>DependsOnProduct  
+ Il `DependsOnProduct` elemento indica che il prodotto corrente dipende dal prodotto specificato, e pertanto deve essere installato prima di quello corrente. È un figlio di `RelatedProducts` elemento. Oggetto `RelatedProducts` elemento può contenere uno o più `DependsOnProduct` elementi.  
   
- `DependsOnProduct` dispone dell'attributo riportato di seguito.  
-  
-|Attributo|Descrizione|  
-|---------------|-----------------|  
-|`Code`|Nome del codice del prodotto incluso, specificato dall'attributo `ProductCode` dell'elemento `Product`.  Per ulteriori informazioni, vedere [Elemento \<Product\>](../deployment/product-element-bootstrapper.md).|  
-  
-## EitherProducts  
- L'elemento `EitherProducts` definisce zero o più elementi `DependsOnProduct` e non dispone di attributi.  Almeno un elemento `DependsOnProduct` in questo set deve essere installato prima del prodotto corrente.  Un elemento `RelatedProducts` può contenere zero o più elementi `EitherProducts`.  
-  
-## IncludesProduct  
- L'elemento `IncludesProduct` indica che un prodotto è incluso nell'installazione corrente e non richiede un'installazione separata.  È un elemento figlio dell'elemento `RelatedProducts`.  L'elemento `RelatedProducts` può contenere uno o più elementi `IncludesProduct`.  
-  
- `IncludesProduct` dispone dell'attributo riportato di seguito.  
+ `DependsOnProduct` presenta l'attributo seguente.  
   
 |Attributo|Descrizione|  
 |---------------|-----------------|  
-|`Code`|Nome del codice del prodotto incluso, specificato dall'attributo `ProductCode` dell'elemento `Product`.  Per ulteriori informazioni, vedere [Elemento \<Product\>](../deployment/product-element-bootstrapper.md).|  
+|`Code`|Il nome del prodotto incluso, come specificato dal codice di `ProductCode` attributo del `Product` elemento. Per ulteriori informazioni, vedere [ \<prodotto > elemento](../deployment/product-element-bootstrapper.md).|  
   
-## Esempio  
- Nell'esempio di codice riportato di seguito è specificato che Microsoft Installer viene installato con [!INCLUDE[dnprdnshort](../code-quality/includes/dnprdnshort_md.md)] e che pertanto non richiede un'installazione separata.  
+## <a name="eitherproducts"></a>EitherProducts  
+ Il `EitherProducts` elemento definisce zero o più `DependsOnProduct` elementi, e non ha attributi. Almeno un `DependsOnProduct` in questo set deve essere installato prima del prodotto corrente. Oggetto `RelatedProducts` elemento può contenere zero o più `EitherProducts` elementi.  
+  
+## <a name="includesproduct"></a>IncludesProduct  
+ Il `IncludesProduct` elemento indica che un prodotto è incluso nell'installazione corrente che non richiede un'installazione separata. È un figlio di `RelatedProducts` elemento. Oggetto `RelatedProducts` elemento può contenere uno o più `IncludesProduct` elementi.  
+  
+ `IncludesProduct` presenta l'attributo seguente.  
+  
+|Attributo|Descrizione|  
+|---------------|-----------------|  
+|`Code`|Il nome del prodotto incluso, come specificato dal codice di `ProductCode` attributo del `Product` elemento. Per ulteriori informazioni, vedere [ \<prodotto > elemento](../deployment/product-element-bootstrapper.md).|  
+  
+## <a name="example"></a>Esempio  
+ Esempio di codice seguente specifica che Microsoft Installer viene installato con il [!INCLUDE[dnprdnshort](../code-quality/includes/dnprdnshort_md.md)]e pertanto non richiede un'installazione separata.  
   
 ```  
 <RelatedProducts>  
@@ -84,5 +83,5 @@ L'elemento `RelatedProducts` definisce i prodotti inclusi nel prodotto corrente 
 </RelatedProducts>  
 ```  
   
-## Vedere anche  
- [Elemento \<Product\>](../deployment/product-element-bootstrapper.md)
+## <a name="see-also"></a>Vedere anche  
+ [\<Prodotto > elemento](../deployment/product-element-bootstrapper.md)

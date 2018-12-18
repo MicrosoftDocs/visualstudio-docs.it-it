@@ -1,48 +1,49 @@
 ---
-title: "IDebugAlias::GetName | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "IDebugAlias::GetName"
-helpviewer_keywords: 
-  - "Metodo IDebugAlias::GetName"
+title: IDebugAlias::GetName | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology:
+- vs-ide-sdk
+ms.topic: conceptual
+f1_keywords:
+- IDebugAlias::GetName
+helpviewer_keywords:
+- IDebugAlias::GetName method
 ms.assetid: ac2d8891-56b5-40ef-9866-ed74f18bb043
-caps.latest.revision: 8
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 8
+author: gregvanl
+ms.author: gregvanl
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: 2168e972722396b4fcd21f1d37fd8c260dba72d5
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# IDebugAlias::GetName
-[!INCLUDE[vs2017banner](../../../code-quality/includes/vs2017banner.md)]
-
-Ottiene il nome di tale alias.  
+# <a name="idebugaliasgetname"></a>IDebugAlias::GetName
+Ottiene il nome di questo alias.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```cpp  
-HRESULT GetName(  
-   BSTR* pbstrName  
+HRESULT GetName(  
+   BSTR* pbstrName  
 );  
 ```  
   
-```c#  
-int GetName(  
-   out string pbstrName  
+```csharp  
+int GetName(  
+   out string pbstrName  
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `pbstrName`  
- \[out\]  Nome dell'alias.  
+ [out] Nome dell'alias.  
   
-## Valore restituito  
- Se l'operazione riesce, restituisce S\_OK, in caso contrario, restituisce un codice di errore.  
+## <a name="return-value"></a>Valore restituito  
+ Se ha esito positivo, restituisce S_OK; in caso contrario, restituisce un codice di errore.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IDebugAlias](../../../extensibility/debugger/reference/idebugalias.md)

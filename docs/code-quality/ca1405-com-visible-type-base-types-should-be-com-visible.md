@@ -1,13 +1,8 @@
 ---
-title: 'CA1405: COM visible type base types should be COM visible | Microsoft Docs'
-ms.custom: 
+title: 'CA1405: I tipi di base del tipo visibile a COM devono essere visibili a COM'
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- vs-devops-test
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.technology: vs-ide-code-analysis
+ms.topic: reference
 f1_keywords:
 - CA1405
 - ComVisibleTypeBaseTypesShouldBeComVisible
@@ -15,58 +10,42 @@ helpviewer_keywords:
 - CA1405
 - ComVisibleTypeBaseTypesShouldBeComVisible
 ms.assetid: a762ea2f-5285-4f73-bfb9-9eb10aea4290
-caps.latest.revision: 18
-author: stevehoag
-ms.author: shoag
-manager: wpickett
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: HT
-ms.sourcegitcommit: eb5c9550fd29b0e98bf63a7240737da4f13f3249
-ms.openlocfilehash: 19fe7efdab29246d723f5a2d06fd5180529aef23
-ms.contentlocale: it-it
-ms.lasthandoff: 08/30/2017
-
+author: gewarren
+ms.author: gewarren
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: ac8412e242f7d69ea657d5b7f74fa83ffbff5acc
+ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/19/2018
 ---
-# <a name="ca1405-com-visible-type-base-types-should-be-com-visible"></a>CA1405: COM visible type base types should be COM visible
-|||  
-|-|-|  
-|TypeName|ComVisibleTypeBaseTypesShouldBeComVisible|  
-|CheckId|CA1405|  
-|Category|Microsoft.Interoperability|  
-|Breaking Change|DependsOnFix|  
-  
-## <a name="cause"></a>Cause  
- A Component Object Model (COM) visible type derives from a type that is not COM visible.  
-  
-## <a name="rule-description"></a>Rule Description  
- When a COM visible type adds members in a new version, it must abide by strict guidelines to avoid breaking COM clients that bind to the current version. A type that is invisible to COM presumes it does not have to follow these COM versioning rules when it adds new members. However, if a COM visible type derives from the COM invisible type and exposes a class interface of <xref:System.Runtime.InteropServices.ClassInterfaceType?displayProperty=fullName> or <xref:System.Runtime.InteropServices.ClassInterfaceType> (the default), all public members of the base type (unless they are specifically marked as COM invisible, which would be redundant) are exposed to COM. If the base type adds new members in a subsequent version, any COM clients that bind to the class interface of the derived type might break. COM visible types should derive only from COM visible types to reduce the chance of breaking COM clients.  
-  
-## <a name="how-to-fix-violations"></a>How to Fix Violations  
- To fix a violation of this rule, make the base types COM visible or the derived type COM invisible.  
-  
-## <a name="when-to-suppress-warnings"></a>When to Suppress Warnings  
- Do not suppress a warning from this rule.  
-  
-## <a name="example"></a>Example  
- The following example shows a type that violates the rule.  
-  
- [!code-vb[FxCop.Interoperability.ComBaseTypes#1](../code-quality/codesnippet/VisualBasic/ca1405-com-visible-type-base-types-should-be-com-visible_1.vb)] [!code-csharp[FxCop.Interoperability.ComBaseTypes#1](../code-quality/codesnippet/CSharp/ca1405-com-visible-type-base-types-should-be-com-visible_1.cs)]  
-  
-## <a name="see-also"></a>See Also  
- <xref:System.Runtime.InteropServices.ClassInterfaceAttribute?displayProperty=fullName>   
- [Introducing the Class Interface](http://msdn.microsoft.com/en-us/733c0dd2-12e5-46e6-8de1-39d5b25df024)   
- [Interoperating with Unmanaged Code](/dotnet/framework/interop/index)
+# <a name="ca1405-com-visible-type-base-types-should-be-com-visible"></a>CA1405: I tipi di base del tipo visibile a COM devono essere visibili a COM
+|||
+|-|-|
+|TypeName|ComVisibleTypeBaseTypesShouldBeComVisible|
+|CheckId|CA1405|
+|Category|Microsoft.Interoperability|
+|Modifica importante|DependsOnFix|
+
+## <a name="cause"></a>Causa
+ Un tipo visibile modello COM (Component Object) deriva da un tipo che non è visibile a COM.
+
+## <a name="rule-description"></a>Descrizione della regola
+ Quando un tipo visibile a COM aggiunge membri in una nuova versione, è necessario rispettare severe linee guida per evitare di interrompere l'associazione alla versione corrente dei client COM. Un tipo che non è visibile a COM presuppone che è necessario seguire queste regole di controllo delle versioni COM durante l'aggiunta di nuovi membri. Tuttavia, se visibile a COM un tipo deriva dal tipo invisibile a COM ed espone un'interfaccia di classe <xref:System.Runtime.InteropServices.ClassInterfaceType?displayProperty=fullName> o <xref:System.Runtime.InteropServices.ClassInterfaceType> (impostazione predefinita), tutti i membri pubblici del tipo di base (a meno che non siano specificatamente contrassegnati come COM invisibile, che sarebbe ridondante) vengono esposti a COM. Se il tipo di base aggiunge nuovi membri in una versione successiva, tutti i client COM che associano l'interfaccia della classe del tipo derivato potrebbero interrompere il funzionamento. Tipi visibili a COM devono derivare solo da tipi visibili a COM per ridurre il rischio di interrompere i client COM.
+
+## <a name="how-to-fix-violations"></a>Come correggere le violazioni
+ Per correggere una violazione di questa regola, rendere invisibili i tipi visibili a COM di base o il tipo derivato COM.
+
+## <a name="when-to-suppress-warnings"></a>Esclusione di avvisi
+ Non escludere un avviso da questa regola.
+
+## <a name="example"></a>Esempio
+ Nell'esempio seguente viene illustrato un tipo che viola la regola.
+
+ [!code-vb[FxCop.Interoperability.ComBaseTypes#1](../code-quality/codesnippet/VisualBasic/ca1405-com-visible-type-base-types-should-be-com-visible_1.vb)]
+ [!code-csharp[FxCop.Interoperability.ComBaseTypes#1](../code-quality/codesnippet/CSharp/ca1405-com-visible-type-base-types-should-be-com-visible_1.cs)]
+
+## <a name="see-also"></a>Vedere anche
+ <xref:System.Runtime.InteropServices.ClassInterfaceAttribute?displayProperty=fullName> [Interoperabilità con codice non gestito](/dotnet/framework/interop/index)

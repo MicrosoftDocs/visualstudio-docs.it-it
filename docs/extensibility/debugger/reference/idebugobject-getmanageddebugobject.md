@@ -1,52 +1,53 @@
 ---
-title: "IDebugObject::GetManagedDebugObject | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "IDebugObject::GetManagedDebugObject"
-helpviewer_keywords: 
-  - "Metodo IDebugObject::GetManagedDebugObject"
+title: IDebugObject::GetManagedDebugObject | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology:
+- vs-ide-sdk
+ms.topic: conceptual
+f1_keywords:
+- IDebugObject::GetManagedDebugObject
+helpviewer_keywords:
+- IDebugObject::GetManagedDebugObject method
 ms.assetid: cb89692e-7657-47ff-846d-311943521951
-caps.latest.revision: 9
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 9
+author: gregvanl
+ms.author: gregvanl
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: 6c7b416ca9af4279e11cabbbf880a73891059df6
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# IDebugObject::GetManagedDebugObject
-[!INCLUDE[vs2017banner](../../../code-quality/includes/vs2017banner.md)]
-
+# <a name="idebugobjectgetmanageddebugobject"></a>IDebugObject::GetManagedDebugObject
 Crea una copia dell'oggetto gestito nello spazio degli indirizzi del motore di debug.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp#  
-HRESULT GetManagedDebugObject(   
-   IDebugManagedObject** ppObject  
+```cpp  
+HRESULT GetManagedDebugObject(   
+   IDebugManagedObject** ppObject  
 );  
 ```  
   
-```c#  
+```csharp  
 int GetManagedDebugObject(  
-   out IDebugManagedObject ppObject  
+   out IDebugManagedObject ppObject  
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `ppObject`  
- \[out\]  Restituisce [IDebugManagedObject](../../../extensibility/debugger/reference/idebugmanagedobject.md) un oggetto che rappresenta l'oggetto gestito appena creato.  
+ [out] Restituisce un [IDebugManagedObject](../../../extensibility/debugger/reference/idebugmanagedobject.md) oggetto che rappresenta l'oggetto gestito appena creato.  
   
-## Valore restituito  
- Se l'operazione riesce, restituisce S\_OK, in caso contrario, restituisce un codice di errore.  Restituisce E\_FAIL se questo [IDebugObject](../../../extensibility/debugger/reference/idebugobject.md) non rappresenta un'istanza della classe gestita di valore.  
+## <a name="return-value"></a>Valore restituito  
+ Se ha esito positivo, restituisce S_OK; in caso contrario, restituisce un codice di errore. Restituisce E_FAIL se questo [IDebugObject](../../../extensibility/debugger/reference/idebugobject.md) non rappresenta un'istanza della classe valore gestito.  
   
-## Note  
- Tale [IDebugObject](../../../extensibility/debugger/reference/idebugobject.md) oggetto deve rappresentare un'istanza della classe gestita di valore, come un'istanza di `System.Decimal` .  Una copia locale, il sovraccarico di chiamare [Valutare](../../../extensibility/debugger/reference/idebugfunctionobject-evaluate.md) viene eliminato.  
+## <a name="remarks"></a>Note  
+ Questo [IDebugObject](../../../extensibility/debugger/reference/idebugobject.md) oggetto deve rappresentare un'istanza di classe di valore gestito, ad esempio un `System.Decimal` istanza. Con una copia locale, l'overhead della chiamata al metodo [Evaluate](../../../extensibility/debugger/reference/idebugfunctionobject-evaluate.md) viene eliminato.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IDebugObject](../../../extensibility/debugger/reference/idebugobject.md)   
  [IDebugManagedObject](../../../extensibility/debugger/reference/idebugmanagedobject.md)

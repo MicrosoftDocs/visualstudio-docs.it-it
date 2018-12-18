@@ -1,30 +1,31 @@
 ---
-title: "IDebugGenericFieldDefinition::GetFormalTypeParams | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "GetFormalTypeParams"
-  - "IDebugGenericFieldDefinition::GetFormalTypeParams"
+title: IDebugGenericFieldDefinition::GetFormalTypeParams | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology:
+- vs-ide-sdk
+ms.topic: conceptual
+helpviewer_keywords:
+- GetFormalTypeParams
+- IDebugGenericFieldDefinition::GetFormalTypeParams
 ms.assetid: cadbd6a1-bc7c-4aff-8777-5396b7a23c3e
-caps.latest.revision: 9
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 9
+author: gregvanl
+ms.author: gregvanl
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: 7a9efc94f86ddbaffc465ae83208b7ff0cc1f152
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# IDebugGenericFieldDefinition::GetFormalTypeParams
-[!INCLUDE[vs2017banner](../../../code-quality/includes/vs2017banner.md)]
-
+# <a name="idebuggenericfielddefinitiongetformaltypeparams"></a>IDebugGenericFieldDefinition::GetFormalTypeParams
 Recupera i parametri di tipo dato il numero di parametri.  
   
 ## <a name="syntax"></a>Sintassi  
   
-```cpp#  
+```cpp  
 HRESULT GetFormalTypeParams(  
    ULONG32                   cParams,  
    IDebugGenericParamField** ppParams,  
@@ -32,7 +33,7 @@ HRESULT GetFormalTypeParams(
 );  
 ```  
   
-```c#  
+```csharp  
 int GetFormalTypeParams(  
    uint                          cParams,  
    out IDebugGenericParamField[] ppParams,  
@@ -54,7 +55,7 @@ int GetFormalTypeParams(
  Se ha esito positivo, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
   
 ## <a name="remarks"></a>Note  
- Restituire i parametri di tipo nell'ordine da sinistra a destra. Ad esempio Dictionary \< K, V > restituisce IDebugFormalGenericParameters {K, V}.  
+ Restituire i parametri di tipo nell'ordine da sinistra a destra. Ad esempio, il dizionario\<K, V > restituisce IDebugFormalGenericParameters {K, V}.  
   
 ## <a name="see-also"></a>Vedere anche  
  [IDebugGenericFieldDefinition](../../../extensibility/debugger/reference/idebuggenericfielddefinition.md)

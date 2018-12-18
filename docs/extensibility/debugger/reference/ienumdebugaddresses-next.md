@@ -1,41 +1,25 @@
 ---
 title: IEnumDebugAddresses::Next | Documenti Microsoft
-ms.custom: 
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - vs-ide-sdk
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: conceptual
 f1_keywords:
 - IEnumDebugAddresses::Next
 helpviewer_keywords:
 - IEnumDebugAddresses::Next method
 ms.assetid: 941e4be7-858d-433a-9259-18d0d017be9e
-caps.latest.revision: 7
+author: gregvanl
 ms.author: gregvanl
-manager: ghogen
-translation.priority.mt:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: b1abc1e21e53c6e5707981efecb3515721761675
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
 ms.translationtype: MT
-ms.sourcegitcommit: 4a36302d80f4bc397128e3838c9abf858a0b5fe8
-ms.openlocfilehash: 7b380859a6020c81a9d2cbb81095f49c8c385405
-ms.contentlocale: it-it
-ms.lasthandoff: 09/26/2017
-
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="ienumdebugaddressesnext"></a>IEnumDebugAddresses::Next
 Questo metodo restituisce il set successivo di elementi dall'enumerazione.  

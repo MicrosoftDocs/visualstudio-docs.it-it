@@ -1,41 +1,25 @@
 ---
 title: IEnumDebugPorts2::GetCount | Documenti Microsoft
-ms.custom: 
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - vs-ide-sdk
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: conceptual
 f1_keywords:
 - IEnumDebugPorts2::GetCount
 helpviewer_keywords:
 - IEnumDebugPorts2::GetCount
 ms.assetid: d714455c-e4fc-48dc-a6d4-7e8b5d7c1bce
-caps.latest.revision: 10
+author: gregvanl
 ms.author: gregvanl
-manager: ghogen
-translation.priority.mt:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: 1122e791ebbf62be5262958e2995ffaa733e865e
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
 ms.translationtype: MT
-ms.sourcegitcommit: 4a36302d80f4bc397128e3838c9abf858a0b5fe8
-ms.openlocfilehash: 5ef13141c17a5ce7be6c982f392243c213ed18c6
-ms.contentlocale: it-it
-ms.lasthandoff: 09/26/2017
-
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="ienumdebugports2getcount"></a>IEnumDebugPorts2::GetCount
 Restituisce il numero di elementi nell'enumerazione.  

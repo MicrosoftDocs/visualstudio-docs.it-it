@@ -1,13 +1,9 @@
 ---
-title: "Attività XDCMake | Microsoft Docs"
-ms.custom: 
+title: Attività XDCMake | Microsoft Docs
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- vs-ide-sdk
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.technology: msbuild
+ms.topic: reference
 f1_keywords:
 - vc.task.xdcmake
 dev_langs:
@@ -20,29 +16,16 @@ helpviewer_keywords:
 - XDCMake task (MSBuild (Visual C++))
 - MSBuild (Visual C++), XDCMake task
 ms.assetid: a7de9c64-903a-4a02-85f3-f37672270f25
-caps.latest.revision: 7
-author: kempb
-ms.author: kempb
-manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: ca7c86466fa23fb21a932f26dc24e37c71cf29b4
-ms.openlocfilehash: 491786ecc75c3a396098d434e58e4f6635a3844c
-ms.lasthandoff: 04/05/2017
-
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: dab82b3ddf2bc39d1253321a335e1fe838235819
+ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/19/2018
 ---
 # <a name="xdcmake-task"></a>Attività XDCMake
 Esegue il wrapping dello strumento Documentazione XML (xdcmake.exe) che unisce i file di commento (con estensione xdc) del documento XML in un file con estensione xml.  

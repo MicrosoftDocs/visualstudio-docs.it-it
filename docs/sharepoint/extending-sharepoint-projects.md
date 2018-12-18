@@ -1,55 +1,55 @@
 ---
-title: "Extending SharePoint Projects"
-ms.custom: ""
-ms.date: "02/02/2017"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "office-development"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-helpviewer_keywords: 
-  - "projects [SharePoint development in Visual Studio], extending"
-  - "SharePoint development in Visual Studio, extending projects"
-  - "SharePoint projects, extending"
-ms.assetid: 4643012b-6e6c-4b7c-bb92-b04b34f6c715
-caps.latest.revision: 19
-author: "kempb"
-ms.author: "kempb"
-manager: "ghogen"
-caps.handback.revision: 18
+title: Estensione di progetti SharePoint | Documenti Microsoft
+ms.custom: ''
+ms.date: 02/02/2017
+ms.technology:
+- office-development
+ms.topic: conceptual
+dev_langs:
+- VB
+- CSharp
+helpviewer_keywords:
+- projects [SharePoint development in Visual Studio], extending
+- SharePoint development in Visual Studio, extending projects
+- SharePoint projects, extending
+author: TerryGLee
+ms.author: tglee
+manager: douge
+ms.workload:
+- office
+ms.openlocfilehash: 622596249e92d73dd4f504a445d43405847e9629
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# Extending SharePoint Projects
-  Quando si desidera personalizzare le funzionalità a livello di progetto dei progetti SharePoint, è possibile creare un'estensione di progetto.  Ad esempio, è possibile aggiungere proprietà del progetto personalizzate o rispondere a eventi a livello di progetto generati quando l'utente sviluppa una soluzione SharePoint in Visual Studio.  
+# <a name="extending-sharepoint-projects"></a>Estensione di progetti SharePoint
+  Creare un'estensione di progetto quando si desidera personalizzare le funzionalità a livello di progetto dei progetti di SharePoint. Ad esempio, aggiungere le proprietà di progetto personalizzato oppure rispondere agli eventi a livello di progetto che vengono generati quando si sviluppa una soluzione di SharePoint in Visual Studio.  
   
-## Creazione di estensioni di progetto  
- Per estendere un elemento del progetto, compilare un assembly di Visual Studio Extension che implementa l'interfaccia <xref:Microsoft.VisualStudio.SharePoint.ISharePointProjectExtension>.  Per ulteriori informazioni, vedere [How to: Create a SharePoint Project Extension](../sharepoint/how-to-create-a-sharepoint-project-extension.md).  
+## <a name="creating-project-extensions"></a>Creazione di estensioni di progetto  
+ Per estendere un elemento di progetto, creare un assembly di estensioni di Visual Studio che implementa il <xref:Microsoft.VisualStudio.SharePoint.ISharePointProjectExtension> interfaccia. Per ulteriori informazioni, vedere [procedura: creare un'estensione di progetto SharePoint](../sharepoint/how-to-create-a-sharepoint-project-extension.md).  
   
- Quando si crea un'estensione di progetto, è inoltre possibile aggiungere la funzionalità seguente ai progetti SharePoint:  
+ Quando si crea un'estensione di progetto, è anche possibile aggiungere le funzionalità seguenti per i progetti SharePoint:  
   
--   Aggiungere una voce di menu di scelta rapida.  La voce di menu viene visualizzata quando si apre il menu di scelta rapida per un nodo del progetto SharePoint in **Esplora soluzioni** fare clic con il pulsante destro del mouse sul nodo o scegliendolo e scegliendo lo spostamento \+ chiavi F10.  Per ulteriori informazioni, vedere [How to: Add a Shortcut Menu Item to SharePoint Projects](../sharepoint/how-to-add-a-shortcut-menu-item-to-sharepoint-projects.md).  
+-   Aggiungere una voce di menu di scelta rapida. La voce di menu viene visualizzata quando si apre il menu di scelta rapida per un nodo di progetto SharePoint in **Esplora** chiavi per il pulsante destro del nodo o scegliendolo e quindi premendo MAIUSC + F10. Per ulteriori informazioni, vedere [procedura: aggiungere una voce di Menu di scelta rapida ai progetti SharePoint](../sharepoint/how-to-add-a-shortcut-menu-item-to-sharepoint-projects.md).  
   
--   Aggiungere una proprietà personalizzata.  La proprietà viene visualizzata nella finestra **Proprietà** quando si sceglie un progetto SharePoint in **Esplora soluzioni**.  Per ulteriori informazioni, vedere [How to: Add a Property to SharePoint Projects](../sharepoint/how-to-add-a-property-to-sharepoint-projects.md).  
+-   Aggiungere una proprietà personalizzata. La proprietà viene visualizzata nel **proprietà** finestra quando si sceglie un progetto SharePoint in **Esplora**. Per ulteriori informazioni, vedere [procedura: aggiungere una proprietà ai progetti SharePoint](../sharepoint/how-to-add-a-property-to-sharepoint-projects.md).  
   
- Per una procedura dettagliata in cui viene illustrato come creare, distribuire e testare un'estensione di progetto, vedere [Walkthrough: Creating a SharePoint Project Extension](../sharepoint/walkthrough-creating-a-sharepoint-project-extension.md).  
+ Per una procedura dettagliata viene illustrato come creare, distribuire e testare un'estensione di progetto, vedere [procedura dettagliata: creazione di un'estensione di progetto SharePoint](../sharepoint/walkthrough-creating-a-sharepoint-project-extension.md).  
   
-## Informazioni sulla relazione tra estensioni di progetto e istanze di progetto  
- Quando si crea un'estensione di progetto, questa viene caricata quando si apre qualsiasi tipo di progetto SharePoint in [!INCLUDE[vsprvs](../sharepoint/includes/vsprvs-md.md)]. In [!INCLUDE[vsprvs](../sharepoint/includes/vsprvs-md.md)] sono inclusi diversi modelli di progetto SharePoint, ad esempio definizioni di elenco, tipi di contenuto e ricevitori di eventi.  Tuttavia, esiste un solo tipo di progetto SharePoint.  I tipi di progetto visualizzati nella finestra di dialogo **Nuovo progetto** sono solo i modelli che raggruppano uno o più elementi di progetto SharePoint.  Poiché esiste un solo tipo di progetto SharePoint, le estensioni create per un determinato progetto si applicano a tutti i progetti SharePoint.  Ad esempio, non è possibile creare un'estensione applicabile soltanto a un progetto **Tipo di contenuto**.  
+## <a name="understanding-the-relationship-between-project-extensions-and-project-instances"></a>Informazioni sulla relazione tra le estensioni di progetto e le istanze del progetto  
+ Quando si crea un'estensione di progetto, l'estensione viene caricato quando si apre qualsiasi tipo di progetto SharePoint in [!INCLUDE[vsprvs](../sharepoint/includes/vsprvs-md.md)]. [!INCLUDE[vsprvs](../sharepoint/includes/vsprvs-md.md)] include vari modelli di progetto SharePoint, ad esempio le definizioni di elenco e i tipi di contenuto, ricevitori di eventi. Tuttavia, è solo un tipo di progetto SharePoint. I tipi di progetto che vengono visualizzati nel **nuovo progetto** la finestra di dialogo sono solo i modelli che raggruppano uno o più elementi di progetto SharePoint. Poiché è presente un solo tipo di progetto SharePoint, le estensioni create per un progetto si applicano a tutti i progetti SharePoint. È possibile, ad esempio, creare un'estensione che si applica solo a un **tipo di contenuto** progetto.  
   
- Per accedere a una specifica istanza del progetto, gestire uno degli eventi <xref:Microsoft.VisualStudio.SharePoint.ISharePointProjectEvents> del parametro *projectService* nell'implementazione del metodo <xref:Microsoft.VisualStudio.SharePoint.ISharePointProjectExtension.Initialize%2A>.  Ad esempio, per determinare quando un progetto SharePoint viene aggiunto a una soluzione, gestire l'evento <xref:Microsoft.VisualStudio.SharePoint.ISharePointProjectEvents.ProjectAdded>.  Per ulteriori informazioni, vedere [How to: Create a SharePoint Project Extension](../sharepoint/how-to-create-a-sharepoint-project-extension.md).  
+ Per accedere a una specifica istanza del progetto, gestire uno del <xref:Microsoft.VisualStudio.SharePoint.ISharePointProjectEvents> gli eventi del *projectService* parametro nell'implementazione del <xref:Microsoft.VisualStudio.SharePoint.ISharePointProjectExtension.Initialize%2A> metodo. Ad esempio, per determinare quando un progetto SharePoint viene aggiunto a una soluzione, gestire il <xref:Microsoft.VisualStudio.SharePoint.ISharePointProjectEvents.ProjectAdded> evento. Per ulteriori informazioni, vedere [procedura: creare un'estensione di progetto SharePoint](../sharepoint/how-to-create-a-sharepoint-project-extension.md).  
   
-## Vedere anche  
- [How to: Create a SharePoint Project Extension](../sharepoint/how-to-create-a-sharepoint-project-extension.md)   
- [How to: Add a Shortcut Menu Item to SharePoint Projects](../sharepoint/how-to-add-a-shortcut-menu-item-to-sharepoint-projects.md)   
- [How to: Add a Property to SharePoint Projects](../sharepoint/how-to-add-a-property-to-sharepoint-projects.md)   
- [Walkthrough: Creating a SharePoint Project Extension](../sharepoint/walkthrough-creating-a-sharepoint-project-extension.md)   
- [Defining Custom SharePoint Project Item Types](../sharepoint/defining-custom-sharepoint-project-item-types.md)   
- [Extending SharePoint Project Items](../sharepoint/extending-sharepoint-project-items.md)   
- [Extending SharePoint Packaging and Deployment](../sharepoint/extending-sharepoint-packaging-and-deployment.md)   
- [Extending the SharePoint Project System](../sharepoint/extending-the-sharepoint-project-system.md)  
+## <a name="see-also"></a>Vedere anche  
+ [Procedura: creare un'estensione di progetto SharePoint](../sharepoint/how-to-create-a-sharepoint-project-extension.md)   
+ [Procedura: aggiungere una voce di Menu di scelta rapida ai progetti SharePoint](../sharepoint/how-to-add-a-shortcut-menu-item-to-sharepoint-projects.md)   
+ [Procedura: aggiungere una proprietà ai progetti SharePoint](../sharepoint/how-to-add-a-property-to-sharepoint-projects.md)   
+ [Procedura dettagliata: Creazione di un'estensione di progetto SharePoint](../sharepoint/walkthrough-creating-a-sharepoint-project-extension.md)   
+ [Definizione di tipi di elemento di progetto SharePoint personalizzato](../sharepoint/defining-custom-sharepoint-project-item-types.md)   
+ [Estensione di elementi di progetto SharePoint](../sharepoint/extending-sharepoint-project-items.md)   
+ [Distribuzione ed estensione dei pacchetti di SharePoint](../sharepoint/extending-sharepoint-packaging-and-deployment.md)   
+ [Estensione del sistema di progetto SharePoint](../sharepoint/extending-the-sharepoint-project-system.md)  
   
   

@@ -1,73 +1,71 @@
 ---
-title: "Procedura: eseguire il debug di codice inserito | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "vs.debug.injected"
-dev_langs: 
-  - "FSharp"
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "C++"
-helpviewer_keywords: 
-  - "linguaggio dell'assembly, visualizzazione"
-  - "debug [C++], attivazione dell'annotazione del codice sorgente"
-  - "debug [C++], codice inserito"
-  - "debug [C++], utilizzo di attributi"
-  - "debug [C++], visualizzazione di codice assembly"
-  - "codice disassembly, debug"
-  - "codice inserito"
-  - "Mostra codice sorgente (comando) [debugger]"
+title: 'Procedura: eseguire il Debug di codice inserito | Documenti Microsoft'
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology: vs-ide-debug
+ms.topic: conceptual
+f1_keywords:
+- vs.debug.injected
+dev_langs:
+- CSharp
+- VB
+- FSharp
+- C++
+helpviewer_keywords:
+- assembly language, viewing
+- debugging [C++], viewing assembly code
+- debugging [C++], injected code
+- debugging [C++], enabling source annotation
+- injected code
+- Show Source Code command [debugger]
+- debugging [C++], using attributes
+- disassembly code, debugging
 ms.assetid: a1b4104d-d49e-451f-a91e-e39ceaf35875
-caps.latest.revision: 17
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 17
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: bf602d8ee670e5fce8602cb50d2aaa1066b501de
+ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/18/2018
 ---
-# Procedura: eseguire il debug di codice inserito
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
+# <a name="how-to-debug-injected-code"></a>Procedura: eseguire il debug di codice inserito
 > [!NOTE]
->  È possibile che le finestre di dialogo e i comandi di menu visualizzati siano diversi da quelli descritti nella Guida a seconda delle impostazioni attive o dell'edizione del programma.  Per modificare le impostazioni, scegliere Importa\/Esporta impostazioni dal menu Strumenti.  Per ulteriori informazioni, vedere [Customizing Development Settings in Visual Studio](http://msdn.microsoft.com/it-it/22c4debb-4e31-47a8-8f19-16f328d7dcd3).  
+>  Le finestre di dialogo e i comandi di menu visualizzati potrebbero essere diversi da quelli descritti nella Guida a seconda delle impostazioni attive o dell'edizione del programma. Per modificare le impostazioni, scegliere Importa/esporta impostazioni dal menu Strumenti. Per altre informazioni, vedere [Personalizzare l'IDE di Visual Studio](../ide/personalizing-the-visual-studio-ide.md).  
   
- Il ricorso agli attributi può semplificare notevolmente la programmazione in C\+\+.  Per ulteriori informazioni, vedere [Concepts](/visual-cpp/windows/attributed-programming-concepts).  Alcuni attributi sono interpretati direttamente dal compilatore.  Con altri attributi è invece possibile inserire codice nell'origine del programma, il quale verrà quindi compilato dal compilatore.  Questo codice inserito rende più semplice la programmazione perché riduce la quantità di codice che è necessario scrivere.  A volte, tuttavia, può accadere che un bug arresti l'applicazione mentre è in esecuzione il codice inserito.  Quando ciò accade, può essere utile esaminare tale codice  e Visual Studio prevede due metodi per farlo:  
+ Il ricorso agli attributi può semplificare notevolmente la programmazione in C++. Per ulteriori informazioni, vedere [concetti](/cpp/windows/attributed-programming-concepts). Alcuni attributi sono interpretati direttamente dal compilatore. Con altri attributi è invece possibile inserire codice nell'origine del programma, il quale verrà quindi compilato dal compilatore. Questo codice inserito rende più semplice la programmazione perché riduce la quantità di codice che è necessario scrivere. A volte, tuttavia, può accadere che un bug arresti l'applicazione mentre è in esecuzione il codice inserito. Quando ciò accade, può essere utile esaminare tale codice e Visual Studio prevede due metodi per farlo:  
   
--   Visualizzare il codice inserito nella finestra **Disassembly**.  
+-   È possibile visualizzare il codice inserito nel **Disassembly** finestra.  
   
--   Creare, mediante [\/Fx](/visual-cpp/build/reference/fx-merge-injected-code), un file di origine unito contenente il codice originale e il codice inserito.  
+-   Utilizzando [/Fx](/cpp/build/reference/fx-merge-injected-code), è possibile creare un file di origine unito contenente il codice originale e inserito.  
   
- Nella finestra **Disassembly** vengono visualizzate le istruzioni in linguaggio assembly che corrispondono al codice sorgente e al codice inserito da attributi.  Nella finestra **Disassembly** sono inoltre riportate le annotazioni del codice sorgente.  
+ Il **Disassembly** finestra vengono visualizzate le istruzioni in linguaggio assembly che corrispondono al codice sorgente e il codice inserito da attributi. Inoltre, il **Disassembly** finestra consente di visualizzare l'annotazione del codice sorgente.  
   
-### Per attivare l'annotazione del codice sorgente  
+### <a name="to-turn-on-source-annotation"></a>Per attivare l'annotazione del codice sorgente  
   
--   Fare clic con il pulsante destro del mouse sulla finestra **Disassembly** e scegliere **Mostra codice sorgente** dal menu di scelta rapida.  
+-   Fare doppio clic su di **Disassembly** finestra e scegliere **Mostra codice sorgente** dal menu di scelta rapida.  
   
-     Se si conosce la posizione di un attributo in una finestra di origine, sarà possibile utilizzare il menu di scelta rapida per trovare il codice inserito nella finestra **Disassembly**.  
+     Se si conosce il percorso di un attributo in una finestra di origine, è possibile utilizzare il menu di scelta rapida per trovare il codice inserito nel **Disassembly** finestra.  
   
-### Per visualizzare il codice inserito  
+### <a name="to-view-injected-code"></a>Per visualizzare il codice inserito  
   
 1.  Il debugger deve essere in modalità di interruzione.  
   
 2.  In una finestra di codice sorgente, portare il cursore davanti all'attributo di cui si desidera visualizzare il codice inserito.  
   
-3.  Fare clic con il pulsante destro del mouse e scegliere **Vai a disassembly** dal menu di scelta rapida.  
+3.  Mouse e scegliere **Vai a Disassembly** dal menu di scelta rapida.  
   
-     Se l'attributo si trova vicino al punto di esecuzione corrente, sarà possibile scegliere la finestra **Disassembly** dal menu **Debug**.  
+     Se l'attributo si trova vicino al punto di esecuzione corrente, è possibile selezionare il **Disassembly** finestra il **Debug** menu.  
   
-### Per visualizzare il codice disassembly al punto di esecuzione corrente  
+### <a name="to-view-the-disassembly-code-at-the-current-execution-point"></a>Per visualizzare il codice disassembly al punto di esecuzione corrente  
   
 1.  Il debugger deve essere in modalità di interruzione.  
   
-2.  Scegliere **Finestre** dal menu **Debug** e fare clic su **Disassembly**.  
+2.  Dal **Debug** menu, scegliere **Windows**, fare clic su **Disassembly**.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Sicurezza del debugger](../debugger/debugger-security.md)   
  [Debug del codice nativo](../debugger/debugging-native-code.md)

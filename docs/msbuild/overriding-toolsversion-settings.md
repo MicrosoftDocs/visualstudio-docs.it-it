@@ -1,41 +1,23 @@
 ---
 title: Override delle impostazioni ToolsVersion | Microsoft Docs
-ms.custom: 
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- vs-ide-sdk
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.technology: msbuild
+ms.topic: conceptual
 helpviewer_keywords:
 - MSBuild, overriding ToolsVersion setting
 - MSBuild, building solutions with
 ms.assetid: ccd42c07-0fb6-4e8b-9ebb-a6a6db18aa2e
-caps.latest.revision: 24
-author: kempb
-ms.author: kempb
-manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 47057e9611b824c17077b9127f8d2f8b192d6eb8
-ms.openlocfilehash: ffb0544e0f48f0bd52ac3edb3a820b594d9d2264
-ms.contentlocale: it-it
-ms.lasthandoff: 05/13/2017
-
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 25d4254e8f45da6a476207740cfa28e1db2253e4
+ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/19/2018
 ---
 # <a name="overriding-toolsversion-settings"></a>Override delle impostazioni ToolsVersion
 È possibile modificare il set di strumenti per progetti e soluzioni nei tre modi seguenti:  

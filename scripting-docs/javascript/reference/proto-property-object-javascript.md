@@ -1,54 +1,61 @@
 ---
-title: "Propriet&#224; __proto__ (Object) (JavaScript) | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/18/2017"
-ms.prod: "windows-client-threshold"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-javascript"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "__proto__"
-dev_langs: 
-  - "JavaScript"
-  - "TypeScript"
-  - "DHTML"
+title: "__proto__ proprietà (Object) (JavaScript) | Documenti Microsoft"
+ms.custom: 
+ms.date: 01/18/2017
+ms.prod: windows-client-threshold
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-javascript
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords:
+- __proto__
+dev_langs:
+- JavaScript
+- TypeScript
+- DHTML
 ms.assetid: 97c3f84d-125e-4905-b921-b021264964ee
-caps.latest.revision: 11
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 11
+caps.latest.revision: 
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.openlocfilehash: f8659c7a4ece5e30378838f20341ec6712f77ca3
+ms.sourcegitcommit: e01ccb5ca4504a327d54f33589911f5d8be9c35c
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 03/15/2018
 ---
-# Propriet&#224; __proto__ (Object) (JavaScript)
+# <a name="proto-property-object-javascript"></a>__proto__ proprietà (Object) (JavaScript)
 Contiene un riferimento al prototipo interno dell'oggetto specificato.  
+
+> [!WARNING]
+> Il `__proto__` proprietà è una caratteristica legacy. Uso [Object. getprototypeof](../reference/object-getprototypeof-function-javascript.md) invece.
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
 object.__proto__  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `object`  
- Necessario.  Oggetto su cui impostare il prototipo.  
+ Obbligatorio. Oggetto su cui impostare il prototipo.  
   
-## Note  
- La proprietà `__proto__` viene quindi utilizzata per impostare il prototipo di un oggetto.  
+## <a name="remarks"></a>Note  
+ Il `__proto__` proprietà può essere utilizzata per impostare il prototipo per un oggetto.  
   
- L'oggetto o la funzione eredita tutti i metodi e le proprietà di un nuovo prototipo, con tutti i metodi e le proprietà nella catena di prototipi del nuovo prototipo.  Un oggetto può avere un solo prototipo \(esclusi i prototipi ereditati nella catena di prototipi\), quindi quando si chiama la proprietà `__proto__`, viene sostituito il prototipo precedente.  
+ L'oggetto o funzione eredita tutti i metodi e proprietà del prototipo, insieme a tutti i metodi e le proprietà nella catena di prototipi del prototipo. Un oggetto può avere solo un singolo prototipo (non inclusi prototipi ereditati nella catena di prototipi), pertanto, quando si chiama il `__proto__` proprietà, si sostituisce il prototipo precedente.  
   
- È possibile impostare il prototipo solo su un oggetto estensibile.  Per ulteriori informazioni, vedi [Funzione Object.preventExtensions](../../javascript/reference/object-preventextensions-function-javascript.md).  
+ È possibile impostare il prototipo solo su un oggetto estensibile. Per altre informazioni, vedere [funzione Object. preventextensions](../../javascript/reference/object-preventextensions-function-javascript.md).  
   
 > [!NOTE]
->  Il nome della proprietà `__proto__` inizia e termina con due caratteri di sottolineatura.  
+>  Il `__proto__` nome della proprietà inizia e finisce con due caratteri di sottolineatura.  
   
-## Esempio  
- Nell'esempio di codice riportato di seguito viene illustrato come impostare il prototipo per un oggetto.  
+## <a name="example"></a>Esempio  
+ Nell'esempio di codice riportato di seguito viene illustrato come impostare la proprietà.  
   
-```javascript  
+```JavaScript  
 function Rectangle() {  
 }  
   
@@ -61,10 +68,10 @@ if (console && console.log) {
 }  
 ```  
   
-## Esempio  
- Nell'esempio di codice riportato di seguito viene illustrato in che modo aggiungere proprietà a un oggetto aggiungendole al prototipo.  
+## <a name="example"></a>Esempio  
+ Esempio di codice seguente viene illustrato come aggiungere proprietà a un oggetto aggiungendoli al prototipo.  
   
-```javascript  
+```JavaScript  
 var proto = { y: 2 };  
   
 var obj = { x: 10 };  
@@ -80,10 +87,10 @@ if (console && console.log) {
 }  
 ```  
   
-## Esempio  
- Nell'esempio di codice vengono aggiunte proprietà all'oggetto `String` impostando un nuovo prototipo.  
+## <a name="example"></a>Esempio  
+ Esempio di codice seguente aggiunge il `String` oggetto impostando un nuovo prototipo su di esso.  
   
-```javascript  
+```JavaScript  
 var stringProp = { desc: "description" };  
   
 String.__proto__ = stringProp;  
@@ -104,8 +111,8 @@ if (console && console.log) {
 }  
 ```  
   
-## Requisiti  
+## <a name="requirements"></a>Requisiti  
  [!INCLUDE[jsv11](../../javascript/reference/includes/jsv11-md.md)]  
   
-## Vedere anche  
- [Prototipi ed ereditarietà del prototipo](../../javascript/advanced/prototypes-and-prototype-inheritance.md)
+## <a name="see-also"></a>Vedere anche  
+ [Prototipi ed ereditarietà](../../javascript/advanced/prototypes-and-prototype-inheritance.md)

@@ -1,13 +1,9 @@
 ---
-title: "Attività Move | Microsoft Docs"
-ms.custom: 
+title: Attività Move | Microsoft Docs
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- vs-ide-sdk
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.technology: msbuild
+ms.topic: reference
 dev_langs:
 - VB
 - CSharp
@@ -17,30 +13,16 @@ helpviewer_keywords:
 - MSBuild, Move task
 - Move task [MSBuild]
 ms.assetid: d1405347-1309-4f18-b565-905408093d59
-caps.latest.revision: 4
-author: kempb
-ms.author: kempb
-manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 2c5abd32476f5a1348c5120e2804a87656298f52
+ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
 ms.translationtype: HT
-ms.sourcegitcommit: c00adbbabf0d3b82acb17f4a269dfc693246bc69
-ms.openlocfilehash: deee8db477425c628e214ad1332884f5a5693ea4
-ms.contentlocale: it-it
-ms.lasthandoff: 08/01/2017
-
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/19/2018
 ---
 # <a name="move-task"></a>Attività Move
 Sposta i file in una nuova posizione.  
@@ -66,4 +48,3 @@ Sposta i file in una nuova posizione.
 ## <a name="see-also"></a>Vedere anche  
  [Attività](../msbuild/msbuild-tasks.md)   
  [Riferimento alle attività](../msbuild/msbuild-task-reference.md)
-

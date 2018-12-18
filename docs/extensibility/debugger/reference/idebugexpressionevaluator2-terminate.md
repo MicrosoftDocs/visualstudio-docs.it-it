@@ -1,49 +1,50 @@
 ---
-title: "IDebugExpressionEvaluator2::Terminate | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "Termina"
-  - "IDebugExpressionEvaluator2::Terminate"
+title: IDebugExpressionEvaluator2::Terminate | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology:
+- vs-ide-sdk
+ms.topic: conceptual
+helpviewer_keywords:
+- Terminate
+- IDebugExpressionEvaluator2::Terminate
 ms.assetid: 38265100-4d80-4902-833a-07bb569f9ba8
-caps.latest.revision: 8
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 8
+author: gregvanl
+ms.author: gregvanl
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: d38695062816c56a0fee635d939cdeea90d32a17
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# IDebugExpressionEvaluator2::Terminate
-[!INCLUDE[vs2017banner](../../../code-quality/includes/vs2017banner.md)]
-
-Le interruzioni e pulita l'analizzatore di espressioni.  
+# <a name="idebugexpressionevaluator2terminate"></a>IDebugExpressionEvaluator2::Terminate
+Arresta e pulisce l'analizzatore di espressioni.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp#  
+```cpp  
 HRESULT Terminate (  
-    void  
+    void  
 );  
 ```  
   
-```c#  
+```csharp  
 int Terminate ();  
 ```  
   
-## Valore restituito  
- Se l'operazione riesce, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
+## <a name="return-value"></a>Valore restituito  
+ Se ha esito positivo, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
   
-## Note  
- Indica analizzatore di espressioni quando viene pulenda.  
+## <a name="remarks"></a>Note  
+ Indica l'analizzatore di espressioni quando si è fase di pulizia.  
   
-## Esempio  
- Nell'esempio seguente viene illustrato come implementare questo metodo per un oggetto **di ExpressionEvaluatorPackage** che espone [IDebugExpressionEvaluator2](../../../extensibility/debugger/reference/idebugexpressionevaluator2.md) l'interfaccia.  
+## <a name="example"></a>Esempio  
+ Nell'esempio seguente viene illustrato come implementare questo metodo per un **ExpressionEvaluatorPackage** oggetto che espone il [IDebugExpressionEvaluator2](../../../extensibility/debugger/reference/idebugexpressionevaluator2.md) interfaccia.  
   
-```cpp#  
+```cpp  
 STDMETHODIMP ExpressionEvaluatorPackage::Terminate(void)  
 {  
     // scan the namespaces contained and delete  
@@ -57,5 +58,5 @@ STDMETHODIMP ExpressionEvaluatorPackage::Terminate(void)
 }  
 ```  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IDebugExpressionEvaluator2](../../../extensibility/debugger/reference/idebugexpressionevaluator2.md)

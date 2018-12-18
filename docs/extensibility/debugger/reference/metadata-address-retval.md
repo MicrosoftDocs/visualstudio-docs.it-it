@@ -1,72 +1,73 @@
 ---
-title: "METADATA_ADDRESS_RETVAL | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "METADATA_ADDRESS_RETVAL"
-helpviewer_keywords: 
-  - "Struttura METADATA_ADDRESS_RETVAL"
+title: METADATA_ADDRESS_RETVAL | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology:
+- vs-ide-sdk
+ms.topic: conceptual
+f1_keywords:
+- METADATA_ADDRESS_RETVAL
+helpviewer_keywords:
+- METADATA_ADDRESS_RETVAL structure
 ms.assetid: 5b0ec0fb-84b3-4ce7-8e24-becf3d881d7d
-caps.latest.revision: 6
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 6
+author: gregvanl
+ms.author: gregvanl
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: 7358669f3057bf26ab88f3a1ef3fc301904c6b0a
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# METADATA_ADDRESS_RETVAL
-[!INCLUDE[vs2017banner](../../../code-quality/includes/vs2017banner.md)]
-
-Questa struttura rappresenta un valore restituito da un metodo o funzione.  
+# <a name="metadataaddressretval"></a>METADATA_ADDRESS_RETVAL
+Questa struttura rappresenta un valore restituito da un metodo o una funzione.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```cpp  
 typedef struct _tagMETADATA_ADDRESS_RETVAL {  
-   _mdToken tokMethod;  
-   DWORD    dwCorType;  
-   DWORD    dwSigSize;  
-   BYTE     rgSig[10];  
+   _mdToken tokMethod;  
+   DWORD    dwCorType;  
+   DWORD    dwSigSize;  
+   BYTE     rgSig[10];  
 } METADATA_ADDRESS_RETVAL;  
 ```  
   
-```c#  
+```csharp  
 public struct METADATA_ADDRESS_RETVAL {  
-   public int    tokMethod;  
-   public uint   dwCorType;  
-   public uint   dwSigSize;  
-   public byte[] rgSig;  
+   public int    tokMethod;  
+   public uint   dwCorType;  
+   public uint   dwSigSize;  
+   public byte[] rgSig;  
 }  
 ```  
   
-## Termini  
+## <a name="terms"></a>Termini  
  tokMethod  
  L'ID del metodo per il valore restituito.  
   
  dwCorType  
- Tipo di base del valore restituito. Questo è un valore compreso il `CorElementType` definita nell'enumerazione di [!INCLUDE[dnprdnshort](../../../code-quality/includes/dnprdnshort_md.md)] file SDK CorHdr. h.  
+ Il tipo di base del valore restituito. Questo è un valore compreso il `CorElementType` definita nell'enumerazione di [!INCLUDE[dnprdnshort](../../../code-quality/includes/dnprdnshort_md.md)] file corhdr. h SDK.  
   
  dwSigSize  
- La dimensione della firma del valore restituito \(archiviata nel `rgSig`\).  
+ La dimensione della firma valore restituito (archiviata nel `rgSig`).  
   
  rgSig  
  Matrice di byte che costituiscono la firma del valore restituito.  
   
-## Note  
- Questa struttura è parte dell'unione nel [DEBUG\_ADDRESS\_UNION](../../../extensibility/debugger/reference/debug-address-union.md) struttura quando la `dwKind` campo il `DEBUG_ADDRESS_UNION` struttura è impostata su `ADDRESS_KIND_RETVAL` \(compreso il [ADDRESS\_KIND](../../../extensibility/debugger/reference/address-kind.md) enumerazione\).  
+## <a name="remarks"></a>Note  
+ Questa struttura è parte dell'unione nel [DEBUG_ADDRESS_UNION](../../../extensibility/debugger/reference/debug-address-union.md) struttura quando il `dwKind` campo il `DEBUG_ADDRESS_UNION` struttura è impostata su `ADDRESS_KIND_RETVAL` (compreso il [ADDRESS_KIND](../../../extensibility/debugger/reference/address-kind.md) enumerazione).  
   
-## Requisiti  
+## <a name="requirements"></a>Requisiti  
  Intestazione: sh.h  
   
- Spazio dei nomi: Microsoft.VisualStudio.Debugger.Interop  
+ Namespace: Microsoft.VisualStudio.Debugger.Interop  
   
  Assembly: Microsoft.VisualStudio.Debugger.Interop.dll  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Strutture e unioni](../../../extensibility/debugger/reference/structures-and-unions.md)   
- [DEBUG\_ADDRESS\_UNION](../../../extensibility/debugger/reference/debug-address-union.md)   
- [ADDRESS\_KIND](../../../extensibility/debugger/reference/address-kind.md)
+ [DEBUG_ADDRESS_UNION](../../../extensibility/debugger/reference/debug-address-union.md)   
+ [ADDRESS_KIND](../../../extensibility/debugger/reference/address-kind.md)

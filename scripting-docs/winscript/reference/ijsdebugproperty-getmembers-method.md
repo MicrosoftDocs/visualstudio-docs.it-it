@@ -1,25 +1,29 @@
 ---
-title: "Metodo IJsDebugProperty::GetMembers | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/18/2017"
-ms.prod: "windows-script-interfaces"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
+title: 'Metodo ijsdebugproperty:: GetMembers | Documenti Microsoft'
+ms.custom: 
+ms.date: 01/18/2017
+ms.prod: windows-script-interfaces
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: reference
 apiname: IJsDebugProperty.GetMembers
 apilocation: jscript9diag.dll
 ms.assetid: a32b5372-d9cb-4b9a-9bc2-81b5e1df365c
-caps.latest.revision: 4
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.openlocfilehash: 066db431f27eca01fab63d10d0396575b3895527
+ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/27/2017
 ---
-# Metodo IJsDebugProperty::GetMembers
-Ottiene i membri di quest'oggetto.  
+# <a name="ijsdebugpropertygetmembers-method"></a>Metodo IJsDebugProperty::GetMembers
+Ottiene i membri di questo oggetto.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
 HRESULT GetMembers(  
@@ -28,17 +32,17 @@ HRESULT GetMembers(
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `members`  
- \[in\] Flag per specificare gli elementi inclusi nelle informazioni del membro.  
+ [in] Flag per specificare il contenuto di informazioni sui membri.  
   
  `ppEnum`  
- \[out\] Membri dell'oggetto.  
+ [out] I membri dell'oggetto.  
   
-## Valore restituito  
+## <a name="return-value"></a>Valore restituito  
   
-## Requisiti  
- **Intestazione:** jscript9diag.h  
+## <a name="requirements"></a>Requisiti  
+ **Intestazione:** jscript9diag  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Interfaccia IJsDebugProperty](../../winscript/reference/ijsdebugproperty-interface.md)

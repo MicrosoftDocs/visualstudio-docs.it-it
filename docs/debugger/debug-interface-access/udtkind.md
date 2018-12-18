@@ -1,41 +1,40 @@
 ---
-title: "UdtKind | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "UdtKind (enumerazione)"
+title: UdtKind | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology: vs-ide-debug
+ms.topic: conceptual
+dev_langs:
+- C++
+helpviewer_keywords:
+- UdtKind enumeration
 ms.assetid: 400b59b9-373c-42cb-aae1-570494214328
-caps.latest.revision: 8
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 8
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: b95d8bfeda0cd8d5efdaab6d0c2fd13a34c8407c
+ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/18/2018
 ---
-# UdtKind
-[!INCLUDE[vs2017banner](../../code-quality/includes/vs2017banner.md)]
-
-Viene descritta la vasta gamma di tipo definito dall'utente \(UDT\).  
+# <a name="udtkind"></a>UdtKind
+Vengono illustrati i vari di tipo definito dall'utente (UDT).  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp#  
-enum UdtKind {   
-   UdtStruct,  
-   UdtClass,  
-   UdtUnion,  
-   UdtInterface  
+```C++  
+enum UdtKind {   
+   UdtStruct,  
+   UdtClass,  
+   UdtUnion,  
+   UdtInterface  
 };  
 ```  
   
-## Elementi  
+## <a name="elements"></a>Elementi  
  UdtStruct  
  Tipo definito dall'utente è una struttura.  
   
@@ -48,12 +47,12 @@ enum UdtKind { 
  UdtInterface  
  Tipo definito dall'utente è un'interfaccia.  
   
-## Note  
- Vengono restituiti i valori di questa enumerazione per la [IDiaSymbol::get\_udtKind](../../debugger/debug-interface-access/idiasymbol-get-udtkind.md) metodo.  
+## <a name="remarks"></a>Note  
+ I valori di questa enumerazione sono restituiti dal [idiasymbol:: Get_udtkind](../../debugger/debug-interface-access/idiasymbol-get-udtkind.md) metodo.  
   
-## Requisiti  
+## <a name="requirements"></a>Requisiti  
  Intestazione: cvconst.h  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Enumerazioni e strutture](../../debugger/debug-interface-access/enumerations-and-structures.md)   
- [IDiaSymbol::get\_udtKind](../../debugger/debug-interface-access/idiasymbol-get-udtkind.md)
+ [IDiaSymbol::get_udtKind](../../debugger/debug-interface-access/idiasymbol-get-udtkind.md)

@@ -1,65 +1,69 @@
 ---
-title: "Metodo setUTCSeconds (Date) (JavaScript) | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/18/2017"
-ms.prod: "windows-client-threshold"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-javascript"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "setUTCSeconds"
-dev_langs: 
-  - "JavaScript"
-  - "TypeScript"
-  - "DHTML"
-helpviewer_keywords: 
-  - "date, UTC"
-  - "seconds (metodo)"
-  - "setUTCSeconds (metodo)"
-  - "UTC (ora), impostazione"
+title: Metodo setUTCSeconds (Date) (JavaScript) | Documenti Microsoft
+ms.custom: 
+ms.date: 01/18/2017
+ms.prod: windows-client-threshold
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-javascript
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords:
+- setUTCSeconds
+dev_langs:
+- JavaScript
+- TypeScript
+- DHTML
+helpviewer_keywords:
+- dates, UTC
+- setUTCSeconds method
+- UTC times, setting
+- seconds method
 ms.assetid: e035e282-b39d-4d1d-8771-c17542fd6493
-caps.latest.revision: 13
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 13
+caps.latest.revision: 
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.openlocfilehash: f3df010cd84332d8957f1c08c41c4543dec36e4a
+ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/27/2017
 ---
-# Metodo setUTCSeconds (Date) (JavaScript)
-Consente di impostare il valore dei secondi nell'oggetto `Date` utilizzando il formato UTC \(Tempo universale coordinato, Universal Coordinated Time\).  
+# <a name="setutcseconds-method-date-javascript"></a>Metodo setUTCSeconds (Date) (JavaScript)
+Imposta il valore secondi `Date` utilizzando l'ora UTC (Universal Coordinated Time).  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
   
 dateObj.setUTCSeconds(numSeconds[, numMilli])   
 ```  
   
-## Parametri  
+## <a name="parameters"></a>Parametri  
  `dateObj`  
- Obbligatorio.  Qualsiasi oggetto `Date`.  
+ Obbligatorio. Qualsiasi oggetto `Date`.  
   
  *numSeconds*  
- Obbligatorio.  Valore numerico corrispondente ai secondi.  
+ Obbligatorio. Valore numerico che rappresenta il valore dei secondi.  
   
  `numMilli`  
- Facoltativo.  Valore numerico corrispondente ai millisecondi.  
+ Parametro facoltativo. Valore numerico che rappresenta il valore dei millisecondi.  
   
-## Note  
- Per tutti i metodi **set** che prevedono argomenti facoltativi, se un argomento facoltativo non viene specificato, viene utilizzato il valore restituito dai corrispondenti metodi **get**.  Se, ad esempio, l'argomento `numMilli` non viene specificato, [!INCLUDE[javascript](../../javascript/includes/javascript-md.md)] utilizza il valore restituito dal metodo `getUTCMilliseconds`.  
+## <a name="remarks"></a>Note  
+ Tutti **impostare** i metodi che gli argomenti facoltativi utilizzato il valore restituito dal corrispondente **ottenere** metodi, se non si specifica un argomento facoltativo. Ad esempio, se il `numMilli` argomento non viene specificato, [!INCLUDE[javascript](../../javascript/includes/javascript-md.md)] utilizza il valore restituito dal `getUTCMilliseconds` metodo.  
   
- Per impostare il valore dei secondi in base all'ora locale, utilizza il metodo `setSeconds`.  
+ Per impostare il valore utilizzando l'ora locale, utilizzare il `setSeconds` metodo.  
   
- Se il valore di un argomento è maggiore del relativo intervallo o è un numero negativo, gli altri valori memorizzati verranno modificati di conseguenza.  Se, ad esempio, la data memorizzata è "5 gen 1996 00.00.00.00" e si richiama il metodo **setSeconds\(150\)**, la data verrà modificata in "5 gen 1996 00.02.30.00".  
+ Se il valore di un argomento è maggiore dell'intervallo specificato o è un numero negativo, gli altri valori memorizzati verranno modificati di conseguenza. Ad esempio, se la data memorizzata è "5 gennaio 1996 00.00.00.00" e **setSeconds(150)** viene chiamato, la data viene modificata in "5 gennaio 1996 00.02.30.00".  
   
- È possibile utilizzare il metodo **setUTCHours** per impostare le ore, i minuti, i secondi e i millisecondi.  
+ Il **setUTCHours** metodo può essere utilizzato per impostare le ore, minuti, secondi e millisecondi.  
   
-## Esempio  
- Nell'esempio seguente viene illustrato l'utilizzo del metodo `setUTCSeconds`.  
+## <a name="example"></a>Esempio  
+ Nell'esempio riportato di seguito viene illustrato l'utilizzo del metodo `setUTCSeconds`.  
   
-```javascript  
+```JavaScript  
 function SetUTCSecondsDemo(nsec){  
 // Create Date object.  
     var d = new Date();       
@@ -72,12 +76,12 @@ function SetUTCSecondsDemo(nsec){
 }  
 ```  
   
-## Requisiti  
+## <a name="requirements"></a>Requisiti  
  [!INCLUDE[jsv3](../../javascript/reference/includes/jsv3-md.md)]  
   
- **Si applica a**: [Oggetto Date](../../javascript/reference/date-object-javascript.md)  
+ **Si applica a**: [Date Object](../../javascript/reference/date-object-javascript.md)  
   
-## Vedere anche  
- [Metodo getSeconds \(Date\)](../../javascript/reference/getseconds-method-date-javascript.md)   
- [Metodo getUTCSeconds \(Date\)](../../javascript/reference/getutcseconds-method-date-javascript.md)   
- [Metodo setSeconds \(Date\)](../../javascript/reference/setseconds-method-date-javascript.md)
+## <a name="see-also"></a>Vedere anche  
+ [Metodo getSeconds (Date)](../../javascript/reference/getseconds-method-date-javascript.md)   
+ [Metodo getUTCSeconds (Date)](../../javascript/reference/getutcseconds-method-date-javascript.md)   
+ [Metodo setSeconds (Date)](../../javascript/reference/setseconds-method-date-javascript.md)

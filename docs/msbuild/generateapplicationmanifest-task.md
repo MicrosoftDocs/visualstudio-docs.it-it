@@ -1,13 +1,9 @@
 ---
-title: "Attività GenerateApplicationManifest | Microsoft Docs"
-ms.custom: 
+title: Attività GenerateApplicationManifest | Microsoft Docs
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- vs-ide-sdk
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.technology: msbuild
+ms.topic: reference
 f1_keywords:
 - http://schemas.microsoft.com/developer/msbuild/2003#GenerateApplicationManifest
 dev_langs:
@@ -20,30 +16,16 @@ helpviewer_keywords:
 - HostInBrowser property (MSBuild)
 - GenerateApplicationManifest task [MSBuild]
 ms.assetid: a494102b-0cb2-4755-8e2a-d2c0f39fac1d
-caps.latest.revision: 24
-author: kempb
-ms.author: kempb
-manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 11a9cee75f912c5fb31cf4a031644abe9c63d744
-ms.openlocfilehash: a936c177318808278bffb361ebba49b861a2acb3
-ms.contentlocale: it-it
-ms.lasthandoff: 06/03/2017
-
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: e40e74dd8e7b2b83f6d4239e6b66c9852c6de604
+ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/19/2018
 ---
 # <a name="generateapplicationmanifest-task"></a>Attività GenerateApplicationManifest
 Genera un manifesto dell'applicazione [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] o un manifesto nativo. Un manifesto nativo descrive un componente definendo un'identità univoca per il componente e identificando tutti gli assembly e i file che costituiscono il componente. Un manifesto dell'applicazione [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] estende un manifesto nativo indicando il punto di ingresso dell'applicazione e specificando il livello di sicurezza dell'applicazione.  
@@ -372,4 +354,4 @@ Genera un manifesto dell'applicazione [!INCLUDE[ndptecclick](../deployment/inclu
  [Attività](../msbuild/msbuild-tasks.md)   
  [Attività GenerateDeploymentManifest](../msbuild/generatedeploymentmanifest-task.md)   
  [Attività SignFile](../msbuild/signfile-task.md)   
- [Riferimenti alle attività](../msbuild/msbuild-task-reference.md)
+ [Riferimento alle attività](../msbuild/msbuild-task-reference.md)

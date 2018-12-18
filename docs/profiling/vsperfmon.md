@@ -1,55 +1,54 @@
 ---
-title: "VSPerfMon | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "VSPerfMon (strumento)"
-  - "riga di comando, strumenti"
-  - "strumenti da riga di comando, VSPerfMon (strumento)"
-  - "dati [Visual Studio ALM], VSPerfMon (strumento)"
-  - "dati sulle prestazioni, VSPerfMon (strumento)"
-  - "strumenti per le prestazioni, VSPerfMon"
-  - "strumenti per la profilatura,VSPerfCmd"
+title: VSPerfMon | Microsoft Docs
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology: vs-ide-debug
+ms.topic: conceptual
+helpviewer_keywords:
+- VSPerfMon tool
+- command line, tools
+- command-line tools, VSPerfMon tool
+- data [Visual Studio ALM], VSPerfMon tool
+- performance data, VSPerfMon tool
+- performance tools, VSPerfMon tool
+- profilng tools,VSPerfCmd
 ms.assetid: 37052afb-7a58-441f-bb17-f1587cc57068
-caps.latest.revision: 30
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 30
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: b0c19d009ddfb60d3e8fa33cf4a976df44ab4c2a
+ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/19/2018
 ---
-# VSPerfMon
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
-È possibile utilizzare lo strumento VSPerfMon per raccogliere dati relativi alle prestazioni per un'applicazione. Questo strumento viene in genere avviato da VSPerfCmd.exe.  VSPerfMon consente di visualizzare informazioni aggiuntive sulla connessione o la disconnessione dei processi che non sono disponibili utilizzando lo strumento VSPerfCmd.  Per visualizzare le informazioni, avviare VSPerfMon in una finestra separata.  Per richiamare lo strumento in questione, utilizzare la sintassi riportata di seguito.  
+# <a name="vsperfmon"></a>VSPerfMon
+È possibile usare lo strumento VSPerfMon per raccogliere dati sulle prestazioni per un'applicazione. In genere, questo strumento viene avviato da VSPerfCmd.exe. VSPerfMon visualizza informazioni aggiuntive sul collegamento o lo scollegamento di processi che non sono disponibili tramite lo strumento VSPerfCmd. Per visualizzare queste informazioni, avviare VSPerfMon in una finestra separata. Per richiamare VSPerfMon, usare la sintassi seguente:  
   
 ```  
 VSPerfMon [/U] </TRACE [/COUNTER:cfg] | /SAMPLE | /COVERAGE> /CROSSSESSION /OUTPUT <file name> [/WINCOUNTER:cfg] [/USER [DOMAIN\]username]  
 ```  
   
- Nella tabella riportata di seguito sono descritte le opzioni dello strumento VSPerfMon.  
+ Nella tabella seguente vengono descritte le opzioni dello strumento VSPerfMon:  
   
 |Opzioni|Descrizione|  
 |-------------|-----------------|  
-|**U**|L'output della console reindirizzato viene scritto come Unicode.  Deve essere la prima opzione specificata.|  
-|**OUTPUT:** `<` *file name* `>`|Reindirizza l'output al nome file specificato.|  
-|**TRACE**|Avvia Performance Monitor per la profilatura mediante strumentazione.|  
-|**SAMPLE**|Avvia Performance Monitor per la profilatura mediante campionamento.|  
-|**COVERAGE**|Avvia Performance Monitor per la raccolta del code coverage.|  
-|**CONCURRENCY**|Avvia Performance Monitor per la profilatura dei conflitti delle risorse.|  
-|**USER:** `[` *domain* `\]` *username*|Consente ai client di accedere a Performance Monitor con l'account specificato.|  
-|**CROSSSESSION**|Attiva la profilatura tra sessioni.|  
-|**COUNTER** `:cfg`|Quando si utilizza il metodo di profilatura strumentazione \(TRACE\), specifica un contatore CPU di cui raccogliere di dati per ogni punto di strumentazione.  È possibile raccogliere i dati di più contatori specificando più opzioni Counter.<br /><br /> Utilizzare la seguente sintassi per specificare il contatore delle prestazioni \(*cfg*\):<br /><br /> CounterName\[**,**Reload\[,FriendlyName\]\]<br /><br /> -   CounterName è il nome di un contatore restituito dal comando VSPerfCmd \/QueryCounters.<br />-   Il ricaricamento è l'intervallo di campionamento degli eventi del contatore.  Non utilizzare *Reload* con il metodo di strumentazione.<br />-   Se specificato, FriendlyName sostituisce CounterName nei nomi delle colonne dei rapporti degli strumenti di profilatura.|  
-|**WINCOUNTER** `:path`|Specifica un contatore delle prestazioni di Windows da includere con i dati di contrassegno.  `path` è una stringa del contatore delle prestazioni di Windows nel percorso del contatore in formato PDH.  Di seguito è riportato un esempio.<br /><br /> \\Processor \(0\)\\% Processor Time<br /><br /> \\System\\Context Switches\/sec|  
-|**AUTOMARK** `:n`|Specifica l'intervallo di tempo \(in millisecondi\) che intercorre tra contrassegni automatici quando si utilizza \/WINCOUNTER.  Arrotondamento al valore 500 ms più vicino.<br /><br /> Utilizzare 0 per disattivare i contrassegni automatici. \(impostazione predefinita\=500ms se non specificato\)|  
+|**U**|L'output di console reindirizzato viene scritto come Unicode.  Deve essere la prima opzione specificata.|  
+|**OUTPUT:** `<` *nome file* `>`|Reindirizza l'output nel nome file specificato.|  
+|**TRACE**|Avvia il monitoraggio delle prestazioni per la profilatura instrumentata.|  
+|**SAMPLE**|Avvia il monitoraggio delle prestazioni per la profilatura tramite campionamento.|  
+|**COVERAGE**|Avvia il monitoraggio delle prestazioni per la raccolta dei dati di code coverage.|  
+|**CONCURRENCY**|Avvia il monitoraggio delle prestazioni per la profilatura dei conflitti di risorse.|  
+|**USER:** `[` *dominio* `\]` *nomeutente*|Consente l'accesso client al monitoraggio delle prestazioni dall'account specificato.|  
+|**CROSSSESSION**|Abilita la profilatura tra sessioni.|  
+|**COUNTER** `:cfg`|Quando viene usato il metodo di profilatura tramite strumentazione (TRACE), specifica un contatore CPU da raccogliere a ogni punto di strumentazione. È possibile raccogliere i dati di più contatori specificando più opzioni Counter.<br /><br /> Usare la seguente sintassi per specificare i dati del contatore (*cfg*):<br /><br /> **CounterName** [**,Reload**[,**FriendlyName**]]<br /><br /> -   **CounterName** è il nome di un contatore restituito dal comando VSPerfCmd /QueryCounters.<br />-   **Reload** è l'intervallo di campionamento degli eventi del contatore. Non usare *Reload* con il metodo di strumentazione.<br />Quando specificato, **FriendlyName** sostituisce **CounterName** nei nomi di colonna dei report degli strumenti di profilatura.|  
+|**WINCOUNTER** `:path`|Specifica un contatore delle prestazioni di Windows da includere con i dati contrassegnati. `path` è una stringa del contatore delle prestazioni di Windows nel formato del percorso del contatore PDH. Ad esempio:<br /><br /> \Processor(0)\\% Processor Time<br /><br /> \System\Context Switches/sec|  
+|**AUTOMARK** `:n`|Specifica l'intervallo di tempo (in millisecondi) tra i contrassegni automatici quando si usa /WINCOUNTER. Arrotondato per eccesso al più vicino multiplo di 500 ms.<br /><br /> Usare 0 per disabilitare i contrassegni automatici. Se non si specifica alcun valore, l'impostazione predefinita è 500 ms.|  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [VSInstr](../profiling/vsinstr.md)   
  [VSPerfCmd](../profiling/vsperfcmd.md)   
  [VSPerfReport](../profiling/vsperfreport.md)   
- [Visualizzazioni dei report degli strumenti per la profilatura](../profiling/performance-report-views.md)
+ [Performance Report Views](../profiling/performance-report-views.md)(Visualizzazioni dei rapporti di prestazioni)

@@ -1,41 +1,42 @@
 ---
-title: "Procedura: ospitare un Editor in un altro Editor | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "editor [Visual Studio SDK], legacy - ospitare un editor annidato"
+title: 'Procedura: ospitare un Editor in un altro Editor | Documenti Microsoft'
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology:
+- vs-ide-sdk
+ms.topic: conceptual
+helpviewer_keywords:
+- editors [Visual Studio SDK], legacy - host a nested editor
 ms.assetid: 2b0eb705-fe94-4ca8-93e0-9dbd8ce61a44
-caps.latest.revision: 14
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 14
+author: gregvanl
+ms.author: gregvanl
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: 351d66a9ab9b24c53dac4ed070c80f0e51e5e31f
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# Procedura: ospitare un Editor in un altro Editor
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
-In Visual Studio è possibile ospitare l'interno di un altro editor specificando la finestra di hosting come finestra padre.  A tale scopo, impostare i parametri <xref:Microsoft.VisualStudio.Shell.Interop.__VSFPROPID2> e <xref:Microsoft.VisualStudio.Shell.Interop.__VSFPROPID2> sul frame di una finestra figlio.  
+# <a name="how-to-host-an-editor-in-another-editor"></a>Procedura: ospitare un Editor in un altro Editor
+In Visual Studio è possibile ospitare un editor all'interno di un altro, specificando la finestra di hosting come finestra padre. A tale scopo, impostare i parametri <xref:Microsoft.VisualStudio.Shell.Interop.__VSFPROPID2> e <xref:Microsoft.VisualStudio.Shell.Interop.__VSFPROPID2> nella cornice della finestra figlio.  
   
-### Per impostare la struttura della finestra per ospitare un editor  
+### <a name="to-set-up-the-window-frame-to-host-an-editor"></a>Per impostare la cornice della finestra per ospitare un editor  
   
-1.  Definire un editor come editor ospitato creazione di un riquadro della finestra figlio.  
+1.  Designare un editor come editor ospitato tramite la creazione di un riquadro della finestra figlio.  
   
-     Questo riquadro è dove il testo dell'editor specificate.  
+     In questo riquadro è cui passa il testo dell'editor.  
   
-2.  Create the hosting editor using the <xref:Microsoft.VisualStudio.Shell.Interop.IVsUIShellOpenDocument.OpenStandardEditor%2A> or <xref:Microsoft.VisualStudio.Shell.Interop.IVsUIShellOpenDocument.OpenSpecificEditor%2A> method.  
+2.  Creare l'editor di hosting usando il <xref:Microsoft.VisualStudio.Shell.Interop.IVsUIShellOpenDocument.OpenStandardEditor%2A> o <xref:Microsoft.VisualStudio.Shell.Interop.IVsUIShellOpenDocument.OpenSpecificEditor%2A> metodo.  
   
-3.  Impostare le proprietà di <xref:Microsoft.VisualStudio.Shell.Interop.__VSFPROPID2> e di <xref:Microsoft.VisualStudio.Shell.Interop.__VSFPROPID2> implementazione della struttura della finestra dell'editor ospitato passando queste proprietà come parametri al metodo di <xref:Microsoft.VisualStudio.Shell.Interop.IVsWindowFrame.SetProperty%2A> , rispettivamente.  
+3.  Impostare il <xref:Microsoft.VisualStudio.Shell.Interop.__VSFPROPID2> e <xref:Microsoft.VisualStudio.Shell.Interop.__VSFPROPID2> proprietà nell'implementazione di cornice della finestra dell'editor ospitato passando queste proprietà come parametri per il <xref:Microsoft.VisualStudio.Shell.Interop.IVsWindowFrame.SetProperty%2A> (metodo), rispettivamente.  
   
-     Se è necessario recuperare tali parametri, passare queste proprietà al metodo di <xref:Microsoft.VisualStudio.Shell.Interop.IVsWindowFrame.GetProperty%2A> .  
+     Se è necessario recuperare questi parametri, passare a queste proprietà per il <xref:Microsoft.VisualStudio.Shell.Interop.IVsWindowFrame.GetProperty%2A> metodo.  
   
-4.  chiamare il metodo di <xref:Microsoft.VisualStudio.Shell.Interop.IVsWindowFrame.Show%2A> per l'editor contenuto.  
+4.  Chiamare il <xref:Microsoft.VisualStudio.Shell.Interop.IVsWindowFrame.Show%2A> metodo per l'editor di contenuto.  
   
-     Verrà visualizzato l'editor nel riquadro dell'editor ospitato contenitore.  
+     Nel riquadro dell'editor contenente ospitato verrà visualizzato l'editor.  
   
-## Programmazione efficiente  
- **Progettazione applicazioni** in Visual Studio Team Edition per gli architetti è un esempio di struttura della finestra editor che ospitano un altro editor.  **Progettazione applicazioni** ospitate altre finestre di progettazione nel riquadro destro.  Un pannello della finestra di progettazione \(o pagina di **Proprietà** \) per ciascuna delle finestre di progettazione contenute viene aggiunto alla struttura della finestra contenitore.
+## <a name="robust-programming"></a>Programmazione efficiente  
+ Il **Application Designer** in Visual Studio Team Edition for Architects è riportato un esempio di una cornice della finestra dell'editor hosting di un altro editor. Il **Application Designer** ospita altre finestre di progettazione nel relativo riquadro di destra. Un pannello della finestra di progettazione (o **proprietà** pagina) per ognuna delle finestre di progettazione contenute viene aggiunto per la cornice della finestra contenitore.

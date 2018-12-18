@@ -1,43 +1,42 @@
 ---
-title: "IDiaInjectedSource::get_objectFilename | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "IDiaInjectedSource::get_objectFilename (metodo)"
+title: IDiaInjectedSource::get_objectFilename | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology: vs-ide-debug
+ms.topic: conceptual
+dev_langs:
+- C++
+helpviewer_keywords:
+- IDiaInjectedSource::get_objectFilename method
 ms.assetid: 7c42847a-f0df-443a-a9fe-c495c1271ea8
-caps.latest.revision: 8
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 8
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 75dd11bde98d345d88b700aef6f4c86d80133714
+ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/18/2018
 ---
-# IDiaInjectedSource::get_objectFilename
-[!INCLUDE[vs2017banner](../../code-quality/includes/vs2017banner.md)]
-
-Recupera il nome file dell'oggetto a cui l'origine è stato compilato.  
+# <a name="idiainjectedsourcegetobjectfilename"></a>IDiaInjectedSource::get_objectFilename
+Recupera il nome del file oggetto a cui l'origine è stato compilato.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp#  
-HRESULT get_objectFilename (   
-   BSTR* pRetVal  
+```C++  
+HRESULT get_objectFilename (   
+   BSTR* pRetVal  
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `pRetVal`  
- \[out\]  Restituisce il nome file dell'oggetto a cui l'origine è stato compilato.  
+ [out] Restituisce il nome del file oggetto a cui l'origine è stato compilato.  
   
-## Valore restituito  
- Se l'operazione riesce, restituisce `S_OK`.  Restituisce `S_FALSE` se questa proprietà non è supportata.  In caso contrario, restituisce un codice di errore.  
+## <a name="return-value"></a>Valore restituito  
+ Se ha esito positivo, restituisce `S_OK`. Restituisce `S_FALSE` se questa proprietà non è supportata. In caso contrario, verrà restituito un codice di errore.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IDiaInjectedSource](../../debugger/debug-interface-access/idiainjectedsource.md)

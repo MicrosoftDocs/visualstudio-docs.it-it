@@ -1,71 +1,53 @@
 ---
-title: 'CA1012: Abstract types should not have constructors | Microsoft Docs'
-ms.custom: 
+title: 'CA1012: I tipi astratti non devono avere costruttori'
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- vs-devops-test
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.technology: vs-ide-code-analysis
+ms.topic: reference
 f1_keywords:
 - AbstractTypesShouldNotHaveConstructors
 - CA1012
 helpviewer_keywords:
 - CA1012
 ms.assetid: 09f458ac-dd88-4cd7-a47f-4106c1e80ece
-caps.latest.revision: 25
-author: stevehoag
-ms.author: shoag
-manager: wpickett
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: HT
-ms.sourcegitcommit: eb5c9550fd29b0e98bf63a7240737da4f13f3249
-ms.openlocfilehash: 82ee2e7ba06a593ef79d12e9a18e10a65d435f90
-ms.contentlocale: it-it
-ms.lasthandoff: 08/30/2017
-
+author: gewarren
+ms.author: gewarren
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: bf4f29a11a831bd5b7d4860dd15698922df3a2c6
+ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/19/2018
 ---
-# <a name="ca1012-abstract-types-should-not-have-constructors"></a>CA1012: Abstract types should not have constructors
-|||  
-|-|-|  
-|TypeName|AbstractTypesShouldNotHaveConstructors|  
-|CheckId|CA1012|  
-|Category|Microsoft.Design|  
-|Breaking Change|Non-breaking|  
-  
-## <a name="cause"></a>Cause  
- A public type is abstract and has a public constructor.  
-  
-## <a name="rule-description"></a>Rule Description  
- Constructors on abstract types can be called only by derived types. Because public constructors create instances of a type, and you cannot create instances of an abstract type, an abstract type that has a public constructor is incorrectly designed.  
-  
-## <a name="how-to-fix-violations"></a>How to Fix Violations  
- To fix a violation of this rule, either make the constructor protected or do not declare the type as abstract.  
-  
-## <a name="when-to-suppress-warnings"></a>When to Suppress Warnings  
- Do not suppress a warning from this rule. The abstract type has a public constructor.  
-  
-## <a name="example"></a>Example  
- The following example contains an abstract type that violates this rule.  
-  
- [!code-vb[FxCop.Design.AbstractTypeBad#1](../code-quality/codesnippet/VisualBasic/ca1012-abstract-types-should-not-have-constructors_1.vb)] [!code-csharp[FxCop.Design.AbstractTypeBad#1](../code-quality/codesnippet/CSharp/ca1012-abstract-types-should-not-have-constructors_1.cs)]  
-  
-## <a name="example"></a>Example  
- The following example fixes the previous violation by changing the accessibility of the constructor from `public` to `protected`.  
-  
- [!code-csharp[FxCop.Design.AbstractTypeGood#1](../code-quality/codesnippet/CSharp/ca1012-abstract-types-should-not-have-constructors_2.cs)] [!code-vb[FxCop.Design.AbstractTypeGood#1](../code-quality/codesnippet/VisualBasic/ca1012-abstract-types-should-not-have-constructors_2.vb)]
+# <a name="ca1012-abstract-types-should-not-have-constructors"></a>CA1012: I tipi astratti non devono avere costruttori
+|||
+|-|-|
+|TypeName|AbstractTypesShouldNotHaveConstructors|
+|CheckId|CA1012|
+|Category|Microsoft.Design|
+|Modifica importante|Non sostanziale|
+
+## <a name="cause"></a>Causa
+ Un tipo pubblico è astratto e ha un costruttore pubblico.
+
+## <a name="rule-description"></a>Descrizione della regola
+ I costruttori sui tipi astratti possono essere chiamati solo da tipi derivati. Poiché i costruttori pubblici creano istanze di un tipo e non è possibile creare istanze di un tipo astratto, per una buona progettazione non bisognerebbe creare un tipo astratto con costruttore pubblico.
+
+## <a name="how-to-fix-violations"></a>Come correggere le violazioni
+ Per correggere una violazione di questa regola, rendere il costruttore protetto o non dichiarare il tipo come astratto.
+
+## <a name="when-to-suppress-warnings"></a>Esclusione di avvisi
+ Non escludere un avviso da questa regola. Tipo astratto con un costruttore pubblico.
+
+## <a name="example"></a>Esempio
+ Nell'esempio seguente contiene un tipo astratto che viola questa regola.
+
+ [!code-vb[FxCop.Design.AbstractTypeBad#1](../code-quality/codesnippet/VisualBasic/ca1012-abstract-types-should-not-have-constructors_1.vb)]
+ [!code-csharp[FxCop.Design.AbstractTypeBad#1](../code-quality/codesnippet/CSharp/ca1012-abstract-types-should-not-have-constructors_1.cs)]
+
+## <a name="example"></a>Esempio
+ Nell'esempio seguente consente di correggere la violazione precedente modificando l'accessibilità del costruttore da `public` a `protected`.
+
+ [!code-csharp[FxCop.Design.AbstractTypeGood#1](../code-quality/codesnippet/CSharp/ca1012-abstract-types-should-not-have-constructors_2.cs)]
+ [!code-vb[FxCop.Design.AbstractTypeGood#1](../code-quality/codesnippet/VisualBasic/ca1012-abstract-types-should-not-have-constructors_2.vb)]

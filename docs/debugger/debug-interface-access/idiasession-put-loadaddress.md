@@ -1,46 +1,45 @@
 ---
-title: "IDiaSession::put_loadAddress | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "IDiaSession::put_loadAddress (metodo)"
+title: 'Idiasession:: Put_loadaddress | Documenti Microsoft'
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology: vs-ide-debug
+ms.topic: conceptual
+dev_langs:
+- C++
+helpviewer_keywords:
+- IDiaSession::put_loadAddress method
 ms.assetid: b157b245-1ea0-4b80-8962-d8b278dbc742
-caps.latest.revision: 11
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 11
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: b0b04db800e5b61ef1598fe4c81a9ab362e375e3
+ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/18/2018
 ---
-# IDiaSession::put_loadAddress
-[!INCLUDE[vs2017banner](../../code-quality/includes/vs2017banner.md)]
-
-Imposta l'indirizzo del caricamento del file eseguibile che corrisponde ai simboli in questo archivio di simboli.  
+# <a name="idiasessionputloadaddress"></a>IDiaSession::put_loadAddress
+Imposta l'indirizzo di caricamento del file eseguibile che corrisponde ai simboli in questo archivio dei simboli.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp#  
-HRESULT put_loadAddress (   
-   ULONGLONG NewVal  
+```C++  
+HRESULT put_loadAddress (   
+   ULONGLONG NewVal  
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `NewVal`  
- \[in\]  Indirizzo del caricamento del file eseguibile.  
+ [in] Carica l'indirizzo del file eseguibile.  
   
-## Note  
- Le proprietà di indirizzo virtuale \(VA\) del simbolo vengono calcolate utilizzando il valore di questo metodo.  Gli indirizzi virtuali non viene calcolato a meno che la proprietà sia impostata su diverso da zero.  
+## <a name="remarks"></a>Note  
+ Proprietà dei simboli indirizzo virtuale (VA) vengono calcolate utilizzando il valore di questo metodo. Gli indirizzi virtuali non vengono calcolati a meno che questa proprietà è impostata su diverso da zero.  
   
 > [!NOTE]
->  È necessario chiamare questo metodo se si ottengono [IDiaSession](../../debugger/debug-interface-access/idiasession.md) oggetto e prima di iniziare utilizzando l'oggetto se è necessario utilizzare qualsiasi proprietà virtuali sui simboli.  
+>  È necessario chiamare questo metodo quando si ottengono il [IDiaSession](../../debugger/debug-interface-access/idiasession.md) dell'oggetto e prima di iniziare a utilizzare l'oggetto se è necessario utilizzare le proprietà virtuali simboli.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IDiaSession](../../debugger/debug-interface-access/idiasession.md)

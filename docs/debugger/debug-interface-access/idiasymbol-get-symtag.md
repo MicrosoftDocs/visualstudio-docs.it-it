@@ -1,55 +1,54 @@
 ---
-title: "IDiaSymbol::get_symTag | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "IDiaSymbol::get_symTag (metodo)"
+title: 'Idiasymbol:: Get_symtag | Documenti Microsoft'
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology: vs-ide-debug
+ms.topic: conceptual
+dev_langs:
+- C++
+helpviewer_keywords:
+- IDiaSymbol::get_symTag method
 ms.assetid: 139a35bd-faeb-4878-be72-394dedfbb18f
-caps.latest.revision: 8
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 8
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 029dee2188f48d2f41368c965542670e5512f7e5
+ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/18/2018
 ---
-# IDiaSymbol::get_symTag
-[!INCLUDE[vs2017banner](../../code-quality/includes/vs2017banner.md)]
-
-Recupera il classificatore del tipo del simbolo.  
+# <a name="idiasymbolgetsymtag"></a>IDiaSymbol::get_symTag
+Recupera il classificatore di tipo di simbolo.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp#  
-HRESULT get_symTag (   
-   DWORD* pRetVal  
+```C++  
+HRESULT get_symTag (   
+   DWORD* pRetVal  
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `pRetVal`  
- \[out\]  Restituisce il valore di un oggetto da l [Enumerazione SymTagEnum](../../debugger/debug-interface-access/symtagenum.md) enumerazione che specifica il classificatore del tipo del simbolo.  
+ [out] Restituisce un valore di [SymTagEnum (enumerazione)](../../debugger/debug-interface-access/symtagenum.md) enumerazione che specifica il classificatore di tipo di simbolo.  
   
-## Valore restituito  
- Se l'operazione riesce, restituisce `S_OK`; in caso contrario, restituisce  `S_FALSE` o un codice di errore.  
+## <a name="return-value"></a>Valore restituito  
+ Se ha esito positivo, restituisce `S_OK`; in caso contrario, restituisce `S_FALSE` o un codice di errore.  
   
 > [!NOTE]
->  un valore restituito di `S_FALSE` indica che la proprietà non è disponibile per il simbolo.  
+>  Valore restituito di `S_FALSE` significa che la proprietà non è disponibile per il simbolo.  
   
-## Esempio  
+## <a name="example"></a>Esempio  
   
-```cpp#  
+```C++  
 IDiaSymbol* pType;  
 DWORD       tag = 0;  
 pType->get_symTag( &tag );  
 ```  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IDiaSymbol](../../debugger/debug-interface-access/idiasymbol.md)   
- [Enumerazione SymTagEnum](../../debugger/debug-interface-access/symtagenum.md)
+ [SymTagEnum (enumerazione)](../../debugger/debug-interface-access/symtagenum.md)

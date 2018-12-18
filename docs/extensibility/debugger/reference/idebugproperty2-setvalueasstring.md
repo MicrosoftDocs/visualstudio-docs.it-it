@@ -1,63 +1,64 @@
 ---
-title: "IDebugProperty2::SetValueAsString | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "IDebugProperty2::SetValueAsString"
-helpviewer_keywords: 
-  - "IDebugProperty2::SetValueAsString"
+title: IDebugProperty2::SetValueAsString | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology:
+- vs-ide-sdk
+ms.topic: conceptual
+f1_keywords:
+- IDebugProperty2::SetValueAsString
+helpviewer_keywords:
+- IDebugProperty2::SetValueAsString
 ms.assetid: 9e6a5054-41b7-4223-b509-b93689d366a5
-caps.latest.revision: 10
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 10
+author: gregvanl
+ms.author: gregvanl
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: a5fb55fb6f9a90cf39120be408428524f64463d3
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# IDebugProperty2::SetValueAsString
-[!INCLUDE[vs2017banner](../../../code-quality/includes/vs2017banner.md)]
-
+# <a name="idebugproperty2setvalueasstring"></a>IDebugProperty2::SetValueAsString
 Imposta il valore di una proprietà da una stringa specificata.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp#  
-HRESULT SetValueAsString (   
-   LPCOLESTR pszValue,  
-   UINT      nRadix,  
-   DWORD     dwTimeout  
+```cpp  
+HRESULT SetValueAsString (   
+   LPCOLESTR pszValue,  
+   UINT      nRadix,  
+   DWORD     dwTimeout  
 );  
 ```  
   
-```c#  
-int SetValueAsString (   
-   string pszValue,  
-   uint   nRadix,  
-   uint   dwTimeout  
+```csharp  
+int SetValueAsString (   
+   string pszValue,  
+   uint   nRadix,  
+   uint   dwTimeout  
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `pszValue`  
- \[in\]  Stringa contenente il valore da impostare.  
+ [in] Stringa contenente il valore da impostare.  
   
  `nRadix`  
- \[in\]  Una radice da utilizzare nell'interpretazione delle informazioni numerica.  Può trattarsi 0 per tentare di determinare la radice automaticamente.  
+ [in] Radice da utilizzare per interpretare le informazioni numeriche. Può essere 0 per tentare di determinare automaticamente la radice.  
   
  `dwTimeout`  
- \[in\]  Specifica il tempo massimo, in millisecondi, di attendere prima di uscire da questo metodo.  Utilizzo `INFINITE` attendere infinito.  
+ [in] Specifica il tempo massimo, in millisecondi di attesa prima della restituzione da questo metodo. Utilizzare `INFINITE` per un'attesa indefinita.  
   
-## Valore restituito  
- Se l'operazione riesce, restituisce `S_OK`; in caso contrario restituisce il codice di errore.  Nella tabella seguente vengono illustrati altri valori possibili.  
+## <a name="return-value"></a>Valore restituito  
+ Se ha esito positivo, restituisce `S_OK`; in caso contrario, restituisce il codice di errore. La tabella seguente illustra gli altri valori possibili.  
   
 |Valore|Descrizione|  
-|------------|-----------------|  
-|`E_SETVALUE_VALUE_CANNOT_BE_SET`|La stringa non può essere convertito in un valore della proprietà, o il valore della proprietà potrebbe non essere impostato.|  
+|-----------|-----------------|  
+|`E_SETVALUE_VALUE_CANNOT_BE_SET`|La stringa non può essere convertita in un valore di proprietà oppure non è stato possibile impostare il valore della proprietà.|  
 |`E_SETVALUE_VALUE_IS_READONLY`|La proprietà è in sola lettura.|  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IDebugProperty2](../../../extensibility/debugger/reference/idebugproperty2.md)

@@ -1,14 +1,10 @@
 ---
-title: 'How to: Add Custom XML Parts to Documents by Using VSTO Add-Ins | Microsoft Docs'
-ms.custom: 
+title: 'Procedura: aggiungere parti XML personalizzate a documenti usando componenti aggiuntivi VSTO | Documenti Microsoft'
+ms.custom: ''
 ms.date: 02/02/2017
-ms.prod: visual-studio-dev14
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - office-development
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: conceptual
 dev_langs:
 - VB
 - CSharp
@@ -21,72 +17,74 @@ helpviewer_keywords:
 - custom XML parts [Office development in Visual Studio], adding
 - documents [Office development in Visual Studio], custom XML parts
 - application-level add-ins [Office development in Visual Studio], custom XML parts
-ms.assetid: 872d2beb-193b-49f9-9a7b-dcebab91a73b
-caps.latest.revision: 27
-author: kempb
-ms.author: kempb
-manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: eb5c9550fd29b0e98bf63a7240737da4f13f3249
-ms.openlocfilehash: a8434e996008be160d40e22740acc37507791e0f
-ms.contentlocale: it-it
-ms.lasthandoff: 08/30/2017
-
+author: TerryGLee
+ms.author: tglee
+manager: douge
+ms.workload:
+- office
+ms.openlocfilehash: d06918a9b1d2bf1bec3f39d3e58352665d07e5c8
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# <a name="how-to-add-custom-xml-parts-to-documents-by-using-vsto-add-ins"></a>How to: Add Custom XML Parts to Documents by Using VSTO Add-Ins
-  You can store XML data in the following types of documents by creating a custom XML part in a VSTO Add-in:  
+# <a name="how-to-add-custom-xml-parts-to-documents-by-using-vsto-add-ins"></a>Procedura: Aggiungere parti XML personalizzate a documenti usando componenti aggiuntivi VSTO
+  È possibile archiviare dati XML nei tipi seguenti di documenti creando una parte XML personalizzata in un componente aggiuntivo VSTO:  
   
--   A Microsoft Office Excel workbook.  
+-   Cartella di lavoro di Microsoft Office Excel.  
   
--   A Microsoft Office Word document.  
+-   Documento di Microsoft Office Word.  
   
--   A Microsoft Office PowerPoint presentation.  
+-   Presentazione di Microsoft Office PowerPoint.  
   
- For more information, see [Custom XML Parts Overview](../vsto/custom-xml-parts-overview.md).  
+ Per altre informazioni, vedere [Custom XML Parts Overview](../vsto/custom-xml-parts-overview.md).  
   
- **Applies to:** The information in this topic applies to application-level projects for Excel, PowerPoint, and Word. For more information, see [Features Available by Office Application and Project Type](../vsto/features-available-by-office-application-and-project-type.md).  
+ **Si applica a:** le informazioni contenute in questo argomento si applicano ai progetti a livello di applicazione per Excel, PowerPoint e Word. Per altre informazioni, vedere [Funzionalità disponibili in base ai tipi di progetto e applicazioni di Office](../vsto/features-available-by-office-application-and-project-type.md).  
   
-### <a name="to-add-a-custom-xml-part-to-an-excel-workbook"></a>To add a custom XML part to an Excel workbook  
+### <a name="to-add-a-custom-xml-part-to-an-excel-workbook"></a>Per aggiungere una parte XML personalizzata a una cartella di lavoro di Excel  
   
-1.  Add a new <xref:Microsoft.Office.Core.CustomXMLPart> object to the <xref:Microsoft.Office.Interop.Excel._Workbook.CustomXMLParts%2A> collection in the workbook. The <xref:Microsoft.Office.Core.CustomXMLPart> contains the XML string that you want to store in the workbook.  
+1.  Aggiungere un nuovo oggetto <xref:Microsoft.Office.Core.CustomXMLPart> alla raccolta <xref:Microsoft.Office.Interop.Excel._Workbook.CustomXMLParts%2A> della cartella di lavoro. <xref:Microsoft.Office.Core.CustomXMLPart> contiene la stringa XML che si vuole memorizzare nella cartella di lavoro.  
   
-     The following code example adds a custom XML part to a specified workbook.  
+     Nell'esempio di codice seguente una parte XML personalizzata viene aggiunta a una cartella di lavoro specificata.  
   
-     [!code-vb[Trin_AddCustomXmlPartExcelAppLevel#1](../vsto/codesnippet/VisualBasic/trin_addcustomxmlpartexcelapplevel/ThisAddIn.vb#1)]  [!code-csharp[Trin_AddCustomXmlPartExcelAppLevel#1](../vsto/codesnippet/CSharp/Trin_AddCustomXmlPartExcelAppLevel/ThisAddIn.cs#1)]  
+     [!code-vb[Trin_AddCustomXmlPartExcelAppLevel#1](../vsto/codesnippet/VisualBasic/trin_addcustomxmlpartexcelapplevel/ThisAddIn.vb#1)]
+     [!code-csharp[Trin_AddCustomXmlPartExcelAppLevel#1](../vsto/codesnippet/CSharp/Trin_AddCustomXmlPartExcelAppLevel/ThisAddIn.cs#1)]  
   
-2.  Add the `AddCustomXmlPartToWorkbook` method to the `ThisAddIn` class in an VSTO Add-in project for Excel.  
+2.  Aggiungere il metodo `AddCustomXmlPartToWorkbook` alla classe `ThisAddIn` in un progetto di componente aggiuntivo VSTO per Excel.  
   
-3.  Call the method from other code in your project. For example, to create the custom XML part when the user opens a workbook, call the method from an event handler for the <xref:Microsoft.Office.Interop.Excel.AppEvents_Event.WorkbookOpen> event.  
+3.  Chiamare il metodo da altro codice nel progetto. Ad esempio, per creare la parte XML personalizzata quando l'utente apre una cartella di lavoro, chiamare il metodo da un gestore eventi per l'evento <xref:Microsoft.Office.Interop.Excel.AppEvents_Event.WorkbookOpen> .  
   
-### <a name="to-add-a-custom-xml-part-to-a-word-document"></a>To add a custom XML part to a Word document  
+### <a name="to-add-a-custom-xml-part-to-a-word-document"></a>Per aggiungere una parte XML personalizzata a un documento di Word  
   
-1.  Add a new <xref:Microsoft.Office.Core.CustomXMLPart> object to the <xref:Microsoft.Office.Interop.Word._Document.CustomXMLParts%2A> collection in the document. The <xref:Microsoft.Office.Core.CustomXMLPart> contains the XML string that you want to store in the document.  
+1.  Aggiungere un nuovo oggetto <xref:Microsoft.Office.Core.CustomXMLPart> alla raccolta <xref:Microsoft.Office.Interop.Word._Document.CustomXMLParts%2A> del documento. <xref:Microsoft.Office.Core.CustomXMLPart> contiene la stringa XML che si vuole memorizzare nel documento.  
   
-     The following code example adds a custom XML part to a specified document.  
+     Nell'esempio di codice seguente una parte XML personalizzata viene aggiunta a un documento specificato.  
   
-     [!code-vb[Trin_AddCustomXmlPartWordAppLevel#1](../vsto/codesnippet/VisualBasic/Trin_AddCustomXmlPartWordAppLevel/ThisAddIn.vb#1)]  [!code-csharp[Trin_AddCustomXmlPartWordAppLevel#1](../vsto/codesnippet/CSharp/Trin_AddCustomXmlPartWordAppLevel/ThisAddIn.cs#1)]  
+     [!code-vb[Trin_AddCustomXmlPartWordAppLevel#1](../vsto/codesnippet/VisualBasic/Trin_AddCustomXmlPartWordAppLevel/ThisAddIn.vb#1)]
+     [!code-csharp[Trin_AddCustomXmlPartWordAppLevel#1](../vsto/codesnippet/CSharp/Trin_AddCustomXmlPartWordAppLevel/ThisAddIn.cs#1)]  
   
-2.  Add the `AddCustomXmlPartToDocument` method to the `ThisAddIn` class in an VSTO Add-in project for Word.  
+2.  Aggiungere il metodo `AddCustomXmlPartToDocument` alla classe `ThisAddIn` in un progetto di componente aggiuntivo VSTO per Word.  
   
-3.  Call the method from other code in your project. For example, to create the custom XML part when the user opens a document, call the method from an event handler for the <xref:Microsoft.Office.Interop.Word.ApplicationEvents4_Event.DocumentOpen> event.  
+3.  Chiamare il metodo da altro codice nel progetto. Ad esempio, per creare la parte XML personalizzata quando l'utente apre un documento, chiamare il metodo da un gestore eventi per l'evento <xref:Microsoft.Office.Interop.Word.ApplicationEvents4_Event.DocumentOpen> .  
   
-### <a name="to-add-a-custom-xml-part-to-a-powerpoint-presentation"></a>To add a custom XML part to a PowerPoint presentation  
+### <a name="to-add-a-custom-xml-part-to-a-powerpoint-presentation"></a>Per aggiungere una parte XML personalizzata a una presentazione di PowerPoint  
   
-1.  Add a new <xref:Microsoft.Office.Core.CustomXMLPart> object to the <xref:Microsoft.Office.Interop.PowerPoint._Presentation.CustomXMLParts%2A> collection in the presentation. The <xref:Microsoft.Office.Core.CustomXMLPart> contains the XML string that you want to store in the presentation.  
+1.  Aggiungere un nuovo oggetto <xref:Microsoft.Office.Core.CustomXMLPart> alla raccolta <xref:Microsoft.Office.Interop.PowerPoint._Presentation.CustomXMLParts%2A> della presentazione. L'oggetto <xref:Microsoft.Office.Core.CustomXMLPart> contiene la stringa XML che si vuole memorizzare nella presentazione.  
   
-     The following code example adds a custom XML part to a specified presentation.  
+     Nell'esempio di codice seguente una parte XML personalizzata viene aggiunta a una presentazione specificata.  
   
-     [!code-csharp[Trin_AddCustomXmlPartPowerPointAppLevel#1](../vsto/codesnippet/CSharp/Trin_AddCustomXmlPartPowerPointAppLevel/ThisAddIn.cs#1)]  [!code-vb[Trin_AddCustomXmlPartPowerPointAppLevel#1](../vsto/codesnippet/VisualBasic/Trin_AddCustomXmlPartPowerPointAppLevel/ThisAddIn.vb#1)]  
+     [!code-csharp[Trin_AddCustomXmlPartPowerPointAppLevel#1](../vsto/codesnippet/CSharp/Trin_AddCustomXmlPartPowerPointAppLevel/ThisAddIn.cs#1)]
+     [!code-vb[Trin_AddCustomXmlPartPowerPointAppLevel#1](../vsto/codesnippet/VisualBasic/Trin_AddCustomXmlPartPowerPointAppLevel/ThisAddIn.vb#1)]  
   
-2.  Add the `AddCustomXmlPartToPresentation` method to the `ThisAddIn` class in an VSTO Add-in project for PowerPoint.  
+2.  Aggiungere il metodo `AddCustomXmlPartToPresentation` alla classe `ThisAddIn` in un progetto di componente aggiuntivo VSTO per PowerPoint.  
   
-3.  Call the method from other code in your project. For example, to create the custom XML part when the user opens a presentation, call the method from an event handler for the <xref:Microsoft.Office.Interop.PowerPoint.EApplication_Event.AfterPresentationOpen> event.  
+3.  Chiamare il metodo da altro codice nel progetto. Ad esempio, per creare la parte XML personalizzata quando l'utente apre una presentazione, chiamare il metodo da un gestore eventi per l'evento <xref:Microsoft.Office.Interop.PowerPoint.EApplication_Event.AfterPresentationOpen> .  
   
-## <a name="robust-programming"></a>Robust Programming  
- For simplicity, this example uses an XML string that is defined as a local variable in the method. Typically, you should obtain the XML from an external source, such as a file or a database.  
+## <a name="robust-programming"></a>Programmazione efficiente  
+ Per semplicità, in questo esempio viene usata una stringa XML definita come variabile locale nel metodo. In genere, è necessario ottenere l'XML da un'origine esterna, ad esempio un file o un database.  
   
-## <a name="see-also"></a>See Also  
+## <a name="see-also"></a>Vedere anche  
  [Custom XML Parts Overview](../vsto/custom-xml-parts-overview.md)   
- [How to: Add Custom XML Parts to Document-Level Customizations](../vsto/how-to-add-custom-xml-parts-to-document-level-customizations.md)  
+ [Procedura: Aggiungere Web part XML personalizzate a personalizzazioni a livello di documento](../vsto/how-to-add-custom-xml-parts-to-document-level-customizations.md)  
   
   

@@ -1,13 +1,9 @@
 ---
 title: Elemento Item (MSBuild) | Microsoft Docs
-ms.custom: 
+ms.custom: ''
 ms.date: 03/13/2017
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- vs-ide-sdk
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.technology: msbuild
+ms.topic: reference
 dev_langs:
 - VB
 - CSharp
@@ -17,30 +13,16 @@ helpviewer_keywords:
 - Item Element [MSBuild]
 - <Item> Element [MSBuild]
 ms.assetid: dcef5f91-0613-4bfc-8ee9-d7004bb6d3a9
-caps.latest.revision: 31
-author: kempb
-ms.author: kempb
-manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 8ce85525f6af336682f6f8547c2f6c13dde73c8c
-ms.openlocfilehash: 2430531e4ddb3a5ef40cd773327311fa7b85ce48
-ms.contentlocale: it-it
-ms.lasthandoff: 06/23/2017
-
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: b55cadc738fb54b1a7fe07a2d891103c0daa755d
+ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/19/2018
 ---
 # <a name="item-element-msbuild"></a>Elemento Item (MSBuild)
 Contiene un elemento definito dall'utente e i relativi metadati. Ogni elemento usato in un progetto [!INCLUDE[vstecmsbuild](../extensibility/internals/includes/vstecmsbuild_md.md)] deve essere specificato come elemento figlio di un elemento `ItemGroup`.  
@@ -89,7 +71,7 @@ Ora è tuttavia possibile passare il metadato `Version` come un attributo, come 
 
 |Attributo|Descrizione|  
 |---------------|-----------------|  
-|`Include`|Attributo obbligatorio.<br /><br /> Il file o carattere jolly da includere nell'elenco di elementi.|  
+|`Include`|Attributo facoltativo.<br /><br /> Il file o carattere jolly da includere nell'elenco di elementi.|  
 |`Exclude`|Attributo facoltativo.<br /><br /> Il file o carattere jolly da escludere dall'elenco di elementi.|  
 |`Condition`|Attributo facoltativo.<br /><br /> La condizione da valutare. Per altre informazioni, vedere [Condizioni](../msbuild/msbuild-conditions.md).|  
 |`Remove`|Attributo facoltativo.<br /><br /> Il file o carattere jolly da eliminare dall'elenco di elementi.<br /><br />|  
@@ -143,4 +125,3 @@ L'esempio di codice seguente mostra come usare l'attributo `Update` per modifica
  [Elementi](../msbuild/msbuild-items.md)   
  [Proprietà di MSBuild](../msbuild/msbuild-properties.md)   
  [Informazioni di riferimento sullo schema del file di progetto](../msbuild/msbuild-project-file-schema-reference.md)
-

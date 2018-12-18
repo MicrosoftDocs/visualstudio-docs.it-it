@@ -1,72 +1,73 @@
 ---
-title: "BP_STATE | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "BP_STATE"
-helpviewer_keywords: 
-  - "Enumerazione BP_STATE"
+title: BP_STATE | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology:
+- vs-ide-sdk
+ms.topic: conceptual
+f1_keywords:
+- BP_STATE
+helpviewer_keywords:
+- BP_STATE enumeration
 ms.assetid: 08aa6a3f-3e5f-4c83-8eca-7b7b5f8e208d
-caps.latest.revision: 10
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 10
+author: gregvanl
+ms.author: gregvanl
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: a8908b61323c80891f93158046b9c7e821287d2e
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# BP_STATE
-[!INCLUDE[vs2017banner](../../../code-quality/includes/vs2017banner.md)]
-
-Specifica la presenza di un punto di interruzione associato e viene specificato se è attivato.  
+# <a name="bpstate"></a>BP_STATE
+Specifica l'esistenza di un punto di interruzione associato e specifica inoltre se è abilitata.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp#  
-enum enum_BP_STATE {   
-   BPS_NONE     = 0x0000,  
-   BPS_DELETED  = 0x0001,  
-   BPS_DISABLED = 0x0002,  
-   BPS_ENABLED  = 0x0003  
+```cpp  
+enum enum_BP_STATE {   
+   BPS_NONE     = 0x0000,  
+   BPS_DELETED  = 0x0001,  
+   BPS_DISABLED = 0x0002,  
+   BPS_ENABLED  = 0x0003  
 };  
 typedef DWORD BP_STATE;  
 ```  
   
-```c#  
-public enum enum_BP_STATE {   
-   BPS_NONE     = 0x0000,  
-   BPS_DELETED  = 0x0001,  
-   BPS_DISABLED = 0x0002,  
-   BPS_ENABLED  = 0x0003  
+```csharp  
+public enum enum_BP_STATE {   
+   BPS_NONE     = 0x0000,  
+   BPS_DELETED  = 0x0001,  
+   BPS_DISABLED = 0x0002,  
+   BPS_ENABLED  = 0x0003  
 };  
 ```  
   
-## Membri  
- BPS\_NONE  
- Specifica che nessun punto di interruzione esistente.  
+## <a name="members"></a>Membri  
+ BPS_NONE  
+ Specifica che è presente alcun punto di interruzione.  
   
- BPS\_DELETED  
+ BPS_DELETED  
  Specifica che il punto di interruzione è stato eliminato.  
   
- BPS\_DISABLED  
- specifica che il punto di interruzione è disabilitato.  
+ BPS_DISABLED  
+ Specifica che il punto di interruzione è disabilitata.  
   
- BPS\_ENABLED  
- Specifica che il punto di interruzione è attivato.  
+ BPS_ENABLED  
+ Specifica che il punto di interruzione è abilitato.  
   
-## Note  
- Restituito [GetState](../../../extensibility/debugger/reference/idebugboundbreakpoint2-getstate.md) dal metodo.  
+## <a name="remarks"></a>Note  
+ Restituito dal [GetState](../../../extensibility/debugger/reference/idebugboundbreakpoint2-getstate.md) metodo.  
   
-## Requisiti  
- intestazione: msdbg.h  
+## <a name="requirements"></a>Requisiti  
+ Intestazione: msdbg.h  
   
- Spazio dei nomi: Microsoft.VisualStudio.Debugger.Interop  
+ Namespace: Microsoft.VisualStudio.Debugger.Interop  
   
  Assembly: Microsoft.VisualStudio.Debugger.Interop.dll  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Enumerazioni](../../../extensibility/debugger/reference/enumerations-visual-studio-debugging.md)   
  [GetState](../../../extensibility/debugger/reference/idebugboundbreakpoint2-getstate.md)

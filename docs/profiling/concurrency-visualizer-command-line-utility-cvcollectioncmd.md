@@ -1,41 +1,22 @@
 ---
-title: "Utilità della riga di comando del visualizzatore di concorrenza (CVCollectionCmd) | Microsoft Docs"
-ms.custom: 
+title: Utilità della riga di comando del visualizzatore di concorrenza (CVCollectionCmd) | Microsoft Docs
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- vs-ide-debug
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.technology: vs-ide-debug
+ms.topic: conceptual
 f1_keywords:
 - vs.cv.performance.cvcollectioncmd
 ms.assetid: 476601be-1608-4014-af15-5aba6ccbed1c
-caps.latest.revision: 21
 author: mikejo5000
 ms.author: mikejo
-manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: Human Translation
-ms.sourcegitcommit: c559290c8e88c8b4e37feabc7014188fad15434d
-ms.openlocfilehash: f219ae7937ea3810b58faa34f6320a627ede99ae
-ms.contentlocale: it-it
-ms.lasthandoff: 06/08/2017
-
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 606a6c021247a00b2244986d5f91ad19d6a167f4
+ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/19/2018
 ---
 # <a name="concurrency-visualizer-command-line-utility-cvcollectioncmd"></a>Utilità della riga di comando del visualizzatore di concorrenza (CVCollectionCmd)
 L'utilità riga di comando Visualizzatore di concorrenza (CVCollectionCmd.exe) permette di raccogliere tracce dalla riga di comando, in modo da poterle visualizzare nel Visualizzatore di concorrenza per Visual Studio. Questi strumenti possono essere usati nei computer in cui non è installato Visual Studio.  
@@ -60,7 +41,7 @@ L'utilità riga di comando Visualizzatore di concorrenza (CVCollectionCmd.exe) p
   
 |Opzione|Descrizione|Parametri|Valori restituiti|  
 |------------|-----------------|----------------|-------------------|  
-|Query|Indica se è possibile avviare la raccolta.|Nessuno|0 se la raccolta è pronta per l'avvio.<br /><br /> 1  se è già in corso una raccolta.<br /><br /> 2 se non è in corso alcuna raccolta, ma sono già state abilitate una o più delle sessioni [ETW](/dotnet/framework/wcf/samples/etw-tracing) necessarie.|  
+|Query|Indica se è possibile avviare la raccolta.|nessuno|0 se la raccolta è pronta per l'avvio.<br /><br /> 1  se è già in corso una raccolta.<br /><br /> 2 se non è in corso alcuna raccolta, ma sono già state abilitate una o più delle sessioni [ETW](/dotnet/framework/wcf/samples/etw-tracing) necessarie.|  
 |Launch|Esegue il processo specificato nel Visualizzatore di concorrenza.|Percorso del file eseguibile.|0 se l'esecuzione è riuscita.<br /><br /> 1 se l'esecuzione non è riuscita poiché non è stato possibile avviare l'applicazione di destinazione.<br /><br /> 13 se l'esecuzione non è riuscita poiché CVCollectionCmd non ha autorizzazioni sufficienti per scrivere nella directory di output specificata.|  
 |Attach|Inizia la raccolta di una traccia a livello di sistema. In caso contrario, si connette a un processo, se ne è stato specificato uno.|Nessuno.|0 se la connessione è riuscita.<br /><br /> 1 se la connessione non è riuscita poiché il processo specificato non è valido o è ambiguo.<br /><br /> 13 se la connessione non è riuscita poiché CVCollectionCmd non ha autorizzazioni sufficienti per scrivere nella directory di output specificata.|  
 |Detach|Arresta la raccolta.|Nessuno.|0 se la disconnessione è riuscita.<br /><br /> 1 se la disconnessione non è riuscita poiché la raccolta non è attualmente in corso.<br /><br /> 2 se la disconnessione non è riuscita poiché non è stato possibile arrestarla.|  
@@ -92,8 +73,8 @@ L'utilità riga di comando Visualizzatore di concorrenza (CVCollectionCmd.exe) p
 |Markers|Include l'elenco di provider marcatori.|Può includere zero o più elementi MarkerProvider.|  
 |MarkerProvider|Specifica un singolo provider marcatori.|Deve contenere gli elementi seguenti:<br /><br /> -   Level<br />-   GUID<br />-   Name<br /><br /> Può includere questi elementi:<br /><br /> -   Categories<br />-   IsEnabled|  
 |Livello|Imposta il livello di importanza di un MarkerProvider.|-   Basso<br />-   Normale<br />-   Alto<br />-   Critico<br />-   Tutto|  
-|Guid|Identificatore univoco globale del provider marcatori ETW.|Un valore GUID.|  
-|Name|Specifica la descrizione del provider marcatori.|Una stringa.|  
+|GUID|Identificatore univoco globale del provider marcatori ETW.|Un valore GUID.|  
+|nome|Specifica la descrizione del provider marcatori.|Una stringa.|  
 |Categories|Specifica le categorie raccolte per il provider marcatori.|Stringa delimitata da virgole che include numeri o intervalli di numeri.|  
 |IsEnabled|Imposta un valore che determina se il provider marcatori è abilitato per la raccolta.|-   True<br />-   False|  
 |FilterConfig|Specifica l'elenco di opzioni di configurazione degli eventi ETW filtrati dalla raccolta.|Può includere gli elementi seguenti:<br /><br /> -   CollectClrEvents<br />-   ClrCollectionOptions<br />-   CollectSampleEvents<br />-   CollectGpuEvents<br />-   CollectFileIO|  
@@ -170,4 +151,3 @@ L'utilità riga di comando Visualizzatore di concorrenza (CVCollectionCmd.exe) p
 </LocalConfig>  
   
 ```
-

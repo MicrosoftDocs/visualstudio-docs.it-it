@@ -1,48 +1,49 @@
 ---
-title: "IDebugWindowsComputerPort2::GetComputerInfo | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "GetComputerInfo"
-  - "IDebugWindowsComputerPort2::GetComputerInfo"
+title: IDebugWindowsComputerPort2::GetComputerInfo | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology:
+- vs-ide-sdk
+ms.topic: conceptual
+helpviewer_keywords:
+- GetComputerInfo
+- IDebugWindowsComputerPort2::GetComputerInfo
 ms.assetid: 654910b2-c239-44c8-92fc-317680a5672f
-caps.latest.revision: 8
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 8
+author: gregvanl
+ms.author: gregvanl
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: e9dff1b64cafa6a212600cd467b86f8ddca83337
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# IDebugWindowsComputerPort2::GetComputerInfo
-[!INCLUDE[vs2017banner](../../../code-quality/includes/vs2017banner.md)]
-
+# <a name="idebugwindowscomputerport2getcomputerinfo"></a>IDebugWindowsComputerPort2::GetComputerInfo
 Recupera le informazioni relative al computer in cui il debugger in esecuzione.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp#  
+```cpp  
 HRESULT GetComputerInfo(  
-   COMPUTER_INFO * pInfo  
+   COMPUTER_INFO * pInfo  
 );  
 ```  
   
-```c#  
+```csharp  
 public int GetComputerInfo(  
-   out COMPUTER_INFO[] pInfo  
+   out COMPUTER_INFO[] pInfo  
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `pInfo`  
- \[out\]  Riferimento a una struttura contenente le informazioni del computer.  
+ [out] Riferimento a una struttura che contiene le informazioni sul computer.  
   
-## Valore restituito  
- Se l'operazione riesce, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
+## <a name="return-value"></a>Valore restituito  
+ Se ha esito positivo, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IDebugWindowsComputerPort2](../../../extensibility/debugger/reference/idebugwindowscomputerport2.md)   
- [COMPUTER\_INFO](../../../extensibility/debugger/reference/computer-info.md)
+ [COMPUTER_INFO](../../../extensibility/debugger/reference/computer-info.md)

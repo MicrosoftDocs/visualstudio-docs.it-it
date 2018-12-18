@@ -1,41 +1,40 @@
 ---
-title: "Task Base Class | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
+title: Classe di base Task | Microsoft Docs
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology: msbuild
+ms.topic: reference
+dev_langs:
+- VB
+- CSharp
+- C++
+- jsharp
 ms.assetid: 6c3f6238-b9f0-4325-b8b0-de61090bd0a2
-caps.latest.revision: 6
-author: "kempb"
-ms.author: "kempb"
-manager: "ghogen"
-caps.handback.revision: 6
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 361ff48c1363fc2e736f01c983b32a3ee229a839
+ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/19/2018
 ---
-# Task Base Class
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
-Molte attività ereditano in ultima istanza dalla classe <xref:Microsoft.Build.Utilities.Task>.  Tramite questa classe vengono aggiunti diversi parametri alle attività da essi derivate.  Tali parametri vengono elencati in questo documento.  
+# <a name="task-base-class"></a>Classe di base Task
+Molte attività ereditano dalla classe <xref:Microsoft.Build.Utilities.Task>. Questa classe aggiunge diversi parametri alle attività che ne derivano. Questi parametri sono elencati in questo documento.  
   
-## Parametri  
- Nella tabella riportata di seguito sono descritti i parametri di questa classe di base.  
+## <a name="parameters"></a>Parametri  
+ Nella tabella seguente vengono descritti i parametri di questa classe di base.  
   
 |Parametro|Descrizione|  
 |---------------|-----------------|  
-|<xref:Microsoft.Build.Utilities.Task.BuildEngine%2A>|Parametro <xref:Microsoft.Build.Framework.IBuildEngine> facoltativo.<br /><br /> Specifica l'interfaccia del modulo di gestione della compilazione disponibile per le attività.  Questo parametro viene impostato automaticamente tramite il motore di compilazione per consentire alle attività di richiamare il motore stesso.|  
-|<xref:Microsoft.Build.Utilities.Task.BuildEngine2%2A>|Parametro <xref:Microsoft.Build.Framework.IBuildEngine2> facoltativo.<br /><br /> Specifica l'interfaccia del modulo di gestione della compilazione disponibile per le attività.  Questo parametro viene impostato automaticamente tramite il motore di compilazione per consentire alle attività di richiamare il motore stesso.<br /><br /> Si tratta di una proprietà che consente agli autori di attività che ereditano da questa classe di non dover eseguire il cast del valore da `IBuildEngine` in `IBuildEngine2`.|  
+|<xref:Microsoft.Build.Utilities.Task.BuildEngine%2A>|Parametro <xref:Microsoft.Build.Framework.IBuildEngine> facoltativo.<br /><br /> Specifica l'interfaccia del motore di compilazione disponibile per le attività. Il motore di compilazione imposta automaticamente questo parametro per consentire alle attività di richiamarlo.|  
+|<xref:Microsoft.Build.Utilities.Task.BuildEngine2%2A>|Parametro <xref:Microsoft.Build.Framework.IBuildEngine2> facoltativo.<br /><br /> Specifica l'interfaccia del motore di compilazione disponibile per le attività. Il motore di compilazione imposta automaticamente questo parametro per consentire alle attività di richiamarlo.<br /><br /> Questa è una proprietà che consente agli autori di attività che ereditano da questa classe di non dovere eseguire il cast da `IBuildEngine` a `IBuildEngine2`.|  
 |<xref:Microsoft.Build.Utilities.Task.BuildEngine3%2A>|Parametro <xref:Microsoft.Build.Framework.IBuildEngine3> facoltativo.<br /><br /> Specifica l'interfaccia del motore di compilazione fornita dall'host.|  
-|<xref:Microsoft.Build.Utilities.Task.HostObject%2A>|Parametro <xref:Microsoft.Build.Framework.ITaskHost> facoltativo.<br /><br /> Specifica l'istanza dell'oggetto host \(può essere null\).  Il motore di compilazione imposta questa proprietà se l'IDE dell'host ha un oggetto host associato con questa particolare attività.|  
-|<xref:Microsoft.Build.Utilities.Task.Log%2A>|Parametro di sola lettura <xref:Microsoft.Build.Utilities.TaskLoggingHelper> facoltativo.<br /><br /> Oggetto supporto della registrazione.|  
+|<xref:Microsoft.Build.Utilities.Task.HostObject%2A>|Parametro <xref:Microsoft.Build.Framework.ITaskHost> facoltativo.<br /><br /> Specifica l'istanza dell'oggetto host (può essere null). Il motore di compilazione imposta questa proprietà se l'IDE host ha associato un oggetto host a questa particolare attività.|  
+|<xref:Microsoft.Build.Utilities.Task.Log%2A>|Parametro di sola lettura <xref:Microsoft.Build.Utilities.TaskLoggingHelper> facoltativo.<br /><br /> Oggetto helper della registrazione.|  
   
-## Vedere anche  
- [Task Reference](../msbuild/msbuild-task-reference.md)   
- [Tasks](../msbuild/msbuild-tasks.md)
+## <a name="see-also"></a>Vedere anche  
+ [Riferimento alle attività](../msbuild/msbuild-task-reference.md)   
+ [Attività](../msbuild/msbuild-tasks.md)

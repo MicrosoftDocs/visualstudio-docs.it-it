@@ -1,51 +1,54 @@
 ---
-title: "Metodo subarray (Float32Array) | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/18/2017"
-ms.prod: "windows-client-threshold"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-javascript"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-dev_langs: 
-  - "JavaScript"
-  - "TypeScript"
-  - "DHTML"
+title: Metodo (Float32Array) subarray | Documenti Microsoft
+ms.custom: 
+ms.date: 01/18/2017
+ms.prod: windows-client-threshold
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-javascript
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+dev_langs:
+- JavaScript
+- TypeScript
+- DHTML
 ms.assetid: 97aa27c0-d650-411e-b929-dd9c4a2ae9a5
-caps.latest.revision: 9
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.openlocfilehash: 78d8c729298fe80d841d7c4750e4e6817120c9d3
+ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/27/2017
 ---
-# Metodo subarray (Float32Array)
-Ottiene una nuova visualizzazione Float32Array dell'archivio [Oggetto ArrayBuffer](../../javascript/reference/arraybuffer-object.md) per questa matrice, specificando il primo e l'ultimo membro della sottomatrice.  
+# <a name="subarray-method-float32array"></a>Metodo subarray (Float32Array)
+Ottiene una nuova visualizzazione Float32Array del [oggetto ArrayBuffer](../../javascript/reference/arraybuffer-object.md) archiviare per questa matrice, specificando il primo e ultimo membro della sottomatrice.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```javascript  
+```JavaScript  
 var newFloat32Array = float32Array.subarray(begin, end);  
 ```  
   
-## Parametri  
+## <a name="parameters"></a>Parametri  
  `newFloat32Array`  
- La sottomatrice restituita da questo metodo.  
+ Sottomatrice restituita da questo metodo.  
   
  `begin`  
- L'indice dell'inizio della matrice.  
+ Indice dell'inizio della matrice.  
   
  `end`  
- L'indice della fine della matrice.  
+ Indice della fine della matrice.  
   
-## Note  
- Se `begin` o `end` è negativo, si riferisce a un indice dalla fine della matrice, anziché dall'inizio.  Se `end` non è stato specificato, la sottomatrice contiene tutti gli elementi da `begin` alla fine della matrice tipizzata.  L'intervallo specificato dai valori di `begin` e `end` viene impostato all'intervallo valido degli indici per la matrice corrente.  Se la lunghezza calcolata della nuova matrice tipizzata è negativa, viene impostato a zero.  La matrice restituita è dallo stesso tipo della matrice sulla quale questo metodo è stato invocato.  
+## <a name="remarks"></a>Note  
+ Se `begin` o `end` è negativo, il valore si riferisce a un indice valutato dalla fine della matrice anziché dall'inizio. Se `end` non è stato specificato, la sottomatrice contiene tutti gli elementi da `begin` alla fine della matrice tipizzata. L'intervallo specificato dai valori di `begin` e `end` viene impostato sull'intervallo valido degli indici per la matrice corrente. Se la lunghezza calcolata della nuova matrice tipizzata è negativa, l'intervallo viene impostato su zero. La matrice restituita è dello stesso tipo della matrice su cui questo metodo è stato invocato.  
   
-## Esempio  
- Il seguente esempio mostra come si può ottenere una sottomatrice lunga tre elementi, a partire dal primo elemento della matrice.  
+## <a name="example"></a>Esempio  
+ Nell'esempio seguente viene illustrato come ottenere una sottomatrice di tre elementi a partire dal primo elemento della matrice.  
   
-```javascript  
+```JavaScript  
 var req = new XMLHttpRequest();  
     req.open('GET', "http://www.example.com");  
     req.responseType = "arraybuffer";  
@@ -61,5 +64,5 @@ var req = new XMLHttpRequest();
   
 ```  
   
-## Requisiti  
+## <a name="requirements"></a>Requisiti  
  [!INCLUDE[jsv10](../../javascript/reference/includes/jsv10-md.md)]

@@ -1,27 +1,32 @@
 ---
-title: "Elemento Description (modelli di Visual Studio) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-general"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "Description (elemento) [modelli di progetto Visual Studio]"
+title: Elemento Description (modelli di Visual Studio) | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology:
+- vs-ide-general
+ms.topic: conceptual
+helpviewer_keywords:
+- Description element [Visual Studio project templates]
 ms.assetid: 6e12be73-081f-4c7d-898f-027c307a9fe1
-caps.latest.revision: 16
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 16
+author: gregvanl
+ms.author: gregvanl
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: 471633a4c786a879b333a09a4d7975739a56ccfa
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# Elemento Description (modelli di Visual Studio)
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
-Specifica la descrizione del modello come verrà visualizzata nella finestra di dialogo **Nuovo progetto** o **Aggiungi nuovo elemento**.  
+# <a name="description-element-visual-studio-templates"></a>Elemento Description (modelli di Visual Studio)
+Specifica la descrizione del modello così come appare in entrambi i **nuovo progetto** o **Aggiungi nuovo elemento** la finestra di dialogo.  
   
-## Sintassi  
+ \<VSTemplate >  
+ \<TemplateData >  
+ \<Descrizione >  
+  
+## <a name="syntax"></a>Sintassi  
   
 ```  
 <Description>  
@@ -33,35 +38,35 @@ Specifica la descrizione del modello come verrà visualizzata nella finestra di 
 <Description Package="{PackageID}" ID="ResourceID" />  
 ```  
   
-## Attributi ed elementi  
+## <a name="attributes-and-elements"></a>Attributi ed elementi  
  Nelle sezioni seguenti vengono descritti gli attributi, gli elementi figlio e gli elementi padre.  
   
-### Attributi  
+### <a name="attributes"></a>Attributi  
   
 |Attributo|Descrizione|  
 |---------------|-----------------|  
-|`Package`|Attributo facoltativo per scenari avanzati.<br /><br /> Un GUID che specifica l'ID del pacchetto Visual Studio.|  
-|`ID`|Attributo facoltativo per scenari avanzati.<br /><br /> Specifica l'ID risorse di Visual Studio.|  
+|`Package`|Attributo facoltativo, per scenari avanzati.<br /><br /> ID di un GUID che specifica il pacchetto di Visual Studio.|  
+|`ID`|Attributo facoltativo, per scenari avanzati.<br /><br /> Specifica l'ID di risorsa di Visual Studio.|  
   
-### Elementi figlio  
+### <a name="child-elements"></a>Elementi figlio  
  Nessuno.  
   
-### Elementi padre  
+### <a name="parent-elements"></a>Elementi padre  
   
 |Elemento|Descrizione|  
-|--------------|-----------------|  
-|[TemplateData](../extensibility/templatedata-element-visual-studio-templates.md)|Elemento obbligatorio.<br /><br /> Classifica il modello e definisce la modalità di visualizzazione per la finestra di dialogo **Nuovo progetto** o **Aggiungi nuovo elemento**.|  
+|-------------|-----------------|  
+|[TemplateData](../extensibility/templatedata-element-visual-studio-templates.md)|Elemento obbligatorio.<br /><br /> Classifica il modello in base alla categoria e definisce la modalità di visualizzazione nella finestra di dialogo **Nuovo progetto** o **Aggiungi nuovo elemento** .|  
   
-## Valore di testo  
- Il valore del testo è obbligatorio, a meno che non vengano utilizzati gli attributi `Package` e `ID`.  
+## <a name="text-value"></a>Valore di testo  
+ È necessario un valore di testo, a meno che il `Package` e `ID` vengono utilizzati gli attributi.  
   
- Il testo fornisce una descrizione del modello.  
+ Il testo viene fornita una descrizione del modello.  
   
-## Note  
+## <a name="remarks"></a>Note  
  `Description` è un elemento figlio obbligatorio dell'elemento `TemplateData`.  
   
-## Esempio  
- Nell'esempio riportato di seguito vengono illustrati i metadati per un modello di progetto di un'applicazione di [!INCLUDE[csprcs](../data-tools/includes/csprcs_md.md)].  
+## <a name="example"></a>Esempio  
+ L'esempio seguente mostra i metadati per un modello di progetto per un [!INCLUDE[csprcs](../data-tools/includes/csprcs_md.md)] dell'applicazione.  
   
 ```  
 <VSTemplate Type="Project" Version="3.0.0"  
@@ -87,6 +92,6 @@ Specifica la descrizione del modello come verrà visualizzata nella finestra di 
 </VSTemplate>  
 ```  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Riferimenti allo schema dei modelli di Visual Studio](../extensibility/visual-studio-template-schema-reference.md)   
- [Creazione di un progetto e di modelli di elemento personalizzati](../ide/creating-project-and-item-templates.md)
+ [Creazione di modelli di progetti e di elementi](../ide/creating-project-and-item-templates.md)

@@ -1,48 +1,49 @@
 ---
-title: "IDebugFunctionPosition2::GetFunctionName | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "IDebugFunctionPosition2::GetFunctionName"
-helpviewer_keywords: 
-  - "IDebugFunctionPosition2::GetFunctionName"
+title: IDebugFunctionPosition2::GetFunctionName | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology:
+- vs-ide-sdk
+ms.topic: conceptual
+f1_keywords:
+- IDebugFunctionPosition2::GetFunctionName
+helpviewer_keywords:
+- IDebugFunctionPosition2::GetFunctionName
 ms.assetid: eb7a348e-a7f5-4f25-be68-80482d5482a8
-caps.latest.revision: 13
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 13
+author: gregvanl
+ms.author: gregvanl
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: 95c896c90334504d7a141e3adda6d29d7d037191
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# IDebugFunctionPosition2::GetFunctionName
-[!INCLUDE[vs2017banner](../../../code-quality/includes/vs2017banner.md)]
-
-Ottiene il nome della funzione in questa posizione indica.  
+# <a name="idebugfunctionposition2getfunctionname"></a>IDebugFunctionPosition2::GetFunctionName
+Ottiene il nome della funzione a cui fa riferimento questa posizione.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp#  
-HRESULT GetFunctionName(   
-   BSTR* pbstrFunctionName  
+```cpp  
+HRESULT GetFunctionName(   
+   BSTR* pbstrFunctionName  
 );  
 ```  
   
-```c#  
+```csharp  
 int GetFunctionName(  
-   out string pbstrFunctionName  
+   out string pbstrFunctionName  
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `pbstrFunctionName`  
- \[out\]  Restituisce il nome della funzione.  
+ [out] Restituisce il nome della funzione.  
   
-## Valore restituito  
- Se l'operazione riesce, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
+## <a name="return-value"></a>Valore restituito  
+ Se ha esito positivo, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IDebugFunctionPosition2](../../../extensibility/debugger/reference/idebugfunctionposition2.md)

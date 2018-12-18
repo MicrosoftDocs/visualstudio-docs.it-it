@@ -1,41 +1,25 @@
 ---
 title: IDebugProperty2::GetSize | Documenti Microsoft
-ms.custom: 
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - vs-ide-sdk
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: conceptual
 f1_keywords:
 - IDebugProperty2::GetSize
 helpviewer_keywords:
 - IDebugProperty2::GetSize
 ms.assetid: 0deb8ec5-d6fb-4622-bb14-0c46b9459cc6
-caps.latest.revision: 10
+author: gregvanl
 ms.author: gregvanl
-manager: ghogen
-translation.priority.mt:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: 1b49ed63c95b63078880b554b31968d210cd063e
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
 ms.translationtype: MT
-ms.sourcegitcommit: 4a36302d80f4bc397128e3838c9abf858a0b5fe8
-ms.openlocfilehash: 00674430f95eed895a6564676e9d33a36795268d
-ms.contentlocale: it-it
-ms.lasthandoff: 09/26/2017
-
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="idebugproperty2getsize"></a>IDebugProperty2::GetSize
 Ottiene le dimensioni, in byte, del valore della proprietà.  

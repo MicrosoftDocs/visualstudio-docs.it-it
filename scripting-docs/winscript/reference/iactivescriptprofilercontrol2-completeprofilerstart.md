@@ -1,47 +1,51 @@
 ---
-title: "IActiveScriptProfilerControl2::CompleteProfilerStart | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/18/2017"
-ms.prod: "windows-script-interfaces"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-helpviewer_keywords: 
-  - "IActiveScriptProfilerControl2::CompleteProfilerStart"
+title: IActiveScriptProfilerControl2::CompleteProfilerStart | Documenti Microsoft
+ms.custom: 
+ms.date: 01/18/2017
+ms.prod: windows-script-interfaces
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: reference
+helpviewer_keywords:
+- IActiveScriptProfilerControl2::CompleteProfilerStart
 ms.assetid: e14d94a2-39d3-40a1-84d9-6300fbe2b339
-caps.latest.revision: 5
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 5
+caps.latest.revision: 
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.openlocfilehash: 5abd4ee4237991714bfe3d8ba21b083f1a1920cd
+ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/27/2017
 ---
-# IActiveScriptProfilerControl2::CompleteProfilerStart
-Notifica al profiler aver avviato il profilo in tutti i moduli di gestione di scripting applicabili.  Utilizzando questo metodo, è possibile ottenere lo stack di chiamate completo se [!INCLUDE[javascript](../../javascript/includes/javascript-md.md)] è in esecuzione quando avviare la profilatura.  
+# <a name="iactivescriptprofilercontrol2completeprofilerstart"></a>IActiveScriptProfilerControl2::CompleteProfilerStart
+Notifica al profiler che è stata avviata l'analisi su tutti i motori di script applicabili. Tramite questo metodo, è possibile ottenere lo stack di chiamate completo se [!INCLUDE[javascript](../../javascript/includes/javascript-md.md)] è in esecuzione quando si avvia la profilatura.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
 HRESULT CompleteProfilerStart();  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  Il metodo non accetta parametri.  
   
-## Valore restituito  
- Restituisce un HRESULT.  I valori possibili sono i seguenti:  
+## <a name="return-value"></a>Valore restituito  
+ Restituisce un valore HRESULT. I valori possibili sono i seguenti:  
   
 |Valore restituito|Significato|  
-|-----------------------|-----------------|  
+|------------------|-------------|  
 |`S_OK`|Il metodo è riuscito.|  
-|`E_FAIL`|La profilatura non può essere avviato.|  
-|`S_FALSE`|La profilatura è stato avviato quando uno script non era in esecuzione.|  
-|`ACTIVPROF_E_PROFILER_ABSENT`|La profilatura non è abilitato.  Alcun callback è stato impostato.|  
-|`E_OUTOFMEMORY`|Lo stack di chiamate non può essere ottenuto a causa di una condizione di memoria insufficiente.|  
+|`E_FAIL`|Impossibile avviare la profilatura.|  
+|`S_FALSE`|Profilatura è stata avviata quando uno script non è in esecuzione.|  
+|`ACTIVPROF_E_PROFILER_ABSENT`|Profilatura non è abilitata. Non è stato impostato alcun callback.|  
+|`E_OUTOFMEMORY`|Non è possibile ottenere lo stack di chiamate a causa di una condizione di memoria insufficiente.|  
   
-## Note  
- Chiamando `IActiveScriptProfilerControl2::CompleteProfilerStart` garantisce che gli eventi per le funzioni già nello stack di chiamate vengono inviati.  Questo metodo deve essere chiamato dopo che la profilatura avviata sul motore di gestione di script che si trova nella scheda corrente.  Il metodo può essere chiamato dal motore di scripting.  
+## <a name="remarks"></a>Note  
+ La chiamata `IActiveScriptProfilerControl2::CompleteProfilerStart` assicura che vengano inviati gli eventi per le funzioni già nello stack di chiamate. Questo metodo deve essere chiamato dopo la profilatura viene avviato nel alcun motore di scripting della scheda corrente. Il metodo può essere chiamato per un motore di script.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IActiveScriptProfilerControl2::PrepareProfilerStop](../../winscript/reference/iactivescriptprofilercontrol2-prepareprofilerstop.md)   
  [Interfaccia IActiveScriptProfilerControl2](../../winscript/reference/iactivescriptprofilercontrol2-interface.md)

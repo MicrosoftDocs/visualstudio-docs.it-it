@@ -1,40 +1,25 @@
 ---
 title: IDebugStepCompleteEvent2 | Documenti Microsoft
-ms.custom: 
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - vs-ide-sdk
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: conceptual
 f1_keywords:
 - IDebugStepCompleteEvent2
 helpviewer_keywords:
 - IDebugStepCompleteEvent2 interface
 ms.assetid: eba2b76e-f90d-486b-ae5c-c47f1b8ba2e5
-caps.latest.revision: 11
+author: gregvanl
 ms.author: gregvanl
-manager: ghogen
-translation.priority.mt:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: ca7c86466fa23fb21a932f26dc24e37c71cf29b4
-ms.openlocfilehash: d6c18c36b205ada9fa64eb7786de9c6f16e03dde
-ms.lasthandoff: 04/05/2017
-
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: 2e5eb11b2eb47e48ba1160bca6d1040e5865c582
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="idebugstepcompleteevent2"></a>IDebugStepCompleteEvent2
 Questa interfaccia viene inviata dal motore di debug (DE) al gestore di sessione di debug (SDM) quando il programma in fase di debug viene completato un passaggio in un'Esegui istruzione/routine o uscire una riga di codice sorgente o istruzione o istruzione.  

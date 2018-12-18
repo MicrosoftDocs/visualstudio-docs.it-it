@@ -1,53 +1,57 @@
 ---
-title: "Metodo lbound (VBArray) (JavaScript) | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/18/2017"
-ms.prod: "windows-client-threshold"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-javascript"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "lbound"
-dev_langs: 
-  - "JavaScript"
-  - "TypeScript"
-  - "DHTML"
-helpviewer_keywords: 
-  - "lbound (metodo)"
+title: Metodo LBound (VBArray) (JavaScript) | Documenti Microsoft
+ms.custom: 
+ms.date: 01/18/2017
+ms.prod: windows-client-threshold
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-javascript
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords:
+- lbound
+dev_langs:
+- JavaScript
+- TypeScript
+- DHTML
+helpviewer_keywords:
+- lbound method
 ms.assetid: 30ff5e8a-8165-494b-bce8-0a562ec2eec3
-caps.latest.revision: 16
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 16
+caps.latest.revision: 
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.openlocfilehash: b01adf424d42e9d24512d15b03ede6079a3da186
+ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/27/2017
 ---
-# Metodo lbound (VBArray) (JavaScript)
-Restituisce il valore di indice minimo utilizzato nella dimensione specificata di un oggetto VBArray.  
+# <a name="lbound-method-vbarray-javascript"></a>Metodo lbound (VBArray) (JavaScript)
+Restituisce il valore di indice più basso utilizzato nella dimensione specificata di un oggetto VBArray.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
   
 safeArray.lbound(dimension)   
 ```  
   
-## Parametri  
+## <a name="parameters"></a>Parametri  
  *safeArray*  
- Necessario.  Un oggetto VBArray  
+ Obbligatorio. Un oggetto VBArray.  
   
  `dimension`  
- Opzionale.  Dimensione dell'oggetto VBArray di cui si desidera individuare l'indice del limite inferiore.  Se omesso, il metodo `lbound` funziona esattamente come se fosse stato passato il valore 1.  
+ Parametro facoltativo. La dimensione dell'oggetto VBArray per cui si desidera recuperare l'indice del limite inferiore. Se omesso, `lbound` si comporta come se venisse passato il valore 1.  
   
-## Note  
- Se l'oggetto VBArray è vuoto, mediante il metodo `lbound` viene restituito undefined.  Se `dimension` è negativo o maggiore del numero di dimensioni dell'oggetto VBArray, verrà generato un errore di indice non compreso nell'intervallo.  
+## <a name="remarks"></a>Note  
+ Se l'oggetto VBArray è vuoto, il metodo `lbound` restituisce non definito. Se `dimension` è maggiore del numero di dimensioni dell'oggetto VBArray o è negativo, il metodo genera un errore del tipo "Indice non incluso nell'intervallo".  
   
-## Esempio  
- L'esempio seguente è composto da tre parti.  La prima parte corrisponde al codice VBScript per la creazione di un Array di tipo Safe di Visual Basic.  La seconda corrisponde al codice [!INCLUDE[javascript](../../javascript/includes/javascript-md.md)] per la determinazione del numero di dimensioni dell'Array di tipo Safe e del limite inferiore di ciascuna dimensione.  Dato che l'Array di tipo Safe viene creato in VBScript e non in Visual Basic, il limite inferiore sarà sempre uguale a zero.  Entrambe queste parti sono incluse nella sezione \<HEAD\> di una pagina HTML.  La terza parte corrisponde al codice [!INCLUDE[javascript](../../javascript/includes/javascript-md.md)] incluso nella sezione \<BODY\> per l'esecuzione delle prime due parti.  
+## <a name="example"></a>Esempio  
+ L'esempio seguente si compone di tre parti: La prima parte è il codice VBScript per creare una matrice protetta di Visual Basic. La seconda parte è [!INCLUDE[javascript](../../javascript/includes/javascript-md.md)] il codice che determina il numero di dimensioni della matrice protetta e il limite inferiore di ogni dimensione. Poiché la matrice sicura viene creata in VBScript anziché in Visual Basic, è possibile che il limite inferiore sarà sempre zero. Entrambe queste parti vanno inserite le \<HEAD > della sezione di una pagina HTML. La terza parte è il [!INCLUDE[javascript](../../javascript/includes/javascript-md.md)] codice che va inserito nella \<corpo > per eseguire le altre due parti.  
   
-```javascript  
+```JavaScript  
 <head>  
 <script type="text/vbscript">  
 <!--  
@@ -92,13 +96,13 @@ function VBArrayTest(vba){
 </body>  
 ```  
   
-## Requisiti  
- Supportato nelle modalità documento seguenti: Quirks, standard di Internet Explorer 6, standard di Internet Explorer 7, standard di Internet Explorer 8, standard di Internet Explorer 9 e standard di Internet Explorer 10.  Non supportato in applicazioni [!INCLUDE[win8_appname_long](../../javascript/includes/win8-appname-long-md.md)].  Vedere la pagina relativa alle [informazioni sulla versione](../../javascript/reference/javascript-version-information.md).  
+## <a name="requirements"></a>Requisiti  
+ Supportato nelle modalità documento seguenti: Quirks, standard di Internet Explorer 6, standard di Internet Explorer 7, standard di Internet Explorer 8, standard di Internet Explorer 9 e standard di Internet Explorer 10. Non supportato in applicazioni [!INCLUDE[win8_appname_long](../../javascript/includes/win8-appname-long-md.md)] . Vedere [Informazioni sulla versione](../../javascript/reference/javascript-version-information.md).  
   
- **Si applica a**: [Oggetto VBArray](../../javascript/reference/vbarray-object-javascript.md)  
+ **Si applica a**: [VBArray Object](../../javascript/reference/vbarray-object-javascript.md)  
   
-## Vedere anche  
- [Metodo dimensions \(VBArray\)](../../javascript/reference/dimensions-method-vbarray-javascript.md)   
- [Metodo getItem \(VBArray\)](../../javascript/reference/getitem-method-vbarray-javascript.md)   
- [Metodo toArray \(VBArray\)](../../javascript/reference/toarray-method-vbarray-javascript.md)   
- [Metodo ubound \(VBArray\)](../../javascript/reference/ubound-method-vbarray-javascript.md)
+## <a name="see-also"></a>Vedere anche  
+ [Metodo Dimensions (VBArray)](../../javascript/reference/dimensions-method-vbarray-javascript.md)   
+ [Metodo getItem (VBArray)](../../javascript/reference/getitem-method-vbarray-javascript.md)   
+ [Metodo toArray (VBArray)](../../javascript/reference/toarray-method-vbarray-javascript.md)   
+ [Metodo ubound (VBArray)](../../javascript/reference/ubound-method-vbarray-javascript.md)

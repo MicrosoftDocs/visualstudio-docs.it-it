@@ -1,55 +1,56 @@
 ---
-title: "IDebugCanStopEvent2::GetDocumentContext | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "IDebugCanStopEvent2::GetDocumentContext"
-helpviewer_keywords: 
-  - "IDebugCanStopEvent2::GetDocumentContext"
+title: IDebugCanStopEvent2::GetDocumentContext | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology:
+- vs-ide-sdk
+ms.topic: conceptual
+f1_keywords:
+- IDebugCanStopEvent2::GetDocumentContext
+helpviewer_keywords:
+- IDebugCanStopEvent2::GetDocumentContext
 ms.assetid: 936a6c4e-30c5-4c7e-9ad5-910cc605a4b5
-caps.latest.revision: 10
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 10
+author: gregvanl
+ms.author: gregvanl
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: 0e5b9bbd5127ac3cf7aef70744fc80ebc8372dfb
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# IDebugCanStopEvent2::GetDocumentContext
-[!INCLUDE[vs2017banner](../../../code-quality/includes/vs2017banner.md)]
-
-Ottiene il contesto del documento che specifica la posizione di questo evento.  
+# <a name="idebugcanstopevent2getdocumentcontext"></a>IDebugCanStopEvent2::GetDocumentContext
+Ottiene il contesto del documento che descrive il percorso di questo evento.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp#  
-HRESULT GetDocumentContext (   
-   IDebugDocumentContext2** ppDocCxt  
+```cpp  
+HRESULT GetDocumentContext (   
+   IDebugDocumentContext2** ppDocCxt  
 );  
 ```  
   
-```c#  
-int GetDocumentContext (   
-   out IDebugDocumentContext2 ppDocCxt  
+```csharp  
+int GetDocumentContext (   
+   out IDebugDocumentContext2 ppDocCxt  
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `ppDocCxt`  
- \[out\]  Restituisce [IDebugDocumentContext2](../../../extensibility/debugger/reference/idebugdocumentcontext2.md) l'interfaccia che rappresenta una posizione in un documento del file di origine che corrisponde alla posizione corrente di codice.  
+ [out] Restituisce il [IDebugDocumentContext2](../../../extensibility/debugger/reference/idebugdocumentcontext2.md) interfaccia che rappresenta una posizione in un documento di file di origine corrispondente al percorso del codice corrente.  
   
-## Valore restituito  
- Se l'operazione riesce, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
+## <a name="return-value"></a>Valore restituito  
+ Se ha esito positivo, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
   
-## Note  
- In genere, il contesto del documento può essere considerato come un percorso in un file di origine.  
+## <a name="remarks"></a>Note  
+ In genere, il contesto del documento può essere considerato come una posizione in un file di origine.  
   
- Per ottenere il contesto di codice, che è orientato alle istruzioni del codice, chiamare [GetCodeContext](../../../extensibility/debugger/reference/idebugcanstopevent2-getcodecontext.md) il metodo.  
+ Per ottenere il contesto del codice, che è orientato verso le istruzioni di codice, chiamare il [GetCodeContext](../../../extensibility/debugger/reference/idebugcanstopevent2-getcodecontext.md) metodo.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IDebugCanStopEvent2](../../../extensibility/debugger/reference/idebugcanstopevent2.md)   
  [IDebugDocumentContext2](../../../extensibility/debugger/reference/idebugdocumentcontext2.md)   
  [GetCodeContext](../../../extensibility/debugger/reference/idebugcanstopevent2-getcodecontext.md)

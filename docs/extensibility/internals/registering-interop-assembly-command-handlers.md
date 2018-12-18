@@ -1,49 +1,33 @@
 ---
-title: "Registrazione di gestori di comando di Assembly di interoperabilità | Documenti Microsoft"
-ms.custom: 
+title: Registrazione di gestori di comando di Assembly di interoperabilità | Documenti Microsoft
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - vs-ide-sdk
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: conceptual
 helpviewer_keywords:
 - interop assemblies, command handlers
 - command handling with interop assemblies, registering
 ms.assetid: 303cd399-e29d-4ea1-8abe-5e0b59c12a0c
-caps.latest.revision: 19
+author: gregvanl
 ms.author: gregvanl
-manager: ghogen
-translation.priority.mt:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: ca7c86466fa23fb21a932f26dc24e37c71cf29b4
-ms.openlocfilehash: 774266bbcd64e87229f8f97626cdff1462b27fcb
-ms.contentlocale: it-it
-ms.lasthandoff: 04/05/2017
-
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: a4b2c0d40029cbc84d64a4ffe5ee50c59c893b95
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="registering-interop-assembly-command-handlers"></a>Registrazione di gestori di comando di Assembly di interoperabilità
 Un VSPackage è necessario registrare con [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] in modo che l'ambiente di sviluppo integrato (IDE) consente di indirizzare i relativi comandi correttamente.  
   
  Il Registro di sistema può essere aggiornato mediante la modifica manuale o tramite un file di registrazione (con estensione RGS). Per ulteriori informazioni, vedere [la creazione di script di registrazione](/cpp/atl/creating-registrar-scripts).  
   
- Il Framework di pacchetto gestito (MPF) fornisce questa funzionalità tramite la <xref:Microsoft.VisualStudio.Shell.ProvideMenuResourceAttribute>classe.</xref:Microsoft.VisualStudio.Shell.ProvideMenuResourceAttribute>  
+ Il Framework di pacchetto gestito (MPF) fornisce questa funzionalità tramite la <xref:Microsoft.VisualStudio.Shell.ProvideMenuResourceAttribute> classe.  
   
- [Riferimento alla tabella formato comando](http://msdn.microsoft.com/en-us/09e9c6ef-9863-48de-9483-d45b7b7c798f) risorse si trovano in non gestite satellite DLL dell'interfaccia utente.  
+ [Comando riferimento formato tabella](http://msdn.microsoft.com/en-us/09e9c6ef-9863-48de-9483-d45b7b7c798f) risorse si trovano nelle DLL dell'interfaccia utente di satellite non gestita.  
   
 ## <a name="command-handler-registration-of-a-vspackage"></a>Registrazione del gestore del comando di un VSPackage  
  Un VSPackage che agisce come un gestore per l'interfaccia utente (UI)-i comandi di base richiede una voce del Registro di sistema denominata dopo il pacchetto VSPackage `GUID`. Questa voce del Registro di sistema specifica il percorso del file di risorse di VSPackage dell'interfaccia utente e la risorsa di menu all'interno del file. La voce del Registro di sistema stesso si trova in HKEY_LOCAL_MACHINE\Software\Microsoft\VisualStudio\\*\<versione >*\Menus, in cui  *\<versione >* è la versione di [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)], ad esempio 9.0.  
@@ -62,17 +46,17 @@ HKEY_LOCAL_MACHINE\Software\VisualStudio\<Version>\
   
  \<*GUID*> è il `GUID` del pacchetto VSPackage nel formato {XXXXXX-XXXX-XXXX-XXXX-XXXXXXXXX}.  
   
- *\<Informazioni sulle risorse >* è costituito da tre elementi, separati da virgole. Questi elementi sono, in ordine:  
+ *\<Informazioni sulle risorse >* è costituito da tre elementi separati da virgole. Questi elementi sono, in ordine:  
   
- \<*Percorso DLL risorsa*>, \< *ID risorsa Menu*>, \< *versione Menu*>  
+ \<*Percorso alla DLL di risorse*>, \< *ID risorsa Menu*>, \< *versione Menu*>  
   
  Nella tabella seguente vengono descritti i campi di \< *informazioni sulle risorse*>.  
   
 |Elemento|Descrizione|  
 |-------------|-----------------|  
-|\<*Percorso DLL di risorse*>|Si tratta del percorso completo per la DLL che contiene la risorsa menu risorse o questo viene lasciato vuoto, che indica che la risorsa del VSPackage DLL da utilizzare (come specificato nella sottochiave pacchetti in cui è stato registrato il pacchetto VSPackage stesso).<br /><br /> È facoltativa per lasciare vuoto questo campo.|  
+|\<*Percorso alla DLL di risorse*>|Si tratta del percorso completo per la DLL che contiene la risorsa menu risorse o questo viene lasciato vuoto, che indica che la risorsa del VSPackage DLL da utilizzare (come specificato nella sottochiave pacchetti in cui è stato registrato il pacchetto VSPackage stesso).<br /><br /> È facoltativa per lasciare vuoto questo campo.|  
 |\<*ID di risorsa di menu*>|Questo è l'ID della risorsa di `CTMENU` risorsa che contiene tutti gli elementi dell'interfaccia utente per il pacchetto VSPackage come compilato da un [vsct](../../extensibility/internals/visual-studio-command-table-dot-vsct-files.md) file.|  
-|\<*Versione di menu*>|Si tratta di un numero utilizzato come una versione per il `CTMENU` risorse. [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)]Questo valore viene utilizzato per determinare se è necessario unire di nuovo il contenuto del `CTMENU` risorsa con la cache di tutti `CTMENU` risorse. Un unire di nuovo viene attivata eseguendo il comando di devenv il programma di installazione.<br /><br /> Questo valore deve essere inizialmente impostato su 1 e incrementato dopo ogni modifica nel `CTMENU` risorse e prima di unire di nuovo.|  
+|\<*Versione di menu*>|Si tratta di un numero utilizzato come una versione per il `CTMENU` risorse. [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] utilizza questo valore per determinare se è necessario unire di nuovo le il contenuto del `CTMENU` risorsa con la cache di tutti i `CTMENU` risorse. Un unire di nuovo viene attivata eseguendo il comando di devenv il programma di installazione.<br /><br /> Questo valore deve essere inizialmente impostato su 1 e incrementato dopo ogni modifica nel `CTMENU` risorse e prima di unire di nuovo.|  
   
 ### <a name="example"></a>Esempio  
  Di seguito è riportato un esempio di un paio di voci di risorsa:  

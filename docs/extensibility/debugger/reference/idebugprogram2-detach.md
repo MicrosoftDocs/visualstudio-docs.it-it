@@ -1,45 +1,46 @@
 ---
-title: "IDebugProgram2::Detach | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "IDebugProgram2::Detach"
-helpviewer_keywords: 
-  - "IDebugProgram2::Detach"
+title: IDebugProgram2::Detach | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology:
+- vs-ide-sdk
+ms.topic: conceptual
+f1_keywords:
+- IDebugProgram2::Detach
+helpviewer_keywords:
+- IDebugProgram2::Detach
 ms.assetid: 5e8d88b0-a8d4-4746-88c0-ad332ee73f33
-caps.latest.revision: 8
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 8
+author: gregvanl
+ms.author: gregvanl
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: 9f2b007fa110c9ef5c344f488e710e3eaf4d097b
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# IDebugProgram2::Detach
-[!INCLUDE[vs2017banner](../../../code-quality/includes/vs2017banner.md)]
-
-Rimuove un motore di debug dal programma.  
+# <a name="idebugprogram2detach"></a>IDebugProgram2::Detach
+Scollega un motore di debug del programma.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp#  
-HRESULT Detach(   
-   void   
+```cpp  
+HRESULT Detach(   
+   void   
 );  
 ```  
   
-```c#  
+```csharp  
 int Detach();  
 ```  
   
-## Valore restituito  
- Se l'operazione riesce, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
+## <a name="return-value"></a>Valore restituito  
+ Se ha esito positivo, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
   
-## Note  
- Un programma distaccato continua, ma non fa parte della sessione di debug.  Non più evento di debug del programma viene inviata una volta che il motore di debug viene rimosso.  
+## <a name="remarks"></a>Note  
+ L'esecuzione di un programma disconnesso continuerà, ma non è più parte della sessione di debug. Non più eventi di debug vengono inviati una volta che il motore di debug viene scollegato.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IDebugProgram2](../../../extensibility/debugger/reference/idebugprogram2.md)

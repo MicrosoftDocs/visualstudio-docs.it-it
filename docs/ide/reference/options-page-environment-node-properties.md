@@ -1,40 +1,24 @@
 ---
-title: "Pagina delle opzioni, Proprietà del nodo Ambiente | Microsoft Docs"
-ms.custom: 
+title: Pagina delle opzioni, Proprietà del nodo Ambiente | Microsoft Docs
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - vs-ide-general
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: conceptual
 helpviewer_keywords:
 - automation [Visual Studio], controlling Tools Options
 - Tools Options settings, Environment node properties
 ms.assetid: 26dca41f-91fc-4ca7-9103-3da402baa1d5
-caps.latest.revision: 18
-author: kempb
-ms.author: kempb
-manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: 5658ecf52637a38bc3c2a5ad9e85b2edebf7d445
-ms.openlocfilehash: ac450b7e414596632d56117813907ee4406ad69d
-ms.lasthandoff: 02/22/2017
-
+author: gewarren
+ms.author: gewarren
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 3cd05ebf4c0161611789214295003eced4ca0d4f
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="options-page-environment-node-properties"></a>Pagina delle opzioni, Proprietà del nodo Ambiente
 Questo documento descrive le pagine, o raccolte di proprietà, associate alla categoria **Ambiente**, `DTE.Properties("Environment", <Property Page>)`, della finestra di dialogo **Opzioni**. Il titolo di ogni sottosezione rappresenta la chiamata usata per accedere alla raccolta Proprietà e la tabella di ogni sottosezione elenca le proprietà della raccolta.  
@@ -50,7 +34,7 @@ Questo documento descrive le pagine, o raccolte di proprietà, associate alla ca
 |Animations|Get/Set (Boolean)|Determina se l'ambiente di sviluppo integrato (IDE, Integrated Development Environment) usa l'animazione nella barra di stato.|  
 |AnimationSpeed|Get/Set (Short)||  
 |AutoAdjustExperience|Get/Set (Boolean)|Regola automaticamente l'esperienza visiva in base alle prestazioni del client.|  
-|RichClientExperienceOptions|Get/Set (Enum)|Consente di usufruire di un'esperienza visiva dettagliata del client con valori in <xref:EnvDTE100.vsRichClientExperienceOptions>.|  
+|RichClientExperienceOptions|Get/Set (Enum)|Abilita l'esperienza visiva dettagliata del client con i valori presenti in <xref:EnvDTE100.vsRichClientExperienceOptions>.|  
 |CloseButtonActiveTabOnly|Get/Set (Boolean)|Determina se il pulsante **Chiudi** viene visualizzato solo nella scheda attiva.|  
 |AutohidePinActiveTabOnly|Get/Set (Boolean)|Determina se il pulsante **Nascondi automaticamente** ha effetto solo sulla scheda attiva.|  
   
@@ -86,7 +70,7 @@ Questo documento descrive le pagine, o raccolte di proprietà, associate alla ca
 |Nome degli elementi delle proprietà|Valore|Descrizione|  
 |------------------------|-----------|-----------------|  
 |EnableAdminExtensions|Get/Set (Boolean)|Carica le estensioni per utente quando Visual Studio viene eseguito con credenziali di amministratore. Dopo la modifica di questo valore, è necessario riavviare Visual Studio.|  
-|EnableOnline|Get/Set (Boolean)|Consente l'accesso alle estensioni di Visual Studio Gallery.|  
+|EnableOnline|Get/Set (Boolean)|Consente l'accesso alle estensioni di Visual Studio Marketplace.|  
 |AutomaticallyCheckForUpdates|Get/Set (Boolean)|Controlla automaticamente la presenza di aggiornamenti per le estensioni installate.|  
   
 ## <a name="find-and-replace"></a>Trova e sostituisci  
@@ -163,7 +147,7 @@ Questo documento descrive le pagine, o raccolte di proprietà, associate alla ca
 |ConfirmTaskDeletion|Get/Set (Boolean)|Specifica se viene visualizzata una finestra di conferma quando si eliminano attività dall'**Elenco attività**.|  
 |WarnOnAddingHiddenItem|Get/Set (Boolean)|Specifica se viene visualizzato un avviso all'aggiunta di un'attività definita dall'utente che non verrà visualizzata.|  
 |DontShowFilePaths|Get/Set (Boolean)|Specifica se mostrare i percorsi dei file completi nell'Elenco attività.|  
-|CommentTokens|SafeArray|Restituisce un SafeArray di valori token di commento. Ognuno ha i campi `Name` (String) e `Priority` (<xref:EnvDTE.vsTaskPriority>, High, Medium o Low).|  
+|CommentTokens|SafeArray|Restituisce un SafeArray di valori token di commento. Ognuno presenta i campi `Name` (stringa) e `Priority` (<xref:EnvDTE.vsTaskPriority>, alta, media o bassa).|  
   
 ## <a name="web-browser"></a>Web browser  
  `DTE.Properties("Environment", "WebBrowser")`  

@@ -1,37 +1,36 @@
 ---
-title: "IDiaEnumTables::Reset | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "IDiaEnumTables::Reset (metodo)"
+title: IDiaEnumTables::Reset | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology: vs-ide-debug
+ms.topic: conceptual
+dev_langs:
+- C++
+helpviewer_keywords:
+- IDiaEnumTables::Reset method
 ms.assetid: 033039f4-5132-48c4-ba46-376243e3519f
-caps.latest.revision: 8
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 8
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 1b7a1e27c7ba2aad0408ca129c9fc2e0a796a7e9
+ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/18/2018
 ---
-# IDiaEnumTables::Reset
-[!INCLUDE[vs2017banner](../../code-quality/includes/vs2017banner.md)]
-
+# <a name="idiaenumtablesreset"></a>IDiaEnumTables::Reset
 Reimposta una sequenza di enumerazione all'inizio.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp#  
+```C++  
 HRESULT Reset ();  
 ```  
   
-## Valore restituito  
- Restituisca il valore `S_OK`.  
+## <a name="return-value"></a>Valore restituito  
+ Restituisce `S_OK`.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IDiaEnumTables](../../debugger/debug-interface-access/idiaenumtables.md)

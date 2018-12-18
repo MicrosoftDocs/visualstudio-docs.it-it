@@ -1,32 +1,31 @@
 ---
-title: "Comandi del menu Messaggi | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "comandi del menu Messaggi"
+title: I comandi di Menu dei messaggi | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology: vs-ide-debug
+ms.topic: conceptual
+helpviewer_keywords:
+- Messages menu commands
 ms.assetid: 8ffcee99-7950-41af-906e-661e19e3257a
-caps.latest.revision: 3
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 3
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 08ba5fc9fa71e71d7b840f31ae9cc17206ac7b6b
+ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/18/2018
 ---
-# Comandi del menu Messaggi
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
-Nel menu **Messaggi** sono disponibili comandi per il controllo delle visualizzazioni dei messaggi.  
+# <a name="messages-menu-commands"></a>comandi del menu Messaggi
+Il **messaggi** menu sono disponibili comandi per il controllo delle visualizzazioni dei messaggi.  
   
- **Avvia\/Arresta registrazione**  
- Consente di avviare o arrestare la visualizzazione dei messaggi.  
+ **Avvia/Arresta registrazione**  
+ Avvia o arresta la visualizzazione dei messaggi.  
   
  **Opzioni di registrazione**  
- Consente di aprire la finestra di dialogo **Opzioni messaggio**, in cui è possibile specificare i criteri di ricerca del messaggio.  
+ Apre il **Opzioni messaggio** della finestra di dialogo in cui è possibile specificare i criteri di ricerca di messaggi.  
   
- **Cancella log**  
- Consente di cancellare il contenuto della visualizzazione messaggi attiva.
+ **Cancella Log**  
+ Cancella il contenuto della visualizzazione messaggi attiva.

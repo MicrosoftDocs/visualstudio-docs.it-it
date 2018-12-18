@@ -1,41 +1,22 @@
 ---
 title: Salvataggio ed esportazione dei dati degli strumenti per le prestazioni | Microsoft Docs
-ms.custom: 
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- vs-ide-debug
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.technology: vs-ide-debug
+ms.topic: conceptual
 helpviewer_keywords:
 - performance tools, saving and exporting reports
 ms.assetid: 2e9b28fe-3ed2-4e1d-b9cb-0a5e384380b0
-caps.latest.revision: 9
 author: mikejo5000
 ms.author: mikejo
-manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 2cd52c97d78c4b2b08244e7f4a8f626a536c8d04
+ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
 ms.translationtype: HT
-ms.sourcegitcommit: 8bd34de7603efac080f3321a87ba3badf85dd1fb
-ms.openlocfilehash: 44988d8c5ff8b541b090f2baf48005d82caa2c10
-ms.contentlocale: it-it
-ms.lasthandoff: 07/15/2017
-
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/19/2018
 ---
 # <a name="saving-and-exporting-performance-tools-data"></a>Salvataggio ed esportazione dei dati degli strumenti per le prestazioni
 Questo argomento descrive come salvare ed esportare i file di dati delle prestazioni.  
@@ -112,4 +93,3 @@ Questo argomento descrive come salvare ed esportare i file di dati delle prestaz
  [Analisi dei dati degli strumenti per le prestazioni](../profiling/analyzing-performance-tools-data.md)   
  [Confronto tra file di dati delle prestazioni](../profiling/comparing-performance-data-files.md)   
  [VSPerfReport](../profiling/vsperfreport.md)
-

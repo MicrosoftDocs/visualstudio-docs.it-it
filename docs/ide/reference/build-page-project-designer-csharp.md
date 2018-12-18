@@ -1,43 +1,26 @@
 ---
 title: Pagina Compilazione, Creazione progetti (C#) | Microsoft Docs
-ms.custom: 
+ms.custom: ''
 ms.date: 06/20/2017
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - vs-ide-general
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: conceptual
 f1_keywords:
 - cs.ProjectPropertiesBuild
 helpviewer_keywords:
 - Build options [C#]
 - Project Designer, Build page
 ms.assetid: 77ff1bfc-d633-4634-ba29-9afdb6d7e362
-caps.latest.revision: 43
 author: gewarren
 ms.author: gewarren
-manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: b7b29ffadcb069b6c918dfbe89f0ae49d0da172a
-ms.openlocfilehash: 7325918e8be0f7a8da3a0b2d055a3ebee110572e
-ms.contentlocale: it-it
-ms.lasthandoff: 06/20/2017
-
+manager: douge
+ms.workload:
+- dotnet
+ms.openlocfilehash: 4572975b534d240cfd535f7d70f57fd958ff218d
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="build-page-project-designer-c"></a>Pagina Compilazione, Progettazione progetti (C#)
 Usare la pagina **Compilazione** di **Creazione progetti** per specificare le proprietà di configurazione della compilazione del progetto. Questa pagina è applicabile solo ai progetti [!INCLUDE[csprcs](../../data-tools/includes/csprcs_md.md)].  
@@ -50,7 +33,7 @@ Per accedere alla pagina **Compilazione**, scegliere un nodo del progetto (non i
 Le opzioni seguenti consentono di selezionare la configurazione e la piattaforma da visualizzare o modificare.  
 
 > [!NOTE]
->  Usando configurazioni di compilazione semplificate, il sistema del progetto determina se compilare una versione di debug o una versione finale. Queste opzioni non sono di conseguenza visualizzate. Per altre informazioni, vedere [Debug and Release Project Configurations](http://msdn.microsoft.com/en-us/0440b300-0614-4511-901a-105b771b236e) (Eseguire il debug e il rilascio delle configurazione del progetto).  
+> Usando configurazioni di compilazione semplificate, il sistema del progetto determina se compilare una versione di debug o una versione finale. Queste opzioni non sono di conseguenza visualizzate. Per altre informazioni, vedere [Procedura: Impostare le configurazioni di debug e rilascio](/debugger/how-to-set-debug-and-release-configurations.md).
 
 **Configurazione**  
 Specifica le impostazioni di configurazione da visualizzare o modificare. Le impostazioni possono essere **Attiva (Debug)** (il valore predefinito), **Debug**, **Release** o **Tutte le configurazioni**.  
@@ -120,9 +103,9 @@ Considera tutti gli avvisi come errori.
 Le impostazioni riportate di seguito sono usate per configurare le opzioni di output del processo di compilazione.  
 
 **Percorso output**  
-Specifica il percorso dei file di output per la configurazione del progetto. Immettere il percorso dell'output di compilazione in questa casella, oppure scegliere il pulsante **Sfoglia** per specificare un percorso. Si noti che il percorso è relativo. Se si immette un percorso assoluto, sarà salvato come relativo. Il percorso predefinito è bin\Debug o bin\Release\\. Per altre informazioni, vedere [Debug and Release Project Configurations](http://msdn.microsoft.com/en-us/0440b300-0614-4511-901a-105b771b236e) (Eseguire il debug e il rilascio delle configurazione del progetto).  
+Specifica il percorso dei file di output per la configurazione del progetto. Immettere il percorso dell'output di compilazione in questa casella, oppure scegliere il pulsante **Sfoglia** per specificare un percorso. Si noti che il percorso è relativo. Se si immette un percorso assoluto, sarà salvato come relativo. Il percorso predefinito è bin\Debug o bin\Release\\.
 
-Usando configurazioni di compilazione semplificate, il sistema del progetto determina se compilare una versione di debug o una versione finale. Scegliendo il comando **Compila** dal menu **Debug** (F5) la compilazione verrà inserita nel percorso di debug indipendentemente dal **Percorso output** specificato. Il comando **Compila** del menu **Compila** la inserisce invece nel percorso specificato. Per altre informazioni, vedere [Debug and Release Project Configurations](http://msdn.microsoft.com/en-us/0440b300-0614-4511-901a-105b771b236e) (Eseguire il debug e il rilascio delle configurazione del progetto).  
+Usando configurazioni di compilazione semplificate, il sistema del progetto determina se compilare una versione di debug o una versione finale. Scegliendo il comando **Compila** dal menu **Debug** (F5) la compilazione verrà inserita nel percorso di debug indipendentemente dal **Percorso output** specificato. Il comando **Compila** del menu **Compila** la inserisce invece nel percorso specificato. Per altre informazioni, vedere [Informazioni sulle configurazioni della build](../../ide/understanding-build-configurations.md).
 
 **File di documentazione XML**  
 Specifica il nome di un file in cui saranno elaborati i commenti relativi alla documentazione. Per altre informazioni, vedere [/doc (Opzioni del compilatore C#)](/dotnet/csharp/language-reference/compiler-options/doc-compiler-option).  
@@ -139,4 +122,3 @@ Selezionare il collegamento per informazioni sulla finestra di dialogo [Impostaz
 ## <a name="see-also"></a>Vedere anche  
 [Project Properties Reference](../../ide/reference/project-properties-reference.md)  (Riferimenti alle proprietà di progetto)  
 [Opzioni del compilatore C#](/dotnet/csharp/language-reference/compiler-options/index)
-

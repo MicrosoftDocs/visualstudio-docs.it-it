@@ -1,13 +1,9 @@
 ---
-title: "Attività MergeLocalizationDirectives | Microsoft Docs"
-ms.custom: 
+title: Attività MergeLocalizationDirectives | Microsoft Docs
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- vs-ide-sdk
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.technology: msbuild
+ms.topic: reference
 dev_langs:
 - VB
 - CSharp
@@ -19,30 +15,16 @@ helpviewer_keywords:
 - MergeLocalizationDirectives task [WPF MSBuild]
 - moving localization comments and attributes to a separate file [WPF MSBuild]
 ms.assetid: 9095b4f1-88da-4194-914b-ee1456826830
-caps.latest.revision: 5
-author: kempb
-ms.author: kempb
-manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 3d32d11a430227800cb3ed53831a9565eb6adeb3
-ms.openlocfilehash: e56ad5826bd6d18bd4409e98f8d54c49d266af82
-ms.contentlocale: it-it
-ms.lasthandoff: 05/30/2017
-
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 9cb696aae19675a12aeb9aa6f2b76c8e6b710ea1
+ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/19/2018
 ---
 # <a name="mergelocalizationdirectives-task"></a>Attività MergeLocalizationDirectives
 L'attività <xref:Microsoft.Build.Tasks.Windows.MergeLocalizationDirectives> unisce i commenti e gli attributi di localizzazione di uno o più file [!INCLUDE[TLA2#tla_xaml](../msbuild/includes/tla2sharptla_xaml_md.md)] in formato binario in un singolo file per l'intero assembly.  

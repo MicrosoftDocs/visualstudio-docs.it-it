@@ -1,39 +1,23 @@
 ---
 title: Utilizzando il modello di automazione | Documenti Microsoft
-ms.custom: 
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - vs-ide-sdk
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: conceptual
 helpviewer_keywords:
 - automation [Visual Studio SDK], automation model
 ms.assetid: 0c7f7889-fbfb-4b19-804f-b742138baecd
-caps.latest.revision: 15
+author: gregvanl
 ms.author: gregvanl
-manager: ghogen
-translation.priority.mt:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: 679e9966e66de1c79cb3c6394f1d80ab6d6733bb
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
 ms.translationtype: MT
-ms.sourcegitcommit: 4a36302d80f4bc397128e3838c9abf858a0b5fe8
-ms.openlocfilehash: 82a9c2068bdd3e234bcc53ffa870ca289289d690
-ms.contentlocale: it-it
-ms.lasthandoff: 09/26/2017
-
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="using-the-automation-model"></a>Utilizzando il modello di automazione
 Dopo aver connesso il pacchetto VSPackage per l'automazione, è possibile ottenere le proprietà e metodi chiamando il <xref:EnvDTE.DTEClass.GetObject%2A> metodo il <xref:EnvDTE._DTE> oggetto, passando una stringa che rappresenta l'oggetto che si desidera recuperare.  

@@ -1,37 +1,36 @@
 ---
-title: "IDiaEnumDebugStreamData::Reset | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "IDiaEnumDebugStreamData::Reset (metodo)"
+title: IDiaEnumDebugStreamData::Reset | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology: vs-ide-debug
+ms.topic: conceptual
+dev_langs:
+- C++
+helpviewer_keywords:
+- IDiaEnumDebugStreamData::Reset method
 ms.assetid: d3eab1a0-db05-4838-833f-57e93a6ad096
-caps.latest.revision: 7
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 7
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 543ccb54c2c316676bf2cd4fcd1133419129a60e
+ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/18/2018
 ---
-# IDiaEnumDebugStreamData::Reset
-[!INCLUDE[vs2017banner](../../code-quality/includes/vs2017banner.md)]
-
-Viene reimpostato all'inizio di una sequenza enumerata.  
+# <a name="idiaenumdebugstreamdatareset"></a>IDiaEnumDebugStreamData::Reset
+Reimposta il valore di inizio di una sequenza enumerata.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp#  
+```C++  
 HRESULT Reset ();  
 ```  
   
-## Valore restituito  
- Restituisca il valore `S_OK`.  
+## <a name="return-value"></a>Valore restituito  
+ Restituisce `S_OK`.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IDiaEnumDebugStreamData](../../debugger/debug-interface-access/idiaenumdebugstreamdata.md)

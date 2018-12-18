@@ -1,19 +1,16 @@
 ---
 title: Creazione e modifica di configurazioni della build
-description: 
+description: ''
 author: asb3993
 ms.author: amburns
 ms.date: 04/14/2017
-ms.topic: article
 ms.assetid: CC1B72D6-12FF-4CCC-A9D4-00F2DC14589F
+ms.openlocfilehash: a3cd55998d3738b5377fe9859b7e212cb7e8aa8d
+ms.sourcegitcommit: 4c0bc21d2ce2d8e6c9d3b149a7d95f0b4d5b3f85
 ms.translationtype: HT
-ms.sourcegitcommit: e2b7ff9126e1cc38ac2e58d6be339b656a024e7f
-ms.openlocfilehash: 0cce820d76660124838307cc231b379c449b58a7
-ms.contentlocale: it-it
-ms.lasthandoff: 08/11/2017
-
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/20/2018
 ---
-
 # <a name="creating-and-editing-build-configurations"></a>Creazione e modifica di configurazioni della build
 
 È possibile creare configurazioni della build per singoli progetti o per un'intera soluzione. Queste configurazioni garantiscono il controllo preciso di una build.
@@ -62,4 +59,3 @@ Per rinominare una configurazione, selezionarla nell'elenco delle configurazioni
 Selezionare il pulsante **Rinomina**.
 
 ![Finestra di dialogo Rinomina](media/create-and-edit-configurations-image5.png) 
-

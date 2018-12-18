@@ -1,40 +1,37 @@
 ---
-title: "IDiaSymbol::get_isSingleInheritance | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
+title: IDiaSymbol::get_isSingleInheritance | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology: vs-ide-debug
+ms.topic: conceptual
+dev_langs:
+- C++
 ms.assetid: 46cde656-059b-4c20-9476-3ca68ccc9912
-caps.latest.revision: 3
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 3
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.openlocfilehash: 15178084d636d6271446319bcff92ac0677898df
+ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/18/2018
 ---
-# IDiaSymbol::get_isSingleInheritance
-[!INCLUDE[vs2017banner](../../code-quality/includes/vs2017banner.md)]
-
-Specifica se i punti del puntatore `this` a un membro dati con ereditarietà singola.  
+# <a name="idiasymbolgetissingleinheritance"></a>IDiaSymbol::get_isSingleInheritance
+Specifica se il `this` puntatore punta a un membro dati con ereditarietà singola.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp  
+```C++  
 HRESULT get_isSingleInheritance(   
    BOOL* pRetVal);  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `pRetVal`  
- \[out\] puntatore A `BOOL` che specifica se il puntatore `this` indica un membro dati con ereditarietà singola.  
+ [out] Un puntatore a un `BOOL` che specifica se il `this` puntatore punta a un membro dati con ereditarietà singola.  
   
-## Valore restituito  
- Se l'operazione riesce, restituisce `S_OK`; in caso contrario, restituisce `S_FALSE` o un codice di errore.  
+## <a name="return-value"></a>Valore restituito  
+ Se ha esito positivo, restituisce `S_OK`; in caso contrario, restituisce `S_FALSE` o un codice di errore.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IDiaSymbol](../../debugger/debug-interface-access/idiasymbol.md)

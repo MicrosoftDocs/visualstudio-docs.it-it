@@ -1,25 +1,29 @@
 ---
-title: "Metodo IJsDebugFrame::GetStackRange | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/18/2017"
-ms.prod: "windows-script-interfaces"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
+title: 'Metodo ijsdebugframe:: GetStackRange | Documenti Microsoft'
+ms.custom: 
+ms.date: 01/18/2017
+ms.prod: windows-script-interfaces
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: reference
 apiname: IJsDebugFrame.GetStackRange
 apilocation: jscript9diag.dll
 ms.assetid: a6d1d8be-efc0-442d-9756-1959c8f102bd
-caps.latest.revision: 4
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.openlocfilehash: cce4d4542f4f76657475636ad6d8e430e1909181
+ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/27/2017
 ---
-# Metodo IJsDebugFrame::GetStackRange
+# <a name="ijsdebugframegetstackrange-method"></a>Metodo IJsDebugFrame::GetStackRange
 Restituisce l'intervallo di indirizzi assoluti dello stack frame JavaScript logico.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
 HRESULT GetStackRange(  
@@ -28,20 +32,20 @@ HRESULT GetStackRange(
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `pStart`  
- \[out\] Basare la maggior parte del puntatore dello stack del frame.  
+ [out] Basso la maggior parte dei puntatori agli stack del frame.  
   
  `pEnd`  
- \[out\] Completare la maggior parte del puntatore di impilatore del frame.  
+ [out] Primi puntatore Fascicolatore la maggior parte del frame.  
   
-## Valore restituito  
+## <a name="return-value"></a>Valore restituito  
   
-## Note  
- Questo metodo è utile per riunire tracce dello stack con interfoliazione raccolte da più runtime.  I puntatori di stack iniziale e finale possono includere più stack frame del computer virtuale \(frame di runtime di JavaScript interpretato\). Da inizio \> fine man mano che lo stack aumenta dall'indirizzo alto a quello basso.  
+## <a name="remarks"></a>Note  
+ Questo metodo è utile per riunire le tracce dello stack con interfoliazione raccolte da più runtime. Inizio, fine puntatori di stack possono includere più stack frame di computer fisico (per i frame al runtime JavaScript interpretati). Start > terminare man mano che aumenta lo stack dall'alto all'indirizzo bassa.  
   
-## Requisiti  
- **Intestazione:** jscript9diag.h  
+## <a name="requirements"></a>Requisiti  
+ **Intestazione:** jscript9diag  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Interfaccia IJsDebugFrame](../../winscript/reference/ijsdebugframe-interface.md)

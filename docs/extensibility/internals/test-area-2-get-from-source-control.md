@@ -1,31 +1,32 @@
 ---
-title: "Area di test 2: Ottenere dal controllo del codice sorgente | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "controllo del codice sorgente plug-in, il recupero di elementi dal controllo del codice sorgente"
-  - "controllo del codice sorgente [Visual Studio SDK], il recupero di elementi da"
+title: 'Area di test 2: Ottenere dal controllo del codice sorgente | Documenti Microsoft'
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology:
+- vs-ide-sdk
+ms.topic: conceptual
+helpviewer_keywords:
+- source control plug-ins, getting items from source control
+- source control [Visual Studio SDK], getting items from
 ms.assetid: cbd345c5-ca43-4630-b7a4-85564f4e2090
-caps.latest.revision: 18
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 18
+author: gregvanl
+ms.author: gregvanl
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: 27f2a535b2e08d3632dfd46031823919477fca3e
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# Area di test 2: Ottenere dal controllo del codice sorgente
-[!INCLUDE[vs2017banner](../../code-quality/includes/vs2017banner.md)]
-
-Questa area di test riguarda i test case per il recupero di elementi dall'archivio versione tramite il comando Get. Questi test case possono essere applicati a entrambe locale e ai progetti Web.  
+# <a name="test-area-2-get-from-source-control"></a>Area di test 2: Ottenere dal controllo del codice sorgente
+Questa area di test descrive i test case per il recupero di elementi dall'archivio delle versioni tramite il comando Get. Questi test case possono essere applicati a entrambi locale e per i progetti Web.  
   
-## Accedere al Menu comando  
- Nell'esempio [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] vengono utilizzati percorsi di menu dell'ambiente di sviluppo integrato nei test case.  
+## <a name="command-menu-access"></a>Accedere al Menu comando  
+ Nell'esempio [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] vengono utilizzati percorsi menu dell'ambiente di sviluppo integrato nei test case.  
   
-##### Ottenere la versione più recente:  
+##### <a name="get-latest-version"></a>Ottenere la versione più recente:  
   
 -   **File**, **controllo del codice sorgente**, **Leggi ultima versione**.  
   
@@ -35,24 +36,24 @@ Questa area di test riguarda i test case per il recupero di elementi dall'archiv
   
 -   Get: **File**, **controllo del codice sorgente**, **ottenere**.  
   
-## Comportamento previsto  
+## <a name="expected-behavior"></a>Comportamento previsto  
   
-##### Ottenere la versione più recente:  
- Esegue un recupero invisibile \(alcuna interfaccia utente\) della versione più recente dell'elemento dall'archivio versione.  
+##### <a name="get-latest-version"></a>Ottenere la versione più recente:  
+ Esegue un recupero invisibile all'utente (senza interfaccia utente) della versione più recente dell'elemento dall'archivio delle versioni.  
   
-##### Get:  
+##### <a name="get"></a>Ottieni:  
  Consente di visualizzare il **ottenere** la finestra di dialogo e consente all'utente di apportare modifiche al set di file che verrà recuperato, nonché modificare le opzioni che influiscono sul modo in cui vengono recuperati i file.  
   
-## Test case  
+## <a name="test-cases"></a>Test case  
   
 |Operazione|Passi di test|Per verificare i risultati previsti|  
-|----------------|-------------------|-----------------------------------------|  
-|Ottenere la versione più recente di un file che non esiste in locale|1.  Creare un progetto.<br />2.  Aggiungere un elemento al progetto.<br />3.  Inserire il progetto nel controllo del codice sorgente.<br />4.  Elimina la copia locale dell'elemento.<br />5.  Ottenere la versione più recente dell'elemento \(Menu di scelta rapida, **Leggi ultima versione**\).|File di elemento viene recuperato in locale.|  
-|Ottenere un file che non esiste in locale|1.  Creare un progetto.<br />2.  Aggiungere un elemento al progetto.<br />3.  Inserire il progetto nel controllo del codice sorgente.<br />4.  Elimina la copia locale dell'elemento.<br />5.  Ottenere l'elemento \(**File**, **controllo del codice sorgente**, **ottenere** \< elemento \>\).|File di elemento viene recuperato in locale.|  
-|Ottenere un file che è stati estratto in modo esclusivo e modificato localmente|1.  Creare un progetto.<br />2.  Aggiungere un elemento al progetto.<br />3.  Inserire il progetto nel controllo del codice sorgente.<br />4.  Estrae l'elemento del progetto in modo esclusivo.<br />5.  Modificare la copia locale.<br />6.  Ottenere la versione più recente dell'elemento \(**File**, **Leggi ultima versione di** \< elemento \>\). Se questo passaggio ha esito positivo, andare al passaggio successivo.<br />7.  Fare clic su **sostituire** pulsante nella finestra di dialogo di avviso.|**ReResult dal passaggio 6** `:`<br /><br /> La finestra di dialogo di avviso indica che il file è estratto.<br /><br /> **ReResult ottenuto nel passaggio 7:**<br /><br /> File locali modificato viene sostituita dalla versione originale dall'archivio versione.<br /><br /> File è di lettura\/scrittura.|  
-|Ottenere e sostituire i file estratti, condiviso e modificato localmente|1.  Creare un nuovo progetto.<br />2.  Aggiungere un elemento al progetto.<br />3.  Inserire il progetto nel controllo del codice sorgente.<br />4.  Estrarre l'elemento del progetto come condiviso.<br />5.  Modificare la copia locale.<br />6.  Ottenere la versione più recente dell'elemento \(**File**, **Leggi ultima versione di** \< elemento \>\). Se questo passaggio ha esito positivo, andare al passaggio successivo.<br />7.  Fare clic su **sostituire** nella finestra di dialogo di avviso.|**Risultato del passaggio 6:**<br /><br /> La finestra di dialogo di avviso indica che il file è estratto.<br /><br /> **Risultato ottenuto nel passaggio 7:**<br /><br /> File locali modificato viene sostituita dalla versione originale dall'archivio versione.<br /><br /> File è di lettura\/scrittura.|  
-|Ottenere un file che esistono in locale, come la versione più recente nell'archivio delle versioni|1.  Creare un nuovo progetto.<br />2.  Aggiungere un elemento al progetto.<br />3.  Inserire il progetto nel controllo del codice sorgente.<br />4.  Ottenere l'elemento \(**File**, **controllo del codice sorgente**, **ottenere** \< elemento \>\).|File locale rimane invariato.|  
-|Ottenere una soluzione con un progetto|1.  Creare una soluzione con un progetto.<br />2.  Inserire la soluzione nel controllo del codice sorgente.<br />3.  Eliminare tutti i file di progetto in locale.<br />4.  Ottenere la soluzione \(**File**, **controllo del codice sorgente**, **ottenere**\).|Tutti i file eliminati vengono ripristinati in locale.|  
+|------------|----------------|--------------------------------|  
+|Ottenere la versione più recente di un file che non esiste in locale|1.  Creare un progetto.<br />2.  Aggiungere un elemento al progetto.<br />3.  Inserire il progetto nel controllo del codice sorgente.<br />4.  Eliminare la copia locale dell'elemento.<br />5.  Ottenere la versione più recente dell'elemento (Menu di scelta rapida, **Leggi ultima versione**).|File di elemento viene recuperato in locale.|  
+|Ottenere un file che non esiste in locale|1.  Creare un progetto.<br />2.  Aggiungere un elemento al progetto.<br />3.  Inserire il progetto nel controllo del codice sorgente.<br />4.  Eliminare la copia locale dell'elemento.<br />5.  Ottenere l'elemento (**File**, **controllo del codice sorgente**, **ottenere** \<elemento >).|File di elemento viene recuperato in locale.|  
+|Ottenere un file che è stato estratto in modo esclusivo e modificato localmente|1.  Creare un progetto.<br />2.  Aggiungere un elemento al progetto.<br />3.  Inserire il progetto nel controllo del codice sorgente.<br />4.  Estrae l'elemento del progetto in modo esclusivo.<br />5.  Modificare la copia locale.<br />6.  Ottenere la versione più recente dell'elemento (**File**, **Leggi ultima versione di** \<elemento >). Se questo passaggio ha esito positivo, andare al passaggio successivo.<br />7.  Fare clic su **sostituire** pulsante nella finestra di dialogo di avviso.|**ReResult al passaggio 6** `:`<br /><br /> La finestra di dialogo di avviso indica che il file è estratto.<br /><br /> **ReResult dal passaggio 7:**<br /><br /> Il file locale modificato viene sostituito dalla versione originale dall'archivio versione.<br /><br /> File è di lettura/scrittura.|  
+|Ottenere e sostituire i file estratti, condivisa e modificato localmente|1.  Creare un nuovo progetto.<br />2.  Aggiungere un elemento al progetto.<br />3.  Inserire il progetto nel controllo del codice sorgente.<br />4.  Estrarre l'elemento di progetto come condiviso.<br />5.  Modificare la copia locale.<br />6.  Ottenere la versione più recente dell'elemento (**File**, **Leggi ultima versione di** \<elemento >). Se questo passaggio ha esito positivo, andare al passaggio successivo.<br />7.  Fare clic su **sostituire** nella finestra di dialogo di avviso.|**Risultato del passaggio 6:**<br /><br /> La finestra di dialogo di avviso indica che il file è estratto.<br /><br /> **Risultato del passaggio 7:**<br /><br /> Il file locale modificato viene sostituito dalla versione originale dall'archivio versione.<br /><br /> File è di lettura/scrittura.|  
+|Ottenere un file che esiste localmente, identica a quella più recente nell'archivio delle versioni|1.  Creare un nuovo progetto.<br />2.  Aggiungere un elemento al progetto.<br />3.  Inserire il progetto nel controllo del codice sorgente.<br />4.  Ottenere l'elemento (**File**, **controllo del codice sorgente**, **ottenere** \<elemento >).|File locale è stato modificato.|  
+|Ottenere una soluzione con un unico progetto|1.  Creare una soluzione con un progetto.<br />2.  Inserire la soluzione nel controllo del codice sorgente.<br />3.  Eliminare tutti i file di progetto in locale.<br />4.  La soluzione (**File**, **controllo del codice sorgente**, **ottenere**).|Tutti i file eliminati vengono ripristinati in locale.|  
   
-## Vedere anche  
- [Guida per i test per il Plug\-in di controllo codice sorgente](../../extensibility/internals/test-guide-for-source-control-plug-ins.md)
+## <a name="see-also"></a>Vedere anche  
+ [Guida per il test dei plug-in del controllo del codice sorgente](../../extensibility/internals/test-guide-for-source-control-plug-ins.md)

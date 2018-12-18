@@ -1,27 +1,33 @@
 ---
-title: "IDispError::QueryErrorInfo | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/18/2017"
-ms.prod: "windows-script-interfaces"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-apiname: IDispError.QueryErrorInfo
-apilocation: scrobj.dll
-helpviewer_keywords: 
-  - "IDispError::QueryErrorInfo"
+title: IDispError::QueryErrorInfo | Documenti Microsoft
+ms.custom: ''
+ms.date: 01/18/2017
+ms.prod: windows-script-interfaces
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
+ms.topic: reference
+apiname:
+- IDispError.QueryErrorInfo
+apilocation:
+- scrobj.dll
+helpviewer_keywords:
+- IDispError::QueryErrorInfo
 ms.assetid: e7e71a14-77e2-4331-9ffc-1dace041fa84
 caps.latest.revision: 8
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 8
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.openlocfilehash: a165edf2d8f9a0b386daa0035ece1a722401a443
+ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/27/2017
 ---
-# IDispError::QueryErrorInfo
-Recupera un determinato tipo di informazioni sugli errori.  
+# <a name="idisperrorqueryerrorinfo"></a>IDispError::QueryErrorInfo
+Recupera un particolare tipo di informazioni sull'errore.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
 HRESULT QueryErrorInfo(  
@@ -30,25 +36,25 @@ HRESULT QueryErrorInfo(
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `guidErrorType`  
- \[in\] GUID che specifica il tipo di errore.  
+ [in] Tipo di errore specifica GUID.  
   
  `ppde`  
- \[out\] specifica l'oggetto di IDispError.  
+ [out] Specifica l'oggetto IDispError.  
   
-## Valore restituito  
- Il metodo restituisce un tipo `HRESULT`.  I valori possibili sono, ma non sono limitati a, quelli nella tabella seguente.  
+## <a name="return-value"></a>Valore restituito  
+ Il metodo restituisce un tipo `HRESULT`. I valori possibili includono, ma non sono limitati a, quelli indicati nella tabella seguente.  
   
 |Valore|Descrizione|  
-|------------|-----------------|  
+|-----------|-----------------|  
 |`S_OK`|Il metodo è riuscito.|  
   
-## Note  
- Il metodo `QueryErrorInfo` recupera un determinato tipo di informazioni sugli errori.  
+## <a name="remarks"></a>Note  
+ Il `QueryErrorInfo` che consente di recuperare un particolare tipo di informazioni sull'errore.  
   
 > [!NOTE]
->  Il metodo non è implementato.  
+>  Questo metodo non è implementato.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Interfaccia IDispError](../../winscript/reference/idisperror-interface.md)

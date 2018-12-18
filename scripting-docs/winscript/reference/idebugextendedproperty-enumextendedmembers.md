@@ -1,50 +1,56 @@
 ---
-title: "IDebugExtendedProperty::EnumExtendedMembers | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/18/2017"
-ms.prod: "windows-script-interfaces"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-apiname: IDebugExtendedProperty.EnumExtendedMembers
-apilocation: scrobj.dll
-helpviewer_keywords: 
-  - "IDebugExtendedProperty::EnumExtendedMembers"
+title: IDebugExtendedProperty::EnumExtendedMembers | Documenti Microsoft
+ms.custom: ''
+ms.date: 01/18/2017
+ms.prod: windows-script-interfaces
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
+ms.topic: reference
+apiname:
+- IDebugExtendedProperty.EnumExtendedMembers
+apilocation:
+- scrobj.dll
+helpviewer_keywords:
+- IDebugExtendedProperty::EnumExtendedMembers
 ms.assetid: 27cdb091-da4e-44d2-a631-31ae00468b98
 caps.latest.revision: 8
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 8
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.openlocfilehash: 81b1cbb9b36d7ae237551aad2677f9480c615b88
+ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/27/2017
 ---
-# IDebugExtendedProperty::EnumExtendedMembers
+# <a name="idebugextendedpropertyenumextendedmembers"></a>IDebugExtendedProperty::EnumExtendedMembers
 Enumera i membri di una proprietà estesa.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
 HRESULT EnumExtendedMembers(  
-   EX_DBGPROP_INFO_FLAGS  dwFieldSpec,  
-   UINT  nRadix,  
-   IEnumDebugExtendedPropertyInfo**  ppeepi  
+   EX_DBGPROP_INFO_FLAGS  dwFieldSpec,  
+   UINT  nRadix,  
+   IEnumDebugExtendedPropertyInfo**  ppeepi  
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `dwFieldSpec`  
- \[in\] specifica le costanti di EX\_DBGPROP\_INFO\_FLAGS che determinano i campi nelle strutture estese enumerate della proprietà di debug che devono essere rispettate.  
+ [in] Specifica le costanti EX_DBGPROP_INFO_FLAGS che determinano che i campi in enumerati estesi strutture delle proprietà debug devono essere compilati.  
   
  `nRadix`  
- \[in\] base da utilizzare nell'interpretazione delle informazioni numerica.  
+ [in] Base per essere utilizzato per interpretare le informazioni numeriche.  
   
  `ppeepi`  
- \[out\] restituisce l'interfaccia `IEnumDebugExtendedPropertyInfo` che enumera le proprietà del membro.  
+ [out] Restituisce il `IEnumDebugExtendedPropertyInfo` interfaccia che enumera le proprietà del membro.  
   
-## Valore restituito  
- Restituisce `HRESULT`valido, in genere `S_OK`.  
+## <a name="return-value"></a>Valore restituito  
+ Restituisce un oggetto valido `HRESULT`, in genere `S_OK`.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Interfaccia IDebugExtendedProperty](../../winscript/reference/idebugextendedproperty-interface.md)   
- [EX\_DBGPROP\_INFO\_FLAGS](../../winscript/reference/ex-dbgprop-info-flags.md)   
+ [EX_DBGPROP_INFO_FLAGS](../../winscript/reference/ex-dbgprop-info-flags.md)   
  [Struttura ExtendedDebugPropertyInfo](../../winscript/reference/extendeddebugpropertyinfo-structure.md)

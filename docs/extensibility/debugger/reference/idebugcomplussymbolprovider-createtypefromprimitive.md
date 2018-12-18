@@ -1,25 +1,26 @@
 ---
-title: "IDebugComPlusSymbolProvider::CreateTypeFromPrimitive | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "IDebugComPlusSymbolProvider::CreateTypeFromPrimitive"
-  - "CreateTypeFromPrimitive"
+title: IDebugComPlusSymbolProvider::CreateTypeFromPrimitive | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology:
+- vs-ide-sdk
+ms.topic: conceptual
+helpviewer_keywords:
+- IDebugComPlusSymbolProvider::CreateTypeFromPrimitive
+- CreateTypeFromPrimitive
 ms.assetid: 37213cc2-a038-42ea-9b28-3ae40d4cfe69
-caps.latest.revision: 13
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 13
+author: gregvanl
+ms.author: gregvanl
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: ccffe70b8b1f13c61a9ed444380c3326a5aed2f5
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# IDebugComPlusSymbolProvider::CreateTypeFromPrimitive
-[!INCLUDE[vs2017banner](../../../code-quality/includes/vs2017banner.md)]
-
+# <a name="idebugcomplussymbolprovidercreatetypefromprimitive"></a>IDebugComPlusSymbolProvider::CreateTypeFromPrimitive
 Crea un tipo dal tipo primitivo specificato.  
   
 ## <a name="syntax"></a>Sintassi  
@@ -44,7 +45,7 @@ int CreateTypeFromPrimitive(
   
 #### <a name="parameters"></a>Parametri  
  `dwPrimType`  
- [in] Valore di [enumerazione CorElementType](CorElementType%20Enumeration.xml) che rappresenta il tipo primitivo.  
+ [in] Valore di [enumerazione CorElementType](/dotnet/framework/unmanaged-api/metadata/corelementtype-enumeration) che rappresenta il tipo primitivo.  
   
  `pAddress`  
  [in] Un oggetto indirizzo rappresentato da un [IDebugAddress](../../../extensibility/debugger/reference/idebugaddress.md) interfaccia.  
@@ -58,7 +59,7 @@ int CreateTypeFromPrimitive(
 ## <a name="example"></a>Esempio  
  Nell'esempio seguente viene illustrato come implementare questo metodo per un **CDebugSymbolProvider** oggetto che espone il [IDebugComPlusSymbolProvider](../../../extensibility/debugger/reference/idebugcomplussymbolprovider.md) interfaccia.  
   
-```cpp#  
+```cpp  
 HRESULT CDebugSymbolProvider::CreateTypeFromPrimitive(  
     DWORD dwPrimType,  
     IDebugAddress* pAddress,  

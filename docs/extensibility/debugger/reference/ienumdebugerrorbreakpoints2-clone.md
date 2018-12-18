@@ -1,51 +1,52 @@
 ---
-title: "IEnumDebugErrorBreakpoints2::Clone | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "IEnumDebugErrorBreakpoints2::Clone"
-helpviewer_keywords: 
-  - "IEnumDebugErrorBreakpoints2::Clone"
+title: IEnumDebugErrorBreakpoints2::Clone | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology:
+- vs-ide-sdk
+ms.topic: conceptual
+f1_keywords:
+- IEnumDebugErrorBreakpoints2::Clone
+helpviewer_keywords:
+- IEnumDebugErrorBreakpoints2::Clone
 ms.assetid: f6fb4985-8dd6-4a9b-98e0-15dbc64cc9ec
-caps.latest.revision: 9
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 9
+author: gregvanl
+ms.author: gregvanl
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: 7e8b5e1c4c0b5c4f52e6b9af6b673d6d78c03ea9
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# IEnumDebugErrorBreakpoints2::Clone
-[!INCLUDE[vs2017banner](../../../code-quality/includes/vs2017banner.md)]
-
-Restituisce una copia dell'enumerazione corrente come un oggetto separato.  
+# <a name="ienumdebugerrorbreakpoints2clone"></a>IEnumDebugErrorBreakpoints2::Clone
+Restituisce una copia dell'enumerazione corrente come oggetto separato.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp#  
+```cpp  
 HRESULT Clone(  
-   IEnumDebugErrorBreakpoints2** ppEnum  
+   IEnumDebugErrorBreakpoints2** ppEnum  
 );  
 ```  
   
-```c#  
+```csharp  
 int Clone(  
-   out IEnumDebugErrorBreakpoints2 ppEnum  
+   out IEnumDebugErrorBreakpoints2 ppEnum  
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `ppEnum`  
- \[out\]  restituisce una copia di questa enumerazione come un oggetto separato.  
+ [out] Restituisce una copia di questa enumerazione come oggetto separato.  
   
-## Valore restituito  
- Se l'operazione riesce, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
+## <a name="return-value"></a>Valore restituito  
+ Se ha esito positivo, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
   
-## Note  
- La copia l'enumerazione presenta lo stesso stato originale quando questo metodo viene chiamato.  Tuttavia, la copia e gli stati originali sono separati e possono essere modificati singolarmente.  
+## <a name="remarks"></a>Note  
+ La copia dell'enumerazione ha lo stesso stato originale al momento che questo metodo viene chiamato. Tuttavia, stati la copia e l'originale sono separati e possono essere modificati singolarmente.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IEnumDebugErrorBreakpoints2](../../../extensibility/debugger/reference/ienumdebugerrorbreakpoints2.md)

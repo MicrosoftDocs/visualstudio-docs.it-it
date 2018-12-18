@@ -13,10 +13,10 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: HT
-ms.sourcegitcommit: 5db97d19b1b823388a465bba15d057b30ff0b3ce
 ms.openlocfilehash: e33f8139f52e80a9b7f5c6072368231ed2ab309d
-ms.contentlocale: it-it
-
+ms.sourcegitcommit: 3b692c9bf332b7b9150901e16daf99a64b599fee
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/10/2018
 ---
 Visual C#

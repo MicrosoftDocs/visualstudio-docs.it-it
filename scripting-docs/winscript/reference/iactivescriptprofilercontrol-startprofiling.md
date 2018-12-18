@@ -1,25 +1,29 @@
 ---
-title: "IActiveScriptProfilerControl::StartProfiling | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/18/2017"
-ms.prod: "windows-script-interfaces"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
+title: IActiveScriptProfilerControl::StartProfiling | Documenti Microsoft
+ms.custom: 
+ms.date: 01/18/2017
+ms.prod: windows-script-interfaces
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: reference
 apiname: IActiveScriptProfilerControl.StartProfiling
 apilocation: scrobj.dll
 ms.assetid: 56a7b3b7-8c21-43d0-9d8b-53bbc19fabb9
-caps.latest.revision: 8
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.openlocfilehash: d5362eaba439ff7a645a8323c4eed5d9496f6d88
+ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/27/2017
 ---
-# IActiveScriptProfilerControl::StartProfiling
-Iniziare la profilatura sul motore di scripting.  Il modulo di gestione di script crea un'istanza dell'oggetto del profiler tramite una chiamata a [CoCreateInstance](http://msdn.microsoft.com/it-it/7295a55b-12c7-4ed0-a7a4-9ecee16afdec).  
+# <a name="iactivescriptprofilercontrolstartprofiling"></a>IActiveScriptProfilerControl::StartProfiling
+Avvia il profiling nel motore di scripting. Il motore di script crea un'istanza dell'oggetto profiler effettuando una chiamata a [CoCreateInstance](http://msdn.microsoft.com/en-us/7295a55b-12c7-4ed0-a7a4-9ecee16afdec).  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
 HRESULT StartProfiling(  
@@ -28,23 +32,23 @@ HRESULT StartProfiling(
     [in] DWORD dwContext);  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `clsidProfilerObject`  
- \[in\] identificatore di classe \(CLSID\) dell'oggetto del profiler da creare.  
+ [in] Classe (CLSID) di identificatore dell'oggetto del profiler da creare.  
   
  `dwEventMask`  
- \[in\] A una maschera di bit a 4 byte che specifica i tipi di eventi.  i bit sono definiti in [Enumerazione PROFILER\_EVENT\_MASK](../../winscript/reference/profiler-event-mask-enumeration.md).  
+ [in] Maschera di bit a 4 byte che specifica i tipi di eventi. I bit sono definiti [enumerazione PROFILER_EVENT_MASK](../../winscript/reference/profiler-event-mask-enumeration.md).  
   
  `dwContext`  
- \[in\] valore byte A 4 passato all'oggetto del profiler.  
+ [in] Un valore a 4 byte che viene passato all'oggetto del profiler.  
   
-## Valore restituito  
- Restituisce un HRESULT.  I valori possibili sono i seguenti:  
+## <a name="return-value"></a>Valore restituito  
+ Restituisce un valore HRESULT. I valori possibili sono i seguenti:  
   
 |Valore restituito|Significato|  
-|-----------------------|-----------------|  
+|------------------|-------------|  
 |`S_OK`|Il metodo è riuscito.|  
-|`ACTIVPROF_E_PROFILER_PRESENT`|La profilatura è già attivato.|  
+|`ACTIVPROF_E_PROFILER_PRESENT`|Profilatura è già abilitata.|  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Interfaccia IActiveScriptProfilerControl](../../winscript/reference/iactivescriptprofilercontrol-interface.md)

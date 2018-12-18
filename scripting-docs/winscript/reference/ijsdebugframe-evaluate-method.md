@@ -1,25 +1,29 @@
 ---
-title: "Metodo IJsDebugFrame::Evaluate | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/18/2017"
-ms.prod: "windows-script-interfaces"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
+title: 'Metodo ijsdebugframe:: Evaluate | Documenti Microsoft'
+ms.custom: 
+ms.date: 01/18/2017
+ms.prod: windows-script-interfaces
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: reference
 apiname: IJsDebugFrame.Evaluate
 apilocation: jscript9diag.dll
 ms.assetid: 0ee61340-37b8-4fbb-a028-748b5315e279
-caps.latest.revision: 4
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.openlocfilehash: 38e826048e85456ca63e069de67701b1fc3e9f04
+ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/27/2017
 ---
-# Metodo IJsDebugFrame::Evaluate
-Valutare un'espressione nel contesto di questo stack frame.  
+# <a name="ijsdebugframeevaluate-method"></a>Metodo IJsDebugFrame::Evaluate
+Valutare un'espressione nel contesto dello stack frame corrente.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
 HRESULT Evaluate(  
@@ -29,23 +33,23 @@ HRESULT Evaluate(
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `pExpressionText`  
- \[in\] Espressione da valutare.  
+ [in] L'espressione da valutare.  
   
  `ppDebugProperty`  
- \[out\] Oggetto che rappresenta il browser delle proprietà.  
+ [out] Oggetto che rappresenta il Visualizzatore proprietà.  
   
  `pError`  
- \[out\] Messaggio di errore, se si verifica un errore.  
+ [out] Il messaggio di errore, se si verifica un errore.  
   
-## Valore restituito  
+## <a name="return-value"></a>Valore restituito  
   
-## Note  
- Restituisce quanto segue: S\_OK: quando la valutazione ha esito positivo, \*ppDebugProperty contiene il risultato della valutazione.  S\_FALSE: la valutazione genera un errore \(o l'operazione di valutazione non è supportata\), \*pError contiene il messaggio di errore.  
+## <a name="remarks"></a>Note  
+ Restituisce le operazioni seguenti: S_OK: esito positivo della valutazione, * ppDebugProperty contiene i risultati della valutazione. Valutazione di S_FALSE: Genera un errore o l'operazione di valutazione non è supportata, \*pError contiene il messaggio di errore.  
   
-## Requisiti  
- **Intestazione:** jscript9diag.h  
+## <a name="requirements"></a>Requisiti  
+ **Intestazione:** jscript9diag  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Interfaccia IJsDebugFrame](../../winscript/reference/ijsdebugframe-interface.md)

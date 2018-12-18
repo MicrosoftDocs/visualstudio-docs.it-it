@@ -1,51 +1,50 @@
 ---
-title: "IDiaSymbol::get_acceleratorPointerTags | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
+title: IDiaSymbol::get_acceleratorPointerTags | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology: vs-ide-debug
+ms.topic: conceptual
+dev_langs:
+- C++
 ms.assetid: 30e13cee-e511-49ec-affd-99b0097071b2
-caps.latest.revision: 3
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 3
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 24db7164335a8deffbac7cb4f62207a974f6efb9
+ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/18/2018
 ---
-# IDiaSymbol::get_acceleratorPointerTags
-[!INCLUDE[vs2017banner](../../code-quality/includes/vs2017banner.md)]
-
-Restituisce tutti i valori del tag del puntatore di scelta rapida che corrispondono alla funzione stub di tasti di scelta rapida AMP C\+\+.  
+# <a name="idiasymbolgetacceleratorpointertags"></a>IDiaSymbol::get_acceleratorPointerTags
+Restituisce tutti i valori tag puntatore tasti di scelta rapida che corrispondono a una funzione di stub di C++ AMP tasti di scelta rapida.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp  
+```C++  
 HRESULT get_acceleratorPointerTags(   
    DWORD          cnt,  
    DWORD*         pcnt,  
    DWORD*         pPointerTags);  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `cnt`  
- \[in\] dimensione della matrice di output `pPointerTags`.  
+ [in] Le dimensioni della matrice di output `pPointerTags`.  
   
  `pcnt`  
- \[out\] numero dei tag del puntatore di scelta rapida nella funzione stub di tasti di scelta rapida AMP C\+\+.  
+ [out] Il numero di tag di puntatore tasti di scelta rapida nella funzione stub C++ AMP tasti di scelta rapida.  
   
  `pPointerTags`  
- \[out\] puntatore a matrice A `DWORD` che viene riempito con un tag del puntatore di scelta rapida stima nella funzione stub di tasti di scelta rapida AMP C\+\+.  
+ [out] Oggetto `DWORD` puntatore alla matrice che viene riempito con i valori di tag puntatore tasti di scelta rapida nella funzione stub C++ AMP tasti di scelta rapida.  
   
-## Valore restituito  
- Se l'operazione riesce, restituisce `S_OK`; in caso contrario, restituisce `S_FALSE` o un codice di errore.  
+## <a name="return-value"></a>Valore restituito  
+ Se ha esito positivo, restituisce `S_OK`; in caso contrario, restituisce `S_FALSE` o un codice di errore.  
   
-## Note  
- Questo metodo viene chiamato in un'interfaccia `IDiaSymbol` che corrisponde alla funzione stub di tasti di scelta rapida AMP C\+\+.  
+## <a name="remarks"></a>Note  
+ Questo metodo viene chiamato su un `IDiaSymbol` interfaccia che corrisponde a una funzione di stub di C++ AMP tasti di scelta rapida.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IDiaSymbol](../../debugger/debug-interface-access/idiasymbol.md)

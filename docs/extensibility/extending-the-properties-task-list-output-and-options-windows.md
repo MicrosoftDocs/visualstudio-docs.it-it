@@ -1,13 +1,10 @@
 ---
-title: "Estensione di proprietà, elenco attività, Output e opzioni Windows | Documenti Microsoft"
-ms.custom: 
+title: Estensione di proprietà, elenco attività, Output e opzioni Windows | Documenti Microsoft
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - vs-ide-sdk
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: conceptual
 helpviewer_keywords:
 - properties pane
 - task list
@@ -16,29 +13,16 @@ helpviewer_keywords:
 - tutorials
 - tool windows
 ms.assetid: 06990510-5424-44b8-9fd9-6481acec5c76
-caps.latest.revision: 37
+author: gregvanl
 ms.author: gregvanl
-manager: ghogen
-translation.priority.mt:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: 4db9bb9101bd06921814132856fab0335a4a2530
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
 ms.translationtype: MT
-ms.sourcegitcommit: 4a36302d80f4bc397128e3838c9abf858a0b5fe8
-ms.openlocfilehash: 5f16658320df87a479d9669fadf269856f80a67a
-ms.contentlocale: it-it
-ms.lasthandoff: 09/26/2017
-
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="extending-the-properties-task-list-output-and-options-windows"></a>Estensione di proprietà, elenco attività, Output e opzioni Windows
 È possibile accedere a qualsiasi finestra degli strumenti in Visual Studio. Questa procedura dettagliata viene illustrato come integrare informazioni sulla finestra di strumento in un nuovo **opzioni** pagina e una nuova impostazione nel **proprietà** pagina, nonché su come scrivere il **elenco attività** e **Output** windows.  
@@ -65,7 +49,7 @@ ms.lasthandoff: 09/26/2017
   
 3.  Trascinare un **TextBox**, **pulsante**e un **ListBox** all'area di disegno. Disporre gli elementi in modo che la casella di testo e il pulsante allo stesso livello, la casella di riepilogo riempie il resto della finestra di sotto di essi, come illustrato nell'immagine seguente.  
   
-     ![Finestra degli strumenti completato](../extensibility/media/t5-toolwindow.png "T5 ToolWindow")  
+     ![Termine finestra degli strumenti](../extensibility/media/t5-toolwindow.png "T5 ToolWindow")  
   
 4.  Nel riquadro di XAML, trovare il pulsante e impostarne la proprietà di contenuto su **Aggiungi**. Riconnettere il gestore dell'evento pulsante al controllo Button aggiungendo un `Click="button1_Click"` attributo. Il blocco dell'area di disegno dovrebbe essere simile al seguente:  
   
@@ -153,7 +137,7 @@ ms.lasthandoff: 09/26/2017
   
      Quando un utente apre la pagina delle opzioni, il risultato sarà simile nell'immagine seguente.  
   
-     ![Pagina Opzioni](../extensibility/media/t5optionspage.gif "T5OptionsPage")  
+     ![Pagina delle opzioni](../extensibility/media/t5optionspage.gif "T5OptionsPage")  
   
      Si noti la categoria **ToDo** e la sottocategoria **generale**.  
   
@@ -164,7 +148,7 @@ ms.lasthandoff: 09/26/2017
   
      Quando la finestra degli strumenti è disponibile per gli utenti, gli elementi nella casella di riepilogo saranno rappresentati da TodoItems. Quando l'utente seleziona una di queste voci nella casella di riepilogo, il **proprietà** finestra vengono visualizzate informazioni sull'elemento.  
   
-     Per rendere disponibili in dati di **proprietà** finestra, di trasformare i dati in proprietà pubbliche che dispongono di due attributi speciali, `Description` e `Category`. `Description`è il testo visualizzato in fondo il **proprietà** finestra. `Category`Determina dove dovrebbe essere visualizzata quando la proprietà di **proprietà** verrà visualizzata la finestra nel **categoria** visualizzazione. Nell'immagine seguente, il **proprietà** finestra è in **categoria** visualizzazione, il **nome** proprietà nel **ToDo Fields** categoria selezionata e la descrizione di **nome** proprietà viene visualizzata nella parte inferiore della finestra.  
+     Per rendere disponibili in dati di **proprietà** finestra, di trasformare i dati in proprietà pubbliche che dispongono di due attributi speciali, `Description` e `Category`. `Description` è il testo visualizzato in fondo il **proprietà** finestra. `Category` Determina dove la proprietà deve essere utilizzato quando il **le proprietà** verrà visualizzata la finestra nel **categoria** vista. Nell'immagine seguente, il **proprietà** finestra è in **categoria** visualizzazione, il **nome** proprietà nel **ToDo Fields** categoria selezionata e la descrizione di **nome** proprietà viene visualizzata nella parte inferiore della finestra.  
   
      ![Finestra proprietà](../extensibility/media/t5properties.png "T5Properties")  
   

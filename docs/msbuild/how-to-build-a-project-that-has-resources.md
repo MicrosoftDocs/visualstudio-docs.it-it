@@ -1,43 +1,25 @@
 ---
 title: 'Procedura: Compilare un progetto con risorse | Microsoft Docs'
-ms.custom: 
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- vs-ide-sdk
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.technology: msbuild
+ms.topic: conceptual
 helpviewer_keywords:
 - resource files, compiling with MSBuild
 - resources [Visual Studio], compiling with MSBuild
 - projects [.NET Framework], building
 - MSBuild, building a project with resources
 ms.assetid: d07ac73f-2c2d-4e9a-812a-6dcb632bafe2
-caps.latest.revision: 14
-author: kempb
-ms.author: kempb
-manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 3d32d11a430227800cb3ed53831a9565eb6adeb3
-ms.openlocfilehash: 641697cabee22a86e3b5ee7a360cbea154ead486
-ms.contentlocale: it-it
-ms.lasthandoff: 05/30/2017
-
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: f1fef7a6a5d585625471794df3c6e98b8c149a82
+ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/19/2018
 ---
 # <a name="how-to-build-a-project-that-has-resources"></a>Procedura: compilare un progetto con risorse
 Se si stanno compilando le versioni localizzate di un progetto, tutti gli elementi dell'interfaccia utente devono essere separati in file di risorse per le diverse lingue. Se il progetto usa solo stringhe, i file di risorse possono usare file di testo. In alternativa, è possibile usare file RESX come file di risorse.  

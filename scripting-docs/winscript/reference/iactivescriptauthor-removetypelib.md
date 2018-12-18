@@ -1,27 +1,33 @@
 ---
-title: "IActiveScriptAuthor::RemoveTypeLib | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/18/2017"
-ms.prod: "windows-script-interfaces"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-apiname: IActiveScriptAuthor.RemoveTypeLib
-apilocation: scrobj.dll
-helpviewer_keywords: 
-  - "IActiveScriptAuthor::RemoveTypeLib"
+title: IActiveScriptAuthor::RemoveTypeLib | Microsoft Docs
+ms.custom: ''
+ms.date: 01/18/2017
+ms.prod: windows-script-interfaces
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
+ms.topic: reference
+apiname:
+- IActiveScriptAuthor.RemoveTypeLib
+apilocation:
+- scrobj.dll
+helpviewer_keywords:
+- IActiveScriptAuthor::RemoveTypeLib
 ms.assetid: 232c3698-024d-4549-8fbc-cb0d3ac17dc5
 caps.latest.revision: 11
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 11
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.openlocfilehash: 91d44d2f910a1523d0c45871e01d0258dcdd4138
+ms.sourcegitcommit: 3b692c9bf332b7b9150901e16daf99a64b599fee
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/10/2018
 ---
-# IActiveScriptAuthor::RemoveTypeLib
-Rimuove una libreria dei tipi dello spazio dei nomi del motore di creazione di script.  
+# <a name="iactivescriptauthorremovetypelib"></a>IActiveScriptAuthor::RemoveTypeLib
+Rimuove lo script di creazione dello spazio dei nomi di modulo di gestione di una libreria dei tipi.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
 HRESULT RemoveTypeLib(  
@@ -31,24 +37,24 @@ HRESULT RemoveTypeLib(
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `rguidTypeLib`  
- \[in\] Il CLSID \(identificatore di classe\) della libreria dei tipi da rimuovere.  
+ [in] Il CLSID (identificatore di classe) della libreria dei tipi da rimuovere.  
   
  `dwMajor`  
- \[in\] numero di versione principale.  
+ [in] Il numero di versione principale.  
   
  `dwMinor`  
- \[in\] numero di versione secondario.  
+ [in] Numero di versione secondario.  
   
-## Valore restituito  
- Oggetto `HRESULT`.  I valori possibili sono, ma non sono limitati a, quelli nella tabella seguente.  
+## <a name="return-value"></a>Valore restituito  
+ Oggetto `HRESULT`. I valori possibili includono, ma non sono limitati a, quelli indicati nella tabella seguente.  
   
 |Valore|Descrizione|  
-|------------|-----------------|  
+|-----------|-----------------|  
 |`S_OK`|Il metodo è riuscito.|  
   
-## Note  
+## <a name="remarks"></a>Note  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Interfaccia IActiveScriptAuthor](../../winscript/reference/iactivescriptauthor-interface.md)

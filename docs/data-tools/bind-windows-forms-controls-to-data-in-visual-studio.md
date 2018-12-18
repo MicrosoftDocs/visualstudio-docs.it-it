@@ -1,107 +1,79 @@
 ---
-title: "Associazione di controlli Windows Form ai dati in Visual Studio | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/14/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "aspx"
-helpviewer_keywords: 
-  - "dati [Windows Form], origini dati"
-  - "dati [Windows Form], visualizzazione"
-  - "origini dati, visualizzazione di dati"
-  - "visualizzazione di dati su form"
-  - "visualizzazione di dati, Windows Form"
-  - "form, visualizzazione di dati"
-  - "Windows Form, associazione dati"
-  - "Windows Form, visualizzazione di dati"
+title: Associare controlli Windows Form ai dati in Visual Studio
+ms.date: 11/03/2017
+ms.topic: conceptual
+helpviewer_keywords:
+- data [Windows Forms], data sources
+- Windows Forms, data binding
+- Windows Forms, displaying data
+- displaying data on forms
+- forms, displaying data
+- data sources, displaying data
+- displaying data, Windows Forms
+- data [Windows Forms], displaying
 ms.assetid: 243338ef-41af-4cc5-aff7-1e830236f0ec
-caps.latest.revision: 37
-caps.handback.revision: 31
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+author: gewarren
+ms.author: gewarren
+manager: douge
+ms.technology: vs-data-tools
+ms.workload:
+- data-storage
+ms.openlocfilehash: 2a5f254e8c9f8a549d8371fefb8ed92b0d12f53f
+ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/19/2018
 ---
-# Associazione di controlli Windows Form ai dati in Visual Studio
-È possibile visualizzare i dati per gli utenti dell'applicazione mediante l'associazione dei dati a Windows Form.  Per creare tali controlli con associazione a dati, è possibile trascinare gli elementi dalla finestra **Origini dati** a Progettazione Windows Form in Visual Studio.  In questo argomento vengono descritte alcune delle attività, degli strumenti e delle classi più comuni che è possibile utilizzare per creare applicazioni Windows Form associate a dati.  
-  
- Per informazioni generali sulla creazione dei controlli associati a dati in Visual Studio, vedere [Associazione di controlli ai dati in Visual Studio](../data-tools/bind-controls-to-data-in-visual-studio.md).  Per ulteriori informazioni sull'associazione ai dati in Windows Form, vedere [Associazione ai dati di Windows Form](../Topic/Windows%20Forms%20Data%20Binding.md).  
-  
-## Attività necessarie per la visualizzazione dei dati su un form di un'applicazione Windows  
- Nella tabella seguente vengono elencate le attività comuni correlate alla visualizzazione di dati in un form in un'applicazione Windows.  
-  
-|Task|Ulteriori informazioni|  
-|----------|----------------------------|  
-|Creare controlli associati a dati.<br /><br /> Associare controlli esistenti a dati.|[Procedura: associare controlli Windows Form ai dati](../data-tools/bind-windows-forms-controls-to-data.md)|  
-|Creare controlli che visualizzano i dati correlati in una relazione padre\-figlio: quando l'utente seleziona un record di dati in un controllo, un altro controllo visualizza i dati correlati per il record selezionato.|[Procedura: visualizzare dati correlati in un'applicazione Windows Form](../data-tools/how-to-display-related-data-in-a-windows-forms-application.md)|  
-|Creare una *tabella di ricerca*.  Una tabella di ricerca consente di visualizzare le informazioni contenute in una tabella in base al valore di un campo della chiave esterna in un'altra tabella.|[Procedura: creare tabelle di ricerca nelle applicazioni Windows Form](../data-tools/create-lookup-tables-in-windows-forms-applications.md)|  
-|Formattare le modalità di visualizzazione dei dati mediante i controlli.|[Formatting and Advanced Binding Dialog Box](http://msdn.microsoft.com/it-it/42638120-9e6f-436b-985f-4036664230fd)|  
-|Modificare il comportamento della didascalia smart della finestra **Origini dati**.|[Procedura: personalizzare la modalità in cui in Visual Studio vengono create didascalie per controlli con associazione a dati](../data-tools/customize-how-visual-studio-creates-captions-for-data-bound-controls.md)|  
-|Aggiungere controlli che eseguono una query con parametri.|[Procedura: aggiungere una query con parametri a un'applicazione Windows Form](../Topic/How%20to:%20Add%20a%20Parameterized%20Query%20to%20a%20Windows%20Forms%20Application.md)|  
-|Impostare una colonna in modo che utilizzi un controllo immagine per visualizzare le immagini di un database.|[Procedura: associare controlli alle immagini di un database](../data-tools/bind-controls-to-pictures-from-a-database.md)|  
-|Filtrare o ordinare dati in un dataset.|[Procedura: filtrare e ordinare i dati in un'applicazione Windows Form](../data-tools/filter-and-sort-data-in-a-windows-forms-application.md)|  
-  
- Negli argomenti seguenti vengono forniti esempi di associazione di controlli Windows Form ai dati.  
-  
- [Procedura dettagliata: visualizzazione di dati in un Windows Form](../data-tools/walkthrough-displaying-data-on-a-windows-form.md)  
- Viene illustrata una procedura dettagliata per l'esecuzione di query sui dati di un database e la visualizzazione dei dati in un Windows Form.  
-  
- [Procedura dettagliata: visualizzazione di dati correlati in un Windows Form](../data-tools/walkthrough-displaying-related-data-on-a-windows-form.md)  
- Viene illustrata una procedura dettagliata per la visualizzazione di dati di due tabelle correlate e la visualizzazione dei dati in un Windows Form.  
-  
- [Procedura: creazione di un Windows Form per la ricerca di dati](../data-tools/create-a-windows-form-to-search-data.md)  
- Viene illustrata una procedura dettagliata per la creazione di un Windows Form che esegue una ricerca in un database in base all'input dell'utente.  
-  
- [Procedura dettagliata: creazione di una tabella di ricerca in un'applicazione Windows Form](../Topic/Walkthrough:%20Creating%20a%20Lookup%20Table%20in%20a%20Windows%20Forms%20Application.md)  
- Vengono fornite istruzioni dettagliate per la visualizzazione dei dati contenuti in una tabella in base ai dati selezionati in un'altra tabella.  
-  
- [Procedura dettagliata: passaggio di dati tra Windows Form](../data-tools/pass-data-between-forms.md)  
- Viene illustrata una procedura dettagliata per il passaggio di valori da un form all'altro in un'applicazione.  
-  
- [Procedura dettagliata: creazione di un controllo utente Windows Form che supporta l'associazione dati semplice](../data-tools/create-a-windows-forms-user-control-that-supports-simple-data-binding.md)  
- Vengono fornite istruzioni dettagliate per la creazione di un controllo personalizzato che può essere utilizzato nella finestra **Origini dati**.  
-  
- [Procedura dettagliata: creazione di un controllo utente Windows Form che supporta l'associazione dati complessa](../data-tools/create-a-windows-forms-user-control-that-supports-complex-data-binding.md)  
- Vengono fornite istruzioni dettagliate per la creazione di un controllo personalizzato che può essere utilizzato nella finestra **Origini dati**.  
-  
- [Procedura dettagliata: creazione di un controllo utente Windows Form che supporta l'associazione dati di ricerca](../data-tools/create-a-windows-forms-user-control-that-supports-lookup-data-binding.md)  
- Vengono fornite istruzioni dettagliate per la creazione di un controllo personalizzato che può essere utilizzato nella finestra **Origini dati**.  
-  
-## Smart tag dei dati  
- Gli smart tag specifici per l'utilizzo di dati sono disponibili in molti controlli.  Quando a un form vengono aggiunti determinati controlli, sullo smart tag è disponibile un set di azioni possibili correlate ai dati.  
-  
-## Il componente BindingSource  
- Il componente <xref:System.Windows.Forms.BindingSource> ha due funzioni.  Fornisce un livello di astrazione per l'associazione dei controlli del form ai dati.  I controlli del form vengono associati al componente <xref:System.Windows.Forms.BindingSource>, anziché direttamente a un'origine dati.  
-  
- E può inoltre gestire una raccolta di oggetti.  L'aggiunta di un tipo a <xref:System.Windows.Forms.BindingSource> determina la creazione di un elenco di quel tipo.  
-  
- Per ulteriori informazioni sul componente <xref:System.Windows.Forms.BindingSource>, vedere:  
-  
--   [Il componente BindingSource](../Topic/BindingSource%20Component.md)  
-  
--   [Cenni preliminari sul componente BindingSource](../Topic/BindingSource%20Component%20Overview.md)  
-  
--   [Architettura del componente BindingSource](../Topic/BindingSource%20Component%20Architecture.md)  
-  
-## Controllo BindingNavigator  
- Questo componente fornisce un'interfaccia utente per l'esplorazione dei dati visualizzati in un'applicazione Windows.  Per ulteriori informazioni, vedere [Controllo BindingNavigator](../Topic/BindingNavigator%20Control%20\(Windows%20Forms\).md).  
-  
-## Controllo DataGridView  
- Il controllo <xref:System.Windows.Forms.DataGridView> consente di visualizzare e modificare i dati tabulari da molti tipi diversi di origini dati.  È possibile associare i dati a un oggetto <xref:System.Windows.Forms.DataGridView> utilizzando la proprietà <xref:System.Windows.Forms.DataGridView.DataSource%2A>.  Per ulteriori informazioni, vedere [Cenni preliminari sul controllo DataGridView](../Topic/DataGridView%20Control%20Overview%20\(Windows%20Forms\).md).  
-  
-## Vedere anche  
- [Procedure dettagliate relative ai dati](../Topic/Data%20Walkthroughs.md)   
- [Origini dati \(finestra\)](../Topic/Data%20Sources%20Window.md)   
- [Associazione di controlli ai dati in Visual Studio](../data-tools/bind-controls-to-data-in-visual-studio.md)   
- [Procedura dettagliata: visualizzazione di dati in un Windows Form](../data-tools/walkthrough-displaying-data-on-a-windows-form.md)   
- [Creazione e modifica di dataset tipizzati](../data-tools/creating-and-editing-typed-datasets.md)   
- [Cenni preliminari sulle origini dati](../data-tools/add-new-data-sources.md)   
- [Procedura dettagliata: creazione di un controllo utente Windows Form che supporta l'associazione dati semplice](../data-tools/create-a-windows-forms-user-control-that-supports-simple-data-binding.md)   
- [Procedura dettagliata: creazione di un controllo utente Windows Form che supporta l'associazione dati complessa](../data-tools/create-a-windows-forms-user-control-that-supports-complex-data-binding.md)   
- [Procedura dettagliata: creazione di un controllo utente Windows Form che supporta l'associazione dati di ricerca](../data-tools/create-a-windows-forms-user-control-that-supports-lookup-data-binding.md)
+# <a name="bind-windows-forms-controls-to-data-in-visual-studio"></a>Associare controlli Windows Form ai dati in Visual Studio
+È possibile visualizzare i dati per gli utenti dell'applicazione mediante l'associazione dati a un Windows Form. Per creare questi controlli con associazione a dati, è possibile trascinare elementi dal **origini dati** finestra in Progettazione Windows Form in Visual Studio.
+
+![Operazione di trascinamento di origine dati](../data-tools/media/raddata-data-source-drag-operation.png "operazione di trascinamento raddata origine dati")
+
+Prima di trascinare elementi, è possibile impostare il tipo di controllo che si desidera associare. Valori diversi visualizzati a seconda se si scelga la tabella stessa, o una singola colonna.  È inoltre possibile impostare valori personalizzati. Per una tabella, "Dettagli" significa che ogni colonna è associato a un controllo separato.
+
+![Associare l'origine dati a DataGridView](../data-tools/media/raddata-bind-data-source-to-datagridview.png "raddata origine dati di associazione di DataGridView")
+
+## <a name="bindingsource-and-bindingnavigator-controls"></a>BindingSource e controlli di BindingNavigator
+Il componente <xref:System.Windows.Forms.BindingSource> ha due scopi. Fornisce un livello di astrazione quando i controlli di associazione ai dati. I controlli nel form vengono associati per il <xref:System.Windows.Forms.BindingSource> componente anziché direttamente a un'origine dati. In secondo luogo, è possibile gestire una raccolta di oggetti. Aggiunta di un tipo per il <xref:System.Windows.Forms.BindingSource> crea un elenco di quel tipo.
+
+Per ulteriori informazioni sul <xref:System.Windows.Forms.BindingSource> componente, vedere:
+
+-   [Componente BindingSource](/dotnet/framework/winforms/controls/bindingsource-component)
+
+-   [Cenni preliminari sul componente BindingSource](/dotnet/framework/winforms/controls/bindingsource-component-overview)
+
+-   [Architettura del componente BindingSource](/dotnet/framework/winforms/controls/bindingsource-component-architecture)
+
+Il [controllo BindingNavigator](/dotnet/framework/winforms/controls/bindingnavigator-control-windows-forms) fornisce un'interfaccia utente per l'esplorazione dei dati visualizzati in un'applicazione Windows.
+
+## <a name="bind-to-data-in-a-datagridview-control"></a>Associazione a dati in un controllo DataGridView
+Per un [controllo DataGridView](/dotnet/framework/winforms/controls/datagridview-control-overview-windows-forms), l'intera tabella è associato a tale controllo singolo. Quando si trascina un controllo DataGridView al form, uno strumento striscia per l'esplorazione dei record (<xref:System.Windows.Forms.BindingNavigator>) viene inoltre visualizzato. Oggetto [DataSet](../data-tools/dataset-tools-in-visual-studio.md), [TableAdapter](../data-tools/create-and-configure-tableadapters.md), <xref:System.Windows.Forms.BindingSource>, e <xref:System.Windows.Forms.BindingNavigator> vengono visualizzati nella barra dei componenti. Nella figura seguente, viene inoltre aggiunto un TableAdapterManager perché la tabella Customers è una relazione con la tabella Orders. Queste variabili sono tutti dichiarate nel codice generato automaticamente come membri privati nella classe del modulo. Il codice generato automaticamente per la compilazione di DataGridView si trova nel gestore eventi form_load. Il codice per il salvataggio dei dati per aggiornare il database si trova nel gestore dell'evento Save di BindingNavigator. È possibile spostare o modificare il codice in base alle esigenze.
+
+![GridView con BindingNavigator](../data-tools/media/raddata-gridview-with-bindingnavigator.png "raddata GridView con BindingNavigator")
+
+È possibile personalizzare il comportamento di DataGridView e BindingNavigator facendo clic sullo smart tag nell'angolo superiore destro di ogni:
+
+![DataGridView e associazione Navigator smart tag](../data-tools/media/raddata-datagridview-and-binding-navigator-smart-tags.png "raddata DataGridView e associazione Navigator smart tag")
+
+Se i controlli dell'applicazione è necessario non è disponibile dall'interno di **origini dati** finestra, è possibile aggiungere controlli. Per ulteriori informazioni, vedere [aggiungere controlli personalizzati alla finestra Origini dati](../data-tools/add-custom-controls-to-the-data-sources-window.md).
+
+È anche possibile trascinare elementi dal **origini dati** finestra controlli già presenti in un form per associare il controllo ai dati. Un controllo che è già associato a dati con i dati di binding reimpostati sull'elemento trascinato più di recente. Per essere destinazioni di rilascio valide, i controlli devono essere in grado di visualizzare il tipo di dati sottostante dell'elemento trascinato su di esso dal **origini dati** finestra. Ad esempio, non è a trascinare un elemento che ha un tipo di dati <xref:System.DateTime> su un <xref:System.Windows.Forms.CheckBox>, in quanto il <xref:System.Windows.Forms.CheckBox> non è in grado di visualizzare una data.
+
+## <a name="bind-to-data-in-individual-controls"></a>Associazione a dati in singoli controlli
+Quando si associa un'origine dati per "Dettagli", ogni colonna nel set di dati è associato a un controllo separato.
+
+![Associare l'origine dati per informazioni dettagliate](../data-tools/media/raddata-bind-data-source-to-details.png "raddata origine dati di associazione per i dettagli")
+
+> [!IMPORTANT]
+> Si noti che nella figura precedente, si trascina dalla proprietà ordini della tabella Customers, non dalla tabella Orders. Tramite l'associazione alla proprietà Orders, i comandi di spostamento apportati in DataGridView vengono riflesse immediatamente nei controlli di dettagli. Se è stata trascinata dalla tabella Orders, i controlli sarebbero comunque essere associati al set di dati, ma non potrebbe non essere sincronizzati con il controllo DataGridView.
+
+La figura seguente mostra l'impostazione predefinita i controlli con associazione a dati che vengono aggiunti al modulo dopo che la proprietà di ordini nella tabella Customers è associata a "Dettagli" nel **origini dati** finestra.
+
+![Tabella Ordini associata a informazioni dettagliate](../data-tools/media/raddata-orders-table-bound-to-details.png "tabella Orders raddata associata ai dettagli")
+
+Si noti inoltre che ogni controllo dispone di uno smart tag. Questo tag consente personalizzazioni che si applicano a solo a tale controllo.
+
+## <a name="see-also"></a>Vedere anche
+
+- [Associazione di controlli ai dati in Visual Studio](../data-tools/bind-controls-to-data-in-visual-studio.md)
+- [Data binding in Windows Form (.NET Framework)](/dotnet/framework/winforms/windows-forms-data-binding)

@@ -1,38 +1,21 @@
 ---
 title: 'Procedura: diagnosticare le prestazioni di estensione | Documenti Microsoft'
-ms.custom: 
+ms.custom: ''
 ms.date: 11/08/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - vs-ide-sdk
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: 46b0a1e3-7e69-47c9-9d8d-a1815d6c3896
-caps.latest.revision: 1
 author: BertanAygun
 ms.author: bertaygu
-manager: ghogen
-translation.priority.mt:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+manager: douge
+ms.workload:
+- bertaygu
+ms.openlocfilehash: 60a7d1c3178d0fd74983d3f1096d01e578a49a00
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
 ms.translationtype: MT
-ms.sourcegitcommit: 4a36302d80f4bc397128e3838c9abf858a0b5fe8
-ms.openlocfilehash: b78a02b9d780b9556cbbf42fce04b1da06e22833
-ms.contentlocale: it-it
-ms.lasthandoff: 09/26/2017
-
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="measuring-extension-impact-in-startup"></a>Misurare l'impatto di estensione nella finestra di avvio
 
@@ -45,6 +28,9 @@ Per consentire agli utenti di comprendere l'impatto, abbiamo aggiunto una nuova 
 ![la gestione delle prestazioni di Visual Studio](media/manage-performance.png)
 
 Questo documento è destinato agli sviluppatori di estensioni descrivendo la modalità di calcolo impatto di estensione e come si può essere analizzato in locale per verificare se un'estensione può essere visualizzata come estensione conseguenze sulle prestazioni.
+
+> [!NOTE]
+> Questo documento è incentrato sull'impatto delle estensioni nel carico di avvio e di soluzione. Estensioni hanno anche impatto sulle prestazioni di Visual Studio quando provocano l'interfaccia utente potrebbe non rispondere. Per ulteriori informazioni su questo argomento, vedere [come: ritardi di interfaccia utente di diagnosticare causati dalle estensioni](how-to-diagnose-ui-delays-caused-by-extensions.md).
 
 ## <a name="how-extensions-can-impact-startup"></a>Estensioni possano impatto di avvio
 
@@ -64,7 +50,7 @@ Sono state aggiunte numerose funzionalità, a partire da Visual Studio 2015, al 
 
 È possibile trovare ulteriori informazioni su queste funzionalità nei documenti seguenti:
 
-[Contesti dell'interfaccia utente basati su regole](how-to-use-rule-based-ui-context-for-visual-studio-extensions.md): un motore basato su regole più ricco compilato in base a contesti dell'interfaccia utente consente di creare contesti personalizzati basati su tipi di progetto, caratteristiche e funzionalità. Questi contesti personalizzati possono essere utilizzati per caricare un pacchetto durante gli scenari più specifici, ad esempio la presenza di un progetto con una capacità specifica invece di avvio. o consentire [comando visibilità a un contesto personalizzato](https://msdn.microsoft.com/en-us/library/bb166512.aspx) in base alle funzionalità di progetto o altre condizioni disponibili eliminando così la necessità di caricare un pacchetto per registrare un gestore di query dello stato di comando.
+[Contesti dell'interfaccia utente basati su regole](how-to-use-rule-based-ui-context-for-visual-studio-extensions.md): un motore basato su regole più ricco compilato in base a contesti dell'interfaccia utente consente di creare contesti personalizzati basati su tipi di progetto, caratteristiche e funzionalità. Questi contesti personalizzati possono essere utilizzati per caricare un pacchetto durante gli scenari più specifici, ad esempio la presenza di un progetto con una capacità specifica invece di avvio. o consentire [comando visibilità a un contesto personalizzato](visibilityconstraints-element.md) in base alle funzionalità di progetto o altre condizioni disponibili eliminando così la necessità di caricare un pacchetto per registrare un gestore di query dello stato di comando.
 
 [Il supporto asincrono pacchetto](how-to-use-asyncpackage-to-load-vspackages-in-the-background.md): la nuova classe di base AsyncPackage in Visual Studio 2015 consente pacchetti di Visual Studio da caricare in background in modo asincrono se il caricamento del pacchetto è stato richiesto da un attributo di caricamento automatico o una query asincrona al servizio . Il caricamento in background consente all'IDE di fornire risposte tempestive mentre l'estensione viene inizializzato in background e non sarebbe risentirà scenari critici come carico di avvio e di soluzione.
 
@@ -195,4 +181,3 @@ Una delle altre visualizzazioni nella traccia che si riveleranno utili per deter
 ## <a name="summary"></a>Riepilogo
 
 Avvio di Visual Studio è stata una delle aree su che è continuamente ottenere commenti e suggerimenti. L'obiettivo, come indicato in precedenza è per tutti gli utenti a un avvio coerenza indipendentemente dalla componenti ed estensioni che è stato installato e si desidera lavorare con i proprietari di estensione per contribuire a raggiungere tale obiettivo. Le indicazioni riportate sopra devono essere utile comprendere un impatto estensioni all'avvio e di evitare di dover auto carico o per caricare in modo asincrono per ridurre al minimo l'impatto sulla produttività degli utenti.
-

@@ -1,39 +1,41 @@
 ---
-title: "Lingue indipendente | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "editor [Visual Studio SDK], legacy - contenuti lingue"
+title: Lingue di contenuti | Documenti Microsoft
+ms.date: 03/22/2018
+ms.technology:
+- vs-ide-sdk
+ms.topic: conceptual
+helpviewer_keywords:
+- editors [Visual Studio SDK], legacy - contained languages
 ms.assetid: b75bbb51-8e42-41b1-bece-09ab0b1f03cc
-caps.latest.revision: 18
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 18
+author: gregvanl
+ms.author: gregvanl
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: bbf2c63a66ba76b65d1caec2c5eed006d57fca0e
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# Lingue indipendente
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
+# <a name="contained-languages"></a>Lingue indipendente
 
-*Le lingue disponibili* sono linguaggi contenuti in altri linguaggi.  Ad esempio, HTML nelle pagine di [!INCLUDE[vstecasp](../code-quality/includes/vstecasp_md.md)] può contenere [!INCLUDE[csprcs](../data-tools/includes/csprcs_md.md)] o script di [!INCLUDE[vbprvb](../code-quality/includes/vbprvb_md.md)] .  L'architettura di doppio\-linguaggio è obbligatoria per l'editor di file aspx fornire IntelliSense, la colorazione e altre funzionalità di modifica per sia HTML che il linguaggio di script.  
-  
-## Implementazione  
- L'interfaccia che più importante è necessario implementare per i linguaggi contenuti rappresenta l'interfaccia di <xref:Microsoft.VisualStudio.TextManager.Interop.IVsContainedLanguage> .  Questa interfaccia viene implementata da qualsiasi linguaggio che può essere ospitato in un linguaggio primario.  Fornisce l'accesso a colorizer del servizio di linguaggio, al filtro di visualizzazione di testo e all'identificazione del servizio di linguaggio primaria  <xref:Microsoft.VisualStudio.TextManager.Interop.IVsContainedLanguageFactory> consente di creare un'interfaccia di <xref:Microsoft.VisualStudio.TextManager.Interop.IVsContainedLanguage> .  Nei passaggi seguenti viene illustrato come implementare un linguaggio contenuto:  
-  
-1.  Utilizzare `QueryService()` per ottenere il servizio di linguaggio ID e l'ID dell'interfaccia di <xref:Microsoft.VisualStudio.TextManager.Interop.IVsContainedLanguageFactory>.  
-  
-2.  chiamare il metodo di <xref:Microsoft.VisualStudio.TextManager.Interop.IVsContainedLanguageFactory.GetLanguage%2A> per creare un'interfaccia di <xref:Microsoft.VisualStudio.TextManager.Interop.IVsContainedLanguage> .  passare un'interfaccia di <xref:Microsoft.VisualStudio.Shell.Interop.IVsHierarchy> , un ID elemento \(uno o più di <xref:Microsoft.VisualStudio.VSConstants.VSITEMID_NIL>, di <xref:Microsoft.VisualStudio.VSConstants.VSITEMID_ROOT>, o di <xref:Microsoft.VisualStudio.VSConstants.VSITEMID_SELECTION>\) e un'interfaccia di <xref:Microsoft.VisualStudio.TextManager.Interop.IVsTextBufferCoordinator> .  
-  
-3.  L'interfaccia di <xref:Microsoft.VisualStudio.TextManager.Interop.IVsTextBufferCoordinator> , che rappresenta l'oggetto del responsabile del buffer di testo, fornisce servizi di base che sono obbligatori eseguire il mapping delle posizioni in un file principale nel buffer secondario del linguaggio.  
-  
-     Ad esempio, in un unico file aspx, il file principale include pagine ASP, HTML e il codice in cui è contenuto.  Tuttavia, il buffer secondario, include solo il codice contenuto, insieme a tutte le definizioni della classe, per convertire il buffer secondario un file di codice valido.  Il responsabile del buffer gestisce il lavoro di coordinare le modifiche da un buffer all'altro.  
-  
-4.  Il metodo di <xref:Microsoft.VisualStudio.TextManager.Interop.IVsTextBufferCoordinator.SetSpanMappings%2A> , ovvero la lingua primario, indica al responsabile del buffer di testo all'interno del relativo buffer è mappato al testo corrispondente nel buffer secondario.  
-  
-     Il linguaggio passa una matrice della struttura di <xref:Microsoft.VisualStudio.TextManager.Interop.NewSpanMapping> , che attualmente includono solo un'ampiezza principale e secondaria.  
-  
-5.  Il metodo di <xref:Microsoft.VisualStudio.TextManager.Interop.IVsTextBufferCoordinator.MapPrimaryToSecondarySpan%2A> e il metodo di <xref:Microsoft.VisualStudio.TextManager.Interop.IVsTextBufferCoordinator.MapSecondaryToPrimarySpan%2A> forniscono il mapping da principale del buffer secondario e viceversa.
+*Contenuti lingue* linguaggi sono contenuti in altri linguaggi. Ad esempio HTML in [!INCLUDE[vstecasp](../code-quality/includes/vstecasp_md.md)] potrebbero contenere pagine [!INCLUDE[csprcs](../data-tools/includes/csprcs_md.md)] o [!INCLUDE[vbprvb](../code-quality/includes/vbprvb_md.md)] script. Un'architettura dual-language è necessaria per l'editor di file con estensione aspx fornire IntelliSense, colorazione e altre funzionalità di modifica per il codice HTML e il linguaggio di scripting.
+
+## <a name="implementation"></a>Implementazione
+
+L'interfaccia più importante, è necessario implementare per lingue indipendente è la <xref:Microsoft.VisualStudio.TextManager.Interop.IVsContainedLanguage> interfaccia. Questa interfaccia viene implementata da qualsiasi linguaggio che può essere ospitato all'interno di una lingua principale. Fornisce l'accesso per il servizio di linguaggio rappresentazione, il filtro di visualizzazione di testo e ID lingua principale del servizio. Il <xref:Microsoft.VisualStudio.TextManager.Interop.IVsContainedLanguageFactory> consente di creare un <xref:Microsoft.VisualStudio.TextManager.Interop.IVsContainedLanguage> interfaccia. La procedura seguente viene illustrato come implementare un linguaggio indipendente:
+
+1.  Utilizzare `QueryService()` language ID servizio e l'ID di interfaccia di ottenere il <xref:Microsoft.VisualStudio.TextManager.Interop.IVsContainedLanguageFactory>.
+
+2.  Per creare un <xref:Microsoft.VisualStudio.TextManager.Interop.IVsContainedLanguage> l'interfaccia, chiamare il <xref:Microsoft.VisualStudio.TextManager.Interop.IVsContainedLanguageFactory.GetLanguage%2A> metodo. Passare un <xref:Microsoft.VisualStudio.Shell.Interop.IVsHierarchy> interfaccia, una o più [elemento ID](<xref:Microsoft.VisualStudio.VSConstants.VSITEMID>)e un <xref:Microsoft.VisualStudio.TextManager.Interop.IVsTextBufferCoordinator> interfaccia.
+
+3.  Il <xref:Microsoft.VisualStudio.TextManager.Interop.IVsTextBufferCoordinator> interfaccia, ovvero l'oggetto TextBuffer coordinator, fornisce i servizi di base necessarie per eseguire il mapping di indirizzi in un file primario nel buffer del linguaggio secondario.
+
+     Ad esempio, in un unico file aspx, il file primario include ASP, HTML e tutto il codice che è contenuto. Tuttavia, il buffer secondario include solo il codice contenuto insieme a tutte le definizioni di classe, per rendere il buffer secondario di un file di codice valido. Il coordinatore buffer gestisce le operazioni di coordinare le modifiche da un buffer per l'altro.
+
+4.  Il <xref:Microsoft.VisualStudio.TextManager.Interop.IVsTextBufferCoordinator.SetSpanMappings%2A> metodo, che è la lingua principale, indica il coordinatore di buffer viene eseguito il mapping di testo all'interno del buffer di testo corrispondente nel buffer secondario.
+
+     Il linguaggio passa una matrice del <xref:Microsoft.VisualStudio.TextManager.Interop.NewSpanMapping> struttura, che attualmente include solo un database primario e un intervallo secondario.
+
+5.  Il <xref:Microsoft.VisualStudio.TextManager.Interop.IVsTextBufferCoordinator.MapPrimaryToSecondarySpan%2A> (metodo) e <xref:Microsoft.VisualStudio.TextManager.Interop.IVsTextBufferCoordinator.MapSecondaryToPrimarySpan%2A> metodo fornisce il mapping da primario a un buffer secondario e viceversa.

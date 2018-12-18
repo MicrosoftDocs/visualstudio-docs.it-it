@@ -1,13 +1,8 @@
 ---
-title: 'CA1301: Avoid duplicate accelerators | Microsoft Docs'
-ms.custom: 
+title: 'CA1301: Evitare tasti di scelta rapida duplicati'
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- vs-devops-test
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.technology: vs-ide-code-analysis
+ms.topic: reference
 f1_keywords:
 - CA1301
 - AvoidDuplicateAccelerators
@@ -15,59 +10,43 @@ helpviewer_keywords:
 - CA1301
 - AvoidDuplicateAccelerators
 ms.assetid: 20570a00-864b-459c-a1fa-a6e9db5f1001
-caps.latest.revision: 17
-author: stevehoag
-ms.author: shoag
-manager: wpickett
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: HT
-ms.sourcegitcommit: eb5c9550fd29b0e98bf63a7240737da4f13f3249
-ms.openlocfilehash: 0e48aa6fd82a218e0184f80b1c4ec90736c46e66
-ms.contentlocale: it-it
-ms.lasthandoff: 08/30/2017
-
+author: gewarren
+ms.author: gewarren
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 0a323ce01201dd4a3650d6da0ddde8edfeea0512
+ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/19/2018
 ---
-# <a name="ca1301-avoid-duplicate-accelerators"></a>CA1301: Avoid duplicate accelerators
-|||  
-|-|-|  
-|TypeName|AvoidDuplicateAccelerators|  
-|CheckId|CA1301|  
-|Category|Microsoft.Globalization|  
-|Breaking Change|Non-breaking|  
-  
-## <a name="cause"></a>Cause  
- A type extends <xref:System.Windows.Forms.Control?displayProperty=fullName> and contains two or more top level controls that have identical access keys that are stored in a resource file.  
-  
-## <a name="rule-description"></a>Rule Description  
- An access key, also known as an accelerator, enables keyboard access to a control by using the ALT key. When multiple controls have duplicate access keys, the behavior of the access key is not well defined. The user might not be able to access the intended control by using the access key and a control other than the one that is intended might be enabled.  
-  
- The current implementation of this rule ignores menu items. However, menu items in the same submenu should not have identical access keys.  
-  
-## <a name="how-to-fix-violations"></a>How to Fix Violations  
- To fix a violation of this rule, define unique access keys for all controls.  
-  
-## <a name="when-to-suppress-warnings"></a>When to Suppress Warnings  
- Do not suppress a warning from this rule.  
-  
-## <a name="example"></a>Example  
- The following example shows a minimal form that contains two controls that have identical access keys. The keys are stored in a resource file, which is not shown; however, their values appear in the commented out `checkBox.Text` lines. The behavior of duplicate accelerators can be examined by exchanging the `checkBox.Text` lines with their commented out counterparts. However, in this case, the example will not generate a warning from the rule.  
-  
- [!code-csharp[FxCop.Globalization.AvoidDuplicateAccels#1](../code-quality/codesnippet/CSharp/ca1301-avoid-duplicate-accelerators_1.cs)]  
-  
-## <a name="see-also"></a>See Also  
- <xref:System.Resources.ResourceManager?displayProperty=fullName>   
- [Resources in Desktop Apps](/dotnet/framework/resources/index)
+# <a name="ca1301-avoid-duplicate-accelerators"></a>CA1301: Evitare tasti di scelta rapida duplicati
+|||
+|-|-|
+|TypeName|AvoidDuplicateAccelerators|
+|CheckId|CA1301|
+|Category|Microsoft.Globalization|
+|Modifica importante|Non sostanziale|
+
+## <a name="cause"></a>Causa
+ Estende un tipo <xref:System.Windows.Forms.Control?displayProperty=fullName> e contiene due o più controlli di primo livello che presentano tasti di scelta identici vengono archiviati in un file di risorse.
+
+## <a name="rule-description"></a>Descrizione della regola
+ Un tasto di scelta o tasto di scelta rapida consente l'accesso da tastiera a un controllo mediante ALT. Quando più controlli presentano tasti di scelta duplicati, il comportamento del tasto di scelta non è ben definito. L'utente potrebbe non essere in grado di accedere al controllo desiderato utilizzando la chiave di accesso e un controllo diverso da quello che è possibile che sia attivato.
+
+ L'implementazione corrente di questa regola ignora le voci di menu. Tuttavia, le voci di menu nel sottomenu stesso non devono essere identica tasti di scelta.
+
+## <a name="how-to-fix-violations"></a>Come correggere le violazioni
+ Per correggere una violazione di questa regola, definire le chiavi di accesso univoco per tutti i controlli.
+
+## <a name="when-to-suppress-warnings"></a>Esclusione di avvisi
+ Non escludere un avviso da questa regola.
+
+## <a name="example"></a>Esempio
+ Nell'esempio seguente viene illustrato un form minimo che contiene due controlli che dispongono di chiavi di accesso identici. Le chiavi vengono archiviate in un file di risorse, non viene visualizzato. Tuttavia, i relativi valori vengono visualizzati in impostati come commento out `checkBox.Text` righe. Il comportamento dei tasti di scelta rapida duplicati può essere esaminato tramite lo scambio di `checkBox.Text` righe con le controparti impostate come commentata. Tuttavia, in questo caso, l'esempio non genererà un avviso dalla regola.
+
+ [!code-csharp[FxCop.Globalization.AvoidDuplicateAccels#1](../code-quality/codesnippet/CSharp/ca1301-avoid-duplicate-accelerators_1.cs)]
+
+## <a name="see-also"></a>Vedere anche
+ <xref:System.Resources.ResourceManager?displayProperty=fullName> [Risorse nelle applicazioni Desktop](/dotnet/framework/resources/index)

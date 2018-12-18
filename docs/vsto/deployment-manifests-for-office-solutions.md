@@ -1,45 +1,45 @@
 ---
-title: "Manifesti di distribuzione per le soluzioni Office"
-ms.custom: ""
-ms.date: "02/02/2017"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "office-development"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-helpviewer_keywords: 
-  - "applicazioni di Office [sviluppo per Office in Visual Studio], manifesti della distribuzione"
-  - "manifesti della distribuzione [sviluppo per Office in Visual Studio]"
-  - "manifesti [sviluppo per Office in Visual Studio], distribuzione"
-  - "sviluppo per Office in Visual Studio, manifesti della distribuzione"
-ms.assetid: 3fb29743-fb96-4d61-a99a-9b1bbafeee13
-caps.latest.revision: 22
-author: "kempb"
-ms.author: "kempb"
-manager: "ghogen"
-caps.handback.revision: 21
+title: Manifesti di distribuzione per le soluzioni Office | Documenti Microsoft
+ms.custom: ''
+ms.date: 02/02/2017
+ms.technology:
+- office-development
+ms.topic: conceptual
+dev_langs:
+- VB
+- CSharp
+helpviewer_keywords:
+- Office applications [Office development in Visual Studio], deployment manifests
+- deployment manifests [Office development in Visual Studio]
+- manifests [Office development in Visual Studio], deployment
+- Office development in Visual Studio, deployment manifests
+author: TerryGLee
+ms.author: tglee
+manager: douge
+ms.workload:
+- office
+ms.openlocfilehash: e1276650d38f16f8ccc36720f7e273472e609367
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# Manifesti di distribuzione per le soluzioni Office
-  Un manifesto di distribuzione è un file XML che descrive le impostazioni di distribuzione di una soluzione Office e che identifica la versione corrente dell'applicazione.  
+# <a name="deployment-manifests-for-office-solutions"></a>Manifesti di distribuzione per le soluzioni Office
+  Un manifesto di distribuzione è un file XML che descrive le impostazioni di distribuzione di una soluzione Office e identifica la versione dell'applicazione corrente.  
   
- Nello sviluppo in Office tramite Visual Studio si utilizza lo schema del manifesto di distribuzione [!INCLUDE[ndptecclick](../vsto/includes/ndptecclick-md.md)] definito nel riferimento [ClickOnce Deployment Manifest](../deployment/clickonce-deployment-manifest.md).  
+ Lo sviluppo di Office in Visual Studio utilizza il [!INCLUDE[ndptecclick](../vsto/includes/ndptecclick-md.md)] schema del manifesto di distribuzione definito nel [manifesto della distribuzione ClickOnce](/visualstudio/deployment/clickonce-deployment-manifest) riferimento.  
   
-## Note  
- Il file del manifesto di distribuzione delle soluzioni Office identifica la versione corrente e altre impostazioni di distribuzione.  Fa riferimento al manifesto dell'applicazione che descrive la versione corrente della soluzione e tutti i file in essa contenuti.  
+## <a name="remarks"></a>Note  
+ Il file manifesto di distribuzione per le soluzioni Office identifica la versione corrente e altre impostazioni di distribuzione. Fa riferimento il manifesto dell'applicazione, che descrive la versione della soluzione e tutti i file contenuti nella soluzione corrente.  
   
-## Sintassi del nome file  
- Il nome di un manifesto di distribuzione deve avere l'estensione vsto.  Sebbene sia un manifesto di distribuzione standard di [!INCLUDE[ndptecclick](../vsto/includes/ndptecclick-md.md)] , l'estensione differisce per consentire al runtime di Visual Studio Tools per Office per gestire il file.  
+## <a name="file-name-syntax"></a>Sintassi del nome file  
+ Il nome di un file manifesto di distribuzione deve terminare con l'estensione vsto. Anche se è uno standard [!INCLUDE[ndptecclick](../vsto/includes/ndptecclick-md.md)] manifesto della distribuzione, l'estensione differisce per abilitare gli strumenti Visual Studio per Office runtime di gestire il file.  
   
-## Esempio  
- In l ' esempio di codice seguente viene illustrato un manifesto di distribuzione di una soluzione di Visual Studio Tools per Office.  
+## <a name="example"></a>Esempio  
+ Esempio di codice seguente viene illustrato un manifesto di distribuzione per un Visual Studio Tools per la soluzione Office.  
   
 ```  
-  
+<?xml version="1.0" encoding="utf-8"?>  
 <asmv1:assembly   
   xsi:schemaLocation=  
     "urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd"   
@@ -185,7 +185,7 @@ caps.handback.revision: 21
 </asmv1:assembly>  
 ```  
   
-## Vedere anche  
- [Manifesti di applicazione per le soluzioni Office](../vsto/application-manifests-for-office-solutions.md)  
+## <a name="see-also"></a>Vedere anche  
+ [Manifesti di applicazione per soluzioni Office](../vsto/application-manifests-for-office-solutions.md)  
   
   

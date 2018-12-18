@@ -5,8 +5,7 @@ ms.date: 01/18/2017
 ms.prod: windows-client-threshold
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-javascript
+ms.technology: devlang-javascript
 ms.tgt_pltfrm: 
 ms.topic: article
 dev_langs:
@@ -17,16 +16,15 @@ helpviewer_keywords:
 - arrays [JavaScript]
 - arrays [JavaScript], objects
 ms.assetid: 785c5acd-b8b3-4152-af9a-dd42ecdd75ba
-caps.latest.revision: 13
+caps.latest.revision: "13"
 author: mikejo5000
 ms.author: mikejo
 manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: 47057e9611b824c17077b9127f8d2f8b192d6eb8
 ms.openlocfilehash: 4c5218a8353a796128d8b672ecc781665c6bde20
-ms.contentlocale: it-it
-ms.lasthandoff: 08/11/2017
-
+ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/27/2017
 ---
 # <a name="using-arrays-javascript"></a>Utilizzo di matrici (JavaScript)
 Le matrici presenti in [!INCLUDE[javascript](../../javascript/includes/javascript-md.md)] sono *sparse*. Ovvero, se si dispone di una matrice con tre elementi che sono numerati 0, 1 e 2, è possibile creare l'elemento 50 senza doversi preoccupare di elementi compresi tra 3 e 49. Se la matrice ha una variabile di lunghezza automatica (vedere [Oggetti intrinseci](../../javascript/intrinsic-objects-javascript.md) per una spiegazione del monitoraggio automatico della lunghezza della matrice), la variabile di lunghezza viene impostata a 51, anziché a 4. È possibile creare matrici in cui non siano presenti interruzioni della numerazione degli elementi, ma non è necessario eseguire questa operazione.  

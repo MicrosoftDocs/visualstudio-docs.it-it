@@ -1,41 +1,25 @@
 ---
 title: IPropertyProxyEESide | Documenti Microsoft
-ms.custom: 
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - vs-ide-sdk
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: conceptual
 f1_keywords:
 - IPropertyProxyEESide
 helpviewer_keywords:
 - IPropertyProxyEESide interface
 ms.assetid: cf227cf8-39d9-4758-8f7e-a697aebb1926
-caps.latest.revision: 13
+author: gregvanl
 ms.author: gregvanl
-manager: ghogen
-translation.priority.mt:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: ca7c86466fa23fb21a932f26dc24e37c71cf29b4
-ms.openlocfilehash: c22154a77221bd45031428a158bc8060b89f93ef
-ms.contentlocale: it-it
-ms.lasthandoff: 04/05/2017
-
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: 0f1dea4c3124cd532177618d84e2302a32e8bc4a
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="ipropertyproxyeeside"></a>IPropertyProxyEESide
 Questa interfaccia fornisce metodi per visualizzare i dati sull'oggetto associato. Questa interfaccia è parte del supporto per i visualizzatori di tipo.  

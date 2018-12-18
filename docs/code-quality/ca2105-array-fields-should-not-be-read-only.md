@@ -1,13 +1,8 @@
 ---
-title: 'CA2105: Array fields should not be read only | Microsoft Docs'
-ms.custom: 
+title: 'CA2105: I campi di matrici non devono essere di sola lettura'
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- vs-devops-test
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.technology: vs-ide-code-analysis
+ms.topic: reference
 f1_keywords:
 - CA2105
 - ArrayFieldsShouldNotBeReadOnly
@@ -15,76 +10,60 @@ helpviewer_keywords:
 - ArrayFieldsShouldNotBeReadOnly
 - CA2105
 ms.assetid: 0bdc3421-3ceb-4182-b30c-a992fbfcc35d
-caps.latest.revision: 16
-author: stevehoag
-ms.author: shoag
-manager: wpickett
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: HT
-ms.sourcegitcommit: eb5c9550fd29b0e98bf63a7240737da4f13f3249
-ms.openlocfilehash: 3980baa67ba22ff52329aaa8bf94c9699af63ed9
-ms.contentlocale: it-it
-ms.lasthandoff: 08/30/2017
-
+author: gewarren
+ms.author: gewarren
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 57b652247ea727c59a9e0d0d0c6850039be52634
+ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/19/2018
 ---
-# <a name="ca2105-array-fields-should-not-be-read-only"></a>CA2105: Array fields should not be read only
-|||  
-|-|-|  
-|TypeName|ArrayFieldsShouldNotBeReadOnly|  
-|CheckId|CA2105|  
-|Category|Microsoft.Security|  
-|Breaking Change|Breaking|  
-  
-## <a name="cause"></a>Cause  
- A public or protected field that holds an array is declared read-only.  
-  
-## <a name="rule-description"></a>Rule Description  
- When you apply the `readonly` (`ReadOnly` in [!INCLUDE[vbprvb](../code-quality/includes/vbprvb_md.md)]) modifier to a field that contains an array, the field cannot be changed to refer to a different array. However, the elements of the array that are stored in a read-only field can be changed. Code that makes decisions or performs operations that are based on the elements of a read-only array that can be publicly accessed might contain an exploitable security vulnerability.  
-  
- Note that having a public field also violates the design rule [CA1051: Do not declare visible instance fields](../code-quality/ca1051-do-not-declare-visible-instance-fields.md).  
-  
-## <a name="how-to-fix-violations"></a>How to Fix Violations  
- To fix the security vulnerability that is identified by this rule, do not rely on the contents of a read-only array that can be publicly accessed. It is strongly recommended that you use one of the following procedures:  
-  
--   Replace the array with a strongly typed collection that cannot be changed. For more information, see <xref:System.Collections.ReadOnlyCollectionBase?displayProperty=fullName>.  
-  
--   Replace the public field with a method that returns a clone of a private array. Because your code does not rely on the clone, there is no danger if the elements are modified.  
-  
- If you chose the second approach, do not replace the field with a property; properties that return arrays adversely affect performance. For more information, see [CA1819: Properties should not return arrays](../code-quality/ca1819-properties-should-not-return-arrays.md).  
-  
-## <a name="when-to-suppress-warnings"></a>When to Suppress Warnings  
- Exclusion of a warning from this rule is strongly discouraged. Almost no scenarios occur where the contents of a read-only field are unimportant. If this is the case with your scenario, remove the `readonly` modifier instead of excluding the message.  
-  
-## <a name="example"></a>Example  
- This example demonstrates the dangers of violating this rule. The first part shows an example library that has a type, `MyClassWithReadOnlyArrayField`, that contains two fields (`grades` and `privateGrades`) that are not secure. The field `grades` is public, and therefore vulnerable to any caller. The field `privateGrades` is private but is still vulnerable because it is returned to callers by the `GetPrivateGrades` method. The `securePrivateGrades` field is exposed in a safe manner by the `GetSecurePrivateGrades` method. It is declared as private to follow good design practices. The second part shows code that changes values stored in the `grades` and `privateGrades` members.  
-  
- The example class library appears in the following example.  
-  
- [!code-csharp[FxCop.Security.ArrayFieldsNotReadOnly#1](../code-quality/codesnippet/CSharp/ca2105-array-fields-should-not-be-read-only_1.cs)]  
-  
-## <a name="example"></a>Example  
- The following code uses the example class library to illustrate read-only array security issues.  
-  
- [!code-csharp[FxCop.Security.TestArrayFieldsRead#1](../code-quality/codesnippet/CSharp/ca2105-array-fields-should-not-be-read-only_2.cs)]  
-  
- The output from this example is:  
-  
- **Before tampering: Grades: 90, 90, 90 Private Grades: 90, 90, 90  Secure Grades, 90, 90, 90**  
-**After tampering: Grades: 90, 555, 90 Private Grades: 90, 555, 90  Secure Grades, 90, 90, 90**   
-## <a name="see-also"></a>See Also  
- <xref:System.Array?displayProperty=fullName>   
- <xref:System.Collections.ReadOnlyCollectionBase?displayProperty=fullName>
+# <a name="ca2105-array-fields-should-not-be-read-only"></a>CA2105: I campi di matrici non devono essere di sola lettura
+|||
+|-|-|
+|TypeName|ArrayFieldsShouldNotBeReadOnly|
+|CheckId|CA2105|
+|Category|Microsoft.Security|
+|Modifica importante|Interruzione|
+
+## <a name="cause"></a>Causa
+ Un campo pubblico o protetto che contiene una matrice è dichiarato di sola lettura.
+
+## <a name="rule-description"></a>Descrizione della regola
+ Quando si applica il `readonly` (`ReadOnly` in [!INCLUDE[vbprvb](../code-quality/includes/vbprvb_md.md)]) modificatore a un campo che contiene una matrice, il campo non può essere modificato per fare riferimento a una matrice diversa. È tuttavia possibile modificare gli elementi della matrice archiviati in un campo in sola lettura. Codice che prende decisioni o esegua operazioni che si basano sugli elementi di una matrice di sola lettura che è possibile accedere pubblicamente potrebbe contenere una vulnerabilità della protezione.
+
+ Si noti che anche la presenza di un campo pubblico viola la regola di progettazione [CA1051: non dichiarare campi di istanza visibili](../code-quality/ca1051-do-not-declare-visible-instance-fields.md).
+
+## <a name="how-to-fix-violations"></a>Come correggere le violazioni
+ Per risolvere le vulnerabilità di sicurezza che è identificato da questa regola, non fare affidamento sul contenuto di una matrice di sola lettura accessibile pubblicamente. È consigliabile utilizzare una delle procedure seguenti:
+
+-   Sostituire la matrice con una raccolta fortemente tipizzata che non può essere modificata. Per altre informazioni, vedere <xref:System.Collections.ReadOnlyCollectionBase?displayProperty=fullName>.
+
+-   Sostituire il campo pubblico con un metodo che restituisce un clone di una matrice privata. Poiché il codice non si basano sul duplicato, non vi è alcun rischio se gli elementi vengono modificati.
+
+ Se si sceglie il secondo approccio, non sostituire il campo con una proprietà. proprietà che restituiscono matrici può influire negativamente sulle prestazioni. Per ulteriori informazioni, vedere [CA1819: le proprietà non devono restituire matrici](../code-quality/ca1819-properties-should-not-return-arrays.md).
+
+## <a name="when-to-suppress-warnings"></a>Esclusione di avvisi
+ Esclusione di un avviso da questa regola è fortemente sconsigliato. Possono verificarsi quasi alcun scenari in cui il contenuto di un campo di sola lettura non è importante. Se questo è il caso, rimuovere il `readonly` modificatore anziché escludere il messaggio.
+
+## <a name="example"></a>Esempio
+ In questo esempio vengono illustrati i rischi di violazione di questa regola. La prima parte viene illustrata una libreria di esempio con un tipo, `MyClassWithReadOnlyArrayField`, che contiene due campi (`grades` e `privateGrades`) che non sono protette. Il campo `grades` sia pubblico e pertanto vulnerabile a qualsiasi chiamante. Il campo `privateGrades` è privato, ma è comunque vulnerabile poiché viene restituito per i chiamanti dal `GetPrivateGrades` metodo. Il `securePrivateGrades` esposto in modo sicuro dal campo di `GetSecurePrivateGrades` metodo. Dichiarata come privata seguire migliori pratiche di progettazione. La seconda parte viene illustrato il codice che modifica i valori archiviati nel `grades` e `privateGrades` membri.
+
+ La libreria di classi di esempio viene visualizzato nell'esempio seguente.
+
+ [!code-csharp[FxCop.Security.ArrayFieldsNotReadOnly#1](../code-quality/codesnippet/CSharp/ca2105-array-fields-should-not-be-read-only_1.cs)]
+
+## <a name="example"></a>Esempio
+ Il codice seguente usa la libreria di classi di esempio per illustrare i problemi di sicurezza di matrice di sola lettura.
+
+ [!code-csharp[FxCop.Security.TestArrayFieldsRead#1](../code-quality/codesnippet/CSharp/ca2105-array-fields-should-not-be-read-only_2.cs)]
+
+ L'output di questo esempio è:
+
+ **Prima di eventuali manomissioni: voti: 90, 90, 90 gradi privato: 90, 90, 90 gradi Secure, 90, 90, 90**
+**dopo eventuali manomissioni: voti: 90, 555, 90 gradi privato: 90, 555, 90 gradi Secure, 90, 90, 90**
+## <a name="see-also"></a>Vedere anche
+ <xref:System.Array?displayProperty=fullName> <xref:System.Collections.ReadOnlyCollectionBase?displayProperty=fullName>

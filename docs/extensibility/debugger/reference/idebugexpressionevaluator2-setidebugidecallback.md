@@ -1,47 +1,48 @@
 ---
-title: "IDebugExpressionEvaluator2::SetIDebugIDECallback | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "IDebugExpressionEvaluator2::SetIDebugIDECallback"
-  - "SetIDebugIDECallback"
+title: IDebugExpressionEvaluator2::SetIDebugIDECallback | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology:
+- vs-ide-sdk
+ms.topic: conceptual
+helpviewer_keywords:
+- IDebugExpressionEvaluator2::SetIDebugIDECallback
+- SetIDebugIDECallback
 ms.assetid: f01c40ad-ef4b-477b-8304-602c6972bc88
-caps.latest.revision: 8
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 8
+author: gregvanl
+ms.author: gregvanl
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: b272a7db4bfc5c7405493759d5e9c1864eaaa07d
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# IDebugExpressionEvaluator2::SetIDebugIDECallback
-[!INCLUDE[vs2017banner](../../../code-quality/includes/vs2017banner.md)]
-
-Consente a un modulo di debug per passare un callback per l'analizzatore di espressioni per la fase di inizializzazione.  
+# <a name="idebugexpressionevaluator2setidebugidecallback"></a>IDebugExpressionEvaluator2::SetIDebugIDECallback
+Consente di passare un callback per l'analizzatore di espressioni durante l'inizializzazione di un motore di debug.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp#  
+```cpp  
 HRESULT SetIDebugIDECallback (  
-   IDebugIDECallback * pCallback  
+   IDebugIDECallback * pCallback  
 );  
 ```  
   
-```c#  
+```csharp  
 int SetIDebugIDECallback (  
-   IDebugIDECallback pCallback  
+   IDebugIDECallback pCallback  
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `pCallback`  
- \[in\]  interfaccia per il callback.  
+ [in] Interfaccia per il callback.  
   
-## Valore restituito  
- Se l'operazione riesce, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
+## <a name="return-value"></a>Valore restituito  
+ Se ha esito positivo, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IDebugExpressionEvaluator2](../../../extensibility/debugger/reference/idebugexpressionevaluator2.md)

@@ -1,68 +1,72 @@
 ---
-title: "Metodo setUTCHours (Date) (JavaScript) | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/18/2017"
-ms.prod: "windows-client-threshold"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-javascript"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "setUTCHours"
-dev_langs: 
-  - "JavaScript"
-  - "TypeScript"
-  - "DHTML"
-helpviewer_keywords: 
-  - "date, UTC"
-  - "setUTCHours (metodo)"
-  - "UTC (ora), impostazione"
+title: Metodo setUTCHours (Date) (JavaScript) | Documenti Microsoft
+ms.custom: ''
+ms.date: 01/18/2017
+ms.prod: windows-client-threshold
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-javascript
+ms.tgt_pltfrm: ''
+ms.topic: language-reference
+f1_keywords:
+- setUTCHours
+dev_langs:
+- JavaScript
+- TypeScript
+- DHTML
+helpviewer_keywords:
+- dates, UTC
+- UTC times, setting
+- setUTCHours method
 ms.assetid: 257e36fd-fb06-4a4d-8634-d66a020a1511
 caps.latest.revision: 12
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 12
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.openlocfilehash: 9fe83735028f86d38ef270beac6c44dfa4caae7f
+ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/27/2017
 ---
-# Metodo setUTCHours (Date) (JavaScript)
-Consente di impostare il valore delle ore nell'oggetto `Date` in base al formato UTC \(Universal Coordinated Time, Tempo universale coordinato\).  
+# <a name="setutchours-method-date-javascript"></a>Metodo setUTCHours (Date) (JavaScript)
+Imposta il valore delle ore di `Date` utilizzando l'ora UTC (Universal Coordinated Time).  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
   
 dateObj.setUTCHours(numHours[, numMin[, numSec[, numMilli]]])   
 ```  
   
-## Parametri  
+## <a name="parameters"></a>Parametri  
  `dateObj`  
- Obbligatorio.  Qualsiasi oggetto `Date`.  
+ Obbligatorio. Qualsiasi oggetto `Date`.  
   
  `numHours`  
- Obbligatorio.  Valore numerico che rappresenta le ore.  
+ Obbligatorio. Valore numerico che rappresenta il valore delle ore.  
   
  `numMin`  
- Facoltativo.  Valore numerico corrispondente ai minuti.  Obbligatorio se viene utilizzato `numSec` o `numMilli`.  
+ Parametro facoltativo. Valore numerico che rappresenta il valore dei minuti. È necessario specificare se il valore `numSec` o `numMilli` vengono utilizzati.  
   
  `numSec`  
- Facoltativo.  Valore numerico corrispondente ai secondi.  Obbligatorio se viene utilizzato l'argomento `numMilli`.  
+ Parametro facoltativo. Valore numerico che rappresenta il valore dei secondi. È necessario specificare se `numMilli` viene utilizzato l'argomento.  
   
  `numMilli`  
- Facoltativo.  Valore numerico corrispondente ai millisecondi.  
+ Parametro facoltativo. Valore numerico che rappresenta il valore dei millisecondi.  
   
-## Note  
- Per tutti i metodi **set** che prevedono argomenti facoltativi, se un argomento facoltativo non viene specificato, viene utilizzato il valore restituito dai corrispondenti metodi **get**.  Se, ad esempio, l'argomento `numMin` non viene specificato, [!INCLUDE[javascript](../../javascript/includes/javascript-md.md)] utilizza il valore restituito dal metodo `getUTCMinutes`.  
+## <a name="remarks"></a>Note  
+ Tutti **impostare** i metodi che gli argomenti facoltativi utilizzato il valore restituito dal corrispondente **ottenere** metodi, se non si specifica un argomento facoltativo. Ad esempio, se il `numMin` argomento non viene specificato, [!INCLUDE[javascript](../../javascript/includes/javascript-md.md)] utilizza il valore restituito dal `getUTCMinutes` metodo.  
   
- Per impostare il valore delle ore in base all'ora locale, utilizzare il metodo `setHours`.  
+ Per impostare il valore delle ore utilizzando l'ora locale, utilizzare il `setHours` metodo.  
   
- Se il valore di un argomento è maggiore del relativo intervallo o è un numero negativo, gli altri valori memorizzati verranno modificati di conseguenza.  Se, ad esempio, la data memorizzata è "5 gen 1996 00.00.00.00" e si chiama il metodo **setUTCHours\(30\)**, la data viene modificata in "6 gen 1996 06.00.00.00".  
+ Se il valore di un argomento è maggiore dell'intervallo specificato o è un numero negativo, gli altri valori memorizzati verranno modificati di conseguenza. Ad esempio, se la data memorizzata è "5 gennaio 1996 00.00.00.00", e **setUTCHours(30)** viene chiamato, la data viene modificata in "06:00:00.00 6 gennaio 1996".  
   
-## Esempio  
- Nell'esempio seguente viene illustrato l'utilizzo del metodo `setUTCHours`.  
+## <a name="example"></a>Esempio  
+ Nell'esempio riportato di seguito viene illustrato l'utilizzo del metodo `setUTCHours`.  
   
-```javascript  
+```JavaScript  
 function SetUTCHoursDemo(nhr, nmin, nsec){     
    var d, s;                        // Declare variables.  
    d = new Date();                  // Create Date object.  
@@ -72,12 +76,12 @@ function SetUTCHoursDemo(nhr, nmin, nsec){
 }  
 ```  
   
-## Requisiti  
+## <a name="requirements"></a>Requisiti  
  [!INCLUDE[jsv3](../../javascript/reference/includes/jsv3-md.md)]  
   
- **Si applica a**: [Oggetto Date](../../javascript/reference/date-object-javascript.md)  
+ **Si applica a**: [Date Object](../../javascript/reference/date-object-javascript.md)  
   
-## Vedere anche  
- [Metodo getHours \(Date\)](../../javascript/reference/gethours-method-date-javascript.md)   
- [Metodo getUTCHours \(Date\)](../../javascript/reference/getutchours-method-date-javascript.md)   
- [Metodo setHours \(Date\)](../../javascript/reference/sethours-method-date-javascript.md)
+## <a name="see-also"></a>Vedere anche  
+ [Metodo getHours (Date)](../../javascript/reference/gethours-method-date-javascript.md)   
+ [Metodo getUTCHours (Date)](../../javascript/reference/getutchours-method-date-javascript.md)   
+ [Metodo setHours (Date)](../../javascript/reference/sethours-method-date-javascript.md)

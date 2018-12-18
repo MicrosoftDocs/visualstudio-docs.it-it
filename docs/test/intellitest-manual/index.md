@@ -1,46 +1,27 @@
 ---
 title: Manuale di riferimento per IntelliTest | Strumenti di test per Microsoft Developer | Microsoft Docs
-ms.custom: 
 ms.date: 05/02/2017
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- vs-devops-test
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.technology: vs-ide-test
+ms.topic: conceptual
 helpviewer_keywords:
 - IntelliTest Reference Manual, IntelliTest
-ms.assetid: C5FA1C59-BB82-43B6-BF96-D0D85E033DAE
-caps.latest.revision: 56
-ms.author: douge
+ms.author: gewarren
 manager: douge
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 45d36934cf1c46902cac566203cddf4a118b7fe4
-ms.openlocfilehash: 1f37379b77701a969cc6667abc0778dbbb95202f
-ms.contentlocale: it-it
-ms.lasthandoff: 06/02/2017
-
+ms.workload:
+- multiple
+author: gewarren
+ms.openlocfilehash: 581533a92807a009696ec1cb4fb715d7272c3897
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="intellitest-reference-manual"></a>Manuale di riferimento per IntelliTest
 
-## <a name="contents"></a>Contenuto
+## <a name="contents"></a>Sommario
 
 * **[Panoramica di IntelliTest](introduction.md)**
-  - [Hello World di IntelliTest](introduction.md#hello-world)
+  - [Hello World di IntelliTest](introduction.md#the-hello-world-of-intellitest)
   - [Limitazioni](introduction.md#limitations)
     * [Non determinismo](introduction.md#nondeterminism)
     * [Concorrenza](introduction.md#concurrency)
@@ -48,13 +29,13 @@ ms.lasthandoff: 06/02/2017
     * [Piattaforma](introduction.md#platform)
     * [Lingua](introduction.md#language)
     * [Ragionamento simbolico](introduction.md#symbolic-reasoning)
-    * [Analisi dello stack non corrette](introduction.md#incorrect-stack)
+    * [Analisi dello stack non corrette](introduction.md#incorrect-stack-traces)
   - [Altre informazioni](introduction.md#further-reading)<p>&nbsp;</p>
 
 * **[Introduzione a IntelliTest](getting-started.md)**
   - [Attributi importanti](getting-started.md#important-attributes)
   - [Classi helper statiche importanti](getting-started.md#helper-classes)<p>&nbsp;</p>
- 
+
 * **[Generazione di test](test-generation.md)**
   - [Generatori di test](test-generation.md#test-generators)
   - [Unit test con parametri](test-generation.md#parameterized-unit-testing)
@@ -145,4 +126,3 @@ ms.lasthandoff: 06/02/2017
 ## <a name="got-feedback"></a>Commenti?
 
 Pubblicare idee e richieste di funzionalità in **[UserVoice](https://visualstudio.uservoice.com/forums/121579-visual-studio-2015/category/157869-test-tools?query=IntelliTest)**.
-

@@ -1,41 +1,24 @@
 ---
-title: "Riferimenti alle proprietà di progetto | Microsoft Docs"
-ms.custom: 
+title: Riferimenti alle proprietà di progetto | Microsoft Docs
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - vs-ide-general
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: conceptual
 helpviewer_keywords:
 - user interface [Visual Studio], projects
 - projects [Visual Studio], user interface
 ms.assetid: eec49aec-5474-48a7-889d-709045b9a475
-caps.latest.revision: 18
 author: gewarren
 ms.author: gewarren
-manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 5ea9179ad37514ffad4876177b05150eecc22def
-ms.openlocfilehash: 0616477123b4b2a08763a3871f42d67e06c1aa3a
-ms.contentlocale: it-it
-ms.lasthandoff: 05/24/2017
-
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 7a80497983c189084bcd64cf87acabc7d54628a3
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="project-properties-reference"></a>Riferimenti alle proprietà di progetto
 Altre informazioni su come configurare e personalizzare le proprietà del progetto.  
@@ -60,4 +43,3 @@ Altre informazioni su come configurare e personalizzare le proprietà del proget
   
 ## <a name="see-also"></a>Vedere anche  
  [Solutions and Projects](../../ide/solutions-and-projects-in-visual-studio.md) (Soluzioni e progetti)
-

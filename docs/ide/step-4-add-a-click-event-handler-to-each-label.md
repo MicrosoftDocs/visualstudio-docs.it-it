@@ -1,38 +1,21 @@
 ---
 title: 'Passaggio 4: Aggiungere un gestore degli eventi Click a ogni etichetta | Microsoft Docs'
-ms.custom: 
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
-- vs-ide-general
-ms.tgt_pltfrm: 
-ms.topic: article
+- vs-acquisition
+ms.topic: conceptual
 ms.assetid: 16bdbc7c-4129-411d-bace-f4a3e5375975
-caps.latest.revision: 20
-author: kempb
-ms.author: kempb
-manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+author: TerryGLee
+ms.author: tglee
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: ec69ea89fe4d6082d03752c67fd7d396e79a53e5
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
 ms.translationtype: HT
-ms.sourcegitcommit: eb5c9550fd29b0e98bf63a7240737da4f13f3249
-ms.openlocfilehash: b7a7fc66913ff7cc4afc952f2f797781a6f90819
-ms.contentlocale: it-it
-ms.lasthandoff: 09/06/2017
-
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="step-4-add-a-click-event-handler-to-each-label"></a>Passaggio 4: aggiungere un gestore degli eventi Click a ogni etichetta
 Il gioco delle coppie funziona come segue:  
@@ -60,7 +43,8 @@ Finestra Proprietà con evento Click visualizzato
   
 5.  Compilare la parte restante di codice come segue:  
   
-     [!code-csharp[VbExpressTutorial4Step2_3_4#4](../ide/codesnippet/CSharp/step-4-add-a-click-event-handler-to-each-label_1.cs)]  [!code-vb[VbExpressTutorial4Step2_3_4#4](../ide/codesnippet/VisualBasic/step-4-add-a-click-event-handler-to-each-label_1.vb)]  
+     [!code-csharp[VbExpressTutorial4Step2_3_4#4](../ide/codesnippet/CSharp/step-4-add-a-click-event-handler-to-each-label_1.cs)]
+     [!code-vb[VbExpressTutorial4Step2_3_4#4](../ide/codesnippet/VisualBasic/step-4-add-a-click-event-handler-to-each-label_1.vb)]  
   
     > [!NOTE]
     >  Se si sceglie di copiare e incollare il blocco di codice `label_Click()` anziché immetterlo manualmente, è necessario verificare di sostituire il codice `label_Click()` esistente. In caso contrario, verrà generato un blocco di codice duplicato.  

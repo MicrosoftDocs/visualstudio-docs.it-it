@@ -1,47 +1,46 @@
 ---
-title: "/SafeMode (devenv.exe) | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/15/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-general"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "/SafeMode (opzione devenv)"
-  - "devenv, /SafeMode (opzione)"
-  - "SafeMode (opzione)"
+title: -SafeMode (devenv.exe) | Microsoft Docs
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology:
+- vs-ide-general
+ms.topic: conceptual
+helpviewer_keywords:
+- /SafeMode Devenv switch
+- Devenv, /SafeMode switch
+- SafeMode switch
 ms.assetid: b191f6a5-8f12-47ec-bcc7-b68149a22aa8
-caps.latest.revision: 5
-caps.handback.revision: 5
-author: "kempb"
-ms.author: "kempb"
-manager: "ghogen"
+author: gewarren
+ms.author: gewarren
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 1c8748a6dadaee41a5e615742715a92240b74ab8
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# /SafeMode (devenv.exe)
-[!INCLUDE[vs2017banner](../../code-quality/includes/vs2017banner.md)]
-
-Avvia [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] in modalità sicura, caricando soltanto l'ambiente e i servizi predefiniti.  
+# <a name="safemode-devenvexe"></a>/SafeMode (devenv.exe)
+Avvia [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] in modalità sicura caricando soltanto l'ambiente e i servizi predefiniti.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
 devenv /SafeMode   
 ```  
   
-## Note  
- Questa opzione consente di evitare di caricare i package VS di altri produttori quando viene avviato [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)], garantendo quindi un'esecuzione stabile.  
+## <a name="remarks"></a>Note  
+ Questa opzione impedisce il caricamento di tutti i pacchetti VSPackage di terze parti all'avvio di [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] assicurando un'esecuzione stabile.  
   
-## Descrizione  
- In questo esempio viene avviato [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] in modalità sicura.  
+## <a name="description"></a>Descrizione  
+ Nell'esempio seguente [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] viene avviato in modalità sicura.  
   
-## Codice  
+## <a name="code"></a>Codice  
   
 ```  
 Devenv.exe /SafeMode  
 ```  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Opzioni della riga di comando devenv](../../ide/reference/devenv-command-line-switches.md)

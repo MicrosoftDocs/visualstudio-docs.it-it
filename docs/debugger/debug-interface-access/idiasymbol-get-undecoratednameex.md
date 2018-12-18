@@ -1,79 +1,78 @@
 ---
-title: "IDiaSymbol::get_undecoratedNameEx | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "IDiaSymbol::get_undecoratedNameEx (metodo)"
+title: IDiaSymbol::get_undecoratedNameEx | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology: vs-ide-debug
+ms.topic: conceptual
+dev_langs:
+- C++
+helpviewer_keywords:
+- IDiaSymbol::get_undecoratedNameEx method
 ms.assetid: 579aed0b-c57d-41a1-a94a-3bf665fd4a9d
-caps.latest.revision: 11
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 11
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 078826c799cf99cadd1812ff88dc29663a759baf
+ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/18/2018
 ---
-# IDiaSymbol::get_undecoratedNameEx
-[!INCLUDE[vs2017banner](../../code-quality/includes/vs2017banner.md)]
-
-Recupera una parte o tutto il nome non decorato per il nome decorato \+\+ c \(collegamento\).  
+# <a name="idiasymbolgetundecoratednameex"></a>IDiaSymbol::get_undecoratedNameEx
+Recupera o parte di un nome non decorato di C++ decorati nome (collegamento).  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp#  
-HRESULT get_undecoratedNameEx(   
-   DWORD undecorateOptions,  
-   BSTR* pRetval  
+```C++  
+HRESULT get_undecoratedNameEx(   
+   DWORD undecorateOptions,  
+   BSTR* pRetval  
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `undecoratedOptions`  
- \[in\]  Specifica una combinazione di flag che controllano ciò che viene restituito.  Vedere la sezione relativa alle osservazioni per i valori specifici e cosa fare.  
+ [in] Specifica una combinazione di flag che controllano ciò che viene restituito. Vedere la sezione Osservazioni per i valori specifici e le operazioni eseguite.  
   
  `pRetVal`  
- \[out\]  Restituisce il nome non decorato per il nome decorato di un'applicazione C\/C\+\+.  
+ [out] Restituisce che il nome non decorato di C++ nome decorato.  
   
-## Valore restituito  
- Se l'operazione riesce, restituisce `S_OK`; in caso contrario, restituisce  `S_FALSE` o un codice di errore.  
-  
-> [!NOTE]
->  un valore restituito di `S_FALSE` indica che la proprietà non è disponibile per il simbolo.  
-  
-## Note  
- `undecorateOptions` può essere una combinazione dei seguenti flag.  
+## <a name="return-value"></a>Valore restituito  
+ Se ha esito positivo, restituisce `S_OK`; in caso contrario, restituisce `S_FALSE` o un codice di errore.  
   
 > [!NOTE]
->  I nomi del flag non sono definiti nel DIA SDK, pertanto è necessario aggiungere le dichiarazioni al codice oppure utilizzare valori non elaborati.  
+>  Valore restituito di `S_FALSE` significa che la proprietà non è disponibile per il simbolo.  
+  
+## <a name="remarks"></a>Note  
+ Il `undecorateOptions` può essere una combinazione dei flag seguenti.  
+  
+> [!NOTE]
+>  I nomi di flag non sono definiti in DIA SDK, pertanto è necessario aggiungere le dichiarazioni per codice oppure utilizzare i valori non elaborati.  
   
 |Flag|Valore|Descrizione|  
-|----------|------------|-----------------|  
-|UNDNAME\_COMPLETE|0x0000|abilita il undecoration completo.|  
-|UNDNAME\_NO\_LEADING\_UNDERSCORES|0x0001|Rimuove generare caratteri di sottolineatura le parole chiave estese di Microsoft.|  
-|UNDNAME\_NO\_MS\_KEYWORDS|0x0002|Disabilita l'espansione delle parole chiave estese di Microsoft.|  
-|UNDNAME\_NO\_FUNCTION\_RETURNS|0x0004|disabilita l'espansione di tipo restituito per la dichiarazione primaria.|  
-|UNDNAME\_NO\_ALLOCATION\_MODEL|0x0008|Disabilita l'espansione del modello di dichiarazione.|  
-|UNDNAME\_NO\_ALLOCATION\_LANGUAGE|0x0010|Disabilita l'espansione dell'identificatore di linguaggio di dichiarazione.|  
-|UNDNAME\_RESERVED1|0x0020|RISERVATO.|  
-|UNDNAME\_RESERVED2|0x0040|RISERVATO.|  
-|UNDNAME\_NO\_THISTYPE|0x0060|Disabilita tutti i modificatori su `this` tipo.|  
-|UNDNAME\_NO\_ACCESS\_SPECIFIERS|0x0080|Disabilita l'espansione degli identificatori di accesso per i membri.|  
-|UNDNAME\_NO\_THROW\_SIGNATURES|0x0100|Disabilita l'espansione di “tiro\-firme„ per le funzioni e i puntatori a funzioni.|  
-|UNDNAME\_NO\_MEMBER\_TYPE|0x0200|disabilita l'espansione di `static` o  `virtual` membri.|  
-|UNDNAME\_NO\_RETURN\_UDT\_MODEL|0x0400|Disabilita l'espansione del modello di Microsoft per la restituzione di tipo definito dall'utente.|  
-|UNDNAME\_32\_BIT\_DECODE|0x0800|nomi decorati 32 bit di Undecorates.|  
-|UNDNAME\_NAME\_ONLY|0x1000|Ottiene il solo nome per la dichiarazione primaria, nome di restituisce semplicemente \[ambito::\].  Espandere params del modello.|  
-|UNDNAME\_TYPE\_ONLY|0x2000|L'input è semplicemente una codifica del tipo; crea un dichiaratore astratto.|  
-|UNDNAME\_HAVE\_PARAMETERS|0x4000|I parametri di modello reali disponibili.|  
-|UNDNAME\_NO\_ECSU|0x8000|Elimina enum\/classe\/struttura\/unione.|  
-|UNDNAME\_NO\_IDENT\_CHAR\_CHECK|0x10000|Elimina il controllo per i caratteri validi per un identificatore.|  
-|UNDNAME\_NO\_PTR64|0x20000|Non include ptr64 nell'output.|  
+|----------|-----------|-----------------|  
+|UNDNAME_COMPLETE|0x0000|Consente di undecoration completo.|  
+|UNDNAME_NO_LEADING_UNDERSCORES|0x0001|Rimuove i caratteri di sottolineatura di iniziali da parole chiave estese Microsoft.|  
+|UNDNAME_NO_MS_KEYWORDS|0x0002|Disabilita l'espansione delle parole chiave estese Microsoft.|  
+|UNDNAME_NO_FUNCTION_RETURNS|0x0004|Disabilita l'espansione di un tipo restituito per la dichiarazione primario.|  
+|UNDNAME_NO_ALLOCATION_MODEL|0x0008|Disabilita l'espansione del modello di dichiarazione.|  
+|UNDNAME_NO_ALLOCATION_LANGUAGE|0x0010|Disabilita l'espansione dell'identificatore di lingua di dichiarazione.|  
+|UNDNAME_RESERVED1|0x0020|RISERVATO.|  
+|UNDNAME_RESERVED2|0x0040|RISERVATO.|  
+|UNDNAME_NO_THISTYPE|0x0060|Disabilita tutti i modificatori nel `this` tipo.|  
+|UNDNAME_NO_ACCESS_SPECIFIERS|0x0080|Disabilita l'espansione di identificatori di accesso per i membri.|  
+|UNDNAME_NO_THROW_SIGNATURES|0x0100|Disabilita l'espansione di "throw-firme" per le funzioni e i puntatori a funzioni.|  
+|UNDNAME_NO_MEMBER_TYPE|0x0200|Disabilita l'espansione di `static` o `virtual` membri.|  
+|UNDNAME_NO_RETURN_UDT_MODEL|0x0400|Disabilita l'espansione del modello di Microsoft per tipo definito dall'utente restituisce.|  
+|UNDNAME_32_BIT_DECODE|0x0800|Undecorates nomi decorati a 32 bit.|  
+|UNDNAME_NAME_ONLY|0x1000|Ottiene solo il nome per la dichiarazione primario. Restituisce semplicemente [ambito::] nome.  Consente di espandere i parametri di modello.|  
+|UNDNAME_TYPE_ONLY|0x2000|Input è solo un tipo di codifica. compone un dichiaratore astratto.|  
+|UNDNAME_HAVE_PARAMETERS|0x4000|Sono disponibili i parametri di modello reali.|  
+|UNDNAME_NO_ECSU|0x8000|Elimina enum, classe o struct/unione.|  
+|UNDNAME_NO_IDENT_CHAR_CHECK|0x10000.|Elimina controllo per i caratteri di identificatore valido.|  
+|UNDNAME_NO_PTR64|0x20000|Non include ptr64 nell'output.|  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IDiaSymbol](../../debugger/debug-interface-access/idiasymbol.md)

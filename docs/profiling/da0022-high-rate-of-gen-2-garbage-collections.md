@@ -1,49 +1,30 @@
 ---
 title: 'DA0022: Frequenza elevata di Garbage Collection di generazione 2 | Microsoft Docs'
-ms.custom: 
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- vs-ide-debug
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.technology: vs-ide-debug
+ms.topic: conceptual
 f1_keywords:
 - vs.performance.DA0022
 - vs.performance.rules.DA0022
 - vs.performance.22
 ms.assetid: f871a547-0e6f-4b11-b2d7-174d30fc2ed8
-caps.latest.revision: 8
 author: mikejo5000
 ms.author: mikejo
-manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 47057e9611b824c17077b9127f8d2f8b192d6eb8
-ms.openlocfilehash: 0bab264151049d595959a439a9659224b01c6cda
-ms.contentlocale: it-it
-ms.lasthandoff: 05/13/2017
-
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 9cd868c55e62f673e8818126f791c889380548e9
+ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/19/2018
 ---
 # <a name="da0022-high-rate-of-gen-2-garbage-collections"></a>DA0022: Frequenza elevata di Garbage Collection di generazione 2
 |||  
 |-|-|  
 |ID regola|DA0022|  
-|Categoria|Uso di .NET Framework|  
+|Category|Uso di .NET Framework|  
 |Metodo di profilatura|Tutti|  
 |Messaggio|È stata rilevata una frequenza elevata di Garbage Collection di generazione 2. In genere, ciò avviene se la maggior parte delle strutture dati del programma sono allocate e rese persistenti per molto tempo per progettazione. Tuttavia, se tale comportamento è imprevisto, l'applicazione potrebbe bloccare gli oggetti. Per altri dettagli, è possibile raccogliere dati sull'allocazione di memoria .NET e informazioni sulla durata degli oggetti per comprendere il criterio di allocazione della memoria usata dall'applicazione.|  
 |Tipo regola|Avviso|  

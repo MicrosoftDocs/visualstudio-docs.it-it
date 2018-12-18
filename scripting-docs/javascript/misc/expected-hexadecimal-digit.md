@@ -1,40 +1,44 @@
 ---
-title: "Prevista cifra esadecimale | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/18/2017"
-ms.prod: "windows-client-threshold"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "javascript"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "VS.WebClient.Help.SCRIPT1023"
-dev_langs: 
-  - "JavaScript"
-  - "TypeScript"
-  - "DHTML"
+title: Prevista cifra esadecimale | Documenti Microsoft
+ms.custom: 
+ms.date: 01/18/2017
+ms.prod: windows-client-threshold
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- javascript
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- VS.WebClient.Help.SCRIPT1023
+dev_langs:
+- JavaScript
+- TypeScript
+- DHTML
 ms.assetid: 67a86df7-49f9-43cb-99c6-99b1a427827a
-caps.latest.revision: 8
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: 
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.openlocfilehash: c9e29131c4ecf4f476a30da94ec67676d6bea347
+ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/27/2017
 ---
-# Prevista cifra esadecimale
-È stata creata una sequenza di escape Unicode errata.  Le sequenze di escape Unicode iniziano con \\u, seguito da esattamente quattro cifre esadecimali.  Le cifre esadecimali Unicode possono contenere solo i numeri da 0 a 9 e le lettere maiuscole e minuscole da A a F.  L'esempio seguente illustra una sequenza di escape Unicode in formato corretto.  
+# <a name="expected-hexadecimal-digit"></a>Prevista cifra esadecimale
+Creazione di una sequenza di escape Unicode non corretta. Le sequenze di escape Unicode iniziano con \u, seguito da quattro cifre esadecimali (non sono più presenti e non meno). Cifre esadecimali Unicode possono contenere solo i numeri 0-9, lettere maiuscole A-F e le lettere minuscole-f. L'esempio seguente illustra una sequenza di escape Unicode corretta.  
   
-```javascript  
+```JavaScript  
 z = "\u1A5F";  
 ```  
   
-### Per correggere l'errore  
+### <a name="to-correct-this-error"></a>Per correggere l'errore  
   
--   Verificare che le cifre esadecimali Unicode inizino con \\u, contengano solo i numeri da 0 a 9 e le lettere maiuscole e minuscole da A a F e vengano raggruppate in quattro cifre.  
+-   Verificare che le cifre esadecimali Unicode iniziano con \u, contiene solo i numeri 0-9, lettere maiuscole A-F, lettere minuscole lettere a-f; e vengono raggruppati in quattro cifre.  
   
     > [!NOTE]
-    >  Per utilizzare il testo letterale \\u in una stringa, inserire due barre rovesciate, \(\\\\u\), di cui una come carattere di escape per la prima.  
+    >  Se si desidera utilizzare il testo letterale \u in una stringa, quindi utilizzare due barre rovesciate - (\\\u)-uno per la prima barra rovesciata di escape.  
   
-## Vedere anche  
- [Riepilogo dei tipi di dati](../../javascript/data-types-javascript.md)
+## <a name="see-also"></a>Vedere anche  
+ [Tipi di dati](../../javascript/data-types-javascript.md)

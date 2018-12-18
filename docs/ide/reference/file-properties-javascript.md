@@ -1,13 +1,10 @@
 ---
-title: "Proprietà file, JavaScript | Microsoft Docs"
-ms.custom: 
+title: Proprietà file, JavaScript | Microsoft Docs
+ms.custom: ''
 ms.date: 06/21/2017
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - vs-ide-general
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: conceptual
 f1_keywords:
 - javascript.project.property.expandedsdknode.fileversion
 - javascript.project.property.expandedsdknode.uri
@@ -26,30 +23,16 @@ f1_keywords:
 - javascript.project.property.reference.resolvedpath
 - javascript.project.property.reference.version
 ms.assetid: 085913b8-a97b-45f7-85fa-bbb0902f3ee9
-caps.latest.revision: 7
 author: gewarren
 ms.author: gewarren
-manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: d2f4eba36e9069a35cf279ccf1c78f72a51d77a1
-ms.openlocfilehash: 6c2b3c577685fcb09cd9e9c7eeee955b75e76e27
-ms.contentlocale: it-it
-ms.lasthandoff: 06/23/2017
-
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 06fd31fc8d87dc40df023cbf494fde16c944ae03
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="file-properties-javascript"></a>Proprietà file, JavaScript
 È possibile usare le proprietà file per indicare le operazioni che il sistema di progetto dovrà eseguire sui file. Ad esempio, è possibile impostare le proprietà file per indicare se un file deve essere aggiunto al pacchetto come file di risorse.  
@@ -73,7 +56,7 @@ ms.lasthandoff: 06/23/2017
 
 -   **Risorsa** - Il file non è incluso nel manifesto di pacchetto. Il contenuto del file viene invece indicizzato nel file di indice risorse (PRI) che va inserito nel manifesto di pacchetto. Viene usato generalmente per i file di risorse.  
 
- Il valore predefinito per **Azione pacchetto** dipende dall'estensione del file aggiunta alla soluzione.  
+Il valore predefinito per **Azione pacchetto** dipende dall'estensione del file aggiunta alla soluzione.  
 
 ### <a name="file-name-property"></a>Proprietà nome file  
  Visualizza il nome del file come un valore di sola lettura. Per rinominarlo, fare clic con il pulsante destro del mouse sul file in Esplora soluzioni e scegliere **Rinomina**.  
@@ -82,7 +65,7 @@ ms.lasthandoff: 06/23/2017
  Visualizza il percorso completo del file come valore di sola lettura. Per modificare il percorso del file, è possibile trascinare il file in Esplora soluzioni.  
 
 ## <a name="reference-file-properties"></a>Proprietà File di riferimento  
- In questa sezione vengono descritte le proprietà comuni ai file cui fa riferimento un'[!INCLUDE[win8_app_js](../../ide/reference/includes/win8_app_js_md.md)]. Quando si seleziona un riferimento come un file con estensione .winmd, un riferimento SDK, un riferimento da progetto a progetto o un riferimento ad assembly in Esplora soluzioni, le altre proprietà possono essere visualizzate nella finestra Proprietà, in base al tipo di file.  
+ In questa sezione vengono descritte le proprietà comuni ai file cui fa riferimento un'app UWP sviluppata con JavaScript. Quando si seleziona un riferimento come un file con estensione .winmd, un riferimento SDK, un riferimento da progetto a progetto o un riferimento ad assembly in Esplora soluzioni, le altre proprietà possono essere visualizzate nella finestra Proprietà, in base al tipo di file.  
 
 ### <a name="culture"></a>Impostazioni cultura  
  Visualizza la lingua associata al riferimento.  
@@ -93,7 +76,7 @@ ms.lasthandoff: 06/23/2017
 ### <a name="file-version"></a>Versione file  
  Visualizza la versione file del riferimento.  
 
-### <a name="identity"></a>Identità  
+### <a name="identity"></a>identità  
  Visualizza l'identità del riferimento utilizzato nel progetto, archiviato nel file di progetto.  
 
 ### <a name="package"></a>Pacchetto  
@@ -113,4 +96,3 @@ ms.lasthandoff: 06/23/2017
 
 ## <a name="see-also"></a>Vedere anche  
  [Gestione delle proprietà di progetti e soluzioni](../../ide/managing-project-and-solution-properties.md)
-

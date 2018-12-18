@@ -1,13 +1,9 @@
 ---
 title: EndTrackingContext | Microsoft Docs
-ms.custom: 
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- vs-ide-sdk
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.technology: msbuild
+ms.topic: conceptual
 apiname:
 - EndTrackingContext
 apilocation:
@@ -16,30 +12,16 @@ apitype: COM
 helpviewer_keywords:
 - EndTrackingContext
 ms.assetid: c2c5d794-8dc8-4594-8717-70dc79a0e75d
-caps.latest.revision: 3
-author: kempb
-ms.author: kempb
-manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 11a9cee75f912c5fb31cf4a031644abe9c63d744
-ms.openlocfilehash: ed89d29f5c8d2d8f3d87b1007c64344f40f7a1a9
-ms.contentlocale: it-it
-ms.lasthandoff: 06/03/2017
-
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 935df371b912d51ef6a5d88fdae4e9e11c449049
+ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/19/2018
 ---
 # <a name="endtrackingcontext"></a>EndTrackingContext
 Consente di terminare il contesto di verifica corrente.  

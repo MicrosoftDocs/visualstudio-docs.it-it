@@ -1,14 +1,10 @@
 ---
-title: 'Walkthrough: Creating a Workflow with Association and Initiation Forms | Microsoft Docs'
-ms.custom: 
+title: 'Procedura dettagliata: Creazione di un flusso di lavoro con form di associazione e avvio | Documenti Microsoft'
+ms.custom: ''
 ms.date: 02/02/2017
-ms.prod: visual-studio-dev14
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - office-development
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: conceptual
 dev_langs:
 - VB
 - CSharp
@@ -21,117 +17,116 @@ helpviewer_keywords:
 - association forms [SharePoint development in Visual Studio]
 - initiation forms [SharePoint development in Visual Studio]
 - SharePoint development in Visual Studio, workflow initiation forms
-ms.assetid: c8666d8c-b173-4245-8014-9c1cd6acb071
-caps.latest.revision: 38
-author: gewarren
-ms.author: gewarren
-manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: 4a36302d80f4bc397128e3838c9abf858a0b5fe8
-ms.openlocfilehash: a9a1507cc7c2d98e98858d46563cd691b6ad969d
-ms.contentlocale: it-it
-ms.lasthandoff: 08/28/2017
-
+author: TerryGLee
+ms.author: tglee
+manager: douge
+ms.workload:
+- office
+ms.openlocfilehash: 92aefd2292976bd9dcb50603e93b460cdf2bf991
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# <a name="walkthrough-creating-a-workflow-with-association-and-initiation-forms"></a>Walkthrough: Creating a Workflow with Association and Initiation Forms
-  This walkthrough demonstrates how to create a basic sequential workflow that incorporates the use of association and initiation forms. These are ASPX forms that enable parameters to be added to a workflow when it is first associated by the SharePoint administrator (the association form), and when the workflow is started by the user (the initiation form).  
+# <a name="walkthrough-creating-a-workflow-with-association-and-initiation-forms"></a>Procedura dettagliata: creazione di un flusso di lavoro con form di associazione e di avvio
+  Questa procedura dettagliata viene illustrato come creare un flusso di lavoro sequenza base che include l'utilizzo di form di associazione e di avvio. Si tratta di form ASPX che consentono di parametri da aggiungere a un flusso di lavoro quando è associata prima dall'amministratore di SharePoint (form di associazione) e quando il flusso di lavoro viene avviato dall'utente (form di avvio).  
   
- This walkthrough outlines a scenario where a user wants to create an approval workflow for expense reports that has the following requirements:  
+ Questa procedura dettagliata descrive uno scenario in cui un utente desidera creare un flusso di lavoro di approvazione delle note spese presenta i requisiti seguenti:  
   
--   When the workflow is associated with a list, the administrator is prompted with an association form where they enter a dollar limit for expense reports.  
+-   Quando il flusso di lavoro è associato a un elenco, l'amministratore viene richiesto con un form di associazione in cui immettere un limite in dollari delle note spese.  
   
--   Employees upload their expense reports to the Shared Documents list, start the workflow, and then enter the expense total in the workflow initiation form.  
+-   I dipendenti caricare le spese per l'elenco di documenti condivisi, avviare il flusso di lavoro e quindi immettere il costo totale nel form di avvio del flusso di lavoro.  
   
--   If an employee expense report total exceeds the administrator's predefined limit, a task is created for the employee's manager to approve the expense report. However, if an employee's expense report total is less than or equal to the expense limit, an auto-approved message is written to the workflow's history list.  
+-   Se una dipendente nota spese totale supera limite predefinito dell'amministratore, viene creata un'attività per il responsabile di approvare la nota spese. Tuttavia, se nota spese totale un dipendente è minore o uguale al limite di spesa, viene scritto un messaggio di approvazione automatica all'elenco di cronologia del flusso di lavoro.  
   
- This walkthrough illustrates the following tasks:  
+ Questa procedura dettagliata illustra le attività seguenti:  
   
--   Creating a SharePoint list definition sequential workflow project in [!INCLUDE[vsprvs](../sharepoint/includes/vsprvs-md.md)].  
+-   Creazione di un progetto di flusso di lavoro sequenziale definizione di elenco SharePoint in [!INCLUDE[vsprvs](../sharepoint/includes/vsprvs-md.md)].  
   
--   Creating a workflow schedule.  
+-   Creazione di una pianificazione del flusso di lavoro.  
   
--   Handling workflow activity events.  
+-   Gestione degli eventi di attività del flusso di lavoro.  
   
--   Creating workflow association and initiation forms.  
+-   Creazione di form di associazione e di avvio del flusso di lavoro.  
   
--   Associating the workflow.  
+-   Associazione del flusso di lavoro.  
   
--   Manually starting the workflow.  
+-   Avvio manuale del flusso di lavoro.  
   
 > [!NOTE]  
->  Although this walkthrough uses a sequential workflow project, the process is the same for state machine workflows.  
+>  Benché questa procedura dettagliata usi un progetto flusso di lavoro sequenziale, il processo è lo stesso per i flussi di lavoro stato macchina.  
 >   
->  Also, your computer might show different names or locations for some of the [!INCLUDE[vsprvs](../sharepoint/includes/vsprvs-md.md)] user interface elements in the following instructions. The [!INCLUDE[vsprvs](../sharepoint/includes/vsprvs-md.md)] edition that you have and the settings that you use determine these elements. For more information, see [Personalize the Visual Studio IDE](../ide/personalizing-the-visual-studio-ide.md).  
+>  Inoltre, il computer potrebbe essere diversi nomi o percorsi visualizzati per alcuni il [!INCLUDE[vsprvs](../sharepoint/includes/vsprvs-md.md)] elementi dell'interfaccia utente nelle istruzioni seguenti. Il [!INCLUDE[vsprvs](../sharepoint/includes/vsprvs-md.md)] edizione in uso e le impostazioni usate determinano questi elementi. Per altre informazioni, vedere [Personalizzare l'IDE di Visual Studio](../ide/personalizing-the-visual-studio-ide.md).  
   
-## <a name="prerequisites"></a>Prerequisites  
- You need the following components to complete this walkthrough:  
+## <a name="prerequisites"></a>Prerequisiti  
+ Per completare la procedura dettagliata, è necessario disporre dei componenti seguenti:  
   
--   Supported editions of [!INCLUDE[TLA#tla_win](../sharepoint/includes/tlasharptla-win-md.md)] and SharePoint. For more information, see [Requirements for Developing SharePoint Solutions](../sharepoint/requirements-for-developing-sharepoint-solutions.md).  
+-   Le edizioni supportate di [!INCLUDE[TLA#tla_win](../sharepoint/includes/tlasharptla-win-md.md)] e SharePoint. Per ulteriori informazioni, vedere [requisiti per lo sviluppo di soluzioni SharePoint](../sharepoint/requirements-for-developing-sharepoint-solutions.md).  
   
 -   Visual Studio.  
   
-## <a name="creating-a-sharepoint-sequential-workflow-project"></a>Creating a SharePoint Sequential Workflow Project  
- First, create a sequential workflow project in [!INCLUDE[vsprvs](../sharepoint/includes/vsprvs-md.md)]. A sequential workflow is a series of steps that executes in order until the last activity finishes. In this procedure, you will create a sequential workflow that applies to the Shared Documents list in SharePoint. The workflow's wizard lets you associate the workflow with either the site or the list definition and lets you determine when the workflow will start.  
+## <a name="creating-a-sharepoint-sequential-workflow-project"></a>Creazione di un progetto flusso di lavoro sequenziale di SharePoint  
+ Innanzitutto, creare un progetto flusso di lavoro sequenziale in [!INCLUDE[vsprvs](../sharepoint/includes/vsprvs-md.md)]. Flusso di lavoro sequenza è una serie di passaggi eseguiti in ordine fino al termine dell'ultima attività. In questa procedura, si creerà un flusso di lavoro sequenza che si applica all'elenco di documenti condivisi in SharePoint. Creazione guidata del flusso di lavoro consente di associare il flusso di lavoro con il sito o la definizione di elenco e consente di determinare quando il flusso di lavoro verrà avviato.  
   
-#### <a name="to-create-a-sharepoint-sequential-workflow-project"></a>To create a SharePoint sequential workflow project  
+#### <a name="to-create-a-sharepoint-sequential-workflow-project"></a>Per creare un progetto flusso di lavoro sequenziale di SharePoint  
   
-1.  On the menu bar, choose **File**, **New**, **Project** to display the **New Project** dialog box.  
+1.  Nella barra dei menu, scegliere **File**, **New**, **progetto** per visualizzare il **nuovo progetto** la finestra di dialogo.  
   
-2.  Expand the **SharePoint** node under either **Visual C#** or **Visual Basic**, and then choose the **2010** node.  
+2.  Espandere il **SharePoint** nodo sotto **Visual c#** o **Visual Basic**, quindi scegliere il **2010** nodo.  
   
-3.  In the **Templates** pane, choose the **SharePoint 2010 Project** project template.  
+3.  Nel **modelli** riquadro, scegliere il **progetto SharePoint 2010** modello di progetto.  
   
-4.  In the **Name** box, enter **ExpenseReport** and then choose the **OK** button.  
+4.  Nel **nome** immettere **ExpenseReport** e quindi scegliere il **OK** pulsante.  
   
-     The **SharePoint Customization Wizard** appears.  
+     Il **Personalizzazione guidata SharePoint** viene visualizzato.  
   
-5.  In the **Specify the site and security level for debugging** page, choose the **Deploy as a farm solution** option button, and then choose the **Finish** button to accept the trust level and default site.  
+5.  Nel **specificare il livello di sito e di sicurezza per il debug** pagina, scegliere il **Distribuisci come soluzione farm** pulsante di opzione e quindi scegliere il **fine** pulsante per accettare il sito di livello e predefinito attendibile.  
   
-     This step also sets the trust level for the solution as farm solution, which is the only available option for workflow projects.  
+     Questo passaggio consente di impostare anche il livello di attendibilità per la soluzione come soluzione farm, che è l'unica opzione disponibile per i progetti di flusso di lavoro.  
   
-6.  In **Solution Explorer**, choose the project node.  
+6.  Scegliere il nodo di progetto in **Esplora soluzioni**.  
   
-7.  On the menu bar, choose **Project**, **Add New Item**.  
+7.  Nella barra dei menu, scegliere **progetto**, **Aggiungi nuovo elemento**.  
   
-8.  Under either **Visual C#** or **Visual Basic**, expand the **SharePoint** node, and then choose the **2010** node.  
+8.  In presenza di **Visual c#** o **Visual Basic**, espandere il **SharePoint** nodo, quindi scegliere il **2010** nodo.  
   
-9. In the **Templates** pane, choose **Sequential Workflow (Farm Solution only)** template, and then choose the **Add** button.  
+9. Nel **modelli** riquadro scegliere **flusso di lavoro sequenziale (solo soluzione Farm)** modello, quindi scegliere il **Aggiungi** pulsante.  
   
-     The **SharePoint Customization Wizard** appears.  
+     Il **Personalizzazione guidata SharePoint** viene visualizzato.  
   
-10. In the **Specify the workflow name for debugging** page, accept the default name (**ExpenseReport - Workflow1**). Keep the default workflow template type value (**List Workflow)**. Choose the **Next** button.  
+10. Nel **specificare il nome del flusso di lavoro per il debug** accettare il nome predefinito (**ExpenseReport - Workflow1**). Mantenere il valore predefinito del tipo di modello del flusso di lavoro (**flusso di lavoro elenco)**. Fare clic su **Avanti**.  
   
-11. In the **Would you like Visual Studio to automatically associate the workflow in a debug session?** page, clear the box that automatically associates your workflow template if it is checked.  
+11. Nel **si desidera che Visual Studio per associare automaticamente il flusso di lavoro in una sessione di debug?** pagina, deselezionare la casella che consente di associare automaticamente il modello di flusso di lavoro se è selezionata.  
   
-     This step lets you manually associate the workflow with the Shared Documents list later on, which displays the association form.  
+     Questo passaggio consente di associare manualmente il flusso di lavoro con l'elenco di documenti condivisi in un secondo momento che visualizza il form di associazione.  
   
-12. Choose the **Finish** button.  
+12. Scegliere il **fine** pulsante.  
   
-## <a name="adding-an-association-form-to-the-workflow"></a>Adding an Association Form to the Workflow  
- Next, create an .ASPX association form that appears when the SharePoint administrator first associates the workflow with an expense report document.  
+## <a name="adding-an-association-form-to-the-workflow"></a>Aggiunta di un Form di associazione per il flusso di lavoro  
+ Creare quindi un. Form di associazione ASPX che viene visualizzato quando l'amministratore di SharePoint associa prima il flusso di lavoro a un documento della nota spese.  
   
-#### <a name="to-add-an-association-form-to-the-workflow"></a>To add an association form to the workflow  
+#### <a name="to-add-an-association-form-to-the-workflow"></a>Per aggiungere un form di associazione per il flusso di lavoro  
   
-1.  Choose the **Workflow1** node in **Solution Explorer**.  
+1.  Scegliere il **Workflow1** nodo **Esplora**.  
   
-2.  On the menu bar, choose **Project**, **Add New Item** to display the **Add New Item** dialog box.  
+2.  Nella barra dei menu, scegliere **progetto**, **Aggiungi nuovo elemento** per visualizzare il **Aggiungi nuovo elemento** la finestra di dialogo.  
   
-3.  In the dialog box tree view, expand either **Visual C#** or **Visual Basic** (depending on your project language), expand the **SharePoint** node, and then choose the **2010** node.  
+3.  In visualizzazione struttura ad albero finestra di dialogo espandere **Visual c#** o **Visual Basic** (a seconda del linguaggio del progetto), espandere il **SharePoint** nodo, quindi scegliere il **2010** nodo.  
   
-4.  In the list of templates, choose the **Workflow Association Form** template.  
+4.  Nell'elenco dei modelli, scegliere il **Form di associazione del flusso di lavoro** modello.  
   
-5.  In the **Name** text box, enter **ExpenseReportAssocForm.aspx**.  
+5.  Nel **nome** testo immettere **ExpenseReportAssocForm**.  
   
-6.  Choose the **Add** button to add the form to the project.  
+6.  Scegliere il **Aggiungi** pulsante per aggiungere il form al progetto.  
   
-## <a name="designing-and-coding-the-association-form"></a>Designing and Coding the Association Form  
- In this procedure, you introduce functionality to the association form by adding controls and code to it.  
+## <a name="designing-and-coding-the-association-form"></a>Progettazione e codifica Form di associazione  
+ In questa procedura, si fornisce funzionalità per il form di associazione aggiungendo controlli e codice.  
   
-#### <a name="to-design-and-code-the-association-form"></a>To design and code the association form  
+#### <a name="to-design-and-code-the-association-form"></a>Progettazione e codice di form di associazione  
   
-1.  In the association form (ExpenseReportAssocForm.aspx), locate the `asp:Content` element that has `ID="Main"`.  
+1.  Nel form di associazione (ExpenseReportAssocForm), individuare il `asp:Content` elemento `ID="Main"`.  
   
-2.  Directly after the first line in this content element, add the following code to create a label and textbox that prompts for the expense approval limit (*AutoApproveLimit*):  
+2.  Subito dopo la prima riga in questo elemento di contenuto, aggiungere il codice seguente per creare un'etichetta e una casella di testo che richiede il limite di approvazione spese (*AutoApproveLimit*):  
   
     ```  
     <asp:Label ID="lblAutoApproveLimit" Text="Auto Approval Limit:" runat="server" />  
@@ -140,14 +135,14 @@ ms.lasthandoff: 08/28/2017
     <br /><br />  
     ```  
   
-3.  Expand the **ExpenseReportAssocForm.aspx** file in **Solution Explorer** to display its dependent files.  
+3.  Espandere il **ExpenseReportAssocForm** file **Esplora** per visualizzare i file dipendenti.  
   
     > [!NOTE]  
-    >  If your project is in [!INCLUDE[vbprvb](../sharepoint/includes/vbprvb-md.md)], you must choose the **View All Files** button to perform this step.  
+    >  Se il progetto è [!INCLUDE[vbprvb](../sharepoint/includes/vbprvb-md.md)], è necessario scegliere il **Visualizza tutti i file** pulsante per eseguire questo passaggio.  
   
-4.  Open the shortcut menu for the ExpenseReportAssocForm.aspx file and choose **View Code**.  
+4.  Aprire il menu di scelta rapida per il file ExpenseReportAssocForm e scegliere **Visualizza codice**.  
   
-5.  Replace the `GetAssociationData` method with:  
+5.  Sostituire il `GetAssociationData` metodo con:  
   
     ```vb  
     Private Function GetAssociationData() As String  
@@ -168,31 +163,31 @@ ms.lasthandoff: 08/28/2017
     }  
     ```  
   
-## <a name="adding-an-initiation-form-to-the-workflow"></a>Adding an Initiation Form to the Workflow  
- Next, create the initiation form that appears when users run the workflow against their expense reports.  
+## <a name="adding-an-initiation-form-to-the-workflow"></a>Aggiunta di un Form di avvio al flusso di lavoro  
+ Successivamente, creare il form di avvio che viene visualizzato quando gli utenti eseguono il flusso di lavoro con i relativi rapporti spese.  
   
-#### <a name="to-create-an-initiation-form"></a>To create an initiation form  
+#### <a name="to-create-an-initiation-form"></a>Per creare un form di avvio  
   
-1.  Choose the **Workflow1** node in **Solution Explorer**.  
+1.  Scegliere il **Workflow1** nodo **Esplora**.  
   
-2.  On the menu bar, choose **Project**, **Add New Item** display the **Add New Item** dialog box.  
+2.  Nella barra dei menu, scegliere **progetto**, **Aggiungi nuovo elemento** visualizzare il **Aggiungi nuovo elemento** la finestra di dialogo.  
   
-3.  In the dialog box tree view, expand either **Visual C#** or **Visual Basic**  (depending on your project language), expand the **SharePoint** node, and then choose the **2010** node.  
+3.  In visualizzazione struttura ad albero finestra di dialogo espandere **Visual c#** o **Visual Basic** (a seconda del linguaggio del progetto), espandere il **SharePoint** nodo, quindi scegliere il **2010** nodo.  
   
-4.  In the list of templates, choose the **Workflow Initiation Form** template.  
+4.  Nell'elenco dei modelli, scegliere il **Form di avvio del flusso di lavoro** modello.  
   
-5.  In the **Name** text box, enter **ExpenseReportInitForm.aspx**.  
+5.  Nel **nome** testo immettere **ExpenseReportInitForm**.  
   
-6.  Choose the **Add** button to add the form to the project.  
+6.  Scegliere il **Aggiungi** pulsante per aggiungere il form al progetto.  
   
-## <a name="designing-and-coding-the-initiation-form"></a>Designing and Coding the Initiation Form  
- Next, introduce functionality to the initiation form by adding controls and code to it.  
+## <a name="designing-and-coding-the-initiation-form"></a>Progettazione e codifica Form di avvio  
+ Successivamente, è possibile inserire la funzionalità per il form di avvio aggiungendo controlli e codice.  
   
-#### <a name="to-code-the-initiation-form"></a>To code the initiation form  
+#### <a name="to-code-the-initiation-form"></a>Per codificare il form di avvio  
   
-1.  In the initiation form (ExpenseReportInitForm.aspx), locate the `asp:Content` element that contains `ID="Main"`.  
+1.  Nel form di avvio (ExpenseReportInitForm), individuare il `asp:Content` elemento contenente `ID="Main"`.  
   
-2.  Directly after the first line in this content element, add the following code to create a label and textbox that displays the expense approval limit (*AutoApproveLimit*) that was entered in the association form, and another label and textbox to prompt for the expense total (*ExpenseTotal*):  
+2.  Subito dopo la prima riga in questo elemento di contenuto, aggiungere il codice seguente per creare un'etichetta e una casella di testo che visualizza il limite di approvazione spese (*AutoApproveLimit*) che è stato immesso in form di associazione e un'altra etichetta e casella di testo per la richiesta per il totale della spesa (*ExpenseTotal*):  
   
     ```  
     <asp:Label ID="lblAutoApproveLimit" Text="Auto Approval Limit:" runat="server" />  
@@ -205,11 +200,11 @@ ms.lasthandoff: 08/28/2017
     <br /><br />  
     ```  
   
-3.  Expand the **ExpenseReportInitForm.aspx** file in **Solution Explorer** to display its dependent files.  
+3.  Espandere il **ExpenseReportInitForm** file **Esplora** per visualizzare i file dipendenti.  
   
-4.  Open the shortcut menu for the ExpenseReportInitForm.aspx file and choose **View Code**.  
+4.  Aprire il menu di scelta rapida per il file ExpenseReportInitForm e scegliere **Visualizza codice**.  
   
-5.  Replace the `Page_Load` method with the following example:  
+5.  Sostituire il `Page_Load` metodo con l'esempio seguente:  
   
     ```vb  
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As   
@@ -231,7 +226,7 @@ ms.lasthandoff: 08/28/2017
     }  
     ```  
   
-6.  Replace the `GetInitiationData` method with the following example:  
+6.  Sostituire il `GetInitiationData` metodo con l'esempio seguente:  
   
     ```vb  
     ' This method is called when the user clicks the button to start the workflow.  
@@ -255,59 +250,59 @@ ms.lasthandoff: 08/28/2017
     }  
     ```  
   
-## <a name="customizing-the-workflow"></a>Customizing the Workflow  
- Next, customize the workflow. Later, you will associate two forms to the workflow.  
+## <a name="customizing-the-workflow"></a>Personalizzazione del flusso di lavoro  
+ Inoltre, è possibile personalizzare il flusso di lavoro. In un secondo momento, si assoceranno due form al flusso di lavoro.  
   
-#### <a name="to-customize-the-workflow"></a>To customize the workflow  
+#### <a name="to-customize-the-workflow"></a>Per personalizzare il flusso di lavoro  
   
-1.  Display the workflow in the workflow designer by opening Workflow1 in the project.  
+1.  Visualizzare il flusso di lavoro nella finestra di progettazione del flusso di lavoro, aprire Workflow1 nel progetto.  
   
-2.  In the **Toolbox**, expand the **Windows Workflow v3.0** node and locate the **IfElse** activity.  
+2.  Nel **della casella degli strumenti**, espandere il **Windows Workflow v 3.0** nodo e individuare il **IfElse** attività.  
   
-3.  Add this activity to the workflow by performing one of the following steps:  
+3.  Aggiungere questa attività al flusso di lavoro eseguendo una delle operazioni seguenti:  
   
-    -   Open the shortcut menu for the **IfElse** activity, choose **Copy**, open the shortcut menu for the line under the **onWorkflowActivated1** activity in the workflow designer, and then choose **Paste**.  
+    -   Aprire il menu di scelta rapida per il **IfElse** attività, scegliere **copia**, aprire il menu di scelta rapida per la riga sotto il **onWorkflowActivated1** attività nella finestra di progettazione del flusso di lavoro, e quindi scegliere **Incolla**.  
   
-    -   Drag the **IfElse** activity from the **Toolbox**, and connect it to the line under the **onWorkflowActiviated1** activity in the workflow designer.  
+    -   Trascinare il **IfElse** attività dal **della casella degli strumenti**e connetterla alla riga sottostante il **onWorkflowActiviated1** attività nella finestra di progettazione del flusso di lavoro.  
   
-4.  In the Toolbox, expand the **SharePoint Workflow** node and locate the **CreateTask** activity.  
+4.  Nella casella degli strumenti, espandere il **flusso di lavoro SharePoint** nodo e individuare il **CreateTask** attività.  
   
-5.  Add this activity to the workflow by performing one of the following steps:  
+5.  Aggiungere questa attività al flusso di lavoro eseguendo una delle operazioni seguenti:  
   
-    -   Open the shortcut menu for the **CreateTask** activity, choose **Copy**, open the shortcut menu for one of the two **Drop Activities Here** areas within **IfElseActivity1** in the workflow designer, and then choose **Paste**.  
+    -   Aprire il menu di scelta rapida per il **CreateTask** attività, scegliere **copia**, aprire il menu di scelta rapida per uno dei due **Rilascia attività qui** aree all'interno di  **Interno di IfElseActivity1** nella finestra di progettazione del flusso di lavoro, quindi scegliere **Incolla**.  
   
-    -   Drag the **CreateTask** activity from the **Toolbox** onto one of the two **Drop Activities Here** areas within **IfElseActivity1**.  
+    -   Trascinare il **CreateTask** attività di **della casella degli strumenti** su uno dei due **Rilascia attività qui** aree all'interno di **interno di IfElseActivity1**.  
   
-6.  In the **Properties** window, enter a property value of *taskToken* for the **CorrelationToken** property.  
+6.  Nel **proprietà** finestra, immettere un valore della proprietà *taskToken* per il **CorrelationToken** proprietà.  
   
-7.  Expand the **CorrelationToken** property by choosing the plus sign (![TreeView plus](../sharepoint/media/plus.gif "TreeView plus")) next to it.  
+7.  Espandere il **CorrelationToken** proprietà facendo clic sul segno più (![più di TreeView](../sharepoint/media/plus.gif "più di TreeView")) accanto.  
   
-8.  Choose the drop-down arrow on the **OwnerActivityName** sub property, and set the *Workflow1* value.  
+8.  Scegliere la freccia a discesa di **OwnerActivityName** sub proprietà e impostare il *Workflow1* valore.  
   
-9. Choose the **TaskId** property, and then choose the ellipsis (![ASP.NET Mobile Designer ellipse](../sharepoint/media/mwellipsis.gif "ASP.NET Mobile Designer ellipse")) button to display the **Bind Property** dialog box.  
+9. Scegliere il **TaskId** proprietà, quindi scegliere i puntini di sospensione (![ellisse di ASP.NET Mobile Designer](../sharepoint/media/mwellipsis.gif "ellisse di ASP.NET Mobile Designer")) per visualizzare il **Associa proprietà** la finestra di dialogo.  
   
-10. Choose the **Bind to a new member** tab, choose the **Create Field** option button, and then choose the **OK** button.  
+10. Scegliere il **associa a un nuovo membro** scheda, scegliere il **Crea campo** pulsante di opzione e quindi scegliere il **OK** pulsante.  
   
-11. choose the **TaskProperties** property, and then choose the ellipsis (![ASP.NET Mobile Designer ellipse](../sharepoint/media/mwellipsis.gif "ASP.NET Mobile Designer ellipse")) button to display the **Bind Property** dialog box.  
+11. Scegliere il **TaskProperties** proprietà, quindi scegliere i puntini di sospensione (![ellisse di ASP.NET Mobile Designer](../sharepoint/media/mwellipsis.gif "ellisse di ASP.NET Mobile Designer")) per visualizzare il  **Associare la proprietà** la finestra di dialogo.  
   
-12. Choose the **Bind to a new member** tab, choose the **Create Field** option button, and then choose the **OK** button.  
+12. Scegliere il **associa a un nuovo membro** scheda, scegliere il **Crea campo** pulsante di opzione e quindi scegliere il **OK** pulsante.  
   
-13. In the **Toolbox**, expand the **SharePoint Workflow** node, and locate the **LogToHistoryListActivity** activity.  
+13. Nel **della casella degli strumenti**, espandere il **flusso di lavoro SharePoint** nodo e individuare il **LogToHistoryListActivity** attività.  
   
-14. Add this activity to the workflow by performing one of the following steps:  
+14. Aggiungere questa attività al flusso di lavoro eseguendo una delle operazioni seguenti:  
   
-    -   Open the shortcut menu for the **LogToHistoryListActivity** activity, choose **Copy**, open the shortcut menu for the other **Drop Activities Here** area within **IfElseActivity1** in the workflow designer, and then choose **Paste**.  
+    -   Aprire il menu di scelta rapida per il **LogToHistoryListActivity** attività, scegliere **copia**, aprire il menu di scelta rapida per gli altri **Rilascia attività qui** area all'interno di **Interno di IfElseActivity1** nella finestra di progettazione del flusso di lavoro, quindi scegliere **Incolla**.  
   
-    -   Drag the **LogToHistoryListActivity** activity from the **Toolbox**, and drop it onto the other **Drop Activities Here** area within **IfElseActivity1**.  
+    -   Trascinare il **LogToHistoryListActivity** attività dal **della casella degli strumenti**e rilasciarlo altri **Rilascia attività qui** area all'interno di **interno di IfElseActivity1** .  
   
-## <a name="adding-code-to-the-workflow"></a>Adding Code to the Workflow  
- Next, add code to the workflow to give it functionality.  
+## <a name="adding-code-to-the-workflow"></a>Aggiungere il codice per il flusso di lavoro  
+ Aggiungere quindi codice al flusso di lavoro per assegnargli una funzionalità.  
   
-#### <a name="to-add-code-to-the-workflow"></a>To add code to the workflow  
+#### <a name="to-add-code-to-the-workflow"></a>Per aggiungere codice al flusso di lavoro  
   
-1.  Open the shortcut menu for the **createTask1** activity in the workflow designer, and then choose **View Code**.  
+1.  Aprire il menu di scelta rapida per il **createTask1** attività nella finestra di progettazione del flusso di lavoro, quindi scegliere **Visualizza codice**.  
   
-2.  Add the following method:  
+2.  Aggiungere il metodo seguente:  
   
     ```vb  
     Private Sub createTask1_MethodInvoking(ByVal sender As   
@@ -334,9 +329,9 @@ ms.lasthandoff: 08/28/2017
     ```  
   
     > [!NOTE]  
-    >  In the code, replace `somedomain\\someuser` with a domain and user name for which a task will be created, such as, "`Office\\JoeSch`". For testing it is easiest to use the account you are developing with.  
+    >  Nel codice, sostituire `somedomain\\someuser` con un nome di dominio e utente per il quale verrà creata un'attività, ad esempio, "`Office\\JoeSch`". Per il test è più facile da usare l'account che con cui si sta sviluppando.  
   
-3.  Below the `MethodInvoking` method, add the following example:  
+3.  Di sotto di `MethodInvoking` metodo, aggiungere il seguente:  
   
     ```vb  
     Private Sub checkApprovalNeeded(ByVal sender As Object, ByVal e As   
@@ -364,15 +359,15 @@ ms.lasthandoff: 08/28/2017
     }   
     ```  
   
-4.  In the workflow designer, choose the **ifElseBranchActivity1** activity.  
+4.  Nella finestra di progettazione del flusso di lavoro, scegliere il **ifElseBranchActivity1** attività.  
   
-5.  In the **Properties** window, choose the drop-down arrow of the **Condition** property, and then set the *Code Condition* value.  
+5.  Nel **proprietà** finestra, scegliere la freccia a discesa del **condizione** proprietà e quindi impostare il *codice condizione* valore.  
   
-6.  Expand the **Condition** property by choosing the plus sign (![TreeView plus](../sharepoint/media/plus.gif "TreeView plus")) next to it, and then set its value to *checkApprovalNeeded*.  
+6.  Espandere il **condizione** proprietà facendo clic sul segno più (![più di TreeView](../sharepoint/media/plus.gif "più di TreeView")) accanto a esso, quindi impostare il relativo valore su *checkApprovalNeeded* .  
   
-7.  In the workflow designer, open the shortcut menu for the **logToHistoryListActivity1** activity, and then choose **Generate Handlers** to generate an empty method for the `MethodInvoking` event.  
+7.  Nella finestra di progettazione del flusso di lavoro, aprire il menu di scelta rapida per il **logToHistoryListActivity1** attività, quindi scegliere **genera gestori** per generare un metodo vuoto per il `MethodInvoking` evento.  
   
-8.  Replace the `MethodInvoking` code with the following:  
+8.  Sostituire il `MethodInvoking` codice con quanto segue:  
   
     ```vb  
     Private Sub logToHistoryListActivity1_MethodInvoking(ByVal sender As   
@@ -391,71 +386,71 @@ ms.lasthandoff: 08/28/2017
     }   
     ```  
   
-9. Choose the F5 key to debug the program.  
+9. Premere il tasto F5 per eseguire il debug del programma.  
   
-     This compiles the application, packages it, deploys it, activates its features, recycles the [!INCLUDE[TLA2#tla_iis5](../sharepoint/includes/tla2sharptla-iis5-md.md)] application pool, and then starts the browser at the location specified in the **Site Url** property.  
+     Ciò consente di compilare l'applicazione, pacchetto, lo distribuisce, attivate le funzionalità, viene riciclato il [!INCLUDE[TLA2#tla_iis5](../sharepoint/includes/tla2sharptla-iis5-md.md)] pool di applicazioni e quindi avviare il browser in corrispondenza della posizione specificato nel **Url del sito** proprietà.  
   
-## <a name="associating-the-workflow-to-the-documents-list"></a>Associating the Workflow to the Documents List  
- Next, display the workflow association form by associating the workflow with the **SharedDocuments** list on the SharePoint site.  
+## <a name="associating-the-workflow-to-the-documents-list"></a>Associare il flusso di lavoro all'elenco di documenti  
+ Successivamente, visualizzare il form di associazione del flusso di lavoro associando il flusso di lavoro con la **SharedDocuments** elenco nel sito di SharePoint.  
   
-#### <a name="to-associate-the-workflow"></a>To associate the workflow  
+#### <a name="to-associate-the-workflow"></a>Per associare il flusso di lavoro  
   
-1.  Choose the **Shared Documents** link on the QuickLaunch bar.  
+1.  Scegliere il **documenti condivisi** collegamento sulla barra Avvio veloce.  
   
-2.  Choose the **Library** link on the **Library Tools** tab and then choose the **Library Settings** ribbon button.  
+2.  Scegliere il **libreria** collegamento sul **Strumenti raccolta** scheda e quindi scegliere il **impostazioni raccolta** pulsante della barra multifunzione.  
   
-3.  In the **Permissions and Management** section, choose the **Workflow Settings** link and then choose the **Add a workflow** link on the **Workflows** page.  
+3.  Nel **autorizzazioni e gestione** , scegliere il **impostazioni flusso di lavoro** collegamento e quindi scegliere il **aggiungere un flusso di lavoro** collegamento sul **iflussidilavoro** pagina.  
   
-4.  In the top list in the workflow settings page, choose the **ExpenseReport - Workflow1** template.  
+4.  Nell'elenco di primo livello nella pagina delle impostazioni del flusso di lavoro, scegliere il **ExpenseReport - Workflow1** modello.  
   
-5.  In the next field, enter **ExpenseReportWorkflow** and then choose the **Next** button.  
+5.  Nel campo successivo, immettere **ExpenseReportWorkflow** e quindi scegliere il **Avanti** pulsante.  
   
-     This associates the workflow with the **Shared Documents** list and displays the workflow association form.  
+     Associa il flusso di lavoro con la **documenti condivisi** elenco e visualizza il form di associazione del flusso di lavoro.  
   
-6.  In the **Auto Approval Limit** text box, enter **1200** and then choose the **Associate Workflow** button.  
+6.  Nel **il limite di approvazione automatica** testo immettere **1200** e quindi scegliere il **Associa flusso di lavoro** pulsante.  
   
-## <a name="starting-the-workflow"></a>Starting the Workflow  
- Next, associate the workflow to one of the documents in the **Shared Documents** list to display the workflow initiation form.  
+## <a name="starting-the-workflow"></a>Avvia il flusso di lavoro  
+ Associare il flusso di lavoro per uno dei documenti nel **documenti condivisi** elenco per visualizzare il form di avvio del flusso di lavoro.  
   
-#### <a name="to-start-the-workflow"></a>To start the workflow  
+#### <a name="to-start-the-workflow"></a>Per avviare il flusso di lavoro  
   
-1.  On the SharePoint page, choose the **Home** button.  
+1.  Nella pagina di SharePoint, scegliere il **Home** pulsante.  
   
-2.  Choose the **Shared Documents** link on the QuickLaunch bar to display the **Shared Documents** list.  
+2.  Scegliere il **documenti condivisi** collegamento sulla barra Avvio veloce per visualizzare il **documenti condivisi** elenco.  
   
-3.  Choose the **Documents** link on the **Library Tools** tab at the top of the page, and then choose the **Upload Document** button on the ribbon to upload a new document into the **Shared Documents** list.  
+3.  Scegliere il **documenti** collegamento sul **Strumenti raccolta** scheda nella parte superiore della pagina e quindi scegliere il **Carica documento** pulsante della barra multifunzione per caricare un nuovo documento nel **Documenti condivisi** elenco.  
   
-4.  In the **Upload Document** dialog box, choose the **Browse** button, choose any document file, choose the **Open** button, and then choose the **OK** button.  
+4.  Nel **Carica documento** finestra di dialogo scegliere la **Sfoglia** pulsante, scegliere di qualsiasi file di documento, scegliere il **aprire** e quindi scegliere il **OK** pulsante.  
   
-     You can change the settings for the document in this dialog box, but leave them at the default values by choosing the **Save** button.  
+     È possibile modificare le impostazioni per il documento nella finestra di dialogo, ma lasciarli scegliendo i valori predefiniti di **salvare** pulsante.  
   
-5.  Choose the uploaded document, choose the drop-down arrow that appears, and then choose the **Workflows** item.  
+5.  Scegliere il documento caricato, scegliere la freccia giù visualizzata e quindi sceglie il **flussi di lavoro** elemento.  
   
-6.  Choose the image next to ExpenseReportWorkflow.  
+6.  Scegliere l'immagine accanto ExpenseReportWorkflow.  
   
-     This displays the workflow initiation form. (Note that the value displayed in the **Auto Approval Limit** box is read-only because it was entered in the association form.)  
+     Consente di visualizzare il form di avvio del flusso di lavoro. (Si noti che il valore visualizzato nel **il limite di approvazione automatica** casella è di sola lettura poiché è stato immesso nel form di associazione.)  
   
-7.  In the **Expense Total** text box, enter **1600**, and then choose the **Start Workflow** button.  
+7.  Nel **spesa totale** testo immettere **1600**, quindi scegliere il **Avvia flusso di lavoro** pulsante.  
   
-     This displays the **Shared Documents** list again. A new column named **ExpenseReportWorkflow** with the value **Completed** is added to the item the workflow just started.  
+     Consente di visualizzare il **documenti condivisi** nuovo elenco. Una nuova colonna denominata **ExpenseReportWorkflow** con il valore **completato** viene aggiunto all'elemento appena avviato il flusso di lavoro.  
   
-8.  Choose the drop-down arrow next to the uploaded document and then choose the **Workflows** item to display the workflow status page. Choose the **Completed** value under **Completed Workflows**. The task is listed under the **Tasks** section.  
+8.  Scegliere la freccia giù accanto il documento caricato e quindi scegliere il **flussi di lavoro** elemento per visualizzare la pagina di stato del flusso di lavoro. Scegliere il **completato** valore **flussi di lavoro completati**. L'attività è elencata sotto il **attività** sezione.  
   
-9. Choose the title of the task to display its task details.  
+9. Scegliere il titolo dell'attività per visualizzarne i dettagli dell'attività.  
   
-10. Go back to the **SharedDocuments** list and restart the workflow, using either the same document or a different one.  
+10. Tornare al **SharedDocuments** elenco e riavviare il flusso di lavoro, utilizzando lo stesso documento o un altro.  
   
-11. Enter an amount on the initiation page that is less than or equal to the amount entered on the association page (**1200**).  
+11. Immettere un importo alla pagina di avvio che è minore o uguale a quello immesso nella pagina di associazione (**1200**).  
   
-     When this occurs, an entry in the history list is created instead of a task. The entry displays in the **Workflow History** section of the workflow status page. Note the message in the **Outcome** column of the history event. It contains the text entered in the `logToHistoryListActivity1.MethodInvoking` event that includes the amount which was auto-approved.  
+     In questo caso, anziché un'attività è creata una voce nell'elenco della cronologia. La voce viene visualizzata nel **cronologia del flusso di lavoro** sezione della pagina stato del flusso di lavoro. Si noti il messaggio di **risultato** colonna dell'evento di cronologia. Contiene il testo immesso nella `logToHistoryListActivity1.MethodInvoking` evento che include la quantità di cui è stata approvata automaticamente.  
   
-## <a name="next-steps"></a>Next Steps  
- You can learn more about how to create workflow templates from these topics:  
+## <a name="next-steps"></a>Passaggi successivi  
+ Maggiori informazioni su come creare modelli di flusso di lavoro in questi argomenti:  
   
--   To learn more about SharePoint workflows, see [Workflows in Windows SharePoint Services](http://go.microsoft.com/fwlink/?LinkID=166275).  
+-   Per ulteriori informazioni sui flussi di lavoro di SharePoint, vedere [flussi di lavoro in Windows SharePoint Services](http://go.microsoft.com/fwlink/?LinkID=166275).  
   
-## <a name="see-also"></a>See Also  
- [Creating SharePoint Workflow Solutions](../sharepoint/creating-sharepoint-workflow-solutions.md)   
- [Walkthrough: Add an Application Page to a Workflow](../sharepoint/walkthrough-add-an-application-page-to-a-workflow.md)  
+## <a name="see-also"></a>Vedere anche  
+ [Creazione di soluzioni flusso di lavoro SharePoint](../sharepoint/creating-sharepoint-workflow-solutions.md)   
+ [Procedura dettagliata: aggiungere una pagina dell'applicazione a un flusso di lavoro](../sharepoint/walkthrough-add-an-application-page-to-a-workflow.md)  
   
   

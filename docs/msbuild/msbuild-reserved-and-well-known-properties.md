@@ -1,13 +1,9 @@
 ---
-title: "Proprietà riservate e note di MSBuild | Microsoft Docs"
-ms.custom: 
+title: Proprietà riservate e note di MSBuild | Microsoft Docs
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- vs-ide-sdk
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.technology: msbuild
+ms.topic: reference
 dev_langs:
 - VB
 - CSharp
@@ -16,35 +12,21 @@ dev_langs:
 helpviewer_keywords:
 - MSBuild, reserved properties
 ms.assetid: 99333e61-83c9-4804-84e3-eda297c2478d
-caps.latest.revision: 29
-author: kempb
-ms.author: kempb
-manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 4d8979877a8cd1fbf60c617e9c03316a46a47879
+ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
 ms.translationtype: HT
-ms.sourcegitcommit: 7a873df77756e5a957d327049566c8e0db1f3a8a
-ms.openlocfilehash: f1f9931e6e7c8dda4cb74f407901f41467c690cc
-ms.contentlocale: it-it
-ms.lasthandoff: 07/14/2017
-
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/19/2018
 ---
 # <a name="msbuild-reserved-and-well-known-properties"></a>Proprietà riservate e note MSBuild
 In [!INCLUDE[vstecmsbuild](../extensibility/internals/includes/vstecmsbuild_md.md)] è disponibile un set di proprietà predefinite che archiviano informazioni sul file di progetto e i file binari di [!INCLUDE[vstecmsbuild](../extensibility/internals/includes/vstecmsbuild_md.md)]. Queste proprietà vengono valutate come le altre proprietà di [!INCLUDE[vstecmsbuild](../extensibility/internals/includes/vstecmsbuild_md.md)]. Ad esempio, per usare la proprietà `MSBuildProjectFile`, è necessario digitare `$(MSBuildProjectFile)`.  
   
- MSBuild usa i valori indicati nella tabella seguente per predefinire le proprietà riservate e quelle note. L'override può essere eseguito solo per le proprietà note usando proprietà globali, proprietà di ambiente con nomi identici o proprietà dichiarate nel file di progetto.  
+ MSBuild usa i valori indicati nella tabella seguente per predefinire le proprietà riservate e quelle note. L'override può essere eseguito solo per le proprietà note usando proprietà globali, proprietà di ambiente con nomi identici o proprietà dichiarate nel file di progetto.
   
 ## <a name="reserved-and-well-known-properties"></a>Proprietà riservate e proprietà note  
  Nella tabella seguente vengono descritte le proprietà predefinite di [!INCLUDE[vstecmsbuild](../extensibility/internals/includes/vstecmsbuild_md.md)].  
@@ -75,6 +57,23 @@ In [!INCLUDE[vstecmsbuild](../extensibility/internals/includes/vstecmsbuild_md.m
 |`MSBuildThisFileName`|La parte di nome file di `MSBuildThisFileFullPath`, senza l'estensione.|Riservata|  
 |`MSBuildToolsPath`|Percorso di installazione della versione di [!INCLUDE[vstecmsbuild](../extensibility/internals/includes/vstecmsbuild_md.md)] associata al valore di `MSBuildToolsVersion`.<br /><br /> Non includere la barra rovesciata finale nel percorso.<br /><br /> Questa proprietà non può essere sottoposta a override.|Riservata|  
 |`MSBuildToolsVersion`|Versione del set di strumenti di [!INCLUDE[vstecmsbuild](../extensibility/internals/includes/vstecmsbuild_md.md)] da usare per compilare il progetto.<br /><br /> Nota: un set di strumenti di [!INCLUDE[vstecmsbuild](../extensibility/internals/includes/vstecmsbuild_md.md)] è costituito da attività, destinazioni e strumenti usati per compilare un'applicazione. Gli strumenti includono compilatori come csc.exe e vbc.exe. Per altre informazioni, vedere [Set di strumenti (ToolsVersion)](../msbuild/msbuild-toolset-toolsversion.md) e [Configurazioni standard e personalizzate del set di strumenti](../msbuild/standard-and-custom-toolset-configurations.md).|Riservata|  
-  
+
+## <a name="names-that-conflict-with-msbuild-elements"></a>Nomi in conflitto con gli elementi di MSBuild
+
+Oltre a quanto sopra, i nomi corrispondenti a elementi del linguaggio MSBuild non possono essere usati per proprietà, elementi o metadati di elementi definiti dall'utente:
+
+* VisualStudioProject
+* destinazione
+* PropertyGroup
+* Output
+* ItemGroup
+* UsingTask
+* ProjectExtensions
+* OnError
+* ImportGroup
+* Scegliere
+* When
+* Otherwise
+
 ## <a name="see-also"></a>Vedere anche  
  [Riferimenti a MSBuild](../msbuild/msbuild-reference.md) [Proprietà di MSBuild](../msbuild/msbuild-properties.md)

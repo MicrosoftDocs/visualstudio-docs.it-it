@@ -1,43 +1,24 @@
 ---
 title: Legenda della visualizzazione Core | Microsoft Docs
-ms.custom: 
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- vs-ide-debug
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.technology: vs-ide-debug
+ms.topic: conceptual
 f1_keywords:
 - vs.cv.cores.legend
 helpviewer_keywords:
 - Concurrency Visualizer, Cores View Legend
 ms.assetid: e160384c-fcfe-49b3-86b7-229adb736c51
-caps.latest.revision: 12
 author: mikejo5000
 ms.author: mikejo
-manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 47057e9611b824c17077b9127f8d2f8b192d6eb8
-ms.openlocfilehash: 4fac3ff28de087401a7ce3efd5ac86ea4e7b8670
-ms.contentlocale: it-it
-ms.lasthandoff: 05/13/2017
-
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: c10695eacdf680d247be8ef95ae14c3208ae92af
+ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/19/2018
 ---
 # <a name="cores-view-legend"></a>Legenda della visualizzazione Core
 La legenda della visualizzazione Core identifica ogni thread in base al colore e al nome. Include colonne che visualizzano il conteggio degli scambi di contesto tra core diversi, gli scambi di contesto totali e la percentuale di scambi di contesto tra core diversi. Le righe della legenda sono ordinate in base al numero di scambi di contesto tra core, in ordine decrescente.  
@@ -56,4 +37,4 @@ La legenda della visualizzazione Core identifica ogni thread in base al colore e
 |Percentuale di scambi di contesto tra core diversi|Calcolata come percentuale dividendo il numero di scambi di contesto tra core diversi per il numero di scambi di contesto totali. Maggiore sarà questa percentuale, maggiore sarà l'effetto complessivo del sovraccarico degli scambi di contesto tra core diversi sulle prestazioni di questo particolare thread.|  
   
 ## <a name="see-also"></a>Vedere anche  
- [Visualizzazione Core](../profiling/cores-view.md)
+ [Cores View](../profiling/cores-view.md) (Visualizzazione Core)

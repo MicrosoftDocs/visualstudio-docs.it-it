@@ -1,61 +1,41 @@
 ---
 title: Trasformazioni di MSBuild | Microsoft Docs
-ms.custom: 
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- vs-ide-sdk
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.technology: msbuild
+ms.topic: conceptual
 helpviewer_keywords:
 - MSBuild, transforms
 - transforms [MSBuild]
 ms.assetid: d0bcfc3c-14fa-455e-805c-63ccffa4a3bf
-caps.latest.revision: 13
-author: kempb
-ms.author: kempb
-manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: 79460291e91f0659df0a4241e17616e55187a0e2
-ms.openlocfilehash: 498afe5aa861c5b52248d444c3754920f2143356
-ms.lasthandoff: 02/22/2017
-
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: eb1a7ba3bff8265e6e707605f02e0bbaba85aff5
+ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/19/2018
 ---
 # <a name="msbuild-transforms"></a>Trasformazioni di MSBuild
 Una trasformazione è una conversione uno-a-uno di un elenco di elementi in un altro. Oltre a consentire a un progetto di convertire gli elenchi di elementi, una trasformazione consente a una destinazione di identificare un mapping diretto tra gli input e gli output. Questo argomento descrive le trasformazioni e il relativo uso in [!INCLUDE[vstecmsbuild](../extensibility/internals/includes/vstecmsbuild_md.md)] per compilare progetti in modo più efficiente.  
   
 ## <a name="transform-modifiers"></a>Modificatori di comandi  
- Le trasformazioni non sono arbitrarie, ma sono limitate da una sintassi speciale in cui tutti i modificatori di trasformazione devono essere nel formato %(*NomeMetadatiElementi*). I metadati degli elementi possono essere usati come modificatori della trasformazione. Sono inclusi i metadati noti degli elementi, assegnati a ogni elemento al momento della creazione. Per un elenco di tutti i metadati noti degli elementi, vedere [Metadati noti degli elementi di MSBuild](../msbuild/msbuild-well-known-item-metadata.md).  
+Le trasformazioni non sono arbitrarie, ma sono limitate da una sintassi speciale in cui tutti i modificatori di trasformazione devono essere nel formato %(*NomeMetadatiElementi*). I metadati degli elementi possono essere usati come modificatori della trasformazione. Sono inclusi i metadati noti degli elementi, assegnati a ogni elemento al momento della creazione. Per un elenco di tutti i metadati noti degli elementi, vedere [Metadati noti degli elementi di MSBuild](../msbuild/msbuild-well-known-item-metadata.md).  
   
- Nell'esempio seguente un elenco di file con estensione resx viene trasformato in un elenco di file con estensione resources. Il modificatore di trasformazione %(filename) specifica che ogni file con estensione resources ha lo stesso nome del file con estensione resx corrispondente.  
+Nell'esempio seguente un elenco di file con estensione *resx* viene trasformato in un elenco di file con estensione *resources*. Il modificatore di trasformazione %(filename) specifica che ogni file con estensione *resources* ha lo stesso nome del file con estensione *resx* corrispondente.  
   
 ```  
 @(RESXFile->'%(filename).resources')  
-```  
-  
+```
+
+Se, ad esempio, gli elementi contenuti nell'elenco @(RESXFile) sono *Form1.resx*, *Form2.resx* e *Form3.resx*, gli output nell'elenco trasformato saranno *Form1.resources*, *Form2.resources* e *Form3.resources*.  
+
 > [!NOTE]
->  Per un elenco di elementi trasformato è possibile specificare un separatore personalizzato, in modo analogo a quanto accade con un elenco di elementi standard. Per separare, ad esempio, un elenco di elementi trasformato usando una virgola (,) anziché il punto e virgola predefinito (;), usare il codice XML seguente.  
-  
-```  
-@(RESXFile->'Toolset\%(filename)%(extension)', ',')  
-```  
-  
- Se ad esempio gli elementi nell'elenco di elementi @(RESXFile) sono `Form1.resx`, `Form2.resx` e `Form3.resx`, gli output nell'elenco trasformato saranno `Form1.resources`, `Form2.resources` e `Form3.resources`.  
+>  Per un elenco di elementi trasformato è possibile specificare un separatore personalizzato, in modo analogo a quanto accade con un elenco di elementi standard. Per separare, ad esempio, un elenco di elementi trasformato usando una virgola (,) anziché il punto e virgola predefinito (;), usare il codice XML seguente:  
+> `@(RESXFile->'Toolset\%(filename)%(extension)', ',')`
   
 ## <a name="using-multiple-modifiers"></a>Uso di più modificatori  
  Un'espressione di trasformazione può contenere più modificatori, che possono essere combinati in qualsiasi ordine e ripetuti. Nell'esempio seguente il nome della directory che contiene il file viene modificato, ma i file mantengono il nome e l'estensione originali.  
@@ -64,12 +44,12 @@ Una trasformazione è una conversione uno-a-uno di un elenco di elementi in un a
 @(RESXFile->'Toolset\%(filename)%(extension)')  
 ```  
   
- Se ad esempio gli elementi contenuti nell'elenco di elementi `RESXFile` sono `Project1\Form1.resx`, `Project1\Form2.resx` e `Project1\Form3.text`, gli output nell'elenco trasformato saranno `Toolset\Form1.resx`, `Toolset\Form2.resx` e `Toolset\Form3.text`.  
+ Se, ad esempio, gli elementi contenuti nell'elenco `RESXFile` sono *Project1\Form1.resx*, *Project1\Form2.resx* e *Project1\Form3.text*, gli output nell'elenco trasformato saranno *Toolset\Form1.resx*, *Toolset\Form2.resx* e *Toolset\Form3.text*.  
   
 ## <a name="dependency-analysis"></a>Analisi delle dipendenze  
  Le trasformazioni garantiscono un mapping uno-a-uno tra l'elenco di elementi trasformato e l'elenco di elementi originale. Se pertanto una destinazione crea output che sono trasformazioni degli input, [!INCLUDE[vstecmsbuild](../extensibility/internals/includes/vstecmsbuild_md.md)] può analizzare i timestamp degli input e output e decidere se ignorare, compilare o ricompilare parzialmente una destinazione.  
   
- Nell'[attività Copy](../msbuild/copy-task.md) dell'esempio seguente, ogni file dell'elenco di elementi `BuiltAssemblies` è associato a un file nella cartella di destinazione dell'attività, specificata mediante una trasformazione nell'attributo `Outputs`. Se viene modificato un file dell'elenco di elementi `BuiltAssemblies`, l'attività `Copy` verrà eseguita esclusivamente per il file modificato e tutti gli altri file verranno ignorati. Per altre informazioni sulle analisi delle dipendenze e su come usare le trasformazioni, vedere [Procedura: Eseguire la compilazione incrementale](../msbuild/how-to-build-incrementally.md).  
+ Nell'[attività Copy](../msbuild/copy-task.md) dell'esempio seguente, ogni file dell'elenco di elementi `BuiltAssemblies` è associato a un file nella cartella di destinazione dell'attività, specificata mediante una trasformazione nell'attributo `Outputs`. Se viene modificato un file dell'elenco di elementi `BuiltAssemblies`, l'attività `Copy` viene eseguita solo per il file modificato e tutti gli altri file vengono ignorati. Per altre informazioni sulle analisi delle dipendenze e su come usare le trasformazioni, vedere [Procedura: Eseguire la compilazione incrementale](../msbuild/how-to-build-incrementally.md).  
   
 ```xml  
 <Target Name="CopyOutputs"  

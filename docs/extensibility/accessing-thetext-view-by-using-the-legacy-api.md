@@ -1,43 +1,44 @@
 ---
-title: "Accesso a theText visualizzazione tramite l&#39;API Legacy | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "editor [Visual Studio SDK], legacy - visualizzazione di testo"
+title: L'accesso a theText visualizzazione tramite l'API Legacy | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology:
+- vs-ide-sdk
+ms.topic: conceptual
+helpviewer_keywords:
+- editors [Visual Studio SDK], legacy - text view
 ms.assetid: 8f751f72-c972-4be3-84ee-19c281e02e25
-caps.latest.revision: 15
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 15
+author: gregvanl
+ms.author: gregvanl
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: 534016bda397ca998740c9fcc8252f4efbc8ccc2
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# Accesso a theText visualizzazione tramite l&#39;API Legacy
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
+# <a name="accessing-thetext-view-by-using-the-legacy-api"></a>L'accesso a theText visualizzazione tramite l'API Legacy
+Una visualizzazione di testo è una presentazione del testo che viene archiviato in un buffer di testo. La visualizzazione del testo è possibile accedere tramite l'API legacy, come illustrato nella sezione seguente.
 
-Una visualizzazione di testo è una presentazione del testo archiviato in un buffer di testo.  È possibile accedere alla visualizzazione di testo utilizzando le API legacy come illustrato nella sezione seguente.  
-  
-## Oggetto della visualizzazione di testo  
- Ogni visualizzazione viene associata al relativo buffer di testo e la visualizzazione è una finestra ai dati nel buffer.  Nel diagramma seguente sono illustrate le interfacce principali dell'oggetto della visualizzazione di testo, rappresentato da <xref:Microsoft.VisualStudio.TextManager.Interop.VsTextView>.  
-  
- ![Oggetto TextView di Visual Studio](~/extensibility/media/vstextview.gif "vstextview")  
-Oggetto della visualizzazione di testo  
-  
- La visualizzazione è una modalità di presentazione del testo nel buffer.  Include funzionalità quali il ritorno a capo automatico e descrizione, in modo che gli elementi visualizzati nella visualizzazione non costituisce un'esatta rappresentazione del testo nel buffer.  
-  
- Una visualizzazione consente agli altri servizi o processi per intercettare i controlli in ingresso e l'atto loro prima della visualizzazione avvenga su di essi.  La maggior parte del servizio comune per eseguire questa operazione è un servizio di linguaggio.  Un servizio di linguaggio potrebbe essere necessario, ad esempio, rilevare il comando affinché il tasto INVIO fornisce il comportamento personalizzato o le descrizioni comandi di rientro.  
-  
-## Aggiunta di funzionalità alla visualizzazione di testo  
- È possibile personalizzare il comportamento della visualizzazione di testo mediante la gestione delle sequenze di tasti specifiche.  Per intercettare le sequenze di tasti, distribuire <xref:Microsoft.VisualStudio.TextManager.Interop.IVsTextViewFilter> sull'oggetto e fornire una destinazione comando \(<xref:Microsoft.VisualStudio.OLE.Interop.IOleCommandTarget>\) per monitorare e rilevare i controlli.  
-  
- La visualizzazione di testo utilizza l'architettura sequenziale per i filtri di comando.  I nuovi filtri di comando \(oggetti di<xref:Microsoft.VisualStudio.OLE.Interop.IOleCommandTarget> \) vengono aggiunti alla sequenza chiamando il metodo di <xref:Microsoft.VisualStudio.TextManager.Interop.IVsTextView.AddCommandFilter%2A> .  
-  
- La notifica degli eventi per la visualizzazione di testo viene fornita tramite l'interfaccia di `T:Microsoft.VisualStudio.TextManager.Interop.IVsTextViewEvents` .  Implementare questa interfaccia sull'oggetto client alla notifica di ricezione delle modifiche alla visualizzazione di testo.  Esporre questa interfaccia alla visualizzazione di testo tramite l'interfaccia di <xref:Microsoft.VisualStudio.OLE.Interop.IConnectionPointContainer> nella visualizzazione di testo per ricevere la notifica delle modifiche dalla visualizzazione.  
-  
-## Vedere anche  
- [Modifica delle impostazioni di visualizzazione tramite l'API Legacy](../extensibility/changing-view-settings-by-using-the-legacy-api.md)   
- [Mediante la gestione di testo per monitorare le impostazioni globali](../extensibility/using-the-text-manager-to-monitor-global-settings.md)
+## <a name="text-view-object"></a>Oggetto TextView
+ Ogni visualizzazione è associato un proprio buffer di testo e la vista è una finestra sui dati nel buffer. Il diagramma seguente mostra le interfacce dell'oggetto visualizzazione testo, rappresentato dalla chiave <xref:Microsoft.VisualStudio.TextManager.Interop.VsTextView>.
+
+ ![Visualizzazione oggetto testo di Visual Studio](../extensibility/media/vstextview.gif "vstextview") oggetto TextView
+
+ La vista è un modo per presentare il testo nel buffer. Sono disponibili funzionalità quali ritorno a capo automatico e la struttura, in modo che sia visualizzata nella vista non è una rappresentazione esatta del testo nel buffer.
+
+ Una vista consente di altri servizi o processi per l'intercettazione di comandi in ingresso e agire di conseguenza, prima della visualizzazione interviene su di essi. Il servizio per eseguire questa operazione più comune è un servizio di linguaggio. Un servizio di linguaggio potrebbe essere necessario, ad esempio, di intercettare il comando per il tasto INVIO fornire suggerimenti di comportamento o lo strumento rientri personalizzati.
+
+## <a name="adding-functionality-to-the-text-view"></a>Aggiunta di funzionalità per la visualizzazione del testo
+ È possibile personalizzare il comportamento di visualizzazione testo gestendo specifiche combinazioni di tasti. Per intercettare le sequenze di tasti, implementano <xref:Microsoft.VisualStudio.TextManager.Interop.IVsTextViewFilter> sull'oggetto e fornire una destinazione di comando (<xref:Microsoft.VisualStudio.OLE.Interop.IOleCommandTarget>) per i comandi di monitoraggio e l'intersezione.
+
+ Visualizzazione di testo utilizza sequenza architettura per i filtri dei comandi. Nuovi filtri dei comandi (<xref:Microsoft.VisualStudio.OLE.Interop.IOleCommandTarget> oggetti) vengono aggiunte alla sequenza chiamando la <xref:Microsoft.VisualStudio.TextManager.Interop.IVsTextView.AddCommandFilter%2A> metodo.
+
+ Notifica degli eventi per la visualizzazione del testo è disponibile utilizzando la <xref:Microsoft.VisualStudio.TextManager.Interop.IVsTextViewEvents> interfaccia. Implementare questa interfaccia per l'oggetto client per ricevere la notifica delle modifiche per la visualizzazione del testo. Esporre l'interfaccia per la visualizzazione del testo utilizzando il <xref:Microsoft.VisualStudio.OLE.Interop.IConnectionPointContainer> interfaccia nella visualizzazione di testo per ricevere una notifica di modifiche dalla vista.
+
+## <a name="see-also"></a>Vedere anche
+
+- [La modifica delle impostazioni di visualizzazione tramite l'API Legacy](../extensibility/changing-view-settings-by-using-the-legacy-api.md)
+- [Utilizzando la gestione di testo per monitorare le impostazioni globali](../extensibility/using-the-text-manager-to-monitor-global-settings.md)

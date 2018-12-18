@@ -1,40 +1,25 @@
 ---
 title: IDebugProperty3 | Documenti Microsoft
-ms.custom: 
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - vs-ide-sdk
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: conceptual
 f1_keywords:
 - IDebugProperty3
 helpviewer_keywords:
 - IDebugProperty3 interface
 ms.assetid: 8f9be68d-4490-4eca-8f6b-8a10ed77e226
-caps.latest.revision: 12
+author: gregvanl
 ms.author: gregvanl
-manager: ghogen
-translation.priority.mt:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: ca7c86466fa23fb21a932f26dc24e37c71cf29b4
-ms.openlocfilehash: 295baf524d3b1261826090164ccdf657b9672122
-ms.lasthandoff: 04/05/2017
-
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: 3ae93a9f88bdee3c4648f803eaf174567fe771c7
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="idebugproperty3"></a>IDebugProperty3
 Questa interfaccia fornisce supporto per:  

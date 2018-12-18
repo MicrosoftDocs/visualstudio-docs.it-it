@@ -1,42 +1,43 @@
 ---
-title: "IDebugProcess2::CauseBreak | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "IDebugProcess2::CauseBreak"
-helpviewer_keywords: 
-  - "IDebugProcess2::CauseBreak"
+title: IDebugProcess2::CauseBreak | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology:
+- vs-ide-sdk
+ms.topic: conceptual
+f1_keywords:
+- IDebugProcess2::CauseBreak
+helpviewer_keywords:
+- IDebugProcess2::CauseBreak
 ms.assetid: efda8865-2319-4d53-90bf-6d9d74cd5195
-caps.latest.revision: 10
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 10
+author: gregvanl
+ms.author: gregvanl
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: e7adf836854d0012fcdd70d7657bb359bdb81dbe
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# IDebugProcess2::CauseBreak
-[!INCLUDE[vs2017banner](../../../code-quality/includes/vs2017banner.md)]
-
-Le richieste che il programma seguente che esegue il codice nell'arresto del processo e inviare [IDebugBreakEvent2](../../../extensibility/debugger/reference/idebugbreakevent2.md) un oggetto evento.  
+# <a name="idebugprocess2causebreak"></a>IDebugProcess2::CauseBreak
+Le richieste che successivo codice di programma che è in esecuzione in questo processo halt e inviare un [IDebugBreakEvent2](../../../extensibility/debugger/reference/idebugbreakevent2.md) oggetto evento.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp#  
-HRESULT CauseBreak(   
-   void  
+```cpp  
+HRESULT CauseBreak(   
+   void  
 );  
 ```  
   
-```c#  
-int CauseBreak();  
+```csharp  
+int CauseBreak();  
 ```  
   
-## Valore restituito  
- Se l'operazione riesce, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
+## <a name="return-value"></a>Valore restituito  
+ Se ha esito positivo, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IDebugProcess2](../../../extensibility/debugger/reference/idebugprocess2.md)

@@ -1,53 +1,52 @@
 ---
-title: "IDiaSymbol::get_hasDebugInfo | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "IDiaSymbol::get_hasDebugInfo (metodo)"
+title: IDiaSymbol::get_hasDebugInfo | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology: vs-ide-debug
+ms.topic: conceptual
+dev_langs:
+- C++
+helpviewer_keywords:
+- IDiaSymbol::get_hasDebugInfo method
 ms.assetid: 84cd2b67-0d83-4589-9ecb-a4bcbeed55f5
-caps.latest.revision: 7
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 7
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 42f2aac13d9257dbbef87faa9446ca1b1c7d4029
+ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/18/2018
 ---
-# IDiaSymbol::get_hasDebugInfo
-[!INCLUDE[vs2017banner](../../code-quality/includes/vs2017banner.md)]
-
-recupera un flag che specifica se [Compilando](../../debugger/debug-interface-access/compiland.md) contiene informazioni di debug.  
+# <a name="idiasymbolgethasdebuginfo"></a>IDiaSymbol::get_hasDebugInfo
+Recupera un flag che specifica se il [compilando](../../debugger/debug-interface-access/compiland.md) contiene informazioni di debug.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp  
+```C++  
 HRESULT get_hasDebugInfo(  
-   BOOL *pFlag  
+   BOOL *pFlag  
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `pFlag`  
- \[out\]  Restituisce `TRUE` se il modulo contiene le informazioni di debug, in caso contrario, restituisce  `FALSE`.  
+ [out] Restituisce `TRUE` se il modulo contiene informazioni di debug; in caso contrario, restituisce `FALSE`.  
   
-## Valore restituito  
- Se l'operazione riesce, restituisce `S_OK`; in caso contrario, restituisce  `S_FALSE` o un codice di errore.  
+## <a name="return-value"></a>Valore restituito  
+ Se ha esito positivo, restituisce `S_OK`; in caso contrario, restituisce `S_FALSE` o un codice di errore.  
   
 > [!NOTE]
->  un valore restituito di `S_FALSE` indica che la proprietà non è disponibile per il simbolo.  
+>  Valore restituito di `S_FALSE` significa che la proprietà non è disponibile per il simbolo.  
   
-## Requisiti  
+## <a name="requirements"></a>Requisiti  
   
-|Requisiti|Descrizione|  
-|---------------|-----------------|  
-|intestazione:|dia2.h|  
-|versione:|DIA SDK v8.0|  
+|Requisito|Descrizione|  
+|-----------------|-----------------|  
+|Intestazione:|DIA2.h|  
+|Versione:|Versione 8.0 DIA SDK|  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IDiaSymbol](../../debugger/debug-interface-access/idiasymbol.md)

@@ -1,48 +1,47 @@
 ---
-title: "IDiaEnumSourceFiles::Item | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "IDiaEnumSourceFiles::Item (metodo)"
+title: 'Idiaenumsourcefiles:: Item | Documenti Microsoft'
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology: vs-ide-debug
+ms.topic: conceptual
+dev_langs:
+- C++
+helpviewer_keywords:
+- IDiaEnumSourceFiles::Item method
 ms.assetid: 3c19d7ed-0232-4b0e-9b10-f33ed9e0c93b
-caps.latest.revision: 7
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 7
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: b1fda746edf51771e7927efd03094f42903141e6
+ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/18/2018
 ---
-# IDiaEnumSourceFiles::Item
-[!INCLUDE[vs2017banner](../../code-quality/includes/vs2017banner.md)]
-
-Recupera un file di origine per l'utilizzo di un indice.  
+# <a name="idiaenumsourcefilesitem"></a>IDiaEnumSourceFiles::Item
+Recupera un file di origine tramite un indice.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp#  
-HRESULT Item (   
-   DWORD            index,  
-   IDiaSourceFile** sourceFile  
+```C++  
+HRESULT Item (   
+   DWORD            index,  
+   IDiaSourceFile** sourceFile  
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  indice  
- \[in\]  Index [IDiaSourceFile](../../debugger/debug-interface-access/idiasourcefile.md) oggetto da recuperare.  L'indice è compreso tra 0 e `count`\-1, dove`count` viene restituito da  [IDiaEnumSourceFiles::get\_Count](../../debugger/debug-interface-access/idiaenumsourcefiles-get-count.md) metodo.  
+ [in] Indice del [IDiaSourceFile](../../debugger/debug-interface-access/idiasourcefile.md) oggetto da recuperare. L'indice è compreso nell'intervallo da 0 a `count`-1, dove `count` restituito dal [idiaenumsourcefiles:: Get_count](../../debugger/debug-interface-access/idiaenumsourcefiles-get-count.md) metodo.  
   
  sourceFile  
- \[out\]  restituisce [IDiaSourceFile](../../debugger/debug-interface-access/idiasourcefile.md) oggetto che rappresenta il file di origine desiderato.  
+ [out] Restituisce un [IDiaSourceFile](../../debugger/debug-interface-access/idiasourcefile.md) oggetto che rappresenta il file di origine desiderato.  
   
-## Valore restituito  
- Se l'operazione riesce, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
+## <a name="return-value"></a>Valore restituito  
+ Se ha esito positivo, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IDiaEnumSourceFiles](../../debugger/debug-interface-access/idiaenumsourcefiles.md)   
  [IDiaSourceFile](../../debugger/debug-interface-access/idiasourcefile.md)

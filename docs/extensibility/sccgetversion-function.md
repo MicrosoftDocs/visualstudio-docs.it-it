@@ -1,47 +1,48 @@
 ---
-title: "Funzione SccGetVersion | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "SccGetVersion"
-helpviewer_keywords: 
-  - "Funzione SccGetVersion"
+title: Funzione SccGetVersion | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology:
+- vs-ide-sdk
+ms.topic: conceptual
+f1_keywords:
+- SccGetVersion
+helpviewer_keywords:
+- SccGetVersion function
 ms.assetid: a6e786bf-744e-4272-9e21-0be44d23b1a1
-caps.latest.revision: 12
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 12
+author: gregvanl
+ms.author: gregvanl
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: 70beb89f13d2f752f3adb0f25e2b370fa272171a
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# Funzione SccGetVersion
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
-Questa funzione Ottiene il numero di versione dell'API di plug\-in controllo di origine supportato dal plug\-in del controllo del codice sorgente.  
+# <a name="sccgetversion-function"></a>SccGetVersion (funzione)
+Questa funzione Ottiene il numero di versione dell'API di plug-in controllo di origine supportata dal plug-in controllo del codice sorgente.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp#  
+```cpp  
 LONG SccGetVersion(void);  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  Nessuno.  
   
-## Valore restituito  
- Oggetto `LONG` tipo di dati che contiene il numero di versione dell'API di plug\-in controllo di origine supportati:  
+## <a name="return-value"></a>Valore restituito  
+ Oggetto `LONG` tipo di dati che contiene il numero di versione dell'API di plug-in controllo di origine supportata:  
   
 |WORD|Descrizione|  
 |----------|-----------------|  
-|HIWORD|Numero di versione principale|  
+|HIWORD|Versione principale|  
 |LOWORD|Versione secondaria|  
   
-## Note  
- Ad esempio, se un plug\-in del controllo del codice sorgente supporta la versione 1.3 dell'API dei plug\-in controllo di origine, questa funzione restituisce 0x0103.  
+## <a name="remarks"></a>Note  
+ Ad esempio, se un plug-in controllo del codice sorgente supporta la versione 1.3 dell'API plug-in controllo di origine, questa funzione restituirà 0x0103.  
   
-## Vedere anche  
- [Funzioni API plug\-in del controllo sorgente](../extensibility/source-control-plug-in-api-functions.md)
+## <a name="see-also"></a>Vedere anche  
+ [Funzioni API del plug-in del controllo del codice sorgente](../extensibility/source-control-plug-in-api-functions.md)

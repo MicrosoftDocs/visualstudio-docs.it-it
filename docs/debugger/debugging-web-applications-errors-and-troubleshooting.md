@@ -1,46 +1,45 @@
 ---
-title: "Debug di applicazioni Web: errori e risoluzione dei problemi | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "FSharp"
-  - "VB"
-  - "CSharp"
-  - "C++"
-helpviewer_keywords: 
-  - "debugger, errori"
-  - "debug [Visual Studio], errori"
-  - "debug di applicazioni Web ASP.NET, risoluzione dei problemi"
-  - "debug di script, risoluzione dei problemi"
-  - "debug di applicazioni Web, risoluzione dei problemi"
-  - "debug di servizi Web, risoluzione dei problemi"
-  - "errori [debugger], applicazioni Web"
-  - "errori [Visual Studio], debug di applicazioni Web"
-  - "script, debug"
-  - "risoluzione di problemi relativi ad applicazioni Web"
-  - "applicazioni Web, errori e risoluzione dei problemi"
-  - "servizi Web, errore di timeout durante il debug"
+title: 'Debug di applicazioni Web: Errori e risoluzione dei problemi | Documenti Microsoft'
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology: vs-ide-debug
+ms.topic: conceptual
+dev_langs:
+- CSharp
+- VB
+- FSharp
+- C++
+helpviewer_keywords:
+- debugging script, troubleshooting
+- errors [debugger], Web applications
+- debugging ASP.NET Web applications, troubleshooting
+- scripts, debugging
+- errors [Visual Studio], debugging Web applications
+- debugging Web services, troubleshooting
+- Web services, timeout error when debugging
+- Web applications, errors and troubleshooting
+- debugging [Visual Studio], errors
+- debugger, errors
+- debugging Web applications, troubleshooting
+- troubleshooting Web applications
 ms.assetid: 63f2742e-2031-48a8-9773-d9b547c62230
-caps.latest.revision: 11
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 11
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 81d9ba4a2e37124f8d8b3641a129d09da1728118
+ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/18/2018
 ---
-# Debug di applicazioni Web: errori e risoluzione dei problemi
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
+# <a name="debugging-web-applications-errors-and-troubleshooting"></a>Debug di applicazioni Web: errori e risoluzione dei problemi
 È possibile che si verifichino i seguenti errori durante il tentativo di eseguire il debug di applicazioni Web.  
   
 -   [Risoluzione dei problemi](../debugger/debugging-web-applications-troubleshooting.md)  
   
--   [Errore: il sito utilizza un indirizzo IP](../debugger/error-site-uses-ip-address.md)  
+-   [Errore: il sito usa un indirizzo IP](../debugger/error-site-uses-ip-address.md)  
   
 -   [Errore: controllo di sicurezza non riuscito. Il servizio di amministrazione IIS non ha risposto](../debugger/error-a-security-check-failed-because-the-iis-admin-service-did-not-respond.md)  
   
@@ -54,8 +53,8 @@ caps.handback.revision: 11
   
 -   [Errore: timeout durante il debug dei servizi Web](../debugger/error-timeout-while-debugging-web-services.md)  
   
--   [Errore: impossibile avviare il debug sul server Web](../debugger/error-unable-to-start-debugging-on-the-web-server.md)  
+-   [Errore: impossibile avviare il debug sul Server Web](../debugger/error-unable-to-start-debugging-on-the-web-server.md)  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Sicurezza del debugger](../debugger/debugger-security.md)   
  [Debug di script e applicazioni Web](../debugger/debugging-web-applications-and-script.md)

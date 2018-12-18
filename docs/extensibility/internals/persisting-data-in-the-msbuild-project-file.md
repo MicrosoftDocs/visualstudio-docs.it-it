@@ -1,71 +1,72 @@
 ---
-title: "Rendere persistenti i dati nel File di progetto MSBuild | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "file di progetto, il mantenimento dati"
+title: Rendere persistenti i dati nel File di progetto MSBuild | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology:
+- vs-ide-sdk
+ms.topic: conceptual
+helpviewer_keywords:
+- project files, persisting data in
 ms.assetid: 6a920cb7-453d-4ffd-af1c-6f3084bd03f7
-caps.latest.revision: 12
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 12
+author: gregvanl
+ms.author: gregvanl
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: 324f9dfd4e381e9580e4940f06f652ef64d9d3ec
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# Rendere persistenti i dati nel File di progetto MSBuild
-[!INCLUDE[vs2017banner](../../code-quality/includes/vs2017banner.md)]
-
-Un sottotipo di progetto può avere l'esigenza di rendere persistenti i dati sottotipo\-specifici nel file di progetto per un utilizzo successivo.  Un sottotipo del progetto utilizza la persistenza del file di progetto per soddisfare i requisiti seguenti:  
+# <a name="persisting-data-in-the-msbuild-project-file"></a>Rendere persistenti i dati nel File di progetto MSBuild
+Un sottotipo di progetto potrebbe essere necessario rendere persistenti i dati specifici del sottotipo nel file di progetto per un uso successivo. Un sottotipo di progetto usa la persistenza del file di progetto per soddisfare i requisiti seguenti:  
   
-1.  Rendere persistenti i dati utilizzati come parte della compilazione del progetto.  \(Per ulteriori informazioni su Microsoft Build Engine, vedere [MSBuild](http://msdn.microsoft.com/it-it/7c49aba1-ee6c-47d8-9de1-6f29a906e20b).\) le informazioni relative possono uno:  
+1.  Mantenere i dati utilizzati come parte della compilazione del progetto. (Per ulteriori informazioni su Microsoft Build Engine, vedere [MSBuild](../../msbuild/msbuild.md).) Informazioni relative alla compilazione possono:  
   
-    1.  dati dell'Configurazione\-indipendente.  Ovvero dati memorizzati in elementi MSBuild con condizioni vuote o mancanti.  
+    1.  Dati indipendenti dalla configurazione. Vale a dire i dati archiviati negli elementi di MSBuild con condizioni vuote o mancante.  
   
-    2.  dati dipendenti dalla configurazione.  Ovvero dati memorizzati in elementi MSBuild che sono condizionali per una configurazione di progetto specifico.  Di seguito è riportato un esempio:  
+    2.  Dati dipendenti dalla configurazione. Vale a dire i dati archiviati negli elementi di MSBuild che sono condizionati per una configurazione di progetto. Ad esempio:  
   
         ```  
         <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">  
         ```  
   
-2.  Rendere persistenti i dati che non sono rilevanti da compilare.  Questi dati possono essere espressi in formato libero XML che non viene convalidato rispetto a uno Schema XML.  
+2.  Rendere persistenti i dati che non sono pertinenti compilare. Questi dati possono essere espressi in XML in formato libero che non viene convalidato rispetto a XML schema.  
   
-    1.  dati dell'Configurazione\-indipendente.  
+    1.  Dati indipendenti dalla configurazione.  
   
-    2.  dati dipendenti dalla configurazione.  
+    2.  Dati dipendenti dalla configurazione.  
   
-## Mantenere informazioni correlate alla compilazione  
- La persistenza dei dati utili per compilare un progetto viene gestita da MSBuild.  Il sistema MSBuild gestisce una tabella master di informazioni relative.  I sottotipi di progetto sono responsabili di accedere a questi dati per ottenere e impostare valori di proprietà.  I sottotipi di progetto è possibile aumentare la tabella dati build\-correlata aggiungendo le proprietà aggiuntive da salvare in modo permanente e rimuovendo proprietà in modo da non vengono mantenuti.  
+## <a name="persisting-build-related-information"></a>Mantenimento delle informazioni relative alla compilazione  
+ Persistenza dei dati utili per la creazione di un progetto viene gestita tramite MSBuild. Il sistema MSBuild mantiene una tabella master di informazioni relative alla compilazione. Sottotipi di progetto sono responsabili per l'accesso a questi dati per ottenere e impostare i valori delle proprietà. Sottotipi di progetto è possono potenziare anche la tabella di dati correlati alla compilazione aggiungendo proprietà aggiuntive da rendere persistenti e rimozione di proprietà in modo che non sono persistenti.  
   
- Per modificare i dati di MSBuild, un sottotipo di progetto è responsabile di recuperare l'oggetto della proprietà MSBuild dal sistema di progetto di base con <xref:Microsoft.VisualStudio.Shell.Interop.IVsBuildPropertyStorage>.  <xref:Microsoft.VisualStudio.Shell.Interop.IVsBuildPropertyStorage> è un'interfaccia implementata nel sistema del progetto principale e sulle query di aggregazione sottotipo di progetto per l'esecuzione `QueryInterface`.  
+ Per modificare i dati di MSBuild, è responsabile per recuperare l'oggetto di proprietà MSBuild dal sistema di progetto di base tramite un sottotipo di progetto <xref:Microsoft.VisualStudio.Shell.Interop.IVsBuildPropertyStorage>. <xref:Microsoft.VisualStudio.Shell.Interop.IVsBuildPropertyStorage> è un'interfaccia implementata nel sistema di progetto di base e le query di sottotipo progetto aggregazione appositamente eseguendo `QueryInterface`.  
   
- La procedura riportata di seguito vengono descritti i passaggi per rimuovere una proprietà utilizzando <xref:Microsoft.VisualStudio.Shell.Interop.IVsBuildPropertyStorage>.  
+ La procedura seguente vengono delineati i passaggi per la rimozione di una proprietà utilizzando <xref:Microsoft.VisualStudio.Shell.Interop.IVsBuildPropertyStorage>.  
   
-#### Per rimuovere una proprietà da un file di progetto MSBuild  
+#### <a name="to-remove-a-property-from-an-msbuild-project-file"></a>Per rimuovere una proprietà da un file di progetto MSBuild  
   
-1.  Chiamare `QueryInterface` su <xref:Microsoft.VisualStudio.Shell.Interop.IVsBuildPropertyStorage> del sottotipo di progetto.  
+1.  Chiamare `QueryInterface` in <xref:Microsoft.VisualStudio.Shell.Interop.IVsBuildPropertyStorage> del sottotipo di progetto.  
   
-2.  Chiamare <xref:Microsoft.VisualStudio.Shell.Interop.IVsMonitorSelection.AdviseSelectionEvents%2A> e fornirgli l'oggetto <xref:Microsoft.VisualStudio.Shell.Interop.IVsSelectionEvents>.  
+2.  Chiamare <xref:Microsoft.VisualStudio.Shell.Interop.IVsBuildPropertyStorage.RemoveProperty%2A> con `pszPropName` impostato sulla proprietà che si desidera rimuovere.  
   
-### Mantenere informazioni correlate Non di Compilazione  
- La persistenza dei dati nel file di progetto che non importano per compilare viene gestita da <xref:Microsoft.VisualStudio.Shell.Interop.IPersistXMLFragment>.  
+### <a name="persisting-non-build-related-information"></a>Informazioni relative alla compilazione Non persistenti  
+ Persistenza dei dati nei file di progetto che non è rilevante per compilare viene gestita tramite <xref:Microsoft.VisualStudio.Shell.Interop.IPersistXMLFragment>.  
   
- È possibile distribuire <xref:Microsoft.VisualStudio.Shell.Interop.IPersistXMLFragment> sull'obiettivo principale di `project subtype aggregator` , nell'oggetto `project subtype project configuration` , o in entrambi.  
+ È possibile implementare <xref:Microsoft.VisualStudio.Shell.Interop.IPersistXMLFragment> su principale `project subtype aggregator` oggetto, il `project subtype project configuration` oggetto, o entrambi.  
   
- I punti seguenti vengono descritti i concetti principali relativi alla persistenza di informazioni correlate non compilazione.  
+ Di seguito sono indicate i principali concetti riguardanti la persistenza di informazioni correlate non compilazione.  
   
--   Le chiamate di progetto base sull'obiettivo di aggregazione principale del sottotipo di progetto \(ovvero il sottotipo più esterno del progetto\) per caricare e salvare i dati correlati di configurazione e chiama sugli oggetti di configurazione del progetto sottotipo di progetto per caricare o salvare i dati del dipendente di configurazione.  
+-   Chiama il progetto di base sull'oggetto progetto principale aggregator sottotipo (vale a dire il sottotipo del progetto più esterno) per caricare e salvare i dati di configurazione indipendente e chiama gli oggetti di configurazione di progetto sottotipo di progetto per caricare o salvare dipendenti dalla configurazione dati.  
   
--   Il progetto di base chiama i metodi di più volte <xref:Microsoft.VisualStudio.Shell.Interop.IPersistXMLFragment> per ogni livello di aggregazione sottotipo di progetto e passa il GUID per ogni livello.  
+-   Il progetto di base chiama i metodi di <xref:Microsoft.VisualStudio.Shell.Interop.IPersistXMLFragment> più volte per ogni livello di aggregazione sottotipo di progetto e passa il GUID per ogni livello.  
   
--   Il progetto di base passa o riceve un frammento XML che è dedicato a un tipo specifico di progetto e utilizza questo meccanismo come modalità di mantenere lo stato tra i livelli di aggregazione.  
+-   Il progetto di base passa o riceve un frammento XML è dedicato a un sottotipo di progetto specifico e che utilizza questo meccanismo in modo persistente lo stato tra i livelli di aggregazione.  
   
--   Il progetto di base chiama l'implementazione più esterna di <xref:Microsoft.VisualStudio.Shell.Interop.IPersistXMLFragment>del sottotipo di progetto che passa un GUID.  Se il GUID appartiene al sottotipo più esterno di progetto, gestire la chiamata stessa; in caso contrario delega la chiamata un sottotipo interno del progetto, e così via, fino a trovare il sottotipo di progetto che il GUID corrisponde a.  
+-   Il progetto di base chiama il sottotipo di progetto più esterno <xref:Microsoft.VisualStudio.Shell.Interop.IPersistXMLFragment>implementazione passando un GUID. Se il GUID appartiene il sottotipo del progetto più esterno, gestisce la chiamata. in caso contrario delega la chiamata a un sottotipo di progetto interna e così via, fino a quando non viene trovato il sottotipo del progetto corrispondente al GUID.  
   
--   Un sottotipo di progetto può anche modificare il frammento XML prima o dopo delega la chiamata un sottotipo interno del progetto.  Nell'esempio seguente viene illustrato un estratto da un file di progetto, in cui un nome di un file che contiene le proprietà specifiche di un sottotipo di progetto, viene passato al sottotipo di progetto.  
+-   Un sottotipo di progetto è possibile modificare anche il frammento XML prima o dopo la delega la chiamata a un sottotipo di progetto interna. Nell'esempio seguente viene illustrato un estratto da un file di progetto, in cui un nome di un file che contiene le proprietà specifiche di un sottotipo di progetto, viene passato a tale sottotipo di progetto.  
   
     ```  
     <ProjectExtensions>  
@@ -77,5 +78,5 @@ Un sottotipo di progetto può avere l'esigenza di rendere persistenti i dati sot
       </ProjectExtensions>  
     ```  
   
-## Vedere anche  
- [Progetto \(sottotipi\)](../../extensibility/internals/project-subtypes.md)
+## <a name="see-also"></a>Vedere anche  
+ [Sottotipi di progetto](../../extensibility/internals/project-subtypes.md)

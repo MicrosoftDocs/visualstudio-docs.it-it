@@ -1,39 +1,38 @@
 ---
-title: "Personalizzazione delle visualizzazioni dei rapporti sugli strumenti di profilatura | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "strumenti di profilatura, personalizzazione delle visualizzazioni rapporti"
-  - "rapporti, personalizzazione delle visualizzazioni rapporti di profilatura"
+title: Personalizzazione delle visualizzazioni dei report sugli strumenti delle prestazioni | Microsoft Docs
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology: vs-ide-debug
+ms.topic: conceptual
+helpviewer_keywords:
+- profiling tools, customizing report views
+- reports, customizing profiling report views
 ms.assetid: 5224ac52-0fc2-4269-8eb2-ead7fda3afd4
-caps.latest.revision: 16
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 16
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 691723e27cc2927733fe82aa1f79e9fd1d9d663d
+ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/19/2018
 ---
-# Personalizzazione delle visualizzazioni dei rapporti sugli strumenti di profilatura
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
-In questa sezione viene trattata la personalizzazione dei rapporti generati con gli strumenti di profilatura di [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)].  
+# <a name="customizing-performance-tools-report-views"></a>Personalizzazione delle visualizzazioni dei report sugli strumenti delle prestazioni
+In questa sezione viene descritto come personalizzare i report generati con gli strumenti di profilatura [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)].  
   
-## Attività comuni  
+## <a name="common-tasks"></a>Attività comuni  
   
-|Task|Contenuto correlato|  
-|----------|-------------------------|  
-|**Aggiungere, rimuovere e ordinare per colonne in una visualizzazione di rapporto:** è possibile specificare le colonne che si desidera visualizzare nelle visualizzazioni basate su tabelle ed è possibile specificare l'ordine in cui vengono visualizzate le colonne.  È inoltre possibile ordinare le righe della tabella del rapporto in base ai valori delle colonne.|-   [Procedura: Personalizzare colonne della visualizzazione report](../profiling/how-to-customize-report-view-columns.md)|  
-|**Eliminare funzioni di piccole dimensioni dal rapporto:** è possibile eliminare funzioni di dimensioni inferiori alla soglia specificata dai rapporti.|-   [Procedura: Configurare la riduzione del rumore nelle visualizzazioni report](../profiling/how-to-configure-noise-reduction-in-report-views.md)|  
-|**Filtrare la data in una visualizzazione di rapporto**: è possibile limitare i dati visualizzati in un rapporto a un intervallo di tempo dell'esecuzione della profilatura.  È possibile specificare un intervallo di tempo nel grafico della sequenza temporale della visualizzazione Riepilogo oppure specificare l'intervallo in una query definita nel filtro di visualizzazione del rapporto.  È inoltre possibile filtrare i rapporti per mostrare solo funzioni definite nei file di codice.|-   [Filtrare visualizzazioni rapporto](../profiling/filtering-report-views.md)<br />-   [Procedura: filtrare le visualizzazioni rapporto dalla sequenza temporale di riepilogo](../profiling/how-to-filter-report-views-from-the-summary-timeline.md)<br />-   [Procedura: Filtrare visualizzazioni report per visualizzare Just My Code](../profiling/how-to-filter-profiling-tools-report-views-to-display-just-my-code.md)<br />-   [Filtro di visualizzazione dei report degli strumenti per la profilatura](../profiling/performance-report-view-filter.md)|  
+|Attività|Contenuto correlato|  
+|----------|---------------------|  
+|**Aggiungere, rimuovere e ordinare in base alle colonne in una visualizzazione di report:** è possibile specificare le colonne che si vuole visualizzare nelle visualizzazioni basate su tabelle e specificare l'ordine in visualizzare le colonne. È anche possibile ordinare le righe della tabella del report in base ai valori della colonne.|-   [Procedura: Personalizzare le colonne della visualizzazione report](../profiling/how-to-customize-report-view-columns.md)|  
+|**Eliminare le piccole funzioni dal report:** è possibile eliminare le funzioni che sono inferiori a una soglia specificata dai report.|-   [Procedura: Configurare la riduzione rumore nelle visualizzazioni report](../profiling/how-to-configure-noise-reduction-in-report-views.md)|  
+|**Filtrare la data in una visualizzazione report**: è possibile limitare i dati visualizzati in un report a un intervallo di tempo di esecuzione della profilatura. È possibile specificare un intervallo di tempo nel grafico della cronologia della visualizzazione Riepilogo oppure è possibile specificare l'intervallo di tempo in una query definita nel filtro di visualizzazione del report. È anche possibile filtrare i report per visualizzare solo le funzioni definite nei file di codice.|-   [Filtrare le visualizzazioni report](../profiling/filtering-report-views.md)<br />-   [Procedura: Filtrare le visualizzazioni report dalla sequenza temporale di riepilogo](../profiling/how-to-filter-report-views-from-the-summary-timeline.md)<br />-   [Procedura: Filtrare le visualizzazioni report degli strumenti di profilatura per visualizzare Just My Code](../profiling/how-to-filter-profiling-tools-report-views-to-display-just-my-code.md)<br />-   [Filtro delle visualizzazioni dei report di prestazioni](../profiling/performance-report-view-filter.md)|  
   
-## Sezioni correlate  
- [Visualizzazioni dei report degli strumenti per la profilatura](../profiling/performance-report-views.md)  
- Vengono descritte le visualizzazioni che è possibile utilizzare per esaminare i dati di profilatura.  
+## <a name="related-sections"></a>Sezioni correlate  
+ [Performance Report Views](../profiling/performance-report-views.md)(Visualizzazioni dei rapporti di prestazioni)  
+ Descrive le visualizzazioni che è possibile usare per analizzare i dati di profilatura.  
   
-## Vedere anche  
- [Analisi dei dati degli strumenti per la profilatura](../profiling/analyzing-performance-tools-data.md)
+## <a name="see-also"></a>Vedere anche  
+ [Analisi dei dati degli strumenti per le prestazioni](../profiling/analyzing-performance-tools-data.md)

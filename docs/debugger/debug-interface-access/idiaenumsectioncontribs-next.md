@@ -1,52 +1,51 @@
 ---
-title: "IDiaEnumSectionContribs::Next | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "IDiaEnumSectionContribs::Next (metodo)"
+title: 'Idiaenumsectioncontribs:: Next | Documenti Microsoft'
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology: vs-ide-debug
+ms.topic: conceptual
+dev_langs:
+- C++
+helpviewer_keywords:
+- IDiaEnumSectionContribs::Next method
 ms.assetid: a6bb2adb-ee6d-4f3c-ab5b-e89361c8880e
-caps.latest.revision: 7
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 7
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 6f700ef7160cff643c2a60007d7b1f83ecbe4eeb
+ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/18/2018
 ---
-# IDiaEnumSectionContribs::Next
-[!INCLUDE[vs2017banner](../../code-quality/includes/vs2017banner.md)]
-
-Recupera un numero specificato di contributi la sezione della sequenza di enumerazione.  
+# <a name="idiaenumsectioncontribsnext"></a>IDiaEnumSectionContribs::Next
+Recupera un numero specificato di contributi di sezione nella sequenza di enumerazione.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp#  
-HRESULT Next(   
-   ULONG                celt,   
-   IDiaSectionContrib** rgelt,  
-   ULONG*               pceltFetched  
+```C++  
+HRESULT Next(   
+   ULONG                celt,   
+   IDiaSectionContrib** rgelt,  
+   ULONG*               pceltFetched  
 );  
 ```  
   
-#### Parametri  
- celta  
- \[in\]  Il numero dei contributi della sezione nell'enumeratore da recuperare.  
+#### <a name="parameters"></a>Parametri  
+ celt  
+ [in] Il numero dei contributi di sezione nell'enumeratore deve essere recuperato.  
   
  rgelt  
- \[out\]  Una matrice che deve essere compilata con [IDiaSectionContrib](../../debugger/debug-interface-access/idiasectioncontrib.md) oggetti che rappresentano i contributi desiderati della sezione.  
+ [out] Matrice che deve essere compilato con la [IDiaSectionContrib](../../debugger/debug-interface-access/idiasectioncontrib.md) gli oggetti che rappresentano i contributi di sezione desiderata.  
   
  pceltFetched  
- \[out\]  Restituisce il numero dei contributi della sezione nell'enumeratore recuperato.  
+ [out] Restituisce il numero dei contributi di sezione nell'enumeratore recuperata.  
   
-## Valore restituito  
- Se l'operazione riesce, restituisce `S_OK`.  Restituisce `S_FALSE` se non sono presenti più contributi della sezione.  In caso contrario, restituisce un codice di errore.  
+## <a name="return-value"></a>Valore restituito  
+ Se ha esito positivo, restituisce `S_OK`. Restituisce `S_FALSE` se non esistono alcun ulteriori contributi di sezione. In caso contrario, verrà restituito un codice di errore.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IDiaEnumSectionContribs](../../debugger/debug-interface-access/idiaenumsectioncontribs.md)   
  [IDiaSectionContrib](../../debugger/debug-interface-access/idiasectioncontrib.md)

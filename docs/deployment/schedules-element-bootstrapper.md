@@ -1,33 +1,32 @@
 ---
-title: "Elemento &lt;Schedules&gt; (programma di avvio automatico) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-deployment"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "FSharp"
-  - "VB"
-  - "CSharp"
-  - "C++"
-helpviewer_keywords: 
-  - "<Schedules> (elemento) [programma di avvio automatico]"
+title: '&lt;Le pianificazioni&gt; elemento (programma di avvio automatico) | Documenti Microsoft'
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology: vs-ide-deployment
+ms.topic: conceptual
+dev_langs:
+- FSharp
+- VB
+- CSharp
+- C++
+helpviewer_keywords:
+- <Schedules> element [bootstrapper]
 ms.assetid: 28d094cf-64f5-42b1-bd8a-3697082aab4f
-caps.latest.revision: 5
-author: "stevehoag"
-ms.author: "shoag"
-manager: "wpickett"
-caps.handback.revision: 5
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: a4cbc6b4f5ebd400d90466ccfa353d679a766580
+ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/19/2018
 ---
-# Elemento &lt;Schedules&gt; (programma di avvio automatico)
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
-L'elemento `Schedules` contiene gli elementi `Schedule`, che definiscono l'ora specifica in cui eseguire i comandi specificati dall'elemento `Command`.  
+# <a name="ltschedulesgt-element-bootstrapper"></a>&lt;Le pianificazioni&gt; elemento (programma di avvio automatico)
+Il `Schedules` elemento contiene `Schedule` elementi che definiscono l'ora specifica a quali comandi definiti per il `Command` elemento deve essere eseguito.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
 <Schedules>  
@@ -41,29 +40,29 @@ L'elemento `Schedules` contiene gli elementi `Schedule`, che definiscono l'ora s
 </Schedules>  
 ```  
   
-## Elementi e attributi  
- L'elemento `Schedules` è un elemento figlio di `Product`.  Ciascun elemento `Product` può contenere al massimo un elemento `Schedules`.  L'elemento `Schedules` non contiene attributi.  
+## <a name="elements-and-attributes"></a>Elementi e attributi  
+ Il `Schedules` è un elemento figlio del `Product` elemento. Ogni `Product` elemento può contenere al massimo una `Schedules` elemento. Il `Schedules` elemento non ha attributi.  
   
-## Schedule  
- L'elemento `Schedule` è un elemento figlio di `Schedules`.  Un elemento `Schedules` deve contenere almeno un elemento `Schedule`.  
+## <a name="schedule"></a>Pianificazione  
+ Il `Schedule` è un elemento figlio del `Schedules` elemento. Oggetto `Schedules` l'elemento deve avere almeno un `Schedule` elemento.  
   
- `Schedule` dispone dell'attributo riportato di seguito.  
+ `Schedule` presenta l'attributo seguente.  
   
 |Attributo|Descrizione|  
 |---------------|-----------------|  
-|`Name`|Obbligatorio.  Nome dell'elemento di pianificazione.  Questo parametro corrisponde alla proprietà `ScheduleName` dell'elemento `Command`.  Quando un elemento `Command` fa riferimento alla pianificazione specificata, tale elemento verrà eseguito soltanto nel momento indicato dall'elemento `Schedule`.  Le pianificazioni possono anche essere associate agli elementi `FailIf` e `BypassIf`, che limitano l'esecuzione dei test condizionali nella pianificazione specificata.  Per ulteriori informazioni, vedere [Elemento \<Commands\>](../deployment/commands-element-bootstrapper.md).|  
+|`Name`|Obbligatorio. Il nome dell'elemento di pianificazione. Corrisponde alla `ScheduleName` proprietà del `Command` elemento. Quando un `Command` fa riferimento alla pianificazione specificata, verrà eseguito solo nell'orario indicato da tale `Schedule` elemento. Le pianificazioni possono anche essere associate le `FailIf` e `BypassIf` elementi, che limitano l'esecuzione in base alla pianificazione specificata questi test condizionale. Per ulteriori informazioni, vedere [ \<comandi > elemento](../deployment/commands-element-bootstrapper.md).|  
   
- Un determinato elemento `Schedule` può avere esattamente uno degli elementi figlio riportati di seguito.  
+ Un determinato `Schedule` elemento può avere esattamente uno degli elementi figlio seguenti.  
   
-## BuildList  
- L'elemento `BuildList` indica al programma di installazione di eseguire un comando immediatamente dopo l'avvio dell'applicazione di avvio automatico.  
+## <a name="buildlist"></a>BuildList  
+ Il `BuildList` elemento indica al programma di installazione per eseguire un comando, subito dopo l'avvio di applicazione di avvio automatico.  
   
-## BeforePackage  
- L'elemento `BeforePackage` indica al programma di installazione di eseguire un comando prima dell'installazione del package specificato.  
+## <a name="beforepackage"></a>BeforePackage  
+ Il `BeforePackage` elemento indica al programma di installazione per eseguire un comando prima di installata il pacchetto specificato.  
   
-## AfterPackage  
- L'elemento `AfterPackage` indica al programma di installazione di eseguire un comando dopo l'installazione del package specificato.  
+## <a name="afterpackage"></a>AfterPackage  
+ Il `AfterPackage` elemento indica al programma di installazione per eseguire un comando, dopo aver installato il pacchetto specificato.  
   
-## Vedere anche  
- [Elemento \<Product\>](../deployment/product-element-bootstrapper.md)   
+## <a name="see-also"></a>Vedere anche  
+ [\<Prodotto > elemento](../deployment/product-element-bootstrapper.md)   
  [Riferimenti dello schema di prodotti e package](../deployment/product-and-package-schema-reference.md)

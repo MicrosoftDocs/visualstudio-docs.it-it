@@ -1,49 +1,50 @@
 ---
-title: "IDebugReference2::GetMemoryBytes | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "IDebugReference2::GetMemoryBytes"
-helpviewer_keywords: 
-  - "IDebugReference2::GetMemoryBytes"
+title: IDebugReference2::GetMemoryBytes | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology:
+- vs-ide-sdk
+ms.topic: conceptual
+f1_keywords:
+- IDebugReference2::GetMemoryBytes
+helpviewer_keywords:
+- IDebugReference2::GetMemoryBytes
 ms.assetid: 2006cb2b-1dfa-4a2d-8e3e-db2ce0302e0d
-caps.latest.revision: 10
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 10
+author: gregvanl
+ms.author: gregvanl
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: c3dfe557fc114cad61ae666c22be6c5f50079ee1
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# IDebugReference2::GetMemoryBytes
-[!INCLUDE[vs2017banner](../../../code-quality/includes/vs2017banner.md)]
-
-ottiene i byte di memoria che contengono fisicamente il valore di un riferimento.  Riservato per un utilizzo futuro.  
+# <a name="idebugreference2getmemorybytes"></a>IDebugReference2::GetMemoryBytes
+Ottiene i byte di memoria fisicamente contenenti il valore di un riferimento. Riservato per utilizzi futuri.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp#  
-HRESULT GetMemoryBytes (   
-   IDebugMemoryBytes2** ppMemoryBytes  
+```cpp  
+HRESULT GetMemoryBytes (   
+   IDebugMemoryBytes2** ppMemoryBytes  
 );  
 ```  
   
-```c#  
-int GetMemoryBytes (   
-   out IDebugMemoryBytes2 ppMemoryBytes  
+```csharp  
+int GetMemoryBytes (   
+   out IDebugMemoryBytes2 ppMemoryBytes  
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `ppMemoryBytes`  
- \[out\]  Restituisce [IDebugMemoryBytes2](../../../extensibility/debugger/reference/idebugmemorybytes2.md) un oggetto che può essere utilizzato per recuperare la memoria che contiene il valore del riferimento.  
+ [out] Restituisce un [IDebugMemoryBytes2](../../../extensibility/debugger/reference/idebugmemorybytes2.md) oggetto che può essere utilizzato per recuperare la memoria che contiene il valore del riferimento.  
   
-## Valore restituito  
+## <a name="return-value"></a>Valore restituito  
  Restituisce sempre `E_NOTIMPL`.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IDebugReference2](../../../extensibility/debugger/reference/idebugreference2.md)   
  [IDebugMemoryBytes2](../../../extensibility/debugger/reference/idebugmemorybytes2.md)

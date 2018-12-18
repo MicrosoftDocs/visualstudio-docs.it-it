@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 06/21/2017
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- vs-ide-general
+ms.technology: vs-ide-general
 ms.tgt_pltfrm: 
 ms.topic: article
 helpviewer_keywords:
@@ -15,30 +14,16 @@ helpviewer_keywords:
 - imported namespaces [Visual Studio]
 - references [Visual Studio], imported namespaces
 ms.assetid: 44cebec3-0ea0-47c2-8406-4edeab6a997e
-caps.latest.revision: 11
+caps.latest.revision: "11"
 author: gewarren
 ms.author: gewarren
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: d2f4eba36e9069a35cf279ccf1c78f72a51d77a1
-ms.openlocfilehash: f512673808ae3fab2fdcca39b58f77ca5df93e05
-ms.contentlocale: it-it
-ms.lasthandoff: 06/23/2017
-
+ms.workload: multiple
+ms.openlocfilehash: 015f2efa352b5ff2d8b87e356972270c175d0168
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-add-or-remove-imported-namespaces-visual-basic"></a>Procedura: aggiungere o rimuovere spazi dei nomi importati (Visual Basic)
 L'importazione di uno spazio dei nomi consente di usare nel codice elementi tratti da tale spazio senza doverli qualificare in modo completo. Se, ad esempio, si vuole accedere al metodo `Create` nella classe `System.Messaging.MessageQueue`, è possibile importare lo spazio dei nomi `System.Messaging` e fare riferimento al solo elemento necessario nel codice come `MessageQueue.Create`.  
@@ -96,4 +81,3 @@ L'importazione di uno spazio dei nomi consente di usare nel codice elementi trat
 
 ## <a name="see-also"></a>Vedere anche  
  [Gestione dei riferimenti in un progetto](../ide/managing-references-in-a-project.md)
-

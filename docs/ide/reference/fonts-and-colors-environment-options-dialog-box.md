@@ -1,13 +1,10 @@
 ---
 title: Tipi di carattere e colori, Ambiente, finestra di dialogo Opzioni | Microsoft Docs
-ms.custom: 
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - vs-ide-general
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: conceptual
 f1_keywords:
 - VS.ToolsOptionsPag.Environment.Fonts_And_Colors
 - VS.ToolsOptionsPages.FontsAndColors
@@ -27,30 +24,16 @@ helpviewer_keywords:
 - defaults, colors
 - printers, customizing
 ms.assetid: c767d302-51ed-47a8-a527-c07bce2aa485
-caps.latest.revision: 27
-author: kempb
-ms.author: kempb
-manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 5ea9179ad37514ffad4876177b05150eecc22def
-ms.openlocfilehash: 209ddbe4166e7818e5ea3a1a699f6a0f1ee096e0
-ms.contentlocale: it-it
-ms.lasthandoff: 05/24/2017
-
+author: gewarren
+ms.author: gewarren
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: a089bc9fe61d1ddc8e4510c4da03235c7ab782ee
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="fonts-and-colors-environment-options-dialog-box"></a>Tipi di carattere e colori, Ambiente, finestra di dialogo Opzioni
 La pagina **Tipi di carattere e colori** della finestra di dialogo **Opzioni** consente di definire una combinazione di colori e tipi di carattere personalizzata per vari elementi dell'interfaccia utente nell'ambiente di sviluppo integrato (IDE). Per accedere a questa finestra di dialogo, fare clic su **Strumenti/Opzioni** e quindi selezionare **Ambiente/Tipi di carattere e colori**. Se questa pagina non viene visualizzata nell'elenco, selezionare **Mostra tutte le impostazioni** nella finestra di dialogo **Opzioni**.  
@@ -93,20 +76,20 @@ La pagina **Tipi di carattere e colori** della finestra di dialogo **Opzioni** c
     > [!NOTE]
     >  Le modifiche al testo degli elementi **[Tutte le finestre degli strumenti di testo]** non sono effettive durante la sessione in cui vengono eseguite. È possibile valutare le modifiche apportate aprendo un'altra istanza di Visual Studio.  
   
- **Valori predefiniti**  
- Reimposta i valori relativi al tipo di carattere e al colore dell'elemento elenco selezionato in **Mostra impostazioni per**. Il pulsante **Usa** viene visualizzato quando sono disponibili per la selezione altre combinazioni di visualizzazione. Ad esempio, è possibile scegliere tra due combinazioni per l'elemento Stampante.  
+**Valori predefiniti**  
+Reimposta i valori relativi al tipo di carattere e al colore dell'elemento elenco selezionato in **Mostra impostazioni per**. Il pulsante **Usa** viene visualizzato quando sono disponibili per la selezione altre combinazioni di visualizzazione. Ad esempio, è possibile scegliere tra due combinazioni per l'elemento Stampante.  
   
- **Carattere (tipi di carattere a larghezza fissa in grassetto)**  
- Elenca tutti i tipi di carattere installati nel sistema. La prima volta che viene visualizzato il menu a discesa, nel campo **Mostra impostazioni per** viene evidenziato il tipo di carattere corrente per l'elemento selezionato. I tipi di carattere a larghezza fissa, più facili da allineare nell'editor, sono visualizzati in grassetto.  
+**Carattere (tipi di carattere a larghezza fissa in grassetto)**  
+Elenca tutti i tipi di carattere installati nel sistema. La prima volta che viene visualizzato il menu a discesa, nel campo **Mostra impostazioni per** viene evidenziato il tipo di carattere corrente per l'elemento selezionato. I tipi di carattere a larghezza fissa, più facili da allineare nell'editor, sono visualizzati in grassetto.  
   
- **Dimensione**  
- Elenca le dimensioni in punti disponibili per il tipo di carattere evidenziato. La modifica della dimensione del carattere influisce su tutti gli **Elementi visualizzati** disponibili per la selezione in **Mostra impostazioni per**.  
+**Dimensione**  
+Elenca le dimensioni in punti disponibili per il tipo di carattere evidenziato. La modifica della dimensione del carattere influisce su tutti gli **Elementi visualizzati** disponibili per la selezione in **Mostra impostazioni per**.  
   
- **Elementi visualizzati**  
- Elenca gli elementi per cui è possibile modificare il colore di primo piano e sfondo.  
+**Elementi visualizzati**  
+Elenca gli elementi per cui è possibile modificare il colore di primo piano e sfondo.  
   
 > [!NOTE]
-> L'elemento visualizzato predefinito è  **Testo normale**. Di conseguenza, le proprietà assegnate a **Testo normale** verranno sostituite dalle proprietà assegnate ad altri elementi visualizzati. Se, ad esempio, si assegna il colore blu a **Testo normale** e il colore verde a **Identificatore**, tutti gli identificatori verranno visualizzati in verde. In questo esempio le proprietà di **Identificatore** sostituiscono le proprietà di **Testo normale**.  
+>  L'elemento visualizzato predefinito è **Testo normale**. Di conseguenza, le proprietà assegnate a **Testo normale** verranno sostituite dalle proprietà assegnate ad altri elementi visualizzati. Se, ad esempio, si assegna il colore blu a **Testo normale** e il colore verde a **Identificatore**, tutti gli identificatori verranno visualizzati in verde. In questo esempio le proprietà di **Identificatore** sostituiscono le proprietà di **Testo normale**.  
   
  Alcuni degli elementi visualizzati includono:  
   

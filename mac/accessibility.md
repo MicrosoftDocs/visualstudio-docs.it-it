@@ -1,19 +1,16 @@
 ---
-title: "Accessibilità"
-description: 
+title: Accessibilità
+description: ''
 author: asb3993
 ms.author: amburns
 ms.date: 08/15/2017
-ms.topic: article
 ms.assetid: 2C4AAC2E-3B4A-4496-8BE0-1F5A7F81D1CA
+ms.openlocfilehash: b434a1cf0290c1c43d0f309850e112843907d6da
+ms.sourcegitcommit: 4c0bc21d2ce2d8e6c9d3b149a7d95f0b4d5b3f85
 ms.translationtype: HT
-ms.sourcegitcommit: f6c7e290f0abc2c32456e076420a7695ae868ba6
-ms.openlocfilehash: e0d893f155982ecd95f25ebdab768e810005b167
-ms.contentlocale: it-it
-ms.lasthandoff: 09/07/2017
-
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/20/2018
 ---
-
 # <a name="accessibility"></a>Accessibilità
 
 Oltre alle funzionalità e alle utilità in macOS, Visual Studio per Mac include le funzionalità seguenti che rendono il programma più accessibile per gli utenti con disabilità:
@@ -78,4 +75,3 @@ Per informazioni generali sull'uso di Voice over in macOS, fare riferimento alle
 
 - [Guida Utente di VoiceOver](https://help.apple.com/voiceover/info/guide/10.12/)
 - [VoiceOver commands in macOS](http://lab.dotjay.com/notes/voiceover-commands/) (Comandi di VoiceOver in macOS)
-

@@ -1,55 +1,53 @@
 ---
-title: "Visualizzazione Riepilogo: dati di memoria .NET del profiler | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/05/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "Visualizzazione Riepilogo"
+title: 'Visualizzazione Riepilogo: dati di memoria .NET | Microsoft Docs'
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology: vs-ide-debug
+ms.topic: conceptual
+helpviewer_keywords:
+- Summary view
 ms.assetid: 0cb317c3-0ae6-4531-aaa8-447576eec037
-caps.latest.revision: 11
-caps.handback.revision: 11
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- dotnet
+ms.openlocfilehash: 174f8612dd4f0678d8bbdc8be5c6a9b37cfc8b61
+ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/19/2018
 ---
-# Visualizzazione Riepilogo: dati di memoria .NET del profiler
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
-Nella visualizzazione Riepilogo vengono visualizzate informazioni sui tipi e sulle funzioni .NET che hanno allocato la quantità di memoria maggiore e sui tipi che sono stati creati più frequentemente in un'esecuzione del profilo.  Per ulteriori informazioni, inclusa una descrizione degli elenchi dei rapporti e dei collegamenti di notifica, vedere [Visualizzazione Riepilogo](../profiling/summary-view.md).  
+# <a name="summary-view---net-memory-data"></a>Visualizzazione Riepilogo: dati di memoria .NET
+La visualizzazione Riepilogo riporta informazioni sui tipi e sulle funzioni .NET che hanno allocato la quantità di memoria maggiore e sui tipi che sono stati creati più frequentemente in un'esecuzione della profilatura. Per altre informazioni, inclusa una descrizione degli elenchi dei collegamenti di notifica e dei rapporti, vedere [Visualizzazione Riepilogo](../profiling/summary-view.md).  
   
-## Grafico cronologia  
- Il grafico cronologia nella visualizzazione Riepilogo segnala l'utilizzo del processore \(CPU\) in base all'applicazione profilata durante il periodo di esecuzione del profilo.  È possibile utilizzare il grafico cronologia per filtrare la visualizzazione in base a un intervallo di tempo selezionato.  Per ulteriori informazioni, vedere [Procedura: filtrare le visualizzazioni rapporto dalla sequenza temporale di riepilogo](../profiling/how-to-filter-report-views-from-the-summary-timeline.md).  
+## <a name="timeline-graph"></a>Grafico della sequenza temporale  
+ Il grafico della sequenza temporale nella visualizzazione Riepilogo mostra l'utilizzo del processore (CPU) per l'applicazione profilata nel periodo di profilatura. È possibile usare il grafico della sequenza temporale per filtrare la visualizzazione in base a un intervallo di tempo selezionato. Per altre informazioni, vedere [Procedura: Filtrare le visualizzazioni dei rapporti dalla sequenza temporale di riepilogo](../profiling/how-to-filter-report-views-from-the-summary-timeline.md).  
   
-## Funzioni che allocano molta memoria  
- Sono elencate le funzioni che hanno allocato il numero maggiore di byte di memoria nell'esecuzione del profilo.  
+## <a name="functions-allocating-most-memory"></a>Funzioni che allocano molta memoria  
+ Elenca le funzioni che hanno allocato il maggior numero di byte di memoria nell'esecuzione della profilatura.  
   
 |Colonna|Descrizione|  
-|-------------|-----------------|  
-|**Nome**|Nome della funzione.|  
-|**% byte**|Percentuale di tutti i byte allocati durante l'esecuzione della profilatura che sono stati allocati da questa funzione o da una funzione figlio chiamata da questa funzione.|  
+|------------|-----------------|  
+|**Name**|Nome della funzione.|  
+|**% byte**|Percentuale di tutti i byte allocati nell'esecuzione della profilatura che sono stati allocati da questa funzione o da una funzione figlio chiamata da questa funzione.|  
   
-## Tipi con molta memoria allocata  
- Sono elencati i tipi per i quali è stato allocato il numero maggiore di byte di memoria nell'esecuzione del profilo.  
-  
-|Colonna|Descrizione|  
-|-------------|-----------------|  
-|**Nome**|Nome del tipo.|  
-|**% byte**|Percentuale di tutti i byte allocati nell'esecuzione del profilo che sono stati allocati per questo tipo.|  
-  
-## Tipi con molte istanze  
- Sono elencati i tipi creati più frequentemente durante l'esecuzione della profilatura.  
+## <a name="types-with-most-memory-allocated"></a>Tipi con molta memoria allocata  
+ Elenca i tipi per cui è stato allocato il maggior numero di byte di memoria nell'esecuzione della profilatura.  
   
 |Colonna|Descrizione|  
-|-------------|-----------------|  
-|**Nome**|Nome del tipo.|  
-|**% istanze**|Percentuale del numero totale di oggetti .NET creati durante l'esecuzione del profilo che costituivano istanze di questo tipo.|  
+|------------|-----------------|  
+|**Name**|Nome del tipo.|  
+|**% byte**|Percentuale di tutti i byte allocati nell'esecuzione della profilatura che sono stati allocati per questo tipo.|  
   
-## Vedere anche  
+## <a name="types-with-most-instances"></a>Tipi con molte istanze  
+ Elenca i tipi creati più frequentemente nell'esecuzione della profilatura. stato  
+  
+|Colonna|Descrizione|  
+|------------|-----------------|  
+|**Name**|Nome del tipo.|  
+|**% istanze**|Percentuale del numero totale di oggetti .NET creati nell'esecuzione della profilatura corrispondenti a istanze di questo tipo.|  
+  
+## <a name="see-also"></a>Vedere anche  
  [Visualizzazione Riepilogo](../profiling/summary-view-sampling-data.md)   
  [Visualizzazione Riepilogo](../profiling/summary-view-instrumentation-data.md)

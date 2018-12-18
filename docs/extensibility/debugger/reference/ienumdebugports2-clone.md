@@ -1,51 +1,52 @@
 ---
-title: "IEnumDebugPorts2::Clone | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "IEnumDebugPorts2::Clone"
-helpviewer_keywords: 
-  - "IEnumDebugPorts2::Clone"
+title: IEnumDebugPorts2::Clone | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology:
+- vs-ide-sdk
+ms.topic: conceptual
+f1_keywords:
+- IEnumDebugPorts2::Clone
+helpviewer_keywords:
+- IEnumDebugPorts2::Clone
 ms.assetid: d5ce77e8-bb99-409a-98fa-20fe5a0de25e
-caps.latest.revision: 9
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 9
+author: gregvanl
+ms.author: gregvanl
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: c9693a5a93740da71c58385b9d6b127701ed0ef1
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# IEnumDebugPorts2::Clone
-[!INCLUDE[vs2017banner](../../../code-quality/includes/vs2017banner.md)]
-
-Restituisce una copia dell'enumerazione corrente come un oggetto separato.  
+# <a name="ienumdebugports2clone"></a>IEnumDebugPorts2::Clone
+Restituisce una copia dell'enumerazione corrente come oggetto separato.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp#  
+```cpp  
 HRESULT Clone(  
-   IEnumDebugPorts2** ppEnum  
+   IEnumDebugPorts2** ppEnum  
 );  
 ```  
   
-```c#  
+```csharp  
 int Clone(  
-   out IEnumDebugPorts2 ppEnum  
+   out IEnumDebugPorts2 ppEnum  
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `ppEnum`  
- \[out\]  restituisce una copia di questa enumerazione come un oggetto separato.  
+ [out] Restituisce una copia di questa enumerazione come oggetto separato.  
   
-## Valore restituito  
- Se l'operazione riesce, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
+## <a name="return-value"></a>Valore restituito  
+ Se ha esito positivo, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
   
-## Note  
- La copia l'enumerazione presenta lo stesso stato originale quando questo metodo viene chiamato.  Tuttavia, la copia e gli stati originali sono separati e possono essere modificati singolarmente.  
+## <a name="remarks"></a>Note  
+ La copia dell'enumerazione ha lo stesso stato originale al momento che questo metodo viene chiamato. Tuttavia, stati la copia e l'originale sono separati e possono essere modificati singolarmente.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IEnumDebugPorts2](../../../extensibility/debugger/reference/ienumdebugports2.md)

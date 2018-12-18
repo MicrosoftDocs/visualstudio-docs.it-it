@@ -1,40 +1,39 @@
 ---
-title: "IDiaLoadCallback2::RestrictDBGAccess | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "IDiaLoadCallback2::RestrictDBGAccess (metodo)"
+title: IDiaLoadCallback2::RestrictDBGAccess | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology: vs-ide-debug
+ms.topic: conceptual
+dev_langs:
+- C++
+helpviewer_keywords:
+- IDiaLoadCallback2::RestrictDBGAccess method
 ms.assetid: 63b67a93-2910-4fff-aa70-6b2eaa08e5c8
-caps.latest.revision: 7
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 7
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: b75db393822dc6c5d65bbbab4c9ccc64eed9f630
+ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/18/2018
 ---
-# IDiaLoadCallback2::RestrictDBGAccess
-[!INCLUDE[vs2017banner](../../code-quality/includes/vs2017banner.md)]
-
-Determina se la ricerca delle informazioni di debug è consentito dai file di estensione dbg.  
+# <a name="idialoadcallback2restrictdbgaccess"></a>IDiaLoadCallback2::RestrictDBGAccess
+Determina se cercando le informazioni di debug da file DBG.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp#  
+```C++  
 HRESULT RestrictDBGAccess();  
 ```  
   
-## Valore restituito  
- Se l'operazione riesce, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
+## <a name="return-value"></a>Valore restituito  
+ Se ha esito positivo, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
   
-## Note  
- Qualsiasi valore restituito diverso da `S_OK` per impedire ricerca delle informazioni di debug dai file di estensione dbg.  
+## <a name="remarks"></a>Note  
+ Diverso da qualsiasi valore restituito `S_OK` per impedire cercando le informazioni di debug da file DBG.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IDiaLoadCallback2](../../debugger/debug-interface-access/idialoadcallback2.md)

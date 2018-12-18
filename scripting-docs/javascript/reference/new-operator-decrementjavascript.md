@@ -1,64 +1,68 @@
 ---
-title: "Operatore new (JavaScript) | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/18/2017"
-ms.prod: "windows-client-threshold"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-javascript"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "new_JavaScriptKeyword"
-dev_langs: 
-  - "JavaScript"
-  - "TypeScript"
-  - "DHTML"
-helpviewer_keywords: 
-  - "Operatore new in JavaScript"
+title: Operatore new (JavaScript) | Documenti Microsoft
+ms.custom: 
+ms.date: 01/18/2017
+ms.prod: windows-client-threshold
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-javascript
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords:
+- new_JavaScriptKeyword
+dev_langs:
+- JavaScript
+- TypeScript
+- DHTML
+helpviewer_keywords:
+- new operator in JavaScript
 ms.assetid: 5ea556ba-7ae6-426c-8430-9032eee5a0a5
-caps.latest.revision: 12
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 12
+caps.latest.revision: 
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.openlocfilehash: 0ad004abb534d69bed1a1bd9bbd2ae96755544b9
+ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/27/2017
 ---
-# Operatore new (JavaScript)
-Consente di creare un nuovo oggetto.  
+# <a name="new-operator-javascript"></a>Operatore new (JavaScript)
+Crea un nuovo oggetto.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
 new constructor ([arguments])   
 ```  
   
-## Parametri  
+## <a name="parameters"></a>Parametri  
  `constructor`  
- Obbligatorio.  Costruttore dell'oggetto.  Se il costruttore non richiede alcun argomento, è possibile omettere le parentesi.  
+ Obbligatorio. Il costruttore dell'oggetto. Le parentesi che possono essere omesso se il costruttore non accetta argomenti.  
   
  `arguments`  
- Facoltativo.  Qualsiasi argomento da passare al costruttore del nuovo oggetto.  
+ Parametro facoltativo. Eventuali argomenti da passare al costruttore del nuovo oggetto.  
   
-## Note  
- Mediante l'operatore `new` vengono effettuate le seguenti attività:  
+## <a name="remarks"></a>Note  
+ Il `new` operatore esegue le attività seguenti:  
   
--   Viene creato un oggetto privo di membri.  
+-   Crea un oggetto senza membri.  
   
--   Viene chiamato il costruttore dell'oggetto, passando un puntatore all'oggetto appena creato come puntatore `this`.  
+-   Chiama il costruttore dell'oggetto, passando un puntatore all'oggetto appena creato come il `this` puntatore.  
   
--   Il costruttore inizializza quindi l'oggetto in base agli argomenti passati.  
+-   Quindi, il costruttore inizializza l'oggetto in base agli argomenti passati al costruttore.  
   
- Di seguito sono riportati alcuni esempi di utilizzi validi dell'operatore **new**.  
+ Questi sono esempi di utilizzi validi del **nuova** operatore.  
   
-```javascript  
+```JavaScript  
 my_object = new Object;  
 my_array = new Array();  
 my_date = new Date("Jan 5 1996");  
 ```  
   
-## Requisiti  
+## <a name="requirements"></a>Requisiti  
  [!INCLUDE[jsv1](../../javascript/misc/includes/jsv1-md.md)]  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Istruzione function](../../javascript/reference/function-statement-javascript.md)

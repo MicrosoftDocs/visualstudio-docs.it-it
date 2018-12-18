@@ -2,32 +2,26 @@
   "build_entry_point": "docs",
   "docsets_to_publish": [
     {
+      "docset_name": "connected-environment",
+      "build_source_folder": "connected-environment",
+      "build_output_subfolder": "connected-environment",
+      "locale": "it-it",
+      "monikers": [],
+      "moniker_ranges": [],
+      "open_to_public_contributors": false,
+      "build_entry_point": "docs",
+      "template_folder": "_themes"
+    },
+    {
       "docset_name": "docs",
       "build_source_folder": "docs",
       "build_output_subfolder": "vsdocsdocs",
       "locale": "it-it",
       "monikers": [],
+      "xref_query_tags": [
+        "/dotnet"
+      ],
       "open_to_public_contributors": true,
-      "type_mapping": {
-        "Conceptual": "Content",
-        "ManagedReference": "Content",
-        "RestApi": "Content"
-      },
-      "template_folder": "_themes"
-    },
-    {
-      "docset_name": "scripting-docs",
-      "build_source_folder": "scripting-docs",
-      "build_output_subfolder": "scripting-docs",
-      "locale": "it-it",
-      "monikers": [],
-      "open_to_public_contributors": false,
-      "type_mapping": {
-        "Conceptual": "Content",
-        "ManagedReference": "Content",
-        "RestApi": "Content"
-      },
-      "build_entry_point": "docs",
       "template_folder": "_themes"
     },
     {
@@ -36,7 +30,8 @@
       "build_output_subfolder": "mac",
       "locale": "it-it",
       "monikers": [],
-      "open_to_public_contributors": false,
+      "moniker_ranges": [],
+      "open_to_public_contributors": true,
       "type_mapping": {
         "Conceptual": "Content",
         "ManagedReference": "Content",
@@ -44,23 +39,51 @@
       },
       "build_entry_point": "docs",
       "template_folder": "_themes"
+    },
+    {
+      "docset_name": "scripting-docs",
+      "build_source_folder": "scripting-docs",
+      "build_output_subfolder": "scripting-docs",
+      "locale": "it-it",
+      "monikers": [],
+      "open_to_public_contributors": true,
+      "build_entry_point": "docs",
+      "template_folder": "_themes"
+    },
+    {
+      "docset_name": "subscriptions",
+      "build_source_folder": "subscriptions",
+      "build_output_subfolder": "subscriptions",
+      "locale": "it-it",
+      "monikers": [],
+      "moniker_ranges": [],
+      "open_to_public_contributors": true,
+      "build_entry_point": "docs",
+      "template_folder": "_themes"
     }
   ],
-  "notification_subscribers": [
-    "CnE_Content_Brno@moravia.com",
-    "CnE_UE_Bugfixing_ENG@moravia.com"
+  "notification_subscribers": [],
+  "branches_to_filter": [
+    "live"
   ],
-  "branches_to_filter": [],
   "git_repository_url_open_to_public_contributors": "https://github.com/MicrosoftDocs/visualstudio-docs.it-it",
   "git_repository_branch_open_to_public_contributors": "live",
   "continue_with_document_error": true,
   "skip_source_output_uploading": false,
   "need_preview_pull_request": true,
-  "contribution_branch_mappings": {},
+  "contribution_branch_mappings": {
+    "live-sxs": "live"
+  },
   "dependent_repositories": [
     {
       "path_to_root": "_themes",
       "url": "https://github.com/Microsoft/templates.docs.msft.it-it",
+      "branch": "master",
+      "branch_mapping": {}
+    },
+    {
+      "path_to_root": "_themes.pdf",
+      "url": "https://github.com/Microsoft/templates.docs.msft.pdf",
       "branch": "master",
       "branch_mapping": {}
     },
@@ -72,19 +95,20 @@
         "live": "live",
         "master": "master"
       }
-    },
-    {
-      "path_to_root": "dotnet-xref",
-      "url": "https://github.com/MicrosoftDocs/dotnet-xref",
-      "branch": "live",
-      "branch_mapping": {
-        "live": "live",
-        "master": "master"
-      }
     }
   ],
-  "branch_target_mapping": {},
-  "need_generate_pdf_url_template": false,
+  "branch_target_mapping": {
+    "live": [
+      "Publish",
+      "Pdf"
+    ]
+  },
+  "need_generate_pdf_url_template": true,
+  "targets": {
+    "Pdf": {
+      "template_folder": "_themes.pdf"
+    }
+  },
   "need_generate_pdf": false,
   "need_generate_intellisense": false
 }

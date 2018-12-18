@@ -1,14 +1,10 @@
 ---
-title: Creating an Association Between Entities | Microsoft Docs
-ms.custom: 
+title: Creazione di un'associazione tra entità | Documenti Microsoft
+ms.custom: ''
 ms.date: 02/02/2017
-ms.prod: visual-studio-dev14
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - office-development
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: conceptual
 f1_keywords:
 - VS.SharePointTools.BDC.Association_Dialog
 dev_langs:
@@ -23,64 +19,67 @@ helpviewer_keywords:
 - Business Data Connectivity service [SharePoint development in Visual Studio], relate entities
 - BDC [SharePoint development in Visual Studio], relate entities
 - BDC [SharePoint development in Visual Studio], associate external content types
-ms.assetid: c908448c-13d3-4d2f-89ad-8d709b2958fb
-caps.latest.revision: 15
-author: kempb
-ms.author: kempb
-manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: eb5c9550fd29b0e98bf63a7240737da4f13f3249
-ms.openlocfilehash: 4ce2395e01f29ab8b3ef836a4b7f9ba7c2c6de7f
-ms.contentlocale: it-it
-ms.lasthandoff: 08/30/2017
-
+author: TerryGLee
+ms.author: tglee
+manager: douge
+ms.workload:
+- office
+ms.openlocfilehash: 293441e93c38a65ca343b021b2bf19c5a56ac7c7
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# <a name="creating-an-association-between-entities"></a>Creating an Association Between Entities
-  You can define relationships between entities in your Business Data Connectivity (BDC) model by creating associations. Visual Studio generates methods that provide consumers of the model with information about each association. These methods can be consumed by SharePoint web parts, lists, or custom applications to display data relationships in a user interface (UI).  
+# <a name="creating-an-association-between-entities"></a>Creazione di un'associazione tra entità
+  È possibile definire relazioni tra entità nel modello (Applicativa dei dati) tramite la creazione di associazioni. Visual Studio genera metodi che forniscono i consumer del modello con informazioni su ogni associazione. Questi metodi possono essere utilizzati da elenchi, applicazioni personalizzate o web part di SharePoint per visualizzare le relazioni tra i dati in un'interfaccia utente.  
   
-## <a name="creating-an-association"></a>Creating an Association  
- Create an association by choosing the **Association** control in the Visual Studio **Toolbox**, choosing the first entity (called the source entity), and then choosing the second entity (called the destination entity). You can define the details of the association in the **Association Editor**. For more information, see [How to: Create an Association between Entities](../sharepoint/how-to-create-an-association-between-entities.md).  
+## <a name="creating-an-association"></a>Creazione di un'associazione  
+ Creare un'associazione scegliendo il **associazione** controllo in Visual Studio **della casella degli strumenti**, scegliendo la prima entità (entità di origine denominata) e quindi la seconda entità (chiamato il entità di destinazione). È possibile definire i dettagli dell'associazione nel **Editor di associazione**. Per ulteriori informazioni, vedere [procedura: creare un'associazione tra entità](../sharepoint/how-to-create-an-association-between-entities.md).  
   
-## <a name="association-methods"></a>Association Methods  
- Applications such as SharePoint business data web parts consume associations by calling methods in the service class of an entity. You can add methods to the service class of an entity by selecting them in the **Association Editor**.  
+## <a name="association-methods"></a>Metodi di associazione  
+ Le applicazioni, ad esempio web part dei dati aziendali di SharePoint utilizzano associazioni chiamando i metodi nella classe di servizio di un'entità. È possibile aggiungere metodi alla classe di servizio di un'entità selezionandoli nel **Editor di associazione**.  
   
- By default, the **Association Editor** adds an Association Navigation method to the source and destination entities. An Association Navigation method in the source entity enables consumers to retrieve a list of destination entities. An Association Navigation method in the destination entity enables consumers to retrieve the source entity that relates to a destination entity.  
+ Per impostazione predefinita, il **Editor di associazione** aggiunge un metodo AssociationNavigator alle entità di origine e destinazione. Un metodo AssociationNavigator nell'entità di origine consente agli utenti di recuperare un elenco di entità di destinazione. Un metodo AssociationNavigator nell'entità di destinazione consente agli utenti di recuperare l'entità di origine che si riferisce a un'entità di destinazione.  
   
- You must add the code to each of these methods to return the appropriate information. You can also add other types of methods to support more advanced scenarios. For more information about each of these methods, see [Supported Operations](http://go.microsoft.com/fwlink/?LinkId=169286).  
+ È necessario aggiungere il codice per ognuno di questi metodi per restituire le informazioni appropriate. È anche possibile aggiungere altri tipi di metodi per supportare scenari più avanzati. Per ulteriori informazioni su ciascuno di questi metodi, vedere [operazioni supportate](http://go.microsoft.com/fwlink/?LinkId=169286).  
   
-## <a name="types-of-associations"></a>Types of Associations  
- You can create two types of associations in the BDC designer: foreign key-based associations and foreign keyless associations.  
+## <a name="types-of-associations"></a>Tipi di associazioni  
+ È possibile creare due tipi di associazioni nella finestra di progettazione di integrazione applicativa dei dati: associazioni basato su chiave esterne e associazioni senza chiave esterna.  
   
-### <a name="foreign-key-based-association"></a>Foreign Key-Based Association  
- You can create a foreign key-based association by relating an identifier in the source entity to type descriptors defined in the destination entity. This relationship enables consumers of the model to provide an enhanced UI for their users. For example, a form in Outlook that enables a user to create a sales order that can display customers in a drop-down list; or a list of sales orders in SharePoint that enables users to open a profile page for a customer.  
+### <a name="foreign-key-based-association"></a>Associazione basata su chiavi esterne  
+ È possibile creare un'associazione basata su chiavi esterne in relazione con un identificatore dell'entità di origine al tipo descrittori definiti nell'entità di destinazione. Questa relazione consente agli utenti del modello fornire un'interfaccia utente avanzata per i propri utenti. Ad esempio, un modulo in Outlook che consente all'utente di creare un ordine di vendita che è possibile visualizzare i clienti in un elenco a discesa; o un elenco di ordini di vendita in SharePoint che consente agli utenti di aprire una pagina del profilo per un cliente.  
   
- To create a foreign key-based association, relate identifiers and type descriptors that share the same name and type. For example, you might create a foreign key-based association between a `Contact` entity and a `SalesOrder` entity. The `SalesOrder` entity returns a `ContactID` type descriptor as part of the return parameter of Finder or Specific Finder methods. Both type descriptors appear in the **Association Editor**. To create a foreign key-based relationship between the `Contact` entity and `SalesOrder` entity, choose the `ContactID` identifier next to each of these fields.  
+ Per creare un'associazione basata su chiavi esterne, correlare gli identificatori e descrittori di tipo che condividono lo stesso nome e tipo. Ad esempio, è possibile creare un'associazione basata su chiavi esterne tra un `Contact` entità e un `SalesOrder` entità. Il `SalesOrder` entità restituisce una `ContactID` descrittore di tipo come parte del parametro restituito dal metodo Finder o Finder specifico. Entrambi i descrittori di tipo vengono visualizzati di **Editor di associazione**. Per creare una relazione basata su chiave esterna tra le `Contact` entità e `SalesOrder` entità, scegliere il `ContactID` identificatore accanto a ciascuno di questi campi.  
   
- Add code to the Association Navigator method of the source entity that returns a collection of destination entities. The following example returns the sales orders for a contact.  
+ Aggiungere codice al metodo AssociationNavigator dell'entità di origine che restituisce una raccolta di entità di destinazione. L'esempio seguente restituisce gli ordini di vendita per un contatto.  
   
- [!code-csharp[SP_BDC#7](../sharepoint/codesnippet/CSharp/SP_BDC/bdcmodel1/contactservice.cs#7)] [!code-vb[SP_BDC#7](../sharepoint/codesnippet/VisualBasic/sp_bdc/bdcmodel1/contactservice.vb#7)]  
+ [!code-csharp[SP_BDC#7](../sharepoint/codesnippet/CSharp/SP_BDC/bdcmodel1/contactservice.cs#7)]
+ [!code-vb[SP_BDC#7](../sharepoint/codesnippet/VisualBasic/sp_bdc/bdcmodel1/contactservice.vb#7)]  
   
- Add code to the Association Navigator method of the destination entity that returns a source entity. The following example returns the contact that is related to the sales order.  
+ Aggiungere codice al metodo AssociationNavigator dell'entità di destinazione che restituisce un'entità di origine. Nell'esempio seguente viene restituito il contatto è correlato all'ordine di vendita.  
   
- [!code-csharp[SP_BDC#8](../sharepoint/codesnippet/CSharp/SP_BDC/bdcmodel1/salesorderservice.cs#8)] [!code-vb[SP_BDC#8](../sharepoint/codesnippet/VisualBasic/sp_bdc/bdcmodel1/salesorderservice.vb#8)]  
+ [!code-csharp[SP_BDC#8](../sharepoint/codesnippet/CSharp/SP_BDC/bdcmodel1/salesorderservice.cs#8)]
+ [!code-vb[SP_BDC#8](../sharepoint/codesnippet/VisualBasic/sp_bdc/bdcmodel1/salesorderservice.vb#8)]  
   
-### <a name="foreign-keyless-association"></a>Foreign Keyless Association  
- You can create an association without mapping identifiers to field type descriptors. Create this kind of association when the source entity does not have a direct relationship with the destination entity. For example, a `SalesOrderDetail` table does not have a foreign key that maps to a primary key in a `Contact` table.  
+### <a name="foreign-keyless-association"></a>Associazione senza chiave esterna  
+ È possibile creare un'associazione senza mapping tra gli identificatori e descrittori del tipo di campo. Creare questo tipo di associazione quando l'entità di origine non dispone di una relazione diretta con l'entità di destinazione. Ad esempio, un `SalesOrderDetail` tabella non dispone di una chiave esterna che esegue il mapping a una chiave primaria in un `Contact` tabella.  
   
- If you want to display information in the `SalesOrderDetail` table that relates to a `Contact`, you can create a foreign keyless association between the `Contact` entity and `SalesOrderDetail` entity.  
+ Se si desidera visualizzare le informazioni nel `SalesOrderDetail` tabella che si riferisce a un `Contact`, è possibile creare un'associazione senza chiave esterna tra le `Contact` entità e `SalesOrderDetail` entità.  
   
- In the Association Navigation method of the `Contact` entity, return the `SalesOrderDetail` entities by joining tables, or by calling a stored procedure.  
+ Nel metodo AssociationNavigator il `Contact` entità, restituito il `SalesOrderDetail` entità unendo in join tabelle o chiamando una stored procedure.  
   
- The following example returns details of all sales orders by joining tables.  
+ Nell'esempio seguente vengono restituiti i dettagli di tutti gli ordini di vendita unendo in join le tabelle.  
   
- [!code-csharp[SP_BDC#9](../sharepoint/codesnippet/CSharp/SP_BDC/bdcmodel1/contactservice.cs#9)] [!code-vb[SP_BDC#9](../sharepoint/codesnippet/VisualBasic/sp_bdc/bdcmodel1/contactservice.vb#9)]  
+ [!code-csharp[SP_BDC#9](../sharepoint/codesnippet/CSharp/SP_BDC/bdcmodel1/contactservice.cs#9)]
+ [!code-vb[SP_BDC#9](../sharepoint/codesnippet/VisualBasic/sp_bdc/bdcmodel1/contactservice.vb#9)]  
   
- In the Association Navigation method of the `SalesOrderDetail` entity, return the related `Contact`. The following example demonstrates this.  
+ Nel metodo AssociationNavigator il `SalesOrderDetail` entità, restituire correlata `Contact`. Nell'esempio che segue viene illustrato quanto descritto.  
   
- [!code-csharp[SP_BDC#10](../sharepoint/codesnippet/CSharp/SP_BDC/bdcmodel1/salesorderdetailservice.cs#10)] [!code-vb[SP_BDC#10](../sharepoint/codesnippet/VisualBasic/sp_bdc/bdcmodel1/salesorderdetailservice.vb#10)]  
+ [!code-csharp[SP_BDC#10](../sharepoint/codesnippet/CSharp/SP_BDC/bdcmodel1/salesorderdetailservice.cs#10)]
+ [!code-vb[SP_BDC#10](../sharepoint/codesnippet/VisualBasic/sp_bdc/bdcmodel1/salesorderdetailservice.vb#10)]  
   
-## <a name="see-also"></a>See Also  
- [Designing a Business Data Connectivity Model](../sharepoint/designing-a-business-data-connectivity-model.md)   
- [How to: Create an Association between Entities](../sharepoint/how-to-create-an-association-between-entities.md)  
+## <a name="see-also"></a>Vedere anche  
+ [Progettazione di un modello di integrazione applicativa dei dati di Business](../sharepoint/designing-a-business-data-connectivity-model.md)   
+ [Procedura: creare un'associazione tra entità](../sharepoint/how-to-create-an-association-between-entities.md)  
   
   

@@ -1,74 +1,78 @@
 ---
-title: "Oggetto WeakMap (JavaScript) | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/18/2017"
-ms.prod: "windows-client-threshold"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-javascript"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "WeakMap"
-dev_langs: 
-  - "JavaScript"
-  - "TypeScript"
-  - "DHTML"
+title: Oggetto WeakMap (JavaScript) | Documenti Microsoft
+ms.custom: ''
+ms.date: 01/18/2017
+ms.prod: windows-client-threshold
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-javascript
+ms.tgt_pltfrm: ''
+ms.topic: language-reference
+f1_keywords:
+- WeakMap
+dev_langs:
+- JavaScript
+- TypeScript
+- DHTML
 ms.assetid: 4682d2dc-caf9-4fa8-8313-a0a0b804fd1d
 caps.latest.revision: 9
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 9
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.openlocfilehash: 8de97f8acb94921090696e9019a1df5d945db7c6
+ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/27/2017
 ---
-# Oggetto WeakMap (JavaScript)
-Raccolta di coppie chiave\/valore in cui ogni chiave è un riferimento a un oggetto.  
+# <a name="weakmap-object-javascript"></a>Oggetto WeakMap (JavaScript)
+Raccolta di coppie chiave-valore in cui ogni chiave è un riferimento a un oggetto.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
 weakmapObj = new WeakMap()  
 ```  
   
-## Note  
- Un oggetto `WeakMap` non può essere enumerato.  
+## <a name="remarks"></a>Note  
+ Oggetto `WeakMap` oggetto non può essere enumerato.  
   
  Se si aggiunge un valore alla raccolta utilizzando una chiave esistente, il nuovo valore sostituisce quello vecchio.  
   
- In un oggetto `WeakMap`, i riferimenti agli oggetti principali vengono conservati poco.  Ciò significa che `WeakMap` non impedirà il verificarsi di un Garbage Collection sugli oggetti chiave.  Quando non esistono riferimenti \(diversi da `WeakMap`\) agli oggetti chiave, un Garbage Collector potrebbe raccogliere gli oggetti chiave.  
+ In un `WeakMap` dell'oggetto, i riferimenti agli oggetti principali contenuti 'debole'. Ciò significa che `WeakMap` non impedisce un'operazione di garbage collection sugli oggetti chiavi. Quando non sono presenti riferimenti (diversi da `WeakMap`) agli oggetti chiavi, il garbage collector potrebbe raccogliere gli oggetti chiavi.  
   
-## Proprietà  
+## <a name="properties"></a>Proprietà  
  Nella tabella seguente sono elencate le proprietà dell'oggetto `WeakMap`.  
   
 |Proprietà|Descrizione|  
-|---------------|-----------------|  
-|[Costruttore](../../javascript/reference/constructor-property-weakmap.md)|Specifica la funzione che crea un oggetto `WeakMap`.|  
+|--------------|-----------------|  
+|[costruttore](../../javascript/reference/constructor-property-weakmap.md)|Specifica la funzione che crea un oggetto `WeakMap`.|  
 |[prototipo](../../javascript/reference/prototype-property-weakmap.md)|Restituisce un riferimento al prototipo per un oggetto `WeakMap`.|  
   
-## Metodi  
+## <a name="methods"></a>Metodi  
  Nella tabella seguente sono elencati i metodi dell'oggetto `WeakMap`:  
   
 |Metodo|Descrizione|  
 |------------|-----------------|  
 |[clear](../../javascript/reference/clear-method-weakmap-javascript.md)|Rimuove tutti gli elementi da `WeakMap`.|  
-|[elimina](../../javascript/reference/delete-method-weakmap-javascript.md)|Rimuove un elemento specificato da un insieme `WeakMap`.|  
-|[get](../../javascript/reference/get-method-weakmap-javascript.md)|Restituisce un elemento specificato da un oggetto `WeakMap`.|  
-|[has](../../javascript/reference/has-method-weakmap-javascript.md)|Restituisce `true` se l'oggetto `WeakMap` contiene un elemento specificato.|  
-|[set](../../javascript/reference/set-method-weakmap-javascript.md)|Aggiunge un nuovo elemento a `WeakMap`.|  
-|[toString](../../javascript/reference/tostring-method-weakmap-javascript.md)|Restituisce una rappresentazione di stringa di un oggetto `WeakMap`.|  
-|[valueOf](../../javascript/reference/valueof-method-weakmap-javascript.md)|Restituisce il valore primitivo dell'oggetto specificato.|  
+|[eliminare](../../javascript/reference/delete-method-weakmap-javascript.md)|Rimuove un elemento specificato da un `WeakMap`.|  
+|[get](../../javascript/reference/get-method-weakmap-javascript.md)|Restituisce un elemento specificato da un `WeakMap`.|  
+|[è](../../javascript/reference/has-method-weakmap-javascript.md)|Restituisce `true` se il `WeakMap` contiene un elemento specificato.|  
+|[set](../../javascript/reference/set-method-weakmap-javascript.md)|Aggiunge un nuovo elemento a un oggetto `WeakMap`.|  
+|[toString](../../javascript/reference/tostring-method-weakmap-javascript.md)|Restituisce una rappresentazione di stringa di un `WeakMap`.|  
+|[valueOf](../../javascript/reference/valueof-method-weakmap-javascript.md)|Restituisce il valore primitivo dell'opzione specificata.|  
   
-## Esempio  
- Nell'esempio seguente viene illustrato come aggiungere dei membri a un oggetto `WeakMap` e quindi recuperarli.  
+## <a name="example"></a>Esempio  
+ Nell'esempio seguente viene illustrato come aggiungere membri a un `WeakMap` dell'oggetto e quindi recuperarli.  
   
-```javascript  
+```JavaScript  
 var dog = {  
     breed: "yorkie"  
 }  
   
 var cat = {  
-    breed: "burmese"  
+    breed: "burmese"  
 }  
   
 var wm = new WeakMap();  
@@ -87,5 +91,5 @@ document.write(cat.breed);
   
 ```  
   
-## Requisiti  
+## <a name="requirements"></a>Requisiti  
  [!INCLUDE[jsv11](../../javascript/reference/includes/jsv11-md.md)]

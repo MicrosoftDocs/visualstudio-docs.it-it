@@ -1,48 +1,50 @@
 ---
-title: "Procedura: Applicare uno shader a un modello tridimensionale | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-general"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: 'Procedura: Applicare uno shader a un modello 3D | Microsoft Docs'
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: vs-ide-designers
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: a3877bd6-abd8-4a9d-842c-6848b6c2f335
-caps.latest.revision: 15
-author: "BrianPeek"
-ms.author: "brpeek"
-manager: "ghogen"
-caps.handback.revision: 15
+caps.latest.revision: "15"
+author: gewarren
+ms.author: gewarren
+manager: ghogen
+ms.workload: multiple
+ms.openlocfilehash: 852baa1c8a2b627e5426411d8c156ab28d5c6614
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
-# Procedura: Applicare uno shader a un modello tridimensionale
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
-In questo documento viene illustrato come utilizzare l'Editor dei modello per applicare uno shader DGSL a un modello 3D.  
+# <a name="how-to-apply-a-shader-to-a-3-d-model"></a>Procedura: Applicare uno shader a un modello tridimensionale
+Questo documento illustra come usare l'editor dei modelli per applicare uno shader DGSL (Directed Graph Shader Language) a un modello 3D.  
   
- In questo documento viene illustrata questa attività:  
+ Questo documento illustra questa attività:  
   
--   Applicare uno shader a un modello tridimensionale  
+-   Applicazione di uno shader a un modello 3D  
   
-## Applicare uno shader a un modello tridimensionale  
- È possibile applicare un effetto shader a un modello 3D per conferirgli un aspetto interessante.  
+## <a name="applying-a-shader-to-a-3-d-model"></a>Applicazione di uno shader a un modello 3D  
+ È possibile applicare un effetto shader a un modello 3D per conferirgli un aspetto più interessante.  
   
- Prima di iniziare, assicurarsi che la finestra **Proprietà** venga visualizzata.  
+ Prima di iniziare, assicurarsi che sia visualizzata la finestra **Proprietà**.  
   
-#### Per applicare uno shader a un modello tridimensionale  
+#### <a name="to-apply-a-shader-to-a-3-d-model"></a>Per applicare uno shader a un modello 3D  
   
-1.  Iniziare con una scena tridimensionale che contiene uno o più modelli.  Se non si dispone di una scena tridimensionale appropriata, crearne una come descritto in [Procedura: Creare un modello tridimensionale di base](../Topic/How%20to:%20Create%20a%20Basic%203-D%20Model.md).  È inoltre necessario disporre di uno shader DGSL applicabile al modello.  Se non si dispone di uno shader appropriato, crearne uno come descritto in [Procedura: Creare uno shader con colore di base](../designers/how-to-create-a-basic-color-shader.md) e verificare che sia stato salvato in un file prima di continuare.  
+1.  Iniziare con una scena 3D contenente uno o più modelli. Se non si ha una scena 3D adatta, crearne una come descritto in [Procedura: Creare un modello 3D di base](../designers/how-to-create-a-basic-3-d-model.md). È necessario avere anche uno shader DGSL da applicare al modello. Se non si ha uno shader adatto, crearne uno come descritto in [Procedura: Creare uno shader con colore di base](../designers/how-to-create-a-basic-color-shader.md) e assicurarsi di salvarlo in un file prima di continuare.  
   
-2.  In modalità **Seleziona**, selezionare il modello a cui si desidera applicare lo shader, quindi nella finestra **Proprietà**, nella proprietà **Nome file** del gruppo di proprietà **Effetto**, specificare lo shader DGSL che si desidera applicare al modello.  
+2.  In modalità **Seleziona** selezionare il modello a cui si vuole applicare lo shader e, nella finestra **Proprietà**, specificare lo shader DGSL da applicare al modello nella proprietà **Nome file** del gruppo di proprietà **Effetto**.  
   
- Di seguito è riportato un modello a cui è stato applicato l'effetto colore di base:  
+ Di seguito è illustrato un modello a cui è stato applicato l'effetto colore di base.  
   
- ![Scena 3D che illustra l'effetto colore di base](../designers/media/digit-3d-model-effect.png "Digit\-3D\-Model\-Effect")  
+ ![Scena 3D che illustra l'effetto colore di base](../designers/media/digit-3d-model-effect.png "Digit-3D-Model-Effect")  
   
- Dopo avere applicato lo shader a un modello, è possibile aprirlo nella finestra di progettazione dello shader selezionando il modello, quindi nella finestra **Proprietà**, nella proprietà **\(Avanzate\)** del gruppo di proprietà **Effetto**, scegliere il pulsante con i puntini di sospensione \(**...**\).  
+ Dopo aver applicato uno shader a un modello, è possibile aprirlo nella finestra di progettazione shader selezionando il modello e, nella finestra **Proprietà**, scegliendo il pulsante con i puntini di sospensione (**...** ) nella proprietà **(Avanzata)** del gruppo di proprietà **Effetto**.  
   
-## Vedere anche  
- [Procedura: Creare un modello tridimensionale di base](../Topic/How%20to:%20Create%20a%20Basic%203-D%20Model.md)   
+## <a name="see-also"></a>Vedere anche  
+ [Procedura: Creare un modello 3D di base](../designers/how-to-create-a-basic-3-d-model.md)   
  [Procedura: Creare uno shader con colore di base](../designers/how-to-create-a-basic-color-shader.md)   
- [Editor modello](../designers/model-editor.md)   
+ [Editor dei modelli](../designers/model-editor.md)   
  [Finestra di progettazione shader](../designers/shader-designer.md)

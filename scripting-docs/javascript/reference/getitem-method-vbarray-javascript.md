@@ -1,51 +1,55 @@
 ---
-title: "Metodo getItem (VBArray) (JavaScript) | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/18/2017"
-ms.prod: "windows-client-threshold"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-javascript"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "getItem"
-dev_langs: 
-  - "JavaScript"
-  - "TypeScript"
-  - "DHTML"
-helpviewer_keywords: 
-  - "getItem (metodo)"
-  - "Item (proprietà)"
+title: Metodo getItem (VBArray) (JavaScript) | Documenti Microsoft
+ms.custom: 
+ms.date: 01/18/2017
+ms.prod: windows-client-threshold
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-javascript
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords:
+- getItem
+dev_langs:
+- JavaScript
+- TypeScript
+- DHTML
+helpviewer_keywords:
+- getItem method
+- Item property
 ms.assetid: f62964ad-8b2f-4596-95d0-b20e587ecea5
-caps.latest.revision: 16
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 16
+caps.latest.revision: 
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.openlocfilehash: e6457435d047f2780a19fa8ce26fc2bb86f7ae0e
+ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/27/2017
 ---
-# Metodo getItem (VBArray) (JavaScript)
+# <a name="getitem-method-vbarray-javascript"></a>Metodo getItem (VBArray) (JavaScript)
 Restituisce l'elemento nella posizione specificata.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
   
-safeArray.getItem(dimension1[, dimension2, ...], dimensionN)  
+safeArray.getItem(dimension1[, dimension2, ...], dimensionN)   
 ```  
   
-## Parametri  
+## <a name="parameters"></a>Parametri  
  *safeArray*  
  Obbligatorio. Un oggetto VBArray.  
   
  *dimensione1,..., dimensioneN*  
- Specifica la posizione esatta dell'elemento desiderato dell'oggetto VBArray.*n* è uguale al numero di dimensioni dell'oggetto VBArray.  
+ Specifica la posizione esatta dell'elemento desiderato dell'oggetto VBArray. *n* è uguale al numero di dimensioni dell'oggetto VBArray.  
   
-## Esempio  
- L'esempio seguente si compone di tre parti: La prima parte è il codice VBScript per creare una matrice protetta di Visual Basic. La seconda parte è il codice [!INCLUDE[javascript](../../javascript/includes/javascript-md.md)] che esegue un'iterazione sulla matrice protetta di Visual Basic e stampa il contenuto di ciascun elemento. Entrambe queste parti vanno inserite nella sezione \<HEAD\> di una pagina HTML. La terza parte è il codice [!INCLUDE[javascript](../../javascript/includes/javascript-md.md)] che va inserito nella sezione \<BODY\> per eseguire le altre due parti.  
+## <a name="example"></a>Esempio  
+ L'esempio seguente si compone di tre parti: La prima parte è il codice VBScript per creare una matrice protetta di Visual Basic. La seconda parte è il codice [!INCLUDE[javascript](../../javascript/includes/javascript-md.md)] che esegue un'iterazione sulla matrice protetta di Visual Basic e stampa il contenuto di ciascun elemento. Entrambe queste parti vanno inserite le \<HEAD > della sezione di una pagina HTML. La terza parte è il [!INCLUDE[javascript](../../javascript/includes/javascript-md.md)] codice che va inserito nella \<corpo > per eseguire le altre due parti.  
   
-```javascript  
+```JavaScript  
 <head>  
 <script type="text/vbscript">  
 <!--  
@@ -91,13 +95,13 @@ function GetItemTest(vbarray)
 </body>  
 ```  
   
-## Requisiti  
- Supportato nelle modalità documento seguenti: Quirks, standard di Internet Explorer 6, standard di Internet Explorer 7, standard di Internet Explorer 8, standard di Internet Explorer 9 e standard di Internet Explorer 10. Non supportato in applicazioni [!INCLUDE[win8_appname_long](../../javascript/includes/win8-appname-long-md.md)]. Vedere [Informazioni sulla versione](../../javascript/reference/javascript-version-information.md).  
+## <a name="requirements"></a>Requisiti  
+ Supportato nelle modalità documento seguenti: Quirks, standard di Internet Explorer 6, standard di Internet Explorer 7, standard di Internet Explorer 8, standard di Internet Explorer 9 e standard di Internet Explorer 10. Non supportato in applicazioni [!INCLUDE[win8_appname_long](../../javascript/includes/win8-appname-long-md.md)] . Vedere [Informazioni sulla versione](../../javascript/reference/javascript-version-information.md).  
   
- **Si applica a**: [Oggetto VBArray](../../javascript/reference/vbarray-object-javascript.md)  
+ **Si applica a**: [VBArray Object](../../javascript/reference/vbarray-object-javascript.md)  
   
-## Vedere anche  
- [Metodo dimensions \(VBArray\)](../../javascript/reference/dimensions-method-vbarray-javascript.md)   
- [Metodo lbound \(VBArray\)](../../javascript/reference/lbound-method-vbarray-javascript.md)   
- [Metodo toArray \(VBArray\)](../../javascript/reference/toarray-method-vbarray-javascript.md)   
- [Metodo ubound \(VBArray\)](../../javascript/reference/ubound-method-vbarray-javascript.md)
+## <a name="see-also"></a>Vedere anche  
+ [Metodo Dimensions (VBArray)](../../javascript/reference/dimensions-method-vbarray-javascript.md)   
+ [Metodo LBound (VBArray)](../../javascript/reference/lbound-method-vbarray-javascript.md)   
+ [Metodo toArray (VBArray)](../../javascript/reference/toarray-method-vbarray-javascript.md)   
+ [Metodo ubound (VBArray)](../../javascript/reference/ubound-method-vbarray-javascript.md)

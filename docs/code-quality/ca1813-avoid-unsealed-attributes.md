@@ -1,13 +1,8 @@
 ---
-title: 'CA1813: Avoid unsealed attributes | Microsoft Docs'
-ms.custom: 
+title: 'CA1813: Evitare attributi non sealed'
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- vs-devops-test
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.technology: vs-ide-code-analysis
+ms.topic: reference
 f1_keywords:
 - CA1813
 - AvoidUnsealedAttributes
@@ -15,60 +10,47 @@ helpviewer_keywords:
 - CA1813
 - AvoidUnsealedAttributes
 ms.assetid: f5e31b4c-9f8b-49e1-a2a8-bb5f1140729a
-caps.latest.revision: 13
-author: stevehoag
-ms.author: shoag
-manager: wpickett
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: HT
-ms.sourcegitcommit: eb5c9550fd29b0e98bf63a7240737da4f13f3249
-ms.openlocfilehash: 259be72c012a009d198ba96c17b56b3dd29e4a14
-ms.contentlocale: it-it
-ms.lasthandoff: 08/30/2017
-
+author: gewarren
+ms.author: gewarren
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: db86642cc5b65a93cd2d2bb565ed3ed786362f54
+ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/19/2018
 ---
-# <a name="ca1813-avoid-unsealed-attributes"></a>CA1813: Avoid unsealed attributes
-|||  
-|-|-|  
-|TypeName|AvoidUnsealedAttributes|  
-|CheckId|CA1813|  
-|Category|Microsoft.Performance|  
-|Breaking Change|Breaking|  
-  
-## <a name="cause"></a>Cause  
- A public type inherits from <xref:System.Attribute?displayProperty=fullName>, is not abstract, and is not sealed (`NotInheritable` in Visual Basic).  
-  
-## <a name="rule-description"></a>Rule Description  
- The [!INCLUDE[dnprdnshort](../code-quality/includes/dnprdnshort_md.md)] class library provides methods for retrieving custom attributes. By default, these methods search the attribute inheritance hierarchy; for example <xref:System.Attribute.GetCustomAttribute%2A?displayProperty=fullName> searches for the specified attribute type, or any attribute type that extends the specified attribute type. Sealing the attribute eliminates the search through the inheritance hierarchy, and can improve performance.  
-  
-## <a name="how-to-fix-violations"></a>How to Fix Violations  
- To fix a violation of this rule, seal the attribute type or make it abstract.  
-  
-## <a name="when-to-suppress-warnings"></a>When to Suppress Warnings  
- It is safe to suppress a warning from this rule. You should do this only if you are defining an attribute hierarchy and cannot seal the attribute or make it abstract.  
-  
-## <a name="example"></a>Example  
- The following example shows a custom attribute that satisfies this rule.  
-  
- [!code-csharp[FxCop.Performance.AttributesSealed#1](../code-quality/codesnippet/CSharp/ca1813-avoid-unsealed-attributes_1.cs)] [!code-vb[FxCop.Performance.AttributesSealed#1](../code-quality/codesnippet/VisualBasic/ca1813-avoid-unsealed-attributes_1.vb)]  
-  
-## <a name="related-rules"></a>Related Rules  
- [CA1019: Define accessors for attribute arguments](../code-quality/ca1019-define-accessors-for-attribute-arguments.md)  
-  
- [CA1018: Mark attributes with AttributeUsageAttribute](../code-quality/ca1018-mark-attributes-with-attributeusageattribute.md)  
-  
-## <a name="see-also"></a>See Also  
- [Attributes](/dotnet/standard/design-guidelines/attributes)
+# <a name="ca1813-avoid-unsealed-attributes"></a>CA1813: Evitare attributi non sealed
+|||
+|-|-|
+|TypeName|AvoidUnsealedAttributes|
+|CheckId|CA1813|
+|Category|Microsoft.Performance|
+|Modifica importante|Interruzione|
+
+## <a name="cause"></a>Causa
+ Un tipo pubblico eredita da <xref:System.Attribute?displayProperty=fullName>, non è astratta e non è bloccato (`NotInheritable` in Visual Basic).
+
+## <a name="rule-description"></a>Descrizione della regola
+ La libreria di classi [!INCLUDE[dnprdnshort](../code-quality/includes/dnprdnshort_md.md)] fornisce metodi per recuperare attributi personalizzati. Per impostazione predefinita, questi metodi eseguono ricerche la gerarchia di ereditarietà di attributo. ad esempio <xref:System.Attribute.GetCustomAttribute%2A?displayProperty=fullName> Cerca il tipo di attributo specificato o qualsiasi tipo di attributo che estende il tipo di attributo specificato. Utilizzo di attributi sealed Elimina la ricerca nella gerarchia di ereditarietà e può migliorare le prestazioni.
+
+## <a name="how-to-fix-violations"></a>Come correggere le violazioni
+ Per correggere una violazione di questa regola, rendere sealed il tipo di attributo o renderlo astratta.
+
+## <a name="when-to-suppress-warnings"></a>Esclusione di avvisi
+ È possibile eliminare un avviso da questa regola. Eseguire questa operazione solo se si sta definendo una gerarchia dell'attributo e non può bloccare l'attributo o renderlo astratta.
+
+## <a name="example"></a>Esempio
+ Nell'esempio seguente viene illustrato un attributo personalizzato che soddisfa questa regola.
+
+ [!code-csharp[FxCop.Performance.AttributesSealed#1](../code-quality/codesnippet/CSharp/ca1813-avoid-unsealed-attributes_1.cs)]
+ [!code-vb[FxCop.Performance.AttributesSealed#1](../code-quality/codesnippet/VisualBasic/ca1813-avoid-unsealed-attributes_1.vb)]
+
+## <a name="related-rules"></a>Regole correlate
+ [CA1019: Definire le funzioni di accesso per gli argomenti degli attributi](../code-quality/ca1019-define-accessors-for-attribute-arguments.md)
+
+ [CA1018: Contrassegnare gli attributi con AttributeUsageAttribute](../code-quality/ca1018-mark-attributes-with-attributeusageattribute.md)
+
+## <a name="see-also"></a>Vedere anche
+ [Attributi](/dotnet/standard/design-guidelines/attributes)

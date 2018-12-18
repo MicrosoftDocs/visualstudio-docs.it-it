@@ -1,13 +1,9 @@
 ---
 title: Elemento Property (MSBuild) | Microsoft Docs
-ms.custom: 
+ms.custom: ''
 ms.date: 03/13/2017
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- vs-ide-sdk
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.technology: msbuild
+ms.topic: reference
 dev_langs:
 - VB
 - CSharp
@@ -17,29 +13,16 @@ helpviewer_keywords:
 - <Property> Element [MSBuild]
 - Property Element [MSBuild]
 ms.assetid: 69ab08ab-3e76-41dd-a01b-49aa1d2e0cac
-caps.latest.revision: 17
-author: kempb
-ms.author: kempb
-manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: 79460291e91f0659df0a4241e17616e55187a0e2
-ms.openlocfilehash: 369a8c9cbfb5431d482cbfdca6da036a9c5b60da
-ms.lasthandoff: 02/22/2017
-
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 5f98e1cc8b3ce016580e477dfa648a493df1c1e8
+ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/19/2018
 ---
 # <a name="property-element-msbuild"></a>Elemento Property (MSBuild)
 Contiene un nome un valore della proprietà definiti dall'utente. Ogni proprietà usata in un progetto [!INCLUDE[vstecmsbuild](../extensibility/internals/includes/vstecmsbuild_md.md)] deve essere specificata come figlio di un elemento `PropertyGroup`.  
@@ -94,4 +77,3 @@ Contiene un nome un valore della proprietà definiti dall'utente. Ogni propriet�
 ## <a name="see-also"></a>Vedere anche
 [Proprietà di MSBuild](../msbuild/msbuild-properties.md)  
  [Informazioni di riferimento sullo schema del file di progetto](../msbuild/msbuild-project-file-schema-reference.md)
-

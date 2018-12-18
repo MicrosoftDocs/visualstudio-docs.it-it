@@ -1,51 +1,52 @@
 ---
-title: "Contesti di debugger | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "contesti [debug SDK], debug"
+title: Contesti del debugger | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology:
+- vs-ide-sdk
+ms.topic: conceptual
+helpviewer_keywords:
+- debugging [Debugging SDK], contexts
 ms.assetid: 79808036-b680-4e4c-9c61-4ed43aa11323
-caps.latest.revision: 9
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 9
+author: gregvanl
+ms.author: gregvanl
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: 8a9310512417ac0e24046a1b7bcc1fd92099fe98
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# Contesti di debugger
-[!INCLUDE[vs2017banner](../../code-quality/includes/vs2017banner.md)]
-
-In [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] che esegue il debug, il motore di \(DE\) debug viene eseguito simultaneamente all'interno di diversi contesti diversi, come segue:  
+# <a name="debugger-contexts"></a>Contesti di debugger
+In [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] debug, il motore di debug (DE) opera contemporaneamente in contesti diversi, come indicato di seguito:  
   
--   Il contesto di codice, che specifica la posizione corrente in un flusso di esecuzione del programma.  
+-   Il contesto del codice, che descrive la posizione corrente nel flusso di esecuzione del programma.  
   
--   Il contesto o la posizione della documentazione, che descrivono la posizione corrente all'interno di un documento di origine.  
+-   Il contesto di documentazione o la posizione, che descrive la posizione corrente all'interno di un documento di origine.  
   
--   Il contesto di valutazione di un'espressione, che descrive il contesto in cui la valutazione delle espressioni di sviluppo.  
+-   Il contesto di valutazione espressione, che descrive il contesto nel quale espressione valutazione verrà eseguita.  
   
-## Argomenti della sezione  
- [contesto di codice](../../extensibility/debugger/code-context.md)  
- Viene descritto il contesto di codice come indirizzo nel flusso di istruzioni di un programma in odierne architetture in fase di esecuzione con i linguaggi non tradizionali, in cui il codice non può essere rappresentato dalle istruzioni, ma alcuni altri metodi.  
+## <a name="in-this-section"></a>In questa sezione  
+ [Contesto del codice](../../extensibility/debugger/code-context.md)  
+ Descrive il contesto del codice come un indirizzo nel flusso di istruzioni del programma odierna in fase di esecuzione le architetture e lingue utilizzate, in codice non può essere rappresentato da istruzioni, ma alcuni altri mezzi.  
   
- [Percorso del documento](../../extensibility/debugger/document-position.md)  
- Definisce la posizione del documento in debug di Visual Studio tramite un'api di una posizione in un file di origine come noto all'IDE.  
+ [Posizione nel documento](../../extensibility/debugger/document-position.md)  
+ Definisce la posizione documento eseguire il debug tramite un'astrazione di una posizione in un file di origine come noto all'IDE di Visual Studio.  
   
  [Contesto del documento](../../extensibility/debugger/document-context.md)  
- Vengono fornite informazioni sul contesto del documento rappresenta in debug di Visual Studio relativamente a un file di origine.  Inoltre descritto come il gestore dei simboli esegue il mapping di un contesto di codice al contesto della documentazione.  
+ Viene descritto il contesto del documento rappresenta in relazione a un file di origine eseguire il debug di Visual Studio. Illustra anche come il gestore di simboli esegue il mapping di un contesto di codice per il contesto di documentazione.  
   
- [Contesto di valutazione di espressioni](../../extensibility/debugger/expression-evaluation-context.md)  
- Fornisce informazioni su un contesto di valutazione di espressioni in Visual Studio.  Ad esempio, un contesto di valutazione di espressioni associato a uno stack frame fornisce contesto per esaminare le variabili locali, i parametri dei metodi e i membri della classe.  
+ [Contesto di valutazione delle espressioni](../../extensibility/debugger/expression-evaluation-context.md)  
+ Fornisce informazioni su un contesto di valutazione di espressioni in Visual Studio. Ad esempio, un contesto di valutazione di espressione associato a uno stack frame fornisce il contesto per la valutazione di variabili locali, i parametri del metodo e i membri della classe.  
   
-## Sezioni correlate  
- [concetti di debug](../../extensibility/debugger/debugger-concepts.md)  
- Vengono descritti i concetti di architettura di debug principali.  
+## <a name="related-sections"></a>Sezioni correlate  
+ [Concetti di debug](../../extensibility/debugger/debugger-concepts.md)  
+ Vengono descritti i principali concetti dell'architettura di debug.  
   
- [componenti di debug](../../extensibility/debugger/debugger-components.md)  
- Viene fornita una panoramica dei componenti di debug di Visual Studio, che includono il motore di \(DE\) debug, l'analizzatore di espressioni \(EE\) e il gestore dei \(SH\) simboli.  
+ [Componenti di debug](../../extensibility/debugger/debugger-components.md)  
+ Viene fornita una panoramica dei componenti di debug Visual Studio, che includono il motore di debug (DE), l'analizzatore di espressioni (Java EE) e il gestore di simboli (SH).  
   
  [Attività di debug](../../extensibility/debugger/debugging-tasks.md)  
- Vengono forniti collegamenti alle varie attività di debug, come avviare un programma e valutazione delle espressioni.
+ Contiene collegamenti a numerose attività di debug, ad esempio un programma di avvio e la valutazione di espressioni.

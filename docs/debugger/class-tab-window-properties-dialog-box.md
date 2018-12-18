@@ -1,39 +1,38 @@
 ---
-title: "Scheda Classe, finestra di dialogo Propriet&#224; finestra | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "Finestra di dialogo Proprietà finestra, scheda Classe"
+title: Scheda classe, finestra di dialogo Proprietà finestra | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology: vs-ide-debug
+ms.topic: reference
+helpviewer_keywords:
+- Window Properties dialog box, Class Tab
 ms.assetid: eaec9f07-d580-436d-934d-76c4e59439aa
-caps.latest.revision: 4
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 4
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 4afce149a2124ba8caa827b73b258fb421792c13
+ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/18/2018
 ---
-# Scheda Classe, finestra di dialogo Propriet&#224; finestra
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
-Utilizzare la scheda **Classe** per visualizzare informazioni sulla classe della finestra selezionata.  Per visualizzare la [finestra di dialogo Proprietà finestra](../debugger/window-properties-dialog-box.md), spostare lo stato attivo sulla finestra [Visualizzazione finestre](../debugger/windows-view.md).  Selezionare un nodo qualsiasi della finestra nella struttura ad albero, quindi scegliere **Proprietà** dal menu **Visualizza**.  
+# <a name="class-tab-window-properties-dialog-box"></a>Scheda Classe, finestra di dialogo Proprietà finestra
+Utilizzare il **classe** scheda per visualizzare informazioni sulla classe della finestra selezionata. Per visualizzare il [finestra di dialogo Proprietà finestra](../debugger/window-properties-dialog-box.md), spostare lo stato attivo per il [Windows Vista](../debugger/windows-view.md) finestra. Selezionare qualsiasi nodo finestra nell'albero, quindi scegliere **proprietà** dal **vista** menu.  
   
- Nella scheda **Classe** sono disponibili le impostazioni seguenti:  
+ Le impostazioni seguenti sono disponibili sul **classe** scheda:  
   
 |Voce|Descrizione|  
-|----------|-----------------|  
-|**Nome classe**|Nome \(o numero ordinale\) di questa classe della finestra.|  
-|**Class Styles**|Combinazione di codici di stile della classe.|  
-|**Class Bytes**|Dati specifici dell'applicazione associati a questa classe della finestra.|  
-|**Class Atom**|Atomo per la classe restituita dalla chiamata **RegisterClass**.|  
-|**Instance Handle**|Handle di istanza del modulo che ha registrato la classe.  Gli handle dell'istanza non sono univoci.|  
-|**Window Bytes**|Numero di byte aggiuntivi associati a ogni finestra di questa classe.  Il significato di questi byte è determinato dall'applicazione.  Espandere la casella di riepilogo per visualizzare i valori dei byte in formato DWORD.|  
-|**Window Proc**|Indirizzo corrente della funzione **WndProc** per le finestre di questa classe.  Differisce da **Window Proc** della scheda **Generale** se la finestra è impostata come sottoclasse.|  
-|**Menu Name**|Nome del menu principale associato alle finestre di questa classe \("none" se non è presente alcun menu\).|  
-|**Icon Handle**|Handle per l'icona associata alle finestre di questa classe \("none" se non è presente alcuna icona\).|  
-|**Cursor Handle**|Handle per il cursore associato alle finestre di questa classe \("none" se non è presente alcun cursore\).|  
-|**Bkgnd Brush**|Handle per il pennello di sfondo associato alle finestre di questa classe oppure uno dei colori predefiniti COLOR\_ \* per colorare lo sfondo della finestra \("none" se non è presente alcun pennello\).|
+|-----------|-----------------|  
+|**Nome di classe**|Il nome (o numero ordinale) di questa classe di finestra.|  
+|**Stili (classe)**|Una combinazione di codici di stile di classe.|  
+|**Byte (classe)**|Dati specifici dell'applicazione associati a questa classe di finestra.|  
+|**Atom (classe)**|Atom per la classe restituita dal **RegisterClass** chiamare.|  
+|**Handle di istanza**|L'handle dell'istanza del modulo che ha registrato la classe. Handle di istanza non sono univoci.|  
+|**Byte di finestra**|Il numero di byte aggiuntivi associati a ogni finestra di questa classe. Il significato di questi byte è determinato dall'applicazione. Espandere la casella di riepilogo per visualizzare i valori di byte in formato DWORD.|  
+|**Procedura di finestra**|L'indirizzo corrente del **WndProc** funzione per le finestre di questa classe. Questo comportamento è diverso da **procedura di finestra** sul **generale** se la finestra è una sottoclasse.|  
+|**Nome del menu**|Il nome del menu principale associata a windows di questa classe ("none" se è presente alcun menu).|  
+|**Handle dell'icona**|Handle per l'icona associata a windows di questa classe ("none" se è presente nessuna icona).|  
+|**Handle del cursore**|L'handle del cursore associato alle finestre di questa classe ("none" se è presente alcun cursore).|  
+|**Pennello di sfondo**|L'handle per il pennello di sfondo associato alle finestre di questa classe o uno dei colori predefiniti Color _ * per disegnare lo sfondo della finestra ("none" se è presente Nessun pennello).|

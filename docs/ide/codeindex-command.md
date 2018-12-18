@@ -13,30 +13,17 @@ helpviewer_keywords:
 - TFSConfig
 - CodeIndex command [Team Foundation Server]
 ms.assetid: b79568d4-6a64-4ca9-a1ee-3e57f92a9c5c
-caps.latest.revision: 18
-author: kempb
-ms.author: kempb
+caps.latest.revision: 
+author: gewarren
+ms.author: gewarren
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 5ea9179ad37514ffad4876177b05150eecc22def
-ms.openlocfilehash: b57a5a18f3bb01c98e577d2caf5eb7f5b58bc360
-ms.contentlocale: it-it
-ms.lasthandoff: 05/24/2017
-
+ms.workload:
+- multiple
+ms.openlocfilehash: 350708309cdc7a65b8c991454704dc9212f20ef8
+ms.sourcegitcommit: b18844078a30d59014b48a9c247848dea188b0ee
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 01/29/2018
 ---
 # <a name="codeindex-command"></a>Comando CodeIndex
 Usare il comando **CodeIndex** per gestire l'indicizzazione del codice in Team Foundation Server. Ad esempio, è possibile che si desideri reimpostare l'indice per correggere le informazioni di CodeLens o disabilitare l'indicizzazione per esaminare eventuali problemi di prestazioni del server.  
@@ -140,6 +127,7 @@ TFSConfig CodeIndex /temporaryDataSizeLimit:disable /collectionName:"Fabrikam We
 TFSConfig CodeIndex /destroyCodeIndex /collectionName:"Fabrikam Web Site"  
 ```  
   
-## <a name="see-also"></a>Vedere anche  
- [Managing server configuration with TFSConfig](http://msdn.microsoft.com/en-us/94424190-3b6b-4f33-a6b6-5807f4225b62)  (Gestione della configurazione del server con TFSConfig)  
- [Strumenti della riga di comando per TFS](http://msdn.microsoft.com/en-us/be8c997a-b97b-4e59-97f5-04db0a601a6c)
+## <a name="see-also"></a>Vedere anche
+
+[Trovare le modifiche apportate al codice e altri elementi della cronologia con CodeLens](../ide/find-code-changes-and-other-history-with-codelens.md)  
+[Managing server configuration with TFSConfig](/vsts/tfs-server/command-line/tfsconfig-cmd) (Gestione della configurazione del server con TFSConfig)

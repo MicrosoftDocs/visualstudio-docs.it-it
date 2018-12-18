@@ -1,52 +1,50 @@
 ---
-title: "IDiaSession::findInlineFramesByRVA | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
+title: IDiaSession::findInlineFramesByRVA | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology: vs-ide-debug
+ms.topic: conceptual
+dev_langs:
+- C++
 ms.assetid: ddb3ff0e-cb3d-4fa0-af56-f064b218b264
-caps.latest.revision: 3
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 3
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 0669d99cfc7ea1aa345a651692641a4bd2ac8d2a
+ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/18/2018
 ---
-# IDiaSession::findInlineFramesByRVA
-[!INCLUDE[vs2017banner](../../code-quality/includes/vs2017banner.md)]
-
-Recupera un'enumerazione che consente a un client ripetere da tutti i frame inline in un indirizzo virtuale relativo specificato \(RVA\).  
+# <a name="idiasessionfindinlineframesbyrva"></a>IDiaSession::findInlineFramesByRVA
+Recupera un'enumerazione che consente a un client scorrere tutti i frame inline in un indirizzo virtuale relativo specificato (RVA).  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp#  
-HRESULT findInlineFramesByRVA (   
-   IDiaSymbol*       parent,  
-   DWORD             rva,  
-   IDiaEnumSymbols** ppResult  
+```C++  
+HRESULT findInlineFramesByRVA (   
+   IDiaSymbol*       parent,   DWORD             rva,  
+   IDiaEnumSymbols** ppResult  
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `parent`  
- \[in\] un oggetto `IDiaSymbol` che rappresenta il padre.  
+ [in] Un `IDiaSymbol` oggetto che rappresenta l'elemento padre.  
   
  `rva`  
- \[in\] specifica l'indirizzo come RVA.  
+ [in] Specifica l'indirizzo come un RVA.  
   
  `ppResult`  
- \[out\] utilizza un oggetto `IDiaEnumSymbols` che contiene l'elenco dei frame recuperati.  
+ [out] Contiene un `IDiaEnumSymbols` oggetto che contiene l'elenco di frame che vengono recuperati.  
   
-## Valore restituito  
- In caso di esito positivo, restituisce `S_OK`; in caso contrario, restituisce un codice errore.  
+## <a name="return-value"></a>Valore restituito  
+ Se ha esito positivo, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IDiaSession](../../debugger/debug-interface-access/idiasession.md)   
  [IDiaSymbol](../../debugger/debug-interface-access/idiasymbol.md)   
- [Enumerazione SymTagEnum](../../debugger/debug-interface-access/symtagenum.md)   
+ [SymTagEnum (enumerazione)](../../debugger/debug-interface-access/symtagenum.md)   
  [IDiaEnumSymbols](../../debugger/debug-interface-access/idiaenumsymbols.md)

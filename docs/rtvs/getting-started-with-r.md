@@ -1,36 +1,30 @@
 ---
-title: Introduzione a R per Visual Studio | Microsoft Docs
-ms.custom: 
-ms.date: 6/29/2017
-ms.reviewer: 
-ms.suite: 
+title: Introduzione a R in Visual Studio | Microsoft Docs
+description: Procedura dettagliata per l'uso di R in Visual Studio, tra cui la creazione del progetto, la finestra interattiva, la modifica del codice e il debug.
+ms.custom: ''
+ms.date: 06/29/2017
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - devlang-r
-ms.devlang: r
-ms.tgt_pltfrm: 
-ms.topic: get-started-article
-ms.assetid: 39228cf0-8d21-43bb-a2ce-5e5fdc81ec41
-caps.latest.revision: 1
+dev_langs:
+- R
+ms.tgt_pltfrm: ''
+ms.topic: tutorial
 author: kraigb
 ms.author: kraigb
 manager: ghogen
+ms.workload:
+- data-science
+ms.openlocfilehash: 1a76b5df7a85fa86d6f0597be2f0316a4960b6ec
+ms.sourcegitcommit: 29ef88fc7d1511f05e32e9c6e7433e184514330d
 ms.translationtype: HT
-ms.sourcegitcommit: 712cc780388acc5e373f71d51fc8f1f42adb5bed
-ms.openlocfilehash: b9fb38bf7e21924d7fbece72978e99d298a42b74
-ms.contentlocale: it-it
-ms.lasthandoff: 07/12/2017
-
+ms.contentlocale: it-IT
+ms.lasthandoff: 03/28/2018
 ---
-
 # <a name="getting-started-with-r-tools-for-visual-studio"></a>Introduzione a R Tools per Visual Studio
 
-Dopo aver installato R Tools per Visual Studio (RTVS), da [How to install R Tools for Visual Studio](installation.md) (Procedura: Installare R Tools per Visual Studio), è possibile farsi rapidamente un'idea dell'esperienza offerta da tali strumenti. Nelle sezioni seguenti viene presentata una breve panoramica:
-
-- [Creare un progetto R](#create-an-r-project)
-- [Esplorare la finestra interattiva e IntelliSense](#explore-the-interactive-window-and-intellisense)
-- [Scoprire le funzionalità di modifica del codice](#experience-code-editing-features)
-- [Debug del codice](#debugging-your-code)
-- [Passaggi successivi](#next-steps)
+Dopo aver installato R Tools per Visual Studio (RTVS), da [How to install R Tools for Visual Studio](installing-r-tools-for-visual-studio.md) (Procedura: Installare R Tools per Visual Studio), è possibile farsi rapidamente un'idea dell'esperienza offerta da tali strumenti. 
 
 ## <a name="create-an-r-project"></a>Creare un progetto R
 
@@ -42,7 +36,7 @@ Dopo aver installato R Tools per Visual Studio (RTVS), da [How to install R Tool
 
 1. Dopo che il progetto è stato creato, sono visualizzate le finestre seguenti:
 
-    - A destra in Esplora soluzioni di Visual Studio viene visualizzato il progetto all'interno di una *soluzione*. Le soluzioni possono contenere un numero qualsiasi di progetti di tipi diversi. Per altri dettagli, vedere [Creating R projects in Visual Studio](projects.md) (Creazione di progetti R in Visual Studio).
+    - A destra in Esplora soluzioni di Visual Studio viene visualizzato il progetto all'interno di una *soluzione*. Le soluzioni possono contenere un numero qualsiasi di progetti di tipi diversi. Per altri dettagli, vedere [Creating R projects in Visual Studio](r-projects-in-visual-studio.md) (Creazione di progetti R in Visual Studio).
     - In alto a sinistra viene visualizzato un nuovo file di R (`script.R`) in cui è possibile modificare il codice sorgente con tutte le funzionalità di modifica di Visual Studio.
     - In basso a sinistra viene visualizzata la finestra **R interattivo** in cui è possibile sviluppare e testare il codice in modo interattivo.
 
@@ -77,13 +71,13 @@ Dopo aver installato R Tools per Visual Studio (RTVS), da [How to install R Tool
 
     ![Visualizzazione di un tracciato in Visual Studio](media/getting-started-07-plot-window.png)
 
-La finestra interattiva consente anche di rivedere la cronologia, caricare e salvare le aree di lavoro, collegarsi a un debugger e interagire con i file di codice sorgente anziché usare operazioni di copia e incolla. Per altri dettagli, vedere [Uso della finestra R interattivo](interactive-repl.md).
+La finestra interattiva consente anche di rivedere la cronologia, caricare e salvare le aree di lavoro, collegarsi a un debugger e interagire con i file di codice sorgente anziché usare operazioni di copia e incolla. Per altri dettagli, vedere [Uso della finestra R interattivo](interactive-repl-for-r-in-visual-studio.md).
 
 ## <a name="experience-code-editing-features"></a>Scoprire le funzionalità di modifica del codice
 
 L'uso anche per poco tempo della finestra interattiva consente di entrare in contatto con funzionalità di modifica di base, come IntelliSense, che possono essere usate anche nell'editor di codice. Se si immette lo stesso codice usato in precedenza, si notano gli stessi prompt di completamento automatico e di IntelliSense, ma non lo stesso output.
 
-Se si scrive il codice in un file `.R`, è possibile visualizzare tutto il codice in una sola volta ed è quindi più facile apportare piccole modifiche e visualizzarne il risultato eseguendo rapidamente il codice nella finestra interattiva. È anche possibile avere quanti file si voglia in un solo progetto. Quando il codice si trova in un file è anche possibile eseguirlo un'istruzione per volta nel debugger, come illustrato più avanti in questo argomento. Queste funzionalità sono utili quando si sviluppano algoritmi di calcolo e si scrive codice per modificare uno o più set di dati, soprattutto se si vogliono esaminare tutti i risultati intermedi.
+Se si scrive il codice in un file `.R`, è possibile visualizzare tutto il codice in una sola volta ed è quindi più facile apportare piccole modifiche e visualizzarne il risultato eseguendo rapidamente il codice nella finestra interattiva. È anche possibile avere quanti file si voglia in un solo progetto. Quando il codice si trova in un file è anche possibile eseguirlo un'istruzione per volta nel debugger, come illustrato più avanti in questo articolo. Queste funzionalità sono utili quando si sviluppano algoritmi di calcolo e si scrive codice per modificare uno o più set di dati, soprattutto se si vogliono esaminare tutti i risultati intermedi.
 
 Ad esempio, la procedura seguente crea un breve codice per esplorare i [teoremi centrali del limite](https://en.wikipedia.org/wiki/Central_limit_theorem) (Wikipedia). Questo esempio è stato adattato da *R Cookbook* di Paul Teetor.
 
@@ -112,7 +106,7 @@ Ad esempio, la procedura seguente crea un breve codice per esplorare i [teoremi 
 
     ```R
     n <- 30
-    samp.means <- rnorm(N, mean = mu, sd = stddev / sqrt(n))    
+    samp.means <- rnorm(N, mean = mu, sd = stddev / sqrt(n))
     lines(density(samp.means))
     ```
 
@@ -142,7 +136,7 @@ Ad esempio, la procedura seguente crea un breve codice per esplorare i [teoremi 
 
     ![Doppio tracciato aggiornato in Visual Studio, ridimensionato correttamente](media/getting-started-10-plot3.png)
 
-Nell'editor è possibile eseguire altre operazioni. Per informazioni dettagliate, vedere [Editing R code in Visual Studio](code-editing.md) (Modifica di codice R in Visual Studio), [IntelliSense](code-intellisense.md), e [Code snippets](code-snippets.md) (Frammenti di codice).
+Nell'editor è possibile eseguire altre operazioni. Per informazioni dettagliate, vedere [Editing R code in Visual Studio](editing-r-code-in-visual-studio.md) (Modifica di codice R in Visual Studio), [IntelliSense](r-intellisense.md), e [Code snippets](code-snippets-for-r.md) (Frammenti di codice).
 
 ## <a name="debugging-your-code"></a>Debug del codice
 
@@ -172,15 +166,14 @@ Uno dei principali vantaggi di Visual Studio è l'interfaccia utente di debug. R
 
 1. È possibile continuare l'esecuzione del programma riga per riga oppure selezionare **Continua** (F5) per completare l'esecuzione fino alla fine, o fino al punto di interruzione successivo.
 
-Per informazioni più approfondite, vedere [Debugging in R Visual Studio](debugging.md) (Debug in R Visual Studio) e [Variable Explorer](variable-explorer.md) (Esplora variabili).
+Per informazioni più approfondite, vedere [Debugging in R Visual Studio](debugging-r-in-visual-studio.md) (Debug in R Visual Studio) e [Variable Explorer](variable-explorer.md) (Esplora variabili).
 
 ## <a name="next-steps"></a>Passaggi successivi
 
-In questa procedura dettagliata sono state illustrate le nozioni di base dei progetti di R, usando la finestra interattiva, la modifica del codice e il debug in Visual Studio. Per passare all'esplorazione di altre funzionalità, vedere gli argomenti seguenti, nonché quelli illustrati nel sommario:
+In questa procedura dettagliata sono state illustrate le nozioni di base dei progetti di R, usando la finestra interattiva, la modifica del codice e il debug in Visual Studio. Per passare all'esplorazione di altre funzionalità, vedere gli articoli seguenti, nonché quelli illustrati nel sommario:
 
 - [Progetti di esempio per R Tools per Visual Studio](getting-started-samples.md)
-- [Editing R code in Visual Studio](code-editing.md) (Modifica di codice R in Visual Studio)
-- [Debug](debugging.md)
-- [Workspaces](workspaces.md) (Aree di lavoro)
-- [Visualizing data](visualizing-data.md) (Visualizzazione di dati)
-
+- [Modifica di codice R in Visual Studio](editing-r-code-in-visual-studio.md)
+- [Debug](debugging-r-in-visual-studio.md)
+- [Workspaces](r-workspaces-in-visual-studio.md) (Aree di lavoro)
+- [Visualizzazione di dati](visualizing-data-with-r-in-visual-studio.md)

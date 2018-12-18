@@ -1,30 +1,29 @@
 ---
-title: "Costruttore marker_series::marker_series | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "cvmarkersobj/Concurrency::diagnostic::marker_series::marker_series"
-helpviewer_keywords: 
-  - "Concurrency::diagnostic::marker_series (costruttore)"
+title: Costruttore marker_series::marker_series | Microsoft Docs
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology: vs-ide-debug
+ms.topic: conceptual
+f1_keywords:
+- cvmarkersobj/Concurrency::diagnostic::marker_series::marker_series
+helpviewer_keywords:
+- Concurrency::diagnostic::marker_series constructor
 ms.assetid: 042c7d23-f1d8-4e09-9e76-a21c30243790
-caps.latest.revision: 3
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 3
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: d9b1e33d845dd07306d9a6b59bfb57fd9cc2acc3
+ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/19/2018
 ---
-# Costruttore marker_series::marker_series
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
+# <a name="markerseriesmarkerseries-constructor"></a>Costruttore marker_series::marker_series
 Inizializza una nuova istanza della classe `marker_series`.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
 marker_series();  
@@ -40,17 +39,17 @@ marker_series(
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `_SeriesName`  
- Nome delle serie da creare.  
+ Nome della serie da creare.  
   
  `_ProviderGuid`  
- Il GUID del provider di serie.  
+ GUID del provider di serie.  
   
-## Requisiti  
+## <a name="requirements"></a>Requisiti  
  **Intestazione:** cvmarkersobj.h  
   
- **Spazio dei nomi:** Concorrenza::diagnostica  
+ **Spazio dei nomi:** Concurrency::diagnostic  
   
-## Vedere anche  
- [Classe marker\_series](../profiling/marker-series-class.md)
+## <a name="see-also"></a>Vedere anche  
+ [Classe marker_series](../profiling/marker-series-class.md)

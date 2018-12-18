@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- vs-ide-general
+ms.technology: vs-ide-general
 ms.tgt_pltfrm: 
 ms.topic: article
 helpviewer_keywords:
@@ -17,30 +16,16 @@ helpviewer_keywords:
 - MSBuild, release build
 - release builds
 ms.assetid: eaea6e0b-6c61-4869-8d63-d372c745a23c
-caps.latest.revision: 9
-author: kempb
-ms.author: kempb
+caps.latest.revision: "9"
+author: gewarren
+ms.author: gewarren
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 5ea9179ad37514ffad4876177b05150eecc22def
-ms.openlocfilehash: 782d860d94cd9e7d4967076a5ea0d3fe86b29400
-ms.contentlocale: it-it
-ms.lasthandoff: 05/24/2017
-
+ms.workload: multiple
+ms.openlocfilehash: 094f87ca4a56f71cbecfa9b6b1dc9189244c0c57
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-manage-build-configurations-with-visual-basic-developer-settings-applied"></a>Procedura: gestire configurazioni di compilazione applicando le impostazioni di Visual Basic Developer
 Per impostazione predefinita, tutte le opzioni di configurazione della build avanzate sono nascoste tramite l'applicazione di impostazioni di [!INCLUDE[vbprvb](../code-quality/includes/vbprvb_md.md)] Developer. Questo argomento illustra come abilitare manualmente tali impostazioni.  

@@ -1,31 +1,32 @@
 ---
-title: "MODULE_SYMBOL_SEARCH_INFO | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "MODULE_SYMBOL_SEARCH_INFO"
-helpviewer_keywords: 
-  - "Struttura MODULE_SYMBOL_SEARCH_INFO"
+title: MODULE_SYMBOL_SEARCH_INFO | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology:
+- vs-ide-sdk
+ms.topic: conceptual
+f1_keywords:
+- MODULE_SYMBOL_SEARCH_INFO
+helpviewer_keywords:
+- MODULE_SYMBOL_SEARCH_INFO structure
 ms.assetid: 432aff03-08a5-4c5a-b2d5-e212090fc70a
-caps.latest.revision: 10
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 10
+author: gregvanl
+ms.author: gregvanl
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: bb62fb0a830c8c3bf6bb9b7ca186e001573b7b37
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# MODULE_SYMBOL_SEARCH_INFO
-[!INCLUDE[vs2017banner](../../../code-quality/includes/vs2017banner.md)]
-
+# <a name="modulesymbolsearchinfo"></a>MODULE_SYMBOL_SEARCH_INFO
 Contiene informazioni sui percorsi di ricerca di simboli che alcuno.  
   
 ## <a name="syntax"></a>Sintassi  
   
-```cpp#  
+```cpp  
 typedef struct _tagSYMBOL_SEARCH_INFO  
 {  
    SYMBOL_SEARCH_INFO_FIELDS dwValidFields;  
@@ -33,7 +34,7 @@ typedef struct _tagSYMBOL_SEARCH_INFO
 } MODULE_SYMBOL_SEARCH_INFO;  
 ```  
   
-```c#  
+```csharp  
 public struct MODULE_SYMBOL_SEARCH_INFO {  
    public uint   dwValidFields;  
    public string bstrVerboseSearchInfo;  
@@ -50,9 +51,9 @@ public struct MODULE_SYMBOL_SEARCH_INFO {
 ## <a name="remarks"></a>Note  
  Questa struttura viene restituita da una chiamata al [GetSymbolInfo](../../../extensibility/debugger/reference/idebugmodule3-getsymbolinfo.md) metodo.  
   
- Se il `bstrVerboseSearchInfo` campo non è vuoto, quindi contiene un elenco di percorsi di ricerca e i risultati della ricerca. L'elenco viene formattato con un percorso, seguito da puntini di sospensione ("..."), seguite dal risultato. Se è presente più di una coppia di risultati di percorso, ogni coppia è separato da una coppia di "\r\n" (ritorno a capo-ritorno/avanzamento riga). Il modello è simile al seguente:  
+ Se il `bstrVerboseSearchInfo` campo non è vuoto, quindi contiene un elenco di percorsi di ricerca e i risultati della ricerca. L'elenco viene formattato con un percorso, seguito dai puntini di sospensione ("..."), seguita dal risultato. Se è presente più di una coppia di risultati di percorso, ogni coppia è separato da una coppia di "\r\n" (ritorno a capo ritorno/avanzamento riga). Il modello è simile al seguente:  
   
- \< percorso>... \< risultato>\r\n \< percorso>... \< risultato>\r\n \< percorso>... \< risultato>  
+ \<percorso >... \<risultato > \r\n\<percorso >... \<risultato > \r\n\<percorso >... \<risultato >  
   
  Si noti che l'ultima voce non dispone di una sequenza \r\n.  
   
@@ -67,7 +68,7 @@ public struct MODULE_SYMBOL_SEARCH_INFO {
 ## <a name="requirements"></a>Requisiti  
  Intestazione: msdbg.h  
   
- Spazio dei nomi: Microsoft.VisualStudio.Debugger.Interop  
+ Namespace: Microsoft.VisualStudio.Debugger.Interop  
   
  Assembly: Microsoft.VisualStudio.Debugger.Interop.dll  
   

@@ -1,13 +1,8 @@
 ---
-title: 'CA2235: Mark all non-serializable fields | Microsoft Docs'
-ms.custom: 
+title: 'CA2235: Contrassegnare tutti i campi non serializzabili'
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- vs-devops-test
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.technology: vs-ide-code-analysis
+ms.topic: reference
 f1_keywords:
 - CA2235
 - MarkAllNonSerializableFields
@@ -15,67 +10,54 @@ helpviewer_keywords:
 - CA2235
 - MarkAllNonSerializableFields
 ms.assetid: 599ad877-3a15-426c-bf17-5de15427365f
-caps.latest.revision: 13
-author: stevehoag
-ms.author: shoag
-manager: wpickett
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: HT
-ms.sourcegitcommit: eb5c9550fd29b0e98bf63a7240737da4f13f3249
-ms.openlocfilehash: 1b5cdf19bb22355cc57c2afe39f970a5e8d7b958
-ms.contentlocale: it-it
-ms.lasthandoff: 08/30/2017
-
+author: gewarren
+ms.author: gewarren
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 640fd26b7e75b566ccc159d8c41ff8f70d260897
+ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/19/2018
 ---
-# <a name="ca2235-mark-all-non-serializable-fields"></a>CA2235: Mark all non-serializable fields
-|||  
-|-|-|  
-|TypeName|MarkAllNonSerializableFields|  
-|CheckId|CA2235|  
-|Category|Microsoft.Usage|  
-|Breaking Change|Non Breaking|  
-  
-## <a name="cause"></a>Cause  
- An instance field of a type that is not serializable is declared in a type that is serializable.  
-  
-## <a name="rule-description"></a>Rule Description  
- A serializable type is one that is marked with the <xref:System.SerializableAttribute?displayProperty=fullName> attribute. When the type is serialized, a <xref:System.Runtime.Serialization.SerializationException?displayProperty=fullName> exception is thrown if a type contains an instance field of a type that is not serializable.  
-  
-## <a name="how-to-fix-violations"></a>How to Fix Violations  
- To fix a violation of this rule, apply the <xref:System.NonSerializedAttribute?displayProperty=fullName> attribute to the field that is not serializable.  
-  
-## <a name="when-to-suppress-warnings"></a>When to Suppress Warnings  
- Only suppress a warning from this rule if a <xref:System.Runtime.Serialization.ISerializationSurrogate?displayProperty=fullName> type is declared that allows instances of the field to be serialized and deserialized.  
-  
-## <a name="example"></a>Example  
- The following example shows a type that violates the rule and a type that satisfies the rule.  
-  
- [!code-csharp[FxCop.Usage.MarkNonSerializable#1](../code-quality/codesnippet/CSharp/ca2235-mark-all-non-serializable-fields_1.cs)] [!code-vb[FxCop.Usage.MarkNonSerializable#1](../code-quality/codesnippet/VisualBasic/ca2235-mark-all-non-serializable-fields_1.vb)]  
-  
-## <a name="related-rules"></a>Related Rules  
- [CA2236: Call base class methods on ISerializable types](../code-quality/ca2236-call-base-class-methods-on-iserializable-types.md)  
-  
- [CA2240: Implement ISerializable correctly](../code-quality/ca2240-implement-iserializable-correctly.md)  
-  
- [CA2229: Implement serialization constructors](../code-quality/ca2229-implement-serialization-constructors.md)  
-  
- [CA2238: Implement serialization methods correctly](../code-quality/ca2238-implement-serialization-methods-correctly.md)  
-  
- [CA2237: Mark ISerializable types with SerializableAttribute](../code-quality/ca2237-mark-iserializable-types-with-serializableattribute.md)  
-  
- [CA2239: Provide deserialization methods for optional fields](../code-quality/ca2239-provide-deserialization-methods-for-optional-fields.md)  
-  
- [CA2120: Secure serialization constructors](../code-quality/ca2120-secure-serialization-constructors.md)
+# <a name="ca2235-mark-all-non-serializable-fields"></a>CA2235: Contrassegnare tutti i campi non serializzabili
+|||
+|-|-|
+|TypeName|MarkAllNonSerializableFields|
+|CheckId|CA2235|
+|Category|Microsoft.Usage|
+|Modifica importante|Non importante|
+
+## <a name="cause"></a>Causa
+ Un campo di istanza di un tipo non serializzabile viene dichiarato in un tipo serializzabile.
+
+## <a name="rule-description"></a>Descrizione della regola
+ Un tipo serializzabile è contrassegnato con il <xref:System.SerializableAttribute?displayProperty=fullName> attributo. Quando viene serializzato il tipo, un <xref:System.Runtime.Serialization.SerializationException?displayProperty=fullName> eccezione viene generata se un tipo contiene un campo di istanza di un tipo che non è serializzabile.
+
+## <a name="how-to-fix-violations"></a>Come correggere le violazioni
+ Per correggere una violazione di questa regola, applicare il <xref:System.NonSerializedAttribute?displayProperty=fullName> attributo per il campo che non è serializzabile.
+
+## <a name="when-to-suppress-warnings"></a>Esclusione di avvisi
+ Escludere un avviso da questa regola solo se un <xref:System.Runtime.Serialization.ISerializationSurrogate?displayProperty=fullName> tipo viene dichiarato che consente di istanze del campo da serializzare e deserializzare.
+
+## <a name="example"></a>Esempio
+ Nell'esempio seguente viene illustrato un tipo che viola la regola e un tipo che soddisfa la regola.
+
+ [!code-csharp[FxCop.Usage.MarkNonSerializable#1](../code-quality/codesnippet/CSharp/ca2235-mark-all-non-serializable-fields_1.cs)]
+ [!code-vb[FxCop.Usage.MarkNonSerializable#1](../code-quality/codesnippet/VisualBasic/ca2235-mark-all-non-serializable-fields_1.vb)]
+
+## <a name="related-rules"></a>Regole correlate
+ [CA2236: Chiamare metodi della classe base su tipi ISerializable](../code-quality/ca2236-call-base-class-methods-on-iserializable-types.md)
+
+ [CA2240: Implementare ISerializable in modo corretto](../code-quality/ca2240-implement-iserializable-correctly.md)
+
+ [CA2229: Implementare costruttori di serializzazione](../code-quality/ca2229-implement-serialization-constructors.md)
+
+ [CA2238: Implementare correttamente i metodi di serializzazione](../code-quality/ca2238-implement-serialization-methods-correctly.md)
+
+ [CA2237: Contrassegnare i tipi ISerializable con SerializableAttribute](../code-quality/ca2237-mark-iserializable-types-with-serializableattribute.md)
+
+ [CA2239: Specificare metodi di deserializzazione per i campi facoltativi](../code-quality/ca2239-provide-deserialization-methods-for-optional-fields.md)
+
+ [CA2120: Proteggere i costruttori di serializzazione](../code-quality/ca2120-secure-serialization-constructors.md)

@@ -1,64 +1,66 @@
 ---
-title: "Metodo sort (Array) (JavaScript) | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/18/2017"
-ms.prod: "windows-client-threshold"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-javascript"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "sort"
-dev_langs: 
-  - "JavaScript"
-  - "TypeScript"
-  - "DHTML"
-helpviewer_keywords: 
-  - "Sort (metodo)"
-ms.assetid: 9bd8b54a-c838-4806-85c8-62eebe6bc48c
-caps.latest.revision: 15
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 15
+title: Metodo Sort (Array) (JavaScript) | Documenti Microsoft
+ms.custom: 
+ms.date: 01/18/2017
+ms.prod: windows-client-threshold
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-javascript
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords:
+- sort
+dev_langs:
+- JavaScript
+- TypeScript
+- DHTML
+helpviewer_keywords:
+- Sort method
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.openlocfilehash: 0462e60e623b99af458beb61eb7ef4215fe8ef41
+ms.sourcegitcommit: b01406355e3b97547b7cbf8ce3960f101b165cec
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 02/05/2018
 ---
-# Metodo sort (Array) (JavaScript)
+# <a name="sort-method-array-javascript"></a>Metodo sort (Array) (JavaScript)
 Ordina un `Array`.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
   
 arrayobj.sort(sortFunction)   
 ```  
   
-## Parametri  
+## <a name="parameters"></a>Parametri  
  `arrayObj`  
- Necessario.  Qualsiasi oggetto `Array`.  
+ Obbligatorio. Qualsiasi oggetto `Array`.  
   
  `sortFunction`  
- Opzionale.  Il nome della funzione utilizzata per determinare l'ordine degli elementi.  Se omessa, gli elementi vengono disposti nell'ordine dei caratteri ASCII crescente.  
+ Facoltativo. Il nome della funzione utilizzata per determinare l'ordine degli elementi. Se omesso, gli elementi vengono ordinati in ordine crescente, ordine di caratteri ASCII.  
   
-## Valore restituito  
+## <a name="return-value"></a>Valore restituito  
  Matrice ordinata.  
   
-## Note  
- Il metodo `sort` ordina l'oggetto `Array` sul posto; non viene creato un nuovo oggetto `Array` durante l'esecuzione.  
+## <a name="remarks"></a>Note  
+ Il `sort` metodo ordinamenti di `Array` oggetto sul posto; no nuovi `Array` oggetto viene creato durante l'esecuzione.  
   
- Se per l'argomento `sortFunction` viene specificata una funzione, essa dovrà restituire uno dei seguenti valori:  
+ `sortFunction`accetta due argomenti e deve restituire uno dei valori seguenti:  
   
--   Un valore negativo se il primo argomento passato è minore del secondo argomento.  
+-   Un valore negativo (minore di 0) se il primo argomento passato è minore rispetto al secondo argomento.  Il primo argomento è ordinato in un indice più basso.
   
--   Zero se i due argomenti sono equivalenti.  
+-   Zero (0) se i due argomenti sono equivalenti.  I due argomenti vengono ordinati in relazione gli altri elementi nella matrice, ma non vengono ordinati uno rispetto a altro.
   
--   Un valore positivo se il primo argomento è maggiore del secondo.  
+-   Un valore positivo (maggiore di 0) se il primo argomento è maggiore del secondo argomento.  Il secondo argomento è ordinato in un indice più basso.
   
-## Esempio  
+## <a name="example"></a>Esempio  
  Nell'esempio seguente viene illustrato come utilizzare il metodo `sort`.  
   
-```javascript  
+```JavaScript  
 var a = new Array(4, 11, 2, 10, 3, 1);  
   
 var b = a.sort();  
@@ -86,5 +88,5 @@ function CompareForSort(first, second)
 }  
 ```  
   
-## Requisiti  
+## <a name="requirements"></a>Requisiti  
  [!INCLUDE[jsv2](../../javascript/reference/includes/jsv2-md.md)]

@@ -1,36 +1,35 @@
 ---
-title: "Scheda Generale, finestra di dialogo Propriet&#224; processo | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "Proprietà processo per Windows NT"
+title: Scheda Generale, elaborare la finestra di dialogo proprietà | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology: vs-ide-debug
+ms.topic: reference
+helpviewer_keywords:
+- Process properties for Windows NT
 ms.assetid: 86f4d61d-a594-4aac-8960-c5279b4a10fd
-caps.latest.revision: 4
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 4
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 3dcefc8be643c74349102261725c4879c0e161cd
+ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/18/2018
 ---
-# Scheda Generale, finestra di dialogo Propriet&#224; processo
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
-Utilizzare la scheda **Generale** per ottenere ulteriori informazioni su un processo specifico.  Per visualizzare la [finestra di dialogo Proprietà processo](../debugger/process-properties-dialog-box.md), spostare lo stato attivo su una finestra [Visualizzazione processi](../debugger/processes-view.md).  Selezionare un nodo qualsiasi del processo nella struttura ad albero, quindi scegliere **Proprietà** dal menu **Visualizza**.  
+# <a name="general-tab-process-properties-dialog-box"></a>Scheda Generale, finestra di dialogo Proprietà processo
+Utilizzare il **generale** tab per ottenere ulteriori informazioni su un processo specifico. Per visualizzare il [finestra di dialogo Proprietà processo](../debugger/process-properties-dialog-box.md), spostare lo stato attivo per un [visualizzazione processi](../debugger/processes-view.md) finestra. Selezionare qualsiasi nodo del processo nell'albero, quindi scegliere **proprietà** dal **vista** menu.  
   
- Nella scheda **Generale** sono disponibili le impostazioni seguenti:  
+ Le impostazioni seguenti sono disponibili sul **generale** scheda:  
   
 |Voce|Descrizione|  
-|----------|-----------------|  
-|**Module Name**|Nome del modulo.|  
-|**ID processo**|ID univoco di questo processo.  I numeri di ID del processo vengono riutilizzati e pertanto identificano un processo solo per la relativa durata.  Il tipo di oggetto Process viene creato durante l'esecuzione di un programma.  Tutti i thread in un processo condividono lo stesso spazio degli indirizzi e hanno accesso agli stessi dati.|  
-|**Priority Base**|Priorità di base corrente del processo.  La priorità di base dei thread all'interno di un processo può aumentare o diminuire in relazione alla priorità di base del processo.|  
-|**Thread**|Numero di thread attualmente attivi nel processo.|  
-|**CPU Time**|Tempo CPU totale trascorso su questo processo e i relativi thread.  Corrisponde alla somma di User Time e Privileged Time.|  
-|**User Time**|Tempo complessivo trascorso impiegato dai thread di questo processo per l'esecuzione di codice in modalità utente in thread attivi.  Le applicazioni vengono eseguite in modalità utente, analogamente a sottosistemi quali la gestione finestre e il motore della grafica.|  
-|**Privileged Time**|Tempo totale trascorso per l'esecuzione del processo in modalità privilegiata in thread attivi.  Il livello di servizio, le routine Executive e il kernel vengono eseguiti in modalità privilegiata.  I driver di dispositivo previsti per la maggior parte dei dispositivi escluse le schede grafiche e le stampanti utilizzano parimenti la modalità privilegiata.  Alcune operazioni eseguite da Windows per l'applicazione possono essere incluse in altri processi del sottosistema oltre a Privileged Time.|  
-|**Tempo trascorso**|Tempo totale trascorso da quando il processo è in esecuzione.|
+|-----------|-----------------|  
+|**Nome modulo**|Nome del modulo.|  
+|**ID processo**|ID univoco di questo processo. Numeri di ID di processo vengono riutilizzati e identificano un processo solo per la durata del processo. Il tipo di oggetto processo viene creato quando viene eseguito un programma. Tutti i thread in un processo condividono lo stesso spazio di indirizzi e hanno accesso agli stessi dati.|  
+|**Valore Base di priorità**|La priorità di base corrente di questo processo. Thread all'interno di un processo può aumentare e ridurre le proprie priorità di base rispetto alla priorità di base del processo.|  
+|**Thread**|Il numero di thread attualmente attivi nel processo corrente.|  
+|**Tempo di CPU**|Tempo CPU totale utilizzato su questo processo e i relativi thread. Uguale all'ora di utente più tempo privilegiato.|  
+|**Tempo utente**|Tempo cumulativo trascorso che thread del processo hanno impiegato per l'esecuzione del codice in modalità utente thread non inattivo. Le applicazioni eseguite in modalità utente, i sottosistemi, ad esempio la gestione di finestre e il motore della grafica.|  
+|**Tempo privilegiato**|Il tempo totale trascorso questo processo è stato in esecuzione in modalità privilegiata in thread non inattivo. Il livello di servizio, le routine e il Kernel eseguite in modalità privilegiata. Driver di dispositivo per la maggior parte dei dispositivi diversi da schede video grafiche e le stampanti eseguire anche in modalità privilegiata. Alcune operazioni eseguite da Windows per l'applicazione possono apparire in altri processi di sottosistema oltre al tempo privilegiato.|  
+|**Tempo trascorso**|Il tempo totale trascorso che questo processo è in esecuzione.|

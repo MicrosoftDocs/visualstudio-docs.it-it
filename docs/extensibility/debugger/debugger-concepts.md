@@ -1,66 +1,67 @@
 ---
-title: "Concetti del debugger | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "debug [Debugging SDK]"
+title: Concetti del debugger | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology:
+- vs-ide-sdk
+ms.topic: conceptual
+helpviewer_keywords:
+- debugging [Debugging SDK]
 ms.assetid: 2d371d38-f1a0-4a9a-8ea3-100e8c0149b7
-caps.latest.revision: 11
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 11
+author: gregvanl
+ms.author: gregvanl
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: c157e570179da1e1f16ed5c2c12af63b95b0b61d
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# Concetti del debugger
-[!INCLUDE[vs2017banner](../../code-quality/includes/vs2017banner.md)]
-
-Per compilare il pacchetto Visual Studio debug, è necessario avere familiarità con i concetti di architettura utilizzati nella progettazione del pacchetto.  
+# <a name="debugger-concepts"></a>Concetti di debugger
+Per compilare il pacchetto di debug di Visual Studio, è necessario avere familiarità con i concetti dell'architettura della progettazione del pacchetto.  
   
-## Argomenti della sezione  
+## <a name="in-this-section"></a>In questa sezione  
  [Sessione di debug](../../extensibility/debugger/debug-session.md)  
  Viene illustrato il ruolo di una sessione nell'architettura di debug.  
   
  [Server](../../extensibility/debugger/servers-visual-studio-sdk.md)  
- Viene definito il concetto un server è in termini di eseguire il debug l'architettura, sia nel sunto che in termini fisici.  
+ Definisce un server è in termini di debug di architettura, in termini sia abstract che fisici.  
   
  [Fornitori di porte](../../extensibility/debugger/port-suppliers.md)  
- Definisce l'operazione che un fornitore di porte è in termini di eseguire il debug dell'architettura.  
+ Definisce le azioni è un fornitore di porta in termini di architettura di debug.  
   
  [Porte](../../extensibility/debugger/ports.md)  
- Viene definito il concetto di porta è in termini di eseguire il debug dell'architettura.  
+ Definisce il tipo di porta è in termini di architettura di debug.  
   
  [Processi](../../extensibility/debugger/processes.md)  
- Definisce l'operazione che un processo è in termini di eseguire il debug dell'architettura.  
+ Definisce il tipo di processo è in termini di architettura di debug.  
   
  [Nodi di programma](../../extensibility/debugger/program-nodes.md)  
- Definisce un nodo di programma in termini di architettura di debug, inclusione come possibile identificarsi e processo che esegue in.  
+ Definisce un nodo di programma in termini di architettura, incluso come in grado di identificare se stesso e il processo che è in esecuzione nel debug.  
   
- [Programs](../../extensibility/debugger/programs.md)  
- Definisce un programma in termini di eseguire il debug dell'architettura.  
+ [Programmi](../../extensibility/debugger/programs.md)  
+ Definisce un programma in termini di architettura di debug.  
   
  [Thread](../../extensibility/debugger/threads.md)  
- Definisce le caratteristiche dei thread in termini di architettura di debug.  
+ Definisce le caratteristiche di thread in termini di architettura di debug.  
   
  [Stack frame](../../extensibility/debugger/stack-frames.md)  
- definisce uno stack frame in termini di architettura di debug.  uno stack frame è un'astrazione di uno stack che fornisce il contesto di esecuzione di un thread.  
+ Definisce uno stack frame in termini di architettura di debug. Uno stack frame è un'astrazione di un oggetto stack che fornisce il contesto di esecuzione di un thread.  
   
  [Moduli](../../extensibility/debugger/modules.md)  
- Definisce un modulo, in termini di architettura di debug, come contenitore fisico del codice, ad esempio un file eseguibile o una DLL.  
+ Definisce un modulo, in termini di debug di architettura, come un contenitore fisico di codice, ad esempio un file eseguibile o una DLL.  
   
  [Punti di interruzione](../../extensibility/debugger/breakpoints-visual-studio-sdk.md)  
- Definisce i tre tipi di punto di interruzione\-in corso, di soglia e errore\-nei termini dell'architettura di debug.  
+ Definisce i tre tipi di punti di interruzione, in sospeso, associazione e di errore, in termini di architettura di debug.  
   
-## Sezioni correlate  
- [Contesti di debugger](../../extensibility/debugger/debugger-contexts.md)  
- Viene illustrato come il motore \(DE\) di debug viene eseguito simultaneamente all'interno del codice, la documentazione e i contesti di valutazione di espressioni.  Viene descritto, per ciascuno dei tre contesti, la posizione, al percorso, o di valutazione relativa a.  
+## <a name="related-sections"></a>Sezioni correlate  
+ [Contesti del debugger](../../extensibility/debugger/debugger-contexts.md)  
+ Viene illustrato come il motore di debug (DE) funziona contemporaneamente all'interno di codice, documentazione e contesti di valutazione di espressione. Viene descritto, per ognuno dei tre contesti, il percorso, posizione o valutazione rilevante a esso.  
   
  [Componenti del debugger](../../extensibility/debugger/debugger-components.md)  
- Viene fornita una panoramica dei componenti di debug di Visual Studio, che includono il motore di \(DE\) debug, l'analizzatore di espressioni \(EE\) e il gestore dei \(SH\) simboli.  
+ Viene fornita una panoramica dei componenti di debug di Visual Studio, che includono il motore di debug (DE), l'analizzatore di espressioni (Java EE) e il gestore di simboli (SH).  
   
  [Attività di debug](../../extensibility/debugger/debugging-tasks.md)  
- Vengono forniti collegamenti alle varie attività di debug, come avviare un programma e valutazione delle espressioni.
+ Contiene collegamenti a numerose attività di debug, ad esempio un programma di avvio e la valutazione di espressioni.

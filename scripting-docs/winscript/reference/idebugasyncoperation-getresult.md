@@ -1,27 +1,33 @@
 ---
-title: "IDebugAsyncOperation::GetResult | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/18/2017"
-ms.prod: "windows-script-interfaces"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-apiname: IDebugAsyncOperation.GetResult
-apilocation: pdm.dll
-helpviewer_keywords: 
-  - "IDebugAsyncOperation::GetResult"
+title: IDebugAsyncOperation::GetResult | Documenti Microsoft
+ms.custom: 
+ms.date: 01/18/2017
+ms.prod: windows-script-interfaces
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: reference
+apiname:
+- IDebugAsyncOperation.GetResult
+apilocation:
+- pdm.dll
+helpviewer_keywords:
+- IDebugAsyncOperation::GetResult
 ms.assetid: 56d43365-6b12-4213-a97c-953c40d7b7f6
-caps.latest.revision: 8
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: 
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.openlocfilehash: 60181904408010f35fa4d99d182216e665583aab
+ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/27/2017
 ---
-# IDebugAsyncOperation::GetResult
-Fornisce il parametro dell'oggetto di ritorno e valore restituito dall'operazione sincrona di debug.  
+# <a name="idebugasyncoperationgetresult"></a>IDebugAsyncOperation::GetResult
+Fornisce il valore restituito e il parametro dell'oggetto restituito dall'operazione di debug sincrono.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
 HRESULT GetResult(  
@@ -30,24 +36,24 @@ HRESULT GetResult(
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `phrResult`  
- \[out\] se l'operazione viene completata, `phrResult` è il valore restituito `IDebugSyncOperation::Execute`.  
+ [out] Se l'operazione è stata completata, `phrResult` è il valore restituito di `IDebugSyncOperation::Execute`.  
   
  `ppunkResult`  
- \[out\] se l'operazione viene completata, `ppunkResult` è il parametro dell'oggetto restituito dall'operazione.  
+ [out] Se l'operazione è stata completata, `ppunkResult` è il parametro dell'oggetto restituito dall'operazione.  
   
-## Valore restituito  
- Il metodo restituisce un tipo `HRESULT`.  I valori possibili sono, ma non sono limitati a, quelli nella tabella seguente.  
+## <a name="return-value"></a>Valore restituito  
+ Il metodo restituisce un tipo `HRESULT`. I valori possibili includono, ma non sono limitati a, quelli indicati nella tabella seguente.  
   
 |Valore|Descrizione|  
-|------------|-----------------|  
+|-----------|-----------------|  
 |`S_OK`|Il metodo è riuscito.|  
-|`E_PENDING`|L'operazione non è stata completata.|  
+|`E_PENDING`|L'operazione non completata.|  
   
-## Note  
- Se l'operazione è stata completata, questo metodo restituisce `HRESULT` e il parametro dell'oggetto da `IDebugSyncOperation::Execute`.  
+## <a name="remarks"></a>Note  
+ Se l'operazione è stata completata, questo metodo restituisce il `HRESULT` e oggetto parametro da `IDebugSyncOperation::Execute`.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Interfaccia IDebugAsyncOperation](../../winscript/reference/idebugasyncoperation-interface.md)   
  [IDebugSyncOperation::Execute](../../winscript/reference/idebugsyncoperation-execute.md)

@@ -1,51 +1,52 @@
 ---
-title: "IDebugObject2::GetICorDebugValue | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "IDebugObject2::GetICorDebugValue"
-helpviewer_keywords: 
-  - "Metodo IDebugObject2::GetICorDebugValue"
+title: IDebugObject2::GetICorDebugValue | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology:
+- vs-ide-sdk
+ms.topic: conceptual
+f1_keywords:
+- IDebugObject2::GetICorDebugValue
+helpviewer_keywords:
+- IDebugObject2::GetICorDebugValue method
 ms.assetid: bcd4355d-3fbe-483f-bb23-a44348323c6a
-caps.latest.revision: 11
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 11
+author: gregvanl
+ms.author: gregvanl
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: 82315e1b2170f38cae296e2a9131f4b235add26b
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# IDebugObject2::GetICorDebugValue
-[!INCLUDE[vs2017banner](../../../code-quality/includes/vs2017banner.md)]
-
+# <a name="idebugobject2geticordebugvalue"></a>IDebugObject2::GetICorDebugValue
 Ottiene un oggetto di codice gestito che rappresenta il valore associato all'oggetto.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```cpp  
-HRESULT GetICorDebugValue(  
-   IUnknown** ppUnk  
+HRESULT GetICorDebugValue(  
+   IUnknown** ppUnk  
 );  
 ```  
   
-```c#  
-int GetICorDebugValue(  
-   out object ppUnk  
+```csharp  
+int GetICorDebugValue(  
+   out object ppUnk  
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `ppUnk`  
- \[out\]  interfaccia di `IUnknown` che rappresenta tale alias.  Questa interfaccia è possibile eseguire una query per l'interfaccia di `ICorDebugValue` .  
+ [out] `IUnknown` interfaccia che rappresenta l'alias. Questa interfaccia è possibile eseguire query per il `ICorDebugValue` interfaccia.  
   
-## Valore restituito  
- Se l'operazione riesce, restituisce S\_OK, in caso contrario, restituisce un codice di errore.  
+## <a name="return-value"></a>Valore restituito  
+ Se ha esito positivo, restituisce S_OK; in caso contrario, restituisce un codice di errore.  
   
-## Note  
- l'oggetto di `ICorDebugValue` è un'interfaccia di Common Language Runtime che rappresenta un valore.  
+## <a name="remarks"></a>Note  
+ Il `ICorDebugValue` oggetto è un'interfaccia di Common Language Runtime che rappresenta un valore.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IDebugObject2](../../../extensibility/debugger/reference/idebugobject2.md)

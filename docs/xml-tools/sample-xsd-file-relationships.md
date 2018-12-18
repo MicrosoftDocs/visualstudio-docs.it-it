@@ -1,24 +1,24 @@
 ---
-title: "File XSD di esempio: relazioni | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-general"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: 'File XSD di esempio: Relazioni | Documenti Microsoft'
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology:
+- vs-ide-general
+ms.topic: conceptual
 ms.assetid: 60126510-b7dd-4cb4-92d3-9883590b92f2
-caps.latest.revision: 4
-author: "kempb"
-ms.author: "kempb"
-manager: "ghogen"
-caps.handback.revision: 4
+author: gewarren
+ms.author: gewarren
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 5498a4bb9e92291be558bd4ef849aab3a227607b
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# File XSD di esempio: relazioni
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
-Il file XSD seguente viene utilizzato in vari esempi nella documentazione relativa alla progettazione di schemi XSD.Questo file è uno schema di ordine di acquisto con annotazioni e documentazione.  
+# <a name="sample-xsd-file-relationships"></a>File XSD di esempio: relazioni
+Il file XSD seguente viene usato in vari esempi nella documentazione relativa alla progettazione di schemi XSD. Questo file è uno schema di ordine di acquisto con annotazioni e documentazione.  
   
 ```xml  
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">  

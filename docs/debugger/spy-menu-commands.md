@@ -1,41 +1,40 @@
 ---
-title: "Comandi di menu di Spy | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "Spy (comandi di menu)"
+title: Controllare i comandi di Menu | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology: vs-ide-debug
+ms.topic: conceptual
+helpviewer_keywords:
+- Spy menu commands
 ms.assetid: 802549be-dbd8-4df0-a18b-971900eaa769
-caps.latest.revision: 4
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 4
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 7a11b24f5f0f950fabe475a0f0099e76032451fb
+ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/18/2018
 ---
-# Comandi di menu di Spy
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
-Nel menu **Spy** sono disponibili i comandi per l'utilizzo delle finestre e delle visualizzazioni di Spy\+\+.  
+# <a name="spy-menu-commands"></a>Spy (comandi di menu)
+Il **Spy** menu sono disponibili comandi per lavorare con le finestre di Spy + + e viste.  
   
  **Windows**  
- Consente di aprire una nuova visualizzazione finestre.  
+ Apre una nuova visualizzazione di Windows.  
   
  **Processi**  
- Consente di aprire una nuova visualizzazione processi.  
+ Apre una nuova visualizzazione processi.  
   
  **Thread**  
- Consente di aprire una nuova visualizzazione thread.  
+ Apre una nuova visualizzazione thread.  
   
- **Registra messaggi**  
- Consente di aprire una nuova visualizzazione messaggi, nonché la [finestra di dialogo Opzioni messaggio](../debugger/message-options-dialog-box.md) relativa alla visualizzazione.  
+ **Messaggi di log**  
+ Apre una nuova visualizzazione di messaggi e viene aperta la [finestra di dialogo Opzioni messaggio](../debugger/message-options-dialog-box.md) per la visualizzazione.  
   
- **Trova finestra**  
- Consente di visualizzare la finestra di dialogo **Trova finestra** per selezionare una finestra utilizzando il mouse.  
+ **Trovare la finestra**  
+ Consente di visualizzare il **FindWindow** la finestra di dialogo per selezionare una finestra con il mouse.  
   
- **Exit**  
- Consente di chiudere l'utilità di Spy\+\+.
+ **File**  
+ Chiude l'utilità di Spy + +.

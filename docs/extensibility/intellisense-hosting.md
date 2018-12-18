@@ -1,52 +1,53 @@
 ---
-title: "Hosting di IntelliSense | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "editor [Visual Studio SDK], legacy - hosting di IntelliSense"
+title: Hosting di IntelliSense | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology:
+- vs-ide-sdk
+ms.topic: conceptual
+helpviewer_keywords:
+- editors [Visual Studio SDK], legacy - IntelliSense hosting
 ms.assetid: 20c61f8a-d32d-47e2-9c67-bf721e2cbead
-caps.latest.revision: 17
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 17
+author: gregvanl
+ms.author: gregvanl
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: b101460b3867c89862068d99412cd06edb884ef7
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# Hosting di IntelliSense
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
-Visual Studio consente l'hosting di IntelliSense.  L'hosting di IntellSense consente di fornire IntelliSense per il codice non ospitato dall'editor di testo Visual Studio.  
+# <a name="intellisense-hosting"></a>Hosting di IntelliSense
+Visual Studio consente l'hosting di IntelliSense. IntellSense hosting consente di fornire IntelliSense per codice che non è ospitato dall'editor di testo di Visual Studio.  
   
-## IntelliSense che ospita utilizzo  
- In Visual Studio, qualsiasi codice che abbia accesso al completamento impostato e un buffer di testo possono ottenere le finestre di IntelliSense qualsiasi punto dell'interfaccia \(UI\) utente.  Alcuni scenari di esempio riportato di seguito vengono di completamento nella finestra di **espressione di controllo** il campo o della condizione di una finestra delle proprietà.  
+## <a name="intellisense-hosting-usage"></a>Utilizzo di Hosting di IntelliSense  
+ In Visual Studio, qualsiasi codice che ha accesso a un set di completamento e di un buffer di testo può ottenere IntelliSense windows ovunque nell'interfaccia utente (UI). Alcuni scenari di questo esempio sono completamento nel **espressioni di controllo** finestra o nel campo condizione di una finestra delle proprietà del punto di interruzione.  
   
-### interfacce di implementazione  
+### <a name="implementation-interfaces"></a>Interfacce di implementazione  
   
-#### IVsIntellisenseHost  
- Qualsiasi componente dell'interfaccia utente che ospita le finestre popup IntelliSense deve supportare l'interfaccia di <xref:Microsoft.VisualStudio.TextManager.Interop.IVsIntellisenseHost> .  La visualizzazione di testo principale predefinita dell'editor include un'implementazione dell'interfaccia predefinita di <xref:Microsoft.VisualStudio.TextManager.Interop.IVsIntellisenseHost> per mantenere la funzionalità corrente di IntelliSense.  In genere, i metodi di interfaccia di <xref:Microsoft.VisualStudio.TextManager.Interop.IVsIntellisenseHost> rappresentano un sottoinsieme di ciò che viene distribuito sull'interfaccia di <xref:Microsoft.VisualStudio.TextManager.Interop.IVsTextView> .  Il sottoinsieme include la gestione dell'interfaccia utente di IntelliSense, la modifica di selezione e del cursore e semplice funzionalità di sostituzione del testo.  Inoltre, l'interfaccia di <xref:Microsoft.VisualStudio.TextManager.Interop.IVsIntellisenseHost> attiva IntelliSense separato “oggetto„ e “contesto„ in modo da consentire a IntelliSense per gli oggetti che direttamente non esistono nel buffer di testo utilizzato per il contesto.  
+#### <a name="ivsintellisensehost"></a>IVsIntellisenseHost  
+ Qualsiasi componente dell'interfaccia utente che ospita le finestre popup IntelliSense deve supportare il <xref:Microsoft.VisualStudio.TextManager.Interop.IVsIntellisenseHost> interfaccia. La visualizzazione del testo dell'editor principale predefinito includa un magazzino <xref:Microsoft.VisualStudio.TextManager.Interop.IVsIntellisenseHost> implementazione per mantenere la funzionalità IntelliSense corrente dell'interfaccia. La maggior parte, i metodi del <xref:Microsoft.VisualStudio.TextManager.Interop.IVsIntellisenseHost> interfaccia rappresentano un subset di ciò che viene implementato sul <xref:Microsoft.VisualStudio.TextManager.Interop.IVsTextView> interfaccia. Il sottoinsieme include gestione UI IntelliSense, punto di inserimento e la modifica di selezione e funzionalità di sostituzione di testo semplice. Inoltre, il <xref:Microsoft.VisualStudio.TextManager.Interop.IVsIntellisenseHost> interfaccia consente separato IntelliSense "subject" e "contesto" in modo che venga fornito IntelliSense per oggetti che non esistono direttamente nel buffer di testo che viene utilizzato per il contesto.  
   
-#### IVsIntellisenseHost.GetHostFlags  
- Un provider dell'interfaccia di <xref:Microsoft.VisualStudio.TextManager.Interop.IVsIntellisenseHost> deve implementare il metodo di <xref:Microsoft.VisualStudio.TextManager.Interop.IVsIntellisenseHost.GetHostFlags%2A> per consentire a un client di determinare il tipo di IntelliSense include i contenuti multimediali host.  
+#### <a name="ivsintellisensehostgethostflags"></a>IVsIntellisenseHost.GetHostFlags  
+ Un <xref:Microsoft.VisualStudio.TextManager.Interop.IVsIntellisenseHost> interfaccia provider deve implementare il <xref:Microsoft.VisualStudio.TextManager.Interop.IVsIntellisenseHost.GetHostFlags%2A> metodo per consentire a un client determinare il tipo di IntelliSense funzionalità host supporta.  
   
- I flag host, definiti in [IntelliSenseHostFlags](../extensibility/intellisensehostflags.md), vengono esposti in.  
+ I flag di host, definiti in [IntelliSenseHostFlags](../extensibility/intellisensehostflags.md), sono riepilogate di seguito.  
   
-|Flag di host di IntelliSense|Descrizione|  
-|----------------------------------|-----------------|  
-|IHF\_READONLYCONTEXT|Impostare questo flag significa che il buffer del contesto è di sola lettura e la modifica viene eseguito solo all'interno del testo tematico.|  
-|IHF\_NOSEPERATESUBJECT|Impostare questo flag indica che non è presente alcun oggetto separato IntelliSense.  L'oggetto esiste nel buffer del contesto, come nel sistema tradizionale di <xref:Microsoft.VisualStudio.TextManager.Interop.IVsTextView> IntelliSense.|  
-|IHF\_SINGLELINESUBJECT|Impostare questo flag significa che l'oggetto non è in grado di più righe, ad esempio una modifica a riga singola nella finestra di **espressione di controllo** .|  
-|IHF\_FORCECOMMITTOCONTEXT|Se questo flag è impostato e il buffer del contesto deve essere aggiornato, l'host attiva il contrassegno di sola lettura nel buffer del contesto da ignorare e modifiche per continuare.|  
-|IHF\_OVERTYPE|Modificare \(nell'oggetto o nel contesto\) deve essere eseguita in modalità di overtype.|  
+|Flag di Host di IntelliSense|Descrizione|  
+|----------------------------|-----------------|  
+|IHF_READONLYCONTEXT|Impostando questo flag del buffer del contesto è in sola lettura e modifica si verifica solo all'interno del testo di oggetto.|  
+|IHF_NOSEPERATESUBJECT|Impostazione di questo flag indica che non vi è alcun oggetto IntelliSense separato. L'oggetto esiste nel buffer del contesto, ad esempio nel tradizionale <xref:Microsoft.VisualStudio.TextManager.Interop.IVsTextView> sistema IntelliSense.|  
+|IHF_SINGLELINESUBJECT|Impostando questo flag non è soggetto a più righe in grado di supportare, ad esempio una singola riga modifica nel **espressioni di controllo** finestra.|  
+|IHF_FORCECOMMITTOCONTEXT|Se questo flag è impostato e il buffer del contesto deve essere aggiornato, l'host Abilita il flag di sola lettura nel buffer del contesto verrà ignorato e modifiche per continuare.|  
+|IHF_OVERTYPE|La modifica (in oggetto o il contesto) deve essere eseguita in modalità di sovrascrittura.|  
   
-#### IVsIntellisenseHost.BeforeCompletorCommit e IVsIntellisenseHost.AfterCompletorCommit  
- Questi metodi di callback vengono chiamati dalla finestra di completamento prima e dopo il testo viene eseguito il commit, per consentire l'esecuzione effettiva e la post\-elaborazione.  
+#### <a name="ivsintellisensehostbeforecompletorcommit-and-ivsintellisensehostaftercompletorcommit"></a>IVsIntellisenseHost.BeforeCompletorCommit e IVsIntellisenseHost.AfterCompletorCommit  
+ Questi metodi di callback vengono chiamati dalla finestra di completamento prima e dopo il testo viene eseguito il commit, per abilitare la pre-elaborazione e post-elaborazione.  
   
-#### IVsIntellisenseCompletor  
- L'interfaccia di <xref:Microsoft.VisualStudio.TextManager.Interop.IVsIntellisenseCompletor> è una versione co\-generabile della finestra di completamento standard utilizzata dall'ambiente di sviluppo integrato \(IDE\).  Qualsiasi interfaccia di <xref:Microsoft.VisualStudio.TextManager.Interop.IVsIntellisenseHost> possibile distribuire rapidamente IntelliSense utilizzando questa interfaccia di completor.  
+#### <a name="ivsintellisensecompletor"></a>IVsIntellisenseCompletor  
+ Il <xref:Microsoft.VisualStudio.TextManager.Interop.IVsIntellisenseCompletor> interfaccia è una versione generabile condiviso della finestra di completamento standard che viene utilizzata dall'ambiente di sviluppo integrato (IDE). Qualsiasi <xref:Microsoft.VisualStudio.TextManager.Interop.IVsIntellisenseHost> interfaccia possa implementare rapidamente IntelliSense tramite questa interfaccia completor.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  <xref:Microsoft.VisualStudio.TextManager.Interop>

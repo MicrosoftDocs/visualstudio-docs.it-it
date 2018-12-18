@@ -1,13 +1,8 @@
 ---
-title: 'CA2101: Specify marshaling for P-Invoke string arguments | Microsoft Docs'
-ms.custom: 
+title: 'CA2101: Specificare il marshalling per gli argomenti di stringa P-Invoke'
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- vs-devops-test
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.technology: vs-ide-code-analysis
+ms.topic: reference
 f1_keywords:
 - SpecifyMarshalingForPInvokeStringArguments
 - CA2101
@@ -15,55 +10,40 @@ helpviewer_keywords:
 - CA2101
 - SpecifyMarshalingForPInvokeStringArguments
 ms.assetid: 9d1abfc3-d320-41e0-9f6e-60cefe6ffe1b
-caps.latest.revision: 19
-author: stevehoag
-ms.author: shoag
-manager: wpickett
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: HT
-ms.sourcegitcommit: eb5c9550fd29b0e98bf63a7240737da4f13f3249
-ms.openlocfilehash: 536195a8bd2a3d92e2fb5f784e29d01d9393e580
-ms.contentlocale: it-it
-ms.lasthandoff: 08/30/2017
-
+author: gewarren
+ms.author: gewarren
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 8171c318d419edc49410c44d381e82f088014082
+ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/19/2018
 ---
-# <a name="ca2101-specify-marshaling-for-pinvoke-string-arguments"></a>CA2101: Specify marshaling for P/Invoke string arguments
-|||  
-|-|-|  
-|TypeName|SpecifyMarshalingForPInvokeStringArguments|  
-|CheckId|CA2101|  
-|Category|Microsoft.Globalization|  
-|Breaking Change|Non-breaking|  
-  
-## <a name="cause"></a>Cause  
- A platform invoke member allows for partially trusted callers, has a string parameter, and does not explicitly marshal the string.  
-  
-## <a name="rule-description"></a>Rule Description  
- When you convert from Unicode to ANSI, it is possible that not all Unicode characters can be represented in a specific ANSI code page. *Best-fit mapping* tries to solve this problem by substituting a character for the character that cannot be represented. The use of this feature can cause a potential security vulnerability because you cannot control the character that is chosen. For example, malicious code could intentionally create a Unicode string that contains characters that are not found in a particular code page, which are converted to file system special characters such as '..' or '/'. Note also that security checks for special characters frequently occur before the string is converted to ANSI.  
-  
- Best-fit mapping is the default for the unmanaged conversion, WChar to MByte. Unless you explicitly disable best-fit mapping, your code might contain an exploitable security vulnerability because of this issue.  
-  
-## <a name="how-to-fix-violations"></a>How to Fix Violations  
- To fix a violation of this rule, explicitly marshal string data types.  
-  
-## <a name="when-to-suppress-warnings"></a>When to Suppress Warnings  
- Do not suppress a warning from this rule.  
-  
-## <a name="example"></a>Example  
- The following example shows a method that violates this rule, and then shows how to fix the violation.  
-  
+# <a name="ca2101-specify-marshaling-for-pinvoke-string-arguments"></a>CA2101: Specificare il marshalling per gli argomenti di stringa P/Invoke
+|||
+|-|-|
+|TypeName|SpecifyMarshalingForPInvokeStringArguments|
+|CheckId|CA2101|
+|Category|Microsoft.Globalization|
+|Modifica importante|Non sostanziale|
+
+## <a name="cause"></a>Causa
+ Platform invoke membro consente chiamanti parzialmente attendibili, presenta un parametro di stringa e non esegue il marshalling della stringa.
+
+## <a name="rule-description"></a>Descrizione della regola
+ Quando si converte da Unicode ad ANSI, è possibile che non tutti i caratteri Unicode possono essere rappresentati in una tabella codici ANSI specifica. *Fallback con mapping* tenta di risolvere il problema tramite la sostituzione di un carattere per il carattere che non può essere rappresentato. L'utilizzo di questa funzionalità può causare una potenziale vulnerabilità di sicurezza, perché non è possibile controllare il carattere che viene scelto. Ad esempio, il codice dannoso potrebbe intenzionalmente creare una stringa Unicode che contiene caratteri che non si trovano in una particolare tabella codici, che vengono convertiti in caratteri speciali del file system, ad esempio '... ' o '/'. Si noti inoltre che i controlli di sicurezza per i caratteri speciali vengono frequentemente eseguiti prima che la stringa viene convertita in formato ANSI.
+
+ Il mapping più appropriato è il valore predefinito per la conversione non gestita, WChar a MByte. A meno che non si disabilita in modo esplicito il mapping più appropriato, il codice potrebbe contenere una vulnerabilità della protezione a causa di questo problema.
+
+## <a name="how-to-fix-violations"></a>Come correggere le violazioni
+ Per correggere una violazione di questa regola, eseguire il marshalling esplicito i tipi di dati stringa.
+
+## <a name="when-to-suppress-warnings"></a>Esclusione di avvisi
+ Non escludere un avviso da questa regola.
+
+## <a name="example"></a>Esempio
+ Nell'esempio seguente viene illustrato un metodo che viola la regola e quindi viene illustrato come correggere la violazione.
+
  [!code-csharp[FxCop.Security.PinvokeAnsiUnicode#1](../code-quality/codesnippet/CSharp/ca2101-specify-marshaling-for-p-invoke-string-arguments_1.cs)]

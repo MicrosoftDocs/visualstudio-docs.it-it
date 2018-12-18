@@ -1,44 +1,47 @@
 ---
-title: "Propriet&#224; constructor (Date) | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/18/2017"
-ms.prod: "windows-client-threshold"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-javascript"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-dev_langs: 
-  - "JavaScript"
-  - "TypeScript"
-  - "DHTML"
+title: "Proprietà constructor (Date) | Documenti Microsoft"
+ms.custom: 
+ms.date: 01/18/2017
+ms.prod: windows-client-threshold
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-javascript
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+dev_langs:
+- JavaScript
+- TypeScript
+- DHTML
 ms.assetid: 5db153a1-788b-4a61-bfc8-2d2ec38f36ea
-caps.latest.revision: 2
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 2
+caps.latest.revision: "2"
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.openlocfilehash: 798064117e17ee5b2988396de3c6545917373b10
+ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/27/2017
 ---
-# Propriet&#224; constructor (Date)
+# <a name="constructor-property-date"></a>Proprietà constructor (Date)
 Specifica la funzione che crea una data.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
   
 date.constructor  
 ```  
   
-## Note  
- L'argomento `date` obbligatorio è il nome di un oggetto data.  
+## <a name="remarks"></a>Note  
+ Obbligatorio `date` è il nome di un oggetto Data.  
   
- La proprietà `constructor` è un membro del prototipo di ogni oggetto che dispone di un prototipo.  La proprietà `constructor` include un riferimento alla funzione che costruisce le istanze dell'oggetto specifico.  
+ La proprietà `constructor` è un membro del prototipo di ogni oggetto per cui esiste un prototipo. La proprietà `constructor` contiene un riferimento alla funzione che costruisce istanze di tale oggetto specifico.  
   
-## Esempio  
- Nell'esempio seguente viene illustrato l'utilizzo della proprietà constructor.  
+## <a name="example"></a>Esempio  
+ Nell'esempio seguente viene illustrato l'utilizzo della proprietà di costruttore.  
   
-```javascript  
+```JavaScript  
 var x = new Date("Hi");  
   
 if (x.constructor == Date)  
@@ -49,5 +52,5 @@ if (x.constructor == Date)
   
 ```  
   
-## Requisiti  
+## <a name="requirements"></a>Requisiti  
  [!INCLUDE[jsv2](../../javascript/reference/includes/jsv2-md.md)]

@@ -1,31 +1,31 @@
 ---
-title: "Comando Sostituisci | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-general"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "edit.replace"
-helpviewer_keywords: 
-  - "Edit.Replace (comando)"
-  - "Sostituisci (comando)"
+title: Comando Sostituisci | Microsoft Docs
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology:
+- vs-ide-general
+ms.topic: conceptual
+f1_keywords:
+- edit.replace
+helpviewer_keywords:
+- Edit.Replace command
+- Replace command
 ms.assetid: a15767f1-5a3d-44f5-8c77-7b0f1157f340
-caps.latest.revision: 13
-author: "kempb"
-ms.author: "kempb"
-manager: "ghogen"
-caps.handback.revision: 13
+author: gewarren
+ms.author: gewarren
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: a773a04c0f289da2d47f468e0282dc8d119c721a
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# Comando Sostituisci
-[!INCLUDE[vs2017banner](../../code-quality/includes/vs2017banner.md)]
-
-Sostituisce il testo nei file utilizzando un sottoinsieme delle opzioni disponibili nella scheda **Sostituisci nei file** della finestra **Trova e sostituisci**.  
+# <a name="replace-command"></a>Comando Sostituisci
+Sostituisce il testo nei file usando un subset delle opzioni disponibili nella scheda **Sostituisci nei file** della finestra **Trova e sostituisci**.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
 Edit.Replace findwhat replacewith [/all] [/case]  
@@ -33,63 +33,63 @@ Edit.Replace findwhat replacewith [/all] [/case]
 [/wild|/regex] [/word]  
 ```  
   
-## Argomenti  
+## <a name="arguments"></a>Argomenti  
  `findwhat`  
- Obbligatorio.  Il testo da ricercare.  
+ Obbligatorio. Testo da cercare.  
   
  `replacewith`  
- Obbligatorio.  Il testo da immettere in sostituzione del testo ricercato.  
+ Obbligatorio. Il testo di sostituzione per il testo corrispondente.  
   
-## Opzioni  
- \/all o \/a  
- Parametro facoltativo.  Sostituisce tutte le occorrenze del testo cercato con il testo sostitutivo.  
+## <a name="switches"></a>Opzioni  
+ /all o /a  
+ Facoltativo. Sostituisce tutte le occorrenze del testo di ricerca con il testo di sostituzione.  
   
- \/case o \/c  
- Parametro facoltativo.  Vengono rilevate corrispondenze solo se i caratteri in maiuscolo e minuscolo coincidono esattamente con quelli specificati nell'argomento `findwhat`.  
+ /case o /c  
+ Facoltativo. Vengono rilevate corrispondenze solo se i caratteri maiuscoli e minuscoli corrispondono esattamente a quelli specificati nell'argomento `findwhat`.  
   
- \/doc o \/d  
- Parametro facoltativo.  Effettua la ricerca soltanto nel documento corrente.  Specificare uno solo degli ambiti di ricerca disponibili:`/doc`, `/proc`, `/open` o `/sel`.  
+ /doc o /d  
+ Facoltativo. Cerca solo nel documento corrente. Specificare solo uno degli ambiti di ricerca disponibili, `/doc`, `/proc`, `/open`, o `/sel`.  
   
- \/hidden o \/h  
- Parametro facoltativo.  Effettua la ricerca nel testo compresso e nascosto, ad esempio nei metadati di un controllo della fase di progettazione, in un'area nascosta di un documento strutturato oppure in classi o metodi compressi.  
+ /hidden o /h  
+ Facoltativo. Cerca il testo compresso e nascosto, come i metadati di un controllo DTC, un'area nascosta di un documento strutturato o un metodo o una classe compressi.  
   
- \/open o \/o  
- Parametro facoltativo.  Esegue la ricerca in tutti i documenti aperti come se costituissero un unico documento.  Specificare uno solo degli ambiti di ricerca disponibili:`/doc`, `/proc`, `/open` o `/sel`.  
+ /open o /o  
+ Facoltativo. Cerca in tutti i documenti aperti come se fossero un unico documento. Specificare solo uno degli ambiti di ricerca disponibili, `/doc`, `/proc`, `/open` o `/sel`.  
   
- \/options o \/t  
- Parametro facoltativo.  Visualizza un elenco delle impostazioni correnti delle opzioni di ricerca e non effettua alcuna ricerca.  
+ /options o /t  
+ Facoltativo. Visualizza l'elenco delle impostazioni correnti dell'opzione di ricerca e non esegue una ricerca.  
   
- \/proc o \/p  
- Parametro facoltativo.  Effettua la ricerca soltanto nella routine corrente.  Specificare uno solo degli ambiti di ricerca disponibili:`/doc`, `/proc`, `/open` o `/sel`.  
+ /proc o /p  
+ Facoltativo. Cerca solo nella routine corrente. Specificare solo uno degli ambiti di ricerca disponibili, `/doc`, `/proc`, `/open` o `/sel`.  
   
- \/regex o \/r  
- Parametro facoltativo.  Utilizza caratteri speciali predefiniti nell'argomento `findwhat` come notazioni rappresentative di determinati criteri testuali anziché di caratteri effettivi.  Per un elenco completo dei caratteri delle espressioni regolari, vedere [Espressioni regolari](../../ide/using-regular-expressions-in-visual-studio.md).  
+ /regex o /r  
+ Facoltativo. Usa caratteri speciali predefiniti nell'argomento `findwhat` come notazioni che rappresentano modelli di testo anziché i caratteri letterali. Per l'elenco completo dei caratteri espressione regolare, vedere [Espressioni regolari](../../ide/using-regular-expressions-in-visual-studio.md).  
   
- \/reset o \/e  
- Parametro facoltativo.  Ripristina le impostazioni predefinite delle opzioni di ricerca e non effettua alcuna ricerca.  
+ /reset o /e  
+ Facoltativo. Ripristina le impostazioni predefinite delle opzioni di ricerca e non esegue la ricerca.  
   
- \/sel o \/s  
- Parametro facoltativo.  Effettua la ricerca soltanto nella selezione corrente.  Specificare uno solo degli ambiti di ricerca disponibili:`/doc`, `/proc`, `/open` o `/sel`.  
+ /sel o /s  
+ Facoltativo. Cerca solo nella selezione corrente. Specificare solo uno degli ambiti di ricerca disponibili, `/doc`, `/proc`, `/open` o `/sel`.  
   
- \/up o \/u  
- Parametro facoltativo.  Effettua la ricerca verso l'inizio del file, a partire dalla posizione corrente all'interno del file stesso.  Per impostazione predefinita, le ricerche vengono invece effettuate a partire dalla posizione corrente verso la fine del file.  
+ /up o /u  
+ Facoltativo. Esegue la ricerca dalla posizione corrente nel file verso la parte superiore del file. Per impostazione predefinita, le ricerche iniziano in corrispondenza della posizione del file e procedono verso la fine del file.  
   
- \/wild o \/l  
- Parametro facoltativo.  Utilizza caratteri speciali predefiniti nell'argomento `findwhat` come notazioni rappresentative di un carattere o di una sequenza di caratteri.  
+ /wild o /l  
+ Facoltativo. Usa caratteri speciali predefiniti nell'argomento `findwhat` come notazioni per rappresentare un carattere o una sequenza di caratteri.  
   
- \/word o \/w  
- Parametro facoltativo.  Cerca solo parole intere.  
+ /word o /w  
+ Facoltativo. Cerca solo parole intere.  
   
-## Esempio  
- Nell'esempio riportato di seguito `btnSend` viene sostituito con `btnSubmit` in tutti i documenti aperti.  
+## <a name="example"></a>Esempio  
+ In questo esempio `btnSend` con `btnSubmit` tutti i documenti aperti.  
   
 ```  
 >Edit.Replace btnSend btnSubmit /open  
 ```  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Ricerca e sostituzione di testo](../../ide/finding-and-replacing-text.md)   
- [Finestra di comando](../../ide/reference/command-window.md)   
- [Casella Trova\/Comando](../../ide/find-command-box.md)   
- [Comandi di Visual Studio](../../ide/reference/visual-studio-commands.md)   
- [Alias di comandi di Visual Studio](../../ide/reference/visual-studio-command-aliases.md)
+ [Command Window](../../ide/reference/command-window.md)  (Finestra di comando)  
+ [Find/Command Box](../../ide/find-command-box.md)  (Casella Trova/Comando)  
+ [Visual Studio Commands](../../ide/reference/visual-studio-commands.md)  (Comandi di Visual Studio)  
+ [Visual Studio Command Aliases](../../ide/reference/visual-studio-command-aliases.md) (Alias di comandi di Visual Studio)

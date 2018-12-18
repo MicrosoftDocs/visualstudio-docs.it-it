@@ -1,38 +1,41 @@
 ---
-title: "Propriet&#224; byteOffset (Uint16Array) | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/18/2017"
-ms.prod: "windows-client-threshold"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-javascript"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-dev_langs: 
-  - "JavaScript"
-  - "TypeScript"
-  - "DHTML"
+title: "Proprietà (Uint16Array) byteOffset | Documenti Microsoft"
+ms.custom: 
+ms.date: 01/18/2017
+ms.prod: windows-client-threshold
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-javascript
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+dev_langs:
+- JavaScript
+- TypeScript
+- DHTML
 ms.assetid: f7a97ea9-5f1d-466d-82cd-79fd8ab95771
-caps.latest.revision: 8
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.openlocfilehash: 9e2c45d6c9908d8dbeabf0ceb46516da4c745a3a
+ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/27/2017
 ---
-# Propriet&#224; byteOffset (Uint16Array)
-Sola lettura.  Offset della matrice dall'inizio di ArrayBuffer, in byte, corretto in fase di costruzione.  
+# <a name="byteoffset-property-uint16array"></a>Proprietà byteOffset (Uint16Array)
+Sola lettura. Offset di questa matrice dall'inizio del relativo ArrayBuffer, espresso in byte, fissato in fase di costruzione.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```javascript  
+```JavaScript  
 var arrayOffset = uint16Array.byteOffset;  
 ```  
   
-## Esempio  
- Nell'esempio seguente viene illustrato come ottenere l'offset della matrice.  
+## <a name="example"></a>Esempio  
+ L'esempio seguente illustra come ottenere l'offset della matrice.  
   
-```javascript  
+```JavaScript  
 var req = new XMLHttpRequest();  
     req.open('GET', "http://www.example.com");  
     req.responseType = "arraybuffer";  
@@ -49,5 +52,5 @@ var req = new XMLHttpRequest();
   
 ```  
   
-## Requisiti  
+## <a name="requirements"></a>Requisiti  
  [!INCLUDE[jsv10](../../javascript/reference/includes/jsv10-md.md)]

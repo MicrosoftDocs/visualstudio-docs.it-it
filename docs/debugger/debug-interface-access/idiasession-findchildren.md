@@ -1,72 +1,71 @@
 ---
-title: "IDiaSession::findChildren | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "IDiaSession::findChildren (metodo)"
+title: 'Idiasession:: Findchildren | Documenti Microsoft'
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology: vs-ide-debug
+ms.topic: conceptual
+dev_langs:
+- C++
+helpviewer_keywords:
+- IDiaSession::findChildren method
 ms.assetid: 5d19046f-f668-4aa9-8788-95cda9a98997
-caps.latest.revision: 10
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 10
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: cc9b9aabf920fa33828d86e2f0c3ac96f7e6dbdb
+ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/18/2018
 ---
-# IDiaSession::findChildren
-[!INCLUDE[vs2017banner](../../code-quality/includes/vs2017banner.md)]
-
-Recupera tutti gli elementi figlio di un identificatore padre specificato che corrispondono al nome e il tipo del simbolo.  
+# <a name="idiasessionfindchildren"></a>IDiaSession::findChildren
+Recupera tutti gli elementi figlio di un identificatore padre specificato che corrispondano al tipo di nome e il simbolo.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp#  
-HRESULT findChildren (   
-   IDiaSymbol*       parent,  
-   SymTagEnum        symtag,  
-   LPCOLESTR         name,  
-   DWORD             compareFlags,  
-   IDiaEnumSymbols** ppResult  
+```C++  
+HRESULT findChildren (   
+   IDiaSymbol*       parent,  
+   SymTagEnum        symtag,  
+   LPCOLESTR         name,  
+   DWORD             compareFlags,  
+   IDiaEnumSymbols** ppResult  
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `parent`  
- \[in\]   [IDiaSymbol](../../debugger/debug-interface-access/idiasymbol.md) oggetto che rappresenta il padre.  Se questo simbolo padre è una funzione, modulo, o blocco, i relativi figli lessicali vengono restituiti in `ppResult`.  Se il simbolo padre è di tipo, i relativi figli di classe vengono restituiti.  se questo parametro è `NULL`, quindi  `symtag` deve essere impostata su  `SymTagExe` o  `SymTagNull`, che restituisce l'ambito globale \(file EXE\).  
+ [in] Un [IDiaSymbol](../../debugger/debug-interface-access/idiasymbol.md) oggetto che rappresenta l'elemento padre. Se questo simbolo padre è una funzione, un modulo o un blocco, quindi vengono restituiti i figli lessicali in `ppResult`. Se il simbolo padre è un tipo, vengono restituiti i figli di classe. Se questo parametro è `NULL`, quindi `symtag` deve essere impostato su `SymTagExe` o `SymTagNull`, che restituisce l'ambito globale (file .exe).  
   
  `symtag`  
- \[in\]  Specifica il tag dei simboli degli elementi figlio da recuperare.  I valori vengono ricavati da [Enumerazione SymTagEnum](../../debugger/debug-interface-access/symtagenum.md) enumerazione.  Impostare su `SymTagNull` per recuperare tutti gli elementi figlio.  
+ [in] Specifica il tag symbol degli elementi figlio da recuperare. I valori vengono prelevati i [SymTagEnum (enumerazione)](../../debugger/debug-interface-access/symtagenum.md) enumerazione. Impostare su `SymTagNull` per recuperare tutti gli elementi figlio.  
   
  `name`  
- \[in\]  Specifica il nome degli elementi figlio da recuperare.  Impostare su `NULL` per tutti gli elementi figlio vengano recuperati.  
+ [in] Specifica il nome degli elementi figlio da recuperare. Impostare su `NULL` per tutti gli elementi figlio da recuperare.  
   
  `compareFlags`  
- \[in\]  specifica le opzioni di confronto applicate per denominare la corrispondenza.  Valori da [Enumerazione NameSearchOptions](../../debugger/debug-interface-access/namesearchoptions.md) l'enumerazione può essere utilizzata da solo o nell'associazione.  
+ [in] Specifica le opzioni di confronto applicate al nome corrispondente. I valori di [NameSearchOptions (enumerazione)](../../debugger/debug-interface-access/namesearchoptions.md) enumerazione può essere utilizzato da solo o in combinazione.  
   
  `ppResult`  
- \[out\]  restituisce [IDiaEnumSymbols](../../debugger/debug-interface-access/idiaenumsymbols.md) oggetto che contiene l'elenco dei simboli figlio recuperati.  
+ [out] Restituisce un [IDiaEnumSymbols](../../debugger/debug-interface-access/idiaenumsymbols.md) recuperare l'oggetto che contiene l'elenco di simboli figlio.  
   
-## Valore restituito  
- Se l'operazione riesce, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
+## <a name="return-value"></a>Valore restituito  
+ Se ha esito positivo, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
   
-## Esempio  
- Nell'esempio seguente viene illustrato come trovare le variabili locali della funzione `pFunc` il nome della corrispondenza  `szVarName`.  
+## <a name="example"></a>Esempio  
+ Nell'esempio seguente viene illustrato come trovare le variabili locali della funzione `pFunc` nome corrispondenza `szVarName`.  
   
-```cpp#  
+```C++  
 IDiaEnumSymbols* pEnum;  
 pSession->findChildren( pFunc, SymTagData, szVarName, nsCaseSensitive, &pEnum );  
 ```  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Panoramica](../../debugger/debug-interface-access/overview-debug-interface-access-sdk.md)   
  [IDiaEnumSymbols](../../debugger/debug-interface-access/idiaenumsymbols.md)   
  [IDiaSession](../../debugger/debug-interface-access/idiasession.md)   
  [IDiaSymbol](../../debugger/debug-interface-access/idiasymbol.md)   
- [Enumerazione NameSearchOptions](../../debugger/debug-interface-access/namesearchoptions.md)   
- [Enumerazione SymTagEnum](../../debugger/debug-interface-access/symtagenum.md)
+ [NameSearchOptions (enumerazione)](../../debugger/debug-interface-access/namesearchoptions.md)   
+ [SymTagEnum (enumerazione)](../../debugger/debug-interface-access/symtagenum.md)

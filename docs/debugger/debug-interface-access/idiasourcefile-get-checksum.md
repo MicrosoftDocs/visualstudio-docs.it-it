@@ -1,59 +1,58 @@
 ---
-title: "IDiaSourceFile::get_checksum | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "IDiaSourceFile::get_checksum (metodo)"
+title: 'Idiasourcefile:: Get_checksum | Documenti Microsoft'
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology: vs-ide-debug
+ms.topic: conceptual
+dev_langs:
+- C++
+helpviewer_keywords:
+- IDiaSourceFile::get_checksum method
 ms.assetid: aad63a7e-4e22-44e4-8a5b-81b5174ced1e
-caps.latest.revision: 9
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 9
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 002ad16d94467c135e08ef0040fd7ffd51462719
+ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/18/2018
 ---
-# IDiaSourceFile::get_checksum
-[!INCLUDE[vs2017banner](../../code-quality/includes/vs2017banner.md)]
-
-recupera i byte di checksum.  
+# <a name="idiasourcefilegetchecksum"></a>IDiaSourceFile::get_checksum
+Recupera i byte di checksum.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp#  
-HRESULT get_checksum (   
-   DWORD  cbData,  
-   DWORD* pcbData,  
-   BYTE   data[]  
+```C++  
+HRESULT get_checksum (   
+   DWORD  cbData,  
+   DWORD* pcbData,  
+   BYTE   data[]  
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `cbData`  
- \[in\]  Dimensione del buffer di dati, in byte.  
+ [in] Dimensione del buffer di dati, in byte.  
   
  `pcbData`  
- \[out\]  Restituisce il numero di byte di checksum.  Questo parametro non può essere `NULL`.  
+ [out] Restituisce il numero di byte di checksum. Questo parametro non può essere `NULL`.  
   
  `data`  
- \[in, out\]  Un buffer che viene riempito con un byte di checksum.  se questo parametro è `NULL`, quindi  `pcbData` restituisce il numero di byte necessari.  
+ [in, out] Un buffer che viene riempito con i byte di checksum. Se questo parametro è `NULL`, quindi `pcbData` restituisce il numero di byte necessari.  
   
-## Valore restituito  
- Se l'operazione riesce, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
+## <a name="return-value"></a>Valore restituito  
+ Se ha esito positivo, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
   
-## Note  
- Per determinare il tipo di algoritmo di checksum utilizzato per generare i byte di checksum, chiamare [IDiaSourceFile::get\_checksumType](../../debugger/debug-interface-access/idiasourcefile-get-checksumtype.md) metodo.  
+## <a name="remarks"></a>Note  
+ Per determinare il tipo di algoritmo di checksum utilizzata per generare i byte di checksum, chiamare il [idiasourcefile:: Get_checksumtype](../../debugger/debug-interface-access/idiasourcefile-get-checksumtype.md) metodo.  
   
- Il checksum in genere viene generato dall'immagine del file di origine in modo che le modifiche apportate nel file di origine riflesse nelle modifiche in byte di checksum.  Se i byte di checksum non corrispondono a un checksum generato dall'immagine caricamento del file, il file deve essere considerato danneggiato o alterato.  
+ Il valore di checksum viene in genere generato dall'immagine del file di origine in modo che le modifiche nel file di origine vengono applicate le modifiche apportate in byte di checksum. Se i byte di checksum non corrispondono a un checksum generato dall'immagine di caricamento del file, quindi è necessario considerare il file danneggiato o manomesso.  
   
- I checksum tipici non vengono mai più di 32 byte nella dimensione ma non si presuppone che corrisponde alla dimensione massima di un checksum.  impostare `data` parametro di  `NULL` per ottenere il numero di byte obbligatorio per recuperare il checksum.  Quindi allocare un buffer di dimensioni corrette e chiamare questo metodo nuovamente con il nuovo buffer.  
+ Tipico checksum non sono mai più di 32 byte di dimensioni ma non presupporre che è la dimensione massima di un checksum. Impostare il `data` parametro `NULL` per ottenere il numero di byte necessari per recuperare il valore di checksum. Quindi allocare un buffer di dimensioni appropriate e chiamare questo metodo ancora una volta con il nuovo buffer.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IDiaSourceFile](../../debugger/debug-interface-access/idiasourcefile.md)   
- [IDiaSourceFile::get\_checksumType](../../debugger/debug-interface-access/idiasourcefile-get-checksumtype.md)
+ [IDiaSourceFile::get_checksumType](../../debugger/debug-interface-access/idiasourcefile-get-checksumtype.md)

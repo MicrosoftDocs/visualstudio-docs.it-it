@@ -1,45 +1,43 @@
 ---
-title: "Modifiche e limitazioni del codice supportato (C++) | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/05/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "FSharp"
-  - "VB"
-  - "CSharp"
-  - "C++"
-helpviewer_keywords: 
-  - "linguaggio C#, modifiche supportate al codice"
-  - "modifiche al codice"
-  - "modifiche al codice, gestione in Modifica e continuazione"
-  - "codifica, modifiche supportate al codice"
-  - "Modifica e continuazione, limiti"
-  - "file oggetto, limiti di Modifica e continuazione"
-  - "file di risorse, limiti di Modifica e continuazione"
-  - "modifiche supportate al codice"
-  - "novità [C#], modifiche supportate al codice"
+title: Modifiche supportate al codice (C++) | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology: vs-ide-debug
+ms.topic: conceptual
+dev_langs:
+- CSharp
+- VB
+- FSharp
+- C++
+helpviewer_keywords:
+- Edit and Continue, limitations
+- supported code changes
+- object files, limitations of Edit and Continue
+- C# language, supported code changes
+- coding, supported code changes
+- resource files, limitations of Edit and Continue
+- code changes, handling in Edit and Continue
+- what's new [C#], supported code changes
+- code changes
 ms.assetid: f5754363-8a56-417b-b904-b05d9dd26d03
-caps.latest.revision: 26
-caps.handback.revision: 26
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- cplusplus
+ms.openlocfilehash: bb97c08b8673854e0fe0d0bbd64efbe038227c43
+ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/18/2018
 ---
-# Modifiche e limitazioni del codice supportato (C++)
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
-L'opzione Modifica e continuazione per Visual C\+\+ gestisce la gran parte dei tipi di modifica al codice. Alcune modifiche non possono tuttavia essere applicate durante l'esecuzione del programma. Per applicare tali modifiche, è necessario arrestare l'esecuzione e compilare una versione aggiornata del codice.  
+# <a name="supported-code-changes-c"></a>Modifiche al codice supportate (C++)
+L'opzione Modifica e continuazione per Visual C++ gestisce la gran parte dei tipi di modifica al codice. Alcune modifiche non possono tuttavia essere applicate durante l'esecuzione del programma. Per applicare tali modifiche, è necessario arrestare l'esecuzione e compilare una versione aggiornata del codice.  
   
- Vedere [Modifica e continuazione \(Visual C\+\+\)](../debugger/edit-and-continue-visual-cpp.md) per informazioni sull'uso di Modifica e continuazione per C\+\+ in Visual Studio.  
+ Vedere [Edit and Continue (Visual C++)](../debugger/edit-and-continue-visual-cpp.md) per informazioni sull'uso di Modifica e continuazione per C++ in Visual Studio.  
   
 ##  <a name="BKMK_Unsupported_changes"></a> Modifiche non supportate  
- Le seguenti modifiche del codice C\/C\+\+ non possono essere applicate durante una sessione di debug:  
+ Le seguenti modifiche del codice C/C++ non possono essere applicate durante una sessione di debug:  
   
 -   La maggior parte delle modifiche a dati globali o statici.  
   
@@ -63,20 +61,20 @@ L'opzione Modifica e continuazione per Visual C\+\+ gestisce la gran parte dei t
   
 -   Modifiche del codice privo di un file oggetto.  
   
- Se si apporta una di queste modifiche e si tenta quindi di applicare le modifiche al codice, viene visualizzato un messaggio di errore o di avviso nella finestra **Output**.  
+ Se si apporta una di queste modifiche e si tenta quindi di applicare le modifiche al codice, viene visualizzato un messaggio di errore o di avviso nella finestra **Output** .  
   
 -   Le librerie statiche non vengono aggiornate con la funzionalità Modifica e continuazione. Se si apporta una modifica in una libreria statica, l'esecuzione continua con la versione precedente e non viene visualizzato alcun avviso.  
   
 ##  <a name="BKMK_Unsupported_scenarios"></a> Scenari non supportati  
- Modifica e continuazione per C\/C\+\+ non è disponibile nei seguenti scenari di debug:  
+ Modifica e continuazione per C/C++ non è disponibile nei seguenti scenari di debug:  
   
--   Debug di applicazioni native compilate con [\/Zo \(Ottimizzare il debug\)](/visual-cpp/build/reference/zo-enhance-optimized-debugging)  
+-   Debug di applicazioni native compilate con [/Zo (Ottimizzare il debug)](/cpp/build/reference/zo-enhance-optimized-debugging)  
   
--   Nelle versioni di Visual Studio precedenti a Visual Studio 2015 Update 1, debug di app di Windows Store o componenti. A partire da Visual Studio 2015 Update 1, è possibile usare Modifica e continuazione nelle app C\+\+ di Windows Store e nelle app DirectX perché ora è supportata l'opzione del compilatore `/ZI` con l'opzione `/bigobj`. È anche possibile usare Modifica e continuazione con file binari compilati con l'opzione `/FASTLINK`.  
+-   Nelle versioni di Visual Studio precedenti a Visual Studio 2015 Update 1, debug di App UWP o componenti. A partire da Visual Studio 2015 Update 1, è possibile utilizzare Modifica e continuazione nelle App UWP C++ e DirectX, perché è ora supportata la `/ZI` opzione del compilatore con il `/bigobj` passare. È anche possibile usare Modifica e continuazione con file binari compilati con l'opzione `/FASTLINK` .  
   
 -   Debug in Windows 98.  
   
--   Debug in modalità mista \(nativo\/gestito\).  
+-   Debug in modalità mista (nativo/gestito).  
   
 -   Debug di JavaScript.  
   
@@ -86,7 +84,7 @@ L'opzione Modifica e continuazione per Visual C\+\+ gestisce la gran parte dei t
   
 -   Modifica di codice dopo un'eccezione non gestita, quando l'opzione **Rimuovi stack di chiamate su eccezioni non gestite** non è selezionata.  
   
--   Debug di un'app usando **Connetti a** invece di eseguire l'app da **Start** nel menu **Debug**.  
+-   Debug di un'app usando **Connetti a** invece di eseguire l'app da **Start** nel menu **Debug** .  
   
 -   Debug di codice ottimizzato.  
   
@@ -97,15 +95,15 @@ L'opzione Modifica e continuazione per Visual C\+\+ gestisce la gran parte dei t
 ###  <a name="BKMK_Linker_options_that_disable_Edit_and_Continue"></a> Opzioni dei linker che disabilitano Modifica e continuazione  
  La funzionalità Modifica e continuazione viene disabilitata dalle seguenti opzioni dei linker:  
   
--   L'impostazione di **\/OPT:REF**, **\/OPT:ICF** o **\/INCREMENTAL:NO** provoca la disattivazione di Modifica e continuazione con la visualizzazione del seguente messaggio di avviso:  
+-   L'impostazione di **/OPT:REF**, **/OPT:ICF**o **/INCREMENTAL:NO** provoca la disattivazione di Modifica e continuazione con la visualizzazione del seguente messaggio di avviso:  
   
-     LINK : avviso LNK4075: \/EDITANDCONTINUE ignorato a causa  
+     LINK : avviso LNK4075: /EDITANDCONTINUE ignorato a causa  
   
      specification  
   
--   L'impostazione di **\/ORDER**, **\/RELEASE** o **\/FORCE** provoca la disattivazione di Modifica e continuazione con la visualizzazione del seguente messaggio di avviso:  
+-   L'impostazione di **/ORDER**, **/RELEASE**o **/FORCE** provoca la disattivazione di Modifica e continuazione con la visualizzazione del seguente messaggio di avviso:  
   
-     LINK : avviso LNK4075: \/INCREMENTAL ignorato a causa  
+     LINK : avviso LNK4075: /INCREMENTAL ignorato a causa  
   
      specification  
   
@@ -124,9 +122,9 @@ L'opzione Modifica e continuazione per Visual C\+\+ gestisce la gran parte dei t
   
 1.  Scegliere **Opzioni e impostazioni** dal menu **Debug**.  
   
-2.  Nella finestra di dialogo **Opzioni** nel nodo **Debug** selezionare il nodo **Modifica e continuazione**.  
+2.  Nella finestra di dialogo **Opzioni** nel nodo **Debug** selezionare il nodo **Modifica e continuazione** .  
   
-3.  Deselezionare la casella di controllo **Ricollega modifiche del codice dopo il debug**.  
+3.  Deselezionare la casella di controllo **Ricollega modifiche del codice dopo il debug** .  
   
 ##  <a name="BKMK_Precompiled_Header_Limitations"></a> Limitazioni dei file di intestazione precompilati  
  Per impostazione predefinita, in Modifica e continuazione le intestazioni precompilate vengono caricate ed elaborate in background per velocizzare l'elaborazione delle modifiche al codice. Il caricamento delle intestazioni precompilate richiede l'allocazione di memoria fisica, il che può rappresentare un problema se si effettua la compilazione usando un computer che dispone di una quantità limitata di RAM. È possibile determinare se ciò può costituire un problema usando Gestione attività di Windows per verificare la quantità di memoria fisica disponibile durante il debug. Se la quantità di memoria supera le dimensioni delle intestazioni precompilate, Modifica e continuazione non dovrebbe presentare alcun problema. Se tale quantità è inferiore alle dimensioni delle intestazioni precompilate, è possibile configurare Modifica e continuazione in modo da evitare che le intestazioni precompilate vengano caricate in background.  
@@ -135,12 +133,12 @@ L'opzione Modifica e continuazione per Visual C\+\+ gestisce la gran parte dei t
   
 1.  Scegliere **Opzioni e impostazioni** dal menu **Debug**.  
   
-2.  Nella finestra di dialogo **Opzioni** nel nodo **Debug** selezionare il nodo **Modifica e continuazione**.  
+2.  Nella finestra di dialogo **Opzioni** nel nodo **Debug** selezionare il nodo **Modifica e continuazione** .  
   
-3.  Deselezionare la casella di controllo **Consenti precompilazione**.  
+3.  Deselezionare la casella di controllo **Consenti precompilazione** .  
   
 ##  <a name="BKMK_IDL_Attribute_Limitations"></a> Limitazioni degli attributi IDL  
- Modifica e Continua non consentono di rigenerare file di definizione di interfaccia \(IDL\). Le modifiche agli attributi IDL non verranno pertanto riflesse mentre si esegue il debug. Per visualizzare il risultato delle modifiche agli attributi IDL è necessario interrompere il debug e ricompilare l'app. Se gli attributi IDL sono stati modificati, non verrà generato alcun errore o avviso. Per altre informazioni, vedere [Attributi IDL](/visual-cpp/windows/idl-attributes).  
+ Modifica e Continua non consentono di rigenerare file di definizione di interfaccia (IDL). Le modifiche agli attributi IDL non verranno pertanto riflesse mentre si esegue il debug. Per visualizzare il risultato delle modifiche agli attributi IDL è necessario interrompere il debug e ricompilare l'app. Se gli attributi IDL sono stati modificati, non verrà generato alcun errore o avviso. Per altre informazioni, vedere [Attributi IDL](/cpp/windows/idl-attributes).  
   
-## Vedere anche  
- [Modifica e continuazione \(Visual C\+\+\)](../debugger/edit-and-continue-visual-cpp.md)
+## <a name="see-also"></a>Vedere anche  
+ [Edit and Continue (Visual C++)](../debugger/edit-and-continue-visual-cpp.md)

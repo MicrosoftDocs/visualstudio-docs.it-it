@@ -1,39 +1,20 @@
 ---
 title: Glossario di MSBuild | Microsoft Docs
-ms.custom: 
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- vs-ide-sdk
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.technology: msbuild
+ms.topic: reference
 ms.assetid: f767d8e4-24d8-4803-80eb-e857202dbe2c
-caps.latest.revision: 23
-author: kempb
-ms.author: kempb
-manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 47057e9611b824c17077b9127f8d2f8b192d6eb8
-ms.openlocfilehash: f680d18660c15e96c87d868cc45cc3a66e8fc553
-ms.contentlocale: it-it
-ms.lasthandoff: 05/13/2017
-
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 01020148db1c5d34b4108d2c7ab25aa74fb1b308
+ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/19/2018
 ---
 # <a name="msbuild-glossary"></a>Glossario di MSBuild
 Questi termini vengono usati per descrivere Microsoft Build Engine (MSBuild) e i relativi componenti.  
@@ -118,7 +99,7 @@ Questi termini vengono usati per descrivere Microsoft Build Engine (MSBuild) e i
  Una funzione di proprietà è una proprietà di sistema o un metodo che si può usare per valutare gli script di MSBuild. I metodi di proprietà possono essere usati per leggere l'ora di sistema, confrontare stringhe, trovare la corrispondenza per espressioni regolari ed eseguire altre azioni. Per altre informazioni, vedere [Funzioni di proprietà](../msbuild/property-functions.md).  
   
  funzione di proprietà, annidata  
- Le funzioni di proprietà possono essere combinate per formare funzioni più complesse. Di seguito è riportato un esempio:  
+ Le funzioni di proprietà possono essere combinate per formare funzioni più complesse. Ad esempio,  
   
  `$([MSBuild]::BitwiseAnd(32,   $([System.IO.File]::GetAttributes(tempFile))))`  
   

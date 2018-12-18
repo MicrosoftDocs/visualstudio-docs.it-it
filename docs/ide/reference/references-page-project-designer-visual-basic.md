@@ -1,13 +1,10 @@
 ---
 title: Riferimenti (pagina), Progettazione progetti (Visual Basic) | Microsoft Docs
-ms.custom: 
+ms.custom: ''
 ms.date: 06/21/2017
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - vs-ide-general
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: conceptual
 f1_keywords:
 - vb.ProjectPropertiesReference
 - vb.ProjectPropertiesUnusedReference
@@ -17,31 +14,16 @@ helpviewer_keywords:
 - Project Designer, References page
 - Unused References dialog box
 ms.assetid: 5a47c595-e084-401c-86e1-74e0bf74fd86
-caps.latest.revision: 34
 author: gewarren
 ms.author: gewarren
-manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 0d21e095ee6a81a257c33fe43be0673766cce43d
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
 ms.translationtype: HT
-ms.sourcegitcommit: d2f4eba36e9069a35cf279ccf1c78f72a51d77a1
-ms.openlocfilehash: 3f6fc5d4cfa934af24497828a57111ea40d6f3a0
-ms.contentlocale: it-it
-ms.lasthandoff: 08/08/2017
-
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="references-page-project-designer-visual-basic"></a>Riferimenti (pagina), Creazione progetti (Visual Basic)
 Usare la pagina **Riferimenti** di **Progettazione progetti** per gestire riferimenti, riferimenti Web e spazi dei nomi importati del progetto. I progetti possono contenere riferimenti a componenti COM, servizi Web XML, assembly o librerie di classi .NET Framework oppure altre librerie di classi. Per altre informazioni sull'uso dei riferimenti, vedere [Gestione dei riferimenti in un progetto](../../ide/managing-references-in-a-project.md).  
@@ -107,4 +89,3 @@ Usare la pagina **Riferimenti** di **Progettazione progetti** per gestire riferi
  [Gestione dei riferimenti in un progetto](../../ide/managing-references-in-a-project.md)   
  [Procedura: Aggiungere o rimuovere spazi dei nomi importati (Visual Basic)](../../ide/how-to-add-or-remove-imported-namespaces-visual-basic.md)   
  [Istruzione Imports (spazio dei nomi XML)](/dotnet/visual-basic/language-reference/statements/imports-statement-xml-namespace)
-

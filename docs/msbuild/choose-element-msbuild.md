@@ -1,13 +1,9 @@
 ---
 title: Elemento Choose (MSBuild) | Microsoft Docs
-ms.custom: 
+ms.custom: ''
 ms.date: 03/13/2017
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- vs-ide-sdk
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.technology: msbuild
+ms.topic: reference
 f1_keywords:
 - http://schemas.microsoft.com/developer/msbuild/2003#Choose
 dev_langs:
@@ -20,29 +16,16 @@ helpviewer_keywords:
 - <Choose> Element [MSBuild]
 - Choose Element [MSBuild]
 ms.assetid: 7b8b025a-d944-4f5c-9018-c89fc2ef146d
-caps.latest.revision: 8
-author: kempb
-ms.author: kempb
-manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: 79460291e91f0659df0a4241e17616e55187a0e2
-ms.openlocfilehash: c4d93013218ace4039267bec73a2525df0c1b370
-ms.lasthandoff: 02/22/2017
-
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: dc467b859e3a02282c6d6165dc263931900c5bc2
+ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/19/2018
 ---
 # <a name="choose-element-msbuild"></a>Elemento Choose (MSBuild)
 Valuta gli elementi figlio per selezionare un set di elementi `ItemGroup` e/o di elementi `PropertyGroup` da valutare.  
@@ -83,7 +66,7 @@ Valuta gli elementi figlio per selezionare un set di elementi `ItemGroup` e/o di
 |Elemento|Descrizione|  
 |-------------|-----------------|  
 |[Otherwise](../msbuild/otherwise-element-msbuild.md)|Specifica il blocco di codice da eseguire se le condizioni di tutti gli elementi `When` restituiscono `false`.|  
-|[Progetto](../msbuild/project-element-msbuild.md)|Elemento radice obbligatorio di un file di progetto [!INCLUDE[vstecmsbuild](../extensibility/internals/includes/vstecmsbuild_md.md)].|  
+|[Progetto](../msbuild/project-element-msbuild.md)|Elemento radice obbligatorio di un file di progetto [!INCLUDE[vstecmsbuild](../extensibility/internals/includes/vstecmsbuild_md.md)] .|  
 |[When](../msbuild/when-element-msbuild.md)|Specifica un blocco di codice selezionabile dall'elemento `Choose`.|  
 
 ## <a name="remarks"></a>Note  
@@ -140,4 +123,3 @@ Valuta gli elementi figlio per selezionare un set di elementi `ItemGroup` e/o di
 ## <a name="see-also"></a>Vedere anche  
  [Costrutti condizionali](../msbuild/msbuild-conditional-constructs.md)   
  [Informazioni di riferimento sullo schema del file di progetto](../msbuild/msbuild-project-file-schema-reference.md)
-

@@ -1,54 +1,59 @@
 ---
-title: "IDebugProgramNode2::GetHostMachineName_V7 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "IDebugProgramNode2::GetHostMachineName"
-helpviewer_keywords: 
-  - "IDebugProgramNode2::GetHostMachineName_V7"
-  - "IDebugProgramNode2::GetHostMachineNameIDebugProgramNode2::GetHostMachineName"
-ms.assetid: a992f2c9-f68b-4146-8cc2-027753bf7ce6
-caps.latest.revision: 11
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 11
+title: IDebugProgramNode2::GetHostMachineName_V7 | Microsoft Docs
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology:
+- vs-ide-sdk
+ms.topic: conceptual
+f1_keywords:
+- IDebugProgramNode2::GetHostMachineName
+helpviewer_keywords:
+- IDebugProgramNode2::GetHostMachineName_V7
+- IDebugProgramNode2::GetHostMachineNameIDebugProgramNode2::GetHostMachineName
+author: gregvanl
+ms.author: gregvanl
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: 2adc7125c79afc6b9ebc16b6c4b36f5c147bcdfb
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# IDebugProgramNode2::GetHostMachineName_V7
-[!INCLUDE[vs2017banner](../../../code-quality/includes/vs2017banner.md)]
+# <a name="idebugprogramnode2gethostmachinenamev7"></a>IDebugProgramNode2::GetHostMachineName_V7
 
-DEPRECATO.  NOT UTILIZZARE.  
-  
-## Sintassi  
-  
-```cpp#  
-HRESULT GetHostMachineName_V7 (   
-   BSTR* pbstrHostMachineName  
-);  
-```  
-  
-```c#  
-int GetHostMachineName_V7 (   
-   out string pbstrHostMachineName  
-);  
-```  
-  
-#### Parametri  
- `pbstrHostMachineName`  
- \[out\]  Restituisce il nome del computer in cui il programma.  
-  
-## Valore restituito  
- L'implementazione di deve restituire sempre `E_NOTIMPL`.  
-  
-## Note  
-  
+> [!Note]
+> DEPRECATO. NON USARE.
+
+## <a name="syntax"></a>Sintassi
+
+```cpp
+HRESULT GetHostMachineName_V7 (
+   BSTR* pbstrHostMachineName
+);
+```
+
+```csharp
+int GetHostMachineName_V7 (
+   out string pbstrHostMachineName
+);
+```
+
+#### <a name="parameters"></a>Parametri
+
+`pbstrHostMachineName`  
+[out] Restituisce il nome del computer in cui è in esecuzione il programma.
+
+## <a name="return-value"></a>Valore restituito
+
+Un'implementazione deve sempre restituire `E_NOTIMPL`.
+
+## <a name="remarks"></a>Note
+
 > [!WARNING]
->  A partire da [!INCLUDE[vsprvslong](../../../code-quality/includes/vsprvslong_md.md)], questo metodo viene più utilizzato e non deve sempre restituire `E_NOTIMPL`.  
-  
-## Vedere anche  
- [IDebugProgramNode2](../../../extensibility/debugger/reference/idebugprogramnode2.md)
+> A partire da Visual Studio 2005, questo metodo non viene più usato e deve sempre restituire `E_NOTIMPL`.
+
+## <a name="see-also"></a>Vedere anche
+
+[IDebugProgramNode2](../../../extensibility/debugger/reference/idebugprogramnode2.md)

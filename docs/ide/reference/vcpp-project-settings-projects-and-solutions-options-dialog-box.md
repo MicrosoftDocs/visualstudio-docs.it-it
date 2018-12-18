@@ -1,13 +1,10 @@
 ---
 title: Impostazioni progetto di VC++, Progetti e soluzioni, finestra di dialogo Opzioni | Microsoft Docs
-ms.custom: 
+ms.custom: ''
 ms.date: 08/02/2017
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - vs-ide-general
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: conceptual
 f1_keywords:
 - VS.ToolsOptionsPages.Projects.VCBuild
 helpviewer_keywords:
@@ -19,31 +16,16 @@ helpviewer_keywords:
 - extensions, files built by C or C++ compiler
 - BuildLog.htm
 ms.assetid: 56420efd-6a95-464e-b890-e2b38c48d66a
-caps.latest.revision: 15
 author: gewarren
 ms.author: gewarren
-manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
+manager: douge
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 875dc15434be8d21a9bcee66d4091ecda9a4375a
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
 ms.translationtype: HT
-ms.sourcegitcommit: ea1e787c1d509123a650cf2bd20e5fa8bffd5b4e
-ms.openlocfilehash: 2581fdecd9a26c8d4500f83b9abd0e1f967e2ee6
-ms.contentlocale: it-it
-ms.lasthandoff: 09/26/2017
-
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="vc-project-settings-projects-and-solutions-options-dialog-box"></a>Impostazioni progetto di VC++, Progetti e soluzioni, finestra di dialogo Opzioni
 Questa finestra di dialogo consente di definire [!INCLUDE[vcprvc](../../code-quality/includes/vcprvc_md.md)] le impostazioni di build e del progetto relative ai log di compilazione, alle prestazioni e ai tipi di file supportati.  
@@ -53,7 +35,6 @@ Questa finestra di dialogo consente di definire [!INCLUDE[vcprvc](../../code-qua
 1.  Scegliere **Opzioni** dal menu **Strumenti**.  
   
 2.  Selezionare **Progetti e soluzioni** e quindi **Impostazioni progetto di VC++**.  
-  
  
 ## <a name="build-logging"></a>Log di compilazione  
  **Sì**  
@@ -95,17 +76,13 @@ Questa finestra di dialogo consente di definire [!INCLUDE[vcprvc](../../code-qua
  **Mostra tutti i file**  
   Configura **Esplora soluzioni** in modo da visualizzare i file del progetto e quelli presenti su disco nella cartella del progetto.  
 
-
 ## <a name="enable-project-caching"></a>Abilitare la memorizzazione nella cache di progetto
-**Sì** Consente a Visual Studio di memorizzare nella cache i dati di progetto in modo che alla successiva apertura del progetto sia possibile caricare i dati presenti nella cache anziché rielaborare i dati dai file di progetto. L'uso dei dati memorizzati nella cache può accelerare i tempi di caricamento del progetto in modo significativo.   
+**Sì**  
+Consente a Visual Studio di memorizzare nella cache i dati di progetto in modo che alla successiva apertura del progetto sia possibile caricare i dati presenti nella cache anziché rielaborare i dati dai file di progetto. L'uso dei dati memorizzati nella cache può accelerare i tempi di caricamento del progetto in modo significativo.   
 
-**No** Non si utilizzano i dati memorizzati nella cache del progetto. Analizzare i file di progetto ogni volta che il progetto viene caricato.
+**No**  
+Non si usano i dati memorizzati nella cache del progetto. Analizzare i file di progetto ogni volta che il progetto viene caricato.
 
-
-  
-
-  
-#
 ## <a name="see-also"></a>Vedere anche  
  [Compilazione di programmi C/C++](/cpp/build/building-c-cpp-programs)   
  [Riferimenti alla compilazione in C/C++](/cpp/build/reference/c-cpp-building-reference)

@@ -3,16 +3,13 @@ title: Introduzione ad ASP.NET Core
 author: asb3993
 ms.author: amburns
 ms.date: 07/13/2017
-ms.topic: article
 ms.assetid: 6E8B0C90-33D6-4546-8207-CE0787584565
+ms.openlocfilehash: 998bd304f287fffdf53dd9c53cb3be1d83a407f3
+ms.sourcegitcommit: 4c0bc21d2ce2d8e6c9d3b149a7d95f0b4d5b3f85
 ms.translationtype: HT
-ms.sourcegitcommit: e2b7ff9126e1cc38ac2e58d6be339b656a024e7f
-ms.openlocfilehash: 9e7d7314240688c1acbf064a53ba182b92833a60
-ms.contentlocale: it-it
-ms.lasthandoff: 08/11/2017
-
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/20/2018
 ---
-
 # <a name="getting-started-with-aspnet-core"></a>Introduzione ad ASP.NET Core
 
  Visual Studio per Mac semplifica lo sviluppo del servizio dell'app grazie al supporto della piattaforma di sviluppo Web ASP.NET Core più recente. Il funzionamento di ASP.NET Core si basa su .NET Core, l'evoluzione più recente di .NET Framework e del runtime. È stato ottimizzato per garantire prestazioni elevate, sottoposto a factoring per ridurre le dimensioni di installazione e riprogettato per consentirne l'esecuzione in Linux e macOS, oltre che in Windows.
@@ -63,7 +60,7 @@ public static void Main(string[] args)
     host.Run();
 }
 ```
-Un'app ASP.NET Core crea un server Web nel metodo Main configurando e avviando un host tramite un'istanza di [ `WebHostBuilder` ](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/hosting). Questo generatore offre alcuni metodi che consentono la configurazione dell'host. Nell'app modello vengono usate le configurazioni seguenti:
+Un'app ASP.NET Core crea un server Web nel metodo Main configurando e avviando un host tramite un'istanza di [ `WebHostBuilder` ](https://docs.microsoft.com/aspnet/core/fundamentals/hosting). Questo generatore offre alcuni metodi che consentono la configurazione dell'host. Nell'app modello vengono usate le configurazioni seguenti:
 
  * `UseKestrel`: specifica il server Kestrel che verrà usato dall'app
  * `UseContentRoot(Directory.GetCurrentDirectory())`: usa la cartella radice del progetto Web come radice del contenuto dell'app quando quest'ultima viene avviata da questa cartella
@@ -109,7 +106,7 @@ La classe di avvio deve sempre rispettare le regole seguenti:
 
 Il metodo `ConfigureServices` consente di definire i servizi che verranno usati dall'app.
 
-Il metodo `Configure` consente di comporre pipeline delle richieste tramite [middleware](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/middleware). Si tratta di componenti usati all'interno delle pipeline delle applicazioni ASP.NET per la gestione delle richieste e delle risposte. La pipeline HTTP è costituita da un certo numero di delegati di richiesta, chiamati in sequenza. Ogni delegato può scegliere di gestire la richiesta o di passarla al delegato successivo.
+Il metodo `Configure` consente di comporre pipeline delle richieste tramite [middleware](https://docs.microsoft.com/aspnet/core/fundamentals/middleware). Si tratta di componenti usati all'interno delle pipeline delle applicazioni ASP.NET per la gestione delle richieste e delle risposte. La pipeline HTTP è costituita da un certo numero di delegati di richiesta, chiamati in sequenza. Ogni delegato può scegliere di gestire la richiesta o di passarla al delegato successivo.
 
 È possibile configurare i delegati tramite i metodi `Run`,`Map` e `Use` in `IApplicationBuilder`. Il metodo `Run`, tuttavia, non chiama mai il delegato successivo e deve essere sempre usato alla fine della pipeline.
 
@@ -135,7 +132,7 @@ Le app ASP.NET Core usano lo schema progettuale Model-View-Controller (MVC) per 
 - **View** (Vista): visualizza l'interfaccia utente dell'app. Spesso corrisponde ai dati del modello.
 - **Controller**: classe che gestisce le richieste del browser e risponde all'input e all'interazione dell'utente.
 
-Per altre informazioni sull'uso dello schema MVC, vedere la guida [Overview of ASP.NET Core MVC](https://docs.microsoft.com/en-us/aspnet/core/mvc/overview) (Panoramica di MVC ASP.NET Core).
+Per altre informazioni sull'uso dello schema MVC, vedere la guida [Overview of ASP.NET Core MVC](https://docs.microsoft.com/aspnet/core/mvc/overview) (Panoramica di MVC ASP.NET Core).
 
 Per aggiungere un controller, eseguire le operazioni seguenti:
 
@@ -237,4 +234,3 @@ Per altre informazioni sui passaggi successivi, fare riferimento alle guide segu
 - Documentazione di [ASP.NET Core](https://docs.microsoft.com/aspnet/core/#build-web-ui-and-web-apis-using-aspnet-core-mvc).
 - [Creating Backend Services for Native Mobile Applications](https://docs.microsoft.com/aspnet/core/mobile/native-mobile-backend) (Creazione di servizi back-end per applicazioni per dispositivi mobili native), che illustra come creare un servizio REST tramite ASP.NET Core per un'app Xamarin.Forms.
 - [ASP.NET Core hands-on lab](https://github.com/Microsoft/vs4mac-labs/tree/master/Web/Getting-Started) (Esercitazione pratica su ASP.NET Core).
-

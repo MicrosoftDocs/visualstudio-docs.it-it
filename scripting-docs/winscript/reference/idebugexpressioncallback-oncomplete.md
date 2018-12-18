@@ -1,45 +1,51 @@
 ---
-title: "IDebugExpressionCallBack::onComplete | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/18/2017"
-ms.prod: "windows-script-interfaces"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-apiname: IDebugExpressionCallBack.onComplete
-apilocation: scrobj.dll
-helpviewer_keywords: 
-  - "IDebugExpressionCallBack::onComplete"
+title: IDebugExpressionCallBack::onComplete | Documenti Microsoft
+ms.custom: 
+ms.date: 01/18/2017
+ms.prod: windows-script-interfaces
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: reference
+apiname:
+- IDebugExpressionCallBack.onComplete
+apilocation:
+- scrobj.dll
+helpviewer_keywords:
+- IDebugExpressionCallBack::onComplete
 ms.assetid: d0b89db3-38e7-44e0-93fe-60205f9149dd
-caps.latest.revision: 8
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: 
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.openlocfilehash: fa3d7d6173161407619174607eae221e4513cbcd
+ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/27/2017
 ---
-# IDebugExpressionCallBack::onComplete
-Indica che la valutazione di un'espressione è completa.  
+# <a name="idebugexpressioncallbackoncomplete"></a>IDebugExpressionCallBack::onComplete
+Indica che la valutazione dell'espressione è stata completata.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
 HRESULT onComplete();  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  Questo metodo non accetta parametri.  
   
-## Valore restituito  
- Il metodo restituisce un tipo `HRESULT`.  I valori possibili sono, ma non sono limitati a, quelli nella tabella seguente.  
+## <a name="return-value"></a>Valore restituito  
+ Il metodo restituisce un tipo `HRESULT`. I valori possibili includono, ma non sono limitati a, quelli indicati nella tabella seguente.  
   
 |Valore|Descrizione|  
-|------------|-----------------|  
+|-----------|-----------------|  
 |`S_OK`|Il metodo è riuscito.|  
   
-## Note  
- Questo metodo viene chiamato quando la valutazione di un'espressione è completa.  Il metodo `IDebugExpression::GetResultAsString` può essere chiamato dal gestore eventi.  
+## <a name="remarks"></a>Note  
+ Questo metodo viene chiamato quando la valutazione dell'espressione è stata completata. Il `IDebugExpression::GetResultAsString` metodo può essere chiamato dall'interno di questo gestore eventi.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Interfaccia IDebugExpressionCallBack](../../winscript/reference/idebugexpressioncallback-interface.md)   
  [IDebugExpression::GetResultAsString](../../winscript/reference/idebugexpression-getresultasstring.md)

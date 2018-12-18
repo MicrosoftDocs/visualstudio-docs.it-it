@@ -1,37 +1,21 @@
 ---
-title: "Procedura: gestione di più thread in codice gestito | Documenti Microsoft"
-ms.custom: 
+title: 'Procedura: gestione di più thread in codice gestito | Documenti Microsoft'
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - vs-ide-sdk
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: 59730063-cc29-4dae-baff-2234ad8d0c8f
-caps.latest.revision: 7
+author: gregvanl
 ms.author: gregvanl
-manager: ghogen
-translation.priority.mt:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: c0888a0f65f36d624deffac60ceee032d3f3d13a
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
 ms.translationtype: MT
-ms.sourcegitcommit: 4a36302d80f4bc397128e3838c9abf858a0b5fe8
-ms.openlocfilehash: 21fcc9388b40baa9e003b4beb876ba2f0f23fbaf
-ms.contentlocale: it-it
-ms.lasthandoff: 09/26/2017
-
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="how-to-managing-multiple-threads-in-managed-code"></a>Procedura: gestione di più thread in codice gestito
 Se si dispone di un'estensione di VSPackage gestita che chiama i metodi asincroni o operazioni eseguite su thread diverso dal thread dell'interfaccia utente di Visual Studio, è necessario seguire le linee guida seguenti. Consente di mantenere il thread dell'interfaccia utente reattiva perché non deve essere in attesa di lavoro su un altro thread di completamento. È possibile rendere il codice più efficiente, perché non si dispone di un thread aggiuntivo che occupano spazio dello stack e renderlo più affidabile e facile eseguire il debug per evitare i deadlock e blocchi.  

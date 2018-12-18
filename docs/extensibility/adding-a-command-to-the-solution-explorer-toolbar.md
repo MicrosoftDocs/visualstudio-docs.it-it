@@ -1,53 +1,38 @@
 ---
-title: Aggiunta di un comando alla barra degli strumenti di Esplora soluzioni | Documenti di Microsoft
-ms.custom: 
+title: L'aggiunta di un comando alla barra degli strumenti Esplora soluzione | Documenti Microsoft
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - vs-ide-sdk
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: conceptual
 helpviewer_keywords:
 - toolbars [Visual Studio], adding buttons
 - buttons [Visual Studio], adding to Solution Explorer
 - Solution Explorer, adding buttons
 ms.assetid: f6411557-2f4b-4e9f-b02e-fce12a6ac7e9
-caps.latest.revision: 39
+author: gregvanl
 ms.author: gregvanl
-manager: ghogen
-translation.priority.mt:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: 5db97d19b1b823388a465bba15d057b30ff0b3ce
-ms.openlocfilehash: c5d6e1e597db52e4ba087cd358f1d2bdbd5f208f
-ms.lasthandoff: 02/22/2017
-
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: f6f732900ff3e73decb1dc01d5c131e26ba50669
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# <a name="adding-a-command-to-the-solution-explorer-toolbar"></a>Aggiunta di un comando alla barra degli strumenti di Esplora soluzioni
+# <a name="adding-a-command-to-the-solution-explorer-toolbar"></a>L'aggiunta di un comando alla barra degli strumenti di Esplora soluzioni
 Questa procedura dettagliata viene illustrato come aggiungere un pulsante per la **Esplora** barra degli strumenti.  
   
- Qualsiasi comando in una barra degli strumenti o menu viene chiamato un pulsante in Visual Studio. Quando si fa clic sul pulsante, viene eseguito il codice nel gestore di comando. In genere, i comandi correlati vengono raggruppati insieme per formare un gruppo. Barre degli strumenti o menu fungono da contenitori per i gruppi. La priorità determina l'ordine in cui singoli comandi in un gruppo vengono visualizzati nel menu o sulla barra degli strumenti. È possibile impedire la visualizzazione nella barra degli strumenti o il menu controllando la visibilità di un pulsante. Un comando elencato in un `<VisibilityConstraints>` sezione del file vsct viene visualizzato solo nel contesto associato. La visibilità non può essere applicata ai gruppi.  
+ Qualsiasi comando in una barra degli strumenti o un menu viene chiamato un pulsante in Visual Studio. Quando si fa clic sul pulsante, viene eseguito il codice nel gestore del comando. In genere, i comandi correlati vengono raggruppati insieme per formare un gruppo. Barre degli strumenti o menu fungono da contenitori per i gruppi. La priorità determina l'ordine in cui vengono visualizzati i singoli comandi in un gruppo nel menu o sulla barra degli strumenti. È possibile impedire che un pulsante visualizzato sulla barra degli strumenti o nel menu controllando la visibilità. Un comando che è elencato in un `<VisibilityConstraints>` sezione del file con estensione vsct viene visualizzato solo nel contesto associato. La visibilità non può essere applicata ai gruppi.  
   
- Per ulteriori informazioni sui menu, comandi della barra degli strumenti e file. vsct, vedere [comandi, menu e barre degli strumenti](../extensibility/internals/commands-menus-and-toolbars.md).  
+ Per ulteriori informazioni sui menu, i comandi della barra degli strumenti e i file con estensione vsct, vedere [comandi, menu e barre degli strumenti](../extensibility/internals/commands-menus-and-toolbars.md).  
   
 > [!NOTE]
->  Utilizzare i file XML comando tabella (vsct) anziché i file di configurazione (.ctc) nella tabella di comando per definire l'aspetto di menu e comandi nel package VS. Per ulteriori informazioni, vedere [tabella di comando Visual Studio (. File Vsct)](../extensibility/internals/visual-studio-command-table-dot-vsct-files.md).  
+>  Utilizzare i file di tabella comandi XML (con estensione vsct) anziché i file di configurazione (CTC) nella tabella di comando per definire l'aspetto di menu e comandi in VSPackage. Per altre informazioni, vedere [Visual Studio Command Table (.Vsct) Files](../extensibility/internals/visual-studio-command-table-dot-vsct-files.md).  
   
 ## <a name="prerequisites"></a>Prerequisiti  
- A partire da Visual Studio 2015, non installare Visual Studio SDK dall'area download. È incluso come funzionalità facoltativa nel programma di installazione di Visual Studio. È inoltre possibile installare il SDK di Visual Studio in un secondo momento. Per ulteriori informazioni, vedere [l'installazione di Visual Studio SDK](../extensibility/installing-the-visual-studio-sdk.md).  
+ A partire da Visual Studio 2015, non installare Visual Studio SDK dall'area download. È incluso come funzionalità facoltativa nel programma di installazione di Visual Studio. È anche possibile installare il SDK di Visual Studio in un secondo momento. Per ulteriori informazioni, vedere [l'installazione di Visual Studio SDK](../extensibility/installing-the-visual-studio-sdk.md).  
   
 ## <a name="creating-an-extension-with-a-menu-command"></a>Creazione di un'estensione con un comando di Menu  
  Creare un progetto VSIX denominato `SolutionToolbar`. Aggiungere un modello di elemento di comando di menu denominato **ToolbarButton**. Per informazioni su come eseguire questa operazione, vedere [creazione di un'estensione con un comando di Menu](../extensibility/creating-an-extension-with-a-menu-command.md).  
@@ -55,13 +40,13 @@ Questa procedura dettagliata viene illustrato come aggiungere un pulsante per la
 ## <a name="adding-a-button-to-the-solution-explorer-toolbar"></a>Aggiunta di un pulsante alla barra degli strumenti di Esplora soluzioni  
  In questa sezione della procedura dettagliata viene illustrato come aggiungere un pulsante per la **Esplora** barra degli strumenti. Quando si fa clic sul pulsante, viene eseguito il codice nel metodo di callback.  
   
-1.  Nel file ToolbarButtonPackage.vsct, andare alla `<Symbols>` sezione. Il `<GuidSymbol>` nodo contiene il gruppo di menu e comandi che è stato generato dal modello di pacchetto. Aggiungere un `<IDSymbol>` elemento per questo nodo per dichiarare il gruppo che conterrà il comando.  
+1.  Nel file ToolbarButtonPackage.vsct, passare al `<Symbols>` sezione. Il `<GuidSymbol>` nodo contiene il gruppo di menu e comandi che è stato generato dal modello di pacchetto. Aggiungere un `<IDSymbol>` elemento per questo nodo per dichiarare il gruppo che conterrà il comando.  
   
     ```xml  
     <IDSymbol name="SolutionToolbarGroup" value="0x0190"/>  
     ```  
   
-2.  Nel `<Groups>` sezione dopo la voce di gruppo esistente, definire il nuovo gruppo che è stata dichiarata nel passaggio precedente.  
+2.  Nel `<Groups>` sezione, dopo la voce di gruppo esistente, definire il nuovo gruppo che è stato dichiarato nel passaggio precedente.  
   
     ```xml  
     <Group guid="guidToolbarButtonPackageCmdSet"  
@@ -70,9 +55,9 @@ Questa procedura dettagliata viene illustrato come aggiungere un pulsante per la
           </Group>  
     ```  
   
-     Impostare l'elemento padre coppia GUID:ID `guidSHLMainMenu` e `IDM_VS_TOOL_PROJWIN` inserisce questo gruppo il **Esplora soluzioni** inserisce dopo gli altri gruppi di comando della barra degli strumenti e impostare il valore di priorità alta.  
+     Impostare l'elemento padre coppia GUID: ID `guidSHLMainMenu` e `IDM_VS_TOOL_PROJWIN` assegna questo gruppo per il **Esplora soluzioni** inserisce dopo altri gruppi di comandi della barra degli strumenti e impostare un valore di priorità alta.  
   
-3.  Nel `<Buttons>` sezione, modificare l'ID padre dell'oggetto generato `<Button>` voce in modo da riflettere il gruppo che è definito nel passaggio precedente. Modificati `<Button>` elemento dovrebbe essere simile al seguente:  
+3.  Nel `<Buttons>` sezione, modificare l'ID padre dell'oggetto generato `<Button>` voce in modo da riflettere il gruppo definito nel passaggio precedente. Modificato `<Button>` elemento dovrebbe essere simile al seguente:  
   
     ```xml  
     <Button guid="guidToolbarButtonPackageCmdSet" id="ToolbarButtonId" priority="0x0100" type="Button">  
@@ -84,29 +69,29 @@ Questa procedura dettagliata viene illustrato come aggiungere un pulsante per la
     </Button>  
     ```  
   
-4.  Compilare il progetto e avviare il debug. Verrà visualizzata l'istanza sperimentale.  
+4.  Compilare il progetto e avviare il debug. Viene visualizzata l'istanza sperimentale.  
   
-     Il **Esplora** barra degli strumenti deve visualizzare il nuovo pulsante di comando a destra del pulsante esistente. Icona del pulsante è il barrato.  
+     Il **Esplora** barra degli strumenti deve visualizzare il nuovo pulsante di comando a destra dei pulsanti esistenti. L'icona del pulsante è il barrato.  
   
 5.  Fare clic sul pulsante nuovo.  
   
-     Finestra di dialogo che è visualizzato un messaggio **ToolbarButtonPackage all'interno di SolutionToolbar.ToolbarButton.MenuItemCallback()** deve essere visualizzato.  
+     Finestra di dialogo che è presente il messaggio **ToolbarButtonPackage all'interno di SolutionToolbar.ToolbarButton.MenuItemCallback()** deve essere visualizzato.  
   
 ## <a name="controlling-the-visibility-of-a-button"></a>Controllare la visibilità di un pulsante  
- In questa sezione della procedura dettagliata viene illustrato come controllare la visibilità di un pulsante sulla barra degli strumenti. Impostando uno o più progetti in un contesto di `<VisibilityConstraints>` sezione del file SolutionToolbar.vsct, si limita un pulsante per essere visualizzate solo quando uno o più progetti aperti.  
+ In questa sezione della procedura dettagliata viene illustrato come controllare la visibilità di un pulsante sulla barra degli strumenti. Impostando un contesto per uno o più progetti nel `<VisibilityConstraints>` sezione del file SolutionToolbar.vsct, si limita un pulsante deve essere visualizzato solo quando uno o più progetti aperti.  
   
-#### <a name="to-display-a-button-when-one-or-more-projects-are-open"></a>Per visualizzare un pulsante quando uno o più progetti aperti  
+#### <a name="to-display-a-button-when-one-or-more-projects-are-open"></a>Per visualizzare un pulsante quando uno o più progetti aperti.  
   
-1.  Nel `<Buttons>` sezione di ToolbarButtonPackage.vsct, aggiungere due flag di comando esistente `<Button>` elemento, tra il `<Strings>` e `<Icons>` tag.  
+1.  Nel `<Buttons>` sezione di ToolbarButtonPackage.vsct, aggiungere due flag dei comandi esistente `<Button>` elemento, tra il `<Strings>` e `<Icons>` tag.  
   
     ```xml  
     <CommandFlag>DefaultInvisible</CommandFlag>  
     <CommandFlag>DynamicVisibility</CommandFlag>  
     ```  
   
-     Il `DefaultInvisible` e `DynamicVisibility` flag devono essere impostati pertanto che le voci di `<VisibilityConstraints>` sezione diventino effettive.  
+     Il `DefaultInvisible` e `DynamicVisibility` flag devono essere impostati pertanto che le voci nel `<VisibilityConstraints>` sezione diventino effettive.  
   
-2.  Creare un `<VisibilityConstraints>` sezione che dispone di due `<VisibilityItem>` voci. Inserire la nuova sezione subito dopo la chiusura `</Commands>` tag.  
+2.  Creare un `<VisibilityConstraints>` sezione che presenta due `<VisibilityItem>` voci. Inserire la nuova sezione subito dopo la chiusura `</Commands>` tag.  
   
     ```xml  
     <VisibilityConstraints>  
@@ -121,7 +106,7 @@ Questa procedura dettagliata viene illustrato come aggiungere un pulsante per la
   
      Ogni elemento visibilità rappresenta una condizione in cui viene visualizzato il pulsante specificato. Per applicare più condizioni, è necessario creare più voci per lo stesso pulsante.  
   
-3.  Compilare il progetto e avviare il debug. Verrà visualizzata l'istanza sperimentale.  
+3.  Compilare il progetto e avviare il debug. Viene visualizzata l'istanza sperimentale.  
   
      Il **Esplora** barra degli strumenti non contiene il pulsante barrato.  
   
@@ -131,7 +116,7 @@ Questa procedura dettagliata viene illustrato come aggiungere un pulsante per la
   
 5.  Nel **File** menu, fare clic su **Chiudi soluzione**. Il pulsante viene rimosso dalla barra degli strumenti.  
   
- La visibilità del pulsante è controllata dal [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] finché non viene caricato il VSPackage. Dopo il caricamento di VSPackage la visibilità del pulsante è controllata dal VSPackage.  Per ulteriori informazioni, vedere [MenuCommands Visual Studio. OleMenuCommands](../misc/menucommands-vs-olemenucommands.md).  
+ La visibilità del pulsante è controllata da [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] fino a quando non viene caricato il pacchetto VSPackage. Dopo aver caricato il pacchetto VSPackage, la visibilità del pulsante è controllata dal pacchetto VSPackage.  Per ulteriori informazioni, vedere [tra oggetti MenuCommand e. OleMenuCommands](../extensibility/menucommands-vs-olemenucommands.md).  
   
 ## <a name="see-also"></a>Vedere anche  
- [I comandi, menu e barre degli strumenti](../extensibility/internals/commands-menus-and-toolbars.md)
+ [Comandi, menu e barre degli strumenti](../extensibility/internals/commands-menus-and-toolbars.md)

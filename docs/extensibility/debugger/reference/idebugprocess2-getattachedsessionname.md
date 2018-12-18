@@ -1,44 +1,45 @@
 ---
-title: "IDebugProcess2::GetAttachedSessionName | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "IDebugProcess2::GetAttachedSessionName"
-helpviewer_keywords: 
-  - "IDebugProcess2::GetAttachedSessionName"
+title: IDebugProcess2::GetAttachedSessionName | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology:
+- vs-ide-sdk
+ms.topic: conceptual
+f1_keywords:
+- IDebugProcess2::GetAttachedSessionName
+helpviewer_keywords:
+- IDebugProcess2::GetAttachedSessionName
 ms.assetid: 7e5e116f-2c0c-4bc8-ad3f-e9fd2318a7e4
-caps.latest.revision: 13
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 13
+author: gregvanl
+ms.author: gregvanl
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: 34e404fe33858c1db7d9dfb103df7b4e0bb9fb91
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# IDebugProcess2::GetAttachedSessionName
-[!INCLUDE[vs2017banner](../../../code-quality/includes/vs2017banner.md)]
-
-Ottiene il nome della sessione che esegue il debug di questo processo.  Un IDE possibile visualizzare queste informazioni a un utente che esegue il debug di un processo specifico di un particolare computer.  
+# <a name="idebugprocess2getattachedsessionname"></a>IDebugProcess2::GetAttachedSessionName
+Ottiene il nome della sessione che il debug di questo processo. L'IDE è possibile visualizzare queste informazioni a un utente che il debug di un processo specifico in un computer specifico.  
   
 > [!NOTE]
->  Questo metodo è deprecato e l'implementazione deve sempre restituire `E_NOTIMPL`.  
+>  Questo metodo è deprecato e la relativa implementazione deve sempre restituire `E_NOTIMPL`.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
 HRESULT GetAttachedSessionName(  
-   BSTR* pbstrSessionName  
+   BSTR* pbstrSessionName  
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `pbstrSessionName`  
   
-## Valore restituito  
- Questo metodo restituirà sempre `E_NOTIMPL`.  
+## <a name="return-value"></a>Valore restituito  
+ Questo metodo deve sempre restituire `E_NOTIMPL`.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IDebugProcess2](../../../extensibility/debugger/reference/idebugprocess2.md)

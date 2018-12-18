@@ -1,35 +1,32 @@
 ---
 title: Informazioni sulle configurazioni della build
-description: 
+description: ''
 author: asb3993
 ms.author: amburns
 ms.date: 04/14/2017
-ms.topic: article
 ms.assetid: 78107CFA-9308-4293-A92A-9B552A259E15
+ms.openlocfilehash: 1ca2d7dc7b450367e5f87d62cf2a3c43a6331e13
+ms.sourcegitcommit: 4c0bc21d2ce2d8e6c9d3b149a7d95f0b4d5b3f85
 ms.translationtype: HT
-ms.sourcegitcommit: e2b7ff9126e1cc38ac2e58d6be339b656a024e7f
-ms.openlocfilehash: e435418c0c77f1577e9db8ab35d76d6bd54f8447
-ms.contentlocale: it-it
-ms.lasthandoff: 08/11/2017
-
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/20/2018
 ---
-
 # <a name="understanding-build-configurations"></a>Informazioni sulle configurazioni della build
 
 ## <a name="project-build-configurations"></a>Configurazioni della build di progetti 
 
-I progetti possono avere più configurazioni. Passare da una configurazione a un'altra consente di ottenere output diversi in fase di compilazione. Se si usa una configurazione di debug, ad esempio, l'output includerà simboli di debug che consentono al debugger di risolvere i nomi delle funzioni, dei parametri o delle variabili dall'analisi dello stack di un'applicazione bloccata. L'uso di una configurazione di debug, tuttavia, fa aumentare eccessivamente le dimensioni dei file e di conseguenza non è ideale per le applicazioni destinate alla distribuzione.
+I progetti hanno tendenzialmente più configurazioni e passare da una configurazione a un'altra consente di ottenere output diversi in fase di compilazione. Con una configurazione di debug, ad esempio, l'output includerà simboli di debug che consentono al debugger di risolvere i nomi delle funzioni, dei parametri o delle variabili dall'analisi dello stack di un'applicazione bloccata. Anche se queste informazioni aggiuntive sono utili durante lo sviluppo, comportano dimensioni molto maggiori dei file e non sono ideale per la distribuzione.
 
-Ogni piattaforma deve avere una configurazione della build specifica. Lo sviluppo Xamarin.Android ha sempre una sola configurazione, di versione o di debug. Xamarin.iOS ha più configurazioni. I progetti per iOS più recenti hanno solo configurazioni di debug o di versione, che però possono essere impostate per un dispositivo o per un qualsiasi simulatore installato.
+Ogni piattaforma ha una configurazione specifica per la compilazione. 
 
 ## <a name="solution-configurations"></a>Configurazioni di soluzioni
 
-Analogamente alle configurazioni di progetti, le configurazioni di soluzioni vengono usate per creare configurazioni personalizzate per un intero progetto. Tramite la scheda **Mapping di configurazione** in **Compilazione > Configurazioni** è possibile assegnare una configurazione di destinazione per ogni elemento della soluzione, come illustrato di seguito:
+Analogamente alle configurazioni di progetti, le configurazioni di soluzioni vengono usate per creare configurazioni personalizzate per un intero progetto. Tramite la scheda **Mapping di configurazione** in **Compilazione > Configurazioni** è possibile assegnare una configurazione di destinazione per ogni elemento della soluzione, come illustrato nell'immagine seguente:
 
 
  ![Opzioni di Mapping di configurazione](media/projects-and-solutions-image3.png)
 
-Per altre informazioni, vedere il video di James Montemagno su [Configuration Manager](https://www.youtube.com/watch?v=tjSdkqYh5Vg).
+Per altre informazioni sulle configurazioni, vedere il video di James Montemagno su [Configuration Manager](https://www.youtube.com/watch?v=tjSdkqYh5Vg).
 
 ## <a name="run-configuration"></a>Configurazione dell'esecuzione
 
@@ -69,4 +66,3 @@ L'elenco seguente offre alcuni esempi di dati che possono essere inclusi nelle c
 * Progetto WatchKit
     * Modalità (Glance, notifica)
     * Payload di notifica
-

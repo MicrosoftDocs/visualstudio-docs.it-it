@@ -1,24 +1,24 @@
 ---
-title: "File XSD di esempio: schema di ordine di acquisto | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-general"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: 'File XSD di esempio: Schema di ordine di acquisto | Documenti Microsoft'
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology:
+- vs-ide-general
+ms.topic: conceptual
 ms.assetid: f92b63b5-ec61-43b5-ae1e-63432a7a7e30
-caps.latest.revision: 4
-author: "kempb"
-ms.author: "kempb"
-manager: "ghogen"
-caps.handback.revision: 4
+author: gewarren
+ms.author: gewarren
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: daf711a2f31e4df6ebe8831d83bb067c3d30eb7c
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# File XSD di esempio: schema di ordine di acquisto
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
-Il file XSD seguente viene utilizzato in vari esempi nella documentazione relativa alla progettazione di schemi XSD.Questo file è uno schema di ordine di acquisto.  
+# <a name="sample-xsd-file-purchase-order-schema"></a>File XSD di esempio: schema di ordine di acquisto
+Il file XSD seguente viene usato in vari esempi nella documentazione relativa alla progettazione di schemi XSD. Questo file è uno schema di ordine di acquisto.  
   
 ```xml  
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"   

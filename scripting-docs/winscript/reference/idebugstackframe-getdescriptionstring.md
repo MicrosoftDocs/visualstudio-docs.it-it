@@ -1,27 +1,33 @@
 ---
-title: "IDebugStackFrame::GetDescriptionString | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/18/2017"
-ms.prod: "windows-script-interfaces"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-apiname: IDebugStackFrame.GetDescriptionString
-apilocation: jscript.dll
-helpviewer_keywords: 
-  - "IDebugStackFrame::GetDescriptionString"
+title: IDebugStackFrame::GetDescriptionString | Documenti Microsoft
+ms.custom: 
+ms.date: 01/18/2017
+ms.prod: windows-script-interfaces
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: reference
+apiname:
+- IDebugStackFrame.GetDescriptionString
+apilocation:
+- jscript.dll
+helpviewer_keywords:
+- IDebugStackFrame::GetDescriptionString
 ms.assetid: a2ddc069-c440-4dee-98dc-ab7c78773b94
-caps.latest.revision: 8
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: 
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.openlocfilehash: cdc77aa2ef2f9d7c95b0b82d5195a6a73524f055
+ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/27/2017
 ---
-# IDebugStackFrame::GetDescriptionString
-Restituisce una breve descrizione testuale o lunga lo stack frame.  
+# <a name="idebugstackframegetdescriptionstring"></a>IDebugStackFrame::GetDescriptionString
+Restituisce una descrizione breve o lungo testuale dello stack frame.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
 HRESULT GetDescriptionString(  
@@ -30,22 +36,22 @@ HRESULT GetDescriptionString(
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `fLong`  
- \[in\] il flag, in cui `TRUE` restituisce una descrizione lunga e `FALSE` restituisce una breve descrizione.  
+ [in] Flag, in cui `TRUE` restituisce una descrizione lunga e `FALSE` restituisce una breve descrizione.  
   
  `pbstrDescription`  
- \[out\] la descrizione dello stack frame.  
+ [out] La descrizione del frame dello stack.  
   
-## Valore restituito  
- Il metodo restituisce un tipo `HRESULT`.  I valori possibili sono, ma non sono limitati a, quelli nella tabella seguente.  
+## <a name="return-value"></a>Valore restituito  
+ Il metodo restituisce un tipo `HRESULT`. I valori possibili includono, ma non sono limitati a, quelli indicati nella tabella seguente.  
   
 |Valore|Descrizione|  
-|------------|-----------------|  
+|-----------|-----------------|  
 |`S_OK`|Il metodo è riuscito.|  
   
-## Note  
- In genere, se `fLong` è `FALSE`, questo metodo fornisce solo il nome della funzione associata allo stack frame.  Quando `fLong` è `TRUE`, questo metodo può inoltre fornire parametri di funzione e altre informazioni importanti.  
+## <a name="remarks"></a>Note  
+ In genere, se `fLong` è `FALSE`, questo metodo fornisce solo il nome della funzione associata a uno stack frame. Quando `fLong` è `TRUE`, questo metodo può anche fornire i parametri della funzione e altre informazioni rilevanti.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Interfaccia IDebugStackFrame](../../winscript/reference/idebugstackframe-interface.md)

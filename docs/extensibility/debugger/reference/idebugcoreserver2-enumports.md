@@ -1,49 +1,50 @@
 ---
-title: "IDebugCoreServer2::EnumPorts | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "IDebugCoreServer2::EnumPorts"
-helpviewer_keywords: 
-  - "IDebugCoreServer2::EnumPorts"
+title: IDebugCoreServer2::EnumPorts | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology:
+- vs-ide-sdk
+ms.topic: conceptual
+f1_keywords:
+- IDebugCoreServer2::EnumPorts
+helpviewer_keywords:
+- IDebugCoreServer2::EnumPorts
 ms.assetid: 3d98dfd0-614f-4d68-90c6-8a9b9cab66f1
-caps.latest.revision: 11
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 11
+author: gregvanl
+ms.author: gregvanl
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: 805d42a460adb40fffa94d6b0c6ab1881546ccc6
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# IDebugCoreServer2::EnumPorts
-[!INCLUDE[vs2017banner](../../../code-quality/includes/vs2017banner.md)]
-
-recupera un elenco di tutte le porte disponibili.  
+# <a name="idebugcoreserver2enumports"></a>IDebugCoreServer2::EnumPorts
+Recupera un elenco di tutte le porte disponibili.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp#  
-HRESULT EnumPorts(   
-   IEnumDebugPorts2** ppEnum  
+```cpp  
+HRESULT EnumPorts(   
+   IEnumDebugPorts2** ppEnum  
 );  
 ```  
   
-```c#  
-int EnumPorts(   
-   out IEnumDebugPorts2 ppEnum  
+```csharp  
+int EnumPorts(   
+   out IEnumDebugPorts2 ppEnum  
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `ppEnum`  
- \[out\]  restituisce [IEnumDebugPorts2](../../../extensibility/debugger/reference/ienumdebugports2.md) un oggetto che contiene un elenco di tutte le porte da tutti i fornitori di porte.  
+ [out] Restituisce un [IEnumDebugPorts2](../../../extensibility/debugger/reference/ienumdebugports2.md) oggetto che contiene un elenco di tutte le porte di tutti i fornitori di porta.  
   
-## Valore restituito  
- Se l'operazione riesce, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
+## <a name="return-value"></a>Valore restituito  
+ Se ha esito positivo, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IDebugCoreServer2](../../../extensibility/debugger/reference/idebugcoreserver2.md)   
  [IEnumDebugPorts2](../../../extensibility/debugger/reference/ienumdebugports2.md)

@@ -1,63 +1,61 @@
 ---
-title: 'How to: Save and Edit Connection Strings | Microsoft Docs'
-ms.custom: 
+title: 'Procedura: salvare e modificare stringhe di connessione'
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: f8ef3a2c-029c-423b-9d9e-a4f1add4f640
-caps.latest.revision: 14
-author: mikeblome
-ms.author: mblome
-manager: ghogen
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: HT
-ms.sourcegitcommit: 9e6c28d42bec272c6fd6107b4baf0109ff29197e
-ms.openlocfilehash: 61e4ae70c3154c1b47ef5eb48ad3079d5602f59a
-ms.contentlocale: it-it
-ms.lasthandoff: 08/22/2017
-
+author: gewarren
+ms.author: gewarren
+manager: douge
+ms.technology: vs-data-tools
+ms.workload:
+- data-storage
+ms.openlocfilehash: 820808a79c8ed18c08c6c54ba416c0993aac06d5
+ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/19/2018
 ---
-# <a name="how-to-save-and-edit-connection-strings"></a>How to: Save and Edit Connection Strings
-Connection strings in Visual Studio applications can be saved in the application configuration file (also referred to as application settings), or hard-coded directly in your application. Saving connection strings in the application configuration file simplifies the task of maintaining your application. If the connection string needs to be changed, then you can update it in the application settings file (as opposed to having to change it in the source code and recompile the application).
+# <a name="how-to-save-and-edit-connection-strings"></a>Procedura: salvare e modificare stringhe di connessione
+Le stringhe di connessione nelle applicazioni di Visual Studio possono essere salvate nel file di configurazione dell'applicazione (detto anche le impostazioni dell'applicazione) o a livello di codice direttamente nell'applicazione. Il salvataggio delle stringhe di connessione nel file di configurazione dell'applicazione semplifica la gestione dell'applicazione. Se la stringa di connessione richiede modifiche, infatti, è possibile aggiornarla all'interno di tale file anziché modificarla nel codice sorgente e poi ricompilare l'applicazione.
 
-Storing sensitive information (such as the password) within the connection string can affect the security of your application. Connection strings saved to the application configuration file are not encrypted or obfuscated, so it may be possible for someone to access the file and view its contents. Using Windows Integrated Security is a more secure way to control access to a database.
+L'archiviazione di informazioni riservate, ad esempio una password, nella stringa di connessione può avere implicazioni sulla sicurezza dell'applicazione. Le stringhe di connessione salvate nel file di configurazione dell'applicazione non vengono crittografate. Per tale motivo, chiunque può accedere al file e visualizzarne il contenuto. La sicurezza integrata di Windows consente di controllare l'accesso a un database in modo più sicuro.
 
-If you do not choose to use Windows integrated security and your database requires a user name and password, you can omit them from the connection string, but your application will need to provide this information to successfully connect to the database. For example, you can create a dialog box that prompts the user for this information and dynamically builds the connection string at run time. Security can still be an issue if the information is intercepted on the way to the database. For more information, see [Protecting Connection Information](https://msdn.microsoft.com/library/89211k9b.aspx).
+Se non si sceglie di utilizzare la sicurezza integrata di Windows e il database in uso richiede l'immissione di un nome utente e di una password, è possibile ometterli nella stringa di connessione, ma sarà comunque necessario specificarli per eseguire la connessione al database. È ad esempio possibile creare una finestra di dialogo in cui vengono richieste tali informazioni e compilare la stringa di connessione dinamicamente in fase di esecuzione. Anche in questo caso possono presentarsi problemi di sicurezza se le informazioni vengono intercettate nel percorso verso il database.
+Per altre informazioni, vedere [Protezione delle informazioni di connessione](/dotnet/framework/data/adonet/protecting-connection-information).
 
-## <a name="to-save-a-connection-string-from-within-the-data-wizards"></a>To save a connection string from within the data wizards
-Select the option to save the connection on the Save connection string to the application configuration file page.
+## <a name="to-save-a-connection-string-from-within-the-data-source-configuration-wizard"></a>Per salvare una stringa di connessione dall'interno la configurazione guidata origine dati
+Nel **configurazione guidata origine dati**, selezionare l'opzione per salvare la connessione alla salvare la stringa di connessione alla pagina File di configurazione dell'applicazione.
 
-## <a name="to-save-a-connection-string-directly-into-application-settings"></a>To save a connection string directly into application settings
-- In Solution Explorer double-click the My Project icon (Visual Basic) or Properties icon (C#) to open the Project Designer.
-- Select the Settings tab.
-- Enter a Name for the connection string. Refer to this name when accessing the connection string in code.
-- Set the Type to (Connection string).
-- Leave the Scope set to Application.
-- Type your connection string into the Value field, or click the ellipses (...) button in the Value field to open the Connection Properties dialog box to build your connection string.
-## <a name="editing-connection-strings-stored-in-application-settings"></a>Editing Connection Strings Stored in Application Settings
-You can modify connection information that is saved in application settings by using the Project Designer.
-### <a name="to-edit-a-connection-string-stored-in-application-settings"></a>To edit a connection string stored in application settings
-- In Solution Explorer, double-click the My Project icon (Visual Basic) or Properties icon (Visual C# to open the Project Designer.
-- Select the Settings tab.
-- Locate the connection you want to edit and select the text in the Value box.
-- Edit the connection string in the Value box, or click the ellipses in the Value box to edit your connection with the Connection Properties dialog box.
-## <a name="editing-hard-coded-connection-strings-in-datasets"></a>Editing Hard-Coded Connection Strings in Datasets
-You can modify connection information that is saved in code by using the Creating and Editing Typed Datasets.
-### <a name="to-edit-a-connection-string-stored-in-a-dataset"></a>To edit a connection string stored in a Dataset
-- In Solution Explorer, double-click the dataset (.xsd file) with the connection you want to edit.
-- Select the TableAdapter or query with the connection you want to edit.
-- In the Properties window expand the DefaultConnection node.
-- To quickly modify the connection string, edit the ConnectionString property, or click the down arrow on the DefaultConnection property and choose New Connection.
+## <a name="to-save-a-connection-string-directly-into-application-settings"></a>Per salvare una stringa di connessione direttamente nelle impostazioni dell'applicazione
+- In Esplora soluzioni fare doppio clic sull'icona di progetto (Visual Basic) o sull'icona delle proprietà (c#) per aprire la finestra di progettazione del progetto.
+- Selezionare la scheda Impostazioni.
+- Immettere un nome per la stringa di connessione. Fare riferimento a questo nome per l'accesso alla stringa di connessione nel codice.
+- Impostare il tipo (stringa di connessione).
+- Lasciare l'ambito impostato su applicazione.
+- Digitare la stringa di connessione nel campo del valore o fare clic sul pulsante con puntini di sospensione (...) nel campo valore per aprire la finestra di dialogo proprietà di connessione per compilare la stringa di connessione.
 
-## <a name="security"></a>Security
-Storing sensitive information (such as a password) within the connection string can affect the security of your application. Using Windows integrated security is a more secure way to control access to a database.
-For more information, see Securing Connection Strings and ADO.NET Secure Coding Guidelines.
-  
-## <a name="see-also"></a>See Also  
- [Visual Studio data tools for .NET](../data-tools/visual-studio-data-tools-for-dotnet.md)
+## <a name="editing-connection-strings-stored-in-application-settings"></a>La modifica di stringhe di connessione archiviate nelle impostazioni dell'applicazione
+È possibile modificare le informazioni di connessione salvate nelle impostazioni dell'applicazione utilizzando la finestra di progettazione del progetto.
+
+### <a name="to-edit-a-connection-string-stored-in-application-settings"></a>Per modificare una stringa di connessione archiviata nelle impostazioni dell'applicazione
+- In Esplora soluzioni fare doppio clic sull'icona di progetto (Visual Basic) o sull'icona delle proprietà (c#) per aprire la finestra di progettazione del progetto.
+- Selezionare la scheda Impostazioni.
+- Individuare la connessione a cui che si desidera modificare e selezionare il testo nel campo del valore.
+- Modificare la stringa di connessione nel campo del valore o fare clic sul pulsante con puntini di sospensione (...) nel campo valore per modificare la connessione con la finestra di dialogo proprietà di connessione.
+
+## <a name="editing-connection-strings-for-datasets"></a>La modifica di stringhe di connessione per i set di dati
+È possibile modificare le informazioni di connessione per ogni TableAdapter in un set di dati.
+
+### <a name="to-edit-a-connection-string-for-a-tableadapter-in-a-dataset"></a>Per modificare una stringa di connessione per un oggetto TableAdapter in un set di dati
+- In Esplora soluzioni fare doppio clic sul set di dati (file con estensione XSD) contenente la connessione che si desidera modificare.
+- Selezionare il TableAdapter o una query che contiene la connessione che si desidera modificare.
+- Nella finestra Proprietà espandere il nodo della connessione.
+- Per modificare rapidamente la stringa di connessione, è possibile modificare la proprietà ConnectionString, o fare clic sulla freccia giù sulla proprietà di connessione e scegliere Nuova connessione.
+
+## <a name="security"></a>Sicurezza
+L'archiviazione delle informazioni riservate, ad esempio la password, nella stringa di connessione può avere implicazioni sulla sicurezza dell'applicazione. La sicurezza integrata di Windows consente di controllare l'accesso a un database in modo più sicuro.
+Per altre informazioni, vedere [Protezione delle informazioni di connessione](/dotnet/framework/data/adonet/protecting-connection-information).
+
+## <a name="see-also"></a>Vedere anche
+
+- [Aggiunta di connessioni](../data-tools/add-new-connections.md)

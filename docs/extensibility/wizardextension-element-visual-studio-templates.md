@@ -1,41 +1,26 @@
 ---
-title: Elemento WizardExtension (modelli di Visual Studio) | Documenti di Microsoft
-ms.custom: 
+title: Elemento WizardExtension (modelli di Visual Studio) | Documenti Microsoft
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - vs-ide-general
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: conceptual
 f1_keywords:
 - http://schemas.microsoft.com/developer/vstemplate/2005#WizardExtension
 helpviewer_keywords:
 - WizardExtension element [Visual Studio Templates]
 - <WizardExtension> element [Visual Studio Templates]
 ms.assetid: d54b01c1-50f5-4b65-828c-686e2321cc8c
-caps.latest.revision: 11
+author: gregvanl
 ms.author: gregvanl
-manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: 5db97d19b1b823388a465bba15d057b30ff0b3ce
-ms.openlocfilehash: d23e6d14cd7118838bbe6e143bebd073171c73de
-ms.lasthandoff: 02/22/2017
-
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: 5544f0d97fec3ae0b3102ed02c284b9c22a98b54
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="wizardextension-element-visual-studio-templates"></a>Elemento WizardExtension (modelli di Visual Studio)
 Contiene gli elementi di registrazione per la creazione guidata modello di personalizzazione.  
@@ -70,13 +55,13 @@ Contiene gli elementi di registrazione per la creazione guidata modello di perso
   
 |Elemento|Descrizione|  
 |-------------|-----------------|  
-|[VSTemplate](../extensibility/vstemplate-element-visual-studio-templates.md)|Contiene tutti i metadati per il modello di progetto modello di elemento o lo starter kit.|  
+|[VSTemplate](../extensibility/vstemplate-element-visual-studio-templates.md)|Contiene tutti i metadati per il modello di progetto, un modello di elemento o lo starter kit.|  
   
 ## <a name="remarks"></a>Note  
  `WizardExtension` è un elemento figlio facoltativo di `VSTemplate`.  
   
 ## <a name="example"></a>Esempio  
- L'esempio seguente illustra i metadati per il modello di progetto standard per un [!INCLUDE[csprcs](../data-tools/includes/csprcs_md.md)] applicazione Windows.  
+ Nell'esempio seguente vengono illustrati i metadati per il modello di progetto standard per un [!INCLUDE[csprcs](../data-tools/includes/csprcs_md.md)] applicazione Windows.  
   
 ```  
 <VSTemplate Version="3.0.0" Type="Item"  
@@ -107,6 +92,6 @@ Contiene gli elementi di registrazione per la creazione guidata modello di perso
 ```  
   
 ## <a name="see-also"></a>Vedere anche  
- [Visual Studio Template Schema Reference](../extensibility/visual-studio-template-schema-reference.md)   
- [Creazione di modelli di elemento e progetto](../ide/creating-project-and-item-templates.md)   
- [Procedura: utilizzare procedure guidate con modelli di progetto](../extensibility/how-to-use-wizards-with-project-templates.md)
+ [Riferimenti allo schema dei modelli di Visual Studio](../extensibility/visual-studio-template-schema-reference.md)   
+ [Creazione di modelli di progetti e di elementi](../ide/creating-project-and-item-templates.md)   
+ [Procedura: Usare procedure guidate con modelli di progetto](../extensibility/how-to-use-wizards-with-project-templates.md)

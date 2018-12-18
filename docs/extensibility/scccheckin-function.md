@@ -1,41 +1,25 @@
 ---
 title: Funzione SccCheckin | Documenti Microsoft
-ms.custom: 
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - vs-ide-sdk
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: conceptual
 f1_keywords:
 - SccCheckin
 helpviewer_keywords:
 - SccCheckin function
 ms.assetid: e3f26ac2-6163-42e1-a764-22cfea5a3bc6
-caps.latest.revision: 16
+author: gregvanl
 ms.author: gregvanl
-manager: ghogen
-translation.priority.mt:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: bf8c8d23a89e55b272657dde0c2374c78e63bfaf
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
 ms.translationtype: MT
-ms.sourcegitcommit: 4a36302d80f4bc397128e3838c9abf858a0b5fe8
-ms.openlocfilehash: b082ca831c17dcab3fbc95f8dd547da23a1f8982
-ms.contentlocale: it-it
-ms.lasthandoff: 09/06/2017
-
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="scccheckin-function"></a>SccCheckin (funzione)
 Questa funzione controlla in precedenza i file estratti al sistema di controllo di origine, le modifiche e la creazione di una nuova versione. Questa funzione viene chiamata con un conteggio e una matrice di nomi dei file da archiviare.  
@@ -86,7 +70,7 @@ SCCRTN SccCheckin (
 |SCC_E_ACCESSFAILURE|Si è verificato un problema di accesso di sistema di controllo di origine, probabilmente a causa di problemi di contesa o di rete. È consigliabile un nuovo tentativo.|  
 |SCC_E_NONSPECIFICERROR|Errore non specifico. File non è stato archiviato.|  
 |SCC_E_NOTCHECKEDOUT|L'utente non ha estratto il file, in modo non è possibile verificare.|  
-|SCC_E_CHECKINCONFLICT|Archiviazione non può essere eseguita perché:<br /><br /> -Un altro utente ha archiviato anticipo e `bAutoReconcile` è false.<br /><br /> -oppure-<br /><br /> -Il merge automatico non può essere eseguito (ad esempio, quando i file sono binari).|  
+|SCC_E_CHECKINCONFLICT|Archiviazione non può essere eseguita perché:<br /><br /> -Un altro utente ha archiviato anticipo e `bAutoReconcile` è false.<br /><br /> oppure<br /><br /> -Il merge automatico non può essere eseguito (ad esempio, quando i file sono binari).|  
 |SCC_E_VERIFYMERGE|File è stato unito automaticamente, ma non è stato archiviato attesa di verifica dell'utente.|  
 |SCC_E_FIXMERGE|File è stato unito automaticamente, ma non è stato archiviato a causa di un conflitto di tipo merge che deve essere risolti manualmente.|  
 |SCC_E_NOTAUTHORIZED|L'utente non è possibile eseguire questa operazione.|  

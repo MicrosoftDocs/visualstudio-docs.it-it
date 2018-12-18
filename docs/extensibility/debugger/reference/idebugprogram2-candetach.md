@@ -1,41 +1,25 @@
 ---
 title: IDebugProgram2::CanDetach | Documenti Microsoft
-ms.custom: 
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - vs-ide-sdk
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: conceptual
 f1_keywords:
 - IDebugProgram2::CanDetach
 helpviewer_keywords:
 - IDebugProgram2::CanDetach
 ms.assetid: dcd9ab6c-49e5-447e-aa7c-89f571f4a052
-caps.latest.revision: 7
+author: gregvanl
 ms.author: gregvanl
-manager: ghogen
-translation.priority.mt:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: 08387df82b20ef38380fe6302a5ca1f5d0bcbc9c
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
 ms.translationtype: MT
-ms.sourcegitcommit: 4a36302d80f4bc397128e3838c9abf858a0b5fe8
-ms.openlocfilehash: 6508286e277eb72dd9f0cb0810146dccd8ec59ee
-ms.contentlocale: it-it
-ms.lasthandoff: 09/26/2017
-
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="idebugprogram2candetach"></a>IDebugProgram2::CanDetach
 Determina se un motore di debug (DE) è possibile disconnettersi dal programma.  

@@ -1,23 +1,27 @@
 ---
-title: "Typedef, costanti ed enumerazioni del runtime di JavaScript | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/18/2017"
-ms.prod: "windows-client-threshold"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
+title: Typedef, costanti ed enumerazioni del runtime di JavaScript | Microsoft Docs
+ms.custom: 
+ms.date: 01/18/2017
+ms.prod: windows-client-threshold
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: reference
 ms.assetid: 1aa107ed-e144-4947-b5bb-90284a537174
-caps.latest.revision: 5
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 5
+caps.latest.revision: "5"
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.openlocfilehash: ad2f5a086062d6a4473a1befc83790d76056d19c
+ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/27/2017
 ---
-# Typedef, costanti ed enumerazioni del runtime di JavaScript
-Typedef, costanti ed enumerazioni del runtime JavaScript \(JsRT\) supportano l'aggiunta di funzionalità di script alle applicazioni desktop e lato server in esecuzione in Windows.  
+# <a name="javascript-runtime-typedefs-constants-and-enumerations"></a>Typedef, costanti ed enumerazioni del runtime di JavaScript
+Typedef, costanti ed enumerazioni del runtime JavaScript (JsRT) supportano l'aggiunta di funzionalità di script alle applicazioni desktop e lato server in esecuzione in Windows.  
   
-## In questa sezione  
+## <a name="in-this-section"></a>Contenuto della sezione  
  L'hosting di JsRT viene supportato dai seguenti typedef globali:  
   
 -   [Typedef JsBackgroundWorkItemCallback](../chakra-hosting/jsbackgroundworkitemcallback-typedef.md)  
@@ -50,7 +54,7 @@ Typedef, costanti ed enumerazioni del runtime JavaScript \(JsRT\) supportano l'a
   
 -   [Typedef JsSerializedScriptLoadSourceCallback](../chakra-hosting/jsserializedscriptloadsourcecallback-typedef.md)  
   
--   [typedef JsSerializedScriptUnloadCallback](../chakra-hosting/jsserializedscriptunloadcallback-typedef.md)  
+-   [Typedef JsSerializedScriptUnloadCallback](../chakra-hosting/jsserializedscriptunloadcallback-typedef.md)  
   
 -   [Typedef JsSourceContext](../chakra-hosting/jssourcecontext-typedef.md)  
   
@@ -60,13 +64,13 @@ Typedef, costanti ed enumerazioni del runtime JavaScript \(JsRT\) supportano l'a
   
  L'hosting di JsRT viene supportato dalla seguenti costanti:  
   
--   [Costante JS\_INVALID\_PROPERTYID](../chakra-hosting/js-invalid-propertyid-constant.md)  
+-   [Costante JS_INVALID_PROPERTYID](../chakra-hosting/js-invalid-propertyid-constant.md)  
   
--   [Costante JS\_INVALID\_REFERENCE](../chakra-hosting/js-invalid-reference-constant.md)  
+-   [Costante JS_INVALID_REFERENCE](../chakra-hosting/js-invalid-reference-constant.md)  
   
--   [Costante JS\_INVALID\_RUNTIME\_HANDLE](../chakra-hosting/js-invalid-runtime-handle-constant.md)  
+-   [Costante JS_INVALID_RUNTIME_HANDLE](../chakra-hosting/js-invalid-runtime-handle-constant.md)  
   
--   [Costante JS\_SOURCE\_CONTEXT\_NONE](../chakra-hosting/js-source-context-none-constant.md)  
+-   [Costante JS_SOURCE_CONTEXT_NONE](../chakra-hosting/js-source-context-none-constant.md)  
   
  L'hosting di JsRT viene supportato dalle seguenti enumerazioni:  
   
@@ -84,6 +88,6 @@ Typedef, costanti ed enumerazioni del runtime JavaScript \(JsRT\) supportano l'a
   
 -   [Enumerazione JsValueType](../chakra-hosting/jsvaluetype-enumeration.md)  
   
-## Vedere anche  
- [Hosting del runtime di JavaScript](../chakra-hosting/hosting-the-javascript-runtime.md)   
- [Hosting del runtime di JavaScript](../chakra-hosting/javascript-runtime-hosting.md)
+## <a name="see-also"></a>Vedere anche  
+ [Hosting del runtime JavaScript](../chakra-hosting/hosting-the-javascript-runtime.md)   
+ [Runtime JavaScript - Hosting](../chakra-hosting/javascript-runtime-hosting.md)

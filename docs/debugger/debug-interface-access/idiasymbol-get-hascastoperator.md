@@ -1,53 +1,52 @@
 ---
-title: "IDiaSymbol::get_hasCastOperator | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "IDiaSymbol::get_hasCastOperator (metodo)"
+title: IDiaSymbol::get_hasCastOperator | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology: vs-ide-debug
+ms.topic: conceptual
+dev_langs:
+- C++
+helpviewer_keywords:
+- IDiaSymbol::get_hasCastOperator method
 ms.assetid: a21114a6-56a3-4e8a-a65f-58ec2a0a8908
-caps.latest.revision: 8
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 8
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: f625be9ce000f0e768d3aa9fc3bf7a205f273d27
+ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/18/2018
 ---
-# IDiaSymbol::get_hasCastOperator
-[!INCLUDE[vs2017banner](../../code-quality/includes/vs2017banner.md)]
-
-Recupera un flag che indica se il tipo di dati definito dall'utente dispone di operatori di cast definiti.  
+# <a name="idiasymbolgethascastoperator"></a>IDiaSymbol::get_hasCastOperator
+Recupera un flag che specifica se il tipo di dati definito dall'utente ha definiti tutti gli operatori di cast.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp#  
-HRESULT get_hasCastOperator (   
-   BOOL* pRetVal  
+```C++  
+HRESULT get_hasCastOperator (   
+   BOOL* pRetVal  
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `pRetVal`  
- \[out\]  Restituisce un oggetto `TRUE` se il tipo di dati definito dall'utente dispone di operatori di cast annullati; in caso contrario, restituisce  `FALSE`.  
+ [out] Restituisce un `TRUE` se il tipo di dati definito dall'utente ha tutti gli operatori di cast definiti; in caso contrario, restituisce `FALSE`.  
   
-## Valore restituito  
- Se l'operazione riesce, restituisce `S_OK`; in caso contrario, restituisce  `S_FALSE` o un codice di errore.  
+## <a name="return-value"></a>Valore restituito  
+ Se ha esito positivo, restituisce `S_OK`; in caso contrario, restituisce `S_FALSE` o un codice di errore.  
   
 > [!NOTE]
->  un valore restituito di `S_FALSE` indica che la proprietà non è disponibile per il simbolo.  
+>  Valore restituito di `S_FALSE` significa che la proprietà non è disponibile per il simbolo.  
   
-## Requisiti  
+## <a name="requirements"></a>Requisiti  
   
-|Requisiti|Descrizione|  
-|---------------|-----------------|  
-|intestazione:|dia2.h|  
-|versione:|DIA SDK v7.0|  
+|Requisito|Descrizione|  
+|-----------------|-----------------|  
+|Intestazione:|DIA2.h|  
+|Versione:|Versione 7.0 DIA SDK|  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IDiaSymbol](../../debugger/debug-interface-access/idiasymbol.md)

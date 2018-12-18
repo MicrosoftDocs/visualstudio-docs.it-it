@@ -1,40 +1,25 @@
 ---
 title: IDebugProviderProgramNode2 | Documenti Microsoft
-ms.custom: 
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - vs-ide-sdk
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: conceptual
 f1_keywords:
 - IDebugProviderProgramNode2
 helpviewer_keywords:
 - IDebugProviderProgramNode2
 ms.assetid: f0bca1cc-afbe-44cf-b5aa-d078aa685d24
-caps.latest.revision: 8
+author: gregvanl
 ms.author: gregvanl
-manager: ghogen
-translation.priority.mt:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: ca7c86466fa23fb21a932f26dc24e37c71cf29b4
-ms.openlocfilehash: 55cccc52e968dd3553c55a9aedb2fb838bd06093
-ms.lasthandoff: 04/05/2017
-
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: 6057371838854755985d2ff570f11eefdeb3b222
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="idebugproviderprogramnode2"></a>IDebugProviderProgramNode2
 Questa interfaccia effettua il marshalling delle interfacce correlate al programma attraverso i limiti di processo.  

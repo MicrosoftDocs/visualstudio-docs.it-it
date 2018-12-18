@@ -1,45 +1,28 @@
 ---
 title: Opzioni, Editor di testo, C/C++, Formattazione | Microsoft Docs
-ms.custom: 
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - vs-ide-general
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: conceptual
 f1_keywords:
 - VS.ToolsOptionsPages.Text_Editor.C/C++.Formatting.General
 - VS.ToolsOptionsPages.Text_Editor.C%2fC%2b%2b.Formatting.General
 dev_langs:
-- C++
+- CPP
 helpviewer_keywords:
 - Text Editor Options dialog box, formatting
 ms.assetid: cb6f1cbb-5305-48da-a8e8-33fd70775d46
-caps.latest.revision: 16
-author: kempb
-ms.author: kempb
-manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 5ea9179ad37514ffad4876177b05150eecc22def
-ms.openlocfilehash: 41cca3051eaf1bfdc90f6616900699b8996033b0
-ms.contentlocale: it-it
-ms.lasthandoff: 05/24/2017
-
+author: gewarren
+ms.author: gewarren
+manager: douge
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 61097f910a2dda79852b126a2f17f2af6c62b808
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="options-text-editor-cc-formatting"></a>Opzioni, Editor di testo, C/C++, Formattazione
 Consente di modificare il comportamento predefinito dell'editor di codice in fase di programmazione in C o C++.  
@@ -77,7 +60,7 @@ Consente di modificare il comportamento predefinito dell'editor di codice in fas
  **Evidenzia token corrispondenti**  
  Se il cursore si trova accanto a una parentesi graffa, l'editor può evidenziare la parentesi graffa corrispondente in modo che sia possibile visualizzare più agevolmente il codice contenuto.  
   
-## <a name="outlining"></a>Struttura  
+## <a name="outlining"></a>struttura  
  **Attiva modalità struttura all'apertura del file**  
  Aprendo un file nell'editor di testo, è possibile abilitare la funzionalità di struttura. Per altre informazioni, vedere [Struttura](../../ide/outlining.md). Se questa opzione è selezionata, la funzionalità di struttura verrà abilitata all'apertura di un file.  
   
@@ -94,5 +77,5 @@ Consente di modificare il comportamento predefinito dell'editor di codice in fas
 -   [Istruzione while (C++)](/cpp/cpp/while-statement-cpp)  
   
 ## <a name="see-also"></a>Vedere anche  
- [Generale, Ambiente, finestra di dialogo Opzioni](../../ide/reference/general-environment-options-dialog-box.md)   
+ [General, Environment, Options Dialog Box](../../ide/reference/general-environment-options-dialog-box.md)  (Generale, Ambiente, finestra di dialogo Opzioni)  
  [Utilizzo di IntelliSense](../../ide/using-intellisense.md)

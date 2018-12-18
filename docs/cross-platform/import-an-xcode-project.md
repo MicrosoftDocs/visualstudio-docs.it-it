@@ -1,26 +1,20 @@
 ---
 title: Importare un progetto XCode | Microsoft Docs
-ms.custom: 
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: aa4b8161-d98f-4a1a-9db3-520133bfc82f
-caps.latest.revision: 7
-author: BrianPeek
-ms.author: brpeek
-manager: ghogen
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: 5db97d19b1b823388a465bba15d057b30ff0b3ce
-ms.openlocfilehash: 828aa9efccd636e517535947606a33322a3bbc4b
-ms.lasthandoff: 02/22/2017
-
+ms.technology: vs-ide-mobile
+author: corob-msft
+ms.author: corob
+manager: douge
+ms.workload:
+- xplat-cplusplus
+ms.openlocfilehash: 500dce15e695cf53a061f8405919e808b8f7c493
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="import-an-xcode-project"></a>Importare un progetto XCode
 Microsoft Visual C++ per lo sviluppo di app per dispositivi mobili multipiattaforma include il supporto per lo spostamento dei progetti XCode in Visual Studio, in cui è possibile creare librerie multipiattaforma e condividere il codice con altri progetti. La procedura guidata Importa da Xcode semplifica il processo di importazione dei progetti e la suddivisione del codice C++ nelle destinazioni XCode per l'uso come libreria statica o come progetto di codice condiviso. È possibile gestire il codice specifico di iOS in Visual Studio e usare comunque XCode per creare storyboard ed eseguire compilazioni. Per informazioni su come spostare facilmente il codice tra Visual Studio e XCode, vedere Spostare le modifiche tra XCode e Visual Studio.  
@@ -32,11 +26,11 @@ Microsoft Visual C++ per lo sviluppo di app per dispositivi mobili multipiattafo
   
 1.  Dal menu **File** scegliere **Nuovo**, **Importa**, **Importa da Xcode**. Verrà aperta la finestra di dialogo della procedura guidata **Importa da Xcode**.  
   
-     ![Scegliere il progetto di destinazione XCode da importare](~/cross-platform/media/cppmdd_u2_importxcode_choose.PNG "CPPMDD_U2_ImportXCode_Choose")  
+     ![Scegliere il progetto di destinazione XCode da importare](../cross-platform/media/cppmdd_u2_importxcode_choose.PNG "CPPMDD_U2_ImportXCode_Choose")  
   
 2.  Nel riquadro **Scegliere un progetto** fare clic sul pulsante Sfoglia per selezionare un file di XCode con estensione pbxproj. Passare al file di progetto nella finestra di dialogo **Seleziona il file di progetto Xcode**, quindi scegliere **Apri**.  
   
-     ![Selezionare un file di progetto nella finestra di dialogo Seleziona il file di progetto Xcode](~/cross-platform/media/cppmdd_u2_importxcode_browse.PNG "CPPMDD_U2_ImportXCode_Browse")  
+     ![Selezionare un file di progetto nella finestra di dialogo Seleziona il file di progetto Xcode](../cross-platform/media/cppmdd_u2_importxcode_browse.PNG "CPPMDD_U2_ImportXCode_Browse")  
   
      Nella procedura guidata Importa da Xcode scegliere **Avanti**.  
   

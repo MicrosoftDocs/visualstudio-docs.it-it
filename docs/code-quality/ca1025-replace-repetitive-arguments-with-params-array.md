@@ -1,13 +1,8 @@
 ---
-title: 'CA1025: Replace repetitive arguments with params array | Microsoft Docs'
-ms.custom: 
+title: 'Ca1025: Sostituire gli argomenti ripetitivi con una matrice di parametri'
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- vs-devops-test
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.technology: vs-ide-code-analysis
+ms.topic: reference
 f1_keywords:
 - CA1025
 - ReplaceRepetitiveArgumentsWithParamsArray
@@ -15,53 +10,38 @@ helpviewer_keywords:
 - ReplaceRepetitiveArgumentsWithParamsArray
 - CA1025
 ms.assetid: f009b340-dea3-4459-8fe1-2143aa8b5d0b
-caps.latest.revision: 14
-author: stevehoag
-ms.author: shoag
-manager: wpickett
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: HT
-ms.sourcegitcommit: eb5c9550fd29b0e98bf63a7240737da4f13f3249
-ms.openlocfilehash: 149d34bcf1192fa93e6ee5416c8003e965f6fc3f
-ms.contentlocale: it-it
-ms.lasthandoff: 08/30/2017
-
+author: gewarren
+ms.author: gewarren
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 5a5957b73789f751f5bd704c1a228994ee6187dc
+ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/19/2018
 ---
-# <a name="ca1025-replace-repetitive-arguments-with-params-array"></a>CA1025: Replace repetitive arguments with params array
-|||  
-|-|-|  
-|TypeName|ReplaceRepetitiveArgumentsWithParamsArray|  
-|CheckId|CA1025|  
-|Category|Microsoft.Design|  
-|Breaking Change|Non-breaking|  
-  
-## <a name="cause"></a>Cause  
- A public or protected method in a public type has more than three parameters, and its last three parameters are the same type.  
-  
-## <a name="rule-description"></a>Rule Description  
- Use a parameter array instead of repeated arguments when the exact number of arguments is unknown and the variable arguments are the same type, or can be passed as the same type. For example, the <xref:System.Console.WriteLine%2A> method provides a general-purpose overload that uses a parameter array to accept any number of <xref:System.Object> arguments.  
-  
-## <a name="how-to-fix-violations"></a>How to Fix Violations  
- To fix a violation of this rule, replace the repeated arguments with a parameter array.  
-  
-## <a name="when-to-suppress-warnings"></a>When to Suppress Warnings  
- It is always safe to suppress a warning from this rule; however, this design might cause usability issues.  
-  
-## <a name="example"></a>Example  
- The following example shows a type that violates this rule.  
-  
+# <a name="ca1025-replace-repetitive-arguments-with-params-array"></a>Ca1025: Sostituire gli argomenti ripetitivi con una matrice di parametri
+|||
+|-|-|
+|TypeName|ReplaceRepetitiveArgumentsWithParamsArray|
+|CheckId|CA1025|
+|Category|Microsoft.Design|
+|Modifica importante|Non sostanziale|
+
+## <a name="cause"></a>Causa
+ Un metodo pubblico o protetto in un tipo pubblico presenta più di tre parametri e i relativi ultimi tre parametri sono dello stesso tipo.
+
+## <a name="rule-description"></a>Descrizione della regola
+ Utilizzare una matrice di parametri anziché argomenti ripetuti quando il numero esatto di argomenti e gli argomenti variabili sono dello stesso tipo oppure possono essere passati come lo stesso tipo. Ad esempio, il <xref:System.Console.WriteLine%2A> metodo fornisce un overload generico che utilizza una matrice di parametri per accettare un numero qualsiasi di <xref:System.Object> argomenti.
+
+## <a name="how-to-fix-violations"></a>Come correggere le violazioni
+ Per correggere una violazione di questa regola, sostituire gli argomenti ripetuti con una matrice di parametri.
+
+## <a name="when-to-suppress-warnings"></a>Esclusione di avvisi
+ È sempre possibile eliminare un avviso da questa regola. Tuttavia, ciò potrebbe causare problemi di usabilità.
+
+## <a name="example"></a>Esempio
+ Nell'esempio seguente viene illustrato un tipo che viola questa regola.
+
  [!code-csharp[FxCop.Design.RepeatArgs#1](../code-quality/codesnippet/CSharp/ca1025-replace-repetitive-arguments-with-params-array_1.cs)]

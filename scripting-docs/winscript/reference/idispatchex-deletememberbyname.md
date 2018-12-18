@@ -1,27 +1,33 @@
 ---
-title: "IDispatchEx::DeleteMemberByName | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/18/2017"
-ms.prod: "windows-script-interfaces"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-apiname: IDispatchEx.DeleteMemberByName
-apilocation: scrobj.dll
-helpviewer_keywords: 
-  - "Metodo DeleteMemberByName"
+title: IDispatchEx::DeleteMemberByName | Documenti Microsoft
+ms.custom: ''
+ms.date: 01/18/2017
+ms.prod: windows-script-interfaces
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
+ms.topic: reference
+apiname:
+- IDispatchEx.DeleteMemberByName
+apilocation:
+- scrobj.dll
+helpviewer_keywords:
+- DeleteMemberByName method
 ms.assetid: a01b4e6a-d989-4b29-bb3f-04554f8c39f7
 caps.latest.revision: 8
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 8
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.openlocfilehash: 5cb9a9dfd979954c42101fde41819d7e12db59e1
+ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/27/2017
 ---
-# IDispatchEx::DeleteMemberByName
-Rimuove un membro per nome.  
+# <a name="idispatchexdeletememberbyname"></a>IDispatchEx::DeleteMemberByName
+Elimina un membro in base al nome.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
 HRESULT DeleteMemberByName(  
@@ -30,32 +36,32 @@ HRESULT DeleteMemberByName(
   
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `bstrName`  
  Nome del membro da eliminare.  
   
  `grfdex`  
- Determina se il nome del membro viene applicata la distinzione tra maiuscole e minuscole.  Ciò può essere uno dei seguenti valori:  
+ Determina se il nome del membro viene fatta distinzione tra maiuscole e minuscole. Può trattarsi di uno dei valori seguenti:  
   
 |Valore|Significato|  
-|------------|-----------------|  
-|fdexNameCaseSensitive|Le richieste tali la ricerca del nome vengono effettuate in un fatta distinzione tra maiuscole e minuscole.  Può essere ignorato da oggetto che non supporta la ricerca con distinzione tra maiuscole e minuscole.|  
-|fdexNameCaseInsensitive|Le richieste tali la ricerca del nome vengono eseguite in modalità senza distinzione tra maiuscole e minuscole.  Può essere ignorato da oggetto che non supporta la ricerca senza distinzione tra maiuscole e minuscole.|  
+|-----------|-------------|  
+|fdexNameCaseSensitive|Richieste di effettuare la ricerca del nome in minuscolo. Può essere ignorato dall'oggetto che non supportano la ricerca tra maiuscole e minuscole.|  
+|fdexNameCaseInsensitive|Richieste di effettuare la ricerca del nome in minuscole. Può essere ignorato dall'oggetto che non supportano la ricerca tra maiuscole e minuscole.|  
   
-## Valore restituito  
- Restituisce uno dei seguenti valori:  
+## <a name="return-value"></a>Valore restituito  
+ Restituisce uno dei valori seguenti:  
   
 |||  
 |-|-|  
-|`S_OK`|Riuscita.|  
-|`S_FALSE`|Il membro esiste ma non può essere eliminato.|  
+|`S_OK`|Operazione completata.|  
+|`S_FALSE`|Membro esiste ma non può essere eliminato.|  
   
-## Note  
- Se il membro viene eliminato, il DISPID deve rimanere valido per `GetNextDispID`.  
+## <a name="remarks"></a>Note  
+ Se il membro viene eliminato, deve rimanere valido per il DISPID `GetNextDispID`.  
   
- Se un membro con il nome specificato viene eliminato e successivamente un membro con lo stesso nome viene ricreato, il DISPID deve corrispondere.  Se i membri che differiscono solo in caso di "stesso" è con dipendente.\)  
+ Se un membro con un nome specificato viene eliminato e successivamente viene ricreato a un membro con lo stesso nome, il DISPID deve essere lo stesso. (Se i membri che differiscono solo per i casi sono "stesso" è dipendente dall'oggetto).  
   
-## Esempio  
+## <a name="example"></a>Esempio  
   
 ```  
 BSTR bstrName;  
@@ -65,5 +71,5 @@ IDispatchEx *pdex;
 pdex->DeleteMemberByName(bstrName, fdexNameCaseSensitive);  
 ```  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Interfaccia IDispatchEx](../../winscript/reference/idispatchex-interface.md)

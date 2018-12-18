@@ -3,16 +3,13 @@ title: Frammenti di codice
 author: asb3993
 ms.author: amburns
 ms.date: 04/14/2017
-ms.topic: article
 ms.assetid: 0FE27C0C-A861-4133-A74E-8D0505CF5342
+ms.openlocfilehash: 0f89c7eadb9f9fbc7a38f4100a6df259a1aa0a06
+ms.sourcegitcommit: 4c0bc21d2ce2d8e6c9d3b149a7d95f0b4d5b3f85
 ms.translationtype: HT
-ms.sourcegitcommit: e2b7ff9126e1cc38ac2e58d6be339b656a024e7f
-ms.openlocfilehash: 1f2ee1d440ad1c7d8cd75ae9194c651f2fc16a41
-ms.contentlocale: it-it
-ms.lasthandoff: 08/11/2017
-
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/20/2018
 ---
-
 # <a name="code-snippets"></a>Frammenti di codice 
 
 I frammenti di codice, a volte indicati come _modelli di codice_, sono utili per una programmazione efficiente poiché consentono di inserire e modificare blocchi di testo scritti in precedenza. L'uso di frammenti di codice può essere particolarmente comodo per aggiungere rapidamente modelli comuni o anche per apprendere nuovi modelli, nel caso lo sviluppatore non sia sicuro della sintassi. Sono disponibili modelli per C#, F#, HTML, XML, Python e Razor.
@@ -40,4 +37,3 @@ Vi sono diversi modi per aggiungere frammenti di codice, alcuni dei quali sono d
 Sebbene vi siano molti modelli esistenti in una vasta gamma di linguaggi che è possibile usare e modificare, è anche possibile aggiungere nuovi modelli da **Visual Studio > Preferenze > Editor di testo > Frammenti di codice**:
 
 ![Inserire un nuovo modello](media/source-editor-image12.png)
-

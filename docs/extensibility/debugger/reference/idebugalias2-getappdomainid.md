@@ -1,50 +1,51 @@
 ---
-title: "IDebugAlias2::GetAppDomainId | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "GetAppDomainId"
-  - "IDebugAlias2::GetAppDomainId"
+title: IDebugAlias2::GetAppDomainId | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology:
+- vs-ide-sdk
+ms.topic: conceptual
+helpviewer_keywords:
+- GetAppDomainId
+- IDebugAlias2::GetAppDomainId
 ms.assetid: 23581aaa-5a53-4859-b264-eca49fc44bcd
-caps.latest.revision: 8
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 8
+author: gregvanl
+ms.author: gregvanl
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: 8d24665526f4487f6d2f514f41eb2afbc291847c
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# IDebugAlias2::GetAppDomainId
-[!INCLUDE[vs2017banner](../../../code-quality/includes/vs2017banner.md)]
-
-Recupera l'identificatore del dominio applicazione.  
+# <a name="idebugalias2getappdomainid"></a>IDebugAlias2::GetAppDomainId
+Recupera l'identificatore per il dominio applicazione.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp#  
+```cpp  
 HRESULT GetAppDomainId (  
-   ULONG32* pappDomainId  
+   ULONG32* pappDomainId  
 );  
 ```  
   
-```c#  
+```csharp  
 int GetAppDomainId (  
-   out uint pappDomainId  
+   out uint pappDomainId  
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `pappDomainId`  
- \[out\]  Restituisce identificatore del dominio applicazione.  
+ [out] Restituisce l'identificatore del dominio applicazione.  
   
-## Valore restituito  
- Se l'operazione riesce, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
+## <a name="return-value"></a>Valore restituito  
+ Se ha esito positivo, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
   
-## Note  
- Le modifiche dell'identificatore del dominio applicazione ogni volta che l'applicazione viene riavviata e un nuovo dominio applicazione viene creata.  
+## <a name="remarks"></a>Note  
+ Modifiche di identificatore di dominio dell'applicazione ogni volta che l'applicazione viene riavviata e un nuovo dominio applicazione viene creato.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IDebugAlias2](../../../extensibility/debugger/reference/idebugalias2.md)

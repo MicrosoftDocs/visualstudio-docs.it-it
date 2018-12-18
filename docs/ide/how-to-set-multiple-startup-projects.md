@@ -11,30 +11,17 @@ ms.topic: article
 helpviewer_keywords:
 - startup projects, setting multiple startup projects
 ms.assetid: 6131eb80-8745-4eb9-bdab-433e69b41651
-caps.latest.revision: 10
+caps.latest.revision: 
 author: gewarren
 ms.author: gewarren
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: d2f4eba36e9069a35cf279ccf1c78f72a51d77a1
-ms.openlocfilehash: 745a92734a6b7bfcee1e0e566aa08a03c3b70850
-ms.contentlocale: it-it
-ms.lasthandoff: 06/23/2017
-
+ms.workload:
+- multiple
+ms.openlocfilehash: 9b148fe01c3cd36713853531941c09611a6bf57f
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-set-multiple-startup-projects"></a>Procedura: impostare più progetti di avvio
 Visual Studio consente di specificare la modalità di esecuzione di più progetti all'avvio del debugger.  
@@ -55,4 +42,3 @@ Visual Studio consente di specificare la modalità di esecuzione di più progett
  [Creazione di soluzioni e progetti](../ide/creating-solutions-and-projects.md)
 
  [Gestione delle proprietà di progetti e soluzioni](../ide/managing-project-and-solution-properties.md)
-

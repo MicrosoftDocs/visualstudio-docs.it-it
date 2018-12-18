@@ -1,56 +1,57 @@
 ---
-title: "IDebugFunctionObject::CreateStringObject | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "IDebugFunctionObject::CreateStringObject"
-helpviewer_keywords: 
-  - "Metodo IDebugFunctionObject::CreateStringObject"
+title: IDebugFunctionObject::CreateStringObject | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology:
+- vs-ide-sdk
+ms.topic: conceptual
+f1_keywords:
+- IDebugFunctionObject::CreateStringObject
+helpviewer_keywords:
+- IDebugFunctionObject::CreateStringObject method
 ms.assetid: fd6070ab-07d4-4ea1-8d71-b16592d6f1a7
-caps.latest.revision: 9
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 9
+author: gregvanl
+ms.author: gregvanl
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: d56356aee150680b4d3a21327e28db353da51469
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# IDebugFunctionObject::CreateStringObject
-[!INCLUDE[vs2017banner](../../../code-quality/includes/vs2017banner.md)]
-
-crea un oggetto stringa.  
+# <a name="idebugfunctionobjectcreatestringobject"></a>IDebugFunctionObject::CreateStringObject
+Crea un oggetto stringa.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp#  
-HRESULT CreateStringObject(   
-   LPCOLESTR      pcstrString,  
-   IDebugObject** ppObject  
+```cpp  
+HRESULT CreateStringObject(   
+   LPCOLESTR      pcstrString,  
+   IDebugObject** ppObject  
 );  
 ```  
   
-```c#  
+```csharp  
 int CreateStringObject(  
-   string      pcstrString,   
-   out IDebugObject ppOjbect  
+   string      pcstrString,   
+   out IDebugObject ppOjbect  
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `pcstrString`  
- \[in\]  il valore stringa per l'oggetto stringa.  
+ [in] Il valore di stringa per l'oggetto stringa.  
   
  `ppObject`  
- \[out\]  Restituisce [IDebugObject](../../../extensibility/debugger/reference/idebugobject.md) un oggetto che rappresenta l'oggetto stringa appena creato.  
+ [out] Restituisce un [IDebugObject](../../../extensibility/debugger/reference/idebugobject.md) oggetto che rappresenta l'oggetto stringa appena creata.  
   
-## Valore restituito  
- Se l'operazione riesce, restituisce S\_OK, in caso contrario, restituisce un codice di errore.  
+## <a name="return-value"></a>Valore restituito  
+ Se ha esito positivo, restituisce S_OK; in caso contrario, restituisce un codice di errore.  
   
-## Note  
- Chiamare questo metodo per creare un oggetto che rappresenta una stringa che è un parametro alla funzione che è rappresentata [IDebugFunctionObject](../../../extensibility/debugger/reference/idebugfunctionobject.md) dall'interfaccia.  
+## <a name="remarks"></a>Note  
+ Chiamare questo metodo per creare un oggetto che rappresenta una stringa che rappresenta un parametro alla funzione che è rappresentato dal [IDebugFunctionObject](../../../extensibility/debugger/reference/idebugfunctionobject.md) interfaccia.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IDebugFunctionObject](../../../extensibility/debugger/reference/idebugfunctionobject.md)

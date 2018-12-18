@@ -1,40 +1,25 @@
 ---
 title: IDebugExceptionEvent2 | Documenti Microsoft
-ms.custom: 
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - vs-ide-sdk
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: conceptual
 f1_keywords:
 - IDebugExceptionEvent2
 helpviewer_keywords:
 - IDebugExceptionEvent2 interface
 ms.assetid: 53d32e59-a84b-4710-833e-c5ab08100516
-caps.latest.revision: 11
+author: gregvanl
 ms.author: gregvanl
-manager: ghogen
-translation.priority.mt:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: ca7c86466fa23fb21a932f26dc24e37c71cf29b4
-ms.openlocfilehash: c9817ca386846833ab022c5dbca3d3807bd38ef6
-ms.lasthandoff: 04/05/2017
-
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: 3f2cb866c12cacc2c0fcc81c3021e7cc5af448d3
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="idebugexceptionevent2"></a>IDebugExceptionEvent2
 Il motore di debug (DE) invia questa interfaccia al gestore di sessione di debug (SDM) quando viene generata un'eccezione nel programma attualmente in esecuzione.  
@@ -49,7 +34,7 @@ IDebugExceptionEvent2 : IUnknown
  La Germania implementa questa interfaccia per i report che si è verificata un'eccezione nel programma sottoposto a debug. Il [IDebugEvent2](../../../extensibility/debugger/reference/idebugevent2.md) interfaccia deve essere implementata sullo stesso oggetto di questa interfaccia. Usa il SDM [QueryInterface](/cpp/atl/queryinterface) per l'accesso di `IDebugEvent2` interfaccia.  
   
 ## <a name="notes-for-callers"></a>Note per i chiamanti  
- La Germania crea e invia l'oggetto evento per segnalare un'eccezione. L'evento viene inviato mediante il [IDebugEventCallback2](../../../extensibility/debugger/reference/idebugeventcallback2.md) funzione di callback che viene fornito dal suo SDM se è collegato al programma in fase di debug.  
+ La Germania crea e invia l'oggetto evento per segnalare un'eccezione. L'evento viene inviato mediante il [IDebugEventCallback2](../../../extensibility/debugger/reference/idebugeventcallback2.md) funzione di callback che viene fornito dal suo SDM quando è collegato al programma sottoposto a debug.  
   
 ## <a name="methods-in-vtable-order"></a>Metodi nell'ordine Vtable  
  Nella tabella seguente sono illustrati i metodi di `IDebugExceptionEvent2`.  

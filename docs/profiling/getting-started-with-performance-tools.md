@@ -1,41 +1,23 @@
 ---
 title: Introduzione agli strumenti per le prestazioni | Microsoft Docs
-ms.custom: 
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- vs-ide-debug
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.technology: vs-ide-debug
+ms.topic: conceptual
 helpviewer_keywords:
 - getting started, performance
 - getting started, profiling tools
 ms.assetid: 02085214-a8e4-40fd-9b26-32391a7a7082
-caps.latest.revision: 28
 author: mikejo5000
 ms.author: mikejo
-manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: 5db97d19b1b823388a465bba15d057b30ff0b3ce
-ms.openlocfilehash: 6bab61ca406ec487d8ee9a75d35bfdd6dd7f7850
-ms.lasthandoff: 02/22/2017
-
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 6fe0a1d3a305ca19b36358ab28fbb794d56df2aa
+ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/19/2018
 ---
 # <a name="getting-started-with-performance-tools"></a>Introduzione agli strumenti per le prestazioni
 Questa sezione fornisce una panoramica dei concetti e delle attività applicabili in fase di raccolta, visualizzazione e analisi delle prestazioni del codice mediante gli strumenti per le prestazioni di Visual Studio.  
@@ -52,7 +34,6 @@ Questa sezione fornisce una panoramica dei concetti e delle attività applicabil
 |----------|---------------------|  
 |**Profilare in modo rapido un'applicazione o un sito Web:** usare la Creazione guidata sessione di prestazioni per configurare ed eseguire una sessione di profilatura per una soluzione Visual Studio o un sito Web.|-   [Guida per principianti alla profilatura delle prestazioni](../profiling/beginners-guide-to-cpu-sampling.md)<br />-   [Procedura: Raccogliere dati sulle prestazioni per un sito Web](../profiling/how-to-collect-performance-data-for-a-web-site.md)|  
 |**Profilare un'applicazione senza la procedura guidata:** imparare a usare le pagine delle proprietà della sessione di prestazioni per creare una sessione di prestazioni.|-   [Procedura: Creare manualmente sessioni di prestazioni](../profiling/how-to-manually-create-performance-sessions.md)|  
-|**Esercitazione:** acquisire esperienza pratica profilando un'applicazione di esempio.|-   [Procedura dettagliata: Identificazione dei problemi di prestazioni](../profiling/walkthrough-identifying-performance-problems.md)<br />-   [Esempio PeopleTrax](../profiling/peopletrax-sample-profiling-tools.md)|  
   
 ## <a name="see-also"></a>Vedere anche  
  [Overviews](../profiling/overviews-performance-tools.md)  (Panoramiche)  

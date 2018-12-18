@@ -1,34 +1,33 @@
 ---
-title: "Visualizzazione Core | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "vs.performance.view.cores"
-helpviewer_keywords: 
-  - "Visualizzatore di concorrenza, visualizzazione Core"
+title: Visualizzazione Core | Microsoft Docs
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology: vs-ide-debug
+ms.topic: conceptual
+f1_keywords:
+- vs.performance.view.cores
+helpviewer_keywords:
+- Concurrency Visualizer, Cores View
 ms.assetid: e47af672-9785-4899-bd45-4d9dda3c396f
-caps.latest.revision: 16
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 16
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: aeac6a7322cb5f08751512f68797560d83ac4fd8
+ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/19/2018
 ---
-# Visualizzazione Core
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
-La Cores View mostra come l'esecuzione del thread è stata mappata ai core logici del processore.  Se si sviluppano applicazioni server, questa visualizzazione agevola l'ottimizzazione delle prestazioni di cache mediante l'affinità di thread o la gestione di pool di thread.  Può inoltre consentire di visualizzare casi in cui l'affinità di thread può aver in realtà peggiorato il problema della migrazione tra core.  La Cores View dispone di due parti, un grafico e una legenda.  
+# <a name="cores-view"></a>Visualizzazione Core
+La **visualizzazione Core** mostra il mapping dell'esecuzione dei thread ai core del processore logico (scegliere **Analizza** > **Visualizzatore di concorrenza** per avviare il visualizzatore di concorrenza). Se si scrivono applicazioni server, questa visualizzazione consente di ottimizzare le prestazioni della cache tramite l'affinità di thread o la gestione dei pool di thread. Consente anche di esaminare i casi in cui l'uso di affinità di thread potrebbe aver peggiorato il problema della migrazione tra core. La visualizzazione Core include due parti, un grafico e una legenda.  
   
- Il grafico superiore illustra i core logici sull'asse Y e il tempo sull'asse X.  Ogni thread nel grafico dispone di un colore univoco in modo da tenere traccia dello spostamento tra componenti principali nel tempo.  È possibile filtrare i thread in questo grafico nell'area della legenda.  
+ Il grafico visualizza i core logici sull'asse y e il tempo sull'asse x. Ogni thread nel grafico possiede un colore univoco in modo che sia possibile tenere traccia del movimento tra core nel tempo. È possibile filtrare i thread sul grafico selezionandoli nell'area della legenda.  
   
- L'area della legenda presenta una voce per ogni colore del grafico.  Sono riportati colore e nome del thread, numero di cambi di contesto tra core, numero totale di cambi di contesto e percentuale di cambi di contesto tra core diversi  La legenda viene ordinata in base al numero di cambi di contesto tra core, in ordine decrescente.  Vengono elencati solo i thread che hanno eseguito durante l'intervallo di tempo visualizzato.  L'elenco viene aggiornato si ingrandisce o si fa una panoramica.  
+ Nell'area della legenda è presente una voce per ogni colore nel grafico. Ogni voce indica colore e nome del thread, numero di scambi di contesto tra core diversi, numero totale di scambi di contesto e percentuale di scambi di contesto tra core diversi. La legenda viene ordinata per numero di scambi di contesto tra core, in ordine decrescente. Vengono elencati solo i thread eseguiti durante l'intervallo di tempo visualizzato.  L'elenco viene aggiornato se si esegue lo zoom o la panoramica.  
   
-## Vedere anche  
- [Visualizzatore di concorrenze](../profiling/concurrency-visualizer.md)   
- [Visualizzazione Uso](../profiling/utilization-view.md)   
+## <a name="see-also"></a>Vedere anche  
+ [Concurrency Visualizer](../profiling/concurrency-visualizer.md)  (Visualizzatore di concorrenza)  
+ [Utilization View](../profiling/utilization-view.md)  (Visualizzazione Uso)  
  [Visualizzazione Thread](../profiling/threads-view-parallel-performance.md)

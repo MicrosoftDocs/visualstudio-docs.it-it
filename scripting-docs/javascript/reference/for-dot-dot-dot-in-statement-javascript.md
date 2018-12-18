@@ -1,32 +1,35 @@
 ---
-title: "Istruzione for...in (JavaScript) | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/18/2017"
-ms.prod: "windows-client-threshold"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-javascript"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-dev_langs: 
-  - "JavaScript"
-  - "TypeScript"
-  - "DHTML"
-helpviewer_keywords: 
-  - "iterazione (istruzioni), istruzione for...in"
-  - "cicli (strutture), istruzioni for...in"
+title: for.... nell'istruzione (JavaScript) | Documenti Microsoft
+ms.custom: 
+ms.date: 01/18/2017
+ms.prod: windows-client-threshold
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-javascript
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+dev_langs:
+- JavaScript
+- TypeScript
+- DHTML
+helpviewer_keywords:
+- iteration statements, for...in statement
+- loop structures, for...in statements
 ms.assetid: 1b51a0ce-89f7-4a69-88ed-017b47dc398f
-caps.latest.revision: 20
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 20
+caps.latest.revision: "20"
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.openlocfilehash: a9c3ce78def6ab91256ff724a4acc87b7cf19ba2
+ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/27/2017
 ---
-# Istruzione for...in (JavaScript)
-Esegue una o più istruzioni per ogni proprietà di un oggetto o per ogni elemento di una matrice.  
+# <a name="forin-statement-javascript"></a>Istruzione for...in (JavaScript)
+Esegue uno o più istruzioni per ogni proprietà di un oggetto o di ogni elemento della matrice.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
 for (variable in [object | array]) {  
@@ -34,27 +37,27 @@ for (variable in [object | array]) {
 }  
 ```  
   
-## Parametri  
+## <a name="parameters"></a>Parametri  
  `variable`  
- Obbligatorio.  Variabile che può essere il nome di qualsiasi proprietà di `object` o l'indice di qualsiasi elemento di `array`.  
+ Obbligatorio. Una variabile che può essere qualsiasi nome di proprietà di `object` o qualsiasi indice di elemento di un `array`.  
   
  `object`, `array`  
- Facoltativo.  Oggetto o matrice su cui eseguire l'iterazione.  
+ Parametro facoltativo. Un oggetto o una matrice su cui eseguire l'iterazione.  
   
  `statements`  
- Facoltativo.  Una o più istruzioni da eseguire per ogni proprietà di `object` o per ogni elemento di `array`.  Può trattarsi di un'istruzione composta.  
+ Parametro facoltativo. Una o più istruzioni da eseguire per ogni proprietà di `object` o di ogni elemento di `array`. Può essere un'istruzione composta.  
   
-## Note  
- All'inizio di ogni iterazione di un ciclo, il valore di `variable` è il nome della proprietà successiva di `object` o l'indice dell'elemento successivo di `array`.  Si può quindi utilizzare `variable` in qualsiasi istruzione all'interno del ciclo per fare riferimento alla proprietà di `object` o all'elemento di `array`.  
+## <a name="remarks"></a>Note  
+ All'inizio di ogni iterazione di un ciclo, il valore di `variable` è il nome della proprietà successivo `object` o l'indice di elemento successivo del `array`. È quindi possibile utilizzare `variable` in una qualsiasi delle istruzioni all'interno del ciclo per fare riferimento alla proprietà di `object` o all'elemento di `array`.  
   
- Le proprietà di un oggetto non vengono assegnate in modo specifico.  Non si può specificare una determinata proprietà in base al relativo indice, ma solo in base al nome della proprietà.  
+ Le proprietà di un oggetto non sono assegnate in un determinato modo. È possibile specificare una determinata proprietà mediante il relativo indice, solo il nome della proprietà.  
   
- Lo scorrimento di una matrice viene eseguito nell'ordine dell'elemento, ovvero 0, 1, 2.  
+ Viene eseguito lo scorrimento di una matrice in ordine degli elementi, ovvero 0, 1, 2.  
   
-## Esempio  
- Nell'esempio seguente viene illustrato l'utilizzo dell'istruzione `for...in` con un oggetto utilizzato come matrice associativa.  
+## <a name="example"></a>Esempio  
+ Nell'esempio seguente viene illustrato l'utilizzo del `for...in` istruzione con un oggetto utilizzato come matrice associativa.  
   
-```javascript  
+```JavaScript  
 // Initialize object.  
 a = {"a" : "Athens" , "b" : "Belgrade", "c" : "Cairo"}  
   
@@ -72,10 +75,10 @@ document.write (s);
 // c: Cairo  
 ```  
   
-## Esempio  
- In questo esempio viene illustrato l'utilizzo dell'istruzione `for ... in` per scorrere un oggetto `Array` che include proprietà expando.  
+## <a name="example"></a>Esempio  
+ In questo esempio viene illustrato l'utilizzo del `for ... in` istruzione per scorrere un `Array` oggetto contenente le proprietà expando.  
   
-```javascript  
+```JavaScript  
 // Initialize the array.  
 var arr = new Array("zero","one","two");  
   
@@ -101,11 +104,11 @@ document.write (s);
 ```  
   
 > [!NOTE]
->  Utilizzare l'oggetto `Enumerator` per scorrere i membri di una raccolta.  
+>  Utilizzare il `Enumerator` oggetto per scorrere i membri di una raccolta.  
   
-## Requisiti  
+## <a name="requirements"></a>Requisiti  
  [!INCLUDE[jsv5](../../javascript/reference/includes/jsv5-md.md)]  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Istruzione for](../../javascript/reference/for-statement-javascript.md)   
  [Istruzione while](../../javascript/reference/while-statement-javascript.md)

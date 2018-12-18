@@ -1,62 +1,61 @@
 ---
-title: "IDiaSymbol::findChildren | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "IDiaSymbol::findChildren (metodo)"
+title: 'Idiasymbol:: Findchildren | Documenti Microsoft'
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology: vs-ide-debug
+ms.topic: conceptual
+dev_langs:
+- C++
+helpviewer_keywords:
+- IDiaSymbol::findChildren method
 ms.assetid: 5fe7573a-e48b-428d-9c17-7421b7209246
-caps.latest.revision: 12
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 12
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 042b02bda59bf064897b0badb24394fc10fb9197
+ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/18/2018
 ---
-# IDiaSymbol::findChildren
-[!INCLUDE[vs2017banner](../../code-quality/includes/vs2017banner.md)]
-
+# <a name="idiasymbolfindchildren"></a>IDiaSymbol::findChildren
 Recupera gli elementi figlio del simbolo.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp#  
-HRESULT findChildren (   
-   enum SymTagEnum   symtag,  
-   LPCOLESTR         name,  
-   DWORD             compareFlags,  
-   IDiaEnumSymbols** ppResult  
+```C++  
+HRESULT findChildren (   
+   enum SymTagEnum   symtag,  
+   LPCOLESTR         name,  
+   DWORD             compareFlags,  
+   IDiaEnumSymbols** ppResult  
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `symtag`  
- \[in\]  Specifica i tag dei simboli degli elementi figlio da recuperare, come definito in [Enumerazione SymTagEnum](../../debugger/debug-interface-access/symtagenum.md).  Impostare su `SymTagNull` per tutti gli elementi figlio vengano recuperati.  
+ [in] Specifica il tag symbol degli elementi figlio da recuperare, come definito nel [SymTagEnum (enumerazione)](../../debugger/debug-interface-access/symtagenum.md). Impostare su `SymTagNull` per tutti gli elementi figlio da recuperare.  
   
  `name`  
- \[in\]  Specifica il nome degli elementi figlio da recuperare.  Impostare su `NULL` per tutti gli elementi figlio vengano recuperati.  
+ [in] Specifica il nome degli elementi figlio da recuperare. Impostare su `NULL` per tutti gli elementi figlio da recuperare.  
   
  `compareFlags`  
- \[in\]  specifica le opzioni di confronto applicate per denominare la corrispondenza.  Valori da [Enumerazione NameSearchOptions](../../debugger/debug-interface-access/namesearchoptions.md) l'enumerazione può essere utilizzata da solo o nell'associazione.  
+ [in] Specifica le opzioni di confronto applicate al nome corrispondente. I valori di [NameSearchOptions (enumerazione)](../../debugger/debug-interface-access/namesearchoptions.md) enumerazione può essere utilizzato da solo o in combinazione.  
   
  `ppResult`  
- \[out\]  restituisce [IDiaEnumSymbols](../../debugger/debug-interface-access/idiaenumsymbols.md) oggetto contenente un elenco dei simboli figlio recuperati.  
+ [out] Restituisce un [IDiaEnumSymbols](../../debugger/debug-interface-access/idiaenumsymbols.md) recuperare l'oggetto che contiene un elenco dei simboli figlio.  
   
-## Valore restituito  
- Restituisce `S_OK` se almeno un elemento figlio del simbolo è stato trovato, o restituisce  `S_FALSE` se nessun figlio è stato trovato, in caso contrario restituisce un codice di errore.  
+## <a name="return-value"></a>Valore restituito  
+ Restituisce `S_OK` se almeno un figlio del simbolo è stato trovato oppure restituisce `S_FALSE` se è non stato rilevato alcun elemento figlio; in caso contrario restituisce un codice di errore.  
   
-## Note  
- questo metodo è identico a chiamare [IDiaSession::findChildren](../../debugger/debug-interface-access/idiasession-findchildren.md) metodo con questo simbolo come primo parametro.  
+## <a name="remarks"></a>Note  
+ Questo metodo è identico alla chiamata di [idiasession:: Findchildren](../../debugger/debug-interface-access/idiasession-findchildren.md) metodo con questo simbolo come primo parametro.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IDiaSymbol](../../debugger/debug-interface-access/idiasymbol.md)   
- [Enumerazione SymTagEnum](../../debugger/debug-interface-access/symtagenum.md)   
+ [SymTagEnum (enumerazione)](../../debugger/debug-interface-access/symtagenum.md)   
  [IDiaEnumSymbols](../../debugger/debug-interface-access/idiaenumsymbols.md)   
- [IDiaSession::findChildren](../../debugger/debug-interface-access/idiasession-findchildren.md)   
- [Enumerazione NameSearchOptions](../../debugger/debug-interface-access/namesearchoptions.md)
+ [Findchildren](../../debugger/debug-interface-access/idiasession-findchildren.md)   
+ [NameSearchOptions (enumerazione)](../../debugger/debug-interface-access/namesearchoptions.md)

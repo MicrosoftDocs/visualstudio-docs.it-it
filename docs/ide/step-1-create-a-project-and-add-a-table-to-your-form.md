@@ -1,38 +1,21 @@
 ---
 title: 'Passaggio 1: creare un progetto e aggiungere una tabella al form | Microsoft Docs'
-ms.custom: 
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
-- vs-ide-general
-ms.tgt_pltfrm: 
-ms.topic: article
+- vs-acquisition
+ms.topic: conceptual
 ms.assetid: 1cac4ba4-f3cd-43bd-ad5d-50fc599234e8
-caps.latest.revision: 19
-author: kempb
-ms.author: kempb
-manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 47057e9611b824c17077b9127f8d2f8b192d6eb8
-ms.openlocfilehash: a112e67966ddf76e6bde53153828c72dbf5b478b
-ms.contentlocale: it-it
-ms.lasthandoff: 05/13/2017
-
+author: TerryGLee
+ms.author: tglee
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 59afec50a1889b62e6115be44caa116b475a95c5
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="step-1-create-a-project-and-add-a-table-to-your-form"></a>Passaggio 1: creare un progetto e aggiungere una tabella al form
 Il primo passaggio nella creazione di un gioco delle coppie consiste nel creare il progetto e aggiungere una tabella al form. La tabella consente di allineare le icone in una griglia ordinata 4x4. È inoltre possibile impostare diverse proprietà per migliorare l'aspetto della tavola da gioco.  

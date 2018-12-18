@@ -1,13 +1,8 @@
 ---
-title: 'CA1300: Specify MessageBoxOptions | Microsoft Docs'
-ms.custom: 
+title: 'CA1300: Specificare MessageBoxOptions'
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- vs-devops-test
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.technology: vs-ide-code-analysis
+ms.topic: reference
 f1_keywords:
 - SpecifyMessageBoxOptions
 - CA1300
@@ -15,57 +10,42 @@ helpviewer_keywords:
 - SpecifyMessageBoxOptions
 - CA1300
 ms.assetid: 9357a724-026e-4a3d-a03a-f14635064ec6
-caps.latest.revision: 19
-author: stevehoag
-ms.author: shoag
-manager: wpickett
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: HT
-ms.sourcegitcommit: eb5c9550fd29b0e98bf63a7240737da4f13f3249
-ms.openlocfilehash: 7d4799fa48ea21c98603ce9aee5de1353618960c
-ms.contentlocale: it-it
-ms.lasthandoff: 08/30/2017
-
+author: gewarren
+ms.author: gewarren
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: d2d0b28d804dc6932e66de9dcd758fd05fc888f7
+ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/19/2018
 ---
-# <a name="ca1300-specify-messageboxoptions"></a>CA1300: Specify MessageBoxOptions
-|||  
-|-|-|  
-|TypeName|SpecifyMessageBoxOptions|  
-|CheckId|CA1300|  
-|Category|Microsoft.Globalization|  
-|Breaking Change|Non-breaking|  
-  
-## <a name="cause"></a>Cause  
- A method calls an overload of the <xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=fullName> method that does not take a <xref:System.Windows.Forms.MessageBoxOptions?displayProperty=fullName> argument.  
-  
-## <a name="rule-description"></a>Rule Description  
- To display a message box correctly for cultures that use a right-to-left reading order, the <xref:System.Windows.Forms.MessageBoxOptions> and <xref:System.Windows.Forms.MessageBoxOptions> members of the <xref:System.Windows.Forms.MessageBoxOptions> enumeration must be passed to the <xref:System.Windows.Forms.MessageBox.Show%2A> method. Examine the <xref:System.Windows.Forms.Control.RightToLeft%2A?displayProperty=fullName> property of the containing control to determine whether to use a right-to-left reading order.  
-  
-## <a name="how-to-fix-violations"></a>How to Fix Violations  
- To fix a violation of this rule, call an overload of the <xref:System.Windows.Forms.MessageBox.Show%2A> method that takes a <xref:System.Windows.Forms.MessageBoxOptions> argument.  
-  
-## <a name="when-to-suppress-warnings"></a>When to Suppress Warnings  
- It is safe to suppress a warning from this rule when the code library will not be localized for a culture that uses a right-to-left reading order.  
-  
-## <a name="example"></a>Example  
- The following example shows a method that displays a message box that has options that are appropriate for the reading order of the culture. A resource file, which is not shown, is required to build the example. Follow the comments in the example to build the example without a resource file and to test the right-to-left feature.  
-  
- [!code-vb[FxCop.Globalization.SpecifyMBOptions#1](../code-quality/codesnippet/VisualBasic/ca1300-specify-messageboxoptions_1.vb)] [!code-csharp[FxCop.Globalization.SpecifyMBOptions#1](../code-quality/codesnippet/CSharp/ca1300-specify-messageboxoptions_1.cs)]  
-  
-## <a name="see-also"></a>See Also  
- <xref:System.Resources.ResourceManager?displayProperty=fullName>   
- [Resources in Desktop Apps](/dotnet/framework/resources/index)
+# <a name="ca1300-specify-messageboxoptions"></a>CA1300: Specificare MessageBoxOptions
+|||
+|-|-|
+|TypeName|SpecifyMessageBoxOptions|
+|CheckId|CA1300|
+|Category|Microsoft.Globalization|
+|Modifica importante|Non sostanziale|
+
+## <a name="cause"></a>Causa
+ Un metodo chiama l'overload del metodo di <xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=fullName> metodo che non accetta un <xref:System.Windows.Forms.MessageBoxOptions?displayProperty=fullName> argomento.
+
+## <a name="rule-description"></a>Descrizione della regola
+ Per visualizzare una finestra di messaggio in modo corretto per le lingue che utilizzano un ordine di lettura da destra a sinistra, il <xref:System.Windows.Forms.MessageBoxOptions> e <xref:System.Windows.Forms.MessageBoxOptions> i membri del <xref:System.Windows.Forms.MessageBoxOptions> enumerazione deve essere passato al <xref:System.Windows.Forms.MessageBox.Show%2A> metodo. Esaminare il <xref:System.Windows.Forms.Control.RightToLeft%2A?displayProperty=fullName> proprietà del controllo contenitore per determinare se utilizzare un ordine di lettura da destra a sinistra.
+
+## <a name="how-to-fix-violations"></a>Come correggere le violazioni
+ Per correggere una violazione di questa regola, chiamare l'overload del metodo di <xref:System.Windows.Forms.MessageBox.Show%2A> metodo che accetta un <xref:System.Windows.Forms.MessageBoxOptions> argomento.
+
+## <a name="when-to-suppress-warnings"></a>Esclusione di avvisi
+ È possibile eliminare un avviso da questa regola quando la libreria di codice non verrà localizzata per una lingua che utilizza un ordine di lettura da destra a sinistra.
+
+## <a name="example"></a>Esempio
+ Nell'esempio seguente viene illustrato un metodo che visualizza una finestra di messaggio con le opzioni appropriate per l'ordine di lettura delle impostazioni cultura. Un file di risorse, non viene visualizzato, è necessario compilare l'esempio. Seguire i commenti nell'esempio per compilare l'esempio senza un file di risorse e per verificarne la funzionalità da destra a sinistra.
+
+ [!code-vb[FxCop.Globalization.SpecifyMBOptions#1](../code-quality/codesnippet/VisualBasic/ca1300-specify-messageboxoptions_1.vb)]
+ [!code-csharp[FxCop.Globalization.SpecifyMBOptions#1](../code-quality/codesnippet/CSharp/ca1300-specify-messageboxoptions_1.cs)]
+
+## <a name="see-also"></a>Vedere anche
+ <xref:System.Resources.ResourceManager?displayProperty=fullName> [Risorse nelle applicazioni Desktop](/dotnet/framework/resources/index)

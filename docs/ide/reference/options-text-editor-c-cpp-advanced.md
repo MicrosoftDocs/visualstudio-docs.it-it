@@ -1,13 +1,10 @@
 ---
 title: Opzioni, Editor di testo, C/C++, Avanzate | Microsoft Docs
-ms.custom: 
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - vs-ide-general
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: conceptual
 f1_keywords:
 - VS.ToolsOptionsPages.Text_Editor.C\C++.Advanced
 - VS.ToolsOptionsPages.Text_Editor.C%2FC%2B%2B.Advanced
@@ -15,30 +12,16 @@ f1_keywords:
 helpviewer_keywords:
 - Text Editor Options dialog box, advanced
 ms.assetid: 67c82ae5-fddd-49df-baec-8e7498b156f3
-caps.latest.revision: 19
 author: gewarren
 ms.author: gewarren
-manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 5ea9179ad37514ffad4876177b05150eecc22def
-ms.openlocfilehash: aecc19cb20592940ab773322764e5383365b3865
-ms.contentlocale: it-it
-ms.lasthandoff: 05/24/2017
-
+manager: douge
+ms.workload:
+- cplusplus
+ms.openlocfilehash: b09c4421c5af79420023ccc4b659280c6bce33c6
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="options-text-editor-cc-advanced"></a>Opzioni, Editor di testo, C/C++, Avanzate
 Modificando queste opzioni è possibile modificare il comportamento correlato a IntelliSense e il database di esplorazione quando si programma in C o C++.  
@@ -46,7 +29,7 @@ Modificando queste opzioni è possibile modificare il comportamento correlato a 
  Per accedere a questa pagina, nel riquadro sinistro della finestra di dialogo **Opzioni** espandere **Editor di testo** e **C/C++** e quindi fare clic su **Avanzate**.  
   
 > [!NOTE]
->  Nomi o percorsi visualizzati per alcuni elementi dell'interfaccia utente di Visual Studio nelle istruzioni seguenti potrebbero essere diversi nel computer in uso. La versione di Visual Studio in uso e le impostazioni configurate determinano questi elementi. Vedere [Personalizzare l'IDE di Visual Studio](../../ide/personalizing-the-visual-studio-ide.md).  
+>  I nomi o i percorsi visualizzati per alcuni elementi dell'interfaccia utente di Visual Studio nelle istruzioni seguenti potrebbero essere diversi nel computer in uso. La versione di Visual Studio in uso e le impostazioni configurate determinano questi elementi. Vedere [Personalizzare l'IDE di Visual Studio](../../ide/personalizing-the-visual-studio-ide.md).  
   
 ## <a name="browsingnavigation"></a>Esplorazione/Navigazione  
  È consigliabile non scegliere mai queste opzioni tranne nel raro caso in cui una soluzione sia talmente grande da richiedere all'attività del database il consumo di una quantità eccessiva di risorse di sistema.  
@@ -183,5 +166,4 @@ Modificando queste opzioni è possibile modificare il comportamento correlato a 
  Se abilitata, è possibile racchiudere il testo selezionato tra parentesi digitando '(' nell'editor di testo.  
   
 ## <a name="see-also"></a>Vedere anche  
- [Setting Language-Specific Editor Options](../../ide/reference/setting-language-specific-editor-options.md) (Impostazione delle opzioni dell'editor specifiche del linguaggio)
-
+ [Impostazione delle opzioni dell'editor specifiche del linguaggio](../../ide/reference/setting-language-specific-editor-options.md)

@@ -13,10 +13,10 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: HT
-ms.sourcegitcommit: 5db97d19b1b823388a465bba15d057b30ff0b3ce
 ms.openlocfilehash: 901c9e77aa94a2e18e8200b7a62c269d53e2363c
-ms.contentlocale: it-it
-
+ms.sourcegitcommit: 3b692c9bf332b7b9150901e16daf99a64b599fee
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/10/2018
 ---
 ASP.NET

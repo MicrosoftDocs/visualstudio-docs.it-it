@@ -1,31 +1,30 @@
 ---
-title: "How to: Display Process Properties | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "Process properties"
+title: 'Procedura: visualizzare le proprietà del processo | Documenti Microsoft'
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology: vs-ide-debug
+ms.topic: conceptual
+helpviewer_keywords:
+- Process properties
 ms.assetid: 5d9eb6e9-2e47-40f2-bf9c-464caa703dc9
-caps.latest.revision: 4
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 4
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 9925f874f2d9dfc06b56d58a20ce9248624dbc31
+ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/18/2018
 ---
-# How to: Display Process Properties
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
-Per ottenere ulteriori informazioni su un processo elencato in [Visualizzazione processi](../debugger/processes-view.md), utilizzare la [finestra di dialogo Proprietà processo](../debugger/process-properties-dialog-box.md).  
+# <a name="how-to-display-process-properties"></a>Procedura: visualizzare le proprietà del processo
+Per ulteriori informazioni su un processo elencato in [visualizzazione processi](../debugger/processes-view.md), utilizzare il [finestra di dialogo Proprietà processo](../debugger/process-properties-dialog-box.md).  
   
-### Per aprire una finestra di dialogo Proprietà processo  
+### <a name="to-open-a-process-properties-dialog-box"></a>Per aprire una finestra di dialogo Proprietà processo  
   
-1.  Selezionare un processo dalla struttura ad albero disponibile in **Visualizzazione processi**.  
+1.  Selezionare un processo nell'albero visualizzato **visualizzazione processi**.  
   
-2.  Scegliere **Proprietà** dal menu **Visualizza**.  
+2.  Dal **vista** menu, scegliere **proprietà**.  
   
- Le finestre di dialogo Proprietà non sono modali. Pertanto, se si fa clic su un elemento differente in una finestra di visualizzazione, nella finestra di dialogo verranno visualizzate informazioni sull'elemento selezionato.
+ Finestre di dialogo proprietà non modale, in modo che è possibile fare clic su un altro elemento in una finestra di visualizzazione e la finestra di dialogo verrà visualizzate informazioni sull'elemento selezionato.

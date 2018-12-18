@@ -1,85 +1,86 @@
 ---
-title: "IDebugEventCallback2::Event | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "IDebugEventCallback2::Event"
-helpviewer_keywords: 
-  - "IDebugEventCallback2::Event"
+title: IDebugEventCallback2::Event | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology:
+- vs-ide-sdk
+ms.topic: conceptual
+f1_keywords:
+- IDebugEventCallback2::Event
+helpviewer_keywords:
+- IDebugEventCallback2::Event
 ms.assetid: e5a3345b-d460-4e40-8f5b-3111c56a2ed9
-caps.latest.revision: 10
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 10
+author: gregvanl
+ms.author: gregvanl
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: 8ea52b8be040df50da1585165599c4fdea635557
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# IDebugEventCallback2::Event
-[!INCLUDE[vs2017banner](../../../code-quality/includes/vs2017banner.md)]
-
-Invia una notifica degli eventi di debug.  
+# <a name="idebugeventcallback2event"></a>IDebugEventCallback2::Event
+Invia una notifica di eventi di debug.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp#  
-HRESULT Event(   
-   IDebugEngine2*  pEngine,  
-   IDebugProcess2* pProcess,  
-   IDebugProgram2* pProgram,  
-   IDebugThread2*  pThread,  
-   IDebugEvent2*   pEvent,  
-   REFIID          riidEvent,  
-   DWORD           dwAttrib  
+```cpp  
+HRESULT Event(   
+   IDebugEngine2*  pEngine,  
+   IDebugProcess2* pProcess,  
+   IDebugProgram2* pProgram,  
+   IDebugThread2*  pThread,  
+   IDebugEvent2*   pEvent,  
+   REFIID          riidEvent,  
+   DWORD           dwAttrib  
 );  
 ```  
   
-```c#  
-int Event(   
-   IDebugEngine2  pEngine,  
-   IDebugProcess2 pProcess,  
-   IDebugProgram2 pProgram,  
-   IDebugThread2  pThread,  
-   IDebugEvent2   pEvent,  
-   ref Guid       riidEvent,  
-   uint           dwAttrib  
+```csharp  
+int Event(   
+   IDebugEngine2  pEngine,  
+   IDebugProcess2 pProcess,  
+   IDebugProgram2 pProgram,  
+   IDebugThread2  pThread,  
+   IDebugEvent2   pEvent,  
+   ref Guid       riidEvent,  
+   uint           dwAttrib  
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `pEngine`  
- \[in\]  [IDebugEngine2](../../../extensibility/debugger/reference/idebugengine2.md) Un oggetto che rappresenta il motore di debug \(DE\) che nell'invio questo evento.  Un DE è necessario compilare questo parametro.  
+ [in] Un [IDebugEngine2](../../../extensibility/debugger/reference/idebugengine2.md) oggetto che rappresenta il motore di debug (DE) che invia l'evento. Per compilare questo parametro è necessario un Germania.  
   
  `pProcess`  
- \[in\]  [IDebugProcess2](../../../extensibility/debugger/reference/idebugprocess2.md) Un oggetto che rappresenta il processo in cui si verifica l'evento.  Questo parametro viene riempito dall'amministratore di debug della sessione \(SDM\).  Un DE passa sempre un valore null per questo parametro.  
+ [in] Un [IDebugProcess2](../../../extensibility/debugger/reference/idebugprocess2.md) oggetto che rappresenta il processo in cui si verifica l'evento. Questo parametro viene inserito dal gestore di sessione di debug (SDM). Un Germania passa sempre un valore null per questo parametro.  
   
  `pProgram`  
- \[in\]  [IDebugProgram2](../../../extensibility/debugger/reference/idebugprogram2.md) Un oggetto che rappresenta il programma in cui si verifica.  Per la maggior parte degli eventi, questo parametro non è un valore null.  
+ [in] Un [IDebugProgram2](../../../extensibility/debugger/reference/idebugprogram2.md) oggetto che rappresenta il programma in cui si verifica questo evento. Per la maggior parte degli eventi, questo parametro non è un valore null.  
   
  `pThread`  
- \[in\]  [IDebugThread2](../../../extensibility/debugger/reference/idebugthread2.md) Un oggetto che rappresenta il thread in cui si verifica.  Per interrompere gli eventi, questo parametro non può essere un valore null mentre lo stack frame viene ottenuto dal parametro.  
+ [in] Un [IDebugThread2](../../../extensibility/debugger/reference/idebugthread2.md) oggetto che rappresenta il thread in cui si verifica questo evento. Per eventi di arresto, questo parametro non può essere un valore null come frame dello stack viene ottenuto da questo parametro.  
   
  `pEvent`  
- \[in\]  [IDebugEvent2](../../../extensibility/debugger/reference/idebugevent2.md) un oggetto che rappresenta l'evento di debug.  
+ [in] Un [IDebugEvent2](../../../extensibility/debugger/reference/idebugevent2.md) oggetto che rappresenta l'evento di debug.  
   
  `riidEvent`  
- \[in\]  GUID che identifichi interfaccia eventi per verificare dal parametro di `pEvent` .  
+ [in] GUID che identifica l'interfaccia eventi di ottenere il `pEvent` parametro.  
   
  `dwAttrib`  
- \[in\]  Una combinazione di flag [EVENTATTRIBUTES](../../../extensibility/debugger/reference/eventattributes.md) dall'enumerazione.  
+ [in] Una combinazione di flag dal [EVENTATTRIBUTES](../../../extensibility/debugger/reference/eventattributes.md) enumerazione.  
   
-## Valore restituito  
- Se l'operazione riesce, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
+## <a name="return-value"></a>Valore restituito  
+ Se ha esito positivo, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
   
-## Note  
- Nel chiamare questo metodo, il parametro di `dwAttrib` deve corrispondere al valore restituito [GetAttributes](../../../extensibility/debugger/reference/idebugevent2-getattributes.md) dal metodo come è stato chiamato sull'oggetto evento passato nel parametro di `pEvent` .  
+## <a name="remarks"></a>Note  
+ Quando si chiama questo metodo, il `dwAttrib` parametro deve corrispondere al valore restituito dal [GetAttributes](../../../extensibility/debugger/reference/idebugevent2-getattributes.md) metodo chiamato per l'oggetto evento passato il `pEvent` parametro.  
   
- Tutti gli eventi di debug vengono inseriti in modo asincrono, indipendentemente dal fatto che un evento stesso è asincrono o meno.  Quando un DE chiama questo metodo, il valore restituito non indica se l'evento è stato elaborato, ma solo se l'evento è stato ricevuto.  Infatti, nella maggior parte dei casi, l'evento non è stato elaborato quando questo metodo restituisce.  
+ Tutti gli eventi di debug vengono registrati in modo asincrono, indipendentemente dal fatto che un evento stesso sia asincrono o meno. Quando questo metodo viene chiamato un Germania, il valore restituito indica se l'evento è stato elaborato, solo se è stato ricevuto l'evento. In realtà, in molti casi, l'evento non è stato elaborato quando questo metodo viene restituito.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IDebugEventCallback2](../../../extensibility/debugger/reference/idebugeventcallback2.md)   
  [IDebugEngine2](../../../extensibility/debugger/reference/idebugengine2.md)   
  [IDebugProcess2](../../../extensibility/debugger/reference/idebugprocess2.md)   

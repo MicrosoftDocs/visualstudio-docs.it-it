@@ -1,13 +1,10 @@
 ---
 title: Opzioni, Editor di testo, Tutti i linguaggi | Microsoft Docs
-ms.custom: 
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - vs-ide-general
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: conceptual
 f1_keywords:
 - VS.ToolsOptionsPages.Text_Editor.JavaScript.General
 - VS.ToolsOptionsPages.Text_Editor.ResJSON.General
@@ -20,30 +17,16 @@ helpviewer_keywords:
 - line numbers
 - virtual space
 ms.assetid: 49ee7306-9d46-4170-850f-a1716171752d
-caps.latest.revision: 20
-author: kempb
-ms.author: kempb
-manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 5ea9179ad37514ffad4876177b05150eecc22def
-ms.openlocfilehash: 00829d499ae9d5a52e94094eed15b1ae39894075
-ms.contentlocale: it-it
-ms.lasthandoff: 05/24/2017
-
+author: gewarren
+ms.author: gewarren
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 762fc7ffbf3ca4dbf8cb768ee96f73cb1f9190aa
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="options-text-editor-all-languages"></a>Opzioni, Editor di testo, Tutti i linguaggi
 Questa finestra di dialogo consente di modificare il comportamento predefinito dell'editor del codice. Queste impostazioni si applicano anche agli altri editor basati sull'editor del codice, come ad esempio la visualizzazione dell'origine della finestra di progettazione HTML. Per aprire questa finestra di dialogo, selezionare **Opzioni** dal menu **Strumenti**. All'interno della cartella dell'**Editor di testo** espandere la sottocartella **All Languages** (Tutti i linguaggi), quindi scegliere **Generale**.  
@@ -93,7 +76,7 @@ Questa finestra di dialogo consente di modificare il comportamento predefinito d
   
 -   Se questa opzione è deselezionata, il comando Taglia rimuove le righe vuote. Tuttavia, i dati negli Appunti vengono mantenuti. Quindi, se si utilizza il comando Incolla, viene inserito il contenuto copiato più di recente negli Appunti. Se non è stata effettuata alcuna copia precedente, non viene incollato nulla.  
   
- Questa impostazione non ha alcun effetto sul comando Copia o Taglia se una riga non è vuota. Se non si seleziona alcun elemento, viene copiata o tagliata l'intera riga. Se quindi si applica il comando Incolla, viene inserito il testo dell'intera riga, incluso il carattere di fine riga.  
+Questa impostazione non ha alcun effetto sul comando Copia o Taglia se una riga non è vuota. Se non si seleziona alcun elemento, viene copiata o tagliata l'intera riga. Se quindi si applica il comando Incolla, viene inserito il testo dell'intera riga, incluso il carattere di fine riga.  
   
 > [!TIP]
 >  Per visualizzare gli indicatori per spazi, tabulazioni e fine riga e distinguere pertanto le righe rientrate da quelle completamente vuote, selezionare **Avanzate** dal menu **Modifica**, quindi scegliere **Mostra/Nascondi spazi**.  

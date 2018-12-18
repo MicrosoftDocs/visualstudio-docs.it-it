@@ -24,31 +24,17 @@ helpviewer_keywords:
 - debug mode
 - custom layouts
 ms.assetid: 7517ff13-76de-4ecf-9c1b-eb9b7ff4d718
-caps.latest.revision: 27
-author: kempb
-ms.author: kempb
+caps.latest.revision: 
+author: gewarren
+ms.author: gewarren
 manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 5ea9179ad37514ffad4876177b05150eecc22def
-ms.openlocfilehash: 8ab795965dc205cd783f469d134d64fb2b5dacf6
-ms.contentlocale: it-it
-ms.lasthandoff: 05/24/2017
-
+ms.workload:
+- multiple
+ms.openlocfilehash: e26a9fa0daf5c92c81161bdcafd92490f9a05113
+ms.sourcegitcommit: b18844078a30d59014b48a9c247848dea188b0ee
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 01/29/2018
 ---
 # <a name="customize-window-layouts-in-visual-studio"></a>Personalizzare il layout delle finestre in Visual Studio
 In Visual Studio è possibile personalizzare la posizione, la dimensione e il comportamento delle finestre per creare layout di finestra ottimali per i vari flussi di lavoro relativi allo sviluppo. Quando si personalizza il layout, l'IDE memorizza le modifiche apportate. Se, ad esempio, si modifica la posizione di ancoraggio di **Esplora soluzioni** e quindi si chiude Visual Studio, al successivo avvio di **Esplora soluzioni** , anche se si utilizza un altro computer, la finestra risulterà ancorata nella stessa posizione. È anche possibile fornire un nome a un layout personalizzato e salvarlo, quindi passare da un layout all'altro con un unico comando. È ad esempio possibile creare un layout per la modifica e un altro per il debug e passare dall'uno all'altro usando il comando di menu **Finestra &#124; Applica layout finestra**.  
@@ -150,7 +136,7 @@ In Visual Studio è possibile personalizzare la posizione, la dimensione e il co
 
 ##### <a name="create-a-ui-project-and-customize-the-layout"></a>Creare un progetto per interfaccia utente e personalizzare il layout  
 
-1.  Nella finestra di dialogo **Nuovo progetto** creare un'applicazione desktop WPF di Visual C# e assegnarle il nome desiderato. Si supponga che questo sia il progetto in cui si lavorerà nell'interfaccia utente e che quindi si voglia dare più spazio alla finestra di progettazione spostando le altre finestre degli strumenti.  
+1.  Nella finestra di dialogo **Nuovo progetto** creare un'applicazione desktop WPF di C# e assegnarle il nome desiderato. Si supponga che questo sia il progetto in cui si lavorerà nell'interfaccia utente e che quindi si voglia dare più spazio alla finestra di progettazione spostando le altre finestre degli strumenti.  
 
 2.  Se sono disponibili più monitor, spostare le finestre **Esplora soluzioni** e **Proprietà** sul secondo monitor. In un sistema con un solo monitor provare a chiudere tutte le finestre eccetto quella di progettazione.  
 
@@ -195,4 +181,3 @@ In Visual Studio è possibile personalizzare la posizione, la dimensione e il co
 ## <a name="related-topics"></a>Argomenti correlati  
 
 [How to: Move Around in the IDE](../ide/how-to-move-around-in-the-visual-studio-ide.md) (Procedura: Spostarsi all'interno dell'IDE)
-

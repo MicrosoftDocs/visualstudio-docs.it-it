@@ -1,13 +1,9 @@
 ---
 title: Risoluzione dei problemi relativi agli errori di impostazione di .NET Framework come destinazione | Microsoft Docs
-ms.custom: 
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- vs-ide-sdk
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.technology: msbuild
+ms.topic: troubleshooting
 f1_keywords:
 - vs.FrameworkTargetingErrors
 - MSBuild.ResolveAssemblyReference.FailedToResolveReferenceBecausePrimaryAssemblyInExclusionList
@@ -18,30 +14,16 @@ helpviewer_keywords:
 - multitargeting
 - .NET Framework Client Profile
 ms.assetid: 830e3e45-9a93-4279-a249-75b84599aefb
-caps.latest.revision: 29
-author: kempb
-ms.author: kempb
-manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 8bf0b097be929b30627e0f1139c6e0b145933ab4
-ms.openlocfilehash: 0fb16d2625bde02a6370a1f06483d7b486c46f4a
-ms.contentlocale: it-it
-ms.lasthandoff: 05/26/2017
-
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- dotnet
+ms.openlocfilehash: 6376abc29f6f06541b9cd7f3d181b97ab7b38e5f
+ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/19/2018
 ---
 # <a name="troubleshooting-net-framework-targeting-errors"></a>Risoluzione dei problemi relativi agli errori di impostazione di .NET Framework come destinazione
 Questo argomento illustra gli errori di MSBuild che possono verificarsi a causa di problemi di riferimento e indica in che modo è possibile risolvere tali errori.  

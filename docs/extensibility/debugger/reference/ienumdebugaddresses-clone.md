@@ -1,51 +1,52 @@
 ---
-title: "IEnumDebugAddresses::Clone | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "IEnumDebugAddresses::Clone"
-helpviewer_keywords: 
-  - "Metodo IEnumDebugAddresses::Clone"
+title: IEnumDebugAddresses::Clone | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology:
+- vs-ide-sdk
+ms.topic: conceptual
+f1_keywords:
+- IEnumDebugAddresses::Clone
+helpviewer_keywords:
+- IEnumDebugAddresses::Clone method
 ms.assetid: 71189a00-34eb-4c71-b96e-8bd6e70c6966
-caps.latest.revision: 5
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 5
+author: gregvanl
+ms.author: gregvanl
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: 5b6b5ddb4eabcbc3d15650e91ee7cecd7fdbb648
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# IEnumDebugAddresses::Clone
-[!INCLUDE[vs2017banner](../../../code-quality/includes/vs2017banner.md)]
-
-Questo metodo restituisce una copia dell'enumerazione corrente come un oggetto separato.  
+# <a name="ienumdebugaddressesclone"></a>IEnumDebugAddresses::Clone
+Questo metodo restituisce una copia dell'enumerazione corrente come oggetto separato.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp#  
+```cpp  
 HRESULT Clone(  
-   IEnumDebugAddresses** ppEnum  
+   IEnumDebugAddresses** ppEnum  
 );  
 ```  
   
-```c#  
+```csharp  
 int Clone(  
-   out IEnumDebugAddresses ppEnum  
+   out IEnumDebugAddresses ppEnum  
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `ppEnum`  
- \[out\]  restituisce una copia di questa enumerazione come un oggetto separato.  
+ [out] Restituisce una copia di questa enumerazione come oggetto separato.  
   
-## Valore proprietà\/Valore restituito  
- Se l'operazione riesce, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
+## <a name="property-valuereturn-value"></a>Valore proprietà/Valore restituito  
+ Se ha esito positivo, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
   
-## Note  
- La copia l'enumerazione presenta lo stesso stato originale quando questo metodo viene chiamato.  Tuttavia, la copia e gli stati originali sono separati e possono essere modificati singolarmente.  
+## <a name="remarks"></a>Note  
+ La copia dell'enumerazione ha lo stesso stato originale al momento che questo metodo viene chiamato. Tuttavia, stati la copia e l'originale sono separati e possono essere modificati singolarmente.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IEnumDebugAddresses](../../../extensibility/debugger/reference/ienumdebugaddresses.md)

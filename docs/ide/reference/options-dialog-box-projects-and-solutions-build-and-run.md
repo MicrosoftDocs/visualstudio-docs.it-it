@@ -1,13 +1,10 @@
 ---
 title: Finestra di dialogo Opzioni, Progetti e soluzioni, Compila ed esegui | Microsoft Docs
-ms.custom: 
-ms.date: 7/14/2017
-ms.reviewer: 
-ms.suite: 
+ms.custom: ''
+ms.date: 07/14/2017
 ms.technology:
 - vs-ide-general
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: conceptual
 f1_keywords:
 - VS.ToolsOptionsPages.Projects.Build_and_Run
 - VS.ToolsOptionsPag.Projects.Build_and_Run
@@ -16,24 +13,23 @@ helpviewer_keywords:
 - run actions
 - debugger, run options
 ms.assetid: c884976e-c0df-4c6d-8e3a-856ea2bd547c
-caps.latest.revision: 20
 author: gewarren
 ms.author: gewarren
-manager: ghogen
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 00e7b0e56f536ce4dc6d62df933be044ab1ed7d5
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
 ms.translationtype: HT
-ms.sourcegitcommit: e48ebcafaca37505dbcc92bce682d0c6169004e1
-ms.openlocfilehash: 8e5165b4b17195e5f9172dd25962c9486a7aeeeb
-ms.contentlocale: it-it
-ms.lasthandoff: 07/26/2017
-
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-
 # <a name="options-dialog-box--projects-and-solutions-build-and-run"></a>Finestra di dialogo Opzioni, Progetti e soluzioni, Compila ed esegui
 
-In questa finestra di dialogo, è possibile specificare il numero massimo di progetti Visual C++ o Visual C# che è possibile compilare allo stesso tempo, determinati comportamenti di compilazione predefiniti e alcune impostazioni del log di compilazione. Per accedere a queste opzioni selezionare **Strumenti > Opzioni**, espandere **Progetti e soluzioni** e selezionare **Compila ed esegui**.
+In questa finestra di dialogo è possibile specificare il numero massimo di progetti Visual C++ o C# che è possibile compilare allo stesso tempo, determinati comportamenti di compilazione predefiniti e alcune impostazioni del log di compilazione. Per accedere a queste opzioni selezionare **Strumenti > Opzioni**, espandere **Progetti e soluzioni** e selezionare **Compila ed esegui**.
   
-**numero massimo di compilazioni di progetto parallele**  
-Specifica il numero massimo di progetti Visual C++ e Visual C# che è possibile compilare contemporaneamente. Per ottimizzare il processo di compilazione, il numero massimo di compilazioni di progetti in parallelo viene impostato automaticamente sul numero di CPU del computer. Il numero massimo è 32.  
+**Numero massimo di compilazioni di progetto parallele**  
+Specifica il numero massimo di progetti Visual C++ e C# che è possibile compilare contemporaneamente. Per ottimizzare il processo di compilazione, il numero massimo di compilazioni di progetti in parallelo viene impostato automaticamente sul numero di CPU del computer. Il numero massimo è 32.  
 
 **Compila progetti di avvio e dipendenze solo in fase di esecuzione**  
 Compila solo il progetto di avvio e le relative dipendenze quando si usa il tasto F5, si seleziona il comando di menu **Debug > Avvia** o i comandi applicabili del menu **Genera**. Senza impostazioni, vengono compilati tutti i progetti e le relative dipendenze. 
@@ -60,6 +56,6 @@ Determina la quantità di informazioni visualizzata nella finestra **Output** pe
 Determina la quantità di informazioni scritta nel file di log di compilazione che si trova in \\...\\*ProjectName*\Debug\\*ProjectName*.log.  
 
 ## <a name="see-also"></a>Vedere anche  
--[Compilazione e creazione in Visual Studio](../../ide/compiling-and-building-in-visual-studio.md)
-- [Finestra di dialogo Opzioni, Progetti e soluzioni](projects-and-solutions-options-dialog-box.md)
-- [Finestra di dialogo Opzioni, Progetti e soluzioni, Progetti Web](options-dialog-box-projects-and-solutions-web-projects.md)
+[Compiling and Building](../../ide/compiling-and-building-in-visual-studio.md) (Compilazione e creazione)  
+[Finestra di dialogo Opzioni, Progetti e soluzioni](projects-and-solutions-options-dialog-box.md)  
+[Finestra di dialogo Opzioni, Progetti e soluzioni, Progetti Web](options-dialog-box-projects-and-solutions-web-projects.md)

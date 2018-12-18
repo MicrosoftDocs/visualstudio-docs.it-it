@@ -1,36 +1,35 @@
 ---
-title: "Strumento di spostamento di utilizzo | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "vs.cv.performance.utilizationnavigator"
+title: Strumento di spostamento di utilizzo | Documenti di Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology: vs-ide-debug
+ms.topic: conceptual
+f1_keywords:
+- vs.cv.performance.utilizationnavigator
 ms.assetid: 522a981a-37ef-4cdd-a04c-f1e7525a2aab
-caps.latest.revision: 9
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 9
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: eb7829408a2cb4cee74c4059d03567c3fc7f6c8a
+ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/19/2018
 ---
-# Strumento di spostamento di utilizzo
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
-È possibile utilizzare l'Utilization Navigator nel Visualizzatore di concorrenza per selezionare un intervallo di tempo in una traccia.  Il Visualizzatore di concorrenza illustra l'utilizzo dei core della CPU da un processo di destinazione nel tempo.  Ciò rende più semplice analizzare i modelli di utilizzo della CPU e consente inoltre il confronto tra l'utilizzo dei dati e dei dati in altre visualizzazioni.  L'Utilization Navigator viene visualizzato nella parte superiore di ogni visualizzazione nel Visualizzatore di concorrenza.  Nella figura seguente viene illustrato l'Utilization Navigator.  
+# <a name="utilization-navigator"></a>Strumento di spostamento di utilizzo
+È possibile usare lo strumento di spostamento di utilizzo nel visualizzatore di concorrenza per selezionare un intervallo di tempo in una traccia. Il visualizzatore di concorrenza mostra l'utilizzo dei core della CPU da parte del processo di destinazione nel tempo. Questo rende più semplice esaminare i modelli di utilizzo della CPU e consente inoltre il confronto tra i dati di utilizzo e i dati in altre visualizzazioni. Lo strumento di spostamento di utilizzo è disponibile nella parte superiore di ogni visualizzazione nel visualizzatore di concorrenza. Nella figura seguente è illustrato lo strumento di spostamento di utilizzo.  
   
- ![Utilization Navigator con intervallo di tempo selezionato](~/profiling/media/cvutilizationnavigator.png "CVUtilizationNavigator")  
-Utilization Navigator e intervallo di tempo selezionato  
+ ![Strumento di spostamento di utilizzo con un intervallo di tempo selezionato](../profiling/media/cvutilizationnavigator.png "CVUtilizationNavigator")  
+Strumento di spostamento di utilizzo con un intervallo di tempo selezionato  
   
- Nell'illustrazione, l'intervallo selezionato viene indicato da un rettangolo rosso, noto come *cursore*.  
+ Nell'illustrazione, l'intervallo selezionato è definito da un rettangolo rosso, denominato *controllo thumb*.  
   
- Di seguito viene illustrato come utilizzare l'Utilization Navigator per modificare l'intervallo di tempo visualizzato:  
+ Ecco come usare lo strumento di spostamento di utilizzo per modificare l'intervallo di tempo visualizzato:  
   
--   È possibile visualizzare una panoramica di lavoro trascinando il cursore a sinistra o a destra. \(Tastiera: Spostare il puntatore sul cursore e premere il tasto freccia sinistra o freccia destra\).  
+-   È possibile eseguire una panoramica trascinando il controllo thumb verso sinistra o destra. Da tastiera: spostare lo stato attivo sul controllo thumb, quindi premere il tasto freccia SINISTRA o DESTRA.  
   
--   È possibile modificare l'estensione dell'intervallo trascinando uno degli handle. \(Tastiera: Spostare il puntatore su un handle e quindi premere il tasto freccia destra o freccia sinistra\).  
+-   È possibile modificare l'estensione dell'intervallo trascinando uno dei quadratini di ridimensionamento. Da tastiera: spostare lo stato attivo sul quadratino di ridimensionamento, quindi premere il tasto freccia DESTRA o SINISTRA.  
   
- Se si modifica l'intervallo mediante un controllo zoom differente del Visualizzatore di concorrenza, l'Utilization Navigator viene aggiornato per riflettere la modifica.
+ Se si modifica l'intervallo usando un altro controllo zoom del visualizzatore di concorrenza, lo strumento di spostamento di utilizzo viene aggiornato per riflettere la modifica.

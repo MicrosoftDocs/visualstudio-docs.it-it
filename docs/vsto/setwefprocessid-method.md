@@ -1,28 +1,28 @@
 ---
-title: "Metodo SetWefProcessId"
-ms.custom: ""
-ms.date: "02/02/2017"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "office-development"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-ms.assetid: 404eec23-a67e-4f5b-b27d-86651f08be03
-caps.latest.revision: 8
-author: "kempb"
-ms.author: "kempb"
-manager: "ghogen"
-caps.handback.revision: 7
+title: Metodo SetWefProcessId | Documenti Microsoft
+ms.custom: ''
+ms.date: 02/02/2017
+ms.technology:
+- office-development
+ms.topic: conceptual
+dev_langs:
+- VB
+- CSharp
+author: TerryGLee
+ms.author: tglee
+manager: douge
+ms.workload:
+- office
+ms.openlocfilehash: 9dbd5a9ffb2ff9b3833dc8007fdfafb4b1a35857
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# Metodo SetWefProcessId
-  Fornisce l'identificatore del processo che esegue il contenuto Web di Framework \(WEF\) extensions.  
+# <a name="setwefprocessid-method"></a>Metodo SetWefProcessId
+  Fornisce l'identificatore di processo che verrà eseguito il contenuto Web estensioni Framework (WEF).  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
 HRESULT SetWefProcessId(  
@@ -30,18 +30,18 @@ HRESULT SetWefProcessId(
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
   
 |Parametro|Descrizione|  
 |---------------|-----------------|  
-|*dwProcessId*|L'identificatore del processo che verrà utilizzato per eseguire il contenuto di WEF.|  
+|*cui dwProcessId*|L'identificatore di processo che verrà utilizzato per eseguire il contenuto WEF.|  
   
-## Valore restituito  
- Valore HRESULT indicante se il metodo è stato eseguito correttamente.  
+## <a name="return-value"></a>Valore restituito  
+ Valore HRESULT che indica se il metodo è stato completato correttamente.  
   
-## Note  
- Questo metodo deve essere chiamato dopo che il processo del contenuto di WEF viene creato ma prima di tutto il contenuto di WEF funzioni.  
+## <a name="remarks"></a>Note  
+ Questo metodo deve essere chiamato dopo aver creato il processo del contenuto WEF ma prima dell'esecuzione di qualsiasi contenuto WEF.  
   
- Se si desidera l'ambiente di sviluppo per connettere un debugger al processo del contenuto di WEF, l'ambiente deve eseguire questa operazione nell'implementazione del metodo.  
+ Se si desidera l'ambiente di sviluppo per collegare un debugger al processo WEF contenuto, l'ambiente è necessario eseguire questa operazione nell'implementazione di questo metodo.  
   
   

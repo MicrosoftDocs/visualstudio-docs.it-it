@@ -1,53 +1,50 @@
 ---
-title: "CA2220: I finalizzatori devono chiamare il finalizzatore della classe base | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/14/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-devops-test"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "CA2220"
-  - "FinalizersShouldCallBaseClassFinalizer"
-helpviewer_keywords: 
-  - "CA2220"
-  - "FinalizersShouldCallBaseClassFinalizer"
+title: 'CA2220: I finalizzatori devono chiamare il finalizzatore della classe base'
+ms.date: 11/04/2016
+ms.technology: vs-ide-code-analysis
+ms.topic: reference
+f1_keywords:
+- CA2220
+- FinalizersShouldCallBaseClassFinalizer
+helpviewer_keywords:
+- CA2220
+- FinalizersShouldCallBaseClassFinalizer
 ms.assetid: 48329f42-170d-45ee-a381-e33f55a240c5
-caps.latest.revision: 14
-caps.handback.revision: 14
-author: "stevehoag"
-ms.author: "shoag"
-manager: "wpickett"
+author: gewarren
+ms.author: gewarren
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 874f0d744f00808d038cdf2bc0343ae7438b76db
+ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/19/2018
 ---
-# CA2220: I finalizzatori devono chiamare il finalizzatore della classe base
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
+# <a name="ca2220-finalizers-should-call-base-class-finalizer"></a>CA2220: I finalizzatori devono chiamare il finalizzatore della classe base
+|||
+|-|-|
+|TypeName|FinalizersShouldCallBaseClassFinalizer|
+|CheckId|CA2220|
+|Category|Microsoft.Usage|
+|Modifica importante|Non importante|
 
-|||  
-|-|-|  
-|TypeName|FinalizersShouldCallBaseClassFinalizer|  
-|CheckId|CA2220|  
-|Category|Microsoft.Usage|  
-|Breaking Change|Non sostanziale|  
-  
-## Causa  
- Un tipo che esegue l'override di <xref:System.Object.Finalize%2A?displayProperty=fullName> non chiama il metodo <xref:System.Object.Finalize%2A> nella relativa classe base.  
-  
-## Descrizione della regola  
- La finalizzazione deve essere propagata tramite la gerarchia di ereditarietà.  A tale scopo, i tipi devono chiamare il metodo <xref:System.Object.Finalize%2A> della propria classe base dal proprio metodo <xref:System.Object.Finalize%2A>.  Il compilatore C\# aggiunge automaticamente la chiamata al finalizzatore della classe base.  
-  
-## Come correggere le violazioni  
- Per correggere una violazione di questa regola, chiamare il metodo <xref:System.Object.Finalize%2A> del tipo di base dal metodo <xref:System.Object.Finalize%2A>.  
-  
-## Esclusione di avvisi  
- Non escludere un avviso da questa regola.  Alcuni compilatori destinati a Common Language Runtime inseriscono una chiamata al finalizzatore del tipo di base in Microsoft intermediate language \(MSIL\).  Se viene segnalato un avviso da questa regola, il compilatore non inserisce la chiamata ed è necessario aggiungerla nel codice.  
-  
-## Esempio  
- Nell'esempio di Visual Basic illustrato di seguito viene illustrato un tipo `TypeB` che chiama correttamente il metodo <xref:System.Object.Finalize%2A> nella relativa classe base.  
-  
- [!code-vb[FxCop.Usage.IDisposableBaseCalled#1](../code-quality/codesnippet/VisualBasic/ca2220-finalizers-should-call-base-class-finalizer_1.vb)]  
-  
-## Vedere anche  
- [Modello Dispose](../Topic/Dispose%20Pattern.md)
+## <a name="cause"></a>Causa
+ Un tipo che esegue l'override <xref:System.Object.Finalize%2A?displayProperty=fullName> non chiama il <xref:System.Object.Finalize%2A> metodo nella classe base.
+
+## <a name="rule-description"></a>Descrizione della regola
+ La finalizzazione deve essere propagata tramite la gerarchia di ereditarietà. A tale scopo, i tipi devono chiamare la relativa classe base <xref:System.Object.Finalize%2A> metodo all'interno di propri <xref:System.Object.Finalize%2A> metodo. Il compilatore c# aggiunge automaticamente la chiamata al finalizzatore della classe base.
+
+## <a name="how-to-fix-violations"></a>Come correggere le violazioni
+ Per correggere una violazione di questa regola, chiamare il tipo di base <xref:System.Object.Finalize%2A> metodo i <xref:System.Object.Finalize%2A> metodo.
+
+## <a name="when-to-suppress-warnings"></a>Esclusione di avvisi
+ Non escludere un avviso da questa regola. Alcuni compilatori destinati a common language runtime inserire una chiamata al finalizzatore del tipo di base in Microsoft intermediate language (MSIL). Se viene segnalato un avviso da questa regola, il compilatore non inserisce la chiamata e aggiungerla al codice.
+
+## <a name="example"></a>Esempio
+ L'esempio di Visual Basic seguente mostra un tipo `TypeB` che chiama correttamente la <xref:System.Object.Finalize%2A> metodo nella classe base.
+
+ [!code-vb[FxCop.Usage.IDisposableBaseCalled#1](../code-quality/codesnippet/VisualBasic/ca2220-finalizers-should-call-base-class-finalizer_1.vb)]
+
+## <a name="see-also"></a>Vedere anche
+ [Criterio Dispose](/dotnet/standard/design-guidelines/dispose-pattern)

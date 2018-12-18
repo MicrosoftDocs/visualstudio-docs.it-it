@@ -1,60 +1,61 @@
 ---
-title: "Selezione frammento di codice | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-general"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "vs.expansionpicker"
-helpviewer_keywords: 
-  - "Selezione frammento di codice"
-  - "frammenti di codice, Selezione frammento di codice"
-  - "frammenti di codice IntelliSense, Selezione frammento di codice"
-ms.assetid: f0862d48-fbbc-4cfe-b228-24492d5c89c4
-caps.latest.revision: 25
-author: "kempb"
-ms.author: "kempb"
-manager: "ghogen"
-caps.handback.revision: 25
+title: Selezione frammento di codice | Microsoft Docs
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology: vs-ide-general
+ms.topic: conceptual
+f1_keywords:
+- vs.expansionpicker
+helpviewer_keywords:
+- Code Snippet Picker
+- IntelliSense code snippets, Code Snippet Picker
+- code snippets, Code Snippet Picker
+author: gewarren
+ms.author: gewarren
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: fb01cfc51591264b258518f4c90276a7ece11250
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# Selezione frammento di codice
-[!INCLUDE[vs2017banner](../../code-quality/includes/vs2017banner.md)]
+# <a name="code-snippet-picker"></a>Selezione frammento di codice
 
-L'editor di codice [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] offre una funzione di **Selezione frammento di codice** che, con pochi clic del mouse, consente di inserire blocchi di codice pronti all'uso nel documento attivo.  
-  
- La procedura per visualizzare la **Selezione frammento di codice** varia in base al linguaggio utilizzato.  
-  
--   [!INCLUDE[vbprvb](../../code-quality/includes/vbprvb_md.md)]: fare clic con il pulsante destro del mouse sulla posizione desiderata nell'Editor di codice per visualizzare il menu di scelta rapida, quindi scegliere **Inserisci frammento di codice**.  
-  
--   [!INCLUDE[csprcs](../../data-tools/includes/csprcs_md.md)]: fare clic con il pulsante destro del mouse sulla posizione desiderata nell'Editor di codice per visualizzare il menu di scelta rapida, quindi scegliere **Inserisci frammento di codice** o **Racchiudi tra**.  
-  
--   [!INCLUDE[vcprvc](../../code-quality/includes/vcprvc_md.md)]: la **Selezione frammento di codice** non è disponibile.  
-  
--   Visual F\# \- **Selezione frammento di codice** non è disponibile.  
-  
--   [!INCLUDE[jsprjscript](../../debugger/debug-interface-access/includes/jsprjscript_md.md)] \-\- fare clic con il pulsante destro del mouse sulla posizione preferita nell'Editor di codice per visualizzare il menu di scelta rapida e scegliere **Inserisci frammento di codice** o **Racchiudi tra**.  
-  
--   XML: fare clic con il pulsante destro del mouse sulla posizione preferita nell'Editor di codice per visualizzare il menu di scelta rapida e scegliere **Inserisci frammento di codice** o **Racchiudi tra**.  
-  
--   HTML: fare clic con il pulsante destro del mouse sulla posizione preferita nell'Editor di codice per visualizzare il menu di scelta rapida e scegliere **Inserisci frammento di codice** o **Racchiudi tra**.  
-  
--   SQL \- fare clic con il pulsante destro del mouse sulla posizione preferita nell'Editor di codice per visualizzare il menu di scelta rapida e scegliere **Inserisci frammento di codice**.  
-  
- Nella maggior parte dei linguaggi di sviluppo di Visual Studio, è possibile utilizzare la  **Gestione frammenti di codice** per aggiungere cartelle per la  **Elenco cartelle** che il  **Selezione frammento di codice** esegue la scansione dei file del frammento XML.  È anche possibile creare frammenti personalizzati da aggiungere all'elenco.  Per ulteriori informazioni, vedere [Procedura dettagliata: creazione di un frammento di codice](../../ide/walkthrough-creating-a-code-snippet.md).  
-  
-## Elenco UIElement  
- Nome elemento  
- Campo di testo modificabile in cui è visualizzato il nome dell'elemento selezionato nell'**Elenco elementi**.  Per eseguire una ricerca incrementale dell'elemento desiderato, iniziare con il digitarne il nome in questo campo.  Continuare aggiungendo lettere finché l'elemento desiderato non è selezionato nell'**Elenco elementi**.  
-  
- Elenco elementi  
- Elenco di frammenti di codice disponibili per l'inserimento oppure elenco di cartelle contenenti frammenti di codice.  Per inserire un frammento di codice o espandere una cartella, selezionare l'elemento desiderato e premere Invio.  
-  
-## Vedere anche  
- [Procedure consigliate per l'utilizzo dei frammenti di codice](../../ide/best-practices-for-using-code-snippets.md)   
- [Visual Basic IntelliSense Code Snippets](/dotnet/visual-basic/developing-apps/using-ide/intellisense-code-snippets)   
- [Impostazione di segnalibri nel codice](../../ide/setting-bookmarks-in-code.md)   
- [Procedura: utilizzare frammenti di codice racchiusi](../Topic/How%20to:%20Use%20Surround-with%20Code%20Snippets.md)
+L'editor del codice di Visual Studio include la **Selezione frammento di codice** che consente, in pochi clic del mouse, di inserire blocchi di codice pronti nel documento attivo.
+
+La procedura per visualizzare la **Selezione frammento di codice** varia in base al linguaggio in uso.
+
+- Visual Basic- Fare clic con il pulsante destro del mouse nella posizione desiderata nell'editor del codice per visualizzare il menu di scelta rapida e quindi scegliere **Inserisci frammento**.
+
+- C# - Fare clic con il pulsante destro del mouse nella posizione desiderata nell'editor del codice per visualizzare il menu di scelta rapida e quindi scegliere **Inserisci frammento** o **Racchiudi tra**.
+
+- C++ - La **Selezione frammento di codice** non è disponibile.
+
+- F# - La **Selezione frammento di codice** non è disponibile.
+
+- JavaScript - Fare clic con il pulsante destro del mouse nella posizione desiderata nell'editor del codice per visualizzare il menu di scelta rapida e quindi scegliere **Inserisci frammento** o **Racchiudi tra**.
+
+- XML - Fare clic con il pulsante destro del mouse nella posizione desiderata nell'editor del codice per visualizzare il menu di scelta rapida e quindi scegliere **Inserisci frammento** o **Racchiudi tra**.
+
+- HTML - Fare clic con il pulsante destro del mouse nella posizione desiderata nell'editor del codice per visualizzare il menu di scelta rapida e quindi scegliere **Inserisci frammento** o **Racchiudi tra**.
+
+- SQL - Fare clic con il pulsante destro del mouse nella posizione desiderata nell'editor del codice per visualizzare il menu di scelta rapida e quindi scegliere **Inserisci frammento**.
+
+Nella maggior parte dei linguaggi di sviluppo di Visual Studio, è possibile usare **Gestione frammenti di codice** per aggiungere cartelle all'elenco cartelle in cui la **Selezione frammento di codice** cerca i file di frammenti di codice XML. È anche possibile creare frammenti personalizzati da aggiungere all'elenco. Per altre informazioni, vedere [Procedura dettagliata: creazione di un frammento di codice](../../ide/walkthrough-creating-a-code-snippet.md).
+
+## <a name="uielement-list"></a>Elenco UIElement
+
+Nome elemento  
+Campo di testo modificabile che visualizza il nome dell'elemento selezionato in **Elenco elementi**. Per eseguire una ricerca incrementale per l'elemento desiderato, iniziare a digitarne il nome in questo campo. Continuare aggiungendo lettere fino a quando l'elemento desiderato non viene selezionato nell'**Elenco elementi**.
+
+Elenco elementi  
+Elenco di frammenti di codice disponibili per l'inserimento o un elenco di cartelle che contengono frammenti di codice. Per inserire un frammento di codice o espandere una cartella, selezionare l'elemento desiderato e premere INVIO.
+
+## <a name="see-also"></a>Vedere anche
+
+[Procedure consigliate per l'uso dei frammenti di codice](../../ide/best-practices-for-using-code-snippets.md)  
+[Frammenti di codice IntelliSense di Visual Basic](/dotnet/visual-basic/developing-apps/using-ide/intellisense-code-snippets)  
+[Impostazione di segnalibri nel codice](../../ide/setting-bookmarks-in-code.md)  
+[Procedura: Usare frammenti di codice racchiusi](../../ide/how-to-use-surround-with-code-snippets.md)

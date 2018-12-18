@@ -1,68 +1,51 @@
 ---
-title: Installare e gestire contenuto locale | Microsoft Docs
-ms.custom: 
+title: Installare la documentazione di Visual Studio in locale | Microsoft Docs
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - vs-help-viewer
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: conceptual
 f1_keywords:
 - hv_manage
 helpviewer_keywords:
-- changing content installation source [Help Viewer 2.0]
-- updating local content [Help Viewer 2.0]
-- Help Viewer 2.0, content installation source
-- Help Viewer 2.0, updating local content
-- Help Viewer 2.0, changing content installation source
-- installing local content [Help Viewer 2.0]
-- content installation source [Help Viewer 2.0]
-- downloading content [Help Viewer 2.0]
-- removing local content [Help Viewer 2.0]
-- Help Viewer 2.0, removing local content
-- Help Viewer 2.0, installing local content
-- Help Viewer 2.0, downloading content
+- changing content installation source [Help Viewer]
+- updating local content [Help Viewer]
+- Help Viewer, content installation source
+- Help Viewer, updating local content
+- Help Viewer, changing content installation source
+- installing local content [Help Viewer]
+- content installation source [Help Viewer]
+- downloading content [Help Viewer]
+- removing local content [Help Viewer]
+- Help Viewer, removing local content
+- Help Viewer, installing local content
+- Help Viewer, downloading content
 ms.assetid: efd9df4c-2e69-4c50-992c-9678a8d8cf19
-caps.latest.revision: 25
 author: gewarren
 ms.author: gewarren
-manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 47057e9611b824c17077b9127f8d2f8b192d6eb8
-ms.openlocfilehash: b016ce5c67f1aa7242d7af3f3fb1142b61145f63
-ms.contentlocale: it-it
-ms.lasthandoff: 05/13/2017
-
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: b6b93d63381ba0e7afa984e6750e0dac07a8a58b
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="install-and-manage-local-content"></a>Installare e gestire il contenuto locale
-Usare Microsoft Help Viewer per aggiungere, rimuovere, aggiornare e spostare il contenuto della Guida installato nel computer a seconda delle esigenze di sviluppo del software.  
+L'uso di Microsoft Help Viewer consente di aggiungere, rimuovere, aggiornare e spostare il contenuto della Guida installato nel computer a seconda delle esigenze di sviluppo del software.  
   
- Per gestire il contenuto nel computer locale, è necessario accedere con un account che disponga di autorizzazioni amministrative. Inoltre, si potrebbe non essere in grado di gestire il contenuto locale se si lavora in un ambiente aziendale poiché gli amministratori di sistema potrebbero prendere tali decisioni per l'organizzazione. Per altre informazioni, vedere la [Guida dell'amministratore di Help Viewer](../ide/help-viewer-administrator-guide.md).  
+Per gestire il contenuto nel computer locale, è necessario accedere con un account che abbia autorizzazioni amministrative. È anche possibile che l'utente non possa gestire il contenuto locale se lavora in un ambiente aziendale in cui gli amministratori di sistema abbiano preso decisioni in tal senso per l'organizzazione. Per altre informazioni, vedere la [Guida dell'amministratore di Help Viewer](../ide/help-viewer-administrator-guide.md).  
   
 ## <a name="changing-the-content-installation-source"></a>Modifica dell'origine di installazione del contenuto  
- Per impostazione predefinita, Help Viewer installa il contenuto tramite un servizio online Microsoft come origine. Non è in genere necessario modificare l'origine del contenuto a meno che non si utilizzi un ambiente aziendale per cui un amministratore di sistema abbia già installato il contenuto in un'altra posizione.  
+Per impostazione predefinita, Help Viewer installa il contenuto tramite un servizio online Microsoft come origine. Non è in genere necessario modificare l'origine del contenuto a meno che non si utilizzi un ambiente aziendale per cui un amministratore di sistema abbia già installato il contenuto in un'altra posizione.  
   
 #### <a name="to-change-the-content-installation-source"></a>Per modificare l'origine di installazione del contenuto  
   
 1.  Nella scheda **Gestisci contenuto** scegliere il pulsante di opzione **Disco**.  
   
     > [!NOTE]
-    >  L'opzione **Disco** non sarà disponibile se l'amministratore ha impedito di modificare l'origine di installazione del contenuto. Per altre informazioni, vedere la [Guida dell'amministratore di Help Viewer](../ide/help-viewer-administrator-guide.md).  
+    >  L'opzione **Disco** non è disponibile se l'amministratore ha impedito la modifica dell'origine dell'installazione del contenuto. Per altre informazioni, vedere la [Guida dell'amministratore di Help Viewer](../ide/help-viewer-administrator-guide.md).  
   
 2.  Effettuare uno dei passaggi indicati di seguito.  
   
@@ -73,12 +56,13 @@ Usare Microsoft Help Viewer per aggiungere, rimuovere, aggiornare e spostare il 
     -   Nell'elenco scegliere la voce che è stata usata più di recente.  
   
 ## <a name="download-and-install-content-locally"></a>Scaricare e installare il contenuto localmente  
- È possibile visualizzare gli argomenti senza una connessione Internet se si scarica e installa il contenuto nel computer locale.  
+Se si installa il contenuto nel computer locale, è possibile visualizzare gli argomenti anche senza una connessione a Internet.  
   
 > [!IMPORTANT]
->  Per installare il contenuto, è necessario accedere con un account che disponga di autorizzazioni amministrative.  
+> Per installare il contenuto, è necessario accedere con un account che disponga di autorizzazioni amministrative.  
   
- Se l'IDE di Visual Studio è impostato su una lingua diversa dall'inglese, è possibile installare il contenuto in inglese o il contenuto localizzato oppure entrambi i contenuti. Non verrà tuttavia visualizzato alcun contenuto se si installa solo la versione inglese e la casella di controllo **Includi contenuto in inglese in tutte le schede di navigazione e nelle richieste F1** nella finestra di dialogo **Opzioni visualizzatore** è deselezionata.  
+> [!NOTE]
+> Se l'IDE di Visual Studio è impostato su una lingua diversa dall'inglese, è possibile installare il contenuto in inglese o il contenuto localizzato oppure entrambi i contenuti. Non verrà tuttavia visualizzato alcun contenuto se si installa solo la versione inglese e la casella di controllo **Includi contenuto in inglese in tutte le schede di navigazione e nelle richieste F1** nella finestra di dialogo **Opzioni visualizzatore** è deselezionata.  
   
 #### <a name="to-download-and-install-content"></a>Per scaricare e installare il contenuto  
   
@@ -93,12 +77,13 @@ Usare Microsoft Help Viewer per aggiungere, rimuovere, aggiornare e spostare il 
      Il libro o i libri specificati vengono installati con tutti gli aggiornamenti dei libri già presenti nel computer. I tempi di installazione variano, ma è possibile visualizzare lo stato di avanzamento nella barra di stato.  
   
 ## <a name="removing-local-content"></a>Rimozione del contenuto locale  
- È possibile risparmiare spazio su disco rimuovendo il contenuto non desiderato dal computer.  
+È possibile risparmiare spazio su disco rimuovendo il contenuto non desiderato dal computer.  
   
 > [!IMPORTANT]
->  Per rimuovere il contenuto è necessario disporre di autorizzazioni amministrative.  
+> Per rimuovere il contenuto è necessario disporre di autorizzazioni amministrative.  
   
- Non verrà visualizzato nessun contenuto se l'IDE di Visual Studio viene impostato su una lingua diversa dall'inglese, se si rimuove il contenuto localizzato e se la casella di controllo **Includi contenuto in inglese in tutte le schede di navigazione e nelle richieste F1** nella finestra di dialogo **Opzioni visualizzatore** è deselezionata.  
+> [!NOTE]
+> Non viene visualizzato alcun contenuto se l'IDE di Visual Studio viene impostato su una lingua diversa dall'inglese, se si rimuove il contenuto localizzato e se la casella di controllo **Includi contenuto in inglese in tutte le schede di navigazione e nelle richieste F1** nella finestra di dialogo **Opzioni visualizzatore** è deselezionata.  
   
 #### <a name="to-remove-content"></a>Per rimuovere il contenuto  
   
@@ -141,4 +126,4 @@ Usare Microsoft Help Viewer per aggiungere, rimuovere, aggiornare e spostare il 
 3.  Scegliere **Chiudi** dopo che il contenuto è stato spostato.  
   
 ## <a name="see-also"></a>Vedere anche  
- [Microsoft Help Viewer](../ide/microsoft-help-viewer.md)
+[Microsoft Help Viewer](../ide/microsoft-help-viewer.md)

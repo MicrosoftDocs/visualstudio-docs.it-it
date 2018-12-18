@@ -1,81 +1,80 @@
 ---
-title: "Attach | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: Attach | Microsoft Docs
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology: vs-ide-debug
+ms.topic: conceptual
 ms.assetid: 79614283-6733-4592-a53a-d428052271ad
-caps.latest.revision: 12
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 12
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 98e18456ad4665359e33d7a9b5f064585f8195be
+ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/19/2018
 ---
-# Attach
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
-L'opzione **Attach** consente di avviare il profilo dei campioni del processo in esecuzione specificato dall'ID processo \(PID\).  
+# <a name="attach"></a>Attach
+L'opzione **Attach** di VSPerfCmd.exe avvia una profilatura campione del processo in esecuzione specificato dall'ID processo (PID).  
   
- Per utilizzare l'opzione **Attach**, è necessario specificare il metodo **Sample** nell'opzione Start.  
+ Per usare l'opzione **Attach**, è necessario specificare il metodo **Sample** nell'opzione Start.  
   
 > [!NOTE]
->  Se l'opzione **Start** è stata specificata con l'opzione **Crosssession**, le chiamate a **VSPerfCmd \/Attach** o **VSPerfCmd \/Detach** devono specificare anche **Crosssession**.  
+>  Se l'opzione **Start** è stata specificata con l'opzione **Crosssession**, eventuali chiamate a **VSPerfCmd /Attach** o a **VSPerfCmd /Detach** devono specificare anche **Crosssession**.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
 VSPerfCmd.exe /Attach:ProcessID [Options]  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `ProcessID`  
- ID del processo in esecuzione.  L'ID di un processo in esecuzione è elencato nella scheda Processi di Gestione attività di Windows.  
+ ID di processo (PID) del processo in esecuzione. Il PID di un processo in esecuzione è indicato nella scheda Processi di Gestione attività di Windows.  
   
-## Opzioni valide  
- Le opzioni **VSPerfCmd** seguenti possono essere combinate con l'opzione **Attach** in una sola riga di comando.  
+## <a name="valid-options"></a>Opzioni valide  
+ Le seguenti opzioni di **VSPerfCmd** possono essere combinate con l'opzione **Attach** in una singola riga di comando.  
   
  **Crosssession**  
- Abilita il profilo di applicazioni in sessioni diverse da quella di accesso.  Obbligatoria se l'opzione **Start** è stata specificata con l'opzione **Crosssession**.  
+ Consente la profilatura delle applicazioni in sessioni diverse da quella di accesso. Obbligatoria se l'opzione **Start** è stata specificata con l'opzione **Crosssession**.  
   
  **Start:** `Method`  
- Inizializza la sessione del profiler dalla riga di comando e imposta il metodo di profilo specificato.  
+ Inizializza la sessione del profiler da riga di comando e imposta il metodo di profilatura specificato.  
   
  **TargetCLR**  
- Specifica la versione di Common Language Runtime \(CLR\) di .NET Framework di cui eseguire il profilo quando in una sessione di profilo sono caricate più versioni.  Per impostazione predefinita, viene eseguito il profilo della prima versione caricata.  
+ Specifica la versione di Common Language Runtime (CLR) .NET Framework da sottoporre a profilatura quando in una sessione di profilatura è caricata più di una versione. Per impostazione predefinita, viene sottoposta a profilatura la prima versione caricata.  
   
  **GlobalOn GlobalOff**  
- Riprende \(**GlobalOn**\) o sospende \(**GlobalOff**\) l'esecuzione del profilo, ma non termina la sessione di profilo.  
+ Riprende (**GlobalOn**) o sospende (**GlobalOff**) la profilatura, ma non termina la sessione di profilatura.  
   
  **ProcessOn:** `PID` **ProcessOff:** `PID`  
- Riprende \(**ProcessOn**\) o sospende \(**ProcessOff**\) l'esecuzione del profilo per il processo specificato.  
+ Riprende (**ProcessOn**) o sospende (**ProcessOff**) la profilatura per il processo specificato.  
   
-## Opzioni di intervallo  
- È possibile specificare una delle opzioni di intervallo di campionamento seguenti nella riga di comando Attach.  L'intervallo di campionamento predefinito è 10.000.000 cicli di clock del processore.  
+## <a name="interval-options"></a>Opzioni di intervallo  
+ È possibile specificare una delle opzioni seguenti per l'intervallo di campionamento nella riga di comando di Attach. L'intervallo di campionamento predefinito è 10.000.000 di cicli di clock del processore.  
   
- **Timer**\[**:**`Cycles`\]**PF**\[**:**`Events`\]**Sys**\[**:**Events\]**Counter**\[**:**`Name`,`Reload`,`FriendlyName`\]  
- Specifica il numero e il tipo dell'intervallo di campionamento.  
+ **Timer**[**:**`Cycles`]**PF**[**:**`Events`]**Sys**[**:** Events]**Counter**[**:**`Name`,`Reload`,`FriendlyName`]  
+ Specifica il numero e il tipo di intervallo di campionamento.  
   
--   **Timer**: esegue il campionamento ogni `Cycles` cicli di clock del processore.  Se `Cycles` non è specificato, vengono utilizzati 10.000.000 cicli.  
+-   **Timer**: esegue il campionamento ogni `Cycles` cicli di clock del processore. Se non si specifica `Cycles`, vengono usati 10.000.000 di cicli.  
   
--   **PF**: esegue il campionamento ogni `Events` errori di pagina.  Se `Events` non è specificato, vengono utilizzati 10 errori di pagina.  
+-   **PF**: esegue il campionamento ogni `Events` errori di pagina. Se non si specifica `Events`, vengono usati 10 errori di pagina.  
   
--   **Sys**: esegue il campionamento ogni chiamate di `Events` al sistema operativo.  Se `Events` non è specificato, vengono utilizzate 10 chiamate di sistema.  
+-   **Sys**: esegue il campionamento ogni `Events` chiamate al sistema operativo. Se non si specifica `Events`, vengono usate 10 chiamate del sistema.  
   
--   **Counter**: esegue il campionamento ogni numero `Reload` del contatore delle prestazioni della CPU specificato da `Name`.  Facoltativamente, `FriendlyName` può specificare una stringa da utilizzare come intestazione di colonna nei rapporti del profiler.  
+-   **Counter**: esegue il campionamento ogni `Reload` dei contatori delle prestazioni della CPU specificato da `Name`. Facoltativamente, `FriendlyName` può specificare una stringa da usare come intestazione di colonna nei report del profiler.  
   
-## Esempio  
- In questo esempio viene illustrato come connettersi a un'istanza in esecuzione di un'applicazione con ID processo 12345.  
+## <a name="example"></a>Esempio  
+ In questo esempio viene illustrato come connettersi a un'istanza di un'applicazione in esecuzione con ID processo 12345.  
   
 ```  
 VSPerfCmd.exe /Start:Sample /Output:TestApp.exe.vsp  
 VSPerfCmd.exe /Attach:12345  
 ```  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [VSPerfCmd](../profiling/vsperfcmd.md)   
  [Profilatura di applicazioni autonome](../profiling/command-line-profiling-of-stand-alone-applications.md)   
  [Profilatura di applicazioni Web ASP.NET](../profiling/command-line-profiling-of-aspnet-web-applications.md)   

@@ -1,44 +1,45 @@
 ---
-title: "Mediante la gestione di testo per monitorare le impostazioni globali | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "editor [Visual Studio SDK], legacy - controllare le impostazioni globali"
-  - "editor [Visual Studio SDK], legacy - gestore di testo"
+title: Utilizzando la gestione di testo per monitorare le impostazioni globali | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology:
+- vs-ide-sdk
+ms.topic: conceptual
+helpviewer_keywords:
+- editors [Visual Studio SDK], legacy - monitor global settings
+- editors [Visual Studio SDK], legacy - text manager
 ms.assetid: 023e7671-cf65-419c-9bc1-3c4ee92aa436
-caps.latest.revision: 14
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 14
+author: gregvanl
+ms.author: gregvanl
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: e6c61a6859a2e8d359b2185ce959aa941944380f
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# Mediante la gestione di testo per monitorare le impostazioni globali
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
-Se si implementa un editor principale, è necessario monitorare le modifiche apportate alle impostazioni globali, poiché tali modifiche possono influire sull'istanza dell'editor.  È possibile tenere traccia delle modifiche attendendo gli eventi generati dall'amministratore del testo.  Ad esempio, quando si specifica una preferenza generale per l'aspetto o il comportamento di un componente nell'editor principale, ad esempio il relativo oggetto dati del documento, gli archivi di gestione del testo queste informazioni e la comunicazione a tutti i client interessati.  
+# <a name="using-the-text-manager-to-monitor-global-settings"></a>Utilizzando la gestione di testo per monitorare le impostazioni globali
+Se si implementa un editor di componenti di base, è necessario monitorare le modifiche apportate alle impostazioni globali, perché queste modifiche potrebbero influenzare l'istanza dell'editor. È possibile rilevare le modifiche in attesa di eventi generati dal gestore del testo. Ad esempio, quando si specifica una preferenza globale per l'aspetto o il comportamento di un componente nell'editor di componenti di base, ad esempio un oggetto dati documento, il gestore di testo vengono archiviate queste informazioni e comunica a tutti i client interessati.  
   
-## Funzioni di gestione del testo  
- L'amministratore di testo genera eventi sia una serie di impostazioni, incluse le seguenti:  
+## <a name="text-manager-functions"></a>Funzioni di gestione di testo  
+ La gestione testi genera eventi per un numero di impostazioni, tra cui le operazioni seguenti:  
   
--   Se un buffer è incluso nel controllo del codice sorgente  
+-   Se un buffer è nel controllo del codice sorgente  
   
--   La registrazione per le notifiche delle modifiche ai file  
+-   Come registrare le notifiche di modifica di file  
   
--   Come tenere traccia delle visualizzazioni sono associate a determinati buffer  
+-   Come tenere traccia delle visualizzazioni di cui sono associate a determinati buffer  
   
--   Preferenze di colorazione del testo  
+-   Preferenze di colorazione di testo  
   
--   Scheda in base alle preferenze dello spazio  
+-   Scheda e le preferenze di spazio  
   
- Le esigenze specifiche relative a un linguaggio specificato non vengono gestite dall'amministratore del testo.  queste impostazioni devono essere gestite da ogni servizio di linguaggio.  
+ Le preferenze che sono univoche per una determinata lingua non sono gestite dal gestore del testo. Queste impostazioni devono essere gestite da ogni servizio di linguaggio.  
   
- La notifica degli eventi per la gestione del testo è fornita dall'interfaccia di <xref:Microsoft.VisualStudio.TextManager.Interop.IVsTextManagerEvents> .  Implementare questa interfaccia sull'oggetto client per gestire gli eventi ha generato la gestione del testo.  Si effettua la registrazione per questi eventi tramite l'interfaccia di <xref:Microsoft.VisualStudio.OLE.Interop.IConnectionPointContainer> sull'amministratore del testo.  
+ Notifica degli eventi per la gestione di testo viene eseguito il <xref:Microsoft.VisualStudio.TextManager.Interop.IVsTextManagerEvents> interfaccia. Implementare questa interfaccia nel client di oggetto per gestire gli eventi ha generato il gestore di testo. Registrare per questi eventi utilizzando il <xref:Microsoft.VisualStudio.OLE.Interop.IConnectionPointContainer> interfaccia del gestore di testo.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Nell'Editor di componenti di base](../extensibility/inside-the-core-editor.md)   
- [Editor Features](http://msdn.microsoft.com/it-it/bdac940d-1f14-4019-a01f-fd0bb3dc7198)
+ [Funzionalità dell'editor](http://msdn.microsoft.com/en-us/bdac940d-1f14-4019-a01f-fd0bb3dc7198)

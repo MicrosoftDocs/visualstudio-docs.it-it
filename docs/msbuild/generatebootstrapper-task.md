@@ -1,13 +1,9 @@
 ---
-title: "Attività GenerateBootstrapper | Microsoft Docs"
-ms.custom: 
+title: Attività GenerateBootstrapper | Microsoft Docs
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- vs-ide-sdk
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.technology: msbuild
+ms.topic: reference
 f1_keywords:
 - http://schemas.microsoft.com/developer/msbuild/2003#GenerateBootstrapper
 dev_langs:
@@ -19,36 +15,22 @@ helpviewer_keywords:
 - MSBuild, GenerateBootstrapper task
 - GenerateBootstrapper task [MSBuild]
 ms.assetid: ca3ba2c6-d2ea-41f2-b7e3-0fc2b0730460
-caps.latest.revision: 13
-author: kempb
-ms.author: kempb
-manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 47057e9611b824c17077b9127f8d2f8b192d6eb8
-ms.openlocfilehash: e22d2cb649528d527cf37e80fda0ad49671863d3
-ms.contentlocale: it-it
-ms.lasthandoff: 05/13/2017
-
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 1fd27aa3e589957d75d504421d170735d1add6f9
+ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/19/2018
 ---
 # <a name="generatebootstrapper-task"></a>Attività GenerateBootstrapper
 Consente di rilevare, scaricare e installare automaticamente un'applicazione e i relativi prerequisiti. Funge da programma di installazione singolo che integra i programmi di installazione separati per tutti i componenti che costituiscono un'applicazione.  
   
 ## <a name="task-parameters"></a>Parametri dell'attività  
- Nella tabella che segue vengono descritti i parametri dell'attività `GenerateBootstrapper`.  
+ Nella tabella che segue vengono descritti i parametri dell'attività `GenerateBootstrapper` .  
   
 -   `ApplicationFile`  
   
@@ -82,7 +64,7 @@ Consente di rilevare, scaricare e installare automaticamente un'applicazione e i
   
 -   `BootstrapperItems`  
   
-     Parametro facoltativo <xref:Microsoft.Build.Framework.ITaskItem>`[]`.  
+     Parametro <xref:Microsoft.Build.Framework.ITaskItem>`[]` facoltativo.  
   
      Specifica i prodotti da compilare nel programma di avvio automatico. Gli elementi passati a questo parametro devono avere la sintassi seguente:  
   

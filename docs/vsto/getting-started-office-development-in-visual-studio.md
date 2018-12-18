@@ -1,31 +1,34 @@
 ---
-title: "Guida introduttiva (sviluppo per Office in Visual Studio)"
-ms.custom: ""
-ms.date: "02/02/2017"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "office-development"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-helpviewer_keywords: 
-  - "sviluppo per Office in Visual Studio, introduzione"
-ms.assetid: fc27e84c-dca2-4b0a-8794-f57a2a886262
-caps.latest.revision: 56
-author: "kempb"
-ms.author: "kempb"
-manager: "ghogen"
-caps.handback.revision: 52
+title: Guida introduttiva (sviluppo per Office in Visual Studio) | Documenti Microsoft
+ms.custom: ''
+ms.date: 02/02/2017
+ms.technology:
+- office-development
+ms.topic: conceptual
+dev_langs:
+- VB
+- CSharp
+helpviewer_keywords:
+- Office development in Visual Studio, getting started
+author: TerryGLee
+ms.author: tglee
+manager: douge
+ms.workload:
+- office
+ms.openlocfilehash: 2e0c945667f99fdd6df431413e3f1f96d06eca4b
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# Guida introduttiva (sviluppo per Office in Visual Studio)
+# <a name="getting-started-office-development-in-visual-studio"></a>Guida introduttiva (sviluppo per Office in Visual Studio)
   In questa sezione sono contenuti gli argomenti che consentono di iniziare a utilizzare gli strumenti di sviluppo di Microsoft Office in Visual Studio.  
   
-## In questa sezione  
- [Panoramica dello sviluppo di soluzioni Office &#40;VSTO&#41;](../vsto/office-solutions-development-overview-vsto.md)  
+> [!NOTE]  
+>  Interessati allo sviluppo di soluzioni che estendono l'esperienza di Office in [più piattaforme](https://dev.office.com/add-in-availability)? Vedere la nuova [modello aggiuntivi di Office](https://dev.office.com/docs/add-ins/overview/office-add-ins). Componenti aggiuntivi di Office hanno un footprint ridotto rispetto alle soluzioni e i componenti aggiuntivi VSTO e possono essere creati con quasi tutte le tecnologie, ad esempio HTML5, JavaScript, CSS3 e XML di programmazione web.  
+  
+## <a name="in-this-section"></a>In questa sezione  
+ [Cenni preliminari sullo sviluppo di soluzioni di Office &#40;VSTO&#41;](../vsto/office-solutions-development-overview-vsto.md)  
  Fornisce informazioni di base per lo sviluppo di soluzioni Office in Visual Studio.  
   
  [Modifiche alla progettazione dei progetti di Office destinati a .NET Framework 4 o a .NET Framework 4.5](../vsto/changes-to-the-design-of-office-projects-that-target-the-dotnet-framework-4-or-the-dotnet-framework-4-5.md)  
@@ -34,26 +37,26 @@ caps.handback.revision: 52
  [Funzionalità disponibili in base ai tipi di progetto e applicazioni di Office](../vsto/features-available-by-office-application-and-project-type.md)  
  Vengono descritte le applicazioni e i progetti che richiedono l’utilizzo delle funzionalità di sviluppo di Office come Extensibility della barra multifunzione, riquadri attività personalizzati, riquadri azioni e aree del modulo.  
   
- [Configurazione di un computer per sviluppare soluzioni Office](../vsto/configuring-a-computer-to-develop-office-solutions.md)  
+ [Configurazione di computer per lo sviluppo di soluzioni Office](../vsto/configuring-a-computer-to-develop-office-solutions.md)  
  Fornisce le informazioni e le procedure per l'installazione degli strumenti di sviluppo di Office, il runtime che consente di eseguire le soluzioni Office nei computer degli utenti finali e gli assembly di interoperabilità primari di Office.  
   
- [Guida introduttiva alla programmazione di personalizzazioni a livello di documento per Excel](../vsto/getting-started-programming-document-level-customizations-for-excel.md)  
+ [Introduzione alla programmazione di personalizzazioni a livello di documento per Excel](../vsto/getting-started-programming-document-level-customizations-for-excel.md)  
  Fornisce un riepilogo delle principali nozioni necessarie per l'utilizzo di Visual Studio per creare personalizzazioni a livello di documento per Excel.  
   
- [Guida introduttiva alla programmazione delle personalizzazioni a livello di documento per Word](../vsto/getting-started-programming-document-level-customizations-for-word.md)  
+ [Introduzione alla programmazione delle personalizzazioni a livello di documento per Word](../vsto/getting-started-programming-document-level-customizations-for-word.md)  
  Fornisce un riepilogo delle principali nozioni necessarie per l'utilizzo di Visual Studio per creare personalizzazioni a livello di documento per Word.  
   
- [Introduzione alla programmazione di componenti aggiuntivi VSTO](../vsto/getting-started-programming-vsto-add-ins.md)  
- Fornisce un riepilogo delle principali nozioni necessarie per l'utilizzo di Visual Studio per creare componenti aggiuntivi di Visual Studio Tools per Office \(VSTO\) a livello di applicazione per applicazioni di Microsoft Office.  
+ [Introduzione alla programmazione dei componenti aggiuntivi VSTO](../vsto/getting-started-programming-vsto-add-ins.md)  
+ Fornisce un riepilogo delle principali nozioni necessarie per l'utilizzo di Visual Studio per creare componenti aggiuntivi di Visual Studio Tools per Office (VSTO) a livello di applicazione per applicazioni di Microsoft Office.  
   
  [Confronto tra soluzioni VBA e Office in Visual Studio](../vsto/vba-and-office-solutions-in-visual-studio-compared.md)  
  Descrive i punti di forza di Visual Basic, Applications Edition e gli strumenti di sviluppo di Office in Visual Studio per lo sviluppo di soluzioni Office.  
   
- [Attività comuni nella programmazione con Office](../vsto/common-tasks-in-office-programming.md)  
+ [Attività comuni nella programmazione Office](../vsto/common-tasks-in-office-programming.md)  
  Vengono forniti i collegamenti degli argomenti che consentono di risolvere i problemi comuni.  
   
-## Sezioni correlate  
- [Procedure dettagliate ed esempi di sviluppo di applicazioni per Microsoft Office](../vsto/office-development-samples-and-walkthroughs.md)  
+## <a name="related-sections"></a>Sezioni correlate  
+ [Procedure dettagliate ed esempi di sviluppo office](../vsto/office-development-samples-and-walkthroughs.md)  
  Fornisce collegamenti ad applicazioni di esempio e ad argomenti che illustrano le procedure dettagliate per l'esecuzione di attività comuni.  
   
  [Architettura delle soluzioni Office in Visual Studio](../vsto/architecture-of-office-solutions-in-visual-studio.md)  

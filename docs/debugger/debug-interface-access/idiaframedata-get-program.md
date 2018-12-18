@@ -1,56 +1,55 @@
 ---
-title: "IDiaFrameData::get_program | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "IDiaFrameData::get_program (metodo)"
+title: 'Idiaframedata:: Get_program | Documenti Microsoft'
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology: vs-ide-debug
+ms.topic: conceptual
+dev_langs:
+- C++
+helpviewer_keywords:
+- IDiaFrameData::get_program method
 ms.assetid: 9201409e-b4b1-4e2e-a9f8-d17678ac538b
-caps.latest.revision: 10
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 10
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 2c78c6f1c2c6e8368efd86dc3ffa03a021e46da3
+ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/18/2018
 ---
-# IDiaFrameData::get_program
-[!INCLUDE[vs2017banner](../../code-quality/includes/vs2017banner.md)]
-
-Recuperare la stringa del programma utilizzata per calcolare il set di log prima della chiamata alla funzione corrente.  
+# <a name="idiaframedatagetprogram"></a>IDiaFrameData::get_program
+Recupera la stringa viene utilizzata per calcolare il set prima della chiamata alla funzione corrente di registri.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp#  
-HRESULT get_program (   
-   BSTR* pRetVal  
+```C++  
+HRESULT get_program (   
+   BSTR* pRetVal  
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `pRetVal`  
- \[out\]  Restituisce la stringa del programma.  
+ [out] Restituisce la stringa di programma.  
   
-## Valore restituito  
- Se l'operazione riesce, restituisce `S_OK`.  Restituisce `S_FALSE` se questa proprietà non è supportata.  In caso contrario, restituisce un codice di errore.  
+## <a name="return-value"></a>Valore restituito  
+ Se ha esito positivo, restituisce `S_OK`. Restituisce `S_FALSE` se questa proprietà non è supportata. In caso contrario, verrà restituito un codice di errore.  
   
-## Note  
- La stringa del programma è una sequenza di macro che viene interpretata per stabilire il prologo.  Ad esempio, uno stack frame tipico può utilizzare la stringa del programma `"$T0 $ebp = $eip $T0 4 + ^ = $ebp $T0 ^ = $esp $T0 8 + ="`.  Il formato di notazione polacca inversa, in cui gli operatori seguono gli operandi.  `T0` rappresenta una variabile temporanea nello stack.  In questo esempio vengono eseguiti i passaggi seguenti:  
+## <a name="remarks"></a>Note  
+ La stringa di programma è una sequenza di macro che viene interpretata per stabilire il prologo. Ad esempio, un frame di stack tipico potrebbe utilizzare la stringa di programma `"$T0 $ebp = $eip $T0 4 + ^ = $ebp $T0 ^ = $esp $T0 8 + ="`. Il formato è una notazione polacca inversa in cui gli operatori seguono gli operandi. `T0` rappresenta una variabile temporanea nello stack. Questo esempio viene eseguita la procedura seguente:  
   
-1.  Contenuto in movimento del log `ebp` in  `T0`.  
+1.  Spostare il contenuto del registro `ebp` a `T0`.  
   
-2.  aggiungere `4` il valore in  `T0` per produrre un indirizzo, ottenere il valore dall'indirizzo e archiviare il valore nel registro  `eip`.  
+2.  Aggiungere `4` al valore di `T0` per produrre un indirizzo, ottenere il valore da tale indirizzo e archiviare il valore nel registro `eip`.  
   
-3.  Ottenere il valore dall'indirizzo archiviato in `T0` e archivio che i valori nel registro  `ebp`.  
+3.  Ottenere il valore dall'indirizzo archiviato in `T0` e il valore memorizzato nel registro `ebp`.  
   
-4.  aggiungere `8` il valore in  `T0` e archivio che i valori nel registro  `esp`.  
+4.  Aggiungere `8` al valore di `T0` e il valore memorizzato nel registro `esp`.  
   
- Si noti che la stringa del programma è specifica della CPU e impostazione della convenzione di chiamata per la funzione rappresentata dallo stack frame corrente.  
+ Si noti che la stringa del programma è specifica per la CPU e la convenzione di chiamata impostato per la funzione rappresentata dallo stack frame corrente.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IDiaFrameData](../../debugger/debug-interface-access/idiaframedata.md)

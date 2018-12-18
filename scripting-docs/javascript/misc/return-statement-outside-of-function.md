@@ -1,48 +1,52 @@
 ---
-title: "Istruzione &#39;return&#39; esterna alla funzione | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/18/2017"
-ms.prod: "windows-client-threshold"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "javascript"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "VS.WebClient.Help.SCRIPT1018"
-dev_langs: 
-  - "JavaScript"
-  - "TypeScript"
-  - "DHTML"
+title: '&#39; restituito &#39; istruzione all''esterno della funzione | Documenti Microsoft'
+ms.custom: 
+ms.date: 01/18/2017
+ms.prod: windows-client-threshold
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- javascript
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- VS.WebClient.Help.SCRIPT1018
+dev_langs:
+- JavaScript
+- TypeScript
+- DHTML
 ms.assetid: 03568f9f-5f4f-4a10-a738-9a73f3832b9e
-caps.latest.revision: 6
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 6
+caps.latest.revision: 
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.openlocfilehash: 07b633c87dc11b291a5a5783f8121b2a368996d6
+ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/27/2017
 ---
-# Istruzione &#39;return&#39; esterna alla funzione
-È stata utilizzata un'istruzione `return` nell'ambito globale del codice.  L'istruzione `return` deve essere visualizzata solo nel corpo di una funzione.  
+# <a name="39return39-statement-outside-of-function"></a>&#39; restituito &#39; istruzione all'esterno della funzione
+È stato utilizzato un `return` istruzione nell'ambito globale del codice. Il `return` istruzione deve essere visualizzato solo all'interno del corpo di una funzione.  
   
- Il richiamo di una funzione con l'operatore `()` rappresenta un'espressione.  Tutte le espressioni presentano valori. L'istruzione `return` viene utilizzata per specificare il valore restituito da una funzione.  La forma generale è la seguente:  
+ Richiamo di una funzione con il `()` operatore è un'espressione. Tutte le espressioni sono valori. il `return` istruzione viene utilizzata per specificare il valore restituito da una funzione. Il formato generale è:  
   
 ```  
   
 return [ expression ];  
 ```  
   
- Quando l'istruzione `return` viene eseguita, viene valutato e restituito il valore della funzione *expression*.  Se non è presente alcuna espressione, viene restituito **undefined**.  
+ Quando il `return` viene eseguita l'istruzione, *espressione* viene valutato e restituito come valore della funzione. Se è presente alcuna espressione, **definito** viene restituito.  
   
- L'esecuzione della funzione viene arrestata quando viene eseguita l'istruzione `return`, anche se nel corpo della funzione compaiono ancora altre istruzioni.  Questa regola non viene applicata nel caso in cui l'istruzione **return** compaia all'interno di un blocco **try** ed esista un corrispondente blocco **finally**. In questo caso, infatti, il blocco **finally** verrà eseguito prima del termine della funzione.  
+ Esecuzione della funzione si interrompe quando il `return` istruzione viene eseguita, anche se sono presenti altre istruzioni ancora nel corpo della funzione. L'eccezione a questa regola è se il **restituire** istruzione si trova all'interno di un **provare** blocco, e non esiste un corrispondente **infine** blocco, il codice nel  **infine** blocco verrà eseguito prima del termine della funzione.  
   
- Se viene restituita una funzione perché raggiunge la fine del corpo della funzione senza eseguire un'istruzione `return`, il valore restituito è il valore **undefined**, ovvero il risultato della funzione non può essere utilizzato come parte di un'espressione più estesa.  
+ Se una funzione restituisce poiché non raggiunge la fine del corpo della funzione senza eseguire un `return` istruzione, il valore restituito è il **definito** valore (in questo caso il risultato della funzione non può essere utilizzato come parte di un'espressione più grande ).  
   
-### Per correggere l'errore  
+### <a name="to-correct-this-error"></a>Per correggere l'errore  
   
--   Rimuovere l'istruzione `return` dal corpo principale del codice \(l'ambito globale\).  
+-   Rimuovere il `return` istruzione dal corpo principale del codice (ambito globale).  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Istruzione return](../../javascript/reference/return-statement-javascript.md)   
  [Oggetto Function](../../javascript/reference/function-object-javascript.md)   
- [Proprietà caller \(Function\)](../../javascript/reference/caller-property-function-javascript.md)
+ [Proprietà caller (Function)](../../javascript/reference/caller-property-function-javascript.md)

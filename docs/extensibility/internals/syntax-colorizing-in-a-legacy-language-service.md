@@ -1,42 +1,26 @@
 ---
 title: Colorazione della sintassi in un servizio di linguaggio Legacy | Documenti Microsoft
-ms.custom: 
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - vs-ide-sdk
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: conceptual
 helpviewer_keywords:
 - language services [managed package framework], syntax highlighting
 - colorization, supporting in language services [managed package framework]
 - syntax highlighting, supporting in language services [managed package framework]
 - language services [managed package framework], colorization
 ms.assetid: 1ca1736a-f554-42e4-a9c7-fe8c3c1717df
-caps.latest.revision: 28
+author: gregvanl
 ms.author: gregvanl
-manager: ghogen
-translation.priority.mt:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: 1d82a85958fd979a3d9d44375656b08356ef09d9
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
 ms.translationtype: MT
-ms.sourcegitcommit: 4a36302d80f4bc397128e3838c9abf858a0b5fe8
-ms.openlocfilehash: 1ec6732b511d437a24149d9cd4b20e593a13a8f0
-ms.contentlocale: it-it
-ms.lasthandoff: 09/26/2017
-
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="syntax-colorizing-in-a-legacy-language-service"></a>Colorazione della sintassi in un servizio di linguaggio Legacy
 La colorazione della sintassi è una funzionalità che determina i diversi elementi di un linguaggio di programmazione da visualizzare in un file di origine in diversi colori e stili. Per supportare questa funzionalità, è necessario fornire un parser o lo scanner in grado di identificare i tipi di elementi lessicali o token nel file. Molti linguaggi di distinguono le parole chiave, delimitatori (ad esempio le parentesi o parentesi graffe) e commenti per colorare li in modi diversi.  

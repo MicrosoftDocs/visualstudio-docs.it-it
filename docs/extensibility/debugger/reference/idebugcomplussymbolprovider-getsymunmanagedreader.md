@@ -1,62 +1,63 @@
 ---
-title: "IDebugComPlusSymbolProvider::GetSymUnmanagedReader | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "IDebugComPlusSymbolProvider::GetSymUnmanagedReader"
-  - "GetSymUnmanagedReader"
+title: IDebugComPlusSymbolProvider::GetSymUnmanagedReader | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology:
+- vs-ide-sdk
+ms.topic: conceptual
+helpviewer_keywords:
+- IDebugComPlusSymbolProvider::GetSymUnmanagedReader
+- GetSymUnmanagedReader
 ms.assetid: 8f1c1627-217f-4405-8141-7a2eb80310a5
-caps.latest.revision: 9
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 9
+author: gregvanl
+ms.author: gregvanl
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: 33c2a4add0f09df2aa28074c5c13b3df4ce43567
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# IDebugComPlusSymbolProvider::GetSymUnmanagedReader
-[!INCLUDE[vs2017banner](../../../code-quality/includes/vs2017banner.md)]
-
-Recupera il reader di simboli da utilizzare dal codice non gestito.  
+# <a name="idebugcomplussymbolprovidergetsymunmanagedreader"></a>IDebugComPlusSymbolProvider::GetSymUnmanagedReader
+Recupera il lettore di simboli per essere utilizzato da codice non gestito.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp#  
+```cpp  
 HRESULT GetSymUnmanagedReader(  
-   ULONG32    ulAppDomainID,  
-   GUID       guidModule,  
-   IUnknown** ppSymUnmanagedReader  
+   ULONG32    ulAppDomainID,  
+   GUID       guidModule,  
+   IUnknown** ppSymUnmanagedReader  
 );  
 ```  
   
-```c#  
+```csharp  
 int GetSymUnmanagedReader(  
-   uint       ulAppDomainID,  
-   Guid       guidModule,  
-   out object ppSymUnmanagedReader  
+   uint       ulAppDomainID,  
+   Guid       guidModule,  
+   out object ppSymUnmanagedReader  
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `ulAppDomainID`  
- \[in\]  Identificatore del dominio applicazione.  
+ [in] Identificatore del dominio dell'applicazione.  
   
  `guidModule`  
- \[in\]  Identificatore univoco del modulo.  
+ [in] Identificatore univoco del modulo.  
   
  `ppSymUnmanagedReader`  
- \[out\]  Restituisce l'oggetto che rappresenta il reader di simboli.  
+ [out] Restituisce l'oggetto che rappresenta il lettore di simboli.  
   
-## Valore restituito  
- Se l'operazione riesce, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
+## <a name="return-value"></a>Valore restituito  
+ Se ha esito positivo, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
   
-## Esempio  
- Nell'esempio seguente viene illustrato come implementare questo metodo per un oggetto **di CDebugSymbolProvider** che espone [IDebugComPlusSymbolProvider](../../../extensibility/debugger/reference/idebugcomplussymbolprovider.md) l'interfaccia.  
+## <a name="example"></a>Esempio  
+ Nell'esempio seguente viene illustrato come implementare questo metodo per un **CDebugSymbolProvider** oggetto che espone il [IDebugComPlusSymbolProvider](../../../extensibility/debugger/reference/idebugcomplussymbolprovider.md) interfaccia.  
   
-```cpp#  
+```cpp  
 HRESULT CDebugSymbolProvider::GetSymUnmanagedReader(  
     ULONG32 ulAppDomainID,  
     GUID guidModule,  
@@ -79,5 +80,5 @@ Error:
 }  
 ```  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IDebugComPlusSymbolProvider](../../../extensibility/debugger/reference/idebugcomplussymbolprovider.md)

@@ -1,49 +1,50 @@
 ---
-title: "IDebugPortPicker::SetSite | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "IDebugPortPicker::SetSite"
+title: IDebugPortPicker::SetSite | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology:
+- vs-ide-sdk
+ms.topic: conceptual
+helpviewer_keywords:
+- IDebugPortPicker::SetSite
 ms.assetid: 7319e187-adfe-4b3f-aec9-521356fb5a8a
-caps.latest.revision: 6
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 6
+author: gregvanl
+ms.author: gregvanl
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: 54286ded44f6acf44033c2fa5e2227ccaa688a64
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# IDebugPortPicker::SetSite
-[!INCLUDE[vs2017banner](../../../code-quality/includes/vs2017banner.md)]
-
-imposta il provider di servizi.  
+# <a name="idebugportpickersetsite"></a>IDebugPortPicker::SetSite
+Imposta il provider del servizio.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp#  
+```cpp  
 HRESULT SetSite(  
-   IServiceProvider * pSP  
+   IServiceProvider * pSP  
 );  
 ```  
   
-```c#  
+```csharp  
 public int SetSite(  
-   IServiceProvider pSP  
+   IServiceProvider pSP  
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `pSP`  
- \[in\]  Riferimento all'interfaccia del provider di servizi.  
+ [in] Riferimento all'interfaccia del provider del servizio.  
   
-## Valore restituito  
- Se l'operazione riesce, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
+## <a name="return-value"></a>Valore restituito  
+ Se ha esito positivo, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
   
-## Note  
- Questo metodo verrà chiamato prima che tutti gli altri metodi vengono chiamati.  
+## <a name="remarks"></a>Note  
+ Questo metodo verrà chiamato prima della chiamata a qualsiasi altro metodo.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IDebugPortPicker](../../../extensibility/debugger/reference/idebugportpicker.md)

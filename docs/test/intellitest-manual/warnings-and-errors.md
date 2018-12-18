@@ -1,39 +1,20 @@
 ---
 title: Avvisi ed errori | Strumento di test per sviluppatori Microsoft IntelliTest | Microsoft Docs
-ms.custom: 
 ms.date: 05/02/2017
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- vs-devops-test
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.technology: vs-ide-test
+ms.topic: conceptual
 helpviewer_keywords:
 - IntelliTest, Warnings and errors
-ms.assetid: F725B4A3-F79E-4F05-945F-847756CD69B9
-caps.latest.revision: 56
-ms.author: douge
+ms.author: gewarren
 manager: douge
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 45d36934cf1c46902cac566203cddf4a118b7fe4
-ms.openlocfilehash: 74f844b7e80892b6eb41d85c78e93083604e0ce6
-ms.contentlocale: it-it
-ms.lasthandoff: 06/02/2017
-
+ms.workload:
+- multiple
+author: gewarren
+ms.openlocfilehash: 5c66d208f89cc656eb22d874dc3efafe46c4d53f
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="warnings-and-errors"></a>Avvisi ed errori
 
@@ -360,4 +341,3 @@ In alcuni casi la modifica di un campo statico è accettabile:
 ## <a name="got-feedback"></a>Commenti?
 
 Pubblicare idee e richieste di funzionalità in **[UserVoice](https://visualstudio.uservoice.com/forums/121579-visual-studio-2015/category/157869-test-tools?query=IntelliTest)**.
-

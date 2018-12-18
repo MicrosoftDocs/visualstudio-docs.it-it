@@ -1,42 +1,45 @@
 ---
-title: "Propriet&#224; Debug.setNonUserCodeExceptions | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/18/2017"
-ms.prod: "windows-client-threshold"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-javascript"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-dev_langs: 
-  - "JavaScript"
-  - "TypeScript"
-  - "DHTML"
+title: "Proprietà Debug setnonusercodeexceptions | Documenti Microsoft"
+ms.custom: 
+ms.date: 01/18/2017
+ms.prod: windows-client-threshold
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-javascript
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+dev_langs:
+- JavaScript
+- TypeScript
+- DHTML
 ms.assetid: 1dd2abee-a415-41bb-a359-017da62f9485
-caps.latest.revision: 3
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.openlocfilehash: 3f53084d5580bc7b6b6c6356268dc60f519b2bd6
+ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/27/2017
 ---
-# Propriet&#224; Debug.setNonUserCodeExceptions
-Determina se un blocco try\-catch in questo ambito deve essere considerato dal debugger come non gestito dall'utente.  Le eccezioni possono essere classificate come generate, non gestite dall'utente o non gestite.  
+# <a name="debugsetnonusercodeexceptions-property"></a>Proprietà Debug.setNonUserCodeExceptions
+Determina se tutti i blocchi try-catch in questo ambito sono considerati dal debugger come gestita dall'utente. Eccezioni possono essere classificate come generata, gestita dall'utente o non gestite.  
   
- Se questa proprietà è impostata a `true` in un determinato ambito, il debugger può quindi decidere di intraprendere qualche azione \(ad esempio, interruzione\) sulle eccezioni generate in quell'ambito se lo sviluppatore desidera interrompere le eccezioni non gestite dall'utente.  Se questa proprietà è impostata a `false` equivale ad una proprietà che non è stata mai impostata.  
+ Se questa proprietà è impostata su `true` in un determinato ambito, il debugger può determinare quindi eseguire un'azione (ad esempio, interruzione) nelle eccezioni generate all'interno di tale ambito, se lo sviluppatore desidera interrompere l'esecuzione in eccezioni non gestite dall'utente. Se questa proprietà è impostata su `false` è lo stesso come se la proprietà non è stata impostata.  
   
- Per ulteriori informazioni sul debug, vedere l'[overview di debug Active Script](http://go.microsoft.com/fwlink/p/?LinkId=249469).  
+ Per ulteriori informazioni sul debug, vedere [Panoramica di debug Script ActiveX](http://go.microsoft.com/fwlink/p/?LinkId=249469).  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
 Debug.setNonUserCodeExceptions [= bool];  
 ```  
   
-## Esempio  
- Nel seguente codice viene mostrato come impostare questa proprietà.  
+## <a name="example"></a>Esempio  
+ Nel codice seguente viene mostrato come impostare questa proprietà.  
   
-```javascript  
+```JavaScript  
 (function () {  
     Debug.setNonUserCodeExceptions = true;  
     try{  
@@ -48,5 +51,5 @@ Debug.setNonUserCodeExceptions [= bool];
 })();  
 ```  
   
-## Requisiti  
+## <a name="requirements"></a>Requisiti  
  [!INCLUDE[jsv10](../../javascript/reference/includes/jsv10-md.md)]

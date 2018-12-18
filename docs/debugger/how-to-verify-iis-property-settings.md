@@ -1,82 +1,81 @@
 ---
-title: "Procedura: verificare le impostazioni delle propriet&#224; di IIS | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "FSharp"
-  - "VB"
-  - "CSharp"
-  - "C++"
-helpviewer_keywords: 
-  - "debug di applicazioni Web, risoluzione dei problemi"
-  - "strumento di amministrazione IIS"
-  - "IIS, impostazioni di proprietà"
-  - "proprietà [debugger], impostazione con lo strumento di amministrazione IIS"
-  - "applicazioni Web, impostazione di proprietà"
+title: 'Procedura: verificare le impostazioni delle proprietà IIS | Documenti Microsoft'
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology: vs-ide-debug
+ms.topic: conceptual
+dev_langs:
+- CSharp
+- VB
+- FSharp
+- C++
+helpviewer_keywords:
+- IIS, property settings
+- debugging Web applications, troubleshooting
+- IIS administration tool
+- Web applications, setting properties
+- properties [debugger], setting with IIS administration tool
 ms.assetid: 9efc50bf-02fb-4750-9b3e-f03c38f10d8b
-caps.latest.revision: 12
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 12
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: acd232b76ece37737833d071c8551d1319d4f151
+ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/18/2018
 ---
-# Procedura: verificare le impostazioni delle propriet&#224; di IIS
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
-È possibile impostare le proprietà di un'applicazione Web utilizzando lo strumento di amministrazione IIS.  Per consentire l'esecuzione dell'applicazione, è necessario che tali proprietà siano impostate correttamente, pertanto la verifica di queste impostazioni è spesso un passaggio necessario nel processo di risoluzione dei problemi.  
+# <a name="how-to-verify-iis-property-settings"></a>Procedura: verificare le impostazioni delle proprietà di IIS
+È possibile impostare le proprietà di un'applicazione Web utilizzando lo strumento di amministrazione IIS. Per consentire l'esecuzione dell'applicazione, è necessario che tali proprietà siano impostate correttamente, pertanto la verifica di queste impostazioni è spesso un passaggio necessario nel processo di risoluzione dei problemi.  
   
 > [!NOTE]
->  È possibile che le finestre di dialogo e i comandi di menu visualizzati siano diversi da quelli descritti nella Guida a seconda delle impostazioni attive o dell'edizione del programma.  Per modificare le impostazioni, scegliere **Importa\/Esporta impostazioni** dal menu **Strumenti**.  Per ulteriori informazioni, vedere [Customizing Development Settings in Visual Studio](http://msdn.microsoft.com/it-it/22c4debb-4e31-47a8-8f19-16f328d7dcd3).  
+>  Le finestre di dialogo e i comandi di menu visualizzati potrebbero essere diversi da quelli descritti nella Guida a seconda delle impostazioni attive o dell'edizione del programma. Per modificare le impostazioni, scegliere **Importa/Esporta impostazioni** dal menu **Strumenti** . Per altre informazioni, vedere [Personalizzare l'IDE di Visual Studio](../ide/personalizing-the-visual-studio-ide.md).  
   
-### Per controllare le impostazioni IIS dell'applicazione Web  
+### <a name="to-check-iis-settings-for-the-web-application"></a>Per controllare le impostazioni IIS dell'applicazione Web  
   
-1.  Aprire la finestra **Strumenti di amministrazione**. Fare clic sul pulsante **Start**, scegliere **Programmi**, quindi **Strumenti di amministrazione**.  Se **Strumenti di amministrazione** non è presente nel menu **Programmi**, cercarlo nel **Pannello di controllo**.  
+1.  Aprire il **strumenti di amministrazione** finestra: sul **avviare** dal menu **programmi**e quindi fare clic su **strumenti di amministrazione**. Se **strumenti di amministrazione** non viene visualizzato nel **programmi** menu, quindi cercare nella **Pannello di controllo**.  
   
-    -   In Windows 2000 selezionare **Gestione servizi Internet**.  
+    -   In Windows 2000, selezionare **Gestione servizi Internet**.  
   
     -   In Windows XP selezionare **Internet Information Services**.  
   
-    -   In Windows Server 2003 fare doppio clic su **Amministrazione server**.  
+    -   In Windows Server 2003, fare doppio clic su **amministrazione Server**.  
   
-         Viene visualizzata la finestra **Amministrazione server**.  In **Server applicazioni** fare clic su **Gestisci questo server applicazioni**.  
+         Il **amministrazione Server** verrà visualizzata la finestra. In **Server applicazioni**, fare clic su **gestire il server di applicazione**.  
   
-         Viene visualizzata la finestra **Server applicazioni**.  Aprire il nodo **Gestione Internet Information Services \(IIS\)** nel riquadro di sinistra.  
+         Il **Server applicazioni** verrà visualizzata la finestra. Aprire il **Gestione Internet Information Services (IIS)** nodo nel riquadro a sinistra.  
   
-2.  Nella finestra di dialogo fare clic sul nodo del controllo struttura ad albero per il computer.  Fare clic sul nodo **Siti Web**, quindi selezionare il nodo dell'applicazione Web.  Si tratterà di un nodo di sito Web, quindi di pari livello rispetto al nodo **Sito Web predefinito** o di un nodo di directory virtuale sottostante un nodo di sito Web.  
+2.  Nella finestra di dialogo fare clic sul nodo del controllo albero per il computer. Fare clic su di **siti Web** nodo, quindi selezionare il nodo dell'applicazione Web. Si tratterà di un nodo di sito Web, quindi di pari livello di **sito Web predefinito** nodo o un nodo di directory virtuale sottostante un nodo di sito Web esistente.  
   
-3.  Fare clic con il pulsante destro del mouse sull'applicazione Web, quindi scegliere **Proprietà** dal menu di scelta rapida.  
+3.  Il pulsante destro l'applicazione Web e il menu di scelta rapida, fare clic su **proprietà**.  
   
 4.  Verificare le impostazioni di sicurezza dell'applicazione Web:  
   
-    1.  Nella finestra **Proprietà** dell'applicazione Web fare clic sulla scheda **Sicurezza directory** e scegliere **Modifica**.  
+    1.  Nell'applicazione Web **proprietà** finestra, fare clic su di **protezione Directory** scheda e fare clic su **modifica**.  
   
-    2.  Nella finestra di dialogo **Metodi di autenticazione** selezionare **Consenti accesso anonimo** e **Autenticazione Windows integrata**, se queste opzioni non sono già selezionate.  
+    2.  Nel **metodi di autenticazione** nella finestra di dialogo **Abilita accesso anonimo** e **autenticazione integrata di Windows** se non sono già selezionate.  
   
-    3.  Scegliere **OK** per chiudere la finestra di dialogo **Metodi di autenticazione**.  
+    3.  Fare clic su **OK** per chiudere la **metodi di autenticazione** la finestra di dialogo.  
   
-5.  Per un'applicazione ATL Server verificare che il verbo DEBUG sia associato all'estensione ISAPI.  Per ulteriori informazioni, vedere [How to: Associate DEBUG Verb with Extension](http://msdn.microsoft.com/it-it/50d261d3-4bd4-41c0-b44e-3591086f121e).  
+5.  Per un'applicazione ATL Server verificare che il verbo DEBUG sia associato all'estensione ISAPI. Per ulteriori informazioni, vedere [procedura: associare verbo DEBUG con estensione](http://msdn.microsoft.com/en-us/50d261d3-4bd4-41c0-b44e-3591086f121e).  
   
-6.  Per un'applicazione [!INCLUDE[vstecasp](../code-quality/includes/vstecasp_md.md)], accertarsi che la cartella virtuale dell'applicazione disponga di un Nome applicazione impostato in **Gestione Internet Information Services \(IIS\)**, **Gestione servizi Internet** o **Internet Information Services**.  
+6.  Per un [!INCLUDE[vstecasp](../code-quality/includes/vstecasp_md.md)] applicazione, assicurarsi che la cartella virtuale dell'applicazione disponga di un nome applicazione impostato in **Gestione Internet Information Services (IIS)**, **Gestione servizi Internet** o  **Internet Information Services**.  
   
-    1.  Nella finestra **Proprietà** dell'applicazione Web scegliere la scheda **Directory**, se l'applicazione è contenuta in una directory virtuale, o **Home directory**, se è contenuta in un sito Web.  
+    1.  Nell'applicazione Web **proprietà** finestra, seleziona il **Directory** scheda, se l'applicazione è in una directory virtuale, o **Home Directory** scheda, se l'applicazione è in un sito Web.  
   
-    2.  Verificare che il nome in **Percorso locale** corrisponda al nome della directory in cui l'applicazione è stata effettivamente distribuita.  
+    2.  Verificare che il nome di **percorso locale** corrisponde al nome della directory in cui l'applicazione è stata effettivamente distribuita.  
   
-    3.  In **Impostazioni applicazione** digitare il nome della directory radice che contiene l'applicazione.  
+    3.  In **le impostazioni dell'applicazione**, digitare il nome della directory radice che contiene l'applicazione.  
   
-    4.  Scegliere **OK** per chiudere la finestra di dialogo **Proprietà**.  
+    4.  Fare clic su **OK** per chiudere la **proprietà** la finestra di dialogo.  
   
-7.  Per un'applicazione [!INCLUDE[vstecasp](../code-quality/includes/vstecasp_md.md)], fare clic sulla scheda **ASP.NET** e verificare che sia specificata la versione corretta di [!INCLUDE[vstecasp](../code-quality/includes/vstecasp_md.md)].  
+7.  Per un [!INCLUDE[vstecasp](../code-quality/includes/vstecasp_md.md)] applicazione, fare clic su di **ASP.NET** scheda e verificare che la versione corretta di [!INCLUDE[vstecasp](../code-quality/includes/vstecasp_md.md)] specificato.  
   
-8.  Scegliere **OK** per chiudere la finestra di dialogo **Proprietà**.  
+8.  Fare clic su **OK** per chiudere la **proprietà** la finestra di dialogo.  
   
-9. Scegliere **OK** per chiudere le finestre di dialogo **Gestione Internet Information Services \(IIS\)**, **Gestione servizi Internet** o **Internet Information Services**.  
+9. Fare clic su **OK** per chiudere la **Gestione Internet Information Services (IIS)**, **Gestione servizi Internet**, o **Internet Information Services**la finestra di dialogo.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Risoluzione dei problemi](../debugger/debugging-web-applications-troubleshooting.md)

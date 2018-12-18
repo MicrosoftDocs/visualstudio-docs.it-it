@@ -1,47 +1,46 @@
 ---
-title: "IDiaSymbol::get_language | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "IDiaSymbol::get_language (metodo)"
+title: 'Idiasymbol:: Get_language | Documenti Microsoft'
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology: vs-ide-debug
+ms.topic: conceptual
+dev_langs:
+- C++
+helpviewer_keywords:
+- IDiaSymbol::get_language method
 ms.assetid: c759ad3c-1c21-4234-869b-86aa3a608a38
-caps.latest.revision: 8
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 8
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 1b7797e4b6eb2aa35f13350580b110c757d7a5db
+ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/18/2018
 ---
-# IDiaSymbol::get_language
-[!INCLUDE[vs2017banner](../../code-quality/includes/vs2017banner.md)]
-
-Recupera il linguaggio del database di origine.  
+# <a name="idiasymbolgetlanguage"></a>IDiaSymbol::get_language
+Recupera la lingua dell'origine.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp#  
-HRESULT get_language (   
-   DWORD* pRetVal  
+```C++  
+HRESULT get_language (   
+   DWORD* pRetVal  
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `pRetVal`  
- \[out\]  restituisce un valore dal [Enumerazione CV\_CFL\_LANG](../../debugger/debug-interface-access/cv-cfl-lang.md) enumerazione che specifica il linguaggio del database di origine.  
+ [out] Restituisce un valore di [CV_CFL_LANG (enumerazione)](../../debugger/debug-interface-access/cv-cfl-lang.md) enumerazione che specifica la lingua dell'origine.  
   
-## Valore restituito  
- Se l'operazione riesce, restituisce `S_OK`; in caso contrario, restituisce  `S_FALSE` o codice di errore.  
+## <a name="return-value"></a>Valore restituito  
+ Se ha esito positivo, restituisce `S_OK`; in caso contrario, restituisce `S_FALSE` o codice di errore.  
   
 > [!NOTE]
->  un valore restituito di `S_FALSE` indica che la proprietà non è disponibile per il simbolo.  
+>  Valore restituito di `S_FALSE` significa che la proprietà non è disponibile per il simbolo.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IDiaSymbol](../../debugger/debug-interface-access/idiasymbol.md)   
- [Enumerazione CV\_CFL\_LANG](../../debugger/debug-interface-access/cv-cfl-lang.md)
+ [CV_CFL_LANG (enumerazione)](../../debugger/debug-interface-access/cv-cfl-lang.md)

@@ -13,14 +13,10 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: 5db97d19b1b823388a465bba15d057b30ff0b3ce
 ms.openlocfilehash: 96d8536857db569ed9286e3a327c366c22bb1b84
-
+ms.sourcegitcommit: 3b692c9bf332b7b9150901e16daf99a64b599fee
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/10/2018
 ---
 XBAP
-
-
-<!--HONumber=Feb17_HO4-->
-
-

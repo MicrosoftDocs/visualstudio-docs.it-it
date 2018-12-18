@@ -1,49 +1,53 @@
 ---
-title: "Costante undefined (JavaScript) | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/18/2017"
-ms.prod: "windows-client-threshold"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-javascript"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "undefined"
-dev_langs: 
-  - "JavaScript"
-  - "TypeScript"
-  - "DHTML"
-helpviewer_keywords: 
-  - "undefined (proprietà)"
+title: non definito (costante) (JavaScript) | Documenti Microsoft
+ms.custom: 
+ms.date: 01/18/2017
+ms.prod: windows-client-threshold
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-javascript
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords:
+- undefined
+dev_langs:
+- JavaScript
+- TypeScript
+- DHTML
+helpviewer_keywords:
+- undefined property
 ms.assetid: 2a689d7d-00b0-48fb-9c95-5c2867bde006
-caps.latest.revision: 20
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 20
+caps.latest.revision: 
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.openlocfilehash: 8ba7fa8b160e4f5d954c8d6545da5fae41c2f74b
+ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/27/2017
 ---
-# Costante undefined (JavaScript)
-Valore che non è mai stato definito, quale una variabile che non è stata inizializzata.  
+# <a name="undefined-constant-javascript"></a>Costante undefined (JavaScript)
+Un valore che non è stata mai definito, ad esempio una variabile che non è stata inizializzata.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
 undefined  
 ```  
   
-## Note  
- La costante `undefined` è un membro dell'oggetto `Global` e diventa disponibile quando viene inizializzato il motore di script.  Quando una variabile viene dichiarata ma non inizializzata, il valore restituito è **undefined**.  
+## <a name="remarks"></a>Note  
+ Il `undefined` costante è un membro del `Global` dell'oggetto e diventa disponibile quando viene inizializzato il motore di script. Quando una variabile dichiarata ma non inizializzata, il valore è **definito**.  
   
- Se una variabile non è stata dichiarata, non è possibile confrontarla con il valore `undefined`, ma è possibile confrontarne il tipo con la stringa "undefined".  
+ Se non è stata dichiarata una variabile, non è possibile confrontare a `undefined`, ma è possibile confrontare il tipo della variabile in cui la stringa "undefined".  
   
- La costante `undefined` risulta utile durante la verifica o l'impostazione esplicita di una variabile come non definita.  
+ Il `undefined` costante è utile quando in modo esplicito di test o impostare una variabile non definita.  
   
-## Esempio  
- Nell'esempio seguente viene illustrato come utilizzare la costante `undefined`.  
+## <a name="example"></a>Esempio  
+ Nell'esempio seguente viene illustrato come utilizzare il `undefined` costante.  
   
-```javascript  
+```JavaScript  
 // A variable that has not been initialized.  
 var declared;  
   
@@ -66,10 +70,10 @@ document.write("typeof notDeclared is " + typeof(notDeclared));
 // typeof notDeclared is undefined  
 ```  
   
-## Requisiti  
- La proprietà `undefined` è stata introdotta in [!INCLUDE[jsv55text](../../javascript/reference/includes/jsv55text-md.md)] ed è stata resa di sola lettura in [!INCLUDE[jsv9textspecific](../../javascript/reference/includes/jsv9textspecific-md.md)].  
+## <a name="requirements"></a>Requisiti  
+ Il `undefined` proprietà è stata introdotta in [!INCLUDE[jsv55text](../../javascript/reference/includes/jsv55text-md.md)]ed è stato eseguito in sola lettura [!INCLUDE[jsv9textspecific](../../javascript/reference/includes/jsv9textspecific-md.md)].  
   
- **Si applica a**: [Oggetto Global](../../javascript/reference/global-object-javascript.md)  
+ **Si applica a**: [oggetto globale](../../javascript/reference/global-object-javascript.md)  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Operatore typeof](../../javascript/reference/typeof-operator-decrementjavascript.md)

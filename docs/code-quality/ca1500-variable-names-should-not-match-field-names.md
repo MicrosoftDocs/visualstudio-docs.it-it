@@ -1,13 +1,8 @@
 ---
-title: 'CA1500: Variable names should not match field names | Microsoft Docs'
-ms.custom: 
+title: 'CA1500: I nomi delle variabili non devono corrispondere ai nomi dei campi'
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- vs-devops-test
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.technology: vs-ide-code-analysis
+ms.topic: reference
 f1_keywords:
 - VariableNamesShouldNotMatchFieldNames
 - CA1500
@@ -15,53 +10,39 @@ helpviewer_keywords:
 - VariableNamesShouldNotMatchFieldNames
 - CA1500
 ms.assetid: fa0e5029-79e9-4a33-8576-787ac3c26c39
-caps.latest.revision: 24
-author: stevehoag
-ms.author: shoag
-manager: wpickett
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: HT
-ms.sourcegitcommit: eb5c9550fd29b0e98bf63a7240737da4f13f3249
-ms.openlocfilehash: 1ca10e7738f912d677488264cbea2a5f4f58390c
-ms.contentlocale: it-it
-ms.lasthandoff: 08/30/2017
-
+author: gewarren
+ms.author: gewarren
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: f291b603c94292cc86536a212a4ab8286600740b
+ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/19/2018
 ---
-# <a name="ca1500-variable-names-should-not-match-field-names"></a>CA1500: Variable names should not match field names
-|||  
-|-|-|  
-|TypeName|VariableNamesShouldNotMatchFieldNames|  
-|CheckId|CA1500|  
-|Category|Microsoft.Maintainability|  
-|Breaking Change|When fired on a parameter that has the same name as a field:<br /><br /> -   Non-breaking - If both the field and method that declares the parameter cannot be seen outside the assembly, regardless of the change you make.<br />-   Breaking - If you change the name of the field and can be seen outside the assembly.<br />-   Breaking - If you change the name of the parameter and the method that declares it can be seen outside the assembly.<br /><br /> When fired on a local variable that has the same name as a field:<br /><br /> -   Non-breaking - If the field cannot be seen outside the assembly, regardless of the change you make.<br />-   Non-breaking - If you change the name of the local variable and do not change the name of the field.<br />-   Breaking - If you change the name of the field and it can be seen outside the assembly.|  
-  
-## <a name="cause"></a>Cause  
- An instance method declares a parameter or a local variable whose name matches an instance field of the declaring type. To catch local variables that violate the rule, the tested assembly must be built by using debugging information and the associated program database (.pdb) file must be available.  
-  
-## <a name="rule-description"></a>Rule Description  
- When the name of an instance field matches a parameter or a local variable name, the instance field is accessed by using the `this` (`Me` in [!INCLUDE[vbprvb](../code-quality/includes/vbprvb_md.md)]) keyword when inside the method body. When maintaining code, it is easy to forget this difference and assume that the parameter/local variable refers to the instance field, which leads to errors. This is true especially for lengthy method bodies.  
-  
-## <a name="how-to-fix-violations"></a>How to Fix Violations  
- To fix a violation of this rule, rename either the parameter/variable or the field.  
-  
-## <a name="when-to-suppress-warnings"></a>When to Suppress Warnings  
- Do not suppress a warning from this rule.  
-  
-## <a name="example"></a>Example  
- The following example shows two violations of the rule.  
-  
- [!code-vb[FxCop.Maintainability.VarMatchesField#1](../code-quality/codesnippet/VisualBasic/ca1500-variable-names-should-not-match-field-names_1.vb)] [!code-csharp[FxCop.Maintainability.VarMatchesField#1](../code-quality/codesnippet/CSharp/ca1500-variable-names-should-not-match-field-names_1.cs)]
+# <a name="ca1500-variable-names-should-not-match-field-names"></a>CA1500: I nomi delle variabili non devono corrispondere ai nomi dei campi
+|||
+|-|-|
+|TypeName|VariableNamesShouldNotMatchFieldNames|
+|CheckId|CA1500|
+|Category|Microsoft.Maintainability|
+|Modifica importante|Quando viene generato in un parametro che ha lo stesso nome di un campo:<br /><br /> Unificatori - se il campo e il metodo che dichiara il parametro non può essere visualizzate all'esterno dell'assembly, indipendentemente dalle modifiche apportate.<br />Sostanziale - Se si modifica il nome del campo e possono essere visualizzati all'esterno dell'assembly.<br />-Sostanziale - Se si modifica il nome del parametro e il metodo che lo dichiara può essere visualizzato all'esterno dell'assembly.<br /><br /> Quando viene generato su una variabile locale avente lo stesso nome di un campo:<br /><br /> Unificatori - se il campo non può essere visibile all'esterno dell'assembly, indipendentemente dalle modifiche apportate.<br />Unificatori - se si modifica il nome della variabile locale e non modifica il nome del campo.<br />-Sostanziale - Se si modifica il nome del campo e può essere visualizzato all'esterno dell'assembly.|
+
+## <a name="cause"></a>Causa
+ Un metodo di istanza dichiara un parametro o una variabile locale il cui nome corrisponde a un campo di istanza del tipo dichiarante. Per intercettare le variabili locali che violano la regola, l'assembly testato deve essere compilato utilizzando le informazioni di debug e il file di database (con estensione pdb) del programma associato deve essere disponibile.
+
+## <a name="rule-description"></a>Descrizione della regola
+ Quando il nome di un campo di istanza corrisponde a un parametro o un nome di variabile locale, il campo di istanza si accede tramite il `this` (`Me` in [!INCLUDE[vbprvb](../code-quality/includes/vbprvb_md.md)]) (parola chiave) all'interno del corpo del metodo. Quando la gestione del codice, è facile dimenticare tale differenza e si presuppone che il parametro o la variabile locale fa riferimento al campo di istanza, con un conseguente errori. Ciò vale soprattutto per i corpi di metodo di lunga durata.
+
+## <a name="how-to-fix-violations"></a>Come correggere le violazioni
+ Per correggere una violazione di questa regola, rinominare il parametro o una variabile o il campo.
+
+## <a name="when-to-suppress-warnings"></a>Esclusione di avvisi
+ Non escludere un avviso da questa regola.
+
+## <a name="example"></a>Esempio
+ L'esempio seguente mostra due violazioni della regola.
+
+ [!code-vb[FxCop.Maintainability.VarMatchesField#1](../code-quality/codesnippet/VisualBasic/ca1500-variable-names-should-not-match-field-names_1.vb)]
+ [!code-csharp[FxCop.Maintainability.VarMatchesField#1](../code-quality/codesnippet/CSharp/ca1500-variable-names-should-not-match-field-names_1.cs)]

@@ -1,51 +1,52 @@
 ---
-title: "IDebugExceptionEvent2::GetExceptionDescription | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "IDebugExceptionEvent2::GetExceptionDescription"
-helpviewer_keywords: 
-  - "IDebugExceptionEvent2::GetExceptionDescription"
+title: IDebugExceptionEvent2::GetExceptionDescription | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology:
+- vs-ide-sdk
+ms.topic: conceptual
+f1_keywords:
+- IDebugExceptionEvent2::GetExceptionDescription
+helpviewer_keywords:
+- IDebugExceptionEvent2::GetExceptionDescription
 ms.assetid: d07d458f-5729-47e4-9b77-1bd59c61a75a
-caps.latest.revision: 10
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 10
+author: gregvanl
+ms.author: gregvanl
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: 35baacc0eca2919e12a9056b902ab551e7f824bd
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# IDebugExceptionEvent2::GetExceptionDescription
-[!INCLUDE[vs2017banner](../../../code-quality/includes/vs2017banner.md)]
-
-Ottiene una descrizione visualizzabile dell'eccezione.  
+# <a name="idebugexceptionevent2getexceptiondescription"></a>IDebugExceptionEvent2::GetExceptionDescription
+Ottiene una descrizione dell'eccezione visualizzabile.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp#  
-HRESULT GetExceptionDescription(   
-   BSTR* pbstrDescription  
+```cpp  
+HRESULT GetExceptionDescription(   
+   BSTR* pbstrDescription  
 );  
 ```  
   
-```c#  
-int GetExceptionDescription(   
-   out string pbstrDescription  
+```csharp  
+int GetExceptionDescription(   
+   out string pbstrDescription  
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `pbstrDescription`  
- \[out\]  Restituisce una descrizione visualizzabile dell'eccezione.  
+ [out] Restituisce una descrizione dell'eccezione visualizzabile.  
   
-## Valore restituito  
- Se l'operazione riesce, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
+## <a name="return-value"></a>Valore restituito  
+ Se ha esito positivo, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
   
-## Note  
- La stringa restituita da questo metodo viene in genere il nome dell'eccezione e viene visualizzata nella finestra di output quando si verifica l'eccezione.  
+## <a name="remarks"></a>Note  
+ La stringa restituita da questo metodo viene in genere il nome dell'eccezione e viene visualizzata nel **Output** finestra quando si verifica l'eccezione.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IDebugExceptionEvent2](../../../extensibility/debugger/reference/idebugexceptionevent2.md)

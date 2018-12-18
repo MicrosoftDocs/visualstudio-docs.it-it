@@ -1,13 +1,9 @@
 ---
 title: Debug di applicazioni multithreading in Visual Studio | Documenti Microsoft
-ms.custom: 
+ms.custom: ''
 ms.date: 09/05/2017
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- vs-ide-debug
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.technology: vs-ide-debug
+ms.topic: conceptual
 f1_keywords:
 - vs.debug.gputthreads
 dev_langs:
@@ -22,30 +18,16 @@ helpviewer_keywords:
 - multithreaded debugging
 - high-performance debugging
 ms.assetid: 9d175bc2-1d95-4c47-9bc3-9755af968a9c
-caps.latest.revision: 25
 author: mikejo5000
 ms.author: mikejo
-manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: HT
-ms.sourcegitcommit: 1d4298d60886d8fe8b402b59b1838a4171532ab1
-ms.openlocfilehash: c5a123ccb276e01953b2168d50e0d633640d384a
-ms.contentlocale: it-it
-ms.lasthandoff: 09/26/2017
-
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: cd789bf9b820e13a265cceffbf3c6000ab4f0331
+ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="debug-multithreaded-applications-in-visual-studio"></a>Debug di applicazioni multithreading in Visual Studio
 Un thread è una sequenza di istruzioni in base alla quale il sistema operativo esegue l'allocazione del tempo processore. Ogni processo in esecuzione nel sistema operativo è composto da almeno un thread. I processi composti da più di un thread sono detti multithreading.  
@@ -58,7 +40,7 @@ Visual Studio fornisce diversi strumenti per eseguire il debug di applicazioni m
 
 - Per i thread sono i principali strumenti per il debug dei thread di **thread** (finestra), gli indicatori dei thread nelle finestre di origine, **stack in parallelo** finestra **espressioni di controllo parallelo** finestra e il **posizione di Debug** barra degli strumenti. Per apprendere la **thread** finestra e **posizione di Debug** sulla barra degli strumenti, vedere [procedura dettagliata: eseguire il Debug utilizzando la finestra thread](../debugger/how-to-use-the-threads-window.md). Per informazioni su come utilizzare il **stack in parallelo** e **espressioni di controllo parallelo** windows, vedere [Introduzione al debug di un'applicazione multithreading](../debugger/get-started-debugging-multithreaded-apps.md). In entrambi gli argomenti viene illustrato come utilizzare gli indicatori dei thread.
   
-- Per il codice che utilizza il [Task Parallel Library (TPL)](/dotnet/standard/parallel-programming/task-parallel-library-tpl) o [Runtime di concorrenza](/cpp/parallel/concrt/concurrency-runtime/), sono i principali strumenti per il debug di **stack in parallelo** finestra, il **Espressioni di controllo parallelo** finestra e **attività** finestra (la **attività** finestra supporta anche JavaScript). Per iniziare, vedere [procedura dettagliata: debug di un'applicazione parallela](../debugger/walkthrough-debugging-a-parallel-application.md) e [procedura dettagliata: debug di un'applicazione C++ AMP](/cpp/parallel/amp/walkthrough-debugging-a-cpp-amp-application.md). 
+- Per il codice che utilizza il [Task Parallel Library (TPL)](/dotnet/standard/parallel-programming/task-parallel-library-tpl) o [Runtime di concorrenza](/cpp/parallel/concrt/concurrency-runtime/), sono i principali strumenti per il debug di **stack in parallelo** finestra, il **Espressioni di controllo parallelo** finestra e **attività** finestra (la **attività** finestra supporta anche JavaScript). Per iniziare, vedere [procedura dettagliata: debug di un'applicazione parallela](../debugger/walkthrough-debugging-a-parallel-application.md) e [procedura dettagliata: debug di un'applicazione C++ AMP](/cpp/parallel/amp/walkthrough-debugging-a-cpp-amp-application). 
 
 - Per il debug di thread nella GPU, lo strumento principale è il **thread GPU** finestra. Vedere [procedura: utilizzare la finestra thread GPU](../debugger/how-to-use-the-gpu-threads-window.md).  
 
@@ -68,7 +50,7 @@ Visual Studio offre anche potenti punti di interruzione e punti di analisi che p
   
 Il debug di un'applicazione multithreading dotata di un'interfaccia utente può essere particolarmente complesso. In tal caso, potrebbe essere necessario eseguire l'applicazione in un secondo computer e utilizzare il debug remoto. Per informazioni, vedere [il debug remoto](../debugger/remote-debugging.md).  
   
-## <a name="in-this-section"></a>Contenuto della sezione
+## <a name="in-this-section"></a>In questa sezione
  [Introduzione al debug di un'applicazione multithreading](../debugger/get-started-debugging-multithreaded-apps.md).  
  Presentazione guidata delle funzionalità, con particolare attenzione alle funzionalità di debug dei thread di **stack in parallelo** finestra e **espressioni di controllo parallelo** finestra.
 
@@ -78,7 +60,7 @@ Il debug di un'applicazione multithreading dotata di un'interfaccia utente può 
  [Eseguire il debug di più processi](../debugger/debug-multiple-processes.md)  
  Spiega la procedura per eseguire il debug di più processi
 
- [Procedura dettagliata: Eseguire il Debug tramite la finestra thread](../debugger/how-to-use-the-threads-window.md).  
+ [Procedura dettagliata: Debug tramite la finestra thread](../debugger/how-to-use-the-threads-window.md).  
  Procedura dettagliata in cui viene illustrato come utilizzare il **thread** finestra e **posizione di Debug** barra degli strumenti. 
 
  [Procedura dettagliata: Debug di un'applicazione parallela](../debugger/walkthrough-debugging-a-parallel-application.md)  
@@ -119,5 +101,5 @@ Il debug di un'applicazione multithreading dotata di un'interfaccia utente può 
  Informazioni sul threading ed esempio di codice per programmatori C++ che utilizzano MFC.  
   
 ## <a name="see-also"></a>Vedere anche  
- [Debug di thread e processi](../debugger/debug-threads-and-processes.md)   
+ [Eseguire il debug di thread e processi](../debugger/debug-threads-and-processes.md)   
  [Debug remoto](../debugger/remote-debugging.md)

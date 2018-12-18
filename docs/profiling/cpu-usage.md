@@ -2,47 +2,31 @@
 title: Analizzare l'uso della CPU in Visual Studio | Microsoft Docs
 ms.custom: H1Hack27Feb2017
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- vs-ide-debug
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.technology: vs-ide-debug
+ms.topic: conceptual
 ms.assetid: 7501a20d-04a1-480f-a69c-201524aa709d
-caps.latest.revision: 8
 author: mikejo5000
 ms.author: mikejo
-manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 267d0a55ae648c68ed4228b3ad4a206bad1f5148
+ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
 ms.translationtype: HT
-ms.sourcegitcommit: 17defdd0b96ec1c3273fc6b845af844b031a4a17
-ms.openlocfilehash: fc00b770461862a0e577b4ffbe20710227e3b711
-ms.contentlocale: it-it
-ms.lasthandoff: 09/06/2017
-
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/19/2018
 ---
 # <a name="analyze-cpu-usage"></a>Analizzare l'utilizzo della CPU
 Quando è necessario analizzare i problemi relativi alle prestazioni dell'app, è consigliabile partire dall'analisi dell'utilizzo della CPU. Lo strumento **Utilizzo CPU** indica i punti in cui la CPU impiega più tempo per l'esecuzione di codice di Visual C++, Visual C#/Visual Basic e JavaScript. A partire da Visual Studio 2015 Update 1, è possibile visualizzare i dettagli dell'utilizzo della CPU a livello di singole funzioni senza uscire dal debugger. È possibile attivare o disattivare la profilatura della CPU durante il debug e visualizzare i risultati quando l'esecuzione viene interrotta, ad esempio in corrispondenza di un punto di interruzione.  
   
-Sono disponibili diverse opzioni per eseguire e gestire la sessione di diagnostica. È ad esempio possibile eseguire lo strumento **Utilizzo CPU** in computer locali o remoti oppure in un simulatore o in un emulatore. È possibile analizzare le prestazioni di un progetto aperto in Visual Studio o collegato a un'app in esecuzione oppure avviare un'app installata da Windows Store. Per altre informazioni, vedere [Run Profiling Tools with or without the Debugger](../profiling/running-profiling-tools-with-or-without-the-debugger.md) (Eseguire gli strumenti di profilatura con o senza il debugger). Per informazioni dettagliate su come analizzare le prestazioni di un'app di Windows Store, vedere [Analizzare l'utilizzo della CPU in un'app di Windows universale (UWP)](analyze-cpu-usage-in-a-windows-universal-app.md). 
+Sono disponibili diverse opzioni per eseguire e gestire la sessione di diagnostica. È ad esempio possibile eseguire lo strumento **Utilizzo CPU** in computer locali o remoti oppure in un simulatore o in un emulatore. È possibile analizzare le prestazioni di un progetto aperto in Visual Studio o collegato a un'app in esecuzione oppure avviare un'app installata da Microsoft Store. Per altre informazioni, vedere [Run Profiling Tools with or without the Debugger](../profiling/running-profiling-tools-with-or-without-the-debugger.md) (Eseguire gli strumenti di profilatura con o senza il debugger).
 
 In questo caso viene illustrato come raccogliere e analizzare l'utilizzo della CPU con build di rilascio. Per analizzare l'utilizzo della CPU durante il debug, vedere la [Guida per principianti alla profilatura delle prestazioni](../profiling/beginners-guide-to-performance-profiling.md). 
+
+> [!NOTE]
+> Per .NET Core e ASP.NET Core, lo strumento Utilizzo CPU non offre attualmente risultati accurati con i file PBD portabili. Usare invece file PDB completi.
   
-##  <a name="BKMK_Collect_CPU_usage_data"></a> Raccogliere i dati di Utilizzo CPU  
+##  <a name="BKMK_Collect_CPU_usage_data"></a> Raccogliere i dati di utilizzo della CPU  
   
 1.  In Visual Studio impostare la configurazione della soluzione su **Versione** e scegliere la destinazione di distribuzione.  
   
@@ -128,4 +112,3 @@ In questo caso viene illustrato come raccogliere e analizzare l'utilizzo della C
 -   `MainPage+<GetMaxNumberAsyncButton_Click>d__3::MoveNext` mostra l'attività necessaria per pianificare e avviare le 48 attività che eseguono il wrapping della chiamata a `GetNumberAsync`.  
   
 -   `MainPage::<GetNumberAsync>b__b` mostra le operazioni eseguite dalle attività che chiamano `GetNumber`.
-

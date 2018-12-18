@@ -1,13 +1,9 @@
 ---
 title: Elemento Output (MSBuild) | Microsoft Docs
-ms.custom: 
+ms.custom: ''
 ms.date: 03/13/2017
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- vs-ide-sdk
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.technology: msbuild
+ms.topic: reference
 f1_keywords:
 - http://schemas.microsoft.com/developer/msbuild/2003#Output
 dev_langs:
@@ -19,29 +15,16 @@ helpviewer_keywords:
 - <Output> Element [MSBuild]
 - Output Element [MSBuild]
 ms.assetid: 34bc7cd1-efd3-4b57-b691-4584eeb6a0e9
-caps.latest.revision: 13
-author: kempb
-ms.author: kempb
-manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: 0e5a449ef396e7b9fd23a2c018bdc7f8791b7b38
-ms.openlocfilehash: 7a72f1faa5cfda2efb650f037ffdfcab072760c7
-ms.lasthandoff: 03/13/2017
-
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 6e5f1d4dec10970770202e685860381cdec15608
+ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/19/2018
 ---
 # <a name="output-element-msbuild"></a>Elemento Output (MSBuild)
 Archivia i valori di output dell'attività in elementi e proprietà.  
@@ -103,4 +86,3 @@ Archivia i valori di output dell'attività in elementi e proprietà.
 ## <a name="see-also"></a>Vedere anche  
  [Informazioni di riferimento sullo schema del file di progetto](../msbuild/msbuild-project-file-schema-reference.md)   
  [Attività](../msbuild/msbuild-tasks.md)
-

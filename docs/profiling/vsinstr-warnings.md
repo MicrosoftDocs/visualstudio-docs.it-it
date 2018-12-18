@@ -1,13 +1,9 @@
 ---
 title: Avvisi di VSInstr | Microsoft Docs
-ms.custom: 
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- vs-ide-debug
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.technology: vs-ide-debug
+ms.topic: conceptual
 helpviewer_keywords:
 - instrumentation, VSInstr tool
 - warnings
@@ -15,30 +11,16 @@ helpviewer_keywords:
 - warnings, VSInstr tool
 - performance tools, VSInstr tool
 ms.assetid: 47512bc9-a8e9-4628-883a-d9888edab786
-caps.latest.revision: 20
 author: mikejo5000
 ms.author: mikejo
-manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 3d32d11a430227800cb3ed53831a9565eb6adeb3
-ms.openlocfilehash: e13a7e293038cf3a9b085d14e428767c561e5e3e
-ms.contentlocale: it-it
-ms.lasthandoff: 05/30/2017
-
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 60ea2bcf1770e8c20db61c93a2b4ed6516b0daff
+ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/19/2018
 ---
 # <a name="vsinstr-warnings"></a>Avvisi di VSInstr
 La tabella seguente elenca gli avvisi generati dallo strumento VSInstr.exe. Per impedire la visualizzazione dei messaggi, è possibile usare l'opzione NOWARN insieme al numero di avviso appropriato.  

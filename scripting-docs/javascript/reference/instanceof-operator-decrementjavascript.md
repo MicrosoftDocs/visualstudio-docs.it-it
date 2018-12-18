@@ -1,56 +1,60 @@
 ---
-title: "Operatore instanceof (JavaScript) | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/18/2017"
-ms.prod: "windows-client-threshold"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-javascript"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "instanceof_JavaScriptKeyword"
-dev_langs: 
-  - "JavaScript"
-  - "TypeScript"
-  - "DHTML"
-helpviewer_keywords: 
-  - "instanceOf (operatore)"
+title: Operatore instanceof (JavaScript) | Documenti Microsoft
+ms.custom: 
+ms.date: 01/18/2017
+ms.prod: windows-client-threshold
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-javascript
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords:
+- instanceof_JavaScriptKeyword
+dev_langs:
+- JavaScript
+- TypeScript
+- DHTML
+helpviewer_keywords:
+- instanceOf operator
 ms.assetid: 92467bdc-56b5-42dc-adbd-a219776454d2
-caps.latest.revision: 17
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 17
+caps.latest.revision: 
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.openlocfilehash: b2124fe815c89c3c157be3ea729fa7edb9d96b39
+ms.sourcegitcommit: f89ed5fc2e5078213e30a6ade4604e34df48181f
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 01/13/2018
 ---
-# Operatore instanceof (JavaScript)
+# <a name="instanceof-operator-javascript"></a>Operatore instanceof (JavaScript)
 Restituisce un valore booleano che indica se un oggetto è o meno un'istanza di una classe particolare.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
   
 result = object instanceof class  
 ```  
   
-## Parametri  
+## <a name="parameters"></a>Parametri  
  `result`  
- Necessario.  Qualsiasi variabile.  
+ Obbligatorio. Qualsiasi variabile.  
   
  `object`  
- Necessario.  Qualsiasi espressione oggetto.  
+ Obbligatorio. Qualsiasi espressione oggetto.  
   
  `class`  
- Necessario.  Qualsiasi classe di oggetto definita.  
+ Obbligatorio. Qualsiasi classe di oggetto definita.  
   
-## Note  
- L'operatore `instanceof` restituisce `true` se `object` rappresenta un'istanza di `class`.  Restituisce `true` se `true` se è presente `class` nella catena di prototipi dell'oggetto.  Restituisce `false` se `object` non è un'istanza di `class` o se `object` è `null`.  
+## <a name="remarks"></a>Note  
+ L'operatore `instanceof` restituisce `true` se `object` rappresenta un'istanza di `class`. Restituisce `true` se `class` è presente nella catena di prototipi dell'oggetto. Restituisce `false` se `object` non è un'istanza di `class` o se `object` è `null`.  
   
-## Esempio  
+## <a name="example"></a>Esempio  
  Nell'esempio seguente viene illustrato come utilizzare l'operatore `instanceof`.  
   
-```javascript  
+```JavaScript  
 function objTest(obj){  
     var i, t, s = "";  
     t = new Array();  
@@ -77,9 +81,9 @@ document.write(objTest(obj));
 // obj is not an instance of Array  
 ```  
   
-## Requisiti  
+## <a name="requirements"></a>Requisiti  
  [!INCLUDE[jsv5](../../javascript/reference/includes/jsv5-md.md)]  
   
-## Vedere anche  
- [Precedenza tra gli operatori](../../javascript/operator-subtractprecedence-javascript.md)   
- [Riepilogo degli operatori \(JavaScript\)](../../javascript/misc/operator-subtractsummary-javascript.md)
+## <a name="see-also"></a>Vedere anche  
+ [Precedenza tra operatori](../../javascript/operator-subtractprecedence-javascript.md)   
+ [Riepilogo degli operatori (JavaScript)](../../javascript/misc/operator-subtractsummary-javascript.md)

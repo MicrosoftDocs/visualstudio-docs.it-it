@@ -1,43 +1,38 @@
 ---
-title: 'How to: Programmatically Create Custom Folder Items | Microsoft Docs'
-ms.custom: 
+title: 'Procedura: creare cartelle personalizzate | Documenti Microsoft'
+ms.custom: ''
 ms.date: 02/02/2017
-ms.prod: visual-studio-dev14
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - office-development
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: conceptual
 dev_langs:
 - VB
 - CSharp
 helpviewer_keywords:
 - Outlook folders [Office development in Visual Studio], creating
 - Outlook folders [Office development in Visual Studio], custom
-ms.assetid: 5af5b11c-3911-46fa-8a80-413c23b4f2b5
-caps.latest.revision: 17
-author: kempb
-ms.author: kempb
-manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: eb5c9550fd29b0e98bf63a7240737da4f13f3249
-ms.openlocfilehash: 74d07b4a4ce4b8c2acc25c0d5874ea367c5b19f5
-ms.contentlocale: it-it
-ms.lasthandoff: 08/30/2017
-
+author: TerryGLee
+ms.author: tglee
+manager: douge
+ms.workload:
+- office
+ms.openlocfilehash: ebd3bbc365212b2c6a1ab0691e8e16a7936c9955
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# <a name="how-to-programmatically-create-custom-folder-items"></a>How to: Programmatically Create Custom Folder Items
-  This example creates a new folder in Microsoft Office Outlook. The name of the user who is logged on is used for the folder name.  
+# <a name="how-to-programmatically-create-custom-folder-items"></a>Procedura: creare cartelle personalizzate a livello di codice
+  Questo esempio crea una nuova cartella in Microsoft Office Outlook. Il nome dell'utente che ha effettuato l'accesso viene utilizzato per il nome della cartella.  
   
  [!INCLUDE[appliesto_olkallapp](../vsto/includes/appliesto-olkallapp-md.md)]  
   
-## <a name="example"></a>Example  
+## <a name="example"></a>Esempio  
  [!code-csharp[Trin_OL_CustFolderItem#1](../vsto/codesnippet/CSharp/Trin_OL_CustFolderItem/thisaddin.cs#1)]  
   
-## <a name="see-also"></a>See Also  
- [Working with Folders](../vsto/working-with-folders.md)   
- [How to: Programmatically Add an Entry to Outlook Contacts](../vsto/how-to-programmatically-add-an-entry-to-outlook-contacts.md)   
- [How to: Programmatically Create Appointments](../vsto/how-to-programmatically-create-appointments.md)  
+## <a name="see-also"></a>Vedere anche  
+ [Utilizzo delle cartelle](../vsto/working-with-folders.md)   
+ [Procedura: aggiungere una voce ai contatti di Outlook](../vsto/how-to-programmatically-add-an-entry-to-outlook-contacts.md)   
+ [Procedura: Creare appuntamenti a livello di codice](../vsto/how-to-programmatically-create-appointments.md)  
   
   

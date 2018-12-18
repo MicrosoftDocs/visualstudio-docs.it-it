@@ -1,27 +1,33 @@
 ---
-title: "IDispError::GetHelpInfo | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/18/2017"
-ms.prod: "windows-script-interfaces"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-apiname: IDispError.GetHelpInfo
-apilocation: scrobj.dll
-helpviewer_keywords: 
-  - "IDispError::GetHelpInfo"
+title: IDispError::GetHelpInfo | Documenti Microsoft
+ms.custom: ''
+ms.date: 01/18/2017
+ms.prod: windows-script-interfaces
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
+ms.topic: reference
+apiname:
+- IDispError.GetHelpInfo
+apilocation:
+- scrobj.dll
+helpviewer_keywords:
+- IDispError::GetHelpInfo
 ms.assetid: a146df13-eda4-4e56-8bf0-cf9886a2150f
 caps.latest.revision: 8
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 8
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.openlocfilehash: 17098b4055bb61e9a2f639404edfe2214abc931e
+ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/27/2017
 ---
-# IDispError::GetHelpInfo
-Restituisce il percorso del file della Guida e dell'ID del contesto dell'argomento che viene illustrato l'errore, se possibile.  
+# <a name="idisperrorgethelpinfo"></a>IDispError::GetHelpInfo
+Restituisce il percorso del file della Guida e l'ID del contesto dell'argomento che descrive l'errore, se possibile.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
 HRESULT GetHelpInfo(  
@@ -30,28 +36,28 @@ HRESULT GetHelpInfo(
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `pbstrFileName`  
- \[out\] stringa contenente il percorso completo del file della Guida.  Se non esiste alcun file della Guida o si verifica un errore, il valore restituito è NULL.  
+ [out] Stringa contenente il percorso completo del file della Guida. Se è presente alcun file della Guida in linea o si verifica un errore, il valore restituito è NULL.  
   
  `pdwContext`  
- \[out\] ID del contesto della guida dell'errore.  Se non esiste alcun file della Guida \(se `pbstrFileName` è NULL\), questo parametro non ha alcun significato.  
+ [out] L'ID del contesto della Guida per l'errore. Se è presente alcun file della Guida (se `pbstrFileName` è NULL), questo parametro non ha alcun significato.  
   
-## Valore restituito  
- Il metodo restituisce un tipo `HRESULT`.  I valori possibili sono, ma non sono limitati a, quelli nella tabella seguente.  
+## <a name="return-value"></a>Valore restituito  
+ Il metodo restituisce un tipo `HRESULT`. I valori possibili includono, ma non sono limitati a, quelli indicati nella tabella seguente.  
   
 |Valore|Descrizione|  
-|------------|-----------------|  
+|-----------|-----------------|  
 |`S_OK`|Il metodo è riuscito.|  
-|`E_FAIL`|Un errore specifico di provider si è verificato.|  
-|`E_INVALIDARG`|`pbstrFileName` o `pdwContext` è NULL.|  
-|`E_OUTOFMEMORY`|Il provider non è in grado di allocare memoria sufficiente in cui restituire il percorso del file della Guida.|  
+|`E_FAIL`|Si è verificato un errore specifico del provider.|  
+|`E_INVALIDARG`|`pbstrFileName`o `pdwContext` era NULL.|  
+|`E_OUTOFMEMORY`|Il provider è stato in grado di allocare memoria sufficiente nel quale restituire il percorso del file della Guida.|  
   
-## Note  
- Questo metodo restituisce il percorso del file della Guida e dell'ID del contesto dell'argomento che viene illustrato l'errore, se possibile.  
+## <a name="remarks"></a>Note  
+ Questo metodo restituisce il percorso del file della Guida e l'ID del contesto dell'argomento che descrive l'errore, se possibile.  
   
 > [!NOTE]
->  Il metodo non è implementato.  
+>  Questo metodo non è implementato.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Interfaccia IDispError](../../winscript/reference/idisperror-interface.md)

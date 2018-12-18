@@ -1,25 +1,23 @@
 ---
-title: "Set di regole Tutte le regole | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-devops-test"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: b490e4d9-2736-4a1f-8bb9-1c35829aa5af
-caps.latest.revision: 9
-author: "stevehoag"
-ms.author: "shoag"
-manager: "wpickett"
-caps.handback.revision: 9
+title: Set di regole Tutte le regole
+ms.date: 11/04/2016
+ms.technology: vs-ide-code-analysis
+ms.topic: reference
+author: gewarren
+ms.author: gewarren
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: cc4cb817cd6a7611c3f511bde71ffd645165b3fe
+ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/19/2018
 ---
-# Set di regole Tutte le regole
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
+# <a name="all-rules-rule-set"></a>Set di regole Tutte le regole
 
-Il set di regole Tutte le regole contiene tutte le regole sia per il codice nativo, sia per quello gestito.  Il set di regole include tutte le regole che vengono descritte negli argomenti seguenti:  
-  
-1.  [Avvisi dell'analisi codice per il linguaggio C\/C\+\+](../code-quality/code-analysis-for-c-cpp-warnings.md)  
-  
-2.  [Analisi del codice per gli avvisi del codice gestito](../code-quality/code-analysis-for-managed-code-warnings.md)
+Il set di regole tutte le regole contiene tutte le regole per codice gestito e nativo. Il set di regole include tutte le regole descritte negli argomenti seguenti:
+
+- [Avvisi dell'analisi codice per C/C++](../code-quality/code-analysis-for-c-cpp-warnings.md)
+
+- [Analisi del codice per gli avvisi del codice gestito](../code-quality/code-analysis-for-managed-code-warnings.md)

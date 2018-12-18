@@ -1,63 +1,64 @@
 ---
-title: "IDebugProgramNodeAttach2 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "IDebugProgramNodeAttach2"
-helpviewer_keywords: 
-  - "Interfaccia IDebugProgramNodeAttach2"
+title: IDebugProgramNodeAttach2 | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology:
+- vs-ide-sdk
+ms.topic: conceptual
+f1_keywords:
+- IDebugProgramNodeAttach2
+helpviewer_keywords:
+- IDebugProgramNodeAttach2 interface
 ms.assetid: 46b37ac9-a026-4ad3-997b-f19e2f8deb73
-caps.latest.revision: 3
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 3
+author: gregvanl
+ms.author: gregvanl
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: a83f5635dfacb638a2e76054dc5ed4e887e2a3cb
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# IDebugProgramNodeAttach2
-[!INCLUDE[vs2017banner](../../../code-quality/includes/vs2017banner.md)]
-
-Consente un nodo di programma da parte di un tentativo di effettuare la connessione al programma associato.  
+# <a name="idebugprogramnodeattach2"></a>IDebugProgramNodeAttach2
+Consente a un nodo di programma ricevere una notifica di un tentativo di connettersi al programma associato.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
 IDebugProgramNodeAttach2 : IUnknown  
 ```  
   
-## Note per gli implementatori  
- Questa interfaccia è implementata nella stessa classe che implementa [IDebugProgramNode2](../../../extensibility/debugger/reference/idebugprogramnode2.md) l'interfaccia per ricevere la notifica di un'operazione di connessione e fornire una possibilità di annullare l'operazione di connessione.  
+## <a name="notes-for-implementers"></a>Note per gli implementatori  
+ Questa interfaccia viene implementata nella stessa classe che implementa il [IDebugProgramNode2](../../../extensibility/debugger/reference/idebugprogramnode2.md) interfaccia per ricevere una notifica di un'operazione di collegamento e per fornire la possibilità di annullare l'operazione di collegamento.  
   
-## Note per i chiamanti  
- Leggi questa interfaccia chiamando il metodo di `QueryInterface` [IDebugProgramNode2](../../../extensibility/debugger/reference/idebugprogramnode2.md) in un oggetto.  [OnAttach](../../../extensibility/debugger/reference/idebugprogramnodeattach2-onattach.md) Il metodo deve essere chiamato prima [Attach](../../../extensibility/debugger/reference/idebugengine2-attach.md) del metodo per fornire al nodo del programma la possibilità di interrompere il processo di connessione.  
+## <a name="notes-for-callers"></a>Note per i chiamanti  
+ Ottenere questa interfaccia chiamando il `QueryInterface` metodo in un [IDebugProgramNode2](../../../extensibility/debugger/reference/idebugprogramnode2.md) oggetto. Il [OnAttach](../../../extensibility/debugger/reference/idebugprogramnodeattach2-onattach.md) metodo deve essere chiamato prima di [Connetti](../../../extensibility/debugger/reference/idebugengine2-attach.md) metodo per fornire il nodo programma la possibilità di interrompere il processo attach.  
   
-## Metodi nell'ordine di Vtable  
- questa interfaccia implementa il seguente metodo:  
+## <a name="methods-in-vtable-order"></a>Metodi nell'ordine Vtable  
+ Questa interfaccia implementa il metodo seguente:  
   
 |Metodo|Descrizione|  
 |------------|-----------------|  
-|[OnAttach](../../../extensibility/debugger/reference/idebugprogramnodeattach2-onattach.md)|Si connette al programma associato o ripianificare il processo di connessione [Attach](../../../extensibility/debugger/reference/idebugengine2-attach.md) al metodo.|  
+|[OnAttach](../../../extensibility/debugger/reference/idebugprogramnodeattach2-onattach.md)|Collega al programma associato o rinvia il collegamento del processo di [collegamento](../../../extensibility/debugger/reference/idebugengine2-attach.md) metodo.|  
   
-## Note  
- Questa interfaccia è l'alternativa consigliata al metodo deprecato [Attach\_V7](../../../extensibility/debugger/reference/idebugprogramnode2-attach-v7.md) .  Tutti i motori di debug vengono sempre caricati con la funzione di `CoCreateInstance` , ovvero, viene creata un'istanza dallo spazio degli indirizzi del programma sottoposto a debug.  
+## <a name="remarks"></a>Note  
+ Questa interfaccia è l'alternativa preferita all'oggetto deprecato [Attach_V7](../../../extensibility/debugger/reference/idebugprogramnode2-attach-v7.md) metodo. Tutti i motori di debug vengono sempre caricati con il `CoCreateInstance` di funzione, vale a dire viene creata un'istanza all'esterno di spazio degli indirizzi del programma sottoposto a debug.  
   
- Se l'implementazione precedente del metodo di `IDebugProgramNode2::Attach_V7` stesse impostando semplicemente `GUID` del programma sottoposto a debug, quindi solo [OnAttach](../../../extensibility/debugger/reference/idebugprogramnodeattach2-onattach.md) il metodo deve essere implementato.  
+ Se una precedente implementazione del `IDebugProgramNode2::Attach_V7` metodo semplicemente l'impostazione di `GUID` del programma sottoposto a debug, quindi solo il [OnAttach](../../../extensibility/debugger/reference/idebugprogramnodeattach2-onattach.md) (metodo) deve essere implementato.  
   
- Se l'implementazione precedente del metodo di `IDebugProgramNode2::Attach_V7` utilizzare l'interfaccia di callback assegnato, quindi che la funzionalità sia stata spostata in un'implementazione [Attach](../../../extensibility/debugger/reference/idebugengine2-attach.md) del metodo e dell'interfaccia di `IDebugProgramNodeAttach2` non deve essere implementato.  
+ Se una precedente implementazione del `IDebugProgramNode2::Attach_V7` utilizzato il metodo di interfaccia di callback che è stato fornito, quindi deve essere spostato a un'implementazione di tale funzionalità il [Connetti](../../../extensibility/debugger/reference/idebugengine2-attach.md) (metodo) e `IDebugProgramNodeAttach2` non di interfaccia deve essere implementato.  
   
-## Requisiti  
- intestazione: Msdbg.h  
+## <a name="requirements"></a>Requisiti  
+ Intestazione: Msdbg.h  
   
- Spazio dei nomi: Microsoft.VisualStudio.Debugger.Interop  
+ Namespace: Microsoft.VisualStudio.Debugger.Interop  
   
  Assembly: Microsoft.VisualStudio.Debugger.Interop.dll  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Interfacce di base](../../../extensibility/debugger/reference/core-interfaces.md)   
  [IDebugProgramNode2](../../../extensibility/debugger/reference/idebugprogramnode2.md)   
- [Attach](../../../extensibility/debugger/reference/idebugengine2-attach.md)   
- [Attach\_V7](../../../extensibility/debugger/reference/idebugprogramnode2-attach-v7.md)
+ [Collegare](../../../extensibility/debugger/reference/idebugengine2-attach.md)   
+ [Attach_V7](../../../extensibility/debugger/reference/idebugprogramnode2-attach-v7.md)

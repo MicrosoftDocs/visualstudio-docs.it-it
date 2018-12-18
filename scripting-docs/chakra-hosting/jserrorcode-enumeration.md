@@ -1,35 +1,39 @@
 ---
-title: "Enumerazione JsErrorCode | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/18/2017"
-ms.prod: "windows-client-threshold"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "jsrt/JsErrorCode"
-helpviewer_keywords: 
-  - "JsErrorCode (enumerazione)"
+title: Enumerazione JsErrorCode | Microsoft Docs
+ms.custom: 
+ms.date: 01/18/2017
+ms.prod: windows-client-threshold
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- jsrt/JsErrorCode
+helpviewer_keywords:
+- JsErrorCode enumeration
 ms.assetid: 4902f3f3-47a5-4e74-9c29-f96eeecbcda9
-caps.latest.revision: 15
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 15
+caps.latest.revision: 
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.openlocfilehash: b09babd38505c5619f414d2e349cd52b3596ceac
+ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/27/2017
 ---
-# Enumerazione JsErrorCode
+# <a name="jserrorcode-enumeration"></a>Enumerazione JsErrorCode
 Codice di errore restituito da una API di hosting Chakra.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
 enum JsErrorCode : unsigned int;  
 ```  
   
-## Membri  
+## <a name="members"></a>Membri  
   
-### Valori  
+### <a name="values"></a>Valori  
   
 |Nome|Descrizione|  
 |----------|-----------------|  
@@ -55,7 +59,7 @@ enum JsErrorCode : unsigned int;
 |`JsErrorNoCurrentContext`|Per l'API di hosting è necessario che un contesto sia corrente, ma non ve ne sono.|  
 |`JsErrorNotImplemented`|Un'API di hosting non è ancora stata implementata.|  
 |`JsErrorNullArgument`|Un argomento per l'API di hosting è Null in un contesto in cui questo valore non è consentito.|  
-|`JsErrorObjectNotInspectable`|Non è possibile annullare il wrapping dell'oggetto al puntatore `IInspectable`.<br /><br /> Questo valore di enumerazione è supportato solo in modalità Bordo|  
+|`JsErrorObjectNotInspectable`|Non è possibile annullare il wrapping dell'oggetto al puntatore `IInspectable` .<br /><br /> Questo valore di enumerazione è supportato solo in modalità Bordo|  
 |`JsErrorOutOfMemory`|Memoria insufficiente del motore Chakra.|  
 |`JsErrorPropertyNotSymbol`|Un'API di hosting che opera su ID di proprietà simbolo è stata chiamata con un ID di proprietà non simbolo. Il codice di errore viene restituito da `JsGetSymbolFromPropertyId` se la funzione viene chiamata con ID di proprietà non simbolo.<br /><br /> Questo valore di enumerazione è supportato solo in modalità Bordo|  
 |`JsErrorPropertyNotString`|Un'API di hosting che opera su ID di proprietà stringa è stata chiamata con un ID di proprietà non stringa. Il codice di errore viene restituito dalla proprietà `JsGetPropertyNamefromId` esistente se la funzione viene chiamata con ID di proprietà non stringa.<br /><br /> Questo valore di enumerazione è supportato solo in modalità Bordo|  
@@ -68,8 +72,8 @@ enum JsErrorCode : unsigned int;
 |`JsErrorWrongThread`|Un'API di hosting è stata chiamata sul thread errato.|  
 |`JsNoError`|Codice di errore riuscito.|  
   
-## Requisiti  
+## <a name="requirements"></a>Requisiti  
  **Intestazione:** jsrt.h  
   
-## Vedere anche  
- [Riferimenti \(Runtime JavaScript\)](../chakra-hosting/reference-javascript-runtime.md)
+## <a name="see-also"></a>Vedere anche  
+ [Riferimenti (Runtime JavaScript)](../chakra-hosting/reference-javascript-runtime.md)

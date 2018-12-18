@@ -1,40 +1,39 @@
 ---
-title: "IDiaSymbol::get_isVirtualInheritance | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
+title: IDiaSymbol::get_isVirtualInheritance | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology: vs-ide-debug
+ms.topic: conceptual
+dev_langs:
+- C++
 ms.assetid: 72906b92-dd4a-42e3-9b24-b77628fa48c1
-caps.latest.revision: 3
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 3
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: c10757f1077e67422799f8f3a477dc3c1675c868
+ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/18/2018
 ---
-# IDiaSymbol::get_isVirtualInheritance
-[!INCLUDE[vs2017banner](../../code-quality/includes/vs2017banner.md)]
-
-Specifica se i punti del puntatore `this` a un membro dati mediante l'ereditarietà virtuale.  
+# <a name="idiasymbolgetisvirtualinheritance"></a>IDiaSymbol::get_isVirtualInheritance
+Specifica se il `this` puntatore punta a un membro dati con ereditarietà virtuale.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp  
+```C++  
 HRESULT get_isVirtualInheritance(   
    BOOL* pRetVal);  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `pRetVal`  
- \[out\] puntatore A `BOOL` che specifica se il puntatore `this` indica un membro dati mediante l'ereditarietà virtuale.  
+ [out] Un puntatore a un `BOOL` che specifica se il `this` puntatore punta a un membro dati con ereditarietà virtuale.  
   
-## Valore restituito  
- Se l'operazione riesce, restituisce `S_OK`; in caso contrario, restituisce `S_FALSE` o un codice di errore.  
+## <a name="return-value"></a>Valore restituito  
+ Se ha esito positivo, restituisce `S_OK`; in caso contrario, restituisce `S_FALSE` o un codice di errore.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IDiaSymbol](../../debugger/debug-interface-access/idiasymbol.md)

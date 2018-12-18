@@ -14,30 +14,17 @@ helpviewer_keywords:
 - code snippets [Visual Studio], schema reference
 - IntelliSense Code Snippets, XML Schema
 ms.assetid: 58a60621-725f-4763-93b7-62ea5424ef88
-caps.latest.revision: 17
-author: kempb
-ms.author: kempb
+caps.latest.revision: 
+author: gewarren
+ms.author: gewarren
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 47057e9611b824c17077b9127f8d2f8b192d6eb8
-ms.openlocfilehash: 18627c9f14e82bef85ff433eea14d99653f78e68
-ms.contentlocale: it-it
-ms.lasthandoff: 05/13/2017
-
+ms.workload:
+- multiple
+ms.openlocfilehash: c267b110b67a69b526bb7efc985bb22bb954b3a1
+ms.sourcegitcommit: b18844078a30d59014b48a9c247848dea188b0ee
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 01/29/2018
 ---
 # <a name="code-snippets-schema-reference"></a>Riferimento dello schema dei frammenti di codice
 I frammenti di codice IntelliSense sono parti di codice già create e pronte per essere inserite nell'applicazione con [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)]. Questi frammenti di codice consentono di incrementare la produttività riducendo la quantità di tempo dedicata alla digitazione di codice ripetitivo o alla ricerca di esempi. È possibile usare l'XML Schema dei frammenti di codice IntelliSense per creare frammenti di codice personali e aggiungerli ai frammenti di codice già inclusi in [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)].  
@@ -58,10 +45,7 @@ I frammenti di codice IntelliSense sono parti di codice già create e pronte per
 |[Elemento Header](../ide/code-snippets-schema-reference.md#header)|[Elemento Reference](../ide/code-snippets-schema-reference.md#reference)||  
   
 ##  <a name="assembly"></a> Elemento Assembly  
- Specifica il nome dell'assembly a cui fa riferimento il frammento di codice.  
-  
-> [!NOTE]
->  L'elemento `Assembly` è supportato solo dai frammenti di codice di Visual Basic.  
+ Specifica il nome dell'assembly a cui fa riferimento il frammento di codice.
   
  Il valore di testo dell'elemento **Assembly** è il nome descrittivo dell'assembly, ad esempio `System.dll` o il nome sicuro, come `System,Version=1.0.0.1,Culture=neutral,PublicKeyToken=9b35aa323c18d4fb1`.  
   
@@ -83,8 +67,7 @@ I frammenti di codice IntelliSense sono parti di codice già create e pronte per
 ```xml  
 <Author>  
    Code Snippet Author  
-</Author>  
-  
+</Author>    
 ```  
   
 |Elemento padre|Descrizione|  
@@ -93,36 +76,39 @@ I frammenti di codice IntelliSense sono parti di codice già create e pronte per
   
  È necessario specificare un valore di testo. Questo testo specifica l'autore del frammento di codice.  
   
-##  <a name="code"></a> Elemento Code  
- Fornisce un contenitore per i blocchi di codice.  
+## <a name="a-namecode--code-element"></a><a name="code" /> Elemento Code  
+Fornisce un contenitore per i blocchi di codice.  
   
- Sono disponibili due parole riservate da usare nel testo dell'elemento `Code`: `$end$` e `$selected$`. `$end$` contrassegna il punto in cui posizionare il cursore dopo l'inserimento del frammento di codice. `$selected$` rappresenta il testo selezionato nel documento da inserire nel frammento di codice quando viene chiamato. Ad esempio, se si avesse:  
+### <a name="keywords"></a>Parole chiave
+Sono disponibili due parole riservate da usare nel testo dell'elemento `Code`: `$end$` e `$selected$`. `$end$` contrassegna il punto in cui posizionare il cursore dopo l'inserimento del frammento di codice. `$selected$` rappresenta il testo selezionato nel documento da inserire nel frammento di codice quando viene chiamato. Ad esempio, se si avesse:  
   
-```xml  
+```  
 $selected$ is a great color.  
 ```  
   
- e fosse stata selezionata la parola "Blue" al momento della chiamata al modello, si otterrebbe:  
+e fosse stata selezionata la parola "Blue" al momento della chiamata al modello, si otterrebbe:  
   
-```xml  
+```  
 Blue is a great color.  
 ```  
   
- Non è possibile usare `$end$` o `$selected$` più di una volta in un frammento di codice. Se lo si fa, viene riconosciuta solo la seconda istanza. Se si avesse:  
+Non è possibile usare `$end$` o `$selected$` più di una volta in un frammento di codice. Se lo si fa, viene riconosciuta solo la seconda istanza. Se si avesse:  
   
 ```  
 $selected$ is a great color. I love $selected$.  
 ```  
   
- e fosse stata selezionata la parola "Blue", si otterrebbe:  
+e fosse stata selezionata la parola "Blue", si otterrebbe:  
   
 ```  
-is a great color. I love Blue.  
+ is a great color. I love Blue.  
 ```  
   
- Lo spazio iniziale viene visualizzato perché c'è uno spazio tra `$selected$` e `is`.  
+Lo spazio iniziale viene visualizzato perché c'è uno spazio tra `$selected$` e `is`.  
   
- Tutte le altre parole chiave `$` vengono definite in modo dinamico nei tag `<Literal>` e `<Object>`.  
+Tutte le altre parole chiave `$` vengono definite in modo dinamico nei tag `<Literal>` e `<Object>`.  
+
+Di seguito è riportata la struttura dell'elemento Code:
   
 ```xml  
 <Code Language="Language"  
@@ -130,37 +116,41 @@ is a great color. I love Blue.
     Delimiter="Delimiter">  
     Code to insert  
 </Code>  
-```  
-  
-|Attributo|Descrizione|  
-|---------------|-----------------|  
-|`Delimiter`|Attributo facoltativo. Specifica il delimitatore usato per descrivere i valori letterali e gli oggetti nel codice. Per impostazione predefinita, il delimitatore è `$`.|  
-|`Kind`|Attributo facoltativo. Specifica il tipo di codice contenuto nel frammento e la posizione in cui un frammento di codice deve essere inserito per la relativa compilazione. I valori disponibili sono `method body`, `method decl`, `type decl`, `file` e `any`.|  
-|`Language`|Attributo obbligatorio. Specifica il linguaggio del frammento di codice.|  
-  
-|Valore attributo Kind|Descrizione|  
-|--------------------------|-----------------|  
-|`method body`|Specifica che il frammento di codice è il corpo di un metodo e deve pertanto essere inserito all'interno di una dichiarazione di metodo.|  
-|`method decl`|Specifica che il frammento di codice è un metodo e deve pertanto essere inserito all'interno di una classe o un modulo.|  
-|`type decl`|Specifica che il frammento di codice è un tipo e deve pertanto essere inserito all'interno di una classe, un modulo o uno spazio dei nomi.|  
-|`file`|Specifica che il frammento di codice è un file di codice completo. Questi frammenti di codice possono essere inseriti autonomamente in un file di codice o all'interno di uno spazio dei nomi.|  
-|`any`|Specifica che il frammento può essere inserito in qualsiasi posizione. Questo tag viene usato per frammenti di codice indipendenti dal contesto, ad esempio i commenti.|  
-  
-|Valore attributo Language|Descrizione|  
-|------------------------------|-----------------|  
-|`VB`|Identifica un frammento di codice di Visual Basic.|  
-|`CSharp`|Identifica un frammento di codice di C#.|  
-|`CPP`|Identifica un frammento di codice di C++.|  
-|`XML`|Identifica un frammento di codice XML.|  
-|`JavaScript`|Identifica un frammento di codice di JavaScript.|  
-|`SQL`|Identifica un frammento di codice SQL.|  
-|`HTML`|Identifica un frammento di codice HTML.|  
-  
+```
+
+È necessario specificare un valore di testo. Il testo specifica il codice, insieme ai valori letterali e agli oggetti, che è possibile usare in caso di inserimento di questo frammento di codice in un file di codice.  
+
+### <a name="attributes"></a>Attributi
+Sono disponibili tre attributi per l'elemento Code:
+
+- L'attributo **Language** - _(obbligatorio)_ specifica il linguaggio del frammento di codice. Il valore può essere uno dei seguenti:
+
+   |Valore|Descrizione|  
+   |-----|-----------|  
+   |`VB`|Identifica un frammento di codice di Visual Basic.|  
+   |`CSharp`|Identifica un frammento di codice di C#.|  
+   |`CPP`|Identifica un frammento di codice di C++.|  
+   |`XML`|Identifica un frammento di codice XML.|  
+   |`JavaScript`|Identifica un frammento di codice di JavaScript.|  
+   |`SQL`|Identifica un frammento di codice SQL.|  
+   |`HTML`|Identifica un frammento di codice HTML.|
+ 
+- L'attributo **Kind** - _(facoltativo)_ specifica il tipo di codice contenuto nel frammento e la posizione in cui un frammento di codice deve essere inserito per la relativa compilazione. Il valore può essere uno dei seguenti:
+
+   |Valore|Descrizione|  
+   |-----|-----------|  
+   |`method body`|Specifica che il frammento di codice è il corpo di un metodo e deve pertanto essere inserito all'interno di una dichiarazione di metodo.|  
+   |`method decl`|Specifica che il frammento di codice è un metodo e deve pertanto essere inserito all'interno di una classe o un modulo.|  
+   |`type decl`|Specifica che il frammento di codice è un tipo e deve pertanto essere inserito all'interno di una classe, un modulo o uno spazio dei nomi.|  
+   |`file`|Specifica che il frammento di codice è un file di codice completo. Questi frammenti di codice possono essere inseriti autonomamente in un file di codice o all'interno di uno spazio dei nomi.|  
+   |`any`|Specifica che il frammento può essere inserito in qualsiasi posizione. Questo tag viene usato per frammenti di codice indipendenti dal contesto, ad esempio i commenti.|
+
+- L'attributo **Delimiter** - _(facoltativo)_ specifica il delimitatore usato per descrivere i valori letterali e gli oggetti nel codice. Per impostazione predefinita, il delimitatore è `$`.
+
+### <a name="parent-element"></a>Elemento padre
 |Elemento padre|Descrizione|  
 |--------------------|-----------------|  
-|[Elemento Snippet](../ide/code-snippets-schema-reference.md#snippet)|Contiene i riferimenti, le importazioni, le dichiarazioni e il codice del frammento di codice.|  
-  
- È necessario specificare un valore di testo. Tale testo specifica il codice, insieme ai valori letterali e agli oggetti, che è possibile usare in caso di inserimento di questo frammento di codice in un progetto.  
+|[Elemento Snippet](../ide/code-snippets-schema-reference.md#snippet)|Contiene i riferimenti, le importazioni, le dichiarazioni e il codice del frammento di codice.|
   
 ##  <a name="codesnippet"></a> Elemento CodeSnippet  
  Consente di specificare un'intestazione e più frammenti di codice IntelliSense, che è possibile inserire in file di codice di Visual Studio.  
@@ -170,7 +160,6 @@ is a great color. I love Blue.
     <Header>... </Header>  
     <Snippet>... </Snippet>  
 </CodeSnippet>  
-  
 ```  
   
 |Attributo|Descrizione|  
@@ -193,7 +182,6 @@ is a great color. I love Blue.
 <CodeSnippets>  
     <CodeSnippet>... </CodeSnippet>  
 </CodeSnippets>  
-  
 ```  
   
 |Elemento figlio|Descrizione|  
@@ -208,7 +196,6 @@ is a great color. I love Blue.
     <Literal>... </Literal>  
     <Object>... </Object>  
 </Declarations>  
-  
 ```  
   
 |Elemento figlio|Descrizione|  
@@ -227,7 +214,6 @@ is a great color. I love Blue.
 <Default>  
     Default value  
 </Default>  
-  
 ```  
   
 |Elemento padre|Descrizione|  
@@ -256,7 +242,7 @@ is a great color. I love Blue.
  Specifica una funzione da eseguire quando il valore letterale o l'oggetto ricevono lo stato attivo in Visual Studio.  
   
 > [!NOTE]
->  L'elemento `Function` è supportato solo nei frammenti di codice di Visual C#.  
+>  L'elemento `Function` è supportato solo nei frammenti di codice di C#.  
   
 ```xml  
 <Function>  
@@ -284,7 +270,6 @@ is a great color. I love Blue.
     <Keywords>... </Keywords>  
     <Shortcut>... </Shortcut>  
 </Header>  
-  
 ```  
   
 |Elemento figlio|Descrizione|  
@@ -311,7 +296,6 @@ is a great color. I love Blue.
 <HelpUrl>  
     www.microsoft.com  
 </HelpUrl>  
-  
 ```  
   
 |Elemento padre|Descrizione|  
@@ -327,7 +311,6 @@ is a great color. I love Blue.
 <ID>  
     Unique Identifier  
 </ID>  
-  
 ```  
   
 |Elemento padre|Descrizione|  
@@ -347,7 +330,6 @@ is a great color. I love Blue.
 <Import>  
     <Namespace>... </Namespace>  
 </Import>  
-  
 ```  
   
 |Elemento figlio|Descrizione|  
@@ -488,10 +470,7 @@ is a great color. I love Blue.
 |[Elemento Declarations](../ide/code-snippets-schema-reference.md#declarations)|Contiene i valori letterali e gli oggetti di un frammento di codice che è possibile modificare.|  
   
 ##  <a name="reference"></a> Elemento Reference  
- Specifica informazioni sui riferimenti ad assembly richiesti dal frammento di codice.  
-  
-> [!NOTE]
->  L'elemento `Reference` è supportato solo per i progetti di Visual Basic.  
+ Specifica informazioni sui riferimenti ad assembly richiesti dal frammento di codice. 
   
 ```xml  
 <Reference>  
@@ -511,9 +490,6 @@ is a great color. I love Blue.
   
 ##  <a name="references"></a> Elemento References  
  Raggruppa singoli elementi `Reference`.  
-  
-> [!NOTE]
->  L'elemento `References` è supportato solo per i progetti di Visual Basic.  
   
 ```xml  
 <References>  
@@ -556,8 +532,7 @@ is a great color. I love Blue.
     <Imports>... </Imports>  
     <Declarations>... </Declarations>  
     <Code>... </Code>  
-</Snippet>  
-  
+</Snippet>    
 ```  
   
 |Elemento figlio|Descrizione|  
@@ -590,7 +565,7 @@ is a great color. I love Blue.
   
 -   `Expansion`: consente di inserire il frammento di codice in corrispondenza della posizione del cursore.  
   
--   `Refactoring`: specifica che il frammento di codice viene usato durante il refactoring di Visual C#. Non è possibile usare il `Refactoring` nei frammenti di codice personalizzati.  
+-   `Refactoring`: specifica che il frammento di codice viene usato durante il refactoring di C#. Non è possibile usare il `Refactoring` nei frammenti di codice personalizzati.  
   
 ##  <a name="snippettypes"></a> Elemento SnippetTypes  
  Raggruppa singoli elementi `SnippetType`. Se l'elemento `SnippetTypes` non è presente, il frammento di codice può essere inserito ovunque nel codice.  

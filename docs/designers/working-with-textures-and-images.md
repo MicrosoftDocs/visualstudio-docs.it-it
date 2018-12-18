@@ -4,42 +4,26 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- vs-ide-designers
+ms.technology: vs-ide-designers
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: b9fbc8fa-66d1-4055-8460-24d8b8fbe43e
-caps.latest.revision: 10
+caps.latest.revision: "10"
 author: gewarren
 ms.author: gewarren
 manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: Human Translation
-ms.sourcegitcommit: ca7c86466fa23fb21a932f26dc24e37c71cf29b4
-ms.openlocfilehash: 2cb4836ae868d56147a82fcefa0c5546bfcf8cad
-ms.contentlocale: it-it
-ms.lasthandoff: 04/05/2017
-
+ms.workload: multiple
+ms.openlocfilehash: f7c15d6bd2bd50b8ba8c5075ab2d90287e3a4750
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="working-with-textures-and-images"></a>Uso di trame e immagini
 È possibile usare l'editor di immagini in [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] per creare e modificare trame e immagini. L'editor di immagini supporta formati avanzati per trame e immagini, come quelli usati nello sviluppo di app DirectX.  
   
 > [!NOTE]
->  L'editor di immagini non supporta immagini con livello di colore minimo, come icone e cursori. Per creare o modificare questi tipi di immagini, usare l'[editor di immagini per le icone](/cpp/windows/image-editor-for-icons).  
+>  L'editor di immagini non supporta immagini con livello di colore minimo, come icone e cursori. Per creare o modificare questi tipi di immagini, usare l' [Image Editor for Icons](/cpp/windows/image-editor-for-icons).  
   
 ## <a name="textures-and-images"></a>Trame e immagini  
  A un livello di base, le trame e le immagini sono semplicemente tabelle di dati usate per offrire dettagli visivi nelle app grafiche. Il tipo di dettagli offerti da una trama o un'immagine dipende dal modo in cui viene usata, ma i campioni di colore, i valori alfa (trasparenza), le normali alla superficie e i valori di altezza costituiscono alcuni esempi comuni. La differenza principale tra una trama e un'immagine è che una trama è destinata a essere usata insieme a una rappresentazione di forma, in genere un modello 3D, per esprimere una scena o un oggetto completo, mentre un'immagine è in genere una rappresentazione autonoma della scena o dell'oggetto.  

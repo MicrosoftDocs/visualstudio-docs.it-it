@@ -1,69 +1,69 @@
 ---
-title: "Propriet&#224; degli elementi Decorator | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "Linguaggio specifico di dominio, elementi Decorator"
-ms.assetid: f6322fe5-dc08-4d32-a6b3-0bd18879136d
-caps.latest.revision: 23
-author: "alancameronwills"
-ms.author: "awills"
-manager: "douge"
-caps.handback.revision: 23
+title: Proprietà degli elementi Decorator
+ms.date: 11/04/2016
+ms.topic: reference
+helpviewer_keywords:
+- Domain-Specific Language, decorators
+author: gewarren
+ms.author: gewarren
+manager: douge
+ms.workload:
+- multiple
+ms.technology: vs-ide-modeling
+ms.openlocfilehash: d99ec880b00583726b0f0c3aa7368b0f5860f847
+ms.sourcegitcommit: 4c0bc21d2ce2d8e6c9d3b149a7d95f0b4d5b3f85
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/20/2018
 ---
-# Propriet&#224; degli elementi Decorator
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
+# <a name="properties-of-decorators"></a>Proprietà degli elementi Decorator
+Gli elementi Decorator sono virgolette acute di espansione/compressione che è possono visualizzare le forme o connettori nel diagramma, testo o icone. Le tabelle seguenti illustrano le proprietà per i tre tipi di elemento decorator. Alcune delle proprietà vengono visualizzati solo gli elementi Decorator forma o solo per gli elementi Decorator connettore.
 
-Gli elementi Decorator sono icone, un testo a, o espandono\/frecce di espansione compresso che possono essere visualizzati sulle forme o sui connettori nel diagramma.  Nelle tabelle riportate le proprietà per i tre tipi di elemento Decorator.  Alcune delle proprietà vengono visualizzati solo sugli elementi Decorator di forma o solo negli elementi Decorator del connettore.  
-  
- Per ulteriori informazioni, vedere [Procedura: definire un linguaggio specifico di dominio](../modeling/how-to-define-a-domain-specific-language.md).  per ulteriori informazioni su come utilizzare queste proprietà, vedere [Personalizzazione ed estensione di un linguaggio specifico di dominio](../modeling/customizing-and-extending-a-domain-specific-language.md).  
-  
-## Espandere\/elemento Decorator di compressione  
-  
-|Proprietà|Descrizione|Predefinito|  
-|---------------|-----------------|-----------------|  
-|DisplayName|Il nome dell'elemento Decorator visualizzati nella finestra di progettazione generata un'eccezione.|Espandere l'elemento Decorator di compressione|  
-|Nome|Il nome dell'elemento Decorator.|ExpandCollapseDecorator|  
-|Note|Note informali associate a questo elemento Decorator.|\<nessuno\>|  
-|HorizontalOffset|L'offset orizzontale, in corrispondenza della posizione predefinita dell'elemento Decorator, nei pollici.  \(Nelle forme solo\).|0|  
-|VerticalOffset|L'offset verticale, rispetto alla posizione predefinita dell'elemento Decorator, nei pollici.  \(Nelle forme solo\).|0|  
-|OffsetFromLine|L'offset dell'elemento Decorator dalla riga, relativo alla posizione predefinita, nei pollici.  \(Sui connettori solo\).|0|  
-|OffsetFromShape|L'offset dell'elemento Decorator dalla forma, relativo alla posizione predefinita, nei pollici.  \(Sui connettori solo\).|0|  
-|Position|Il percorso predefinito dell'elemento Decorator.|SourceTop|  
-  
-## Elemento Decorator icona  
-  
-|Proprietà|Descrizione|Predefinito|  
-|---------------|-----------------|-----------------|  
-|DefaultIcon|Il percorso icona o del file di immagine da visualizzare.|\<nessuno\>|  
-|DisplayName|Il nome dell'elemento Decorator da visualizzare nella finestra di progettazione generata un'eccezione.|Elemento Decorator icona|  
-|Nome|Il nome dell'elemento Decorator.|IconDecorator|  
-|Note|Note informali associate all'elemento Decorator.|\<nessuno\>|  
-|HorizontalOffset|L'offset orizzontale, in corrispondenza della posizione predefinita dell'elemento Decorator, nei pollici.  \(Nelle forme solo\).|0|  
-|VerticalOffset|L'offset verticale, rispetto alla posizione predefinita dell'elemento Decorator, nei pollici.  \(Nelle forme solo\).|0|  
-|OffsetFromLine|L'offset dell'elemento Decorator dalla riga, relativo alla posizione predefinita, nei pollici.  \(Sui connettori solo\).|0|  
-|OffsetFromShape|L'offset dell'elemento Decorator dalla forma, relativo alla posizione predefinita, nei pollici.  \(Sui connettori solo\).|0|  
-|Position|Il percorso predefinito dell'elemento Decorator.|SourceTop|  
-  
-## TextDecorator  
-  
-|Proprietà|Descrizione|Predefinito|  
-|---------------|-----------------|-----------------|  
-|DefaultText|Il testo predefinito da visualizzare.|Etichetta|  
-|DisplayName|Il nome dell'elemento Decorator da visualizzare nella finestra di progettazione generata un'eccezione.|Etichetta|  
-|FontSize|La dimensione dei caratteri del testo visualizzato nell'elemento Decorator.|8|  
-|FontStyle|Stile del carattere per il testo visualizzato nell'elemento Decorator.|Regolare|  
-|Nome|Il nome dell'elemento Decorator.|Etichetta|  
-|Note|Note informali associate all'elemento Decorator.|\<nessuno\>|  
-|HorizontalOffset|L'offset orizzontale, in corrispondenza della posizione predefinita dell'elemento Decorator, nei pollici.  \(Nelle forme solo\).|0|  
-|VerticalOffset|L'offset verticale, rispetto alla posizione predefinita dell'elemento Decorator, nei pollici.  \(Nelle forme solo\).|0|  
-|OffsetFromLine|L'offset dell'elemento Decorator dalla riga, relativo alla posizione predefinita, nei pollici.  \(Sui connettori solo\).|0|  
-|OffsetFromShape|L'offset dell'elemento Decorator dalla forma, relativo alla posizione predefinita, nei pollici.  \(Sui connettori solo\).|0|  
-|Position|Il percorso predefinito dell'elemento Decorator.|TargetBottom|  
-  
-## Vedere anche  
- [Domain\-Specific Language Tools Glossary](http://msdn.microsoft.com/it-it/ca5e84cb-a315-465c-be24-76aa3df276aa)
+ Per ulteriori informazioni, vedere [come definire un linguaggio specifico di dominio](../modeling/how-to-define-a-domain-specific-language.md). Per ulteriori informazioni sull'utilizzo di queste proprietà, vedere [personalizzare ed estendere un linguaggio specifico di dominio](../modeling/customizing-and-extending-a-domain-specific-language.md).
+
+## <a name="expandcollapse-decorator"></a>Espandi/Comprimi elemento Decorator
+
+|Proprietà|Descrizione|Impostazione predefinita|
+|--------------|-----------------|-------------|
+|DisplayName|Il nome di decoratore che verrà visualizzato nella finestra di progettazione generato.|Espandere l'elemento Decorator Comprimi|
+|nome|Il nome dell'elemento decorator.|ExpandCollapseDecorator|
+|Note|Note informale che sono associate a questo elemento decorator.|\<Nessuno >|
+|HorizontalOffset|L'offset orizzontale rispetto alla posizione predefinita di decorator, espressa in pollici. (In forme solo.)|0|
+|VerticalOffset|L'offset verticale, relativo alla posizione predefinita di decorator, espressa in pollici. (In forme solo.)|0|
+|OffsetFromLine|L'offset dell'elemento decorator dalla riga di relativo alla posizione predefinita, in pollici. (Sui connettori solo.)|0|
+|OffsetFromShape|L'offset dell'elemento decorator dalla forma, relativo alla posizione predefinita, in pollici. (Sui connettori solo.)|0|
+|Posizione|La posizione predefinita dell'elemento decorator.|SourceTop|
+
+## <a name="icon-decorator"></a>Icona Decorator
+
+|Proprietà|Descrizione|Impostazione predefinita|
+|--------------|-----------------|-------------|
+|DefaultIcon|Il percorso del file icona o di immagine da visualizzare.|\<Nessuno >|
+|DisplayName|Il nome di decorator da visualizzare nella finestra di progettazione generato.|Icona Decorator|
+|nome|Il nome dell'elemento decorator.|IconDecorator|
+|Note|Note informale associati con l'elemento decorator.|\<Nessuno >|
+|HorizontalOffset|L'offset orizzontale rispetto alla posizione predefinita di decorator, espressa in pollici. (In forme solo.)|0|
+|VerticalOffset|L'offset verticale, relativo alla posizione predefinita di decorator, espressa in pollici. (In forme solo.)|0|
+|OffsetFromLine|L'offset dell'elemento decorator dalla riga di relativo alla posizione predefinita, in pollici. (Sui connettori solo.)|0|
+|OffsetFromShape|L'offset dell'elemento decorator dalla forma, relativo alla posizione predefinita, in pollici. (Sui connettori solo.)|0|
+|Posizione|La posizione predefinita dell'elemento decorator.|SourceTop|
+
+## <a name="textdecorator"></a>TextDecorator
+
+|Proprietà|Descrizione|Impostazione predefinita|
+|--------------|-----------------|-------------|
+|DefaultText|Il testo predefinito da visualizzare.|Label|
+|DisplayName|Il nome di decorator da visualizzare nella finestra di progettazione generato.|Label|
+|FontSize|Le dimensioni del carattere per il testo visualizzato nell'elemento decorator.|8|
+|FontStyle|Lo stile del carattere per il testo visualizzato nell'elemento decorator.|Regular|
+|nome|Il nome dell'elemento decorator.|Label|
+|Note|Note informale associati con l'elemento decorator.|\<Nessuno >|
+|HorizontalOffset|L'offset orizzontale rispetto alla posizione predefinita di decorator, espressa in pollici. (In forme solo.)|0|
+|VerticalOffset|L'offset verticale, relativo alla posizione predefinita di decorator, espressa in pollici. (In forme solo.)|0|
+|OffsetFromLine|L'offset dell'elemento decorator dalla riga di relativo alla posizione predefinita, in pollici. (Sui connettori solo.)|0|
+|OffsetFromShape|L'offset dell'elemento decorator dalla forma, relativo alla posizione predefinita, in pollici. (Sui connettori solo.)|0|
+|Posizione|La posizione predefinita dell'elemento decorator.|TargetBottom|
+
+## <a name="see-also"></a>Vedere anche
+
+- [Glossario di strumenti di linguaggio specifico di dominio](http://msdn.microsoft.com/ca5e84cb-a315-465c-be24-76aa3df276aa)

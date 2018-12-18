@@ -1,62 +1,61 @@
 ---
-title: "Visualizzazioni dei dati comuni del profiler | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "strumenti di profilatura, rapporti"
-  - "strumenti di profilatura, visualizzazioni"
+title: Visualizzazioni dei dati comuni | Microsoft Docs
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology: vs-ide-debug
+ms.topic: conceptual
+helpviewer_keywords:
+- Profiling Tools,views
+- Profiling Tools,reports
 ms.assetid: ee5e964c-1222-496d-b825-166443a89d2b
-caps.latest.revision: 9
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 9
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 32039843f3aef60f6e7087b0d26f8b5e1efd1df8
+ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/19/2018
 ---
-# Visualizzazioni dei dati comuni del profiler
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
-In questa sezione sono incluse informazioni di riferimento relative a visualizzazioni e rapporti dei file di dati del profiler comuni a tutti i metodi di profilo.  
+# <a name="common-data-views"></a>Visualizzazioni dei dati comuni
+Questa sezione contiene informazioni di riferimento sulle visualizzazioni e i report dei file di dati del profiler comuni a tutti i metodi di profilatura.  
   
-## In questa sezione  
+## <a name="in-this-section"></a>In questa sezione  
  [Visualizzazione Riepilogo](../profiling/summary-view.md)  
- Descrive il rapporto e la visualizzazione Riepilogo.  Le colonne di dati dipendono dal metodo di profilo.  
+ Descrive la visualizzazione e il report di riepilogo. Le colonne di dati dipendono dal metodo di profilatura.  
   
- [Visualizzazione Chiamante\/chiamato](../profiling/caller-callee-view.md)  
- Descrive il rapporto e la visualizzazione Struttura ad albero delle chiamate.  Le colonne di dati dipendono dal metodo di profilo.  
+ [Visualizzazione Chiamante/Chiamato](../profiling/caller-callee-view.md)  
+ Descrive la visualizzazione e il report Albero delle chiamate. Le colonne di dati dipendono dal metodo di profilatura.  
   
- [Visualizzazione Struttura ad albero delle chiamate](../profiling/call-tree-view.md)  
- Descrive il rapporto e la visualizzazione Struttura ad albero delle chiamate.  Le colonne di dati dipendono dal metodo di profilo.  
+ [Visualizzazione Albero delle chiamate](../profiling/call-tree-view.md)  
+ Descrive la visualizzazione e il report Albero delle chiamate. Le colonne di dati dipendono dal metodo di profilatura.  
   
- [Visualizzazione Moduli](../profiling/modules-view.md)  
- Descrive il rapporto e la visualizzazione Moduli.  Le colonne di dati dipendono dal metodo di profilo.  
+ [Visualizzazione moduli](../profiling/modules-view.md)  
+ Descrive la visualizzazione e il report Moduli. Le colonne di dati dipendono dal metodo di profilatura.  
   
  [Visualizzazione Funzioni](../profiling/functions-view.md)  
- Descrive il rapporto e la visualizzazione Funzioni.  Le colonne di dati dipendono dal metodo di profilo.  
+ Descrive la visualizzazione e il report Funzioni. Le colonne di dati dipendono dal metodo di profilatura.  
   
  [Visualizzazione Righe](../profiling/lines-view.md)  
- Descrive il rapporto e la visualizzazione Righe.  Le colonne di dati dipendono dal metodo di profilo.  
+ Descrive la visualizzazione e il report Righe. Le colonne di dati dipendono dal metodo di profilatura.  
   
  [Visualizzazione Puntatori all'istruzione](../profiling/instruction-pointers-ips-view.md)  
- Descrive il rapporto e la visualizzazione Puntatore all'istruzione \(IP\).  Le colonne di dati dipendono dal metodo di profilo.  
+ Descrive la visualizzazione e il report Puntatori all'istruzione. Le colonne di dati dipendono dal metodo di profilatura.  
   
  [Visualizzazione Processo](../profiling/process-view.md)  
- Elenca le ore di inizio e di fine di thread e processi.  
+ Elenca l'ora di inizio e di fine di processi e thread.  
   
  [Visualizzazione Contrassegni](../profiling/marks-view.md)  
  Elenca gli eventi ETW e di campionamento inseriti nei file dei dati di profilatura.  
   
-## Sezioni correlate  
- [Visualizzazioni dei dati del metodo di campionamento](../profiling/profiler-sampling-method-data-views.md)  
- Informazioni di riferimento relative a visualizzazioni e rapporti dei file di dati del profiler generati tramite il metodo di campionamento.  
+## <a name="related-sections"></a>Sezioni correlate  
+ [Sampling Method Data Views](../profiling/profiler-sampling-method-data-views.md) (Visualizzazioni dei dati del metodo di campionamento)  
+ Informazioni di riferimento relative alle visualizzazioni e ai report sui file di dati del profiler generati tramite il metodo di campionamento.  
   
- [Visualizzazioni dei dati del metodo di strumentazione](../profiling/instrumentation-method-data-views.md)  
- Informazioni di riferimento relative a visualizzazioni e rapporti dei file di dati del profiler generati tramite il metodo di strumentazione.  
+ [Instrumentation Method Data Views](../profiling/instrumentation-method-data-views.md) (Visualizzazioni dei dati del metodo di strumentazione)  
+ Informazioni di riferimento relative alle visualizzazioni e ai report sui file di dati del profiler generati tramite il metodo di strumentazione.  
   
  [Visualizzazioni dei dati di memoria .NET](../profiling/dotnet-memory-data-views.md)  
- Informazioni di riferimento relative a visualizzazioni e rapporti dei file di dati del profiler generati tramite la raccolta di memoria .NET.
+ Informazioni di riferimento relative alle visualizzazioni e ai report sui file di dati del profiler generati tramite la raccolta della memoria .NET.

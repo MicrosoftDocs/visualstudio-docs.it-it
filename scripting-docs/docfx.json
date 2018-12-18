@@ -29,19 +29,22 @@
       }
     ],
     "overwrite": [],
-    "externalReference": [],
+   "externalReference": [],
     "globalMetadata": {
+      "bilingual_type": "hover over",
             "breadcrumb_path": "~/_breadcrumb/toc.yml",
             "ROBOTS": "INDEX,FOLLOW",
             "author": "",
-            "ms.author": "",
+            "bilingual_type": "hover over",
+             "ms.author": "",
             "manager": "ghogen",
             "ms.date": "3/7/2017",
             "ms.topic": "article",
             "audience": "developer",
             "ms.reviewer": "",
             "searchScope": ["Scripting"],
-            "hideScope": true
+            "hideScope": true,
+      "uhfHeaderId": "MSDocsHeader-VisualStudio"
     },
     "fileMetadata": {},
     "template": [],

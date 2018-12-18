@@ -1,44 +1,43 @@
 ---
-title: "IManagedAddin::Unload"
-ms.custom: ""
-ms.date: "02/02/2017"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "office-development"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-helpviewer_keywords: 
-  - "metodo Unload"
-  - "IManagedAddin::Unload"
-ms.assetid: 40a73f07-2605-4745-8ac5-0a0189167fd7
-caps.latest.revision: 8
-author: "kempb"
-ms.author: "kempb"
-manager: "ghogen"
-caps.handback.revision: 7
+title: IManagedAddin::Unload | Documenti Microsoft
+ms.custom: ''
+ms.date: 02/02/2017
+ms.technology:
+- office-development
+ms.topic: conceptual
+dev_langs:
+- VB
+- CSharp
+helpviewer_keywords:
+- Unload method
+author: TerryGLee
+ms.author: tglee
+manager: douge
+ms.workload:
+- office
+ms.openlocfilehash: 76070f520e4e9d1f331cf6799c5d751774c37b16
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# IManagedAddin::Unload
+# <a name="imanagedaddinunload"></a>IManagedAddin::Unload
   Chiamato subito prima dello scaricamento di un componente aggiuntivo VSTO gestito.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
 HRESULT Unload();  
 ```  
   
-## Valore restituito  
+## <a name="return-value"></a>Valore restituito  
  Valore HRESULT che indica se il metodo è stato completato correttamente.  
   
-## Note  
+## <a name="remarks"></a>Note  
  Questo metodo non viene chiamato da versioni correnti di Microsoft Office. Questo metodo è riservato per utilizzi futuri.  
   
-## Vedere anche  
- [Interfaccia IManagedAddin](../vsto/imanagedaddin-interface.md)   
+## <a name="see-also"></a>Vedere anche  
+ [IManagedAddin Interface](../vsto/imanagedaddin-interface.md)   
  [IManagedAddin::Load](../vsto/imanagedaddin-load.md)  
   
   

@@ -1,13 +1,8 @@
 ---
-title: 'CA2140: Transparent code must not reference security critical items | Microsoft Docs'
-ms.custom: 
+title: 'CA2140: Il codice Transparent non deve far riferimento a elementi SecurityCritical'
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- vs-devops-test
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.technology: vs-ide-code-analysis
+ms.topic: reference
 f1_keywords:
 - CA2129
 - SecurityTransparentCodeShouldNotReferenceNonpublicSecurityCriticalCode
@@ -17,81 +12,63 @@ helpviewer_keywords:
 - SecurityTransparentCodeShouldNotReferenceNonpublicSecurityCriticalCode
 - CA2129
 ms.assetid: 251a12da-0557-47f5-a4f7-0229d590ae7b
-caps.latest.revision: 17
-author: stevehoag
-ms.author: shoag
-manager: wpickett
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: HT
-ms.sourcegitcommit: eb5c9550fd29b0e98bf63a7240737da4f13f3249
-ms.openlocfilehash: 6cb8758ba9aa3408b40f7a468523c52925faf78d
-ms.contentlocale: it-it
-ms.lasthandoff: 08/30/2017
-
+author: gewarren
+ms.author: gewarren
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 779b26797dfda4b66b8b3941f76654590cff4843
+ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/19/2018
 ---
-# <a name="ca2140-transparent-code-must-not-reference-security-critical-items"></a>CA2140: Transparent code must not reference security critical items
-|||  
-|-|-|  
-|TypeName|TransparentMethodsMustNotReferenceCriticalCode|  
-|CheckId|CA2140|  
-|Category|Microsoft.Security|  
-|Breaking Change|Breaking|  
-  
-## <a name="cause"></a>Cause  
- A transparent method:  
-  
--   handles a security critical security exception type  
-  
--   has a parameter that is marked as a security critical type  
-  
--   has a generic parameter with a security critical constraints  
-  
--   has a local variable of a security critical type  
-  
--   references a type that is marked as security critical  
-  
--   calls a method that is marked as security critical  
-  
--   references a field that is marked as security critical  
-  
--   returns a type that is marked as security critical  
-  
-## <a name="rule-description"></a>Rule Description  
- A code element that is marked with the <xref:System.Security.SecurityCriticalAttribute> attribute is security critical. A transparent method cannot use a security critical element. If a transparent type attempts to use a security critical type a <xref:System.TypeAccessException>, <xref:System.MethodAccessException> , or <xref:System.FieldAccessException> is raised.  
-  
-## <a name="how-to-fix-violations"></a>How to Fix Violations  
- To fix a violation of this rule, do one of the following:  
-  
--   Mark the code element that uses the security critical code with the <xref:System.Security.SecurityCriticalAttribute> attribute  
-  
-     \- or -  
-  
--   Remove the <xref:System.Security.SecurityCriticalAttribute> attribute from the code elements that are marked as security critical and instead mark them with the <xref:System.Security.SecuritySafeCriticalAttribute> or <xref:System.Security.SecurityTransparentAttribute> attribute.  
-  
-## <a name="when-to-suppress-warnings"></a>When to Suppress Warnings  
- Do not suppress a warning from this rule.  
-  
-## <a name="example"></a>Example  
- In the following examples, a transparent method attempts to reference a security critical generic collection, a security critical field, and a security critical method.  
-  
- [!code-csharp[FxCop.Security.CA2140.TransparentMethodsMustNotReferenceCriticalCode#1](../code-quality/codesnippet/CSharp/ca2140-transparent-code-must-not-reference-security-critical-items_1.cs)]  
-  
-## <a name="see-also"></a>See Also  
- <xref:System.Security.SecurityTransparentAttribute>   
- <xref:System.Security.SecurityCriticalAttribute>   
- <xref:System.Security.SecurityTransparentAttribute>   
- <xref:System.Security.SecurityTreatAsSafeAttribute>   
- <xref:System.Security?displayProperty=fullName>
+# <a name="ca2140-transparent-code-must-not-reference-security-critical-items"></a>CA2140: Il codice Transparent non deve far riferimento a elementi SecurityCritical
+|||
+|-|-|
+|TypeName|TransparentMethodsMustNotReferenceCriticalCode|
+|CheckId|CA2140|
+|Category|Microsoft.Security|
+|Modifica importante|Interruzione|
+
+## <a name="cause"></a>Causa
+ Un metodo trasparente:
+
+-   gestisce un tipo di eccezione di sicurezza critico per la protezione
+
+-   ha un parametro che è contrassegnato come un tipo SecurityCritical
+
+-   contiene un parametro generico con vincoli SecurityCritical
+
+-   dispone di una variabile locale di un tipo SecurityCritical
+
+-   fa riferimento a un tipo contrassegnato come SecurityCritical
+
+-   chiama un metodo contrassegnato come sicurezza critico
+
+-   riferimento a un campo contrassegnato come sicurezza critico
+
+-   Restituisce un tipo che è contrassegnato come sicurezza critico
+
+## <a name="rule-description"></a>Descrizione della regola
+ Un elemento di codice che è contrassegnato con il <xref:System.Security.SecurityCriticalAttribute> attributo è critico per la sicurezza. Un metodo trasparente non può usare un elemento critico per la sicurezza. Se un tipo trasparente tenta di usare un tipo SecurityCritical un <xref:System.TypeAccessException>, <xref:System.MethodAccessException> , o <xref:System.FieldAccessException> viene generato.
+
+## <a name="how-to-fix-violations"></a>Come correggere le violazioni
+ Per correggere una violazione di questa regola, eseguire una delle operazioni seguenti:
+
+-   Contrassegnare l'elemento di codice che utilizza il codice SecurityCritical con il <xref:System.Security.SecurityCriticalAttribute> attributo
+
+     \- oppure -
+
+-   Rimuovere il <xref:System.Security.SecurityCriticalAttribute> attributo dagli elementi di codice che sono contrassegnati come SecurityCritical e invece contrassegnarli con il <xref:System.Security.SecuritySafeCriticalAttribute> o <xref:System.Security.SecurityTransparentAttribute> attributo.
+
+## <a name="when-to-suppress-warnings"></a>Esclusione di avvisi
+ Non escludere un avviso da questa regola.
+
+## <a name="example"></a>Esempio
+ Negli esempi seguenti, un metodo trasparente tenta di fare riferimento a una raccolta generica, un campo e un metodo SecurityCritical.
+
+ [!code-csharp[FxCop.Security.CA2140.TransparentMethodsMustNotReferenceCriticalCode#1](../code-quality/codesnippet/CSharp/ca2140-transparent-code-must-not-reference-security-critical-items_1.cs)]
+
+## <a name="see-also"></a>Vedere anche
+ <xref:System.Security.SecurityTransparentAttribute> <xref:System.Security.SecurityCriticalAttribute> <xref:System.Security.SecurityTransparentAttribute> <xref:System.Security.SecurityTreatAsSafeAttribute> <xref:System.Security?displayProperty=fullName>

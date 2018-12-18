@@ -1,43 +1,42 @@
 ---
-title: "IDiaEnumFrameData::Clone | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "IDiaEnumFrameData::Clone (metodo)"
+title: IDiaEnumFrameData::Clone | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology: vs-ide-debug
+ms.topic: conceptual
+dev_langs:
+- C++
+helpviewer_keywords:
+- IDiaEnumFrameData::Clone Method
 ms.assetid: 28a17300-1626-422f-a17a-3a4d3872c37c
-caps.latest.revision: 7
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 7
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 8bd5ac8a9af2ff06e8095dda1c4724f5f76d9b51
+ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/18/2018
 ---
-# IDiaEnumFrameData::Clone
-[!INCLUDE[vs2017banner](../../code-quality/includes/vs2017banner.md)]
-
-Crea un enumeratore che contiene lo stesso stato di enumerazione dell'enumeratore corrente.  
+# <a name="idiaenumframedataclone"></a>IDiaEnumFrameData::Clone
+Crea un enumeratore che contiene lo stesso stato di enumerazione come enumerazione corrente.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp#  
-HRESULT Clone(   
-   IDiaEnumFrameData** ppenum  
+```C++  
+HRESULT Clone(   
+   IDiaEnumFrameData** ppenum  
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  ppenum  
- \[out\]  restituisce [IDiaEnumFrameData](../../debugger/debug-interface-access/idiaenumframedata.md) oggetto che contiene un duplicato dell'enumeratore.  I dati del frame non siano duplicati, solo enumeratore.  
+ [out] Restituisce un [IDiaEnumFrameData](../../debugger/debug-interface-access/idiaenumframedata.md) oggetto che contiene un duplicato dell'enumeratore. Il frame di dati non sono duplicato, solo l'enumeratore.  
   
-## Valore restituito  
- Se l'operazione riesce, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
+## <a name="return-value"></a>Valore restituito  
+ Se ha esito positivo, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IDiaEnumFrameData](../../debugger/debug-interface-access/idiaenumframedata.md)

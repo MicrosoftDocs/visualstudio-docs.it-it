@@ -1,58 +1,57 @@
 ---
-title: "IDiaSymbol::get_liveRangeStartAddressSection | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "IDiaSymbol::get_liveRangeStartAddressSection"
+title: IDiaSymbol::get_liveRangeStartAddressSection | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology: vs-ide-debug
+ms.topic: conceptual
+dev_langs:
+- C++
+helpviewer_keywords:
+- IDiaSymbol::get_liveRangeStartAddressSection
 ms.assetid: 892b80ff-5957-4233-b4d7-6144167be289
-caps.latest.revision: 9
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 9
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 8e598a6c6414194da487fe90d39a7f7bb2f0e7a7
+ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/18/2018
 ---
-# IDiaSymbol::get_liveRangeStartAddressSection
-[!INCLUDE[vs2017banner](../../code-quality/includes/vs2017banner.md)]
-
-Restituisce parte della sezione di indirizzo iniziale dell'intervallo in cui il simbolo locale è valido.  
+# <a name="idiasymbolgetliverangestartaddresssection"></a>IDiaSymbol::get_liveRangeStartAddressSection
+Restituisce la parte della sezione dell'indirizzo iniziale dell'intervallo in cui il simbolo locale è valido.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp#  
-HRESULT get_liveRangeStartAddressSection (   
-   DWORD* section  
+```C++  
+HRESULT get_liveRangeStartAddressSection (   
+   DWORD* section  
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `section`  
- \[out\]  Restituisce parte della sezione dell'intervallo di indirizzo iniziale.  
+ [out] Restituisce la parte della sezione dell'intervallo di indirizzi iniziale.  
   
-## Valore restituito  
- Se l'operazione riesce, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
+## <a name="return-value"></a>Valore restituito  
+ Se ha esito positivo, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
   
 > [!NOTE]
->  Un codice di errore restituito indica che il simbolo non dispone di informazioni attive l'intervallo.  
+>  Un codice di errore restituito significa che il simbolo non dispone di informazioni di intervallo in tempo reale.  
   
-## Note  
- L'indirizzo formato collegando dalla sezione e dall'offset è l'inizio dell'intervallo in cui il simbolo è valido.  
+## <a name="remarks"></a>Note  
+ L'indirizzo formata by the sezione e l'offset è l'inizio dell'intervallo in cui il simbolo è valido.  
   
- Per ottenere la parte dell'offset indirizzo, utilizzare [IDiaSymbol::get\_liveRangeStartAddressOffset](../../debugger/debug-interface-access/idiasymbol-get-liverangestartaddressoffset.md).  
+ Per ottenere la parte relativa all'offset dell'indirizzo, utilizzare [IDiaSymbol::get_liveRangeStartAddressOffset](../../debugger/debug-interface-access/idiasymbol-get-liverangestartaddressoffset.md).  
   
-## Requisiti  
- intestazione: Dia2.h  
+## <a name="requirements"></a>Requisiti  
+ Intestazione: Dia2.h  
   
- raccolta: diaguids.lib  
+ Libreria: diaguids.lib  
   
  DLL: msdia100.dll  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IDiaSymbol](../../debugger/debug-interface-access/idiasymbol.md)

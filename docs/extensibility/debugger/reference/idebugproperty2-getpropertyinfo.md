@@ -1,76 +1,77 @@
 ---
-title: "IDebugProperty2::GetPropertyInfo | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "IDebugProperty2::GetPropertyInfo"
-helpviewer_keywords: 
-  - "IDebugProperty2::GetPropertyInfo"
+title: IDebugProperty2::GetPropertyInfo | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology:
+- vs-ide-sdk
+ms.topic: conceptual
+f1_keywords:
+- IDebugProperty2::GetPropertyInfo
+helpviewer_keywords:
+- IDebugProperty2::GetPropertyInfo
 ms.assetid: 39d6e942-df72-4c84-a5d9-a386d112714c
-caps.latest.revision: 10
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 10
+author: gregvanl
+ms.author: gregvanl
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: f922731f5c595f7308f78269b8386b7da20e2398
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# IDebugProperty2::GetPropertyInfo
-[!INCLUDE[vs2017banner](../../../code-quality/includes/vs2017banner.md)]
-
-ottiene [DEBUG\_PROPERTY\_INFO](../../../extensibility/debugger/reference/debug-property-info.md) la struttura che descrive una proprietà.  
+# <a name="idebugproperty2getpropertyinfo"></a>IDebugProperty2::GetPropertyInfo
+Ottiene il [DEBUG_PROPERTY_INFO](../../../extensibility/debugger/reference/debug-property-info.md) struttura che descrive una proprietà.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp#  
-HRESULT GetPropertyInfo (   
-   DEBUGPROP_INFO_FLAGS dwFields,  
-   DWORD                nRadix,  
-   DWORD                dwTimeout,  
-   IDebugReference2**   rgpArgs,  
-   DWORD                dwArgCount,  
-   DEBUG_PROPERTY_INFO* pPropertyInfo  
+```cpp  
+HRESULT GetPropertyInfo (   
+   DEBUGPROP_INFO_FLAGS dwFields,  
+   DWORD                nRadix,  
+   DWORD                dwTimeout,  
+   IDebugReference2**   rgpArgs,  
+   DWORD                dwArgCount,  
+   DEBUG_PROPERTY_INFO* pPropertyInfo  
 );  
 ```  
   
-```cpp#  
-int GetPropertyInfo (   
-   enum_DEBUGPROP_INFO_FLAGS dwFields,  
-   uint                      nRadix,  
-   uint                      dwTimeout,  
-   IDebugReference2[]        rgpArgs,  
-   uint                      dwArgCount,  
-   DEBUG_PROPERTY_INFO[]     pPropertyInfo  
+```cpp  
+int GetPropertyInfo (   
+   enum_DEBUGPROP_INFO_FLAGS dwFields,  
+   uint                      nRadix,  
+   uint                      dwTimeout,  
+   IDebugReference2[]        rgpArgs,  
+   uint                      dwArgCount,  
+   DEBUG_PROPERTY_INFO[]     pPropertyInfo  
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `dwFields`  
- \[in\]  Una combinazione di valori [DEBUGPROP\_INFO\_FLAGS](../../../extensibility/debugger/reference/debugprop-info-flags.md) dall'enumerazione che specifica i campi devono essere compilati nella struttura di `pPropertyInfo` .  
+ [in] Una combinazione dei valori di [DEBUGPROP_INFO_FLAGS](../../../extensibility/debugger/reference/debugprop-info-flags.md) enumerazione che specifica i campi devono essere compilati nel `pPropertyInfo` struttura.  
   
  `nRadix`  
- \[in\]  Base da utilizzare durante la formattazione delle informazioni numerica.  
+ [in] Base da utilizzare per la formattazione di eventuali informazioni numeriche.  
   
  `dwTimeout`  
- \[in\]  Specifica il tempo massimo, in millisecondi, di attendere prima di uscire da questo metodo.  Utilizzo `INFINITE` attendere infinito.  
+ [in] Specifica il tempo massimo, in millisecondi di attesa prima della restituzione da questo metodo. Utilizzare `INFINITE` per un'attesa indefinita.  
   
  `rgpArgs`  
- \[in, out\]  Riservato per un utilizzo futuro, impostare su un valore null.  
+ [in, out] Riservato per utilizzi futuri; impostare un valore null.  
   
  `dwArgCount`  
- \[in\]  Riservato per un utilizzo futuro, impostare su zero.  
+ [in] Riservato per utilizzi futuri; Impostare su zero.  
   
  `pPropertyInfo`  
- \[out\]  [DEBUG\_PROPERTY\_INFO](../../../extensibility/debugger/reference/debug-property-info.md) Una struttura che viene soddisfatta di descrizione della proprietà.  
+ [out] Oggetto [DEBUG_PROPERTY_INFO](../../../extensibility/debugger/reference/debug-property-info.md) struttura che viene compilato con la descrizione della proprietà.  
   
-## Valore restituito  
- Se l'operazione riesce, restituisce `S_OK`; in caso contrario restituisce il codice di errore.  
+## <a name="return-value"></a>Valore restituito  
+ Se ha esito positivo, restituisce `S_OK`; in caso contrario, restituisce il codice di errore.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IDebugProperty2](../../../extensibility/debugger/reference/idebugproperty2.md)   
- [DEBUGPROP\_INFO\_FLAGS](../../../extensibility/debugger/reference/debugprop-info-flags.md)   
+ [DEBUGPROP_INFO_FLAGS](../../../extensibility/debugger/reference/debugprop-info-flags.md)   
  [IDebugReference2](../../../extensibility/debugger/reference/idebugreference2.md)   
- [DEBUG\_PROPERTY\_INFO](../../../extensibility/debugger/reference/debug-property-info.md)
+ [DEBUG_PROPERTY_INFO](../../../extensibility/debugger/reference/debug-property-info.md)

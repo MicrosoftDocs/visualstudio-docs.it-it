@@ -1,37 +1,40 @@
 ---
-title: "IActiveScriptWinRTErrorDebug::GetRestrictedErrorString | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/18/2017"
-ms.prod: "windows-script-interfaces"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-helpviewer_keywords: 
-  - "IActiveScriptWinRTErrorDebug::GetRestrictedErrorString"
+title: IActiveScriptWinRTErrorDebug::GetRestrictedErrorString | Documenti Microsoft
+ms.custom: 
+ms.date: 01/18/2017
+ms.prod: windows-script-interfaces
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: reference
+helpviewer_keywords:
+- IActiveScriptWinRTErrorDebug::GetRestrictedErrorString
 ms.assetid: d901e049-fb1b-4101-a04a-1395d657f1cf
-caps.latest.revision: 5
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 5
+caps.latest.revision: 
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.openlocfilehash: ade51ae9852519d6a059193aacbfdde49ae82d19
+ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/27/2017
 ---
-# IActiveScriptWinRTErrorDebug::GetRestrictedErrorString
-Restituisce la stringa di errore limitata Windows Runtime, se disponibile.  
+# <a name="iactivescriptwinrterrordebuggetrestrictederrorstring"></a>IActiveScriptWinRTErrorDebug::GetRestrictedErrorString
+Restituisce il Runtime di Windows limitato stringa di errore, se disponibile.  
   
 > [!IMPORTANT]
->  [Interfaccia IActiveScriptWinRTErrorDebug](../../winscript/reference/iactivescriptwinrterrordebug-interface.md) implementato da PDM v11.0 e maggiore.  Trovato in activdbg100.h.  
+>  [Interfaccia IActiveScriptWinRTErrorDebug](../../winscript/reference/iactivescriptwinrterrordebug-interface.md) è implementata da PDM v 11.0 e versione successiva. Rilevata in activdbg100.h.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```cpp  
-HRESULT GetRestrictedErrorString([out] BSTR * errorString);  
-  
+HRESULT GetRestrictedErrorString([out] BSTR * errorString);   
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `errorString`  
- \[out\] la stringa di errore limitata.  
+ [out] La stringa di errore con restrizioni.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Interfaccia IActiveScriptWinRTErrorDebug](../../winscript/reference/iactivescriptwinrterrordebug-interface.md)

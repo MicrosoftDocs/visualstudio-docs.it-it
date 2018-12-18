@@ -1,13 +1,9 @@
 ---
 title: StopTrackingAndCleanup | Microsoft Docs
-ms.custom: 
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- vs-ide-sdk
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.technology: msbuild
+ms.topic: conceptual
 apiname:
 - StopTrackingAndCleanup
 apilocation:
@@ -16,30 +12,16 @@ apitype: COM
 helpviewer_keywords:
 - StopTrackingAndCleanup
 ms.assetid: 9f8c5994-2dfc-43c3-a5fb-89b2f8990429
-caps.latest.revision: 4
-author: kempb
-ms.author: kempb
-manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 11a9cee75f912c5fb31cf4a031644abe9c63d744
-ms.openlocfilehash: 809e3bffb84406b13aa26c9a170fbb3caf5f1808
-ms.contentlocale: it-it
-ms.lasthandoff: 06/03/2017
-
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 731e8091a91c49c8e17dbcd00c3aea32001115a0
+ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/19/2018
 ---
 # <a name="stoptrackingandcleanup"></a>StopTrackingAndCleanup
 Arresta tutte le operazioni di verifica e libera tutta la memoria usata dalla sessione di verifica.  

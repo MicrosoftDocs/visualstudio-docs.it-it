@@ -1,37 +1,21 @@
 ---
 title: 'Procedura dettagliata: Creazione di un SDK tramite c# o Visual Basic | Documenti Microsoft'
-ms.custom: 
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - vs-ide-sdk
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: ef96a249-5eef-402a-a8d5-d74cb49239bd
-caps.latest.revision: 20
+author: gregvanl
 ms.author: gregvanl
-manager: ghogen
-translation.priority.mt:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: 2106c26e8320e64a641197528c6b91223ef20342
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
 ms.translationtype: MT
-ms.sourcegitcommit: eb5c9550fd29b0e98bf63a7240737da4f13f3249
-ms.openlocfilehash: d40de5bedbb0e77aee2a0dbed34f8dc22d3835c9
-ms.contentlocale: it-it
-ms.lasthandoff: 09/06/2017
-
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="walkthrough-creating-an-sdk-using-c-or-visual-basic"></a>Procedura dettagliata: Creazione di un SDK tramite c# o Visual Basic
 In questa procedura dettagliata si apprenderà come creare un SDK di libreria matematica semplice utilizzando Visual c# e quindi creare il pacchetto SDK come un Visual Studio Extension (VSIX). Si completeranno le seguenti procedure:  
@@ -45,7 +29,7 @@ In questa procedura dettagliata si apprenderà come creare un SDK di libreria ma
 ## <a name="prerequisites"></a>Prerequisiti  
  Per seguire questa procedura dettagliata, è necessario installare Visual Studio SDK. Per ulteriori informazioni, vedere [Visual Studio SDK](../extensibility/visual-studio-sdk.md).  
   
-##  <a name="createClassLibrary"></a>Per creare il componente SimpleMath Windows Runtime  
+##  <a name="createClassLibrary"></a> Per creare il componente SimpleMath Windows Runtime  
   
 1.  Nella barra dei menu, scegliere **File**, **New**, **nuovo progetto**.  
   
@@ -57,7 +41,8 @@ In questa procedura dettagliata si apprenderà come creare un SDK di libreria ma
   
 5.  Rinominare **Class1.cs** a **Arithmetic.cs** e aggiornarlo in modo che corrisponda al codice seguente:  
   
-     [!code-csharp[N. 3 CreatingAnSDKUsingWinRT](../extensibility/codesnippet/CSharp/walkthrough-creating-an-sdk-using-csharp-or-visual-basic_1.cs)][!code-vb[CreatingAnSDKUsingWinRT n. 3  ](../extensibility/codesnippet/VisualBasic/walkthrough-creating-an-sdk-using-csharp-or-visual-basic_1.vb)]  
+     [!code-csharp[CreatingAnSDKUsingWinRT#3](../extensibility/codesnippet/CSharp/walkthrough-creating-an-sdk-using-csharp-or-visual-basic_1.cs)]
+     [!code-vb[CreatingAnSDKUsingWinRT#3](../extensibility/codesnippet/VisualBasic/walkthrough-creating-an-sdk-using-csharp-or-visual-basic_1.vb)]  
   
 6.  In **Esplora**, aprire il menu di scelta rapida per il **soluzione 'SimpleMath'** nodo, quindi scegliere **Configuration Manager**.  
   
@@ -72,7 +57,7 @@ In questa procedura dettagliata si apprenderà come creare un SDK di libreria ma
   
 9. In **Esplora**, aprire il menu di scelta rapida per il **SimpleMath** nodo del progetto e quindi scegliere **compilare**.  
   
-##  <a name="createVSIX"></a>Per creare il progetto di estensione SimpleMathVSIX  
+##  <a name="createVSIX"></a> Per creare il progetto di estensione SimpleMathVSIX  
   
 1.  Nel menu di scelta rapida per il **soluzione 'SimpleMath'** nodo, scegliere **Aggiungi**, **nuovo progetto**.  
   
@@ -86,7 +71,7 @@ In questa procedura dettagliata si apprenderà come creare un SDK di libreria ma
   
 6.  Sostituire il codice XML esistente con il codice XML seguente:  
   
-     [!code-xml[CreatingAnSDKUsingWinRT n. 1](../extensibility/codesnippet/XML/walkthrough-creating-an-sdk-using-csharp-or-visual-basic_2.xml)]
+     [!code-xml[CreatingAnSDKUsingWinRT#1](../extensibility/codesnippet/XML/walkthrough-creating-an-sdk-using-csharp-or-visual-basic_2.xml)]
   
 7.  In **Esplora**, scegliere il **SimpleMathVSIX** progetto.  
   
@@ -167,7 +152,7 @@ In questa procedura dettagliata si apprenderà come creare un SDK di libreria ma
   
 30. Scegliere il **installare** pulsante, attendere il completamento dell'installazione e quindi riavviare Visual Studio.  
   
-##  <a name="createSample"></a>Per creare un'app di esempio che utilizza la libreria di classi  
+##  <a name="createSample"></a> Per creare un'app di esempio che utilizza la libreria di classi  
   
 1.  Nella barra dei menu, scegliere **File**, **New**, **nuovo progetto**.  
   
@@ -181,7 +166,7 @@ In questa procedura dettagliata si apprenderà come creare un SDK di libreria ma
   
 6.  Nel riquadro dei dettagli, scegliere il **SDK matematiche semplici** estensione.  
   
-     Ulteriori informazioni sul SDK viene visualizzato. È possibile scegliere di **informazioni** collegamento per aprire http://www.msdn.microsoft.com, come specificato nel file SDKManifest.xml precedentemente in questa procedura dettagliata.  
+     Ulteriori informazioni sul SDK viene visualizzato. È possibile scegliere il **informazioni** collegamento per aprire http://www.msdn.microsoft.com, come specificato nel file SDKManifest.xml più indietro in questa procedura dettagliata.  
   
 7.  Nel **gestione riferimenti** la finestra di dialogo, seleziona il **SDK matematiche semplici** casella di controllo e quindi scegliere il **OK** pulsante.  
   
@@ -245,11 +230,12 @@ In questa procedura dettagliata si apprenderà come creare un SDK di libreria ma
   
 11. Aggiornamento MainPage.xaml.cs affinché corrisponda al codice seguente:  
   
-     [!code-csharp[N. 2 CreatingAnSDKUsingWinRTDemoApp](../extensibility/codesnippet/CSharp/walkthrough-creating-an-sdk-using-csharp-or-visual-basic_5.cs)][!code-vb[CreatingAnSDKUsingWinRTDemoApp n. 2  ](../extensibility/codesnippet/VisualBasic/walkthrough-creating-an-sdk-using-csharp-or-visual-basic_5.vb)]  
+     [!code-csharp[CreatingAnSDKUsingWinRTDemoApp#2](../extensibility/codesnippet/CSharp/walkthrough-creating-an-sdk-using-csharp-or-visual-basic_5.cs)]
+     [!code-vb[CreatingAnSDKUsingWinRTDemoApp#2](../extensibility/codesnippet/VisualBasic/walkthrough-creating-an-sdk-using-csharp-or-visual-basic_5.vb)]  
   
 12. Premere il tasto F5 per eseguire l'app.  
   
-13. Nell'app, immettere i due numeri, scegliere un'operazione e quindi scegliere il  **=**  pulsante.  
+13. Nell'app, immettere i due numeri, scegliere un'operazione e quindi scegliere il **=** pulsante.  
   
      Viene visualizzato il risultato corretto.  
   

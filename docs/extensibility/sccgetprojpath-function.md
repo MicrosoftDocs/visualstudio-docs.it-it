@@ -1,41 +1,25 @@
 ---
 title: Funzione SccGetProjPath | Documenti Microsoft
-ms.custom: 
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - vs-ide-sdk
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: conceptual
 f1_keywords:
 - SccGetProjPath
 helpviewer_keywords:
 - SccGetProjPath function
 ms.assetid: 1079847e-d45f-4cb8-9d92-1e01ce5d08f6
-caps.latest.revision: 15
+author: gregvanl
 ms.author: gregvanl
-manager: ghogen
-translation.priority.mt:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: 7ef5041b483e85e0806827f7d1188d432b476c5b
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
 ms.translationtype: MT
-ms.sourcegitcommit: 4a36302d80f4bc397128e3838c9abf858a0b5fe8
-ms.openlocfilehash: b45e9a9f33bd5f1b30ee0f300385ef984ce1bc0b
-ms.contentlocale: it-it
-ms.lasthandoff: 09/06/2017
-
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="sccgetprojpath-function"></a>SccGetProjPath (funzione)
 Questa funzione è richiesto all'utente per un percorso di progetto, è una stringa che è significativa solo per il plug-in controllo del codice sorgente. Viene chiamato quando l'utente è:  
@@ -110,14 +94,14 @@ SCCRTN SccGetProjPath (
 ## <a name="remarks"></a>Note  
  Lo scopo di questa funzione è per l'ambiente IDE di acquisire i parametri `lpProjName` e `lpAuxProjPath`. Dopo il plug-in controllo del codice sorgente richiede l'immissione di queste informazioni, passa questi due stringhe nell'IDE L'IDE persiste queste stringhe nel file di soluzione e li passa al [SccOpenProject](../extensibility/sccopenproject-function.md) ogni volta che l'utente apre il progetto. Queste stringhe di abilitare il plug-in tenere traccia delle informazioni associate a un progetto.  
   
- Quando viene innanzitutto chiamata la funzione, `lpAuxProjPath` è impostata su una stringa vuota. `lProjName`può anche essere vuota o contenere il nome del progetto IDE, che può quindi usare o ignorare il plug-in controllo del codice sorgente. Quando la funzione restituisce correttamente, il plug-in restituisce le due stringhe corrispondenti. L'IDE non fa alcuna ipotesi sulle stringhe di queste non verrà utilizzati e non consente all'utente di modificarli. Se l'utente decide di modificare le impostazioni, l'IDE chiamerà `SccGetProjPath` nuovamente, passando gli stessi valori ha ricevuto l'ora precedente. In questo modo il plug-in del controllo completo su questi due stringhe.  
+ Quando viene innanzitutto chiamata la funzione, `lpAuxProjPath` è impostata su una stringa vuota. `lProjName` potrebbe anche essere vuota o contenere il nome del progetto IDE, che può usare o ignorare il plug-in del controllo del codice sorgente. Quando la funzione restituisce correttamente, il plug-in restituisce le due stringhe corrispondenti. L'IDE non fa alcuna ipotesi sulle stringhe di queste non verrà utilizzati e non consente all'utente di modificarli. Se l'utente decide di modificare le impostazioni, l'IDE chiamerà `SccGetProjPath` nuovamente, passando gli stessi valori ha ricevuto l'ora precedente. In questo modo il plug-in del controllo completo su questi due stringhe.  
   
  Per `lpUser`, l'IDE è possibile passare un nome utente o può semplicemente passare un puntatore a una stringa vuota. Se è presente un nome utente, il plug-in controllo del codice sorgente necessario utilizzarlo come valore predefinito. Tuttavia, se è stato passato alcun nome o l'account di accesso non riuscito con il nome specificato, il plug-in deve richiedere all'utente di accesso e passare nuovamente il nome `lpUser` quando riceve un account di accesso valido. Dato che il plug-in potrebbe cambiare questa stringa, l'IDE verrà sempre allocare un buffer di dimensione (`SCC_USER_LEN`+ 1).  
   
 > [!NOTE]
 >  La prima azione che esegue l'IDE può essere una chiamata a uno di `SccOpenProject` funzione o `SccGetProjPath` (funzione). Di conseguenza, essi dispongono di identica `lpUser` parametro, che consente l'accesso dell'utente in fase di plug-in controllo del codice sorgente. Anche se il valore restituito dalla funzione indica un errore, il plug-in necessario inserire la stringa con un nome di account di accesso valido.  
   
- `lpLocalPath`è la directory in cui l'utente mantiene il progetto. Può essere una stringa vuota. Se è disponibile alcuna directory attualmente definito (come nel caso di un utente è stato eseguito un tentativo di scaricare un progetto dal sistema di controllo di origine) e `bAllowChangePath` è `TRUE`, il plug-in controllo del codice sorgente può richiedere l'input dell'utente o utilizzare un altro metodo per inserire la proprietà stringa in `lpLocalPath`. Se `bAllowChangePath` è `FALSE`, il plug-in necessario non modificare la stringa, perché l'utente sta già nella directory specificata.  
+ `lpLocalPath` è la directory in cui l'utente mantiene il progetto. Può essere una stringa vuota. Se è disponibile alcuna directory attualmente definito (come nel caso di un utente è stato eseguito un tentativo di scaricare un progetto dal sistema di controllo di origine) e `bAllowChangePath` è `TRUE`, il plug-in controllo del codice sorgente può richiedere l'input dell'utente o utilizzare un altro metodo per inserire la proprietà stringa in `lpLocalPath`. Se `bAllowChangePath` è `FALSE`, il plug-in necessario non modificare la stringa, perché l'utente sta già nella directory specificata.  
   
  Se l'utente crea un nuovo progetto da inserire nel controllo del codice sorgente, il plug-in controllo del codice sorgente potrebbe non effettivamente crearla nel sistema di controllo di origine al momento `SccGetProjPath` viene chiamato. Invece, passa nuovamente la stringa lungo con un valore diverso da zero per `pbNew`, che indica che il progetto verrà creato nel sistema di controllo di origine.  
   

@@ -1,26 +1,24 @@
 ---
-title: Refactoring
+title: Refactoring del codice in Visual Studio per Mac | Microsoft Docs
 description: "La riorganizzazione del codice in Visual Studio per Mac è stata semplificata grazie all'analisi dell'origine."
 author: asb3993
 ms.author: amburns
 ms.date: 04/14/2017
 ms.topic: article
 ms.assetid: C7782BF3-016F-4B41-8A81-85FC540A1A8F
+ms.openlocfilehash: 925c928e171b76af76304074e736fd8962158564
+ms.sourcegitcommit: 39c525ec200c6c4ea94815567b3fad7ab14fb7b3
 ms.translationtype: HT
-ms.sourcegitcommit: e2b7ff9126e1cc38ac2e58d6be339b656a024e7f
-ms.openlocfilehash: 4133b35d7bafd37a44150c6af0d730562a639874
-ms.contentlocale: it-it
-ms.lasthandoff: 08/11/2017
-
+ms.contentlocale: it-IT
+ms.lasthandoff: 03/08/2018
 ---
-
 # <a name="refactoring"></a>Refactoring
 
 Il refactoring del codice è un modo per riorganizzare, ristrutturare e rendere più chiaro il codice esistente garantendo che il comportamento complessivo del codice non cambi.
 
-Questa operazione produce una codebase più integra e quindi più facile da usare, leggere e gestire per qualsiasi sviluppatore o utente che fa riferimento al codice.
+Il refactoring produce una codebase più integra e quindi più facile da usare, leggere e gestire per qualsiasi sviluppatore o utente che fa riferimento al codice.
 
-L'integrazione di Visual Studio per Mac con Roslyn, la piattaforma di compilazione .NET open source Microsoft, consente più operazioni di refactoring, oltre a offrire supporto completo per la versione di C# più recente.
+L'integrazione di Visual Studio per Mac con Roslyn, la piattaforma di compilazione .NET open source Microsoft, consente più operazioni di refactoring.
 
 ## <a name="renaming"></a>Ridenominazione 
 
@@ -109,5 +107,4 @@ L'analisi dell'origine analizza il codice in tempo reale, sottolineando potenzia
 Se si fa clic sul cerchio nella parte superiore, è possibile scorrere ogni suggerimento, con i problemi più gravi visualizzati per primi. Passando il puntatore su un singolo risultato o una singola riga viene visualizzato il problema, che può essere risolto tramite azioni di contesto:
 
  ![Elemento di analisi dell'origine](media/refactoring-image5.png)
-
 

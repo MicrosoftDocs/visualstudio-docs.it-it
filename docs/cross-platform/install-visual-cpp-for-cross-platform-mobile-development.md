@@ -1,43 +1,24 @@
 ---
 title: Installare Visual C++ per lo sviluppo di app per dispositivi mobili multipiattaforma | Microsoft Docs
-ms.custom: 
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- tgt-pltfrm-cross-plat
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.technology: vs-ide-mobile
+ms.topic: conceptual
 dev_langs:
 - C++
 ms.assetid: aaea6b8d-55eb-4427-8185-c050f855c257
-caps.latest.revision: 15
-author: BrianPeek
-ms.author: brpeek
-manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 47057e9611b824c17077b9127f8d2f8b192d6eb8
-ms.openlocfilehash: d284309b0243f8d551d06c53d50d5df5de8f3f3c
-ms.contentlocale: it-it
-ms.lasthandoff: 05/13/2017
-
+author: corob-msft
+ms.author: corob
+manager: douge
+ms.workload:
+- xplat-cplusplus
+ms.openlocfilehash: 64bdc654bc1bcd6721cc29052a9409e00f6afd07
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# <a name="install-visual-c-for-cross-platform-mobile-development"></a>Install Visual C++ for Cross-Platform Mobile Development
+# <a name="install-visual-c-for-cross-platform-mobile-development"></a>Installare Visual C++ per Sviluppo app per dispositivi mobili multipiattaforma
 [Visual C++ per Sviluppo app per dispositivi mobili multipiattaforma](http://go.microsoft.com/fwlink/p/?LinkId=536383) è un componente installabile di Visual Studio 2015. Include modelli multipiattaforma di Visual Studio e installa gli SDK e gli strumenti multipiattaforma per iniziare rapidamente, senza doverli individuare, scaricare e configurare manualmente. Con questi strumenti di Visual Studio è possibile creare, modificare, eseguire il debug e testare facilmente i progetti multipiattaforma. Questo argomento descrive come installare gli strumenti e il software di terze parti necessari per sviluppare app multipiattaforma mediante Visual Studio. Per una panoramica del componente, vedere [Visual C++ per dispositivi mobili multipiattaforma](http://go.microsoft.com/fwlink/p/?LinkId=536387)  
   
  [Requisiti](#Requirements)   
@@ -142,7 +123,7 @@ ms.lasthandoff: 05/13/2017
   
 1.  Sulla barra dei menu di Visual Studio scegliere **Strumenti**, quindi **Opzioni**.  
   
-2.  Nella finestra di dialogo **Opzioni** espandere **Multipiattaforma**, **C++**e selezionare **Android**.  
+2.  Nella finestra di dialogo **Opzioni** espandere **Multipiattaforma**, **C++** e selezionare **Android**.  
   
      ![Opzioni di percorso dello strumento Android](../cross-platform/media/cppmdd_options_android.PNG "CPPMDD_Options_Android")  
   

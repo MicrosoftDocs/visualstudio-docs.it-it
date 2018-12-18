@@ -1,69 +1,70 @@
 ---
-title: "IDebugCoreServer3::CreateInstanceInServer | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "IDebugCoreServer3::CreateInstanceInServer"
-helpviewer_keywords: 
-  - "IDebugCoreServer3::CreateInstanceInServer"
+title: IDebugCoreServer3::CreateInstanceInServer | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology:
+- vs-ide-sdk
+ms.topic: conceptual
+f1_keywords:
+- IDebugCoreServer3::CreateInstanceInServer
+helpviewer_keywords:
+- IDebugCoreServer3::CreateInstanceInServer
 ms.assetid: 76f36bae-f6ab-413c-a8a9-8808bfeba05b
-caps.latest.revision: 9
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 9
+author: gregvanl
+ms.author: gregvanl
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: 71995e38cf58c23437cbb9a6d6973fbd09cab8ab
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# IDebugCoreServer3::CreateInstanceInServer
-[!INCLUDE[vs2017banner](../../../code-quality/includes/vs2017banner.md)]
-
-Crea un'istanza di un modulo di debug sul server.  
+# <a name="idebugcoreserver3createinstanceinserver"></a>IDebugCoreServer3::CreateInstanceInServer
+Crea un'istanza di un motore di debug nel server.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp#  
-HRESULT CreateInstanceInServer(  
-   LPCWSTR  szDll,  
-   WORD     wLangId,  
-   REFCLSID clsidObject,  
-   REFIID   riid,  
-   void**   ppvObject  
+```cpp  
+HRESULT CreateInstanceInServer(  
+   LPCWSTR  szDll,  
+   WORD     wLangId,  
+   REFCLSID clsidObject,  
+   REFIID   riid,  
+   void**   ppvObject  
 );  
 ```  
   
-```c#  
+```csharp  
 int CreateInstanceInServer(  
-   string     szDll,   
-   ushort     wLangID,   
-   ref Guid   clsidObject,   
-   ref Guid   riid,   
-   out IntPtr ppvObject  
+   string     szDll,   
+   ushort     wLangID,   
+   ref Guid   clsidObject,   
+   ref Guid   riid,   
+   out IntPtr ppvObject  
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `szDll`  
- \[in\]  Il percorso della DLL che implementa il CLSID specificato dal parametro di `clsidObject` .  Se questo è `NULL`, la funzione di `CoCreateInstance` di COM è denominata.  
+ [in] Percorso della dll che implementa il CLSID specificato nel `clsidObject` parametro. Se si tratta di `NULL`, quindi COM `CoCreateInstance` funzione viene chiamata.  
   
  `wLangId`  
- \[in\]  Impostazioni locali del motore di debug.  Può trattarsi 0 se [SetLocale](../../../extensibility/debugger/reference/idebugengine2-setlocale.md) viene chiamato il metodo.  
+ [in] Impostazioni locali del motore di debug. Può essere 0 se il [SetLocale](../../../extensibility/debugger/reference/idebugengine2-setlocale.md) metodo non deve essere chiamato.  
   
  `clsidObject`  
- \[in\]  CLSID del motore di debug da creare.  
+ [in] CLSID del motore di debug da creare.  
   
  `riid`  
- \[in\]  ID dell'interfaccia specifica da recuperare dall'oggetto di classe.  
+ [in] ID di interfaccia dell'interfaccia specifica per recuperare l'oggetto della classe.  
   
  `ppvObject`  
- \[out\]  interfaccia di `IUnknown` da creare un'istanza.  Eseguire il cast o il marshalling questo oggetto all'interfaccia desiderata.  
+ [out] `IUnknown` interfaccia dall'oggetto istanziato. Eseguire il cast o effettuare il marshalling di questo oggetto per l'interfaccia desiderata.  
   
-## Valore restituito  
- Se l'operazione riesce, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
+## <a name="return-value"></a>Valore restituito  
+ Se ha esito positivo, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IDebugCoreServer3](../../../extensibility/debugger/reference/idebugcoreserver3.md)   
  [SetLocale](../../../extensibility/debugger/reference/idebugengine2-setlocale.md)

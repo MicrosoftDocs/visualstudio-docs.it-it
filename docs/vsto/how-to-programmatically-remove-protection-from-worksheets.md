@@ -1,14 +1,10 @@
 ---
-title: 'How to: Programmatically Remove Protection from Worksheets | Microsoft Docs'
-ms.custom: 
+title: 'Procedura: rimuovere la protezione dai fogli di lavoro a livello di codice | Documenti Microsoft'
+ms.custom: ''
 ms.date: 02/02/2017
-ms.prod: visual-studio-dev14
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - office-development
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: conceptual
 dev_langs:
 - VB
 - CSharp
@@ -17,42 +13,43 @@ helpviewer_keywords:
 - documents [Office development in Visual Studio], document protection
 - document protection, removing from worksheets
 - Unprotect method
-ms.assetid: 034688d2-eda7-4b4a-bcc2-d0999ff879a4
-caps.latest.revision: 48
-author: kempb
-ms.author: kempb
-manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: eb5c9550fd29b0e98bf63a7240737da4f13f3249
-ms.openlocfilehash: 3ca7d27aa126318a48e30887b1e76e932ec659c6
-ms.contentlocale: it-it
-ms.lasthandoff: 08/30/2017
-
+author: TerryGLee
+ms.author: tglee
+manager: douge
+ms.workload:
+- office
+ms.openlocfilehash: c9e34e184462f1ec7822b5c2fce63aaff4a7f515
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# <a name="how-to-programmatically-remove-protection-from-worksheets"></a>How to: Programmatically Remove Protection from Worksheets
-  You can programmatically remove protection from a Microsoft Office Excel worksheet.  
+# <a name="how-to-programmatically-remove-protection-from-worksheets"></a>Procedura: Rimuovere la protezione dai fogli di lavoro a livello di codice
+  È possibile rimuovere la protezione a livello di codice da un foglio di lavoro di Microsoft Office Excel.  
   
  [!INCLUDE[appliesto_xlalldocapp](../vsto/includes/appliesto-xlalldocapp-md.md)]  
   
- The following example uses the variable `getPasswordFromUser`, which contains a password obtained from the user.  
+ L'esempio seguente usa la variabile `getPasswordFromUser`, che contiene una password ottenuta dall'utente.  
   
-### <a name="to-unprotect-a-worksheet-in-a-document-level-customization"></a>To unprotect a worksheet in a document-level customization  
+### <a name="to-unprotect-a-worksheet-in-a-document-level-customization"></a>Per rimuovere la protezione da un foglio di lavoro in una personalizzazione a livello di documento  
   
-1.  Call the <xref:Microsoft.Office.Tools.Excel.Worksheet.Unprotect%2A> method of the worksheet and pass in the password, if required. This example assumes that you are working with a worksheet named `Sheet1`.  
+1.  Chiamare il metodo <xref:Microsoft.Office.Tools.Excel.Worksheet.Unprotect%2A> del foglio di lavoro e passare la password, se necessario. Questo esempio presuppone l'utilizzo di un foglio di lavoro denominato `Sheet1`.  
   
-     [!code-csharp[Trin_VstcoreExcelAutomation#28](../vsto/codesnippet/CSharp/Trin_VstcoreExcelAutomationCS/Sheet1.cs#28)]  [!code-vb[Trin_VstcoreExcelAutomation#28](../vsto/codesnippet/VisualBasic/Trin_VstcoreExcelAutomation/Sheet1.vb#28)]  
+     [!code-csharp[Trin_VstcoreExcelAutomation#28](../vsto/codesnippet/CSharp/Trin_VstcoreExcelAutomationCS/Sheet1.cs#28)]
+     [!code-vb[Trin_VstcoreExcelAutomation#28](../vsto/codesnippet/VisualBasic/Trin_VstcoreExcelAutomation/Sheet1.vb#28)]  
   
-### <a name="to-unprotect-a-worksheet-in-an-vsto-add-in"></a>To unprotect a worksheet in an VSTO Add-in  
+### <a name="to-unprotect-a-worksheet-in-an-vsto-add-in"></a>Per rimuovere la protezione di un foglio di lavoro in un componente aggiuntivo VSTO  
   
-1.  Call the <xref:Microsoft.Office.Interop.Excel._Worksheet.Unprotect%2A> method of the active worksheet and pass in the password, if required.  
+1.  Chiamare il metodo <xref:Microsoft.Office.Interop.Excel._Worksheet.Unprotect%2A> del foglio di lavoro attivo e passare la password, se necessario.  
   
-     [!code-csharp[Trin_VstcoreExcelAutomationAddIn#18](../vsto/codesnippet/CSharp/trin_vstcoreexcelautomationaddin/ThisAddIn.cs#18)]  [!code-vb[Trin_VstcoreExcelAutomationAddIn#18](../vsto/codesnippet/VisualBasic/trin_vstcoreexcelautomationaddin/ThisAddIn.vb#18)]  
+     [!code-csharp[Trin_VstcoreExcelAutomationAddIn#18](../vsto/codesnippet/CSharp/trin_vstcoreexcelautomationaddin/ThisAddIn.cs#18)]
+     [!code-vb[Trin_VstcoreExcelAutomationAddIn#18](../vsto/codesnippet/VisualBasic/trin_vstcoreexcelautomationaddin/ThisAddIn.vb#18)]  
   
-## <a name="see-also"></a>See Also  
- [Working with Worksheets](../vsto/working-with-worksheets.md)   
- [How to: Programmatically Protect Worksheets](../vsto/how-to-programmatically-protect-worksheets.md)   
- [How to: Programmatically Protect Workbooks](../vsto/how-to-programmatically-protect-workbooks.md)   
- [How to: Programmatically Hide Worksheets](../vsto/how-to-programmatically-hide-worksheets.md)   
- [Global Access to Objects in Office Projects](../vsto/global-access-to-objects-in-office-projects.md)  
+## <a name="see-also"></a>Vedere anche  
+ [Utilizzo dei fogli di lavoro](../vsto/working-with-worksheets.md)   
+ [Procedura: proteggere i fogli di lavoro a livello di codice](../vsto/how-to-programmatically-protect-worksheets.md)   
+ [Procedura: proteggere a livello di programmazione le cartelle di lavoro](../vsto/how-to-programmatically-protect-workbooks.md)   
+ [Procedura: nascondere i fogli di lavoro a livello di codice](../vsto/how-to-programmatically-hide-worksheets.md)   
+ [Accesso globale a oggetti nei progetti di Office](../vsto/global-access-to-objects-in-office-projects.md)  
   
   

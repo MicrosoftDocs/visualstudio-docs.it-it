@@ -1,57 +1,54 @@
 ---
-title: 'How to: Programmatically Open Existing Documents | Microsoft Docs'
-ms.custom: 
+title: 'Procedura: aprire documenti esistenti | Documenti Microsoft'
+ms.custom: ''
 ms.date: 02/02/2017
-ms.prod: visual-studio-dev14
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - office-development
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: conceptual
 dev_langs:
 - VB
 - CSharp
 helpviewer_keywords:
 - documents [Office development in Visual Studio], opening
 - Word [Office development in Visual Studio], opening documents
-ms.assetid: 08f7fe4b-d96d-4a0c-b32a-aa7fd7992316
-caps.latest.revision: 44
-author: kempb
-ms.author: kempb
-manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: eb5c9550fd29b0e98bf63a7240737da4f13f3249
-ms.openlocfilehash: a0078a0bde72abc94d586d22bdf4ef36c8b69801
-ms.contentlocale: it-it
-ms.lasthandoff: 08/30/2017
-
+author: TerryGLee
+ms.author: tglee
+manager: douge
+ms.workload:
+- office
+ms.openlocfilehash: 0c7542b2222839afc75b3b5b1b84fc5afe56f523
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# <a name="how-to-programmatically-open-existing-documents"></a>How to: Programmatically Open Existing Documents
-  The <xref:Microsoft.Office.Interop.Word.Documents.Open%2A> method opens the existing Microsoft Office Word document specified by a fully qualified path and file name. This method returns a <xref:Microsoft.Office.Interop.Word.Document> that represents the opened document.  
+# <a name="how-to-programmatically-open-existing-documents"></a>Procedura: aprire documenti esistenti a livello di codice
+  Il <xref:Microsoft.Office.Interop.Word.Documents.Open%2A> metodo apre il documento di Microsoft Office Word esistente specificato da un nome di file e percorso completo. Questo metodo restituisce un <xref:Microsoft.Office.Interop.Word.Document> che rappresenta il documento aperto.  
   
  [!INCLUDE[appliesto_wdalldocapp](../vsto/includes/appliesto-wdalldocapp-md.md)]  
   
-### <a name="to-open-a-document"></a>To open a document  
+### <a name="to-open-a-document"></a>Per aprire un documento  
   
--   Call the <xref:Microsoft.Office.Interop.Word.Documents.Open%2A> method of the <xref:Microsoft.Office.Interop.Word.Documents> collection and supply a path to the document.  
+-   Chiamare il <xref:Microsoft.Office.Interop.Word.Documents.Open%2A> metodo il <xref:Microsoft.Office.Interop.Word.Documents> raccolta e specificare un percorso del documento.  
   
-     [!code-vb[Trin_VstcoreWordAutomation#5](../vsto/codesnippet/VisualBasic/Trin_VstcoreWordAutomationVB/ThisDocument.vb#5)]  [!code-csharp[Trin_VstcoreWordAutomation#5](../vsto/codesnippet/CSharp/Trin_VstcoreWordAutomationCS/ThisDocument.cs#5)]  
+     [!code-vb[Trin_VstcoreWordAutomation#5](../vsto/codesnippet/VisualBasic/Trin_VstcoreWordAutomationVB/ThisDocument.vb#5)]
+     [!code-csharp[Trin_VstcoreWordAutomation#5](../vsto/codesnippet/CSharp/Trin_VstcoreWordAutomationCS/ThisDocument.cs#5)]  
   
-### <a name="to-open-a-document-as-read-only"></a>To open a document as read-only  
+### <a name="to-open-a-document-as-read-only"></a>Per aprire un documento in sola lettura  
   
--   Call the <xref:Microsoft.Office.Interop.Word.Documents.Open%2A> method, supply a path to the document, and set the *ReadOnly* argument to **True** in the method call.  
+-   Chiamare il <xref:Microsoft.Office.Interop.Word.Documents.Open%2A> metodo, fornire un percorso del documento e impostare il *ReadOnly* argomento **True** nella chiamata al metodo.  
   
-     [!code-vb[Trin_VstcoreWordAutomation#6](../vsto/codesnippet/VisualBasic/Trin_VstcoreWordAutomationVB/ThisDocument.vb#6)]  [!code-csharp[Trin_VstcoreWordAutomation#6](../vsto/codesnippet/CSharp/Trin_VstcoreWordAutomationCS/ThisDocument.cs#6)]  
+     [!code-vb[Trin_VstcoreWordAutomation#6](../vsto/codesnippet/VisualBasic/Trin_VstcoreWordAutomationVB/ThisDocument.vb#6)]
+     [!code-csharp[Trin_VstcoreWordAutomation#6](../vsto/codesnippet/CSharp/Trin_VstcoreWordAutomationCS/ThisDocument.cs#6)]  
   
-## <a name="compiling-the-code"></a>Compiling the Code  
- This code example requires the following:  
+## <a name="compiling-the-code"></a>Compilazione del codice  
+ Questo esempio di codice presenta i requisiti seguenti:  
   
--   A document named NewDocument.doc must exist in a directory named Test on drive C.  
+-   Un documento denominato NewDocument. doc deve essere presente in una directory denominata Test sull'unità C.  
   
-## <a name="see-also"></a>See Also  
- [How to: Programmatically Create New Documents](../vsto/how-to-programmatically-create-new-documents.md)   
- [How to: Programmatically Close Documents](../vsto/how-to-programmatically-close-documents.md)   
- [Optional Parameters in Office Solutions](../vsto/optional-parameters-in-office-solutions.md)  
+## <a name="see-also"></a>Vedere anche  
+ [Procedura: creazione di nuovi documenti a livello di codice](../vsto/how-to-programmatically-create-new-documents.md)   
+ [Procedura: chiudere i documenti a livello di codice](../vsto/how-to-programmatically-close-documents.md)   
+ [Parametri facoltativi nelle soluzioni Office](../vsto/optional-parameters-in-office-solutions.md)  
   
   

@@ -1,39 +1,20 @@
 ---
 title: Glossario degli attributi | Strumento di test per sviluppatori Microsoft IntelliTest | Microsoft Docs
-ms.custom: 
 ms.date: 05/02/2017
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- vs-devops-test
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.technology: vs-ide-test
+ms.topic: conceptual
 helpviewer_keywords:
 - IntelliTest, Attribute glossary
-ms.assetid: 557C7869-48BE-4B82-9563-1FF356ABACDB
-caps.latest.revision: 56
-ms.author: douge
+ms.author: gewarren
 manager: douge
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 45d36934cf1c46902cac566203cddf4a118b7fe4
-ms.openlocfilehash: ad5a3dab018ccafba6462d92fea8401939d1b278
-ms.contentlocale: it-it
-ms.lasthandoff: 06/02/2017
-
+ms.workload:
+- multiple
+author: gewarren
+ms.openlocfilehash: fd799598f7e497c217024965d7a83ff1df322acd
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="attribute-glossary"></a>Glossario degli attributi
 
@@ -220,7 +201,7 @@ public void MyTest(object testParameter)
 <a name="pexallowedexception"></a>
 ## <a name="pexallowedexception"></a>PexAllowedException
 
-Se questo attributo è allegato a [PexMethod](#pexmethod) o a [PexClass](#pexclass), modifica la logica di IntelliTest predefinita che indica se il test ha esito negativo. Il test non verrà considerato come non riuscito, anche se viene generata l'eccezione specificata.
+Se questo attributo è associato a [PexMethod](#pexmethod) o a [PexClass](#pexclass), modifica la logica di IntelliTest predefinita che indica se il test ha esito negativo. Il test non verrà considerato come non riuscito, anche se viene generata l'eccezione specificata.
 
 **Esempio**
 
@@ -267,4 +248,3 @@ class CtorTest(int capacity) {
 ## <a name="got-feedback"></a>Commenti?
 
 Pubblicare idee e richieste di funzionalità in **[UserVoice](https://visualstudio.uservoice.com/forums/121579-visual-studio-2015/category/157869-test-tools?query=IntelliTest)**.
-

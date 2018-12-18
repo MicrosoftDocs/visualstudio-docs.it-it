@@ -1,39 +1,21 @@
 ---
 title: 'Passaggio 3: aggiungere un timer per il conto alla rovescia | Microsoft Docs'
-ms.custom: 
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
-- vs-ide-general
-ms.tgt_pltfrm: 
-ms.topic: article
+- vs-acquisition
+ms.topic: conceptual
 ms.assetid: 62670a2b-efdc-45c6-9646-9b17eeb33dcb
-caps.latest.revision: 23
-author: kempb
-ms.author: kempb
-manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
+author: TerryGLee
+ms.author: tglee
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 15f398aa90ea4565fea5645abeb1b2570a7ffc29
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
 ms.translationtype: HT
-ms.sourcegitcommit: eb5c9550fd29b0e98bf63a7240737da4f13f3249
-ms.openlocfilehash: 1719ed1feb1caa38644550322484d2ba519c1be2
-ms.contentlocale: it-it
-ms.lasthandoff: 09/06/2017
-
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="step-3-add-a-countdown-timer"></a>Passaggio 3: aggiungere un timer per il conto alla rovescia
 Nella terza parte di questa esercitazione si aggiungerà un timer per il conto alla rovescia per tenere traccia del numero di secondi che rimangono all'esecutore del quiz per completare l'operazione.  
@@ -45,7 +27,8 @@ Nella terza parte di questa esercitazione si aggiungerà un timer per il conto a
   
 1.  Aggiungere una variabile Integer denominata **timeLeft**, come nella procedura precedente. Il codice dovrebbe essere analogo al seguente.  
   
-     [!code-vb[VbExpressTutorial3Step3#5](../ide/codesnippet/VisualBasic/step-3-add-a-countdown-timer_1.vb)]  [!code-csharp[VbExpressTutorial3Step3#5](../ide/codesnippet/CSharp/step-3-add-a-countdown-timer_1.cs)]  
+     [!code-vb[VbExpressTutorial3Step3#5](../ide/codesnippet/VisualBasic/step-3-add-a-countdown-timer_1.vb)]
+     [!code-csharp[VbExpressTutorial3Step3#5](../ide/codesnippet/CSharp/step-3-add-a-countdown-timer_1.cs)]  
   
      A questo punto è necessario un metodo che conti effettivamente i secondi, ad esempio un timer, e generi un evento dopo il periodo di tempo specificato.  
   
@@ -63,7 +46,8 @@ Nella terza parte di questa esercitazione si aggiungerà un timer per il conto a
   
 5.  Aggiungere le istruzioni seguenti al metodo del nuovo gestore eventi.  
   
-     [!code-vb[VbExpressTutorial3Step3#6](../ide/codesnippet/VisualBasic/step-3-add-a-countdown-timer_2.vb)]  [!code-csharp[VbExpressTutorial3Step3#6](../ide/codesnippet/CSharp/step-3-add-a-countdown-timer_2.cs)]  
+     [!code-vb[VbExpressTutorial3Step3#6](../ide/codesnippet/VisualBasic/step-3-add-a-countdown-timer_2.vb)]
+     [!code-csharp[VbExpressTutorial3Step3#6](../ide/codesnippet/CSharp/step-3-add-a-countdown-timer_2.cs)]  
   
      In base all'elemento aggiunto, ogni secondo il timer controlla se il tempo è scaduto determinando se la variabile Integer **timeLeft** è maggiore di 0. In caso positivo, rimane ancora tempo. Il timer sottrae prima 1 da timeLeft, quindi aggiorna la proprietà **Text** del controllo `timeLabel` per mostrare all'esecutore del quiz quanti secondi rimangono.  
   
@@ -99,7 +83,8 @@ Nella terza parte di questa esercitazione si aggiungerà un timer per il conto a
   
      Esaminare attentamente l'istruzione aggiunta al blocco `else` per visualizzare la risposta al problema di addizione.  
   
-     [!code-vb[VbExpressTutorial3Step3#24](../ide/codesnippet/VisualBasic/step-3-add-a-countdown-timer_3.vb)]  [!code-csharp[VbExpressTutorial3Step3#24](../ide/codesnippet/CSharp/step-3-add-a-countdown-timer_3.cs)]  
+     [!code-vb[VbExpressTutorial3Step3#24](../ide/codesnippet/VisualBasic/step-3-add-a-countdown-timer_3.vb)]
+     [!code-csharp[VbExpressTutorial3Step3#24](../ide/codesnippet/CSharp/step-3-add-a-countdown-timer_3.cs)]  
   
      L'istruzione `addend1 + addend2` somma i valori delle due variabili. La prima parte (`sum.Value`) utilizza la proprietà **Value** del controllo `NumericUpDown` della somma per visualizzare la risposta corretta. La stessa proprietà verrà utilizzata successivamente per controllare le risposte al quiz.  
   
@@ -107,7 +92,8 @@ Nella terza parte di questa esercitazione si aggiungerà un timer per il conto a
   
 6.  Aggiungere tre righe alla fine del metodo `StartTheQuiz()`, in modo che il codice sia analogo al seguente.  
   
-     [!code-vb[VbExpressTutorial3Step3#7](../ide/codesnippet/VisualBasic/step-3-add-a-countdown-timer_4.vb)]  [!code-csharp[VbExpressTutorial3Step3#7](../ide/codesnippet/CSharp/step-3-add-a-countdown-timer_4.cs)]  
+     [!code-vb[VbExpressTutorial3Step3#7](../ide/codesnippet/VisualBasic/step-3-add-a-countdown-timer_4.vb)]
+     [!code-csharp[VbExpressTutorial3Step3#7](../ide/codesnippet/CSharp/step-3-add-a-countdown-timer_4.cs)]  
   
      A questo punto, all'avvio del quiz la variabile **timeLeft** è impostata su 30 e la proprietà **Text** del controllo `timeLabel` è impostata su 30 secondi. Il metodo `Start()` del controllo `Timer` avvia il conto alla rovescia. La risposta non viene ancora controllata. Ciò avverrà in seguito.  
   

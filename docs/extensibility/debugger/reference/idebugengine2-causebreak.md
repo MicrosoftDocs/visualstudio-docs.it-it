@@ -1,46 +1,47 @@
 ---
-title: "IDebugEngine2::CauseBreak | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "IDebugEngine2::CauseBreak"
-helpviewer_keywords: 
-  - "IDebugEngine2::CauseBreak"
+title: IDebugEngine2::CauseBreak | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology:
+- vs-ide-sdk
+ms.topic: conceptual
+f1_keywords:
+- IDebugEngine2::CauseBreak
+helpviewer_keywords:
+- IDebugEngine2::CauseBreak
 ms.assetid: 17fe4698-b04e-4798-8412-80e0da60c387
-caps.latest.revision: 8
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 8
+author: gregvanl
+ms.author: gregvanl
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: 2ba10e167246ce2467f2faebf157e46306749bdb
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# IDebugEngine2::CauseBreak
-[!INCLUDE[vs2017banner](../../../code-quality/includes/vs2017banner.md)]
-
-Richieste tali tutti i programmi in corso il debug nel motore di \(DE\) debug per interrompere l'esecuzione nel successivo uno dei thread tenta di eseguire.  
+# <a name="idebugengine2causebreak"></a>IDebugEngine2::CauseBreak
+Le richieste di tutti i programmi in corso il debug da questo motore di debug (DE) per arrestare l'esecuzione, la volta successiva che uno dei relativi thread tenta di eseguire.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp#  
-HRESULT CauseBreak(   
-   void   
+```cpp  
+HRESULT CauseBreak(   
+   void   
 );  
 ```  
   
-```c#  
+```csharp  
 int CauseBreak();  
 ```  
   
-## Valore restituito  
- Se l'operazione riesce, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
+## <a name="return-value"></a>Valore restituito  
+ Se ha esito positivo, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
   
-## Note  
- questo metodo è asincrono: [IDebugBreakEvent2](../../../extensibility/debugger/reference/idebugbreakevent2.md) un evento viene inviato quando il programma dopo tenta di eseguire dopo che questo metodo viene chiamato.  
+## <a name="remarks"></a>Note  
+ Questo metodo è asincrono: un [IDebugBreakEvent2](../../../extensibility/debugger/reference/idebugbreakevent2.md) evento viene inviato quando il programma successivo tentativo di eseguire dopo la chiamata di questo metodo.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [CauseBreak](../../../extensibility/debugger/reference/idebugprogram2-causebreak.md)   
  [IDebugEngine2](../../../extensibility/debugger/reference/idebugengine2.md)

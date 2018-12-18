@@ -1,48 +1,47 @@
 ---
-title: "IDiaEnumSymbolsByAddr::symbolByVA | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "IDiaEnumSymbolsByAddr::symbolByVA (metodo)"
+title: IDiaEnumSymbolsByAddr::symbolByVA | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology: vs-ide-debug
+ms.topic: conceptual
+dev_langs:
+- C++
+helpviewer_keywords:
+- IDiaEnumSymbolsByAddr::symbolByVA method
 ms.assetid: ac84339f-70c6-48ed-85d0-6d7d1b5194e8
-caps.latest.revision: 8
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 8
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 6a47c39a417e65d30178a2f878e53196e7f7fb27
+ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/18/2018
 ---
-# IDiaEnumSymbolsByAddr::symbolByVA
-[!INCLUDE[vs2017banner](../../code-quality/includes/vs2017banner.md)]
-
-Posiziona l'enumeratore eseguendo una ricerca dall'indirizzo virtuale \(VA\).  
+# <a name="idiaenumsymbolsbyaddrsymbolbyva"></a>IDiaEnumSymbolsByAddr::symbolByVA
+Posiziona l'enumeratore eseguendo una ricerca in base all'indirizzo virtuale (VA).  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp#  
-HRESULT symbolByVA (   
-   DWORD**      virtualAddress,  
-   IDiaSymbol** ppsymbol  
+```C++  
+HRESULT symbolByVA (   
+   DWORD**      virtualAddress,  
+   IDiaSymbol** ppsymbol  
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  virtualAddress  
- \[in\]  indirizzo virtuale.  
+ [in] Indirizzo virtuale.  
   
  ppsymbol  
- \[out\]  restituisce [IDiaSymbol](../../debugger/debug-interface-access/idiasymbol.md) oggetto che rappresenta il simbolo individuate.  
+ [out] Restituisce un [IDiaSymbol](../../debugger/debug-interface-access/idiasymbol.md) oggetto che rappresenta il simbolo trovato.  
   
-## Valore restituito  
- Se l'operazione riesce, restituisce `S_OK`.  Restituisce `S_FALSE` se il simbolo non può essere trovato.  In caso contrario, restituisce un codice di errore.  
+## <a name="return-value"></a>Valore restituito  
+ Se ha esito positivo, restituisce `S_OK`. Restituisce `S_FALSE` se non è stato possibile trovare il simbolo. In caso contrario, verrà restituito un codice di errore.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IDiaEnumSymbolsByAddr](../../debugger/debug-interface-access/idiaenumsymbolsbyaddr.md)   
  [IDiaSymbol](../../debugger/debug-interface-access/idiasymbol.md)

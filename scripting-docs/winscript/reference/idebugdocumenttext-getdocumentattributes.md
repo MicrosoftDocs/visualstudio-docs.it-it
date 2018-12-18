@@ -1,27 +1,33 @@
 ---
-title: "IDebugDocumentText::GetDocumentAttributes | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/18/2017"
-ms.prod: "windows-script-interfaces"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-apiname: IDebugDocumentText.GetDocumentAttributes
-apilocation: pdm.dll
-helpviewer_keywords: 
-  - "IDebugDocumentText::GetDocumentAttributes"
+title: IDebugDocumentText::GetDocumentAttributes | Documenti Microsoft
+ms.custom: ''
+ms.date: 01/18/2017
+ms.prod: windows-script-interfaces
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
+ms.topic: reference
+apiname:
+- IDebugDocumentText.GetDocumentAttributes
+apilocation:
+- pdm.dll
+helpviewer_keywords:
+- IDebugDocumentText::GetDocumentAttributes
 ms.assetid: 8c544ca1-8db4-4bca-973e-09315d9a0ee5
 caps.latest.revision: 8
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 8
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.openlocfilehash: e3121538612be48628b24965e118130875c51a0b
+ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/27/2017
 ---
-# IDebugDocumentText::GetDocumentAttributes
+# <a name="idebugdocumenttextgetdocumentattributes"></a>IDebugDocumentText::GetDocumentAttributes
 Restituisce gli attributi del documento.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
 HRESULT GetDocumentAttributes(  
@@ -29,20 +35,20 @@ HRESULT GetDocumentAttributes(
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `ptextdocattr`  
- \[out\] attributi di testo del documento.  
+ [out] Gli attributi di testo del documento.  
   
-## Valore restituito  
- Il metodo restituisce un tipo `HRESULT`.  I valori possibili sono, ma non sono limitati a, quelli nella tabella seguente.  
+## <a name="return-value"></a>Valore restituito  
+ Il metodo restituisce un tipo `HRESULT`. I valori possibili includono, ma non sono limitati a, quelli indicati nella tabella seguente.  
   
 |Valore|Descrizione|  
-|------------|-----------------|  
+|-----------|-----------------|  
 |`S_OK`|Il metodo è riuscito.|  
   
-## Note  
+## <a name="remarks"></a>Note  
  Questo metodo restituisce gli attributi del documento.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Interfaccia IDebugDocumentText](../../winscript/reference/idebugdocumenttext-interface.md)   
- [Costanti TEXT\_DOC\_ATTR](../../winscript/reference/text-doc-attr-constants.md)
+ [Costanti TEXT_DOC_ATTR](../../winscript/reference/text-doc-attr-constants.md)

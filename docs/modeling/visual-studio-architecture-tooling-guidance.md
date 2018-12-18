@@ -1,23 +1,22 @@
 ---
-title: "Documentazione Visual Studio Architecture Tooling Guidance | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: fce6b398-935e-4241-bdf4-875d09ff57c7
-caps.latest.revision: 10
-author: "alexhomer1"
-ms.author: "ahomer"
-manager: "douge"
-caps.handback.revision: 10
+title: Documentazione Visual Studio Architecture Tooling Guidance
+ms.date: 11/04/2016
+ms.topic: conceptual
+author: gewarren
+ms.author: gewarren
+manager: douge
+ms.workload:
+- multiple
+ms.technology: vs-ide-modeling
+ms.openlocfilehash: b70b229d128143a4c61dc9789e3a4797a0317643
+ms.sourcegitcommit: 4c0bc21d2ce2d8e6c9d3b149a7d95f0b4d5b3f85
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/20/2018
 ---
-# Documentazione Visual Studio Architecture Tooling Guidance
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
+# <a name="visual-studio-architecture-tooling-guidance"></a>Documentazione Visual Studio Architecture Tooling Guidance
+Questo Architecture Tooling Guidance è un pacchetto scaricabile di istruzioni pratiche sull'utilizzo degli strumenti di modellazione in Visual Studio 2010. Viene fornita una panoramica di come utilizzare gli strumenti di modellazione in modo integrato e vengono illustrati gli scenari più comuni in cui vengono utilizzati gli strumenti.
 
-L'Architecture Tooling Guidance è un pacchetto scaricabile di informazioni pratiche di supporto per l'utilizzo degli strumenti di modellazione in Visual Studio 2011.  In esso viene fornita una panoramica delle modalità e degli scenari comuni di utilizzo integrato di tutti gli strumenti di modellazione.  
-  
- Il contenuto è stato creato dal gruppo [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] ALM Rangers, i cui membri includono il team del prodotto [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)], Microsoft Services, Microsoft Most Valued Professionals \(MVP\) e la community [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)].  
-  
- [Fare clic qui per scaricare Architecture Tooling Guidance.](http://go.microsoft.com/fwlink/?LinkID=191984)
+ Il contenuto è stato creato dal [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] ALM Rangers, un gruppo speciale che dispone di membri dal [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] Team del prodotto, Microsoft Services, Microsoft Most Valued Professional (MVP) e [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] Community lead.
+
+ [Fare clic qui per scaricare Architecture Tooling Guidance. ](http://go.microsoft.com/fwlink/?LinkID=191984).

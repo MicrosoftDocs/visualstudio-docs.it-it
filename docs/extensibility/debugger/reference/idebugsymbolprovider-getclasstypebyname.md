@@ -1,60 +1,61 @@
 ---
-title: "IDebugSymbolProvider::GetClassTypeByName | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "IDebugSymbolProvider::GetClassTypeByName"
-helpviewer_keywords: 
-  - "Metodo IDebugSymbolProvider::GetClassTypeByName"
+title: IDebugSymbolProvider::GetClassTypeByName | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology:
+- vs-ide-sdk
+ms.topic: conceptual
+f1_keywords:
+- IDebugSymbolProvider::GetClassTypeByName
+helpviewer_keywords:
+- IDebugSymbolProvider::GetClassTypeByName method
 ms.assetid: 2c748909-51dc-49b7-b193-19f96fca1138
-caps.latest.revision: 11
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 11
+author: gregvanl
+ms.author: gregvanl
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: b972885a8999ac688ade380fbe9601d4274d205e
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# IDebugSymbolProvider::GetClassTypeByName
-[!INCLUDE[vs2017banner](../../../code-quality/includes/vs2017banner.md)]
-
-Questo metodo ottiene il tipo di campo della classe che rappresenta un nome di classe completo.  
+# <a name="idebugsymbolprovidergetclasstypebyname"></a>IDebugSymbolProvider::GetClassTypeByName
+Questo metodo ottiene il tipo di campo di classe che rappresenta un nome completo della classe.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp#  
-HRESULT GetClassTypeByName(   
-   LPCOLESTR          pszClassName,  
-   NAME_MATCH         nameMatch,  
-   IDebugClassField** ppField  
+```cpp  
+HRESULT GetClassTypeByName(   
+   LPCOLESTR          pszClassName,  
+   NAME_MATCH         nameMatch,  
+   IDebugClassField** ppField  
 );  
 ```  
   
-```c#  
+```csharp  
 int GetClassTypeByName(  
-   string               pszClassName,   
-   NAME_MATCH           nameMatch,   
-   out IDebugClassField ppField  
+   string               pszClassName,   
+   NAME_MATCH           nameMatch,   
+   out IDebugClassField ppField  
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `pszClassName`  
- \[in\]  Il nome della classe.  
+ [in] Il nome della classe.  
   
  `nameMatch`  
- \[in\]  Selezionare il tipo di corrispondenza, ad esempio, la distinzione tra maiuscole e minuscole.  Valore ottenuto dall'enumerazione [NAME\_MATCH](../../../extensibility/debugger/reference/name-match.md).  
+ [in] Seleziona il tipo di corrispondenza, ad esempio distinzione maiuscole/minuscole. Un valore di [NAME_MATCH](../../../extensibility/debugger/reference/name-match.md) enumerazione.  
   
  `ppField`  
- \[out\]  Restituisce il tipo della classe come rappresentato [IDebugClassField](../../../extensibility/debugger/reference/idebugclassfield.md) dall'interfaccia.  
+ [out] Restituisce il tipo di classe, come rappresentato dal [IDebugClassField](../../../extensibility/debugger/reference/idebugclassfield.md) interfaccia.  
   
-## Valore restituito  
- Se l'operazione riesce, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
+## <a name="return-value"></a>Valore restituito  
+ Se ha esito positivo, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IDebugSymbolProvider](../../../extensibility/debugger/reference/idebugsymbolprovider.md)   
- [NAME\_MATCH](../../../extensibility/debugger/reference/name-match.md)   
+ [NAME_MATCH](../../../extensibility/debugger/reference/name-match.md)   
  [IDebugClassField](../../../extensibility/debugger/reference/idebugclassfield.md)

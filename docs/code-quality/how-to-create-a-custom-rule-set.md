@@ -1,115 +1,85 @@
 ---
-title: "Procedura: Creare un set di regole personalizzato | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-devops-test"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "vs.codeanalysis.addremoverulesets"
-helpviewer_keywords: 
-  - "Development Edition, set di regole"
-ms.assetid: bcc42508-9592-4802-9f66-a50111641d73
-caps.latest.revision: 24
-author: "stevehoag"
-ms.author: "shoag"
-manager: "wpickett"
-caps.handback.revision: 24
+title: Creare una regola di analisi codice personalizzato impostata in Visual Studio
+ms.date: 04/04/2018
+ms.technology: vs-ide-code-analysis
+ms.topic: conceptual
+f1_keywords:
+- vs.codeanalysis.addremoverulesets
+helpviewer_keywords:
+- Development Edition, rule sets
+author: gewarren
+ms.author: gewarren
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: f9297d862b0fa47ecc4f5b7b08f6b754e1b5dfc3
+ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/19/2018
 ---
-# Procedura: Creare un set di regole personalizzato
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
+# <a name="custom-rule-sets"></a>Set di regole personalizzate
 
-In [!INCLUDE[vsUltShort](../code-quality/includes/vsultshort_md.md)], [!INCLUDE[vsPreShort](../code-quality/includes/vspreshort_md.md)] e [!INCLUDE[vsPro](../code-quality/includes/vspro_md.md)], è possibile creare e modificare un *set di regole* personalizzate per soddisfare specifiche esigenze del progetto in relazione all'analisi del codice.  Per creare un set di regole personalizzato, aprire uno o più set di regole standard nell'Editor set di regole.  È quindi possibile aggiungere quindi o rimuovere determinate regole nonché modificare l'azione che si verifica quando l'analisi codice determina che una regola è stata violata.  
-  
- Per creare un nuovo set di regole personalizzate, è necessario salvarlo con un nuovo nome file.  Il set di regole personalizzato viene assegnato automaticamente al progetto.  
-  
-## Apertura dell'Editor set di regole  
-  
-#### Per aprire un file del set di regole vuoto nell'editor del set di regole  
-  
-1.  Scegliere **Nuovo** dal menu **File** di [!INCLUDE[vs_current_short](../code-quality/includes/vs_current_short_md.md)], quindi fare clic su **File**.  
-  
-2.  Nella finestra di dialogo **Nuovo file** fare clic su **Generale** nell'elenco **Modelli installati**, quindi selezionare **Set di regole di analisi codice**.  
-  
-3.  Verrà aperto l'editor del set di regole.  Nell'elenco dell'editor non è selezionata alcuna regola.  
-  
-#### Per creare una regola personalizzata da un singolo set di regole esistente  
-  
-1.  In Esplora soluzioni fare clic con il pulsante destro del mouse sul progetto, quindi scegliere **Proprietà**.  
-  
-2.  Nella scheda **Proprietà** fare clic su **Analisi codice**.  
-  
-3.  Nell'elenco a discesa **Set di regole** eseguire una delle operazioni seguenti:  
-  
-    -   Selezionare il set di regole che si desidera personalizzare.  
-  
-     \- oppure \-  
-  
-    -   Selezionare **\<Sfoglia...\>** per specificare un set di regole esistente non incluso nell'elenco.  
-  
-4.  Fare clic su **Apri** per visualizzare le regole nell'Editor set di regole.  
-  
-#### Per creare un set di regole personalizzato a partire da più set di regole esistenti  
-  
-1.  In Esplora soluzioni fare clic con il pulsante destro del mouse sul progetto, quindi scegliere **Proprietà**.  
-  
-2.  Nella scheda **Proprietà** fare clic su **Analisi codice**.  
-  
-3.  Selezionare **\<Scegli più set di regole\>** da **Esegui il set di regole**.  
-  
-4.  Nella finestra di dialogo **Aggiungi o rimuovi set di regole** selezionare i set di regole su cui si desidera basare il nuovo set e quindi scegliere **OK**.  
-  
-5.  Salvare il nuovo set di regole.  
-  
-     Il nome del nuovo set di regole viene selezionato nell'elenco **Esegui il set di regole**.  Nel passaggio successivo è possibile modificare il nome visualizzato del set di regole.  
-  
-6.  \(Facoltativo\) Per modificare il nome visualizzato del set di regole, scegliere **Finestra Proprietà** dal menu **Visualizza**.  Digitare il nome visualizzato nella casella **Nome**.  
-  
-7.  Per aggiungere, rimuovere o modificare regole di analisi del codice specifiche nel nuovo set di regole, fare clic su **Apri**.  
-  
-## Modifica di un set di regole  
-  
-#### Per modificare un set di regole nell'Editor set di regole  
-  
--   Per modificare il nome visualizzato del set di regole, scegliere **Finestra Proprietà** dal menu **Visualizza**.  Immettere il nome visualizzato nella casella **Nome**.  Si noti che il nome visualizzato può differire dal nome file.  
-  
--   Per aggiungere tutte le regole del gruppo a un set di regole personalizzato, selezionare la casella di controllo del gruppo.  Per rimuovere tutte le regole del gruppo, deselezionare la casella di controllo.  
-  
--   Per aggiungere una regola specifica al set di regole personalizzato, selezionare la casella di controllo della regola.  Per rimuovere la regola dal set di regole, deselezionare la casella di controllo.  
-  
--   Per modificare l'azione eseguita in caso di violazione di una regola nell'analisi del codice, fare clic nel campo **Azione** corrispondente alla regola, quindi selezionare uno dei valori seguenti:  
-  
-     **Warn**: genera un avviso.  
-  
-     **Error**: genera un errore.  
-  
-     **None**: disabilita la regola.  Questa azione corrisponde alla rimozione della regola dal set di regole.  
-  
-## Modifica della visualizzazione dell'Editor set di regole  
-  
-#### Per raggruppare, filtrare o modificare i campi nell'Editor set di regole tramite la relativa barra degli strumenti  
-  
--   Per espandere le regole in tutti i gruppi, fare clic su **Espandi tutto**.  
-  
--   Per comprimere le regole in tutti i gruppi, fare clic su **Comprimi tutto**.  
-  
--   Per modificare il campo in base al quale sono raggruppate le regole, selezionare il campo dall'elenco **Raggruppa per**.  Per visualizzare le regole separate, selezionare **\<Nessuno\>**.  
-  
--   Per aggiungere o rimuovere campi nelle colonne della regola, fare clic su **Opzioni colonne**.  
-  
--   Per nascondere regole che non si applicano alla soluzione corrente, selezionare **Nascondi le regole che non si applicano alla soluzione corrente**.  
-  
--   Per visualizzare e nascondere regole assegnate all'azione in caso di errore, fare clic su **Mostra regole che possono generare errori di analisi codice**.  
-  
--   Per visualizzare e nascondere regole assegnate all'azione in caso di avviso, fare clic su **Mostra regole che possono generare avvisi di analisi codice**.  
-  
--   Per visualizzare e nascondere regole assegnate all'azione **Nessuna**, fare clic su **Mostra regole non abilitate**.  
-  
--   Per aggiungere o rimuovere set di regole Microsoft predefiniti al set di regole corrente, fare clic su **Aggiungi o rimuovi set di regole figlio**.  
-  
-## Vedere anche  
- [Procedura: Configurare l'analisi codice per un progetto di codice gestito](../code-quality/how-to-configure-code-analysis-for-a-managed-code-project.md)   
- [Tabella di riferimento del set di regole di analisi del codice](../code-quality/code-analysis-rule-set-reference.md)
+È possibile creare un oggetto personalizzato *set di regole* per soddisfare specifiche esigenze del progetto per l'analisi codice.
+
+## <a name="create-a-custom-rule-set"></a>Creare un set di regole personalizzate
+
+Per creare una regola personalizzata set, è possibile aprire una regola predefinita impostata la **editor set di regole**. Da qui, è possibile aggiungere o rimuovere le regole specifiche ed è possibile modificare l'azione che si verifica quando una regola viene violata&mdash;, ad esempio, Mostra un avviso o un errore.
+
+1. In **Esplora soluzioni**, fare clic sul progetto e quindi selezionare **proprietà**.
+
+2. Nel **delle proprietà** pagine, selezionare il **analisi del codice** scheda.
+
+3. Nel **eseguire il set di regole** elenco a discesa, effettuare una delle operazioni seguenti:
+
+    - Selezionare il set di regole che si desidera personalizzare.
+
+     \- oppure -
+
+    - Selezionare  **\<Sfoglia... >** per specificare set di una regola esistente non è presente nell'elenco.
+
+4. Selezionare **Open** per visualizzare le regole nell'editor set di regole.
+
+È anche possibile creare un nuovo file di set di regole dal **nuovo File** finestra di dialogo:
+
+1. Selezionare **File** > **nuovo** > **File**, o premere **Ctrl**+**N**.
+
+2. Nel **nuovo File** finestra di dialogo, seleziona il **generali** categoria a sinistra e quindi selezionare **Set di regole di analisi codice**.
+
+3. Selezionare **Apri**.
+
+   Il nuovo *estensione ruleset* file verrà aperto nell'editor set di regole.
+
+### <a name="create-a-custom-rule-set-from-multiple-rule-sets"></a>Creare una regola personalizzata impostata da più set di regole
+
+1. In Esplora soluzioni, fare clic sul progetto e quindi selezionare **proprietà**.
+
+2. Nel **delle proprietà** pagine, selezionare il **analisi del codice** scheda.
+
+3. Selezionare  **\<scegliere più regola imposta... >** da **eseguire il set di regole**.
+
+4. Nel **Aggiungi o Rimuovi set di regole** della finestra di dialogo selezionare i set di regole è da includere nel nuovo set di regole.
+
+   ![Aggiungere o rimuovere la finestra di dialogo set di regole](media/add-remove-rule-sets.png)
+
+5. Selezionare **Salva con nome**, immettere un nome per il *estensione ruleset* file e quindi selezionare **salvare**.
+
+   Nuovo set di regole è selezionato nel **eseguire il set di regole** elenco.
+
+6. Selezionare **aprire** per aprire il nuovo set di regole in editor set di regole.
+
+## <a name="name-and-description"></a>Nome e descrizione
+
+Per modificare il nome visualizzato di un set di regole che viene aperto nell'editor, aprire il **delle proprietà** selezionando **vista** > **finestra proprietà** nella barra dei menu. Immettere il nome visualizzato nel **nome** casella. È anche possibile immettere una descrizione per il set di regole.
+
+## <a name="next-steps"></a>Passaggi successivi
+
+Dopo aver creato una regola impostata, il passaggio successivo consiste nel personalizzare le regole aggiungendo o rimuovendo le regole o modificando la gravità di violazioni delle regole.
+
+> [!div class="nextstepaction"]
+> [Modificare le regole di editor set di regole](../code-quality/working-in-the-code-analysis-rule-set-editor.md)
+
+## <a name="see-also"></a>Vedere anche
+
+- [Procedura: Configurare l'analisi codice per un progetto di codice gestito](../code-quality/how-to-configure-code-analysis-for-a-managed-code-project.md)
+- [Tabella di riferimento del set di regole di analisi del codice](../code-quality/rule-set-reference.md)

@@ -1,57 +1,56 @@
 ---
-title: "IDiaSymbol::get_classParent | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "IDiaSymbol::get_classParent (metodo)"
+title: 'Idiasymbol:: Get_classparent | Documenti Microsoft'
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology: vs-ide-debug
+ms.topic: conceptual
+dev_langs:
+- C++
+helpviewer_keywords:
+- IDiaSymbol::get_classParent method
 ms.assetid: 99db875a-caae-4d60-ae70-64bc8a9f6fba
-caps.latest.revision: 10
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 10
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 745342547d7c8264ebd9f2fa06bfababcc3aebcb
+ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/18/2018
 ---
-# IDiaSymbol::get_classParent
-[!INCLUDE[vs2017banner](../../code-quality/includes/vs2017banner.md)]
-
-Recupera un riferimento al padre della classe del simbolo.  
+# <a name="idiasymbolgetclassparent"></a>IDiaSymbol::get_classParent
+Recupera un riferimento all'elemento padre di classe del simbolo.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp#  
-HRESULT get_classParent (   
-   IDiaSymbol** pRetVal  
+```C++  
+HRESULT get_classParent (   
+   IDiaSymbol** pRetVal  
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `pRetVal`  
- \[out\]  restituisce [IDiaSymbol](../../debugger/debug-interface-access/idiasymbol.md) oggetto che rappresenta il padre della classe del simbolo.  
+ [out] Restituisce un [IDiaSymbol](../../debugger/debug-interface-access/idiasymbol.md) oggetto che rappresenta il padre della classe del simbolo.  
   
-## Valore restituito  
- Se l'operazione riesce, restituisce `S_OK`; in caso contrario, restituisce  `S_FALSE` o un codice di errore.  
+## <a name="return-value"></a>Valore restituito  
+ Se ha esito positivo, restituisce `S_OK`; in caso contrario, restituisce `S_FALSE` o un codice di errore.  
   
 > [!NOTE]
->  un valore restituito di `S_FALSE` indica che la proprietà non è disponibile per il simbolo.  
+>  Valore restituito di `S_FALSE` significa che la proprietà non è disponibile per il simbolo.  
   
-## Requisiti  
+## <a name="requirements"></a>Requisiti  
   
-|Requisiti|Descrizione|  
-|---------------|-----------------|  
-|intestazione:|dia2.h|  
-|versione:|DIA SDK v7.0|  
+|Requisito|Descrizione|  
+|-----------------|-----------------|  
+|Intestazione:|DIA2.h|  
+|Versione:|Versione 7.0 DIA SDK|  
   
-## Note  
- I tipi di simboli che possono essere padre della classe sono documentati in [Gerarchia di classi dei tipi di simboli](../../debugger/debug-interface-access/class-hierarchy-of-symbol-types.md).  
+## <a name="remarks"></a>Note  
+ I tipi di simboli che possono essere padri di classe sono documentati in [classe gerarchia dei tipi di simboli](../../debugger/debug-interface-access/class-hierarchy-of-symbol-types.md).  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IDiaSymbol](../../debugger/debug-interface-access/idiasymbol.md)   
  [Gerarchia di classi dei tipi di simboli](../../debugger/debug-interface-access/class-hierarchy-of-symbol-types.md)

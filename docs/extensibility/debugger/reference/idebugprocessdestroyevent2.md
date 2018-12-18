@@ -1,40 +1,25 @@
 ---
 title: IDebugProcessDestroyEvent2 | Documenti Microsoft
-ms.custom: 
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - vs-ide-sdk
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: conceptual
 f1_keywords:
 - IDebugProcessDestroyEvent2
 helpviewer_keywords:
 - IDebugProcessDestroyEvent2
 ms.assetid: 1b8e0528-95bc-48fa-9653-2cea66c8dc3a
-caps.latest.revision: 13
+author: gregvanl
 ms.author: gregvanl
-manager: ghogen
-translation.priority.mt:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: ca7c86466fa23fb21a932f26dc24e37c71cf29b4
-ms.openlocfilehash: 18dc8600aeaee6e900961ab83b449e338e06cc18
-ms.lasthandoff: 04/05/2017
-
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: 9122c161a0ce308c7bd2e46cb6d56c32ada85fbc
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="idebugprocessdestroyevent2"></a>IDebugProcessDestroyEvent2
 Questa interfaccia viene inviata quando un processo viene terminato, viene chiuso insolitamente o viene disconnesso da.  
@@ -46,7 +31,7 @@ IDebugProcessDestroyEvent2 : IUnknown
 ```  
   
 ## <a name="notes-for-implementers"></a>Note per gli implementatori  
- Il motore di debug (DE) o il fornitore della porta personalizzata implementare questa interfaccia per segnalare che un processo è stato terminato. Il [IDebugEvent2](../../../extensibility/debugger/reference/idebugevent2.md) interfaccia deve essere implementata sullo stesso oggetto di questa interfaccia. Usa il SDM [QueryInterface](/cpp/atl/queryinterface) per l'accesso il `IDebugEvent2` interfaccia.  
+ Il motore di debug (DE) o il fornitore della porta personalizzata implementare questa interfaccia per segnalare che un processo è stato terminato. Il [IDebugEvent2](../../../extensibility/debugger/reference/idebugevent2.md) interfaccia deve essere implementata sullo stesso oggetto di questa interfaccia. Usa il SDM [QueryInterface](/cpp/atl/queryinterface) per l'accesso di `IDebugEvent2` interfaccia.  
   
 ## <a name="notes-for-callers"></a>Note per i chiamanti  
  La Germania o il fornitore della porta personalizzato crea e invia l'oggetto evento per segnalare la fine di un processo. La Germania, questo evento viene inviato tramite il [IDebugEventCallback2](../../../extensibility/debugger/reference/idebugeventcallback2.md) funzione di callback che viene fornito dal suo SDM quando è associato al programma in fase di debug. Il fornitore di porta personalizzato invia questo evento utilizzando il [IDebugPortEvents2](../../../extensibility/debugger/reference/idebugportevents2.md) interfaccia.  

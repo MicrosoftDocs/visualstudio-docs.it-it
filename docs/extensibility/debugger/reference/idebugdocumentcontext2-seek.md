@@ -1,53 +1,54 @@
 ---
-title: "IDebugDocumentContext2::Seek | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "IDebugDocumentContext2::Seek"
-helpviewer_keywords: 
-  - "IDebugDocumentContext2::Seek"
+title: IDebugDocumentContext2::Seek | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology:
+- vs-ide-sdk
+ms.topic: conceptual
+f1_keywords:
+- IDebugDocumentContext2::Seek
+helpviewer_keywords:
+- IDebugDocumentContext2::Seek
 ms.assetid: 71501356-8a82-4d36-b354-6625bdd2baa0
-caps.latest.revision: 10
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 10
+author: gregvanl
+ms.author: gregvanl
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: 70ba99005bfe64782bcbaf655e659ae015a6d5c1
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# IDebugDocumentContext2::Seek
-[!INCLUDE[vs2017banner](../../../code-quality/includes/vs2017banner.md)]
-
-Consente di spostare il contesto del documento da un numero specificato di istruzioni o righe.  
+# <a name="idebugdocumentcontext2seek"></a>IDebugDocumentContext2::Seek
+Sposta il contesto del documento da un determinato numero di istruzioni o le righe.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp#  
-HRESULT Seek(   
-   int                      nCount,  
-   IDebugDocumentContext2** ppDocContext  
+```cpp  
+HRESULT Seek(   
+   int                      nCount,  
+   IDebugDocumentContext2** ppDocContext  
 );  
 ```  
   
-```cpp#  
-int Seek(   
-   int                        nCount,  
-   out IDebugDocumentContext2 ppDocContext  
+```cpp  
+int Seek(   
+   int                        nCount,  
+   out IDebugDocumentContext2 ppDocContext  
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `nCount`  
- \[in\]  Il numero di istruzioni o righe da spostare avanti, a seconda del contesto del documento.  
+ [in] Il numero di istruzioni o le righe per spostare in avanti, a seconda del contesto di documento.  
   
  `ppDocContext`  
- \[out\]  restituisce un nuovo [IDebugDocumentContext2](../../../extensibility/debugger/reference/idebugdocumentcontext2.md) oggetto con la nuova posizione.  
+ [out] Restituisce un nuovo [IDebugDocumentContext2](../../../extensibility/debugger/reference/idebugdocumentcontext2.md) oggetto con la nuova posizione.  
   
-## Valore restituito  
- Se l'operazione riesce, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
+## <a name="return-value"></a>Valore restituito  
+ Se ha esito positivo, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IDebugDocumentContext2](../../../extensibility/debugger/reference/idebugdocumentcontext2.md)

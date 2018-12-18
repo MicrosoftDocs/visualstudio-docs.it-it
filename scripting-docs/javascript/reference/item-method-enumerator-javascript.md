@@ -1,51 +1,55 @@
 ---
-title: "Metodo item (Enumerator) (JavaScript) | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/18/2017"
-ms.prod: "windows-client-threshold"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-javascript"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "item"
-dev_langs: 
-  - "JavaScript"
-  - "TypeScript"
-  - "DHTML"
-helpviewer_keywords: 
-  - "Item (metodo)"
+title: Metodo Item (Enumerator) (JavaScript) | Documenti Microsoft
+ms.custom: 
+ms.date: 01/18/2017
+ms.prod: windows-client-threshold
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-javascript
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords:
+- item
+dev_langs:
+- JavaScript
+- TypeScript
+- DHTML
+helpviewer_keywords:
+- Item method
 ms.assetid: a88e93f2-42df-4578-a4f9-0760bd074185
-caps.latest.revision: 15
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 15
+caps.latest.revision: 
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.openlocfilehash: 94275b2c82f199c96ef2d6c7d667fd27fba2702d
+ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/27/2017
 ---
-# Metodo item (Enumerator) (JavaScript)
+# <a name="item-method-enumerator-javascript"></a>Metodo item (Enumerator) (JavaScript)
 Restituisce l'elemento corrente nella raccolta.  
   
 > [!WARNING]
 >  Questo oggetto è supportato solo in Internet Explorer.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
   
-enumObj.item()  
+enumObj.item()   
 ```  
   
-## Note  
- Il riferimento *enumObj* obbligatorio è qualsiasi oggetto `Enumerator`.  
+## <a name="remarks"></a>Note  
+ Il riferimento *enumObj* obbligatorio è qualsiasi oggetto `Enumerator` .  
   
  Il metodo **item** restituisce l'elemento corrente. Se la raccolta è vuota o l'elemento corrente è non definito, il metodo restituisce **undefined**.  
   
-## Esempio  
- Nel codice seguente il metodo **item** viene usato per restituire un membro della raccolta `Drives`.  
+## <a name="example"></a>Esempio  
+ Nel codice seguente il metodo **item** viene usato per restituire un membro della raccolta `Drives` .  
   
-```javascript  
+```JavaScript  
 function ShowDrives()  
 {  
     var s = "";  
@@ -82,12 +86,12 @@ function ShowDrives()
 }  
 ```  
   
-## Requisiti  
- Supportato nelle modalità documento seguenti: Quirks, standard di Internet Explorer 6, standard di Internet Explorer 7, standard di Internet Explorer 8, standard di Internet Explorer 9 e standard di Internet Explorer 10. Non supportato in applicazioni [!INCLUDE[win8_appname_long](../../javascript/includes/win8-appname-long-md.md)]. Vedere [Informazioni sulla versione](../../javascript/reference/javascript-version-information.md).  
+## <a name="requirements"></a>Requisiti  
+ Supportato nelle modalità documento seguenti: Quirks, standard di Internet Explorer 6, standard di Internet Explorer 7, standard di Internet Explorer 8, standard di Internet Explorer 9 e standard di Internet Explorer 10. Non supportato in applicazioni [!INCLUDE[win8_appname_long](../../javascript/includes/win8-appname-long-md.md)] . Vedere [Informazioni sulla versione](../../javascript/reference/javascript-version-information.md).  
   
- **Si applica a**: [Oggetto Enumerator](../../javascript/reference/enumerator-object-javascript.md)  
+ **Si applica a**: [Enumerator Object](../../javascript/reference/enumerator-object-javascript.md)  
   
-## Vedere anche  
- [Metodo atEnd \(Enumerator\)](../../javascript/reference/atend-method-enumerator-javascript.md)   
- [Metodo moveFirst \(Enumerator\)](../../javascript/reference/movefirst-method-enumerator-javascript.md)   
- [Metodo moveNext \(Enumerator\)](../../javascript/reference/movenext-method-enumerator-javascript.md)
+## <a name="see-also"></a>Vedere anche  
+ [Metodo atEnd (Enumerator)](../../javascript/reference/atend-method-enumerator-javascript.md)   
+ [Metodo moveFirst (Enumerator)](../../javascript/reference/movefirst-method-enumerator-javascript.md)   
+ [Metodo moveNext (Enumerator)](../../javascript/reference/movenext-method-enumerator-javascript.md)

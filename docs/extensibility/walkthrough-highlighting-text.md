@@ -1,39 +1,23 @@
 ---
 title: 'Procedura dettagliata: Evidenziazione di testo | Documenti Microsoft'
-ms.custom: 
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - vs-ide-sdk
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: conceptual
 helpviewer_keywords:
 - editors [Visual Studio SDK], new - highlight text
 ms.assetid: 64b772ad-4392-42e9-a237-5137f0384bf0
-caps.latest.revision: 42
+author: gregvanl
 ms.author: gregvanl
-manager: ghogen
-translation.priority.mt:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: 90bf22bfe65b1120f5cc149d95eea25357b8ffa4
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
 ms.translationtype: MT
-ms.sourcegitcommit: eb5c9550fd29b0e98bf63a7240737da4f13f3249
-ms.openlocfilehash: 6d18e69f248f4c046c51dd2dd1189c46369a0f7e
-ms.contentlocale: it-it
-ms.lasthandoff: 09/06/2017
-
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="walkthrough-highlighting-text"></a>Procedura dettagliata: Evidenziazione di testo
 È possibile aggiungere effetti visivi diversi per l'editor creando parti componente Managed Extensibility Framework (MEF). Questa procedura dettagliata viene illustrato come evidenziare tutte le occorrenze della parola corrente in un file di testo. Se una parola si verifica più di una volta in un file di testo e si posiziona il punto di inserimento in un'occorrenza, tutte le occorrenze viene evidenziata.  
@@ -102,9 +86,9 @@ ms.lasthandoff: 09/06/2017
   
 5.  Creare una seconda classe che eredita da <xref:Microsoft.VisualStudio.Text.Classification.MarkerFormatDefinition>e denominarla HighlightWordFormatDefinition. Per usare questa definizione di formato per il tag, è necessario esportarlo con gli attributi seguenti:  
   
-    -   <xref:Microsoft.VisualStudio.Utilities.NameAttribute>: tag utilizzano questa opzione per fare riferimento a questo formato  
+    -   <xref:Microsoft.VisualStudio.Utilities.NameAttribute>: i tag utilizzano questa opzione per fare riferimento a questo formato  
   
-    -   <xref:Microsoft.VisualStudio.Text.Classification.UserVisibleAttribute>: in questo modo, il formato di visualizzazione nell'interfaccia utente  
+    -   <xref:Microsoft.VisualStudio.Text.Classification.UserVisibleAttribute>: in questo modo, il formato da visualizzare nell'interfaccia utente  
   
     ```csharp  
   
@@ -217,7 +201,8 @@ ms.lasthandoff: 09/06/2017
   
 5.  È inoltre necessario aggiungere un `TagsChanged` evento che verrà chiamato dal metodo update.  
   
-     [!code-csharp[VSSDKHighlightWordTest #10](../extensibility/codesnippet/CSharp/walkthrough-highlighting-text_1.cs)][!code-vb[VSSDKHighlightWordTest #10  ](../extensibility/codesnippet/VisualBasic/walkthrough-highlighting-text_1.vb)]  
+     [!code-csharp[VSSDKHighlightWordTest#10](../extensibility/codesnippet/CSharp/walkthrough-highlighting-text_1.cs)]
+     [!code-vb[VSSDKHighlightWordTest#10](../extensibility/codesnippet/VisualBasic/walkthrough-highlighting-text_1.vb)]  
   
 6.  Il `UpdateAtCaretPosition()` metodo individua tutte le parole nel buffer di testo che è identico a word in cui il cursore è posizionato e costruisce un elenco di <xref:Microsoft.VisualStudio.Text.SnapshotSpan> oggetti che corrispondono alle occorrenze della parola. Chiama quindi `SynchronousUpdate`, che genera il `TagsChanged` evento.  
   

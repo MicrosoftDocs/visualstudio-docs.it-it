@@ -1,42 +1,42 @@
 ---
-title: "Risoluzione dei problemi relativi ai frammenti di codice | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-general"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "frammenti di codice IntelliSense, risoluzione dei problemi"
-  - "risoluzione dei problemi dei frammenti di codice IntelliSense"
-  - "risoluzione dei problemi in Visual Basic, frammenti di codice IntelliSense"
+title: Risoluzione dei problemi relativi ai frammenti di codice | Microsoft Docs
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology:
+- vs-ide-general
+ms.topic: conceptual
+helpviewer_keywords:
+- IntelliSense Code Snippets, troubleshooting
+- troubleshooting IntelliSense Code Snippets
+- troubleshooting Visual Basic, IntelliSense Code Snippets
 ms.assetid: 7b6dd40e-2f78-4b50-8e68-41fac1bcb81e
-caps.latest.revision: 17
-author: "kempb"
-ms.author: "kempb"
-manager: "ghogen"
-caps.handback.revision: 17
+author: gewarren
+ms.author: gewarren
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: c4ffc44bdc47265a9e0b4fec27ee2c68bef8f14a
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# Risoluzione dei problemi relativi ai frammenti di codice
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
-I problemi relativi ai frammenti di codice IntelliSense sono in genere causati da due fattori: un file frammento danneggiato o contenuto non valido nel file frammento.  
+# <a name="troubleshooting-snippets"></a>Risoluzione dei problemi relativi ai frammenti di codice
+In genere, i problemi con i frammenti di codice IntelliSense possono avere due cause: un file di frammento di codice danneggiato o un contenuto non valido in un file.  
   
-## Problemi comuni  
+## <a name="common-problems"></a>Problemi comuni  
   
-### Il frammento non può essere trascinato da Esplora file in un file di origine Visual Studio  
+### <a name="the-snippet-cannot-be-dragged-from-file-explorer-to-a-visual-studio-source-file"></a>Non è possibile trascinare il frammento di codice da Esplora file in un file di origine di Visual Studio  
   
--   È possibile che l'XML nel file frammento sia danneggiato.  L'**Editor XML** di [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] consente di individuare i problemi nella struttura XML.  
+-   Il codice XML nel file di frammento di codice potrebbe essere danneggiato. L'**Editor XML** in [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] può individuare i problemi nella struttura XML.  
   
--   È possibile che il file frammento non sia conforme allo schema del frammento.  L'**Editor XML** di [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] consente di individuare i problemi nella struttura XML.  
+-   Il file di frammento di codice potrebbe non essere conforme allo schema del frammento di codice. L'**Editor XML** in [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] può individuare i problemi nella struttura XML.  
   
-### Il codice contiene errori del compilatore non evidenziati  
+### <a name="the-code-has-compiler-errors-that-are-not-highlighted"></a>Il codice presenta errori del compilatore che non sono evidenziati  
   
--   È possibile che manchi un riferimento al progetto.  Esaminare la documentazione relativa al frammento.  Se il riferimento non si trova sul computer, sarà necessario installarlo.  Inserendo un frammento, verranno aggiunti al progetto tutti i riferimenti necessari.  L'eventuale mancanza delle informazioni di riferimento nel frammento può essere segnalata come errore al creatore del frammento.  
+-   Potrebbe essere stato omesso un riferimento al progetto. Esaminare la documentazione relativa al frammento di codice. Se il riferimento non viene trovato nel computer, è necessario installarlo. L'inserimento di un frammento di codice dovrebbe aggiungere al progetto tutti i riferimenti necessari. Se il frammento di codice non ha le informazioni di riferimento necessarie, è possibile segnalare l'errore a chi lo ha generato.  
   
--   È possibile che una variabile non sia definita.  Le variabili non definite in un frammento dovrebbero essere evidenziate.  In caso contrario, è possibile segnalarlo come errore al creatore del frammento.  
+-   Una variabile potrebbe essere non definita. Le variabili non definite in un frammento di codice dovrebbero essere evidenziate. In caso contrario, è possibile segnalare l'errore a chi ha generato il frammento di codice.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Frammenti di codice](../ide/code-snippets.md)

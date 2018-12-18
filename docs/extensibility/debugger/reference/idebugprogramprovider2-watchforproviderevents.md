@@ -1,88 +1,89 @@
 ---
-title: "IDebugProgramProvider2::WatchForProviderEvents | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "IDebugProgramProvider2::WatchForProviderEvents"
-helpviewer_keywords: 
-  - "IDebugProgramProvider2::WatchForProviderEvents"
+title: IDebugProgramProvider2::WatchForProviderEvents | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology:
+- vs-ide-sdk
+ms.topic: conceptual
+f1_keywords:
+- IDebugProgramProvider2::WatchForProviderEvents
+helpviewer_keywords:
+- IDebugProgramProvider2::WatchForProviderEvents
 ms.assetid: 2eb93653-b5fb-45b6-b136-56008c5d25ef
-caps.latest.revision: 14
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 14
+author: gregvanl
+ms.author: gregvanl
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: 1dd2dcaa930db97ee8bab9b2bba168c80444dda8
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# IDebugProgramProvider2::WatchForProviderEvents
-[!INCLUDE[vs2017banner](../../../code-quality/includes/vs2017banner.md)]
-
-Consente il processo da notificare agli eventi della porta.  
+# <a name="idebugprogramprovider2watchforproviderevents"></a>IDebugProgramProvider2::WatchForProviderEvents
+Consente di ricevere una notifica degli eventi porta il processo.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```cpp  
-HRESULT WatchForProviderEvents(  
-   PROVIDER_FLAGS       Flags,  
-   IDebugDefaultPort2*  pPort,  
-   AD_PROCESS_ID        processId,  
-   CONST_GUID_ARRAY     EngineFilter,  
-   REFGUID              guidLaunchingEngine,  
-   IDebugPortNotify2*   pEventCallback  
+HRESULT WatchForProviderEvents(  
+   PROVIDER_FLAGS       Flags,  
+   IDebugDefaultPort2*  pPort,  
+   AD_PROCESS_ID        processId,  
+   CONST_GUID_ARRAY     EngineFilter,  
+   REFGUID              guidLaunchingEngine,  
+   IDebugPortNotify2*   pEventCallback  
 );  
 ```  
   
-```c#  
-int WatchForProviderEvents(  
-   enum_PROVIDER_FLAGS   Flags,  
-   IDebugDefaultPort2    pPort,  
-   AD_PROCESS_ID         ProcessId,  
-   CONST_GUID_ARRAY      EngineFilter,  
-   ref Guid              guidLaunchingEngine,  
-   IDebugPortNotify2     pEventCallback  
+```csharp  
+int WatchForProviderEvents(  
+   enum_PROVIDER_FLAGS   Flags,  
+   IDebugDefaultPort2    pPort,  
+   AD_PROCESS_ID         ProcessId,  
+   CONST_GUID_ARRAY      EngineFilter,  
+   ref Guid              guidLaunchingEngine,  
+   IDebugPortNotify2     pEventCallback  
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `Flags`  
- \[in\]  Una combinazione di flag [PROVIDER\_FLAGS](../../../extensibility/debugger/reference/provider-flags.md) dall'enumerazione.  i seguenti flag sono tipici per questa chiamata:  
+ [in] Una combinazione di flag dal [PROVIDER_FLAGS](../../../extensibility/debugger/reference/provider-flags.md) enumerazione. I flag seguenti sono più comuni per questa chiamata:  
   
 |Flag|Descrizione|  
 |----------|-----------------|  
-|`PFLAG_REMOTE_PORT`|Il chiamante è in esecuzione nel computer remoto.|  
-|`PFLAG_DEBUGGEE`|Il chiamante è in corso il debug \(informazioni aggiuntive sul marshalling vengono restituite per ogni nodo\).|  
-|`PFLAG_ATTACHED_TO_DEBUGGEE`|Il chiamante è stato collegato a ma non è stato avviato dal debugger.|  
-|`PFLAG_REASON_WATCH`|Il chiamante desidera controllare per gli eventi.  Se questo flag non è impostata.  quindi l'evento callback viene rimosso e il chiamante più non riceve le notifiche.|  
+|`PFLAG_REMOTE_PORT`|Chiamante è in esecuzione sul computer remoto.|  
+|`PFLAG_DEBUGGEE`|Chiamante è in corso il debug (ulteriori informazioni di marshalling sono restituite per ogni nodo).|  
+|`PFLAG_ATTACHED_TO_DEBUGGEE`|Chiamante è stato collegato ma non è stato avviato dal debugger.|  
+|`PFLAG_REASON_WATCH`|Chiamante desidera il controllo degli eventi. Se questo flag non è impostato. quindi, viene rimosso l'evento di callback e il chiamante non riceve più notifiche.|  
   
  `pPort`  
- \[in\]  La porta che il processo chiamante viene eseguito.  
+ [in] La porta del processo chiamante è in esecuzione.  
   
  `processId`  
- \[in\]  [AD\_PROCESS\_ID](../../../extensibility/debugger/reference/ad-process-id.md) Una struttura contenente l'ID del processo che contiene il programma in questione.  
+ [in] Un [AD_PROCESS_ID](../../../extensibility/debugger/reference/ad-process-id.md) struttura che contiene l'ID del processo che contiene il programma in questione.  
   
  `EngineFilter`  
- \[in\]  Una matrice di GUID dei motori di debug associati al processo.  
+ [in] Matrice di GUID di motori di debug associati al processo.  
   
  `guidLaunchingEngine`  
- \[in\]  GUID del motore di debug che ha avviato il processo \(se presente\).  
+ [in] GUID del motore di debug che ha avviato il processo (se presente).  
   
  `pEventCallback`  
- \[in\]  [IDebugPortNotify2](../../../extensibility/debugger/reference/idebugportnotify2.md) Un oggetto che riceve le notifiche di eventi.  
+ [in] Un [IDebugPortNotify2](../../../extensibility/debugger/reference/idebugportnotify2.md) oggetto che riceve le notifiche degli eventi.  
   
-## Valore restituito  
- Se l'operazione riesce, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
+## <a name="return-value"></a>Valore restituito  
+ Se ha esito positivo, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
   
-## Note  
- Quando un chiamante desidera rimuovere un gestore eventi che è stato impostato tramite una chiamata precedente a questo metodo, il chiamante passa gli stessi parametri come effettua la prima volta ma i nodi foglia dal flag di `PFLAG_REASON_WATCH` .  
+## <a name="remarks"></a>Note  
+ Quando un chiamante richiede rimuovere un gestore eventi che è stato stabilito con una precedente chiamata a questo metodo, il chiamante passa gli stessi parametri come la prima volta, ma lascia disattivato il `PFLAG_REASON_WATCH` flag.  
   
-## Esempio  
- Nell'esempio seguente viene illustrato come implementare questo metodo per un oggetto **di CDebugEngine** che espone [IDebugProgramProvider2](../../../extensibility/debugger/reference/idebugprogramprovider2.md) l'interfaccia.  
+## <a name="example"></a>Esempio  
+ Nell'esempio seguente viene illustrato come implementare questo metodo per un **CDebugEngine** oggetto che espone il [IDebugProgramProvider2](../../../extensibility/debugger/reference/idebugprogramprovider2.md) interfaccia.  
   
-```cpp#  
+```cpp  
 STDMETHODIMP CDebugEngine::WatchForProviderEvents(  
     PROVIDER_FLAGS Flags,   
     IDebugDefaultPort2 *pPort,   
@@ -208,10 +209,10 @@ STDMETHODIMP CDebugEngine::WatchForProviderEvents(
 }  
 ```  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IDebugProgramProvider2](../../../extensibility/debugger/reference/idebugprogramprovider2.md)   
- [PROVIDER\_FLAGS](../../../extensibility/debugger/reference/provider-flags.md)   
- [AD\_PROCESS\_ID](../../../extensibility/debugger/reference/ad-process-id.md)   
- [CONST\_GUID\_ARRAY](../../../extensibility/debugger/reference/const-guid-array.md)   
+ [PROVIDER_FLAGS](../../../extensibility/debugger/reference/provider-flags.md)   
+ [AD_PROCESS_ID](../../../extensibility/debugger/reference/ad-process-id.md)   
+ [CONST_GUID_ARRAY](../../../extensibility/debugger/reference/const-guid-array.md)   
  [IDebugDefaultPort2](../../../extensibility/debugger/reference/idebugdefaultport2.md)   
  [IDebugPortNotify2](../../../extensibility/debugger/reference/idebugportnotify2.md)

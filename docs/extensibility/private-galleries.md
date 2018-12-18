@@ -1,40 +1,24 @@
 ---
 title: Gallerie private | Documenti Microsoft
-ms.custom: 
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - vs-ide-sdk
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: conceptual
 helpviewer_keywords:
 - VSIX galleries, private
 - private galleries, VSIX
 ms.assetid: b6b3dee7-91c5-4556-9f69-0d56b675e83b
-caps.latest.revision: 10
+author: gregvanl
 ms.author: gregvanl
-manager: ghogen
-translation.priority.mt:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: baf810f644ed45433d77ddff75bf8aec93f76f1e
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
 ms.translationtype: MT
-ms.sourcegitcommit: 8ce054bf6149f0224785f4c3cd9274e86dc09d04
-ms.openlocfilehash: e4c49a19a9befad5d90b9526842786f49af0851b
-ms.contentlocale: it-it
-ms.lasthandoff: 09/06/2017
-
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="private-galleries"></a>Private Galleries
 È possibile condividere i controlli, modelli e strumenti che si sviluppano inserendoli in un *raccolta privata* sulla rete intranet per l'organizzazione, come indicato di seguito:  
@@ -46,7 +30,7 @@ ms.lasthandoff: 09/06/2017
 ## <a name="adding-a-private-gallery-to-extensions-and-updates-in-visual-studio"></a>Aggiunta di una raccolta privata a estensioni e aggiornamenti in Visual Studio  
  Quando una raccolta privata è disponibile, è possibile aggiungere a **estensioni e aggiornamenti** in Visual Studio.  
   
- ![Finestra di dialogo Aggiungi gestore estensioni](../extensibility/media/em_adddialog.png "EM_AddDialog")  
+ ![Finestra di dialogo Aggiungi gestore estensioni del](../extensibility/media/em_adddialog.png "EM_AddDialog")  
   
 #### <a name="to-add-a-private-gallery-to-extensions-and-updates"></a>Per aggiungere una raccolta privata a estensioni e aggiornamenti  
   
@@ -54,15 +38,15 @@ ms.lasthandoff: 09/06/2017
   
 2.  Nel **ambiente** nodo, seleziona **estensioni e aggiornamenti**.  
   
-3.  Scegliere il pulsante **Aggiungi** .  
+3.  Scegliere il pulsante **Aggiungi**.  
   
 4.  Nel **nome** immettere un nome per la raccolta privata, ad esempio, `My Gallery`.  
   
 5.  Nel **URL** immettere l'URL del feed Atom o sito di SharePoint che ospita la raccolta privata.  
   
-    1.  Se l'host è un feed Atom che si connette a una raccolta privata, l'URL sarà simile a questo: http://www.mywebsite/mygallery/atom.xml.  Questo URL può fare riferimento a un file o un percorso di rete.  
+    1.  Se l'host è un feed Atom che si connette alla raccolta privata, l'URL sarà simile alla seguente presente: http://www.mywebsite/mygallery/atom.xml.  Questo URL può fare riferimento a un file o un percorso di rete.  
   
-    2.  Se l'host è un sito di SharePoint, l'URL sarà simile a questo: http://mysharepoint/sites/mygallery/forms/AllItems.aspx.  
+    2.  Se l'host è un sito di SharePoint, l'URL sarà simile alla seguente presente: http://mysharepoint/sites/mygallery/forms/AllItems.aspx.  
   
 ### <a name="managing-private-galleries"></a>La gestione di raccolte Private  
  Un amministratore può renderla una raccolta privata disponibile per più computer allo stesso tempo modificando il Registro di sistema in ogni computer. A tale scopo, creare un file. pkgdef che descrive le nuove chiavi del Registro di sistema e i relativi valori.  Il formato di questo file è come indicato di seguito.  
@@ -84,7 +68,7 @@ DisplayNamePackageGuid={GUID} (REG_SZ)
 ## <a name="installing-extensions-from-a-private-gallery"></a>L'installazione delle estensioni da una raccolta privata  
  È possibile cercare e installare le estensioni di Visual Studio da una raccolta privata in **estensioni e aggiornamenti**. La procedura seguente utilizza una raccolta privata denominata `My Gallery`.  
   
- ![L'installazione della Galleria privata di gestione di estensione](../extensibility/media/em_.png "EM_")  
+ ![Installazione della Galleria privata di gestione di estensione](../extensibility/media/em_.png "EM_")  
   
 #### <a name="to-search-for-and-install-extensions-from-a-private-gallery"></a>Per cercare e installare le estensioni da una raccolta privata  
   

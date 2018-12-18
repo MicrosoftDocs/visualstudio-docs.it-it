@@ -1,48 +1,49 @@
 ---
-title: "Salvare un documento personalizzato | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "persistenza, il salvataggio di documenti personalizzati"
-  - "progetti [Visual Studio SDK], salvataggio di documenti personalizzati"
-  - "editor [Visual Studio SDK], salvataggio di documenti personalizzati"
+title: Salvataggio di un documento personalizzato | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology:
+- vs-ide-sdk
+ms.topic: conceptual
+helpviewer_keywords:
+- persistence, saving custom documents
+- projects [Visual Studio SDK], saving custom documents
+- editors [Visual Studio SDK], saving custom documents
 ms.assetid: 040b36d6-1f0a-4579-971c-40fbb46ade1d
-caps.latest.revision: 12
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 12
+author: gregvanl
+ms.author: gregvanl
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: 5425a1c35816fd85847915029e3b6f2da1ed75a6
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# Salvare un documento personalizzato
-[!INCLUDE[vs2017banner](../../code-quality/includes/vs2017banner.md)]
-
-L'handle di ambiente **Save**, **Save As**e controlli di **Save All** .  Quando un utente fa clic su **Salvare**, **Salva con nome**, **o salvare tutti** il menu File o chiude la soluzione, con conseguente salva tutti, il seguente processo si verifica.  
+# <a name="saving-a-custom-document"></a>Salvataggio di un documento personalizzato
+Gli handle di ambiente di **salvare**, **Salva con nome**, e **Salva tutto** comandi. Quando un utente fa clic **salvare**, **Salva con nome**, **o Salva tutto** sul **File** menu o chiude la soluzione, pertanto il comando Salva tutto, le operazioni seguenti si verifica.  
   
- ![Salvataggio editor customer](~/extensibility/internals/media/private.gif "Private")  
-Salvare, salva con nome e salvare qualsiasi gestione di comando per un editor personalizzato  
+ ![Salvataggio Editor Customer](../../extensibility/internals/media/private.gif "privato")  
+Salvare, Salva con nome e un editor personalizzato di gestione del comando Salva tutto  
   
- Questo processo è in dettaglio i passaggi seguenti:  
+ Questa procedura è descritta nei passaggi seguenti:  
   
-1.  Per i controlli di **Salva con nome** e di **Salvare** , l'ambiente viene utilizzato il servizio di <xref:Microsoft.VisualStudio.Shell.Interop.SVsShellMonitorSelection> per determinare la finestra di documento attivo e quindi gli elementi che devono essere salvati.  Una volta che la finestra di documento attivo è noto, l'ambiente viene trovato l'identificatore del puntatore e dell'elemento della gerarchia \(ID voce\) per il documento nella tabella in esecuzione il documento.  Per ulteriori informazioni, vedere [Tabella Document in esecuzione](../../extensibility/internals/running-document-table.md).  
+1.  Per il **salvare** e **Salva con nome** comandi, nell'ambiente viene utilizzato il <xref:Microsoft.VisualStudio.Shell.Interop.SVsShellMonitorSelection> del servizio per determinare la finestra del documento attivo e pertanto gli elementi che devono essere salvati. Una volta che è nota la finestra del documento attivo, l'ambiente trova il puntatore di gerarchia e l'identificatore dell'elemento (ID elemento) per il documento della tabella document in esecuzione. Per ulteriori informazioni, vedere [tabella documenti in esecuzione](../../extensibility/internals/running-document-table.md).  
   
-     Di salvataggio qualsiasi comando, l'ambiente utilizza le informazioni nella tabella in esecuzione di documento per compilare l'elenco di tutti gli elementi da salvare.  
+     Per il comando Salva tutto l'ambiente utilizza le informazioni nella tabella documenti in esecuzione per compilare l'elenco di tutti gli elementi da salvare.  
   
-2.  Quando la soluzione riceve una chiamata di <xref:Microsoft.VisualStudio.OLE.Interop.IOleCommandTarget.QueryStatus%2A> , scorre il set di elementi selezionati ossia le selezioni esposte dal servizio di <xref:Microsoft.VisualStudio.Shell.Interop.SVsShellMonitorSelection> \).  
+2.  Quando la soluzione riceve un <xref:Microsoft.VisualStudio.OLE.Interop.IOleCommandTarget.QueryStatus%2A> chiamata, scorre il set di elementi selezionati (vale a dire le selezioni multiple esposte dal <xref:Microsoft.VisualStudio.Shell.Interop.SVsShellMonitorSelection> servizio).  
   
-3.  In ogni elemento nella selezione, la soluzione utilizza il puntatore della gerarchia per chiamare il metodo di <xref:Microsoft.VisualStudio.Shell.Interop.IVsPersistHierarchyItem2.IsItemDirty%2A> per determinare se il comando di menu di salvataggio deve essere abilitato.  Se uno o più elementi vengono modificati, il comando salva è abilitato.  Se la gerarchia utilizza un editor standard, la gerarchia delega eseguire una query sullo stato cambiato l'editor chiamando il metodo di <xref:Microsoft.VisualStudio.Shell.Interop.IVsPersistDocData2.IsDocDataDirty%2A> .  
+3.  Su ogni elemento nella selezione, la soluzione utilizza l'indicatore di misura di gerarchia per chiamare il <xref:Microsoft.VisualStudio.Shell.Interop.IVsPersistHierarchyItem2.IsItemDirty%2A> metodo per determinare se il comando di menu Salva deve essere abilitato. Se uno o più elementi sono dirty, quindi viene attivato il comando Salva. Se la gerarchia utilizza un editor standard, i delegati di gerarchia per l'esecuzione di query dirty stato all'editor chiamando il <xref:Microsoft.VisualStudio.Shell.Interop.IVsPersistDocData2.IsDocDataDirty%2A> metodo.  
   
-4.  In ogni elemento selezionato è stato modificato, la soluzione utilizza il puntatore della gerarchia per chiamare il metodo di <xref:Microsoft.VisualStudio.Shell.Interop.IVsPersistHierarchyItem2.SaveItem%2A> sulle gerarchie appropriate.  
+4.  Ogni elemento selezionato è stato modificato, la soluzione utilizza l'indicatore di misura di gerarchia per chiamare il <xref:Microsoft.VisualStudio.Shell.Interop.IVsPersistHierarchyItem2.SaveItem%2A> metodo sulle gerarchie appropriate.  
   
-     Nel caso di un editor personalizzato, la comunicazione tra l'oggetto dati del documento e il progetto è privata.  Pertanto, tutte le problematiche particolari di persistenza vengono mantenute tra questi due oggetti.  
+     Nel caso di un editor personalizzato, la comunicazione tra l'oggetto dati del documento e il progetto è privata. Di conseguenza, eventuali problemi di persistenza speciali vengono gestiti tra questi due oggetti.  
   
     > [!NOTE]
-    >  Se si distribuisce della persistenza, è necessario assicurarsi di chiamare il metodo di <xref:Microsoft.VisualStudio.Shell.Interop.IVsQueryEditQuerySave2.QuerySaveFiles%2A> per risparmiare tempo.  Controlli di questo metodo per assicurarsi che sia protetto salvare il file, il file non sia in sola lettura\).  
+    >  Se si implementa la propria persistenza, assicurarsi di chiamare il <xref:Microsoft.VisualStudio.Shell.Interop.IVsQueryEditQuerySave2.QuerySaveFiles%2A> metodo per risparmiare tempo. Questo metodo consente di assicurarsi che è possibile salvare il file (ad esempio, il file non è in sola lettura).  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  <xref:Microsoft.VisualStudio.OLE.Interop.IOleCommandTarget>   
  [Apertura e salvataggio di elementi di progetto](../../extensibility/internals/opening-and-saving-project-items.md)

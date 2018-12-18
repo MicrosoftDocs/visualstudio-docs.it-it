@@ -1,76 +1,76 @@
 ---
-title: "Procedura: aggiungere controlli XMLNode ai documenti di Word"
-ms.custom: ""
-ms.date: "02/02/2017"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "office-development"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-helpviewer_keywords: 
-  - "controlli [sviluppo per Office in Visual Studio], aggiunta a documenti"
-  - "XMLNodes (controllo), aggiunta a documenti"
-ms.assetid: 315c6def-51f6-4ba6-bd9e-55cdf70f15bf
-caps.latest.revision: 28
-author: "kempb"
-ms.author: "kempb"
-manager: "ghogen"
-caps.handback.revision: 27
+title: 'Procedura: aggiungere controlli XMLNode ai documenti di Word | Documenti Microsoft'
+ms.custom: ''
+ms.date: 02/02/2017
+ms.technology:
+- office-development
+ms.topic: conceptual
+dev_langs:
+- VB
+- CSharp
+helpviewer_keywords:
+- XMLNodes control, adding to documents
+- controls [Office development in Visual Studio], adding to documents
+author: TerryGLee
+ms.author: tglee
+manager: douge
+ms.workload:
+- office
+ms.openlocfilehash: 1ff96af4078883bf77d3632d08b6417ff1c34e2f
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# Procedura: aggiungere controlli XMLNode ai documenti di Word
-  **importante** le informazioni relative in questo argomento relative a Microsoft Word è verificato esclusivamente per il vantaggio e l'utilizzo degli utenti e le organizzazioni che si trovano fuori dagli Stati Uniti e i relativi territori, o sviluppano programmi eseguiti con prodotti, Microsoft Word che sono stati concessi in licenza da Microsoft prima del gennaio 2010, quando È stato rimosso un'implementazione di determinata funzionalità correlata alla classe personalizzata XML da Microsoft Word.  Queste informazioni relative a Microsoft Word non possono essere lette o utilizzate dagli individui o delle organizzazioni che si trovano negli Stati Uniti o nei relativi territori oppure che usano o sviluppano programmi eseguiti con prodotti Microsoft Word concessi in licenza da Microsoft dopo il 10 gennaio 2010. Questi prodotti funzioneranno in modo diverso rispetto a quelli concessi in licenza prima di tale data oppure acquistati e concessi in licenza per l'uso all'esterno degli Stati Uniti.  
+# <a name="how-to-add-xmlnodes-controls-to-word-documents"></a>Procedura: aggiungere controlli XMLNode ai documenti di Word
+  **Importante** le informazioni in questo argomento relative a Microsoft Word sono presentato in modo esclusivo per il vantaggio e uso di singoli utenti e organizzazioni che si trovano di fuori degli Stati Uniti e dei relativi territori o che utilizzano o lo sviluppo programmi che vengono eseguiti in, i prodotti di Microsoft Word che sono stati concessi in licenza da Microsoft prima di gennaio 2010, quando Microsoft ha rimosso un'implementazione di una funzionalità specifica relativi a XML personalizzato da Microsoft Word. Queste informazioni relative a Microsoft Word potrebbero non essere lette o utilizzate dal singoli individui o organizzazioni negli Stati Uniti o relativi territori, che utilizza o lo sviluppo di programmi eseguibili in, i prodotti di Microsoft Word che sono stati concessi in licenza da Microsoft dopo il 10 gennaio 2010 ; tali prodotti non si comporterà come prodotti con licenza prima di tale data o acquistati e concesso in licenza di fuori degli Stati Uniti.  
   
  [!INCLUDE[appliesto_wdalldoc](../vsto/includes/appliesto-wdalldoc-md.md)]  
   
- Quando si associa un elemento di schema XML ripetuto a un documento di Microsoft Office Word, Visual Studio aggiunge automaticamente un controllo <xref:Microsoft.Office.Tools.Word.XMLNodes> al documento.  
+ Quando si mappa un elemento di schema XML ripetuto a un documento di Microsoft Office Word, Visual Studio aggiunge automaticamente un <xref:Microsoft.Office.Tools.Word.XMLNodes> controllo al documento.  
   
- Per informazioni sul mapping di elementi di schema XML non ripetuti, vedere [Procedura: aggiungere controlli XMLNode ai documenti di Word](../vsto/how-to-add-xmlnode-controls-to-word-documents.md).  
+ Per informazioni sul mapping di elementi XML schema non ripetuti, vedere [procedura: aggiungere controlli XMLNode ai documenti di Word](../vsto/how-to-add-xmlnode-controls-to-word-documents.md).  
   
 > [!NOTE]  
->  Il controllo <xref:Microsoft.Office.Tools.Word.XMLNodes> non è disponibile dalla **Casella degli strumenti** o dalla finestra **Origini dati** e non può essere creato a livello di codice.  
+>  Il <xref:Microsoft.Office.Tools.Word.XMLNodes> controllo non è disponibile il **della casella degli strumenti** o **origini dati** finestra, né può essere creato a livello di codice.  
   
  [!INCLUDE[note_settings_general](../sharepoint/includes/note-settings-general-md.md)]  
   
-### Per aggiungere un controllo XMLNode a un documento  
+### <a name="to-add-an-xmlnodes-control-to-a-document"></a>Per aggiungere un controllo XMLNodes a un documento  
   
-1.  Nel documento contenuto nella finestra di progettazione di Visual Studio, fare clic sulla scheda **Sviluppatore** della barra multifunzione.  
+1.  Nel documento nella finestra di progettazione di Visual Studio, sulla barra multifunzione, fare clic su di **Developer** scheda.  
   
     > [!NOTE]  
-    >  Se la scheda **Sviluppo** non è visibile, è necessario prima visualizzarla.  Per ulteriori informazioni, vedere [Procedura: visualizzare la scheda Sviluppo nella barra multifunzione](../vsto/how-to-show-the-developer-tab-on-the-ribbon.md).  
+    >  Se la scheda **Sviluppatore** non viene mostrata, è necessario abilitarne la visualizzazione. Per altre informazioni, vedere [Procedura: visualizzare la scheda Sviluppo nella barra multifunzione](../vsto/how-to-show-the-developer-tab-on-the-ribbon.md).  
   
-2.  Nel gruppo **XML**, fare clic su **Schema**.  
+2.  Nel **XML** gruppo, fare clic su **Schema**.  
   
-     Verrà visualizzata la finestra di dialogo **Modelli e aggiunte**.  
+     Il **modelli e componenti aggiuntivi** verrà visualizzata la finestra di dialogo.  
   
-3.  Fare clic sulla scheda **XML Schema**.  
+3.  Fare clic su di **XML Schema** scheda.  
   
-4.  Fare clic su **Aggiungi schema**.  
+4.  Fare clic su **aggiungere Schema**.  
   
-     Verrà visualizzata la finestra di dialogo **Aggiungi schema**.  
+     Il **Aggiungi Schema** verrà visualizzata la finestra di dialogo.  
   
-5.  Selezionare un XML Schema che contiene elementi di schema ripetuti e fare clic su **Apri**.  
+5.  Selezionare uno schema XML che contiene ripetuta elementi dello schema e fare clic su **aprire**.  
   
-     Verrà visualizzata la finestra di dialogo **Impostazioni schema**.  
+     Il **impostazioni Schema** viene visualizzata la finestra di dialogo.  
   
 6.  Assegnare un alias o fare clic su **OK** per aggiungere lo schema senza un alias.  
   
-     Lo schema verrà aggiunto alla finestra di dialogo **Aggiungi schema**.  
+     Lo schema viene aggiunto per il **Aggiungi Schema** la finestra di dialogo.  
   
-7.  Fare clic su **OK** nella finestra di dialogo **Aggiungi schema**.  
+7.  Nel **Aggiungi Schema** la finestra di dialogo, fare clic su **OK**.  
   
-     Verrà aperto il riquadro attività **Struttura XML**.  
+     Il **struttura XML** Visualizza il riquadro attività.  
   
-8.  Scegliere l'elemento di schema ripetuto nel riquadro attività **Struttura XML** per aggiungere l'elemento al documento.  
+8.  Scegliere l'elemento ripetuto dello schema di **struttura XML** riquadro attività per aggiungerlo al documento.  
   
-     Un controllo <xref:Microsoft.Office.Tools.Word.XMLNodes> verrà creato e aggiunto al progetto.  
+     Un <xref:Microsoft.Office.Tools.Word.XMLNodes> controllo viene creato e aggiunto al progetto.  
   
-## Vedere anche  
- [Controllo XMLNodes](../vsto/xmlnodes-control.md)   
+## <a name="see-also"></a>Vedere anche  
+ [XMLNodes (controllo)](../vsto/xmlnodes-control.md)   
  [Automazione di Word usando oggetti estesi](../vsto/automating-word-by-using-extended-objects.md)   
  [Panoramica degli elementi e dei controlli host](../vsto/host-items-and-host-controls-overview.md)   
  [Limitazioni a livello di codice degli elementi e dei controlli host](../vsto/programmatic-limitations-of-host-items-and-host-controls.md)  

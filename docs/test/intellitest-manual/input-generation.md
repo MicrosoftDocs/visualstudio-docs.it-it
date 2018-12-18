@@ -1,39 +1,20 @@
 ---
 title: Esecuzione simbolica dinamica | Strumento di test per sviluppatori Microsoft IntelliTest | Microsoft Docs
-ms.custom: 
 ms.date: 05/02/2017
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- vs-devops-test
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.technology: vs-ide-test
+ms.topic: conceptual
 helpviewer_keywords:
 - IntelliTest, Dynamic symbolic execution
-ms.assetid: B938E2D2-7B7C-4D76-B26C-2616F5B4A9F5
-caps.latest.revision: 56
-ms.author: douge
+ms.author: gewarren
 manager: douge
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 45d36934cf1c46902cac566203cddf4a118b7fe4
-ms.openlocfilehash: f5b061b77d5abe977d12d400534c6ac80842aded
-ms.contentlocale: it-it
-ms.lasthandoff: 06/02/2017
-
+ms.workload:
+- multiple
+author: gewarren
+ms.openlocfilehash: 083ee0e340688065ab765961676da63c405fd434
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="input-generatation-using-dynamic-symbolic-execution"></a>Generazione di input con l'esecuzione simbolica dinamica
 
@@ -164,4 +145,3 @@ La classe statica [PexChoose](static-helper-classes.md#pexchoose) può essere us
 ## <a name="got-feedback"></a>Commenti?
 
 Pubblicare idee e richieste di funzionalità in **[UserVoice](https://visualstudio.uservoice.com/forums/121579-visual-studio-2015/category/157869-test-tools?query=IntelliTest)**.
-

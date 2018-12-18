@@ -1,41 +1,22 @@
 ---
 title: Finestra di dialogo Impostazioni avanzate (visualizzatore di concorrenza) | Microsoft Docs
-ms.custom: 
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- vs-ide-debug
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.technology: vs-ide-debug
+ms.topic: conceptual
 f1_keywords:
 - vs.cv.settings
 ms.assetid: bb3d90aa-5f08-4953-9be0-be6cea11633d
-caps.latest.revision: 9
 author: mikejo5000
 ms.author: mikejo
-manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 3d32d11a430227800cb3ed53831a9565eb6adeb3
-ms.openlocfilehash: ae3359dc390dc5486d7de93a4b745f44fe7c0ae6
-ms.contentlocale: it-it
-ms.lasthandoff: 05/30/2017
-
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: e0cde5d1ddd5dabfd42a6a7d31284736e24fa302
+ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/19/2018
 ---
 # <a name="advanced-settings-dialog-box-concurrency-visualizer"></a>Finestra di dialogo Impostazioni avanzate (visualizzatore di concorrenza)
 La finestra **Impostazioni avanzate** del visualizzatore di concorrenza consente di controllare quali tracce vengono raccolte.  Nella finestra sono presenti le schede seguenti: Simboli, Just My Code, Buffer, Filtro, Eventi CLR, Marcatori, Provider e File.  

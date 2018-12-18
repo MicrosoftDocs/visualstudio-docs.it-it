@@ -1,47 +1,46 @@
 ---
-title: "IDiaSymbol::get_virtualAddress | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "IDiaSymbol::get_virtualAddress (metodo)"
+title: IDiaSymbol::get_virtualAddress | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology: vs-ide-debug
+ms.topic: conceptual
+dev_langs:
+- C++
+helpviewer_keywords:
+- IDiaSymbol::get_virtualAddress method
 ms.assetid: dc20c7c0-15a6-4b78-a5c9-2e0b94cac522
-caps.latest.revision: 8
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 8
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: b9207f9ec88ed09712c32f72d2e52a85fcd2cc8f
+ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/18/2018
 ---
-# IDiaSymbol::get_virtualAddress
-[!INCLUDE[vs2017banner](../../code-quality/includes/vs2017banner.md)]
-
-Recupera indirizzo \(VA\) virtuale della posizione.  Utilizzare quando [Enumerazione LocationType](../../debugger/debug-interface-access/locationtype.md) è impostato su  `LocIsStatic`.  
+# <a name="idiasymbolgetvirtualaddress"></a>IDiaSymbol::get_virtualAddress
+Recupera l'indirizzo virtuale (VA) della posizione. Utilizzo di [LocationType (enumerazione)](../../debugger/debug-interface-access/locationtype.md) è impostato su `LocIsStatic`.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp#  
-HRESULT get_virtualAddress (   
-   ULONGLONG* pRetVal  
+```C++  
+HRESULT get_virtualAddress (   
+   ULONGLONG* pRetVal  
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `pRetVal`  
- \[out\]  Restituisce l'indirizzo virtuale della posizione.  
+ [out] Restituisce l'indirizzo del percorso virtuale.  
   
-## Valore restituito  
- Se l'operazione riesce, restituisce `S_OK`; in caso contrario, restituisce  `S_FALSE` o un codice di errore.  
+## <a name="return-value"></a>Valore restituito  
+ Se ha esito positivo, restituisce `S_OK`; in caso contrario, restituisce `S_FALSE` o un codice di errore.  
   
 > [!NOTE]
->  un valore restituito di `S_FALSE` indica che la proprietà non è disponibile per il simbolo.  
+>  Valore restituito di `S_FALSE` significa che la proprietà non è disponibile per il simbolo.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IDiaSymbol](../../debugger/debug-interface-access/idiasymbol.md)   
- [Enumerazione LocationType](../../debugger/debug-interface-access/locationtype.md)
+ [LocationType (enumerazione)](../../debugger/debug-interface-access/locationtype.md)

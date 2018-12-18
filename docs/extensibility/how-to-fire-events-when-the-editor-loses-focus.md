@@ -1,36 +1,37 @@
 ---
-title: "Procedura: generare eventi quando l&#39;Editor non &#232; attivo | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "editor [Visual Studio SDK], legacy - generano eventi perde lo stato attivo"
+title: "Procedura: generare eventi quando l'Editor perde lo stato attivo | Documenti Microsoft"
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology:
+- vs-ide-sdk
+ms.topic: conceptual
+helpviewer_keywords:
+- editors [Visual Studio SDK], legacy - fire events on losing focus
 ms.assetid: 64d40695-6917-468a-8037-a253453ac159
-caps.latest.revision: 8
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 8
+author: gregvanl
+ms.author: gregvanl
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: bbdcf30443bc548fd8d182db301cbc7119d8ceae
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# Procedura: generare eventi quando l&#39;Editor non &#232; attivo
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
-È talvolta necessario sapere quando un editor perde lo stato attivo sulla struttura della finestra.  Ad esempio, potrebbe essere necessario aggiornare la versione di estrarre il codice da una finestra del codice dopo che l'editor non è più attivo su.  La procedura riportata di seguito vengono illustrate le operazioni necessarie per utilizzare per ricevere la notifica dello stato attivo perdente dell'editor.  
+# <a name="how-to-fire-events-when-the-editor-loses-focus"></a>Procedura: generare eventi quando l'Editor perde lo stato attivo
+In alcuni casi è necessario sapere quando un editor perde lo stato attivo sulla cornice finestra. È ad esempio, potrebbe essere necessario estrarre codice da una finestra del codice dopo l'editor non è più incentrata su di esso. La procedura seguente fornisce i passaggi da seguire per ricevere la notifica dell'editor perde lo stato attivo.  
   
-### Per generare un evento in risposta allo stato attivo perdente dell'editor  
+### <a name="to-fire-an-event-in-response-to-an-editor-losing-focus"></a>Per generare un evento in risposta a un editor perde lo stato attivo  
   
-1.  Eventi di selezione del monitor per ottenere un oggetto di <xref:Microsoft.VisualStudio.Shell.Interop.IVsMonitorSelection> da <xref:Microsoft.VisualStudio.Shell.Interop.SVsShellMonitorSelection>.  
+1.  Monitorare gli eventi di selezione ottenendo un <xref:Microsoft.VisualStudio.Shell.Interop.IVsMonitorSelection> oggetto <xref:Microsoft.VisualStudio.Shell.Interop.SVsShellMonitorSelection>.  
   
-2.  Call <xref:Microsoft.VisualStudio.Shell.Interop.IVsMonitorSelection.AdviseSelectionEvents%2A> and provide it your <xref:Microsoft.VisualStudio.Shell.Interop.IVsSelectionEvents> object.  
+2.  Chiamare <xref:Microsoft.VisualStudio.Shell.Interop.IVsMonitorSelection.AdviseSelectionEvents%2A> e fornirlo il <xref:Microsoft.VisualStudio.Shell.Interop.IVsSelectionEvents> oggetto.  
   
-3.  Nella chiamata all'entity\_M:Microsoft.VisualStudio.Shell.Interop.IVsSelectionEvents.OnElementValueChanged\(System.UInt32, System.Object  
+3.  Nella chiamata a <xref:Microsoft.VisualStudio.Shell.Interop.IVsSelectionEvents.OnElementValueChanged%2A>, cercare `elementid==SEID_WindowFrame`.  
   
-4.  Verificare il parametro di `varValueNew` per due fattori:  
+4.  Test di `varValueNew` parametro per due scopi:  
   
-    1.  La struttura della finestra da cercare.  
+    1.  Si sta cercando la cornice della finestra.  
   
-    2.  Il punto in cui il programma perde la selezione a tale struttura della finestra.
+    2.  Il punto in cui il programma perde la selezione verso la cornice della finestra.

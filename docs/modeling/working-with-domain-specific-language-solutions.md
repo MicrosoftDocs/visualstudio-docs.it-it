@@ -1,50 +1,39 @@
 ---
-title: "Utilizzo di soluzioni per un linguaggio specifico di dominio | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 3db02722-5fd5-437f-a789-9acaaa809de8
-caps.latest.revision: 6
-author: "alancameronwills"
-ms.author: "awills"
-manager: "douge"
-caps.handback.revision: 6
+title: Utilizzo di soluzioni per un linguaggio specifico di dominio
+ms.date: 11/04/2016
+ms.topic: conceptual
+author: gewarren
+ms.author: gewarren
+manager: douge
+ms.workload:
+- multiple
+ms.technology: vs-ide-modeling
+ms.openlocfilehash: b601d348f01334377e765285fbf8b37e0f7089fb
+ms.sourcegitcommit: 4c0bc21d2ce2d8e6c9d3b149a7d95f0b4d5b3f85
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/20/2018
 ---
-# Utilizzo di soluzioni per un linguaggio specifico di dominio
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
+# <a name="working-with-domain-specific-language-solutions"></a>Utilizzo di soluzioni per un linguaggio specifico di dominio
+Un linguaggio specifico di dominio (DSL) viene creato utilizzando un [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] soluzione. In questa sezione è su come configurare e personalizzare la soluzione.
 
-Un linguaggio specifico \(DSL\) di dominio viene creato utilizzando un oggetto [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] soluzione.  In questa sezione vengono fornite informazioni su come impostare e personalizzare la soluzione.  
-  
-## In questa sezione  
- [Informazioni sui linguaggi specifici del dominio](../modeling/about-domain-specific-languages.md)  
- Viene illustrato come compilare DSLs e viene descritta l'applicazione.  
-  
- [Informazioni generali sugli strumenti di linguaggio specifico di dominio](../modeling/overview-of-domain-specific-language-tools.md)  
- Vengono illustrate le attività fondamentali per compilare e distribuire in un modello DSL.  
-  
- [Informazioni sull'interfaccia utente degli strumenti di linguaggio specifico di dominio](../modeling/overview-of-the-domain-specific-language-tools-user-interface.md)  
- Vengono descritte le finestre associate a DSLs.  
-  
- [Scelta di un modello di soluzione per un linguaggio specifico di dominio](../modeling/choosing-a-domain-specific-language-solution-template.md)  
- Viene descritto come scegliere un modello per avviare il progetto di modello DSL.  
-  
- [Procedura: creare una soluzione per un linguaggio specifico di dominio](../modeling/how-to-create-a-domain-specific-language-solution.md)  
- Vengono descritti i passaggi per impostare un modello DSL.  
-  
- [Utilizzo del diagramma di definizione DSL](../modeling/working-with-the-dsl-definition-diagram.md)  
- Vengono illustrate le parti del diagramma.  
-  
- [Utilizzo di Esplora linguaggi specifici di dominio](../modeling/working-with-the-domain-specific-language-explorer.md)  
- Viene illustrato il contenuto esplora soluzioni  
-  
- [Procedura: modificare lo spazio dei nomi di un linguaggio specifico di dominio](../modeling/how-to-change-the-namespace-of-a-domain-specific-language.md)  
- Il codice generati da un modello DSL è presente uno spazio dei nomi impostate quando si avvia la soluzione, ma è possibile modificarlo successivamente.  
-  
- [Procedura: estendere la finestra di progettazione di linguaggio specifico di dominio](../modeling/how-to-extend-the-domain-specific-language-designer.md)  
- È possibile personalizzare la finestra di progettazione DSL con i comandi di menu.  
-  
- [Procedura: automatizzare la trasformazione di tutti i modelli](http://msdn.microsoft.com/it-it/b63cfe20-fe5e-47cc-9506-59b29bca768a)  
- Per evitare fare clic sulla trasformazione tutti i modelli, è possibile renderla una parte automatica della compilazione.
+## <a name="in-this-section"></a>In questa sezione
+ [Informazioni sulle lingue Domain-Specific](../modeling/about-domain-specific-languages.md) viene descritto come sviluppare DSL e come applicarli.
+
+ [Panoramica degli strumenti di linguaggio specifico di dominio](../modeling/overview-of-domain-specific-language-tools.md) illustra le attività principali per lo sviluppo e distribuzione di un linguaggio DSL.
+
+ [Panoramica dell'interfaccia utente di strumenti di linguaggio specifico di dominio](../modeling/overview-of-the-domain-specific-language-tools-user-interface.md) vengono descritte le finestre associate DSL.
+
+ [Scelta di un modello di soluzione Domain-Specific Language](../modeling/choosing-a-domain-specific-language-solution-template.md) viene spiegato come scegliere un modello per avviare il progetto DSL.
+
+ [Procedura: creare una soluzione di linguaggio specifico di dominio](../modeling/how-to-create-a-domain-specific-language-solution.md) vengono descritti i passaggi per configurare un linguaggio DSL.
+
+ [Utilizzo con il diagramma della definizione DSL](../modeling/working-with-the-dsl-definition-diagram.md) vengono illustrate le parti del diagramma.
+
+ [Utilizzo di Esplora di linguaggio specifico di dominio](../modeling/working-with-the-domain-specific-language-explorer.md) illustra i contenuti dell'oggetto explorer
+
+ [Procedura: modificare Namespace di un linguaggio specifico di dominio](../modeling/how-to-change-the-namespace-of-a-domain-specific-language.md) il codice generato da un linguaggio DSL include uno spazio dei nomi che è impostato quando si avvia la soluzione, ma è possibile modificarlo in un secondo momento.
+
+ [Procedura: estendere la finestra di progettazione di linguaggio specifico di dominio](../modeling/how-to-extend-the-domain-specific-language-designer.md) è possibile personalizzare la finestra di progettazione DSL con i comandi di menu.
+
+ [Come automatizzare Trasforma tutti i modelli](http://msdn.microsoft.com/b63cfe20-fe5e-47cc-9506-59b29bca768a) per evitare facendo clic su Trasforma tutti i modelli, è possibile renderlo un'automatica di una parte della compilazione.

@@ -1,59 +1,58 @@
 ---
-title: "Threads View | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "vs.externaltools.spyplus.threadsview"
-helpviewer_keywords: 
-  - "Threads view"
+title: Visualizzazione thread | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology: vs-ide-debug
+ms.topic: conceptual
+f1_keywords:
+- vs.externaltools.spyplus.threadsview
+helpviewer_keywords:
+- Threads view
 ms.assetid: abfb4e9e-1622-47c9-afda-b6b71a9d88e4
-caps.latest.revision: 6
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 6
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 21ace8efe2491a394d7abfc6402894a2fe11e6f9
+ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/18/2018
 ---
-# Threads View
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
-Nella visualizzazione thread vengono elencati in modo completo tutti i thread associati alle finestre del sistema.  Vengono visualizzati l'ID del thread e il nome del modulo per ogni thread.  I processi non sono inclusi, tuttavia si può individuare facilmente il processo a cui appartiene un thread selezionato.  
+# <a name="threads-view"></a>Visualizzazione Thread
+La visualizzazione dei thread è un semplice elenco di tutti i thread associati alle finestre nel sistema. Vengono visualizzati l'ID del Thread e nome del modulo per ogni thread. I processi non vengono inclusi, ma è possibile trovare facilmente il processo a cui appartiene un thread selezionato.  
   
-## Procedure  
+## <a name="procedures"></a>Procedure  
   
-#### Per aprire la visualizzazione thread  
+#### <a name="to-open-the-threads-view"></a>Per aprire la visualizzazione thread  
   
-1.  Scegliere **Thread** dal menu **Spy**.  
+1.  Dal **Spy** menu, scegliere **thread**.  
   
- ![Visualizzazione Thread di Spy&#43;&#43;](../debugger/media/spy--_threads.png "Spy\+\+\_Threads")  
-Visualizzazione Thread di Spy\+\+  
+ ![Spy&#43; &#43; visualizzazione thread](../debugger/media/spy--_threads.png "Spy + + _Threads")  
+Visualizzazione Thread di Spy++  
   
- Nella figura precedente viene mostrata la visualizzazione thread.  
+ La seguente figura mostra la visualizzazione dei thread.  
   
-## Argomenti della sezione  
- [Ricerca di un thread nella visualizzazione thread](../debugger/how-to-search-for-a-thread-in-threads-view.md)  
- Viene illustrato come individuare un thread specifico nella visualizzazione thread.  
+## <a name="in-this-section"></a>In questa sezione  
+ [Ricerca di un Thread nella visualizzazione thread](../debugger/how-to-search-for-a-thread-in-threads-view.md)  
+ Viene illustrato come trovare un thread specifico nella visualizzazione thread.  
   
- [Visualizzazione delle proprietà del thread](../debugger/how-to-display-thread-properties.md)  
+ [Visualizzazione delle proprietà del Thread](../debugger/how-to-display-thread-properties.md)  
  Viene illustrato come visualizzare ulteriori informazioni su un thread.  
   
-## Sezioni correlate  
- [Visualizzazioni di Spy\+\+](../debugger/spy-increment-views.md)  
- Vengono illustrate le visualizzazioni struttura ad albero di Spy\+\+ relative a finestre, messaggi, processi e thread.  
+## <a name="related-sections"></a>Sezioni correlate  
+ [Visualizzazioni di Spy++](../debugger/spy-increment-views.md)  
+ Vengono illustrate le visualizzazioni ad albero Spy + + di windows, i messaggi, thread e processi.  
   
- [Utilizzo di Spy\+\+](../debugger/using-spy-increment.md)  
- Vengono illustrati lo strumento Spy\+\+ e il relativo utilizzo.  
+ [Uso di Spy++](../debugger/using-spy-increment.md)  
+ Vengono presentati lo strumento Spy + + e come può essere usato.  
   
  [Finestra di dialogo Ricerca thread](../debugger/thread-search-dialog-box.md)  
- Utilizzata per individuare il nodo relativo a un thread specifico nella visualizzazione thread.  
+ Utilizzato per individuare il nodo per un thread specifico nella visualizzazione thread.  
   
  [Finestra di dialogo Proprietà thread](../debugger/message-properties-dialog-box.md)  
- Vengono visualizzate le proprietà di un thread selezionato nella visualizzazione thread o messaggi.  
+ Visualizza le proprietà di un thread selezionato nella visualizzazione thread o visualizzazione di messaggi.  
   
- [Riferimenti per Spy\+\+](../debugger/spy-increment-reference.md)  
- Sono incluse le sezioni in cui vengono descritti tutti i menu e le finestre di dialogo di Spy\+\+.
+ [riferimenti per Spy++](../debugger/spy-increment-reference.md)  
+ Include le sezioni che descrivono ogni Spy + + menu e finestra di dialogo.

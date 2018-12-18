@@ -1,81 +1,81 @@
 ---
-title: "Procedure dettagliate relative alla sicurezza e alla distribuzione"
-ms.custom: ""
-ms.date: "02/02/2017"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "office-development"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-helpviewer_keywords: 
-  - "manifesti della distribuzione [sviluppo per Office in Visual Studio], procedure dettagliate"
-  - "sicurezza [sviluppo per Office in Visual Studio], procedure dettagliate"
-  - "procedure dettagliate [sviluppo per Office in Visual Studio], distribuzione"
-  - "procedure dettagliate [sviluppo per Office in Visual Studio], sicurezza"
-ms.assetid: 0a74f24e-abb0-49ba-ad12-0e6a5b78b85d
-caps.latest.revision: 29
-author: "kempb"
-ms.author: "kempb"
-manager: "ghogen"
-caps.handback.revision: 28
+title: Sicurezza e procedure dettagliate sulla distribuzione | Documenti Microsoft
+ms.custom: ''
+ms.date: 02/02/2017
+ms.technology:
+- office-development
+ms.topic: conceptual
+dev_langs:
+- VB
+- CSharp
+helpviewer_keywords:
+- security [Office development in Visual Studio], walkthroughs
+- walkthroughs [Office development in Visual Studio], security
+- deployment manifests [Office development in Visual Studio], walkthroughs
+- walkthroughs [Office development in Visual Studio], deployment
+author: TerryGLee
+ms.author: tglee
+manager: douge
+ms.workload:
+- office
+ms.openlocfilehash: 0a0d68bceffaf26297ca8a1709978cf3447520c3
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# Procedure dettagliate relative alla sicurezza e alla distribuzione
-  Negli argomenti che illustrano come impostare criteri di sicurezza per consentire l'esecuzione della soluzione e come distribuire la soluzione Office.  
+# <a name="security-and-deployment-walkthroughs"></a>Procedure dettagliate relative alla sicurezza e alla distribuzione
+  Gli argomenti seguenti viene illustrato come è possibile impostare criteri di sicurezza per consentire l'esecuzione della soluzione e come è possibile distribuire la soluzione Office.  
   
-## Argomenti relativi alla sicurezza  
- [Procedura: firmare soluzioni Office](../vsto/how-to-sign-office-solutions.md)  
- Vengono fornite le informazioni su come concedere l'attendibilità alla soluzione utilizzando il certificato.  
+## <a name="security-topics"></a>Argomenti sulla sicurezza  
+ [Procedura: Firmare soluzioni Office](../vsto/how-to-sign-office-solutions.md)  
+ Fornisce informazioni su come è possibile concedere l'attendibilità alla soluzione usando un certificato.  
   
- [Procedura: configurare la sicurezza dell'elenco di inclusione](../vsto/how-to-configure-inclusion-list-security.md)  
- Viene illustrato come configurare la richiesta di attendibilità [!INCLUDE[ndptecclick](../vsto/includes/ndptecclick-md.md)] per controllare se agli utenti finali viene data la possibilità di installare le soluzioni Office.  
+ [Procedura: Configurare la sicurezza dell'elenco di inclusione](../vsto/how-to-configure-inclusion-list-security.md)  
+ Viene illustrato come configurare il [!INCLUDE[ndptecclick](../vsto/includes/ndptecclick-md.md)] richiesta di attendibilità per controllare se gli utenti finali è data la possibilità di installare le soluzioni Office.  
   
-## Argomenti di distribuzione  
- [Procedura: pubblicare una soluzione Office utilizzando ClickOnce](http://msdn.microsoft.com/it-it/2b6c247e-bc04-4ce4-bb64-c4e79bb3d5b8)  
- Vengono fornite informazioni su come utilizzare **Pubblicazione guidata** o la pagina **Pubblica** di progettazione progetti per pubblicare le soluzioni Office.  
+## <a name="deployment-topics"></a>Argomenti relativi alla distribuzione  
+ [Procedura: pubblicare una soluzione Office tramite ClickOnce](http://msdn.microsoft.com/en-us/2b6c247e-bc04-4ce4-bb64-c4e79bb3d5b8)  
+ Vengono fornite informazioni sull'utilizzo di **pubblicazione guidata** o **pubblica** pagina di progettazione per la pubblicazione di soluzioni Office.  
   
- [Procedura: pubblicare una soluzione Office a livello di documento in un server SharePoint tramite ClickOnce](http://msdn.microsoft.com/it-it/2408e809-fb78-42a1-9152-00afa1522e58)  
+ [Procedura: pubblicare una soluzione Office a livello di documento in un Server di SharePoint tramite ClickOnce](http://msdn.microsoft.com/en-us/2408e809-fb78-42a1-9152-00afa1522e58)  
  Vengono descritti i passaggi per la distribuzione in un server SharePoint.  
   
- [Procedura: installare una soluzione Office ClickOnce](http://msdn.microsoft.com/it-it/14702f48-9161-4190-994c-78211fe18065)  
- Vengono forniti i passaggi per l'installazione di soluzioni Office eseguendo il programma di installazione generato durante il processo di pubblicazione, aprire il file manifesto di distribuzione; o l'apertura di un documento o una cartella di lavoro personalizzata.  
+ [Procedura: installare una soluzione Office ClickOnce](http://msdn.microsoft.com/en-us/14702f48-9161-4190-994c-78211fe18065)  
+ Viene descritta la procedura per l'installazione di soluzioni Office eseguendo il programma di installazione che viene generato durante il processo di pubblicazione; apertura del file manifesto di distribuzione; o l'apertura di un documento personalizzato o una cartella di lavoro.  
   
- [Procedura: installare i prerequisiti nei computer degli utenti finali per l'esecuzione delle soluzioni Office](http://msdn.microsoft.com/it-it/74dd2c52-838f-4abf-b2b4-4d7b0c2a0a98)  
- Viene descritto come creare un programma di installazione che verifichi i prerequisiti prima dell'installazione dei componenti della soluzione.  
+ [Procedura: installare i prerequisiti nei computer degli utenti finali per eseguire soluzioni Office](http://msdn.microsoft.com/en-us/74dd2c52-838f-4abf-b2b4-4d7b0c2a0a98)  
+ Viene descritto come creare un programma di installazione verifica i prerequisiti prima di installare i componenti della soluzione.  
   
- [Procedura: preparare IIS per la distribuzione di soluzioni Office](http://msdn.microsoft.com/it-it/f62bce70-81d4-4f8b-86e6-2f2afec5d9b4)  
- Viene descritto come configurare il tipo MIME in Microsoft Internet Information Services \(IIS\) per il manifesto di distribuzione.  
+ [Procedura: preparare IIS per la distribuzione di soluzioni Office](http://msdn.microsoft.com/en-us/f62bce70-81d4-4f8b-86e6-2f2afec5d9b4)  
+ Viene descritto come configurare il tipo MIME in Microsoft Internet Information Services (IIS) per il manifesto di distribuzione.  
   
- [Procedura: aggiornare le soluzioni Office distribuite](http://msdn.microsoft.com/it-it/be96db53-b6ea-46ab-b8d9-b76b098b3b13)  
- Vengono fornite informazioni su come aggiornare una soluzione Office utilizzando **Pubblicazione guidata**.  
+ [Procedura: aggiornare soluzioni Office distribuite](http://msdn.microsoft.com/en-us/be96db53-b6ea-46ab-b8d9-b76b098b3b13)  
+ Vengono fornite informazioni sull'aggiornamento di una soluzione Office utilizzando il **pubblicazione guidata**.  
   
- [Procedura: modificare il percorso di installazione di una soluzione Office](http://msdn.microsoft.com/it-it/d0eaa07b-2d72-4902-899f-2f9fb165b8fd)  
+ [Procedura: modificare il percorso di installazione di una soluzione Office](http://msdn.microsoft.com/en-us/d0eaa07b-2d72-4902-899f-2f9fb165b8fd)  
  Vengono fornite informazioni su come modificare il percorso di installazione di una soluzione Office.  
   
-## Sezioni correlate  
+## <a name="related-sections"></a>Sezioni correlate  
  [Procedure dettagliate con Word](../vsto/walkthroughs-using-word.md)  
- Vengono elencate procedure dettagliate che forniscono un'introduzione alle soluzioni Office in Visual Studio e illustrano come creare applicazioni che utilizzano Word.  
+ Vengono elencate procedure dettagliate che viene fornita un'introduzione a soluzioni Office in Visual Studio e illustrano come creare applicazioni che sfruttano i vantaggi di Word.  
   
  [Procedure dettagliate con Excel](../vsto/walkthroughs-using-excel.md)  
- Vengono elencate procedure dettagliate che forniscono un'introduzione alle soluzioni Office in Visual Studio e illustrano come creare applicazioni che utilizzano excel.  
+ Vengono elencate procedure dettagliate che forniscono un'introduzione a soluzioni Office in Visual Studio e illustrano come creare applicazioni che sfruttano i vantaggi di Excel.  
   
  [Procedure dettagliate relative ai dati nelle soluzioni Office](../vsto/data-in-office-solutions-walkthroughs.md)  
  Vengono elencate procedure dettagliate che illustrano come utilizzare i dati nelle soluzioni.  
   
- [Guida introduttiva &#40;sviluppo per Office in Visual Studio&#41;](../vsto/getting-started-office-development-in-visual-studio.md)  
- Vengono forniti collegamenti a informazioni su installazione, modelli di progetto, assembly di interoperabilità primari di Office e sulle novità relative allo sviluppo di applicazioni per Office.  
+ [Introduzione al &#40;sviluppo per Office in Visual Studio&#41;](../vsto/getting-started-office-development-in-visual-studio.md)  
+ Vengono forniti collegamenti a informazioni sull'installazione, i modelli di progetto, assembly di interoperabilità primari di Office e nuove funzionalità di sviluppo per Office.  
   
- [Attività comuni nella programmazione con Office](../vsto/common-tasks-in-office-programming.md)  
- Vengono elencate le domande frequenti sulla programmazione di soluzioni Office in Visual Studio e vengono forniti collegamenti ad argomenti che consentono di risolvere problemi comuni.  
+ [Attività comuni nella programmazione Office](../vsto/common-tasks-in-office-programming.md)  
+ Elenca le domande frequenti sulla programmazione con soluzioni di Office in Visual Studio e vengono forniti collegamenti ad argomenti che consentono di risolvere i problemi comuni.  
   
  [Progettazione e creazione di soluzioni Office](../vsto/designing-and-creating-office-solutions.md)  
- Vengono forniti collegamenti a informazioni sulla creazione di soluzioni Word ed Excel e sul ruolo degli assembly all'interno della soluzione.  
+ Vengono forniti collegamenti alle informazioni sulla creazione di soluzioni Word ed Excel e il ruolo degli assembly nella soluzione.  
   
-## Vedere anche  
- [Procedure dettagliate ed esempi di sviluppo di applicazioni per Microsoft Office](../vsto/office-development-samples-and-walkthroughs.md)  
+## <a name="see-also"></a>Vedere anche  
+ [Procedure dettagliate ed esempi di sviluppo office](../vsto/office-development-samples-and-walkthroughs.md)  
   
   

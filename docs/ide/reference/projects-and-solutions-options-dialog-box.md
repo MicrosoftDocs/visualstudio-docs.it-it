@@ -1,13 +1,10 @@
 ---
 title: Finestra di dialogo Progetti e soluzioni, Opzioni | Microsoft Docs
-ms.custom: 
-ms.date: 7/14/2017
-ms.reviewer: 
-ms.suite: 
+ms.custom: ''
+ms.date: 07/14/2017
 ms.technology:
 - vs-ide-general
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: conceptual
 f1_keywords:
 - VS.ToolsOptionsPages.Projects.General
 - VS.ToolsOptionsPages.Projects.Locations
@@ -15,19 +12,18 @@ helpviewer_keywords:
 - Projects and Solutions Options dialog box
 - Options dialog box, Projects and Solutions
 ms.assetid: 2801f24e-a138-488a-ae3c-e1f99a678ac0
-caps.latest.revision: 12
 author: gewarren
 ms.author: gewarren
-manager: ghogen
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: bd72380cbc17d0ff161a296e1ef08e238159da43
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
 ms.translationtype: HT
-ms.sourcegitcommit: 17defdd0b96ec1c3273fc6b845af844b031a4a17
-ms.openlocfilehash: 2778964a6d5e4f478422727b02e15a058868e644
-ms.contentlocale: it-it
-ms.lasthandoff: 09/06/2017
-
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="projects-and-solutions-options-dialog-box"></a>Progetti e soluzioni, Opzioni (finestra di dialogo)
-
 Consente di impostare il comportamento di [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] in relazione a progetti e soluzioni. Per accedere a queste opzioni selezionare **Strumenti > Opzioni**, espandere **Progetti e soluzioni** e fare clic su **Generale**.
 
 I percorsi predefiniti per le cartelle di progetti e modelli vengono impostati nella scheda **Percorsi** della stessa finestra di dialogo.
@@ -35,15 +31,7 @@ I percorsi predefiniti per le cartelle di progetti e modelli vengono impostati n
 > [!NOTE]
 >  Le opzioni disponibili nelle finestre di dialogo e i nomi e i percorsi dei comandi di menu visualizzati potrebbero non corrispondere a quelli descritti nella Guida a seconda dell'edizione o delle impostazioni attive. Questo argomento della Guida è stato creato tenendo presente le **Impostazioni generali per lo sviluppo**. Per visualizzare o modificare le impostazioni, scegliere **Importa/Esporta impostazioni** dal menu **Strumenti**. Per altre informazioni, vedere [Personalizzare l'IDE di Visual Studio](../../ide/personalizing-the-visual-studio-ide.md).  
   
-## <a name="general-tab-options"></a>Opzioni della scheda Generale  
- 
-**Caricamento leggero soluzioni**: riduce la quantità di tempo e memoria necessari per caricare le soluzioni di grandi dimensioni nell'IDE. Nelle soluzioni di grandi dimensioni, che contengono molti progetti C#, Visual Basic o C++, è probabile che l'abilitazione del caricamento leggero delle soluzioni produca sostanziali vantaggi in termini di prestazioni.
-
-- **Consenti a Visual Studio di scegliere l'opzione migliore per la soluzione**: consente a Visual Studio di determinare automaticamente se applicare il caricamento leggero in base alle caratteristiche della soluzione.
-- **Abilitato**: applica sempre il caricamento leggero durante il caricamento delle soluzioni.
-- **Disattivato**: non applica mai il caricamento leggero delle soluzioni.
-
-Per altre informazioni, vedere [Ottimizzare il tempo di avvio di Visual Studio](../optimize-visual-studio-startup-time.md#speed_up_solution_load)
+## <a name="general-tab-options"></a>Opzioni della scheda Generale
 
 **Mostra sempre Elenco errori se la compilazione finisce con errori**  
 Apre la finestra **Elenco errori** al completamento della compilazione, ma solo se la compilazione di un progetto non è riuscita. Vengono visualizzati gli errori che si sono verificati durante il processo di compilazione. Quando questa opzione è deselezionata, gli errori si verificano ugualmente, ma la finestra non verrà aperta una volta completata la compilazione. Questa opzione è attivata per impostazione predefinita.  
@@ -86,5 +74,5 @@ Specifica il percorso predefinito usato dalla finestra di dialogo **Nuovo proget
 Specifica il percorso predefinito usato dalla finestra di dialogo **Aggiungi nuovo elemento** per creare l'elenco **Modelli personali**. Per altre informazioni, vedere [Procedura: Individuare e organizzare modelli](../../ide/how-to-locate-and-organize-project-and-item-templates.md). 
 
 ## <a name="see-also"></a>Vedere anche  
-- [Finestra di dialogo Opzioni, Progetti e soluzioni, Compila ed esegui](../../ide/reference/options-dialog-box-projects-and-solutions-build-and-run.md)
-- - [Finestra di dialogo Opzioni, Progetti e soluzioni, Progetti Web](../../ide/reference/options-dialog-box-projects-and-solutions-web-projects.md)
+- [Finestra di dialogo Opzioni, Progetti e soluzioni, Compila ed esegui](../../ide/reference/options-dialog-box-projects-and-solutions-build-and-run.md)  
+- [Finestra di dialogo Opzioni, Progetti e soluzioni, Progetti Web](../../ide/reference/options-dialog-box-projects-and-solutions-web-projects.md)

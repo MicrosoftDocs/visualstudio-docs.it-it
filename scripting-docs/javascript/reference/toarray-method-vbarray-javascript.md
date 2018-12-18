@@ -1,52 +1,56 @@
 ---
-title: "Metodo toArray (VBArray) (JavaScript) | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/18/2017"
-ms.prod: "windows-client-threshold"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-javascript"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "toArray"
-dev_langs: 
-  - "JavaScript"
-  - "TypeScript"
-  - "DHTML"
-helpviewer_keywords: 
-  - "toArray (metodo)"
+title: Metodo toArray (VBArray) (JavaScript) | Documenti Microsoft
+ms.custom: 
+ms.date: 01/18/2017
+ms.prod: windows-client-threshold
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-javascript
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords:
+- toArray
+dev_langs:
+- JavaScript
+- TypeScript
+- DHTML
+helpviewer_keywords:
+- toArray method
 ms.assetid: 664de44c-2039-4289-82f6-948e9d744d80
-caps.latest.revision: 13
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 13
+caps.latest.revision: 
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.openlocfilehash: eeee8acad04125eb942089b4d8dacef6f0f5e6fb
+ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/27/2017
 ---
-# Metodo toArray (VBArray) (JavaScript)
+# <a name="toarray-method-vbarray-javascript"></a>Metodo toArray (VBArray) (JavaScript)
 Restituisce una matrice [!INCLUDE[javascript](../../javascript/includes/javascript-md.md)] standard convertita da un oggetto VBArray.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
   
-safeArray.toArray( )  
+safeArray.toArray( )   
 ```  
   
-## Note  
+## <a name="remarks"></a>Note  
  Il riferimento *safeArray* richiesto è un oggetto VBArray.  
   
  La conversione trasforma l'oggetto VBArray multidimensionale in una matrice [!INCLUDE[javascript](../../javascript/includes/javascript-md.md)] unidimensionale. Ogni successiva dimensione viene aggiunta alla fine di quella precedente. Ad esempio, un oggetto VBArray a tre dimensioni e tre elementi in ogni dimensione viene convertito in una matrice [!INCLUDE[javascript](../../javascript/includes/javascript-md.md)] come indicato di seguito:  
   
- Si supponga che contiene l'oggetto VBArray contiene: \(1, 2, 3\), \(4, 5, 6\), \(7, 8, 9\). Dopo la conversione, la matrice [!INCLUDE[javascript](../../javascript/includes/javascript-md.md)] contiene: 1, 2, 3, 4, 5, 6, 7, 8, 9.  
+ Si supponga che contiene l'oggetto VBArray contiene: (1, 2, 3), (4, 5, 6), (7, 8, 9). Dopo la conversione, la matrice [!INCLUDE[javascript](../../javascript/includes/javascript-md.md)] contiene: 1, 2, 3, 4, 5, 6, 7, 8, 9.  
   
  Attualmente non è possibile convertire una matrice [!INCLUDE[javascript](../../javascript/includes/javascript-md.md)] in un oggetto VBArray.  
   
-## Esempio  
- L'esempio seguente si compone di tre parti: La prima parte è il codice VBScript per creare una matrice protetta di Visual Basic. La seconda parte è il codice [!INCLUDE[javascript](../../javascript/includes/javascript-md.md)] che converte la matrice protetta di Visual Basic in una matrice [!INCLUDE[javascript](../../javascript/includes/javascript-md.md)]. Entrambe queste parti vanno inserite nella sezione \<HEAD\> di una pagina HTML. La terza parte è il codice [!INCLUDE[javascript](../../javascript/includes/javascript-md.md)] che va inserito nella sezione \<BODY\> per eseguire le altre due parti.  
+## <a name="example"></a>Esempio  
+ L'esempio seguente si compone di tre parti: La prima parte è il codice VBScript per creare una matrice protetta di Visual Basic. La seconda parte è il codice [!INCLUDE[javascript](../../javascript/includes/javascript-md.md)] che converte la matrice protetta di Visual Basic in una matrice [!INCLUDE[javascript](../../javascript/includes/javascript-md.md)] . Entrambe queste parti vanno inserite le \<HEAD > della sezione di una pagina HTML. La terza parte è il [!INCLUDE[javascript](../../javascript/includes/javascript-md.md)] codice che va inserito nella \<corpo > per eseguire le altre due parti.  
   
-```javascript  
+```JavaScript  
 <head>  
 <script type="text/vbscript">  
 <!--  
@@ -92,13 +96,13 @@ function VBArrayTest(vbarray)
 </body>  
 ```  
   
-## Requisiti  
- Supportato nelle modalità documento seguenti: Quirks, standard di Internet Explorer 6, standard di Internet Explorer 7, standard di Internet Explorer 8, standard di Internet Explorer 9 e standard di Internet Explorer 10. Non supportato in applicazioni [!INCLUDE[win8_appname_long](../../javascript/includes/win8-appname-long-md.md)]. Vedere [Informazioni sulla versione](../../javascript/reference/javascript-version-information.md).  
+## <a name="requirements"></a>Requisiti  
+ Supportato nelle modalità documento seguenti: Quirks, standard di Internet Explorer 6, standard di Internet Explorer 7, standard di Internet Explorer 8, standard di Internet Explorer 9 e standard di Internet Explorer 10. Non supportato in applicazioni [!INCLUDE[win8_appname_long](../../javascript/includes/win8-appname-long-md.md)] . Vedere [Informazioni sulla versione](../../javascript/reference/javascript-version-information.md).  
   
- **Si applica a**: [Oggetto VBArray](../../javascript/reference/vbarray-object-javascript.md)  
+ **Si applica a**: [VBArray Object](../../javascript/reference/vbarray-object-javascript.md)  
   
-## Vedere anche  
- [Metodo dimensions \(VBArray\)](../../javascript/reference/dimensions-method-vbarray-javascript.md)   
- [Metodo getItem \(VBArray\)](../../javascript/reference/getitem-method-vbarray-javascript.md)   
- [Metodo lbound \(VBArray\)](../../javascript/reference/lbound-method-vbarray-javascript.md)   
- [Metodo ubound \(VBArray\)](../../javascript/reference/ubound-method-vbarray-javascript.md)
+## <a name="see-also"></a>Vedere anche  
+ [Metodo Dimensions (VBArray)](../../javascript/reference/dimensions-method-vbarray-javascript.md)   
+ [Metodo getItem (VBArray)](../../javascript/reference/getitem-method-vbarray-javascript.md)   
+ [Metodo LBound (VBArray)](../../javascript/reference/lbound-method-vbarray-javascript.md)   
+ [Metodo ubound (VBArray)](../../javascript/reference/ubound-method-vbarray-javascript.md)

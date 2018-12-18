@@ -1,13 +1,8 @@
 ---
-title: 'CA2122: Do not indirectly expose methods with link demands | Microsoft Docs'
-ms.custom: 
+title: 'CA2122: Non esporre in modo indiretto metodi con richieste di collegamento'
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- vs-devops-test
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.technology: vs-ide-code-analysis
+ms.topic: reference
 f1_keywords:
 - CA2122
 - DoNotIndirectlyExposeMethodsWithLinkDemands
@@ -15,65 +10,49 @@ helpviewer_keywords:
 - DoNotIndirectlyExposeMethodsWithLinkDemands
 - CA2122
 ms.assetid: 3eda58e7-c6ec-41c3-8112-ae0841109c6a
-caps.latest.revision: 17
-author: stevehoag
-ms.author: shoag
-manager: wpickett
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: HT
-ms.sourcegitcommit: eb5c9550fd29b0e98bf63a7240737da4f13f3249
-ms.openlocfilehash: 9996d217691c9a21701c1f6f36e7ced8f605efe0
-ms.contentlocale: it-it
-ms.lasthandoff: 08/30/2017
-
+author: gewarren
+ms.author: gewarren
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 88b80c9e354f4d353f6c09023f704218777e5bc5
+ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/19/2018
 ---
-# <a name="ca2122-do-not-indirectly-expose-methods-with-link-demands"></a>CA2122: Do not indirectly expose methods with link demands
-|||  
-|-|-|  
-|TypeName|DoNotIndirectlyExposeMethodsWithLinkDemands|  
-|CheckId|CA2122|  
-|Category|Microsoft.Security|  
-|Breaking Change|Non Breaking|  
-  
-## <a name="cause"></a>Cause  
- A public or protected member has a [Link Demands](/dotnet/framework/misc/link-demands) and is called by a member that does not perform any security checks.  
-  
-## <a name="rule-description"></a>Rule Description  
- A link demand checks the permissions of the immediate caller only. If a member `X` makes no security demands of its callers, and calls code protected by a link demand, a caller without the necessary permission can use `X` to access the protected member.  
-  
-## <a name="how-to-fix-violations"></a>How to Fix Violations  
- Add a security [Data and Modeling](/dotnet/framework/data/index) or link demand to the member so that it no longer provides unsecured access to the link demand-protected member.  
-  
-## <a name="when-to-suppress-warnings"></a>When to Suppress Warnings  
- To safely suppress a warning from this rule, you must make sure that your code does not grant its callers access to operations or resources that can be used in a destructive manner.  
-  
-## <a name="example"></a>Example  
- The following examples show a library that violates the rule, and an application that demonstrates the library's weakness. The sample library provides two methods that together violate the rule. The `EnvironmentSetting` method is secured by a link demand for unrestricted access to environment variables. The `DomainInformation` method makes no security demands of its callers before it calls `EnvironmentSetting`.  
-  
- [!code-csharp[FxCop.Security.UnsecuredDoNotCall#1](../code-quality/codesnippet/CSharp/ca2122-do-not-indirectly-expose-methods-with-link-demands_1.cs)]  
-  
-## <a name="example"></a>Example  
- The following application calls the unsecured library member.  
-  
- [!code-csharp[FxCop.Security.TestUnsecuredDoNot1#1](../code-quality/codesnippet/CSharp/ca2122-do-not-indirectly-expose-methods-with-link-demands_2.cs)]  
-  
- This example produces the following output.  
-  
- **Value from unsecured member: seattle.corp.contoso.com**   
-## <a name="see-also"></a>See Also  
- [Secure Coding Guidelines](/dotnet/standard/security/secure-coding-guidelines)   
- [Link Demands](/dotnet/framework/misc/link-demands)   
- [Data and Modeling](/dotnet/framework/data/index)
+# <a name="ca2122-do-not-indirectly-expose-methods-with-link-demands"></a>CA2122: Non esporre in modo indiretto metodi con richieste di collegamento
+|||
+|-|-|
+|TypeName|DoNotIndirectlyExposeMethodsWithLinkDemands|
+|CheckId|CA2122|
+|Category|Microsoft.Security|
+|Modifica importante|Non importante|
+
+## <a name="cause"></a>Causa
+ Un membro pubblico o protetto presenta un [le richieste di collegamento](/dotnet/framework/misc/link-demands) e viene chiamato da un membro che non esegue alcun controllo della sicurezza.
+
+## <a name="rule-description"></a>Descrizione della regola
+ Una richiesta di collegamento controlla esclusivamente le autorizzazioni del chiamante immediato. Se un membro `X` non rende richieste di sicurezza dei relativi chiamanti e chiamate di codice protetto da una richiesta di collegamento, un chiamante senza l'autorizzazione necessaria è possibile utilizzare `X` per accedere al membro protetto.
+
+## <a name="how-to-fix-violations"></a>Come correggere le violazioni
+ Aggiungere una protezione [dati e modellazione](/dotnet/framework/data/index) o richiesta di collegamento per il membro in modo che non fornisca accesso non protetto non è più al membro protetto dalla richiesta di collegamento.
+
+## <a name="when-to-suppress-warnings"></a>Esclusione di avvisi
+ Per eliminare in modo sicuro un avviso da questa regola, è necessario assicurarsi che il codice non concede i chiamanti accesso a operazioni o risorse che possono essere utilizzate in modo distruttivo.
+
+## <a name="example"></a>Esempio
+ Gli esempi seguenti mostrano una libreria che viola la regola e un'applicazione che illustra i punti deboli della libreria. La libreria di esempio fornisce due metodi che insieme violano la regola. Il `EnvironmentSetting` metodo è protetto da una richiesta di collegamento per l'accesso illimitato alle variabili di ambiente. Il `DomainInformation` metodo non effettua protezione richieste dai relativi chiamanti prima di chiamare `EnvironmentSetting`.
+
+ [!code-csharp[FxCop.Security.UnsecuredDoNotCall#1](../code-quality/codesnippet/CSharp/ca2122-do-not-indirectly-expose-methods-with-link-demands_1.cs)]
+
+## <a name="example"></a>Esempio
+ La seguente applicazione chiama il membro della libreria non protetto.
+
+ [!code-csharp[FxCop.Security.TestUnsecuredDoNot1#1](../code-quality/codesnippet/CSharp/ca2122-do-not-indirectly-expose-methods-with-link-demands_2.cs)]
+
+ Questo esempio produce il seguente output:
+
+ **Valore da membro non protetto: Seattle**
+## <a name="see-also"></a>Vedere anche
+ [Linee guida di codice sicuro](/dotnet/standard/security/secure-coding-guidelines) [le richieste di collegamento](/dotnet/framework/misc/link-demands) [dati e modellazione](/dotnet/framework/data/index)

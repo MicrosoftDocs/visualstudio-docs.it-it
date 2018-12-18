@@ -1,57 +1,56 @@
 ---
-title: "IDiaSymbol::get_offset | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "IDiaSymbol::get_offset (metodo)"
+title: 'Idiasymbol:: Get_offset | Documenti Microsoft'
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology: vs-ide-debug
+ms.topic: conceptual
+dev_langs:
+- C++
+helpviewer_keywords:
+- IDiaSymbol::get_offset method
 ms.assetid: 8292bb08-4dc8-4663-beb4-258f5d5a448d
-caps.latest.revision: 8
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 8
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 9e1cf6b88a306fbb6cb127ec8174b5030a6d4d88
+ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/18/2018
 ---
-# IDiaSymbol::get_offset
-[!INCLUDE[vs2017banner](../../code-quality/includes/vs2017banner.md)]
-
-Recuperare l'offset della posizione del simbolo.  Utilizzare quando [Enumerazione LocationType](../../debugger/debug-interface-access/locationtype.md) viene  `LocIsRegRel` o  `LocIsBitField`.  
+# <a name="idiasymbolgetoffset"></a>IDiaSymbol::get_offset
+Recupera l'offset della posizione simbolo. Utilizzo di [LocationType (enumerazione)](../../debugger/debug-interface-access/locationtype.md) è `LocIsRegRel` o `LocIsBitField`.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp#  
-HRESULT get_offset (   
-   LONG* pRetVal  
+```C++  
+HRESULT get_offset (   
+   LONG* pRetVal  
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `pRetVal`  
- \[out\]  Restituisce l'offset in byte della posizione del simbolo.  
+ [out] Restituisce l'offset in byte dell'indirizzo di simbolo.  
   
-## Valore restituito  
- Se l'operazione riesce, restituisce `S_OK`; in caso contrario, restituisce  `S_FALSE` o un codice di errore.  
+## <a name="return-value"></a>Valore restituito  
+ Se ha esito positivo, restituisce `S_OK`; in caso contrario, restituisce `S_FALSE` o un codice di errore.  
   
 > [!NOTE]
->  un valore restituito di `S_FALSE` indica che la proprietà non è disponibile per il simbolo.  
+>  Valore restituito di `S_FALSE` significa che la proprietà non è disponibile per il simbolo.  
   
-## Note  
- L'offset proviene da un certo punto noto in precedenza determinato.  Ad esempio, l'offset per un oggetto `LocIsBitField` il tipo del percorso è in genere dall'inizio della classe contenitore.  
+## <a name="remarks"></a>Note  
+ L'offset è da un certo punto noto in precedenza è stato determinato. Ad esempio, l'offset per un `LocIsBitField` il tipo di percorso è in genere dall'inizio della classe che contiene.  
   
-## Requisiti  
+## <a name="requirements"></a>Requisiti  
   
-|Requisiti|Descrizione|  
-|---------------|-----------------|  
-|intestazione:|dia2.h|  
-|versione:|DIA SDK v7.0|  
+|Requisito|Descrizione|  
+|-----------------|-----------------|  
+|Intestazione:|DIA2.h|  
+|Versione:|Versione 7.0 DIA SDK|  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IDiaSymbol](../../debugger/debug-interface-access/idiasymbol.md)   
- [Enumerazione LocationType](../../debugger/debug-interface-access/locationtype.md)
+ [LocationType (enumerazione)](../../debugger/debug-interface-access/locationtype.md)

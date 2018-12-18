@@ -1,29 +1,27 @@
 ---
-title: "File di origine Dia2dump.cpp | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/05/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "Dia2dump [DIA SDK], origine dell'esempio"
+title: Origine Dia2dump.cpp | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology: vs-ide-debug
+ms.topic: conceptual
+dev_langs:
+- C++
+helpviewer_keywords:
+- Dia2dump sample [DIA SDK], sample source
 ms.assetid: 32fd92f6-3de5-4353-b7cb-66781e03b38f
-caps.latest.revision: 7
-caps.handback.revision: 7
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 3e481d6589dce362afede0f00cfa30519d57fae6
+ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/18/2018
 ---
-# File di origine Dia2dump.cpp
-[!INCLUDE[vs2017banner](../../code-quality/includes/vs2017banner.md)]
-
-Il seguente codice sorgente di Dia2dump.cpp visualizzare il contenuto di un file con estensione pdb.  Questo codice sorgente viene utilizzato da [Esempio Dia2dump](../../debugger/debug-interface-access/dia2dump-sample.md).  
+# <a name="dia2dumpcpp-source-file"></a>File di origine Dia2dump.cpp
+Il codice di origine Dia2dump.cpp seguente visualizza il contenuto di un file con estensione pdb. Questo codice di origine è utilizzato da [esempio Dia2dump](../../debugger/debug-interface-access/dia2dump-sample.md).  
   
 ```  
 // dia2dump.cpp : Dump contents of a pdb file using DIA.  

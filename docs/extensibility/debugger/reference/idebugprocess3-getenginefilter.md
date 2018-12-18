@@ -1,48 +1,49 @@
 ---
-title: "IDebugProcess3::GetEngineFilter | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "GetEngineFilter"
-  - "IDebugProcess3::GetEngineFilter"
+title: IDebugProcess3::GetEngineFilter | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology:
+- vs-ide-sdk
+ms.topic: conceptual
+helpviewer_keywords:
+- GetEngineFilter
+- IDebugProcess3::GetEngineFilter
 ms.assetid: ccb7ecb0-f189-4e80-b5b2-221a095e01f5
-caps.latest.revision: 9
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 9
+author: gregvanl
+ms.author: gregvanl
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: c592220267444818f7310895974b92cd02c69a62
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# IDebugProcess3::GetEngineFilter
-[!INCLUDE[vs2017banner](../../../code-quality/includes/vs2017banner.md)]
-
-Recupera una matrice di identificatori univoci per i motori di debug.  
+# <a name="idebugprocess3getenginefilter"></a>IDebugProcess3::GetEngineFilter
+Recupera una matrice di identificatori univoci per i motori di debug disponibili.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp#  
+```cpp  
 HRESULT GetEngineFilter(  
-   GUID_ARRAY *pEngineArray  
+   GUID_ARRAY *pEngineArray  
 );  
 ```  
   
-```c#  
+```csharp  
 public int GetEngineFilter(  
-   out GUID_ARRAY[] pEngineArray  
+   out GUID_ARRAY[] pEngineArray  
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `pEngineArray`  
- \[out\]  Riferimento a una struttura contenente identificatori univoci per i motori di debug.  
+ [out] Riferimento a una struttura che contiene gli identificatori univoci per i motori di debug.  
   
-## Valore restituito  
- Se l'operazione riesce, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
+## <a name="return-value"></a>Valore restituito  
+ Se ha esito positivo, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IDebugProcess3](../../../extensibility/debugger/reference/idebugprocess3.md)   
- [GUID\_ARRAY](../../../extensibility/debugger/reference/guid-array.md)
+ [GUID_ARRAY](../../../extensibility/debugger/reference/guid-array.md)

@@ -1,44 +1,43 @@
 ---
-title: "IDiaSession::getEnumDebugStreams | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "IDiaSession::getEnumDebugStreams (metodo)"
+title: 'Idiasession:: Getenumdebugstreams | Documenti Microsoft'
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology: vs-ide-debug
+ms.topic: conceptual
+dev_langs:
+- C++
+helpviewer_keywords:
+- IDiaSession::getEnumDebugStreams method
 ms.assetid: d294954b-80e9-476c-b9f0-5ca6fd575f68
-caps.latest.revision: 10
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 10
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 24e604734b7dceb9c0edc1fc19aaae56655ee27f
+ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/18/2018
 ---
-# IDiaSession::getEnumDebugStreams
-[!INCLUDE[vs2017banner](../../code-quality/includes/vs2017banner.md)]
-
-recupera una sequenza enumerata di flussi di dati di debug.  
+# <a name="idiasessiongetenumdebugstreams"></a>IDiaSession::getEnumDebugStreams
+Recupera una sequenza di debug di flussi di dati enumerata.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp#  
-HRESULT getEnumDebugStreams (   
-   IDiaEnumDebugStreams** ppEnumDebugStreams  
+```C++  
+HRESULT getEnumDebugStreams (   
+   IDiaEnumDebugStreams** ppEnumDebugStreams  
 )  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `ppEnumDebugStreams`  
- \[out\]  restituisce [IDiaEnumDebugStreams](../../debugger/debug-interface-access/idiaenumdebugstreams.md) oggetto che contiene un elenco di flussi di debug.  
+ [out] Restituisce un [IDiaEnumDebugStreams](../../debugger/debug-interface-access/idiaenumdebugstreams.md) oggetto che contiene un elenco di flussi di debug.  
   
-## Valore restituito  
- Se l'operazione riesce, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
+## <a name="return-value"></a>Valore restituito  
+ Se ha esito positivo, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IDiaSession](../../debugger/debug-interface-access/idiasession.md)   
  [IDiaEnumDebugStreams](../../debugger/debug-interface-access/idiaenumdebugstreams.md)

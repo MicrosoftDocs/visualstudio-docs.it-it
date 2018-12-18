@@ -1,13 +1,10 @@
 ---
 title: Finestra Output | Microsoft Docs
-ms.custom: 
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - vs-ide-general
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: conceptual
 f1_keywords:
 - vs.build.output
 - vs.debug.output
@@ -17,30 +14,16 @@ helpviewer_keywords:
 - Output window
 - Toolbox, removing controls
 ms.assetid: d8931d88-250e-4db4-963f-2c5b3e99b45f
-caps.latest.revision: 30
-author: kempb
-ms.author: kempb
-manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 3d32d11a430227800cb3ed53831a9565eb6adeb3
-ms.openlocfilehash: 60636023fc506df5ed6e57d4f4d9c90e680ab607
-ms.contentlocale: it-it
-ms.lasthandoff: 05/30/2017
-
+author: gewarren
+ms.author: gewarren
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 4a8a075f977746a769fb19bec6eb196e0d338b12
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="output-window"></a>Finestra di output
 Nella finestra **Output** è possibile che vengano visualizzati messaggi di stato per diverse funzionalità dell'ambiente di sviluppo integrato (IDE, Integrated Development Environment). Per aprire la finestra **Output**, nella barra dei menu scegliere **Visualizza/Output** oppure premere CTRL+ALT+O.  

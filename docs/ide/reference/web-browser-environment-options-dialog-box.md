@@ -1,13 +1,10 @@
 ---
 title: Web browser, Ambiente, finestra di dialogo Opzioni | Microsoft Docs
-ms.custom: 
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - vs-ide-general
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: conceptual
 f1_keywords:
 - VS.Environment.Web Browser
 - VS.ToolsOptionsPages.Environment.WebBrowser
@@ -24,30 +21,16 @@ helpviewer_keywords:
 - Options dialog box, Web settings
 - Internet Explorer, setting options
 ms.assetid: 586db4eb-032d-4cb5-93a6-a7c14de1ae49
-caps.latest.revision: 17
-author: kempb
-ms.author: kempb
-manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 5ea9179ad37514ffad4876177b05150eecc22def
-ms.openlocfilehash: e2852ef4eb48247a97fe513efc7cdecb89ec619a
-ms.contentlocale: it-it
-ms.lasthandoff: 05/24/2017
-
+author: gewarren
+ms.author: gewarren
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 494cb25555c77ebc0dce3c9267d5ab362f4d78ce
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="web-browser-environment-options-dialog-box"></a>Web Browser, Ambiente, finestra di dialogo Opzioni
 Consente di impostare le opzioni per il Web browser interno e per Internet Explorer. Per accedere a questa finestra di dialogo, selezionare **Opzioni** dal menu **Strumenti**, espandere la cartella **Ambiente** e selezionare **Web browser**.  
@@ -58,26 +41,26 @@ Consente di impostare le opzioni per il Web browser interno e per Internet Explo
 > [!IMPORTANT]
 >  L'apertura di determinati file o componenti dal Web può determinare l'esecuzione del codice nel computer in uso.  
   
- Home page  
+## <a name="home-page"></a>Home page
  Consente di impostare la pagina visualizzata quando si apre il Web browser dell'IDE.  
   
- Pagina Search  
+## <a name="search-page"></a>Pagina Search
  Consente di definire una pagina di ricerca per il Web browser interno. Questo percorso può essere diverso dalla pagina di ricerca usata dalle istanze di Internet Explorer avviate all'esterno dell'ambiente di sviluppo integrato (IDE).  
   
- Visualizza origine in  
+## <a name="view-source-in"></a>Visualizza origine in
  Consente di impostare l'editor usato per aprire una pagina Web quando si sceglie **Visualizza origine** nella pagina dal Web browser interno.  
   
--   **Editor standard** Selezionare questa opzione per visualizzare l'origine nella [scrittura del codice](../../ide/writing-code-in-the-code-and-text-editor.md).  
+-   **Editor standard** Selezionare questa opzione per visualizzare l'origine nell'[editor](../../ide/writing-code-in-the-code-and-text-editor.md).  
   
 -   **Editor HTML** Selezionare questa opzione per visualizzare l'origine nella [finestra di progettazione HTML](http://msdn.microsoft.com/Library/640043cc-3657-4677-a091-bc315e636477). Usare questa opzione per modificare la pagina Web nella visualizzazione Progettazione o nella visualizzazione Origine standard basata su testo.  
   
 -   **Editor esterno** Selezionare questa opzione per visualizzare l'origine in un altro editor. Specificare il percorso dell'editor scelto, ad esempio notepad.exe.  
   
- Opzioni di Internet Explorer  
- Selezionare questa opzione per modificare le opzioni di Internet Explorer nella finestra di dialogo **Proprietà Internet**. Le modifiche apportate in questa finestra di dialogo influiscono sul Web browser interno e sulle istanze di Internet Explorer avviate all'esterno dell'IDE di Visual Studio, ad esempio dal menu Start.  
+## <a name="internet-explorer-options"></a>Opzioni di Internet Explorer  
+Selezionare questa opzione per modificare le opzioni di Internet Explorer nella finestra di dialogo **Proprietà Internet**. Le modifiche apportate in questa finestra di dialogo influiscono sul Web browser interno e sulle istanze di Internet Explorer avviate all'esterno dell'IDE di Visual Studio, ad esempio dal menu Start.  
   
 > [!NOTE]
->  Usare la finestra di dialogo Esplora con per sostituire il Web browser interno di Visual Studio, vale a dire una versione di Internet Explorer, con un altro Web browser esterno.  
+>  Usare la finestra di dialogo **Esplora con** per sostituire il Web browser di Visual Studio interno con un browser di propria scelta. È possibile accedere alla finestra di dialogo Esplora con ad esempio dal menu di scelta rapida di un file HTML nel progetto.
   
 ## <a name="see-also"></a>Vedere anche  
  [Environment Options Dialog Box](../../ide/reference/environment-options-dialog-box.md)  (Ambiente, finestra di dialogo Opzioni)  

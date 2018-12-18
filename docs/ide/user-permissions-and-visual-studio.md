@@ -1,59 +1,41 @@
 ---
 title: Autorizzazioni utente e Visual Studio | Microsoft Docs
-ms.custom: 
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- vs-ide-general
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.technology: vs-ide-general
+ms.topic: conceptual
 helpviewer_keywords:
 - Visual Studio, user permissions
 - user permissions
 - administrative privileges
 - permissions
-ms.assetid: 70485ed7-6342-41bf-8250-7a6826e21b98
-caps.latest.revision: 14
-author: kempb
-ms.author: kempb
-manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 3d32d11a430227800cb3ed53831a9565eb6adeb3
-ms.openlocfilehash: badbf6892698c6e35ce76500001839c7c9e6734a
-ms.contentlocale: it-it
-ms.lasthandoff: 05/30/2017
-
+author: gewarren
+ms.author: gewarren
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 1ba45cd360059d0ac6efbcdddbe3f1e550f3b3d8
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="user-permissions-and-visual-studio"></a>Autorizzazioni utente e Visual Studio
-Per motivi di sicurezza è necessario, quando possibile, eseguire Visual Studio come utente normale.  
+
+Per motivi di sicurezza è necessario, quando possibile, eseguire Visual Studio come utente normale.
 
 > [!WARNING]
->  Accertarsi inoltre di non compilare, avviare o eseguire il debug di una soluzione di Visual Studio che non provenga da una persona o un percorso attendibile.  
+> Accertarsi inoltre di non compilare, avviare o eseguire il debug di una soluzione di Visual Studio che non provenga da una persona o un percorso attendibile.
 
- È possibile usare quasi tutte le funzioni dell'IDE di Visual Studio come utente normale, tuttavia è necessario disporre delle autorizzazioni di amministratore per completare le seguenti attività:  
+È possibile usare quasi tutte le funzioni dell'IDE di Visual Studio come utente normale, tuttavia è necessario disporre delle autorizzazioni di amministratore per completare le seguenti attività:
 
 |Area|Attività|Per altre informazioni|  
 |----------|----------|--------------------------|  
 |Installazione|Installare Visual Studio.|[Installare Visual Studio](../install/install-visual-studio.md)|  
 ||Installazione, aggiornamento o rimozione del contenuto della Guida locale.|[Installare e gestire il contenuto locale](../ide/install-and-manage-local-content.md)|  
 |Tipi di applicazioni|Sviluppo di soluzioni per SharePoint.|[Requisiti per lo sviluppo di soluzioni SharePoint](/office-dev/office-dev/requirements-for-developing-sharepoint-solutions)|  
-||Acquisizione di una licenza per sviluppatori per [!INCLUDE[win8_appstore_long](../debugger/includes/win8_appstore_long_md.md)].|[Ottenere una licenza per sviluppatori (app di Windows Store)](http://go.microsoft.com/fwlink/?LinkID=241313)|  
-|Casella degli strumenti|Aggiunta di controlli COM classici alla **Casella degli strumenti**.|[Uso della Casella degli strumenti](../ide/using-the-toolbox.md)|  
+||Acquisizione di una licenza per sviluppatori per [!INCLUDE[win8_appstore_long](../debugger/includes/win8_appstore_long_md.md)].|[Ottenere una licenza per sviluppatori](http://go.microsoft.com/fwlink/?LinkID=241313)|  
+|Casella degli strumenti|Aggiunta di controlli COM classici alla **casella degli strumenti**.|[Casella degli strumenti](../ide/reference/toolbox.md)|  
 |Componenti aggiuntivi|Installazione e utilizzo di componenti aggiuntivi scritti tramite COM classico nell'IDE.|[Creazione di componenti aggiuntivi e di procedure guidate](http://msdn.microsoft.com/Library/c5a47c21-6668-4de3-898d-afa969317e73)|  
 |Compilazione|Utilizzo di eventi di post-compilazione che registrano un componente.|[Informazioni sulle istruzioni di compilazione personalizzate e sugli eventi di compilazione](/cpp/ide/understanding-custom-build-steps-and-build-events)|  
 ||Aggiunta di un passaggio di registrazione durante la compilazione di progetti C++.|[Informazioni sulle istruzioni di compilazione personalizzate e sugli eventi di compilazione](/cpp/ide/understanding-custom-build-steps-and-build-events)|  
@@ -65,26 +47,21 @@ Per motivi di sicurezza è necessario, quando possibile, eseguire Visual Studio 
 |Strumenti per le prestazioni|Profilatura di un'applicazione.|[Guida per principianti alla profilatura delle prestazioni](../profiling/beginners-guide-to-performance-profiling.md)|  
 |Distribuzione|Distribuzione di un'applicazione Web in Internet Information Services (IIS) su un computer locale.|[Deploying an ASP.NET Web Application to a Hosting Provider using Visual Studio or Visual Web Developer: Deploying to IIS as a Test Environment](http://go.microsoft.com/fwlink/?LinkId=266478) (Distribuzione di un'applicazione Web ASP.NET a un provider di hosting usando Visual Studio o Visual Web Developer: distribuzione a IIS come ambiente di test)|
 
-## <a name="running-visual-studio-as-an-administrator"></a>Esecuzione di Visual Studio come amministratore  
- È possibile avviare Visual Studio con autorizzazioni amministrative ogni volta che si avvia l'IDE oppure modificare il collegamento dell'applicazione in modo che venga eseguita sempre con autorizzazioni amministrative. Per altre informazioni, vedere la Guida di Windows.  
+## <a name="running-visual-studio-as-an-administrator"></a>Esecuzione di Visual Studio come amministratore
 
-#### <a name="to-run-visual-studio-with-administrative-permissions-on-includewin8debuggerincludeswin8mdmd-includewin81debuggerincludeswin81mdmd-includewinserver8debuggerincludeswinserver8mdmd-or-includewinblueserver2ideincludeswinblueserver2mdmd"></a>Per eseguire Visual Studio con autorizzazioni amministrative in [!INCLUDE[win8](../debugger/includes/win8_md.md)], [!INCLUDE[win81](../debugger/includes/win81_md.md)], [!INCLUDE[winserver8](../debugger/includes/winserver8_md.md)] o [!INCLUDE[winblue_server_2](../ide/includes/winblue_server_2_md.md)]  
+È possibile avviare Visual Studio con autorizzazioni amministrative ogni volta che si avvia l'IDE oppure modificare il collegamento dell'applicazione in modo che venga eseguita sempre con autorizzazioni amministrative. Per altre informazioni, vedere la Guida di Windows.
 
-1.  Nella schermata **iniziale** digitare **Visual Studio**. Verrà visualizzata la versione o le versioni di Visual Studio installate.  
+### <a name="to-run-visual-studio-with-administrative-permissions"></a>Per eseguire Visual Studio con autorizzazioni amministrative
 
-2.  Selezionare la versione di Visual Studio che si desidera avviare, quindi visualizzare il menu di scelta rapida (nella parte inferiore dello schermo). Scegliere **Esegui come amministratore**.  
+Queste istruzioni sono relative a Windows 10. Sono simili per le altre versioni di Windows.
 
-     All'avvio di Visual Studio, viene visualizzato **(Amministratore)** dopo il nome del prodotto nella barra del titolo.  
+1. Aprire il menu **Start** e scorrere fino Visual Studio 2017.
 
-#### <a name="to-run-visual-studio-with-administrative-permissions-on-includewin7debuggerincludeswin7mdmd-or-includewinsvr08r2debuggerincludeswinsvr08r2mdmd"></a>Per eseguire Visual Studio con autorizzazioni amministrative in [!INCLUDE[win7](../debugger/includes/win7_md.md)] o [!INCLUDE[winsvr08_r2](../debugger/includes/winsvr08_r2_md.md)]  
+1. Dal menu di scelta rapida o contestuale di **Visual Studio 2017** scegliere **Altro** > **Esegui come amministratore**.
 
-1.  Dal menu **Start** scegliere **Tutti i programmi**.  
+     All'avvio di Visual Studio, viene visualizzato **(Amministratore)** dopo il nome del prodotto nella barra del titolo.
 
-2.  Nella cartella **Microsoft Visual Studio** *Versione* selezionare **Visual Studio** *Versione*, aprire il menu di scelta rapida e quindi selezionare **Esegui come amministratore**.  
+## <a name="see-also"></a>Vedere anche
 
-     All'avvio di Visual Studio, viene visualizzato **(Amministratore)** dopo il nome del prodotto nella barra del titolo.  
-
-## <a name="see-also"></a>Vedere anche  
- [Portabilità, migrazione e aggiornamento dei progetti di Visual Studio](../porting/port-migrate-and-upgrade-visual-studio-projects.md)   
- [Installare Visual Studio](../install/install-visual-studio.md)
-
+[Portabilità, migrazione e aggiornamento dei progetti di Visual Studio](../porting/port-migrate-and-upgrade-visual-studio-projects.md)  
+[Installare Visual Studio](../install/install-visual-studio.md)

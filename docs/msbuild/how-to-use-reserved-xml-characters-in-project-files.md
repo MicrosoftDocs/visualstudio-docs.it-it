@@ -1,40 +1,23 @@
 ---
 title: 'Procedura: Usare caratteri XML riservati nei file di progetto | Microsoft Docs'
-ms.custom: 
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- vs-ide-sdk
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.technology: msbuild
+ms.topic: conceptual
 helpviewer_keywords:
 - MSBuild, using reserved XML characters
 - MSBuild, reserved XML characters
 ms.assetid: 1ae37275-96bf-4e6e-897b-6b048e5bbe93
-caps.latest.revision: 14
-author: kempb
-ms.author: kempb
-manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: 3ba7680d46345f2b49019659c715cfb418933d39
-ms.openlocfilehash: f4b909c055e6ae3734ef8d53717c119c534689df
-ms.lasthandoff: 02/22/2017
-
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 8538ffdb1093accc8446d072ecc980586b73ee7b
+ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/19/2018
 ---
 # <a name="how-to-use-reserved-xml-characters-in-project-files"></a>Procedura: utilizzare caratteri XML riservati nei file di progetto
 Quando si creano file di progetto, potrebbe essere necessario usare caratteri XML riservati, ad esempio, nei valori della proprietà o nei valori del parametro di un'attività. Alcuni caratteri riservati tuttavia devono essere sostituiti da un'entità denominata in modo che il file di progetto possa essere analizzato.  
@@ -44,18 +27,18 @@ Quando si creano file di progetto, potrebbe essere necessario usare caratteri XM
   
 |Carattere riservato|Entità denominata|  
 |------------------------|------------------|  
-|\<|&lt;|  
-|>|&gt;|  
-|&|&amp;|  
-|"|&quot;|  
-|'|&apos;|  
+|\<|&amp;lt;|  
+|>|&amp;gt;|  
+|&|&amp;amp;|  
+|"|&amp;quot;|  
+|'|&amp;apos;|  
   
 #### <a name="to-use-double-quotes-in-a-project-file"></a>Per usare le virgolette doppie in un file di progetto  
   
--   Sostituire le virgolette doppie con l'entità denominata corrispondente, &quot;. Ad esempio, per racchiudere tra virgolette doppie l'elenco di elementi `EXEFile`, digitare:  
+-   Sostituire le virgolette doppie con l'entità denominata corrispondente, &amp;quot;. Ad esempio, per racchiudere tra virgolette doppie l'elenco di elementi `EXEFile`, digitare:  
   
     ```xml  
-    <Message Text="The output file is "@(EXEFile)"."/>  
+    <Message Text="The output file is &quot;@(EXEFile)&quot;."/>  
     ```  
   
 ## <a name="example"></a>Esempio  
@@ -83,11 +66,11 @@ Quando si creano file di progetto, potrebbe essere necessario usare caratteri XM
                 ItemName = "EXEFile"/>  
         </Csc>  
         <!-- Log the file name of the output file -->  
-        <Message Text="The output file is "@(EXEFile)"."/>  
+        <Message Text="The output file is &quot;@(EXEFile)&quot;."/>  
     </Target>  
 </Project>  
 ```  
   
 ## <a name="see-also"></a>Vedere anche  
- [Informazioni di riferimento su MSBuild](../msbuild/msbuild-reference.md)
- [MSBuild](../msbuild/msbuild.md)
+ [Informazioni di riferimento su MSBuild](../msbuild/msbuild-reference.md)    
+ [MSBuild](../msbuild/msbuild.md)    

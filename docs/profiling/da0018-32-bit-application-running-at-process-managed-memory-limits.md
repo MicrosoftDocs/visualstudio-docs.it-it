@@ -1,49 +1,30 @@
 ---
 title: 'DA0018: Applicazione a 32 bit in esecuzione al limite di memoria gestito dal processo | Microsoft Docs'
-ms.custom: 
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- vs-ide-debug
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.technology: vs-ide-debug
+ms.topic: conceptual
 f1_keywords:
 - vs.performance.18
 - vs.performance.DA0018
 - vs.performance.rules.DA0018
 ms.assetid: 98eb2d96-f92f-42f9-915c-e5ac2330ffbf
-caps.latest.revision: 9
 author: mikejo5000
 ms.author: mikejo
-manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 47057e9611b824c17077b9127f8d2f8b192d6eb8
-ms.openlocfilehash: f94a1e1c967e2e2bf9d9cdccc83603e1aee97619
-ms.contentlocale: it-it
-ms.lasthandoff: 05/13/2017
-
+manager: douge
+ms.workload:
+- dotnet
+ms.openlocfilehash: ba328ae4b54728422e032741e20543b99f49d5ae
+ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/19/2018
 ---
 # <a name="da0018-32-bit-application-running-at-process-managed-memory-limits"></a>DA0018: Applicazione a 32 bit in esecuzione al limite di memoria gestito dal processo
 |||  
 |-|-|  
 |ID regola|DA0018|  
-|Categoria|Uso degli strumenti di profilatura|  
+|Category|Uso degli strumenti di profilatura|  
 |Metodo di profilatura|Campionamento|  
 |Messaggio|Le allocazioni di memoria gestita hanno quasi raggiunto il limite predefinito per un processo a 32 bit. L'applicazione potrebbe essere associata alla memoria.|  
 |Tipo regola|Avviso|  
@@ -73,7 +54,7 @@ ms.lasthandoff: 05/13/2017
   
 -   ottimizzazione dell'uso delle risorse di memoria gestita da parte dell'applicazione  
   
-     -oppure-  
+     oppure  
   
 -   esecuzione di procedure per limitare i vincoli architettonici alla dimensione massima della memoria virtuale per un processo a 32 bit  
   

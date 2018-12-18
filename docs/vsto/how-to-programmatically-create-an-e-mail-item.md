@@ -1,14 +1,10 @@
 ---
-title: 'How to: Programmatically Create an E-Mail Item | Microsoft Docs'
-ms.custom: 
+title: 'Procedura: creare a livello di programmazione un elemento di posta elettronica | Documenti Microsoft'
+ms.custom: ''
 ms.date: 02/02/2017
-ms.prod: visual-studio-dev14
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - office-development
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: conceptual
 dev_langs:
 - VB
 - CSharp
@@ -16,28 +12,27 @@ helpviewer_keywords:
 - e-mail [Office development in Visual Studio], creating
 - Outlook [Office development in Visual Studio], creating e-mail
 - mail items [Office development in Visual Studio], creating
-ms.assetid: f8fe3f2b-36ba-4f71-abdb-d30ce7fecb30
-caps.latest.revision: 27
-author: kempb
-ms.author: kempb
-manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: eb5c9550fd29b0e98bf63a7240737da4f13f3249
-ms.openlocfilehash: d47ca82216af40d28f9e5b3b12eaafd6e16eceb0
-ms.contentlocale: it-it
-ms.lasthandoff: 08/30/2017
-
+author: TerryGLee
+ms.author: tglee
+manager: douge
+ms.workload:
+- office
+ms.openlocfilehash: 3e6fedb9024dcb965917492b3eb8f759c0f6c8ee
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# <a name="how-to-programmatically-create-an-e-mail-item"></a>How to: Programmatically Create an E-Mail Item
-  This example creates an e-mail message in Microsoft Office Outlook.  
+# <a name="how-to-programmatically-create-an-e-mail-item"></a>Procedura: Creare un elemento di posta elettronica a livello di codice
+  In questo esempio viene creato un messaggio di posta elettronica in Microsoft Office Outlook.  
   
  [!INCLUDE[appliesto_olkallapp](../vsto/includes/appliesto-olkallapp-md.md)]  
   
-## <a name="example"></a>Example  
+## <a name="example"></a>Esempio  
  [!code-csharp[Trin_OL_CreateMailItem#1](../vsto/codesnippet/CSharp/Trin_OL_CreateMailItem/thisaddin.cs#1)]  
   
-## <a name="see-also"></a>See Also  
- [Working with Mail Items](../vsto/working-with-mail-items.md)   
- [Getting Started Programming VSTO Add-ins](../vsto/getting-started-programming-vsto-add-ins.md)  
+## <a name="see-also"></a>Vedere anche  
+ [Utilizzo di elementi di posta elettronica](../vsto/working-with-mail-items.md)   
+ [Introduzione alla programmazione dei componenti aggiuntivi VSTO](../vsto/getting-started-programming-vsto-add-ins.md)  
   
   

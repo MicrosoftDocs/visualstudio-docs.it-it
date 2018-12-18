@@ -1,13 +1,9 @@
 ---
-title: "Attività CL | Microsoft Docs"
-ms.custom: 
+title: Attività CL | Microsoft Docs
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- vs-ide-sdk
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.technology: msbuild
+ms.topic: reference
 f1_keywords:
 - VC.Project.VCCLCompilerTool.UseUnicodeForAssemblerListing
 - vc.task.cl
@@ -22,30 +18,16 @@ helpviewer_keywords:
 - MSBuild (Visual C++), CL task
 - CL task (MSBuild (Visual C++))
 ms.assetid: 651ba971-b755-4f03-a549-4816beb3cc0d
-caps.latest.revision: 18
-author: kempb
-ms.author: kempb
-manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 3d32d11a430227800cb3ed53831a9565eb6adeb3
-ms.openlocfilehash: 0e6777ed52cb1695c90ae42d7795de57f9c62169
-ms.contentlocale: it-it
-ms.lasthandoff: 05/30/2017
-
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 396253865e01ddfe5566e6cd97424af644bd9246
+ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/19/2018
 ---
 # <a name="cl-task"></a>Attività CL
 Esegue il wrapping dello strumento del compilatore Visual C++, cl.exe. Il compilatore genera file eseguibili (EXE), librerie a collegamento dinamico (DLL) o moduli di codice (NETMODULE). Per altre informazioni, vedere [Opzioni del compilatore](/cpp/build/reference/compiler-options).  
@@ -769,7 +751,7 @@ Esegue il wrapping dello strumento del compilatore Visual C++, cl.exe. Il compil
   
     -   **EnableAllWarnings** - **/Wall**  
   
-     Per altre informazioni, vedere l'opzione **/W***n* in [/w, /W0, /W1, /W2, /W3, /W4, /w1, /w2, /w3, /w4, /Wall, /wd, /we, /wo, /Wv, /WX (Livello di avviso)](/cpp/build/reference/compiler-option-warning-level).  
+     Per altre informazioni, vedere l'opzione */W***n* in [/w, /W0, /W1, /W2, /W3, /W4, /w1, /w2, /w3, /w4, /Wall, /wd, /we, /wo, /Wv, /WX (Livello di avviso)](/cpp/build/reference/compiler-option-warning-level).  
   
 -   **WholeProgramOptimization**  
   

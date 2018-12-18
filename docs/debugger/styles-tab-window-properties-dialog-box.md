@@ -1,30 +1,29 @@
 ---
-title: "Scheda Stili, finestra di dialogo Propriet&#224; finestra | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "Finestra di dialogo Proprietà finestra, scheda Stili"
+title: Stili (scheda), finestra di dialogo Proprietà finestra | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology: vs-ide-debug
+ms.topic: reference
+helpviewer_keywords:
+- Window Properties dialog box, Styles Tab
 ms.assetid: 4ac1eae8-d6ce-4f05-98f0-a29065f471d4
-caps.latest.revision: 4
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 4
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: ccccced77f508bdced130012645aa475124e87b5
+ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/18/2018
 ---
-# Scheda Stili, finestra di dialogo Propriet&#224; finestra
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
-Utilizzare la scheda **Stili** per visualizzare gli stili applicati alla finestra selezionata.  Per visualizzare la [finestra di dialogo Proprietà finestra](../debugger/window-properties-dialog-box.md), spostare lo stato attivo sulla finestra [Visualizzazione finestre](../debugger/windows-view.md).  Selezionare un nodo qualsiasi della finestra nella struttura ad albero, quindi scegliere **Proprietà** dal menu **Visualizza**.  
+# <a name="styles-tab-window-properties-dialog-box"></a>Scheda Stili, finestra di dialogo Proprietà finestra
+Utilizzare il **stili** scheda per visualizzare gli stili applicati alla finestra selezionata. Per visualizzare il [finestra di dialogo Proprietà finestra](../debugger/window-properties-dialog-box.md), spostare lo stato attivo per il [Windows Vista](../debugger/windows-view.md) finestra. Selezionare qualsiasi nodo finestra nell'albero, quindi scegliere **proprietà** dal **vista** menu.  
   
- Nella scheda **Stili** sono disponibili le impostazioni seguenti:  
+ Le impostazioni seguenti sono disponibili sul **stili** scheda:  
   
 |Voce|Descrizione|  
-|----------|-----------------|  
-|**Window Styles**|Combinazione di codici di stile e stili del controllo della finestra se applicabili.|  
-|**Extended Styles**|Combinazione di codici di stile della finestra estesi.|
+|-----------|-----------------|  
+|**Stili di finestra**|Una combinazione di finestra codici di stile e gli stili di controllo, se applicabile.|  
+|**Stili estesi**|Una combinazione di codici di stile di finestra esteso.|

@@ -12,16 +12,15 @@ ms.topic: article
 helpviewer_keywords:
 - JavaScript, Windows Runtime asynchronous methods
 ms.assetid: 70756833-44f7-4383-827f-2ac781558082
-caps.latest.revision: 15
+caps.latest.revision: 
 author: mikejo5000
 ms.author: mikejo
 manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: 29eb97427c2c5a29ee9a66e8e2a85953fd797efd
 ms.openlocfilehash: 215a04a2f3f875743a7fbf910a3a565cf34fb558
-ms.contentlocale: it-it
-ms.lasthandoff: 08/11/2017
-
+ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/27/2017
 ---
 # <a name="using-windows-runtime-asynchronous-methods"></a>Uso di metodi asincroni di Windows Runtime
 Molti metodi di Windows Runtime, in particolari i metodi il cui completamento richiede molto tempo, sono asincroni. Questi metodi restituiscono in genere un'azione o un'operazione asincrona, ad esempio, `Windows.Foundation.IAsyncAction`, `Windows.Foundation.IAsyncOperation`, `Windows.Foundation.IAsyncActionWithProgress` o `Windows.Foundation.IAsyncOperationWithProgress`. Questi metodi sono rappresentati in JavaScript con il modello [CommonJS/Promises/A](http://go.microsoft.com/fwlink/p/?LinkId=244434). Restituiscono quindi un oggetto Promise che include una funzione [quindi](https://msdn.microsoft.com/en-us/library/windows/apps/br229728.aspx), per cui è necessario fornire una funzione `completed` che gestisce il risultato in caso di esito positivo dell'operazione. Se non si vuole fornire alcun gestore degli errori, è consigliabile usare la funzione [fatto](https://msdn.microsoft.com/en-us/library/windows/apps/hh701079.aspx) invece della funzione `then`.  

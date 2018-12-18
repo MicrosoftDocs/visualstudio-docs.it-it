@@ -1,39 +1,22 @@
 ---
-title: "Confronto di proprietà ed elementi | Microsoft Docs"
-ms.custom: 
+title: Confronto di proprietà ed elementi | Microsoft Docs
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- vs-ide-sdk
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.technology: msbuild
+ms.topic: conceptual
 helpviewer_keywords:
 - msbuild, msbuild properties
 ms.assetid: b9da45ae-d6a6-4399-8628-397deed31486
-caps.latest.revision: 16
-author: kempb
-ms.author: kempb
-manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: 79460291e91f0659df0a4241e17616e55187a0e2
-ms.openlocfilehash: cf04644c98062ffb2aee5b4b826f8426070c3d60
-ms.lasthandoff: 02/22/2017
-
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 8d2464acb75d8ea8a309d788aa95dc86b44d47e9
+ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/19/2018
 ---
 # <a name="comparing-properties-and-items"></a>Confronto di proprietà ed elementi
 Le proprietà e gli elementi MSBuild vengono usati per passare informazioni ad attività, valutare condizioni e archiviare valori a cui poter fare riferimento nel file di progetto.  
@@ -58,7 +41,7 @@ Le proprietà e gli elementi MSBuild vengono usati per passare informazioni ad a
 </PropertyGroup>  
 ```  
   
- La proprietà `BuildDependsOn` viene in genere usata come argomento di un attributo di destinazione `DependsOnTargets` che lo converte in modo efficace in un elenco di elementi. Questa proprietà può essere sottoposta a override per aggiungere una destinazione o per modificare l'ordine di esecuzione della destinazione. Di seguito è riportato un esempio:  
+ La proprietà `BuildDependsOn` viene in genere usata come argomento di un attributo di destinazione `DependsOnTargets` che lo converte in modo efficace in un elenco di elementi. Questa proprietà può essere sottoposta a override per aggiungere una destinazione o per modificare l'ordine di esecuzione della destinazione. Ad esempio,  
   
 ```xml  
 <PropertyGroup>  
@@ -90,9 +73,9 @@ Le proprietà e gli elementi MSBuild vengono usati per passare informazioni ad a
 ## <a name="properties-and-items-in-tasks"></a>Proprietà ed elementi in attività  
  Le proprietà e gli elementi vengono usati come input e output nelle attività MSBuild. Per altre informazioni, vedere [Tasks](../msbuild/msbuild-tasks.md) (Attività).  
   
- Le proprietà vengono passate alle attività sotto forma di attributi. All'interno dell'attività una proprietà MSBuild viene rappresentata da un tipo di proprietà il cui valore può essere convertito in e da una stringa. I tipi di proprietà supportati sono `bool`, `char`, `DateTime`, `Decimal`, `Double`, `int`, `string` e qualsiasi altro tipo che <xref:System.Convert.ChangeType%2A> può gestire.  
+ Le proprietà vengono passate alle attività sotto forma di attributi. All'interno dell'attività una proprietà MSBuild viene rappresentata da un tipo di proprietà il cui valore può essere convertito in e da una stringa. I tipi di proprietà supportati sono `bool`, `char`, `DateTime`, `Decimal`, `Double`, `int`, `string` e qualsiasi altro tipo che <xref:System.Convert.ChangeType%2A> è in grado di gestire.  
   
- Gli elementi vengono passati all'attività sotto forma di oggetti <xref:Microsoft.Build.Framework.ITaskItem>. All'interno dell'attività <xref:Microsoft.Build.Framework.ITaskItem.ItemSpec%2A> rappresenta il valore dell'elemento e <xref:Microsoft.Build.Framework.ITaskItem.GetMetadata%2A> ne recupera i metadati.  
+ Gli elementi vengono passati alle attività come oggetti <xref:Microsoft.Build.Framework.ITaskItem>. All'interno dell'attività, <xref:Microsoft.Build.Framework.ITaskItem.ItemSpec%2A> rappresenta il valore dell'elemento e <xref:Microsoft.Build.Framework.ITaskItem.GetMetadata%2A> recupera i relativi metadati.  
   
  È possibile passare l'elenco di elementi di un tipo di elemento sotto forma di matrice di oggetti `ITaskItem`. A partire da .NET Framework 3.5, gli elementi possono essere rimossi da un elenco di elementi in una destinazione usando l'attributo `Remove`. Poiché gli elementi possono essere rimossi da un elenco di elementi, è possibile che un tipo di elemento non contenta elementi. Se un elenco di elementi viene passato a un'attività, il codice dell'attività deve verificare questa possibilità.  
   

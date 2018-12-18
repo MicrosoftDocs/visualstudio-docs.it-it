@@ -1,41 +1,25 @@
 ---
 title: Creazione di un controllo casella degli strumenti WPF | Documenti Microsoft
-ms.custom: 
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - vs-ide-sdk
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: conceptual
 helpviewer_keywords:
 - toolbox control
 - toolbox
 - wpf
 ms.assetid: 9cc34db9-b0d1-4951-a02f-7537fbbb51ad
-caps.latest.revision: 16
+author: gregvanl
 ms.author: gregvanl
-manager: ghogen
-translation.priority.mt:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: 0b8bfbde2459998f13b8b19b17cfecba172538aa
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
 ms.translationtype: MT
-ms.sourcegitcommit: 4a36302d80f4bc397128e3838c9abf858a0b5fe8
-ms.openlocfilehash: 40196a61c1fdc1dd7f2cf7d75e5fa65fb0580160
-ms.contentlocale: it-it
-ms.lasthandoff: 09/26/2017
-
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="creating-a-wpf-toolbox-control"></a>Creazione di un controllo casella degli strumenti WPF
 Il modello di controllo della casella degli strumenti WPF (Windows Presentation Framework) consente di creare controlli WPF che vengono aggiunti automaticamente per il **della casella degli strumenti** quando l'estensione è installata. In questo argomento viene illustrato come utilizzare il modello per creare un **della casella degli strumenti** controllo che è possibile distribuire ad altri utenti.  
@@ -75,7 +59,7 @@ Il modello di controllo della casella degli strumenti WPF (Windows Presentation 
   
 1.  Aprire MyToolboxControl.xaml.cs nella visualizzazione codice.  
   
-2.  Trovare la classe MyToolboxControl e rinominarlo TestControl. (Il modo più rapido per eseguire questa operazione consiste nel rinominare la classe, quindi selezionare **rinominare** dal menu di scelta rapida e completare i passaggi. (Per ulteriori informazioni sul **rinominare** command, vedere [Refactoring di ridenominazione (c#)](../csharp-ide/rename-refactoring-csharp.md).)  
+2.  Trovare la classe MyToolboxControl e rinominarlo TestControl. (Il modo più rapido per eseguire questa operazione consiste nel rinominare la classe, quindi selezionare **rinominare** dal menu di scelta rapida e completare i passaggi. (Per ulteriori informazioni sul **rinominare** command, vedere [Refactoring di ridenominazione (c#)](../ide/reference/rename.md).)
   
 3.  Passare al `ProvideToolboxControl` attributo e modificare il valore del primo parametro per **Test**. Si tratta del nome del gruppo che contiene il controllo di **della casella degli strumenti**.  
   

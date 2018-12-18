@@ -1,42 +1,25 @@
 ---
 title: -ResetSettings (devenv.exe) | Microsoft Docs
-ms.custom: 
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - vs-ide-general
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: conceptual
 helpviewer_keywords:
 - Devenv, /ResetSettings switch
 - ResetSettings switch
 - /ResetSettings Devenv switch
 ms.assetid: 1d41021c-6f58-4bd5-b122-d1c995812192
-caps.latest.revision: 10
-author: kempb
-ms.author: kempb
-manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 5ea9179ad37514ffad4876177b05150eecc22def
-ms.openlocfilehash: 08d285b07d775f3e46bb2f5106ff8140d3058f8f
-ms.contentlocale: it-it
-ms.lasthandoff: 05/24/2017
-
+author: gewarren
+ms.author: gewarren
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 22dd925755e996a927664e0a9a5846fc10247882
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="resetsettings-devenvexe"></a>/ResetSettings (devenv.exe)
 Ripristina le impostazioni predefinite di [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] e avvia automaticamente l'IDE di [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)]. Facoltativamente, reimposta le impostazioni in un file con estensione vssettings specificato.  

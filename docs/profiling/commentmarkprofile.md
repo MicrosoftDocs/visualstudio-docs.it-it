@@ -1,79 +1,78 @@
 ---
-title: "CommentMarkProfile | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "CommentMarkProfile"
-  - "CommentMarkProfileA"
+title: CommentMarkProfile | Microsoft Docs
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology: vs-ide-debug
+ms.topic: conceptual
+helpviewer_keywords:
+- CommentMarkProfile
+- CommentMarkProfileA
 ms.assetid: 33ccff45-c33a-4672-b41f-5b317b848cd1
-caps.latest.revision: 11
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 11
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: ae602e6f28fc30c20c5b1f3c466d2e7afe458b8f
+ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/19/2018
 ---
-# CommentMarkProfile
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
-La funzione `CommentMarkProfile` inserisce un marcatore numerico e una stringa di testo nel file vsp.  Per l'inserimento dell'indicatore e del commento, è necessario che la profilatura per il thread contenente la funzione `CommentMarkProfile` sia impostata su ON.  
+# <a name="commentmarkprofile"></a>CommentMarkProfile
+La funzione `CommentMarkProfile` inserisce un indicatore numerico e una stringa di testo nel file VSP. Per l'indicatore e il commento da inserire, è necessario attivare la profilatura per il thread che contiene la funzione `CommentMarkProfile`.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
 PROFILE_COMMAND_STATUS PROFILERAPI CommentMarkProfile(  
-                                   long lMarker,   
-                                   LPCTSTR szComment);  
+                                   long lMarker,   
+                                   LPCTSTR szComment);  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `lMarker`  
   
- Marcatore numerico da inserire  che deve essere maggiore o uguale a 0 \(zero\).  
+ Indicatore numerico da inserire. L'indicatore deve essere maggiore o uguale a 0 (zero).  
   
  `szComment`  
   
- Puntatore alla stringa di testo da inserire.  La stringa deve contenere meno di 256 caratteri, incluso il carattere di terminazione NULL.  
+ Puntatore alla stringa di testo da inserire. La stringa deve contenere meno di 256 caratteri, compreso il terminatore Null.  
   
-## Valore proprietà\/Valore restituito  
- La funzione indica esito positivo o negativo utilizzando l'enumerazione **PROFILE\_COMMAND\_STATUS**.  Il valore restituito può essere uno dei seguenti:  
+## <a name="property-valuereturn-value"></a>Valore proprietà/Valore restituito  
+ La funzione indica esito l'esito positivo o negativo usando l'enumerazione **PROFILE_COMMAND_STATUS**. Il valore restituito può essere uno dei seguenti:  
   
 |Enumerator|Descrizione|  
 |----------------|-----------------|  
-|MARK\_ERROR\_MARKER\_RESERVED|Il parametro è minore di o uguale a 0.  I valori sono riservati.  L'indicatore e il commento non vengono registrati.|  
-|MARK\_ERROR\_MODE\_NEVER|La modalità di profilo è stata impostata su NEVER quando è stata chiamata la funzione.  L'indicatore e il commento non vengono registrati.|  
-|MARK\_ERROR\_MODE\_OFF|La modalità di profilatura era impostata su OFF quando è stata chiamata la funzione.  L'indicatore e il commento non vengono registrati.|  
-|MARK\_ERROR\_NO\_SUPPORT|In questo contesto non sono supportati indicatori.  L'indicatore e il commento non vengono registrati.|  
-|MARK\_ERROR\_OUTOFMEMORY|Memoria non disponibile per registrare l'evento.  L'indicatore e il commento non vengono registrati.|  
-|MARK\_TEXTTOOLONG|La stringa supera il limite massimo di 256 caratteri.  La stringa di commento viene troncata e l'indicatore e il commento vengono registrati.|  
-|MARK\_OK|MARK\_OK viene restituito per indicare esito positivo.|  
+|MARK_ERROR_MARKER_RESERVED|Il parametro è minore o uguale a 0. Questi valori sono riservati. L'indicatore e il commento non vengono registrati.|  
+|MARK_ERROR_MODE_NEVER|La modalità di profilatura è stata impostata su NEVER al momento della chiamata della funzione. L'indicatore e il commento non vengono registrati.|  
+|MARK_ERROR_MODE_OFF|La modalità di profilatura è stata impostata su OFF al momento della chiamata della funzione. L'indicatore e il commento non vengono registrati.|  
+|MARK_ERROR_NO_SUPPORT|Nessun supporto dell'indicatore in questo contesto. L'indicatore e il commento non vengono registrati.|  
+|MARK_ERROR_OUTOFMEMORY|Non era disponibile memoria per registrare l'evento. L'indicatore e il commento non vengono registrati.|  
+|MARK_TEXTTOOLONG|La stringa supera il numero massimo di 256 caratteri. La stringa di commento viene troncata e vengono registrati l'indicatore e il commento.|  
+|MARK_OK|MARK_OK viene restituito per indicare l'esito positivo.|  
   
-## Note  
- La stato di profilatura per il thread contenente la funzione relativa al contrassegno del profilo deve essere impostato su ON quando vengono inseriti indicatori e commenti con il comando Mark di VSInstr o con le funzioni \(CommentMarkAtProfile, CommentMarkProfile o MarkProfile\).  
+## <a name="remarks"></a>Note  
+ Lo stato della profilatura per il thread che contiene la funzione di contrassegno del profilo deve essere attivo quando vengono inseriti indicatori e commenti con il comando Contrassegno di VSInstr o con le funzioni CommentMarkAtProfile, CommentMarkProfile o MarkProfile.  
   
- Gli indicatori di profilo hanno un ambito globale.  Un indicatore di profilo inserito in un thread può, ad esempio, essere utilizzato per contrassegnare l'inizio o la fine di un segmento di dati in qualsiasi thread del file vsp.  
+ I contrassegni del profilo hanno ambito globale. Ad esempio, un contrassegno del profilo inserito in un solo thread può essere usato per contrassegnare l'inizio o la fine di un segmento di dati in qualsiasi thread del file VSP.  
   
 > [!IMPORTANT]
->  Il metodo CommentMarkProfile può essere utilizzato solo con la strumentazione.  
+>  Il metodo CommentMarkProfile può essere usato solo con la strumentazione.  
   
-## Equivalente .NET Framework  
+## <a name="net-framework-equivalent"></a>Equivalente .NET Framework  
  Microsoft.VisualStudio.Profiler.dll  
   
-## Informazioni sulla funzione  
+## <a name="function-information"></a>Informazioni sulla funzione  
   
 |||  
 |-|-|  
 |**Intestazione**|Includere VSPerf.h|  
-|**Libreria**|Utilizzare VSPerf.lib|  
-|**Unicode**|Implementato come `CommentMarkProfileW` \(Unicode\) e `CommentMarkProfileA` \(ANSI\).|  
+|**Libreria**|Usare VSPerf.lib|  
+|**Unicode**|Implementato come `CommentMarkProfileW` (Unicode) e `CommentMarkProfileA` (ANSI).|  
   
-## Esempio  
- Nel codice riportato di seguito è illustrata la chiamata della funzione CommentMarkProfile.  Nell'esempio si presuppone l'utilizzo di macro di stringa Win32 e delle impostazioni del compilatore Unicode per stabilire se il codice chiama la funzione [!INCLUDE[vcpransi](../profiling/includes/vcpransi_md.md)].  
+## <a name="example"></a>Esempio  
+ Il codice seguente illustra la chiamata della funzione CommentNameProfile. Nell'esempio si presuppone l'uso di macro di stringa Win32 e delle impostazioni del compilatore Unicode per stabilire se il codice chiama la funzione [!INCLUDE[vcpransi](../profiling/includes/vcpransi_md.md)].  
   
 ```  
 void ExerciseCommentMarkProfile()  
@@ -111,5 +110,5 @@ void ExerciseCommentMarkProfile()
 }  
 ```  
   
-## Vedere anche  
- [Riferimenti per le API del profiler di Visual Studio \(native\)](../profiling/visual-studio-profiler-api-reference-native.md)
+## <a name="see-also"></a>Vedere anche  
+ [Riferimenti per le API del profiler di Visual Studio (native)](../profiling/visual-studio-profiler-api-reference-native.md)

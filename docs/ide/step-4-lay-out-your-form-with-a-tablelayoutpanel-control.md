@@ -1,38 +1,21 @@
 ---
 title: 'Passaggio 4: creare il layout del form con un controllo TableLayoutPanel | Microsoft Docs'
-ms.custom: 
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
-- vs-ide-general
-ms.tgt_pltfrm: 
-ms.topic: article
+- vs-acquisition
+ms.topic: conceptual
 ms.assetid: 61acde79-e115-4bad-bb06-1fbe37717a3e
-caps.latest.revision: 17
-author: kempb
-ms.author: kempb
-manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 47057e9611b824c17077b9127f8d2f8b192d6eb8
-ms.openlocfilehash: 6f4db48b7e1f90654643efbfcfd41acbdcceaec8
-ms.contentlocale: it-it
-ms.lasthandoff: 05/13/2017
-
+author: TerryGLee
+ms.author: tglee
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 775b6938d44d2fb9f85cc4036fd77e14330d1df2
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="step-4-lay-out-your-form-with-a-tablelayoutpanel-control"></a>Passaggio 4: creare il layout del form con un controllo TableLayoutPanel
 In questo passaggio si aggiunge un controllo `TableLayoutPanel` al form. TableLayoutPanel consente di allineare in modo corretto i controlli nel form che si aggiungerà successivamente.  
@@ -45,7 +28,7 @@ In questo passaggio si aggiunge un controllo `TableLayoutPanel` al form. TableLa
   
 2.  Scegliere il piccolo simbolo del triangolo accanto al gruppo **Contenitori** per aprirlo, come mostrato nell'immagine seguente.  
   
-     ![Gruppo Contenitori](../ide/media/express_toolbox.png "Express_Toolbox")  
+     ![Gruppo contenitori](../ide/media/express_toolbox.png "Express_Toolbox")  
 Gruppo di contenitori  
   
 3.  È possibile aggiungere al form controlli quali pulsanti, caselle di controllo ed etichette. Fare doppio clic sul controllo `TableLayoutPanel` nella casella degli strumenti. In alternativa, è possibile trascinare il controllo dalla casella degli strumenti al form. Quando si esegue questa operazione, l'IDE aggiunge un controllo `TableLayoutPanel` al form, come mostrato nell'immagine seguente.  
@@ -70,7 +53,7 @@ Finestra Proprietà con il controllo TableLayoutPanel
   
 6.  Il selettore dei controlli è un elenco a discesa che si trova nella parte superiore della finestra **Proprietà**. In questo esempio è selezionato un controllo denominato `tableLayoutPanel1`. È possibile selezionare i controlli scegliendo un'area in Progettazione Windows Form o selezionandoli dal selettore dei controlli. Dopo aver selezionato `TableLayoutPanel`, individuare la proprietà **Dock** e scegliere **Ancora** che dovrebbe essere impostato su **Nessuno**. Si noti che viene visualizzata una freccia a discesa accanto al valore. Fare clic sulla freccia, quindi selezionare il pulsante **Riempimento** (il pulsante grande al centro), come mostrato nell'immagine seguente.  
   
-     ![Finestra Proprietà con Riempimento selezionato](../ide/media/express_docktable.png "Express_DockTable")  
+     ![Finestra Proprietà con Fill selezionato](../ide/media/express_docktable.png "Express_DockTable")  
 Finestra Proprietà con Fill selezionato  
   
      Il termine *ancoraggio* in Visual Studio indica l'associazione di una finestra un'altra finestra o area nell'IDE. Ad esempio, la finestra Proprietà può essere non ancorata, ovvero non collegata e mobile all'interno di Visual Studio, oppure può essere ancorata a **Esplora soluzioni**.  

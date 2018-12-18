@@ -1,48 +1,49 @@
 ---
-title: "IDebugBeforeSymbolSearchEvent2 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "Interfaccia IDebugBeforeSymbolSearchEvent2"
+title: IDebugBeforeSymbolSearchEvent2 | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology:
+- vs-ide-sdk
+ms.topic: conceptual
+helpviewer_keywords:
+- IDebugBeforeSymbolSearchEvent2 interface
 ms.assetid: 679fd7b1-765a-41a8-a046-63240c09a499
-caps.latest.revision: 8
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 8
+author: gregvanl
+ms.author: gregvanl
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: 790aa358a40c79c7d517935192fd0155150063a5
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# IDebugBeforeSymbolSearchEvent2
-[!INCLUDE[vs2017banner](../../../code-quality/includes/vs2017banner.md)]
-
-Il motore \(DE\) di debug invia questa interfaccia gestione \(SDM\) di debug della sessione per impostare il messaggio della barra di stato durante il caricamento dei simboli.  
+# <a name="idebugbeforesymbolsearchevent2"></a>IDebugBeforeSymbolSearchEvent2
+Il motore di debug (DE) invia questa interfaccia per la gestione di debug (SDM) per impostare lo stato di sessione barra messaggio durante il caricamento di simboli.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
 IDebugBeforeSymbolSearchEvent2 : IUnknown  
 ```  
   
-## Note per gli implementatori  
- Il DE implementa questa interfaccia quando necessario impostare il messaggio della barra di stato durante il caricamento dei simboli.  Questa interfaccia è implementata solo dai motori di debug che utilizzano o è una parte degli interpreti dello script.  [IDebugEvent2](../../../extensibility/debugger/reference/idebugevent2.md) L'interfaccia deve essere implementata nello stesso oggetto di questa interfaccia \(utilizzi **QueryInterface** di SDM accedere all'interfaccia **IDebugEvent2** \).  
+## <a name="notes-for-implementers"></a>Note per gli implementatori  
+ La Germania implementa questa interfaccia quando è necessario impostare il messaggio sulla barra di stato durante il caricamento di simboli. Questa interfaccia è implementata solo dai motori di debug che utilizzano o fanno parte di interpreti di script. Il [IDebugEvent2](../../../extensibility/debugger/reference/idebugevent2.md) interfaccia deve essere implementata sullo stesso oggetto di questa interfaccia (utilizza il SDM **QueryInterface** per l'accesso di **IDebugEvent2** interfaccia).  
   
-## Note per i chiamanti  
- Il DE crea e invia questo oggetto evento quando necessario impostare il messaggio della barra di stato durante il caricamento dei simboli.  L'evento viene inviato mediante [IDebugEventCallback2](../../../extensibility/debugger/reference/idebugeventcallback2.md) la funzione di callback fornite da SDM quando è collegato al programma sottoposto a debug.  
+## <a name="notes-for-callers"></a>Note per i chiamanti  
+ La Germania crea e invia l'oggetto evento quando è necessario impostare il messaggio sulla barra di stato durante il caricamento di simboli. L'evento viene inviato tramite il [IDebugEventCallback2](../../../extensibility/debugger/reference/idebugeventcallback2.md) funzione di callback fornita dal suo SDM quando è collegato al programma sottoposto a debug.  
   
-## Metodi  
- Nella tabella seguente sono elencati i metodi di `IDebugBeforeSymbolSearchEvent2`.  
+## <a name="methods"></a>Metodi  
+ Nella tabella seguente sono illustrati i metodi di `IDebugBeforeSymbolSearchEvent2`.  
   
 |Metodo|Descrizione|  
 |------------|-----------------|  
-|[GetModuleName](../../../extensibility/debugger/reference/idebugbeforesymbolsearchevent2-getmodulename.md)|Recupera il nome del modulo attualmente in corso di debug.|  
+|[GetModuleName](../../../extensibility/debugger/reference/idebugbeforesymbolsearchevent2-getmodulename.md)|Recupera il nome del modulo in fase di debug.|  
   
-## Requisiti  
- intestazione: Msdbg.h  
+## <a name="requirements"></a>Requisiti  
+ Intestazione: Msdbg.h  
   
- Spazio dei nomi: Microsoft.VisualStudio.Debugger.Interop  
+ Namespace: Microsoft.VisualStudio.Debugger.Interop  
   
  Assembly: Microsoft.VisualStudio.Debugger.Interop.dll

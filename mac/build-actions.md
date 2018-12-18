@@ -5,14 +5,12 @@ ms.author: amburns
 ms.date: 04/14/2017
 ms.topic: article
 ms.assetid: 5399BCB1-E317-4C7B-87B1-C531E985DE6E
+ms.openlocfilehash: 78b0e715ca44c613b6a7ee839c0656e301308588
+ms.sourcegitcommit: ebe9fb5eda724936f7a059d35d987c29dffdb50d
 ms.translationtype: HT
-ms.sourcegitcommit: e2b7ff9126e1cc38ac2e58d6be339b656a024e7f
-ms.openlocfilehash: 347378da197b5c6d22bbd145c2ac8673d53a63bf
-ms.contentlocale: it-it
-ms.lasthandoff: 08/11/2017
-
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/07/2017
 ---
-
 # <a name="build-actions"></a>Azioni di compilazione 
 
 A tutti i file di un progetto Visual Studio per Mac è associata un'azione di compilazione che controlla cosa accade al file durante la compilazione. Per impostare questa azione, è possibile fare clic con il pulsante destro del mouse sul file e scegliere **Azione di compilazione**, come illustrato di seguito:
@@ -28,4 +26,4 @@ Ecco alcune azioni di compilazione comuni per progetti C#:
 
 È possibile selezionare più file in Esplora soluzioni. Ciò consente di impostare l'azione di compilazione per più file in una sola volta.
 
-Sono anche disponibili azioni di compilazione per progetti specifici. Ad esempio, per i progetti Xamarin.iOS esiste l'azione di compilazione **BundeledResource**, che aggiunge il file al bundle dell'app. Per informazioni sulle azioni di compilazione specifiche per Xamarin.Android, vedere la guida al [processo di compilazione](https://developer.xamarin.com/guides/android/under_the_hood/build_process/#Build_Actions) in developer.xamarin.com.
+Sono anche disponibili azioni di compilazione per progetti specifici. Per i progetti Xamarin.iOS, ad esempio, esiste l'azione di compilazione **BundleResource**, che aggiunge il file al bundle dell'app. Per informazioni sulle azioni di compilazione specifiche per Xamarin.Android, vedere la guida al [processo di compilazione](https://developer.xamarin.com/guides/android/under_the_hood/build_process/#Build_Actions) in developer.xamarin.com.

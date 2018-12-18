@@ -1,41 +1,24 @@
 ---
 title: 'Procedura: Escludere file dalla compilazione | Microsoft Docs'
-ms.custom: 
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- vs-ide-sdk
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.technology: msbuild
+ms.topic: conceptual
 helpviewer_keywords:
 - MSBuild, wildcards
 - MSBuild, excluding files
 - wildcards, MSBuild
 ms.assetid: 1be36e45-01da-451c-972d-f9fc0e7d663c
-caps.latest.revision: 16
-author: kempb
-ms.author: kempb
-manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: 3ba7680d46345f2b49019659c715cfb418933d39
-ms.openlocfilehash: 09a5ecabf88a9f15bcd84bd83ffac5730680adae
-ms.lasthandoff: 02/22/2017
-
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: eb8e8ba51f4aaeed0242147d46fd282b95452d91
+ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/19/2018
 ---
 # <a name="how-to-exclude-files-from-the-build"></a>Procedura: escludere file dalla compilazione
 In un file di progetto è possibile usare caratteri jolly per includere tutti i file in una sola directory o in un set annidato di directory come input per una compilazione. Potrebbe tuttavia essere presente un file nella directory o una directory in un set annidato di directory che non si vuole includere come input per una compilazione. È possibile escludere in modo esplicito tale file o directory dall'elenco di input. In un progetto potrebbe anche essere presente un file che si vuole includere solo in determinate condizioni. È possibile dichiarare in modo esplicito le condizioni in cui un file viene incluso in una compilazione.  
@@ -142,5 +125,4 @@ In un file di progetto è possibile usare caratteri jolly per includere tutti i 
   
 ## <a name="see-also"></a>Vedere anche  
  [Elementi](../msbuild/msbuild-items.md)   
- [MSBuild](../msbuild/msbuild.md)
- [Procedura: Selezionare i file da compilare](../msbuild/how-to-select-the-files-to-build.md)
+ [MSBuild](../msbuild/msbuild.md) [Procedura: Selezionare i file da compilare](../msbuild/how-to-select-the-files-to-build.md)

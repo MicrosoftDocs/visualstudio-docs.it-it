@@ -1,48 +1,49 @@
 ---
-title: "IDebugAddress2::GetProcessID | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "IDebugAddress2::GetProcessID"
-helpviewer_keywords: 
-  - "Metodo IDebugAddress2::GetProcessID"
+title: IDebugAddress2::GetProcessID | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology:
+- vs-ide-sdk
+ms.topic: conceptual
+f1_keywords:
+- IDebugAddress2::GetProcessID
+helpviewer_keywords:
+- IDebugAddress2::GetProcessID method
 ms.assetid: 2c18889d-074a-4b95-87b4-bf1a067f44ed
-caps.latest.revision: 6
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 6
+author: gregvanl
+ms.author: gregvanl
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: 7fbe84371deb7306300c69f4890398fd43c3061f
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# IDebugAddress2::GetProcessID
-[!INCLUDE[vs2017banner](../../../code-quality/includes/vs2017banner.md)]
-
-Recupera l'ID del processo a cui appartiene l'oggetto rappresentato dall'[IDebugAddress2](../../../extensibility/debugger/reference/idebugaddress2.md) interfaccia.  
+# <a name="idebugaddress2getprocessid"></a>IDebugAddress2::GetProcessID
+Recupera l'ID del processo a cui appartiene l'oggetto rappresentato da questo [IDebugAddress2](../../../extensibility/debugger/reference/idebugaddress2.md) interfaccia.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```cpp  
 HRESULT GetProcessID (  
-   DWORD* pProcID  
+   DWORD* pProcID  
 );  
 ```  
   
-```c#  
+```csharp  
 int GetProcessID (  
-   out uint pProcID  
+   out uint pProcID  
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `pProcID`  
- \[out\]  L'id processo  
+ [out] L'ID del processo.  
   
-## Valore restituito  
- Se l'operazione riesce, restituisce S\_OK, in caso contrario, restituisce un codice di errore.  
+## <a name="return-value"></a>Valore restituito  
+ Se ha esito positivo, restituisce S_OK; in caso contrario, restituisce un codice di errore.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IDebugAddress2](../../../extensibility/debugger/reference/idebugaddress2.md)

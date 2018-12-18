@@ -1,43 +1,26 @@
 ---
 title: Gestione delle firme di assembly e manifesti | Microsoft Docs
-ms.custom: 
+ms.custom: ''
 ms.date: 02/17/2017
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - vs-ide-general
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: conceptual
 helpviewer_keywords:
 - manifests [Visual Studio]
 - signing manifests [Visual Studio]
 - application manifests [Visual Studio]
 - assemblies [Visual Studio], signing
 ms.assetid: 6c1ef36b-25f7-4ad0-b29a-51801b7a5420
-caps.latest.revision: 15
-author: kempb
-ms.author: kempb
-manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+author: gewarren
+ms.author: gewarren
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 2104ea0a86b351d0300bb7327c338dfcb0cd1818
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
 ms.translationtype: HT
-ms.sourcegitcommit: a3c0f4d3bde8bb03d3766383eba01665e58458be
-ms.openlocfilehash: 6a28915840af1b22dffe704ac931a57f25ca6879
-ms.contentlocale: it-it
-ms.lasthandoff: 08/01/2017
-
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="managing-assembly-and-manifest-signing"></a>Gestione delle firme di assembly e manifesti
 La firma con nome sicuro offre un'identità univoca globale per un componente software. I nomi sicuri sono usati per garantire che l'assembly non possa essere sottoposto a spoofing da parte di altri utenti e per verificare che le dipendenze dei componenti e le istruzioni di configurazione siano mappate al componente e alla versione del componente corretti.  
@@ -62,15 +45,15 @@ La firma con nome sicuro offre un'identità univoca globale per un componente so
   
 -   assembly di componenti condivisi (.dll)  
   
- È necessario firmare i seguenti tipi di asset:  
+È necessario firmare i seguenti tipi di asset:  
   
-1.  assembly, se si vuole distribuirli alla Global Assembly Cache (GAC).  
+1.  Assembly, se si vuole distribuirli alla Global Assembly Cache (GAC).  
   
 2.  [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] manifesti di applicazione e distribuzione. Visual Studio abilita la firma per impostazione predefinita per queste applicazioni.  
   
 3.  Assembly di interoperabilità primari, usati per l'interoperabilità COM. L'utilità TLBIMP attiva l'assegnazione di nomi sicuri quando crea un assembly di interoperabilità primario da una libreria di tipi COM.  
   
- In generale è consigliabile non firmare i file eseguibili. Un componente con nome sicuro non può fare riferimento a un componente senza nome sicuro distribuito con l'applicazione. Visual Studio non firma gli eseguibili dell'applicazione, consente invece di firmare il manifesto dell'applicazione, che fa riferimento al file eseguibile con nome debole. Non è in genere consigliabile firmare i componenti privati dell'applicazione, perché la firma può rendere più difficile la gestione delle dipendenze.  
+In generale è consigliabile non firmare i file eseguibili. Un componente con nome sicuro non può fare riferimento a un componente senza nome sicuro distribuito con l'applicazione. Visual Studio non firma gli eseguibili dell'applicazione, consente invece di firmare il manifesto dell'applicazione, che fa riferimento al file eseguibile con nome debole. Non è in genere consigliabile firmare i componenti privati dell'applicazione, perché la firma può rendere più difficile la gestione delle dipendenze.  
   
 ## <a name="how-to-sign-an-assembly-in-visual-studio"></a>Come firmare un assembly in Visual Studio  
  Per firmare un'applicazione o un componente, usare la scheda **Firma** della finestra delle proprietà del progetto (fare clic con il pulsante destro del mouse sul nodo del progetto in **Esplora soluzioni** e scegliere **Proprietà** o digitare **proprietà del progetto** nella finestra **Avvio veloce** oppure premere ALT+INVIO nella finestra **Esplora soluzioni**. Selezionare la scheda **Firma**, quindi la casella di controllo **Firma assembly**.  

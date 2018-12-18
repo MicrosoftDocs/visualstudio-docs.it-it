@@ -1,46 +1,30 @@
 ---
 title: IDebugCoreServer3::GetConnectionProtocol | Documenti Microsoft
-ms.custom: 
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - vs-ide-sdk
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: conceptual
 f1_keywords:
 - IDebugCoreServer3::GetConnectionProtocol
 helpviewer_keywords:
 - IDebugCoreServer3::GetConnectionProtocol
 ms.assetid: 368ced5b-c5d9-4090-a5b4-26ff400d1a55
-caps.latest.revision: 8
+author: gregvanl
 ms.author: gregvanl
-manager: ghogen
-translation.priority.mt:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: 127d4c5695c870c570080c79c5f447b6173b1fb8
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
 ms.translationtype: MT
-ms.sourcegitcommit: 4a36302d80f4bc397128e3838c9abf858a0b5fe8
-ms.openlocfilehash: 8901f9fff01ecdfe21e3731df8b2d155fe250ac2
-ms.contentlocale: it-it
-ms.lasthandoff: 09/26/2017
-
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# IDebugCoreServer3::GetConnectionProtocol
+# <a name="idebugcoreserver3getconnectionprotocol"></a>IDebugCoreServer3::GetConnectionProtocol
 Restituisce un valore che indica il protocollo utilizzato per la comunicazione tra il server e il pacchetto di debug.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```cpp  
 HRESULT GetConnectionProtocol(  
@@ -54,13 +38,13 @@ int GetConnectionProtocol(
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `pProtocol`  
  [out] Restituisce uno dei valori di [CONNECTION_PROTOCOL](../../../extensibility/debugger/reference/connection-protocol.md) enumerazione.  
   
-## Valore restituito  
+## <a name="return-value"></a>Valore restituito  
  Se ha esito positivo, restituisce `S_OK`; in caso contrario, restituisce il codice di errore.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IDebugCoreServer3](../../../extensibility/debugger/reference/idebugcoreserver3.md)   
  [CONNECTION_PROTOCOL](../../../extensibility/debugger/reference/connection-protocol.md)

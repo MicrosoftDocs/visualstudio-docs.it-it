@@ -1,27 +1,33 @@
 ---
-title: "IActiveScript::InterruptScriptThread | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/18/2017"
-ms.prod: "windows-script-interfaces"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-apiname: IActiveScript.InterruptScriptThread
-apilocation: scrobj.dll
-helpviewer_keywords: 
-  - "IActiveScript_InterruptScriptThread"
+title: IActiveScript::InterruptScriptThread | Documenti Microsoft
+ms.custom: ''
+ms.date: 01/18/2017
+ms.prod: windows-script-interfaces
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
+ms.topic: reference
+apiname:
+- IActiveScript.InterruptScriptThread
+apilocation:
+- scrobj.dll
+helpviewer_keywords:
+- IActiveScript_InterruptScriptThread
 ms.assetid: 2304d035-6d39-4811-acd3-8a9640fdbef6
 caps.latest.revision: 8
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 8
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.openlocfilehash: ad717ee950dda4f0f0d7a14292f0f5f150ab4973
+ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/27/2017
 ---
-# IActiveScript::InterruptScriptThread
-Interrompere l'esecuzione di un thread in esecuzione dello script \(un sink di evento, l'esecuzione immediata, o una chiamata di macro\).  Questo metodo può essere utilizzato per terminare uno script che verrebbe è, ad esempio in un ciclo infinito\).  Può essere chiamato dai thread non di base senza con conseguente callout di non base agli oggetti host o al metodo [IActiveScriptSite](../../winscript/reference/iactivescriptsite.md).  
+# <a name="iactivescriptinterruptscriptthread"></a>IActiveScript::InterruptScriptThread
+Interrompe l'esecuzione di un thread in esecuzione di script (un sink di evento, un'esecuzione immediata o una chiamata di macro). Questo metodo può essere utilizzato per terminare uno script che è bloccato (ad esempio, in un ciclo infinito). Può essere chiamato dal thread non di base senza callout non in base a oggetti host o al [IActiveScriptSite](../../winscript/reference/iactivescriptsite.md) metodo.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
 HRESULT InterruptScriptThread(  
@@ -31,36 +37,36 @@ HRESULT InterruptScriptThread(
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `stidThread`  
- \[in\] identificatore del thread da interrompere, o uno dell'identificatore speciale di thread stima:  
+ [in] Identificatore del thread interrupt, o su uno dei valori di identificatore thread speciali seguenti:  
   
 |Valore|Significato|  
-|------------|-----------------|  
-|SCRIPTTHREADID\_ALL|Tutti i thread.  Si applica attualmente a tutti i metodi di script corrente.  Si noti che a meno che il chiamante ha richiesto che lo script è disconnesso, il codice di script basati su script seguente di cause di evento per eseguire nuovamente chiamando il metodo [IActiveScript::SetScriptState](../../winscript/reference/iactivescript-setscriptstate.md) con il flag di SCRIPTSTATE\_INITIALIZED o di SCRIPTSTATE\_DISCONNECTED.|  
-|SCRIPTTHREADID\_BASE|Il thread di base; ovvero il thread in cui il motore di scripting è stata creata un'istanza.|  
-|SCRIPTTHREADID\_CURRENT|Il thread attualmente in esecuzione.|  
+|-----------|-------------|  
+|SCRIPTTHREADID_ALL|Tutti i thread. L'interrupt viene applicata a tutti i metodi di script in corso. Si noti che, a meno che il chiamante ha richiesto che lo script di disconnessione, l'evento successivo tramite script comporta il codice di script eseguire di nuovo chiamando il [IActiveScript::SetScriptState](../../winscript/reference/iactivescript-setscriptstate.md) metodo con il SCRIPTSTATE_DISCONNECTED o SCRIPTSTATE_INITIALIZED flag impostato.|  
+|SCRIPTTHREADID_BASE|Il thread di base. vale a dire il thread in cui la creazione di script del motore è stata creata un'istanza.|  
+|SCRIPTTHREADID_CURRENT|Il thread attualmente in esecuzione.|  
   
  `pexcepinfo`  
- \[in\] indirizzo di una struttura `EXCEPINFO` contenente informazioni che devono essere restituite allo script interrotto.  
+ [in] Indirizzo di un `EXCEPINFO` struttura che contiene le informazioni sull'errore che devono essere segnalati allo script interrotte.  
   
  `dwFlags`  
- \[in\] i flag di opzione associato all'interruzione.  Può essere uno dei seguenti valori:  
+ [in] Flag di opzione associati l'interruzione. Può essere uno dei seguenti valori:  
   
 |Valore|Significato|  
-|------------|-----------------|  
-|SCRIPTINTERRUPT\_DEBUG|Se supportato, registrare il debugger del motore di scripting al punto corrente di esecuzione degli script.|  
-|SCRIPTINTERRUPT\_RAISEEXCEPTION|Se supportato dal motore di scripting, lasciare lo script gestire l'eccezione.  In caso contrario, il metodo lo script viene interrotto e il codice di errore viene restituito al chiamante, ovvero il invoker di macro o di origine evento.|  
+|-----------|-------------|  
+|SCRIPTINTERRUPT_DEBUG|Se supportato, immettere il debugger del motore di script in fase di esecuzione dello script corrente.|  
+|SCRIPTINTERRUPT_RAISEEXCEPTION|Se supportato dal linguaggio di scripting del motore, lasciare lo script gestisce l'eccezione. In caso contrario, il metodo di script viene interrotta e viene restituito il codice di errore per il chiamante. vale a dire l'invoker di evento origine o una macro.|  
   
-## Valore restituito  
- Restituisce uno dei seguenti valori:  
+## <a name="return-value"></a>Valore restituito  
+ Restituisce uno dei valori seguenti:  
   
 |Valore restituito|Significato|  
-|-----------------------|-----------------|  
-|`S_OK`|Riuscita.|  
-|`E_INVALIDARG`|Un argomento non è valido.|  
-|`E_POINTER`|Un puntatore non valido è stato specificato.|  
-|`E_UNEXPECTED`|La chiamata non era prevista, ad esempio il motore di scripting non è ancora stato caricato o non inizializzata\).|  
+|------------------|-------------|  
+|`S_OK`|Operazione completata.|  
+|`E_INVALIDARG`|Un argomento non valido.|  
+|`E_POINTER`|È stato specificato un puntatore non valido.|  
+|`E_UNEXPECTED`|La chiamata non era previsto (ad esempio, il motore di script non è ancora caricato o inizializzato).|  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IActiveScript](../../winscript/reference/iactivescript.md)

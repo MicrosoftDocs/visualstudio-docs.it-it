@@ -1,48 +1,49 @@
 ---
-title: "IDebugPortSupplier2::GetPortSupplierName | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "IDebugPortSupplier2::GetPortSupplierName"
-helpviewer_keywords: 
-  - "IDebugPortSupplier2::GetPortSupplierName"
+title: IDebugPortSupplier2::GetPortSupplierName | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology:
+- vs-ide-sdk
+ms.topic: conceptual
+f1_keywords:
+- IDebugPortSupplier2::GetPortSupplierName
+helpviewer_keywords:
+- IDebugPortSupplier2::GetPortSupplierName
 ms.assetid: e4c368ab-640d-4b5b-9f74-810dc9364d8f
-caps.latest.revision: 10
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 10
+author: gregvanl
+ms.author: gregvanl
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: 612b72a7fe0251b43d277629e274193b115eae24
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# IDebugPortSupplier2::GetPortSupplierName
-[!INCLUDE[vs2017banner](../../../code-quality/includes/vs2017banner.md)]
-
-Ottiene il nome del fornitore di porte.  
+# <a name="idebugportsupplier2getportsuppliername"></a>IDebugPortSupplier2::GetPortSupplierName
+Ottiene il nome della porta fornitore.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp#  
-HRESULT GetPortSupplierName(   
-   BSTR* pbstrName  
+```cpp  
+HRESULT GetPortSupplierName(   
+   BSTR* pbstrName  
 );  
 ```  
   
-```c#  
-int GetPortSupplierName(   
-   out string pbstrName  
+```csharp  
+int GetPortSupplierName(   
+   out string pbstrName  
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `pbstrName`  
- \[out\]  Restituisce il nome del fornitore di porte.  
+ [out] Restituisce il nome del fornitore porta.  
   
-## Valore restituito  
- Se l'operazione riesce, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
+## <a name="return-value"></a>Valore restituito  
+ Se ha esito positivo, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IDebugPortSupplier2](../../../extensibility/debugger/reference/idebugportsupplier2.md)

@@ -1,41 +1,22 @@
 ---
 title: Risoluzione dei problemi di Visual Studio Emulator for Android | Microsoft Docs
-ms.custom: 
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- tgt-pltfrm-cross-plat
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.technology: vs-ide-mobile
+ms.topic: conceptual
 ms.assetid: f3fb5df4-3aae-40e4-9450-bbe15b0c5af5
-caps.latest.revision: 23
-author: mikejo5000
-ms.author: mikejo
-manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 47057e9611b824c17077b9127f8d2f8b192d6eb8
-ms.openlocfilehash: 2b73f62b59c2106cdda090133013603e3dc887c6
-ms.contentlocale: it-it
-ms.lasthandoff: 05/13/2017
-
+author: mgmclemore
+ms.author: mamcle
+manager: crdun
+ms.workload:
+- multiple
+ms.openlocfilehash: ae4478b711581e332c8da980ddac9fd4d369d8e7
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# <a name="troubleshooting-the-visual-studio-emulator-for-android"></a>Troubleshooting the Visual Studio Emulator for Android
+# <a name="troubleshooting-the-visual-studio-emulator-for-android"></a>Risoluzione dei problemi di Visual Studio Emulatore per Android
 Questo argomento contiene informazioni che consentono di risolvere i problemi che possono verificarsi quando si usa Visual Studio Emulator for Android.  
   
 > [!WARNING]
@@ -227,11 +208,11 @@ Questo argomento contiene informazioni che consentono di risolvere i problemi ch
   
     2.  Per la scheda vEthernet (interno porta Windows Phone emulatore interna Switch Ethernet), scegliere **proprietà** dal menu di scelta rapida.  
   
-         ![Scheda virtuale usata da Hyper&#45;V](~/cross-platform/media/android_emu_virtual_adapter.png "Android_Emu_Virtual_Adapter")  
+         ![Scheda virtuale usata da Hyper&#45;V](../cross-platform/media/android_emu_virtual_adapter.png "Android_Emu_Virtual_Adapter")  
   
          Qui vengono visualizzate le proprietà dell'adapter.  
   
-         ![Proprietà della scheda virtuale](~/cross-platform/media/android_emu_virtual_adapter_properties.png "Android_Emu_Virtual_Adapter_Properties")  
+         ![Proprietà della scheda virtuale](../cross-platform/media/android_emu_virtual_adapter_properties.png "Android_Emu_Virtual_Adapter_Properties")  
   
     3.  Per questo adapter, gli unici elementi che devono essere selezionati in **la connessione utilizza i seguenti elementi** riportato di seguito:  
   
@@ -259,7 +240,7 @@ Questo argomento contiene informazioni che consentono di risolvere i problemi ch
   
     -   Aprire Hyper V e andare in Gestione commutatori virtuali. Creare un commutatore virtuale denominato "Windows Phone emulatore interna Switch" e impostarne il tipo di connessione **rete interna**.  
   
-         ![Gestione commutatori virtuali](~/cross-platform/media/android_emu_virtual_switch_manager.png "Android_Emu_Virtual_Switch_Manager")  
+         ![Gestione commutatori virtuali](../cross-platform/media/android_emu_virtual_switch_manager.png "Android_Emu_Virtual_Switch_Manager")  
   
      Ora avviare l'emulatore Dovrebbe funzionare.  
   

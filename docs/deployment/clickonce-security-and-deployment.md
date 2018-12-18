@@ -1,121 +1,119 @@
 ---
-title: "ClickOnce Security and Deployment | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/15/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-deployment"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-helpviewer_keywords: 
-  - "Windows applications, ClickOnce deployment"
-  - "deploying applications [ClickOnce]"
-  - "ClickOnce deployment"
-  - "publishing, ClickOnce"
+title: Protezione di applicazioni ClickOnce | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology: vs-ide-deployment
+ms.topic: conceptual
+dev_langs:
+- VB
+- CSharp
+- C++
+helpviewer_keywords:
+- Windows applications, ClickOnce deployment
+- deploying applications [ClickOnce]
+- ClickOnce deployment
+- publishing, ClickOnce
 ms.assetid: abab6d34-c3c2-45c1-a8b6-43c7d3131e7a
-caps.latest.revision: 32
-caps.handback.revision: 32
-author: "stevehoag"
-ms.author: "shoag"
-manager: "wpickett"
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 4ec2e74623c39640517ae73786d7865143bf1505
+ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/19/2018
 ---
-# ClickOnce Security and Deployment
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
-[!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] è una tecnologia di distribuzione che consente di creare applicazioni basate su Windows ad aggiornamento automatico che possono essere installate ed eseguite con un'interazione minima da parte dell'utente. [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] fornisce un supporto completo per la pubblicazione e l'aggiornamento di applicazioni distribuite con la tecnologia ClickOnce, a condizione che i progetti siano stati sviluppati con Visual Basic e Visual C\#.  Per informazioni sulla distribuzione di applicazioni Visual C\+\+, vedere [Distribuzione ClickOnce per applicazioni Visual C\+\+](/visual-cpp/ide/clickonce-deployment-for-visual-cpp-applications).  
+# <a name="clickonce-security-and-deployment"></a>Sicurezza e distribuzione di ClickOnce
+[!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] è una tecnologia di distribuzione che consente di creare applicazioni basate su Windows aggiornamento automatico che possono essere installate ed eseguite l'intervento dell'utente minima. [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] fornisce supporto completo per la pubblicazione e aggiornamento di applicazioni distribuite con la tecnologia ClickOnce se è stata sviluppata i progetti con Visual Basic e Visual c#. Per informazioni sulla distribuzione di applicazioni Visual C++, vedere [distribuzione ClickOnce per applicazioni Visual C++](/cpp/ide/clickonce-deployment-for-visual-cpp-applications).  
   
- La distribuzione [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] risolve tre problemi principali della distribuzione:  
+ [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] è possibile superare tre problemi principali della distribuzione:  
   
--   **Difficoltà di aggiornamento delle applicazioni.** Con la distribuzione tramite Microsoft Windows Installer, ogni volta che un'applicazione viene aggiornata, l'utente può installare un aggiornamento, sotto forma di file con estensione msp, e applicarlo al prodotto installato. La distribuzione [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] consente invece di fornire gli aggiornamenti in modo automatico.  Vengono scaricate solo le parti dell'applicazione che sono state modificate e quindi l'applicazione completa aggiornata viene reinstallata da una nuova cartella affiancata.  
+-   **Difficoltà nell'aggiornamento delle applicazioni.** Con la distribuzione di Microsoft Windows Installer, ogni volta che viene aggiornata un'applicazione, l'utente può installare un aggiornamento, un file msp e applicarlo al prodotto installato. con [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] distribuzione, è possibile fornire gli aggiornamenti automaticamente. Vengono scaricate solo le parti dell'applicazione che sono stati modificati, e reinstallata l'applicazione completa e aggiornata da una nuova cartella side-by-side.  
   
--   **Impatto sul computer dell'utente.** Con la distribuzione tramite Windows Installer le applicazioni sono spesso basate su componenti condivisi, con il conseguente rischio di conflitti di versione. Nella distribuzione [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)], invece, ciascuna applicazione è indipendente e non può interferire con le altre.  
+-   **Impatto sul computer dell'utente.** Con la distribuzione di Windows Installer, le applicazioni spesso si basano su componenti condivisi, con la possibilità di conflitti di versioni. con [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] distribuzione, ogni applicazione è indipendente e non può interferire con altre applicazioni.  
   
--   **Autorizzazioni di sicurezza.** Nella distribuzione tramite Windows Installer sono necessarie autorizzazioni amministrative e agli utenti sono imposte limitazioni relative all'installazione. La distribuzione [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] consente invece di eseguire l'installazione anche a utenti senza privilegi di amministratore, concedendo solo le autorizzazioni di sicurezza dall'accesso di codice necessarie per l'applicazione.  
+-   **Autorizzazioni di sicurezza.** Distribuzione di Windows Installer richiede autorizzazioni amministrative e consente solo per l'installazione utente limitati. [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] distribuzione consente agli utenti senza privilegi di amministratore installare, concedendo solo le autorizzazioni di sicurezza dall'accesso di codice necessarie per l'applicazione.  
   
- In passato, a causa di questi problemi, gli sviluppatori preferivano talvolta creare applicazioni Web anziché applicazioni basate su Windows, rinunciando a un'interfaccia utente avanzata a favore della semplicità di installazione.  La distribuzione di applicazioni mediante [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] consente di ottenere il meglio di entrambe le tecnologie.  
+ In passato, questi problemi causati talvolta gli sviluppatori di creare applicazioni Web anziché applicazioni basate su Windows, compromettere un'interfaccia utente avanzata per agevolare l'installazione. Tramite le applicazioni distribuite con [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)], è possibile ottenere il meglio di entrambe le tecnologie.  
   
-## Definizione di applicazione ClickOnce  
- Per applicazione [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] si intende qualsiasi applicazione Windows Presentation Foundation \(xbap\), Windows Form \(exe\), console \(exe\) o una soluzione Office \(dll\) pubblicata mediante la tecnologia [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)].  È possibile pubblicare un'applicazione [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] in tre modi diversi: da una pagina Web, da una condivisione file di rete o da un supporto, ad esempio un CD\-ROM.  Un'applicazione [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] può essere installata nel computer di un utente finale ed eseguita localmente anche quando il computer è offline, oppure può essere eseguita in modalità solo online senza essere installata in modo permanente nel computer dell'utente finale.  Per ulteriori informazioni, vedere [Choosing a ClickOnce Deployment Strategy](../deployment/choosing-a-clickonce-deployment-strategy.md).  
+## <a name="what-is-a-clickonce-application"></a>Che cos'è un'applicazione ClickOnce?  
+ Oggetto [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] applicazione è qualsiasi Windows Presentation Foundation (XBAP), Windows Form (.exe), l'applicazione console (.exe) o soluzione Office (con estensione dll) pubblicata mediante [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] tecnologia. È possibile pubblicare un [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] applicazione in tre modi diversi: da una pagina Web, da una condivisione di file di rete o da supporto, ad esempio un CD-ROM. Oggetto [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] applicazione può essere installata nel computer dell'utente finale ed eseguita localmente anche quando il computer è offline, oppure può essere eseguita in modalità solo online senza alcuna operazione di installazione in modo permanente nel computer dell'utente finale. Per altre informazioni, vedere [Scelta di una strategia di distribuzione ClickOnce](../deployment/choosing-a-clickonce-deployment-strategy.md).  
   
- Le applicazioni [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] possono essere autoaggiornanti, ossia possono verificare la presenza di versioni più recenti non appena disponibili e sostituire automaticamente gli eventuali file aggiornati.  Lo sviluppatore può specificare il comportamento dell'aggiornamento e l'amministratore di rete può controllare anche le strategie di aggiornamento, ad esempio contrassegnando un aggiornamento come obbligatorio.  Sia l'utente finale che l'amministratore possono inoltre eseguire il ripristino di una versione precedente.  Per ulteriori informazioni, vedere [Choosing a ClickOnce Update Strategy](../deployment/choosing-a-clickonce-update-strategy.md).  
+ [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] le applicazioni possono essere di aggiornamento automatico; è possibile cercare le versioni più recenti non appena diventano disponibili e sostituire automaticamente qualsiasi file aggiornati. Lo sviluppatore può specificare il comportamento di aggiornamento. un amministratore di rete può inoltre controllare le strategie di aggiornamento, ad esempio, contrassegnare un aggiornamento come obbligatorio. Gli aggiornamenti possono anche possibile eseguire il rollback a una versione precedente dall'utente finale o da un amministratore. Per ulteriori informazioni, vedere [scelta di una strategia di aggiornamento ClickOnce](../deployment/choosing-a-clickonce-update-strategy.md).  
   
- Poiché le applicazioni [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] sono isolate, è impossibile che l'installazione o l'esecuzione di un'applicazione [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] interrompa le applicazioni esistenti.  Le applicazioni [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] sono autonome; ogni applicazione [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] viene installata in una cache per utente, per applicazione sicura e da questa eseguita.  Le applicazioni [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] vengono eseguite nelle aree di sicurezza Intranet o Internet.  Se necessario, possono richiedere autorizzazioni di sicurezza elevate.  Per ulteriori informazioni, vedere [Protezione di applicazioni ClickOnce](../deployment/securing-clickonce-applications.md).  
+ Poiché [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] applicazioni risultano isolate, installare o eseguire un [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] applicazione non è possibile interrompere le applicazioni esistenti. [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] le applicazioni sono indipendenti. ogni [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] applicazione è installato ed eseguito da una cache sicura specifica-utente, per ogni applicazione. [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] le applicazioni eseguite nelle aree di protezione Internet o Intranet. Se necessario, l'applicazione può richiedere le autorizzazioni di sicurezza con privilegi elevati. Per altre informazioni, vedere [Protezione di applicazioni ClickOnce](../deployment/securing-clickonce-applications.md).  
   
-## Funzionamento della sicurezza ClickOnce  
- La sicurezza [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] principale è basata su certificati, criteri di sicurezza dall'accesso di codice e la richiesta di attendibilità ClickOnce.  
+## <a name="how-clickonce-security-works"></a>Come funziona la sicurezza ClickOnce  
+ Il core [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] protezione si basa sui certificati, i criteri di sicurezza di accesso di codice e la richiesta di attendibilità di ClickOnce.  
   
-### Certificati  
- I certificati Authenticode sono utilizzati per verificare l'autenticità dell'editore dell'applicazione.  Tramite Authenticode per la distribuzione dell'applicazione, ClickOnce impedisce che un programma pericoloso figuri come programma legittimo proveniente da una fonte definita e attendibile.  Facoltativamente, i certificati possono essere utilizzati anche per firmare l'applicazione e i manifesti della distribuzione al fine di dimostrare che i file non sono stati alterati.  Per ulteriori informazioni, vedere [ClickOnce e Authenticode](../deployment/clickonce-and-authenticode.md).  I certificati possono inoltre essere utilizzati per configurare i computer client in modo che dispongano di un elenco di editori attendibili.  Se un'applicazione proviene da un editore attendibile, può essere installata senza alcuna interazione da parte dell'utente.  Per ulteriori informazioni, vedere [Cenni preliminari sulla distribuzione di applicazioni attendibili](../deployment/trusted-application-deployment-overview.md).  
+### <a name="certificates"></a>Certificati  
+ Per verificare l'autenticità dell'editore dell'applicazione vengono utilizzati i certificati Authenticode. Utilizzando la tecnologia Authenticode per la distribuzione di applicazioni ClickOnce consente di impedire che un programma dannoso basato sulla creazione di se stesso come programma legittimo provenienti da un'origine definita e attendibile. Facoltativamente, i certificati possono essere utilizzati anche per firmare l'applicazione e i manifesti di distribuzione per dimostrare che i file non sono stati alterati. Per ulteriori informazioni, vedere [ClickOnce e Authenticode](../deployment/clickonce-and-authenticode.md). Certificati possono essere usati anche per configurare i computer client per un elenco di editori attendibili. Se un'applicazione proviene da un autore attendibile, può essere installato senza alcuna interazione dell'utente. Per altre informazioni, vedere [Trusted Application Deployment Overview](../deployment/trusted-application-deployment-overview.md).  
   
-### Sicurezza per l'accesso al codice  
- La sicurezza dall'accesso di codice consente di limitare l'accesso alle risorse protette da parte del codice.  Nella maggior parte dei casi, è possibile scegliere le aree Internet o Intranet locale per limitare le autorizzazioni.  Utilizzare la pagina **Sicurezza** in **Progettazione  progetti** per richiedere l'area adatta per l'applicazione.  È inoltre possibile eseguire il debug di applicazioni con autorizzazioni limitate per emulare l'esperienza dell'utente finale.  Per ulteriori informazioni, vedere [Sicurezza dall'accesso di codice per applicazioni ClickOnce](../deployment/code-access-security-for-clickonce-applications.md).  
+### <a name="code-access-security"></a>Sicurezza per l'accesso al codice  
+ Sicurezza dall'accesso di codice consente di limitare l'accesso alle risorse protette del codice. Nella maggior parte dei casi, è possibile scegliere le aree Internet o Intranet locale per limitare le autorizzazioni. Utilizzare il **sicurezza** nella pagina di **ProjectDesigner** per richiedere l'area appropriata per l'applicazione. È anche possibile eseguire il debug di applicazioni con autorizzazioni limitate per emulare l'esperienza dell'utente finale. Per altre informazioni, vedere [Sicurezza dall'accesso di codice per applicazioni ClickOnce](../deployment/code-access-security-for-clickonce-applications.md).  
   
-### Richiesta di attendibilità ClickOnce  
- Se l'applicazione richiede più autorizzazioni di quante ne consenta l'area, è possibile che venga richiesto all'utente finale di stabilirne l'attendibilità.  L'utente finale può decidere se applicazioni ClickOnce quali le applicazioni Windows Form, le applicazioni Windows Presentation Foundation, le applicazioni console, le applicazioni browser XAML e le soluzioni Office siano da considerarsi attendibili ai fini dell'esecuzione.  Per ulteriori informazioni, vedere [How to: Configure the ClickOnce Trust Prompt Behavior](../deployment/how-to-configure-the-clickonce-trust-prompt-behavior.md).  
+### <a name="clickonce-trust-prompt"></a>Richiesta di attendibilità ClickOnce  
+ Se l'applicazione richiede più autorizzazioni consente la zona, l'utente finale può essere richiesto di prendere una decisione di attendibilità. L'utente finale può decidere se le applicazioni ClickOnce, ad esempio le applicazioni Windows Form, applicazioni Windows Presentation Foundation, applicazioni console, applicazioni browser XAML e le soluzioni Office sono attendibili per l'esecuzione. Per ulteriori informazioni, vedere [procedura: configurare il comportamento dei messaggi di richiesta attendibilità di ClickOnce](../deployment/how-to-configure-the-clickonce-trust-prompt-behavior.md).  
   
-## Modalità di funzionamento della distribuzione ClickOnce  
- L'architettura principale di distribuzione [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] è basata su due file manifesto XML: un manifesto dell'applicazione e uno di distribuzione.  I file sono utilizzati per descrivere il percorso dal quale vengono installate le applicazioni ClickOnce, il modo e il momento in cui vengono aggiornate.  
+## <a name="how-clickonce-deployment-works"></a>Funzionamento della distribuzione ClickOnce  
+ Il core [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] distribuzione architettura è basata su due file manifesto XML: un manifesto dell'applicazione e un manifesto di distribuzione. I file vengono utilizzati per descrivere in cui le applicazioni ClickOnce sono installate da, la modalità di aggiornamento e quando vengono aggiornate.  
   
-### Pubblicazione di applicazioni ClickOnce  
- Nel manifesto dell'applicazione viene descritta l'applicazione vera e propria,  inclusi gli assembly, le dipendenze e i file da cui è costituita, oltre alle autorizzazioni necessarie e al percorso in cui saranno disponibili gli aggiornamenti.  Il manifesto dell'applicazione viene creato dallo sviluppatore mediante la Pubblicazione guidata di Visual Studio o lo strumento per la generazione e la modifica di manifesti \(Mage.exe\) di [!INCLUDE[winsdklong](../deployment/includes/winsdklong_md.md)].  Per ulteriori informazioni, vedere [How to: Publish a ClickOnce Application using the Publish Wizard](../Topic/How%20to:%20Publish%20a%20ClickOnce%20Application%20using%20the%20Publish%20Wizard.md).  
+### <a name="publishing-clickonce-applications"></a>Pubblicazione di applicazioni ClickOnce  
+ Il manifesto dell'applicazione descrive l'applicazione stessa. Ciò include gli assembly, le dipendenze e i file che costituiscono l'applicazione, le autorizzazioni necessarie e il percorso in cui saranno disponibili aggiornamenti. Lo sviluppatore di applicazioni viene creato il manifesto dell'applicazione tramite la pubblicazione guidata di Visual Studio o la generazione e la modifica dello strumento (Mage.exe) nei [!INCLUDE[winsdklong](../deployment/includes/winsdklong_md.md)]. Per ulteriori informazioni, vedere [procedura: pubblicare un'applicazione ClickOnce mediante la pubblicazione guidata](../deployment/how-to-publish-a-clickonce-application-using-the-publish-wizard.md).  
   
- Nel manifesto di distribuzione viene descritta la distribuzione dell'applicazione.  Sono inclusi il percorso del manifesto dell'applicazione e la versione dell'applicazione da eseguire nei client.  
+ Il manifesto di distribuzione viene descritto come l'applicazione viene distribuita. Ciò include il percorso del manifesto dell'applicazione e la versione dell'applicazione in cui i client devono eseguire.  
   
-### Distribuzione delle applicazioni ClickOnce  
- Una volta creato, il manifesto di distribuzione viene copiato nel percorso di distribuzione,  che può essere un server Web, una condivisione file di rete o un supporto quale un CD.  Anche il manifesto dell'applicazione e tutti i file dell'applicazione vengono copiati nel percorso specificato nel manifesto di distribuzione,  che può corrispondere al percorso di distribuzione o può essere un percorso differente.  In caso di utilizzo della **Pubblicazione guidata** di Visual Studio, le operazioni di copia vengono eseguite automaticamente.  
+### <a name="deploying-clickonce-applications"></a>Distribuzione di applicazioni ClickOnce  
+ Dopo averlo creato, il manifesto di distribuzione viene copiato nel percorso di distribuzione. Può trattarsi di un server Web, condivisione file di rete o supporto, ad esempio un CD. In un percorso di distribuzione specificato nel manifesto di distribuzione verranno copiati anche il manifesto dell'applicazione e tutti i file dell'applicazione. Può essere lo stesso come il percorso di distribuzione, o può essere un percorso diverso. Quando si utilizza il **pubblicazione guidata** in Visual Studio, le operazioni di copia vengono eseguite automaticamente.  
   
-### Installazione di applicazioni ClickOnce  
- Dopo la distribuzione nell'apposito percorso, gli utenti finali possono scaricare e installare l'applicazione facendo clic su un'icona che rappresenta il file del manifesto di distribuzione su una pagina Web o in una cartella.  Nella maggior parte dei casi viene visualizzata una semplice finestra di dialogo di conferma, dopodichè l'installazione prosegue e l'applicazione viene avviata senza altri interventi da parte dell'utente.  Nei casi in cui l'applicazione richiede autorizzazioni elevate, o se l'applicazione non è firmata con un certificato attendibile, viene richiesto all'utente di concedere l'autorizzazione prima di proseguire con l'installazione.  Sebbene le installazioni ClickOnce siano per utente, in presenza di prerequisiti che richiedono privilegi di amministratore potrebbe essere necessaria l'elevazione dell'autorizzazione.  Per ulteriori informazioni sulle autorizzazioni elevate, vedere [Protezione di applicazioni ClickOnce](../deployment/securing-clickonce-applications.md).  
+### <a name="installing-clickonce-applications"></a>Installazione di applicazioni ClickOnce  
+ Dopo la distribuzione nel percorso di distribuzione, gli utenti finali possono scaricare e installare l'applicazione facendo clic su un'icona che rappresenta il file manifesto di distribuzione in una pagina Web o in una cartella. Nella maggior parte dei casi, l'utente finale viene visualizzata una finestra di dialogo che chiede all'utente di confermare l'installazione, dopo l'installazione viene eseguita e l'applicazione viene avviata senza intervento aggiuntivo. Nei casi in cui l'applicazione richiede autorizzazioni elevate o se l'applicazione non è firmato da un certificato attendibile, la finestra di dialogo inoltre chiesto di concedere l'autorizzazione prima di poter continuare l'installazione. Sebbene ClickOnce installa per utente, l'elevazione delle autorizzazioni potrebbe essere necessario se esistono prerequisiti che richiedono privilegi di amministratore. Per ulteriori informazioni sulle autorizzazioni elevate, vedere [protezione delle applicazioni ClickOnce](../deployment/securing-clickonce-applications.md).  
   
- I certificati possono essere considerati attendibili a livello di computer o di impresa, così da consentire l'installazione senza alcuna notifica delle applicazioni ClickOnce firmate con un certificato attendibile.  Per ulteriori informazioni sui certificati attendibili, vedere [Cenni preliminari sulla distribuzione di applicazioni attendibili](../deployment/trusted-application-deployment-overview.md).  
+ Certificati possono essere considerati attendibili a livello di computer o enterprise, in modo che sia firmate con un certificato attendibile di applicazioni ClickOnce è possono installare automaticamente. Per ulteriori informazioni sui certificati attendibili, vedere [Cenni preliminari sulla distribuzione di applicazioni attendibili](../deployment/trusted-application-deployment-overview.md).  
   
- L'applicazione può essere aggiunta al menu **Start** dell'utente e al gruppo **Installazione applicazioni** nel **Pannello di controllo**.  A differenza di altre tecnologie di distribuzione, non viene aggiunto alcun elemento nella cartella **Programmi** né nel Registro di sistema e non sono richiesti diritti amministrativi per l'installazione.  
+ L'applicazione può essere aggiunta all'utente **avviare** menu e di ottenere il **Aggiungi / Rimuovi programmi** gruppo il **Pannello di controllo**. A differenza di altre tecnologie di distribuzione, viene aggiunto nulla al **programmi** cartella o il Registro di sistema e diritti amministrativi non sono necessari per l'installazione  
   
 > [!NOTE]
->  È inoltre possibile impedire che l'applicazione venga aggiunta al **menu Start** e al gruppo **Installazione applicazioni**, esattamente come per un'applicazione Web.  Per ulteriori informazioni, vedere [Choosing a ClickOnce Deployment Strategy](../deployment/choosing-a-clickonce-deployment-strategy.md).  
+>  È anche possibile impedire l'applicazione venga aggiunto il **avviare** menu e **Aggiungi / Rimuovi programmi** gruppo, in effetti esattamente come un'applicazione Web. Per altre informazioni, vedere [Scelta di una strategia di distribuzione ClickOnce](../deployment/choosing-a-clickonce-deployment-strategy.md).  
   
-### Aggiornamento di applicazioni ClickOnce  
- Quando gli sviluppatori creano una versione aggiornata dell'applicazione, generano un nuovo manifesto dell'applicazione e copiano i file in un percorso di distribuzione, che in genere corrisponde a una cartella di pari livello della cartella di distribuzione dell'applicazione originale.  L'amministratore aggiorna il manifesto di distribuzione in modo da puntare al percorso della nuova versione dell'applicazione.  
+### <a name="updating-clickonce-applications"></a>Aggiornamento di applicazioni ClickOnce  
+ Quando gli sviluppatori di applicazioni creano una versione aggiornata dell'applicazione, che genera un nuovo manifesto dell'applicazione e copiare i file in un percorso di distribuzione, in genere una cartella di pari livello nella cartella di distribuzione dell'applicazione originale. L'amministratore aggiorna il manifesto di distribuzione in modo che punti al percorso della nuova versione dell'applicazione.  
   
 > [!NOTE]
->  Per l'esecuzione di queste operazioni è possibile utilizzare la **Pubblicazione guidata** di Visual Studio.  
+>  Il **pubblicazione guidata** in Visual Studio può essere utilizzato per eseguire questi passaggi.  
   
- In aggiunta al percorso di distribuzione, il manifesto di distribuzione contiene anche un percorso di aggiornamento \(una pagina Web o una condivisione di file della rete\) dove l'applicazione verifica la presenza di versioni aggiornate.  Le proprietà **Publish** di [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] vengono utilizzate per specificare quando e con quale frequenza l'applicazione deve verificare la disponibilità di eventuali aggiornamenti.  È possibile specificare il comportamento dell'aggiornamento nel manifesto di distribuzione oppure presentare una serie di opzioni nell'interfaccia utente dell'applicazione mediante le API di [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)].  Le proprietà relative alla pubblicazione possono inoltre essere utilizzate per rendere obbligatori gli aggiornamenti o per eseguire il rollback a una versione precedente.  Per ulteriori informazioni, vedere [Choosing a ClickOnce Update Strategy](../deployment/choosing-a-clickonce-update-strategy.md).  
+ Oltre al percorso di distribuzione, il manifesto di distribuzione contiene anche un percorso di aggiornamento (una condivisione file pagina Web o di rete) in cui viene controllata per le versioni aggiornate. [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] **Pubblicare** proprietà vengono utilizzate per specificare quando e con quale frequenza l'applicazione deve cercare gli aggiornamenti. Comportamento di aggiornamento può essere specificato nel manifesto di distribuzione o può essere presentata come scelte dell'utente nell'interfaccia utente dell'applicazione mediante il [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] API. Inoltre, **pubblica** proprietà possono essere utilizzate per rendere gli aggiornamenti obbligatori o eseguire il rollback a una versione precedente. Per ulteriori informazioni, vedere [scelta di una strategia di aggiornamento ClickOnce](../deployment/choosing-a-clickonce-update-strategy.md).  
   
-### Programmi di installazione di terze parti  
- È possibile personalizzare il programma di installazione ClickOnce per installare componenti di terze parti insieme all'applicazione.  È necessario disporre del package ridistribuibile \(file EXE o MSI\) e descriverlo con un manifesto del prodotto indipendente dalla lingua e un manifesto di pacchetto specifico della lingua.  Per ulteriori informazioni, vedere [Creazione di programmi di avvio automatico](../deployment/creating-bootstrapper-packages.md).  
+### <a name="third-party-installers"></a>Programmi di installazione di terze parti  
+ È possibile personalizzare il programma di installazione ClickOnce per installare i componenti di terze parti insieme all'applicazione. È necessario disporre del package ridistribuibile (file .exe o file con estensione msi) e descrivono il pacchetto con un manifesto del prodotto indipendente dalla lingua e un manifesto di pacchetto specifico della lingua. Per ulteriori informazioni, vedere [la creazione di pacchetti del programma di avvio](../deployment/creating-bootstrapper-packages.md).  
   
-## Strumenti ClickOnce  
- Nella tabella seguente vengono illustrati gli strumenti che è possibile utilizzare per generare, modificare, firmare e rifirmare i manifesti dell'applicazione e della distribuzione.  
+## <a name="clickonce-tools"></a>Strumenti di ClickOnce  
+ La tabella seguente illustra gli strumenti che è possibile utilizzare per generare, modificare, firmare e firmare nuovamente i manifesti dell'applicazione e distribuzione.  
   
 |Strumento|Descrizione|  
-|---------------|-----------------|  
-|[Pagina Sicurezza, Progettazione progetti](../ide/reference/security-page-project-designer.md)|Consente di firmare i manifesti dell'applicazione e della distribuzione.|  
-|[Pagina Pubblica, Progettazione progetti](../ide/reference/publish-page-project-designer.md)|Consente di generare e modificare i manifesti dell'applicazione e della distribuzione per applicazioni Visual Basic e Visual C\#.|  
-|[Mage.exe \(Strumento per la generazione e la modifica di manifesti\)](../Topic/Mage.exe%20\(Manifest%20Generation%20and%20Editing%20Tool\).md)|Consente di generare i manifesti dell'applicazione e della distribuzione per applicazioni Visual Basic, Visual C\# e Visual C\+\+.<br /><br /> Consente di firmare e rifirmare i manifesti dell'applicazione e della distribuzione.<br /><br /> Può essere eseguito da script batch e dal prompt dei comandi.|  
-|[MageUI.exe \(Manifest Generation and Editing Tool, Graphical Client\)](../Topic/MageUI.exe%20\(Manifest%20Generation%20and%20Editing%20Tool,%20Graphical%20Client\).md)|Consente di generare e modificare i manifesti dell'applicazione e della distribuzione.<br /><br /> Consente di firmare e rifirmare i manifesti dell'applicazione e della distribuzione.|  
-|[GenerateApplicationManifest Task](../msbuild/generateapplicationmanifest-task.md)|Consente di generare il manifesto dell'applicazione.<br /><br /> Può essere eseguito da MSBuild.  Per ulteriori informazioni, vedere [MSBuild Reference](../msbuild/msbuild-reference.md).|  
-|[GenerateDeploymentManifest Task](../msbuild/generatedeploymentmanifest-task.md)|Consente di generare il manifesto della distribuzione.<br /><br /> Può essere eseguito da MSBuild.  Per ulteriori informazioni, vedere [MSBuild Reference](../msbuild/msbuild-reference.md).|  
-|[SignFile Task](../msbuild/signfile-task.md)|Consente di firmare i manifesti dell'applicazione e della distribuzione.<br /><br /> Può essere eseguito da MSBuild.  Per ulteriori informazioni, vedere [MSBuild Reference](../msbuild/msbuild-reference.md).|  
-|<xref:Microsoft.Build.Tasks.Deployment.ManifestUtilities>|Consente di sviluppare un'applicazione personalizzata per generare i manifesti dell'applicazione e della distribuzione.|  
+|----------|-----------------|  
+|[Pagina Sicurezza, Creazione progetti](../ide/reference/security-page-project-designer.md)|Firma i manifesti dell'applicazione e distribuzione.|  
+|[Pagina Pubblica, Creazione progetti](../ide/reference/publish-page-project-designer.md)|Genera l'errore e modificare i manifesti dell'applicazione e di distribuzione per le applicazioni Visual Basic e Visual c#.|  
+|[Mage.exe (Strumento per la generazione e la modifica di manifesti)](/dotnet/framework/tools/mage-exe-manifest-generation-and-editing-tool)|Genera i manifesti dell'applicazione e di distribuzione per le applicazioni Visual Basic, Visual c# e Visual C++.<br /><br /> Firma e firma nuovamente i manifesti dell'applicazione e distribuzione.<br /><br /> Può essere eseguito dal prompt dei comandi e script di batch.|  
+|[MageUI.exe (Strumento per la generazione e la modifica di manifesti, client grafico)](/dotnet/framework/tools/mageui-exe-manifest-generation-and-editing-tool-graphical-client)|Genera l'errore e modificare i manifesti dell'applicazione e di distribuzione.<br /><br /> Firma e firma nuovamente i manifesti dell'applicazione e distribuzione.|  
+|[Attività GenerateApplicationManifest](../msbuild/generateapplicationmanifest-task.md)|Genera il manifesto dell'applicazione.<br /><br /> Può essere eseguito da MSBuild. Per ulteriori informazioni, vedere [di riferimento su MSBuild](../msbuild/msbuild-reference.md).|  
+|[Attività GenerateDeploymentManifest](../msbuild/generatedeploymentmanifest-task.md)|Genera il manifesto di distribuzione.<br /><br /> Può essere eseguito da MSBuild. Per ulteriori informazioni, vedere [di riferimento su MSBuild](../msbuild/msbuild-reference.md).|  
+|[Attività SignFile](../msbuild/signfile-task.md)|Firma i manifesti dell'applicazione e distribuzione.<br /><br /> Può essere eseguito da MSBuild. Per ulteriori informazioni, vedere [di riferimento su MSBuild](../msbuild/msbuild-reference.md).|  
+|<xref:Microsoft.Build.Tasks.Deployment.ManifestUtilities>|Sviluppare un'applicazione personalizzata per generare i manifesti dell'applicazione e distribuzione.|  
   
- Nella tabella seguente viene indicata la versione di .NET Framework richiesta dai vari browser per supportare le applicazioni ClickOnce.  
+ La tabella seguente illustra la versione di .NET Framework necessaria per supportare le applicazioni ClickOnce in questi browser.  
   
 |Browser|Versione di .NET Framework|  
-|-------------|--------------------------------|  
+|-------------|----------------------------|  
 |Internet Explorer|2.0, 3.0, 3.5, 3.5 SP1, 4|  
 |Firefox|2.0 SP1, 3.5 SP1, 4|  
   
-## Vedere anche  
- [ClickOnce Deployment on Windows Vista](../deployment/clickonce-deployment-on-windows-vista.md)   
- [Publishing ClickOnce Applications](../deployment/publishing-clickonce-applications.md)   
+## <a name="see-also"></a>Vedere anche  
+ [Distribuzione ClickOnce in Windows Vista](../deployment/clickonce-deployment-on-windows-vista.md)   
+ [Pubblicazione di applicazioni ClickOnce](../deployment/publishing-clickonce-applications.md)   
  [Protezione di applicazioni ClickOnce](../deployment/securing-clickonce-applications.md)   
- [Deploying COM Components with ClickOnce](../deployment/deploying-com-components-with-clickonce.md)   
- [Building ClickOnce Applications from the Command Line](../deployment/building-clickonce-applications-from-the-command-line.md)   
- [Debugging ClickOnce Applications That Use System.Deployment.Application](../deployment/debugging-clickonce-applications-that-use-system-deployment-application.md)
+ [Distribuzione di componenti COM con ClickOnce](../deployment/deploying-com-components-with-clickonce.md)   
+ [Compilazione di applicazioni ClickOnce dalla riga di comando](../deployment/building-clickonce-applications-from-the-command-line.md)   
+ [Debug di applicazioni ClickOnce in cui si usa System.Deployment.Application](../deployment/debugging-clickonce-applications-that-use-system-deployment-application.md)

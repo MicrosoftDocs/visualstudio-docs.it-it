@@ -1,51 +1,57 @@
 ---
-title: "IDebugProperty::GetExtendedInfo | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/18/2017"
-ms.prod: "windows-script-interfaces"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-apiname: IDebugProperty.GetExtendedInfo
-apilocation: scrobj.dll
-helpviewer_keywords: 
-  - "IDebugProperty::GetExtendedInfo"
+title: IDebugProperty::GetExtendedInfo | Documenti Microsoft
+ms.custom: ''
+ms.date: 01/18/2017
+ms.prod: windows-script-interfaces
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
+ms.topic: reference
+apiname:
+- IDebugProperty.GetExtendedInfo
+apilocation:
+- scrobj.dll
+helpviewer_keywords:
+- IDebugProperty::GetExtendedInfo
 ms.assetid: a989ade5-16d5-4ee6-8d8a-8dcbfad24034
 caps.latest.revision: 8
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 8
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.openlocfilehash: cc549ecc4cfa3b3cbbb754585c751b16df2fd8a6
+ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/27/2017
 ---
-# IDebugProperty::GetExtendedInfo
-Gets ha esteso le informazioni per la proprietà.  
+# <a name="idebugpropertygetextendedinfo"></a>IDebugProperty::GetExtendedInfo
+Ottiene le informazioni per la proprietà estese.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
 HRESULT GetExtendedInfo (  
-   ULONG  cInfos,  
-   GUID*  rgguidExtendedInfo,  
-   VARIANT* pExtendedInfo  
+   ULONG  cInfos,  
+   GUID*  rgguidExtendedInfo,  
+   VARIANT* pExtendedInfo  
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `cInfos`  
- \[in\] numero di informazioni estese oggetti.  
+ [in] Numero di oggetti informazioni estese.  
   
  `rgguidExtendedInfo`  
- \[in\] matrice di oggetti `GUID`viene passata in modo da poter recuperare più elementi di informazioni estese contemporaneamente.  
+ [in] Matrice di `GUID`s viene passato in modo che più elementi di informazioni estese possono essere recuperati allo stesso tempo.  
   
  `pExtendedInfo`  
- \[out\] restituisce una matrice `VARIANT`oggetti che può essere utilizzata per recuperare le informazioni di proprietà estesa.  
+ [out] Restituisce una matrice di `VARIANT`che può essere utilizzato per recuperare le informazioni sulle proprietà estese.  
   
-## Valore restituito  
- Restituisce `HRESULT`valido, in genere `S_OK`.  
+## <a name="return-value"></a>Valore restituito  
+ Restituisce un oggetto valido `HRESULT`, in genere `S_OK`.  
   
-## Note  
- Questa interfaccia ottiene informazioni estese per l'oggetto.  L'api esiste solo a scopo di recuperare le informazioni non si prestano a essere recuperato mediante l'utilizzo `IDebugProperty::GetPropertyInfo`\).  
+## <a name="remarks"></a>Note  
+ Questa interfaccia ottiene estese informazioni per questo oggetto. L'API esiste solo allo scopo di recupero di informazioni che non si prestano a recuperati dall'uso di `IDebugProperty::GetPropertyInfo`).  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Interfaccia IDebugProperty](../../winscript/reference/idebugproperty-interface.md)

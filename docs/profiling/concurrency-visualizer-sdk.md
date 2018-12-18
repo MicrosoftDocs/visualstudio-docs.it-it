@@ -1,41 +1,22 @@
 ---
 title: SDK del visualizzatore di concorrenza | Microsoft Docs
-ms.custom: 
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- vs-ide-debug
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.technology: vs-ide-debug
+ms.topic: conceptual
 f1_keywords:
 - vs.cv.sdk.about
 ms.assetid: 4b22cdf9-59b1-4c88-a6d8-1644a4a11e08
-caps.latest.revision: 11
 author: mikejo5000
 ms.author: mikejo
-manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 47057e9611b824c17077b9127f8d2f8b192d6eb8
-ms.openlocfilehash: 0d5c4895cb77388e45442dccdbfdd98884e81c18
-ms.contentlocale: it-it
-ms.lasthandoff: 05/13/2017
-
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 7268e786c7d68d642778f0c0dca31de170b424b4
+ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/19/2018
 ---
 # <a name="concurrency-visualizer-sdk"></a>SDK del visualizzatore di concorrenza
 Con l'SDK del visualizzatore di concorrenza è possibile instrumentare il codice sorgente in modo che nel visualizzatore di concorrenza siano visualizzate informazioni aggiuntive. È possibile associare i dati aggiuntivi a fasi ed eventi nel codice. Queste visualizzazioni aggiuntive sono note come *marcatori*.  Per una procedura dettagliata introduttiva, vedere [Introducing the Concurrency Visualizer SDK](http://go.microsoft.com/fwlink/?LinkId=235405).(Introduzione all'SDK del visualizzatore di concorrenza).  
@@ -57,7 +38,7 @@ Con l'SDK del visualizzatore di concorrenza è possibile instrumentare il codice
   
 3.  Aggiungere un'istruzione imports o using al codice.  
   
-    ```CSharp  
+    ```csharp  
     using Microsoft.ConcurrencyVisualizer.Instrumentation;  
     ```  
   
@@ -110,7 +91,7 @@ Con l'SDK del visualizzatore di concorrenza è possibile instrumentare il codice
   
 1.  Per usare un nuova serie <xref:Microsoft.ConcurrencyVisualizer.Instrumentation.MarkerSeries>, è necessario prima crearla tramite un oggetto <xref:Microsoft.ConcurrencyVisualizer.Instrumentation.MarkerWriter>. A questo punto è possibile generare gli eventi marcatori direttamente dalla nuova serie.  
   
-    ```CSharp  
+    ```csharp  
     MarkerSeries series1 = myMarkerWriter.CreateMarkerSeries("Series 1");  
     series1.WriteFlag("My flag");  
     ```  
@@ -143,7 +124,7 @@ Con l'SDK del visualizzatore di concorrenza è possibile instrumentare il codice
   
 |Titolo|Descrizione|  
 |-----------|-----------------|  
-|[C++ Library Reference](../profiling/cpp-library-reference.md) (Riferimento alla libreria C++)|Viene descritta l'API del visualizzatore di concorrenza per C++.|  
-|[C Library Reference](../profiling/c-library-reference.md) (Riferimento alla libreria C)|Viene descritta l'API del visualizzatore di concorrenza per C.|  
+|[Riferimento alla libreria C++](../profiling/cpp-library-reference.md)|Viene descritta l'API del visualizzatore di concorrenza per C++.|  
+|[Riferimento alla libreria C](../profiling/c-library-reference.md)|Viene descritta l'API del visualizzatore di concorrenza per C.|  
 |<xref:Microsoft.ConcurrencyVisualizer.Instrumentation>|Viene descritta l'API del visualizzatore di concorrenza per il codice gestito.|  
-|[Visualizzatore di concorrenza](../profiling/concurrency-visualizer.md)|Informazioni di riferimento sulle visualizzazioni e sui rapporti dei file di dati di profilatura che sono generati tramite il metodo di concorrenza e che includono dati di esecuzione thread.|
+|[Visualizzatore di concorrenze](../profiling/concurrency-visualizer.md)|Informazioni di riferimento sulle visualizzazioni e sui rapporti dei file di dati di profilatura che sono generati tramite il metodo di concorrenza e che includono dati di esecuzione thread.|

@@ -1,40 +1,23 @@
 ---
 title: -? (devenv.exe) | Microsoft Docs
-ms.custom: 
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - vs-ide-general
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: conceptual
 helpviewer_keywords:
 - /? Devenv switch
 ms.assetid: fd8fd6b2-1304-4d06-8118-6629666801fb
-caps.latest.revision: 10
 author: gewarren
 ms.author: gewarren
-manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 5db97d19b1b823388a465bba15d057b30ff0b3ce
-ms.openlocfilehash: 059e8272700a3d78f744a3ea4fe6cb8a41e28c4e
-ms.contentlocale: it-it
-ms.lasthandoff: 02/22/2017
-
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 06b99ec98dc871a65bcb9cf26bf864a6bbe67fce
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="-devenvexe"></a>/? (devenv.exe)
 Visualizza una finestra di messaggio contenente tutte le opzioni `devenv` e una breve descrizione di ciascuna di esse.  

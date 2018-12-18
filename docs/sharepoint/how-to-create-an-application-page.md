@@ -1,59 +1,58 @@
 ---
-title: "Procedura: creare una pagina applicazione"
-ms.custom: ""
-ms.date: "02/02/2017"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "office-development"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "VB"
-  - "CSharp"
-helpviewer_keywords: 
-  - "pagine applicazione [sviluppo per SharePoint in Visual Studio], aggiunta"
-  - "pagine applicazione [sviluppo per SharePoint in Visual Studio], creazione"
-ms.assetid: 9ad7044a-2fa7-4bba-8f25-b9f2cc1b7c6b
-caps.latest.revision: 16
-author: "kempb"
-ms.author: "kempb"
-manager: "ghogen"
-caps.handback.revision: 15
+title: 'Procedura: creare una pagina applicazione | Documenti Microsoft'
+ms.custom: ''
+ms.date: 02/02/2017
+ms.technology:
+- office-development
+ms.topic: conceptual
+dev_langs:
+- VB
+- CSharp
+- VB
+- CSharp
+helpviewer_keywords:
+- application pages [SharePoint development in Visual Studio], adding
+- application pages [SharePoint development in Visual Studio], creating
+author: TerryGLee
+ms.author: tglee
+manager: douge
+ms.workload:
+- office
+ms.openlocfilehash: a95a7e08a52ff2b6d20f3e84f7456c37e8901ab2
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# Procedura: creare una pagina applicazione
-  È possibile creare una pagina Web ASP.NET per uno o più siti SharePoint.  In SharePoint queste pagine sono dette pagine applicazione.  A differenza di una pagina di sito, in una pagina applicazione è contenuto code\-behind eseguito nella pagina.  Per ulteriori informazioni, vedere [Creazione di pagine applicazione per SharePoint](../sharepoint/creating-application-pages-for-sharepoint.md).  
+# <a name="how-to-create-an-application-page"></a>Procedura: creare una pagina applicazione
+  È possibile creare una pagina Web ASP.NET per uno o più siti di SharePoint. In SharePoint, queste pagine sono dette pagine dell'applicazione. A differenza di una pagina del sito, una pagina dell'applicazione contiene codice che viene eseguito dopo la pagina. Per ulteriori informazioni, vedere [la creazione di pagine dell'applicazione per SharePoint](../sharepoint/creating-application-pages-for-sharepoint.md).  
   
-### Per creare una pagina applicazione  
+### <a name="to-create-an-application-page"></a>Per creare una pagina dell'applicazione  
   
-1.  Aprire o creare un progetto SharePoint in Visual Studio.  
+1.  In Visual Studio aprire o creare un progetto SharePoint.  
   
-     Per ulteriori informazioni, vedere [Modelli di progetto e di elementi di progetto SharePoint](../sharepoint/sharepoint-project-and-project-item-templates.md).  
+     Per ulteriori informazioni, vedere [progetto SharePoint e i modelli di progetto](../sharepoint/sharepoint-project-and-project-item-templates.md).  
   
 2.  Scegliere il nodo di progetto in **Esplora soluzioni**.  
   
-3.  Sulla barra dei menu scegliere **Progetto**, **Aggiungi nuovo elemento**.  
+3.  Nella barra dei menu, scegliere **progetto**, **Aggiungi nuovo elemento**.  
   
-4.  Nella finestra di dialogo **Aggiungi nuovo elemento**, espandere il nodo **SharePoint**, quindi scegliere l'elemento **2010**.  
+4.  Nel **Aggiungi nuovo elemento** finestra di dialogo, espandere il **SharePoint** nodo, quindi scegliere il **2010** elemento.  
   
-5.  Nell'elenco di modelli SharePoint, scegliere **Pagina applicazione**.  
+5.  Nell'elenco dei modelli di SharePoint, scegliere **pagina applicazione**.  
   
-6.  Nella casella **Nome** specificare un nome per la pagina applicazione, quindi scegliere il pulsante **Aggiungi**.  
+6.  Nel **nome** , specificare un nome per la pagina dell'applicazione e quindi scegliere il **Aggiungi** pulsante.  
   
-     In Visual Studio verranno aggiunti al progetto alcuni file e cartelle.  Per ulteriori informazioni su questi file, vedere [Creazione di pagine applicazione per SharePoint](../sharepoint/creating-application-pages-for-sharepoint.md).  
+     Visual Studio aggiunge diverse cartelle e file al progetto. Per ulteriori informazioni su questi file, vedere [la creazione di pagine dell'applicazione per SharePoint](../sharepoint/creating-application-pages-for-sharepoint.md).  
   
-     Nella visualizzazione **Origine** della finestra di progettazione di Visual Web Developer, viene visualizzato il file di pagina ASP.NET.  È possibile progettare la pagina aggiungendo i controlli dalla **Casella degli strumenti** e collocandoli nei segnaposti del contenuto.  Per ulteriori informazioni, vedere [Visualizzazione Origine, Progettazione pagine Web](http://msdn.microsoft.com/it-it/5911396b-fe51-4150-9ff1-b085f812862f).  
+     Nel **origine** visualizzazione della finestra di progettazione Visual Web Developer, il file della pagina ASP.NET è disponibile. È possibile progettare la pagina aggiungendo i controlli dal **della casella degli strumenti** e inserendoli nei segnaposti del contenuto. Per ulteriori informazioni, vedere [visualizzazione origine, progettazione della pagina Web](http://msdn.microsoft.com/en-us/5911396b-fe51-4150-9ff1-b085f812862f).  
   
-7.  Se si vuole gestire gli eventi del controllo, aggiungere il codice al file di codice per la pagina dell'applicazione.  
+7.  Se si desidera gestire gli eventi di controllo, aggiungere il codice al file di codice per la pagina applicazione.  
   
-     Il file di codice viene visualizzato se si espande il nodo per il file della pagina ASP.NET e ha un'estensione .cs o .vb, a seconda del linguaggio del progetto.  Per un esempio end\-to\-end relativo a come creare una pagina applicazione, vedere [Procedura dettagliata: creazione di una pagina di un'applicazione SharePoint](../sharepoint/walkthrough-creating-a-sharepoint-application-page.md).  
+     Il file di codice viene visualizzato se si espande il nodo per il file della pagina ASP.NET e presenta un'estensione cs o vb, a seconda del linguaggio del progetto. Per un esempio end-to-end di come creare una pagina applicazione, vedere [procedura dettagliata: creazione di una pagina dell'applicazione SharePoint](../sharepoint/walkthrough-creating-a-sharepoint-application-page.md).  
   
-## Vedere anche  
- [Visual Studio Web Development Content Map](http://msdn.microsoft.com/it-it/9c31f93b-c8fb-4599-9b14-6194ec8c7539)   
- [Creazione di pagine applicazione per SharePoint](../sharepoint/creating-application-pages-for-sharepoint.md)   
+## <a name="see-also"></a>Vedere anche  
+ [Creazione di pagine dell'applicazione per SharePoint](../sharepoint/creating-application-pages-for-sharepoint.md)   
  [Procedura dettagliata: creazione di una pagina di un'applicazione SharePoint](../sharepoint/walkthrough-creating-a-sharepoint-application-page.md)  
   
   

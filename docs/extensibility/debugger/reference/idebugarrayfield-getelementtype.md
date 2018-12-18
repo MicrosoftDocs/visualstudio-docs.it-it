@@ -1,52 +1,53 @@
 ---
-title: "IDebugArrayField::GetElementType | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "IDebugArrayField::GetElementType"
-helpviewer_keywords: 
-  - "Metodo IDebugArrayField::GetElementType"
+title: IDebugArrayField::GetElementType | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology:
+- vs-ide-sdk
+ms.topic: conceptual
+f1_keywords:
+- IDebugArrayField::GetElementType
+helpviewer_keywords:
+- IDebugArrayField::GetElementType method
 ms.assetid: c46bf625-0a48-4cbb-8f1f-286356f2c065
-caps.latest.revision: 9
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 9
+author: gregvanl
+ms.author: gregvanl
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: d3c2eb6009eacd40081be28cc5945310d7a00fc1
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# IDebugArrayField::GetElementType
-[!INCLUDE[vs2017banner](../../../code-quality/includes/vs2017banner.md)]
-
-Ottiene il tipo di elemento della matrice.  
+# <a name="idebugarrayfieldgetelementtype"></a>IDebugArrayField::GetElementType
+Ottiene il tipo di elemento nella matrice.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp#  
-HRESULT GetElementType(   
-   IDebugField** ppType  
+```cpp  
+HRESULT GetElementType(   
+   IDebugField** ppType  
 );  
 ```  
   
-```c#  
+```csharp  
 int GetElementType(  
-   out IDebugField ppType  
+   out IDebugField ppType  
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `ppType`  
- \[out\]  restituisce [IDebugField](../../../extensibility/debugger/reference/idebugfield.md) un oggetto che descrive il tipo di elemento.  
+ [out] Restituisce un [IDebugField](../../../extensibility/debugger/reference/idebugfield.md) oggetto che descrive il tipo di elemento.  
   
-## Valore restituito  
- Se l'operazione riesce, restituisce S\_OK, in caso contrario, restituisce un codice di errore.  
+## <a name="return-value"></a>Valore restituito  
+ Se ha esito positivo, restituisce S_OK; in caso contrario, restituisce un codice di errore.  
   
-## Note  
- [IDebugArrayField](../../../extensibility/debugger/reference/idebugarrayfield.md) L'oggetto presuppone che tutti gli elementi della matrice abbiano lo stesso tipo.  
+## <a name="remarks"></a>Note  
+ Il [IDebugArrayField](../../../extensibility/debugger/reference/idebugarrayfield.md) oggetto presuppone che tutti gli elementi della matrice sono dello stesso tipo.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IDebugArrayField](../../../extensibility/debugger/reference/idebugarrayfield.md)   
  [IDebugField](../../../extensibility/debugger/reference/idebugfield.md)

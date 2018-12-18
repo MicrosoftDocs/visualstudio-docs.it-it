@@ -1,40 +1,24 @@
 ---
 title: 'Nuova generazione del progetto: Dietro le quinte, parte 2 | Documenti Microsoft'
-ms.custom: 
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - vs-ide-sdk
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: conceptual
 helpviewer_keywords:
 - projects [Visual Studio], new project dialog
 - projects [Visual Studio], new project generation
 ms.assetid: 73ce91d8-0ab1-4a1f-bf12-4d3c49c01e13
-caps.latest.revision: 14
+author: gregvanl
 ms.author: gregvanl
-manager: ghogen
-translation.priority.mt:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 5581224b17a7b42f65b69f741f984a144d78fc26
-ms.openlocfilehash: 859eeac9c2fd322dcf231e9c70fe83b92b099111
-ms.contentlocale: it-it
-ms.lasthandoff: 04/04/2017
-
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: 69174be20a0961a6074650471bcb4b9d1df9fa98
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="new-project-generation-under-the-hood-part-two"></a>Nuova generazione del progetto: Dietro le quinte, parte 2
 In [nuova generazione progetto: in parte integrante, parte 1](../../extensibility/internals/new-project-generation-under-the-hood-part-one.md) abbiamo visto come **nuovo progetto** inserite nella finestra di dialogo. Si supponga di aver selezionato un **applicazione Windows di Visual c#**, compilati il **nome** e **percorso** caselle di testo e si fa clic su OK.  
@@ -42,7 +26,7 @@ In [nuova generazione progetto: in parte integrante, parte 1](../../extensibilit
 ## <a name="generating-the-solution-files"></a>Generazione dei file di soluzione  
  Scelta di un modello di applicazione indirizza [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] per decomprimere e aprire il file con estensione vstemplate corrispondente e per avviare un modello per interpretare i comandi XML in questo file. Questi comandi creano progetti ed elementi di progetto nella soluzione nuova o esistente.  
   
- Il modello decomprime il file di origine, denominato modelli di elementi, dalla stessa cartella con estensione zip che contiene il file. vstemplate. Il modello consente di copiare questi file al nuovo progetto, di conseguenza la personalizzazione. Per una panoramica dei modelli di progetto e di elemento, vedere [NIB: modelli di Visual Studio](http://msdn.microsoft.com/en-us/141fccaa-d68f-4155-822b-27f35dd94041).  
+ Il modello decomprime il file di origine, denominato modelli di elementi, dalla stessa cartella con estensione zip che contiene il file. vstemplate. Il modello consente di copiare questi file al nuovo progetto, di conseguenza la personalizzazione.  
   
 ### <a name="template-parameter-replacement"></a>Sostituzione dei parametri di modello  
  Quando il modello di copia di un modello di elemento a un nuovo progetto, eventuali parametri di modello vengono sostituite con le stringhe per personalizzare il file. Un parametro di modello è un token speciale che è preceduto e seguito da un segno di dollaro, ad esempio, $ $date.  
@@ -63,7 +47,7 @@ namespace $safeprojectname$
 }  
 ```  
   
- Se si crea un nuovo progetto applicazione Windows denominato "semplice", il modello sostituisce il `$safeprojectname$` parametro con il nome del progetto.  
+ Se si crea un nuovo progetto applicazione Windows denominato "semplice", il modello sostituisce la `$safeprojectname$` parametro con il nome del progetto.  
   
 ```  
 using System;  
@@ -79,7 +63,7 @@ namespace Simple
 }  
 ```  
   
- Per un elenco completo dei parametri di modello, vedere [parametri di modello](../../ide/template-parameters.md).  
+ Per un elenco completo dei parametri dei modelli, vedere [Parametri di modelli](../../ide/template-parameters.md).  
   
 ## <a name="a-look-inside-a-vstemplate-file"></a>Un aspetto all'interno di una. File VSTemplate  
  Il formato è un file. vstemplate di base  
@@ -93,7 +77,7 @@ namespace Simple
 </VSTemplate>  
 ```  
   
- È stato esaminato il \<TemplateData > sezione la [nuova generazione di progetto: in parte integrante, parte 1](../../extensibility/internals/new-project-generation-under-the-hood-part-one.md). I tag in questa sezione consentono di controllare l'aspetto del **nuovo progetto** la finestra di dialogo.  
+ È stato esaminato il \<TemplateData > sezione di [nuova generazione progetto: in parte integrante, parte 1](../../extensibility/internals/new-project-generation-under-the-hood-part-one.md). I tag in questa sezione consentono di controllare l'aspetto del **nuovo progetto** la finestra di dialogo.  
   
  I tag di \<TemplateContent > sezione la generazione di nuovi progetti ed elementi di progetto di controllo. Ecco il \<TemplateContent > sezione dal file nella cartella \Programmi\Microsoft Visual Studio 8\Common7\IDE\ProjectTemplates\CSharp\Windows\1033\WindowsApplication.zip cswindowsapplication.vstemplate.  
   
@@ -129,7 +113,7 @@ namespace Simple
 </TemplateContent>  
 ```  
   
- Il \<progetto > tag controlla la generazione di un progetto e \<ProjectItem > tag controlla la generazione di un elemento di progetto. Se il parametro ReplaceParameters è true, il modello verrà personalizzare tutti i parametri di modello nel file di progetto o dell'elemento. In questo caso, tutti gli elementi di progetto personalizzati, ad eccezione di Settings. Settings.  
+ Il \<progetto > tag controlla la generazione di un progetto e \<ProjectItem > tag controlla la generazione di un elemento di progetto. Se il parametro ReplaceParameters è true, il modello verrà personalizzare tutti i parametri di modello nel file di progetto o elemento. In questo caso, tutti gli elementi di progetto personalizzati, ad eccezione di Settings. Settings.  
   
  Il parametro TargetFileName specifica il nome e percorso relativo del file di progetto risultante o dell'elemento. Ciò consente di creare una struttura di cartelle per il progetto. Se non si specifica questo argomento, l'elemento del progetto avrà lo stesso nome di modello di elemento di progetto.  
   
@@ -161,7 +145,7 @@ namespace Simple
 </ItemGroup>  
 ```  
   
- È possibile visualizzare sono i riferimenti al sei progetto che vengono visualizzati in Esplora soluzioni. Ecco una sezione da un altro \<ItemGroup >. Numero di righe di codice sia stata eliminata per maggiore chiarezza. In questa sezione viene Settings.Designer.cs dipende Settings:  
+ È possibile visualizzare sono i riferimenti al sei progetto che vengono visualizzati in Esplora soluzioni. Ecco una sezione da un altro \<ItemGroup >. Numero di righe di codice sia stata eliminata per maggiore chiarezza. In questa sezione rende Settings.Designer.cs dipendente Settings:  
   
 ```  
 <ItemGroup>  

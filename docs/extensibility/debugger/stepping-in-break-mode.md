@@ -1,33 +1,34 @@
 ---
-title: "L&#39;esecuzione in modalit&#224; di interruzione | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "modalità di interruzione, l'esecuzione di istruzioni"
-  - "esecuzione di istruzioni, in modalità di interruzione"
-  - "debug [Debugging SDK], esecuzione di istruzioni in modalità di interruzione"
+title: Esecuzione in modalità di interruzione | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology:
+- vs-ide-sdk
+ms.topic: conceptual
+helpviewer_keywords:
+- break mode, stepping
+- stepping, in break mode
+- debugging [Debugging SDK], stepping in break mode
 ms.assetid: b08dc8ee-6c63-4462-a097-6f525cfbb35a
-caps.latest.revision: 7
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 7
+author: gregvanl
+ms.author: gregvanl
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: 1cf10254ec4642bd6dd671124d4a0600794de6fb
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# L&#39;esecuzione in modalit&#224; di interruzione
-[!INCLUDE[vs2017banner](../../code-quality/includes/vs2017banner.md)]
-
-L'esempio seguente viene descritto il processo che si verifica quando il debugger è in modalità di interruzione e deve eseguire il codice un'istruzione alla volta:  
+# <a name="stepping-in-break-mode"></a>Esecuzione in modalità di interruzione
+Di seguito viene descritto il processo che si verifica quando il debugger è in modalità di interruzione e deve esaminare il codice:  
   
-## Processo avanzare  
+## <a name="stepping-process"></a>Processo di esecuzione di istruzioni  
   
-1.  chiamata [IDebugProgram2:: passaggio](../../extensibility/debugger/reference/idebugprogram2-step.md) con gli argomenti di [STEPUNIT](../../extensibility/debugger/reference/stepunit.md) e di [STEPKIND](../../extensibility/debugger/reference/stepkind.md) per eseguire un passaggio.  
+1.  Chiamare [IDebugProgram2::Step](../../extensibility/debugger/reference/idebugprogram2-step.md) con [STEPKIND](../../extensibility/debugger/reference/stepkind.md) e [STEPUNIT](../../extensibility/debugger/reference/stepunit.md) argomenti per eseguire un passaggio.  
   
-2.  Quando il passaggio viene completato, inviare [IDebugStepCompleteEvent2](../../extensibility/debugger/reference/idebugstepcompleteevent2.md) come evento bloccato.  
+2.  Al termine, il passaggio di inviare un [IDebugStepCompleteEvent2](../../extensibility/debugger/reference/idebugstepcompleteevent2.md) come un evento di arresto.  
   
-## Vedere anche  
- [Eventi di chiamata del Debugger](../../extensibility/debugger/calling-debugger-events.md)
+## <a name="see-also"></a>Vedere anche  
+ [Chiamata degli eventi del debugger](../../extensibility/debugger/calling-debugger-events.md)

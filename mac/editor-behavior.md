@@ -1,19 +1,16 @@
 ---
 title: Comportamento dell'editor
-description: 
+description: ''
 author: asb3993
 ms.author: amburns
 ms.date: 04/14/2017
-ms.topic: article
 ms.assetid: 81EE4460-26EB-4BB0-9297-932E1F88E4B8
+ms.openlocfilehash: 5de50299ec1d79f28687e5f49d8169ecd3413279
+ms.sourcegitcommit: 4c0bc21d2ce2d8e6c9d3b149a7d95f0b4d5b3f85
 ms.translationtype: HT
-ms.sourcegitcommit: e2b7ff9126e1cc38ac2e58d6be339b656a024e7f
-ms.openlocfilehash: 894bcbe66bd071bff1a6d904759f468b519da0f2
-ms.contentlocale: it-it
-ms.lasthandoff: 08/11/2017
-
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/20/2018
 ---
-
 # <a name="editor-behavior"></a>Comportamento dell'editor
 
 È possibile impostare i comportamenti dell'editor in modo da consentire la formattazione del codice mentre viene scritto. Queste azioni possono essere impostate in **Visual Studio > Preferenze... > Editor di testo > Comportamento**. Di seguito vengono descritte alcune delle funzioni usate più comunemente:

@@ -1,40 +1,39 @@
 ---
-title: "IDiaSymbol::get_isMatrixRowMajor | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
+title: IDiaSymbol::get_isMatrixRowMajor | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology: vs-ide-debug
+ms.topic: conceptual
+dev_langs:
+- C++
 ms.assetid: 36b1e881-ea76-48b0-b67f-e9eb0d19bec7
-caps.latest.revision: 3
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 3
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: af4d1817de2886ededb019942b55271480176ba8
+ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/18/2018
 ---
-# IDiaSymbol::get_isMatrixRowMajor
-[!INCLUDE[vs2017banner](../../code-quality/includes/vs2017banner.md)]
-
-Specifica se è maggiore della riga.  
+# <a name="idiasymbolgetismatrixrowmajor"></a>IDiaSymbol::get_isMatrixRowMajor
+Specifica se la matrice è riga principale.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp  
+```C++  
 HRESULT get_isMatrixRowMajor(   
    BOOL* pRetVal);  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `pRetVal`  
- \[out\] puntatore A `BOOL` che specifica se è maggiore della riga.  
+ [out] Un puntatore a un `BOOL` che specifica se la matrice è riga principale.  
   
-## Valore restituito  
- Se l'operazione riesce, restituisce `S_OK`; in caso contrario, restituisce `S_FALSE` o un codice di errore.  
+## <a name="return-value"></a>Valore restituito  
+ Se ha esito positivo, restituisce `S_OK`; in caso contrario, restituisce `S_FALSE` o un codice di errore.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IDiaSymbol](../../debugger/debug-interface-access/idiasymbol.md)

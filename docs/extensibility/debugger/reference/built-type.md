@@ -1,68 +1,69 @@
 ---
-title: "BUILT_TYPE | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "BUILT_TYPE"
-helpviewer_keywords: 
-  - "Struttura BUILT_TYPE"
+title: BUILT_TYPE | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology:
+- vs-ide-sdk
+ms.topic: conceptual
+f1_keywords:
+- BUILT_TYPE
+helpviewer_keywords:
+- BUILT_TYPE structure
 ms.assetid: cc02c32c-0f65-4210-ad25-a9b1899066e8
-caps.latest.revision: 7
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 7
+author: gregvanl
+ms.author: gregvanl
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: 14a9010925db5c175b7110fb12261eb135162246
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# BUILT_TYPE
-[!INCLUDE[vs2017banner](../../../code-quality/includes/vs2017banner.md)]
-
-Questa struttura specifica le informazioni su un tipo di campo utilizzato dai metadati.  
+# <a name="builttype"></a>BUILT_TYPE
+Questa struttura consente di specificare informazioni su un tipo di campo prelevato dai metadati.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp#  
+```cpp  
 typedef struct _tagTYPE_BUILT {  
-   ULONG32      ulAppDomainID;  
-   GUID         guidModule;  
-   IDebugField* pUnderlyingField;  
+   ULONG32      ulAppDomainID;  
+   GUID         guidModule;  
+   IDebugField* pUnderlyingField;  
 } BUILT_TYPE;  
 ```  
   
-```c#  
+```csharp  
 public struct BUILT_TYPE {  
-   public uint        ulAppDomainID;  
-   public Guid        guidModule;  
-   public IDebugField pUnderlyingField;  
+   public uint        ulAppDomainID;  
+   public Guid        guidModule;  
+   public IDebugField pUnderlyingField;  
 };  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  ulAppDomainID  
- ID dell'applicazione da cui il simbolo è stato acquistato.  Viene utilizzato per identificare in modo univoco un'istanza dell'applicazione.  
+ ID dell'applicazione da cui proviene il simbolo. Questo viene utilizzato per identificare in modo univoco un'istanza dell'applicazione.  
   
  guidModule  
  Il GUID del modulo che contiene questo campo.  
   
  pUnderlyingField  
- [IDebugField](../../../extensibility/debugger/reference/idebugfield.md) Un oggetto che identifica il campo sottostante associato a questo campo generato.  
+ Un [IDebugField](../../../extensibility/debugger/reference/idebugfield.md) oggetto che identifica il campo sottostante associato a questo campo viene compilato.  
   
-## Note  
- Questa struttura viene visualizzata come parte dell'[TYPE\_INFO](../../../extensibility/debugger/reference/type-info.md) unione nella struttura quando il campo di `dwKind` della struttura di `TYPE_INFO` è impostato su `TYPE_KIND_BUILT` \(un valore [dwTYPE\_KIND](../../../extensibility/debugger/reference/dwtype-kind.md) dell'enumerazione\).  
+## <a name="remarks"></a>Note  
+ Questa struttura viene visualizzato come parte dell'unione nel [TYPE_INFO](../../../extensibility/debugger/reference/type-info.md) struttura quando il `dwKind` campo il `TYPE_INFO` struttura è impostata su `TYPE_KIND_BUILT` (compreso il [dwTYPE_KIND](../../../extensibility/debugger/reference/dwtype-kind.md) enumerazione).  
   
-## Requisiti  
- intestazione: sh.h  
+## <a name="requirements"></a>Requisiti  
+ Intestazione: sh.h  
   
- Spazio dei nomi: Microsoft.VisualStudio.Debugger.Interop  
+ Namespace: Microsoft.VisualStudio.Debugger.Interop  
   
  Assembly: Microsoft.VisualStudio.Debugger.Interop.dll  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Strutture e unioni](../../../extensibility/debugger/reference/structures-and-unions.md)   
- [TYPE\_INFO](../../../extensibility/debugger/reference/type-info.md)   
- [dwTYPE\_KIND](../../../extensibility/debugger/reference/dwtype-kind.md)   
+ [TYPE_INFO](../../../extensibility/debugger/reference/type-info.md)   
+ [dwTYPE_KIND](../../../extensibility/debugger/reference/dwtype-kind.md)   
  [IDebugField](../../../extensibility/debugger/reference/idebugfield.md)

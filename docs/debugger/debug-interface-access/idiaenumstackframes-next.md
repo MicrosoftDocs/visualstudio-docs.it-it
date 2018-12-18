@@ -1,52 +1,51 @@
 ---
-title: "IDiaEnumStackFrames::Next | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "IDiaEnumStackFrames::Next (metodo)"
+title: 'Idiaenumstackframes:: Next | Documenti Microsoft'
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology: vs-ide-debug
+ms.topic: conceptual
+dev_langs:
+- C++
+helpviewer_keywords:
+- IDiaEnumStackFrames::Next method
 ms.assetid: 09378a21-d5e3-4213-b7e2-10f04d85295f
-caps.latest.revision: 8
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 8
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 68e84c31cb98cdbbe69e62aa1e572386100277a0
+ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/18/2018
 ---
-# IDiaEnumStackFrames::Next
-[!INCLUDE[vs2017banner](../../code-quality/includes/vs2017banner.md)]
-
-Recupera un numero specificato di elementi dello stack frame dalla sequenza di enumerazione.  
+# <a name="idiaenumstackframesnext"></a>IDiaEnumStackFrames::Next
+Recupera un numero specificato di elementi di frame dello stack dalla sequenza di enumerazione.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp#  
-HRESULT Next(   
-   ULONG             celt,  
-   IDiaStackFrame**  rgelt,  
-   ULONG*            pceltFetched  
+```C++  
+HRESULT Next(   
+   ULONG             celt,  
+   IDiaStackFrame**  rgelt,  
+   ULONG*            pceltFetched  
 );  
 ```  
   
-#### Parametri  
- celta  
- \[in\]  Il numero di elementi di stackframe nell'enumeratore da recuperare.  
+#### <a name="parameters"></a>Parametri  
+ celt  
+ [in] Il numero di elementi stackframe nell'enumeratore deve essere recuperato.  
   
  rgelt  
- \[out\]  Una matrice che deve essere soddisfatta di richiesta [IDiaStackFrame](../../debugger/debug-interface-access/idiastackframe.md) oggetti.  
+ [out] Matrice che deve essere compilato con la richiesta [IDiaStackFrame](../../debugger/debug-interface-access/idiastackframe.md) oggetti.  
   
  pceltFetched  
- \[out\]  Restituisce il numero di elementi dello stack frame nell'enumeratore recuperato.  
+ [out] Restituisce il numero di stack di elementi frame nell'enumeratore recuperata.  
   
-## Valore restituito  
- Se l'operazione riesce, restituisce `S_OK`.  Restituisce `S_FALSE` se non sono presenti più stack frame.  In caso contrario, restituisce un codice di errore.  
+## <a name="return-value"></a>Valore restituito  
+ Se ha esito positivo, restituisce `S_OK`. Restituisce `S_FALSE` se vi sono più stack frame. In caso contrario, verrà restituito un codice di errore.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IDiaEnumStackFrames](../../debugger/debug-interface-access/idiaenumstackframes.md)   
  [IDiaStackFrame](../../debugger/debug-interface-access/idiastackframe.md)

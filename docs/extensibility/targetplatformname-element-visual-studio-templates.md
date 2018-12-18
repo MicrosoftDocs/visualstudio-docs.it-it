@@ -1,25 +1,26 @@
 ---
-title: "Elemento TargetPlatformName (Modelli di Visual Studio) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-general"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: Elemento TargetPlatformName (modelli di Visual Studio) | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology:
+- vs-ide-general
+ms.topic: conceptual
 ms.assetid: 3a6b1f45-b5d6-418e-add1-87ee8f15033d
-caps.latest.revision: 5
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 5
+author: gregvanl
+ms.author: gregvanl
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: 738021c693bf0ea82319c411e3b5832306f05503
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# Elemento TargetPlatformName (Modelli di Visual Studio)
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
+# <a name="targetplatformname-element-visual-studio-templates"></a>Elemento TargetPlatformName (Modelli di Visual Studio)
 Specifica la piattaforma a cui è destinato il modello di progetto. Questo elemento viene usato per specificare per creare app di [!INCLUDE[win8_appname_long](../debugger/includes/win8_appname_long_md.md)] viene usato un modello di progetto.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```xml  
 <VSTemplate>  
@@ -27,37 +28,43 @@ Specifica la piattaforma a cui è destinato il modello di progetto. Questo eleme
         <TargetPlatformName> OperatingSystem</TargetPlatformName>  
 ```  
   
-## Attributi ed elementi  
+## <a name="attributes-and-elements"></a>Attributi ed elementi  
  Nelle sezioni seguenti vengono descritti gli attributi, gli elementi figlio e gli elementi padre.  
   
-### Attributi  
+### <a name="attributes"></a>Attributi  
  Nessuno.  
   
-### Elementi figlio  
+### <a name="child-elements"></a>Elementi figlio  
   
 |Elemento|Descrizione|  
-|--------------|-----------------|  
+|-------------|-----------------|  
 |[RequiredPlatformVersion](../extensibility/requiredplatformversion-element-visual-studio-templates.md)|Specifica la versione del sistema operativo a cui è destinato il modello di progetto.|  
   
-### Elementi padre  
+### <a name="parent-elements"></a>Elementi padre  
   
 |Elemento|Descrizione|  
-|--------------|-----------------|  
-|[TemplateData](../extensibility/templatedata-element-visual-studio-templates.md)|Classifica il modello in base alla categoria e definisce la modalità di visualizzazione nella finestra di dialogo **Nuovo progetto** o **Aggiungi nuovo elemento**.|  
+|-------------|-----------------|  
+|[TemplateData](../extensibility/templatedata-element-visual-studio-templates.md)|Classifica il modello in base alla categoria e definisce la modalità di visualizzazione nella finestra di dialogo **Nuovo progetto** o **Aggiungi nuovo elemento** .|  
   
-## Valore di testo  
+## <a name="text-value"></a>Valore di testo  
  È necessario specificare un valore di testo.  
   
-## Note  
+## <a name="remarks"></a>Note  
  Il testo deve essere **Windows**.  
   
-## Esempio  
+## <a name="example"></a>Esempio  
  Questo esempio specifica che il modello di progetto è destinato a [!INCLUDE[win8](../debugger/includes/win8_md.md)] o versioni successive.  
   
 ```xml  
-<VSTemplate Type="Project" Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005"> <TemplateData> <TargetPlatformName>Windows</TargetPlatformName> <RequiredPlatformVersion>8</RequiredPlatformVersion> </TemplateData> <TemplateContent> </TemplateContent> </VSTemplate>  
+<VSTemplate Type="Project" Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">   
+    <TemplateData>   
+        <TargetPlatformName>Windows</TargetPlatformName>   
+        <RequiredPlatformVersion>8</RequiredPlatformVersion>   
+    </TemplateData>   
+    <TemplateContent> </TemplateContent>  
+</VSTemplate>  
 ```  
   
-## Vedere anche  
- [Creazione di un progetto e di modelli di elemento personalizzati](../ide/creating-project-and-item-templates.md)   
- [Riferimenti allo schema dei modelli di Visual Studio](../extensibility/visual-studio-template-schema-reference.md)
+## <a name="see-also"></a>Vedere anche  
+ [Creazione di modelli di progetti e di elementi](../ide/creating-project-and-item-templates.md)   
+ [Riferimenti sullo schema dei modelli di Visual Studio](../extensibility/visual-studio-template-schema-reference.md)

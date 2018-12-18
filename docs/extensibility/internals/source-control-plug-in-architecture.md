@@ -1,44 +1,45 @@
 ---
-title: "Architettura di plug-in controllo di origine | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "origine plug-in del controllo, architettura"
+title: Architettura plug-in del controllo origine | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology:
+- vs-ide-sdk
+ms.topic: conceptual
+helpviewer_keywords:
+- source control plug-ins, architecture
 ms.assetid: 35351d4c-9414-409b-98fc-f2023e2426b7
-caps.latest.revision: 24
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 24
+author: gregvanl
+ms.author: gregvanl
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: 498f3aeb87855a0dac5afacc1baa7e2e816375f2
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# Architettura di plug-in controllo di origine
-[!INCLUDE[vs2017banner](../../code-quality/includes/vs2017banner.md)]
-
-È possibile aggiungere il supporto del controllo del codice sorgente all'ambiente di sviluppo integrato di \(IDE\) [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] distribuzione e associando un plug\-in controllo del codice sorgente.  L'ide si connette al plug\-in controllo del codice sorgente tramite il plug\-in controllo del codice sorgente ben definito API.  L'ide espone le funzionalità di controllo della versione del sistema di controllo del codice sorgente di un'interfaccia \(UI\) utente costituita dalle barre degli strumenti e i comandi di menu.  Il plug\-in controllo del codice sorgente implementa la funzionalità di controllo del codice sorgente.  
+# <a name="source-control-plug-in-architecture"></a>Architettura plug-in controllo di origine
+È possibile aggiungere il supporto del controllo di origine per il [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] ambiente di sviluppo integrato (IDE) implementando e collegamento di un plug-in controllo del codice sorgente. L'IDE si connette il controllo del codice sorgente plug-in tramite l'API di plug-in controllo origine ben definito. L'IDE espone le funzionalità di controllo di versione del sistema di origine, fornendo un'interfaccia utente (UI) che include i comandi di menu e barre degli strumenti. Il plug-in controllo del codice sorgente implementa la funzionalità di controllo di origine.  
   
-## Risorse di plug\-in controllo del codice sorgente  
- Il plug\-in controllo del codice sorgente fornisce risorse per la creazione e connettere l'applicazione di controllo delle versioni all'IDE di [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] .  Il plug\-in controllo del codice sorgente contiene la specifica di API che deve essere implementata da un plug\-in controllo del codice sorgente in modo che sia possibile integrare nell'IDE di [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] .  Contiene anche un esempio di codice \(scritto in C\+\+\) che implementa un plug\-in controllo del codice sorgente di base in cui venga illustrata l'implementazione delle funzioni principali conformi al plug\-in controllo del codice sorgente API.  
+## <a name="source-control-plug-in-resources"></a>Risorse di plug-in controllo di origine  
+ Il plug-in controllo di origine vengono fornite risorse che consentono di creare e collegare l'applicazione di controllo delle versioni per il [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] IDE. Il plug-in controllo di origine contiene la specifica di API che deve essere implementata da un plug-in controllo del codice sorgente, in modo che è possibile integrare il [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] IDE. Contiene inoltre un esempio di codice (scritto in C++) che implementa una struttura implementazione del controllo plug-nella dimostrazione delle funzioni essenziali compatibile con l'API plug-in controllo di origine.  
   
- La specifica di plug\-in controllo del codice sorgente l'api consente di sfruttare il sistema di controllo del codice sorgente di scelta se si crea una DLL del controllo del codice sorgente con la raccolta di funzioni obbligatorio distribuito in base al plug\-in controllo del codice sorgente API.  
+ La specifica dell'API di plug-in controllo origine consente di utilizzare qualsiasi controllo del codice sorgente di propria scelta, se si crea un controllo del codice sorgente DLL con il set di funzioni implementati in conformità con l'API plug-in controllo di origine necessari.  
   
-## Componenti  
- Il pacchetto di adattatori di controllo del codice sorgente nel diagramma è la parte dell'IDE che converte la richiesta dell'utente per operazioni di controllo del codice sorgente in una chiamata di funzione supportata dal plug\-in controllo del codice sorgente.  Affinché ciò si verifica, l'ide e il plug\-in controllo del codice sorgente devono avere un efficace finestra di dialogo che comunica informazioni avanti e indietro tra IDE e del plug\-in.  Affinché questa finestra di dialogo hanno luogo, entrambi devono presentare lo stesso linguaggio.  Il plug\-in controllo del codice sorgente API descrivere in questa documentazione è il vocabolario comune per questo scambio.  
+## <a name="components"></a>Componenti  
+ Il pacchetto di scheda di controllo di origine nel diagramma è il componente dell'IDE che traduce la richiesta dell'utente per un'operazione di controllo del codice sorgente in una chiamata di funzione supportata dal plug-in controllo del codice sorgente. A tale scopo, l'IDE e il plug-in controllo del codice sorgente deve avere una finestra di dialogo efficace che passa informazioni avanti e indietro tra l'IDE e del plug-in. Per questa finestra di dialogo eseguire entrambi devono parlano la stessa lingua. L'API plug-in controllo origine descritte in questa documentazione è il vocabolario comune per questo scambio.  
   
- ![Diagramma dell'architettura di controllo del codice sorgente](~/extensibility/internals/media/vs_sccsdk_plug_in_arch.gif "vs\_sccsdk\_plug\_in\_arch")  
-Interazione di rappresentazione del diagramma di architettura tra VS e plug\-in controllo del codice sorgente  
+ ![Diagramma architettura del controllo del codice di origine](../../extensibility/internals/media/vs_sccsdk_plug_in_arch.gif "vs_sccsdk_plug_in_arch")  
+Diagramma dell'architettura con l'interazione tra Visual Studio e controllo del codice sorgente plug-in  
   
- Come illustrato nel diagramma dell'architettura, la shell di [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] , contrassegnati come VS la shell nel diagramma, ospita i progetti di lavoro e componenti associate dell'utente, ad esempio gli editor e Esplora soluzioni.  Il pacchetto di adattatori di controllo del codice sorgente gestisce l'interazione tra l'ide e il plug\-in controllo del codice sorgente.  Il pacchetto di adattatori di controllo del codice sorgente fornisce la propria interfaccia utente del controllo del codice sorgente.  È l'interfaccia utente di livello superiore che l'utente interagisce per avviare e definire l'ambito di un'operazione di controllo del codice sorgente.  
+ Come illustrato nel diagramma dell'architettura, la [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] shell, etichettata come shell di Visual Studio nel diagramma, ospita i progetti di lavoro dell'utente e i componenti associati, ad esempio l'Editor ed Esplora soluzioni. Il pacchetto di Adapter origine controllo gestisce l'interazione tra l'IDE e il plug-in controllo del codice sorgente. Il pacchetto di origine controllo scheda fornisce il proprio controllo del codice sorgente dell'interfaccia utente. È l'interfaccia utente di primo livello che l'utente interagisce con per avviare e definire l'ambito di un'operazione di controllo del codice sorgente.  
   
- Il plug\-in controllo del codice sorgente può avere la propria interfaccia utente, che possono essere costituiti da due parti come illustrato nella figura.  La casella relativa interfaccia utente del fornitore„ rappresenta gli elementi dell'interfaccia utente personalizzati che, come autore di plug\-in controllo del codice sorgente, fornire.  Questi verranno visualizzati direttamente dal plug\-in controllo del codice sorgente quando l'utente richiama un'operazione di controllo del codice sorgente avanzata.  La casella relativa interfaccia utente supportato„ è un set di funzionalità dell'interfaccia utente di plug\-in controllo del codice sorgente che vengono richiamate indirettamente tramite l'ide di.  I messaggi Interfaccia utente\-correlati sessioni di plug\-in controllo del codice sorgente dell'IDE con le funzioni di callback speciale fornite dall'IDE.  L'interfaccia utente di supporto facilita un'integrazione più senza con l'ide \(spesso con l'utilizzo di un pulsante di **Avanzate** \) e così fornisce un'esperienza unificata dell'utente finale.  
+ Il plug-in controllo del codice sorgente può avere la propria interfaccia utente, che può essere costituito da due parti come illustrato nella figura. La casella "Fornitore dell'interfaccia utente" rappresenta elementi dell'interfaccia utente personalizzata specificata dall'utente, un autore del plug-in del controllo origine. Quando l'utente richiama un'operazione di controllo avanzati di origine, questi vengono visualizzati direttamente per il plug-in controllo del codice sorgente. La casella "Supporto dell'interfaccia utente" è un set di origine del plug-in dell'interfaccia utente funzionalità di controllo che vengono richiamati indirettamente tramite l'IDE. Il plug-in controllo del codice sorgente passa i messaggi relativi all'interfaccia utente all'IDE tramite funzioni speciali di callback fornita dall'IDE. L'interfaccia utente del supporto facilita un'integrazione più affidabile con l'IDE (spesso mediante l'utilizzo di un **avanzate** pulsante) e pertanto fornisce un'esperienza utente finale più unificata.  
   
- Un plug\-in controllo del codice sorgente non è possibile apportare modifiche a [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] sgusciare e, di conseguenza, al pacchetto di adattatori di controllo del codice sorgente o all'interfaccia utente del controllo del codice sorgente fornita dall'IDE.  Deve fare massimo utilizzo della flessibilità offerta dall'implementazione delle diverse funzioni API di plug\-in controllo del codice sorgente che consentono di offrire un'esperienza integrata per l'utente finale.  La sezione di riferimento della documentazione di plug\-in controllo del codice sorgente l'api include informazioni per alcune funzionalità avanzate di plug\-in controllo del codice sorgente.  Per sfruttare queste funzionalità, il plug\-in controllo del codice sorgente necessario dichiarare le relative funzionalità avanzate IDE durante l'inizializzazione e deve implementare le funzioni avanzate specifiche per ogni funzionalità.  
+ Un plug-in controllo del codice sorgente non è possibile apportare modifiche per il [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] della shell e, di conseguenza, per il pacchetto di scheda di controllo di origine o l'origine di controllo dell'interfaccia utente fornita dall'IDE. È necessario sfruttare al massimo alla flessibilità offerta tramite l'implementazione delle diverse funzioni dell'API di plug-in controllo di origine che contribuiscono a un'esperienza integrata per l'utente finale. La sezione di riferimento della documentazione dell'API di plug-in controllo di origine include informazioni per alcune funzionalità di plug-in del controllo origine avanzate. Per sfruttare queste funzionalità, il plug-in controllo del codice sorgente deve dichiarare le funzionalità avanzate di IDE durante l'inizializzazione e deve implementare funzioni avanzate specifiche per ogni funzionalità.  
   
-## Vedere anche  
- [Plug\-in del controllo codice sorgente](../../extensibility/source-control-plug-ins.md)   
+## <a name="see-also"></a>Vedere anche  
+ [Plug-in del controllo codice sorgente](../../extensibility/source-control-plug-ins.md)   
  [Glossario](../../extensibility/source-control-plug-in-glossary.md)   
- [Creazione di plug\-in un controllo del codice sorgente](../../extensibility/internals/creating-a-source-control-plug-in.md)
+ [Creazione di un plug-in del controllo del codice sorgente](../../extensibility/internals/creating-a-source-control-plug-in.md)

@@ -1,41 +1,25 @@
 ---
 title: Le risorse nei pacchetti VSPackage | Documenti Microsoft
-ms.custom: 
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - vs-ide-sdk
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: conceptual
 helpviewer_keywords:
 - managed VSPackages, resources in
 - resources, managed VSPackages
 - VSPackages, managed resources
 ms.assetid: cc8c17a6-b190-4856-b001-0c1104f104b2
-caps.latest.revision: 23
+author: gregvanl
 ms.author: gregvanl
-manager: ghogen
-translation.priority.mt:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: d252f61a9f634f4bb8435626c41c586bbe5cb839
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
 ms.translationtype: MT
-ms.sourcegitcommit: eb5c9550fd29b0e98bf63a7240737da4f13f3249
-ms.openlocfilehash: 8a49aa40daaa1bd0fc0543d2f6198212185c8490
-ms.contentlocale: it-it
-ms.lasthandoff: 09/06/2017
-
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="resources-in-vspackages"></a>Risorse nei pacchetti VSPackage
 È possibile incorporare le risorse localizzate in nativa dell'interfaccia utente DLL satellite, le DLL satellite gestite, o in un pacchetto VSPackage gestito se stesso.  
@@ -60,7 +44,8 @@ ms.lasthandoff: 09/06/2017
   
  È possibile utilizzare il <xref:Microsoft.VisualStudio.Shell.PackageRegistrationAttribute> attributo per indicare al [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] che siano disponibili le risorse gestite.  
   
- [!code-csharp[N. 1 VSSDKResources](../../extensibility/internals/codesnippet/CSharp/resources-in-vspackages_1.cs) ] [!code-vb [VSSDKResources n. 1](../../extensibility/internals/codesnippet/VisualBasic/resources-in-vspackages_1.vb)]  
+ [!code-csharp[VSSDKResources#1](../../extensibility/internals/codesnippet/CSharp/resources-in-vspackages_1.cs)]
+ [!code-vb[VSSDKResources#1](../../extensibility/internals/codesnippet/VisualBasic/resources-in-vspackages_1.vb)]  
   
  Impostazione <xref:Microsoft.VisualStudio.Shell.PackageRegistrationAttribute> indica che in questo modo [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] deve ignorare le DLL satellite non gestita durante la ricerca di risorse, ad esempio, tramite <xref:Microsoft.VisualStudio.Shell.Interop.IVsShell.LoadPackageString%2A>. Se [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] rileva due o più risorse aventi lo stesso ID di risorsa, viene utilizzata la prima risorsa trova.  
   
@@ -98,11 +83,10 @@ type="System.Resources.ResXFileRef,System.Windows.Forms">
 ```  
   
 ## <a name="implementation-notes"></a>Note di implementazione  
- [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)]caricamento di ritardi di VSPackage laddove possibile. Una conseguenza di incorporamento di un file CTO in un pacchetto VSPackage è che [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] deve caricare tutti questi pacchetti VSPackage in memoria durante l'installazione, ovvero quando viene generata una tabella unita di comando. Risorse possono essere estratto da un pacchetto VSPackage esaminando i metadati senza eseguire il codice nel pacchetto VSPackage. Il pacchetto VSPackage non inizializzato in questo momento, pertanto il calo delle prestazioni è minimo.  
+ [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] caricamento di ritardi di VSPackage laddove possibile. Una conseguenza di incorporamento di un file CTO in un pacchetto VSPackage è che [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] deve caricare tutti questi pacchetti VSPackage in memoria durante l'installazione, ovvero quando viene generata una tabella unita di comando. Risorse possono essere estratto da un pacchetto VSPackage esaminando i metadati senza eseguire il codice nel pacchetto VSPackage. Il pacchetto VSPackage non inizializzato in questo momento, pertanto il calo delle prestazioni è minimo.  
   
  Quando [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] le richieste di una risorsa da un pacchetto VSPackage dopo l'installazione, tale pacchetto è probabilmente già caricato e inizializzato, pertanto il calo delle prestazioni è minimo.  
   
 ## <a name="see-also"></a>Vedere anche  
  [Gestione dei pacchetti VSPackage](../../extensibility/managing-vspackages.md)   
  [Risorse localizzate in applicazioni MFC: DLL satellite](/cpp/build/localized-resources-in-mfc-applications-satellite-dlls)   
-

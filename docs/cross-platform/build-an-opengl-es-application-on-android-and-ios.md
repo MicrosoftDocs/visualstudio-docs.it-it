@@ -1,43 +1,24 @@
 ---
-title: Compilare un&quot;applicazione OpenGL ES in Android e iOS | Microsoft Docs
-ms.custom: 
+title: Compilare un'applicazione OpenGL ES in Android e iOS | Microsoft Docs
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- tgt-pltfrm-cross-plat
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.technology: vs-ide-mobile
+ms.topic: conceptual
 dev_langs:
 - C++
 ms.assetid: 76a67886-df57-4a81-accb-2e3c2eaf607b
-caps.latest.revision: 5
-author: BrianPeek
-ms.author: brpeek
-manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 47057e9611b824c17077b9127f8d2f8b192d6eb8
-ms.openlocfilehash: 148a64927d78db8ccf473fc0cc74c5a8df953c03
-ms.contentlocale: it-it
-ms.lasthandoff: 05/13/2017
-
+author: corob-msft
+ms.author: corob
+manager: douge
+ms.workload:
+- xplat-cplusplus
+ms.openlocfilehash: 41d1a3a88230ed38d4d9688c2f07cdf099e2464b
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# <a name="build-an-opengl-es-application-on-android-and-ios"></a>Build an OpenGL ES Application on Android and iOS
+# <a name="build-an-opengl-es-application-on-android-and-ios"></a>Compilare un'applicazione OpenGL ES in Android e iOS
 Quando si installa l'opzione Visual C++ per Sviluppo app per dispositivi mobili multipiattaforma, è possibile creare soluzioni e progetti di Visual Studio per le app iOS e Android che condividono un codice comune. Questo argomento descrive un modello di soluzione che crea un'app iOS semplice e un'app NativeActivity di Android. Le app hanno un codice C++ in comune che usa OpenGL ES per visualizzare lo stesso cubo rotante animato in tutte le piattaforme. OpenGL ES (OpenGL for Embedded Systems o GLES) è un'API grafica 2D e 3D supportata in molti dispositivi mobili.  
   
  [Requisiti](#req)   
@@ -109,7 +90,7 @@ Quando si installa l'opzione Visual C++ per Sviluppo app per dispositivi mobili 
   
      Visual Studio avvia l'emulatore, che richiede alcuni secondi per caricare e distribuire il codice. Ecco come verrà visualizzata l'app in Visual Studio Emulator for Android.  
   
-     ![App in esecuzione nell'emulatore per Android](~/cross-platform/media/cppmdd_opengles_andemulator.png "CPPMDD_OpenGLES_AndEmulator")  
+     ![App in esecuzione nell'emulatore per Android](../cross-platform/media/cppmdd_opengles_andemulator.png "CPPMDD_OpenGLES_AndEmulator")  
   
      Una volta avviata l'app, è possibile impostare i punti di interruzione e usare il debugger per eseguire il codice un'istruzione alla volta, esaminare le variabili locali e controllare i valori.  
   
@@ -150,7 +131,7 @@ Quando si installa l'opzione Visual C++ per Sviluppo app per dispositivi mobili 
   
      Una volta avviata l'app, è possibile impostare i punti di interruzione e usare il debugger di Visual Studio per esaminare le variabili locali, visualizzare lo stack di chiamate e controllare i valori.  
   
-     ![Debugger nel punto di interruzione nell'app iOS](~/cross-platform/media/cppmdd_opengles_iosdebug.png "CPPMDD_OpenGLES_iOSDebug")  
+     ![Debugger nel punto di interruzione nell'app iOS](../cross-platform/media/cppmdd_opengles_iosdebug.png "CPPMDD_OpenGLES_iOSDebug")  
   
 5.  Premere MAIUSC+F5 per arrestare il debug.  
   

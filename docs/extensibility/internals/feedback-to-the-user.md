@@ -1,64 +1,65 @@
 ---
-title: "Commenti e suggerimenti all&#39;utente | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "commenti e suggerimenti modello utente"
-  - "contesto, ambiente"
-  - "IDE, contesto"
-  - "IDE, commenti degli utenti"
+title: Commenti e suggerimenti all'utente | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology:
+- vs-ide-sdk
+ms.topic: conceptual
+helpviewer_keywords:
+- user model feedback
+- environment, context
+- IDE, context
+- IDE, user feedback
 ms.assetid: 2d472a24-3813-4f5f-9783-b491ad8a71ad
-caps.latest.revision: 8
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 8
+author: gregvanl
+ms.author: gregvanl
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: 629d12974a52bca30c0db96e838c5c731ae1abf7
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# Commenti e suggerimenti all&#39;utente
-[!INCLUDE[vs2017banner](../../code-quality/includes/vs2017banner.md)]
-
-Nell'ambiente di sviluppo integrato di \(IDE\) [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] , il feedback visivo per quanto riguarda funzionalità disponibili dipende dalla selezione corrente dell'utente e al contesto globale di selezione.  Nella seguente tabella sono elencate le funzionalità disponibile in contesti diversi di selezione.  
+# <a name="feedback-to-the-user"></a>Commenti e suggerimenti per l'utente
+Nel [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] ambiente di sviluppo integrato (IDE), la risposta visiva relative alle funzionalità disponibili si basa sulla selezione corrente dell'utente e il contesto di selezione globale. Nella tabella seguente sono elencate le funzionalità che sono disponibile in contesti diversi di selezione.  
   
-|contesto di selezione|funzionalità disponibile|  
-|---------------------------|------------------------------|  
+|Contesto della selezione|Funzionalità disponibili|  
+|-----------------------|-----------------------------|  
 |IDE|Global|  
-|Insieme corrente del prodotto|prodotto specifico|  
-|gerarchia attiva|Tipo di struttura specifico|  
-|Elemento attivo della gerarchia|Tipo di elemento della gerarchia specifico|  
-|documento attivo|tipo di documento specifico|  
-|Finestra in primo \(MDI\) piano con interfaccia a documenti multipli|Tipo di finestra specifico|  
-|Il contesto della selezione corrente|contesto di selezione specifico|  
+|Set di prodotto corrente|Prodotto specifico|  
+|Gerarchia attivo|Specifica tipo di gerarchia|  
+|Elemento della gerarchia Active|Specifiche del tipo di elemento gerarchia|  
+|Documento attivo|Specifica tipo di documento|  
+|Finestra in primo piano interfaccia a documenti multipli (MDI)|Specifica tipo di finestra|  
+|Contesto della selezione corrente|Contesto della selezione specifico|  
   
- Se sorgete solo il gli utenti necessitano di funzionalità e continuamente fornire la selezione coerente e il feedback di contesto dell'ambiente, si riduce la complessità dell'IDE.  Le regole seguenti si applicano ogni volta che una finestra è aperta nell'IDE:  
+ Se si mostrano solo le funzionalità necessarie agli utenti e forniscono continuamente selezione coerente e commenti e suggerimenti contesto di ambiente, si riduce la complessità nell'IDE. Le regole seguenti si applicano ogni volta che viene aperta una finestra nell'IDE:  
   
--   Se la finestra modificare il relativo contesto di selezione, il feedback di selezione viene illustrato dettagliatamente nella finestra e la finestra Guida dinamica, se visualizzata, viene aggiornata per riflettere il contesto corrente.  
+-   Se la finestra viene modificata relativo contesto di selezione, commenti e suggerimenti di selezione sono chiaramente indicato nella finestra e finestra Guida dinamica, se visualizzata, viene aggiornata per riflettere il contesto corrente.  
   
--   Se la finestra cambia contesto globale di selezione, tutti i menu contesto\-specifici, la finestra attiva della gerarchia e la barra del titolo dell'applicazione vengono aggiornati per riflettere il contesto corrente.  
+-   Se la finestra viene modificata contesto globale della selezione, tutti i menu specifici del contesto, la finestra gerarchia attivo e barra del titolo dell'applicazione vengono aggiornati per riflettere il contesto corrente.  
   
--   La finestra dovrebbe verificarsi le proprietà per la selezione corrente nella finestra di **Proprietà** e facoltativamente, se visualizzata, la finestra di dialogo di **Pagine delle proprietà** .  
+-   La finestra dovrebbe area le proprietà per la selezione corrente nella **proprietà** finestra e, facoltativamente, se visualizzata, la **pagine delle proprietà** la finestra di dialogo.  
   
--   Se la finestra non viene visualizzato le proprietà o non cambia contesto globale di selezione, il feedback di selezione non deve rimanere nella finestra quando non è più la finestra attiva nell'IDE.  
+-   Se la finestra non esporre una proprietà o modificare il contesto di selezione globale, commenti e suggerimenti di selezione non devono rimanere nella finestra quando non è più la finestra attiva nell'IDE.  
   
--   Tutte le finestre degli strumenti documento\-specifiche devono riflettere sempre il documento attivo.  
+-   Tutte le finestre di documento specifico strumento continuamente devono riflettere il documento attivo.  
   
--   I menu, barre degli strumenti e la barra del titolo dell'applicazione devono riflettere la finestra in primo piano client MDI \(MDI\).  
+-   Menu, barre degli strumenti e barra del titolo dell'applicazione deve riflettere finestra del client di livello più alto interfaccia a documenti multipli (MDI).  
   
- Ad esempio, quando la visualizzazione HTML di un Web Form in un progetto di applicazione Web Visual Basic è aperta e l'utente seleziona un tag di `<td>` , il feedback viene fornito nel modo seguente:  
+ Ad esempio, quando viene aperta la visualizzazione HTML di un Web Form all'interno di un progetto di applicazione Web di Visual Basic e l'utente seleziona un `<td>` tag, viene fornito un feedback nel modo seguente:  
   
--   La selezione viene visualizzata nella finestra attiva e viene riportata nella finestra di **Proprietà** .  
+-   La selezione è indicata nella finestra attiva e applicata le **proprietà** finestra.  
   
--   **Casella degli strumenti** documento\-specifico aggiornato per riflettere il documento attivo.  
+-   Specifica del documento **della casella degli strumenti** viene aggiornata per riflettere il documento attivo.  
   
--   La barra degli strumenti di **editor** e il menu di **Tabella** visualizzare e gli aggiornamenti della didascalia per riflettere la finestra Web Form.  
+-   Il **Editor** barra degli strumenti e **tabella** vengono visualizzati i menu e barra del titolo aggiorna in modo da riflettere la finestra del Web Form.  
   
--   La finestra attiva della gerarchia, che in genere **Esplora soluzioni**e il relativo aggiornamento della didascalia per riflettere il contesto corrente e i comandi di menu sensibili al contesto di **Progetto** ora si applicano al progetto di applicazione Web attivo.  
+-   Finestra gerarchia attivo in cui è in genere **Esplora**e l'aggiornamento della barra del titolo in modo da riflettere il contesto corrente e il sensibile al contesto **progetto** applicano i comandi di menu per il Web attivo Progetto di applicazione.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Selezione e la valuta nell'IDE](../../extensibility/internals/selection-and-currency-in-the-ide.md)   
  [Selezione oggetti di contesto](../../extensibility/internals/selection-context-objects.md)   
- [Selezione e gerarchie](../../extensibility/internals/hierarchies-and-selection.md)
+ [Gerarchie e selezione](../../extensibility/internals/hierarchies-and-selection.md)

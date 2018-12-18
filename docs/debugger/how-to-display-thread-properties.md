@@ -1,31 +1,30 @@
 ---
-title: "How to: Display Thread Properties | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "thread properties"
+title: 'Procedura: visualizzare le proprietà del Thread | Documenti Microsoft'
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology: vs-ide-debug
+ms.topic: conceptual
+helpviewer_keywords:
+- thread properties
 ms.assetid: f0e64c0e-cdb3-4ad4-9723-09934166f3a2
-caps.latest.revision: 4
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 4
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 04e209132818824a8fc6e320e93031e65a7c403c
+ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/18/2018
 ---
-# How to: Display Thread Properties
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
-Per ottenere ulteriori informazioni su un thread elencato in [Visualizzazione thread](../debugger/threads-view.md), utilizzare la [finestra di dialogo Proprietà thread](../debugger/thread-properties-dialog-box.md).  
+# <a name="how-to-display-thread-properties"></a>Procedura: visualizzare le proprietà thread
+Per ulteriori informazioni su un thread elencato in [visualizzazione thread](../debugger/threads-view.md), utilizzare il [finestra di dialogo proprietà Thread](../debugger/thread-properties-dialog-box.md).  
   
-### Per aprire una finestra di dialogo Proprietà thread  
+### <a name="to-open-a-thread-properties-dialog-box"></a>Per aprire una finestra di dialogo proprietà Thread  
   
-1.  Selezionare un thread dalla struttura ad albero disponibile in [Visualizzazione thread](../debugger/threads-view.md).  
+1.  Selezionare un thread nell'albero visualizzato [visualizzazione thread](../debugger/threads-view.md).  
   
-2.  Scegliere **Proprietà** dal menu **Visualizza**.  
+2.  Dal **vista** menu, scegliere **proprietà**.  
   
- Le finestre di dialogo Proprietà non sono modali. Pertanto, se si fa clic su un elemento differente in una finestra di visualizzazione, nella finestra di dialogo verranno visualizzate informazioni sull'elemento selezionato.
+ Finestre di dialogo proprietà non modale, in modo che è possibile fare clic su un altro elemento in una finestra di visualizzazione e la finestra di dialogo verrà visualizzate informazioni sull'elemento selezionato.

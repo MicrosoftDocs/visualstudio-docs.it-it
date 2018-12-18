@@ -1,41 +1,22 @@
 ---
 title: Marcatori del visualizzatore di concorrenza.| Microsoft Docs
-ms.custom: 
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- vs-ide-debug
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.technology: vs-ide-debug
+ms.topic: conceptual
 f1_keywords:
 - vs.cv.markersui
 ms.assetid: c4692d17-6cd2-4ad1-8590-d7275c771c70
-caps.latest.revision: 12
 author: mikejo5000
 ms.author: mikejo
-manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 3d32d11a430227800cb3ed53831a9565eb6adeb3
-ms.openlocfilehash: 29aa9de1c8fcba0c51a05751666d2931aa68aaa4
-ms.contentlocale: it-it
-ms.lasthandoff: 05/30/2017
-
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: a1e713292421613e835697037d5298a4a2c854f6
+ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/19/2018
 ---
 # <a name="concurrency-visualizer-markers"></a>Marcatori del visualizzatore di concorrenza
 I marcatori del visualizzatore di concorrenza sono icone che rappresentano eventi in un'app.  In genere, l'applicazione genera questi eventi per definire fasi o occorrenze di un'applicazione.  Gli eventi possono essere generati dall'app o da librerie e runtime usati dall'app.  
@@ -61,7 +42,7 @@ I marcatori del visualizzatore di concorrenza sono icone che rappresentano event
 ## <a name="known-sources-of-markers"></a>Origini note di marcatori  
  I marcatori possono essere generati da qualsiasi privider ETW purché il provider sia conforme a determinati vincoli. È possibile configurare il visualizzatore di concorrenza in modo che sia in ascolto di origini evento aggiuntive. Per impostazione predefinita, è in ascolto delle origini evento seguenti:  
   
--   [Concurrency Visualizer SDK](../profiling/concurrency-visualizer-sdk.md) (SDK del visualizzatore di concorrenza)  
+-   [SDK del visualizzatore di concorrenza](../profiling/concurrency-visualizer-sdk.md)  
   
 -   [Task Parallel Library (TPL)](/dotnet/standard/parallel-programming/task-parallel-library-tpl)  
   

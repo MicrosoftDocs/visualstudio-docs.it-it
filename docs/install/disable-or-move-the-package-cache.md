@@ -2,12 +2,12 @@
 title: Disabilitare o spostare la cache dei pacchetti | Microsoft Docs
 description: Disabilitare, abilitare o spostare la cache dei pacchetti per distribuzioni di Visual Studio.
 ms.date: 04/14/2017
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
-- vs-ide-install
-ms.tgt_pltfrm: 
-ms.topic: article
+- vs-acquisition
+ms.tgt_pltfrm: ''
+ms.topic: conceptual
 f1_keywords:
 - cache
 - nocache
@@ -16,29 +16,15 @@ helpviewer_keywords:
 - '{{PLACEHOLDER}}'
 ms.assetid: 2429993A-3F0E-41C5-9562-FEA6AE994440
 author: heaths
-ms.author: heaths
-manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 85576806818a6ed289c2f660f87b5c419016c600
-ms.openlocfilehash: e07f1c04d9695e092db7aa29e641ce9bd36250f9
-ms.contentlocale: it-it
-ms.lasthandoff: 05/09/2017
-
+ms.author: tglee
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 7027413936cc7f907b4ec70304317c71c5ceb2da
+ms.sourcegitcommit: efd8c8e0a9ba515d47efcc7bd370eaaf4771b5bb
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="disable-or-move-the-package-cache"></a>Disabilitare o spostare la cache dei pacchetti
 
@@ -69,10 +55,17 @@ Una configurazione di sistema comune prevede Windows installato in un'unità SSD
 
 Attualmente, è possibile eseguire questa operazione solo se si impostano i [criteri del Registro di sistema](set-defaults-for-enterprise-deployments.md) `CachePath` prima di installare, modificare o ripristinare Visual Studio.
 
+## <a name="get-support"></a>Supporto
+Non sempre tutto funziona correttamente. Se l'installazione di Visual Studio non riesce, vedere la pagina [Risoluzione degli errori di installazione e aggiornamento di Visual Studio 2017](troubleshooting-installation-issues.md). Se nessuna delle procedure di risoluzione dei problemi risulta utile, contattare Microsoft tramite chat in tempo reale per richiedere assistenza per l'installazione (solo in lingua inglese). Per informazioni dettagliate, vedere la [pagina del supporto di Visual Studio](https://www.visualstudio.com/vs/support/#talktous).
+
+Ecco alcune altre opzioni di supporto:
+* È possibile segnalare i problemi del prodotto a Microsoft tramite lo strumento [Segnala un problema](../ide/how-to-report-a-problem-with-visual-studio-2017.md) che viene visualizzato sia nel programma di installazione di Visual Studio che nell'IDE di Visual Studio.
+* È possibile condividere un suggerimento per il prodotto con Microsoft in [UserVoice](https://visualstudio.uservoice.com/forums/121579).
+* È possibile visualizzare lo stato dei problemi del prodotto nella [community degli sviluppatori di Visual Studio](https://developercommunity.visualstudio.com/), dove è possibile creare domande e trovare risposte.
+* È anche possibile comunicare con gli sviluppatori Microsoft e altri sviluppatori di Visual Studio partecipando alla [conversazione dedicata a Visual Studio nella community di Gitter](https://gitter.im/Microsoft/VisualStudio).  Per questa opzione è necessario un account [GitHub](https://github.com/).
+
 ## <a name="see-also"></a>Vedere anche
 
  * [Installare Visual Studio](install-visual-studio.md)
  * [Impostare i valori predefiniti per le distribuzioni aziendali](set-defaults-for-enterprise-deployments.md)
  * [Usare i parametri della riga di comando per installare Visual Studio](use-command-line-parameters-to-install-visual-studio.md)
- * [Report a problem with Visual Studio](../ide/how-to-report-a-problem-with-visual-studio-2017.md) (Segnalare un problema di Visual Studio)
-

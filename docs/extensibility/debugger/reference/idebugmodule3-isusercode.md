@@ -1,48 +1,49 @@
 ---
-title: "IDebugModule3::IsUserCode | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "IDebugModule3::IsUserCode"
-helpviewer_keywords: 
-  - "IDebugModule3::IsUserCode"
+title: IDebugModule3::IsUserCode | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology:
+- vs-ide-sdk
+ms.topic: conceptual
+f1_keywords:
+- IDebugModule3::IsUserCode
+helpviewer_keywords:
+- IDebugModule3::IsUserCode
 ms.assetid: 77022946-bb8b-4114-aa81-614df6e54b13
-caps.latest.revision: 11
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 11
+author: gregvanl
+ms.author: gregvanl
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: 8e44f70741e6f47bc628a7952979bead0bfba23d
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# IDebugModule3::IsUserCode
-[!INCLUDE[vs2017banner](../../../code-quality/includes/vs2017banner.md)]
-
-Recupera le informazioni su se il modulo rappresenta il codice utente o meno.  
+# <a name="idebugmodule3isusercode"></a>IDebugModule3::IsUserCode
+Recupera informazioni su se il modulo rappresenta il codice utente o meno.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp#  
-HRESULT IsUserCode(  
-   BOOL* pfUser  
+```cpp  
+HRESULT IsUserCode(  
+   BOOL* pfUser  
 );  
 ```  
   
-```c#  
+```csharp  
 int IsUserCode(  
-   out int pfUser  
+   out int pfUser  
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `pfUser`  
- \[out\]  Diverso da zero \(`TRUE`\) se il modulo rappresenta il codice utente, zero \(`FALSE`\) in caso contrario.  
+ [out] Diverso da zero (`TRUE`) se il modulo rappresenta il codice utente, zero (`FALSE`) in caso contrario.  
   
-## Valore restituito  
- Se l'operazione riesce, restituisce `S_OK`; in caso contrario, codice di errore restituito.  
+## <a name="return-value"></a>Valore restituito  
+ Se ha esito positivo, restituisce `S_OK`; in caso contrario, restituisce il codice di errore.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IDebugModule3](../../../extensibility/debugger/reference/idebugmodule3.md)

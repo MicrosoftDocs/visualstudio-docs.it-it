@@ -1,49 +1,46 @@
 ---
-title: 'How to: Programmatically Access Outlook Contacts | Microsoft Docs'
-ms.custom: 
+title: 'Procedura: accedere a livello di codice ai contatti di Outlook | Documenti Microsoft'
+ms.custom: ''
 ms.date: 02/02/2017
-ms.prod: visual-studio-dev14
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - office-development
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: conceptual
 dev_langs:
 - VB
 - CSharp
 helpviewer_keywords:
 - contacts [Office development in Visual Studio], searching
-ms.assetid: ea2297ea-6802-40e4-af1a-1e511a71ec75
-caps.latest.revision: 23
-author: kempb
-ms.author: kempb
-manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: eb5c9550fd29b0e98bf63a7240737da4f13f3249
-ms.openlocfilehash: 876bd379d6990e1793c178333bc2c5cd7423ad4f
-ms.contentlocale: it-it
-ms.lasthandoff: 08/30/2017
-
+author: TerryGLee
+ms.author: tglee
+manager: douge
+ms.workload:
+- office
+ms.openlocfilehash: c48a58a4215ce73bcc6e9f4593819cbbdbed1693
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# <a name="how-to-programmatically-access-outlook-contacts"></a>How to: Programmatically Access Outlook Contacts
-  This example finds all contacts whose last names contain a specified search string.  
+# <a name="how-to-programmatically-access-outlook-contacts"></a>Procedura: accedere ai contatti di Outlook a livello di codice
+  Questo esempio vengono trovati tutti i contatti il cui cognome contengano una stringa di ricerca specificato.  
   
  [!INCLUDE[appliesto_olkallapp](../vsto/includes/appliesto-olkallapp-md.md)]  
   
-## <a name="example"></a>Example  
- [!code-csharp[Trin_OL_AccessContacts#1](../vsto/codesnippet/CSharp/Trin_OL_AccessContacts.trin_ol_accesscontacts/thisaddin.cs#1)] [!code-csharp[Trin_OL_AccessContacts#1](../vsto/codesnippet/CSharp/Trin_OL_AccessContacts.trin_ol_accesscontacts/thisaddin.cs#1)] [!code-vb[Trin_OL_AccessContacts#1](../vsto/codesnippet/VisualBasic/Trin_OL_AccessContacts/thisaddin.vb#1)]  
+## <a name="example"></a>Esempio  
+ [!code-csharp[Trin_OL_AccessContacts#1](../vsto/codesnippet/CSharp/Trin_OL_AccessContacts.trin_ol_accesscontacts/thisaddin.cs#1)]
+ [!code-csharp[Trin_OL_AccessContacts#1](../vsto/codesnippet/CSharp/Trin_OL_AccessContacts.trin_ol_accesscontacts/thisaddin.cs#1)]
+ [!code-vb[Trin_OL_AccessContacts#1](../vsto/codesnippet/VisualBasic/Trin_OL_AccessContacts/thisaddin.vb#1)]  
   
-## <a name="compiling-the-code"></a>Compiling the Code  
- This example requires:  
+## <a name="compiling-the-code"></a>Compilazione del codice  
+ L'esempio presenta i requisiti seguenti:  
   
--   Contacts whose last names contain the string "**Na"** (for example, Tzipi Butnaru) in the **Contacts** folder.  
+-   Contatti il cui cognome contengono la stringa "**Na"** , ad esempio Tzipi Butnaru, nel **contatti** cartella.  
   
-## <a name="see-also"></a>See Also  
- [Working with Contact Items](../vsto/working-with-contact-items.md)   
- [How to: Programmatically Add an Entry to Outlook Contacts](../vsto/how-to-programmatically-add-an-entry-to-outlook-contacts.md)   
- [How to: Programmatically Search for a Specific Contact](../vsto/how-to-programmatically-search-for-a-specific-contact.md)   
- [How to: Programmatically Search for an E-Mail Address in Contacts](../vsto/how-to-programmatically-search-for-an-e-mail-address-in-contacts.md)   
- [How to: Programmatically Delete Outlook Contacts](../vsto/how-to-programmatically-delete-outlook-contacts.md)  
+## <a name="see-also"></a>Vedere anche  
+ [Utilizzo dei contatti](../vsto/working-with-contact-items.md)   
+ [Procedura: aggiungere una voce ai contatti di Outlook](../vsto/how-to-programmatically-add-an-entry-to-outlook-contacts.md)   
+ [Procedura: eseguire la ricerca a livello di codice per un contatto specifico](../vsto/how-to-programmatically-search-for-a-specific-contact.md)   
+ [Procedura: eseguire la ricerca a livello di codice per un indirizzo di posta elettronica nei contatti](../vsto/how-to-programmatically-search-for-an-e-mail-address-in-contacts.md)   
+ [Procedura: Eliminare contatti di Outlook a livello di codice](../vsto/how-to-programmatically-delete-outlook-contacts.md)  
   
   

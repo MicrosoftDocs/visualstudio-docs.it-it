@@ -1,57 +1,58 @@
 ---
-title: "IDebugFunctionObject2::CreateStringObjectWithLength | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "CreateStringObjectWithLength"
-  - "IDebugFunctionObject2::CreateStringObjectWithLength"
+title: IDebugFunctionObject2::CreateStringObjectWithLength | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology:
+- vs-ide-sdk
+ms.topic: conceptual
+helpviewer_keywords:
+- CreateStringObjectWithLength
+- IDebugFunctionObject2::CreateStringObjectWithLength
 ms.assetid: 1f43ec66-1615-4a4c-8b9d-e933f549f96d
-caps.latest.revision: 9
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 9
+author: gregvanl
+ms.author: gregvanl
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: 01accfb86161880be3d155a0f1751ebd9ac0a5a4
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# IDebugFunctionObject2::CreateStringObjectWithLength
-[!INCLUDE[vs2017banner](../../../code-quality/includes/vs2017banner.md)]
-
-Crea un oggetto stringa con la lunghezza specificata.  
+# <a name="idebugfunctionobject2createstringobjectwithlength"></a>IDebugFunctionObject2::CreateStringObjectWithLength
+Crea un oggetto stringa che ha la lunghezza specificata.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp#  
+```cpp  
 HRESULT CreateStringObjectWithLength (  
-   LPCOLESTR      pcstrString,  
-   UINT           uiLength,  
-   IDebugObject** ppObject  
+   LPCOLESTR      pcstrString,  
+   UINT           uiLength,  
+   IDebugObject** ppObject  
 );  
 ```  
   
-```c#  
+```csharp  
 int CreateStringObjectWithLength (  
-   string           pcstrString,  
-   uint             uiLength,  
-   out IDebugObject ppObject  
+   string           pcstrString,  
+   uint             uiLength,  
+   out IDebugObject ppObject  
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `pcstrString`  
- \[in\]  il valore stringa per l'oggetto stringa.  
+ [in] Il valore di stringa per l'oggetto stringa.  
   
  `uiLength`  
- \[in\]  La lunghezza della stringa in byte.  
+ [in] La lunghezza della stringa in byte.  
   
  `ppObject`  
- \[out\]  Restituisce [IDebugObject](../../../extensibility/debugger/reference/idebugobject.md) un oggetto che rappresenta l'oggetto stringa appena creato.  
+ [out] Restituisce un [IDebugObject](../../../extensibility/debugger/reference/idebugobject.md) oggetto che rappresenta l'oggetto stringa appena creata.  
   
-## Valore restituito  
- Se l'operazione riesce, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
+## <a name="return-value"></a>Valore restituito  
+ Se ha esito positivo, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IDebugFunctionObject2](../../../extensibility/debugger/reference/idebugfunctionobject2.md)

@@ -1,13 +1,9 @@
 ---
-title: "Attività BscMake | Microsoft Docs"
-ms.custom: 
+title: Attività BscMake | Microsoft Docs
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- vs-ide-sdk
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.technology: msbuild
+ms.topic: reference
 f1_keywords:
 - vc.task.bscmake
 - VC.Project.VCBscMakeTool.PreserveSBR
@@ -21,29 +17,16 @@ helpviewer_keywords:
 - MSBuild (Visual C++), tasks
 - BscMake task (MSBuild (Visual C++))
 ms.assetid: bb98fc67-cad8-43a7-9598-60df6d734db2
-caps.latest.revision: 7
-author: kempb
-ms.author: kempb
-manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: ca7c86466fa23fb21a932f26dc24e37c71cf29b4
-ms.openlocfilehash: 7522b540558794c702fc5a49972a9e00f785fd2f
-ms.lasthandoff: 04/05/2017
-
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 4f10d43fec6ad02cd83debac100add989f65d2df
+ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/19/2018
 ---
 # <a name="bscmake-task"></a>Attività BscMake
 > [!IMPORTANT]

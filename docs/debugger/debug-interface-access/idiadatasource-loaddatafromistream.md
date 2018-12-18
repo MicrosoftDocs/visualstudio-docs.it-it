@@ -1,61 +1,60 @@
 ---
-title: "IDiaDataSource::loadDataFromIStream | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "IDiaDataSource::loadDataFromIStream (metodo)"
+title: 'Idiadatasource:: Loaddatafromistream | Documenti Microsoft'
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology: vs-ide-debug
+ms.topic: conceptual
+dev_langs:
+- C++
+helpviewer_keywords:
+- IDiaDataSource::loadDataFromIStream method
 ms.assetid: 8fe33eea-1457-4b8c-ae19-f1ede5578483
-caps.latest.revision: 7
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 7
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 2421e25c51d005a069de316d1d465eca80a0432b
+ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/18/2018
 ---
-# IDiaDataSource::loadDataFromIStream
-[!INCLUDE[vs2017banner](../../code-quality/includes/vs2017banner.md)]
-
-Scrive i dati di debug archiviate in un file di database di programma \(PDB\) accede mediante un flusso di dati in memoria.  
+# <a name="idiadatasourceloaddatafromistream"></a>IDiaDataSource::loadDataFromIStream
+Prepara i dati di debug archiviati in un file di programma (PDB) di database tramito un flusso di dati in memoria.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp#  
-HRESULT loadDataFromIStream (   
-   IStream* pIStream  
+```C++  
+HRESULT loadDataFromIStream (   
+   IStream* pIStream  
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  pIStream  
- \[in\]   <xref:IStream> oggetto che rappresenta il flusso di dati da utilizzare.  
+ [in] Un <xref:IStream> oggetto che rappresenta il flusso di dati da utilizzare.  
   
-## Valore restituito  
- Se l'operazione riesce, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  Nella tabella seguente vengono illustrati i valori restituiti possibili di questo metodo.  
+## <a name="return-value"></a>Valore restituito  
+ Se ha esito positivo, restituisce `S_OK`; in caso contrario, restituisce un codice di errore. Nella tabella seguente mostra i valori restituiti possibili per questo metodo.  
   
 |Valore|Descrizione|  
-|------------|-----------------|  
-|E\_PDB\_FORMAT|Ha tentato di accedere a un file con un formato obsoleto.|  
-|E\_INVALIDARG|Invalidparameter.|  
-|E\_UNEXPECTED|L'origine dati è già stata preparare.|  
+|-----------|-----------------|  
+|E_PDB_FORMAT|Tentativo di accedere a un file con formato obsoleto.|  
+|E_INVALIDARG|Invalidparameter.|  
+|E_UNEXPECTED|Origine dati è già stata preparata.|  
   
-## Note  
- Questo metodo consente l'utilizzo dei dati di debug per un eseguibile sia ottenuto dalla memoria con <xref:IStream> oggetto.  
+## <a name="remarks"></a>Note  
+ In questo modo i dati di debug per un file eseguibile deve essere ottenuta dalla memoria tramite un <xref:IStream> oggetto.  
   
- Per caricare un file con estensione pdb senza convalida, utilizzare [IDiaDataSource::loadDataFromPdb](../../debugger/debug-interface-access/idiadatasource-loaddatafrompdb.md) metodo.  
+ Per caricare un file con estensione pdb senza convalida, utilizzare il [idiadatasource:: Loaddatafrompdb](../../debugger/debug-interface-access/idiadatasource-loaddatafrompdb.md) metodo.  
   
- Per convalidare il file pdb in base a criteri specifici, utilizzare [IDiaDataSource::loadAndValidateDataFromPdb](../../debugger/debug-interface-access/idiadatasource-loadandvalidatedatafrompdb.md) metodo.  
+ Per convalidare il file con estensione pdb sulla base dei criteri specifici, utilizzare il [idiadatasource:: Loadandvalidatedatafrompdb](../../debugger/debug-interface-access/idiadatasource-loadandvalidatedatafrompdb.md) metodo.  
   
- Per accedere al processo di caricamento dati \(tramite un meccanismo di callback, utilizzare [IDiaDataSource::loadDataForExe](../../debugger/debug-interface-access/idiadatasource-loaddataforexe.md) metodo.  
+ Per ottenere l'accesso per il processo di caricamento di dati (tramite un meccanismo di callback), utilizzare il [idiadatasource:: Loaddataforexe](../../debugger/debug-interface-access/idiadatasource-loaddataforexe.md) metodo.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IDiaDataSource](../../debugger/debug-interface-access/idiadatasource.md)   
- [IDiaDataSource::loadDataForExe](../../debugger/debug-interface-access/idiadatasource-loaddataforexe.md)   
- [IDiaDataSource::loadDataFromPdb](../../debugger/debug-interface-access/idiadatasource-loaddatafrompdb.md)   
+ [Loaddataforexe](../../debugger/debug-interface-access/idiadatasource-loaddataforexe.md)   
+ [Loaddatafrompdb](../../debugger/debug-interface-access/idiadatasource-loaddatafrompdb.md)   
  [IDiaDataSource::loadAndValidateDataFromPdb](../../debugger/debug-interface-access/idiadatasource-loadandvalidatedatafrompdb.md)

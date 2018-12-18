@@ -1,56 +1,57 @@
 ---
-title: "Dopo il lancio di un collegamento | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "motori di debug, connessione a programmi"
+title: Dopo il lancio di un collegamento di | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology:
+- vs-ide-sdk
+ms.topic: conceptual
+helpviewer_keywords:
+- debug engines, attaching to programs
 ms.assetid: 5a3600a1-dc20-4e55-b2a4-809736a6ae65
-caps.latest.revision: 14
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 14
+author: gregvanl
+ms.author: gregvanl
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: 69f9f9cde76c5fa66294fd2cdbdc5252169e0183
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# Dopo il lancio di un collegamento
-[!INCLUDE[vs2017banner](../../code-quality/includes/vs2017banner.md)]
-
-Dopo che un programma è stato avviato, la sessione di debug è pronta per associare il motore \(DE\) di debug del programma autonoma.  
+# <a name="attaching-after-a-launch"></a>Dopo il lancio di un collegamento di
+Dopo che è stato avviato un programma, la sessione di debug è possibile collegare il motore di debug (DE) a tale programma.  
   
-## decisioni di progettazione  
- Poiché la comunicazione risulta più semplice all'interno di uno spazio degli indirizzi condiviso, è necessario decidere se è opportuno semplificare la comunicazione tra la sessione di debug e il DE, o tra il DE e il programma.  Scegliere tra i seguenti:  
+## <a name="design-decisions"></a>Decisioni di progettazione  
+ Poiché la comunicazione è più semplice in uno spazio di indirizzi condiviso, è necessario decidere se è opportuno per facilitare la comunicazione tra la sessione di debug e la Germania, o tra la Germania e il programma. Scegliere tra le operazioni seguenti:  
   
--   Se è opportuno semplificare la comunicazione tra la sessione di debug e il DE, la sessione di debug viene creato il DE e chiede al DE per connettere il programma.  Ciò consente alla sessione di debug e il DE in uno spazio degli indirizzi e l'ambiente di runtime e pianifica raccolta in un altro.  
+-   Se è opportuno per facilitare la comunicazione tra la sessione di debug e la Germania, la sessione di debug creato la Germania e DE per collegare il programma richiesto. In questo modo la sessione di debug e DE insieme in uno spazio degli indirizzi e l'ambiente di runtime e il programma riuniti in un altro.  
   
--   Se è opportuno semplificare la comunicazione tra il DE e il programma, nell'ambiente di runtime viene creato il DE.  Ciò permette a SDM in uno spazio degli indirizzi e il DE, ambiente di runtime e pianifica raccolta in un altro.  Si tratta di una tipica di un DE distribuito con un interprete per eseguire i linguaggi basati su script.  
+-   Se è opportuno per facilitare la comunicazione tra la Germania e il programma, quindi l'ambiente in fase di esecuzione creato la Germania. In questo modo riuniti in un altro SDM in uno spazio degli indirizzi e per la Germania, ambiente di runtime e programma. È tipico di un DE implementato con un interprete per eseguire i linguaggi di script.  
   
     > [!NOTE]
-    >  Come si connette di DE al programma è implementazione\-dipendenti.  La comunicazione tra DE e il programma è anche implementazione\-dipendente.  
+    >  Come la Germania collega al programma è dipendente dall'implementazione. La comunicazione tra la Germania e il programma è dipendente dall'implementazione.  
   
-## Implementazione  
- A livello di codice, quando l'amministratore \(SDM\) di debug della sessione in primo luogo [IDebugProgram2](../../extensibility/debugger/reference/idebugprogram2.md) viene rilasciato l'oggetto che rappresenta il programma venga avviata, chiama [Attach](../../extensibility/debugger/reference/idebugprogram2-attach.md) il metodo, passando [IDebugEventCallback2](../../extensibility/debugger/reference/idebugeventcallback2.md) un oggetto, che successivamente viene utilizzato per passare gli eventi di debug di nuovo a SDM.  Successivamente, il metodo `IDebugProgram2::Attach` chiama il metodo [OnAttach](../../extensibility/debugger/reference/idebugprogramnodeattach2-onattach.md).  per ulteriori informazioni su come lo SDM riceve l'interfaccia di `IDebugProgram2` , vedere [La porta di notifica](../../extensibility/debugger/notifying-the-port.md).  
+## <a name="implementation"></a>Implementazione  
+ A livello di codice quando gestore di sessione di debug (SDM) riceve il [IDebugProgram2](../../extensibility/debugger/reference/idebugprogram2.md) oggetto che rappresenta il programma da avviare, chiama il [collegamento](../../extensibility/debugger/reference/idebugprogram2-attach.md) metodo, passando un [ IDebugEventCallback2](../../extensibility/debugger/reference/idebugeventcallback2.md) oggetto, che è successiva utilizzato per passare di nuovo gli eventi di debug di SDM. Il `IDebugProgram2::Attach` chiama quindi il [OnAttach](../../extensibility/debugger/reference/idebugprogramnodeattach2-onattach.md) metodo. Per ulteriori informazioni sul modo in cui riceve il SDM il `IDebugProgram2` interfaccia, vedere [la porta di notifica](../../extensibility/debugger/notifying-the-port.md).  
   
- Se il DE necessario eseguire nello stesso spazio degli indirizzi del programma sottoposto a debug, in genere perché il DE fa parte di un interprete che esegue uno script, il metodo di `IDebugProgramNodeAttach2::OnAttach` restituisce `S_FALSE`, indicando che ha eseguito il processo di connessione.  
+ Se la Germania deve essere eseguito nello stesso spazio di indirizzi del programma sottoposto a debug, in genere perché la Germania fa parte di un interprete eseguendo uno script, il `IDebugProgramNodeAttach2::OnAttach` restituisce `S_FALSE`, che indica che completato il processo di collegamento.  
   
- Se, invece, il DE viene eseguito nello spazio degli indirizzi di SDM, il metodo di `IDebugProgramNodeAttach2::OnAttach` restituisce `S_OK` o [IDebugProgramNodeAttach2](../../extensibility/debugger/reference/idebugprogramnodeattach2.md) l'interfaccia non è implementata qualsiasi [IDebugProgramNode2](../../extensibility/debugger/reference/idebugprogramnode2.md) oggetto associato al programma sottoposto a debug.  In questo caso, [Attach](../../extensibility/debugger/reference/idebugengine2-attach.md) il metodo viene infine viene chiamato per completare l'operazione di connessione.  
+ Se, invece, la Germania viene eseguito nello spazio degli indirizzi di SDM, il `IDebugProgramNodeAttach2::OnAttach` restituisce `S_OK` o [IDebugProgramNodeAttach2](../../extensibility/debugger/reference/idebugprogramnodeattach2.md) interfaccia non è implementata tutti scegliere il [IDebugProgramNode2 ](../../extensibility/debugger/reference/idebugprogramnode2.md) oggetto associato al programma in fase di debug. In questo caso, il [collegamento](../../extensibility/debugger/reference/idebugengine2-attach.md) viene chiamato alla fine per completare l'operazione di collegamento.  
   
- Nel secondo caso, è necessario chiamare [GetProgramId](../../extensibility/debugger/reference/idebugprogram2-getprogramid.md) il metodo sull'oggetto di `IDebugProgram2` passato al metodo di `IDebugEngine2::Attach` , archivia `GUID` nell'oggetto locale del programma e restituisce il `GUID` quando il metodo di `IDebugProgram2::GetProgramId` seguito viene chiamato il metodo su questo oggetto.  `GUID` viene utilizzato per identificare il programma in modo univoco tra i vari componenti di debug.  
+ Nel secondo caso, è necessario chiamare il [GetProgramId](../../extensibility/debugger/reference/idebugprogram2-getprogramid.md) metodo il `IDebugProgram2` oggetto passato al `IDebugEngine2::Attach` (metodo), archivio di `GUID` nel programma locale dell'oggetto e restituiscono questo `GUID` quando il `IDebugProgram2::GetProgramId` metodo successivamente viene chiamato su questo oggetto. Il `GUID` viene utilizzato per identificare in modo univoco il programma per i vari componenti di debug.  
   
- Si noti che nel caso del metodo di `IDebugProgramNodeAttach2::OnAttach` che restituisce `S_FALSE`, `GUID` da utilizzare per il programma viene passato al metodo ed è il metodo di `IDebugProgramNodeAttach2::OnAttach` che imposta `GUID` sull'oggetto locale del programma.  
+ Si noti che nel caso del `IDebugProgramNodeAttach2::OnAttach` metodo che restituisce `S_FALSE`, `GUID` da utilizzare per il programma viene passato a tale metodo ed è il `IDebugProgramNodeAttach2::OnAttach` metodo che imposta il `GUID` sull'oggetto di programmi locali.  
   
- Il DE è ora associato al programma e pronto per inviare tutti gli eventi di avvio.  
+ La Germania è ora associato al programma e pronta per l'invio di tutti gli eventi di avvio.  
   
-## Vedere anche  
- [La connessione direttamente a un programma](../../extensibility/debugger/attaching-directly-to-a-program.md)   
+## <a name="see-also"></a>Vedere anche  
+ [Connessione direttamente a un programma](../../extensibility/debugger/attaching-directly-to-a-program.md)   
  [La porta di notifica](../../extensibility/debugger/notifying-the-port.md)   
  [Attività di debug](../../extensibility/debugger/debugging-tasks.md)   
  [IDebugEventCallback2](../../extensibility/debugger/reference/idebugeventcallback2.md)   
  [IDebugProgram2](../../extensibility/debugger/reference/idebugprogram2.md)   
- [Attach](../../extensibility/debugger/reference/idebugprogram2-attach.md)   
+ [Collegare](../../extensibility/debugger/reference/idebugprogram2-attach.md)   
  [GetProgramId](../../extensibility/debugger/reference/idebugprogram2-getprogramid.md)   
  [IDebugProgramNode2](../../extensibility/debugger/reference/idebugprogramnode2.md)   
  [IDebugProgramNodeAttach2](../../extensibility/debugger/reference/idebugprogramnodeattach2.md)   

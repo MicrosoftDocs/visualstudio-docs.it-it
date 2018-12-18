@@ -1,29 +1,30 @@
 ---
-title: "DisplayKind | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "Enumerazione DisplayKind"
+title: DisplayKind | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology:
+- vs-ide-sdk
+ms.topic: conceptual
+helpviewer_keywords:
+- DisplayKind enumeration
 ms.assetid: 940968c5-6065-4bda-8ee6-c31597db4d71
-caps.latest.revision: 5
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 5
+author: gregvanl
+ms.author: gregvanl
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: 8890d8a949e59827b45d3a2933116294562023e1
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# DisplayKind
-[!INCLUDE[vs2017banner](../../../code-quality/includes/vs2017banner.md)]
-
-Enumera i valori validi che rappresentano i tipi di informazioni accettare [IDebugField](../../../extensibility/debugger/reference/idebugfield.md) da un oggetto e da una visualizzazione all'utente.  
+# <a name="displaykind"></a>DisplayKind
+Enumera i valori validi che rappresentano i tipi di informazioni da eseguire da un [IDebugField](../../../extensibility/debugger/reference/idebugfield.md) dell'oggetto e visualizzare all'utente.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp#  
+```cpp  
 enum enum_DisplayKind  
 {  
    DisplayKind_Value = 0x1,  
@@ -33,7 +34,7 @@ enum enum_DisplayKind
 typedef DWORD DisplayKind;  
 ```  
   
-```c#  
+```csharp  
 public enum enum_DisplayKind  
 {  
    DisplayKind_Value = 0x1,  
@@ -42,23 +43,23 @@ public enum enum_DisplayKind
 };  
 ```  
   
-#### Parametri  
- DisplayKind\_Value  
+#### <a name="parameters"></a>Parametri  
+ DisplayKind_Value  
  Valore del campo.  
   
- DisplayKind\_Name  
+ DisplayKind_Name  
  Nome del campo.  
   
- DisplayKind\_Type  
- tipo di campo.  
+ DisplayKind_Type  
+ Tipo del campo.  
   
-## Requisiti  
- intestazione: Ee.h  
+## <a name="requirements"></a>Requisiti  
+ Intestazione: Ee.h  
   
- Spazio dei nomi: Microsoft.VisualStudio.Debugger.Interop  
+ Namespace: Microsoft.VisualStudio.Debugger.Interop  
   
  Assembly: Microsoft.VisualStudio.Debugger.Interop.dll  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Enumerazioni](../../../extensibility/debugger/reference/enumerations-visual-studio-debugging.md)   
  [GetValueDisplayStringCount](../../../extensibility/debugger/reference/ieevisualizerservice-getvaluedisplaystringcount.md)

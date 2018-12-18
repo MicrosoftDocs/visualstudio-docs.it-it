@@ -1,42 +1,26 @@
 ---
 title: -Build (devenv.exe) | Microsoft Docs
-ms.custom: 
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - vs-ide-general
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: conceptual
 helpviewer_keywords:
 - builds [Team System], command-line
 - /build Devenv switch
 - Devenv, /build switch
 - build Devenv switch
 ms.assetid: ced21627-7653-455b-8821-3e31c6a448cf
-caps.latest.revision: 15
-author: kempb
-ms.author: kempb
-manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: 5db97d19b1b823388a465bba15d057b30ff0b3ce
-ms.openlocfilehash: b87c3eb43cd36154f7cbe75cc02c103fe63bc340
-ms.lasthandoff: 02/22/2017
-
+author: gewarren
+ms.author: gewarren
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 1cc01dac34723f2a587e76461d41a60361a72091
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="build-devenvexe"></a>/Build (devenv.exe)
 Consente di compilare una soluzione con un file di configurazione della soluzione specificato.  
@@ -55,10 +39,10 @@ Devenv SolutionName /build SolnConfigName [/project ProjName [/projectconfig Pro
  Obbligatorio. Nome della configurazione della soluzione da usare per compilare la soluzione indicata in `SolutionName`.  
   
  /project `ProjName`  
- Parametro facoltativo. Percorso e nome di un file di progetto all'interno della soluzione. È possibile immettere un percorso relativo per il file di progetto dalla cartella `SolutionName`, il nome visualizzato del progetto, oppure il percorso completo e il nome del file di progetto.  
+ Facoltativo. Il percorso e il nome del file di progetto nella soluzione. È possibile immettere il percorso relativo del file di progetto dalla cartella `SolutionName` il nome visualizzato del progetto o il percorso completo e il nome del file di progetto.  
   
  /projectconfig `ProjConfigName`  
- Parametro facoltativo. Nome della configurazione di compilazione del progetto da usare per la compilazione del `/project` denominato.  
+ Facoltativo. Nome della configurazione di compilazione del progetto da usare per la compilazione del `/project` denominato.  
   
 ## <a name="remarks"></a>Note  
  Questa opzione esegue la stessa funzione del comando di menu **Compila soluzione** nell'ambiente di sviluppo integrato (IDE).  
@@ -70,7 +54,7 @@ Devenv SolutionName /build SolnConfigName [/project ProjName [/projectconfig Pro
  Questo comando esegue la compilazione dei soli progetti modificati dopo l'ultima compilazione. Per compilare tutti i progetti in una soluzione, usare [/Rebuild (devenv.exe)](../../ide/reference/rebuild-devenv-exe.md).  
   
 ## <a name="example"></a>Esempio  
- In questo esempio viene compilato il progetto `CSharpConsoleApp`, usando la configurazione di compilazione del progetto `Debug` all'interno della configurazione della soluzione `Debug` di `MySolution`.  
+ Questo esempio compila il progetto `CSharpConsoleApp` usando la configurazione di compilazione del progetto `Debug` all'interno della configurazione della soluzione `Debug` di `MySolution`.  
   
 ```  
 devenv "C:\Documents and Settings\someuser\My Documents\Visual Studio\Projects\MySolution\MySolution.sln" /build Debug /project "CSharpWinApp\CSharpWinApp.csproj" /projectconfig Debug   

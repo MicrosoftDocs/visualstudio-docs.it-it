@@ -1,27 +1,26 @@
 ---
-title: "Distribuzione di soluzioni per un linguaggio specifico di dominio | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "Linguaggio specifico di dominio, distribuzione"
-ms.assetid: 160a9022-ab2f-47db-9d04-4c63fef0ee7d
-caps.latest.revision: 27
-author: "alancameronwills"
-ms.author: "awills"
-manager: "douge"
-caps.handback.revision: 27
+title: Distribuzione di soluzioni per un linguaggio specifico di dominio
+ms.date: 11/04/2016
+ms.topic: conceptual
+helpviewer_keywords:
+- Domain-Specific Language, deployment
+author: gewarren
+ms.author: gewarren
+manager: douge
+ms.workload:
+- multiple
+ms.technology: vs-ide-modeling
+ms.openlocfilehash: 98a22595a41d7045ff0c56be5f18ca39cf328f94
+ms.sourcegitcommit: 4c0bc21d2ce2d8e6c9d3b149a7d95f0b4d5b3f85
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/20/2018
 ---
-# Distribuzione di soluzioni per un linguaggio specifico di dominio
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
+# <a name="deploying-domain-specific-language-solutions"></a>Distribuzione di soluzioni per un linguaggio specifico di dominio
+È possibile installare un linguaggio specifico di dominio nel proprio computer o in altri computer. [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] deve essere già installato nel computer di destinazione.
 
-È possibile installare un linguaggio specifico di dominio di diventi proprietaria del computer o in altri computer.  [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] il valore è già installato nel computer di destinazione.  
-  
--   [Distribuzione MSI e VSIX di un linguaggio DSL](../modeling/msi-and-vsix-deployment-of-a-dsl.md)  
-  
--   [Più soluzioni DSL in una soluzione unica](../modeling/multiple-dsls-in-one-solution.md)  
-  
+-   [Distribuzione MSI e VSIX di un linguaggio DSL](../modeling/msi-and-vsix-deployment-of-a-dsl.md)
+
+-   [Più soluzioni DSL in una soluzione unica](../modeling/multiple-dsls-in-one-solution.md)
+
 -   [Distribuzione della shell di Visual Studio](../modeling/vs-shell-deployment.md)

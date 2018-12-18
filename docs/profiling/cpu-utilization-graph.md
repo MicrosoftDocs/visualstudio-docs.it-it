@@ -1,39 +1,38 @@
 ---
-title: "Grafico Utilizzo CPU | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "vs.cv.cpu.graph"
-helpviewer_keywords: 
-  - "Visualizzatore di concorrenza, grafico Utilizzo CPU"
+title: Grafico di utilizzo della CPU | Microsoft Docs
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology: vs-ide-debug
+ms.topic: conceptual
+f1_keywords:
+- vs.cv.cpu.graph
+helpviewer_keywords:
+- CPU Utilization GraphConcurrency Visualizer, CPU Utilization Graph
 ms.assetid: 5332fd38-622d-47a3-874f-8c2fd7a30f95
-caps.latest.revision: 14
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 14
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: cfbce376425d4e98d493aa3478e9cf00ac837a17
+ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/19/2018
 ---
-# Grafico Utilizzo CPU
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
-Il grafico di utilizzo della CPU mostra il livello di utilizzo della CPU in un'applicazione nel tempo.  Sull'asse X viene rappresentata la durata della traccia e sull'asse y il numero di core logici nel sistema.  Nel grafico non viene tuttavia indicato quale core specifico è attivo in un determinato momento.  Ad esempio, se due core sono ciascuno in esecuzione al 50 percento della capacità per un periodo di tempo specificato, in questa visualizzazione verrà indicato l'utilizzo di un solo core logico.  
+# <a name="cpu-utilization-graph"></a>Grafico Utilizzo CPU
+Il grafico di utilizzo della CPU visualizza il livello di utilizzo in un'app nel tempo. L'asse X rappresenta la durata della traccia e l'asse Y rappresenta il numero di core logici nel sistema. Il grafico non indica quale core specifico è attivo in un momento determinato. Ad esempio, se due core sono in esecuzione al 50% per un determinato periodo di tempo, il grafico indica che viene utilizzato un solo core logico.  
   
-## Colori del Grafico di Utilizzo della CPU  
+## <a name="cpu-utilization-graph-colors"></a>Colori del grafico di utilizzo della CPU  
   
--   Il verde indica l'utilizzo dei core logici nel sistema dal processo corrente.  
+-   Il colore verde indica l'utilizzo dei core logici del sistema da parte del processo corrente.  
   
--   Il grigio chiaro indica l'utilizzo dei core logici da parte di altri processi nel sistema.  Una percentuale elevata di grigio chiaro nel grafico della CPU segnala un carico massimo sul sistema a causa di altri processi, per cui il processo dell'utente potrebbe essere annullato.  Per ridurre l'utilizzo di core logici da parte degli altri processi, limitare il numero dei processi stessi in esecuzione sul sistema.  
+-   Il colore grigio chiaro indica l'utilizzo dei core logici da parte di altri processi nel sistema. Una percentuale elevata di colore grigio chiaro nel grafico della CPU indica che il sistema è eccessivamente caricato da altri processi e che il processo in corso potrebbe essere annullato dagli altri processi. Per ridurre l'uso dei core logici da parte di altri processi, ridurre il numero di tali processi eseguiti nel sistema.  
   
--   In grigio scuro viene indicato l'utilizzo dei core logici da parte del processo di sistema.  Sebbene non sia possibile controllarlo, è utile sapere quando viene eseguito perché può influire sulla disponibilità di core logici per il processo dell'utente.  
+-   Il colore grigio scuro indica il consumo di core logici da parte del processo di sistema. Non è possibile controllare direttamente questa attività, ma è utile essere al corrente di questi eventi perché possono incidere sulla disponibilità di core logici per il processo.  
   
--   In bianco viene indicata la disponibilità di core logici inutilizzati nel sistema.  Tali core sono disponibili per il processo se è possibile trovare più opportunità di parallelismo.  
+-   Il colore bianco indica la disponibilità di core logici non usati nel sistema. Tali core sono disponibili per il processo se è possibile trovare altre opportunità di parallelismo.  
   
-## Vedere anche  
- [Visualizzazione Uso](../profiling/utilization-view.md)   
- [Utilizzo CPU medio](../profiling/average-cpu-utilization.md)
+## <a name="see-also"></a>Vedere anche  
+ [Visualizzazione Utilizzo](../profiling/utilization-view.md)   
+ [Utilizzo medio della CPU](../profiling/average-cpu-utilization.md)

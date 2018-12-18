@@ -1,53 +1,54 @@
 ---
-title: "Barra dei menu a discesa | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "legacy [Visual Studio SDK], Editor - menu a discesa della barra"
+title: Barra dei menu a discesa | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology:
+- vs-ide-sdk
+ms.topic: conceptual
+helpviewer_keywords:
+- editors [Visual Studio SDK], legacy - drop-down bar
 ms.assetid: 4bb621bd-72f5-43d5-916f-9f66617da049
-caps.latest.revision: 12
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 12
+author: gregvanl
+ms.author: gregvanl
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: 0cf01e8a416407c570076812bf18aa6b21c21583
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# Barra dei menu a discesa
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
-La barra a discesa viene fornita la parte superiore della finestra del codice e contiene due elenchi a discesa.  
+# <a name="drop-down-bar"></a>Barra dei menu a discesa
+Barra dei menu a discesa viene fornita nella parte superiore della finestra del codice e contiene due elenchi a discesa.  
   
-## Interfacce a discesa della barra  
- In [!INCLUDE[vcprvc](../code-quality/includes/vcprvc_md.md)], ad esempio, la barra a discesa contiene gli elenchi per le funzioni membro degli elementi di [!INCLUDE[vcprvc](../code-quality/includes/vcprvc_md.md)] e gli elementi di [!INCLUDE[vcprvc](../code-quality/includes/vcprvc_md.md)] , come mostrato nell'immagine seguente.  
+## <a name="drop-down-bar-interfaces"></a>Barra dei menu a discesa interfacce  
+ In [!INCLUDE[vcprvc](../code-quality/includes/vcprvc_md.md)], ad esempio, la barra dei menu a discesa contiene gli elenchi per [!INCLUDE[vcprvc](../code-quality/includes/vcprvc_md.md)] elementi e [!INCLUDE[vcprvc](../code-quality/includes/vcprvc_md.md)] le funzioni membro di elementi, come illustrato nell'immagine seguente.  
   
- ![Barre a discesa](~/extensibility/media/vsdropdown_bar.gif "vsDropdown\_bar")  
-barra a discesa  
+ ![Eliminare&#45;verso il basso le barre](../extensibility/media/vsdropdown_bar.gif "vsDropdown_bar")  
+Barra dei menu a discesa  
   
- Quando si implementa una barra a discesa, esistono quattro interfacce di importanza primaria:  
+ Quando si implementa una barra dei menu a discesa, sono disponibili quattro interfacce di primaria importanza:  
   
 -   <xref:Microsoft.VisualStudio.TextManager.Interop.IVsDropdownBarClient>  
   
-     Implementare questa interfaccia per inserire il contenuto della barra a discesa.  Ogni combinazione a discesa può contenere testo normale o il testo effettuato \(grassetto, sottolineatura, o corsivo\), è possibile che la colorazione di carattere del testo della finestra o colorazione in grigio di carattere e facoltativamente può fornire una piccola bitmap accanto all'elemento a discesa.  Simile all'interfaccia di <xref:Microsoft.VisualStudio.TextManager.Interop.IVsCompletionSet> , immagini bitmap vengono forniti gli elenchi di immagini.  Ogni combinazione a discesa può avere un elenco immagini diverso; tuttavia, ogni elenco immagini deve contenere immagini della stessa altezza.  Inoltre, utilizzando il metodo di <xref:Microsoft.VisualStudio.TextManager.Interop.IVsDropdownBarClient.GetComboTipText%2A> , è possibile fornire una descrizione comandi per ogni combinazione.  
+     Implementare questa interfaccia per l'inserimento del contenuto della barra dei menu a discesa. Ogni combinazione di riepilogo a discesa può contenere testo normale o testo artistico (grassetto, sottolineato o corsivo), può avere colorazione del tipo di carattere testo finestra o tipo di carattere grigio colorazione e facoltativamente, è possibile specificare una bitmap piccola accanto alla voce dell'elenco a discesa. Simile al <xref:Microsoft.VisualStudio.TextManager.Interop.IVsCompletionSet> interfaccia, le immagini bitmap fornite negli elenchi di immagini. Ogni combinazione di riepilogo a discesa può avere un elenco di immagini differenti; Tuttavia, ciascun elenco immagini deve contenere le immagini della stessa altezza. Inoltre, l'uso di <xref:Microsoft.VisualStudio.TextManager.Interop.IVsDropdownBarClient.GetComboTipText%2A> (metodo), è possibile fornire una descrizione comando per ogni combinazione.  
   
 -   <xref:Microsoft.VisualStudio.TextManager.Interop.IVsDropdownBarManager>  
   
-     Chiamare questa interfaccia per creare o elimina la barra a discesa per una finestra del codice.  Tale interfaccia può essere utilizzata anche per determinare se una barra a discesa è già associate a una finestra del codice chiamando il metodo di <xref:Microsoft.VisualStudio.TextManager.Interop.IVsDropdownBarManager.GetDropdownBar%2A> .  chiamata <xref:System.Runtime.InteropServices.Marshal.QueryInterface%2A> per <xref:Microsoft.VisualStudio.TextManager.Interop.IVsDropdownBarManager> da <xref:Microsoft.VisualStudio.TextManager.Interop.IVsCodeWindow>.  
+     Chiamare questa interfaccia per creare o eliminare la barra di menu a discesa per una finestra del codice. Questa interfaccia può essere utilizzata anche per determinare se una barra dei menu a discesa è già connesso a una finestra del codice tramite la chiamata di <xref:Microsoft.VisualStudio.TextManager.Interop.IVsDropdownBarManager.GetDropdownBar%2A> metodo. Chiamare <xref:System.Runtime.InteropServices.Marshal.QueryInterface%2A> per <xref:Microsoft.VisualStudio.TextManager.Interop.IVsDropdownBarManager> da <xref:Microsoft.VisualStudio.TextManager.Interop.IVsCodeWindow>.  
   
 -   <xref:Microsoft.VisualStudio.TextManager.Interop.IVsDropdownBar>  
   
-     chiamare questa interfaccia per comunicare direttamente con la barra a discesa.  È possibile utilizzare questa interfaccia per forzare l'aggiornamento del contenuto a discesa della barra o modificare la selezione in una delle caselle di riepilogo.  
+     Chiamare questa interfaccia per comunicare direttamente con la barra dei menu a discesa. È possibile utilizzare questa interfaccia per forzare un aggiornamento dell'elenco a discesa della barra di contenuto o per modificare la selezione in una delle caselle di riepilogo.  
   
 -   <xref:Microsoft.VisualStudio.TextManager.Interop.IVsTextManagerEvents>  
   
-     Se è stato registrato `ShowDropdownBarOption` nella chiave del Registro di sistema del servizio di linguaggio, quindi gestione finestre del codice deve monitorare l'evento per sincronizzare con le preferenze utente per quanto riguarda se la barra a discesa deve essere visualizzato.  Se non si registra questa opzione nella chiave del servizio di linguaggio, quindi l'opzione per visualizzare o nascondere la barra a discesa è disabilitata nel menu di **opzioni** .  
+     Se è stato registrato il `ShowDropdownBarOption` chiave del Registro di sistema del servizio del linguaggio, quindi la gestione di finestre di codice necessario monitorare questo evento per la sincronizzazione con le preferenze dell'utente relative se deve essere visualizzata la barra di elenco a discesa. Se questa opzione non registrare chiave del linguaggio del servizio, quindi l'opzione per mostrare o nascondere la barra dei menu a discesa è disabilitata nel **opzioni** menu.  
   
-## Connettere una barra a discesa a una finestra del codice  
- Per connettere una barra a discesa nella finestra del codice quando viene creata, un servizio di linguaggio deve associare alla barra a discesa quando il metodo di <xref:Microsoft.VisualStudio.TextManager.Interop.IVsCodeWindowManager.AddAdornments%2A> viene chiamato.  If a call to the <xref:Microsoft.VisualStudio.TextManager.Interop.IVsDropdownBarManager.GetDropdownBar%2A> method indicates that a drop\-down bar does not already exist, then call <xref:Microsoft.VisualStudio.TextManager.Interop.IVsDropdownBarManager.AddDropdownBar%2A>.  Per accedere all'interfaccia di <xref:Microsoft.VisualStudio.TextManager.Interop.IVsDropdownBarManager> , la chiamata <xref:System.Runtime.InteropServices.Marshal.QueryInterface%2A> il puntatore di <xref:Microsoft.VisualStudio.TextManager.Interop.IVsCodeWindow> ha restituito all'implementazione di <xref:Microsoft.VisualStudio.TextManager.Interop.IVsCodeWindowManager> è stata collegata.  
+## <a name="attaching-a-drop-down-bar-to-a-code-window"></a>Collegamento di una barra dei menu a discesa a una finestra del codice  
+ Per collegare una barra dei menu a discesa nella finestra di codice quando viene creato, un servizio di linguaggio deve connettersi per l'elenco a discesa barra quando il <xref:Microsoft.VisualStudio.TextManager.Interop.IVsCodeWindowManager.AddAdornments%2A> metodo viene chiamato. Se una chiamata al <xref:Microsoft.VisualStudio.TextManager.Interop.IVsDropdownBarManager.GetDropdownBar%2A> metodo indica che una barra dei menu a discesa non esista già, quindi chiamare <xref:Microsoft.VisualStudio.TextManager.Interop.IVsDropdownBarManager.AddDropdownBar%2A>. Per l'accesso di <xref:Microsoft.VisualStudio.TextManager.Interop.IVsDropdownBarManager> interfaccia, chiamare <xref:System.Runtime.InteropServices.Marshal.QueryInterface%2A> dal <xref:Microsoft.VisualStudio.TextManager.Interop.IVsCodeWindow> puntatore restituito all'utente quando il <xref:Microsoft.VisualStudio.TextManager.Interop.IVsCodeWindowManager> implementazione è stata collegata.  
   
-## Vedere anche  
- [Personalizzazione di Windows di codice tramite l'API Legacy](../extensibility/customizing-code-windows-by-using-the-legacy-api.md)   
- [Supporto per la barra di spostamento in un servizio di linguaggio Legacy](../extensibility/internals/support-for-the-navigation-bar-in-a-legacy-language-service.md)
+## <a name="see-also"></a>Vedere anche  
+ [Personalizzazione di codice Windows tramite l'API Legacy](../extensibility/customizing-code-windows-by-using-the-legacy-api.md)   
+ [Supporto per la barra di spostamento in un servizio di linguaggio legacy](../extensibility/internals/support-for-the-navigation-bar-in-a-legacy-language-service.md)

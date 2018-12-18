@@ -1,54 +1,55 @@
 ---
-title: "IDebugCoreServer2::GetPort | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "IDebugCoreServer2::GetPort"
-helpviewer_keywords: 
-  - "IDebugCoreServer2::GetPort"
+title: IDebugCoreServer2::GetPort | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology:
+- vs-ide-sdk
+ms.topic: conceptual
+f1_keywords:
+- IDebugCoreServer2::GetPort
+helpviewer_keywords:
+- IDebugCoreServer2::GetPort
 ms.assetid: 3f5ea4a8-6085-4600-980a-9e48f8b5be56
-caps.latest.revision: 11
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 11
+author: gregvanl
+ms.author: gregvanl
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: c1f889e44895faf9b5afdc2186adc5baadd5a578
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# IDebugCoreServer2::GetPort
-[!INCLUDE[vs2017banner](../../../code-quality/includes/vs2017banner.md)]
-
-recupera una porta specifica.  
+# <a name="idebugcoreserver2getport"></a>IDebugCoreServer2::GetPort
+Recupera una porta specifica.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp#  
-HRESULT GetPort(   
-   REFGUID       guidPort,  
-   IDebugPort2** ppPort  
+```cpp  
+HRESULT GetPort(   
+   REFGUID       guidPort,  
+   IDebugPort2** ppPort  
 );  
 ```  
   
-```c#  
-int GetPort(   
-   ref Guid        guidPort,  
-   out IDebugPort2 ppPort  
+```csharp  
+int GetPort(   
+   ref Guid        guidPort,  
+   out IDebugPort2 ppPort  
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `guidPort`  
- \[in\]  GUID della porta da recuperare.  
+ [in] GUID della porta deve essere recuperato.  
   
  `ppPort`  
- \[out\]  restituisce [IDebugPort2](../../../extensibility/debugger/reference/idebugport2.md) un oggetto che rappresenta la porta desiderata.  
+ [out] Restituisce un [IDebugPort2](../../../extensibility/debugger/reference/idebugport2.md) oggetto che rappresenta la porta desiderata.  
   
-## Valore restituito  
- Se l'operazione riesce, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  Restituisce `E_PORTSUPPLIER_NO_PORT` se non c " è porta con l'identificatore specificato.  
+## <a name="return-value"></a>Valore restituito  
+ Se ha esito positivo, restituisce `S_OK`; in caso contrario, restituisce un codice di errore. Restituisce `E_PORTSUPPLIER_NO_PORT` se non sono disponibili porte con l'identificatore specificato.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IDebugCoreServer2](../../../extensibility/debugger/reference/idebugcoreserver2.md)   
  [IDebugPort2](../../../extensibility/debugger/reference/idebugport2.md)

@@ -1,51 +1,52 @@
 ---
-title: "IEnumDebugPortSuppliers2::GetCount | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "IEnumDebugPortSuppliers2::GetCount"
-helpviewer_keywords: 
-  - "IEnumDebugPortSuppliers2::GetCount"
+title: IEnumDebugPortSuppliers2::GetCount | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology:
+- vs-ide-sdk
+ms.topic: conceptual
+f1_keywords:
+- IEnumDebugPortSuppliers2::GetCount
+helpviewer_keywords:
+- IEnumDebugPortSuppliers2::GetCount
 ms.assetid: 004f78dd-87d0-41a8-bcaa-f7fadbfeb8fc
-caps.latest.revision: 10
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 10
+author: gregvanl
+ms.author: gregvanl
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: e134a00af63b22ba0c29e015c593459aa8ebb20e
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# IEnumDebugPortSuppliers2::GetCount
-[!INCLUDE[vs2017banner](../../../code-quality/includes/vs2017banner.md)]
-
+# <a name="ienumdebugportsuppliers2getcount"></a>IEnumDebugPortSuppliers2::GetCount
 Restituisce il numero di elementi nell'enumerazione.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp#  
+```cpp  
 HRESULT GetCount(  
-   ULONG* pcelt  
+   ULONG* pcelt  
 );  
 ```  
   
-```c#  
+```csharp  
 int GetCount(  
-   out uint pcelt  
+   out uint pcelt  
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `pcelt`  
- \[out\]  Restituisce il numero di elementi nell'enumerazione.  
+ [out] Restituisce il numero di elementi nell'enumerazione.  
   
-## Valore restituito  
- Se l'operazione riesce, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
+## <a name="return-value"></a>Valore restituito  
+ Se ha esito positivo, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
   
-## Note  
- Questo metodo non fa parte dell'interfaccia solito di enumerazione COM che specifica che solo `Next`, `Clone`, `Skip`e i metodi di `Reset` devono essere distribuiti.  
+## <a name="remarks"></a>Note  
+ Questo metodo non è solitamente si interfaccia COM di enumerazione che specifica che solo il `Next`, `Clone`, `Skip`, e `Reset` metodi devono essere implementate.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IEnumDebugPortSuppliers2](../../../extensibility/debugger/reference/ienumdebugportsuppliers2.md)

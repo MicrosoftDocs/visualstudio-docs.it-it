@@ -1,45 +1,48 @@
 ---
-title: "Metodo valueOf (String) | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/18/2017"
-ms.prod: "windows-client-threshold"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-javascript"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-dev_langs: 
-  - "JavaScript"
-  - "TypeScript"
-  - "DHTML"
+title: Metodo valueOf (String) | Documenti Microsoft
+ms.custom: 
+ms.date: 01/18/2017
+ms.prod: windows-client-threshold
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-javascript
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+dev_langs:
+- JavaScript
+- TypeScript
+- DHTML
 ms.assetid: dfb55e6b-e38f-4b49-8196-9693f87126a4
-caps.latest.revision: 2
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 2
+caps.latest.revision: "2"
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.openlocfilehash: 15fe978fb0628c046f369f565bb464353f1e6812
+ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/27/2017
 ---
-# Metodo valueOf (String)
+# <a name="valueof-method-string"></a>Metodo valueOf (String)
 Restituisce la stringa.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
   
 string.valueOf()  
 ```  
   
-#### Parametri  
- Il metodo non ha parametri.  
+#### <a name="parameters"></a>Parametri  
+ Questo metodo non ha parametri.  
   
-## Valore restituito  
- Restituisce il valore stringa.  
+## <a name="return-value"></a>Valore restituito  
+ Restituisce il valore di stringa.  
   
-## Note  
- Nell'esempio seguente, l'oggetto stringa corrisponde al valore restituito.  
+## <a name="remarks"></a>Note  
+ Nell'esempio seguente, l'oggetto string è lo stesso come il valore restituito.  
   
-```javascript  
+```JavaScript  
 var str = "every good boy does fine";  
 var strStr = str.valueOf();  
   
@@ -53,5 +56,5 @@ document.write("different");
   
 ```  
   
-## Requisiti  
+## <a name="requirements"></a>Requisiti  
  [!INCLUDE[jsv2](../../javascript/reference/includes/jsv2-md.md)]

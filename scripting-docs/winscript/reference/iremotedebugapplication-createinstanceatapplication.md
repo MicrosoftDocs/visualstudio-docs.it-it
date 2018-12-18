@@ -1,27 +1,33 @@
 ---
-title: "IRemoteDebugApplication::CreateInstanceAtApplication | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/18/2017"
-ms.prod: "windows-script-interfaces"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-apiname: IRemoteDebugApplication.CreateInstanceAtApplication
-apilocation: pdm.dll
-helpviewer_keywords: 
-  - "IRemoteDebugApplication::CreateInstanceAtApplication"
+title: IRemoteDebugApplication::CreateInstanceAtApplication | Documenti Microsoft
+ms.custom: 
+ms.date: 01/18/2017
+ms.prod: windows-script-interfaces
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: reference
+apiname:
+- IRemoteDebugApplication.CreateInstanceAtApplication
+apilocation:
+- pdm.dll
+helpviewer_keywords:
+- IRemoteDebugApplication::CreateInstanceAtApplication
 ms.assetid: d669ec80-2182-400d-87cc-7c1753315e5c
-caps.latest.revision: 8
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: 
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.openlocfilehash: a2185987f6b635dae4d537231fca3327d0aed003
+ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/27/2017
 ---
-# IRemoteDebugApplication::CreateInstanceAtApplication
-Consente la creazione di oggetti nel processo dell'applicazione dal codice che è out\-of\-process all'applicazione.  
+# <a name="iremotedebugapplicationcreateinstanceatapplication"></a>IRemoteDebugApplication::CreateInstanceAtApplication
+Consente la creazione di oggetti nel processo dell'applicazione dal codice che è out-of-process per l'applicazione.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
 HRESULT CreateInstanceAtApplication(  
@@ -33,31 +39,31 @@ HRESULT CreateInstanceAtApplication(
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `rclsid`  
- \[in\] identificatore di classe \(CLSID\) dell'oggetto da creare.  
+ [in] Classe (CLSID) di identificatore di oggetto da creare.  
   
  `pUnkOuter`  
- \[in\] se `NULL`, l'oggetto non viene creato come parte di un'operazione di aggregazione.  In caso contrario, `pUnkOuter` è un puntatore a interfaccia di aggregazione `IUnknown` dell'oggetto \( `IUnknown`di controllo.  
+ [in] Se `NULL`, l'oggetto non sia stata creata come parte di un'aggregazione. In caso contrario, `pUnkOuter` è un puntatore all'oggetto aggregato `IUnknown` interfaccia (il controllo `IUnknown`).  
   
  `dwClsContext`  
- \[in\] contesto del codice eseguibile in esecuzione.  I valori vengono ottenuti dall'enumerazione `CLSCTX`.  
+ [in] Contesto per l'esecuzione di codice eseguibile. I valori sono tratti dall'enumerazione `CLSCTX`.  
   
  `riid`  
- \[in\] identificatore di interfaccia utilizzata per comunicare con l'oggetto.  
+ [in] L'identificatore di interfaccia utilizzata per comunicare con l'oggetto.  
   
  `ppvObject`  
- \[out\] Indirizzo della variabile puntatore che riceve il puntatore a interfaccia richiesto in `riid`.  Nel ritorno, \*`ppvObject` contiene un puntatore a interfaccia richiesta.  Quando si verifica un errore, \*`ppvObject` contiene `NULL`.  
+ [out] Indirizzo della variabile puntatore che riceve il puntatore di interfaccia richiesto `riid`. Dopo la restituzione ha esito positivo, *`ppvObject` contiene il puntatore di interfaccia richiesto. In caso di errore, \* `ppvObject` contiene `NULL`.  
   
-## Valore restituito  
- Il metodo restituisce un tipo `HRESULT`.  I valori possibili sono, ma non sono limitati a, quelli nella tabella seguente.  
+## <a name="return-value"></a>Valore restituito  
+ Il metodo restituisce un tipo `HRESULT`. I valori possibili includono, ma non sono limitati a, quelli indicati nella tabella seguente.  
   
 |Valore|Descrizione|  
-|------------|-----------------|  
+|-----------|-----------------|  
 |`S_OK`|Il metodo è riuscito.|  
   
-## Note  
- Delegati di questo metodo a `CoCreateInstance`.  
+## <a name="remarks"></a>Note  
+ Questo metodo delega al `CoCreateInstance`.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Interfaccia IRemoteDebugApplication](../../winscript/reference/iremotedebugapplication-interface.md)

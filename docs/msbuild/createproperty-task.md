@@ -1,50 +1,49 @@
 ---
-title: "CreateProperty Task | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "http://schemas.microsoft.com/developer/msbuild/2003#CreateProperty"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "CreateProperty task [MSBuild]"
-  - "MSBuild, CreateProperty task"
+title: Attività CreateProperty | Microsoft Docs
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology: msbuild
+ms.topic: reference
+f1_keywords:
+- http://schemas.microsoft.com/developer/msbuild/2003#CreateProperty
+dev_langs:
+- VB
+- CSharp
+- C++
+- jsharp
+helpviewer_keywords:
+- CreateProperty task [MSBuild]
+- MSBuild, CreateProperty task
 ms.assetid: fbc31a88-62d4-43d2-b739-68ef3fac38f5
-caps.latest.revision: 11
-author: "kempb"
-ms.author: "kempb"
-manager: "ghogen"
-caps.handback.revision: 11
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 817d888a14d20b4778b28f81811b876c6d97ad61
+ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/19/2018
 ---
-# CreateProperty Task
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
-Inserisce gli elementi passati nelle proprietà.   Questa attività consente di copiare tali valori da una proprietà o stringa a un'altra.  
+# <a name="createproperty-task"></a>Attività CreateProperty
+Popola le proprietà con i valori passati. In questo modo i valori vengono copiati da una proprietà o una stringa a un'altra.  
   
-## Attributi  
- Nella tabella riportata di seguito sono descritti i parametri dell'attività `CreateProperty`.  
+## <a name="attributes"></a>Attributi  
+ Nella tabella che segue vengono descritti i parametri dell'attività `CreateProperty` .  
   
 |Parametro|Descrizione|  
 |---------------|-----------------|  
-|`Value`|Parametro di output `String` facoltativo.<br /><br /> Specifica il valore da copiare nella nuova proprietà.|  
-|`ValueSetByTask`|Parametro di output `String` facoltativo.<br /><br /> Contiene lo stesso valore del parametro `Value`.  Utilizzare questo parametro solo per evitare che la proprietà di output venga impostata da [!INCLUDE[vstecmsbuild](../extensibility/internals/includes/vstecmsbuild_md.md)] nei casi in cui la destinazione di inclusione viene ignorata perché gli output sono aggiornati.|  
+|`Value`|Parametro di ouput facoltativo `String`.<br /><br /> Specifica il valore da copiare nella nuova proprietà.|  
+|`ValueSetByTask`|Parametro di ouput facoltativo `String`.<br /><br /> Contiene lo stesso valore del parametro `Value`. Usare questo parametro solo quando si vuole evitare che la proprietà di output venga impostata da [!INCLUDE[vstecmsbuild](../extensibility/internals/includes/vstecmsbuild_md.md)] quando la destinazione di inclusione viene ignorata perché gli output sono aggiornati.|  
   
-## Note  
- Oltre ai parametri sopra elencati, questa attività eredita i parametri dalla classe <xref:Microsoft.Build.Tasks.TaskExtension>, che eredita dalla classe <xref:Microsoft.Build.Utilities.Task>.  Per un elenco di tali parametri aggiuntivi e le relative descrizioni, vedere [TaskExtension Base Class](../msbuild/taskextension-base-class.md).  
+## <a name="remarks"></a>Note  
+ Oltre ai parametri elencati sopra, questa attività eredita i parametri dalla classe <xref:Microsoft.Build.Tasks.TaskExtension>, che a sua volta eredita dalla classe <xref:Microsoft.Build.Utilities.Task>. Per un elenco di questi parametri aggiuntivi e le rispettive descrizioni, vedere [TaskExtension Base Class](../msbuild/taskextension-base-class.md).  
   
-## Esempio  
- Nell'esempio riportato di seguito l'attività `CreateProperty` viene utilizzata per creare la proprietà `NewFile` utilizzando la combinazione dei valori delle proprietà `SourceFilename` e `SourceFileExtension`.  
+## <a name="example"></a>Esempio  
+ L'esempio seguente usa l'attività `CreateProperty` per creare la proprietà `NewFile` usando la combinazione dei valori della proprietà `SourceFilename` e `SourceFileExtension`.  
   
-```  
+```xml  
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">  
   
     <PropertyGroup>  
@@ -66,8 +65,8 @@ Inserisce gli elementi passati nelle proprietà.   Questa attività consente di 
 </Project>  
 ```  
   
- Al termine dell'esecuzione del progetto, il valore della proprietà `NewFile` è `Module1.vb`.  
+ Dopo l'esecuzione del progetto il valore della proprietà `NewFile` è `Module1.vb`.  
   
-## Vedere anche  
- [Task Reference](../msbuild/msbuild-task-reference.md)   
- [Tasks](../msbuild/msbuild-tasks.md)
+## <a name="see-also"></a>Vedere anche  
+ [Riferimento alle attività](../msbuild/msbuild-task-reference.md)   
+ [Attività](../msbuild/msbuild-tasks.md)

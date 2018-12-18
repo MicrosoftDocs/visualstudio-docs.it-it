@@ -1,40 +1,25 @@
 ---
 title: IDebugEngineProgram2 | Documenti Microsoft
-ms.custom: 
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - vs-ide-sdk
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: conceptual
 f1_keywords:
 - IDebugEngineProgram2
 helpviewer_keywords:
 - IDebugEngineProgram2 interface
 ms.assetid: 151003a9-2e4d-4acf-9f4d-365dfa6b9596
-caps.latest.revision: 11
+author: gregvanl
 ms.author: gregvanl
-manager: ghogen
-translation.priority.mt:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: ca7c86466fa23fb21a932f26dc24e37c71cf29b4
-ms.openlocfilehash: 2897213b9c94a2c8a140c12bfdbc3d4deb29052e
-ms.lasthandoff: 04/05/2017
-
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: ff075605371d39f9d3ff04df01c7022c52e809ef
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="idebugengineprogram2"></a>IDebugEngineProgram2
 Questa interfaccia fornisce supporto per il debug multithreading.  
@@ -56,12 +41,12 @@ IDebugEngineProgram2 : IUnknown
   
 |Metodo|Descrizione|  
 |------------|-----------------|  
-|[Arresta](../../../extensibility/debugger/reference/idebugengineprogram2-stop.md)|Arresta tutti i thread in esecuzione in questo programma.|  
+|[Stop](../../../extensibility/debugger/reference/idebugengineprogram2-stop.md)|Arresta tutti i thread in esecuzione in questo programma.|  
 |[WatchForThreadStep](../../../extensibility/debugger/reference/idebugengineprogram2-watchforthreadstep.md)|Verifica la presenza di esecuzione (o arresto di controllo per l'esecuzione) a cui si verificano sul thread specificato.|  
 |[WatchForExpressionEvaluationOnThread](../../../extensibility/debugger/reference/idebugengineprogram2-watchforexpressionevaluationonthread.md)|Consente o impedisce valutazione dell'espressione si verifica sul thread specificato, anche se il programma viene arrestato.|  
   
 ## <a name="remarks"></a>Note  
- Visual Studio chiama questa interfaccia in risposta a un [IDebugProgramCreateEvent2](../../../extensibility/debugger/reference/idebugprogramcreateevent2.md) evento e impostare gli stati "Espressioni di controllo per passaggio Thread" e "Espressioni di controllo per espressione valutazione sul Thread" del programma. [Arrestare](../../../extensibility/debugger/reference/idebugengineprogram2-stop.md) viene chiamato ogni volta che è necessario arrestare il programma, questo metodo consente il programma per terminare tutti i thread.  
+ Visual Studio chiama questa interfaccia in risposta a un [IDebugProgramCreateEvent2](../../../extensibility/debugger/reference/idebugprogramcreateevent2.md) evento e impostare gli stati "Espressioni di controllo per passaggio Thread" e "Espressioni di controllo per espressione valutazione sul Thread" del programma. [Arrestare](../../../extensibility/debugger/reference/idebugengineprogram2-stop.md) viene chiamato ogni volta che il programma è necessario arrestare; questo metodo consente il programma per terminare tutti i thread.  
   
 ## <a name="requirements"></a>Requisiti  
  Intestazione: msdbg.h  

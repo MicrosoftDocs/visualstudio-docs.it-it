@@ -1,53 +1,54 @@
 ---
-title: "IDebugProcessQueryProperties | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "IDebugProcessQueryProperties"
+title: IDebugProcessQueryProperties | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology:
+- vs-ide-sdk
+ms.topic: conceptual
+helpviewer_keywords:
+- IDebugProcessQueryProperties
 ms.assetid: ce29a248-81a0-42c0-99a7-1606e8c548ec
-caps.latest.revision: 4
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 4
+author: gregvanl
+ms.author: gregvanl
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: ac071afd9f9ce7d45a05408aeec32117776832f2
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# IDebugProcessQueryProperties
-[!INCLUDE[vs2017banner](../../../code-quality/includes/vs2017banner.md)]
-
-Questa interfaccia è un'interfaccia di estensione implementata [IDebugProcess2](../../../extensibility/debugger/reference/idebugprocess2.md) dagli implementatori.  Consente all'implementatore ottenere le informazioni sull'ambiente di processo di debug.  
+# <a name="idebugprocessqueryproperties"></a>IDebugProcessQueryProperties
+Questa interfaccia è implementata da un'interfaccia di estensione [IDebugProcess2](../../../extensibility/debugger/reference/idebugprocess2.md) i responsabili dell'implementazione. Consente all'implementatore ottenere informazioni sull'ambiente dei processi di debug.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
 IDebugProcessQueryProperties: IUnknown  
 ```  
   
-## Note per gli implementatori  
+## <a name="notes-for-implementers"></a>Note per gli implementatori  
  Implementare questa interfaccia per ottenere informazioni sull'ambiente di esecuzione di un processo di debug.  
   
-## Metodi nell'ordine di Vtable  
- Nella tabella seguente sono elencati i metodi di `IDebugProcessQueryProperties`.  
+## <a name="methods-in-vtable-order"></a>Metodi nell'ordine Vtable  
+ Nella tabella seguente sono illustrati i metodi di `IDebugProcessQueryProperties`.  
   
 |Metodo|Descrizione|  
 |------------|-----------------|  
-|[QueryProperty](../Topic/IDebugProcessQueryProperties::QueryProperty.md)|Query per un valore di proprietà.|  
-|[QueryProperties](../../../extensibility/debugger/reference/idebugprocessqueryproperties-queryproperties.md)|Query per i valori della proprietà.|  
+|[QueryProperty](../../../extensibility/debugger/reference/idebugprocessqueryproperties-queryproperty.md)|Query per un valore della proprietà.|  
+|[QueryProperties](../../../extensibility/debugger/reference/idebugprocessqueryproperties-queryproperties.md)|Query per i valori delle proprietà.|  
   
-## Note  
+## <a name="remarks"></a>Note  
  Questa interfaccia viene implementata raramente.  
   
-## Requisiti  
- intestazione: Portpriv.h  
+## <a name="requirements"></a>Requisiti  
+ Intestazione: Portpriv.h  
   
- Spazio dei nomi: Microsoft.VisualStudio.Debugger.Interop  
+ Namespace: Microsoft.VisualStudio.Debugger.Interop  
   
  Assembly: Microsoft.VisualStudio.Debugger.Interop.dll  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Interfacce di base](../../../extensibility/debugger/reference/core-interfaces.md)   
  [IDebugProcess2](../../../extensibility/debugger/reference/idebugprocess2.md)

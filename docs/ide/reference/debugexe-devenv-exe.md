@@ -1,51 +1,50 @@
 ---
-title: "/DebugExe (devenv.exe) | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/15/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-general"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "/DebugExe [devenv.exe]"
-  - "DebugExe (opzione)"
-  - "devenv, /DebugExe (opzione)"
+title: -DebugExe (devenv.exe) | Microsoft Docs
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology:
+- vs-ide-general
+ms.topic: conceptual
+helpviewer_keywords:
+- Devenv, /DebugExe switch
+- DebugExe switch
+- /DebugExe [devenv.exe]
 ms.assetid: cd700006-1648-418f-924b-4b1e5c1412ab
-caps.latest.revision: 4
-caps.handback.revision: 4
-author: "kempb"
-ms.author: "kempb"
-manager: "ghogen"
+author: gewarren
+ms.author: gewarren
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: e0882ae58919cafae71bcb056e74533b7ce64a4e
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# /DebugExe (devenv.exe)
-[!INCLUDE[vs2017banner](../../code-quality/includes/vs2017banner.md)]
-
-Consente di aprire il file eseguibile specificato di cui eseguire il debug.  
+# <a name="debugexe-devenvexe"></a>/DebugExe (devenv.exe)
+Apre il file eseguibile specificato per il debug.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
 Devenv /debugexe ExecutableFile  
 ```  
   
-## Argomenti  
+## <a name="arguments"></a>Argomenti  
  `ExecutableFile`  
- Obbligatorio.  Il percorso e il nome di un file .exe.  
+ Obbligatorio. Percorso e nome di un file con estensione exe.  
   
  Se il file con estensione exe non viene trovato o non esiste, non viene visualizzato alcun avviso o errore e [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] viene avviato normalmente.  
   
-## Note  
- Tutte le stringhe aggiunte dopo il parametro `ExecutableFile` vengono inviate al file come argomenti.  
+## <a name="remarks"></a>Note  
+ Le stringhe che seguono il parametro `ExecutableFile` vengono passate al file come argomenti.  
   
-## Esempio  
- Nel seguente esempio viene aperto il file `MyApplication.exe` per eseguire il debug.  
+## <a name="example"></a>Esempio  
+ Nell'esempio seguente il file `MyApplication.exe` viene aperto per il debug.  
   
 ```  
 Devenv.exe /debugexe MyApplication.exe  
 ```  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Opzioni della riga di comando devenv](../../ide/reference/devenv-command-line-switches.md)

@@ -1,14 +1,10 @@
 ---
-title: Calling Code in VSTO Add-ins from Other Office Solutions | Microsoft Docs
-ms.custom: 
+title: Chiamata di codice nei componenti aggiuntivi VSTO da altre soluzioni Office | Documenti Microsoft
+ms.custom: ''
 ms.date: 02/02/2017
-ms.prod: visual-studio-dev14
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - office-development
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: conceptual
 dev_langs:
 - VB
 - CSharp
@@ -19,104 +15,105 @@ helpviewer_keywords:
 - add-ins [Office development in Visual Studio], calling code from other solutions
 - interoperability [Office development in Visual Studio]
 - calling code from VBA
-ms.assetid: c1f16b4c-9291-49ed-9694-a83a37109612
-caps.latest.revision: 54
-author: kempb
-ms.author: kempb
-manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: eb5c9550fd29b0e98bf63a7240737da4f13f3249
-ms.openlocfilehash: 72b7b7cffdb21f74cbd0da9d9c9a9297c0b7e237
-ms.contentlocale: it-it
-ms.lasthandoff: 08/30/2017
-
+author: TerryGLee
+ms.author: tglee
+manager: douge
+ms.workload:
+- office
+ms.openlocfilehash: 1f256cf8fd0b5c89a0d9e6a9733680aac9257cd4
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# <a name="calling-code-in-vsto-add-ins-from-other-office-solutions"></a>Calling Code in VSTO Add-ins from Other Office Solutions
-  You can expose an object in your VSTO Add-in to other solutions, including other Microsoft Office solutions. This is useful if your VSTO Add-in provides a service that you want to enable other solutions to use. For example, if you have an VSTO Add-in for Microsoft Office Excel that performs calculations on financial data from a Web service, other solutions can perform these calculations by calling into the Excel VSTO Add-in at run time.  
+# <a name="calling-code-in-vsto-add-ins-from-other-office-solutions"></a>Chiamata di codice nei componenti aggiuntivi VSTO da altre soluzioni Office
+  È possibile esporre un oggetto del componente aggiuntivo VSTO in altre soluzioni, ad esempio in altre soluzioni Microsoft Office. Questa funzionalità è utile se il componente aggiuntivo VSTO fornisce un servizio che si vuole usare anche in altre soluzioni. Ad esempio, se un componente aggiuntivo VSTO per Microsoft Office Excel esegue calcoli sui dati finanziari da un servizio Web, altre soluzioni possono eseguire tali calcoli chiamando il componente aggiuntivo VSTO di Excel in fase di esecuzione.  
   
  [!INCLUDE[appliesto_allapp](../vsto/includes/appliesto-allapp-md.md)]  
   
- There are two main steps in this process:  
+ Questo processo prevede due passaggi principali:  
   
--   In your VSTO Add-in, expose an object to other solutions.  
+-   Nel componente aggiuntivo VSTO esporre un oggetto ad altre soluzioni.  
   
--   In another solution, access the object exposed by your VSTO Add-in, and call members of the object.  
+-   In un'altra soluzione accedere all'oggetto esposto dal componente aggiuntivo VSTO e chiamare i membri dell'oggetto.  
   
-## <a name="types-of-solutions-that-can-call-code-in-an-add-in"></a>Types of Solutions That Can Call Code in an Add-In  
- You can expose an object in an VSTO Add-in to the following types of solutions:  
+## <a name="types-of-solutions-that-can-call-code-in-an-add-in"></a>Tipi di soluzioni che possono chiamare il codice di un componente aggiuntivo  
+ Un oggetto in un componente aggiuntivo VSTO può essere esposto ai tipi di soluzioni seguenti:  
   
--   Visual Basic for Applications (VBA) code in a document that is loaded in the same application process as your VSTO Add-in.  
+-   Codice Visual Basic, Applications Edition (VBA) di un documento caricato nello stesso processo dell'applicazione del componente aggiuntivo VSTO.  
   
--   Document-level customizations that are loaded in the same application process as your VSTO Add-in.  
+-   Personalizzazioni a livello di documento caricate nello stesso processo dell'applicazione del componente aggiuntivo VSTO.  
   
--   Other VSTO Add-ins created by using the Office project templates in Visual Studio.  
+-   Altri componenti aggiuntivi VSTO creati usando i modelli di progetto di Office in Visual Studio.  
   
--   COM VSTO Add-ins (that is, VSTO Add-ins that implement the <xref:Extensibility.IDTExtensibility2> interface directly).  
+-   Componenti aggiuntivi VSTO COM, ovvero componenti aggiuntivi VSTO che implementano direttamente l'interfaccia <xref:Extensibility.IDTExtensibility2> .  
   
--   Any solution that is running in a different process than your VSTO Add-in (these types of solutions are also named *out-of-process clients*). These include applications that automate an Office application, such as a Windows Forms or console application, and VSTO Add-ins that are loaded in a different process.  
+-   Qualsiasi soluzione in esecuzione in un processo diverso dal componente aggiuntivo VSTO. Questi tipi di soluzioni sono detti anche *client out-of-process*. Sono incluse le applicazioni che automatizzano un'applicazione di Office, ad esempio Windows Form o un'applicazione console, e i componenti aggiuntivi VSTO caricati in un processo diverso.  
   
-## <a name="exposing-objects-to-other-solutions"></a>Exposing Objects to Other Solutions  
- To expose an object in your VSTO Add-in to other solutions, perform the following steps in your VSTO Add-in:  
+## <a name="exposing-objects-to-other-solutions"></a>Esposizione di oggetti ad altre soluzioni  
+ Per esporre un oggetto del componente aggiuntivo VSTO ad altre soluzioni, eseguire la procedura seguente nel componente aggiuntivo:  
   
-1.  Define a class that you want to expose to other solutions.  
+1.  Definire una classe da esporre ad altre soluzioni.  
   
-2.  Override the <xref:Microsoft.Office.Tools.AddInBase.RequestComAddInAutomationService%2A> method in the `ThisAddIn` class. Return an instance of the class that you want to expose to other solutions.  
+2.  Eseguire l'override del metodo <xref:Microsoft.Office.Tools.AddInBase.RequestComAddInAutomationService%2A> nella classe `ThisAddIn` . Restituire un'istanza della classe da esporre ad altre soluzioni.  
   
-### <a name="defining-the-class-you-want-to-expose-to-other-solutions"></a>Defining the Class You Want to Expose to Other Solutions  
- At a minimum, the class you want to expose must be public, it must have the <xref:System.Runtime.InteropServices.ComVisibleAttribute> attribute set to **true**, and it must expose the [IDispatch](https://msdn.microsoft.com/library/windows/desktop/ms221608.aspx) interface.  
+### <a name="defining-the-class-you-want-to-expose-to-other-solutions"></a>Definizione della classe da esporre ad altre soluzioni  
+ Questa classe deve essere almeno pubblica, deve avere l'attributo <xref:System.Runtime.InteropServices.ComVisibleAttribute> impostato su **true**e deve esporre l'interfaccia [IDispatch](https://msdn.microsoft.com/library/windows/desktop/ms221608.aspx) .  
   
- The recommended way to expose the [IDispatch](https://msdn.microsoft.com/library/windows/desktop/ms221608.aspx) interface is to perform the following steps:  
+ Il metodo consigliato per esporre l'interfaccia [IDispatch](https://msdn.microsoft.com/library/windows/desktop/ms221608.aspx) consiste nell'eseguire la procedura seguente:  
   
-1.  Define an interface that declares the members that you want to expose to other solutions. You can define this interface in your VSTO Add-in project. However, you might want to define this interface in a separate class library project if you want to expose the class to non-VBA solutions, so that the solutions that call your VSTO Add-in can reference the interface without referencing your VSTO Add-in project.  
+1.  Definire un'interfaccia che dichiari i membri da esporre ad altre soluzioni. È possibile definire questa interfaccia nel progetto di componente aggiuntivo VSTO. È tuttavia consigliabile definire l'interfaccia in un progetto di libreria di classi separato, se si vuole esporre la classe a soluzioni non VBA. In questo modo, le soluzioni che chiamano il componente aggiuntivo VSTO possono fare riferimento all'interfaccia senza fare riferimento al progetto di componente aggiuntivo VSTO.  
   
-2.  Apply the <xref:System.Runtime.InteropServices.ComVisibleAttribute> attribute to this interface, and set this attribute to **true**.  
+2.  Applicare l'attributo <xref:System.Runtime.InteropServices.ComVisibleAttribute> a questa interfaccia e impostarlo su **true**.  
   
-3.  Modify your class to implement this interface.  
+3.  Modificare la classe per implementare l'interfaccia.  
   
-4.  Apply the <xref:System.Runtime.InteropServices.ClassInterfaceAttribute> attribute to your class, and set this attribute to the None value of the <xref:System.Runtime.InteropServices.ClassInterfaceType> enumeration.  
+4.  Applicare il <xref:System.Runtime.InteropServices.ClassInterfaceAttribute> attributo alla classe e si imposta questo attributo su None valore il <xref:System.Runtime.InteropServices.ClassInterfaceType> enumerazione.  
   
-5.  If you want to expose the class to out-of-process clients, you might also need to do the following:  
+5.  Se si vuole esporre la classe a client out-of-process, potrebbe anche essere necessario eseguire le operazioni seguenti:  
   
-    -   Derive the class from <xref:System.Runtime.InteropServices.StandardOleMarshalObject>. For more information, see [Exposing Classes to Out-of-Process Clients](#outofproc).  
+    -   Derivare la classe da <xref:System.Runtime.InteropServices.StandardOleMarshalObject>. Per altre informazioni, vedere [Esposizione di classi a client out-of-process](#outofproc).  
   
-    -   Set the **Register for COM interop** property in the project where you define the interface. This is necessary only if you want to enable clients to use early binding to call into the VSTO Add-in.  
+    -   Impostare la proprietà **Registra per interoperabilità COM** nel progetto in cui si definisce l'interfaccia. Questo passaggio è necessario solo se si vuole consentire ai client di usare l'associazione anticipata per effettuare chiamate nel componente aggiuntivo VSTO.  
   
- The following code example demonstrates an `AddInUtilities` class with an `ImportData` method that can be called by other solutions. To see this code in the context of a larger walkthrough, see [Walkthrough: Calling Code in a VSTO Add-in from VBA](../vsto/walkthrough-calling-code-in-a-vsto-add-in-from-vba.md).  
+ L'esempio di codice seguente illustra una classe `AddInUtilities` con un metodo `ImportData` che è possibile chiamare da altre soluzioni. Per visualizzare questo codice nel contesto di una procedura dettagliata più estesa, vedere [procedura dettagliata: chiamata di codice in un componente aggiuntivo VSTO da VBA](../vsto/walkthrough-calling-code-in-a-vsto-add-in-from-vba.md).  
   
- [!code-csharp[Trin_AddInInteropWalkthrough#3](../vsto/codesnippet/CSharp/Trin_AddInInteropWalkthrough/AddInUtilities.cs#3)] [!code-vb[Trin_AddInInteropWalkthrough#3](../vsto/codesnippet/VisualBasic/Trin_AddInInteropWalkthrough/AddInUtilities.vb#3)]  
+ [!code-csharp[Trin_AddInInteropWalkthrough#3](../vsto/codesnippet/CSharp/Trin_AddInInteropWalkthrough/AddInUtilities.cs#3)]
+ [!code-vb[Trin_AddInInteropWalkthrough#3](../vsto/codesnippet/VisualBasic/Trin_AddInInteropWalkthrough/AddInUtilities.vb#3)]  
   
-### <a name="exposing-classes-to-vba"></a>Exposing Classes to VBA  
- When you perform the steps provided above, VBA code can call only the methods that you declare in the interface. VBA code cannot call any other methods in your class, including methods that your class obtains from base classes such as <xref:System.Object>.  
+### <a name="exposing-classes-to-vba"></a>Esposizione di classi a VBA  
+ Quando si esegue la procedura riportata sopra, il codice VBA può chiamare solo i metodi dichiarati nell'interfaccia. Il codice VBA non può chiamare altri metodi della classe, inclusi i metodi che la classe ottiene dalle classi base, ad esempio <xref:System.Object>.  
   
- You can alternatively expose the [IDispatch](https://msdn.microsoft.com/library/windows/desktop/ms221608.aspx) interface by setting the <xref:System.Runtime.InteropServices.ClassInterfaceAttribute> attribute to the AutoDispatch or AutoDual value of the <xref:System.Runtime.InteropServices.ClassInterfaceType> enumeration. If you do this, you do not have to declare the methods in a separate interface. However, VBA code can call any public and non-static methods in your class, including methods obtained from base classes such as <xref:System.Object>. In addition, out-of-process clients that use early binding cannot call your class.  
+ In alternativa, è possibile esporre il [IDispatch](https://msdn.microsoft.com/library/windows/desktop/ms221608.aspx) interfaccia impostando il <xref:System.Runtime.InteropServices.ClassInterfaceAttribute> attributo del valore AutoDispatch o AutoDual tra il <xref:System.Runtime.InteropServices.ClassInterfaceType> enumerazione. Se si esegue questa operazione, non è necessario dichiarare i metodi in un'interfaccia separata. Il codice VBA può tuttavia chiamare qualsiasi metodo pubblico e non statico della classe, inclusi i metodi ottenuti dalle classi base, ad esempio <xref:System.Object>. Inoltre, i client out-of-process che usano l'associazione anticipata non possono chiamare la classe.  
   
-###  <a name="outofproc"></a> Exposing Classes to Out-of-Process Clients  
- If you want to expose a class in your VSTO Add-in to out-of-process clients, you should derive the class from <xref:System.Runtime.InteropServices.StandardOleMarshalObject> to ensure that out-of-process clients can call your exposed VSTO Add-in object. Otherwise, attempts to get an instance of your exposed object in an out-of-process client might fail unexpectedly.  
+###  <a name="outofproc"></a> Esposizione di classi a client out-of-process  
+ Per esporre una classe del componente aggiuntivo VSTO a client out-of-process, è necessario derivare la classe da <xref:System.Runtime.InteropServices.StandardOleMarshalObject> per assicurarsi che i client out-of-process possano chiamare l'oggetto componente aggiuntivo VSTO esposto. In caso contrario, i tentativi di ottenere un'istanza dell'oggetto esposto in un client out-of-process potrebbero non riuscire in modo imprevisto.  
   
- This is because all calls into the object model of an Office application must be made on the main UI thread, but calls from an out-of-process client to your object will arrive on an arbitrary RPC (remote procedure call) thread. The COM marshaling mechanism in the .NET Framework will not switch threads, and it will instead attempt to marshal the call to your object on the incoming RPC thread instead of the main UI thread. If your object is an instance of a class that derives from <xref:System.Runtime.InteropServices.StandardOleMarshalObject>, incoming calls to your object are automatically marshaled to the thread where the exposed object was created, which will be the main UI thread of the host application.  
+ Questa situazione si verifica perché tutte le chiamate al modello a oggetti di un'applicazione di Office devono essere effettuate nel thread principale dell'interfaccia utente, mentre le chiamate da un client out-of-process all'oggetto arrivano in un thread RPC (Remote Procedure Call) arbitrario. Il meccanismo di marshalling COM in .NET Framework non cambia thread e tenta invece di effettuare il marshalling della chiamata all'oggetto nel thread RPC in ingresso anziché nel thread principale dell'interfaccia utente. Se l'oggetto è un'istanza di una classe che deriva da <xref:System.Runtime.InteropServices.StandardOleMarshalObject>, viene effettuato automaticamente il marshalling delle chiamate in ingresso all'oggetto in relazione al thread in cui è stato creato l'oggetto esposto, che sarà il thread principale dell'interfaccia utente dell'applicazione host.  
   
- For more information about using threads in Office solutions, see [Threading Support in Office](../vsto/threading-support-in-office.md).  
+ Per altre informazioni sull'uso dei thread nelle soluzioni Office, vedere [Threading Support in Office](../vsto/threading-support-in-office.md).  
   
-### <a name="overriding-the-requestcomaddinautomationservice-method"></a>Overriding the RequestComAddInAutomationService Method  
- The following code example demonstrates how to override <xref:Microsoft.Office.Tools.AddInBase.RequestComAddInAutomationService%2A> in the `ThisAddIn` class in your VSTO Add-in. This example assumes that you have defined a class named `AddInUtilities` that you want to expose to other solutions. To see this code in the context of a larger walkthrough, see [Walkthrough: Calling Code in a VSTO Add-in from VBA](../vsto/walkthrough-calling-code-in-a-vsto-add-in-from-vba.md).  
+### <a name="overriding-the-requestcomaddinautomationservice-method"></a>Override del metodo RequestComAddInAutomationService  
+ L'esempio di codice seguente illustra come eseguire l'override del metodo <xref:Microsoft.Office.Tools.AddInBase.RequestComAddInAutomationService%2A> nella classe `ThisAddIn` del componente aggiuntivo VSTO. Questo esempio presuppone che sia stata definita una classe denominata `AddInUtilities` da esporre ad altre soluzioni. Per visualizzare questo codice nel contesto di una procedura dettagliata più estesa, vedere [procedura dettagliata: chiamata di codice in un componente aggiuntivo VSTO da VBA](../vsto/walkthrough-calling-code-in-a-vsto-add-in-from-vba.md).  
   
- [!code-csharp[Trin_AddInInteropWalkthrough#1](../vsto/codesnippet/CSharp/Trin_AddInInteropWalkthrough/ThisAddIn.cs#1)] [!code-vb[Trin_AddInInteropWalkthrough#1](../vsto/codesnippet/VisualBasic/Trin_AddInInteropWalkthrough/ThisAddIn.vb#1)]  
+ [!code-csharp[Trin_AddInInteropWalkthrough#1](../vsto/codesnippet/CSharp/Trin_AddInInteropWalkthrough/ThisAddIn.cs#1)]
+ [!code-vb[Trin_AddInInteropWalkthrough#1](../vsto/codesnippet/VisualBasic/Trin_AddInInteropWalkthrough/ThisAddIn.vb#1)]  
   
- When your VSTO Add-in is loaded, the [!INCLUDE[vsto_runtime](../vsto/includes/vsto-runtime-md.md)] calls the <xref:Microsoft.Office.Tools.AddInBase.RequestComAddInAutomationService%2A> method. The runtime assigns the returned object to the <xref:Microsoft.Office.Core.COMAddIn.Object%2A> property of a <xref:Microsoft.Office.Core.COMAddIn> object that represents your VSTO Add-in. This <xref:Microsoft.Office.Core.COMAddIn> object is available to other Office solutions, and to solutions that automate Office.  
+ Quando il componente aggiuntivo VSTO viene caricato, [!INCLUDE[vsto_runtime](../vsto/includes/vsto-runtime-md.md)] chiama il metodo <xref:Microsoft.Office.Tools.AddInBase.RequestComAddInAutomationService%2A> . Il runtime assegna l'oggetto restituito alla proprietà <xref:Microsoft.Office.Core.COMAddIn.Object%2A> di un oggetto <xref:Microsoft.Office.Core.COMAddIn> che rappresenta il componente aggiuntivo VSTO. Questo oggetto <xref:Microsoft.Office.Core.COMAddIn> è disponibile per altre soluzioni Office e per soluzioni che automatizzano Office.  
   
-## <a name="accessing-objects-from-other-solutions"></a>Accessing Objects from Other Solutions  
- To call the exposed object in your VSTO Add-in, perform the following steps in the client solution:  
+## <a name="accessing-objects-from-other-solutions"></a>Accesso agli oggetti da altre soluzioni  
+ Per chiamare l'oggetto esposto del componente aggiuntivo VSTO, eseguire i passaggi seguenti nella soluzione client:  
   
-1.  Get the <xref:Microsoft.Office.Core.COMAddIn> object that represents the exposed VSTO Add-in. Clients can access all of the available VSTO Add-ins by using the Application.COMAddIns property in the object model of the host Office application.  
+1.  Ottenere l'oggetto <xref:Microsoft.Office.Core.COMAddIn> che rappresenta il componente aggiuntivo VSTO esposto. Client possono accedere tutti i disponibili componenti aggiuntivi VSTO usando la proprietà Application. COMAddIns nel modello a oggetti dell'applicazione host di Office.  
   
-2.  Access the <xref:Microsoft.Office.Core.COMAddIn.Object%2A> property of the <xref:Microsoft.Office.Core.COMAddIn> object. This property returns the exposed object from the VSTO Add-in.  
+2.  Accedere alla proprietà <xref:Microsoft.Office.Core.COMAddIn.Object%2A> dell'oggetto <xref:Microsoft.Office.Core.COMAddIn> . Questa proprietà restituisce l'oggetto esposto dal componente aggiuntivo VSTO.  
   
-3.  Call the members of the exposed object.  
+3.  Chiamare i membri dell'oggetto esposto.  
   
- The way that you use the return value of the <xref:Microsoft.Office.Core.COMAddIn.Object%2A> property is different for VBA clients and non-VBA clients. For out-of-process clients, additional code is necessary to avoid a possible race condition.  
+ La modalità con cui si usa il valore restituito della proprietà <xref:Microsoft.Office.Core.COMAddIn.Object%2A> è diversa per i client VBA e i client non VBA. Per i client out-of-process, il codice aggiuntivo è necessario per evitare una possibile race condition.  
   
-### <a name="accessing-objects-from-vba-solutions"></a>Accessing Objects from VBA Solutions  
- The following code example demonstrates how to use VBA to call a method that is exposed by an VSTO Add-in. This VBA macro calls a method named `ImportData` that is defined in an VSTO Add-in that is named **ExcelImportData**. To see this code in the context of a larger walkthrough, see [Walkthrough: Calling Code in a VSTO Add-in from VBA](../vsto/walkthrough-calling-code-in-a-vsto-add-in-from-vba.md).  
+### <a name="accessing-objects-from-vba-solutions"></a>Accesso agli oggetti da soluzioni VBA  
+ L'esempio di codice seguente illustra come usare VBA per chiamare un metodo esposto da un componente aggiuntivo VSTO. Questa macro VBA chiama un metodo denominato `ImportData` definito in un componente aggiuntivo VSTO denominato **ExcelImportData**. Per visualizzare questo codice nel contesto di una procedura dettagliata più estesa, vedere [procedura dettagliata: chiamata di codice in un componente aggiuntivo VSTO da VBA](../vsto/walkthrough-calling-code-in-a-vsto-add-in-from-vba.md).  
   
 ```  
 Sub CallVSTOMethod()  
@@ -128,8 +125,8 @@ Sub CallVSTOMethod()
 End Sub  
 ```  
   
-### <a name="accessing-objects-from-non-vba-solutions"></a>Accessing Objects from Non-VBA Solutions  
- In a non-VBA solution, you must cast the <xref:Microsoft.Office.Core.COMAddIn.Object%2A> property value to the interface it implements, and then you can call the exposed methods on the interface object. The following code example demonstrates how to call the `ImportData` method from a different VSTO Add-in that was created by using the Office developer tools in Visual Studio.  
+### <a name="accessing-objects-from-non-vba-solutions"></a>Accesso agli oggetti da soluzioni non VBA  
+ In una soluzione non VBA è necessario eseguire il cast del valore della proprietà <xref:Microsoft.Office.Core.COMAddIn.Object%2A> all'interfaccia che viene implementata e quindi è possibile chiamare i metodi esposti nell'oggetto interfaccia. L'esempio di codice seguente illustra come chiamare il metodo `ImportData` da un componente aggiuntivo VSTO diverso creato usando gli strumenti di sviluppo per Office in Visual Studio.  
   
 ```vb  
 Dim addIn As Office.COMAddIn = Globals.ThisAddIn.Application.COMAddIns.Item("ExcelImportData")  
@@ -145,14 +142,14 @@ ExcelImportData.IAddInUtilities utilities = (ExcelImportData.IAddInUtilities)add
 utilities.ImportData();  
 ```  
   
- In this example, if you try to cast the value of the <xref:Microsoft.Office.Core.COMAddIn.Object%2A> property to the `AddInUtilities` class rather than the `IAddInUtilities` interface, the code will throw an <xref:System.InvalidCastException>.  
+ In questo esempio, se si tenta di eseguire il cast del valore della proprietà <xref:Microsoft.Office.Core.COMAddIn.Object%2A> alla classe `AddInUtilities` invece che all'interfaccia `IAddInUtilities` , viene generata una <xref:System.InvalidCastException>.  
   
-## <a name="see-also"></a>See Also  
+## <a name="see-also"></a>Vedere anche  
  [Programming VSTO Add-Ins](../vsto/programming-vsto-add-ins.md)   
- [Walkthrough: Calling Code in a VSTO Add-in from VBA](../vsto/walkthrough-calling-code-in-a-vsto-add-in-from-vba.md)   
- [Developing Office Solutions](../vsto/developing-office-solutions.md)   
- [How to: Create Office Projects in Visual Studio](../vsto/how-to-create-office-projects-in-visual-studio.md)   
- [Architecture of VSTO Add-ins](../vsto/architecture-of-vsto-add-ins.md)   
- [Customizing UI Features By Using Extensibility Interfaces](../vsto/customizing-ui-features-by-using-extensibility-interfaces.md)  
+ [Procedura dettagliata: Chiamata di codice in un componente aggiuntivo VSTO da VBA](../vsto/walkthrough-calling-code-in-a-vsto-add-in-from-vba.md)   
+ [Sviluppo di soluzioni Office](../vsto/developing-office-solutions.md)   
+ [Procedura: creare progetti di Office in Visual Studio](../vsto/how-to-create-office-projects-in-visual-studio.md)   
+ [Architettura dei componenti aggiuntivi VSTO](../vsto/architecture-of-vsto-add-ins.md)   
+ [Personalizzazione delle funzionalità dell'interfaccia utente tramite le interfacce di estensibilità](../vsto/customizing-ui-features-by-using-extensibility-interfaces.md)  
   
   

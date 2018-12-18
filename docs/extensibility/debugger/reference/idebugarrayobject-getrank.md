@@ -1,51 +1,52 @@
 ---
-title: "IDebugArrayObject::GetRank | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "IDebugArrayObject::GetRank"
-helpviewer_keywords: 
-  - "Metodo IDebugArrayObject::GetRank"
+title: IDebugArrayObject::GetRank | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology:
+- vs-ide-sdk
+ms.topic: conceptual
+f1_keywords:
+- IDebugArrayObject::GetRank
+helpviewer_keywords:
+- IDebugArrayObject::GetRank method
 ms.assetid: 9948551a-e334-4ff6-979c-08dab633b9b6
-caps.latest.revision: 10
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 10
+author: gregvanl
+ms.author: gregvanl
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: e76e8d3f39ab5f86ba15db7fd00c4b45fc93c9c2
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# IDebugArrayObject::GetRank
-[!INCLUDE[vs2017banner](../../../code-quality/includes/vs2017banner.md)]
-
-Ottiene il numero di dimensioni della matrice, ovvero, il numero di dimensioni.  
+# <a name="idebugarrayobjectgetrank"></a>IDebugArrayObject::GetRank
+Ottiene il numero di dimensioni della matrice, vale a dire il numero di dimensioni.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp#  
-HRESULT GetRank(   
-   DWORD* pdwRank  
+```cpp  
+HRESULT GetRank(   
+   DWORD* pdwRank  
 );  
 ```  
   
-```c#  
+```csharp  
 int GetRank(  
-   out uint pdwRank  
+   out uint pdwRank  
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `pdwRank`  
- \[out\]  Restituisce il numero di dimensioni.  
+ [out] Restituisce il rango.  
   
-## Valore restituito  
- Se l'operazione riesce, restituisce S\_OK, in caso contrario, restituisce un codice di errore.  
+## <a name="return-value"></a>Valore restituito  
+ Se ha esito positivo, restituisce S_OK; in caso contrario, restituisce un codice di errore.  
   
-## Note  
- Utilizzare [GetDimensions](../../../extensibility/debugger/reference/idebugarrayobject-getdimensions.md) il metodo per recuperare la dimensione di ogni dimensione della matrice.  
+## <a name="remarks"></a>Note  
+ Utilizzare il [GetDimensions](../../../extensibility/debugger/reference/idebugarrayobject-getdimensions.md) metodo per recuperare le dimensioni di ciascuna dimensione dell'oggetto matrice.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IDebugArrayObject](../../../extensibility/debugger/reference/idebugarrayobject.md)

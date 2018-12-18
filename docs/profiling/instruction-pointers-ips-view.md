@@ -1,41 +1,40 @@
 ---
-title: "Visualizzazione Puntatori all&#39;istruzione | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "vs.performance.view.instructionpointers"
-  - "vs.performance.view.ips"
-helpviewer_keywords: 
-  - "Puntatori all'istruzione (visualizzazione)"
-  - "rapporti degli strumenti di profilatura, visualizzazione Puntatore all'istruzione"
-  - "rapporti degli strumenti di profilatura, visualizzazione IP (Puntatore all'istruzione)"
-  - "strumenti di profilatura, visualizzazione Puntatore all'istruzione"
-  - "strumenti di profilatura, visualizzazione IP (Puntatore all'istruzione)"
+title: Visualizzazione Puntatore all'istruzione | Microsoft Docs
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology: vs-ide-debug
+ms.topic: conceptual
+f1_keywords:
+- vs.performance.view.instructionpointers
+- vs.performance.view.ips
+helpviewer_keywords:
+- profiling tools reports, Instruction Pointer (IP) view
+- profiling tools, Instruction Pointer (IP) view
+- profiling tools reports, IP view
+- Instruction Pointers view
+- profiling tools, IP view
 ms.assetid: 5e26e0fd-383b-4fb6-a29d-a458d8232828
-caps.latest.revision: 17
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 17
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 5f34df089219fda6a27e68c59a1b67f1e48a0839
+ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/19/2018
 ---
-# Visualizzazione Puntatori all&#39;istruzione
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
-La visualizzazione Puntatori all'istruzione consente di visualizzare istruzioni specifiche eseguite durante la profilatura tramite campionamento.  
+# <a name="instruction-pointers-ips-view"></a>Visualizzazione Puntatori all'istruzione
+La visualizzazione Puntatore all'istruzione consente di visualizzare istruzioni specifiche eseguite durante la profilatura del campionamento.  
   
- Tale visualizzazione non è disponibile durante la profilatura mediante strumentazione.  
+ Questa visualizzazione non è disponibile durante la profilatura della strumentazione.  
   
- Per i dati del profilo di campionatura, la visualizzazione Puntatori all'istruzione identifica le istruzioni in una funzione in esecuzione diretta durante la raccolta del campione.  
+ Per i dati del profilo di campionamento, la visualizzazione Puntatore all'istruzione identifica le istruzioni in una funzione eseguita direttamente durante la raccolta del campione.  
   
- Per i dati di memoria .NET, la visualizzazione Righe identifica le istruzioni che allocano memoria.  
+ Per i dati di memoria .NET, la visualizzazione Righe identifica le istruzioni per l'allocazione della memoria.  
   
-## Vedere anche  
- [Visualizzazione Puntatori all'istruzione](../profiling/instruction-pointers-ips-view-sampling-data.md)   
- [Visualizzazione Puntatori all'istruzione \- Campionamento](../profiling/instruction-pointers-ips-view-dotnet-memory-sampling-data.md)   
- [Visualizzazione Puntatori all'istruzione](../profiling/instruction-pointers-ips-view-contention-data.md)
+## <a name="see-also"></a>Vedere anche  
+ [Visualizzazione Puntatore all'istruzione](../profiling/instruction-pointers-ips-view-sampling-data.md)   
+ [Visualizzazione Puntatore all'istruzione - Campionamento](../profiling/instruction-pointers-ips-view-dotnet-memory-sampling-data.md)   
+ [Visualizzazione Puntatore all'istruzione](../profiling/instruction-pointers-ips-view-contention-data.md)

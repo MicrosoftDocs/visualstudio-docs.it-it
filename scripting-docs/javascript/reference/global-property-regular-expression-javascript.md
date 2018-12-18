@@ -1,52 +1,56 @@
 ---
-title: "Propriet&#224; global (Regular Expression) (JavaScript) | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/18/2017"
-ms.prod: "windows-client-threshold"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-javascript"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "Global"
-dev_langs: 
-  - "JavaScript"
-  - "TypeScript"
-  - "DHTML"
-helpviewer_keywords: 
-  - "global (proprietà)"
+title: "Proprietà Global (Regular Expression) (JavaScript) | Documenti Microsoft"
+ms.custom: 
+ms.date: 01/18/2017
+ms.prod: windows-client-threshold
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-javascript
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords:
+- Global
+dev_langs:
+- JavaScript
+- TypeScript
+- DHTML
+helpviewer_keywords:
+- global property
 ms.assetid: 76a0f115-0d89-4aca-86d5-932895c6d649
-caps.latest.revision: 19
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 19
+caps.latest.revision: 
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.openlocfilehash: 7e2b0256fea60b7ab998c504e79565fc7028cd98
+ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/27/2017
 ---
-# Propriet&#224; global (Regular Expression) (JavaScript)
-Restituisce un valore booleano che indica lo stato del flag globale \(**g**\) utilizzato con un'espressione regolare.  L'impostazione predefinita è **false**.  Sola lettura.  
+# <a name="global-property-regular-expression-javascript"></a>Proprietà global (Regular Expression) (JavaScript)
+Restituisce un valore booleano che indica lo stato del flag globale (**g**) utilizzato con un'espressione regolare. Valore predefinito è **false**. Sola lettura.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
   
 rgExp.global  
 ```  
   
-## Note  
- Il riferimento `rgExp` obbligatorio è un'istanza di un oggetto **Regular Expression**.  
+## <a name="remarks"></a>Note  
+ Obbligatorio `rgExp` riferimento è un'istanza di un **espressione regolare** oggetto.  
   
- La proprietà `global` restituisce **true** se il flag globale è impostato per un'espressione regolare, **false** in caso contrario.  
+ Il `global` restituisce proprietà **true** se il flag globale è impostato per un'espressione regolare e restituisce **false** in caso contrario.  
   
- Quando utilizzato, il flag globale indica che in una ricerca devono essere individuate tutte le occorrenze del modello nella stringa in cui viene eseguita la ricerca e non solo nella prima.  È noto anche come corrispondenza globale.  
+ Il flag globale, se utilizzato, indica che una ricerca devono essere individuate tutte le occorrenze del criterio all'interno della stringa di ricerca, non solo il primo. È anche noto come corrispondenza globale.  
   
-## Esempio  
- Nell'esempio seguente viene illustrato l'utilizzo della proprietà `global`.  Se si passa **g** alla funzione illustrata di seguito, tutte le istanze della parola "the" vengono sostituite dalla parola "a".  Si noti che la parola "The" all'inizio della stringa non viene sostituita in quanto il flag **i** \(che consente di ignorare la distinzione tra maiuscole e minuscole\) non viene passato alla funzione.  
+## <a name="example"></a>Esempio  
+ Nell'esempio seguente viene illustrato l'utilizzo del `global` proprietà. Se si passa **g** "nella funzione illustrata di seguito, tutte le istanze della parola the" verranno sostituite con la parola "a". Si noti che la "The" all'inizio della stringa non viene sostituita in quanto il **si** (Ignora maiuscole / minuscole) flag non è stato passato alla funzione.  
   
- Questa funzione visualizza la condizione delle proprietà associate ai flag dell'espressione regolare consentiti, ovvero **g**, **i** e **m**.  La funzione inoltre visualizza la stringa con tutte le sostituzioni apportate.  
+ Questa funzione consente di visualizzare la condizione delle proprietà associate ai flag dell'espressione regolare consentiti, ovvero **g**, **si**, e **m**. La funzione Visualizza anche la stringa con tutte le sostituzioni apportate.  
   
-```javascript  
+```JavaScript  
 function RegExpPropDemo(flag){  
    // The flag parameter is a string that contains  
    // g, i, or m.  The flags can be combined.  
@@ -81,22 +85,22 @@ function RegExpPropDemo(flag){
 document.write(RegExpPropDemo("g"));  
 ```  
   
-## Esempio  
- Di seguito è riportato l'output risultante.  
+## <a name="example"></a>Esempio  
+ Di seguito è l'output risultante.  
   
-```javascript  
+```JavaScript  
 global: true  
 ignoreCase: false  
 multiline: false  
 Resulting String: The batter hit a ball with a bat and a fielder caught a ball with a glove.  
 ```  
   
-## Requisiti  
+## <a name="requirements"></a>Requisiti  
  [!INCLUDE[jsv55](../../javascript/reference/includes/jsv55-md.md)]  
   
- **Si applica a**: [Oggetto Regular Expression](../../javascript/reference/regular-expression-object-javascript.md)  
+ **Si applica a**: [oggetto di espressione regolare](../../javascript/reference/regular-expression-object-javascript.md)  
   
-## Vedere anche  
- [Proprietà ignoreCase \(Regular Expression\)](../../javascript/reference/ignorecase-property-regular-expression-javascript.md)   
- [Proprietà multiline \(Regular Expression\)](../../javascript/reference/multiline-property-regular-expression-javascript.md)   
- [Regular Expression Syntax \(JavaScript\)](http://msdn.microsoft.com/it-it/ab0766e1-7037-45ed-aa23-706f58358c0e)
+## <a name="see-also"></a>Vedere anche  
+ [Proprietà ignoreCase (Regular Expression)](../../javascript/reference/ignorecase-property-regular-expression-javascript.md)   
+ [Proprietà Multiline (Regular Expression)](../../javascript/reference/multiline-property-regular-expression-javascript.md)   
+ [Sintassi di espressione regolare (JavaScript)](http://msdn.microsoft.com/en-us/ab0766e1-7037-45ed-aa23-706f58358c0e)

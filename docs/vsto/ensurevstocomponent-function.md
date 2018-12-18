@@ -1,28 +1,28 @@
 ---
-title: "Funzione EnsureVSTOComponent"
-ms.custom: ""
-ms.date: "02/02/2017"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "office-development"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-ms.assetid: e101fcd5-37a2-4b8c-b9ac-a84624298736
-caps.latest.revision: 9
-author: "kempb"
-ms.author: "kempb"
-manager: "ghogen"
-caps.handback.revision: 8
+title: Funzione EnsureVSTOComponent | Documenti Microsoft
+ms.custom: ''
+ms.date: 02/02/2017
+ms.technology:
+- office-development
+ms.topic: conceptual
+dev_langs:
+- VB
+- CSharp
+author: TerryGLee
+ms.author: tglee
+manager: douge
+ms.workload:
+- office
+ms.openlocfilehash: 5561d3c046c083c1495b858d36f6c867050ed842
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# Funzione EnsureVSTOComponent
-  Questa API supporta l'infrastruttura di Office e non deve essere utilizzato direttamente dal codice.  
+# <a name="ensurevstocomponent-function"></a>Funzione EnsureVSTOComponent
+  Questa API supporta l'infrastruttura Office e non può essere utilizzato direttamente dal codice.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
 HRESULT EnsureVSTOComponent(  
@@ -30,13 +30,13 @@ HRESULT EnsureVSTOComponent(
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
   
 |Parametro|Descrizione|  
 |---------------|-----------------|  
-|*pProject*|Non utilizzare.|  
+|*pProject*|Non usare.|  
   
-## Valore restituito  
- Se la funzione ha esito positivo, restituisce **S\_OK**.  Se la funzione ha esito negativo, restituisce un codice di errore.  
+## <a name="return-value"></a>Valore restituito  
+ Se la funzione ha esito positivo, restituisce **S_OK**. Se la funzione ha esito negativo, restituisce un codice di errore.  
   
   

@@ -1,13 +1,8 @@
 ---
-title: 'CA1802: Use Literals Where Appropriate | Microsoft Docs'
-ms.custom: 
+title: 'CA1802: Utilizza valori letterali dove appropriato'
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- vs-devops-test
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.technology: vs-ide-code-analysis
+ms.topic: reference
 f1_keywords:
 - UseLiteralsWhereAppropriate
 - CA1802
@@ -15,57 +10,43 @@ helpviewer_keywords:
 - UseLiteralsWhereAppropriate
 - CA1802
 ms.assetid: 2515e4cd-9e61-486d-b067-58ba1a743ce4
-caps.latest.revision: 17
-author: stevehoag
-ms.author: shoag
-manager: wpickett
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: HT
-ms.sourcegitcommit: eb5c9550fd29b0e98bf63a7240737da4f13f3249
-ms.openlocfilehash: 542d38ffef6008d3bd9605466f23f0cc35014c3e
-ms.contentlocale: it-it
-ms.lasthandoff: 08/30/2017
-
+author: gewarren
+ms.author: gewarren
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 861e03251a8d3f8ee461b82afdbc6ff55b254684
+ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/19/2018
 ---
-# <a name="ca1802-use-literals-where-appropriate"></a>CA1802: Use Literals Where Appropriate
-|||  
-|-|-|  
-|TypeName|UseLiteralsWhereAppropriate|  
-|CheckId|CA1802|  
-|Category|Microsoft.Performance|  
-|Breaking Change|Non-breaking|  
-  
-## <a name="cause"></a>Cause  
- A field is declared `static` and `readonly` (`Shared` and `ReadOnly` in [!INCLUDE[vbprvb](../code-quality/includes/vbprvb_md.md)]), and is initialized with a value that is computable at compile time.  
-  
-## <a name="rule-description"></a>Rule Description  
- The value of a `static``readonly` field is computed at runtime when the static constructor for the declaring type is called. If the `static``readonly` field is initialized when it is declared and a static constructor is not declared explicitly, the compiler emits a static constructor to initialize the field.  
-  
- The value of a `const` field is computed at compile time and stored in the metadata, which increases runtime performance when it is compared to a `static``readonly` field.  
-  
- Because the value assigned to the targeted field is computable at compile time, change the declaration to a `const` field so that the value is computed at compile time instead of at runtime.  
-  
-## <a name="how-to-fix-violations"></a>How to Fix Violations  
- To fix a violation of this rule, replace the `static` and `readonly` modifiers with the `const` modifier.  
-  
-## <a name="when-to-suppress-warnings"></a>When to Suppress Warnings  
- It is safe to suppress a warning from this rule, or disable the rule, if performance is not of concern.  
-  
-## <a name="example"></a>Example  
- The following example shows a type, `UseReadOnly`, that violates the rule and a type, `UseConstant`, that satisfies the rule.  
-  
- [!code-vb[FxCop.Performance.UseLiterals#1](../code-quality/codesnippet/VisualBasic/ca1802-use-literals-where-appropriate_1.vb)] [!code-csharp[FxCop.Performance.UseLiterals#1](../code-quality/codesnippet/CSharp/ca1802-use-literals-where-appropriate_1.cs)]
+# <a name="ca1802-use-literals-where-appropriate"></a>CA1802: Utilizza valori letterali dove appropriato
+|||
+|-|-|
+|TypeName|UseLiteralsWhereAppropriate|
+|CheckId|CA1802|
+|Category|Microsoft.Performance|
+|Modifica importante|Non sostanziale|
+
+## <a name="cause"></a>Causa
+ Un campo viene dichiarato `static` e `readonly` (`Shared` e `ReadOnly` in [!INCLUDE[vbprvb](../code-quality/includes/vbprvb_md.md)]) e viene inizializzato con un valore calcolabile in fase di compilazione.
+
+## <a name="rule-description"></a>Descrizione della regola
+ Il valore di un `static``readonly` campo viene calcolato in fase di esecuzione quando viene chiamato il costruttore statico per il tipo dichiarante. Se il `static``readonly` campo viene inizializzato quando viene dichiarata e un costruttore statico non è dichiarato in modo esplicito, il compilatore genera un costruttore per inizializzare il campo statico.
+
+ Il valore di un `const` campo viene calcolato in fase di compilazione e archiviato nei metadati, aumentando le prestazioni di runtime quando viene confrontata con un `static``readonly` campo.
+
+ Poiché il valore assegnato al campo di destinazione è calcolabile in fase di compilazione, modificare la dichiarazione in un `const` in modo che il valore viene calcolato in fase di compilazione anziché in fase di esecuzione.
+
+## <a name="how-to-fix-violations"></a>Come correggere le violazioni
+ Per correggere una violazione di questa regola, sostituire il `static` e `readonly` modificatori con il `const` modificatore.
+
+## <a name="when-to-suppress-warnings"></a>Esclusione di avvisi
+ È possibile escludere un avviso da questa regola o disabilitare la regola, se le prestazioni non è un problema.
+
+## <a name="example"></a>Esempio
+ Nell'esempio seguente viene illustrato un tipo, `UseReadOnly`, che viola la regola e un tipo, `UseConstant`, che soddisfa la regola.
+
+ [!code-vb[FxCop.Performance.UseLiterals#1](../code-quality/codesnippet/VisualBasic/ca1802-use-literals-where-appropriate_1.vb)]
+ [!code-csharp[FxCop.Performance.UseLiterals#1](../code-quality/codesnippet/CSharp/ca1802-use-literals-where-appropriate_1.cs)]

@@ -1,48 +1,51 @@
 ---
-title: "Operatore di sottrazione (-) (JavaScript) | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/18/2017"
-ms.prod: "windows-client-threshold"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-javascript"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "-"
-dev_langs: 
-  - "JavaScript"
-  - "TypeScript"
-  - "DHTML"
-helpviewer_keywords: 
-  - "- (operatore)"
-  - "- (operatore), informazioni sull'operatore -"
-  - "aritmetici (operatori), sottrazione"
-  - "negazione (operatore)"
-  - "operatori, sottrazione"
-  - "sottrazione (operatore), sintassi"
+title: Operatore di sottrazione (-) (JavaScript) | Documenti Microsoft
+ms.custom: ''
+ms.date: 01/18/2017
+ms.prod: windows-client-threshold
+ms.reviewer: ''
+ms.suite: ''
+ms.technology:
+- devlang-javascript
+ms.tgt_pltfrm: ''
+ms.topic: language-reference
+f1_keywords:
+- '-'
+dev_langs:
+- JavaScript
+- TypeScript
+- DHTML
+helpviewer_keywords:
+- '- operator, about - operator'
+- '- operator'
+- negation operator
+- subtraction operator, syntax
+- arithmetic operators, subtraction
+- operators, subtraction
 ms.assetid: cd0681d3-15cd-49fe-b4dd-e087de55d778
 caps.latest.revision: 8
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 8
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.openlocfilehash: fb79aab0a57c733871dbfc73ac96c7ddbf4db37c
+ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/27/2017
 ---
-# Operatore di sottrazione (-) (JavaScript)
-Esegue la sottrazione tra i valori di due espressioni o fornisce la negazione unaria di una singola espressione.  
+# <a name="subtraction-operator---javascript"></a>Operatore di sottrazione (-) (JavaScript)
+Sottrae il valore di un'espressione da un altro oppure di negazione unaria di un'unica espressione.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
   
 result = number1 - number2;  
-  
 ```  
   
-## Parametri  
- *result*  
- Qualsiasi variabile numerica.  
+## <a name="parameters"></a>Parametri  
+ *risultato*  
+ Qualsiasi variabile di tipo numerico.  
   
  `number`  
  Qualsiasi espressione numerica.  
@@ -53,25 +56,25 @@ result = number1 - number2;
  `number2`  
  Qualsiasi espressione numerica.  
   
-## Note  
- Nella sintassi 1 l'operatore **\-** è l'operatore di sottrazione aritmetica utilizzato per il calcolo della differenza tra due valori numerici.  Nella sintassi 2 l'operatore **\-** viene utilizzato come operatore di negazione unario per indicare il valore negativo di un'espressione.  
+## <a name="remarks"></a>Note  
+ Nella sintassi 1, il  **-**  operatore è l'operatore di sottrazione aritmetica usato per calcolare la differenza tra due numeri. Nella sintassi 2, il  **-**  operatore viene utilizzato l'operatore di negazione unario per indicare il valore negativo di un'espressione.  
   
- Nella sintassi 2, come per tutti gli operatori unari, le espressioni vengono valutate nel modo seguente:  
+ Sintassi 2, come per tutti gli operatori unari, le espressioni vengono valutate come segue:  
   
--   Se l'operatore viene applicato a espressioni undefined o `null`, verrà generato un errore di runtime.  
+-   Se applicato undefined o `null` viene generato un errore di run-time espressioni.  
   
 -   Gli oggetti vengono convertiti in stringhe.  
   
--   Le stringhe vengono convertite in numeri se possibile.  In caso contrario, verrà generato un errore di runtime.  
+-   Le stringhe vengono convertite in numeri, se possibile. In caso contrario, viene generato un errore di run-time.  
   
--   I valori booleani vengono considerati come numeri e precisamente come 0 nel caso di false, come 1 nel caso di true.  
+-   I valori booleani vengono considerati come numeri (0 se è false, 1 se è true).  
   
- L'operatore viene applicato al numero risultante.  Nella sintassi 2, se il numero risultante è diverso da zero, *result* sarà uguale al numero risultante con segno inverso.  Se invece è zero, *result* sarà zero.  
+ L'operatore viene applicato per il numero risultante. Nella sintassi 2, se il numero risulta è diverso da zero, *risultato* è uguale al numero risultante con il segno opposto. Se il numero risulta è uguale a zero, *risultato* è zero.  
   
-## Requisiti  
+## <a name="requirements"></a>Requisiti  
  [!INCLUDE[jsv1](../../javascript/misc/includes/jsv1-md.md)]  
   
-## Vedere anche  
- [Operatore di assegnazione di sottrazione \(\-\=\)](../../javascript/reference/subtraction-assignment-operator-decrement-equal-javascript.md)   
- [Precedenza tra gli operatori](../../javascript/operator-subtractprecedence-javascript.md)   
- [Riepilogo degli operatori \(JavaScript\)](../../javascript/misc/operator-subtractsummary-javascript.md)
+## <a name="see-also"></a>Vedere anche  
+ [Operatore di assegnazione di sottrazione (-)](../../javascript/reference/subtraction-assignment-operator-decrement-equal-javascript.md)   
+ [Precedenza tra operatori](../../javascript/operator-subtractprecedence-javascript.md)   
+ [Riepilogo degli operatori (JavaScript)](../../javascript/misc/operator-subtractsummary-javascript.md)

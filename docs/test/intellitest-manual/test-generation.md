@@ -1,39 +1,20 @@
 ---
 title: Generazione di test | Strumento di test per sviluppatori Microsoft IntelliTest | Microsoft Docs
-ms.custom: 
 ms.date: 05/02/2017
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- vs-devops-test
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.technology: vs-ide-test
+ms.topic: conceptual
 helpviewer_keywords:
 - IntelliTest, Test generation
-ms.assetid: B6CADFD1-42C7-4FC0-B41F-0E9F8291A702
-caps.latest.revision: 56
-ms.author: douge
+ms.author: gewarren
 manager: douge
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 45d36934cf1c46902cac566203cddf4a118b7fe4
-ms.openlocfilehash: d6795ff2807bc0c7febf42ca4d9399b8aeea6db4
-ms.contentlocale: it-it
-ms.lasthandoff: 06/02/2017
-
+ms.workload:
+- multiple
+author: gewarren
+ms.openlocfilehash: 259ff0818cebde6d7c603428c6cdb88cd51ca293
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="test-generation"></a>Generazione di test
 
@@ -263,4 +244,3 @@ namespace MyTests
 ## <a name="got-feedback"></a>Commenti?
 
 Pubblicare idee e richieste di funzionalità in **[UserVoice](https://visualstudio.uservoice.com/forums/121579-visual-studio-2015/category/157869-test-tools?query=IntelliTest)**.
-

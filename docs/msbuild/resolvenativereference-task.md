@@ -1,13 +1,9 @@
 ---
-title: "Attività ResolveNativeReference | Microsoft Docs"
-ms.custom: 
+title: Attività ResolveNativeReference | Microsoft Docs
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- vs-ide-sdk
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.technology: msbuild
+ms.topic: reference
 f1_keywords:
 - http://schemas.microsoft.com/developer/msbuild/2003#ResolveNativeReference
 dev_langs:
@@ -19,30 +15,16 @@ helpviewer_keywords:
 - MSBuild, ResolveNativeReference task
 - ResolveNativeReference task [MSBuild]
 ms.assetid: 56acd101-de77-4eec-92c6-f5c6d2187579
-caps.latest.revision: 9
-author: kempb
-ms.author: kempb
-manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 11a9cee75f912c5fb31cf4a031644abe9c63d744
-ms.openlocfilehash: c3c8a58f0eeeb43ac43e2064c2e4c7de2e5bf469
-ms.contentlocale: it-it
-ms.lasthandoff: 06/03/2017
-
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 3cd6651ba20a4edfbfa2b250e63fca890da78920
+ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/19/2018
 ---
 # <a name="resolvenativereference-task"></a>Attività ResolveNativeReference
 Risolve i riferimenti nativi. Implementa la classe <xref:Microsoft.Build.Tasks.ResolveNativeReference>. Questa classe supporta l'infrastruttura .NET Framework, che non può essere usata direttamente dal codice.  

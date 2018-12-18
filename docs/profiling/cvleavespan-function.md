@@ -1,30 +1,29 @@
 ---
-title: "Funzione CvLeaveSpan | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "cvmarkers/CvLeaveSpan"
-helpviewer_keywords: 
-  - "CvLeaveSpan (metodo)"
+title: Funzione CvLeaveSpan | Microsoft Docs
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology: vs-ide-debug
+ms.topic: conceptual
+f1_keywords:
+- cvmarkers/CvLeaveSpan
+helpviewer_keywords:
+- CvLeaveSpan method
 ms.assetid: 3bf65fdf-a471-4efd-ac7a-03e701bbae5d
-caps.latest.revision: 3
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 3
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 381a6742dbedbe50b350764ca9e2637895db7ae2
+ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/19/2018
 ---
-# Funzione CvLeaveSpan
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
-Contrassegna la fine dell'intervallo.  
+# <a name="cvleavespan-function"></a>Funzione CvLeaveSpan
+Contrassegna la fine della sezione.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
 HRESULT CvLeaveSpan(  
@@ -32,15 +31,15 @@ HRESULT CvLeaveSpan(
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `pSpan`  
- Oggetto Span restituito dalla chiamata precedente a CvEnterSpan\*.  Non può essere NULL.  
+ Oggetto sezione restituito dalla chiamata precedente a CvEnterSpan*. Non può essere NULL.  
   
-## Valore restituito  
- S\_OK quando il messaggio è scritto correttamente.  Codice di errore nel caso siano alcuni errori.  Utilizzare le macro SUCCEEDED\/FAILED per verificare la condizione di errore.  
+## <a name="return-value"></a>Valore restituito  
+ S_OK quando il messaggio è stato scritto correttamente. Codice dell'errore nel caso in cui si siano verificati errori. Usare le macro SUCCEEDED/FAILED per controllare la condizione di errore.  
   
-## Requisiti  
+## <a name="requirements"></a>Requisiti  
  **Intestazione:** cvmarkers.h  
   
-## Vedere anche  
- [riferimento alla libreria C\+\+](../profiling/cpp-library-reference.md)
+## <a name="see-also"></a>Vedere anche  
+ [Riferimento alla libreria C++](../profiling/cpp-library-reference.md)

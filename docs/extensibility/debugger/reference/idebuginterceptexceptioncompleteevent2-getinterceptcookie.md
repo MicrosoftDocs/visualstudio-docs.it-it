@@ -1,41 +1,25 @@
 ---
 title: IDebugInterceptExceptionCompleteEvent2::GetInterceptCookie | Documenti Microsoft
-ms.custom: 
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - vs-ide-sdk
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: conceptual
 f1_keywords:
 - IDebugInterceptExceptionCompleteEvent2::GetInterceptCookie
 helpviewer_keywords:
 - IDebugInterceptExceptionCompleteEvent2::GetInterceptCookie
 ms.assetid: 07b20866-e598-4783-9ecc-6aa8625c8804
-caps.latest.revision: 11
+author: gregvanl
 ms.author: gregvanl
-manager: ghogen
-translation.priority.mt:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: bd7ea8d7ed7da47c88b0c2816e0cf03e7833e8f2
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
 ms.translationtype: MT
-ms.sourcegitcommit: 4a36302d80f4bc397128e3838c9abf858a0b5fe8
-ms.openlocfilehash: 4e1fa009437acca5fea3f2854c4cdf389b1c463a
-ms.contentlocale: it-it
-ms.lasthandoff: 09/26/2017
-
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="idebuginterceptexceptioncompleteevent2getinterceptcookie"></a>IDebugInterceptExceptionCompleteEvent2::GetInterceptCookie
 Chiamata eseguita quando è stata completata l'elaborazione di un'eccezione intercettata.  

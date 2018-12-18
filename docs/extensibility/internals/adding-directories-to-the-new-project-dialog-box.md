@@ -1,31 +1,32 @@
 ---
-title: "Aggiunta di directory per la finestra di dialogo Nuovo progetto | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "Finestra di dialogo Nuovo progetto, estensione"
+title: Aggiunta di directory per la finestra di dialogo Nuovo progetto | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology:
+- vs-ide-sdk
+ms.topic: conceptual
+helpviewer_keywords:
+- New Project dialog box, extending
 ms.assetid: 53b328f5-20bb-49a3-bf9e-1818f4fbdf50
-caps.latest.revision: 13
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 13
+author: gregvanl
+ms.author: gregvanl
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: c4ad992785fdf8ab5ffdd3faa7043e2a0ee5411b
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# Aggiunta di directory per la finestra di dialogo Nuovo progetto
-[!INCLUDE[vs2017banner](../../code-quality/includes/vs2017banner.md)]
-
-Quando si creano nuovi tipi di progetto, è anche possibile registrare una nuova directory nella finestra di dialogo di **nuovo progetto** per visualizzare per l'utilizzo come modelli.  Nell'esempio di codice seguente viene illustrato come registrare una nuova directory, noto anche come nodo.  Nell'esempio, i modelli esposti da un VSPackage CLSID\_Package registrati.  Di conseguenza, il lato sinistro della finestra di dialogo di **nuovo progetto** offre il nodo aggiunto, con un nome basato sulla risorsa di Folder\_Label\_ResID.  Questa risorsa caricata da DLL satellite di package VS.  
+# <a name="adding-directories-to-the-new-project-dialog-box"></a>Aggiunta di directory per la finestra di dialogo Nuovo progetto
+Quando si creano nuovi tipi di progetto, è anche possibile registrare una nuova directory di **nuovo progetto** la finestra di dialogo per la visualizzazione da utilizzare come modelli. Esempio di codice seguente viene illustrato come registrare una nuova directory, noto anche come un nodo. Nell'esempio, modelli esposti dal VSPackage CLSID_Package vengono registrati. Di conseguenza, il lato sinistro del **nuovo progetto** la finestra di dialogo offre il nodo aggiunto, con un nome di base della risorsa Folder_Label_ResID. Questa risorsa verrà caricata dal pacchetto VSPackage DLL satellite.  
   
- Il valore di **cartella** rappresenta un GUID di una cartella in cui il nodo di Folder\_Label\_ResID visualizzare.  Nell'esempio, il GUID rappresenta la cartella di **altri progetti** nel riquadro di **tipi di progetto** della finestra di dialogo di **nuovo progetto** .  Se il valore di **altri progetti** è presente, l'etichetta viene posizionato al livello.  
+ Il **cartella** valore rappresenta un GUID di una cartella in cui viene visualizzato il nodo Folder_Label_ResID. Nell'esempio, rappresenta il GUID di **altri progetti** cartella la **tipi di progetto** riquadro del **nuovo progetto** la finestra di dialogo. Se il **altri progetti** valore è assente, l'etichetta viene posizionata nella parte superiore.  
   
- Il valore di TemplatesDir specifica il percorso completo della directory contenente i modelli di progetto.  Questi file possono trovarsi in qualsiasi file VSZ o file modelli tipici da usare.  
+ Il valore TemplatesDir specifica il percorso completo della directory che contiene i modelli di progetto. Questi file possono essere file VSZ o file di modello tipico per la clonazione.  
   
- Se si specifica TemplatesLocalizedSubDir, deve essere ID di risorsa di stringa che indica la sottodirectory di TemplatesDir che utilizza i modelli localizzati.  Poiché [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] carica la risorsa di tipo stringa da una DLL satellite se presente, ogni DLL satellite può contenere un nome diverso di sottodirectory. Il valore di SortPriority specifica una proprietà di ordinamento.  
+ Se si specifica TemplatesLocalizedSubDir, deve essere l'ID di risorsa di una stringa che assegna un nome di sottodirectory di TemplatesDir che contiene modelli localizzati. Poiché [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] carica la risorsa stringa da una DLL satellite se si dispone di uno, ogni DLL satellite contenere un nome di sottodirectory di diversi. Il valore SortPriority specifica una priorità di ordinamento.  
   
 ```  
 NoRemove NewProjectTemplates  
@@ -46,7 +47,7 @@ NoRemove NewProjectTemplates
 }  
 ```  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [La registrazione di progetto e modelli di elemento](../../extensibility/internals/registering-project-and-item-templates.md)   
  [Aggiunta di elementi di Aggiungi nuovo elemento di finestre di dialogo](../../extensibility/internals/adding-items-to-the-add-new-item-dialog-boxes.md)   
- [Aggiunta di directory per il dialogo Aggiungi nuovo elemento](../../extensibility/internals/adding-directories-to-the-add-new-item-dialog-box.md)
+ [Aggiunta di directory nella finestra di dialogo Aggiungi nuovo elemento](../../extensibility/internals/adding-directories-to-the-add-new-item-dialog-box.md)

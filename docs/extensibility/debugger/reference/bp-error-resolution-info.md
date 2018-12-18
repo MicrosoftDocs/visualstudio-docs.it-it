@@ -1,86 +1,87 @@
 ---
-title: "BP_ERROR_RESOLUTION_INFO | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "BP_ERROR_RESOLUTION_INFO"
-helpviewer_keywords: 
-  - "Struttura BP_ERROR_RESOLUTION_INFO"
+title: BP_ERROR_RESOLUTION_INFO | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology:
+- vs-ide-sdk
+ms.topic: conceptual
+f1_keywords:
+- BP_ERROR_RESOLUTION_INFO
+helpviewer_keywords:
+- BP_ERROR_RESOLUTION_INFO structure
 ms.assetid: a6b83242-5728-4716-80f3-840c96d59c6c
-caps.latest.revision: 9
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 9
+author: gregvanl
+ms.author: gregvanl
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: 9fdf3b6aee272990fb22feee13f8e46ee8550073
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# BP_ERROR_RESOLUTION_INFO
-[!INCLUDE[vs2017banner](../../../code-quality/includes/vs2017banner.md)]
-
-Viene descritta la risoluzione di un punto di interruzione di errori, incluso il percorso, il programma e il thread.  
+# <a name="bperrorresolutioninfo"></a>BP_ERROR_RESOLUTION_INFO
+Descrive la risoluzione di un punto di interruzione di errore, ad esempio percorso, software e thread.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp#  
-typedef struct _BP_ERROR_RESOLUTION_INFO {   
-   BPERESI_FIELDS         dwFields;  
-   BP_RESOLUTION_LOCATION bpResLocation;  
-   IDebugProgram2*        pProgram;  
-   IDebugThread2*         pThread;  
-   BSTR                   bstrMessage;  
-   BP_ERROR_TYPE          dwType;  
+```cpp  
+typedef struct _BP_ERROR_RESOLUTION_INFO {   
+   BPERESI_FIELDS         dwFields;  
+   BP_RESOLUTION_LOCATION bpResLocation;  
+   IDebugProgram2*        pProgram;  
+   IDebugThread2*         pThread;  
+   BSTR                   bstrMessage;  
+   BP_ERROR_TYPE          dwType;  
 } BP_ERROR_RESOLUTION_INFO;  
 ```  
   
-```c#  
-public struct BP_ERROR_RESOLUTION_INFO {   
-   public uint                   dwFields;  
-   public BP_RESOLUTION_LOCATION bpResLocation;  
-   public IDebugProgram2         pProgram;  
-   public IDebugThread2          pThread;  
-   public string                 bstrMessage;  
-   public uint                   dwType;  
+```csharp  
+public struct BP_ERROR_RESOLUTION_INFO {   
+   public uint                   dwFields;  
+   public BP_RESOLUTION_LOCATION bpResLocation;  
+   public IDebugProgram2         pProgram;  
+   public IDebugThread2          pThread;  
+   public string                 bstrMessage;  
+   public uint                   dwType;  
 };  
 ```  
   
-## Membri  
+## <a name="members"></a>Membri  
  `dwFields`  
- Una combinazione di valori [BPERESI\_FIELDS](../../../extensibility/debugger/reference/bperesi-fields.md) da specificare di enumerazione quali campi della struttura vengono compilati.  
+ Una combinazione dei valori di [BPERESI_FIELDS](../../../extensibility/debugger/reference/bperesi-fields.md) enumerazione che specifica quali campi della struttura sono stati compilati.  
   
  `bpResLocation`  
- [BP\_RESOLUTION\_LOCATION](../../../extensibility/debugger/reference/bp-resolution-location.md) L'unione, che specifica la posizione di risoluzione del punto di interruzione.  
+ Il [BP_RESOLUTION_LOCATION](../../../extensibility/debugger/reference/bp-resolution-location.md) unione, che specifica il percorso di risoluzione del punto di interruzione.  
   
  `pProgram`  
- [IDebugProgram2](../../../extensibility/debugger/reference/idebugprogram2.md) L'oggetto che rappresenta l'applicazione in cui l'errore del punto di interruzione si è verificato.  
+ Il [IDebugProgram2](../../../extensibility/debugger/reference/idebugprogram2.md) oggetto che rappresenta l'applicazione in cui si è verificato l'errore del punto di interruzione.  
   
  `pThread`  
- [IDebugThread2](../../../extensibility/debugger/reference/idebugthread2.md) L'oggetto che rappresenta il thread in cui l'applicazione che ha generato l'errore il punto di interruzione è in esecuzione.  
+ Il [IDebugThread2](../../../extensibility/debugger/reference/idebugthread2.md) oggetto che rappresenta il thread su cui è in esecuzione l'applicazione che ha generato l'errore del punto di interruzione.  
   
  `bstrMessage`  
- Stringa contenente qualsiasi avviso o un messaggio di errore derivazione da questa risoluzione di errore.  
+ Stringa contenente un messaggio di avviso o errore risultanti da questo risoluzione degli errori.  
   
  `dwType`  
- Un valore [BP\_ERROR\_TYPE](../../../extensibility/debugger/reference/bp-error-type.md) dell'enumerazione che specifica il tipo di errore del punto di interruzione.  
+ Un valore di [BP_ERROR_TYPE](../../../extensibility/debugger/reference/bp-error-type.md) enumerazione che specifica il tipo di errore del punto di interruzione.  
   
-## Note  
- Questa struttura viene [GetResolutionInfo](../../../extensibility/debugger/reference/idebugerrorbreakpointresolution2-getresolutioninfo.md) restituito dal metodo.  
+## <a name="remarks"></a>Note  
+ Questa struttura viene restituita dal [GetResolutionInfo](../../../extensibility/debugger/reference/idebugerrorbreakpointresolution2-getresolutioninfo.md) metodo.  
   
-## Requisiti  
- intestazione: msdbg.h  
+## <a name="requirements"></a>Requisiti  
+ Intestazione: msdbg.h  
   
- Spazio dei nomi: Microsoft.VisualStudio.Debugger.Interop  
+ Namespace: Microsoft.VisualStudio.Debugger.Interop  
   
  Assembly: Microsoft.VisualStudio.Debugger.Interop.dll  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Strutture e unioni](../../../extensibility/debugger/reference/structures-and-unions.md)   
  [GetResolutionInfo](../../../extensibility/debugger/reference/idebugerrorbreakpointresolution2-getresolutioninfo.md)   
- [BPRESI\_FIELDS](../../../extensibility/debugger/reference/bpresi-fields.md)   
- [BP\_RESOLUTION\_LOCATION](../../../extensibility/debugger/reference/bp-resolution-location.md)   
+ [BPRESI_FIELDS](../../../extensibility/debugger/reference/bpresi-fields.md)   
+ [BP_RESOLUTION_LOCATION](../../../extensibility/debugger/reference/bp-resolution-location.md)   
  [IDebugProgram2](../../../extensibility/debugger/reference/idebugprogram2.md)   
  [IDebugThread2](../../../extensibility/debugger/reference/idebugthread2.md)   
- [BP\_ERROR\_TYPE](../../../extensibility/debugger/reference/bp-error-type.md)
+ [BP_ERROR_TYPE](../../../extensibility/debugger/reference/bp-error-type.md)

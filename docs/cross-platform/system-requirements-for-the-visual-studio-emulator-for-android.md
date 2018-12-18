@@ -1,44 +1,25 @@
 ---
 title: Requisiti di sistema per Visual Studio Emulator for Android | Microsoft Docs
-ms.custom: 
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- tgt-pltfrm-cross-plat
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.technology: vs-ide-mobile
+ms.topic: conceptual
 ms.assetid: 35e766ad-269f-41e4-ba23-74a556c315f3
-caps.latest.revision: 5
 author: mikejo5000
 ms.author: mikejo
-manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 47057e9611b824c17077b9127f8d2f8b192d6eb8
-ms.openlocfilehash: b4ed14f43316dc02ef8d039c590cd2f93b3060e5
-ms.contentlocale: it-it
-ms.lasthandoff: 05/13/2017
-
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 42415e1a8814de8b7a9872bf619d0ae3a000fc69
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="system-requirements-for-the-visual-studio-emulator-for-android"></a>Requisiti di sistema per Visual Studio Emulator for Android
 Visual Studio Emulator per Android viene eseguito come una macchina virtuale in Hyper-V, la tecnologia di virtualizzazione per Windows 8 e versioni successive. Per eseguire l'emulatore, il computer deve soddisfare i requisiti per l'esecuzione di Hyper-V, come descritto in questo argomento.  
   
- Il programma di installazione tenta di configurare automaticamente i prerequisiti quando si installa l'emulatore. Se i prerequisiti vengono configurati correttamente, l'emulatore funziona come previsto. In caso contrario potrebbe essere necessario abilitare i prerequisiti manualmente. Per configurare manualmente i prerequisiti, usare i passaggi e gli strumenti descritti [qui](https://msdn.microsoft.com/en-us/library/windows/apps/jj863509\(v=vs.105\).aspx) per l'emulatore di Windows Phone.  
+ Il programma di installazione tenta di configurare automaticamente i prerequisiti quando si installa l'emulatore. Se i prerequisiti vengono configurati correttamente, l'emulatore funziona come previsto. In caso contrario potrebbe essere necessario abilitare i prerequisiti manualmente. Per configurare manualmente i prerequisiti, usare i passaggi e gli strumenti descritti [qui](/previous-versions/windows/apps/jj863509\(v=vs.105\)) per l'emulatore di Windows Phone.  
   
 > [!IMPORTANT]
 >  Il programma di installazione per l'emulatore verifica i prerequisiti per l'esecuzione di Visual Studio Emulator per Android. Se i prerequisiti non sono presenti, visualizza degli avvisi ma non richiede i prerequisiti.  
@@ -101,7 +82,7 @@ Visual Studio Emulator per Android viene eseguito come una macchina virtuale in 
   
  Per verificare i requisiti di RAM e di Windows, nel Pannello di controllo scegliere Sistema e sicurezza e quindi scegliere Sistema.  
   
- ![Verificare i requisiti di sistema](~/cross-platform/media/android_emu_system_requirements.png "Android_Emu_System_Requirements")  
+ ![Verificare i requisiti di sistema](../cross-platform/media/android_emu_system_requirements.png "Android_Emu_System_Requirements")  
   
 ##  <a name="Network"></a> Requisiti di rete  
  La rete deve soddisfare i seguenti requisiti:  
@@ -147,7 +128,7 @@ Visual Studio Emulator per Android viene eseguito come una macchina virtuale in 
 > [!IMPORTANT]
 >  Dopo aver partecipato al gruppo, disconnettersi o riavviare il computer per rendere effettiva la modifica.  
   
- ![Aggiunta al gruppo di sicurezza Amministratori Hyper&#45;V](~/cross-platform/media/android_emu_hyperv_admin.png "Android_Emu_HyperV_Admin")  
+ ![Aggiunta al gruppo di sicurezza Amministratori Hyper&#45;V](../cross-platform/media/android_emu_hyperv_admin.png "Android_Emu_HyperV_Admin")  
   
  Per aggiungersi manualmente a un gruppo, aprire lo snap-in Utenti e gruppi locali. Per altre informazioni, vedere [Aggiungere un account utente a un gruppo](http://windows.microsoft.com/en-us/windows/add-user-account-to-group#1TC=windows-7). (Questo argomento di Windows 7 è applicabile anche a Windows 8).  
   

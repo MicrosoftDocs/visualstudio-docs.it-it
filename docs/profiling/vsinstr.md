@@ -1,13 +1,9 @@
 ---
 title: VSInstr | Microsoft Docs
-ms.custom: 
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- vs-ide-debug
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.technology: vs-ide-debug
+ms.topic: conceptual
 helpviewer_keywords:
 - performance tools, instrumentation
 - instrumentation, VSInstr tool
@@ -18,31 +14,16 @@ helpviewer_keywords:
 - VSInstr tool
 - performance tools, VSInstr tool
 ms.assetid: 7b1334f7-f9b0-4a82-a145-d0607bfa8467
-caps.latest.revision: 44
 author: mikejo5000
 ms.author: mikejo
-manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 63aad78bdc7df685ca3a73ec16a9cbc87b78151f
-ms.openlocfilehash: f8a98aebc2d6c8a0ad53988f92ea327948ae14a6
-ms.contentlocale: it-it
-ms.lasthandoff: 06/14/2017
-
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 64e9d8c2b25d779bfe0e80aa7b7d324f7a69879c
+ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/19/2018
 ---
 # <a name="vsinstr"></a>VSInstr
 Lo strumento VSInstr viene usato per instrumentare i file binari. Viene richiamato tramite la sintassi seguente:  
@@ -80,4 +61,4 @@ VSInstr [/U] filename [/options]
  [VSPerfCmd](../profiling/vsperfcmd.md)   
  [VSPerfReport](../profiling/vsperfreport.md)   
  [Avvisi di VSInstr](../profiling/vsinstr-warnings.md)   
- [Visualizzazioni dei rapporti di prestazioni](../profiling/performance-report-views.md)
+ [Performance Report Views](../profiling/performance-report-views.md)(Visualizzazioni dei rapporti di prestazioni)

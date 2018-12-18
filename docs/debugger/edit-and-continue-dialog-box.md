@@ -1,40 +1,36 @@
 ---
-title: "Finestra di dialogo Modifica e continuazione | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/05/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "vs.debug.ENC.welcome"
-dev_langs: 
-  - "FSharp"
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "VB"
-  - "C++"
-helpviewer_keywords: 
-  - "Finestra di dialogo Modifica e continuazione"
+title: Modifica e continuazione la finestra di dialogo | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology: vs-ide-debug
+ms.topic: reference
+f1_keywords:
+- vs.debug.ENC.welcome
+dev_langs:
+- CSharp
+- VB
+- FSharp
+- C++
+helpviewer_keywords:
+- Edit and Continue dialog box
 ms.assetid: 4390c09c-fc73-4cc3-ab8e-6f07a7d70be2
-caps.latest.revision: 9
-caps.handback.revision: 9
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: c2b8e9051a127a7338bc5d1ae6bd82b2e65ba3f4
+ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/18/2018
 ---
-# Finestra di dialogo Modifica e continuazione
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
-\(Solo codice nativo\) Questa finestra di dialogo viene visualizzata se durante il debug sono state apportate modifiche al codice riconosciute come applicabili dalla funzionalità **Modifica e continuazione**.  Per ulteriori informazioni, vedere [Modifica e continuazione](../debugger/edit-and-continue.md).  
+# <a name="edit-and-continue-dialog-box"></a>Finestra di dialogo Modifica e continuazione
+(Solo nativo) Questa finestra di dialogo viene visualizzata quando è stato modificato durante il debug del codice e **modifica e continuazione** riconosce che è possibile applicare le modifiche al codice. Per ulteriori informazioni, vedere [modifica e continuazione](../debugger/edit-and-continue.md).  
   
  **Non visualizzare più questo messaggio**  
- Se si seleziona questa casella di controllo, la modalità **Modifica e continuazione** applicherà le modifiche al codice senza chiedere l'autorizzazione.  Per attivare nuovamente questo messaggio di avviso, accedere alla finestra di dialogo **Opzioni**, aprire la cartella **Debug**, fare clic sulla pagina **Modifica e continuazione** e selezionare **Richiama dai comandi di debug** e **Chiedi conferma**.  
+ Se si seleziona questa casella di controllo **modifica e continuazione** applicherà le modifiche al codice senza chiedere l'autorizzazione in futuro. È possibile attivare questo avviso nuovamente visitando il **opzioni** la finestra di dialogo, aprire il **debug** cartella, fare clic sul **modifica e continuazione** , quindi selezionare **Richiama dai comandi di debug** e **Chiedi conferma**.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Sicurezza del debugger](../debugger/debugger-security.md)   
- [Modifica e continuazione, Debug, finestra di dialogo Opzioni](../Topic/Edit%20and%20Continue,%20Debugging,%20Options%20Dialog%20Box.md)
+ [Modifica e continuazione, debug, finestra di dialogo Opzioni](http://msdn.microsoft.com/Library/009d225f-ef65-463f-a146-e4c518f86103)

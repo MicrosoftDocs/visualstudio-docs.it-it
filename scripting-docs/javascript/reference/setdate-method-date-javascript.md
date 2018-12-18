@@ -1,58 +1,62 @@
 ---
-title: "Metodo setDate (Date) (JavaScript) | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/18/2017"
-ms.prod: "windows-client-threshold"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-javascript"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "setDate"
-dev_langs: 
-  - "JavaScript"
-  - "TypeScript"
-  - "DHTML"
-helpviewer_keywords: 
-  - "setDate (metodo)"
-  - "date, impostazione"
+title: Metodo setDate (Date) (JavaScript) | Documenti Microsoft
+ms.custom: 
+ms.date: 01/18/2017
+ms.prod: windows-client-threshold
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-javascript
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords:
+- setDate
+dev_langs:
+- JavaScript
+- TypeScript
+- DHTML
+helpviewer_keywords:
+- setDate method
+- dates, setting
 ms.assetid: a84b9b01-a6d0-489f-8a13-e7af9e9630b2
-caps.latest.revision: 16
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 16
+caps.latest.revision: 
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.openlocfilehash: 8d74340287b3a7348419d302f79775eb610c6983
+ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/27/2017
 ---
-# Metodo setDate (Date) (JavaScript)
-Imposta il valore numerico di giorno\-de \-\- mese dell'oggetto `Date` utilizzando l'ora locale.  
+# <a name="setdate-method-date-javascript"></a>Metodo setDate (Date) (JavaScript)
+Imposta il valore numerico giorno del mese del `Date` oggetto utilizzando l'ora locale.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
   
 dateObj.setDate(numDate)   
 ```  
   
-## Parametri  
+## <a name="parameters"></a>Parametri  
  `dateObj`  
- Obbligatorio.  Qualsiasi oggetto `Date`.  
+ Obbligatorio. Qualsiasi oggetto `Date`.  
   
  `numDate`  
- Obbligatorio.  Valore numerico corrispondente al giorno del mese.  
+ Obbligatorio. Valore numerico che rappresenta il giorno del mese.  
   
-## Note  
- Per impostare il valore di giorno\-de \-\- mese utilizzo di tempo universale coordinato \(UTC\), utilizzare il metodo `setUTCDate`.  
+## <a name="remarks"></a>Note  
+ Per impostare il valore del giorno del mese con l'ora UTC (Universal Coordinated Time), utilizzare il `setUTCDate` metodo.  
   
- Se il valore `numDate` è maggiore del numero di giorni del mese, la data viene chiamata a un mese e\/o all'anno più tardi.  Ad esempio, se la data archiviato è il 5 gennaio 1996 e `setDate(32)` viene chiamato, le modifiche della data a 1° febbraio 1996.  Se `numDate` è un numero negativo, la data alza su un mese e\/o a un anno precedente.  Ad esempio, se la data archiviato è il 5 gennaio 1996 e `setDate(-32)` viene chiamato, le modifiche della data a 29 novembre 1995.  
+ Se il valore di `numDate` è maggiore del numero di giorni del mese, esegue il rollback data in a una versione successiva mese e/o anno. Ad esempio, se la data memorizzata è 5 gennaio 1996 e `setDate(32)` viene chiamato, le modifiche data 1 febbraio 1996. Se `numDate` è un numero negativo, il Data esegue il rollback un precedente mese e/o anno. Ad esempio, se la data memorizzata è 5 gennaio 1996 e `setDate(-32)` viene chiamato, le modifiche data 29 novembre 1995.  
   
- [Metodo setFullYear \(Date\)](../../javascript/reference/setfullyear-method-date-javascript.md) può essere utilizzato per impostare l'anno, il mese e il giorno.  
+ Il [metodo setFullYear (Date)](../../javascript/reference/setfullyear-method-date-javascript.md) può essere utilizzato per impostare l'anno, mese e giorno del mese.  
   
-## Esempio  
+## <a name="example"></a>Esempio  
  Nell'esempio seguente viene illustrato come utilizzare il metodo `setDate`.  
   
-```javascript  
+```JavaScript  
 var date = new Date("12/15/1990");  
 date.setDate(30);  
 document.write(date);  
@@ -61,13 +65,13 @@ document.write(date);
   
 ```  
   
-## Requisiti  
+## <a name="requirements"></a>Requisiti  
  [!INCLUDE[jsv3](../../javascript/reference/includes/jsv3-md.md)]  
   
- **Applies To**: [Oggetto Date](../../javascript/reference/date-object-javascript.md)  
+ **Si applica a**: [Date Object](../../javascript/reference/date-object-javascript.md)  
   
-## Vedere anche  
- [Metodo getDate \(Date\)](../../javascript/reference/getdate-method-date-javascript.md)   
- [Metodo setFullYear \(Date\)](../../javascript/reference/setfullyear-method-date-javascript.md)   
- [Metodo setMonth \(Date\)](../../javascript/reference/setmonth-method-date-javascript.md)   
- [Metodo setUTCDate \(Date\)](../../javascript/reference/setutcdate-method-date-javascript.md)
+## <a name="see-also"></a>Vedere anche  
+ [Metodo getDate (Date)](../../javascript/reference/getdate-method-date-javascript.md)   
+ [Metodo setFullYear (Date)](../../javascript/reference/setfullyear-method-date-javascript.md)   
+ [Metodo setMonth (Date)](../../javascript/reference/setmonth-method-date-javascript.md)   
+ [Metodo setUTCDate (Date)](../../javascript/reference/setutcdate-method-date-javascript.md)

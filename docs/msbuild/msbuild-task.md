@@ -1,13 +1,9 @@
 ---
-title: "Attività MSBuild | Microsoft Docs"
-ms.custom: 
+title: Attività MSBuild | Microsoft Docs
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- vs-ide-sdk
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.technology: msbuild
+ms.topic: reference
 f1_keywords:
 - http://schemas.microsoft.com/developer/msbuild/2003#MSBuild
 dev_langs:
@@ -19,37 +15,22 @@ helpviewer_keywords:
 - MSBuild task [MSBuild]
 - MSBuild, MSBuild task
 ms.assetid: 76577f6c-7669-44ad-a840-363e37a04d34
-caps.latest.revision: 32
-author: kempb
-ms.author: kempb
-manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 47057e9611b824c17077b9127f8d2f8b192d6eb8
-ms.openlocfilehash: 0540432e570bf533df1f6437361486f9dd7b6727
-ms.contentlocale: it-it
-ms.lasthandoff: 05/13/2017
-
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 04b76df9a174bcbc03269e42ce37b1103c3bfd2f
+ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/19/2018
 ---
 # <a name="msbuild-task"></a>Attività MSBuild
 Compila progetti di [!INCLUDE[vstecmsbuild](../extensibility/internals/includes/vstecmsbuild_md.md)] da un altro progetto di [!INCLUDE[vstecmsbuild](../extensibility/internals/includes/vstecmsbuild_md.md)].  
   
 ## <a name="parameters"></a>Parametri  
- Nella tabella che segue vengono descritti i parametri dell'attività `MSBuild`.  
+ Nella tabella che segue vengono descritti i parametri dell'attività `MSBuild` .  
   
 |Parametro|Descrizione|  
 |---------------|-----------------|  

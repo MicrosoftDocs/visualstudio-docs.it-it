@@ -1,14 +1,10 @@
 ---
-title: 'How to: Programmatically Protect Worksheets | Microsoft Docs'
-ms.custom: 
+title: 'Procedura: proteggere i fogli di lavoro a livello di codice | Documenti Microsoft'
+ms.custom: ''
 ms.date: 02/02/2017
-ms.prod: visual-studio-dev14
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - office-development
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: conceptual
 dev_langs:
 - VB
 - CSharp
@@ -17,67 +13,68 @@ helpviewer_keywords:
 - documents [Office development in Visual Studio], document protection
 - document protection, adding to worksheets
 - worksheets, protecting
-ms.assetid: 50bde1ff-918a-42ca-ba1b-f22139f8717a
-caps.latest.revision: 47
-author: kempb
-ms.author: kempb
-manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: eb5c9550fd29b0e98bf63a7240737da4f13f3249
-ms.openlocfilehash: 511ee619b9a74906d6f7d356486de0dcc1da0d32
-ms.contentlocale: it-it
-ms.lasthandoff: 08/30/2017
-
+author: TerryGLee
+ms.author: tglee
+manager: douge
+ms.workload:
+- office
+ms.openlocfilehash: 23e0706f7436355e2308fbde8d945968da5348c8
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# <a name="how-to-programmatically-protect-worksheets"></a>How to: Programmatically Protect Worksheets
-  The protection feature in Microsoft Office Excel helps prevent users and code from modifying objects in a worksheet. By default, all cells are locked after you turn on protection.  
+# <a name="how-to-programmatically-protect-worksheets"></a>Procedura: proteggere fogli di lavoro a livello di codice
+  La funzionalità di protezione di Microsoft Office Excel consente di impedire la modifica degli oggetti di un foglio di lavoro da parte degli utenti o mediante codice. Per impostazione predefinita, dopo l'attivazione della protezione tutte le celle risultano bloccate.  
   
  [!INCLUDE[appliesto_xlalldocapp](../vsto/includes/appliesto-xlalldocapp-md.md)]  
   
- In document-level customizations, you can protect worksheets by using the Excel designer. You can also protect a worksheet programmatically at run time in any project type.  
+ Nelle personalizzazioni a livello di documento è possibile proteggere i fogli di lavoro tramite la finestra di progettazione di Excel. È anche possibile proteggere un foglio di lavoro a livello di codice in fase di esecuzione, in qualsiasi tipo di progetto.  
   
 > [!NOTE]  
->  You cannot add Windows Forms controls to areas of a worksheet that are protected.  
+>  Non è possibile aggiungere controlli Windows Form alle aree protette di un foglio di lavoro.  
   
-## <a name="using-the-designer"></a>Using the Designer  
+## <a name="using-the-designer"></a>Uso della finestra di progettazione  
   
-#### <a name="to-protect-a-worksheet-in-the-designer"></a>To protect a worksheet in the designer  
+#### <a name="to-protect-a-worksheet-in-the-designer"></a>Per proteggere un foglio di lavoro nella finestra di progettazione  
   
-1.  In the **Changes** group of the **Review** tab, click **Protect Sheet**.  
+1.  Nel **modifiche** gruppo il **revisione** scheda, fare clic su **Proteggi foglio**.  
   
-     The **Protect Sheet** dialog box appears. You can set a password and optionally specify certain actions that users are allowed to perform with the worksheet, such as format cells or insert rows.  
+     Il **Proteggi foglio** viene visualizzata la finestra di dialogo. È possibile impostare una password e specificare le azioni che gli utenti possono eseguire nel foglio di lavoro, ad esempio formattare le celle o inserire righe.  
   
- You can also allow users to edit specific ranges in protected worksheets.  
+ È anche possibile consentire agli utenti di modificare intervalli specifici nei fogli di lavoro protetti.  
   
-#### <a name="to-allow-editing-in-specific-ranges"></a>To allow editing in specific ranges  
+#### <a name="to-allow-editing-in-specific-ranges"></a>Per consentire la modifica in intervalli specifici  
   
-1.  In the **Changes** group of the **Review** tab, click **Allow Users to Edit Ranges**.  
+1.  Nel **modifiche** gruppo il **revisione** scheda, fare clic su **Consenti agli utenti la modifica degli intervalli**.  
   
-     The **Allow Users to Edit Ranges** dialog box appears. You can specify ranges that are unlocked using a password, and users who can edit ranges without a password.  
+     Il **Consenti agli utenti la modifica degli intervalli** viene visualizzata la finestra di dialogo. È possibile specificare gli intervalli che possono essere sbloccati mediante l'inserimento di una password e gli utenti che possono modificarli senza immettere alcuna password.  
   
-## <a name="using-code-at-run-time"></a>Using Code at Run Time  
- The following code sets the password (using the variable getPasswordFromUser, which contains a password obtained from the user) and allows only sorting.  
+## <a name="using-code-at-run-time"></a>Uso di codice in fase di esecuzione  
+ Il codice seguente imposta la password tramite la variabile getPasswordFromUser, che contiene la password ottenuta dall'utente, e consente solo l'ordinamento.  
   
-#### <a name="to-protect-a-worksheet-by-using-code-in-a-document-level-customization"></a>To protect a worksheet by using code in a document-level customization  
+#### <a name="to-protect-a-worksheet-by-using-code-in-a-document-level-customization"></a>Per proteggere un foglio di lavoro mediante codice in una personalizzazione a livello di documento  
   
-1.  Call the <xref:Microsoft.Office.Tools.Excel.Worksheet.Protect%2A> method of the worksheet. This example assumes that you are working with a worksheet named `Sheet1`.  
+1.  Chiamare il metodo <xref:Microsoft.Office.Tools.Excel.Worksheet.Protect%2A> del foglio di lavoro. Questo esempio presuppone l'utilizzo di un foglio di lavoro denominato `Sheet1`.  
   
-     [!code-csharp[Trin_VstcoreExcelAutomation#27](../vsto/codesnippet/CSharp/Trin_VstcoreExcelAutomationCS/Sheet1.cs#27)]  [!code-vb[Trin_VstcoreExcelAutomation#27](../vsto/codesnippet/VisualBasic/Trin_VstcoreExcelAutomation/Sheet1.vb#27)]  
+     [!code-csharp[Trin_VstcoreExcelAutomation#27](../vsto/codesnippet/CSharp/Trin_VstcoreExcelAutomationCS/Sheet1.cs#27)]
+     [!code-vb[Trin_VstcoreExcelAutomation#27](../vsto/codesnippet/VisualBasic/Trin_VstcoreExcelAutomation/Sheet1.vb#27)]  
   
-#### <a name="to-protect-a-worksheet-by-using-code-in-a-vsto-add-in"></a>To protect a worksheet by using code in a VSTO Add-in  
+#### <a name="to-protect-a-worksheet-by-using-code-in-a-vsto-add-in"></a>Per proteggere un foglio di lavoro mediante codice in un componente aggiuntivo VSTO  
   
-1.  Call the <xref:Microsoft.Office.Interop.Excel._Worksheet.Protect%2A> method of the active worksheet.  
+1.  Chiamare il metodo <xref:Microsoft.Office.Interop.Excel._Worksheet.Protect%2A> del foglio di lavoro attivo.  
   
-     [!code-csharp[Trin_VstcoreExcelAutomationAddIn#17](../vsto/codesnippet/CSharp/trin_vstcoreexcelautomationaddin/ThisAddIn.cs#17)]  [!code-vb[Trin_VstcoreExcelAutomationAddIn#17](../vsto/codesnippet/VisualBasic/trin_vstcoreexcelautomationaddin/ThisAddIn.vb#17)]  
+     [!code-csharp[Trin_VstcoreExcelAutomationAddIn#17](../vsto/codesnippet/CSharp/trin_vstcoreexcelautomationaddin/ThisAddIn.cs#17)]
+     [!code-vb[Trin_VstcoreExcelAutomationAddIn#17](../vsto/codesnippet/VisualBasic/trin_vstcoreexcelautomationaddin/ThisAddIn.vb#17)]  
   
-## <a name="see-also"></a>See Also  
- [Working with Worksheets](../vsto/working-with-worksheets.md)   
- [How to: Programmatically Remove Protection from Worksheets](../vsto/how-to-programmatically-remove-protection-from-worksheets.md)   
- [How to: Programmatically Protect Workbooks](../vsto/how-to-programmatically-protect-workbooks.md)   
- [How to: Programmatically Hide Worksheets](../vsto/how-to-programmatically-hide-worksheets.md)   
- [Host Items and Host Controls Overview](../vsto/host-items-and-host-controls-overview.md)   
- [Worksheet Host Item](../vsto/worksheet-host-item.md)   
- [Global Access to Objects in Office Projects](../vsto/global-access-to-objects-in-office-projects.md)   
- [Optional Parameters in Office Solutions](../vsto/optional-parameters-in-office-solutions.md)  
+## <a name="see-also"></a>Vedere anche  
+ [Utilizzo dei fogli di lavoro](../vsto/working-with-worksheets.md)   
+ [Procedura: rimuovere la protezione dai fogli di lavoro a livello di codice](../vsto/how-to-programmatically-remove-protection-from-worksheets.md)   
+ [Procedura: proteggere a livello di programmazione le cartelle di lavoro](../vsto/how-to-programmatically-protect-workbooks.md)   
+ [Procedura: nascondere i fogli di lavoro a livello di codice](../vsto/how-to-programmatically-hide-worksheets.md)   
+ [Panoramica degli elementi e dei controlli host](../vsto/host-items-and-host-controls-overview.md)   
+ [Elemento Host Worksheet](../vsto/worksheet-host-item.md)   
+ [Accesso globale a oggetti nei progetti di Office](../vsto/global-access-to-objects-in-office-projects.md)   
+ [Parametri facoltativi nelle soluzioni Office](../vsto/optional-parameters-in-office-solutions.md)  
   
   

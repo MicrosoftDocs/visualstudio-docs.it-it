@@ -1,42 +1,38 @@
 ---
-title: 'How to: Programmatically Search for a Specific Contact | Microsoft Docs'
-ms.custom: 
+title: 'Procedura: eseguire la ricerca a livello di codice per un contatto specifico | Documenti Microsoft'
+ms.custom: ''
 ms.date: 02/02/2017
-ms.prod: visual-studio-dev14
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - office-development
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: conceptual
 dev_langs:
 - VB
 - CSharp
 helpviewer_keywords:
 - contacts [Office development in Visual Studio], searching
 - searching contacts
-ms.assetid: ca17ce97-7b07-46e6-a476-34003e9cb9ad
-caps.latest.revision: 25
-author: kempb
-ms.author: kempb
-manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: eb5c9550fd29b0e98bf63a7240737da4f13f3249
-ms.openlocfilehash: 8ab07c886ab51b66f1b28d1c3e6fcbe2e2328321
-ms.contentlocale: it-it
-ms.lasthandoff: 08/30/2017
-
+author: TerryGLee
+ms.author: tglee
+manager: douge
+ms.workload:
+- office
+ms.openlocfilehash: 6799041283fab154be40233729dd3c14b1978ed9
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# <a name="how-to-programmatically-search-for-a-specific-contact"></a>How to: Programmatically Search for a Specific Contact
-  This example searches an Outlook contacts folder for a specific contact by first and last name. The example assumes that a contact named **John Evans** exists in the contacts folder.  
+# <a name="how-to-programmatically-search-for-a-specific-contact"></a>Procedura: Eseguire la ricerca di un contatto specifico a livello di codice
+  Questo esempio cerca una cartella Contatti di Outlook per un contatto specifico in base al nome e al cognome. L'esempio presuppone che un contatto denominato **John Evans** esista nella cartella Contatti.  
   
  [!INCLUDE[appliesto_olkallapp](../vsto/includes/appliesto-olkallapp-md.md)]  
   
-## <a name="example"></a>Example  
- [!code-csharp[Trin_Outlook_RL_SearchForContact#1](../vsto/codesnippet/CSharp/trin_outlook_rl_searchforcontact/thisaddin.cs#1)] [!code-vb[Trin_Outlook_RL_SearchForContact#1](../vsto/codesnippet/VisualBasic/trin_outlook_rl_searchforcontact/thisaddin.vb#1)]  
+## <a name="example"></a>Esempio  
+ [!code-csharp[Trin_Outlook_RL_SearchForContact#1](../vsto/codesnippet/CSharp/trin_outlook_rl_searchforcontact/thisaddin.cs#1)]
+ [!code-vb[Trin_Outlook_RL_SearchForContact#1](../vsto/codesnippet/VisualBasic/trin_outlook_rl_searchforcontact/thisaddin.vb#1)]  
   
-## <a name="see-also"></a>See Also  
- [Working with Contact Items](../vsto/working-with-contact-items.md)   
- [Getting Started Programming VSTO Add-ins](../vsto/getting-started-programming-vsto-add-ins.md)  
+## <a name="see-also"></a>Vedere anche  
+ [Utilizzo dei contatti](../vsto/working-with-contact-items.md)   
+ [Introduzione alla programmazione dei componenti aggiuntivi VSTO](../vsto/getting-started-programming-vsto-add-ins.md)  
   
   

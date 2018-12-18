@@ -1,29 +1,30 @@
 ---
-title: "Elemento VSTemplate (modelli di Visual Studio) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-general"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "http://schemas.microsoft.com/developer/vstemplate/2005#VSTemplate"
-helpviewer_keywords: 
-  - "VSTemplate (elemento) [modelli di progetto Visual Studio]"
+title: Elemento VSTemplate (modelli di Visual Studio) | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology:
+- vs-ide-general
+ms.topic: conceptual
+f1_keywords:
+- http://schemas.microsoft.com/developer/vstemplate/2005#VSTemplate
+helpviewer_keywords:
+- VSTemplate element [Visual Studio project templates]
 ms.assetid: f8ac561b-3b0b-4246-9ec9-118d2447e9a9
-caps.latest.revision: 20
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 20
+author: gregvanl
+ms.author: gregvanl
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: f6151dfd852a76caa1dccbae55241af89681fd81
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# Elemento VSTemplate (modelli di Visual Studio)
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
-Contiene tutti i metadati per il modello di progetto, il modello di elemento o lo starter kit.  
+# <a name="vstemplate-element-visual-studio-templates"></a>Elemento VSTemplate (modelli di Visual Studio)
+Contiene tutti i metadati relativi a modello di progetto, modello di elemento o lo starter kit.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
 <VSTemplate Type="TemplateType" Version="x.x.x">  
@@ -33,33 +34,33 @@ Contiene tutti i metadati per il modello di progetto, il modello di elemento o l
 </VSTemplate>  
 ```  
   
-## Attributi ed elementi  
+## <a name="attributes-and-elements"></a>Attributi ed elementi  
  Nelle sezioni seguenti vengono descritti gli attributi, gli elementi figlio e gli elementi padre.  
   
-### Attributi  
+### <a name="attributes"></a>Attributi  
   
 |Attributo|Descrizione|  
 |---------------|-----------------|  
-|`Type`|Identifica il modello come modello di progetto o modello di elemento.  Questo attributo può avere un valore `Project` o `Item`.|  
-|`Version`|Specifica il numero di versione per il modello.  I modelli in [!INCLUDE[vs_dev10_long](../code-quality/includes/vs_dev10_long_md.md)] e [!INCLUDE[vs_dev11_long](../data-tools/includes/vs_dev11_long_md.md)] hanno un valore di attributo di `Version` di `3.0.0`.|  
+|`Type`|Identifica il modello come un modello di progetto o un modello di elemento. Questo attributo può avere un valore di `Project` o `Item`.|  
+|`Version`|Specifica un numero di versione per il modello. Modelli in [!INCLUDE[vs_dev10_long](../code-quality/includes/vs_dev10_long_md.md)] e [!INCLUDE[vs_dev11_long](../data-tools/includes/vs_dev11_long_md.md)] hanno un `Version` valore dell'attributo `3.0.0`.|  
   
-### Elementi figlio  
+### <a name="child-elements"></a>Elementi figlio  
   
 |Elemento|Descrizione|  
-|--------------|-----------------|  
-|[TemplateData](../extensibility/templatedata-element-visual-studio-templates.md)|Elemento obbligatorio.<br /><br /> Specifica i dati che classificano il modello e definisce la modalità di visualizzazione per la finestra di dialogo **Nuovo progetto** o **Aggiungi nuovo elemento**.|  
+|-------------|-----------------|  
+|[TemplateData](../extensibility/templatedata-element-visual-studio-templates.md)|Elemento obbligatorio.<br /><br /> Specifica i dati che classificano il modello e definisce la modalità di visualizzazione per il **nuovo progetto** o **Aggiungi nuovo elemento** la finestra di dialogo.|  
 |[TemplateContent](../extensibility/templatecontent-element-visual-studio-templates.md)|Elemento obbligatorio.<br /><br /> Specifica il contenuto del modello.|  
 |[WizardExtension](../extensibility/wizardextension-element-visual-studio-templates.md)|Elemento facoltativo.|  
 |[WizardData](../extensibility/wizarddata-element-visual-studio-templates.md)|Elemento facoltativo.|  
   
-### Elementi padre  
+### <a name="parent-elements"></a>Elementi padre  
  Nessuno.  
   
-## Note  
- L'elemento `VSTemplate` è l'elemento radice dei file .vstemplate.  
+## <a name="remarks"></a>Note  
+ Il `VSTemplate` elemento è l'elemento radice del file. vstemplate.  
   
-## Esempio  
- Nell'esempio riportato di seguito vengono illustrati i metadati per un modello di progetto di un'applicazione di [!INCLUDE[csprcs](../data-tools/includes/csprcs_md.md)].  
+## <a name="example"></a>Esempio  
+ L'esempio seguente mostra i metadati per un modello di progetto per un [!INCLUDE[csprcs](../data-tools/includes/csprcs_md.md)] dell'applicazione.  
   
 ```  
 <VSTemplate Type="Project" Version="3.0.0"  
@@ -85,6 +86,6 @@ Contiene tutti i metadati per il modello di progetto, il modello di elemento o l
 </VSTemplate>  
 ```  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Riferimenti allo schema dei modelli di Visual Studio](../extensibility/visual-studio-template-schema-reference.md)   
- [Creazione di un progetto e di modelli di elemento personalizzati](../ide/creating-project-and-item-templates.md)
+ [Creazione di modelli di progetti e di elementi](../ide/creating-project-and-item-templates.md)

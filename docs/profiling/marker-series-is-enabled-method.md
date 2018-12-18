@@ -1,30 +1,29 @@
 ---
-title: "Metodo marker_series::is_enabled | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "cvmarkersobj/Concurrency::diagnostic::marker_series::is_enabled"
-helpviewer_keywords: 
-  - "Concurrency::diagnostic::marker_series::is_enabled (metodo)"
+title: Metodo marker_series::is_enabled | Microsoft Docs
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology: vs-ide-debug
+ms.topic: conceptual
+f1_keywords:
+- cvmarkersobj/Concurrency::diagnostic::marker_series::is_enabled
+helpviewer_keywords:
+- Concurrency::diagnostic::marker_series::is_enabled method
 ms.assetid: 8ce4dd50-ca29-4c72-98d6-582693f7d501
-caps.latest.revision: 3
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 3
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 0d7889fc8b02bcaa09ca1fb33efbd84e524695c0
+ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/19/2018
 ---
-# Metodo marker_series::is_enabled
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
-Determina se una sessione abilita il provider.  
+# <a name="markerseriesisenabled-method"></a>Metodo marker_series::is_enabled
+Determina se il provider è stato abilitato da una sessione.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
 bool is_enabled();  
@@ -34,19 +33,19 @@ bool is_enabled(
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `_Importance`  
  Livello di importanza.  
   
  `_Category`  
- Categoria  
+ Categoria.  
   
-## Valore restituito  
+## <a name="return-value"></a>Valore restituito  
   
-## Requisiti  
+## <a name="requirements"></a>Requisiti  
  **Intestazione:** cvmarkersobj.h  
   
- **Spazio dei nomi:** Concorrenza::diagnostica  
+ **Spazio dei nomi:** Concurrency::diagnostic  
   
-## Vedere anche  
- [Classe marker\_series](../profiling/marker-series-class.md)
+## <a name="see-also"></a>Vedere anche  
+ [Classe marker_series](../profiling/marker-series-class.md)

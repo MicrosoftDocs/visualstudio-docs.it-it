@@ -1,42 +1,24 @@
 ---
 title: Spazio dei nomi diagnostic | Microsoft Docs
-ms.custom: 
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- vs-ide-debug
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.technology: vs-ide-debug
+ms.topic: conceptual
 f1_keywords:
 - cvmarkersobj/Concurrency::diagnostic
 helpviewer_keywords:
 - Concurrency::diagnostic namespace
 ms.assetid: ad786b19-7c4c-46ee-bfb6-c4752b373a09
-caps.latest.revision: 6
 author: mikejo5000
 ms.author: mikejo
-manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: 5db97d19b1b823388a465bba15d057b30ff0b3ce
-ms.openlocfilehash: 5ad6ce1f39a3dbc22245d403036c6e659edf07d6
-ms.lasthandoff: 02/22/2017
-
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 29164c08b03bd23980aad381a1a832b2857309a6
+ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/19/2018
 ---
 # <a name="diagnostic-namespace"></a>Spazio dei nomi diagnostic
 Lo spazio dei nomi `diagnostics` offre funzionalità per l'emissione di marcatori del visualizzatore di concorrenza.  
@@ -51,14 +33,14 @@ namespace diagnostic;
   
 ### <a name="classes"></a>Classi  
   
-|Nome|Descrizione|  
+|nome|Descrizione|  
 |----------|-----------------|  
 |[Classe marker_series](../profiling/marker-series-class.md)|Rappresenta un canale seriale di eventi generati da un singolo provider.|  
 |[Classe span](../profiling/span-class.md)|Definisce una fase dell'applicazione.|  
   
 ### <a name="enumerations"></a>Enumerazioni  
   
-|Nome|Descrizione|  
+|nome|Descrizione|  
 |----------|-----------------|  
 |[Enumerazione marker_importance](../profiling/marker-importance-enumeration.md)|Rappresenta il livello di importanza di un marcatore del visualizzatore di concorrenza.|  
   
@@ -68,4 +50,4 @@ namespace diagnostic;
  **Spazio dei nomi:** Concurrency  
   
 ## <a name="see-also"></a>Vedere anche  
- [Concurrency Namespace (Concurrency Visualizer)](../profiling/concurrency-namespace-concurrency-visualizer.md) (Spazio dei nomi Concurrency (visualizzatore di concorrenza))
+ [Spazio dei nomi Concurrency (visualizzatore di concorrenza)](../profiling/concurrency-namespace-concurrency-visualizer.md)

@@ -1,43 +1,42 @@
 ---
-title: "IDiaEnumSourceFiles::Clone | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "IDiaEnumSourceFiles::Clone (metodo)"
+title: IDiaEnumSourceFiles::Clone | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology: vs-ide-debug
+ms.topic: conceptual
+dev_langs:
+- C++
+helpviewer_keywords:
+- IDiaEnumSourceFiles::Clone method
 ms.assetid: 87a9a9b6-3927-4131-927c-ad95f8f098b9
-caps.latest.revision: 7
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 7
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 696cb87e29161cd4332940695aaa85484952d7ac
+ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/18/2018
 ---
-# IDiaEnumSourceFiles::Clone
-[!INCLUDE[vs2017banner](../../code-quality/includes/vs2017banner.md)]
-
-Crea un enumeratore che contiene lo stesso stato di enumerazione dell'enumeratore corrente.  
+# <a name="idiaenumsourcefilesclone"></a>IDiaEnumSourceFiles::Clone
+Crea un enumeratore che contiene lo stesso stato di enumerazione come enumerazione corrente.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp#  
-HRESULT Clone (   
-   IDiaEnumSourceFiles** ppenum  
+```C++  
+HRESULT Clone (   
+   IDiaEnumSourceFiles** ppenum  
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  ppenum  
- \[out\]  restituisce [IDiaEnumSourceFiles](../../debugger/debug-interface-access/idiaenumsourcefiles.md) oggetto che contiene un duplicato dell'enumeratore.  I file di origine non siano duplicati, solo enumeratore.  
+ [out] Restituisce un [IDiaEnumSourceFiles](../../debugger/debug-interface-access/idiaenumsourcefiles.md) oggetto che contiene un duplicato dell'enumeratore. L'origine file non vengono duplicati, solo l'enumeratore.  
   
-## Valore restituito  
- Se l'operazione riesce, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
+## <a name="return-value"></a>Valore restituito  
+ Se ha esito positivo, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IDiaEnumSourceFiles](../../debugger/debug-interface-access/idiaenumsourcefiles.md)

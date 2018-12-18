@@ -1,26 +1,27 @@
 ---
-title: "Archivio | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: Archivio | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology:
+- vs-ide-sdk
+ms.topic: conceptual
 ms.assetid: eb92f40d-c0f0-42a9-8388-97ba0476efdf
-caps.latest.revision: 2
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 2
+author: gregvanl
+ms.author: gregvanl
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: fd683ee7edc2a8641d38ef84d69c30badd5b14db
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# Archivio
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
-In questa sezione contiene le discussioni di tecnologie di extensibility di Visual Studio che sono ancora supportati ma che dispongono di tecnologie di sostituzione che sono più recenti.  
+# <a name="archive"></a>Archivio
+In questa sezione contiene discussioni di tecnologie di estendibilità di Visual Studio che sono ancora supportati, ma che dispongono di tecnologie di sostituzione che sono più recenti.  
   
-## Interfacce legacy nell'Editor  
- In questa sezione viene illustrato come accedere all'editor con le interfacce legacy \(i vettori di inizializzazione \*\) anziché il codice più recente di MEF: [Interfacce legacy nell'Editor](../extensibility/legacy-interfaces-in-the-editor.md).  
+## <a name="legacy-interfaces-in-the-editor"></a>Interfacce legacy nell'Editor  
+ In questa sezione viene illustrato come accedere all'editor con le interfacce legacy (vettori di inizializzazione *) anziché il codice più recente di MEF: [Legacy interfacce nell'Editor](../extensibility/legacy-interfaces-in-the-editor.md).  
   
-## Finestre degli strumenti nel Registro di sistema  
- In questa sezione viene illustrato come impostare le finestre degli strumenti direttamente nel Registro di sistema: [Finestre degli strumenti nel Registro di sistema](../extensibility/tool-windows-in-the-registry.md).
+## <a name="tool-windows-in-the-registry"></a>Finestre degli strumenti nel Registro di sistema  
+ Questa sezione viene illustrato come configurare le finestre degli strumenti direttamente nel Registro di sistema: [finestre degli strumenti nel Registro di sistema](../extensibility/tool-windows-in-the-registry.md).

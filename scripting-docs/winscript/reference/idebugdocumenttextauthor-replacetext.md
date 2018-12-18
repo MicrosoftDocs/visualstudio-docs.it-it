@@ -1,27 +1,33 @@
 ---
-title: "IDebugDocumentTextAuthor::ReplaceText | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/18/2017"
-ms.prod: "windows-script-interfaces"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-apiname: IDebugDocumentTextAuthor.ReplaceText
-apilocation: scrobj.dll
-helpviewer_keywords: 
-  - "IDebugDocumentTextAuthor::ReplaceText"
+title: IDebugDocumentTextAuthor::ReplaceText | Documenti Microsoft
+ms.custom: 
+ms.date: 01/18/2017
+ms.prod: windows-script-interfaces
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: reference
+apiname:
+- IDebugDocumentTextAuthor.ReplaceText
+apilocation:
+- scrobj.dll
+helpviewer_keywords:
+- IDebugDocumentTextAuthor::ReplaceText
 ms.assetid: f89304e6-5be0-45a5-947d-2c59c3c0a05e
-caps.latest.revision: 8
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: 
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.openlocfilehash: 6aa7ef34d035ad89a096414c285b4f66a4f4fa1e
+ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/27/2017
 ---
-# IDebugDocumentTextAuthor::ReplaceText
-Sostituire il testo nel documento.  
+# <a name="idebugdocumenttextauthorreplacetext"></a>IDebugDocumentTextAuthor::ReplaceText
+Sostituisce il testo nel documento.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
 HRESULT ReplaceText(  
@@ -31,25 +37,25 @@ HRESULT ReplaceText(
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `cCharacterPosition`  
- \[in\] percorso iniziale dell'intervallo di caratteri da sostituire.  
+ [in] Posizione iniziale dell'intervallo di caratteri da sostituire.  
   
  `cNumToReplace`  
- \[in\] numero di caratteri da sostituire.  
+ [in] Numero di caratteri da sostituire.  
   
  `pcharText[]`  
- \[in\] buffer di un oggetto che contiene i nuovi caratteri per sostituire i caratteri vecchi.  
+ [in] Un buffer contenente i caratteri di nuova per sostituire i caratteri precedenti.  
   
-## Valore restituito  
- Il metodo restituisce un tipo `HRESULT`.  I valori possibili sono, ma non sono limitati a, quelli nella tabella seguente.  
+## <a name="return-value"></a>Valore restituito  
+ Il metodo restituisce un tipo `HRESULT`. I valori possibili includono, ma non sono limitati a, quelli indicati nella tabella seguente.  
   
 |Valore|Descrizione|  
-|------------|-----------------|  
+|-----------|-----------------|  
 |`S_OK`|Il metodo è riuscito.|  
   
-## Note  
+## <a name="remarks"></a>Note  
  Questo metodo sostituisce il testo nel documento.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Interfaccia IDebugDocumentTextAuthor](../../winscript/reference/idebugdocumenttextauthor-interface.md)

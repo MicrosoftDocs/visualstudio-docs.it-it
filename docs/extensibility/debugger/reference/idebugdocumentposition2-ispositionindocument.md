@@ -1,52 +1,53 @@
 ---
-title: "IDebugDocumentPosition2::IsPositionInDocument | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "IDebugDocumentPosition2::IsPositionInDocument"
-helpviewer_keywords: 
-  - "IDebugDocumentPosition2::IsPositionInDocument"
+title: IDebugDocumentPosition2::IsPositionInDocument | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology:
+- vs-ide-sdk
+ms.topic: conceptual
+f1_keywords:
+- IDebugDocumentPosition2::IsPositionInDocument
+helpviewer_keywords:
+- IDebugDocumentPosition2::IsPositionInDocument
 ms.assetid: d5cf57cb-b93b-4e1d-bec9-185f4fe8668d
-caps.latest.revision: 10
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 10
+author: gregvanl
+ms.author: gregvanl
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: 225a92d521f118c2d038cabf114c69f389af0108
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# IDebugDocumentPosition2::IsPositionInDocument
-[!INCLUDE[vs2017banner](../../../code-quality/includes/vs2017banner.md)]
-
-Determina se la posizione del documento è contenuto nel documento specificato.  
+# <a name="idebugdocumentposition2ispositionindocument"></a>IDebugDocumentPosition2::IsPositionInDocument
+Determina se la posizione del documento è contenuta nel documento specificato.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp#  
-HRESULT IsPositionInDocument(   
-   IDebugDocument2* pDoc  
+```cpp  
+HRESULT IsPositionInDocument(   
+   IDebugDocument2* pDoc  
 );  
 ```  
   
-```c#  
-int IsPositionInDocument(   
-   IDebugDocument2 pDoc  
+```csharp  
+int IsPositionInDocument(   
+   IDebugDocument2 pDoc  
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `pDoc`  
- \[in\]  [IDebugDocument2](../../../extensibility/debugger/reference/idebugdocument2.md) L'oggetto che rappresenta il candidato contenitore del documento.  
+ [in] Il [IDebugDocument2](../../../extensibility/debugger/reference/idebugdocument2.md) oggetto che rappresenta il candidato documento contenitore.  
   
-## Valore restituito  
- Se l'operazione riesce, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
+## <a name="return-value"></a>Valore restituito  
+ Se ha esito positivo, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
   
-## Note  
- Questo metodo viene utilizzato principalmente in punti di interruzione [IDebugDocument2](../../../extensibility/debugger/reference/idebugdocument2.md) nelle interfacce.  Mentre i documenti caricati, la posizione del punto di interruzione viene chiamato il metodo per determinare se il documento contiene questa posizione.  
+## <a name="remarks"></a>Note  
+ Questo metodo viene utilizzato principalmente in impostando punti di interruzione [IDebugDocument2](../../../extensibility/debugger/reference/idebugdocument2.md) interfacce. Quando vengono caricati i documenti, la posizione del punto di interruzione viene chiamata per determinare se il documento contiene questa posizione.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IDebugDocumentPosition2](../../../extensibility/debugger/reference/idebugdocumentposition2.md)   
  [IDebugDocument2](../../../extensibility/debugger/reference/idebugdocument2.md)

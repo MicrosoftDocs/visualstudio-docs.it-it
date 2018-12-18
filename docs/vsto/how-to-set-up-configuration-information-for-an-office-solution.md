@@ -1,52 +1,52 @@
 ---
-title: "Procedura: definire le informazioni di configurazione per una soluzione Office"
-ms.custom: ""
-ms.date: "02/02/2017"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "office-development"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-helpviewer_keywords: 
-  - "file di configurazione [sviluppo per Office in Visual Studio]"
-  - "soluzioni [sviluppo per Office in Visual Studio], file di configurazione"
-ms.assetid: f123838f-957a-4cf5-acc0-0cc0f4c2aea2
-caps.latest.revision: 33
-author: "kempb"
-ms.author: "kempb"
-manager: "ghogen"
-caps.handback.revision: 33
+title: 'Procedura: impostare le informazioni di configurazione per una soluzione Office | Documenti Microsoft'
+ms.custom: ''
+ms.date: 02/02/2017
+ms.technology:
+- office-development
+ms.topic: conceptual
+dev_langs:
+- VB
+- CSharp
+helpviewer_keywords:
+- solutions [Office development in Visual Studio], configuration files
+- configuration files [Office development in Visual Studio]
+author: TerryGLee
+ms.author: tglee
+manager: douge
+ms.workload:
+- office
+ms.openlocfilehash: 9659872fa6cb4e294d1757412862c10e42cde2e9
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# Procedura: definire le informazioni di configurazione per una soluzione Office
-  È possibile utilizzare i file di configurazione per configurare impostazioni specifiche delle soluzioni Office,  quali criteri di associazione di assembly, oggetti remoti, debug e impostazioni di traccia.  
+# <a name="how-to-set-up-configuration-information-for-an-office-solution"></a>Procedura: definire le informazioni di configurazione per una soluzione Office
+  È possibile utilizzare i file di configurazione per configurare le impostazioni specifiche per le soluzioni Office. È possibile specificare impostazioni quali criteri di associazione degli assembly, oggetti remoti, debug e le impostazioni di traccia.  
   
  [!INCLUDE[appliesto_all](../vsto/includes/appliesto-all-md.md)]  
   
  [!INCLUDE[note_settings_general](../sharepoint/includes/note-settings-general-md.md)]  
   
-### Per aggiungere un file di configurazione al progetto Office  
+### <a name="to-add-a-configuration-file-to-your-office-project"></a>Per aggiungere un file di configurazione al progetto di Office  
   
-1.  Scegliere **Aggiungi nuovo elemento** dal menu **Progetto**.  
+1.  Nel menu **Progetto** fare clic su **Aggiungi nuovo elemento**.  
   
-2.  Nel riquadro **Categorie**, fare clic su **Generale**.  
+2.  Nel **categorie** riquadro, fare clic su **generale**.  
   
-3.  Nel riquadro **Modelli**  selezionare **File di configurazione dell'applicazione**.  
+3.  Nel **modelli** riquadro, selezionare **File di configurazione applicazione**.  
   
-4.  Nella casella **Nome** digitare lo stesso nome dell'assembly con l'estensione CONFIG.  Ad esempio, il file di configurazione per l'assembly di un progetto di Excerl denominato ExcelWorkbook1.dll verrebbe denominato ExcelWorkbook1.dll.config.  
+4.  Nel **nome** digitare lo stesso nome dell'assembly con estensione config. Ad esempio, un file di configurazione per un assembly di progetto di Excel denominato ExcelWorkbook1.dll verrebbe denominato Excelworkbook1.  
   
-5.  Scegliere **Aggiungi**.  
+5.  Fare clic su **Aggiungi**.  
   
-6.  Creare il file di configurazione in base allo schema del file di configurazione dell'applicazione.  Per ulteriori informazioni, vedere [Schema dei file di configurazione per .NET Framework](http://msdn.microsoft.com/library/69003d39-dc8a-460c-a6be-e6d93e690b38).  
+6.  Creare il file di configurazione in base allo schema di file di configurazione dell'applicazione. Per ulteriori informazioni, vedere [Schema di File di configurazione per .NET Framework](/dotnet/framework/configure-apps/file-schema/index).  
   
- Non vi sono considerazioni particolari da tenere presente per l'utilizzo dei file di configurazione con i progetti Office.  
+ Non esistono considerazioni speciali per l'utilizzo di file di configurazione con i progetti di Office.  
   
-## Vedere anche  
- [Schema dei file di configurazione per .NET Framework](http://msdn.microsoft.com/library/69003d39-dc8a-460c-a6be-e6d93e690b38)   
+## <a name="see-also"></a>Vedere anche  
+ [Schema di File di configurazione per .NET Framework](/dotnet/framework/configure-apps/file-schema/index)   
  [Progettazione e creazione di soluzioni Office](../vsto/designing-and-creating-office-solutions.md)   
  [Distribuzione di una soluzione Office](../vsto/deploying-an-office-solution.md)  
   

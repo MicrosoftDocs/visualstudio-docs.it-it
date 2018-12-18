@@ -1,31 +1,34 @@
 ---
-title: "Riferimenti ad API non gestite (sviluppo per Office in Visual Studio)"
-ms.custom: ""
-ms.date: "02/02/2017"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "office-development"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-helpviewer_keywords: 
-  - "sviluppo per Office in Visual Studio, riferimenti"
-  - "sviluppo per Office in Visual Studio, riferimenti ad API non gestite"
-ms.assetid: cdbc70b1-1f98-43dc-a619-07d805e53dce
-caps.latest.revision: 12
-author: "kempb"
-ms.author: "kempb"
-manager: "ghogen"
-caps.handback.revision: 8
+title: Riferimento API (sviluppo per Office in Visual Studio) non gestito | Documenti Microsoft
+ms.custom: ''
+ms.date: 02/02/2017
+ms.technology:
+- office-development
+ms.topic: conceptual
+dev_langs:
+- VB
+- CSharp
+helpviewer_keywords:
+- Office development in Visual Studio, reference
+- Office development in Visual Studio, unmanaged API reference
+author: TerryGLee
+ms.author: tglee
+manager: douge
+ms.workload:
+- office
+ms.openlocfilehash: e06ec998dc4b9c23b38526563ce8b501866769b0
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# Riferimenti ad API non gestite (sviluppo per Office in Visual Studio)
-  A partire da Microsoft Office System 2007, le applicazioni di Office usano l'interfaccia [Interfaccia IManagedAddin](../vsto/imanagedaddin-interface.md) per chiamare un componente del caricatore di componenti aggiuntivi VSTO che è incluso con [!INCLUDE[vsto_runtime](../vsto/includes/vsto-runtime-md.md)]. Questo componente viene usato per consentire il caricamento dei componenti aggiuntivi VSTO gestiti. Implementando questa interfaccia, è possibile creare il proprio componente di caricamento di componenti aggiuntivi VSTO.  
+# <a name="unmanaged-api-reference-office-development-in-visual-studio"></a>Riferimenti ad API non gestite (sviluppo per Office in Visual Studio)
+  A partire da Microsoft Office system 2007, utilizzano le applicazioni di Office di [interfaccia IManagedAddin](../vsto/imanagedaddin-interface.md) interfaccia per chiamare un componente aggiuntivo VSTO caricatore incluso con il [!INCLUDE[vsto_runtime](../vsto/includes/vsto-runtime-md.md)]. Questo componente viene usato per consentire il caricamento dei componenti aggiuntivi VSTO gestiti. Implementando questa interfaccia, è possibile creare il proprio componente di caricamento di componenti aggiuntivi VSTO.  
   
-## In questa sezione  
+> [!NOTE]  
+>  Interessati allo sviluppo di soluzioni che estendono l'esperienza di Office in [più piattaforme](https://dev.office.com/add-in-availability)? Vedere la nuova [modello aggiuntivi di Office](https://dev.office.com/docs/add-ins/overview/office-add-ins). Componenti aggiuntivi di Office hanno un footprint ridotto rispetto alle soluzioni e i componenti aggiuntivi VSTO e possono essere creati con quasi tutte le tecnologie, ad esempio HTML5, JavaScript, CSS3 e XML di programmazione web.  
+  
+## <a name="in-this-section"></a>In questa sezione  
  [Interfaccia IManagedAddin](../vsto/imanagedaddin-interface.md)  
  Un'interfaccia COM che è possibile implementare per caricare e scaricare componenti aggiuntivi VSTO gestiti nelle applicazioni di Office.  
   

@@ -1,53 +1,50 @@
 ---
-title: 'How to: Programmatically Remove All Comments from Documents | Microsoft Docs'
-ms.custom: 
+title: 'Procedura: rimuovere a livello di codice tutti i commenti dai documenti | Documenti Microsoft'
+ms.custom: ''
 ms.date: 02/02/2017
-ms.prod: visual-studio-dev14
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - office-development
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: conceptual
 dev_langs:
 - VB
 - CSharp
 helpviewer_keywords:
 - documents [Office development in Visual Studio], removing comments
 - comments, removing from documents
-ms.assetid: 920de39a-3b6d-4682-bca6-f4b4dedda1ac
-caps.latest.revision: 24
-author: kempb
-ms.author: kempb
-manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: eb5c9550fd29b0e98bf63a7240737da4f13f3249
-ms.openlocfilehash: 315715e04ca6319a52e955442dcc141034752938
-ms.contentlocale: it-it
-ms.lasthandoff: 08/30/2017
-
+author: TerryGLee
+ms.author: tglee
+manager: douge
+ms.workload:
+- office
+ms.openlocfilehash: 19c713356a8949261524eda9f44fee8fae9f9f21
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# <a name="how-to-programmatically-remove-all-comments-from-documents"></a>How to: Programmatically Remove All Comments from Documents
-  Use the DeleteAllComments method to remove all comments from a Microsoft Office Word document.  
+# <a name="how-to-programmatically-remove-all-comments-from-documents"></a>Procedura: Rimuovere tutti i commenti dai documenti a livello di codice
+  Utilizzare il metodo DeleteAllComments per rimuovere tutti i commenti da un documento di Microsoft Office Word.  
   
  [!INCLUDE[appliesto_wdalldocapp](../vsto/includes/appliesto-wdalldocapp-md.md)]  
   
-### <a name="to-remove-all-comments-from-a-document-that-is-part-of-a-document-level-customization"></a>To remove all comments from a document that is part of a document-level customization  
+### <a name="to-remove-all-comments-from-a-document-that-is-part-of-a-document-level-customization"></a>Per rimuovere tutti i commenti da un documento che fa parte di una personalizzazione a livello di documento  
   
-1.  Call the <xref:Microsoft.Office.Tools.Word.Document.DeleteAllComments%2A> method of the `ThisDocument` class in your project. To use this code example, run it from the `ThisDocument` class.  
+1.  Chiamare il metodo <xref:Microsoft.Office.Tools.Word.Document.DeleteAllComments%2A> della classe `ThisDocument` nel progetto. Per usare questo esempio di codice, eseguirlo dalla classe `ThisDocument` .  
   
-     [!code-vb[Trin_VstcoreWordAutomation#119](../vsto/codesnippet/VisualBasic/Trin_VstcoreWordAutomationVB/ThisDocument.vb#119)]  [!code-csharp[Trin_VstcoreWordAutomation#119](../vsto/codesnippet/CSharp/Trin_VstcoreWordAutomationCS/ThisDocument.cs#119)]  
+     [!code-vb[Trin_VstcoreWordAutomation#119](../vsto/codesnippet/VisualBasic/Trin_VstcoreWordAutomationVB/ThisDocument.vb#119)]
+     [!code-csharp[Trin_VstcoreWordAutomation#119](../vsto/codesnippet/CSharp/Trin_VstcoreWordAutomationCS/ThisDocument.cs#119)]  
   
-### <a name="to-remove-all-comments-from-a-document-by-using-an-vsto-add-in"></a>To remove all comments from a document by using an VSTO Add-in  
+### <a name="to-remove-all-comments-from-a-document-by-using-an-vsto-add-in"></a>Per rimuovere tutti i commenti da un documento usando un componente aggiuntivo VSTO  
   
-1.  Call the <xref:Microsoft.Office.Interop.Word._Document.DeleteAllComments%2A> method of the <xref:Microsoft.Office.Interop.Word.Document> from which you want to remove comments.  
+1.  Chiamare il metodo <xref:Microsoft.Office.Interop.Word._Document.DeleteAllComments%2A> dell'oggetto <xref:Microsoft.Office.Interop.Word.Document> da cui si vogliono rimuovere i commenti.  
   
-     The following code example removes all comments from the active document. To use this code example, run it from the `ThisAddIn` class in your project.  
+     Il codice di esempio seguente rimuove tutti i commenti dal documento attivo. Per usare questo esempio di codice, eseguirlo dalla classe `ThisAddIn` nel progetto.  
   
-     [!code-vb[Trin_VstcoreWordAutomationAddIn#119](../vsto/codesnippet/VisualBasic/Trin_VstcoreWordAutomationAddIn/ThisAddIn.vb#119)]  [!code-csharp[Trin_VstcoreWordAutomationAddIn#119](../vsto/codesnippet/CSharp/Trin_VstcoreWordAutomationAddIn/ThisAddIn.cs#119)]  
+     [!code-vb[Trin_VstcoreWordAutomationAddIn#119](../vsto/codesnippet/VisualBasic/Trin_VstcoreWordAutomationAddIn/ThisAddIn.vb#119)]
+     [!code-csharp[Trin_VstcoreWordAutomationAddIn#119](../vsto/codesnippet/CSharp/Trin_VstcoreWordAutomationAddIn/ThisAddIn.cs#119)]  
   
-## <a name="see-also"></a>See Also  
- [How to: Programmatically Add Comments to Text in Documents](../vsto/how-to-programmatically-add-comments-to-text-in-documents.md)   
- [Document Host Item](../vsto/document-host-item.md)  
+## <a name="see-also"></a>Vedere anche  
+ [Procedura: a livello di codice aggiungere commenti al testo nei documenti](../vsto/how-to-programmatically-add-comments-to-text-in-documents.md)   
+ [Elemento host Document](../vsto/document-host-item.md)  
   
   

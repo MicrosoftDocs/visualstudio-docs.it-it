@@ -1,37 +1,40 @@
 ---
-title: "Metodo set (Int32Array) | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/18/2017"
-ms.prod: "windows-client-threshold"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-javascript"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-dev_langs: 
-  - "JavaScript"
-  - "TypeScript"
-  - "DHTML"
+title: impostare il metodo (Int32Array) | Documenti Microsoft
+ms.custom: 
+ms.date: 01/18/2017
+ms.prod: windows-client-threshold
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-javascript
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+dev_langs:
+- JavaScript
+- TypeScript
+- DHTML
 ms.assetid: c0716454-88dc-43d5-8ce9-f8fdc91da4c5
-caps.latest.revision: 10
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.openlocfilehash: 033c2ba996b5754ec15eb97d9926f20a88c0dc6e
+ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/27/2017
 ---
-# Metodo set (Int32Array)
+# <a name="set-method-int32array"></a>Metodo set (Int32Array)
 Imposta un valore o una matrice di valori.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```javascript  
+```JavaScript  
 Int32Array.set(index, value);  
 int32Array.set(array, offset);  
   
 ```  
   
-## Parametri  
+## <a name="parameters"></a>Parametri  
  `index`  
  Indice della posizione da impostare.  
   
@@ -44,15 +47,15 @@ int32Array.set(array, offset);
  `offset`  
  Indice nella matrice corrente in base al quale devono essere scritti i valori.  
   
-## Note  
- Se la matrice di input è un oggetto TypedArray, le due matrici possono utilizzare lo stesso oggetto ArrayBuffer sottostante.  In questa situazione, l'impostazione dei valori viene eseguita come se tutti i dati venissero prima copiati in un buffer temporaneo che non si sovrappone ad alcuna matrice e come se successivamente i dati presenti nel buffer temporaneo venissero copiati nella matrice corrente.  
+## <a name="remarks"></a>Note  
+ Se la matrice di input è un oggetto TypedArray, le due matrici possono utilizzare lo stesso oggetto ArrayBuffer sottostante. In questa situazione, l'impostazione dei valori viene eseguita come se tutti i dati venissero prima copiati in un buffer temporaneo che non si sovrappone ad alcuna matrice e come se successivamente i dati presenti nel buffer temporaneo venissero copiati nella matrice corrente.  
   
  Se l'offset più la lunghezza della matrice specificata non è compreso nell'intervallo per l'oggetto TypedArray corrente, viene generata un'eccezione.  
   
-## Esempio  
+## <a name="example"></a>Esempio  
  Nell'esempio seguente viene illustrato come impostare il primo elemento della matrice.  
   
-```javascript  
+```JavaScript  
 var req = new XMLHttpRequest();  
     req.open('GET', "http://www.example.com");  
     req.responseType = "arraybuffer";  
@@ -69,5 +72,5 @@ var req = new XMLHttpRequest();
   
 ```  
   
-## Requisiti  
+## <a name="requirements"></a>Requisiti  
  [!INCLUDE[jsv10](../../javascript/reference/includes/jsv10-md.md)]

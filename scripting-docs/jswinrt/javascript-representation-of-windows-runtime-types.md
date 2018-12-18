@@ -5,24 +5,22 @@ ms.date: 01/18/2017
 ms.prod: windows-client-threshold
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- javascript
+ms.technology: javascript
 ms.tgt_pltfrm: 
 ms.topic: article
 helpviewer_keywords:
 - Windows Runtime types [JavaScript]
 - JavaScript, Windows Runtime types
 ms.assetid: f4851802-8b40-4afa-ba6c-8a162a9a43cc
-caps.latest.revision: 9
+caps.latest.revision: "9"
 author: mikejo5000
 ms.author: mikejo
 manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: 47057e9611b824c17077b9127f8d2f8b192d6eb8
 ms.openlocfilehash: 8e4c21675d26bf857391d92b99b4a94637a761ca
-ms.contentlocale: it-it
-ms.lasthandoff: 08/11/2017
-
+ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/27/2017
 ---
 # <a name="javascript-representation-of-windows-runtime-types"></a>Rappresentazione JavaScript dei tipi di Windows Runtime
 Nella tabella seguente viene descritto il modo in cui JavaScript rappresenta i tipi di Windows Runtime.  

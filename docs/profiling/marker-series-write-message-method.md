@@ -1,30 +1,29 @@
 ---
-title: "Metodo marker_series::write_message | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "cvmarkersobj/Concurrency::diagnostic::marker_series::write_message"
-helpviewer_keywords: 
-  - "Concurrency::diagnostic::marker_series::write_message (metodo)"
+title: Metodo marker_series::write_message | Microsoft Docs
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology: vs-ide-debug
+ms.topic: conceptual
+f1_keywords:
+- cvmarkersobj/Concurrency::diagnostic::marker_series::write_message
+helpviewer_keywords:
+- Concurrency::diagnostic::marker_series::write_message method
 ms.assetid: 546121bc-67e0-4a5a-a456-12bd78fd6de2
-caps.latest.revision: 3
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 3
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: bea8f3bfa5f37aa88c50a831e26713f78d2a9d4a
+ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/19/2018
 ---
-# Metodo marker_series::write_message
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
-Scrive un messaggio nel file di traccia del Visualizzatore di concorrenza.  
+# <a name="markerserieswritemessage-method"></a>Metodo marker_series::write_message
+Scrive un messaggio nel file di traccia del visualizzatore di concorrenza.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
 void write_message(  
@@ -49,9 +48,9 @@ void write_message(
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `_Format`  
- Una Stringa di formato composta, contiene testo combinato con zero o più elementi di formato che corrispondono agli oggetti nella lista degli argomenti.  
+ Stringa di formato composta che contiene testo combinato con zero o più elementi di formato, che corrispondono agli oggetti nell'elenco degli argomenti.  
   
  `_Importance`  
  Livello di importanza.  
@@ -59,10 +58,10 @@ void write_message(
  `_Category`  
  Livello di Category.Importance.  
   
-## Requisiti  
+## <a name="requirements"></a>Requisiti  
  **Intestazione:** cvmarkersobj.h  
   
- **Spazio dei nomi:** Concorrenza::diagnostica  
+ **Spazio dei nomi:** Concurrency::diagnostic  
   
-## Vedere anche  
- [Classe marker\_series](../profiling/marker-series-class.md)
+## <a name="see-also"></a>Vedere anche  
+ [Classe marker_series](../profiling/marker-series-class.md)

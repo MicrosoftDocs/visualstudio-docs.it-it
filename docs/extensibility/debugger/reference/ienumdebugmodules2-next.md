@@ -1,41 +1,25 @@
 ---
 title: IEnumDebugModules2::Next | Documenti Microsoft
-ms.custom: 
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - vs-ide-sdk
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: conceptual
 f1_keywords:
 - IEnumDebugModules2::Next
 helpviewer_keywords:
 - IEnumDebugModules2::Next
 ms.assetid: 46b7ccad-b07b-4ec0-b3ce-13981ffab7e8
-caps.latest.revision: 12
+author: gregvanl
 ms.author: gregvanl
-manager: ghogen
-translation.priority.mt:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: d6aec07561487b06a198dadd791e16b335fbe45e
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
 ms.translationtype: MT
-ms.sourcegitcommit: 4a36302d80f4bc397128e3838c9abf858a0b5fe8
-ms.openlocfilehash: bb4ebd3c5392114ba95e5cdbbfb71e8b5e7cdb5a
-ms.contentlocale: it-it
-ms.lasthandoff: 09/26/2017
-
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="ienumdebugmodules2next"></a>IEnumDebugModules2::Next
 Restituisce il set successivo di elementi dall'enumerazione.  

@@ -1,36 +1,35 @@
 ---
-title: "&lt;entryPoint&gt; Element (ClickOnce Application) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-deployment"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "urn:schemas-microsoft-com:asm.v2#commandLine"
-  - "urn:schemas-microsoft-com:asm.v2#entryPoint"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-helpviewer_keywords: 
-  - "<entryPoint> element [ClickOnce application manifest]"
-  - "manifests [ClickOnce], entryPoint element"
+title: '&lt;punto di ingresso&gt; elemento (applicazione ClickOnce) | Documenti Microsoft'
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology: vs-ide-deployment
+ms.topic: reference
+f1_keywords:
+- urn:schemas-microsoft-com:asm.v2#commandLine
+- urn:schemas-microsoft-com:asm.v2#entryPoint
+dev_langs:
+- VB
+- CSharp
+- C++
+helpviewer_keywords:
+- <entryPoint> element [ClickOnce application manifest]
+- manifests [ClickOnce], entryPoint element
 ms.assetid: 10ad3083-10c1-4189-a870-9bba2eab244f
-caps.latest.revision: 33
-author: "stevehoag"
-ms.author: "shoag"
-manager: "wpickett"
-caps.handback.revision: 33
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: beb140a64a415ab1a42f8157e2fafb1d20f9569a
+ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/19/2018
 ---
-# &lt;entryPoint&gt; Element (ClickOnce Application)
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
-Identifica l'assembly che deve essere eseguito quando l'applicazione [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] viene eseguita su un computer client.  
+# <a name="ltentrypointgt-element-clickonce-application"></a>&lt;punto di ingresso&gt; elemento (applicazione ClickOnce)
+Identifica l'assembly che deve essere eseguito quando questa [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] applicazione viene eseguita in un computer client.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
   
@@ -52,53 +51,53 @@ Identifica l'assembly che deve essere eseguito quando l'applicazione [!INCLUDE[n
 </entryPoint>  
 ```  
   
-## Elementi e attributi  
- L'elemento `entryPoint` è obbligatorio e si trova nello spazio dei nomi `urn:schemas-microsoft-com:asm.v2`.  È possibile definire un solo elemento `entryPoint` in un manifesto dell'applicazione.  
+## <a name="elements-and-attributes"></a>Elementi e attributi  
+ L'elemento `entryPoint` è obbligatorio e si trova nello spazio dei nomi `urn:schemas-microsoft-com:asm.v2`. Potrebbe essere presente una sola `entryPoint` elemento definito in un manifesto dell'applicazione.  
   
- L'elemento `entryPoint` presenta l'attributo seguente.  
-  
-|Attributo|Descrizione|  
-|---------------|-----------------|  
-|`name`|Parametro facoltativo.  Questo valore non viene utilizzato da .NET Framework.|  
-  
- `entryPoint` presenta gli elementi seguenti.  
-  
-## assemblyIdentity  
- Obbligatorio.  Il ruolo di `assemblyIdentity` e dei relativi attributi viene definito nell'[\<assemblyIdentity\> Element](../deployment/assemblyidentity-element-clickonce-application.md).  
-  
- L'attributo `processorArchitecture` di questo elemento e l'attributo `processorArchitecture` definito nell'attributo `assemblyIdentity` in un'altra posizione nel manifesto dell'applicazione devono corrispondere.  
-  
-## commandLine  
- Obbligatorio.  Deve essere un elemento figlio dell'elemento `entryPoint`.  Non contiene elementi figlio e dispone degli attributi riportati di seguito.  
+ Il `entryPoint` elemento presenta l'attributo seguente.  
   
 |Attributo|Descrizione|  
 |---------------|-----------------|  
-|`file`|Obbligatorio.  Riferimento locale all'assembly di avvio per l'applicazione [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)].  Questo valore non può contenere separatori di percorso barra \(\/\) o barra rovesciata \(\\\).|  
-|`parameters`|Obbligatorio.  Descrive l'azione da eseguire con il punto di ingresso.  L'unico valore valido è `run`. Se viene fornita una stringa vuota, si presuppone che venga utilizzato il valore `run`.|  
+|`name`|Facoltativo. Questo valore non è utilizzato da .NET Framework.|  
   
-## customHostRequired  
- Parametro facoltativo.  Se incluso, specifica che questa distribuzione contiene un componente che sarà distribuito all'interno di un host personalizzato e non è un'applicazione autonoma.  
+ `entryPoint` presenta gli elementi seguenti:  
   
- Se questo elemento è presente, gli elementi `assemblyIdentity` e `commandLine` non possono essere presenti  altrimenti [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] genererà un errore di convalida durante l'installazione.  
+## <a name="assemblyidentity"></a>assemblyIdentity  
+ Obbligatorio. Il ruolo di `assemblyIdentity` e relativi attributi è definito in [ \<assemblyIdentity > elemento](../deployment/assemblyidentity-element-clickonce-application.md).  
   
- Questo elemento non ha né attributi né figli.  
+ Il `processorArchitecture` attributo di questo elemento e `processorArchitecture` attributo definito nella `assemblyIdentity` altrove nell'applicazione manifesto deve corrispondere.  
   
-## customUX  
- Parametro facoltativo.  Specifica che l'applicazione viene installata e gestita da un programma di installazione personalizzato e non crea una voce del menu Start, un collegamento o un voce Installazione applicazioni.  
+## <a name="commandline"></a>Riga di comando  
+ Obbligatorio. Deve essere un figlio di `entryPoint` elemento. Non dispone di alcun elemento figlio e presenta i seguenti attributi.  
+  
+|Attributo|Descrizione|  
+|---------------|-----------------|  
+|`file`|Obbligatorio. Un riferimento locale all'assembly di avvio per il [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] dell'applicazione. Questo valore non può contenere una barra (/) o una barra rovesciata (\\) separatori del percorso.|  
+|`parameters`|Obbligatorio. Descrive l'azione da intraprendere con il punto di ingresso. L'unico valore valido è `run`; se viene fornita una stringa vuota, `run` verrà utilizzato.|  
+  
+## <a name="customhostrequired"></a>customHostRequired  
+ Facoltativo. Se incluso, specifica che la distribuzione contiene un componente che verrà distribuito all'interno di un host personalizzato e non è un'applicazione autonoma.  
+  
+ Se questo elemento è presente, il `assemblyIdentity` e `commandLine` elementi non possono essere presenti. In tal caso, [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] genererà un errore di convalida durante l'installazione.  
+  
+ Questo elemento dispone di alcun attributo e nessun elemento figlio.  
+  
+## <a name="customux"></a>customUX  
+ Facoltativo. Specifica che l'applicazione è installato e gestita da un programma di installazione personalizzato e non creare una voce di menu Start, scelta rapida o aggiungere o rimuovere la voce di programmi.  
   
 ```  
 <customUX xmlns="urn:schemas-microsoft-com:clickonce.v1" />  
 ```  
   
- Per eseguire le operazioni di installazione, un'applicazione che include l'elemento customUX deve fornire un programma di installazione personalizzato che utilizzi la classe <xref:System.Deployment.Application.InPlaceHostingManager>.  Impossibile installare un'applicazione con questo elemento facendo doppio clic sul manifesto o sul programma di avvio automatico dei prerequisiti setup.exe.  Con il programma di installazione personalizzato è possibile creare voci del menu Start, collegamenti e voci Installazione applicazioni.  Se il programma di installazione personalizzato non crea una voce Installazione applicazioni, deve archiviare l'identificatore di sottoscrizione fornito dalla proprietà <xref:System.Deployment.Application.GetManifestCompletedEventArgs.SubscriptionIdentity%2A> e in seguito deve consentire all'utente di disinstallare l'applicazione chiamando il metodo <xref:System.Deployment.Application.InPlaceHostingManager.UninstallCustomUXApplication%2A>.  Per ulteriori informazioni, vedere [Walkthrough: Creating a Custom Installer for a ClickOnce Application](../deployment/walkthrough-creating-a-custom-installer-for-a-clickonce-application.md).  
+ Un'applicazione che include l'elemento customUX deve fornire un programma di installazione personalizzato che utilizza il <xref:System.Deployment.Application.InPlaceHostingManager> classe per eseguire le operazioni di installazione. Un'applicazione con questo elemento non può essere installata facendo doppio clic sul relativo manifesto o setup.exe dei prerequisiti del programma di avvio. Il programma di installazione personalizzato è possibile creare voci di menu Start, collegamenti e voci Installazione applicazioni. Se il programma di installazione personalizzato non crea una voce in Installazione applicazioni, è necessario archiviare l'identificatore di sottoscrizione fornito dal <xref:System.Deployment.Application.GetManifestCompletedEventArgs.SubscriptionIdentity%2A> proprietà e consentono all'utente di disinstallare l'applicazione in un secondo momento chiamando la <xref:System.Deployment.Application.InPlaceHostingManager.UninstallCustomUXApplication%2A> metodo. Per ulteriori informazioni, vedere [procedura dettagliata: creazione di un programma di installazione personalizzato per un'applicazione ClickOnce](../deployment/walkthrough-creating-a-custom-installer-for-a-clickonce-application.md).  
   
-## Note  
- Questo elemento identifica l'assembly e il punto di ingresso per l'applicazione [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)].  
+## <a name="remarks"></a>Note  
+ Questo elemento identifica l'assembly e punto di ingresso per il [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] dell'applicazione.  
   
- Non è possibile utilizzare l'elemento `commandLine` per passare i parametri all'applicazione in fase di esecuzione.  È possibile accedere ai parametri della stringa di query per una distribuzione [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] dall'oggetto <xref:System.AppDomain> dell'applicazione.  Per ulteriori informazioni, vedere [Procedura: recuperare informazioni sulle stringhe di query in un'applicazione ClickOnce online](../Topic/How%20to:%20Retrieve%20Query%20String%20Information%20in%20an%20Online%20ClickOnce%20Application.md).  
+ Non è possibile utilizzare `commandLine` per passare i parametri nell'applicazione in fase di esecuzione. Si può accedere ai parametri di stringa di query per un [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] distribuzione dell'applicazione <xref:System.AppDomain>. Per ulteriori informazioni, vedere [procedura: recuperare le informazioni di stringa di Query in un'applicazione ClickOnce Online](../deployment/how-to-retrieve-query-string-information-in-an-online-clickonce-application.md).  
   
-## Esempio  
- Nell'esempio di codice riportato di seguito viene illustrato un elemento `entryPoint` in un manifesto per un'applicazione [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)].  L'esempio di codice fa parte di un esempio più esaustivo fornito per l'argomento [Manifesto dell'applicazione ClickOnce](../deployment/clickonce-application-manifest.md).  
+## <a name="example"></a>Esempio  
+ Nell'esempio di codice seguente viene illustrato un `entryPoint` elemento in un manifesto dell'applicazione per un [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] dell'applicazione. Questo esempio di codice fa parte di un esempio più esaustivo disponibile per il [manifesto dell'applicazione ClickOnce](../deployment/clickonce-application-manifest.md) argomento.  
   
 ```  
 <!-- Identify the main code entrypoint. -->  
@@ -113,5 +112,5 @@ Identifica l'assembly che deve essere eseguito quando l'applicazione [!INCLUDE[n
   </entryPoint>  
 ```  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [ClickOnce Application Manifest](../deployment/clickonce-application-manifest.md)

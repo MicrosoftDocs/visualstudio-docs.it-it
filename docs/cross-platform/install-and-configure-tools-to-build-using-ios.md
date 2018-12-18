@@ -1,41 +1,22 @@
 ---
 title: Installare e configurare gli strumenti per la compilazione con iOS | Microsoft Docs
-ms.custom: 
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- tgt-pltfrm-cross-plat
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.technology: vs-ide-mobile
+ms.topic: conceptual
 dev_langs:
 - C++
 ms.assetid: d0c311c9-9eb9-42c5-ba07-25604362cd28
-caps.latest.revision: 11
-author: BrianPeek
-ms.author: brpeek
-manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 47057e9611b824c17077b9127f8d2f8b192d6eb8
-ms.openlocfilehash: 53224c67d6778ea51e1cf055a0c4c0db34940ada
-ms.contentlocale: it-it
-ms.lasthandoff: 05/13/2017
-
+author: corob-msft
+ms.author: corob
+manager: douge
+ms.workload:
+- xplat-cplusplus
+ms.openlocfilehash: 5374001e63f83f13e0956314e9af88808d624dae
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="install-and-configure-tools-to-build-using-ios"></a>Install and Configure Tools to Build using iOS
 È possibile usare Visual C++ per lo sviluppo di app per dispositivi mobili multipiattaforma per modificare, eseguire il debug e distribuire codice iOS al simulatore iOS o a un dispositivo iOS. Tuttavia, a causa di restrizioni di licenza, il codice deve essere compilato ed eseguito in modalità remota su Mac. Per compilare ed eseguire le app iOS usando Visual Studio, è necessario installare e configurare l'agente remoto [vcremote](http://go.microsoft.com/fwlink/p/?LinkId=534988), sul Mac. L'agente remoto gestisce le richieste di compilazione da parte di Visual Studio ed esegue l'app su un dispositivo iOS connesso a Mac o nel simulatore iOS su Mac.  
@@ -177,7 +158,7 @@ ms.lasthandoff: 05/13/2017
   
 7.  Scegliere **Associa** per abilitare l'associazione.  
   
-     ![Configurazione della connessione vcremote per compilazioni iOS](~/cross-platform/media/cppmdd_options_ios.PNG "CPPMDD_Options_iOS")  
+     ![Configurazione della connessione vcremote per compilazioni iOS](../cross-platform/media/cppmdd_options_ios.PNG "CPPMDD_Options_iOS")  
   
      L'associazione viene mantenuta finché non si modifica il nome host o la porta. Se si modifica il nome host o la porta nella finestra di dialogo **Opzioni** , per annullare la modifica, scegliere il pulsante **Ripristina** per ripristinare l'associazione precedente.  
   
@@ -257,4 +238,4 @@ ms.lasthandoff: 05/13/2017
      dove *config_file_path* è il percorso di un file di configurazione in formato JSON. Le opzioni di avvio e i relativi valori non devono includere trattini.  
   
 ## <a name="see-also"></a>Vedere anche  
- [Installare Visual C++ per lo sviluppo di app per dispositivi mobili multipiattaforma](../cross-platform/install-visual-cpp-for-cross-platform-mobile-development.md)
+ [Install Visual C++ for Cross-Platform Mobile Development](../cross-platform/install-visual-cpp-for-cross-platform-mobile-development.md)

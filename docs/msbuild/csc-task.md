@@ -1,13 +1,9 @@
 ---
-title: "Attività Csc | Microsoft Docs"
-ms.custom: 
+title: Attività Csc | Microsoft Docs
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- vs-ide-sdk
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.technology: msbuild
+ms.topic: reference
 f1_keywords:
 - http://schemas.microsoft.com/developer/msbuild/2003#Csc
 dev_langs:
@@ -19,35 +15,22 @@ helpviewer_keywords:
 - Csc task [MSBuild]
 - MSBuild, Csc task
 ms.assetid: d8c19b36-f5ca-484b-afa6-8ff3b90e103a
-caps.latest.revision: 26
-author: kempb
-ms.author: kempb
-manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: 79460291e91f0659df0a4241e17616e55187a0e2
-ms.openlocfilehash: 9057a6bd209d4761c147577888dffa2933bbf4c8
-ms.lasthandoff: 02/22/2017
-
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: d35f1dee5c2f3d4f91a6d59e001bc9f16fd7b52a
+ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/19/2018
 ---
 # <a name="csc-task"></a>Attività Csc
 Esegue il wrap di CSC.exe e produce file eseguibili (con estensione EXE), librerie a collegamento dinamico (con estensione DLL) o moduli di codice (con estensione NETMODULE). Per altre informazioni su CSC.exe, vedere [Opzioni del compilatore C#](/dotnet/csharp/language-reference/compiler-options/index).  
   
 ## <a name="parameters"></a>Parametri  
- Nella tabella che segue vengono descritti i parametri dell'attività `Csc`.  
+ Nella tabella che segue vengono descritti i parametri dell'attività `Csc` .  
   
 |Parametro|Descrizione|  
 |---------------|-----------------|  
@@ -70,7 +53,7 @@ Esegue il wrap di CSC.exe e produce file eseguibili (con estensione EXE), librer
 |`KeyContainer`|Parametro `String` facoltativo.<br /><br /> Specifica il nome del contenitore di chiavi crittografiche. Per altre informazioni, vedere [/keycontainer (Opzioni del compilatore C#)](/dotnet/csharp/language-reference/compiler-options/keycontainer-compiler-option).|  
 |`KeyFile`|Parametro `String` facoltativo.<br /><br /> Specifica il nome del file contenente la chiave di crittografia. Per altre informazioni, vedere [/keyfile (Opzioni del compilatore C#)](/dotnet/csharp/language-reference/compiler-options/keyfile-compiler-option).|  
 |`LangVersion`|Parametro `String` facoltativo.<br /><br /> Specifica la versione del linguaggio da usare. Per altre informazioni, vedere [/langversion (Opzioni del compilatore C#)](/dotnet/csharp/language-reference/compiler-options/langversion-compiler-option).|  
-|`LinkResources`|Parametro facoltativo <xref:Microsoft.Build.Framework.ITaskItem>`[]`.<br /><br /> Crea un collegamento a una risorsa [!INCLUDE[dnprdnshort](../code-quality/includes/dnprdnshort_md.md)] nel file di output. Il file di risorse non viene inserito nel file di output.<br /><br /> Gli elementi passati a questo parametro possono avere voci di metadati facoltativi denominati `LogicalName` e `Access`. `LogicalName` corrisponde al parametro `identifier` dell'opzione `/linkresource` e `Access` corrisponde al parametro `accessibility-modifier`. Per altre informazioni, vedere [/linkresource (Opzioni del compilatore C#)](/dotnet/csharp/language-reference/compiler-options/linkresource-compiler-option).|  
+|`LinkResources`|Parametro <xref:Microsoft.Build.Framework.ITaskItem>`[]` facoltativo.<br /><br /> Crea un collegamento a una risorsa [!INCLUDE[dnprdnshort](../code-quality/includes/dnprdnshort_md.md)] nel file di output. Il file di risorse non viene inserito nel file di output.<br /><br /> Gli elementi passati a questo parametro possono avere voci di metadati facoltativi denominati `LogicalName` e `Access`. `LogicalName` corrisponde al parametro `identifier` dell'opzione `/linkresource` e `Access` corrisponde al parametro `accessibility-modifier`. Per altre informazioni, vedere [/linkresource (Opzioni del compilatore C#)](/dotnet/csharp/language-reference/compiler-options/linkresource-compiler-option).|  
 |`MainEntryPoint`|Parametro `String` facoltativo.<br /><br /> Specifica il percorso del metodo `Main`. Per altre informazioni, vedere [/main (Opzioni del compilatore C#)](/dotnet/csharp/language-reference/compiler-options/main-compiler-option).|  
 |`ModuleAssemblyName`|Parametro `String` facoltativo.<br /><br /> Specifica il nome dell'assembly di cui fa parte il modulo.|  
 |`NoConfig`|Parametro `Boolean` facoltativo.<br /><br /> Se `true`, indica al compilatore di non eseguire la compilazione con il file csc.rsp. Per altre informazioni, vedere [/noconfig (Opzioni del compilatore C#)](/dotnet/csharp/language-reference/compiler-options/noconfig-compiler-option).|  
@@ -79,12 +62,13 @@ Esegue il wrap di CSC.exe e produce file eseguibili (con estensione EXE), librer
 |`NoWin32Manifest`|Parametro `Boolean` facoltativo.<br /><br /> Se `true`, non includere il manifesto Win32 predefinito.|  
 |`Optimize`|Parametro `Boolean` facoltativo.<br /><br /> Se `true`, abilita le ottimizzazioni. Se `false`, disabilita le ottimizzazioni. Per altre informazioni, vedere [/optimize (Opzioni del compilatore C#)](/dotnet/csharp/language-reference/compiler-options/optimize-compiler-option).|  
 |`OutputAssembly`|Parametro di ouput facoltativo `String`.<br /><br /> Specifica il nome del file di output. Per altre informazioni, vedere [/out (Opzioni del compilatore C#)](/dotnet/csharp/language-reference/compiler-options/out-compiler-option).|  
+|`OutputRefAssembly`|Parametro `String` facoltativo.<br /><br /> Specifica il nome del file di assembly di riferimento di output. Per altre informazioni, vedere [/refout (opzioni del compilatore C#)](/dotnet/csharp/language-reference/compiler-options/refout-compiler-option).|  
 |`PdbFile`|Parametro `String` facoltativo.<br /><br /> Specifica il nome file delle informazioni di debug. Il nome predefinito è il nome file di output con estensione PDB.|  
 |`Platform`|Parametro `String` facoltativo.<br /><br /> Specifica la piattaforma del processore da impostare come destinazione del file di output. Il valore di questo parametro può essere `x86`, `x64` o `anycpu`. Il valore predefinito è `anycpu`. Per altre informazioni, vedere [/platform (Opzioni del compilatore C#)](/dotnet/csharp/language-reference/compiler-options/platform-compiler-option).|  
-|`References`|Parametro facoltativo <xref:Microsoft.Build.Framework.ITaskItem>`[]`.<br /><br /> Specifica l'attività per importare informazioni di tipi pubblico dagli elementi specificati nel progetto corrente. Per altre informazioni, vedere [/reference (Opzioni del compilatore C#)](/dotnet/csharp/language-reference/compiler-options/reference-compiler-option).<br /><br /> È possibile specificare un alias di riferimento [!INCLUDE[csprcs](../data-tools/includes/csprcs_md.md)] in un file [!INCLUDE[vstecmsbuild](../extensibility/internals/includes/vstecmsbuild_md.md)] aggiungendo i metadati `Aliases` all'elemento originale di "riferimento". Ad esempio, per impostare l'alias "LS1" nella riga di comando CSC seguente:<br /><br /> `csc /r:LS1=MyCodeLibrary.dll /r:LS2=MyCodeLibrary2.dll *.cs`<br /><br /> è necessario usare:<br /><br /> `<Reference Include="MyCodeLibrary"> <Aliases>LS1</Aliases> </Reference>`|  
-|`Resources`|Parametro facoltativo <xref:Microsoft.Build.Framework.ITaskItem>`[]`.<br /><br /> Inserisce una risorsa [!INCLUDE[dnprdnshort](../code-quality/includes/dnprdnshort_md.md)] nel file di output.<br /><br /> Gli elementi passati a questo parametro possono avere voci di metadati facoltativi denominati `LogicalName` e `Access`. `LogicalName` corrisponde al parametro `identifier` dell'opzione `/resource` e `Access` corrisponde al parametro `accessibility-modifier`. Per altre informazioni, vedere [/resource (Opzioni del compilatore C#)](/dotnet/csharp/language-reference/compiler-options/resource-compiler-option).|  
+|`References`|Parametro <xref:Microsoft.Build.Framework.ITaskItem>`[]` facoltativo.<br /><br /> Specifica l'attività per importare informazioni di tipi pubblico dagli elementi specificati nel progetto corrente. Per altre informazioni, vedere [/reference (Opzioni del compilatore C#)](/dotnet/csharp/language-reference/compiler-options/reference-compiler-option).<br /><br /> È possibile specificare un alias di riferimento [!INCLUDE[csprcs](../data-tools/includes/csprcs_md.md)] in un file [!INCLUDE[vstecmsbuild](../extensibility/internals/includes/vstecmsbuild_md.md)] aggiungendo i metadati `Aliases` all'elemento originale di "riferimento". Ad esempio, per impostare l'alias "LS1" nella riga di comando CSC seguente:<br /><br /> `csc /r:LS1=MyCodeLibrary.dll /r:LS2=MyCodeLibrary2.dll *.cs`<br /><br /> è necessario usare:<br /><br /> `<Reference Include="MyCodeLibrary"> <Aliases>LS1</Aliases> </Reference>`|  
+|`Resources`|Parametro <xref:Microsoft.Build.Framework.ITaskItem>`[]` facoltativo.<br /><br /> Inserisce una risorsa [!INCLUDE[dnprdnshort](../code-quality/includes/dnprdnshort_md.md)] nel file di output.<br /><br /> Gli elementi passati a questo parametro possono avere voci di metadati facoltativi denominati `LogicalName` e `Access`. `LogicalName` corrisponde al parametro `identifier` dell'opzione `/resource` e `Access` corrisponde al parametro `accessibility-modifier`. Per altre informazioni, vedere [/resource (Opzioni del compilatore C#)](/dotnet/csharp/language-reference/compiler-options/resource-compiler-option).|  
 |`ResponseFiles`|Parametro `String` facoltativo.<br /><br /> Specifica il file di risposta che contiene i comandi per questa attività. Per altre informazioni, vedere [@ (specifica di un file di risposta)](/dotnet/csharp/language-reference/compiler-options/response-file-compiler-option).|  
-|`Sources`|Parametro facoltativo <xref:Microsoft.Build.Framework.ITaskItem>`[]`.<br /><br /> Specifica uno o più file di origine [!INCLUDE[csprcs](../data-tools/includes/csprcs_md.md)].|  
+|`Sources`|Parametro <xref:Microsoft.Build.Framework.ITaskItem>`[]` facoltativo.<br /><br /> Specifica uno o più file di origine [!INCLUDE[csprcs](../data-tools/includes/csprcs_md.md)].|  
 |`TargetType`|Parametro `String` facoltativo.<br /><br /> Specifica il formato del file di output. Questo parametro può avere un valore di `library`, che crea una libreria di codice, `exe`, che crea un'applicazione console, `module`, che crea un modulo o `winexe`, che crea un programma Windows. Il valore predefinito è `library`. Per altre informazioni, vedere [/target (Opzioni del compilatore C#)](/dotnet/csharp/language-reference/compiler-options/target-compiler-option).|  
 |`TreatWarningsAsErrors`|Parametro `Boolean` facoltativo.<br /><br /> Se `true`, tutti gli avvisi vengono considerati come errori. Per altre informazioni, vedere [/warnaserror (Opzioni del compilatore C#)](/dotnet/csharp/language-reference/compiler-options/warnaserror-compiler-option).|  
 |`UseHostCompilerIfAvailable`|Parametro `Boolean` facoltativo.<br /><br /> Indica all'attività di usare l'oggetto del compilatore in corso, se disponibile. Usato solo da [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)].|  
@@ -97,7 +81,7 @@ Esegue il wrap di CSC.exe e produce file eseguibili (con estensione EXE), librer
 |`Win32Resource`|Parametro `String` facoltativo.<br /><br /> Inserisce un file di risorsa Win32 (estensione RES) nel file di output . Per altre informazioni, vedere [/win32res (C# Compiler Options)](/dotnet/csharp/language-reference/compiler-options/win32res-compiler-option).|  
   
 ## <a name="remarks"></a>Note  
- Oltre ai parametri sopra elencati, questa attività eredita i parametri dalla classe `Microsoft.Build.Tasks.ManagedCompiler`, che eredita dalla classe <xref:Microsoft.Build.Tasks.ToolTaskExtension>, che a sua volta eredita dalla classe <xref:Microsoft.Build.Utilities.ToolTask>. Per un elenco di questi parametri aggiuntivi e le rispettive descrizioni, vedere [TaskExtension Base Class](../msbuild/tooltaskextension-base-class.md) (Classe di base TaskExtension).  
+ Oltre ai parametri elencati sopra, questa attività eredita i parametri dalla classe `Microsoft.Build.Tasks.ManagedCompiler`, che eredita dalla classe <xref:Microsoft.Build.Tasks.ToolTaskExtension>, che a sua volta eredita dalla classe <xref:Microsoft.Build.Utilities.ToolTask>. Per un elenco di questi parametri aggiuntivi e le rispettive descrizioni, vedere [TaskExtension Base Class](../msbuild/tooltaskextension-base-class.md) (Classe di base TaskExtension).  
   
 ## <a name="example"></a>Esempio  
  Nell'esempio seguente viene usata l'attività `Csc` per compilare un eseguibile dai file di origine nella raccolta di elementi `Compile`.  

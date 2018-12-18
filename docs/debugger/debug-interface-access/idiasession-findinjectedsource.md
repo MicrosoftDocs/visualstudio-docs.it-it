@@ -1,48 +1,47 @@
 ---
-title: "IDiaSession::findInjectedSource | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "IDiaSession::findInjectedSource (metodo)"
+title: 'Idiasession:: Findinjectedsource | Documenti Microsoft'
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology: vs-ide-debug
+ms.topic: conceptual
+dev_langs:
+- C++
+helpviewer_keywords:
+- IDiaSession::findInjectedSource method
 ms.assetid: 907531b6-1ef8-4153-986d-b72611a1632d
-caps.latest.revision: 10
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 10
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 6f9870d1e2d14a2dcbe9f33191e0559a3e0b34f4
+ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/18/2018
 ---
-# IDiaSession::findInjectedSource
-[!INCLUDE[vs2017banner](../../code-quality/includes/vs2017banner.md)]
-
-Recupera un elenco di origini inserito nell'archivio simboli dai provider di attributo o da altri componenti del processo di compilazione.  
+# <a name="idiasessionfindinjectedsource"></a>IDiaSession::findInjectedSource
+Recupera un elenco di origini che è stato inserito nell'archivio simboli dai provider di attributo o di altri componenti del processo di compilazione.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp#  
-HRESULT findInjectedSource (   
-   LPCOLESTR                 srcFile,  
-   IDiaEnumInjectedSources** ppResult  
+```C++  
+HRESULT findInjectedSource (   
+   LPCOLESTR                 srcFile,  
+   IDiaEnumInjectedSources** ppResult  
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  srcFile  
- \[in\]  Nome del file di origine per il quale da cercare.  
+ [in] Nome del file di origine per la ricerca.  
   
  ppResult  
- \[out\]  restituisce [IDiaEnumInjectedSources](../../debugger/debug-interface-access/idiaenuminjectedsources.md) oggetto che contiene un elenco di tutti i database di origine inseriti.  
+ [out] Restituisce un [IDiaEnumInjectedSources](../../debugger/debug-interface-access/idiaenuminjectedsources.md) oggetto che contiene un elenco di tutte le origini inserite.  
   
-## Valore restituito  
- Se l'operazione riesce, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
+## <a name="return-value"></a>Valore restituito  
+ Se ha esito positivo, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IDiaEnumInjectedSources](../../debugger/debug-interface-access/idiaenuminjectedsources.md)   
  [IDiaSession](../../debugger/debug-interface-access/idiasession.md)

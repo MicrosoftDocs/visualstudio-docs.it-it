@@ -1,52 +1,53 @@
 ---
-title: "IDebugTypeFieldBuilder::CreatePointerToType | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "CreatePointerToType"
-  - "IDebugTypeFieldBuilder::CreatePointerToType"
+title: IDebugTypeFieldBuilder::CreatePointerToType | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology:
+- vs-ide-sdk
+ms.topic: conceptual
+helpviewer_keywords:
+- CreatePointerToType
+- IDebugTypeFieldBuilder::CreatePointerToType
 ms.assetid: 73966e8a-b643-43e0-9b4e-0aa4b402ebbe
-caps.latest.revision: 8
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 8
+author: gregvanl
+ms.author: gregvanl
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: 292a6ba67ca6508d19d6dc56abb012ec13197244
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# IDebugTypeFieldBuilder::CreatePointerToType
-[!INCLUDE[vs2017banner](../../../code-quality/includes/vs2017banner.md)]
-
+# <a name="idebugtypefieldbuildercreatepointertotype"></a>IDebugTypeFieldBuilder::CreatePointerToType
 Crea un puntatore al tipo specificato.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp#  
+```cpp  
 HRESULT CreatePointerToType(  
-   IDebugField*  pTypeField,  
-   IDebugField** pPtrToTypeField  
+   IDebugField*  pTypeField,  
+   IDebugField** pPtrToTypeField  
 );  
 ```  
   
-```c#  
+```csharp  
 int CreatePointerToType(  
-   IDebugField     pTypeField,  
-   out IDebugField pPtrToTypeField  
+   IDebugField     pTypeField,  
+   out IDebugField pPtrToTypeField  
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `pTypeField`  
- \[in\]  Tipo da leggere.  È [IDebugField](../../../extensibility/debugger/reference/idebugfield.md) rappresentato dall'interfaccia.  
+ [in] Tipo da scegliere. È rappresentato dal [IDebugField](../../../extensibility/debugger/reference/idebugfield.md) interfaccia.  
   
  `pPtrToTypeField`  
- \[out\]  restituisce il puntatore rappresentato da un nuovo oggetto di **IDebugField** .  
+ [out] Restituisce il puntatore rappresentato da un nuovo **IDebugField** oggetto.  
   
-## Valore restituito  
- Se l'operazione riesce, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
+## <a name="return-value"></a>Valore restituito  
+ Se ha esito positivo, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IDebugTypeFieldBuilder](../../../extensibility/debugger/reference/idebugtypefieldbuilder.md)

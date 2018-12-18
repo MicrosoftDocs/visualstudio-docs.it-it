@@ -1,40 +1,41 @@
 ---
-title: "Metodo NotifyDebuggerOfWaitCompletion | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "Metodo NotifyDebuggerOfWaitCompletion, classe di attività [motori di debug di .NET Framework]"
+title: Metodo NotifyDebuggerOfWaitCompletion | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology:
+- vs-ide-sdk
+ms.topic: conceptual
+helpviewer_keywords:
+- NotifyDebuggerOfWaitCompletion method, Task class [.NET Framework debug engines]
 ms.assetid: 841c5908-4f3f-400b-a7b0-96a95f362817
-caps.latest.revision: 5
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 5
+author: gregvanl
+ms.author: gregvanl
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: 95c510cd0b9be97c53d2026a54335b07bcd1da9f
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# Metodo NotifyDebuggerOfWaitCompletion
-[!INCLUDE[vs2017banner](../../code-quality/includes/vs2017banner.md)]
-
-Metodo segnaposto utilizzato come destinazione del punto di interruzione dal debugger. Questo metodo non deve essere resa inline o ottimizzata.  
+# <a name="notifydebuggerofwaitcompletion-method"></a>Metodo NotifyDebuggerOfWaitCompletion
+Metodo segnaposto utilizzato come destinazione del punto di interruzione dal debugger. Questo metodo non deve essere inline o ottimizzato.  
   
- **Spazio dei nomi:** <xref:System.Threading.Tasks?displayProperty=fullName>  
+ **Namespace:** <xref:System.Threading.Tasks?displayProperty=fullName>  
   
- **Assembly:** mscorlib \(in mscorlib. dll\)  
+ **Assembly:** mscorlib (in mscorlib. dll)  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```vb  
 private void NotifyDebuggerOfWaitCompletion()  
 ```  
   
-## Note  
- Tutte le operazioni di join con un'attività devono chiamare questo metodo se è impostato il bit di notifica di debugger.  
+## <a name="remarks"></a>Note  
+ Tutte le operazioni di join con un'attività è necessario chiamare questo metodo se i bit di notifica di debugger è impostato.  
   
-## Requisiti  
+## <a name="requirements"></a>Requisiti  
   
-## Vedere anche  
- [Classe attività](../../extensibility/debugger/task-class-internal-members.md)
+## <a name="see-also"></a>Vedere anche  
+ [Classe dell'attività](../../extensibility/debugger/task-class-internal-members.md)

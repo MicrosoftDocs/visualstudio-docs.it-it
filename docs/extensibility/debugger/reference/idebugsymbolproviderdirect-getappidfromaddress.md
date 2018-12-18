@@ -1,52 +1,53 @@
 ---
-title: "IDebugSymbolProviderDirect::GetAppIDFromAddress | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "IDebugSymbolProviderDirect::GetAppIDFromAddress"
-  - "GetAppIDFromAddress"
+title: IDebugSymbolProviderDirect::GetAppIDFromAddress | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology:
+- vs-ide-sdk
+ms.topic: conceptual
+helpviewer_keywords:
+- IDebugSymbolProviderDirect::GetAppIDFromAddress
+- GetAppIDFromAddress
 ms.assetid: d76a0f36-79c4-4c58-9db3-880b00d11610
-caps.latest.revision: 8
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 8
+author: gregvanl
+ms.author: gregvanl
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: b27ddc4e385aa19d9a760b5cf1a278ddaf1b401d
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# IDebugSymbolProviderDirect::GetAppIDFromAddress
-[!INCLUDE[vs2017banner](../../../code-quality/includes/vs2017banner.md)]
-
-Recupera l'identificatore del dominio applicazione fornito l'indirizzo di debug.  
+# <a name="idebugsymbolproviderdirectgetappidfromaddress"></a>IDebugSymbolProviderDirect::GetAppIDFromAddress
+Recupera l'identificatore di dominio applicazione con l'indirizzo di debug.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp#  
+```cpp  
 HRESULT GetAppIDFromAddress(  
-   IDebugAddress* pAddress,  
-   DWORD*         pAppID  
+   IDebugAddress* pAddress,  
+   DWORD*         pAppID  
 );  
 ```  
   
-```c#  
+```csharp  
 int GetAppIDFromAddress(  
-   IDebugAddress pAddress,  
-   out uint      pAppID  
+   IDebugAddress pAddress,  
+   out uint      pAppID  
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `pAddress`  
- \[in\]  Eseguire il debug l'indirizzo che è rappresentato [IDebugAddress](../../../extensibility/debugger/reference/idebugaddress.md) dall'interfaccia.  
+ [in] Indirizzo rappresentato da eseguire il debug di [IDebugAddress](../../../extensibility/debugger/reference/idebugaddress.md) interfaccia.  
   
  `pAppID`  
- \[out\]  Identificatore del dominio applicazione.  
+ [out] Identificatore del dominio dell'applicazione.  
   
-## Valore restituito  
- Se l'operazione riesce, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
+## <a name="return-value"></a>Valore restituito  
+ Se ha esito positivo, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IDebugSymbolProviderDirect](../../../extensibility/debugger/reference/idebugsymbolproviderdirect.md)

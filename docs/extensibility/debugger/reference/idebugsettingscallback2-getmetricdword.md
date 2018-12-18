@@ -1,61 +1,62 @@
 ---
-title: "IDebugSettingsCallback2::GetMetricDword | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "IDebugSettingsCallback2::GetMetricDword"
+title: IDebugSettingsCallback2::GetMetricDword | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology:
+- vs-ide-sdk
+ms.topic: conceptual
+helpviewer_keywords:
+- IDebugSettingsCallback2::GetMetricDword
 ms.assetid: 831a5a1a-c4af-4520-9fdf-3a731aeff85c
-caps.latest.revision: 8
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 8
+author: gregvanl
+ms.author: gregvanl
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: 0accbe60855e6467d8f3b81db61d273821650de2
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# IDebugSettingsCallback2::GetMetricDword
-[!INCLUDE[vs2017banner](../../../code-quality/includes/vs2017banner.md)]
-
+# <a name="idebugsettingscallback2getmetricdword"></a>IDebugSettingsCallback2::GetMetricDword
 Recupera il valore di una metrica in base al nome.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp#  
+```cpp  
 HRESULT GetMetricDword(  
-   LPCWSTR pszType,  
-   REFGUID guidSection,  
-   LPCWSTR pszMetric,  
-   DWORD*  pdwValue  
+   LPCWSTR pszType,  
+   REFGUID guidSection,  
+   LPCWSTR pszMetric,  
+   DWORD*  pdwValue  
 );  
 ```  
   
-```c#  
+```csharp  
 private int GetMetricDword(  
-   string   pszType,  
-   ref Guid guidSection,  
-   string   pszMetric,  
-   out uint pdwValue  
+   string   pszType,  
+   ref Guid guidSection,  
+   string   pszMetric,  
+   out uint pdwValue  
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `pszType`  
- \[in\]  Tipo di metrica.  
+ [in] Tipo di metrica.  
   
  `guidSection`  
- \[in\]  Identificatore univoco della sezione.  
+ [in] Identificatore univoco della sezione.  
   
  `pszMetric`  
- \[in\]  Nome della metrica.  
+ [in] Nome della metrica.  
   
  `pdwValue`  
- \[out\]  Restituisce il valore della metrica.  
+ [out] Restituisce il valore della metrica.  
   
-## Valore restituito  
- Se l'operazione riesce, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
+## <a name="return-value"></a>Valore restituito  
+ Se ha esito positivo, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IDebugSettingsCallback2](../../../extensibility/debugger/reference/idebugsettingscallback2.md)

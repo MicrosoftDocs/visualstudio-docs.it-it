@@ -1,52 +1,51 @@
 ---
-title: "IDiaSymbol::findSymbolsByRVAForAcceleratorPointerTag | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
+title: IDiaSymbol::findSymbolsByRVAForAcceleratorPointerTag | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology: vs-ide-debug
+ms.topic: conceptual
+dev_langs:
+- C++
 ms.assetid: 024ccd78-5867-4ca7-bc26-548758e9ac53
-caps.latest.revision: 3
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 3
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 6620993582501e157bc8d53e5c295b4cfe5cb50d
+ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/18/2018
 ---
-# IDiaSymbol::findSymbolsByRVAForAcceleratorPointerTag
-[!INCLUDE[vs2017banner](../../code-quality/includes/vs2017banner.md)]
-
-Dato un valore corrispondente tag, questo metodo restituisce un'enumerazione di simboli contenuti in questa funzione stub a un indirizzo virtuale relativo specificato.  
+# <a name="idiasymbolfindsymbolsbyrvaforacceleratorpointertag"></a>IDiaSymbol::findSymbolsByRVAForAcceleratorPointerTag
+Dato un valore di tag corrispondente, questo metodo restituisce un'enumerazione di simboli contenuti in questa funzione stub in un indirizzo virtuale relativo specificato.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp  
+```C++  
 HRESULT findSymbolsByRVAForAcceleratorPointerTag (   
    DWORD             tagValue,  
    DWORD             rva,  
    IDiaEnumSymbols** ppResult);  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `tagValue`  
- \[in\] il valore del tag del puntatore per il quale i record del simbolo di pointee viene trovato.  
+ [in] Il valore del tag puntatore per cui sono contenuti i record dei simboli pointee.  
   
  `rva`  
- \[in\] il rva utilizzato per filtrare i simboli corrispondenti alla variabile di pointee il valore specificato nel tag.  
+ [in] Rva che viene utilizzato per filtrare i simboli che corrispondono alla variabile pointee con il valore del tag specificato.  
   
  `ppResult`  
- \[out\] puntatore A un puntatore a interfaccia `IDiaEnumSymbols` inizializzato con il risultato.  
+ [out] Un puntatore a un `IDiaEnumSymbols` puntatore a interfaccia che viene inizializzato con il risultato.  
   
-## Valore restituito  
- Se l'operazione riesce, restituisce `S_OK`; in caso contrario, restituisce `S_FALSE` o un codice di errore.  
+## <a name="return-value"></a>Valore restituito  
+ Se ha esito positivo, restituisce `S_OK`; in caso contrario, restituisce `S_FALSE` o un codice di errore.  
   
-## Note  
- Chiamare questo metodo solo in un'interfaccia `IDiaSymbol` che corrisponde a una funzione dello stub dei tasti di scelta rapida.  
+## <a name="remarks"></a>Note  
+ Chiamare questo metodo solo in un `IDiaSymbol` interfaccia che corrisponde a una funzione di stub di tasti di scelta rapida.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IDiaSymbol](../../debugger/debug-interface-access/idiasymbol.md)   
  [IDiaEnumSymbols](../../debugger/debug-interface-access/idiaenumsymbols.md)

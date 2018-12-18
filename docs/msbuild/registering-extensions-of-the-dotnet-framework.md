@@ -1,38 +1,36 @@
 ---
-title: "Registrazione di estensioni di .NET Framework | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/05/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "Aggiungi riferimenti (finestra di dialogo), registrazione di estensioni di .NET Framework"
-  - "MSBuild, registrazione di estensioni in .NET Framework"
-  - ".NET Framework (estensioni), registrazione"
+title: Registrazione di estensioni di .NET Framework | Microsoft Docs
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology: msbuild
+ms.topic: conceptual
+helpviewer_keywords:
+- Add References dialog box, registering extensions of the .NET Framework
+- MSBuild, registering extensions of the .NET Framework
+- .NET Framework extensions, registering
 ms.assetid: deee6f53-ea87-4b88-a120-bea589822e03
-caps.latest.revision: 5
-caps.handback.revision: 5
-author: "kempb"
-ms.author: "kempb"
-manager: "ghogen"
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- dotnet
+ms.openlocfilehash: cad3d2d02ed27ab46410be6edc024b137bbca7bd
+ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/19/2018
 ---
-# Registrazione di estensioni di .NET Framework
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
-È possibile sviluppare un assembly che estende una versione specifica di .NET Framework.  Per consentire all'assembly di venire visualizzato nella finestra di dialogo **Aggiungi riferimenti** di Visual Studio, è necessario aggiungere la cartella che lo contiene al Registro di sistema.  
+# <a name="registering-extensions-of-the-net-framework"></a>Registrazione di estensioni di .NET Framework
+È possibile sviluppare un assembly per estendere una versione specifica di .NET Framework. Per poter visualizzare l'assembly nella finestra di dialogo **Aggiungi riferimenti**, è necessario aggiungere la cartella che lo contiene al Registro di sistema.  
   
- Ad esempio, si supponga che la società Trey Research abbia sviluppato una libreria che estende .NET Framework 4 e desidera che gli assembly della libreria vengano visualizzati nella finestra di dialogo **Aggiungi riferimenti** quando un progetto è destinato a .NET Framework 4.  Si supponga inoltre che si tratti di assembly a 32 bit che vengono eseguiti su un computer a 32 bit o assembly a 64 bit che vengono eseguiti su un computer di 64 bit e che saranno installati nella cartella C:\\TreyResearch\\Extensions4\\.  
+ Si supponga, ad esempio, che la società Trey Research abbia sviluppato una libreria che estende .NET Framework 4 e voglia che gli assembly della libreria vengano visualizzati nella finestra di dialogo **Aggiungi riferimenti** quando un progetto ha come destinazione .NET Framework 4. Si supponga anche che si tratti di assembly a 32 bit in esecuzione su un computer a 32 bit o di assembly a 64 bit in esecuzione su un computer a 64 bit e che verranno installati nella cartella C:\TreyResearch\Extensions4\.  
   
- Registrare la cartella utilizzando questa chiave: HKEY\_LOCAL\_MACHINE\\SOFTWARE\\Microsoft\\.NETFramework\\v4.0.21006\\AssemblyFoldersEx\\TreyResearch\\.  Assegnare alla chiave questo valore predefinito: C:\\TreyResearch\\Extensions4.  
+ Registrare questa cartella usando la chiave HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\\.NETFramework\v4.0.21006\AssemblyFoldersEx\TreyResearch\\. Assegnare alla chiave il valore predefinito C:\TreyResearch\Extensions4.  
   
 > [!NOTE]
->  È possibile che il numero di build della versione di .NET Framework sia diverso.  
+>  Il numero di build della versione di .NET Framework potrebbe essere diverso.  
   
- Per registrare un assembly a 32 bit su un computer a 64 bit, utilizzare il nodo Wow6432, ad esempio: HKEY\_LOCAL\_MACHINE\\SOFTWARE\\Wow6432Node\\Microsoft\\.NETFramework\\v4.0.21006\\AssemblyFoldersEx\\TreyResearch\\.  
+ Per registrare un assembly a 32 bit su un computer a 64 bit, usare il nodo Wow6432, ad esempio: HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\\.NETFramework\v4.0.21006\AssemblyFoldersEx\TreyResearch\\.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Integrazione con Visual Studio](../msbuild/visual-studio-integration-msbuild.md)

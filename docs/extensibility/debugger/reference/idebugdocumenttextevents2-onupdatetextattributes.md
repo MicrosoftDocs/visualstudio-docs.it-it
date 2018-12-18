@@ -1,54 +1,55 @@
 ---
-title: "IDebugDocumentTextEvents2::onUpdateTextAttributes | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "IDebugDocumentTextEvents2::OnUpdateTextAttributes"
-helpviewer_keywords: 
-  - "IDebugDocumentTextEvents2::onUpdateTextAttributes"
+title: IDebugDocumentTextEvents2::onUpdateTextAttributes | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology:
+- vs-ide-sdk
+ms.topic: conceptual
+f1_keywords:
+- IDebugDocumentTextEvents2::OnUpdateTextAttributes
+helpviewer_keywords:
+- IDebugDocumentTextEvents2::onUpdateTextAttributes
 ms.assetid: eb68d69a-1ad9-4ce4-84e1-40979ef16634
-caps.latest.revision: 10
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 10
+author: gregvanl
+ms.author: gregvanl
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: d809a5f06be6facd43265fb00e25fc08aabd1f81
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# IDebugDocumentTextEvents2::onUpdateTextAttributes
-[!INCLUDE[vs2017banner](../../../code-quality/includes/vs2017banner.md)]
-
-Notifica al pacchetto di debug che gli attributi di testo sono stati aggiornati nel documento.  
+# <a name="idebugdocumenttextevents2onupdatetextattributes"></a>IDebugDocumentTextEvents2::onUpdateTextAttributes
+Notifica il pacchetto di debug che sono stati aggiornati gli attributi di testo nel documento.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp#  
-HRESULT onUpdateTextAttributes(   
-   TEXT_POSITION pos,  
-   DWORD         dwNumToUpdate  
+```cpp  
+HRESULT onUpdateTextAttributes(   
+   TEXT_POSITION pos,  
+   DWORD         dwNumToUpdate  
 );  
 ```  
   
-```c#  
-int onUpdateTextAttributes(   
-   enum_TEXT_POSITION pos,  
-   uint               dwNumToUpdate  
+```csharp  
+int onUpdateTextAttributes(   
+   enum_TEXT_POSITION pos,  
+   uint               dwNumToUpdate  
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `pos`  
- \[in\]  [TEXT\_POSITION](../../../extensibility/debugger/reference/text-position.md) Una struttura che indica dove gli attributi di testo sono stati aggiornati.  
+ [in] Oggetto [TEXT_POSITION](../../../extensibility/debugger/reference/text-position.md) struttura che indica in cui sono stati aggiornati gli attributi di testo.  
   
  `dwNumToUpdate`  
- \[in\]  specifica il numero di caratteri di testo che è stato aggiornato.  
+ [in] Specifica il numero di caratteri di testo che sono stati aggiornati.  
   
-## Valore restituito  
- Se l'operazione riesce, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
+## <a name="return-value"></a>Valore restituito  
+ Se ha esito positivo, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IDebugDocumentTextEvents2](../../../extensibility/debugger/reference/idebugdocumenttextevents2.md)   
- [TEXT\_POSITION](../../../extensibility/debugger/reference/text-position.md)
+ [TEXT_POSITION](../../../extensibility/debugger/reference/text-position.md)

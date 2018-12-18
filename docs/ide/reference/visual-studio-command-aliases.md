@@ -1,13 +1,10 @@
 ---
 title: Alias di comandi di Visual Studio | Microsoft Docs
-ms.custom: 
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - vs-ide-general
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: conceptual
 helpviewer_keywords:
 - aliases, Visual Studio commands
 - Visual Studio, commands
@@ -17,30 +14,16 @@ helpviewer_keywords:
 - pre-defined command aliases
 - command aliases
 ms.assetid: de8bb378-8c1c-4087-a9a5-537fa8314c19
-caps.latest.revision: 17
-author: kempb
-ms.author: kempb
-manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 5db97d19b1b823388a465bba15d057b30ff0b3ce
-ms.openlocfilehash: 0baf22ca488f4500fb3f4e845a0957b6225dd327
-ms.contentlocale: it-it
-ms.lasthandoff: 05/19/2017
-
+author: gewarren
+ms.author: gewarren
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 05699b5791bf8493ac8dd19c6f3dbd28ab5b2ce1
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="visual-studio-command-aliases"></a>Visual Studio Command Aliases
 Gli alias consentono di immettere un comando nella casella **Trova/Comando** o nella finestra di **comando** usando un testo ridotto per eseguire il comando. Ad esempio, anziché immettere `>File.OpenFile` per visualizzare la finestra di dialogo **Apri file** è possibile usare l'alias predefinito `>of`.  

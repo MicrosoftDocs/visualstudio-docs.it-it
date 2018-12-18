@@ -1,53 +1,54 @@
 ---
-title: "IDebugEngineLaunch2::CanTerminateProcess | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "IDebugEngineLaunch2::CanTerminateProcess"
-helpviewer_keywords: 
-  - "IDebugEngineLaunch2::CanTerminateProcess"
+title: IDebugEngineLaunch2::CanTerminateProcess | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology:
+- vs-ide-sdk
+ms.topic: conceptual
+f1_keywords:
+- IDebugEngineLaunch2::CanTerminateProcess
+helpviewer_keywords:
+- IDebugEngineLaunch2::CanTerminateProcess
 ms.assetid: 7973454d-c957-4123-a0ee-80ebcdbbd2d1
-caps.latest.revision: 10
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 10
+author: gregvanl
+ms.author: gregvanl
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: 4b6dcbb10b4d188ac3a5e59cfccf9f1150b3cd00
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# IDebugEngineLaunch2::CanTerminateProcess
-[!INCLUDE[vs2017banner](../../../code-quality/includes/vs2017banner.md)]
-
+# <a name="idebugenginelaunch2canterminateprocess"></a>IDebugEngineLaunch2::CanTerminateProcess
 Determina se un processo può essere terminato.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp#  
-HRESULT CanTerminateProcess (   
-   IDebugProcess2* pProcess  
+```cpp  
+HRESULT CanTerminateProcess (   
+   IDebugProcess2* pProcess  
 );  
 ```  
   
-```c#  
-int CanTerminateProcess (   
-   IDebugProcess2 pProcess  
+```csharp  
+int CanTerminateProcess (   
+   IDebugProcess2 pProcess  
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `pProcess`  
- \[in\]  [IDebugProcess2](../../../extensibility/debugger/reference/idebugprocess2.md) un oggetto che rappresenta il processo da terminare.  
+ [in] Un [IDebugProcess2](../../../extensibility/debugger/reference/idebugprocess2.md) oggetto che rappresenta il processo da terminare.  
   
-## Valore restituito  
- Se l'operazione riesce, restituisce `S_OK`; in caso contrario restituisce un codice di errore.  Restituisce `S_FALSE` se il motore non possono terminare il processo, ad esempio, in quanto viene negato.  
+## <a name="return-value"></a>Valore restituito  
+ Se ha esito positivo, restituisce `S_OK`; in caso contrario, restituisce un codice di errore. Restituisce `S_FALSE` se il motore non può terminare il processo, ad esempio, perché l'accesso è negato.  
   
-## Note  
- Se questo metodo restituisce `S_OK`, il metodo [TerminateProcess](../../../extensibility/debugger/reference/idebugenginelaunch2-terminateprocess.md) può essere chiamato in realtà per terminare il processo.  
+## <a name="remarks"></a>Note  
+ Se questo metodo restituisce `S_OK`, quindi il [TerminateProcess](../../../extensibility/debugger/reference/idebugenginelaunch2-terminateprocess.md) metodo può essere chiamato per effettivamente terminare il processo.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IDebugEngineLaunch2](../../../extensibility/debugger/reference/idebugenginelaunch2.md)   
  [IDebugProcess2](../../../extensibility/debugger/reference/idebugprocess2.md)   
  [TerminateProcess](../../../extensibility/debugger/reference/idebugenginelaunch2-terminateprocess.md)

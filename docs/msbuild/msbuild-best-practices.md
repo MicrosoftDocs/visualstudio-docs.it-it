@@ -1,41 +1,23 @@
 ---
 title: Procedure consigliate per MSBuild | Microsoft Docs
-ms.custom: 
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- vs-ide-sdk
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.technology: msbuild
+ms.topic: conceptual
 helpviewer_keywords:
 - best practices, MSBuild
 - MSBuild, best practices
 ms.assetid: 90ef8693-e921-410a-a377-fe4d13f58c48
-caps.latest.revision: 5
-author: kempb
-ms.author: kempb
-manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: a2572e300c666462c5f514452a40f810a349040f
+ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
 ms.translationtype: HT
-ms.sourcegitcommit: 8a544bd1e1242bb6fabe00f7842ac33ed9d9d444
-ms.openlocfilehash: a48867456cd6ac60c5fc6ca53fcadbc4ad787711
-ms.contentlocale: it-it
-ms.lasthandoff: 09/26/2017
-
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/19/2018
 ---
 # <a name="msbuild-best-practices"></a>Procedure consigliate di MSBuild
 Per la scrittura degli script di MSBuild è consigliabile seguire le indicazioni riportate di seguito:  
@@ -52,4 +34,3 @@ Per la scrittura degli script di MSBuild è consigliabile seguire le indicazioni
   
 ## <a name="see-also"></a>Vedere anche  
  [Advanced Concepts](../msbuild/msbuild-advanced-concepts.md) (Concetti avanzati)
-

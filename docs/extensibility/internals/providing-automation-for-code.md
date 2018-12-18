@@ -1,37 +1,38 @@
 ---
-title: "Fornisce l&#39;automazione per il codice | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "Oggetto CodeModel"
+title: Fornisce l'automazione per il codice | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology:
+- vs-ide-sdk
+ms.topic: conceptual
+helpviewer_keywords:
+- CodeModel object
 ms.assetid: 21cb3e63-f25c-404b-bc1d-a32ad0fdd4d5
-caps.latest.revision: 13
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 13
+author: gregvanl
+ms.author: gregvanl
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: 9f9dbb7a8ddad39f01f5b29443168eebe12a2da8
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# Fornisce l&#39;automazione per il codice
-[!INCLUDE[vs2017banner](../../code-quality/includes/vs2017banner.md)]
-
-Creare un modello di automazione di per il codice non è obbligatorio.  L'ambiente SDK non fornisce un esempio per questa operazione.  Per visione dei modelli di codice, vedere l'oggetto di <xref:EnvDTE.CodeModel> .  
+# <a name="providing-automation-for-code"></a>Fornisce l'automazione per il codice
+Creazione di un modello di automazione per il codice non è necessaria. il SDK di ambiente non fornisce un esempio per questa operazione. Per informazioni su modelli di codice, vedere il <xref:EnvDTE.CodeModel> oggetto.  
   
- Per applicare un modello di codice, è necessario implementare tutte le interfacce che sono determinate dalla struttura di dati interna.  Gli oggetti devono essere derivati dalla classe di `IDispatch`.  
+ Per implementare un modello di codice, è necessario implementare le interfacce che sono determinate dalla struttura di dati interno. Gli oggetti devono essere derivati dalla `IDispatch` classe.  
   
- Gli oggetti che si estende, <xref:EnvDTE.CodeModel> e <xref:EnvDTE.FileCodeModel>, sono disponibili dall'oggetto di <xref:EnvDTE.Project> e simili alle seguenti:  
+ Gli oggetti che si estendono, <xref:EnvDTE.CodeModel> e <xref:EnvDTE.FileCodeModel>, sono disponibili le <xref:EnvDTE.Project> dell'oggetto e simile al seguente:  
   
  <xref:EnvDTE.Project.CodeModel%2A>  
   
  <xref:EnvDTE.ProjectItem.FileCodeModel%2A>  
   
- È possibile senza per implementare solo `CodeModel` o l'interfaccia di `FileCodeModel` nell'oggetto restituito dagli oggetti di <xref:EnvDTE.ProjectItem> e di `Project` .  Fornire tutte le funzionalità da questa interfaccia appropriata per il sistema del progetto.  
+ È possibile scegliere di implementare solo il `CodeModel` o `FileCodeModel` interfaccia l'oggetto restituito dal `Project` e <xref:EnvDTE.ProjectItem> oggetti. Fornisce funzionalità da questa interfaccia appropriata per il sistema di progetto.  
   
- Se si desidera aggiungere funzionalità, come metodi o proprietà, che non sono disponibili in `CodeModel` delle interfacce e standard di `FileCodeModel` , creare la propria interfaccia che eredita dallo standard.  Assicurarsi di documentarlo nel sistema del progetto in modo che gli utenti finali sapranno per trovarlo.  Restituire l'interfaccia standard, ma l'utente può chiamare il metodo o il cast di `QueryInterface` l'interfaccia se è noto che esistano.  
+ Se si desidera aggiungere le funzionalità, ad esempio metodi o proprietà, che non sono disponibili dallo standard `CodeModel` e `FileCodeModel` interfacce, creare un'interfaccia che eredita da standard. Assicurarsi di documentare con il sistema di progetto in modo che gli utenti finali verrà per cercare l'elemento. Restituire l'interfaccia standard, ma l'utente può chiamare il `QueryInterface` metodo o eseguire il cast all'interfaccia se è noto al esiste.  
   
-## Vedere anche  
- [Cenni preliminari sul modello di automazione](../../extensibility/internals/automation-model-overview.md)
+## <a name="see-also"></a>Vedere anche  
+ [Panoramica del modello di automazione](../../extensibility/internals/automation-model-overview.md)

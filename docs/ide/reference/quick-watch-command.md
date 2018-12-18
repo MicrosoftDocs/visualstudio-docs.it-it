@@ -1,43 +1,26 @@
 ---
 title: Comando Controllo immediato | Microsoft Docs
-ms.custom: 
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - vs-ide-general
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: conceptual
 f1_keywords:
 - debug.quickwatch
 helpviewer_keywords:
 - Quick Watch command
 - Debug.Quickwatch command
 ms.assetid: 9670ac3a-8f2f-4874-974d-cb87d3b0cde1
-caps.latest.revision: 11
-author: kempb
-ms.author: kempb
-manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 5ea9179ad37514ffad4876177b05150eecc22def
-ms.openlocfilehash: b9b6af3a8db0aef28a7704f8e266e1610b436ba6
-ms.contentlocale: it-it
-ms.lasthandoff: 05/24/2017
-
+author: gewarren
+ms.author: gewarren
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 75ac6c430d34dabdba3a6bebcce78c7c5b9817b7
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="quick-watch-command"></a>Comando Controllo immediato
 Visualizza il testo selezionato o specificato nel campo Espressione della finestra di dialogo [Controllo immediato](../../debugger/watch-and-quickwatch-windows.md). È possibile usare questa finestra di dialogo per calcolare il valore corrente di una variabile o di un'espressione riconosciuta dal debugger o i contenuti di un registro. È anche possibile modificare il valore di una variabile non costante o i contenuti di un registro.  
@@ -66,4 +49,4 @@ Debug.QuickWatchq [text]
  [Visual Studio Commands](../../ide/reference/visual-studio-commands.md)  (Comandi di Visual Studio)  
  [Command Window](../../ide/reference/command-window.md)  (Finestra di comando)  
  [Find/Command Box](../../ide/find-command-box.md)  (Casella Trova/Comando)  
- [Visual Studio Command Aliases](../../ide/reference/visual-studio-command-aliases.md) (Alias di comandi di Visual Studio)
+ [Alias di comandi di Visual Studio](../../ide/reference/visual-studio-command-aliases.md)

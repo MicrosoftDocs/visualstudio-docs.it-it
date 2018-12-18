@@ -1,27 +1,33 @@
 ---
-title: "IMachineDebugManagerEvents::onAddApplication | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/18/2017"
-ms.prod: "windows-script-interfaces"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-apiname: IMachineDebugManagerEvents.onAddApplication
-apilocation: scrobj.dll
-helpviewer_keywords: 
-  - "IMachineDebugManagerEvents::onAddApplication"
+title: IMachineDebugManagerEvents::onAddApplication | Documenti Microsoft
+ms.custom: ''
+ms.date: 01/18/2017
+ms.prod: windows-script-interfaces
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
+ms.topic: reference
+apiname:
+- IMachineDebugManagerEvents.onAddApplication
+apilocation:
+- scrobj.dll
+helpviewer_keywords:
+- IMachineDebugManagerEvents::onAddApplication
 ms.assetid: 00a54b91-36d5-430d-b654-5e2abe5300cd
 caps.latest.revision: 8
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 8
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.openlocfilehash: 887ce7f723713c335d72a6353c20765c7b695031
+ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/27/2017
 ---
-# IMachineDebugManagerEvents::onAddApplication
-Gestisce l'evento quando un'applicazione viene aggiunto all'elenco in esecuzione di un'applicazione.  
+# <a name="imachinedebugmanagereventsonaddapplication"></a>IMachineDebugManagerEvents::onAddApplication
+Gestisce l'evento quando un'applicazione viene aggiunto all'esecuzione elenco di applicazioni.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
 HRESULT onAddApplication(  
@@ -30,23 +36,23 @@ HRESULT onAddApplication(
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `pda`  
- \[in\] applicazione aggiunto all'elenco in esecuzione di un'applicazione.  
+ [in] Applicazione che è stata aggiunta all'esecuzione elenco di applicazioni.  
   
  `dwAppCookie`  
- \[in\] cookie fornito quando l'applicazione è stata aggiunta all'elenco di applicazione.  
+ [in] Il cookie specificato quando l'applicazione è stato aggiunto all'elenco di applicazioni.  
   
-## Valore restituito  
- Il metodo restituisce un tipo `HRESULT`.  I valori possibili sono, ma non sono limitati a, quelli nella tabella seguente.  
+## <a name="return-value"></a>Valore restituito  
+ Il metodo restituisce un tipo `HRESULT`. I valori possibili includono, ma non sono limitati a, quelli indicati nella tabella seguente.  
   
 |Valore|Descrizione|  
-|------------|-----------------|  
+|-----------|-----------------|  
 |`S_OK`|Il metodo è riuscito.|  
   
-## Note  
- Questo metodo indica che un'applicazione è stata aggiunta all'elenco in esecuzione di un'applicazione.  
+## <a name="remarks"></a>Note  
+ Questo metodo indica che un'applicazione è stata aggiunta all'esecuzione elenco di applicazioni.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Interfaccia IMachineDebugManagerEvents](../../winscript/reference/imachinedebugmanagerevents-interface.md)   
  [IMachineDebugManagerEvents::onRemoveApplication](../../winscript/reference/imachinedebugmanagerevents-onremoveapplication.md)

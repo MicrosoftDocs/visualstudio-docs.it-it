@@ -1,48 +1,33 @@
 ---
-title: All&quot;interno di Visual Studio SDK | Documenti Microsoft
-ms.custom: 
+title: All'interno di Visual Studio SDK | Documenti Microsoft
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - vs-ide-sdk
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: conceptual
 helpviewer_keywords:
 - roadmap, Visual Studio integration SDK
 - Visual Studio integration SDK roadmap
 - integration roadmap, Visual Studio SDK
 ms.assetid: 9118eaa4-0453-4dc5-9e16-c7062d254869
-caps.latest.revision: 30
+author: gregvanl
 ms.author: gregvanl
-manager: ghogen
-translation.priority.mt:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: ca7c86466fa23fb21a932f26dc24e37c71cf29b4
-ms.openlocfilehash: 565aaeb189ad129d5e4e26d9c73c080de2e77676
-ms.lasthandoff: 04/05/2017
-
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: fff6b720c11f3342a5894489186f57d397dd91b5
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="inside-the-visual-studio-sdk"></a>All'interno di Visual Studio SDK
 In questa sezione fornisce informazioni approfondite sulle estensioni di Visual Studio, tra cui architettura di Visual Studio, componenti, servizi, schemi, utilità e così via.  
   
 ## <a name="extensibility-architecture"></a>Architettura di estendibilità  
- Nella figura seguente viene illustrata l'architettura di estendibilità di Visual Studio. Pacchetti VSPackage forniscono funzionalità di applicazione, che viene condiviso nell'IDE come servizi. L'IDE standard offre una vasta gamma di servizi, ad esempio <xref:Microsoft.VisualStudio.Shell.Interop.SVsUIShell>, che consentono di accedere alla funzionalità di windowing IDE.</xref:Microsoft.VisualStudio.Shell.Interop.SVsUIShell>  
+ Nella figura seguente viene illustrata l'architettura di estendibilità di Visual Studio. Pacchetti VSPackage forniscono funzionalità di applicazione, che viene condiviso nell'IDE come servizi. L'IDE standard offre una vasta gamma di servizi, ad esempio <xref:Microsoft.VisualStudio.Shell.Interop.SVsUIShell>, che consentono di accedere alla funzionalità di windowing IDE.  
   
- ![Rappresentazione grafica dell'architettura di ambiente](~/extensibility/internals/media/environment.gif "environment")  
+ ![Rappresentazione grafica dell'architettura ambiente](../../extensibility/internals/media/environment.gif "ambiente")  
 Generalizzato di vista dell'architettura di Visual Studio  
   
 ## <a name="vspackages"></a>VSPackages  
@@ -59,7 +44,7 @@ Generalizzato di vista dell'architettura di Visual Studio
   
  Quando si estende Visual Studio, è possibile creare comandi e registrarlo con la shell di Visual Studio. È possibile specificare come questi comandi verranno visualizzati nell'IDE, ad esempio, un menu o una barra degli strumenti. In genere è presente un comando personalizzato il **strumenti** menu e un comando per la visualizzazione di una finestra degli strumenti vengono visualizzate nel **altre finestre** sottomenu del **vista** menu.  
   
- Quando si crea un comando, è necessario creare anche un gestore eventi per tale. Il gestore eventi determina quando il comando è visibile o abilitato, è possibile modificare il testo e garantisce che il comando risponda in modo appropriato quando è abilitato. Nella maggior parte dei casi, l'IDE gestisce i comandi utilizzando il <xref:Microsoft.VisualStudio.OLE.Interop.IOleCommandTarget>interfaccia.</xref:Microsoft.VisualStudio.OLE.Interop.IOleCommandTarget> I comandi in Visual Studio vengono gestiti a partire dal contesto del comando più interno, in base alla selezione locale e procedendo verso il contesto più esterno, in base alla selezione globale. I comandi aggiunti al menu principale sono immediatamente disponibili per lo scripting.  
+ Quando si crea un comando, è necessario creare anche un gestore eventi per tale. Il gestore eventi determina quando il comando è visibile o abilitato, è possibile modificare il testo e garantisce che il comando risponda in modo appropriato quando è abilitato. Nella maggior parte dei casi, l'IDE gestisce i comandi utilizzando il <xref:Microsoft.VisualStudio.OLE.Interop.IOleCommandTarget> interfaccia. I comandi in Visual Studio vengono gestiti a partire dal contesto del comando più interno, in base alla selezione locale e procedendo verso il contesto più esterno, in base alla selezione globale. I comandi aggiunti al menu principale sono immediatamente disponibili per lo scripting.  
   
  Per ulteriori informazioni, vedere [comandi, menu e barre degli strumenti](../../extensibility/internals/commands-menus-and-toolbars.md).  
   
@@ -69,17 +54,17 @@ Generalizzato di vista dell'architettura di Visual Studio
  Barre degli strumenti sono righe o colonne di pulsanti e altri controlli, ad esempio caselle combinate, caselle di riepilogo e caselle di testo. Pulsanti della barra degli strumenti sono in genere le immagini icona, ad esempio un'icona di cartella per un **Apri File** comando o una stampante per una **stampa** comando. Tutti gli elementi della barra degli strumenti sono associati a comandi. Quando si fa clic su un pulsante della barra degli strumenti, viene eseguito il comando associato. Nel caso di un controllo elenco a discesa, ogni elemento nell'elenco a discesa è associata a un comando diverso. Alcuni controlli della barra degli strumenti, ad esempio un controllo barra di divisione, sono ibridi. Un lato del controllo è un pulsante della barra degli strumenti e l'altro lato è una freccia rivolta verso il basso che visualizza comandi diversi quando viene selezionato.  
   
 ## <a name="tool-windows"></a>Finestre degli strumenti  
- Le finestre degli strumenti vengono usate nell'IDE per visualizzare le informazioni. **Casella degli strumenti**, **Esplora**, **proprietà** finestra e **Web Browser** sono esempi di finestre degli strumenti.  
+ Le finestre degli strumenti vengono usate nell'IDE per visualizzare le informazioni. **Casella degli strumenti**, **Esplora soluzioni**, **delle proprietà** finestra, e **Web Browser** sono esempi di finestre degli strumenti.  
   
  Le finestre degli strumenti in genere offrono vari controlli con cui l'utente può interagire. Ad esempio, il **proprietà** finestra consente all'utente di impostare le proprietà di oggetti che fungono a uno scopo specifico. Il **proprietà** finestra è specializzato in questo senso, ma anche generale perché può essere utilizzato in molte situazioni diverse. Analogamente, il **Output** finestra è specializzata in quanto fornisce output basato su testo, ma generale perché molti sottosistemi in Visual Studio possono usare per fornire output all'utente di Visual Studio.  
   
  Prendere in considerazione l'immagine di Visual Studio, che contiene diverse finestre degli strumenti seguente.  
   
- ![Cattura di schermata](~/extensibility/internals/media/t1gui.png "T1gui")  
+ ![Cattura di schermata](../../extensibility/internals/media/t1gui.png "T1gui")  
   
  Alcune delle finestre degli strumenti sono ancorate insieme in un unico riquadro che consente di visualizzare la finestra degli strumenti di Esplora soluzioni e nasconde le altre finestre degli strumenti, ma li rende disponibili facendo clic sulle schede. Nella figura sono illustrate due altre finestre degli strumenti, la **elenco errori** e **Output** ancorata in un unico riquadro della finestra.  
   
- Viene inoltre illustrato il riquadro principale del documento, che mostra diverse finestre dell'editor. Anche se le finestre degli strumenti hanno in genere una sola istanza (ad esempio, è possibile aprire un solo **Esplora**), finestre dell'editor possono avere più istanze, ognuno dei quali è possibile modificare un documento separato, ma ognuno dei quali sono ancorate nel riquadro stesso. Nella figura è illustrato un riquadro del documento che dispone di due finestre dell'editor, una finestra di progettazione di form e una finestra del browser che mostra la pagina iniziale. Tutte le finestre nel riquadro del documento sono disponibili facendo clic sulle schede, ma la finestra dell'editor che contiene file EditorPane.cs è visibile e attivo.  
+ Viene inoltre illustrato il riquadro principale del documento, che mostra diverse finestre dell'editor. Anche se le finestre degli strumenti hanno in genere una sola istanza (ad esempio, è possibile aprire un solo **Esplora**), finestre dell'editor possono avere più istanze, ognuno dei quali è possibile modificare un documento separato, ma ognuno dei quali vengono ancorati in il riquadro stesso. Nella figura è illustrato un riquadro del documento che dispone di due finestre dell'editor, una finestra di progettazione di form e una finestra del browser che mostra la pagina iniziale. Tutte le finestre nel riquadro del documento sono disponibili facendo clic sulle schede, ma la finestra dell'editor che contiene file EditorPane.cs è visibile e attivo.  
   
  Quando si estende Visual Studio, è possibile creare lo strumento windows che consentono agli utenti di Visual Studio di interagire con l'estensione. È inoltre possibile creare il propria editor che consentono agli utenti di Visual Studio di modificare i documenti. Poiché le finestre degli strumenti ed editor verranno integrate in Visual Studio, non si dispone di programmazione per ancorare o vengono visualizzati correttamente in una scheda. Quando sono registrati correttamente in Visual Studio, avranno automaticamente le funzionalità tipiche di finestre degli strumenti e finestre di documento in Visual Studio. Per ulteriori informazioni, vedere [estensione e le finestre degli strumenti personalizzazione](../../extensibility/extending-and-customizing-tool-windows.md).  
   
@@ -107,7 +92,7 @@ Generalizzato di vista dell'architettura di Visual Studio
   
  Per ulteriori informazioni, vedere [progetti](../../extensibility/internals/projects.md) e [soluzioni](../../extensibility/internals/solutions.md).  
   
-## <a name="project-and-item-templates"></a>Project and Item Templates  
+## <a name="project-and-item-templates"></a>Modelli di progetti e di elementi  
  Visual Studio include modelli di progetto predefiniti e i modelli di progetto. È possibile apportare anche modelli personalizzati o acquisire modelli dalla community e quindi integrarli in Visual Studio. Il [MSDN Code Gallery](http://code.msdn.microsoft.com/Project/ProjectDirectory.aspx?ProjectSearchText=visual%20studio) consente di passare per i modelli e le estensioni.  
   
  I modelli contengono la struttura di progetto e i file necessari per compilare un particolare tipo di applicazione, controllo, una libreria o classe di base. Quando si desidera sviluppare software che è simile a uno dei modelli, creare un progetto basato sul modello e quindi modificare i file nel progetto.  
@@ -118,7 +103,7 @@ Generalizzato di vista dell'architettura di Visual Studio
  Per ulteriori informazioni, vedere [aggiunta di progetto e i modelli di progetto](../../extensibility/internals/adding-project-and-project-item-templates.md).  
   
 ## <a name="properties-and-options"></a>Proprietà e le opzioni  
- Il **proprietà** finestra vengono visualizzate le proprietà di uno o più elementi selezionati: [estensione di proprietà](../../extensibility/internals/extending-properties.md) pagine Opzioni del menu contengono set di opzioni che riguardano un determinato componente, ad esempio un pacchetto VSPackage o di un linguaggio di programmazione: [opzioni e le pagine di opzioni](../../extensibility/internals/options-and-options-pages.md). Le impostazioni sono le funzionalità in genere correlate all'interfaccia utente che possono essere importate ed esportate: [il supporto per le impostazioni utente](../../extensibility/internals/support-for-user-settings.md).  
+ Il **proprietà** finestra vengono visualizzate le proprietà di uno o più elementi selezionati: [estensione di proprietà](../../extensibility/internals/extending-properties.md) pagine Opzioni del menu contengono set di opzioni che riguardano un determinato componente, ad esempio un linguaggio di programmazione o un pacchetto VSPackage: [opzioni e le pagine di opzioni](../../extensibility/internals/options-and-options-pages.md). Le impostazioni sono le funzionalità in genere correlate all'interfaccia utente che possono essere importate ed esportate: [il supporto per le impostazioni utente](../../extensibility/internals/support-for-user-settings.md).  
   
 ## <a name="visual-studio-services"></a>Servizi di Visual Studio  
  Un servizio fornisce un set specifico di interfacce per i componenti da utilizzare. Visual Studio fornisce un set di servizi che può essere utilizzato da tutti i componenti, incluse le estensioni. Ad esempio, i servizi di Visual Studio consentono le finestre degli strumenti essere visualizzato o nascosto in modo dinamico, abilitare l'accesso a eventi di interfaccia utente, barra di stato o della Guida. Editor di Visual Studio fornisce anche i servizi che possono essere importati dalle estensioni di editor. Per ulteriori informazioni, vedere [sull'utilizzo e la fornitura di servizi](../../extensibility/using-and-providing-services.md).  
@@ -129,7 +114,7 @@ Generalizzato di vista dell'architettura di Visual Studio
 ## <a name="source-control"></a>Controllo del codice sorgente  
  Per informazioni sull'implementazione di un plug-in controllo del codice sorgente o un VSPackage, vedere [controllo del codice sorgente](../../extensibility/internals/source-control.md).  
   
-## <a name="wizards"></a>Creazioni guidate  
+## <a name="wizards"></a>Procedure guidate  
  È possibile creare una procedura guidata in combinazione con un nuovo tipo di progetto, in modo che la procedura guidata può aiutare gli utenti prendere le decisioni destra durante la creazione di un nuovo progetto di quel tipo. Per ulteriori informazioni, vedere [procedure guidate](../../extensibility/internals/wizards.md).  
   
 ## <a name="custom-tools"></a>Strumenti personalizzati  

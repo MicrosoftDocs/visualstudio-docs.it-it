@@ -1,43 +1,44 @@
 ---
-title: "Nodi di programma | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "nodi di programma, il contesto di debug"
-  - "debug [Debugging SDK], programmare nodi"
-  - "nodi di programma, aggiunta"
-  - "nodi di programma, sostituendo"
+title: Programma nodi | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology:
+- vs-ide-sdk
+ms.topic: conceptual
+helpviewer_keywords:
+- program nodes, debugging context
+- debugging [Debugging SDK], program nodes
+- program nodes, adding
+- program nodes, superceding
 ms.assetid: 1c5a5c13-c14d-42c3-af11-4c63f1032c8d
-caps.latest.revision: 12
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 12
+author: gregvanl
+ms.author: gregvanl
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: 50ab93c31a340bf8a2f4e2deb5f202707d7826b8
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# Nodi di programma
-[!INCLUDE[vs2017banner](../../code-quality/includes/vs2017banner.md)]
-
-In termini di architettura del debugger, **un nodo di programma**:  
+# <a name="program-nodes"></a>Nodi di programma
+In termini di architettura del debugger, un **nodo programma**:  
   
--   È una descrizione semplice di un programma.  
+-   È una descrizione di un programma semplice.  
   
--   Può identificarsi e il processo che esegue in e può essere associato a, essere rimosso da e descrivere il motore di debug \(DE\) che lo ha creato, se presente.  
+-   Consente di identificare se stesso e il processo è in esecuzione in e deve essere collegata a scollegati da e descrivere il motore di debug (DE) che è stato creato, se presente.  
   
--   è rappresentato [IDebugProgramNode2](../../extensibility/debugger/reference/idebugprogramnode2.md) da un'interfaccia, in genere creata da un DE o da una porta.  I nodi di programma vengono aggiunti a una porta chiamando [AddProgramNode](../../extensibility/debugger/reference/idebugportnotify2-addprogramnode.md).  Quando un nodo di programma viene aggiunto a una porta, viene aggiunto al processo che contiene il programma in questo nodo del programma rappresenta.  
+-   È rappresentato da un [IDebugProgramNode2](../../extensibility/debugger/reference/idebugprogramnode2.md) interfaccia, in genere creato da una porta o Germania. I nodi di programma vengono aggiunti a una porta chiamando [AddProgramNode](../../extensibility/debugger/reference/idebugportnotify2-addprogramnode.md). Quando viene aggiunto un nodo di programma a una porta, viene aggiunto al processo che contiene il programma che rappresenta questo nodo del programma.  
   
- Prima o quindi il termine di una sessione di debug viene avviata, a seconda dell'implementazione del pacchetto di debug, nodi di programma vengono utilizzati per creare programmi corrispondenti.  Quando un processo viene eseguita una query per i programmi, i programmi vengono enumerati, uno per ogni nodo del programma.  
+ Corrisponde a un giorno dopo che viene avviata una sessione di debug, a seconda dell'implementazione del pacchetto di debug, i nodi di programma vengono utilizzati per creare programmi corrispondenti. Quando un processo viene eseguita una query per i programmi, vengono enumerati i programmi, uno per ogni nodo del programma.  
   
- Prima che un programma sia associato a, l'ide necessita solo di una descrizione semplice programma.  Queste informazioni possono essere ottenute dal nodo del programma.  Il programma viene aggiunto una volta a, l'ide deve visualizzare informazioni più dettagliate, come un elenco di tutti i thread del programma.  Queste informazioni vengono ottenute dal programma stesso.  
+ Prima di un programma è collegato, l'IDE deve solo una semplice descrizione del programma. Queste informazioni possono essere ottenute dal nodo del programma. Una volta il programma è collegato, l'IDE deve visualizzare informazioni più dettagliate, ad esempio un elenco di tutti i thread in esecuzione del programma. Queste informazioni vengono ottenute dal programma stesso.  
   
-## Vedere anche  
- [Programs](../../extensibility/debugger/programs.md)   
+## <a name="see-also"></a>Vedere anche  
+ [Programmi](../../extensibility/debugger/programs.md)   
  [Processi](../../extensibility/debugger/processes.md)   
- [Il motore di debug](../../extensibility/debugger/debug-engine.md)   
- [Concetti del debugger](../../extensibility/debugger/debugger-concepts.md)   
+ [Motore di debug](../../extensibility/debugger/debug-engine.md)   
+ [Concetti di debugger](../../extensibility/debugger/debugger-concepts.md)   
  [IDebugProgramNode2](../../extensibility/debugger/reference/idebugprogramnode2.md)   
  [AddProgramNode](../../extensibility/debugger/reference/idebugportnotify2-addprogramnode.md)

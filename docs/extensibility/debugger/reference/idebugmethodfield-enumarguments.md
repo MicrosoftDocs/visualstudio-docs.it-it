@@ -1,55 +1,56 @@
 ---
-title: "IDebugMethodField::EnumArguments | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "IDebugMethodField::EnumArguments"
-helpviewer_keywords: 
-  - "Metodo IDebugMethodField::EnumArguments"
+title: IDebugMethodField::EnumArguments | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology:
+- vs-ide-sdk
+ms.topic: conceptual
+f1_keywords:
+- IDebugMethodField::EnumArguments
+helpviewer_keywords:
+- IDebugMethodField::EnumArguments method
 ms.assetid: 3ab55488-2437-4ff6-a9ae-78ea6d7b23a8
-caps.latest.revision: 9
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 9
+author: gregvanl
+ms.author: gregvanl
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: dc92dc6b560332509f69a975eca63ddb5c191fab
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# IDebugMethodField::EnumArguments
-[!INCLUDE[vs2017banner](../../../code-quality/includes/vs2017banner.md)]
-
-Crea un enumeratore per il tipo di ciascun argomento obbligatorio per chiamare il metodo.  
+# <a name="idebugmethodfieldenumarguments"></a>IDebugMethodField::EnumArguments
+Crea un enumeratore per il tipo di ogni argomento è necessario chiamare il metodo.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp#  
-HRESULT EnumArguments(   
-   IEnumDebugFields** ppParams  
+```cpp  
+HRESULT EnumArguments(   
+   IEnumDebugFields** ppParams  
 );  
 ```  
   
-```c#  
+```csharp  
 int EnumArguments(  
-   out IEnumDebugFields ppParams  
+   out IEnumDebugFields ppParams  
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `ppParams`  
- \[out\]  Restituisce [IEnumDebugFields](../../../extensibility/debugger/reference/ienumdebugfields.md) un oggetto che rappresenta l'elenco di tipi di argomento.  Restituisce un valore null se non sono presenti argomenti.  
+ [out] Restituisce un [IEnumDebugFields](../../../extensibility/debugger/reference/ienumdebugfields.md) oggetto che rappresenta l'elenco dei tipi di argomento. Restituisce un valore null se non sono presenti argomenti.  
   
-## Valore restituito  
- Se l'operazione riesce, restituisce S\_OK o restituisce S\_FALSE se non sono presenti argomenti.  In caso contrario, restituisce un codice di errore.  
+## <a name="return-value"></a>Valore restituito  
+ Se ha esito positivo, restituisce S_OK o S_FALSE se non sono presenti argomenti. In caso contrario, verrà restituito un codice di errore.  
   
-## Note  
- Ogni elemento è [IDebugField](../../../extensibility/debugger/reference/idebugfield.md) un oggetto che rappresenta i tipi dei parametri.  Chiamare [GetInfo](../../../extensibility/debugger/reference/idebugfield-getinfo.md) il metodo per recuperare le informazioni sul tipo di ogni parametro.  
+## <a name="remarks"></a>Note  
+ Ogni elemento è un [IDebugField](../../../extensibility/debugger/reference/idebugfield.md) oggetto che rappresenta i tipi di ogni parametro. Chiamare il [GetInfo](../../../extensibility/debugger/reference/idebugfield-getinfo.md) metodo per recuperare informazioni sul tipo di ogni parametro.  
   
- Se il nome del parametro è necessario con il tipo, quindi chiamare [EnumParameters](../../../extensibility/debugger/reference/idebugmethodfield-enumparameters.md) il metodo.  
+ Se è necessario specificare il nome del parametro insieme al tipo, quindi chiamare il [EnumParameters](../../../extensibility/debugger/reference/idebugmethodfield-enumparameters.md) metodo.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IDebugMethodField](../../../extensibility/debugger/reference/idebugmethodfield.md)   
  [IEnumDebugFields](../../../extensibility/debugger/reference/ienumdebugfields.md)   
  [IDebugField](../../../extensibility/debugger/reference/idebugfield.md)   

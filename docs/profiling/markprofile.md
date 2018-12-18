@@ -1,71 +1,70 @@
 ---
-title: "MarkProfile | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "MarkProfile"
+title: MarkProfile | Microsoft Docs
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology: vs-ide-debug
+ms.topic: conceptual
+helpviewer_keywords:
+- MarkProfile
 ms.assetid: 54dac8c8-c8ee-4023-af27-b25466e3a6ec
-caps.latest.revision: 10
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 10
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: a5e4f93446c49120afb43202f457af39439ca1bc
+ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/19/2018
 ---
-# MarkProfile
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
-Il metodo `MarkProfile` inserisce un indicatore del profilo nel file vsp.  Per l'inserimento dell'indicatore, è necessario che la profilatura del thread contenente la funzione `MarkProfile` sia impostata su ON.  
+# <a name="markprofile"></a>MarkProfile
+Il metodo `MarkProfile` inserisce un contrassegno del profilo nel file con estensione vsp. La profilatura per il thread che contiene la funzione `MarkProfile` deve essere impostata su ON affinché il contrassegno possa essere inserito.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
 PROFILE_COMMAND_STATUS PROFILERAPI MarkProfile( long lMarker );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `lMarker`  
   
- Marcatore da inserire  che deve essere maggiore o uguale a 0 \(zero\).  
+ Marcatore da inserire. Il marcatore deve essere maggiore o uguale a 0 (zero).  
   
-## Valore proprietà\/Valore restituito  
- La funzione indica esito positivo o negativo utilizzando l'enumerazione **PROFILE\_COMMAND\_STATUS**.  Il valore restituito può essere uno dei seguenti:  
+## <a name="property-valuereturn-value"></a>Valore proprietà/Valore restituito  
+ La funzione indica esito l'esito positivo o negativo usando l'enumerazione **PROFILE_COMMAND_STATUS**. Il valore restituito può essere uno dei seguenti:  
   
 |Enumerator|Descrizione|  
 |----------------|-----------------|  
-|MARK\_ERROR\_MARKER\_RESERVED|Il parametro è minore di o uguale a 0.  I valori sono riservati.  L'indicatore e il commento non vengono registrati.|  
-|MARK\_ERROR\_MODE\_NEVER|La modalità di profilo è stata impostata su NEVER quando è stata chiamata la funzione.  L'indicatore e il commento non vengono registrati.|  
-|MARK\_ERROR\_MODE\_OFF|La modalità di profilatura era impostata su OFF quando è stata chiamata la funzione.  L'indicatore e il commento non vengono registrati.|  
-|MARK\_ERROR\_NO\_SUPPORT|In questo contesto non sono supportati indicatori.  L'indicatore e il commento non vengono registrati.|  
-|MARK\_ERROR\_OUTOFMEMORY|Memoria non disponibile per registrare l'evento.  L'indicatore e il commento non vengono registrati.|  
-|MARK\_TEXTTOOLONG|La stringa supera il limite massimo di 256 caratteri.  La stringa di commento viene troncata e l'indicatore e il commento vengono registrati.|  
-|MARK\_OK|MARK\_OK viene restituito per indicare esito positivo.|  
+|MARK_ERROR_MARKER_RESERVED|Il parametro è minore o uguale a 0. Questi valori sono riservati. L'indicatore e il commento non vengono registrati.|  
+|MARK_ERROR_MODE_NEVER|La modalità di profilatura è stata impostata su NEVER al momento della chiamata della funzione. L'indicatore e il commento non vengono registrati.|  
+|MARK_ERROR_MODE_OFF|La modalità di profilatura è stata impostata su OFF al momento della chiamata della funzione. L'indicatore e il commento non vengono registrati.|  
+|MARK_ERROR_NO_SUPPORT|Nessun supporto dell'indicatore in questo contesto. L'indicatore e il commento non vengono registrati.|  
+|MARK_ERROR_OUTOFMEMORY|Non era disponibile memoria per registrare l'evento. L'indicatore e il commento non vengono registrati.|  
+|MARK_TEXTTOOLONG|La stringa supera il numero massimo di 256 caratteri. La stringa di commento viene troncata e vengono registrati l'indicatore e il commento.|  
+|MARK_OK|MARK_OK viene restituito per indicare l'esito positivo.|  
   
-## Note  
- Il valore dell'indicatore viene inserito nel file vsp a ogni esecuzione del codice se è in corso il profilo del thread che contiene la funzione MarkProfile.  Tale funzione può essere chiamata più volte.  
+## <a name="remarks"></a>Note  
+ Il valore del contrassegno viene inserito nel file con estensione vsp ogni volta che il codice viene eseguito se il thread che contiene la funzione MarkProfile è in corso di profilatura. È possibile chiamare MarkProfile più volte.  
   
- Gli indicatori di profilo hanno un ambito globale.  Un indicatore di profilo inserito in un thread può, ad esempio, essere utilizzato per contrassegnare l'inizio o la fine di un segmento di dati in qualsiasi thread del file vsp.  
+ I contrassegni di profilatura hanno ambito globale. Ad esempio, un contrassegno di profilatura inserito in un thread può essere usato per contrassegnare l'inizio o alla fine di un segmento di dati in qualsiasi thread nel file vsp.  
   
- La stato di profilatura per il thread contenente la funzione relativa al contrassegno di profilo deve essere impostato su ON quando vengono inseriti indicatori e commenti con il comando Mark o con le funzioni API \(CommentMarkAtProfile, CommentMarkProfile o MarkProfile\).  
+ Lo stato di profilatura per il thread che contiene la funzione del contrassegno di profilatura deve essere attivo quando vengono inseriti contrassegni e commenti con il comando Contrassegno o con le funzioni API (CommentMarkAtProfile, CommentMarkProfile o MarkProfile).  
   
 > [!IMPORTANT]
->  I metodi MarkProfile vanno utilizzati esclusivamente con la profilatura mediante strumentazione.  
+>  Il metodo MarkProfile deve essere usato solo con la profilatura con il metodo di strumentazione.  
   
-## Equivalente .NET Framework  
+## <a name="net-framework-equivalent"></a>Equivalente .NET Framework  
  Microsoft.VisualStudio.Profiler.dll  
   
-## Informazioni sulla funzione  
+## <a name="function-information"></a>Informazioni sulla funzione  
  Intestazione: dichiarata in VSPerf.h  
   
  Libreria di importazione: VSPerf.lib  
   
-## Esempio  
- Nel codice seguente è illustrata la funzione MarkProfile.  
+## <a name="example"></a>Esempio  
+ Il codice seguente illustra la funzione MarkProfile.  
   
 ```  
 void ExerciseMarkProfile()  
@@ -99,5 +98,5 @@ void ExerciseMarkProfile()
 }  
 ```  
   
-## Vedere anche  
- [Riferimenti per le API del profiler di Visual Studio \(native\)](../profiling/visual-studio-profiler-api-reference-native.md)
+## <a name="see-also"></a>Vedere anche  
+ [Riferimenti per le API del profiler di Visual Studio (native)](../profiling/visual-studio-profiler-api-reference-native.md)

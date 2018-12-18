@@ -1,20 +1,17 @@
 ---
 title: Estensione di Visual Studio per Mac
-Description: "Le funzioni e funzionalità di Visual Studio per Mac possono essere estese con moduli chiamati pacchetti di estensione. La prima parte di questa guida permette di creare un semplice pacchetto di estensione per Visual Studio per Mac per inserire la data e l'ora in un documento. La seconda parte della guida presenta le nozioni di base relative al sistema dei pacchetti di estensione e alcune delle principali API che costituiscono la base di Visual Studio per Mac."
+Description: Visual Studio for Mac's features and functionality can be extended with modules called extension packages. The first part of this guide creates a simple Visual Studio for Mac extension package to insert the date and time into a document. The second part of this guide introduces the fundamentals of the extension package system and some of the core APIs that form the foundation of Visual Studio for Mac.
 author: asb3993
 ms.author: amburns
 ms.date: 04/14/2017
-ms.topic: article
 ms.technology: vs-ide-sdk
 ms.assetid: D5245AB0-8404-426B-B538-F49125E672B2
+ms.openlocfilehash: 589663fff7caa46899fe8f4213f5d29fe2772611
+ms.sourcegitcommit: 4c0bc21d2ce2d8e6c9d3b149a7d95f0b4d5b3f85
 ms.translationtype: HT
-ms.sourcegitcommit: f6c7e290f0abc2c32456e076420a7695ae868ba6
-ms.openlocfilehash: fd924424ed825ae37dcfa736e529a50b04e472e6
-ms.contentlocale: it-it
-ms.lasthandoff: 09/07/2017
-
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/20/2018
 ---
-
 # <a name="extending-visual-studio-for-mac"></a>Estensione di Visual Studio per Mac
 
 Visual Studio per Mac è costituito da un set di moduli chiamati *pacchetti di estensione*. È possibile usare i pacchetti di estensione per introdurre nuove funzionalità in Visual Studio per Mac, come il supporto per un linguaggio aggiuntivo o un nuovo modello di progetto.

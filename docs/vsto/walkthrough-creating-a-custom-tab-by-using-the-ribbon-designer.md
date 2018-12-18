@@ -1,14 +1,10 @@
 ---
-title: 'Walkthrough: Creating a Custom Tab by Using the Ribbon Designer | Microsoft Docs'
-ms.custom: 
+title: 'Procedura dettagliata: Creazione di una scheda personalizzata utilizzando la finestra di progettazione della barra multifunzione | Documenti Microsoft'
+ms.custom: ''
 ms.date: 02/02/2017
-ms.prod: visual-studio-dev14
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - office-development
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: conceptual
 dev_langs:
 - VB
 - CSharp
@@ -19,158 +15,160 @@ helpviewer_keywords:
 - customizing the Ribbon, tabs
 - custom Ribbon, tabs
 - Custom tab [Office development in Visual Studio]
-ms.assetid: 312865e6-950f-46ab-88de-fe7eb8036bfe
-caps.latest.revision: 68
-author: kempb
-ms.author: kempb
-manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: eb5c9550fd29b0e98bf63a7240737da4f13f3249
-ms.openlocfilehash: f3de58256e8c533b7cd092d056c785c7ad6b60b6
-ms.contentlocale: it-it
-ms.lasthandoff: 08/30/2017
-
+author: TerryGLee
+ms.author: tglee
+manager: douge
+ms.workload:
+- office
+ms.openlocfilehash: 7fdae2b6a867b6d87c6579fc1d24f9d0ebd07cf9
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# <a name="walkthrough-creating-a-custom-tab-by-using-the-ribbon-designer"></a>Walkthrough: Creating a Custom Tab by Using the Ribbon Designer
-  By using the Ribbon Designer, you can create a custom tab and then add and position controls on it.  
+# <a name="walkthrough-creating-a-custom-tab-by-using-the-ribbon-designer"></a>Procedura dettagliata: creazione di una scheda personalizzata utilizzando la finestra di progettazione della barra multifunzione
+  Usando la finestra di progettazione della barra multifunzione è possibile creare una scheda personalizzata per aggiungervi e posizionarvi controlli.  
   
  [!INCLUDE[appliesto_xlalldoc](../vsto/includes/appliesto-xlalldoc-md.md)]  
   
- This walkthrough illustrates the following tasks:  
+ Questa procedura dettagliata illustra le attività seguenti:  
   
--   [Creating Actions Panes](#BKMK_CreateActionsPanes).  
+-   [Creazione di riquadri azioni](#BKMK_CreateActionsPanes).  
   
--   [Creating a Custom Tab](#BKMK_CreateCustomTab).  
+-   [Creazione di una scheda personalizzata](#BKMK_CreateCustomTab).  
   
--   [Hiding and Showing Actions Panes by Using Buttons on the Custom Tab](#BKMK_HideShowActionsPane).  
+-   [Attivazione e disattivazione della visualizzazione dei riquadri azioni mediante i pulsanti della scheda personalizzata](#BKMK_HideShowActionsPane).  
   
 > [!NOTE]  
->  Your computer might show different names or locations for some of the Visual Studio user interface elements in the following instructions. The Visual Studio edition that you have and the settings that you use determine these elements. For more information, see [Personalize the Visual Studio IDE](../ide/personalizing-the-visual-studio-ide.md).  
+>  I nomi o i percorsi visualizzati per alcuni elementi dell'interfaccia utente di Visual Studio nelle istruzioni seguenti potrebbero essere diversi nel computer in uso. La versione di Visual Studio in uso e le impostazioni configurate determinano questi elementi. Per altre informazioni, vedere [Personalizzare l'IDE di Visual Studio](../ide/personalizing-the-visual-studio-ide.md).  
   
-## <a name="prerequisites"></a>Prerequisites  
- You need the following components to complete this walkthrough:  
+## <a name="prerequisites"></a>Prerequisiti  
+ Per completare la procedura dettagliata, è necessario disporre dei componenti seguenti:  
   
 -   [!INCLUDE[vsto_vsprereq](../vsto/includes/vsto-vsprereq-md.md)]  
   
 -   Microsoft Excel  
   
-## <a name="creating-an-excel-workbook-project"></a>Creating an Excel Workbook Project  
- The steps for using the Ribbon Designer are almost identical for all Office applications. This example uses an Excel workbook.  
+## <a name="creating-an-excel-workbook-project"></a>Creazione di un progetto Cartella di lavoro di Excel  
+ I passaggi per l'utilizzo della finestra di progettazione della barra multifunzione sono quasi identici per tutte le applicazioni Office. In questo esempio viene usata una cartella di lavoro di Excel.  
   
-#### <a name="to-create-an-excel-workbook-project"></a>To create an Excel workbook project  
+#### <a name="to-create-an-excel-workbook-project"></a>Per creare un progetto cartella di lavoro di Excel  
   
--   Create an Excel workbook project with the name **MyExcelRibbon**. For more information, see [How to: Create Office Projects in Visual Studio](../vsto/how-to-create-office-projects-in-visual-studio.md).  
+-   Creare un progetto di cartella di lavoro di Excel con il nome **MyExcelRibbon**. Per altre informazioni, vedere [How to: Create Office Projects in Visual Studio](../vsto/how-to-create-office-projects-in-visual-studio.md).  
   
-     Visual Studio opens the new workbook in the designer and adds the **MyExcelRibbon** project to **Solution Explorer**.  
+     Verrà visualizzata la nuova cartella di lavoro nella finestra di progettazione di Visual Studio e aggiunge il **MyExcelRibbon** progetto **Esplora**.  
   
-##  <a name="BKMK_CreateActionsPanes"></a> Creating Actions Panes  
- Add two custom actions panes to the project. You will later add buttons that show and hide these actions panes to the custom tab.  
+##  <a name="BKMK_CreateActionsPanes"></a> Creazione di riquadri azioni  
+ Aggiungere due riquadri azioni personalizzati al progetto. Successivamente si aggiungeranno alcuni pulsanti che mostrano e nascondono questi riquadri azioni alla scheda personalizzata.  
   
-#### <a name="to-create-actions-panes"></a>To create actions panes  
+#### <a name="to-create-actions-panes"></a>Per creare i riquadri azioni  
   
-1.  On the **Project** menu, choose **Add New Item**.  
+1.  Scegliere **Aggiungi nuovo elemento** dal menu **Progetto**.  
   
-2.  In the **Add New Item** dialog box, select **ActionsPaneControl**, and then choose **Add**.  
+2.  Nel **Aggiungi nuovo elemento** nella finestra di dialogo **ActionsPaneControl**, quindi scegliere **Aggiungi**.  
   
-     The **ActionsPaneControl1.cs** or **ActionsPaneControl1.vb** file opens in the designer.  
+     Il **ActionsPaneControl1. cs** o **ActionsPaneControl1. vb** file verrà aperto nella finestra di progettazione.  
   
-3.  From the **Common Controls** tab of the **Toolbox**, add a label to the designer surface.  
+3.  Dal **controlli comuni** scheda della finestra di **della casella degli strumenti**, aggiungere un'etichetta all'area di progettazione.  
   
-4.  In the **Properties** window, set the **Text** property of label1 to **Actions Pane 1**.  
+4.  Nel **proprietà** finestra, impostare il **testo** proprietà di label1 su **Actions Pane 1**.  
   
-5.  Repeat steps 1 through 5 to create a second actions pane and label. Set the **Text** property of the second label to **Actions Pane 2**.  
+5.  Ripetere i passaggi da 1 a 5 per creare un secondo riquadro azioni e una seconda etichetta. Impostare il **testo** proprietà della seconda etichetta su **Actions Pane 2**.  
   
-##  <a name="BKMK_CreateCustomTab"></a> Creating a Custom Tab  
- One of the Office application design guidelines is that users should always have control of the Office application UI. To add this capability for the actions panes, you can add buttons that show and hide each actions pane from a custom tab on the ribbon. To create a custom tab, add a **Ribbon (Visual Designer)** item to the project. The designer helps you add and position controls, set control properties, and handle control events.  
+##  <a name="BKMK_CreateCustomTab"></a> Creazione di una scheda personalizzata  
+ Per la progettazione di applicazioni di Office, è necessario che gli utenti abbiano sempre il controllo dell'interfaccia utente dell'applicazione di Office. Per aggiungere questa funzionalità relativa ai riquadri azioni, è possibile aggiungere pulsanti che mostrano e nascondono ciascun riquadro azioni da una scheda personalizzata della barra multifunzione. Per creare una scheda personalizzata, aggiungere un **della barra multifunzione (finestra di progettazione visiva)** elemento al progetto. La finestra di progettazione consente di aggiungere e posizionare controlli, impostarne le proprietà e gestirne gli eventi.  
   
-#### <a name="to-create-a-custom-tab"></a>To create a custom tab  
+#### <a name="to-create-a-custom-tab"></a>Per creare una scheda personalizzata  
   
-1.  On the **Project** menu, choose **Add New Item**.  
+1.  Scegliere **Aggiungi nuovo elemento** dal menu **Progetto**.  
   
-2.  In the **Add New Item** dialog box, select **Ribbon (Visual Designer)**.  
+2.  Nella finestra di dialogo **Aggiungi nuovo elemento** selezionare **Barra multifunzione (finestra di progettazione visiva)**.  
   
-3.  Change the name of the new ribbon to **MyRibbon**, and choose **Add**.  
+3.  Modificare il nome della nuova barra multifunzione per **MyRibbon**e scegliere **Aggiungi**.  
   
-     The **MyRibbon.cs** or **MyRibbon.vb** file opens in the Ribbon Designer and displays a default tab and group.  
+     Nella finestra di progettazione della barra multifunzione viene aperto un file **MyRibbon.cs** o **MyRibbon.vb** , che visualizza una scheda e un gruppo predefiniti.  
   
-4.  In the Ribbon Designer, choose the default tab.  
+4.  Nella finestra di progettazione della barra multifunzione scegliere la scheda predefinita.  
   
-5.  In the **Properties** window, expand the **ControlId** property, and then set the **ControlIdType** property to **Custom**.  
+5.  Nel **proprietà** finestra, espandere il **ControlId** proprietà e quindi impostare il **ControlIdType** proprietà **personalizzato**.  
   
-6.  Set the **Label** property to **My Custom Tab**.  
+6.  Impostare il **etichetta** proprietà **My Custom Tab**.  
   
-7.  In the Ribbon Designer, choose **group1**.  
+7.  Nella finestra di progettazione della barra multifunzione scegliere **group1**.  
   
-8.  In the **Properties** window, set **Label** to **Actions Pane Manager**.  
+8.  Nel **proprietà** finestra impostare **etichetta** a **Actions Pane Manager**.  
   
-9. From the **Office Ribbon Controls** tab of the **Toolbox**, drag a button onto **group1**.  
+9. Dal **controlli della barra multifunzione di Office** scheda della finestra di **della casella degli strumenti**, trascinare un pulsante in **group1**.  
   
-10. Select **button1**.  
+10. Selezionare **button1**.  
   
-11. In the **Properties** window, set **Label** to **Show Actions Pane 1**.  
+11. Nel **proprietà** finestra impostare **etichetta** a **Show Actions Pane 1**.  
   
-12. Add a second button to **group1**, and set the **Label** property to **Show Actions Pane 2**.  
+12. Aggiungere un secondo pulsante su **group1**e impostare il **etichetta** proprietà **Show Actions Pane 2**.  
   
-13. From the **Office Ribbon Controls** tab of the **Toolbox**, drag a **ToggleButton** control onto **group1**.  
+13. Dal **controlli della barra multifunzione di Office** scheda della finestra di **della casella degli strumenti**, trascinare un **ToggleButton** sul controllo **group1**.  
   
-14. Set the **Label** property to **Hide Actions Pane**.  
+14. Impostare il **etichetta** proprietà **Hide Actions Pane**.  
   
-##  <a name="BKMK_HideShowActionsPane"></a> Hiding and Showing Actions Panes by Using Buttons on the Custom Tab  
- The last step is to add code that responds to the user. Add event handlers for the <xref:Microsoft.Office.Tools.Ribbon.RibbonButton.Click> events of the two buttons and the <xref:Microsoft.Office.Tools.Ribbon.RibbonToggleButton.Click> event of the toggle button. Add code to these event handlers to enable hiding and showing the actions panes.  
+##  <a name="BKMK_HideShowActionsPane"></a> Attivazione e disattivazione della visualizzazione dei riquadri azioni mediante i pulsanti della scheda personalizzata  
+ L'ultimo passaggio consiste nell'aggiungere codice che risponde all'utente. Aggiungere gestori eventi per gli eventi <xref:Microsoft.Office.Tools.Ribbon.RibbonButton.Click> dei due pulsanti e per l'evento <xref:Microsoft.Office.Tools.Ribbon.RibbonToggleButton.Click> dell'interruttore. Aggiungere codice a questi gestori eventi per abilitare e disabilitare la visualizzazione dei riquadri azioni.  
   
-#### <a name="to-hide-and-show-actions-panes-by-using-buttons-in-the-custom-tab"></a>To hide and show actions panes by using buttons in the custom tab  
+#### <a name="to-hide-and-show-actions-panes-by-using-buttons-in-the-custom-tab"></a>Per nascondere e mostrare i riquadri azioni mediante i pulsanti della scheda personalizzata  
   
-1.  In **Solution Explorer**, open the shortcut menu for MyRibbon.cs or MyRibbon.vb, and then choose **View Code**.  
+1.  In **Esplora**, aprire il menu di scelta rapida per MyRibbon.cs o MyRibbon. vb e quindi scegliere **Visualizza codice**.  
   
-2.  Add the following code to the top of the `MyRibbon` class. This code creates two actions pane objects.  
+2.  Aggiungere il codice riportato di seguito all'inizio della classe `MyRibbon`. Mediante questo codice vengono creati due oggetti riquadro azioni.  
   
-     [!code-csharp[Trin_Ribbon_Custom_Tab#1](../vsto/codesnippet/CSharp/Trin_Ribbon_Custom_Tab/MyRibbon.cs#1)]  [!code-vb[Trin_Ribbon_Custom_Tab#1](../vsto/codesnippet/VisualBasic/Trin_Ribbon_Custom_Tab/MyRibbon.vb#1)]  
+     [!code-csharp[Trin_Ribbon_Custom_Tab#1](../vsto/codesnippet/CSharp/Trin_Ribbon_Custom_Tab/MyRibbon.cs#1)]
+     [!code-vb[Trin_Ribbon_Custom_Tab#1](../vsto/codesnippet/VisualBasic/Trin_Ribbon_Custom_Tab/MyRibbon.vb#1)]  
   
-3.  Replace the `MyRibbon_Load` method with the following code. This code adds the actions pane objects to the <xref:Microsoft.Office.Tools.ActionsPane.Controls%2A> collection and hides the objects from view. The Visual C# code also attaches delegates to several ribbon control events.  
+3.  Sostituire il metodo `MyRibbon_Load` con il codice seguente. Mediante questo codice vengono aggiunti alla raccolta <xref:Microsoft.Office.Tools.ActionsPane.Controls%2A> oggetti riquadro azioni, che vengono nascosti. Il codice Visual C# associa inoltre delegati a vari eventi del controllo della barra multifunzione.  
   
-     [!code-csharp[Trin_Ribbon_Custom_Tab#2](../vsto/codesnippet/CSharp/Trin_Ribbon_Custom_Tab/MyRibbon.cs#2)]  [!code-vb[Trin_Ribbon_Custom_Tab#2](../vsto/codesnippet/VisualBasic/Trin_Ribbon_Custom_Tab/MyRibbon.vb#2)]  
+     [!code-csharp[Trin_Ribbon_Custom_Tab#2](../vsto/codesnippet/CSharp/Trin_Ribbon_Custom_Tab/MyRibbon.cs#2)]
+     [!code-vb[Trin_Ribbon_Custom_Tab#2](../vsto/codesnippet/VisualBasic/Trin_Ribbon_Custom_Tab/MyRibbon.vb#2)]  
   
-4.  Add the following three event handler methods to the `MyRibbon` class. These methods handle the <xref:Microsoft.Office.Tools.Ribbon.RibbonButton.Click> events of the two buttons and the <xref:Microsoft.Office.Tools.Ribbon.RibbonToggleButton.Click> event of the toggle button. The event handlers for button1 and button2 show alternate actions panes. The event handler for toggleButton1 shows and hides the active actions pane.  
+4.  Aggiungere i tre metodi per la gestione eventi riportati di seguito alla classe `MyRibbon`. Questi metodi gestiscono gli eventi <xref:Microsoft.Office.Tools.Ribbon.RibbonButton.Click> dei due pulsanti e l'evento <xref:Microsoft.Office.Tools.Ribbon.RibbonToggleButton.Click> dell'interruttore. I gestori eventi per button1 e button2 mostrano riquadri azioni alternativi. Il gestore eventi per toggleButton1 mostra e nasconde il riquadro azioni attivo.  
   
-     [!code-csharp[Trin_Ribbon_Custom_Tab#3](../vsto/codesnippet/CSharp/Trin_Ribbon_Custom_Tab/MyRibbon.cs#3)]  [!code-vb[Trin_Ribbon_Custom_Tab#3](../vsto/codesnippet/VisualBasic/Trin_Ribbon_Custom_Tab/MyRibbon.vb#3)]  
+     [!code-csharp[Trin_Ribbon_Custom_Tab#3](../vsto/codesnippet/CSharp/Trin_Ribbon_Custom_Tab/MyRibbon.cs#3)]
+     [!code-vb[Trin_Ribbon_Custom_Tab#3](../vsto/codesnippet/VisualBasic/Trin_Ribbon_Custom_Tab/MyRibbon.vb#3)]  
   
-## <a name="testing-the-custom-tab"></a>Testing the Custom Tab  
- When you run the project, Excel starts, and the **My Custom Tab** tab appears on the ribbon. Choose the buttons on **My Custom Tab** to show and hide the actions panes.  
+## <a name="testing-the-custom-tab"></a>Verifica della scheda personalizzata  
+ Quando si esegue il progetto, viene avviato Excel e **My Custom Tab** verrà visualizzata la scheda della barra multifunzione. Scegliere i pulsanti di **My Custom Tab** per mostrare e nascondere i riquadri azioni.  
   
-#### <a name="to-test-the-custom-tab"></a>To test the custom tab  
+#### <a name="to-test-the-custom-tab"></a>Per verificare la scheda personalizzata  
   
-1.  Press F5 to run your project.  
+1.  Premere F5 per eseguire il progetto.  
   
-2.  Choose the **My Custom Tab** tab.  
+2.  Scegliere il **My Custom Tab** scheda.  
   
-3.  In the **Custom Actions Pane Manager** group, choose **Show Actions Pane 1**.  
+3.  Nel **Custom Actions Pane Manager** gruppo **Show Actions Pane 1**.  
   
-     The actions pane appears and displays the label **Actions Pane 1**.  
+     Il riquadro azioni viene visualizzata e viene visualizzata l'etichetta **Actions Pane 1**.  
   
-4.  Choose **Show Actions Pane 2**.  
+4.  Scegliere **Show Actions Pane 2**.  
   
-     The actions pane appears and displays the label **Actions Pane 2**.  
+     Il riquadro azioni viene visualizzata e viene visualizzata l'etichetta **Actions Pane 2**.  
   
-5.  Choose **Hide Actions Pane**.  
+5.  Scegliere **Hide Actions Pane**.  
   
-     The actions panes are no longer visible.  
+     I riquadri azioni non sono più visibili.  
   
-## <a name="next-steps"></a>Next Steps  
- You can learn more about how to customize the Office UI from these topics:  
+## <a name="next-steps"></a>Passaggi successivi  
+ È possibile trovare ulteriori informazioni sulla personalizzazione dell'interfaccia utente di Office nei seguenti argomenti:  
   
--   Add context-based UI to any document-level customization. For more information, see [Actions Pane Overview](../vsto/actions-pane-overview.md).  
+-   Aggiunta di un'interfaccia utente basata sul contesto a una personalizzazione a livello di documento. Per altre informazioni, vedere [Actions Pane Overview](../vsto/actions-pane-overview.md).  
   
--   Extend a standard or custom Microsoft Office Outlook form. For more information, see [Walkthrough: Designing an Outlook Form Region](../vsto/walkthrough-designing-an-outlook-form-region.md).  
+-   Estensione di un modulo standard o personalizzato di Microsoft Office Outlook. Per ulteriori informazioni, vedere [procedura dettagliata: progettazione di un'area del modulo di Outlook](../vsto/walkthrough-designing-an-outlook-form-region.md).  
   
-## <a name="see-also"></a>See Also  
+## <a name="see-also"></a>Vedere anche  
  [Accessing the Ribbon at Run Time](../vsto/accessing-the-ribbon-at-run-time.md)   
- [Ribbon Overview](../vsto/ribbon-overview.md)   
- [Ribbon Designer](../vsto/ribbon-designer.md)   
- [Customizing a Ribbon for Outlook](../vsto/customizing-a-ribbon-for-outlook.md)   
- [How to: Get Started Customizing the Ribbon](../vsto/how-to-get-started-customizing-the-ribbon.md)   
- [How to: Change the Position of a Tab on the Ribbon](../vsto/how-to-change-the-position-of-a-tab-on-the-ribbon.md)   
- [How to: Customize a Built-in Tab](../vsto/how-to-customize-a-built-in-tab.md)   
- [How to: Add Controls to the Backstage View](../vsto/how-to-add-controls-to-the-backstage-view.md)   
- [Ribbon Object Model Overview](../vsto/ribbon-object-model-overview.md)  
+ [Panoramica della barra multifunzione](../vsto/ribbon-overview.md)   
+ [Finestra di progettazione della barra multifunzione](../vsto/ribbon-designer.md)   
+ [Personalizzazione di una barra multifunzione per Outlook](../vsto/customizing-a-ribbon-for-outlook.md)   
+ [Procedura: iniziare a personalizzare la barra multifunzione](../vsto/how-to-get-started-customizing-the-ribbon.md)   
+ [Procedura: modificare la posizione di una scheda della barra multifunzione](../vsto/how-to-change-the-position-of-a-tab-on-the-ribbon.md)   
+ [Procedura: personalizzare una scheda incorporata](../vsto/how-to-customize-a-built-in-tab.md)   
+ [Procedura: aggiungere controlli alla visualizzazione Backstage](../vsto/how-to-add-controls-to-the-backstage-view.md)   
+ [Panoramica del modello a oggetti della barra multifunzione](../vsto/ribbon-object-model-overview.md)  
   
   

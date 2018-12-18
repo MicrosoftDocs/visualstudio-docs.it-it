@@ -1,10 +1,10 @@
 ---
-title: "Funzionalità di Dotfuscator | Microsoft Docs"
-ms.date: 2017-06-22
+title: Funzionalità di Dotfuscator | Microsoft Docs
+ms.date: 2017-10-10
 ms.devlang: dotnet
 ms.technology:
 - vs-ide-general
-ms.topic: article
+ms.topic: conceptual
 keywords: Dotfuscator, Dotfuscator CE, PreEmptive, PreEmptive Solutions, PreEmptive Protection, protezione, community edition, offuscamento, .NET, gratuito, Visual Studio 2017
 helpviewer_keywords:
 - PreEmptive Protection Dotfuscator
@@ -13,41 +13,25 @@ helpviewer_keywords:
 - Dotfuscator
 - obfuscation
 - protection
-description: "Informazioni sulle funzionalità della versione gratuita di Dotfuscator Community Edition inclusa in Visual Studio 2017."
+description: Informazioni sulle funzionalità della versione gratuita di Dotfuscator Community Edition inclusa in Visual Studio 2017.
 ms.assetid: 0ee89c58-c900-48fc-a6a2-65ace00e8bab
 author: Joe-Sewell-PreEmptive
-manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 8ce85525f6af336682f6f8547c2f6c13dde73c8c
-ms.openlocfilehash: 9193020b9031b5e1a5637fd4ec207d0449ec85ae
-ms.contentlocale: it-it
-ms.lasthandoff: 06/23/2017
-
+manager: douge
+ms.openlocfilehash: 91d2e379c37567a88e29eb504ad7bc09723d3fc6
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-
 # <a name="capabilities-of-dotfuscator"></a>Funzionalità di Dotfuscator
 
 Questa pagina illustra le funzionalità di Dotfuscator Community Edition (Dotfuscator CE), con alcuni riferimenti alle opzioni avanzate disponibili tramite gli [aggiornamenti][upgrades].
 
 Dotfuscator è un sistema *post-compilazione* per le applicazioni .NET.
-Con Dotfuscator CE, gli utenti di Visual Studio possono [offuscare gli assembly][obfuscation] e inserire una [difesa attiva][checks] e [funzioni di rilevamento per l'analisi][ analytics] nell'applicazione, senza che Dotfuscator debba accedere al codice sorgente originale.
+Con Dotfuscator CE, gli utenti di Visual Studio possono [offuscare gli assembly][obfuscation] e inserire una [difesa attiva][checks] e [funzioni di rilevamento per l'analisi] [ analytics] nell'applicazione, senza che Dotfuscator debba accedere al codice sorgente originale.
 Dotfuscator protegge l'applicazione in diversi modi, creando una strategia per la protezione a più livelli.
 
-Dotfuscator CE supporta una vasta gamma di tipi assembly e applicazioni .NET, tra cui la [piattaforma UWP (Universal Windows Platform) ][uwp] e [Xamarin][xamarin].
+Dotfuscator CE supporta una vasta gamma di tipi assembly e applicazioni .NET, tra cui la [piattaforma UWP (Universal Windows Platform) ] [ uwp] e [Xamarin][xamarin].
 
 ## <a name="intellectual-property-protection"></a>Protezione della proprietà intellettuale
 
@@ -96,8 +80,8 @@ Mentre viene eseguita, l'applicazione elaborata trasmetterà a un [endpoint di P
 [obfuscation]: https://www.preemptive.com/dotfuscator/ce/docs/help/obfuscation_overview.html
 [renaming]: https://www.preemptive.com/dotfuscator/ce/docs/help/obfuscation_renaming.html
 
-[analytics]: https://www.preemptive.com/dotfuscator/ce/docs/help/analytics_overview.html
-[endpoints]: https://www.preemptive.com/dotfuscator/ce/docs/help/analytics_overview.html#endpoints
+[analytics]: https://www.preemptive.com/dotfuscator/ce/docs/help/instrumentation_overview.html
+[endpoints]: https://www.preemptive.com/dotfuscator/ce/docs/help/instrumentation_overview.html#endpoints
 
 [checks]: https://www.preemptive.com/dotfuscator/ce/docs/help/checks_overview.html
 [check-app]: https://www.preemptive.com/dotfuscator/ce/docs/help/checks_overview.html#app-notification
@@ -106,10 +90,9 @@ Mentre viene eseguita, l'applicazione elaborata trasmetterà a un [endpoint di P
 [tamper]: https://www.preemptive.com/dotfuscator/ce/docs/help/checks_tamper.html
 [debug]: https://www.preemptive.com/dotfuscator/ce/docs/help/checks_debug.html
 [shelflife]: https://www.preemptive.com/dotfuscator/ce/docs/help/checks_shelflife.html
-[exceptions]: https://www.preemptive.com/dotfuscator/ce/docs/help/analytics_exceptions.html
-[sessions]: https://www.preemptive.com/dotfuscator/ce/docs/help/analytics_sessions.html
-[features]: https://www.preemptive.com/dotfuscator/ce/docs/help/analytics_features.html
-[check-telemetry]: https://www.preemptive.com/dotfuscator/ce/docs/help/analytics_checks.html
+[exceptions]: https://www.preemptive.com/dotfuscator/ce/docs/help/instrumentation_exceptions.html
+[sessions]: https://www.preemptive.com/dotfuscator/ce/docs/help/instrumentation_sessions.html
+[features]: https://www.preemptive.com/dotfuscator/ce/docs/help/instrumentation_features.html
+[check-telemetry]: https://www.preemptive.com/dotfuscator/ce/docs/help/instrumentation_checks.html
 
 [full]: https://www.preemptive.com/dotfuscator/ce/docs/help/intro_capabilities.html
-

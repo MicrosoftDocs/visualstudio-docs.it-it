@@ -1,47 +1,46 @@
 ---
-title: "WaitStart | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: WaitStart | Microsoft Docs
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology: vs-ide-debug
+ms.topic: conceptual
 ms.assetid: 6c737177-2dfb-4150-963e-a49ac9aaa591
-caps.latest.revision: 5
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 5
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: d84688198ff9d21a03923bf510676c7f620e4d12
+ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/19/2018
 ---
-# WaitStart
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
-L'opzione WaitStart comporta che il sottocomando Start VSPerfCmd.exe restituisca un risultato solo in seguito all'inizializzazione del profiler o una volta trascorso il numero di secondi specificato.  Per impostazione predefinita, il comando Avvia viene immediatamente restituito.  Se il sotto comando Avvio ritorna senza inizializzare il profiler, viene restituito un errore.  Se non è specificato il numero di secondi, il comando Avvio attende indefinitamente.  
+# <a name="waitstart"></a>WaitStart
+Con l'opzione WaitStart, il sottocomando Start di VSPerfCmd.exe restituisce il controllo solo quando il profiler è stato inizializzato o dopo il numero di secondi specificato. Per impostazione predefinita, il comando Start restituisce il controllo immediatamente. Se il sottocomando Start restituisce il controllo senza inizializzare il profiler, viene restituito un errore. Se non viene specificato il numero di secondi, il comando Start attende per un periodo di tempo illimitato.  
   
- L'opzione WaitStart è utile nei file batch per assicurarsi che il profiler sia stato inizializzato.  
+ L'opzione WaitStart è utile in file batch per assicurarsi che il profiler sia stato inizializzato.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
 VSPerfCmd.exe /Start:Method /Output:FileName[Options] /StartWait[:Seconds]  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `Seconds`  
- Numero di secondi di attesa prima del ritorno dal sottocomando di avvio.  
+ Numero di secondi di attesa prima che il sottocomando Start restituisca il controllo.  
   
-## Opzioni obbligatorie  
- L'opzione WaitStart può essere utilizzata con il sottocomando Start.  
+## <a name="required-options"></a>Opzioni obbligatorie  
+ L'opzione WaitStart può essere usata solo con il sottocomando Start.  
   
  **Output:** `filename`  
  Specifica il nome del file di output.  
   
-## Note  
+## <a name="remarks"></a>Note  
   
-## Esempio  
- In questo esempio di file batch, il comando Start attenderà 5 secondi affinché il profiler venga inizializzato.  
+## <a name="example"></a>Esempio  
+ In questo esempio di file batch, il comando Start attenderà per 5 secondi l'inizializzazione del profiler.  
   
 ```  
 VSPerfCmd.exe /Start:Sample /Output:TestApp.exe.vsp /WaitStart:5  

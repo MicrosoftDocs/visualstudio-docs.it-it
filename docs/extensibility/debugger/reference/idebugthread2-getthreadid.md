@@ -1,61 +1,62 @@
 ---
-title: "IDebugThread2::GetThreadId | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "IDebugThread2::GetThreadId"
-helpviewer_keywords: 
-  - "IDebugThread2::GetThreadId"
+title: IDebugThread2::GetThreadId | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology:
+- vs-ide-sdk
+ms.topic: conceptual
+f1_keywords:
+- IDebugThread2::GetThreadId
+helpviewer_keywords:
+- IDebugThread2::GetThreadId
 ms.assetid: db8b1c07-6b86-47f9-b292-bac19c276d36
-caps.latest.revision: 11
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 11
+author: gregvanl
+ms.author: gregvanl
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: ac1701b3f52975e962860d558bc70b1847eef8e5
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# IDebugThread2::GetThreadId
-[!INCLUDE[vs2017banner](../../../code-quality/includes/vs2017banner.md)]
-
-Ottiene l'identificatore di thread di sistema.  
+# <a name="idebugthread2getthreadid"></a>IDebugThread2::GetThreadId
+Ottiene l'identificatore del thread di sistema.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp#  
-HRESULT GetThreadId (   
-   DWORD* pdwThreadId  
+```cpp  
+HRESULT GetThreadId (   
+   DWORD* pdwThreadId  
 );  
 ```  
   
-```c#  
-int GetThreadId (   
-   out uint pdwThreadId  
+```csharp  
+int GetThreadId (   
+   out uint pdwThreadId  
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `pdwThreadId`  
- \[out\]  Restituisce l'identificatore di thread di sistema.  
+ [out] Restituisce l'identificatore del thread di sistema.  
   
-## Valore restituito  
- Se l'operazione riesce, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
+## <a name="return-value"></a>Valore restituito  
+ Se ha esito positivo, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
   
-## Note  
- Un ID del thread viene utilizzato per identificare un thread tra tutti gli altri thread in un processo.  
+## <a name="remarks"></a>Note  
+ Un ID thread viene utilizzato per identificare un thread tra tutti gli altri thread in un processo.  
   
-## Esempio  
- Nell'esempio seguente viene illustrato come implementare questo metodo per un oggetto semplice di `CProgram` che implementa [IDebugThread2](../../../extensibility/debugger/reference/idebugthread2.md) l'interfaccia.  
+## <a name="example"></a>Esempio  
+ Nell'esempio seguente viene illustrato come implementare questo metodo per una semplice `CProgram` oggetto che implementa il [IDebugThread2](../../../extensibility/debugger/reference/idebugthread2.md) interfaccia.  
   
-```cpp#  
+```cpp  
 HRESULT CProgram::GetThreadId(DWORD* pdwThreadId) {     
    *pdwThreadId = GetCurrentThreadId();    
    return NOERROR;    
 }    
 ```  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IDebugThread2](../../../extensibility/debugger/reference/idebugthread2.md)

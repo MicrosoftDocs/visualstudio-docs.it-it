@@ -1,39 +1,20 @@
 ---
 title: PerfTips | Microsoft Docs
-ms.custom: 
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- vs-ide-debug
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.technology: vs-ide-debug
+ms.topic: conceptual
 ms.assetid: 509d2d4f-48a5-4cdf-acad-6f7b75421303
-caps.latest.revision: 6
 author: mikejo5000
 ms.author: mikejo
-manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 81e5f0696db8f8e29204f9fbed49cc347a4afb74
+ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
 ms.translationtype: HT
-ms.sourcegitcommit: 8a544bd1e1242bb6fabe00f7842ac33ed9d9d444
-ms.openlocfilehash: b19a309f403daa0a3881ec154aa4cd3f5e4d97dc
-ms.contentlocale: it-it
-ms.lasthandoff: 08/14/2017
-
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/19/2018
 ---
 # <a name="perftips"></a>PerfTips
 Il debugger di Visual Studio *PerfTips* e il debugger integrato **Strumenti di diagnostica** consentono di monitorare e analizzare le prestazioni dell'app durante il debug.  
@@ -75,5 +56,5 @@ Il debugger di Visual Studio *PerfTips* e il debugger integrato **Strumenti di d
 2.  Selezionare o deselezionare **Abilita Strumenti di diagnostica durante il debug**.
 
 ## <a name="see-also"></a>Vedere anche
- [Profilatura in Visual Studio](../profiling/index.md) [Panoramica delle funzionalità di profilatura](../profiling/profiling-feature-tour.md)
-
+ [Profilatura in Visual Studio](../profiling/index.md)  
+ [Tour delle funzionalità di profilatura](../profiling/profiling-feature-tour.md)

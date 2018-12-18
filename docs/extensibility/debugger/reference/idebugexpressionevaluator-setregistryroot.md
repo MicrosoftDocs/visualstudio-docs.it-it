@@ -1,51 +1,52 @@
 ---
-title: "IDebugExpressionEvaluator::SetRegistryRoot | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "IDebugExpressionEvaluator::SetRegistryRoot"
-helpviewer_keywords: 
-  - "Metodo IDebugExpressionEvaluator::SetRegistryRoot"
+title: IDebugExpressionEvaluator::SetRegistryRoot | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology:
+- vs-ide-sdk
+ms.topic: conceptual
+f1_keywords:
+- IDebugExpressionEvaluator::SetRegistryRoot
+helpviewer_keywords:
+- IDebugExpressionEvaluator::SetRegistryRoot method
 ms.assetid: 790886d8-1975-4d3c-9a75-cd86c1faf4ca
-caps.latest.revision: 11
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 11
+author: gregvanl
+ms.author: gregvanl
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: 70b1730fc44deeb7e32433480f02f750c9bec193
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# IDebugExpressionEvaluator::SetRegistryRoot
-[!INCLUDE[vs2017banner](../../../code-quality/includes/vs2017banner.md)]
-
-Questo metodo imposta la chiave radice del Registro di sistema.  Utilizzato per il debug side\-by\-side.  
+# <a name="idebugexpressionevaluatorsetregistryroot"></a>IDebugExpressionEvaluator::SetRegistryRoot
+Questo metodo imposta la radice del Registro di sistema. Usato per il debug side-by-side.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp#  
-HRESULT SetRegistryRoot (   
-   LPCOLESTR ustrRegistryRoot  
+```cpp  
+HRESULT SetRegistryRoot (   
+   LPCOLESTR ustrRegistryRoot  
 );  
 ```  
   
-```c#  
+```csharp  
 int SetRegistryRoot(  
-   string ustrRegistryRoot  
+   string ustrRegistryRoot  
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `ustrRegistryRoot`  
- \[in\]  La nuova chiave radice del Registro di sistema.  
+ [in] Il nuovo oggetto radice del Registro di sistema.  
   
-## Valore restituito  
- Se l'operazione riesce, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
+## <a name="return-value"></a>Valore restituito  
+ Se ha esito positivo, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
   
-## Note  
- La chiave radice del Registro di sistema specificato in genere è impostata quando nell'analizzatore di espressioni in cui ne viene creata un'istanza e punta alla chiave del Registro di sistema per una specifica versione di Visual Studio \(\\SOFTWARE\\Microsoft\\VisualStudio HKEY\_LOCAL\_MACHINE \\*X.Y*, dove *X.Y* è un numero di versione\).  
+## <a name="remarks"></a>Note  
+ La radice del Registro di sistema viene in genere impostata quando l'analizzatore di espressioni viene innanzitutto creata un'istanza e fa riferimento alla chiave del Registro di sistema per una specifica versione di Visual Studio (HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\VisualStudio\\*x. y* , dove *x. y* è un numero di versione).  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IDebugExpressionEvaluator](../../../extensibility/debugger/reference/idebugexpressionevaluator.md)

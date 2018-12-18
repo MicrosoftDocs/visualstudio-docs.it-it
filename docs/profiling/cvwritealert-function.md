@@ -1,36 +1,35 @@
 ---
-title: "Funzione CvWriteAlert | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "cvmarkers/CvWriteAlertVA"
-  - "cvmarkers/CvWriteAlertVW"
-  - "cvmarkers/CvWriteAlertA"
-  - "cvmarkers/CvWriteAlertW"
-helpviewer_keywords: 
-  - "CvWriteAlertVW (metodo)"
-  - "CvWriteAlertA (metodo)"
-  - "CvWriteAlertVA (metodo)"
-  - "CvWriteAlertW (metodo)"
+title: Funzione CvWriteAlert | Microsoft Docs
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology: vs-ide-debug
+ms.topic: conceptual
+f1_keywords:
+- cvmarkers/CvWriteAlertVA
+- cvmarkers/CvWriteAlertVW
+- cvmarkers/CvWriteAlertA
+- cvmarkers/CvWriteAlertW
+helpviewer_keywords:
+- CvWriteAlertVW method
+- CvWriteAlertA method
+- CvWriteAlertVA method
+- CvWriteAlertW method
 ms.assetid: 937aa9d6-278a-4df3-bef7-151441df16d5
-caps.latest.revision: 4
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 4
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 7931ae34838ac7c995cbea0543f921fedd20e2ed
+ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/19/2018
 ---
-# Funzione CvWriteAlert
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
-Scrive un avviso nel file di traccia del Visualizzatore di concorrenza.  
+# <a name="cvwritealert-function"></a>Funzione CvWriteAlert
+Scrive un avviso nel file di traccia del visualizzatore di concorrenza.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
 HRESULT CvWriteAlertW(  
@@ -56,25 +55,25 @@ HRESULT CvWriteAlertVA(
     _In_ va_list argList);  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `argList`  
  Elenco di argomenti.  
   
  `pMarkerSeries`  
- Contesto di una serie di marcatori validi.  Non può essere NULL.  
+ Contesto della serie di marcatori valido. Non può essere NULL.  
   
  `pMessage`  
- Stringa di formato del messaggio.  Non può essere NULL.  
+ Stringa di formato del messaggio. Non può essere NULL.  
   
-## Valore restituito  
- S\_OK quando il messaggio è scritto correttamente.  Codice di errore nel caso siano alcuni errori.  Utilizzare le macro SUCCEEDED\/FAILED per verificare la condizione di errore.  
+## <a name="return-value"></a>Valore restituito  
+ S_OK quando il messaggio è stato scritto correttamente. Codice dell'errore nel caso in cui si siano verificati errori. Usare le macro SUCCEEDED/FAILED per controllare la condizione di errore.  
   
-## Requisiti  
+## <a name="requirements"></a>Requisiti  
  **Intestazione:** cvmarkers.h  
   
  **Unicode:** CvWriteAlertW, CvWriteAlertVW  
   
  **ANSI:** CvWriteAlertA, CvWriteAlertVA  
   
-## Vedere anche  
- [riferimento alla libreria C\+\+](../profiling/cpp-library-reference.md)
+## <a name="see-also"></a>Vedere anche  
+ [Riferimento alla libreria C++](../profiling/cpp-library-reference.md)

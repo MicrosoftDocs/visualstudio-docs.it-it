@@ -1,41 +1,25 @@
 ---
 title: METADATA_ADDRESS_PARAM | Documenti Microsoft
-ms.custom: 
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - vs-ide-sdk
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: conceptual
 f1_keywords:
 - METADATA_ADDRESS_PARAM
 helpviewer_keywords:
 - METADATA_ADDRESS_PARAM structure
 ms.assetid: 90904f19-0e71-4cb3-a56e-6a2e92f66dfc
-caps.latest.revision: 6
+author: gregvanl
 ms.author: gregvanl
-manager: ghogen
-translation.priority.mt:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: c2cc91ea41003f153a1b3910510f41bc032bf221
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
 ms.translationtype: MT
-ms.sourcegitcommit: 4a36302d80f4bc397128e3838c9abf858a0b5fe8
-ms.openlocfilehash: edca5da7e4d417f6578946c824ac601dea516270
-ms.contentlocale: it-it
-ms.lasthandoff: 09/26/2017
-
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="metadataaddressparam"></a>METADATA_ADDRESS_PARAM
 Questa struttura rappresenta un parametro di un metodo o funzione.  

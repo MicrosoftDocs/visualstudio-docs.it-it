@@ -1,56 +1,57 @@
 ---
-title: "IDebugBinder3::GetExceptionObjectAndType | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "IDebugBinder3::GetExceptionObjectAndType"
-helpviewer_keywords: 
-  - "Metodo IDebugBinder3::GetExceptionObjectAndType"
+title: IDebugBinder3::GetExceptionObjectAndType | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology:
+- vs-ide-sdk
+ms.topic: conceptual
+f1_keywords:
+- IDebugBinder3::GetExceptionObjectAndType
+helpviewer_keywords:
+- IDebugBinder3::GetExceptionObjectAndType method
 ms.assetid: 2a313fe1-4ee1-4f01-af86-382d6c661a8f
-caps.latest.revision: 7
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 7
+author: gregvanl
+ms.author: gregvanl
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: 519281487e85ec7dffc0e7bb470d044dc2bae885
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# IDebugBinder3::GetExceptionObjectAndType
-[!INCLUDE[vs2017banner](../../../code-quality/includes/vs2017banner.md)]
-
-Questo metodo recupera l'eccezione associata a un oggetto, se disponibile.  
+# <a name="idebugbinder3getexceptionobjectandtype"></a>IDebugBinder3::GetExceptionObjectAndType
+Questo metodo recupera l'eccezione associata a un oggetto, se presente.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```cpp  
-HRESULT GetExceptionObjectAndType(  
-   IDebugObject** ppException,  
-   IDebugField**  ppField  
+HRESULT GetExceptionObjectAndType(  
+   IDebugObject** ppException,  
+   IDebugField**  ppField  
 );  
 ```  
   
-```c#  
-int GetExceptionObjectAndType(  
-   out IDebugObject ppException,  
-   out IDebugField  ppField  
+```csharp  
+int GetExceptionObjectAndType(  
+   out IDebugObject ppException,  
+   out IDebugField  ppField  
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `ppException`  
- \[out\]  restituisce l'oggetto che rappresenta l'eccezione.  
+ [out] Restituisce l'oggetto che rappresenta l'eccezione.  
   
  `ppField`  
- \[out\]  Restituisce l'oggetto che rappresenta un campo specifico che può provocare un'eccezione \(ciò può essere un valore null\).  
+ [out] Restituisce l'oggetto che rappresenta un campo specifico che potrebbe aver causato l'eccezione (potrebbe essere un valore null).  
   
-## Valore restituito  
- Se l'operazione riesce, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
+## <a name="return-value"></a>Valore restituito  
+ Se ha esito positivo, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
   
 > [!NOTE]
->  Per verificare se vi faccia un'eccezione, controllare il valore restituito da `ppException`: se è un valore null, pertanto non esiste alcuna eccezione associata all'oggetto.  
+>  Per verificare se si verifica un'eccezione, controllare il valore restituito da `ppException`: se si tratta di un valore null, sarà associata a questo oggetto alcuna eccezione.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IDebugBinder3](../../../extensibility/debugger/reference/idebugbinder3.md)

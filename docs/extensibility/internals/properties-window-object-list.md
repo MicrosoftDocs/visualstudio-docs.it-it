@@ -1,34 +1,35 @@
 ---
-title: "Elenco di oggetti finestra delle propriet&#224; | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "Finestra Proprietà, elenco di oggetti"
+title: Elenco di oggetti finestra delle proprietà | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology:
+- vs-ide-sdk
+ms.topic: conceptual
+helpviewer_keywords:
+- Properties window, object list
 ms.assetid: 6c159c9d-345d-4b23-8ddd-9839d338b62f
-caps.latest.revision: 12
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 12
+author: gregvanl
+ms.author: gregvanl
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: b6b7d238f7ce64122ac18a52dab59afb063ce47e
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# Elenco di oggetti finestra delle propriet&#224;
-[!INCLUDE[vs2017banner](../../code-quality/includes/vs2017banner.md)]
-
-L'elenco di oggetti nella finestra di **Proprietà** è un elenco a discesa che consente di modificare la selezione ad altri oggetti disponibili in uno o più finestre selezionate.  Selecting a different object from within this list triggers a call to <xref:Microsoft.VisualStudio.Shell.Interop.ISelectionContainer.SelectObjects%2A> to inform the environment that a new object has been selected.  Le informazioni visualizzate nella finestra di **Proprietà** quindi vengono modificate per visualizzare le proprietà associate all'oggetto appena selezionato.  
+# <a name="properties-window-object-list"></a>Elenco di oggetti finestra delle proprietà
+Nell'elenco di oggetti nel **proprietà** finestra è un elenco di riepilogo a discesa che consente di modificare la selezione ad altri oggetti disponibili all'interno di uno o più finestre selezionate. Selezione di un oggetto diverso da all'interno dell'elenco genera una chiamata a <xref:Microsoft.VisualStudio.Shell.Interop.ISelectionContainer.SelectObjects%2A> per informare l'ambiente che è stato selezionato un nuovo oggetto. Le informazioni visualizzate nel **proprietà** finestra viene quindi modificata per visualizzare le proprietà associate all'oggetto selezionato.  
   
-## L'elenco di oggetti  
- L'elenco di oggetti è costituito da due campi: il nome dell'oggetto viene visualizzato in grassetto\) e il tipo di oggetto.  
+## <a name="the-object-list"></a>Elenco di oggetti  
+ L'elenco di oggetti è costituito da due campi: il nome dell'oggetto (visualizzato in grassetto) e il tipo di oggetto.  
   
- Il nome dell'oggetto viene visualizzata a sinistra del tipo di oggetto in grassetto viene recuperato dall'oggetto stesso utilizzando la proprietà di `Name` fornita dall'interfaccia di <xref:Microsoft.VisualStudio.OLE.Interop.IProvideClassInfo> .  <xref:Microsoft.VisualStudio.OLE.Interop.IProvideClassInfo.GetClassInfo%2A>, l'unico metodo su <xref:Microsoft.VisualStudio.OLE.Interop.IProvideClassInfo>, restituisce <xref:Microsoft.VisualStudio.OLE.Interop.ITypeInfo> della coclasse dell'interfaccia.  La finestra di **Proprietà** utilizza <xref:Microsoft.VisualStudio.OLE.Interop.IProvideClassInfo> per ottenere il nome della coclasse, visualizzata come nome dell'oggetto nell'elenco a discesa.  
+ Il nome dell'oggetto visualizzato a sinistra del tipo di oggetto in grassetto viene recuperato dall'oggetto stesso utilizzando il `Name` proprietà fornita dal <xref:Microsoft.VisualStudio.OLE.Interop.IProvideClassInfo> interfaccia. <xref:Microsoft.VisualStudio.OLE.Interop.IProvideClassInfo.GetClassInfo%2A>, l'unico metodo sul <xref:Microsoft.VisualStudio.OLE.Interop.IProvideClassInfo>, restituisce <xref:Microsoft.VisualStudio.OLE.Interop.ITypeInfo> per coclasse dell'interfaccia. Il **proprietà** finestra utilizza <xref:Microsoft.VisualStudio.OLE.Interop.IProvideClassInfo> per ottenere il nome della coclasse, che viene visualizzato come il nome dell'oggetto nell'elenco a discesa.  
   
- Se l'oggetto non ha una proprietà di `Name` , un nome non viene visualizzato nell'area nome dell'elenco di oggetti.  È possibile aggiungere una proprietà name all'oggetto se si desidera che il nome visualizzato nell'elenco di oggetti.  
+ Se l'oggetto non ha un `Name` proprietà, un nome non viene visualizzata nell'area del nome dell'elenco di oggetti. Se si desidera che il nome visualizzato nell'elenco di oggetti, è possibile aggiungere una proprietà Name per l'oggetto.  
   
- Se l'oggetto COM non implementa <xref:Microsoft.VisualStudio.OLE.Interop.IProvideClassInfo>, la finestra di **Proprietà** visualizzare il nome dell'interfaccia anziché il nome dell'oggetto sul lato sinistro dell'elenco.  
+ Se l'oggetto COM non implementa <xref:Microsoft.VisualStudio.OLE.Interop.IProvideClassInfo>, **proprietà** finestra Visualizza il nome di interfaccia al posto del nome di oggetto sul lato sinistro dell'elenco.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Estensione delle proprietà](../../extensibility/internals/extending-properties.md)

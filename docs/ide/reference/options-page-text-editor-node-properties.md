@@ -1,40 +1,24 @@
 ---
-title: "Pagina delle opzioni, Proprietà del nodo Editor di testo | Microsoft Docs"
-ms.custom: 
+title: Pagina delle opzioni, Proprietà del nodo Editor di testo | Microsoft Docs
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - vs-ide-general
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: conceptual
 helpviewer_keywords:
 - Tools Options settings, Text Editor node properties
 - automation [Visual Studio], controlling Tools Options
 ms.assetid: 19438302-0677-4f4d-9720-5667e6a22ab2
-caps.latest.revision: 17
-author: kempb
-ms.author: kempb
-manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: 5658ecf52637a38bc3c2a5ad9e85b2edebf7d445
-ms.openlocfilehash: 922e6ae930ee146a0e948a659cb128149e140396
-ms.lasthandoff: 02/22/2017
-
+author: gewarren
+ms.author: gewarren
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 6678901da33593f8a73b9a0af42eabe721bf91d9
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="options-page-text-editor-node-properties"></a>Pagina delle opzioni, Proprietà del nodo Editor di testo
 In questo documento vengono descritte alcune pagine, o raccolte di proprietà, associate alla categoria **Editor di testo**, `DTE.Properties("TextEditor", <Property Page>)`, della finestra di dialogo **Opzioni**. Il titolo di ogni sottosezione rappresenta la chiamata utilizzata per accedere alla raccolta `Properties` e nella tabella di ogni sottosezione sono elencate le proprietà della raccolta.  

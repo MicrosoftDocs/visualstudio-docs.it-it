@@ -1,89 +1,89 @@
 ---
-title: "Procedura: aggiungere e rimuovere cartelle mappate"
-ms.custom: ""
-ms.date: "02/02/2017"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "office-development"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "VS.SharePointTools.Project.MappedFolder"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "VB"
-  - "CSharp"
-helpviewer_keywords: 
-  - "cartelle mappate [sviluppo per SharePoint in Visual Studio]"
-  - "sviluppo per SharePoint in Visual Studio, cartelle mappate"
-ms.assetid: 115c8b00-7d4c-4fbe-b42c-e82dca944504
-caps.latest.revision: 23
-author: "kempb"
-ms.author: "kempb"
-manager: "ghogen"
-caps.handback.revision: 22
+title: 'Procedura: aggiungere e rimuovere cartelle mappate | Documenti Microsoft'
+ms.custom: ''
+ms.date: 02/02/2017
+ms.technology:
+- office-development
+ms.topic: conceptual
+f1_keywords:
+- VS.SharePointTools.Project.MappedFolder
+dev_langs:
+- VB
+- CSharp
+- VB
+- CSharp
+helpviewer_keywords:
+- SharePoint development in Visual Studio, mapped folders
+- mapped folders [SharePoint development in Visual Studio]
+author: TerryGLee
+ms.author: tglee
+manager: douge
+ms.workload:
+- office
+ms.openlocfilehash: 43ec8b7c18d99880b1ab932ea28a371a7604b636
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# Procedura: aggiungere e rimuovere cartelle mappate
-  Alcune cartelle utilizzate comunemente nel server SharePoint, come Immagini e Layout, sono eccessivamente incorporate nella gerarchia dei file.  Queste cartelle possono essere mappate in un progetto SharePoint per accedervi più facilmente.  Le cartelle mappate sono le cartelle del progetto SharePoint che corrispondono alla posizione fisica dei file nell'installazione di SharePoint Server.  
+# <a name="how-to-add-and-remove-mapped-folders"></a>Procedura: aggiungere e rimuovere cartelle mappate
+  Alcune cartelle utilizzate comunemente in SharePoint, ad esempio immagini e layout di annidamento nella gerarchia dei file. È possibile eseguire il mapping di queste cartelle in un progetto di SharePoint per accedervi più facilmente. Cartelle mappate sono le cartelle nel progetto di SharePoint che corrispondono al percorso fisico dei file nell'installazione di SharePoint Server.  
   
- Quando si distribuisce un'applicazione SharePoint, il contenuto della cartella mappata e tutte le relative sottocartelle vengono copiati dal pacchetto della soluzione \(.wsp\) nel server che sta eseguendo SharePoint, in corrispondenza del percorso specificato nell'albero di cartelle di SharePoint.  Questo percorso è determinato dalla proprietà **Deployment Location** impostata per la cartella mappata.  Tutte le sottocartelle nella cartella mappata si riferiscono a **Deployment Location**.  Notare che la proprietà **Deployment Location**, non il nome della cartella mappata, determina dove vengono distribuiti gli elementi.  
+ Quando si distribuisce un'applicazione di SharePoint, il contenuto della cartella mappata e tutte le relative sottocartelle vengono copiate dal pacchetto della soluzione (con estensione wsp) nel server che esegue SharePoint nel percorso specificato nella struttura di cartelle di SharePoint. Questo percorso è determinato dal **percorso di distribuzione** proprietà che è impostato per la cartella mappata. Tutte le sottocartelle della cartella mappata sono relativi **percorso di distribuzione** della cartella mappata. Si noti che il **percorso di distribuzione** determina di proprietà, non il nome della cartella mappata, in cui gli elementi da distribuire.  
   
- Le cartelle mappate possono essere aggiunte a un progetto utilizzando i relativi comandi dalla barra dei menu o dal menu di scelta rapida per il progetto.  È possibile utilizzare i comandi **Aggiungi cartella mappata "Immagini" SharePoint** e **Aggiungi cartella "Layout" SharePoint** per aggiungere queste cartelle mappate utilizzate più frequentemente.  È possibile eseguire il mapping di tutte le altre cartelle disponibili di SharePoint al progetto utilizzando il comando **Aggiungi cartella mappata di SharePoint** dal menu di scelta rapida e specificando le cartelle nella finestra di dialogo **Aggiungi cartella mappata di SharePoint**.  
+ È possibile aggiungere cartelle mappate a un progetto tramite i comandi sulla barra dei menu o nel menu di scelta rapida per il progetto. È possibile utilizzare il **cartella mappata "Immagini" di SharePoint aggiungere** e **aggiungere SharePoint "Layout" cartella** i comandi da aggiungere a quelli associati le cartelle utilizzate più spesso. È possibile mappare una delle altre cartelle SharePoint disponibile per il progetto utilizzando il **Aggiungi cartella mappata di SharePoint** dal menu di scelta rapida e quindi specificare le cartelle di **Aggiungi cartella mappata di SharePoint** la finestra di dialogo.  
   
-## Aggiunta di cartelle mappate al progetto  
- Nella procedura riportata di seguito viene illustrato come aggiungere due cartelle mappate ad un progetto visual web part.  Per iniziare, creare un progetto visual web part.  
+## <a name="adding-mapped-folders-to-a-project"></a>Aggiunta di cartelle mappate a un progetto  
+ La procedura seguente viene descritto come aggiungere due cartelle mappate a un progetto di visual web part. Per iniziare, si crea un progetto di visual web part.  
   
-#### Per aggiungere cartelle mappate al progetto  
+#### <a name="to-add-mapped-folders-to-a-project"></a>Per aggiungere le cartelle mappate a un progetto  
   
-1.  Sulla barra dei menu scegliere **File**, **Nuovo**, **Progetto**.  
+1.  Nella barra dei menu scegliere **File**, **Nuovo**, **Progetto**.  
   
-2.  Nella finestra di dialogo **Nuovo progetto**, espandere il nodo **Visual Basic** o **Visual C\#**, espandere **Office\/SharePoint** e quindi selezionare il nodo **Soluzioni SharePoint**.  
+2.  Nel **nuovo progetto** finestra di dialogo espandere il il **Visual Basic** o **Visual c#** nodo, espandere il **Office/SharePoint** nodo, quindi Scegliere il **soluzioni SharePoint** nodo.  
   
-3.  Nell'elenco di modelli di progetto, selezionare il modello **SharePoint 2013 Visual Web Part**.  
+3.  Nell'elenco dei modelli di progetto, scegliere il **Web Part visiva di SharePoint 2013** modello.  
   
-4.  Nella casella **Nome** inserire TestProject1 quindi scegliere il pulsante **OK**.  
+4.  Nel **nome** immettere **TestProject1**, quindi scegliere il **OK** pulsante.  
   
-5.  In **Personalizzazione guidata SharePoint**, scegliere il pulsante **Fine** per mantenere le impostazioni predefinite.  
+5.  Nel **Personalizzazione guidata SharePoint**, scegliere il **fine** pulsante per mantenere le impostazioni predefinite.  
   
-6.  In **Esplora soluzioni** scegliere il nodo del progetto, quindi **Progetto**, **Aggiungi cartella mappata "Immagini" di SharePoint** dalla barra dei menu.  
+6.  In **Esplora**, scegliere il nodo del progetto e quindi nella barra dei menu scegliere **progetto**, **cartella mappata "Immagini" di SharePoint aggiungere**.  
   
-     Nel progetto viene visualizzata una cartella denominata **Immagini** contenente una sottocartella denominata TestProject1.  Questa cartella mappata conterrà le immagini per il progetto visual web part.  
+     Una cartella denominata **immagini** viene visualizzato nel progetto e contiene una sottocartella denominata TestProject1. Questa cartella mappata conterrà le immagini per il progetto di visual web part.  
   
-7.  In **Esplora soluzioni** scegliere il nodo del progetto, quindi scegliere **Progetto**, **Aggiungi cartella mappata di SharePoint** dalla barra dei menu per visualizzare la finestra di dialogo **Aggiungi cartella mappata di SharePoint**.  
+7.  In **Esplora**, scegliere il nodo del progetto e quindi nella barra dei menu scegliere **progetto**, **Aggiungi cartella mappata di SharePoint** per visualizzare il **Aggiungi Cartella mappata di SharePoint** la finestra di dialogo.  
   
-8.  Nella visualizzazione ad albero delle cartelle disponibili per il mapping, scegliere la cartella **Risorse** quindi selezionare il pulsante **OK**.  
+8.  Nella visualizzazione albero delle cartelle che sono disponibili per il mapping, scegliere il **risorse** cartella, quindi scegliere il **OK** pulsante.  
   
-     Nel progetto viene visualizzata una cartella denominata **Risorse**.  Questa cartella può memorizzare elementi quali file di risorse sotto forma di stringa.  Le sottocartelle possono essere utili per l'organizzazione del contenuto di una cartella mappata, ma non vengono create automaticamente quando si aggiunge una cartella mappata tramite il comando **Aggiungi cartella mappata di SharePoint**.  Per aggiungere una sottocartella, scegliere la cartella **Risorse** quindi **Progetto**, **Nuova cartella** dalla barra dei menu.  
+     Una cartella denominata **risorse** viene visualizzata nel progetto. Questa cartella è possibile archiviare gli elementi, ad esempio i file di risorse di stringa. Le sottocartelle possono essere utile per organizzare il contenuto di una cartella mappata, ma vengono creati automaticamente quando si aggiunge una cartella mappata tramite il **Aggiungi cartella mappata di SharePoint** comando. Per aggiungere una sottocartella, scegliere il **risorse** cartella, quindi nella barra dei menu, scegliere **progetto**, **nuova cartella**.  
   
-## Modifica del percorso di distribuzione di una cartella mappata  
- Per impostazione predefinita, le cartelle mappate vengono aggiunte in percorsi specifici sulla base del percorso di installazione radice dei SharePoint, indicato dal token {SharePointRoot}.  Tuttavia, questo percorso può essere modificato cambiando la proprietà **Deployment location** della cartella mappata.  Per ogni cartella mappata è prevista una proprietà **Deployment location** specifica.  
+## <a name="changing-the-deployment-location-of-a-mapped-folder"></a>Modifica del percorso di distribuzione di una cartella mappata  
+ Per impostazione predefinita, le cartelle mappate vengono aggiunti a posizioni specifiche relativo al percorso di installazione radice di SharePoint, indica il token {SharePointRoot}. Tuttavia, è possibile modificare questo percorso modificando il **percorso di distribuzione** proprietà della cartella mappata. Per ogni cartella mappata ha il proprio **percorso di distribuzione** proprietà.  
   
-#### Per modificare il percorso di distribuzione di una cartella mappata  
+#### <a name="to-change-the-deployment-location-of-a-mapped-folder"></a>Per modificare il percorso di distribuzione di una cartella mappata  
   
-1.  Scegliere una cartella mappata nel progetto creato precedentemente.  
+1.  Nel progetto creato in precedenza, scegliere una cartella mappata.  
   
-2.  Nella finestra **Proprietà** selezionare il pulsante con i puntini di sospensione \(![Ellisse di ASP.NET Mobile Designer](~/sharepoint/media/mwellipsis.gif "Ellisse di ASP.NET Mobile Designer")\) dalla proprietà **Deployment location**.  
+2.  Nel **proprietà** finestra, scegliere i puntini di sospensione (![ellisse di ASP.NET Mobile Designer](../sharepoint/media/mwellipsis.gif "ellisse di ASP.NET Mobile Designer")) sul pulsante di **distribuzione percorso** proprietà.  
   
-3.  Nella finestra di dialogo **Aggiungi cartella mappata di SharePoint** individuare la cartella a cui si desidera che punti la cartella mappata.  
+3.  Nel **Aggiungi cartella mappata di SharePoint** la finestra di dialogo, passare alla cartella che si desidera scegliere la cartella mappata.  
   
-4.  Scegliere il nodo, quindi fare clic sul pulsante **OK**.  
+4.  Scegliere il nodo e quindi scegliere il **OK** pulsante.  
   
-## Ridenominazione o rimozione di cartelle mappate  
+## <a name="renaming-or-removing-mapped-folders"></a>La ridenominazione o rimozione di cartelle mappate  
   
-#### Per rinominare o rimuovere una cartella mappata  
+#### <a name="to-rename-or-remove-a-mapped-folder"></a>Per rinominare o rimuovere una cartella mappata  
   
-1.  Scegliere una cartella mappata nel progetto creato precedentemente.  
+1.  Nel progetto creato in precedenza, scegliere una cartella mappata.  
   
-2.  Per rinominare la cartella mappata, aprire il relativo menu di scelta rapida, selezionare **Rinomina**, immettere il nuovo nome, quindi premere il pulsante Invio.  
+2.  Per rinominare la cartella mappata, aprire il menu di scelta rapida, scegliere **rinominare**, immettere il nuovo nome e quindi premere INVIO.  
   
-     In alternativa, è possibile scegliere la cartella mappata che si desidera rinominare, aprire la finestra **Proprietà** quindi impostare il valore della proprietà **Folder name** con il nuovo nome.  
+     In alternativa, è possibile scegliere la cartella mappata che si desidera rinominare, aprire il **proprietà** finestra e quindi impostare il valore della **nome della cartella** proprietà per il nuovo nome.  
   
-3.  Per rimuovere una cartella mappata dal progetto, aprire il relativo menu di scelta rapida, selezionare **Elimina**, quindi fare clic sul pulsante **OK** nella finestra di dialogo per confermarne la rimozione.  
+3.  Per rimuovere una cartella mappata dal progetto, aprire il menu di scelta rapida, scegliere **eliminare**, quindi scegliere il **OK** pulsante nella finestra di dialogo per confermare la rimozione.  
   
-## Vedere anche  
- [Developing SharePoint Solutions](../sharepoint/developing-sharepoint-solutions.md)  
+## <a name="see-also"></a>Vedere anche  
+ [Sviluppo di soluzioni SharePoint](../sharepoint/developing-sharepoint-solutions.md)  
   
   

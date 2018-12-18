@@ -1,45 +1,26 @@
 ---
 title: Personalizzare gli eventi dell'heap ETW nativo | Microsoft Docs
-ms.custom: 
+ms.custom: ''
 ms.date: 02/24/2017
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- vs-ide-debug
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.technology: vs-ide-debug
+ms.topic: conceptual
 ms.assetid: 668a6603-5082-4c78-98e6-f3dc871aa55b
-caps.latest.revision: 8
-author: BrianPeek
-ms.author: brpeek
-manager: ghogen
+author: mikejo5000
+ms.author: mikejo
+manager: douge
 dev_langs:
 - C++
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.workload:
+- cplusplus
+ms.openlocfilehash: d08abca1d20641a8e12261577ec1fdcf8179e080
+ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
 ms.translationtype: HT
-ms.sourcegitcommit: 7c87490f8e4ad01df8761ebb2afee0b2d3744fe2
-ms.openlocfilehash: f2a659347823fee4b933463011c0b69c07fa937f
-ms.contentlocale: it-it
-ms.lasthandoff: 09/06/2017
-
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/19/2018
 ---
-
 # <a name="custom-native-etw-heap-events"></a>Personalizzare gli eventi dell'heap ETW nativo
 
-Visual Studio contiene un'ampia gamma di [strumenti di profilatura e diagnostica](https://docs.microsoft.com/en-us/visualstudio/profiling/profiling-tools), tra cui un profiler nativo della memoria.  Il profiler esegue l'hook degli [eventi ETW](/windows-hardware/drivers/devtest/event-tracing-for-windows--etw-) dal provider di heap e offre un'analisi delle modalità di allocazione e uso della memoria.  Per impostazione predefinita, questo strumento consente di analizzare solo le allocazioni effettuate dall'heap standard di Windows ed eventuali allocazioni esterne all'heap nativo non vengono visualizzate.
+Visual Studio contiene un'ampia gamma di [strumenti di profilatura e diagnostica](../profiling/profiling-tools.md), tra cui un profiler nativo della memoria.  Il profiler esegue l'hook degli [eventi ETW](/windows-hardware/drivers/devtest/event-tracing-for-windows--etw-) dal provider di heap e offre un'analisi delle modalità di allocazione e uso della memoria.  Per impostazione predefinita, questo strumento consente di analizzare solo le allocazioni effettuate dall'heap standard di Windows ed eventuali allocazioni esterne all'heap nativo non vengono visualizzate.
 
 Vi sono molti i casi in cui può essere utile usare il proprio heap personalizzato ed evitare il sovraccarico di allocazioni dall'heap standard.  Ad esempio, è possibile usare [VirtualAlloc](https://msdn.microsoft.com/library/windows/desktop/aa366887(v=vs.85).aspx) per allocare una grande quantità di memoria all'avvio dell'app o del gioco e quindi gestire i propri blocchi all'interno di tale elenco.  In questo scenario lo strumento profiler della memoria vedrà solo l'allocazione iniziale e non la gestione personalizzata eseguita all'interno del blocco di memoria.  Tuttavia, se si usa utilizza il provider ETW dell'heap nativo personalizzato, è possibile consentire allo strumento di sapere quali allocazioni vengono create all'esterno dell'heap standard.
 
@@ -65,7 +46,7 @@ Foo* pFoo2 = (Foo*)mPool.allocate();
 Foo* pFoo3 = (Foo*)mPool.allocate();
 ```
 
-Uno snapshot dello strumento [Utilizzo memoria](https://docs.microsoft.com/en-us/visualstudio/profiling/memory-usage) senza rilevamento dell'heap personalizzato indicherebbe semplicemente la singola allocazione di 8192 byte e nessuna delle allocazioni personalizzate create dal pool:
+Uno snapshot dello strumento [Utilizzo memoria](../profiling/memory-usage.md) senza rilevamento dell'heap personalizzato indicherebbe semplicemente la singola allocazione di 8192 byte e nessuna delle allocazioni personalizzate create dal pool:
 
 ![Allocazione di heap di Windows](media/heap-example-windows-heap.png)
 
@@ -110,7 +91,7 @@ Questa libreria può essere usata facilmente in C e C++.
    pHeapTracker->AllocateEvent(memPtr, size);
    ```
 
-   o
+   oppure
 
    ```C
    VSHeapTrackerAllocateEvent(hHeapTracker, memPtr, size);
@@ -156,7 +137,7 @@ Questa libreria può essere usata facilmente in C e C++.
    ```
 
 ## <a name="tracking-memory-usage"></a>Verificare l'uso della memoria
-Dopo aver definito le chiamate, è possibile verificare l'uso dell'heap personalizzato con lo strumento **Utilizzo memoria** standard di Visual Studio.  Per altre informazioni sull'uso di questo strumento, vedere la documentazione relativa a [Utilizzo memoria](https://docs.microsoft.com/en-us/visualstudio/profiling/memory-usage). Verificare di avere abilitato la profilatura dell'heap con gli snapshot, poiché altrimenti non verrà visualizzato l'uso dell'heap personalizzato. 
+Dopo aver definito le chiamate, è possibile verificare l'uso dell'heap personalizzato con lo strumento **Utilizzo memoria** standard di Visual Studio.  Per altre informazioni sull'uso di questo strumento, vedere la documentazione relativa a [Utilizzo memoria](../profiling/memory-usage.md). Verificare di avere abilitato la profilatura dell'heap con gli snapshot, poiché altrimenti non verrà visualizzato l'uso dell'heap personalizzato. 
 
 ![Abilitare la profilatura dell'heap](media/heap-enable-heap.png)
 
@@ -170,12 +151,11 @@ L'*heap NT* predefinito ha lo stesso aspetto di prima, con l'aggiunta dell'ogget
 
 ![Heap NT con strumento di rilevamento](media/heap-example-windows-heap.png)
 
-Come con l'heap standard di Windows, è possibile usare questo strumento per confrontare gli snapshot e verificare la presenza di spazi inutilizzati ed errori nell'heap personalizzato, descritto nella documentazione principale di [Utilizzo memoria](https://docs.microsoft.com/en-us/visualstudio/profiling/memory-usage).
+Come con l'heap standard di Windows, è possibile usare questo strumento per confrontare gli snapshot e verificare la presenza di spazi inutilizzati ed errori nell'heap personalizzato, descritto nella documentazione principale di [Utilizzo memoria](../profiling/memory-usage.md).
 
 > [!TIP]
 > Visual Studio contiene anche uno strumento **Utilizzo memoria** nel set di strumenti di **profilatura delle prestazioni** set di strumenti, che viene abilitato dall'opzione di menu **Debug > Profiler prestazioni** o dalla combinazione di tasti **Alt+F2**.  Questa funzionalità non include la verifica dell'heap e non visualizza l'heap personalizzato come descritto in questo documento.  Solo la finestra **Strumenti di diagnostica**, che può essere abilitata con il menu **Debug > Windows > Mostra strumenti di diagnostica** o la combinazione di tasti **Ctrl+Alt+F2**, contiene questa funzionalità.
 
 ## <a name="see-also"></a>Vedere anche
-* [Strumenti di profilatura](https://docs.microsoft.com/en-us/visualstudio/profiling/profiling-tools)
-* [Utilizzo memoria](https://docs.microsoft.com/en-us/visualstudio/profiling/memory-usage)
-
+[Profiling Tools](../profiling/profiling-tools.md) (Strumenti di profilatura)  
+[Utilizzo memoria](../profiling/memory-usage.md)

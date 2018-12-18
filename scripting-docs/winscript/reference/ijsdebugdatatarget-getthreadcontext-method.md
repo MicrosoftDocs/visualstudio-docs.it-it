@@ -1,25 +1,29 @@
 ---
-title: "Metodo IJsDebugDataTarget::GetThreadContext | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/18/2017"
-ms.prod: "windows-script-interfaces"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
+title: 'Metodo ijsdebugdatatarget:: GetThreadContext | Documenti Microsoft'
+ms.custom: 
+ms.date: 01/18/2017
+ms.prod: windows-script-interfaces
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: reference
 apiname: IJsDebugDataTarget.GetThreadContext
 apilocation: jscript9diag.dll
 ms.assetid: faf2a689-6c49-4a7d-b5a6-2b323e2257a7
-caps.latest.revision: 4
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.openlocfilehash: 4e2f858c66eda2ad09b04d7beab776c793b6f195
+ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/27/2017
 ---
-# Metodo IJsDebugDataTarget::GetThreadContext
-Recupera il contesto del thread specificato.  
+# <a name="ijsdebugdatatargetgetthreadcontext-method"></a>Metodo IJsDebugDataTarget::GetThreadContext
+Contesto recuperato per dato thread.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
 HRESULT GetThreadContext(  
@@ -30,23 +34,23 @@ HRESULT GetThreadContext(
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `threadId`  
- \[in\] Thread in esecuzione nel processo di destinazione.  
+ [in] Thread in esecuzione nel processo di destinazione.  
   
  `contextFlags`  
- \[in\] Specifica i flag di contesto.  Ciò equivale al campo ContextFlags di CONTEXT \(per ulteriori informazioni, vedere winnt.h, cercare CONTEXT\_ALL\).  
+ [in] Specifica i flag di contesto. Questo corrisponde al campo ContextFlags del contesto (per ulteriori informazioni, vedere Winnt. h, cercare CONTEXT_ALL).  
   
  `contextSize`  
- \[in\] Dimensione del buffer specificata da pContext.  
+ [in] Le dimensioni del buffer specificato da pContext.  
   
  `pContext`  
- \[out\] Riceve la struttura del CONTEXT specifica della piattaforma nel buffer specificato da pContext.  
+ [out] Nel buffer specificato da pContext, riceve la struttura del contesto specifico della piattaforma.  
   
-## Valore restituito  
+## <a name="return-value"></a>Valore restituito  
   
-## Requisiti  
- **Intestazione:** jscript9diag.h  
+## <a name="requirements"></a>Requisiti  
+ **Intestazione:** jscript9diag  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Interfaccia IJsDebugDataTarget](../../winscript/reference/ijsdebugdatatarget-interface.md)

@@ -1,13 +1,9 @@
 ---
-title: Guida per principianti alla profilatura delle prestazioni in Visual Studio | Microsoft Docs
+title: Profilare le prestazioni delle applicazioni in Visual Studio | Microsoft Docs
 ms.custom: H1Hack27Feb2017
 ms.date: 02/27/2017
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- vs-ide-debug
-ms.tgt_pltfrm: 
-ms.topic: get-started-article
+ms.technology: vs-ide-debug
+ms.topic: tutorial
 f1_keywords:
 - vs.performance.wizard.intropage
 helpviewer_keywords:
@@ -16,32 +12,18 @@ helpviewer_keywords:
 - CPU Usage
 - Diagnostics Tools
 ms.assetid: da2fbf8a-2d41-4654-a509-dd238532d25a
-caps.latest.revision: 45
 author: mikejo5000
 ms.author: mikejo
-manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: f4415956aaa819881584b4298285ff878c1d7ccf
+ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
 ms.translationtype: HT
-ms.sourcegitcommit: 9e6c28d42bec272c6fd6107b4baf0109ff29197e
-ms.openlocfilehash: a5eabb6a62e4b362d9355772621d27f574034ff1
-ms.contentlocale: it-it
-ms.lasthandoff: 09/06/2017
-
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/19/2018
 ---
-# <a name="beginners-guide-to-performance-profiling"></a>Guida per principianti alla profilatura delle prestazioni
+# <a name="profile-application-performance-in-visual-studio"></a>Profilare le prestazioni delle applicazioni in Visual Studio
 È possibile usare gli strumenti di profilatura di Visual Studio per analizzare i problemi di prestazioni nell'applicazione. Questa procedura illustra come usare la scheda **Utilizzo CPU** della finestra Strumenti di diagnostica per ottenere i dati relativi alle prestazioni per l'applicazione. Gli strumenti di diagnostica sono supportati per lo sviluppo di .NET in Visual Studio, incluso ASP.NET, e per lo sviluppo nativo/C++.
   
 Durante le pause del debug, lo strumento **Utilizzo CPU** raccoglie informazioni sulle funzioni in esecuzione nell'applicazione. Vengono indicate le funzioni che stavano eseguendo un'operazione e un grafico della sequenza temporale consente di concentrarsi su segmenti specifici della sessione di campionamento.
@@ -50,9 +32,18 @@ L'hub diagnostica include numerose altre opzioni per eseguire e gestire la sessi
 
 |         |         |
 |---------|---------|
-| ![Guardare un video](../install/media/video-icon.png "WatchVideo") | [Guardare un video](#video) sull'uso degli strumenti di diagnostica che illustra come analizzare l'utilizzo della CPU e l'utilizzo della memoria. |
+|  ![icona della telecamera](../install/media/video-icon.png "Guardare un video")  |    [Guardare un video](https://mva.microsoft.com/en-US/training-courses-embed/getting-started-with-visual-studio-2017-17798/Profiling-with-Diagnostics-Tools-in-Visual-Studio-2017-daHnzMD6D_9211787171) sull'uso degli strumenti di diagnostica che illustra come analizzare l'utilizzo della CPU e l'utilizzo della memoria. |
 
 In questo argomento viene illustrata l'analisi dell'utilizzo della CPU nel normale flusso di lavoro di debug. È anche possibile analizzare l'utilizzo della CPU senza un debugger collegato o usando un'app in esecuzione. Per altre informazioni, vedere [Raccogliere dati di profilatura senza il debug](../profiling/running-profiling-tools-with-or-without-the-debugger.md#collect-profiling-data-without-debugging) in [Eseguire gli strumenti di profilatura con o senza il debugger](../profiling/running-profiling-tools-with-or-without-the-debugger.md).
+
+> [!NOTE]
+> Per .NET Core e ASP.NET Core, lo strumento Utilizzo CPU non offre attualmente risultati accurati con i file PBD portabili. Usare invece file PDB completi.
+
+In questa esercitazione si eseguono le attività seguenti:
+
+> [!div class="checklist"]
+> * Raccogliere i dati di Utilizzo CPU
+> * Analizzare i dati d'uso della CPU
   
 ##  <a name="BKMK_Quick_start__Collect_diagnostic_data"></a> Passaggio 1: Raccogliere i dati di profilatura 
   
@@ -85,7 +76,7 @@ In questo argomento viene illustrata l'analisi dell'utilizzo della CPU nel norma
 
      ![Strumenti di diagnostica - Abilitare profilatura CPU](../profiling/media/DiagToolsEnableCPUProfiling.png "DiagToolsEnableCPUProfiling")
 
-     Quando si sceglie **Abilita profilatura CPU** Visual Studio avvia la registrazione delle funzioni e del tempo necessario per eseguirle. È possibile visualizzare i dati raccolti solo quando l'applicazione viene interrotta in un punto di interruzione.
+     Quando si sceglie **Registra profilo CPU** Visual Studio avvia la registrazione delle funzioni e del tempo necessario per eseguirle. È possibile visualizzare i dati raccolti solo quando l'applicazione viene interrotta in un punto di interruzione.
 
 8.  Premere F5 per eseguire l'applicazione fino al secondo punto di interruzione.
 
@@ -125,7 +116,6 @@ In questo argomento viene illustrata l'analisi dell'utilizzo della CPU nel norma
     In questa visualizzazione la funzione selezionata viene visualizzata nell'intestazione e nella casella **Funzione corrente** (GetNumber, in questo esempio). La funzione che ha chiamato la funzione corrente viene visualizzata a sinistra, sotto **Funzioni chiamanti**, e tutte le funzioni chiamate dalla funzione corrente sono riportate nella casella **Funzioni chiamate** sulla destra. Selezionare una delle due caselle per modificare la funzione corrente.
 
     Questa visualizzazione indica il tempo totale (ms) e la percentuale del tempo complessivo di esecuzione dell'applicazione dedicato al completamento della funzione.
-
     **Corpo funzione** indica anche la quantità totale di tempo (e la percentuale di tempo) impiegata nel corpo della funzione, escluso il tempo dedicato alle funzioni chiamanti e chiamate. In questo esempio 3713 su 3729 ms sono stati usati nel corpo della funzione e i 16 ms rimanenti nel codice esterno chiamato dalla funzione.
 
     > [!TIP]
@@ -167,12 +157,9 @@ Usare la casella di ricerca per trovare un nodo che si sta cercando, quindi usar
 > [!TIP]
 > Se si profila il codice esterno che chiama le funzioni di Windows, è necessario verificare di avere i file PDB più aggiornati. Senza questi file, le visualizzazioni dei rapporti elencherà i nomi delle funzioni di Windows enigmatici e difficile da comprendere. Per altre informazioni su come verificare di avere i file necessari, vedere [Specify Symbol (.pdb) and Source Files in the Debugger](../debugger/specify-symbol-dot-pdb-and-source-files-in-the-visual-studio-debugger.md) (Specificare file di simboli (PDB) e di origine nel debugger).
 
-## <a name="video"></a> Guarda un video sull'uso degli strumenti di diagnostica
+## <a name="next-steps"></a>Passaggi successivi
 
-<div style="padding-top: 56.25%; position: relative; width: 100%;">
-<iframe style="position: absolute;top: 0;left: 0;right: 0;bottom: 0;" width="100%" height="100%" src="https://mva.microsoft.com/en-US/training-courses-embed/getting-started-with-visual-studio-2017-17798/Profiling-with-Diagnostics-Tools-in-Visual-Studio-2017-daHnzMD6D_9211787171" frameborder="0" allowfullscreen></iframe>
-</div>
-  
-## <a name="see-also"></a>Vedere anche  
- [[Utilizzo memoria](../profiling/memory-usage.md) [Utilizzo CPU](../profiling/cpu-usage.md) [Profilatura in Visual Studio](../profiling/index.md) [Panoramica delle funzionalità di profilatura](../profiling/profiling-feature-tour.md)
+In questa esercitazione si è appreso come raccogliere e analizzare i dati d'uso della CPU. Se è già stato completata la [presentazione del profiler](../profiling/profiling-feature-tour.md), è possibile vedere come analizzare l'uso della memoria nelle app di Windows.
 
+> [!div class="nextstepaction"]
+> [Analizzare l'uso della memoria](../profiling/memory-usage.md) 

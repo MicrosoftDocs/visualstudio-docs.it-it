@@ -1,13 +1,9 @@
 ---
 title: Elemento Target (MSBuild) | Microsoft Docs
-ms.custom: 
+ms.custom: ''
 ms.date: 03/13/2017
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- vs-ide-sdk
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.technology: msbuild
+ms.topic: reference
 f1_keywords:
 - http://schemas.microsoft.com/developer/msbuild/2003#Target
 dev_langs:
@@ -19,31 +15,16 @@ helpviewer_keywords:
 - Target element [MSBuild]
 - <Target> element [MSBuild]
 ms.assetid: 350f6fc2-86b3-45f2-a31e-ece0e6bd4dca
-caps.latest.revision: 34
-author: kempb
-ms.author: kempb
-manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 0e5a449ef396e7b9fd23a2c018bdc7f8791b7b38
-ms.openlocfilehash: 217f42db123e95557c2425b5678fb1ac9473c162
-ms.contentlocale: it-it
-ms.lasthandoff: 03/13/2017
-
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 5c5d60d41c7c7866ed396a90eacec4ba61a05238
+ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/19/2018
 ---
 # <a name="target-element-msbuild"></a>Elemento Target (MSBuild)
 Contiene un set di attività da eseguire in sequenza in [!INCLUDE[vstecmsbuild](../extensibility/internals/includes/vstecmsbuild_md.md)].  
@@ -102,7 +83,7 @@ Contiene un set di attività da eseguire in sequenza in [!INCLUDE[vstecmsbuild](
 
 |Elemento|Descrizione|  
 |-------------|-----------------|  
-|[Progetto](../msbuild/project-element-msbuild.md)|Elemento radice obbligatorio di un file di progetto [!INCLUDE[vstecmsbuild](../extensibility/internals/includes/vstecmsbuild_md.md)].|  
+|[Progetto](../msbuild/project-element-msbuild.md)|Elemento radice obbligatorio di un file di progetto [!INCLUDE[vstecmsbuild](../extensibility/internals/includes/vstecmsbuild_md.md)] .|  
 
 ## <a name="remarks"></a>Note  
  La prima destinazione da eseguire viene specificata in fase di esecuzione. Le destinazioni possono avere dipendenze da altre destinazioni. Ad esempio, una destinazione per la distribuzione dipende da una destinazione per la compilazione. Il motore [!INCLUDE[vstecmsbuild](../extensibility/internals/includes/vstecmsbuild_md.md)] esegue le dipendenze nell'ordine in cui vengono visualizzate nell'attributo `DependsOnTargets`, da sinistra a destra. Per altre informazioni, vedere [Destinazioni](../msbuild/msbuild-targets.md).  
@@ -139,4 +120,3 @@ Contiene un set di attività da eseguire in sequenza in [!INCLUDE[vstecmsbuild](
 ## <a name="see-also"></a>Vedere anche  
  [Destinazioni](../msbuild/msbuild-targets.md)   
  [Informazioni di riferimento sullo schema del file di progetto](../msbuild/msbuild-project-file-schema-reference.md)
-

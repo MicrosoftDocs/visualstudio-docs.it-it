@@ -1,27 +1,33 @@
 ---
-title: "IMachineDebugManager::AddApplication | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/18/2017"
-ms.prod: "windows-script-interfaces"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-apiname: IMachineDebugManager.AddApplication
-apilocation: scrobj.dll
-helpviewer_keywords: 
-  - "IMachineDebugManager::AddApplication"
+title: IMachineDebugManager::AddApplication | Documenti Microsoft
+ms.custom: 
+ms.date: 01/18/2017
+ms.prod: windows-script-interfaces
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: reference
+apiname:
+- IMachineDebugManager.AddApplication
+apilocation:
+- scrobj.dll
+helpviewer_keywords:
+- IMachineDebugManager::AddApplication
 ms.assetid: 7cd591b6-718c-4e77-acb7-a6dd147ddf57
-caps.latest.revision: 8
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: 
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.openlocfilehash: 77c31084ccc24a6bace18f009eb8372a4f68a428
+ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/27/2017
 ---
-# IMachineDebugManager::AddApplication
-Aggiunta un'applicazione all'elenco in esecuzione di un'applicazione.  
+# <a name="imachinedebugmanageraddapplication"></a>IMachineDebugManager::AddApplication
+Aggiunge un'applicazione per l'esecuzione elenco di applicazioni.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
 HRESULT AddApplication(  
@@ -30,24 +36,24 @@ HRESULT AddApplication(
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `pda`  
- \[in\] l'elenco in esecuzione di un'applicazione.  
+ [in] Applicazione all'esecuzione elenco di applicazioni.  
   
  `pdwAppCookie`  
- \[out\] cookie A utilizzate per rimuovere l'applicazione dall'amministratore del computer di debug.  
+ [out] Un cookie utilizzato per rimuovere l'applicazione di debug machine manager.  
   
-## Valore restituito  
- Il metodo restituisce un tipo `HRESULT`.  I valori possibili sono, ma non sono limitati a, quelli nella tabella seguente.  
+## <a name="return-value"></a>Valore restituito  
+ Il metodo restituisce un tipo `HRESULT`. I valori possibili includono, ma non sono limitati a, quelli indicati nella tabella seguente.  
   
 |Valore|Descrizione|  
-|------------|-----------------|  
+|-----------|-----------------|  
 |`S_OK`|Il metodo è riuscito.|  
   
-## Note  
- Questo metodo viene chiamato dall'amministratore del processo di debug ogni volta che `IProcessDebugManager::AddApplication` viene chiamato.  
+## <a name="remarks"></a>Note  
+ Questo metodo viene chiamato dal gestore di debug del processo ogni volta che `IProcessDebugManager::AddApplication` viene chiamato.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Interfaccia IMachineDebugManager](../../winscript/reference/imachinedebugmanager-interface.md)   
  [IMachineDebugManager::RemoveApplication](../../winscript/reference/imachinedebugmanager-removeapplication.md)   
  [IProcessDebugManager::AddApplication](../../winscript/reference/iprocessdebugmanager-addapplication.md)

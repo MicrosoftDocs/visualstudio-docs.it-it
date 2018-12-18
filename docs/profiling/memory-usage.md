@@ -2,45 +2,21 @@
 title: Analizzare l'utilizzo della memoria in Visual Studio | Microsoft Docs
 ms.custom: H1Hack27Feb2017
 ms.date: 04/25/2017
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- vs-ide-debug
-ms.tgt_pltfrm: 
-ms.topic: article
-ms.assetid: bbb58d6c-3362-4ca3-8e87-64b2d4415bf6
-caps.latest.revision: 13
+ms.technology: vs-ide-debug
+ms.topic: conceptual
 author: mikejo5000
 ms.author: mikejo
-manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: de4cf17e02391db4430bcd41fb8cfa2ea09b98f7
+ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
 ms.translationtype: HT
-ms.sourcegitcommit: 17defdd0b96ec1c3273fc6b845af844b031a4a17
-ms.openlocfilehash: 56ff9bcee976de7ae6be4bc410c275438f0f16ec
-ms.contentlocale: it-it
-ms.lasthandoff: 09/06/2017
-
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/19/2018
 ---
-# <a name="analyze-memory-usage"></a>Analizzare l'uso della memoria
-È possibile rilevare perdite di memoria e memoria inefficiente mentre si sta eseguendo il debug con lo strumento di diagnostica **Utilizzo memoria** integrato nel debugger. Lo strumento Utilizzo memoria consente di eseguire uno o più *snapshot* dell'heap di memoria gestito e nativo. È possibile raccogliere snapshot di app.NET, native o in modalità mista (.NET e native).  
-  
--   È possibile analizzare un singolo snapshot per ottenere informazioni sull'impatto relativo dei tipi di oggetto sull'uso della memoria e per trovare nell'app il codice che usa la memoria in modo non efficiente.  
-  
--   È anche possibile confrontare (diff) due snapshot di un'app per trovare le aree del codice che provocano l'incremento dell'uso della memoria nel tempo.  
+# <a name="profile-memory-usage-in-visual-studio"></a>Profilare l'utilizzo della memoria in Visual Studio
+È possibile rilevare perdite di memoria e memoria inefficiente mentre si sta eseguendo il debug con lo strumento di diagnostica **Utilizzo memoria** integrato nel debugger. Lo strumento Utilizzo memoria consente di eseguire uno o più *snapshot* dell'heap di memoria gestito e nativo per comprendere meglio l'impatto sull'utilizzo della memoria dei tipi di oggetti. È possibile raccogliere snapshot di app.NET, native o in modalità mista (.NET e native).  
   
  L'immagine seguente mostra la finestra **Strumenti di diagnostica**, disponibile in Visual Studio 2015 Update 1 e versioni successive:  
   
@@ -54,6 +30,12 @@ ms.lasthandoff: 09/06/2017
 >  **Supporto allocatore personalizzato.** Il profiler della memoria nativo raccoglie dati relativi a eventi [ETW](/windows-hardware/drivers/devtest/event-tracing-for-windows--etw-) di allocazione generati in fase di esecuzione.  Gli allocatori in CRT e Windows SDK sono stati annotati a livello di origine in modo che sia possibile acquisirne i dati di allocazione.  Nella scrittura degli allocatori, fare in modo che qualsiasi funzione che restituisce un puntatore alla memoria heap appena allocata possa essere decorata con [__declspec](/cpp/cpp/declspec)(allocator), come illustrato in questo esempio per myMalloc:  
 >   
 >  `__declspec(allocator) void* myMalloc(size_t size)` 
+
+In questa esercitazione si eseguono le attività seguenti:
+
+> [!div class="checklist"]
+> * Creare snapshot della memoria
+> * Analizzare i dati di utilizzo della memoria
 
 ## <a name="collect-memory-usage-data"></a>Raccogliere i dati sull'utilizzo della memoria
 
@@ -109,7 +91,7 @@ Nelle righe della tabella di riepilogo Utilizzo memoria sono elencati gli snapsh
 
  Il nome delle colonne dipende dalla modalità di debug selezionata nelle proprietà del progetto: .NET, nativa o mista (nativa e .NET).  
   
--   Le colonne **Oggetti (diff)**e **Allocazioni (diff)** visualizzano il numero di oggetti nella memoria .NET e nativa quando è stato creato lo snapshot.  
+-   Le colonne **Oggetti (diff)** e **Allocazioni (diff)** visualizzano il numero di oggetti nella memoria .NET e nativa quando è stato creato lo snapshot.  
   
 -   La colonna **Dimensioni heap (diff)** visualizza il numero di byte negli heap nativi e .NET 
 
@@ -177,13 +159,18 @@ Per analizzare l'utilizzo della memoria, fare clic su uno dei collegamenti che c
  ![Visualizzazione differenze dei tipi nativi](../profiling/media/dbgdiag_mem_native_typesviewdiff.png "DBGDIAG_MEM_Native_TypesViewDiff")  
   
 ## <a name="blogs-and-videos"></a>Blog e video  
- [Finestra del debugger degli strumenti di diagnostica in Visual Studio 2015](http://blogs.msdn.com/b/visualstudioalm/archive/2015/01/16/diagnostic-tools-debugger-window-in-visual-studio-2015.aspx)  
-  
- [Blog: Strumento di utilizzo della memoria durante il debug in Visual Studio 2015](http://blogs.msdn.com/b/visualstudioalm/archive/2014/11/13/memory-usage-tool-while-debugging-in-visual-studio-2015.aspx)  
-  
- [Blog su Visual C++: Diagnostica della memoria nativa in Visual Studio 2015 Preview](http://blogs.msdn.com/b/vcblog/archive/2014/11/21/native-memory-diagnostics-in-vs2015-preview.aspx)  
-  
- [Blog su Visual C++: Strumenti di diagnostica della memoria nativa per Visual Studio 2015 CTP](http://blogs.msdn.com/b/vcblog/archive/2014/06/04/native-memory-diagnostic-tools-for-visual-studio-14-ctp1.aspx)
 
-## <a name="see-also"></a>Vedere anche
- [Profilatura in Visual Studio](../profiling/index.md) [Panoramica delle funzionalità di profilatura](../profiling/profiling-feature-tour.md)
+|         |         |
+|---------|---------|
+|  ![icona della telecamera](../install/media/video-icon.png "Guardare un video")  |    [Guardare un video](https://mva.microsoft.com/en-US/training-courses-embed/getting-started-with-visual-studio-2017-17798/Profiling-with-Diagnostics-Tools-in-Visual-Studio-2017-daHnzMD6D_9211787171) sull'uso degli strumenti di diagnostica che illustra come analizzare l'uso della memoria e della CPU in Visual Studio 2017. |
+
+ [Analizzare CPU e memoria in fase di debug](https://blogs.msdn.microsoft.com/visualstudio/2016/02/15/analyze-cpu-memory-while-debugging/)  
+  
+ [Blog su Visual C++: profilatura della memoria in Visual C++ 2015](https://blogs.msdn.microsoft.com/vcblog/2015/10/21/memory-profiling-in-visual-c-2015/)  
+
+## <a name="next-steps"></a>Passaggi successivi
+
+In questa esercitazione si è appreso come raccogliere e analizzare i dati d'uso della memoria. Se è già stato completata la [presentazione del profiler](../profiling/profiling-feature-tour.md), è possibile vedere come analizzare l'uso della CPU nelle app di Windows.
+
+> [!div class="nextstepaction"]
+> [Analizzare l'utilizzo della CPU](../profiling/beginners-guide-to-performance-profiling.md) 

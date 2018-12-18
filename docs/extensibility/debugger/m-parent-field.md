@@ -1,43 +1,28 @@
 ---
-title: Campo m_parent | Documenti di Microsoft
-ms.custom: 
+title: Campo m_parent | Documenti Microsoft
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - vs-ide-sdk
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: conceptual
 helpviewer_keywords:
 - m_parent field, Task class [.NET Framework debug engines]
 ms.assetid: da9e3dc7-8e9b-4c3a-a9e0-12921b5300c6
-caps.latest.revision: 9
+author: gregvanl
 ms.author: gregvanl
-manager: ghogen
-translation.priority.mt:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: 5db97d19b1b823388a465bba15d057b30ff0b3ce
-ms.openlocfilehash: 235f3bb6dc000f96e28a48cc2bac1f1dacea0917
-ms.lasthandoff: 02/22/2017
-
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: 4c50bb06a7aa87e06768e55849ca1e7c2bd4d1c8
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="mparent-field"></a>m_parent campo
-Il campo sottostante per la <xref:System.Threading.Tasks.Task.Parent%2A?displayProperty=fullName>proprietà.</xref:System.Threading.Tasks.Task.Parent%2A?displayProperty=fullName>  
+Il campo sottostante per il <xref:System.Threading.Tasks.Task?displayProperty=fullName> `Parent` proprietà.  
   
- **Namespace:**<xref:System.Threading.Tasks?displayProperty=fullName></xref:System.Threading.Tasks?displayProperty=fullName>  
+ **Namespace:** <xref:System.Threading.Tasks?displayProperty=fullName>  
   
  **Assembly:** mscorlib (in mscorlib. dll)  
   
@@ -52,4 +37,4 @@ Il campo sottostante per la <xref:System.Threading.Tasks.Task.Parent%2A?displayP
 ## <a name="remarks"></a>Note  
   
 ## <a name="see-also"></a>Vedere anche  
- [Classe attività](../../extensibility/debugger/task-class-internal-members.md)
+ [Classe dell'attività](../../extensibility/debugger/task-class-internal-members.md)

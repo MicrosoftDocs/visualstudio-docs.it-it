@@ -1,46 +1,45 @@
 ---
-title: "Scheda Messaggi, Finestra di dialogo Opzioni messaggio | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "opzioni messaggio, Messaggi"
+title: Scheda messaggi, finestra di dialogo Opzioni messaggio | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology: vs-ide-debug
+ms.topic: reference
+helpviewer_keywords:
+- message options, Messages
 ms.assetid: fb9fa211-e82c-40a5-9e4b-ba8de07313c0
-caps.latest.revision: 4
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 4
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: f19da533d2ab13e7493eae53af8dea3af4e520df
+ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/18/2018
 ---
-# Scheda Messaggi, Finestra di dialogo Opzioni messaggio
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
-Utilizzare la scheda **Messaggi** per selezionare quali tipi di messaggio elencare in [Visualizzazione messaggi](../debugger/messages-view.md) e per specificare i criteri di ricerca del messaggio.  Per visualizzare la [finestra di dialogo Opzioni messaggio](../debugger/message-options-dialog-box.md), scegliere **Registra messaggi** dal menu **Spy**.  
+# <a name="messages-tab-message-options-dialog-box"></a>Scheda Messaggi, Finestra di dialogo Opzioni messaggio
+Utilizzare il **messaggi** tab per selezionare quali tipi di elenco nel messaggio [visualizzazione messaggi](../debugger/messages-view.md)e per specificare i criteri di ricerca di messaggi. Per visualizzare il [finestra di dialogo Opzioni messaggio](../debugger/message-options-dialog-box.md), scegliere **messaggi di Log** dal **Spy** menu.  
   
- In genere prima si seleziona **Gruppi di messaggi**, quindi si ottimizza la selezione scegliendo **Messaggi da visualizzare**.  Il pulsante **Tutti** consente di selezionare tutti i tipi di messaggio mentre il pulsante **Nessuno** consente di deselezionare tutti i tipi.  
+ In genere, prima selezionare **gruppi di messaggi**e quindi ottimizzare la selezione selezionando singoli **messaggi alla visualizzazione**. Il **tutti** pulsante Seleziona tutti i tipi di messaggio e **Nessuno** pulsante Cancella tutti i tipi.  
   
- Nella scheda **Messaggi** sono disponibili le impostazioni seguenti:  
+ Le impostazioni seguenti sono disponibili sul **messaggi** scheda:  
   
- **Messaggi da visualizzare**  
- Consente di selezionare messaggi specifici da visualizzare.  Quando si crea una nuova finestra Messaggi, è possibile visualizzare tutti i messaggi.  Quando si filtrano messaggi dalla scheda **Messaggi**, quel filtro viene applicato solo ai nuovi messaggi e non a quelli che sono già stati visualizzati nella visualizzazione delle finestre.  
+ **Messaggi alla visualizzazione**  
+ Selezionare i messaggi specifici per la visualizzazione. Quando si crea una nuova finestra messaggi, è possibile visualizzare tutti i messaggi. Quando si filtrano i messaggi dal **messaggi** scheda, tale filtro si applica solo ai nuovi messaggi e non quelli che sono già stati visualizzati nella visualizzazione delle finestre.  
   
  **Gruppi di messaggi**  
- Consente di selezionare i gruppi di messaggi da visualizzare.  I gruppi disponibili includono:  
+ Selezionare i gruppi di messaggi per la visualizzazione. I gruppi disponibili includono:  
   
--   WM\_USER: con un codice maggiore o uguale a WM\_USER  
+-   WM_USER: con un codice maggiore di o uguale a WM_USER  
   
--   Registrato: registrato con la chiamata **RegisterWindowMessage**  
+-   Registrato: registrato con il **RegisterWindowMessage** chiamare  
   
--   Sconosciuto: messaggi sconosciuti nell'intervallo compreso tra 0 e \(WM\_USER – 1\)  
+-   Sconosciuto: messaggi sconosciuti nell'intervallo da 0 a (WM_USER - 1)  
   
- Notare che questi **Gruppi di messaggi** non sono mappati alle voci specifiche sotto **Messaggi da visualizzare**.  Quando si seleziona un gruppo, la selezione è applicata direttamente al flusso di messaggi.  
+ Si noti che queste **gruppi di messaggi** non corrispondono alle voci specifiche sotto **messaggi da visualizzare**. Quando si seleziona un gruppo, la selezione viene applicata direttamente al flusso di messaggi.  
   
- Una casella di controllo disabilitata all'interno di **Gruppi di messaggi** indica che la casella di riepilogo **Messaggi da visualizzare** è stata modificata relativamente ai messaggi di quel gruppo. Non tutti i tipi di messaggio di quel gruppo vengono selezionati.  
+ All'interno di una casella di controllo disabilitata **gruppi di messaggi** indica che il **messaggi da visualizzare** casella di riepilogo è stato modificato per i messaggi in tale gruppo, sono selezionati tutti i tipi di messaggio in tale gruppo.  
   
- **Salva impostazioni come predefinite**  
- Consente di salvare le impostazioni correnti per un uso successivo come opzioni di ricerca del messaggio.  Queste impostazioni vengono salvate anche alla chiusura di Spy\+\+.
+ **Salva le impostazioni come impostazioni predefinite**  
+ Salvare le impostazioni correnti per un utilizzo successivo come opzioni di ricerca di messaggi. Queste impostazioni vengono salvate anche quando si esce da Spy + +.

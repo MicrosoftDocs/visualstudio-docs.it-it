@@ -1,37 +1,65 @@
 ---
-title: "Utilizzo di set di regole per raggruppare regole di analisi del codice | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-devops-test"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "vs.codeanalysis.rulesets.learnmore"
-helpviewer_keywords: 
-  - "analisi codice, set di regole"
-ms.assetid: ed0f3a2a-1516-42e2-92de-b8986dc75d42
-caps.latest.revision: 36
-author: "stevehoag"
-ms.author: "shoag"
-manager: "wpickett"
-caps.handback.revision: 36
+title: Set di regole di analisi codice in Visual Studio
+ms.date: 04/02/2018
+ms.technology: vs-ide-code-analysis
+ms.topic: conceptual
+f1_keywords:
+- vs.codeanalysis.rulesets.learnmore
+helpviewer_keywords:
+- code analysis, rule sets
+author: gewarren
+ms.author: gewarren
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 3a445aecdd5a9f02bca8d43e42646c991742a626
+ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/19/2018
 ---
-# Utilizzo di set di regole per raggruppare regole di analisi del codice
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
+# <a name="use-rule-sets-to-group-code-analysis-rules"></a>Set di regole di utilizzo per raggruppare regole di analisi codice
 
-Quando si configura l'analisi del codice in [!INCLUDE[vsUltLong](../code-quality/includes/vsultlong_md.md)], [!INCLUDE[vsPreLong](../code-quality/includes/vsprelong_md.md)], o [!INCLUDE[vsPro](../code-quality/includes/vspro_md.md)], è possibile scegliere da un elenco di *set di regole*incorporate Microsoft.  Un set di regole è un raggruppamento logico di regole dell'analisi del codice che identificano problemi di destinazione e condizioni specifiche.  Ad esempio, è possibile applicare un set di regole progettato per analizzare il codice per le API disponibili, oppure è possibile applicare un set di regole che includa solo le regole minime consigliate.  È inoltre possibile applicare un set di regole che includa tutte le regole.  
-  
- È possibile personalizzare un set di regole aggiungendo o eliminando regole oppure modificando le regole in modo che vengano visualizzate nella finestra **Elenco errori** come avvisi o errori.  I set di regole personalizzati possono soddisfare le esigenze di un determinato ambiente di sviluppo.  Quando si personalizza un set di regole, nella relativa pagina vengono forniti strumenti di ricerca e filtro che agevolano il processo.  
-  
-## Attività comuni  
-  
-|Task|Contenuto correlato|  
-|----------|-------------------------|  
-|**Fare pratica:** utilizzare gli strumenti di analisi codice per specificare un set di regole personalizzate e individuare e correggere problemi in una semplice applicazione .NET Framework.|-   [Procedura dettagliata: Configurazione e uso di un set di regole personalizzate](../code-quality/walkthrough-configuring-and-using-a-custom-rule-set.md)|  
-|**Configurare l'analisi codice per un progetto:** scegliere un set di regole esistente per un progetto, un sito Web o una soluzione.|-   [Procedura: Configurare l'analisi codice per un progetto di codice gestito](../code-quality/how-to-configure-code-analysis-for-a-managed-code-project.md)<br />-   [Utilizzo di set di regole per specificare le regole C\+\+ da eseguire](../code-quality/using-rule-sets-to-specify-the-cpp-rules-to-run.md)<br />-   [Procedura: configurare l'analisi del codice per un'applicazione Web ASP.NET](../code-quality/how-to-configure-code-analysis-for-an-aspnet-web-application.md)<br />-   [Procedura: specificare set di regole per più progetti in una soluzione](../code-quality/how-to-specify-managed-code-rule-sets-for-multiple-projects-in-a-solution.md)|  
-|**Personalizzare un set di regole:** specificare le regole da applicare al progetto.|-   [Creazione di set di regole personalizzate](../code-quality/creating-custom-code-analysis-rule-sets.md)|  
-|**Capire i set di regole standard:** visualizzare le regole di analisi codice che costituiscono i set di regole incorporati.|-   [Tabella di riferimento del set di regole di analisi del codice](../code-quality/code-analysis-rule-set-reference.md)|  
-|**Integrare l'analisi codice con Team Foundation Server:**i criteri di archiviazione di[!INCLUDE[esprtfs](../code-quality/includes/esprtfs_md.md)] consentono ai team di sviluppo di assicurarsi che tutte le archiviazioni di codice soddisfino un set comune di standard di analisi codice.|-   [Procedura: sincronizzare i set di regole del progetto di codice con i criteri di archiviazione del progetto team](../code-quality/how-to-synchronize-code-project-rule-sets-with-team-project-check-in-policy.md)|
+Quando si configura l'analisi del codice in Visual Studio, è possibile scegliere da un elenco di incorporato *set di regole*. Un set di regole viene applicata a un progetto ed è un raggruppamento di codice le regole di analisi che identificano i problemi di destinazione e condizioni specifiche per il progetto. Ad esempio, è possibile applicare un set di regole che è progettato per l'analisi codice per le API disponibili pubblicamente, o solo le regole minime. È inoltre possibile applicare un set di regole che include tutte le regole.
+
+È possibile personalizzare una set di regole mediante l'aggiunta o eliminazione di regole, o modificando i livelli di gravità regola vengono visualizzati come avvisi o errori nel **elenco errori**. Set di regole personalizzato può soddisfare esigenze per l'ambiente di sviluppo specifico. Quando si personalizza un set di regole, editor set di regole fornisce ricerca e strumenti per semplificare il processo di filtraggio.
+
+## <a name="rule-set-format"></a>Formato del set di regole
+
+Un set di regole viene specificato in formato XML in un *estensione ruleset* file. Regole, che sono costituiti da un ID e un *azione*, raggruppati per ID analizzatore e spazio dei nomi nel file.
+
+Il contenuto XML di un *estensione ruleset* file avrà un aspetto simile al seguente:
+
+```xml
+<RuleSet Name="Rules for Hello World project" Description="These rules focus on critical issues for the Hello World app." ToolsVersion="10.0">
+  <Localization ResourceAssembly="Microsoft.VisualStudio.CodeAnalysis.RuleSets.Strings.dll" ResourceBaseName="Microsoft.VisualStudio.CodeAnalysis.RuleSets.Strings.Localized">
+    <Name Resource="HelloWorldRules_Name" />
+    <Description Resource="HelloWorldRules_Description" />
+  </Localization>
+  <Rules AnalyzerId="Microsoft.Analyzers.ManagedCodeAnalysis" RuleNamespace="Microsoft.Rules.Managed">
+    <Rule Id="CA1001" Action="Warning" />
+    <Rule Id="CA1009" Action="Warning" />
+    <Rule Id="CA1016" Action="Warning" />
+    <Rule Id="CA1033" Action="Warning" />
+  </Rules>
+  <Rules AnalyzerId="Microsoft.CodeQuality.Analyzers" RuleNamespace="Microsoft.CodeQuality.Analyzers">
+    <Rule Id="CA1802" Action="Error" />
+    <Rule Id="CA1814" Action="Info" />
+    <Rule Id="CA1823" Action="None" />
+    <Rule Id="CA2217" Action="Warning" />
+  </Rules>
+</RuleSet>
+```
+
+> [!TIP]
+> È più facile [modifica un set di regole](../code-quality/working-in-the-code-analysis-rule-set-editor.md) nel grafico **Editor Set di regole** rispetto a mano.
+
+La regola impostata per un progetto specificato per il `CodeAnalysisRuleSet` proprietà nel file di progetto Visual Studio. Ad esempio:
+
+```xml
+<CodeAnalysisRuleSet>HelloWorld.ruleset</CodeAnalysisRuleSet>
+```
+
+## <a name="see-also"></a>Vedere anche
+
+- [Tabella di riferimento del set di regole di analisi del codice](../code-quality/rule-set-reference.md)

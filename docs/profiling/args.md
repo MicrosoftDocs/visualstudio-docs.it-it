@@ -1,50 +1,49 @@
 ---
-title: "Args | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: Args | Microsoft Docs
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology: vs-ide-debug
+ms.topic: conceptual
 ms.assetid: 20c35949-1f29-4282-ac75-4e6c237d71bc
-caps.latest.revision: 10
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 10
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 7c92cde3389710e292d8f6b24625055065a9128a
+ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/19/2018
 ---
-# Args
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
-L'opzione **Args** di VSPerfCmd.exe consente di specificare un elenco di argomenti passati all'applicazione di destinazione del sottocomando **Launch**.  
+# <a name="args"></a>Args
+L'opzione **Args** di VSPerfCmd.exe specifica un elenco di argomenti passati all'applicazione di destinazione del sottocomando **Launch**.  
   
- **Args** può essere utilizzata solo quando anche **Launch** è specificata nella riga di comando.  **Args** è facoltativa quando **Launch** è specificata.  
+ **Args** può essere usata solo quando è specificato anche **Launch** nella riga di comando. **Args** è facoltativa quando è specificato **Launch**.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
 VSPerfCmd.exe /Launch:AppName /Args:Arguments [Options]  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `Arguments`  
- Elenco di argomenti per l'applicazione di destinazione del comando **Launch**.  
+ Un elenco di argomenti per l'applicazione di destinazione del comando **Launch**.  
   
-## Opzioni obbligatorie  
+## <a name="required-options"></a>Opzioni obbligatorie  
  **Launch:** `AppName`  
- Avvia l'applicazione specificata e l'operazione di profilo con il metodo di campionamento.  
+ Avvia l'applicazione specificata e inizia la profilatura con il metodo di campionamento.  
   
-## Esempio  
- Nell'esempio seguente viene utilizzata l'opzione **Args** per passare argomenti a TestApp.exe.  
+## <a name="example"></a>Esempio  
+ L'esempio seguente usa l'opzione **Args** per passare gli argomenti a TestApp.exe.  
   
 ```  
 VSPerfCmd.exe /Start:Sample /Output:TestApp.exe.vsp  
 VSPerfCmd.exe /Launch:TestApp.exe /Args:"123, 'Hello World'"  
 ```  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [VSPerfCmd](../profiling/vsperfcmd.md)   
  [Profilatura di applicazioni autonome](../profiling/command-line-profiling-of-stand-alone-applications.md)   
  [Profilatura di applicazioni Web ASP.NET](../profiling/command-line-profiling-of-aspnet-web-applications.md)   

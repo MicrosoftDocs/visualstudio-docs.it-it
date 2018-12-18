@@ -1,71 +1,70 @@
 ---
-title: "ProcessOn e ProcessOff | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: ProcessOn e ProcessOff | Microsoft Docs
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology: vs-ide-debug
+ms.topic: conceptual
 ms.assetid: d3dc6a7e-bc0f-48a6-a4ec-f386348bb296
-caps.latest.revision: 8
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 8
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 720ac244002e287b47d7c0c7c75b15a1fc707dd1
+ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/19/2018
 ---
-# ProcessOn e ProcessOff
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
-I sottocomandi **ProcessOff** e **ProcessOn** di VSPerfCmd.exe consentono di sospendere e di riprendere la profilatura per il processo specificato in una sessione di profilatura dalla riga di comando.  **ProcessOff** arresta la profilatura del processo, mentre **ProcessOn** la avvia.  
+# <a name="processon-and-processoff"></a>ProcessOn e ProcessOff
+I sottocomandi **ProcessOff** e **ProcessOn** di VSPerfCmd.exe sospendono e riprendono la profilatura per il processo specificato in una sessione di profilatura da riga di comando. **ProcessOff** arresta la profilatura del processo e **ProcessOn** avvia la profilatura del processo.  
   
- Nella maggior parte dei casi, si specifica **ProcessOn** o **ProcessOff** come unica opzione in una riga di comando VSPerfCmd.exe, anche se è possibile combinare questi comandi con i sottocomandi **GlobalOn**, **GlobalOff**, **ThreadOn** e **ThreadOff**.  
+ Nella maggior parte dei casi si specifica **ProcessOn** o **ProcessOff** come unica opzione in una riga di comando di VSPerfCmd.exe, ma questi sottocomandi possono anche essere combinati con i sottocomandi **GlobalOn**, **GlobalOff**, **ThreadOn** e **ThreadOff**.  
   
- I sottocomandi **ProcessOn** e **ProcessOff** interagiscono con i sottocomandi **GlobalOn** e **GlobalOff** che controllano la raccolta dei dati per tutti i processi di una sessione di profilo dalla riga di comando e con i sottocomandi **ThreadOn** e **ThreadOff** che controllano la raccolta dei dati per un thread specificato.  
+ I sottocomandi **ProcessOn** e **ProcessOff** interagiscono con i sottocomandi **GlobalOn** e **GlobalOff** che controllano la raccolta dei dati per tutti i processi in una sessione di profilatura da riga di comando e i sottocomandi **ThreadOn** e **ThreadOff** che controllano la raccolta dei dati per un processo specificato.  
   
- I sottocomandi **ProcessOff** e **ProcessOn** influiscono anche sul conteggio Start\/Stop del processo modificato dalle funzioni API del profiler.  
+ I sottocomandi **ProcessOff** e **ProcessOn** influenzano anche il conteggio Start/Stop per il processo, gestito dalle funzioni API del profiler.  
   
--   **ProcessOff** imposta immediatamente il conteggio Start\/Stop del processo su 0 e sospende l'operazione di profilo.  
+-   **ProcessOff** imposta immediatamente il conteggio Start/Stop per il processo su 0 e sospende quindi la profilatura.  
   
--   **ProcessOn** imposta immediatamente il conteggio Start\/Stop del processo su 1 e riprende l'operazione di profilo.  
+-   **ProcessOn** imposta immediatamente il conteggio Start/Stop per il processo su 1 e riprende quindi la profilatura.  
   
- Per ulteriori informazioni, vedere [API per strumenti di profilatura](../profiling/profiling-tools-apis.md).  
+ Per altre informazioni, vedere [API per strumenti di profilatura](../profiling/profiling-tools-apis.md).  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
 VSPerfCmd.exe /{ProcessOff|ProcessOn}:PID [Options]  
   
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `PID`  
- Identificatore Integer del processo da avviare o interrompere.  Gli ID processo vengono elencati nella scheda Processi di Gestione attività di Windows.  
+ Identificatore integer del processo da avviare o arrestare. Gli ID di processo sono elencati nella scheda Processi di Gestione attività di Windows.  
   
-## Sottocomandi obbligatori  
- Nessuno  
+## <a name="required-subcommands"></a>Sottocomandi obbligatori  
+ nessuno  
   
-## Sottocomandi validi  
- È possibile specificare **ProcessOn** e **ProcessOff** sulle righe di comando che contengono anche i sottocomandi seguenti.  
+## <a name="valid-subcommands"></a>Sottocomandi validi  
+ **ProcessOn** e **ProcessOff** possono essere specificati su righe di comando che contengono anche i sottocomandi seguenti.  
   
  **Start:** `Method`  
- Inizializza la sessione di profilo dalla riga di comando e imposta il metodo di profilo specificato.  
+ Inizializza la sessione di profilatura da riga di comando e imposta il metodo di profilatura specificato.  
   
  **Launch:** `AppName`  
- Avvia l'applicazione specificata e l'operazione di profilo con il metodo di campionamento.  
+ Avvia l'applicazione specificata e inizia la profilatura con il metodo di campionamento.  
   
  **Attach:** `PID`  
- Avvia il profilo del processo specificato.  
+ Avvia la profilatura del processo specificato.  
   
  **GlobalOff**&#124;**GlobalOn**  
- Interrompe o avvia il profilo di tutti i processi in una sessione di profilo dalla riga di comando.  
+ Arresta o avvia la profilatura per tutti i processi in una sessione di profilatura da riga di comando.  
   
  {**ThreadOff**&#124;**ThreadOn**}**:**`TID`  
- Interrompe o avvia il profilo per il thread specificato \(solo metodo di strumentazione\).  
+ Arresta o avvia la profilatura per il thread specificato (solo metodo di strumentazione).  
   
-## Esempio  
- In questo esempio, il sottocomando **ProcessOff** viene utilizzato per raccogliere dati di profilo per l'avvio dell'applicazione.  
+## <a name="example"></a>Esempio  
+ In questo esempio, il sottocomando **ProcessOff** viene usato per raccogliere dati di profilatura per l'avvio dell'applicazione.  
   
 ```  
 ; Initialize the profiler.  
@@ -79,7 +78,7 @@ VSPerfCmd /Shutdown
   
 ```  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [VSPerfCmd](../profiling/vsperfcmd.md)   
  [Profilatura di applicazioni autonome](../profiling/command-line-profiling-of-stand-alone-applications.md)   
  [Profilatura di applicazioni Web ASP.NET](../profiling/command-line-profiling-of-aspnet-web-applications.md)   

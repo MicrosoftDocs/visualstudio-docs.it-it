@@ -1,13 +1,9 @@
 ---
-title: "Attività SGen | Microsoft Docs"
-ms.custom: 
+title: Attività SGen | Microsoft Docs
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- vs-ide-sdk
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.technology: msbuild
+ms.topic: reference
 f1_keywords:
 - http://schemas.microsoft.com/developer/msbuild/2003#SGen
 dev_langs:
@@ -19,36 +15,22 @@ helpviewer_keywords:
 - SGen task [MSBuild]
 - MSBuild, SGen task
 ms.assetid: 22c5ade4-4159-4667-b891-0c1aa06f4df5
-caps.latest.revision: 11
-author: kempb
-ms.author: kempb
-manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 3d32d11a430227800cb3ed53831a9565eb6adeb3
-ms.openlocfilehash: d027716980368a7c812ebda6fac6884c9481af12
-ms.contentlocale: it-it
-ms.lasthandoff: 05/30/2017
-
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 57e9841bd93e1bf41f15dec36b11137edfd5fa14
+ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/19/2018
 ---
 # <a name="sgen-task"></a>Attività SGen
 Crea un assembly di serializzazione XML per i tipi presenti nell'assembly specificato. Questa attività esegue il wrapping dello strumento per la generazione di serializzatori XML (Sgen.exe). Per altre informazioni, vedere [Strumento per la generazione di serializzatori XML (Sgen.exe)](/dotnet/framework/serialization/xml-serializer-generator-tool-sgen-exe).  
   
 ## <a name="parameters"></a>Parametri  
- Nella tabella che segue vengono descritti i parametri dell'attività `SGen`.  
+ Nella tabella che segue vengono descritti i parametri dell'attività `SGen` .  
   
 |Parametro|Descrizione|  
 |---------------|-----------------|  
@@ -73,5 +55,5 @@ Crea un assembly di serializzazione XML per i tipi presenti nell'assembly specif
   
 ## <a name="see-also"></a>Vedere anche  
  [Riferimento alle attività](../msbuild/msbuild-task-reference.md)   
- [Tasks](../msbuild/msbuild-tasks.md)  (Attività)  
+ [Attività](../msbuild/msbuild-tasks.md)   
  [Concetti relativi a MSBuild](../msbuild/msbuild-concepts.md)

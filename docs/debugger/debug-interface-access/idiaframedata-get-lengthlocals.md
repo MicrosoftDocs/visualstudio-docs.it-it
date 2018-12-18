@@ -1,47 +1,46 @@
 ---
-title: "IDiaFrameData::get_lengthLocals | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "IDiaFrameData::get_lengthLocals (metodo)"
+title: IDiaFrameData::get_lengthLocals | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology: vs-ide-debug
+ms.topic: conceptual
+dev_langs:
+- C++
+helpviewer_keywords:
+- IDiaFrameData::get_lengthLocals method
 ms.assetid: 51fe15c3-4cd6-4a06-8a41-a56502209762
-caps.latest.revision: 8
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 8
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 31dd2eb35ccf8a9adb4392c55bbfb3feb8b010e5
+ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/18/2018
 ---
-# IDiaFrameData::get_lengthLocals
-[!INCLUDE[vs2017banner](../../code-quality/includes/vs2017banner.md)]
-
-Recupera il numero di byte delle variabili locali inserite nello stack.  
+# <a name="idiaframedatagetlengthlocals"></a>IDiaFrameData::get_lengthLocals
+Recupera il numero di byte di variabili locali inserite nello stack.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp#  
-HRESULT get_lengthLocals (   
-   DWORD* pRetVal  
+```C++  
+HRESULT get_lengthLocals (   
+   DWORD* pRetVal  
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `pRetVal`  
- \[out\]  Restituisce il numero di byte delle variabili locali.  
+ [out] Restituisce il numero di byte di variabili locali.  
   
-## Valore restituito  
- Se l'operazione riesce, restituisce `S_OK`.  Restituisce `S_FALSE` se questa proprietà non è supportata.  In caso contrario, restituisce un codice di errore.  
+## <a name="return-value"></a>Valore restituito  
+ Se ha esito positivo, restituisce `S_OK`. Restituisce `S_FALSE` se questa proprietà non è supportata. In caso contrario, verrà restituito un codice di errore.  
   
-## Note  
- Il valore restituito da questo metodo viene utilizzato in genere nell'interpretazione di una stringa di programma \(vedere [IDiaFrameData::get\_program](../../debugger/debug-interface-access/idiaframedata-get-program.md) metodo per la definizione di una stringa di programma\).  
+## <a name="remarks"></a>Note  
+ Il valore restituito da questo metodo viene utilizzato in genere l'interpretazione di una stringa di programma (vedere il [idiaframedata:: Get_program](../../debugger/debug-interface-access/idiaframedata-get-program.md) metodo per la definizione di una stringa di programma).  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IDiaFrameData](../../debugger/debug-interface-access/idiaframedata.md)   
- [IDiaFrameData::get\_program](../../debugger/debug-interface-access/idiaframedata-get-program.md)
+ [IDiaFrameData::get_program](../../debugger/debug-interface-access/idiaframedata-get-program.md)

@@ -1,69 +1,66 @@
 ---
-title: "Procedura: sincronizzare i set di regole del progetto di codice con i criteri di archiviazione del progetto team | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-devops-test"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "vs.codeanalysis.selecttfsruleset"
+title: 'Procedura: sincronizzare i set di regole del progetto di codice con i criteri di archiviazione del progetto team'
+ms.date: 11/04/2016
+ms.technology: vs-ide-code-analysis
+ms.topic: conceptual
+f1_keywords:
+- vs.codeanalysis.selecttfsruleset
 ms.assetid: 9b02f934-2db6-41ec-aaff-9c31ceec2f04
-caps.latest.revision: 12
-author: "stevehoag"
-ms.author: "shoag"
-manager: "wpickett"
-caps.handback.revision: 12
+author: gewarren
+ms.author: gewarren
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 1bb6f97495eec73e52751f79d92e2f078bd13b24
+ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/19/2018
 ---
-# Procedura: sincronizzare i set di regole del progetto di codice con i criteri di archiviazione del progetto team
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
+# <a name="how-to-synchronize-code-project-rule-sets-with-team-project-check-in-policy"></a>Procedura: sincronizzare i set di regole del progetto di codice con i criteri di archiviazione del progetto team
 
-Sincronizzare le impostazioni dell'analisi del codice per i progetti di codice ai criteri di archiviazione per il progetto team specificando un set di regole che contiene almeno le regole specificate nel set di regole per i criteri di archiviazione.  Lo sviluppatore responsabile offre informazioni su nome e percorso del set di regole per i criteri di archiviazione.  È possibile utilizzare una delle opzioni seguenti per assicurarsi che l'analisi del codice per il progetto utilizzi il set di regole corretto:  
-  
--   Se i criteri di archiviazione utilizzano un set di regole incorporate Microsoft, aprire la finestra di dialogo delle proprietà per il progetto di codice, visualizzare la pagina Analisi codice e selezionare il set di regole nella pagina Analisi codice delle impostazioni del progetto di codice.  I set di regole standard Microsoft vengono installati automaticamente con Visual Studio, sono di sola lettura e non devono essere modificati.  Se i set di regole non vengono modificati, la corrispondenza delle regole nei set di regole locali e dei criteri è garantita.  
-  
--   Se i criteri di archiviazione utilizzano un set di regole personalizzato, eseguire un'operazione get nel file del set di regole nel controllo della versione per creare una copia locale.  Quindi specificare tale percorso locale nelle impostazioni dell'analisi del codice per il progetto di codice.  La corrispondenza delle regole è garantita se il set di regole per i criteri di archiviazione è aggiornato.  
-  
-     Se si esegue il mapping del percorso del controllo della versione a una cartella locale nella stessa relazione della radice del progetto team come progetto di codice, il percorso del set di regole viene impostato tramite un percorso relativo.  Il percorso relativo assicura che l'impostazione del progetto di codice per l'analisi del codice possa essere spostata in altri computer.  
-  
--   Personalizzare una copia del set di regole per i criteri di archiviazione per un progetto di codice.  Assicurarsi che il nuovo set di regole contenga tutte le regole dei criteri di archiviazione e qualsiasi altra regola che si desidera includere.  È necessario verificare che il set di regole includa tutte le regole nel set di regole per i criteri di archiviazione.  
-  
-### Per specificare un set di regole standard Microsoft  
-  
-1.  In **Esplora soluzioni** fare clic con il pulsante destro del mouse sul progetto di codice, quindi scegliere **Proprietà**.  
-  
-2.  Fare clic su **Analisi codice**.  
-  
-3.  Nell'elenco a discesa **Esegui set di regole**, fare clic sul set di regole dei criteri di archiviazione:  
-  
-### Per specificare un set di regole dei criteri di archiviazione personalizzato  
-  
-1.  Se necessario, eseguire un'operazione get nel file del set di regole che specifica i criteri di archiviazione.  
-  
-2.  In **Esplora soluzioni** fare clic con il pulsante destro del mouse sul progetto di codice, quindi scegliere **Proprietà**.  
-  
-3.  Fare clic su **Analisi codice**.  
-  
-4.  Nell'elenco **Esegui il set di regole**, fare clic su **\<Sfoglia...\>**.  
-  
-5.  Nella finestra di dialogo **Apri**, specificare il file del set di regole dei criteri di archiviazione.  
-  
-### Per creare un set di regole personalizzato per un progetto di codice  
-  
-1.  Seguire una delle procedure illustrate in precedenza in questo argomento per selezionare i criteri di archiviazione del progetto team nella pagina Analisi codice della finestra di dialogo delle impostazioni del progetto.  
-  
-2.  Fare clic su **Apri**.  
-  
-3.  Aggiungere o rimuovere regole tramite l'editor del set di regole.  
-  
-     Per ulteriori informazioni, vedere [Creazione di set di regole personalizzate](../code-quality/creating-custom-code-analysis-rule-sets.md).  
-  
-4.  Salvare il set di regole modificato in un file con estensione ruleset nel computer locale o in un percorso UNC.  
-  
-5.  Aprire la finestra di dialogo delle proprietà per il progetto di codice e visualizzare la pagina **Analisi codice**.  
-  
-6.  Nell'elenco **Esegui il set di regole**, fare clic su **\<Sfoglia...\>**.  
-  
-7.  Nella finestra di dialogo **Apri**, specificare il file del set di regole.
+Sincronizzare le impostazioni di analisi codice per i progetti di codice per i criteri di controllo per il progetto team specificando un set di regole che contiene almeno le regole che vengono specificate nel set di regole per i criteri di controllo. Sviluppatore responsabile può informare è il nome e la posizione del set di regole per i criteri di controllo. È possibile utilizzare una delle opzioni seguenti per assicurarsi che l'analisi del codice per il progetto utilizza il set corretto di regole:
+
+-   Se i criteri di controllo utilizzano uno dei set di regole predefinite Microsoft, aprire la finestra di dialogo proprietà per il progetto di codice, visualizzare la pagina di analisi del codice e selezionare la regola impostata nella pagina dell'analisi del codice delle impostazioni di progetto di codice. Il set di regole standard installate automaticamente con Visual Studio di Microsoft sono impostati sola lettura e non deve essere modificato. Se non vengono modificati i set di regole, le regole nel set di regole locali e criteri di corrispondenza è garantite.
+
+-   Se i criteri di controllo utilizzano un set di regole personalizzate, eseguire un'operazione get sul file di set di regole nel controllo della versione per creare una copia locale. Quindi specificare il percorso locale nelle impostazioni di analisi del codice per il progetto di codice. Le regole sono garantite per la corrispondenza se il set di regole per i criteri di archiviazione sono aggiornata.
+
+     Se si esegue il mapping del percorso di controllo della versione in una cartella locale in relazione stessa radice del progetto team come progetto di codice, il percorso della regola viene impostato utilizzando un percorso relativo. Il percorso relativo assicura che l'impostazione di progetto di codice per l'analisi del codice può essere spostato in altri computer.
+
+-   Personalizzare una copia del set di regole per i criteri di controllo per un progetto di codice. Assicurarsi che il nuovo set di regole contiene tutte le regole nei criteri di archiviazione e altre regole che si desiderano includere. È necessario assicurarsi che il set di regole include tutte le regole nel set di regole per i criteri di controllo.
+
+## <a name="to-specify-a-microsoft-standard-rule-set"></a>Per specificare una regola standard Microsoft set
+
+1.  In **Esplora**, fare clic sul progetto codice e quindi fare clic su **proprietà**.
+
+2.  Fare clic su **l'analisi del codice**.
+
+3.  Nel **eseguire il set di regole** elenco, fare clic su set di regole dei criteri di archiviazione.
+
+## <a name="to-specify-a-custom-check-in-policy-rule-set"></a>Per specificare un set di regole di criteri di archiviazione personalizzate
+
+1.  Se necessario, eseguire un'operazione get sul file di set di regole che specifica i criteri di controllo.
+
+2.  In **Esplora**, fare clic sul progetto codice e quindi fare clic su **proprietà**.
+
+3.  Fare clic su **l'analisi del codice**.
+
+4.  Nel **eseguire il set di regole** elenco, fare clic su  **\<Sfoglia... >**.
+
+5.  Nel **aprire** finestra di dialogo, specificare i file del set di regole dei criteri di controllo.
+
+## <a name="to-create-a-custom-rule-set-for-a-code-project"></a>Per creare una regola personalizzata impostata per un progetto di codice
+
+1.  Seguire una delle procedure in questo argomento per selezionare i criteri di archiviazione del progetto team nella pagina dell'analisi del codice della finestra di dialogo Impostazioni di progetto.
+
+2.  Fare clic su **aprire**.
+
+3.  Aggiungere o rimuovere le regole usando il [editor set di regole](../code-quality/working-in-the-code-analysis-rule-set-editor.md).
+
+4.  Salvare la regola modificata impostato su un file con estensione ruleset nel computer locale o in un percorso UNC.
+
+5.  Aprire la finestra di dialogo proprietà per il progetto di codice e visualizzare il **analisi del codice** pagina.
+
+6.  Nel **eseguire il set di regole** elenco, fare clic su  **\<Sfoglia... >**.
+
+7.  Nel **aprire** finestra di dialogo, specificare il set di regole file.

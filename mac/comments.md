@@ -3,16 +3,13 @@ title: Commenti
 author: asb3993
 ms.author: amburns
 ms.date: 04/14/2017
-ms.topic: article
 ms.assetid: 0FE5E929-1846-4F48-B5E3-70990FAF9504
+ms.openlocfilehash: 0d49896a3c265dfdc5a25c46e80de498adfffb07
+ms.sourcegitcommit: 4c0bc21d2ce2d8e6c9d3b149a7d95f0b4d5b3f85
 ms.translationtype: HT
-ms.sourcegitcommit: e2b7ff9126e1cc38ac2e58d6be339b656a024e7f
-ms.openlocfilehash: cb44dc755721f6095c9a07ad3e6fec1f6849e149
-ms.contentlocale: it-it
-ms.lasthandoff: 08/11/2017
-
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/20/2018
 ---
-
 # <a name="comments"></a>Commenti
 
 Durante l'esecuzione del debug o di esperimenti con il codice, può essere utile impostare blocchi di codice come commenti, temporaneamente o a lungo termine. 
@@ -47,4 +44,3 @@ I commenti sono utili anche per la documentazione di codice per gli sviluppatori
   comment in F#
 *)
 ```
-

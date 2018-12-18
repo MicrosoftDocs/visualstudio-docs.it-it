@@ -1,47 +1,47 @@
 ---
-title: "-Setup (devenv.exe) | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/15/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-general"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "setup (opzione devenv)"
-  - "/setup (opzione devenv)"
-  - "Devenv, /setup switch"
-ms.assetid: 87608b7f-a156-400c-80f5-fc823f843e61
-caps.latest.revision: 14
-caps.handback.revision: 14
-author: "kempb"
-ms.author: "kempb"
-manager: "ghogen"
+title: Opzione /setup (devenv.exe) | Microsoft Docs
+ms.date: 11/04/2016
+ms.technology:
+- vs-ide-general
+ms.topic: conceptual
+helpviewer_keywords:
+- setup Devenv switch
+- /setup Devenv switch
+- Devenv, /setup switch
+author: gewarren
+ms.author: gewarren
+manager: douge
+ms.openlocfilehash: eee6e30a7489f5097cb17a19513c2a423187c827
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# /Setup (devenv.exe)
-[!INCLUDE[vs2017banner](../../code-quality/includes/vs2017banner.md)]
+# <a name="setup-devenvexe"></a>/Setup (devenv.exe)
 
-Impone a [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] l'unione dei metadati delle risorse che descrivono menu, barre degli strumenti e gruppi di comandi contenuti in tutti i pacchetti VSPackage disponibili.  
-  
-## <a name="syntax"></a>Sintassi  
-  
-```  
-devenv /setup  
-```  
-  
-## <a name="remarks"></a>Note  
- Questa opzione non accetta argomenti. Il comando `devenv /setup` viene in genere eseguito come ultimo passaggio del processo di installazione. L'opzione `/setup` non ha l'effetto di avviare [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)].  
-  
- Per poter usare le opzioni `devenv` e [devenv](../../ide/reference/setup-devenv-exe.md) è necessario eseguire [devenv](../../ide/reference/installvstemplates-devenv-exe.md) come amministratore.  
-  
-## <a name="example"></a>Esempio  
- Questo esempio illustra l'ultimo passaggio dell'installazione di una versione di [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] che include pacchetti VSPackage.  
-  
-```  
-devenv /setup  
-```  
-  
-## <a name="see-also"></a>Vedere anche  
- [Opzioni della riga di comando devenv](../../ide/reference/devenv-command-line-switches.md)
+L'opzione /setup impone a Visual Studio l'unione dei metadati delle risorse che descrivono menu, barre degli strumenti e gruppi di comandi contenuti in tutti i pacchetti VSPackage disponibili.
+
+## <a name="syntax"></a>Sintassi
+
+```shell
+devenv /setup
+```
+
+## <a name="remarks"></a>Note
+
+Questa opzione non accetta argomenti. Il comando `devenv /setup` viene in genere eseguito come ultimo passaggio del processo di installazione. L'opzione `/setup` non causa l'avvio di Visual Studio.
+
+> [!NOTE]
+> Per poter usare l'opzione `/setup`, è necessario eseguire `devenv` come amministratore.
+
+## <a name="example"></a>Esempio
+
+Questo esempio illustra l'ultimo passaggio dell'installazione di una versione di Visual Studio che include pacchetti VSPackage.
+
+```shell
+devenv /setup
+```
+
+## <a name="see-also"></a>Vedere anche
+
+[Opzioni della riga di comando devenv](../../ide/reference/devenv-command-line-switches.md)

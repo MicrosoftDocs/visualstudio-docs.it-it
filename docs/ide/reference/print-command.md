@@ -1,65 +1,65 @@
 ---
-title: "Comando Print | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-general"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "debug.print"
-helpviewer_keywords: 
-  - "Debug.Print (comando)"
-  - "Stampa (comando)"
-  - "Print (metodo)"
+title: Comando Stampa | Microsoft Docs
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology:
+- vs-ide-general
+ms.topic: conceptual
+f1_keywords:
+- debug.print
+helpviewer_keywords:
+- Debug.Print command
+- Print method
+- Print command
 ms.assetid: 0412d381-590a-483f-bab4-6e1cca095645
-caps.latest.revision: 10
-author: "kempb"
-ms.author: "kempb"
-manager: "ghogen"
-caps.handback.revision: 10
+author: gewarren
+ms.author: gewarren
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 66175f8aa1d371386793b892c0ead5b4dd1885b0
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# Comando Print
-[!INCLUDE[vs2017banner](../../code-quality/includes/vs2017banner.md)]
-
+# <a name="print-command"></a>Comando Print
 Valuta un'espressione o visualizza il testo specificato.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
 Debug.Print text  
 ```  
   
-## Argomenti  
+## <a name="arguments"></a>Argomenti  
  `text`  
- Obbligatorio.  L'espressione da valutare o il testo da visualizzare.  
+ Obbligatorio. Espressione da valutare o testo da visualizzare.  
   
-## Note  
- È possibile utilizzare il punto interrogativo \(?\) come alias del comando.  Ad esempio, il comando  
+## <a name="remarks"></a>Note  
+ È possibile usare il punto interrogativo (?) come alias per questo comando. Il comando  
   
 ```  
 >Debug.Print expA  
 ```  
   
- può essere scritto anche  
+ può anche essere scritto  
   
 ```  
 >? expA  
 ```  
   
- Entrambe le versioni del comando restituiscono il valore corrente dell'espressione `expA`.  
+ Entrambe le versioni di questo comando restituiscono il valore corrente dell'espressione `expA`.  
   
-## Esempio  
+## <a name="example"></a>Esempio  
   
 ```  
 >Debug.Print varA  
 ```  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Comando Valuta istruzione](../../ide/reference/evaluate-statement-command.md)   
- [Comandi di Visual Studio](../../ide/reference/visual-studio-commands.md)   
- [Finestra di comando](../../ide/reference/command-window.md)   
- [Casella Trova\/Comando](../../ide/find-command-box.md)   
+ [Visual Studio Commands](../../ide/reference/visual-studio-commands.md)  (Comandi di Visual Studio)  
+ [Command Window](../../ide/reference/command-window.md)  (Finestra di comando)  
+ [Find/Command Box](../../ide/find-command-box.md)  (Casella Trova/Comando)  
  [Alias di comandi di Visual Studio](../../ide/reference/visual-studio-command-aliases.md)

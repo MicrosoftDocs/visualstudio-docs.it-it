@@ -1,57 +1,58 @@
 ---
-title: "Test Area 6: eliminare | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "controllo del codice sorgente [Visual Studio SDK], eliminazione elementi"
-  - "origine plug-in del controllo, l'eliminazione di elementi"
+title: 'Area test 6: Eliminare | Documenti Microsoft'
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology:
+- vs-ide-sdk
+ms.topic: conceptual
+helpviewer_keywords:
+- source control [Visual Studio SDK], deleting items
+- source control plug-ins, deleting items
 ms.assetid: 6f2e872c-5ba2-4303-9f50-a90cef9a6225
-caps.latest.revision: 12
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 12
+author: gregvanl
+ms.author: gregvanl
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: 97fc6ab9746e7ef2188c78dc77ec357f7d415a42
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# Test Area 6: eliminare
-[!INCLUDE[vs2017banner](../../code-quality/includes/vs2017banner.md)]
-
-Quest'area esempio di plug\-in controllo del codice sorgente relative alle azioni di eliminazione.  
+# <a name="test-area-6-delete"></a>Test Area 6: eliminare
+Questa area di plug-in test di controllo del codice sorgente vengono illustrate le azioni di eliminazione.  
   
- Il controllo del codice sorgente rispondono alle azioni di eliminazione in **Esplora soluzioni**.  
+ Controllo del codice sorgente risponde per eliminare le azioni in **Esplora**.  
   
- Segue un elenco di elementi che possono essere eliminati:  
+ Ecco un elenco di elementi che possono essere eliminate:  
   
 -   File  
   
 -   Cartelle  
   
--   Project  
+-   Progetto  
   
- A seconda dello scenario, l'interfaccia <xref:Microsoft.VisualStudio.Shell.Interop.IVsSolutionEventsProjectUpgrade> viene generato dopo i metodi <xref:Microsoft.VisualStudio.Shell.Interop.IVsSolutionEvents3.OnAfterOpenSolution%2A>, the <xref:Microsoft.VisualStudio.Shell.Interop.IVsSolutionEvents3.OnAfterOpenProject%2A>, o <xref:Microsoft.VisualStudio.Shell.Interop.IVsSolutionEvents3.OnAfterLoadProject%2A>.  Qualsiasi azione eliminerà il progetto o elemento da **Esplora soluzioni**.  
+ A seconda del tipo di progetto, potrebbe essere possibile **rimuovere** il progetto (lascia i file su disco) o **eliminare** il progetto (rimuove i file su disco). Entrambe le azioni rimuove il progetto o un elemento da **Esplora**.  
   
-## comportamento previsto  
- Il comportamento previsto per i test case nell'esempio di eliminazione è:  
+## <a name="expected-behavior"></a>Comportamento previsto  
+ Il comportamento previsto per i test case nell'area di prova delete è:  
   
--   L'elemento eliminati non è più visibile all'interno di **Esplora soluzioni**.  
+-   Elemento eliminato non è più visibile all'interno di **Esplora**.  
   
--   Il padre del progetto dell'elemento o eliminato è verificato in base alle esigenze \(possibilmente con una richiesta.\)  
+-   L'elemento padre del progetto eliminato o dell'elemento è stato estratto in base alle esigenze (possibilmente con un prompt dei comandi.)  
   
--   Dopo avere eliminato verificato o l'elemento aggiunto, non viene visualizzato nella finestra di **In attesa dei controlli** .  
+-   Dopo avere eliminato un timeout o elemento aggiunto, non appare nella **archiviazioni in sospeso** finestra.  
   
--   L'elemento è ancora presente all'interno dell'archivio di controllo del codice sorgente, anche dopo l'eliminazione e manualmente essere purgato.  
+-   L'elemento è ancora presente all'interno dell'archivio del controllo origine, anche dopo l'eliminazione e deve essere eliminato manualmente.  
   
-|Azione|Passi del test|I risultati previsti da verificarsi|  
-|------------|--------------------|-----------------------------------------|  
-|eliminare un progetto client|1.  creare un progetto client.<br />2.  Aggiungere la soluzione al controllo del codice sorgente.<br />3.  Rimuovere l'intero progetto da una soluzione|Comportamento previsto di uso comune.|  
-|eliminare un file vuoto|1.  creare un progetto client.<br />2.  Aggiungere un file a zero byte al progetto.<br />3.  Aggiungere la soluzione al controllo del codice sorgente.<br />4.  selezionare il file, eliminarlo.|Comportamento previsto di uso comune.|  
-|Per eliminare una cartella con un file|1.  Creare la soluzione del progetto.<br />2.  aggiungere una cartella.<br />3.  Aggiungere un file alla cartella.<br />4.  Aggiungere la soluzione al controllo del codice sorgente.<br />5.  Estrarre il progetto per evitare le richieste.<br />6.  eliminare la cartella.|Comportamento previsto di uso comune.|  
-|Eliminare un progetto Web di file system|1.  Creare un progetto Web di file system \(utilizzare il pulsante sfoglia per specificare un percorso UNC\).<br />2.  Aggiungere la soluzione al controllo del codice sorgente.<br />3.  Rimuovere l'intero progetto dalla soluzione.<br />4.  Ripetere i passaggi da 1 a 3 per un progetto Web locale \(percorsi diversi di da uno con il codice ma ha la stessa interfaccia esterna e comportamento\).|Comportamento previsto di uso comune.|  
-|Eliminare un file da un progetto Web di file system|1.  Creare un progetto Web di file system.<br />2.  Aggiungere la soluzione al controllo del codice sorgente.<br />3.  Eliminare un file dal progetto.<br />4.  Ripetere i passaggi da 1 a 3 per un progetto Web locale \(percorsi diversi di da uno con il codice ma ha la stessa interfaccia esterna e comportamento\).|Comportamento previsto di uso comune.|  
+|Operazione|Passi di test|Per verificare i risultati previsti|  
+|------------|----------------|--------------------------------|  
+|Eliminare un progetto client|1.  Creare un progetto client.<br />2.  Aggiungere la soluzione al controllo del codice sorgente.<br />3.  Rimuovere l'intero progetto dalla soluzione|Comportamento previsto comune.|  
+|Eliminare un file vuoto|1.  Creare un progetto client.<br />2.  Aggiungere un file di zero byte per il progetto.<br />3.  Aggiungere la soluzione al controllo del codice sorgente.<br />4.  Selezionare il file, eliminarlo.|Comportamento previsto comune.|  
+|Eliminare una cartella con un file|1.  Creare la soluzione singolo progetto.<br />2.  Aggiungere una cartella.<br />3.  Aggiungere un file nella cartella.<br />4.  Aggiungere la soluzione al controllo del codice sorgente.<br />5.  Estrarre il progetto per evitare richieste.<br />6.  Eliminare la cartella.|Comportamento previsto comune.|  
+|Eliminare un progetto Web di File System|1.  Creare un progetto Web di File System (utilizzare il pulsante Sfoglia per specificare un percorso UNC).<br />2.  Aggiungere la soluzione al controllo del codice sorgente.<br />3.  Rimuovere l'intero progetto dalla soluzione.<br />4.  Ripetere i passaggi da 1 a 3 per un progetto Web locale (esercita percorsi diversi nel codice ma ha la stessa interfaccia esterna e il comportamento).|Comportamento previsto comune.|  
+|Eliminare un file da un progetto Web di File System|1.  Creare un progetto di File System. Web.<br />2.  Aggiungere la soluzione al controllo del codice sorgente.<br />3.  Eliminare un file dal progetto.<br />4.  Ripetere i passaggi da 1 a 3 per un progetto Web locale (esercita percorsi diversi nel codice ma ha la stessa interfaccia esterna e il comportamento).|Comportamento previsto comune.|  
   
-## Vedere anche  
- [Guida per i test per il Plug\-in di controllo codice sorgente](../../extensibility/internals/test-guide-for-source-control-plug-ins.md)
+## <a name="see-also"></a>Vedere anche  
+ [Guida per il test dei plug-in del controllo del codice sorgente](../../extensibility/internals/test-guide-for-source-control-plug-ins.md)

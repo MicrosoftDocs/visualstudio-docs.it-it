@@ -1,43 +1,42 @@
 ---
-title: "IDiaEnumInjectedSources::Skip | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "IDiaEnumInjectedSources::Skip (metodo)"
+title: IDiaEnumInjectedSources::Skip | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology: vs-ide-debug
+ms.topic: conceptual
+dev_langs:
+- C++
+helpviewer_keywords:
+- IDiaEnumInjectedSources::Skip method
 ms.assetid: 4aad6a51-f2d3-4064-b216-60d830d0a560
-caps.latest.revision: 7
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 7
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 038510fbd89d58c0d122457828c2f130df39173e
+ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/18/2018
 ---
-# IDiaEnumInjectedSources::Skip
-[!INCLUDE[vs2017banner](../../code-quality/includes/vs2017banner.md)]
-
-Ignora un numero specificato di database di origine inseriti in una sequenza di enumerazione.  
+# <a name="idiaenuminjectedsourcesskip"></a>IDiaEnumInjectedSources::Skip
+Ignora un numero di origini inserite in una sequenza di enumerazione specificato.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp#  
-HRESULT Skip (   
-   ULONG celt  
+```C++  
+HRESULT Skip (   
+   ULONG celt  
 );  
 ```  
   
-#### Parametri  
- celta  
- \[in\]  Il numero di database di origine inseriti nella sequenza di enumerazione da ignorare.  
+#### <a name="parameters"></a>Parametri  
+ celt  
+ [in] Il numero di origini inserite nella sequenza di enumerazione da ignorare.  
   
-## Valore restituito  
- Se l'operazione riesce, restituisce `S_OK`; in caso contrario, restituisce  `S_FALSE` se non sono presenti altri database di origine inseriti da ignorare.  
+## <a name="return-value"></a>Valore restituito  
+ Se ha esito positivo, restituisce `S_OK`; in caso contrario, restituisce `S_FALSE` se sono presenti origini inserite nessun altro da ignorare.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IDiaEnumInjectedSources](../../debugger/debug-interface-access/idiaenuminjectedsources.md)

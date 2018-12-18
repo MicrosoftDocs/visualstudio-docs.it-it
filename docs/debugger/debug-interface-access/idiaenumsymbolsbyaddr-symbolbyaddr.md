@@ -1,52 +1,51 @@
 ---
-title: "IDiaEnumSymbolsByAddr::symbolByAddr | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "IDiaEnumSymbolsByAddr::symbolByAddr (metodo)"
+title: IDiaEnumSymbolsByAddr::symbolByAddr | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology: vs-ide-debug
+ms.topic: conceptual
+dev_langs:
+- C++
+helpviewer_keywords:
+- IDiaEnumSymbolsByAddr::symbolByAddr method
 ms.assetid: 0b6f5a68-8402-4f29-8219-20576fda8166
-caps.latest.revision: 8
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 8
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 159c6fcc65734255f5303ee267a1368078f7af10
+ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/18/2018
 ---
-# IDiaEnumSymbolsByAddr::symbolByAddr
-[!INCLUDE[vs2017banner](../../code-quality/includes/vs2017banner.md)]
-
-Posiziona l'enumeratore eseguendo una ricerca dal numero e dall'offset di sezione di immagine.  
+# <a name="idiaenumsymbolsbyaddrsymbolbyaddr"></a>IDiaEnumSymbolsByAddr::symbolByAddr
+Posiziona l'enumeratore eseguendo una ricerca per il numero di sezione dell'immagine e l'offset.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp#  
-HRESULT symbolByAddr (   
-   DWORD**      isect,  
-   DWORD**      offsect,  
-   IDiaSymbol** ppsymbol  
+```C++  
+HRESULT symbolByAddr (   
+   DWORD**      isect,  
+   DWORD**      offsect,  
+   IDiaSymbol** ppsymbol  
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  isect  
- \[in\]  numero di sezione di immagine.  
+ [in] Numero di sezione dell'immagine.  
   
  offsect  
- \[in\]  Offset nella sezione.  
+ [in] Offset nella sezione.  
   
  ppsymbol  
- \[out\]  restituisce [IDiaSymbol](../../debugger/debug-interface-access/idiasymbol.md) oggetto che rappresenta il simbolo individuate.  
+ [out] Restituisce un [IDiaSymbol](../../debugger/debug-interface-access/idiasymbol.md) oggetto che rappresenta il simbolo trovato.  
   
-## Valore restituito  
- Se l'operazione riesce, restituisce `S_OK`.  Restituisce `S_FALSE` se il simbolo non può essere trovato.  In caso contrario, restituisce un codice di errore.  
+## <a name="return-value"></a>Valore restituito  
+ Se ha esito positivo, restituisce `S_OK`. Restituisce `S_FALSE` se non è stato possibile trovare il simbolo. In caso contrario, verrà restituito un codice di errore.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IDiaEnumSymbolsByAddr](../../debugger/debug-interface-access/idiaenumsymbolsbyaddr.md)   
  [IDiaSymbol](../../debugger/debug-interface-access/idiasymbol.md)

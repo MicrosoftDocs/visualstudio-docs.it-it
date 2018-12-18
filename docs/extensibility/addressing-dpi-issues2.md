@@ -1,108 +1,109 @@
 ---
-title: "Indirizzamento Problemi2 DPI | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: Indirizzamento DPI Problemi2 | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.topic: conceptual
 ms.assetid: 359184aa-f5b6-4b6c-99fe-104655b3a494
-caps.latest.revision: 9
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 9
+author: gregvanl
+ms.author: gregvanl
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: dc0801d3fb43188ac3371ed7e5e7394b0e3aad72
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# Risoluzione dei problemi di DPI
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
-Un numero crescente di dispositivi è distribuiti con "schermi". Queste schermate sono in genere più di 200 pixel per pollice \(ppi\). Utilizzo di un'applicazione in tali computer richiede il contenuto per la scalabilità verticale per soddisfare le esigenze di visualizzazione del contenuto a una distanza di visualizzazione normale per il dispositivo. A partire da 2014, la destinazione principale per gli schermi ad alta densità è mobile computing dispositivi \(telefoni, Tablet e portatili conchiglia\).  
+# <a name="addressing-dpi-issues"></a>Risolvere i problemi DPI
+Un numero crescente di dispositivi è distribuiti con schermate "ad alta risoluzione". Queste schermate vengono visualizzate in genere sono più di 200 pixel per pollice (PPID). Utilizzo di un'applicazione in questi computer richiederà il contenuto per la scalabilità verticale per soddisfare le esigenze di visualizzazione del contenuto a una distanza di visualizzazione normale per il dispositivo. A partire da 2014, la destinazione principale per gli schermi ad alta densità è mobile computing dispositivi (telefoni, Tablet e portatili conchiglia).  
   
- Windows 8.1 e versioni successive sono disponibili numerose funzionalità per consentire a questi computer lavorare con gli ambienti in cui il computer è collegato a entrambi ad alta densità e densità standard consente di visualizzare contemporaneamente e Visualizza.  
+ Windows 8.1 e versioni successive sono disponibili molte funzionalità per abilitare questi computer per lavorare con gli ambienti in cui la macchina è associata a entrambi ad alta densità e densità standard consente di visualizzare contemporaneamente e Visualizza.  
   
--   Windows consente a ridimensiona il contenuto per il dispositivo utilizzando il "rendere il testo e altri elementi di maggiore o minore" impostazione \(disponibile fin da Windows XP\).  
+-   Windows consente a ridimensiona il contenuto al dispositivo utilizzando il "accertarsi testo e altri elementi maggiori o minori" impostazione (disponibile a partire da Windows XP).  
   
--   Windows 8.1 e versioni successive verranno automaticamente scalati contenuto per la maggior parte delle applicazioni sia coerente quando viene spostato da visualizzare le diverse densità di pixel. Quando la visualizzazione primaria è ad alta densità \(200% scalabilità\) e la visualizzazione secondaria è densità standard \(100%\), Windows verrà automaticamente ridimensionare il contenuto della finestra dell'applicazione sullo schermo secondario \(1 pixel visualizzati per ogni 4 pixel viene eseguito il rendering dall'applicazione\).  
+-   Windows 8.1 e versioni successive verranno automaticamente scalati contenuto per la maggior parte delle applicazioni siano coerenti quando spostato da una visualizzazione delle diverse densità di pixel. Quando lo schermo primario è ad alta densità (200% scaling) e la visualizzazione secondaria è densità standard (100%), Windows verrà ridurre automaticamente il contenuto della finestra dell'applicazione sulla visualizzazione secondaria (1 pixel visualizzato per ogni 4 pixel eseguito il rendering tramite il applicazione).  
   
--   Per impostazione predefinita Windows a destra scalabilità per la densità di pixel e la visualizzazione di distanza per la visualizzazione \(Windows 7 e versioni successive, OEM configurabile\).  
+-   Windows utilizzerà il diritto di scalabilità per la densità di pixel e la visualizzazione di distanza per la visualizzazione (Windows 7 e versioni successive, configurabile dall'OEM).  
   
--   Windows consente di adattare automaticamente il contenuto di 250% su nuovi dispositivi che superano 280 PPID \(a partire da Windows 8.1 S14\).  
+-   Windows può applicare la scalabilità automatica del contenuto di 250% su nuovi dispositivi che superano 280 PPID (a partire da Windows 8.1 S14).  
   
- Windows dispone di una soluzione per gestire la scalabilità dell'interfaccia utente per sfruttare i vantaggi dei conteggi pixel maggiore. Un'applicazione consente di partecipare a questo sistema dichiarando stesso "sistema compatibile con DPI." Le applicazioni che non eseguire questa operazione vengono ridimensionate dal sistema. Ciò può comportare un'esperienza utente "fuzzy" in cui l'intera applicazione è in modo uniforme allungato pixel. Ad esempio:  
+ Windows ha una soluzione per gestire la scalabilità verticale dell'interfaccia utente per sfruttare i vantaggi dei conteggi maggiore pixel. Un'applicazione consente di partecipare a questo sistema dichiarando stesso "sistema compatibilità DPI avanzata". Le applicazioni che si esegue questa operazione vengono ridimensionate dal sistema. Ciò può comportare un'esperienza utente "fuzzy" in cui è in modo uniforme estesa pixel dell'intera applicazione. Ad esempio:  
   
- ![Problemi DPI &#45; sfocatura](../extensibility/media/dpi-issues-fuzzy.png "DPI Issues Fuzzy")  
+ ![DPI emette Fuzzy](../extensibility/media/dpi-issues-fuzzy.png "DPI emette Fuzzy")  
   
- Visual Studio consente di partecipare alla scalabilità compatibile con DPI e pertanto non viene "virtualizzata."  
+ Visual Studio consente di partecipare a da scalabilità compatibile con DPI e pertanto non viene "virtualizzata."  
   
- Windows \(e Visual Studio\) sfruttare diverse tecnologie dell'interfaccia utente, che in diversi modi di affrontare impostati dal sistema di fattori di scala. Ad esempio:  
+ Windows (e Visual Studio) sfruttare diverse tecnologie dell'interfaccia utente, che sono diversi modi per gestire con dal sistema di fattori di scala. Ad esempio:  
   
--   WPF misura controlli in modo indipendente dalla periferica \(unità, non pixel\). WPF UI viene ridimensionato automaticamente per il DPI corrente.  
+-   WPF consente di misurare i controlli in modo indipendente dalla periferica (unità, non pixel). UI WPF viene ridimensionato automaticamente per la risoluzione corrente.  
   
--   Tutte le dimensioni del testo indipendentemente dal framework dell'interfaccia utente sono espresse in punti e vengono pertanto considerate dal sistema come indipendente dai DPI. Testo in Win32, Windows Form e WPF già aumentare in modo corretto quando viene disegnata sullo schermo.  
+-   Tutte le dimensioni di testo indipendentemente dal framework dell'interfaccia utente sono espresse in punti e pertanto vengono gestite dal sistema come indipendente dal DPI. Il testo Win32, Windows Form e WPF già la scalabilità verticale in modo corretto quando viene disegnata sullo schermo.  
   
--   Finestre e finestre di dialogo Win32\/WinForms dispongono di mezzi per l'abilitazione di layout che viene ridimensionato con testo, ad esempio, tramite la griglia, flusso e pannelli di layout di tabella. Che permettono di evitare percorsi hardcoded pixel che non vengono scalati quando vengono aumentate le dimensioni dei caratteri.  
+-   Finestre di dialogo di Win32/Windows Form e Windows sono i mezzi per l'abilitazione di layout che viene ridimensionato con testo, ad esempio, tramite griglia, il flusso e pannelli di layout di tabella. Che permettono di evitare percorsi hardcoded pixel che non vengono scalati quando vengono aumentate le dimensioni del carattere.  
   
--   Icone fornite dal sistema o risorse in base alle metriche di sistema \(ad esempio, SM\_CXICON e SM\_CXSMICON\) sono già aumentate.  
+-   Icone fornite dal sistema o risorse in base alle metriche di sistema (ad esempio, SM_CXICON e SM_CXSMICON) sono già la scalabilità verticale.  
   
-## Win32 precedente \(GDI, GDI\+\) e un'interfaccia utente basata su Windows Form  
- Mentre WPF è ancora\-DPI avanzata, gran parte del codice basata su Win32\/GDI non è stato scritto originariamente con il riconoscimento DPI presente. Windows ha fornito le API di ridimensionamento DPI. Correzioni ai problemi di Win32 devono essere considerati in modo uniforme per il prodotto. Visual Studio ha fornito un supporto di libreria di classi per evitare la duplicazione di funzionalità e garantendo la coerenza tra il prodotto.  
+## <a name="older-win32-gdi-gdi-and-winforms-based-ui"></a>Win32 precedente (GDI, GDI+) e dell'interfaccia utente basata su Windows Form  
+ Mentre WPF è ancora elevata compatibile con DPI, gran parte del codice basato su Win32/GDI non è stato scritto originariamente con il riconoscimento DPI presente. Windows ha fornito le API di ridimensionamento DPI. Correzioni dei problemi di Win32 devono essere considerati in modo uniforme per il prodotto. Visual Studio ha fornito un supporto di libreria di classi per evitare la duplicazione di funzionalità e verificare la coerenza tra il prodotto.  
   
-## Immagini ad alta risoluzione  
- In questa sezione è principalmente per gli sviluppatori di estendere Visual Studio 2013. Per Visual Studio 2015, usare immagine servizio incorporato in Visual Studio. È inoltre possibile che si desidera supporto\/destinazione molte versioni di Visual Studio e pertanto si utilizza il servizio immagini in 2015 non è un'opzione in quanto non esiste nelle versioni precedenti. In questa sezione sarà anche per l'utente.  
+## <a name="high-resolution-images"></a>Immagini ad alta risoluzione  
+ In questa sezione è principalmente per gli sviluppatori di estendere Visual Studio 2013. Per Visual Studio 2015, utilizzare il servizio di immagine che viene compilato in Visual Studio. È inoltre possibile che si desidera supporto/destinazione molte versioni di Visual Studio e pertanto tramite il servizio immagini in 2015 non è un'opzione poiché non esiste nelle versioni precedenti. In questa sezione sarà anche per l'utente.  
   
-## Ridimensionamento di immagini che sono troppo piccole  
- Immagini che sono troppo piccole possono essere "aumentate" e il rendering GDI e WPF tramite alcuni metodi comuni. Classi helper DPI gestite sono disponibili per gli integratori di Visual Studio interni ed esterni all'indirizzo scalabilità icone, bitmap, imagestrips e imagelists. Basate su Win32 nativo C \/ C\+\+ helper sono disponibili per la scalabilità di ICONA, HBITMAP, HIMAGELIST e VsUI::GdiplusImage. Ridimensionamento di una bitmap in genere richiede solo una modifica di una riga dopo aver incluso un riferimento alla libreria di supporto. Ad esempio:  
+## <a name="scaling-up-images-that-are-too-small"></a>L'aumento di immagini che sono troppo piccole  
+ Le immagini che sono troppo ridotte possono essere "scalabilità" e sottoposto a rendering GDI e WPF tramite alcuni metodi comuni. Classi di helper DPI gestite sono disponibili per interni ed esterni integratori di Visual Studio all'indirizzo imagestrips, icone, bitmap e imagelists la scalabilità. Basate su Win32 nativo C / C++ helper sono disponibili per la scalabilità di ICONA, HBITMAP, HIMAGELIST e VsUI::GdiplusImage. Ridimensionamento di una bitmap in genere richiede solo una modifica di una riga dopo l'inclusione di un riferimento alla libreria di supporto. Ad esempio:  
   
 ```cpp  
 (Unmanaged)  VsUI::DpiHelper::LogicalToDeviceUnits(&hBitmap);  
 ```  
   
-```c#  
+```csharp  
 (WinForms) DpiHelper.LogicalToDeviceUnits(ref image);  
 ```  
   
- Ridimensionamento di un oggetto imagelist varia a seconda se è stato completato in fase di caricamento, il componente imagelist o viene aggiunto in fase di esecuzione. Se in fase di caricamento è completo, chiamare LogicalToDeviceUnits\(\) con imagelist come una bitmap. Quando il codice necessario caricare una bitmap singoli prima composizione imagelist, assicuratevi di scalare le dimensioni dell'immagine di imagelist:  
+ Scala il controllo imagelist varia a seconda se è stato completato in fase di caricamento, il componente imagelist o viene aggiunto in fase di esecuzione. Se in fase di caricamento è completo, chiamare LogicalToDeviceUnits() con il componente imagelist come una bitmap. Quando il codice deve caricare una bitmap singoli prima il componente imagelist di composizione, assicurarsi di ridimensionare le dimensioni dell'immagine di imagelist:  
   
-```c#  
+```csharp  
 imagelist.ImageSize = DpiHelper.LogicalToDeviceUnits(imagelist.ImageSize);  
 ```  
   
- Nel codice nativo, le dimensioni possono essere ridimensionate quando si crea l'oggetto imagelist come indicato di seguito:  
+ Nel codice nativo, le dimensioni possono essere ridimensionate quando si crea il componente imagelist come indicato di seguito:  
   
 ```cpp  
 ImageList_Create(VsUI::DpiHelper::LogicalToDeviceUnitsX(16),VsUI::DpiHelper::LogicalToDeviceUnitsY(16), ILC_COLOR32|ILC_MASK, nCount, 1);  
 ```  
   
- Funzioni della libreria consentono di specificare l'algoritmo di ridimensionamento. Quando ridimensionamento di immagini da inserire nella imagelists, assicurarsi di specificare il colore di sfondo utilizzato per la trasparenza o utilizzare NearestNeighbor la scalabilità \(che causerà distorsioni al 125% e % 150\).  
+ Funzioni della libreria consentono di specificare l'algoritmo di ridimensionamento. Quando le immagini di scalabilità per essere inserito in imagelists, assicurarsi di specificare il colore di sfondo utilizzato per la trasparenza oppure utilizzare NearestNeighbor scalabilità (che altrimenti si verificherà distorsioni 125% e % 150).  
   
  Consultare la <xref:Microsoft.VisualStudio.PlatformUI.DpiHelper> documentazione su MSDN.  
   
- Nella tabella seguente vengono illustrati esempi di come le immagini devono essere ridimensionate DPI corrispondente fattori di scala. Le immagini in verde indicano la procedura consigliata a partire da Visual Studio 2013 \(100\-200% di ridimensionamento DPI\):  
+ Nella tabella seguente mostra esempi di come le immagini devono essere scalate DPI corrispondente fattori di scala. Le immagini in verde indicano la procedura consigliata, a partire da Visual Studio 2013 (100-200% ridimensionamento DPI):  
   
- ![Problemi DPI &#45; ridimensionamento](../extensibility/media/dpi-issues-scaling.png "DPI Issues Scaling")  
+ ![Problemi DPI-ridimensionamento](../extensibility/media/dpi-issues-scaling.png "problemi DPI-ridimensionamento")  
   
-## Problemi di layout  
- È possibile evitare problemi di layout comuni principalmente mantenendo i punti nell'interfaccia utente di scalabilità e rispetto a un altro piuttosto che tramite percorsi assoluti \(in particolare, in unità di pixel\). Ad esempio:  
+## <a name="layout-issues"></a>Problemi di layout  
+ È possibile evitare problemi di layout comuni principalmente, mantenendo i punti nell'interfaccia utente ridimensionata e rispetto a un altro invece di percorsi assoluti (in particolare, in unità di pixel). Ad esempio:  
   
--   Posizioni di layout, testo o necessario modificare per account per le immagini con scalabilità verticale.  
+-   Posizioni di layout, testo necessario modificare l'account per le immagini con scalabilità verticale.  
   
 -   Colonne nelle griglie devono avere larghezza regolata per il testo con scalabilità verticale.  
   
--   Le dimensioni a livello di codice o lo spazio tra gli elementi anche dovrà essere aumentato. Le dimensioni che si basano solo le dimensioni del testo sono in genere un problema, perché i tipi di carattere vengono automaticamente ridimensionati.  
+-   Dimensioni a livello di codice o spazio tra gli elementi sarà necessario per la scalabilità verticale. Le dimensioni che si basano solo le dimensioni del testo sono in genere un problema, perché i tipi di carattere vengono ridimensionati automaticamente.  
   
- Le funzioni di supporto sono disponibili nella <xref:Microsoft.VisualStudio.PlatformUI.DpiHelper> classe per consentire la scalabilità sull'asse X e Y:  
+ Sono disponibili in funzioni di supporto di <xref:Microsoft.VisualStudio.PlatformUI.DpiHelper> classe per consentire la scalabilità sull'asse X e Y:  
   
--   LogicalToDeviceUnitsX\/LogicalToDeviceUnitsY \(funzioni di consentono la scalabilità in X o asse Y\)  
+-   LogicalToDeviceUnitsX/LogicalToDeviceUnitsY (funzioni consentono la scalabilità in X o asse Y)  
   
--   spazio int \= DpiHelper.LogicalToDeviceUnitsX \(10\).  
+-   spazio int = DpiHelper.LogicalToDeviceUnitsX (10).  
   
--   altezza int \= VsUI::DpiHelper::LogicalToDeviceUnitsY\(5\);  
+-   altezza int = VsUI::DpiHelper::LogicalToDeviceUnitsY(5);  
   
- Sono disponibili overload LogicalToDeviceUnits per consentire il ridimensionamento di oggetti, ad esempio Rect, Point e Size.  
+ Esistono overload LogicalToDeviceUnits per consentire la scalabilità di oggetti, ad esempio Rect, punto e dimensioni.  
   
-## Utilizzando la libreria\/classe DPIHelper per ridimensionare le immagini e layout  
- La libreria di supporto di Visual Studio DPI è disponibile in formati nativi e gestiti e può essere utilizzata all'esterno della shell di Visual Studio da altre applicazioni.  
+## <a name="using-the-dpihelper-libraryclass-to-scale-images-and-layout"></a>Utilizzo della libreria/classe DPIHelper per ridimensionare le immagini e il layout  
+ La libreria di supporto di Visual Studio DPI è disponibile nei moduli nativi e gestiti e può essere utilizzata all'esterno di shell di Visual Studio da altre applicazioni.  
   
- Per utilizzare la libreria, vedere il [esempi di estendibilità di Visual Studio VSSDK](https://github.com/Microsoft/VSSDK-Extensibility-Samples) e clonare il codice di esempio DPI\_Images\_Icons elevata  
+ Per utilizzare la libreria, passare al [esempi di estendibilità di Visual Studio VSSDK](https://github.com/Microsoft/VSSDK-Extensibility-Samples) e clonare il codice di esempio elevata DPI_Images_Icons  
   
  Nel file di origine, includere VsUIDpiHelper.h e chiamare le funzioni statiche della classe VsUI::DpiHelper:  
   
@@ -115,21 +116,21 @@ VsUI::DpiHelper::LogicalToDeviceUnits(&hBitmap);
 ```  
   
 > [!NOTE]
->  Non utilizzare le funzioni di supporto in variabili statiche a livello di modulo o a livello di classe. La libreria utilizza inoltre elementi statici per la sincronizzazione dei thread e si potrebbero riscontrare problemi di inizializzazione dell'ordine. Convertire tali elementi statici in variabili membro non statiche o eseguire il wrapping in una funzione \(in modo da ottenere costruite al primo accesso\).  
+>  Non utilizzare le funzioni di supporto in variabili statiche a livello di modulo o a livello di classe. La libreria Usa anche elementi statici per la sincronizzazione dei thread e che possono verificarsi problemi di ordine-inizializzazione. Convertire tali elementi statici in variabili di membro non statiche oppure eseguire il wrapping in una funzione (in modo da ottenere costruite al primo accesso).  
   
- Per utilizzare le funzioni di supporto DPI dal codice gestito che verrà eseguito all'interno dell'ambiente di Visual Studio:  
+ Per utilizzare le funzioni di supporto DPI da codice gestito che viene eseguita all'interno dell'ambiente Visual Studio:  
   
--   Il progetto consumer deve fare riferimento la versione più recente di MPF di Shell. Ad esempio:  
+-   Il progetto utilizzato deve fare riferimento la versione più recente di MPF Shell. Ad esempio:  
   
-    ```c#  
+    ```csharp  
     <Reference Include="Microsoft.VisualStudio.Shell.14.0.dll" />  
     ```  
   
--   Verificare il progetto contiene riferimenti a **System.Windows.Forms**, **PresentationCore**, e **PresentationUI**.  
+-   Verificare che il progetto contiene riferimenti a **Forms**, **PresentationCore**, e **PresentationUI**.  
   
--   Nel codice, utilizzare il **Microsoft.VisualStudio.PlatformUI** dello spazio dei nomi e chiamare funzioni statiche della classe DpiHelper. Per i tipi supportati \(punti, dimensioni, rettangoli e così via\), vengono fornite funzioni di estensione che restituiscono nuovi scalata oggetti. Ad esempio:  
+-   Nel codice, utilizzare il **Microsoft.VisualStudio.PlatformUI** dello spazio dei nomi e chiamare funzioni statiche della classe DpiHelper. Per i tipi supportati (punti, dimensioni, rettangoli e così via), vengono fornite funzioni di estensione che restituiscono nuove ridimensionato oggetti. Ad esempio:  
   
-    ```c#  
+    ```csharp  
     using Microsoft.VisualStudio.PlatformUI;  
     double x = DpiHelper.LogicalToDeviceUnitsX(posX);  
     Point ptScaled = ptOriginal.LogicalToDeviceUnits();  
@@ -137,18 +138,18 @@ VsUI::DpiHelper::LogicalToDeviceUnits(&hBitmap);
   
     ```  
   
-## Gestione di tolleranza immagine WPF nell'interfaccia utente di questo  
- In WPF, le bitmap vengono ridimensionate automaticamente da WPF per il livello di zoom DPI corrente mediante un algoritmo bicubica di alta qualità \(predefinito\), che funziona bene per immagini o le schermate di grandi dimensioni, ma non è appropriato per le icone di menu perché introduce percepito tolleranza.  
+## <a name="dealing-with-wpf-image-fuzziness-in-zoomable-ui"></a>Gestione di tolleranza immagine WPF nell'interfaccia utente sul quale  
+ In WPF, le bitmap vengono ridimensionate automaticamente da WPF per il livello di zoom DPI corrente mediante un algoritmo di alta qualità bicubica (impostazione predefinita), che funziona bene per immagini o schermate di grandi dimensioni, ma non è appropriata per le icone di voce di menu perché introduce confusa percepito .  
   
- Raccomandazioni:  
+ Indicazioni:  
   
--   Per logo banner e immagine grafica, il valore predefinito <xref:System.Windows.Media.BitmapScalingMode> modalità di ridimensionamento può essere utilizzato.  
+-   Per il logo banner e immagine grafica, il valore predefinito <xref:System.Windows.Media.BitmapScalingMode> può essere utilizzato in modalità di ridimensionamento.  
   
--   Per le voci di menu e le immagini visualizzato, il <xref:System.Windows.Media.BitmapScalingMode> deve essere utilizzata quando non causa di altri elementi di una distorsione a eliminare tolleranza \(al 200% e % 300\).  
+-   Per le voci di menu e le immagini visualizzato, il <xref:System.Windows.Media.BitmapScalingMode> deve essere utilizzato quando non causa di altri elementi di una distorsione eliminare confusa (in 200% e % 300).  
   
--   •	Per i livelli di zoom di grandi dimensioni non multipli di 100% \(ad esempio, 250% o % 350\), il ridimensionamento delle immagini visualizzato con Bicubica risultati nell'interfaccia utente fuzzy, sbiadito consentendo di riprodurre. Viene ottenuto un risultato migliore scalabilità l'immagine con NearestNeighbor al multiplo più grande del 100% \(ad esempio, 200% o 300%\) prima e la scalabilità con Bicubica da lì. Vedere caso speciale: prescaling immagini WPF per DPI elevato dei livelli per ulteriori informazioni.  
+-   Per i livelli di zoom di grandi dimensioni non multipli di 100% (ad esempio, 250% o % 350), ridimensionamento di immagini visualizzato con Bicubica risultati nell'interfaccia utente fuzzy, sbiadito consentendo di riprodurre. Di ottenere risultati migliori prima scala un'immagine con NearestNeighbor al multiplo più grande del 100% (ad esempio, % 200 o 300%) e scalabilità con Bicubica da qui. Vedere caso speciale: prescaling immagini WPF per valori DPI elevato livelli per ulteriori informazioni.  
   
- La classe DpiHelper nello spazio dei nomi Microsoft.VisualStudio.PlatformUI fornisce un membro <xref:System.Windows.Media.BitmapScalingMode> che può essere utilizzato per l'associazione. Consente la shell di Visual Studio controllare la modalità di ridimensionamento tra il prodotto in modo uniforme, a seconda del fattore di ridimensionamento DPI di bitmap.  
+ La classe DpiHelper nello spazio dei nomi Microsoft.VisualStudio.PlatformUI fornisce un membro <xref:System.Windows.Media.BitmapScalingMode> che può essere utilizzato per l'associazione. Consentirà la shell di Visual Studio controllare la modalità ridimensionamento delle bitmap interno del prodotto in modo uniforme, in base al fattore di ridimensionamento DPI.  
   
  Per utilizzarlo in XAML, aggiungere:  
   
@@ -159,20 +160,20 @@ xmlns:vsui="clr-namespace:Microsoft.VisualStudio.PlatformUI;assembly=Microsoft.V
   
 ```  
   
- La shell di Visual Studio già imposta questa proprietà su finestre di dialogo e finestre di primo livello. Interfaccia utente basata su WPF in esecuzione in Visual Studio verrà già ereditare. Se l'impostazione non si propaga alle parti di particolare dell'interfaccia utente, è possibile impostare per l'elemento radice dell'interfaccia utente XAML\/WPF. Posizioni in cui ciò includono i popup per gli elementi con elementi padre di Win32, e finestre di progettazione eseguiti da elaborare, ad esempio Blend.  
+ La shell di Visual Studio già imposta questa proprietà in finestre di dialogo e finestre di primo livello. Interfaccia utente basato su WPF in esecuzione in Visual Studio verrà già ereditare. Se non si propaga l'impostazione per le parti dell'interfaccia utente specifici, è possibile impostare per l'elemento radice dell'interfaccia utente XAML/WPF. Posizioni in cui ciò si verifica includono i popup, per gli elementi con gli elementi padre Win32 e finestre di progettazione eseguiti da elaborare, come ad esempio Blend.  
   
- Parte dell'interfaccia utente è possibile scalare in modo indipendente il livello di zoom DPI set di sistema, ad esempio l'editor di testo di Visual Studio e finestre di progettazione basata su WPF \(Desktop WPF e Windows Store\). In questi casi, DpiHelper.BitmapScalingMode non deve essere utilizzato. Per risolvere il problema nell'editor, il team dell'IDE creato una proprietà personalizzata denominata RenderOptions.BitmapScalingMode. Impostare il valore della proprietà per riprodurre o NearestNeighbor a seconda del livello di zoom combinato del sistema e l'interfaccia utente.  
+ Un'interfaccia utente possono essere ridimensionati in modo indipendente dal livello di zoom DPI di sistema set, ad esempio l'editor di testo di Visual Studio e finestre di progettazione basate su WPF (Desktop WPF e Windows Store). In questi casi, DpiHelper.BitmapScalingMode non deve essere utilizzato. Per risolvere il problema nell'editor, il team IDE creato una proprietà personalizzata denominata RenderOptions.BitmapScalingMode. Impostare il valore della proprietà da riprodurre o NearestNeighbor a seconda del livello di zoom combinato del sistema e l'interfaccia utente.  
   
-## Caso speciale: prescaling immagini WPF per i livelli di grandi dimensioni DPI  
- Per i livelli di zoom molto grandi che non sono multipli di 100% \(ad esempio, 250%, % 350 e così via\), ridimensionamento di immagini visualizzato con risultati bicubica nell'interfaccia utente fuzzy, sbiadito consentendo di riprodurre. L'impressione di queste immagini con testo nitido è quasi simile a quella di un effetto ottico. Le immagini vengono visualizzate per avvicinarsi all'occhio e la messa a fuoco in relazione al testo. Il risultato della scalabilità queste dimensioni ingrandite può essere migliorato dal primo scalabilità l'immagine con NearestNeighbor al multiplo più grande del 100% \(ad esempio, 200% o 300%\) e la scalabilità con Bicubica al resto \(un ulteriore % di 50\).  
+## <a name="special-case-prescaling-wpf-images-for-large-dpi-levels"></a>Caso speciale: prescaling immagini WPF per i livelli di grandi dimensioni DPI  
+ Per i livelli di zoom molto elevato che non sono multipli di 100% (ad esempio, 250% 350% e così via), ridimensionamento di immagini visualizzato con risultati bicubica nell'interfaccia utente fuzzy, sbiadito consentendo di riprodurre. L'impressione di queste immagini con testo chiaro è quasi simile a quella di un effetto ottico. Le immagini vengono visualizzate a essere più vicina all'occhio e la messa a fuoco in relazione al testo. Il risultato della scalabilità queste dimensioni ingrandite può migliorare tramite l'adattamento con NearestNeighbor al multiplo più grande del 100% (ad esempio, % 200 o 300%) e scalabilità con Bicubica al resto (un ulteriore % 50).  
   
- Il seguente è riportato un esempio delle differenze nei risultati, dove la prima immagine viene ridimensionata con l'algoritmo migliore scalabilità doppia\-\> 100%, 200% \-\> 250% e la seconda solo con Bicubica 100% \-\> 250%.  
+ Ecco un esempio delle differenze nei risultati, in cui la prima immagine viene ridimensionata con l'algoritmo di ridimensionamento doppia migliorato -> 100%, 200% -> 250%, e la seconda solo con Bicubica 100% -> % 250.  
   
- ![DPI Issues Double Scaling Example](../extensibility/media/dpi-issues-double-scaling-example.png "DPI Issues Double Scaling Example")  
+ ![DPI emette doppia esempio scalabilità](../extensibility/media/dpi-issues-double-scaling-example.png "DPI emette doppia esempio scala")  
   
- Per abilitare l'interfaccia utente per utilizzare questo ridimensionamento double, il markup XAML per la visualizzazione di ogni elemento immagine dovrà essere modificato. Negli esempi seguenti viene illustrato come utilizzare la scalabilità double in WPF in Visual Studio utilizzando la libreria di DpiHelper e Shell.12\/14.  
+ Per abilitare l'interfaccia utente per utilizzare questa scalabilità doppia, markup XAML per la visualizzazione di ogni elemento immagine dovrà essere modificato. Nell'esempio seguente viene illustrato come utilizzare doppia scalabilità in WPF in Visual Studio usando la libreria DpiHelper e Shell.12/14.  
   
- Passaggio 1: Prescale 300% l'immagine in 200% e così via utilizzando NearestNeighbor.  
+ Passaggio 1: Prescale l'immagine da % 200, 300% e così via utilizzando NearestNeighbor.  
   
  Prescale l'immagine utilizzando un convertitore di applicare un'associazione, o con un'estensione di markup XAML. Ad esempio:  
   
@@ -185,7 +186,7 @@ xmlns:vsui="clr-namespace:Microsoft.VisualStudio.PlatformUI;assembly=Microsoft.V
   
 ```  
   
- Se l'immagine deve inoltre essere temi \(più, se non tutti, dovrebbe essere\), il markup può utilizzare un convertitore diverso che esegue prima dei temi dell'immagine e quindi pre\-scalabilità. Il markup può essere <xref:Microsoft.VisualStudio.PlatformUI.DpiPrescaleThemedImageConverter> o <xref:Microsoft.VisualStudio.PlatformUI.DpiPrescaleThemedImageSourceConverter>, a seconda l'output di conversione desiderata.  
+ Se l'immagine sarà inoltre necessario applicare un tema (più, se non tutti, dovrebbe essere), il codice è possibile usare un convertitore di tipo diverso che esegue prima dei temi dell'immagine e quindi pre-scaling. Il markup può essere <xref:Microsoft.VisualStudio.PlatformUI.DpiPrescaleThemedImageConverter> o <xref:Microsoft.VisualStudio.PlatformUI.DpiPrescaleThemedImageSourceConverter>, a seconda l'output di conversione desiderato.  
   
 ```xaml  
 <vsui:DpiPrescaleThemedImageSourceConverter x:Key="DpiPrescaleThemedImageSourceConverter" />  
@@ -202,17 +203,17 @@ xmlns:vsui="clr-namespace:Microsoft.VisualStudio.PlatformUI;assembly=Microsoft.V
 </Image>  
 ```  
   
- Passaggio 2: Verificare che la dimensione finale sia corretta per il DPI corrente.  
+ Passaggio 2: Verificare che le dimensioni finali sono corrette per la risoluzione corrente.  
   
- Poiché WPF ridimensionerà l'interfaccia utente per il DPI corrente utilizzando la proprietà BitmapScalingMode impostata su UIElement, un controllo immagine con un'immagine di prescaled come origine avrà un aspetto due o tre volte maggiore rispetto al necessario. Di seguito sono un paio di modi per contrastare questo effetto:  
+ Poiché WPF verrà ridimensionato l'interfaccia utente per il DPI corrente utilizzando la proprietà BitmapScalingMode impostata su UIElement, un controllo immagine usando un'immagine prescaled come origine avrà un aspetto due o tre volte maggiore rispetto al necessario. Di seguito sono un paio di modi per contrastare questo effetto:  
   
--   Se si conosce la dimensione dell'immagine originale al 100%, è possibile specificare la dimensione esatta del controllo Image. Queste dimensioni riflette che la dimensione dell'interfaccia utente prima del ridimensionamento viene applicata.  
+-   Se si conosce la dimensione dell'immagine originale al 100%, è possibile specificare le dimensioni esatte del controllo immagine. Queste dimensioni riflette che la dimensione dell'interfaccia utente prima del ridimensionamento viene applicata.  
   
     ```xaml  
     <Image Source="{Binding Path=SelectedImage, Converter={StaticResource DpiPrescaleImageSourceConverter}}" Width="16" Height="16" />  
     ```  
   
--   Se le dimensioni dell'immagine originale non sono noto, è possibile utilizzare una proprietà LayoutTransform scalare verso il basso l'oggetto immagine finale. Ad esempio:  
+-   Se le dimensioni dell'immagine originale non sono noto, è possibile utilizzare un LayoutTransform scalare verso il basso l'oggetto immagine finale. Ad esempio:  
   
     ```xaml  
     <Image Source="{Binding Path=SelectedImage, Converter={StaticResource DpiPrescaleImageSourceConverter}}" >  
@@ -224,10 +225,10 @@ xmlns:vsui="clr-namespace:Microsoft.VisualStudio.PlatformUI;assembly=Microsoft.V
     </Image>  
     ```  
   
-## Abilita il supporto HDPI per WebOC  
- Per impostazione predefinita, non abilitare controlli WebOC \(ad esempio il controllo WebBrowser in WPF, o l'interfaccia IWebBrowser2\) HDPI rilevamento e supporto. Il risultato sarà un controllo incorporato con il contenuto visualizzato è troppo piccolo su uno schermo ad alta risoluzione. Di seguito viene descritto come abilitare il supporto di valori DPI alti in un'istanza di WebOC web specifico.  
+## <a name="enabling-hdpi-support-to-the-weboc"></a>Abilitazione del supporto HDPI per il WebOC  
+ Per impostazione predefinita, i controlli di WebOC (ad esempio, il controllo WebBrowser in WPF, o l'interfaccia IWebBrowser2) non consentono il supporto e il rilevamento di HDPI. Il risultato sarà un controllo incorporato con il contenuto visualizzato è troppo piccolo su uno schermo ad alta risoluzione. Di seguito viene descritto come abilitare il supporto a DPI elevato in un'istanza di WebOC web specifico.  
   
- Implementare l'interfaccia IDocHostUIHandler \(vedere l'articolo MSDN di [IDocHostUIHandler](http://msdn.microsoft.com/library/aa753260.aspx) interface\):  
+ Implementare l'interfaccia IDocHostUIHandler (vedere l'articolo MSDN sul [IDocHostUIHandler](http://msdn.microsoft.com/library/aa753260.aspx) interface):  
   
 ```idl  
 [ComImport, InterfaceType(ComInterfaceType.InterfaceIsIUnknown),  
@@ -306,7 +307,7 @@ public interface IDocHostUIHandler
     }   
 ```  
   
- Facoltativamente, implementare l'interfaccia ICustomDoc \(vedere l'articolo MSDN di [ICustomDoc](http://msdn.microsoft.com/library/aa753272.aspx) interface\):  
+ Facoltativamente, implementare l'interfaccia ICustomDoc (vedere l'articolo MSDN sul [ICustomDoc](http://msdn.microsoft.com/library/aa753272.aspx) interface):  
   
 ```idl  
 [InterfaceType(ComInterfaceType.InterfaceIsIUnknown),  
@@ -317,18 +318,18 @@ public interface ICustomDoc
 }   
 ```  
   
- Associare la classe che implementa IDocHostUIHandler con documento del WebOC. Se è stata implementata l'interfaccia ICustomDoc precedente, come proprietà del documento del WebOC è valido, viene eseguito il cast a un ICustomDoc e chiamare il metodo SetUIHandler, passando la classe che implementa IDocHostUIHandler.  
+ Associare la classe che implementa IDocHostUIHandler con il documento del WebOC. Se è implementato l'interfaccia ICustomDoc sopra riportata, come proprietà del documento del WebOC è valido, eseguirne il cast a un ICustomDoc e chiamare il metodo SetUIHandler, passando la classe che implementa IDocHostUIHandler.  
   
-```c#  
+```csharp  
 // "this" references that class that owns the WebOC control and in this case also implements the IDocHostUIHandler interface  
 ICustomDoc customDoc = (ICustomDoc)webBrowser.Document;  
 customDoc.SetUIHandler(this);  
   
 ```  
   
- Se non è stato implementato l'interfaccia ICustomDoc, quindi come proprietà del documento del WebOC è valido, è necessario eseguirne il cast a un oggetto IOleObject e chiamare il metodo SetClientSite, passando la classe che implementa IDocHostUIHandler. Impostare il flag DOCHOSTUIFLAG\_DPI\_AWARE il DOCHOSTUIINFO passato alla chiamata al metodo GetHostInfo:  
+ Se si non implementa l'interfaccia ICustomDoc, quindi come proprietà del documento del WebOC è valido, è necessario eseguirne il cast a un oggetto IOleObject e chiamare il metodo SetClientSite, passando la classe che implementa IDocHostUIHandler. Imposta il flag DOCHOSTUIFLAG_DPI_AWARE il DOCHOSTUIINFO passato alla chiamata al metodo GetHostInfo:  
   
-```c#  
+```csharp  
 public int GetHostInfo(DOCHOSTUIINFO info)  
 {  
     // This is what the default site provides.  
@@ -341,13 +342,13 @@ public int GetHostInfo(DOCHOSTUIINFO info)
   
  Deve trattarsi di tutto ciò che è necessario ottenere il controllo WebOC supporti HPDI.  
   
-## Suggerimenti  
+## <a name="tips"></a>Suggerimenti  
   
 1.  Se la proprietà di documento nel controllo WebOC cambia, potrebbe essere necessario riassociare il documento con la classe IDocHostUIHandler.  
   
-2.  Se la soluzione non funziona, sussiste un problema noto con WebOC non prelievo per il flag DPI la modifica. Il modo più affidabile di questa correzione è per attivare o disattivare lo zoom ottico di WebOC due chiamate al significato con due valori diversi per la percentuale di zoom. Inoltre, se questa soluzione è necessaria, potrebbero essere necessaria per eseguirla in ogni chiamata navigate.  
+2.  Se la soluzione non funziona, sussiste un problema noto con il WebOC non prelievo per il flag DPI le modifiche. Il modo più affidabile di questa correzione è per attivare o disattivare lo zoom ottico di Web oC, due chiamate di significato con due valori diversi per la percentuale di zoom. Inoltre, se questa soluzione è necessaria, potrebbe essere necessario eseguirla in ogni chiamata di passare.  
   
-    ```c#  
+    ```csharp  
     // browser2 is a SHDocVw.IWebBrowser2 in this case  
     // EX: Call the Exec twice with DPI%-1 and then DPI% as the zoomPercent values  
     IOleCommandTarget cmdTarget = browser2.Document as IOleCommandTarget;  

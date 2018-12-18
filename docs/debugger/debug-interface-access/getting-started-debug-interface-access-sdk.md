@@ -1,54 +1,53 @@
 ---
-title: "Introduzione (Debug Interface Access SDK) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "file dbg"
-  - "DBG (file)"
+title: Introduzione (Debug Interface Access SDK) | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology: vs-ide-debug
+ms.topic: conceptual
+dev_langs:
+- C++
+helpviewer_keywords:
+- .dbg files
+- DBG files
 ms.assetid: cb3d040a-2846-40d7-bdbc-8a5beb5dd2f6
-caps.latest.revision: 15
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 15
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 1fdfe560f22374c0b46305d096bea32a784babe6
+ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/18/2018
 ---
-# Introduzione (Debug Interface Access SDK)
-[!INCLUDE[vs2017banner](../../code-quality/includes/vs2017banner.md)]
-
-Il Debug \(DIA\) Interface Access SDK offre documentazione esplicativo e un esempio che illustra come utilizzare il diametro API.  Utilizzare le interfacce e metodi nel DIA SDK per lo sviluppo di applicazioni personalizzate che aprono i file di estensione dbg e PDB e individuare il contenuto dei simboli, i valori, gli attributi, gli indirizzi e altre informazioni di debug.  Il presente SDK fornisce inoltre le tabelle di riferimento per le proprietà associate ai simboli presenti nelle applicazioni C\+\+.  
+# <a name="getting-started-debug-interface-access-sdk"></a>Introduzione (Debug Interface Access SDK)
+Il Debug Interface Access (DIA) SDK fornisce un esempio che illustra come usare l'API di DIA e la documentazione di istruzioni. Utilizzare le interfacce e metodi in DIA SDK per sviluppare applicazioni personalizzate che aprire i file con estensione pdb e DBG e ricerca di contenuto per i simboli, i valori, gli attributi, gli indirizzi e altre informazioni di debug. Questo SDK fornisce inoltre le tabelle di riferimento per le proprietà associate ai simboli presenti nelle applicazioni C++.  
   
- Un utilizzo ottimale del DIA SDK, è necessario conoscere le operazioni seguenti:  
+ Per utilizzare al meglio il DIA SDK, è necessario avere familiarità con gli elementi seguenti:  
   
--   linguaggio di programmazione in C\+\+  
+-   Linguaggio di programmazione C++  
   
 -   Programmazione COM  
   
--   ambiente di sviluppo integrato di Visual Studio \(IDE\) per compilare gli esempi  
+-   Ambiente Visual Studio sviluppo integrato (IDE) per la compilazione degli esempi di  
   
- Il DIA SDK in genere installato con Visual Studio e la relativa posizione predefinita è *\[unità\]*\\Program Files\\Microsoft Visual Studio 9.0\\DIA SDK.  Durante l'installazione, il msdia90.dll, che implementa il DIA SDK, viene automaticamente registrato quindi tutti quello che è necessario eseguire per utilizzare anziché incorporare `dia2.h` nel programma e collegarsi a  `diaguids.lib`.  
+ Il DIA SDK viene normalmente installato con Visual Studio e il percorso predefinito è *[unità]* \Programmi\Microsoft 9.0\DIA di Visual Studio SDK. Come parte dell'installazione, il MSDIA90, che implementa il DIA SDK, viene registrato automaticamente in modo che tutto ciò che è necessario eseguire per poterlo utilizzare includono `dia2.h` nel programma e collegamento a `diaguids.lib`.  
   
- intestazione: include \\ dia2.h  
+ Intestazione: include\dia2.h  
   
- raccolta: lib \\ diaguids.lib  
+ Libreria: lib\diaguids.lib  
   
- DLL: bin \\ msdia80.dll  
+ DLL: bin\msdia80.dll  
   
- IDL: IDL \\ dia2.idl  
+ IDL: idl\dia2.idl  
   
-## Argomenti della sezione  
+## <a name="in-this-section"></a>In questa sezione  
  [Panoramica](../../debugger/debug-interface-access/overview-debug-interface-access-sdk.md)  
- Esaminare l'architettura di base di diametro.  
+ Esamina l'architettura di base di DIA.  
   
- [Ricerche nel file PDB](../../debugger/debug-interface-access/querying-the-dot-pdb-file.md)  
- Vengono fornite istruzioni dettagliate su come utilizzare il diametro API per eseguire una query su un file con estensione pdb.  
+ [Esecuzione di query nel file PDB](../../debugger/debug-interface-access/querying-the-dot-pdb-file.md)  
+ Vengono fornite istruzioni dettagliate su come utilizzare l'API di DIA per eseguire query di un file con estensione pdb.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Debug Interface Access SDK](../../debugger/debug-interface-access/debug-interface-access-sdk.md)

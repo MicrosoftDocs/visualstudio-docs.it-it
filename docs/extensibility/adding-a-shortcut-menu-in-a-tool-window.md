@@ -1,42 +1,26 @@
 ---
 title: Aggiunta di un Menu di scelta rapida in una finestra degli strumenti | Documenti Microsoft
-ms.custom: 
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - vs-ide-sdk
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: conceptual
 helpviewer_keywords:
 - context menus, adding to tool windows
 - menus, context menus
 - shortcut menus, adding to tool windows
 - tool windows, adding context menus
 ms.assetid: 50234537-9e95-4b7e-9cb7-e5cf26d6e9d2
-caps.latest.revision: 37
+author: gregvanl
 ms.author: gregvanl
-manager: ghogen
-translation.priority.mt:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: e4b36800ea291c6f1bc0948a46b67c4e3549f349
+ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
 ms.translationtype: MT
-ms.sourcegitcommit: 4a36302d80f4bc397128e3838c9abf858a0b5fe8
-ms.openlocfilehash: 661e31f32f176e48ea69ae92f23ecdde7911456b
-ms.contentlocale: it-it
-ms.lasthandoff: 09/26/2017
-
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/19/2018
 ---
 # <a name="adding-a-shortcut-menu-in-a-tool-window"></a>Aggiunta di un Menu di scelta rapida in una finestra degli strumenti
 Questa procedura dettagliata pone un menu di scelta rapida in una finestra degli strumenti. Menu di scelta rapida è un menu che viene visualizzato quando un utente fa un pulsante, una casella di testo o sfondo della finestra. Comandi del menu di scelta rapida comportano come comandi su altri menu o barre degli strumenti. Per supportare un menu di scelta rapida, specificarlo nel file vsct e visualizzarli in risposta a destro del mouse.  
@@ -52,7 +36,7 @@ Questa procedura dettagliata pone un menu di scelta rapida in una finestra degli
   
 ## <a name="creating-the-tool-window-shortcut-menu-package"></a>Creazione del pacchetto di Menu di scelta rapida finestra dello strumento  
   
-1.  Creare un progetto VSIX denominato `TWShortcutMenu` e aggiungere un modello di finestra strumento denominato **menu scelta rapida** a esso. Per ulteriori informazioni sulla creazione di una finestra degli strumenti, vedere [creazione di un'estensione con una finestra degli strumenti](../extensibility/creating-an-extension-with-a-tool-window.md).  
+1.  Creare un progetto VSIX denominato `TWShortcutMenu` e aggiungere un modello di finestra dello strumento denominato **menu scelta rapida** a esso. Per ulteriori informazioni sulla creazione di una finestra degli strumenti, vedere [creazione di un'estensione con una finestra degli strumenti](../extensibility/creating-an-extension-with-a-tool-window.md).  
   
 ## <a name="specifying-the-shortcut-menu"></a>Specifica il Menu di scelta rapida  
  Menu di scelta rapida, ad esempio quella illustrata in questa procedura dettagliata consente all'utente di selezionare da un elenco di colori usati per riempire lo sfondo della finestra degli strumenti.  
@@ -130,7 +114,7 @@ Questa procedura dettagliata pone un menu di scelta rapida in una finestra degli
     </Buttons>  
     ```  
   
-5.  In ShortcutMenuPackageGuids.cs, aggiungere le definizioni per il comando di GUID, menu di scelta rapida e le voci di menu.  
+5.  In ShortcutMenuCommand.cs, aggiungere le definizioni per il comando di GUID, il menu di scelta rapida e le voci di menu.  
   
     ```csharp  
     public const string guidShortcutMenuPackageCmdSet = "00000000-0000-0000-0000-00000000"; // your GUID will differ  
@@ -159,7 +143,7 @@ Questa procedura dettagliata pone un menu di scelta rapida in una finestra degli
     ```csharp  
     protected override void Initialize()  
     {  
-        commandService = (OleMenuCommandService)GetService(typeof(IMenuCommandService));  
+        var commandService = (OleMenuCommandService)GetService(typeof(IMenuCommandService));  
         Content = new ShortcutMenuControl(commandService);  
     }  
     ```  
@@ -186,12 +170,12 @@ Questa procedura dettagliata pone un menu di scelta rapida in una finestra degli
         if (null !=commandService)  
         {  
             // Create an alias for the command set guid.  
-            Guid guid = new Guid(ShortcutMenuPackageGuids.guidShortcutMenuPackageCmdSet);  
+            Guid guid = new Guid(ShortcutMenuCommand.guidShortcutMenuPackageCmdSet);  
   
             // Create the command IDs.   
-            var red = new CommandID(guid, ShortcutMenuPackageGuids.cmdidRed);  
-            var yellow = new CommandID(guid, ShortcutMenuPackageGuids.cmdidYellow);  
-            var blue = new CommandID(guid, ShortcutMenuPackageGuids.cmdidBlue);  
+            var red = new CommandID(guid, ShortcutMenuCommand.cmdidRed);  
+            var yellow = new CommandID(guid, ShortcutMenuCommand.cmdidYellow);  
+            var blue = new CommandID(guid, ShortcutMenuCommand.cmdidBlue);  
   
             // Add a command for each command ID.  
             commandService.AddCommand(new MenuCommand(ChangeColor, red));  
@@ -250,8 +234,8 @@ Questa procedura dettagliata pone un menu di scelta rapida in una finestra degli
         if (null != commandService)  
         {  
             CommandID menuID = new CommandID(  
-                new Guid(ShortcutMenuPackageGuids.guidShortcutMenuPackageCmdSet),  
-                ShortcutMenuPackageGuids.ColorMenu);  
+                new Guid(ShortcutMenuCommand.guidShortcutMenuPackageCmdSet),  
+                ShortcutMenuCommand.ColorMenu);  
             Point p = this.PointToScreen(e.GetPosition(this));  
             commandService.ShowContextMenu(menuID, (int)p.X, (int)p.Y);  
         }  
@@ -269,13 +253,13 @@ Questa procedura dettagliata pone un menu di scelta rapida in una finestra degli
   
         switch (mc.CommandID.ID)  
         {  
-            case ShortcutMenuPackageGuids.cmdidRed:  
+            case ShortcutMenuCommand.cmdidRed:  
                 MyToolWindow.Background = Brushes.Red;  
                 break;  
-            case ShortcutMenuPackageGuids.cmdidYellow:  
+            case ShortcutMenuCommand.cmdidYellow:  
                 MyToolWindow.Background = Brushes.Yellow;  
                 break;  
-            case ShortcutMenuPackageGuids.cmdidBlue:  
+            case ShortcutMenuCommand.cmdidBlue:  
                 MyToolWindow.Background = Brushes.Blue;  
                 break;  
         }  

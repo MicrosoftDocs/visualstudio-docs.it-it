@@ -1,55 +1,54 @@
 ---
-title: "Visualizzazione Uso | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "vs.performance.view.cpuutilization"
-helpviewer_keywords: 
-  - "Visualizzatore di concorrenza, visualizzazione Uso CPU"
+title: Visualizzazione Utilizzo | Microsoft Docs
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology: vs-ide-debug
+ms.topic: conceptual
+f1_keywords:
+- vs.performance.view.cpuutilization
+helpviewer_keywords:
+- Concurrency Visualizer, CPU Utilization View
 ms.assetid: b4f7ceab-3653-4069-bb74-c309aec62866
-caps.latest.revision: 21
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 21
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: cb49d47dbd01b1d84228e1f01dc4cbf7f49dfc8d
+ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/19/2018
 ---
-# Visualizzazione Uso
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
-La **Visualizzazione Utilizzo** mostra informazioni sulla CPU, GPU e altre risorse di sistema utilizzate dal processo corrente.  Viene mostrato l'utilizzo medio dei core nel tempo da parte del processo analizzato, del processo inattivo, del processo di sistema e di altri processi in esecuzione nel sistema.  Non viene tuttavia indicato quale core specifico è attivo in un determinato momento.  Ad esempio, se due core sono ciascuno in esecuzione al 50 percento della capacità per un periodo di tempo specificato, in questa visualizzazione verrà indicato l'utilizzo di un solo core logico.  La visualizzazione viene generata suddividendo il tempo di profilatura in segmenti temporali più brevi.  Per ogni segmento, nel grafico viene tracciato il numero medio di thread di processo in esecuzione su core logici in tale intervallo.  
+# <a name="utilization-view"></a>Visualizzazione Uso
+La **visualizzazione Utilizzo** mostra le informazioni relative a CPU, GPU e altre risorse di sistema usate dal processo corrente. (Scegliere **Analizza** > **Visualizzatore di concorrenza** per avviare il visualizzatore di concorrenza). Viene indicato l'utilizzo medio dei core da parte del processo analizzato, del processo inattivo, del processo di sistema e di altri processi in esecuzione nel sistema nel tempo. Non viene indicato quale core specifico è attivo in un momento determinato. Ad esempio, se due core sono in esecuzione al 50% per un determinato periodo di tempo, il grafico indica che viene usato un solo core logico. La visualizzazione viene generata dividendo il tempo di profilatura in brevi segmenti di tempo. Per ogni segmento, nel grafico viene rappresentato il numero medio di thread di processo in esecuzione nei core logici durante l'intervallo.  
   
- ![Visualizzazione Utilizzo CPU](../profiling/media/vsts_ppacpuutil.png "VSTS\_PPAcpuUtil")  
+ ![Visualizzazione Utilizzo CPU](../profiling/media/vsts_ppacpuutil.png "VSTS_PPAcpuUtil")  
   
- Nel grafico vengono illustrati il tempo \(sull'asse x\) e il numero medio di core logici utilizzati dal processo target, il processo inattivo e il processo di sistema. \(Il processo inattivo mostra core inattivi.  Il processo di sistema è un processo in Windows che può eseguire operazioni per conto di altri processi.\) Gli altri processi in esecuzione nel sistema vengono presi in considerazione per l'utilizzo di eventuali core rimanenti.  
+ Il grafico mostra il tempo (sull'asse x) e la media dei core logici usati dal processo di destinazione, dal processo inattivo e dal processo di sistema. Il processo inattivo mostra i core inattivi. Il processo di sistema è un processo di Windows che può eseguire operazioni per conto di altri processi. Gli altri processi sono quelli in esecuzione nell'account di sistema per l'utilizzo da parte dei core rimanenti.  
   
- Il numero di core logici viene visualizzato sull'asse Y.  Il supporto multithreading simultaneo nell'hardware viene considerato da Windows sotto forma di core logici \(ad esempio, Hyper\-Threading\).  Pertanto, un sistema che dispone di un processore quad\-core che supporta due thread hardware per core risulta provvisto di otto core logici.  Questo concetto si applica anche alla visualizzazione Core.  Per ulteriori informazioni, vedere [Visualizzazione Core](../profiling/cores-view.md).  
+ Sull'asse y viene indicato il numero di core logici. Windows considera il supporto multithread simultaneo nell'hardware come core logici (ad esempio, Hyper-Threading). Di conseguenza, un sistema dotato di un processore quad core che supporta due thread hardware per ogni core viene visualizzato come un sistema con otto core logici. Questo vale anche per la visualizzazione Core. Per altre informazioni, vedere [Visualizzazione Core](../profiling/cores-view.md).  
   
- Il grafico di attività della GPU mostra il numero dei motori di DirectX in uso nel tempo.  Un motore è utilizzato se sta elaborando un pacchetto di DMA.  Il grafico non mostra lo specifico motore di DirectX \(ad esempio, motore tridimensionale, motore video, e gli altri\).  
+ Il grafico Attività GPU mostra il numero di motori di DirectX in uso nel tempo.  Un motore è in uso se sta elaborando un pacchetto DMA.  Il grafico non mostra lo specifico motore di DirectX (ad esempio, motore 3D, motore video e altri).  
   
-## Scopo  
- Si raccomanda l'utilizzo della Visualizzazione Utilizzo come punto di partenza per le analisi delle prestazioni tramite il visualizzatore della concorrenza.  Poiché vengono fornite informazioni generali sul grado di concorrenza in un'applicazione nel tempo, è possibile utilizzarla per identificare rapidamente le aree che richiedono l'ottimizzazione delle prestazioni o la parallelizzazione.  
+## <a name="purpose"></a>Scopo  
+ È consigliabile usare la visualizzazione Utilizzo come punto di partenza per le analisi delle prestazioni quando si usa il visualizzatore di concorrenza. Poiché fornisce una panoramica del livello di concorrenza in un'app nel tempo, è possibile usare questa visualizzazione per identificare rapidamente le aree che richiedono l'ottimizzazione o la parallelizzazione delle prestazioni.  
   
- Se si è interessati all'ottimizzazione delle prestazioni, potrebbe risultare opportuno tentare di identificare i comportamenti diversi dalle aspettative.  È possibile inoltre che risulti utile identificare l'esistenza e la causa di aree con un utilizzo ridotto di core CPU logici.  È inoltre possibile cercare i modelli di utilizzo tra la CPU e la GPU.  
+ Se è interessati all'ottimizzazione delle prestazioni, può essere utile tentare di identificare i comportamenti che non soddisfano le aspettative. È possibile verificare se sono presenti aree con un utilizzo ridotto dei core logici della CPU e identificare la causa del problema. È anche possibile tentare di individuare schemi di utilizzo tra la CPU e la GPU.  
   
- Se si è interessati alla parallelizzazione di un'applicazione, in genere è consigliabile concentrarsi sulle aree di esecuzione associate alla CPU oppure su aree in cui la CPU non viene utilizzata.  
+ Se si è interessati alla parallelizzazione di un'app, è possibile cercare le aree di esecuzione associate alla CPU o quelle in cui la CPU non viene usata.  
   
- Le aree associate alla CPU sono verdi.  Nel grafico viene mostrato che solo un core viene utilizzato se l'applicazione è seriale.  
+ Le aree associate alla CPU sono di colore verde. Se l'applicazione è seriale, il grafico mostra l'utilizzo di un solo core.  
   
- Le aree in cui non viene utilizzata la CPU sono di colore grigio.  Tali aree potrebbero rappresentare punti in cui l'applicazione è inattiva o esegue operazioni di I\/O di blocco che forniscono opportunità di parallelismo mediante la sovrapposizione con altro lavoro associato alla CPU.  
+ Le aree in cui la CPU non viene usata sono visualizzate in grigio. Queste aree potrebbero rappresentare punti in cui l'app è inattiva o esegue attività di I/O di blocco che offrono opportunità di parallelismo attraverso la sovrapposizione con altre operazioni associate alla CPU.  
   
- Dopo aver trovato un comportamento di interesse, è possibile selezionare l'area per applicare lo zoom avanti.  Una volta ingrandita l'area, è possibile passare alla visualizzazione dei thread o dei core per condurre un'analisi più approfondita.  
+ Quando si individua un comportamento di proprio interesse, è possibile ingrandire l'area selezionandola. Dopo avere eseguito lo zoom, è possibile passare alla visualizzazione Thread o alla visualizzazione Core per un'analisi più dettagliata.  
   
- Se si utilizza la GPU tramite C\+\+ AMP o DirectX, potrebbe essere necessario identificare il numero dei motori della GPU in uso o le aree in cui la GPU è inattiva in modo imprevisto.  
+ Se si usa la GPU con C++ AMP o DirectX, potrebbe essere utile identificare il numero di motori GPU in uso o le aree di inattività imprevista della GPU.  
   
-## Zoom  
- Per applicare lo zoom avanti e ingrandire il grafico relativo all'utilizzo della CPU o quello relativo all'attività della GPU, selezionare una sezione o utilizzare il dispositivo di scorrimento dello zoom disponibile sopra il grafico.  L'impostazione di zoom viene mantenuta quando si passa ad altre visualizzazioni.  Per applicare lo zoom indietro, utilizzare di nuovo il dispositivo di scorrimento dello zoom.  È inoltre possibile ingrandire utilizzando Ctrl\+scroll.  
+## <a name="zooming"></a>Zoom  
+ Per ingrandire il grafico Utilizzo CPU o il grafico Attività GPU, selezionare una sezione o usare il dispositivo di scorrimento dello zoom sopra il grafico. L'impostazione dello zoom viene mantenuta quando si passa ad altre visualizzazioni. Per eseguire lo zoom indietro, usare il dispositivo di scorrimento dello zoom. È inoltre possibile eseguire lo zoom tenendo premuto CTRL mentre si sposta la rotellina del mouse.  
   
-## Vedere anche  
- [Visualizzatore di concorrenze](../profiling/concurrency-visualizer.md)   
+## <a name="see-also"></a>Vedere anche  
+ [Visualizzatore di concorrenza](../profiling/concurrency-visualizer.md)   
  [Visualizzazione Core](../profiling/cores-view.md)

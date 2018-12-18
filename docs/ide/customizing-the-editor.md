@@ -1,43 +1,39 @@
 ---
-title: "Personalizzazione dell&#39;editor | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-general"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "Editor di codice, personalizzazione"
-  - "editor, personalizzazione editor di codice"
-ms.assetid: 7f4eee2a-586f-49ae-a763-4d9c0ac5bc71
-caps.latest.revision: 21
-author: "kempb"
-ms.author: "kempb"
-manager: "ghogen"
-caps.handback.revision: 21
+title: Personalizzazione dell'editor di Visual Studio | Microsoft Docs
+ms.custom: 
+ms.date: 11/20/2017
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- vs-ide-general
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- editor, customizing
+- Code Editor, customizing
+- Text Editor, customizing
+author: gewarren
+ms.author: gewarren
+manager: ghogen
+ms.workload:
+- multiple
+ms.openlocfilehash: 513780cde8a8a9c0db86b3720382b58a55f385af
+ms.sourcegitcommit: 49aa031cbebdd9c7ec070c713afb1a97d1ecb701
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 01/23/2018
 ---
-# Personalizzazione dell&#39;editor
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
+# <a name="customizing-the-editor"></a>Personalizzazione dell'editor
 
-È possibile personalizzare la formattazione, le schede, i tipi di carattere e colori, IntelliSense e molte altre funzionalità dell'editor in generale o in un editor di linguaggio specifico modificando le opzioni.  Per ulteriori informazioni su queste opzioni, vedere [Finestra di dialogo Opzioni editor di testo](../ide/reference/text-editor-options-dialog-box.md) o digitare `Editor` in **Avvio veloce**.  È inoltre possibile modificare la modalità di visualizzazione delle finestre dell'editor.  
-  
-## In questa sezione  
- In questi argomenti viene illustrato come modificare l'aspetto e il comportamento dell'editor di testo e codice.  
-  
- [Procedura: modificare maiuscole\/minuscole nell'editor](../ide/how-to-change-text-case-in-the-editor.md)  
- Viene illustrato come eseguire tale operazione nel codice.  
-  
- [Procedura: gestire le finestre dell'editor](../ide/how-to-manage-editor-windows.md)  
- Viene illustrato come modificare le finestre dell'editor.  
-  
- [Procedura: gestire le modalità dell'editor](../ide/how-to-manage-editor-modes.md)  
- Viene illustrato come utilizzare la modalità a schermo intero e la modalità Spazio virtuale.  
-  
-## Vedere anche  
- [Scrittura di codice](../ide/writing-code-in-the-code-and-text-editor.md)   
- [Impostazione di segnalibri nel codice](../ide/setting-bookmarks-in-code.md)   
- [Generale, Ambiente, finestra di dialogo Opzioni](../ide/reference/general-environment-options-dialog-box.md)   
- [Documenti, Ambiente, finestra di dialogo Opzioni](../ide/reference/documents-environment-options-dialog-box.md)   
- [Tipi di carattere e colori, Ambiente, finestra di dialogo Opzioni](../ide/reference/fonts-and-colors-environment-options-dialog-box.md)
+È possibile personalizzare la formattazione, le tabulazioni, i tipi di carattere e i colori, IntelliSense e molte altre funzionalità dell'editor di testo in generale o per un linguaggio di programmazione specifico. Gli argomenti di questa sezione illustrano come eseguire alcune di queste personalizzazioni.
+
+Per altre informazioni sulle opzioni dell'editor di testo, vedere [Finestra di dialogo Opzioni editor di testo](../ide/reference/text-editor-options-dialog-box.md).
+
+## <a name="see-also"></a>Vedere anche
+
+[Guida introduttiva: Personalizzare l'IDE e l'editor di Visual Studio](../ide/quickstart-personalize-the-ide.md)  
+[Writing Code](../ide/writing-code-in-the-code-and-text-editor.md) (Scrittura di codice)  
+[Impostazione di segnalibri nel codice](../ide/setting-bookmarks-in-code.md)  
+[Generale, Ambiente, finestra di dialogo Opzioni](../ide/reference/general-environment-options-dialog-box.md)  
+[Documenti, Ambiente, finestra di dialogo Opzioni](../ide/reference/documents-environment-options-dialog-box.md)  
+[Tipi di carattere e colori, Ambiente, finestra di dialogo Opzioni](../ide/reference/fonts-and-colors-environment-options-dialog-box.md)

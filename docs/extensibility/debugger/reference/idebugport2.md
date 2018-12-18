@@ -1,65 +1,66 @@
 ---
-title: "IDebugPort2 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "IDebugPort2"
-helpviewer_keywords: 
-  - "Interfaccia IDebugPort2"
+title: IDebugPort2 | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology:
+- vs-ide-sdk
+ms.topic: conceptual
+f1_keywords:
+- IDebugPort2
+helpviewer_keywords:
+- IDebugPort2 interface
 ms.assetid: 8fd87f05-a950-4d14-b925-98be29d4facc
-caps.latest.revision: 13
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 13
+author: gregvanl
+ms.author: gregvanl
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: d1811ad7e46865d00eed2066d061daec78d7ab2b
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# IDebugPort2
-[!INCLUDE[vs2017banner](../../../code-quality/includes/vs2017banner.md)]
-
+# <a name="idebugport2"></a>IDebugPort2
 Questa interfaccia rappresenta una porta di debug in un computer.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
 IDebugPort2 : IUnknown  
 ```  
   
-## Note per gli implementatori  
- Un fornitore di porte personalizzato implementa questa interfaccia per rappresentare una porta di debug in un computer.  
+## <a name="notes-for-implementers"></a>Note per gli implementatori  
+ Un fornitore di porta personalizzato implementa questa interfaccia per rappresentare una porta di debug in un computer.  
   
- Se la porta supporta inviare gli eventi di porta, deve implementare anche l'interfaccia di <xref:System.Runtime.InteropServices.ComTypes.IConnectionPointContainer> per supportare un'interfaccia di <xref:System.Runtime.InteropServices.ComTypes.IConnectionPoint> che a sua volta fornisce [IDebugPortEvents2](../../../extensibility/debugger/reference/idebugportevents2.md) l'interfaccia.  
+ Se la porta supporta l'invio di eventi porta, è necessario implementare anche il <xref:System.Runtime.InteropServices.ComTypes.IConnectionPointContainer> interfaccia per supportare un <xref:System.Runtime.InteropServices.ComTypes.IConnectionPoint> interfaccia che a sua volta fornisce il [IDebugPortEvents2](../../../extensibility/debugger/reference/idebugportevents2.md) interfaccia.  
   
-## Note per i chiamanti  
+## <a name="notes-for-callers"></a>Note per i chiamanti  
  Le chiamate a [GetPort](../../../extensibility/debugger/reference/idebugportsupplier2-getport.md) o [Aggiungi porta](../../../extensibility/debugger/reference/idebugportsupplier2-addport.md) restituiscono questa interfaccia, che rappresenta la porta richiesta.  
   
-## Metodi nell'ordine di Vtable  
- Nella tabella seguente sono elencati i metodi di `IDebugPort2`.  
+## <a name="methods-in-vtable-order"></a>Metodi nell'ordine Vtable  
+ Nella tabella seguente sono illustrati i metodi di `IDebugPort2`.  
   
 |Metodo|Descrizione|  
 |------------|-----------------|  
 |[GetPortName](../../../extensibility/debugger/reference/idebugport2-getportname.md)|Restituisce il nome della porta.|  
-|[GetPortId](../../../extensibility/debugger/reference/idebugport2-getportid.md)|Restituisce l'identificatore della porta.|  
-|[GetPortRequest](../../../extensibility/debugger/reference/idebugport2-getportrequest.md)|restituisce la richiesta utilizzata per creare una porta \(se disponibile\).|  
-|[GetPortSupplier](../Topic/IDebugPort2::GetPortSupplier.md)|restituisce il fornitore di porte per questa porta.|  
-|[GetProcess](../Topic/IDebugPort2::GetProcess.md)|Restituisce un'interfaccia al processo specificato l'identificatore del processo.|  
-|[EnumProcesses](../Topic/IDebugPort2::EnumProcesses.md)|Enumera i processi in esecuzione su una porta.|  
+|[GetPortId](../../../extensibility/debugger/reference/idebugport2-getportid.md)|Restituisce l'identificatore di porta.|  
+|[GetPortRequest](../../../extensibility/debugger/reference/idebugport2-getportrequest.md)|Restituisce la richiesta utilizzata per creare una porta (se disponibile).|  
+|[GetPortSupplier](../../../extensibility/debugger/reference/idebugport2-getportsupplier.md)|Restituisce il fornitore della porta per la porta.|  
+|[GetProcess](../../../extensibility/debugger/reference/idebugport2-getprocess.md)|Restituisce un'interfaccia per il processo specificato l'identificatore del processo.|  
+|[EnumProcesses](../../../extensibility/debugger/reference/idebugport2-enumprocesses.md)|Enumera tutti i processi in esecuzione su una porta.|  
   
-## Note  
- La porta locale consente di accedere a tutti i processi e programmi in esecuzione sul computer locale.  Altre porte potrebbero rappresentare una connessione di rete seriale a un dispositivo basato su windows CE, o una connessione di rete a un computer non DCOM.  L'interfaccia di `IDebugPort2` viene utilizzata per cercare il nome e l'identificatore di una porta, enumerare tutti elabora il funzionamento della porta e forniscono le funzionalità per avviare e interrompere i processi sulla porta.  
+## <a name="remarks"></a>Note  
+ La porta locale consente di accedere a tutti i processi e i programmi in esecuzione nel computer locale. Le altre porte potrebbero rappresentare un cavo seriale per un dispositivo basato su Windows CE o una connessione di rete a un computer non DCOM. Il `IDebugPort2` interfaccia viene utilizzata per trovare il nome e l'identificatore di una porta, enumerare tutti i processi in esecuzione sulla porta e forniscono funzionalità per l'avvio e terminazione dei processi sulla porta.  
   
-## Requisiti  
- intestazione: msdbg.h  
+## <a name="requirements"></a>Requisiti  
+ Intestazione: msdbg.h  
   
- Spazio dei nomi: Microsoft.VisualStudio.Debugger.Interop  
+ Namespace: Microsoft.VisualStudio.Debugger.Interop  
   
  Assembly: Microsoft.VisualStudio.Debugger.Interop.dll  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Interfacce di base](../../../extensibility/debugger/reference/core-interfaces.md)   
  [IDebugPortSupplier2](../../../extensibility/debugger/reference/idebugportsupplier2.md)   
  [IDebugCoreServer2](../../../extensibility/debugger/reference/idebugcoreserver2.md)

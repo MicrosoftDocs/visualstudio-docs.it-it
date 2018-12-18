@@ -1,41 +1,25 @@
 ---
 title: METADATA_ADDRESS_ARRAYELEM | Documenti Microsoft
-ms.custom: 
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - vs-ide-sdk
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: conceptual
 f1_keywords:
 - METADATA_ADDRESS_ARRAYELEM
 helpviewer_keywords:
 - METADATA_ADDRESS_ARRAYELEM structure
 ms.assetid: 24321be5-7c17-4038-82a1-c20a2b68ff3c
-caps.latest.revision: 6
+author: gregvanl
 ms.author: gregvanl
-manager: ghogen
-translation.priority.mt:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: 0e222adcd64457a9294a257b64f70695b9f36060
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
 ms.translationtype: MT
-ms.sourcegitcommit: 4a36302d80f4bc397128e3838c9abf858a0b5fe8
-ms.openlocfilehash: df941d56a1b9baf8ffa15b022e0b9577da143fc8
-ms.contentlocale: it-it
-ms.lasthandoff: 09/26/2017
-
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="metadataaddressarrayelem"></a>METADATA_ADDRESS_ARRAYELEM
 Questa struttura rappresenta un elemento di matrice all'interno di una matrice.  

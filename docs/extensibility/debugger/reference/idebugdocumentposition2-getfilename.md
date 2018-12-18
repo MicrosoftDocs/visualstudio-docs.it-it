@@ -1,51 +1,52 @@
 ---
-title: "IDebugDocumentPosition2::GetFileName | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "IDebugDocumentPosition2::GetFileName"
-helpviewer_keywords: 
-  - "IDebugDocumentPosition2::GetFileName"
+title: IDebugDocumentPosition2::GetFileName | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology:
+- vs-ide-sdk
+ms.topic: conceptual
+f1_keywords:
+- IDebugDocumentPosition2::GetFileName
+helpviewer_keywords:
+- IDebugDocumentPosition2::GetFileName
 ms.assetid: d713635e-088f-465b-b26d-00ac971c9e86
-caps.latest.revision: 10
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 10
+author: gregvanl
+ms.author: gregvanl
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: 81417fbb025fdea70a4b9fb51f0b49fb0257cd8a
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# IDebugDocumentPosition2::GetFileName
-[!INCLUDE[vs2017banner](../../../code-quality/includes/vs2017banner.md)]
-
-Ottiene il nome del file di origine contenente il percorso del documento.  
+# <a name="idebugdocumentposition2getfilename"></a>IDebugDocumentPosition2::GetFileName
+Ottiene il nome del file del file di origine che contiene la posizione del documento.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp#  
-HRESULT GetFileName(   
-   BSTR* pbstrFileName  
+```cpp  
+HRESULT GetFileName(   
+   BSTR* pbstrFileName  
 );  
 ```  
   
-```c#  
-int GetFileName(   
-   out string pbstrFileName  
+```csharp  
+int GetFileName(   
+   out string pbstrFileName  
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `pbstrFileName`  
- \[out\]  Restituisce il nome del file di origine.  
+ [out] Restituisce il nome del file del file di origine.  
   
-## Valore restituito  
- Se l'operazione riesce, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
+## <a name="return-value"></a>Valore restituito  
+ Se ha esito positivo, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
   
-## Note  
- Un file di origine non può sempre assegnato un nome file \(il file di origine non può trovarsi sul disco, ad esempio.  
+## <a name="remarks"></a>Note  
+ Un file di origine non può sempre essere un nome di file (file di origine inesistente su disco, ad esempio).  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IDebugDocumentPosition2](../../../extensibility/debugger/reference/idebugdocumentposition2.md)

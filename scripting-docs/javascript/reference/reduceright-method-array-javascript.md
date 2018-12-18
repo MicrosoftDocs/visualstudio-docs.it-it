@@ -1,66 +1,69 @@
 ---
-title: "Metodo reduceRight (Array) (JavaScript) | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/18/2017"
-ms.prod: "windows-client-threshold"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-javascript"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-dev_langs: 
-  - "JavaScript"
-  - "TypeScript"
-  - "DHTML"
-helpviewer_keywords: 
-  - "matrici [JavaScript], reduceRight (metodo)"
-  - "reduceRight (metodo) [JavaScript]"
+title: Metodo reduceRight (Array) (JavaScript) | Documenti Microsoft
+ms.custom: 
+ms.date: 01/18/2017
+ms.prod: windows-client-threshold
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-javascript
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+dev_langs:
+- JavaScript
+- TypeScript
+- DHTML
+helpviewer_keywords:
+- arrays [JavaScript], reduceRight method
+- reduceRight method [JavaScript]
 ms.assetid: 85963761-da11-407c-8bce-278c930e61bd
-caps.latest.revision: 19
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 19
+caps.latest.revision: "19"
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.openlocfilehash: 0d7fd2794157eadacefa7404f9333c51aed9425c
+ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/27/2017
 ---
-# Metodo reduceRight (Array) (JavaScript)
-Chiama la funzione di callback specificata per tutti gli elementi in una matrice, in ordine decrescente.  Il valore restituito della funzione di callback è il risultato accumulato e viene fornito come argomento nella chiamata successiva alla funzione di callback.  
+# <a name="reduceright-method-array-javascript"></a>Metodo reduceRight (Array) (JavaScript)
+Chiama la funzione di callback specificato per tutti gli elementi in una matrice, in ordine decrescente. Il valore restituito della funzione di callback è il risultato accumulato e viene fornito come argomento nella chiamata successiva alla funzione di callback.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
   
 array1.reduceRight(callbackfn[, initialValue])  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
   
 |Parametro|Definizione|  
-|---------------|-----------------|  
-|`array1`|Obbligatorio.  Oggetto matrice.|  
-|`callbackfn`|Obbligatorio.  Funzione che accetta fino a quattro argomenti.  Il metodo `reduceRight` chiama la funzione `callbackfn` una volta per ogni elemento nella matrice.|  
-|`initialValue`|Facoltativo.  Se specificato, `initialValue` viene utilizzato come valore iniziale per avviare l'accumulo.  La prima chiamata alla funzione `callbackfn` fornisce questo valore come argomento invece di un valore di matrice.|  
+|---------------|----------------|  
+|`array1`|Obbligatorio. Oggetto matrice.|  
+|`callbackfn`|Obbligatorio. Una funzione che accetta fino a quattro argomenti. Il metodo `reduceRight` chiama la funzione `callbackfn` una volta per ogni elemento nella matrice.|  
+|`initialValue`|Parametro facoltativo. Se `initialValue` viene specificato, viene utilizzato come valore iniziale per avviare l'accumulo. La prima chiamata al `callbackfn` funzione questo valore viene fornito come argomento anziché un valore di matrice.|  
   
-## Valore restituito  
- Oggetto contenente il risultato accumulato dall'ultima chiamata alla funzione di callback.  
+## <a name="return-value"></a>Valore restituito  
+ Oggetto che contiene il risultato accumulato dall'ultima chiamata alla funzione di callback.  
   
-## Eccezioni  
- Un'eccezione `TypeError` viene generata quando si verifica una delle seguenti condizioni:  
+## <a name="exceptions"></a>Eccezioni  
+ Oggetto `TypeError` eccezione viene generata quando viene soddisfatta una delle condizioni seguenti:  
   
--   L'argomento `callbackfn` non è un oggetto funzione.  
+-   Il `callbackfn` argomento non è un oggetto funzione.  
   
--   La matrice non contiene elementi e non viene fornito `initialValue`.  
+-   La matrice non contiene elementi e `initialValue` non è stato specificato.  
   
-## Note  
- Se viene fornito `initialValue`, il metodo `reduceRight` chiama la funzione `callbackfn` una volta per ogni elemento nella matrice, in ordine di indice decrescente.  Se `initialValue` non viene fornito, il metodo `reduceRight` chiama la funzione `callbackfn` in ogni elemento, a partire dal secondo all'ultimo, in ordine di indice decrescente.  
+## <a name="remarks"></a>Note  
+ Se un `initialValue` viene fornito il `reduceRight` chiamate al metodo di `callbackfn` funzione una volta per ogni elemento della matrice, in senso decrescente di indice. Se non `initialValue` viene fornito il `reduceRight` chiamate al metodo di `callbackfn` funzione su ogni elemento, a partire dall'elemento secondo ultimo, in senso decrescente di indice.  
   
- Il valore restituito della funzione di callback viene fornito come argomento `previousValue` nella chiamata successiva alla funzione di callback.  Il valore restituito dell'ultima chiamata alla funzione di callback è il valore restituito del metodo `reduceRight`.  
+ Il valore restituito della funzione di callback viene fornito come il `previousValue` argomento alla chiamata successiva alla funzione di callback. Il valore restituito dell'ultima chiamata alla funzione di callback è il valore restituito di `reduceRight` metodo.  
   
  La funzione di callback non viene chiamata per gli elementi mancanti della matrice.  
   
- Per accumulare un risultato in ordine di indice crescente, utilizzare [Metodo reduce \(Array\)](../../javascript/reference/reduce-method-array-javascript.md).  
+ Per raccogliere un risultato in ordine di indice crescente, utilizzare il [metodo reduce (Array)](../../javascript/reference/reduce-method-array-javascript.md).  
   
-## Sintassi della funzione di callback  
+## <a name="callback-function-syntax"></a>Sintassi della funzione di callback  
  La sintassi della funzione di callback è la seguente:  
   
  `function callbackfn(previousValue, currentValue, currentIndex, array1)`  
@@ -70,43 +73,43 @@ array1.reduceRight(callbackfn[, initialValue])
  Nella tabella seguente sono elencati i parametri della funzione di callback.  
   
 |Argomento di callback|Definizione|  
-|---------------------------|-----------------|  
-|`previousValue`|Valore dalla chiamata precedente alla funzione di callback.  Se `initialValue` viene fornito al metodo `reduceRight`, `previousValue` è `initialValue` alla prima chiamata alla funzione.|  
-|`currentValue`|Valore dell'elemento della matrice corrente.|  
-|`currentIndex`|Indice numerico dell'elemento della matrice corrente.|  
+|-----------------------|----------------|  
+|`previousValue`|Il valore dalla precedente chiamata alla funzione di callback. Se un `initialValue` viene fornito per il `reduceRight` (metodo), il `previousValue` è `initialValue` la prima volta che viene chiamata la funzione.|  
+|`currentValue`|Il valore dell'elemento della matrice corrente.|  
+|`currentIndex`|L'indice numerico dell'elemento della matrice corrente.|  
 |`array1`|Oggetto matrice contenente l'elemento.|  
   
-## Prima chiamata alla funzione di callback  
- La prima volta che la funzione di callback viene chiamata, i valori forniti come argomenti variano a seconda che il metodo `reduceRight` contenga un argomento `initialValue`.  
+## <a name="first-call-to-the-callback-function"></a>Prima chiamata alla funzione di Callback  
+ La prima volta che viene chiamata la funzione di callback, i valori forniti come argomenti dipendono il `reduceRight` metodo ha un `initialValue` argomento.  
   
- Se `initialValue` viene fornito al metodo `reduceRight`:  
+ Se un `initialValue` viene fornito per il `reduceRight` metodo:  
   
 -   Il valore dell'argomento `previousValue` è `initialValue`.  
   
--   L'argomento `currentValue` è il valore dell'ultimo elemento presente nella matrice.  
+-   Il `currentValue` argomento è il valore dell'ultimo elemento presente nella matrice.  
   
- Se `initialValue` non viene fornito:  
+ Se un `initialValue` non è stato specificato:  
   
--   L'argomento `previousValue` è il valore dell'ultimo elemento presente nella matrice.  
+-   Il `previousValue` argomento è il valore dell'ultimo elemento presente nella matrice.  
   
--   L'argomento `currentValue` è il valore del secondo all'ultimo elemento presente nella matrice.  
+-   Il `currentValue` argomento è il valore dell'elemento al penultimo presente nella matrice.  
   
-## Modifica dell'oggetto matrice  
+## <a name="modifying-the-array-object"></a>Modifica dell'oggetto matrice  
  L'oggetto matrice può essere modificato dalla funzione di callback.  
   
  Nella tabella seguente vengono descritti i risultati della modifica dell'oggetto matrice dopo l'avvio del metodo `reduceRight`.  
   
 |Condizione dopo l'avvio del metodo `reduceRight`|Elemento passato alla funzione di callback?|  
-|------------------------------------------------------|-------------------------------------------------|  
+|-----------------------------------------------------|------------------------------------------|  
 |L'elemento viene aggiunto oltre la lunghezza originale della matrice.|No.|  
 |L'elemento viene aggiunto per inserire un elemento mancante della matrice.|Sì, se tale indice non è stato ancora passato alla funzione di callback.|  
 |L'elemento è stato modificato.|Sì, se tale elemento non è stato ancora passato alla funzione di callback.|  
 |L'elemento viene eliminato dalla matrice.|No, a meno che tale elemento non sia già stato passato alla funzione di callback.|  
   
-## Esempio  
- Nell'esempio seguente i valori della matrice vengono concatenati in una stringa, che separa i valori con "::".  Poiché non viene fornito alcun valore iniziale al metodo `reduceRight`, la prima chiamata alla funzione di callback presenta 456 come argomento `previousValue` e 123 come argomento `currentValue`.  
+## <a name="example"></a>Esempio  
+ Nell'esempio seguente consente di concatenare i valori della matrice in una stringa, separare i valori con ":". Perché non è stato specificato alcun valore iniziale per il `reduceRight` metodo, la prima chiamata alla funzione di callback ha 456 come il `previousValue` argomento e 123 come il `currentValue` argomento.  
   
-```javascript  
+```JavaScript  
 // Define the callback function.  
 function appendCurrent (previousValue, currentValue) {  
     return previousValue + "::" + currentValue;  
@@ -125,10 +128,10 @@ document.write(result);
 //  456::123::def::abc  
 ```  
   
-## Esempio  
- Nell'esempio seguente viene trovata la somma dei quadrati degli elementi della matrice.  Il metodo `reduceRight` viene chiamato con un valore iniziale di 0.  
+## <a name="example"></a>Esempio  
+ Nell'esempio seguente viene calcolata la somma dei quadrati degli elementi della matrice. Il `reduceRight` metodo viene chiamato con un valore iniziale pari a 0.  
   
-```javascript  
+```JavaScript  
 // Define the callback function.  
 function Process(previousValue, currentValue, index, array) {  
     // Add the previous value to the current value squared.  
@@ -153,10 +156,10 @@ document.write("sum of squares=" + sumOfSquares);
 //  sum of squares=50  
 ```  
   
-## Esempio  
- L'esempio seguente consente di ottenere gli elementi di una matrice i cui valori sono compresi tra 1 e 10.  Il valore iniziale fornito al metodo `reduceRight` è una matrice vuota.  
+## <a name="example"></a>Esempio  
+ Nell'esempio seguente ottiene gli elementi di una matrice i cui valori sono compresi tra 1 e 10. Il valore iniziale specificato per il `reduceRight` metodo è una matrice vuota.  
   
-```javascript  
+```JavaScript  
 function Process2(previousArray, currentValue) {  
     // If currentValue is between 1 and 10,   
     // append currentValue to the array.  
@@ -186,10 +189,10 @@ document.write("result array=" + resultArray);
 //  result array=3,6,1  
 ```  
   
-## Esempio  
- Il metodo `reduceRight` può essere applicato a una stringa.  Nell'esempio seguente viene illustrato come utilizzare il metodo per invertire i caratteri in una stringa.  
+## <a name="example"></a>Esempio  
+ Il metodo `reduceRight` può essere applicato a una stringa. Nell'esempio seguente viene illustrato come utilizzare questo metodo per invertire i caratteri in una stringa.  
   
-```javascript  
+```JavaScript  
 // Define the callback function.  
 function AppendToArray(previousValue, currentValue) {  
     return previousValue + currentValue;  
@@ -208,8 +211,8 @@ document.write(result);
 // the computer  
 ```  
   
-## Requisiti  
+## <a name="requirements"></a>Requisiti  
  [!INCLUDE[jsv9](../../javascript/includes/jsv9-md.md)]  
   
-## Vedere anche  
- [Metodo reduce \(Array\)](../../javascript/reference/reduce-method-array-javascript.md)
+## <a name="see-also"></a>Vedere anche  
+ [Metodo reduce (Array)](../../javascript/reference/reduce-method-array-javascript.md)

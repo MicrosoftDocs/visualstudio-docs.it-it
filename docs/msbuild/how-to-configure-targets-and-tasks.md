@@ -1,37 +1,20 @@
 ---
-title: "Procedura: Configurare destinazioni e attività | Microsoft Docs"
-ms.custom: 
+title: 'Procedura: Configurare destinazioni e attività | Microsoft Docs'
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- vs-ide-sdk
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.technology: msbuild
+ms.topic: conceptual
 ms.assetid: 92814100-392a-471d-96fd-e26f637d6cc2
-caps.latest.revision: 5
-author: kempb
-ms.author: kempb
-manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: ce1142acf4acb0e44e85b7e9ab313136d7ed7727
-ms.openlocfilehash: 0ef80ff90b0182405f72f9413de13b699aed971d
-ms.lasthandoff: 03/28/2017
-
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 7a09f2ec1af511cb789f2101e2df0a675dd065e8
+ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/19/2018
 ---
 # <a name="how-to-configure-targets-and-tasks"></a>Procedura: Configurare destinazioni e attività
 Alcune attività MSBuild possono essere impostate in modo da essere eseguite nell'ambiente a cui sono destinate, indipendentemente dall'ambiente del computer di sviluppo. Se ad esempio si usa un computer a 64 bit per creare un'applicazione destinata a un'architettura a 32 bit, le attività selezionate vengono eseguite in un processo a 32 bit.  
@@ -118,7 +101,7 @@ Alcune attività MSBuild possono essere impostate in modo da essere eseguite nel
  A differenza di altri parametri di attività, `MSBuildRuntime` e `MSBuildArchitecture` non vengono visualizzati per l'attività stessa.  Per scrivere un'attività che considera il contesto in cui viene eseguita, è necessario verificare il contesto tramite una chiamata a .NET Framework o usare le proprietà di compilazione per passare le informazioni sul contesto tramite altri parametri di attività.  
   
 > [!NOTE]
-> Gli attributi  `UsingTask` possono essere impostati dalle proprietà del set di strumenti o dell'ambiente.  
+>  Gli attributi `UsingTask` possono essere impostati dalle proprietà del set di strumenti o dell'ambiente.  
   
  I parametri `MSBuildRuntime` e `MSBuildArchitecture` offrono il metodo più flessibile per impostare il contesto di destinazione ma anche il più limitato relativamente all'ambito.  Da un lato, poiché vengono impostati nell'istanza dell'attività e vengono valutati solo prima dell'esecuzione dell'attività, possono derivare il valore dall'ambito completo di proprietà disponibili in fase di valutazione e in fase di compilazione.  Dall'altro, questi parametri vengono applicati solo a una particolare istanza di un'attività in una determinata destinazione.  
   
@@ -127,4 +110,3 @@ Alcune attività MSBuild possono essere impostate in modo da essere eseguite nel
   
 ## <a name="see-also"></a>Vedere anche  
  [Configurazione di destinazioni e attività](../msbuild/configuring-targets-and-tasks.md)
-

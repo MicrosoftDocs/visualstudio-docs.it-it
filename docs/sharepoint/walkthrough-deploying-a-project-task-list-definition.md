@@ -1,14 +1,10 @@
 ---
-title: 'Walkthrough: Deploying a Project Task List Definition | Microsoft Docs'
-ms.custom: 
+title: 'Procedura dettagliata: Distribuzione di una definizione di elenco attività di progetto | Documenti Microsoft'
+ms.custom: ''
 ms.date: 02/02/2017
-ms.prod: visual-studio-dev14
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - office-development
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: conceptual
 dev_langs:
 - VB
 - CSharp
@@ -16,188 +12,172 @@ dev_langs:
 - CSharp
 helpviewer_keywords:
 - SharePoint development in Visual Studio, deploying
-ms.assetid: 18b62016-ed30-4dd1-9dfc-0d7e82c6767f
-caps.latest.revision: 34
-author: kempb
-ms.author: kempb
-manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: eb5c9550fd29b0e98bf63a7240737da4f13f3249
-ms.openlocfilehash: 1e0f260d1f814a2b2a3396ece8a2505561ecbbfd
-ms.contentlocale: it-it
-ms.lasthandoff: 08/30/2017
-
+author: TerryGLee
+ms.author: tglee
+manager: douge
+ms.workload:
+- office
+ms.openlocfilehash: fb7f8445cf43209ffed47140b1d8d204c68eaa4f
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# <a name="walkthrough-deploying-a-project-task-list-definition"></a>Walkthrough: Deploying a Project Task List Definition
-  This walkthrough shows you how to use [!INCLUDE[vs_dev11_long](../sharepoint/includes/vs-dev11-long-md.md)] to create, customize, debug, and deploy a SharePoint list to track project tasks.  
-  
- This walkthrough illustrates the following tasks:  
-  
--   [Creating a SharePoint List](#CreatingListDef).  
-  
--   [Creating a SharePoint List](#CreatingListDef).  
-  
--   [Adding an Event Receiver](#AddEventRcvr).  
-  
--   [Customizing the Project Task List Feature](#CustomizeFeature).  
-  
--   [Building and Testing the Project Task List](#BuildTest).  
-  
- [!INCLUDE[note_settings_general](../sharepoint/includes/note-settings-general-md.md)]  
-  
-## <a name="prerequisites"></a>Prerequisites  
- You need the following components to complete this walkthrough:  
-  
--   Supported editions of Microsoft Windows and SharePoint. For more information, see [Requirements for Developing SharePoint Solutions](../sharepoint/requirements-for-developing-sharepoint-solutions.md).  
-  
--   [!INCLUDE[vs_pro_current_short](../sharepoint/includes/vs-pro-current-short-md.md)] or an edition of Visual Studio Application Lifecycle Management (ALM).  
-  
-##  <a name="CreatingListDef"></a> Creating a SharePoint List  
- Create a SharePoint list project and associate the list definition with tasks.  
-  
-#### <a name="to-create-a-sharepoint-list-project"></a>To create a SharePoint list project  
-  
-1.  Open the **New Project** dialog box, expand the **SharePoint** node, and then choose the **2010** node.  
-  
-2.  In the **Templates** pane, choose the **SharePoint 2010 Project** template, name the project **ProjectTaskList**, and then choose the **OK** button.  
-  
-     The **SharePoint Customization Wizard** appears.  
-  
-3.  Specify the local SharePoint site that you use for debugging, choose the **Deploy as a farm solution** option button, and then choose the **Finish** button.  
-  
-4.  Open the shortcut menu for the project, and then choose **Add**, **New Item**.  
-  
-5.  In the **Templates** pane, choose the **List** template, and then choose the **Add** button.  
-  
-     The **SharePoint Customization Wizard** appears.  
-  
-6.  In the **What name do you want to display for your list?** box, enter **Project Task List**.  
-  
-7.  Choose the **Create a non-customizable list based on an existing list type of** option button, and then, in its list, choose **Tasks**, and then choose the **Finish** button.  
-  
-     The list, feature, and package appear in **Solution Explorer**.  
-  
-##  <a name="AddEventRcvr"></a> Adding an Event Receiver  
- In the task list, you can add an event receiver that automatically sets the due date and description of the task. The following procedure adds a simple event handler to the list instance as an event receiver.  
-  
-#### <a name="to-add-an-event-receiver"></a>To add an event receiver  
-  
-1.  Open the shortcut menu for the project node, choose **Add**, and then choose **New Item**.  
-  
-2.  In the list of SharePoint templates, choose the **Event Receiver** template, and then name it **ProjectTaskListEventReceiver**.  
-  
-     The **SharePoint Customization Wizard** appears.  
-  
-3.  On the **Choose Event Receiver Settings** page, choose **List Item Events** as the event receiver type in the **What type of event receiver do you want** list.  
-  
-4.  In the **What item should be the event source** list, choose **Tasks**.  
-  
-5.  In the list of events to handle, select the check box next to **An item was added**, and then choose the **Finish** button.  
-  
-     A new event receiver node is added to the project with a code file that is named **ProjectTaskListEventReceiver**.  
-  
-6.  Add code to the `ItemAdded` method in the **ProjectTaskListEventReceiver** code file. Each time a new task is added, a default due date and a description is added to the task. The default due date is July 1, 2009.  
-  
-     [!code-vb[SPProjectTaskList#1](../sharepoint/codesnippet/VisualBasic/projecttasklist1/projecttasklisteventreceiver/projecttasklisteventreceiver.vb#1)]  [!code-csharp[SPProjectTaskList#1](../sharepoint/codesnippet/CSharp/projecttasklist/projecttasklisteventreceiver/projecttasklisteventreceiver.cs#1)]  
-  
-##  <a name="CustomizeFeature"></a> Customizing the Project Task List Feature  
- When you create a SharePoint solution, Visual Studio automatically creates features for the default project items. You can customize the project task list settings for the SharePoint site by using the Feature Designer.  
-  
-#### <a name="to-customize-the-project-task-list-feature"></a>To customize the project task list feature  
-  
-1.  In **Solution Explorer**, expand **Features**.  
-  
-2.  Open the shortcut menu for **Feature1**, and then choose **View Designer**.  
-  
-3.  In the **Title** box, enter **Project Task List Feature**.  
-  
-4.  In the **Scope** list, choose **Web**.  
-  
-5.  In the **Properties** window, enter **1.0.0.0** as the value for the **Version** property.  
-  
-##  <a name="CustomizePackage"></a> Customizing the Project Task List Package  
- When you create a SharePoint project, Visual Studio automatically adds the features that contain the default project items to the package. You can customize the project task list settings for the SharePoint site by using the Package Designer.  
-  
-#### <a name="to-customize-the-project-task-list-package"></a>To customize the project task list package  
-  
-1.  In **SolutionExplorer**, open the shortcut menu for **Package**, and then choose **View Designer**.  
-  
-2.  In the **Name** box, enter **ProjectTaskListPackage**.  
-  
-3.  Select the **Reset Web Server** check box.  
-  
-##  <a name="BuildTest"></a> Building and Testing the Project Task List  
- When you run the project, the SharePoint site opens. However, you must manually navigate to the location of the task list.  
-  
-#### <a name="to-test-the-project-task-list"></a>To test the project task list  
-  
-1.  Choose the F5 key to build and deploy your project task list.  
-  
-     The SharePoint site opens.  
-  
-2.  Choose the **Home** tab.  
-  
-3.  In the left sidebar, choose the **Project Task List** link.  
-  
-     The Project Task List page appears.  
-  
-4.  In the **List Tools** tab, choose the **Items** tab.  
-  
-5.  In the **Items** group, choose the **New Item** button.  
-  
-6.  In the **Title** text box, enter **Task1**.  
-  
-7.  Choose the **Save** button.  
-  
-     After the site is refreshed, the **Task1** task appears with a due date of 7/1/2009.  
-  
-8.  Choose **Task1**.  
-  
-     The detailed view of the task appears, and the description shows "This is a critical task."  
-  
-##  <a name="Deploy"></a> Deploying the Project Task List  
- After you build and test the project task list, you can deploy it to the *local system* or a *remote system*. The local system is the same computer on which you developed the solution, whereas a remote system is a different computer.  
-  
-#### <a name="to-deploy-the-project-task-list-to-the-local-system"></a>To deploy the project task list to the local system  
-  
-1.  On the Visual Studio menu bar, choose **Build**, **Deploy Solution**.  
-  
-     Visual Studio recycles the IIS application pool, retracts any existing versions of the solution, copies the solution package (.wsp) file to SharePoint, and then activates its features. You can now use the solution in SharePoint. For more information about deployment configuration steps, see [How to: Edit a SharePoint Deployment Configuration](../sharepoint/how-to-edit-a-sharepoint-deployment-configuration.md).  
-  
-#### <a name="to-deploy-the-project-task-list-to-a-remote-system"></a>To deploy the project task list to a remote system  
-  
-1.  On the Visual Studio menu bar, choose **Build**, **Publish**.  
-  
-2.  In the **Publish** dialog box, choose the **Publish to File System** option button.  
-  
-     You can change the target location in the **Publish** dialog box by choosing the ellipsis button ![Ellipsis Icon](../sharepoint/media/ellipsisicon.gif "Ellipsis Icon") and then navigating to another location.  
-  
-3.  Choose the **Publish** button.  
-  
-     A .wsp file is created for the solution.  
-  
-4.  Copy the .wsp file to the remote SharePoint system.  
-  
-5.  Use the PowerShell `Add-SPUserSolution` command to install the package on the remote SharePoint installation. (For farm solutions, use the `Add-SPSolution` command.)  
-  
-     For example, `Add-SPUserSolution C:\MyProjects\ProjectTaskList\ProjectTaskList\bin\Debug\ProjectTaskList.wsp`.  
-  
-6.  Use the PowerShell `Install-SPUserSolution` command to deploy the solution. (For farm solutions, use the `Install-SPSolution` command.)  
-  
-     For example, `Install-SPUserSolution -Identity ProjectTaskList.wsp -Site http://NewSiteName`.  
-  
-     For more information about remote deployment, see [Using Solutions](http://go.microsoft.com/fwlink/?LinkId=217680) and [Adding and Deploying Solutions with PowerShell in SharePoint 2010](http://go.microsoft.com/fwlink/?LinkId=217682).  
-  
-## <a name="next-steps"></a>Next Steps  
- You can learn more about how to customize and deploy SharePoint solutions from the following topics:  
-  
--   [Walkthrough: Create a Site Column, Content Type, and List for SharePoint](../sharepoint/walkthrough-create-a-site-column-content-type-and-list-for-sharepoint.md)  
-  
--   [How to: Create an Event Receiver](../sharepoint/how-to-create-an-event-receiver.md)  
-  
--   [Windows PowerShell for SharePoint Server 2010](http://go.microsoft.com/fwlink/?LinkId=217684)  
-  
-## <a name="see-also"></a>See Also  
- [Packaging and Deploying SharePoint Solutions](../sharepoint/packaging-and-deploying-sharepoint-solutions.md)  
-  
-  
+# <a name="walkthrough-deploying-a-project-task-list-definition"></a>Procedura dettagliata: distribuzione di una definizione di elenco attività del progetto
+
+In questa procedura guidata viene illustrato come utilizzare [!INCLUDE[vs_dev11_long](../sharepoint/includes/vs-dev11-long-md.md)] per creare, personalizzare, eseguire il debug e distribuire un elenco di SharePoint per tenere traccia delle attività del progetto.
+
+[!INCLUDE[note_settings_general](../sharepoint/includes/note-settings-general-md.md)]
+
+## <a name="prerequisites"></a>Prerequisiti
+
+- Edizioni supportate di Microsoft Windows e SharePoint. Per ulteriori informazioni, vedere [requisiti per lo sviluppo di soluzioni SharePoint](../sharepoint/requirements-for-developing-sharepoint-solutions.md).
+
+- Visual Studio 2017 o un'edizione di Visual Studio Application Lifecycle Management (ALM).
+
+## <a name="CreatingListDef"></a> Creazione di un elenco SharePoint
+
+Creare un progetto di elenco di SharePoint e associare la definizione dell'elenco alle attività.
+
+1. Aprire il **nuovo progetto** finestra di dialogo espandere il **SharePoint** nodo e quindi scegliere il **2010** nodo.
+
+2. Nel **modelli** riquadro, scegliere il **progetto SharePoint 2010** modello, denominare il progetto **ProjectTaskList**e quindi scegliere il **OK**pulsante.
+
+     Il **Personalizzazione guidata SharePoint** viene visualizzato.
+
+3. Specificare il sito di SharePoint locale utilizzato per il debug, scegliere il **Distribuisci come soluzione farm** pulsante di opzione e quindi scegliere il **fine** pulsante.
+
+4. Aprire il menu di scelta rapida per il progetto e quindi scegliere **Aggiungi**, **nuovo elemento**.
+
+5. Nel **modelli** riquadro, scegliere il **elenco** modello, quindi scegliere il **Aggiungi** pulsante.
+
+     Il **Personalizzazione guidata SharePoint** viene visualizzato.
+
+6. Nel **il nome che si desidera visualizzare per l'elenco?** immettere **elenco attività progetti**.
+
+7. Scegliere il **creare un elenco non personalizzabile in base a un tipo di elenco esistente di** pulsante di opzione e quindi, nel relativo elenco scegliere **attività**, quindi scegliere il **fine** pulsante.
+
+     Nell'elenco, funzionalità e pacchetto vengono visualizzati **Esplora**.
+
+## <a name="AddEventRcvr"></a> Aggiunta di un ricevitore di eventi
+
+Nell'elenco attività è possibile aggiungere un ricevitore di eventi tramite cui vengono impostate automaticamente la scadenza e la descrizione dell'attività. La procedura seguente aggiunge un gestore di evento semplice per l'istanza di elenco come un ricevitore di eventi.
+
+1. Aprire il menu di scelta rapida per il nodo del progetto, scegliere **Aggiungi**, quindi scegliere **nuovo elemento**.
+
+2. Nell'elenco dei modelli di SharePoint, scegliere il **ricevitore di eventi** modello, quindi denominarlo **ProjectTaskListEventReceiver**.
+
+     Il **Personalizzazione guidata SharePoint** viene visualizzato.
+
+3. Nel **scegliere le impostazioni del ricevitore di eventi** pagina, scegliere **eventi elementi elenco** come tipo di ricevitore di eventi nel **il tipo di ricevitore di eventi si desidera** elenco.
+
+4. Nel **selezionare l'elemento deve essere l'origine evento** scegliere **attività**.
+
+5. Nell'elenco di eventi da gestire, selezionare la casella di controllo accanto a **è stato aggiunto un elemento**, quindi scegliere il **fine** pulsante.
+
+     Un nuovo nodo di ricevitore di eventi viene aggiunto al progetto con un file di codice denominato **ProjectTaskListEventReceiver**.
+
+6. Aggiungere codice per il `ItemAdded` metodo il **ProjectTaskListEventReceiver** file di codice. Ogni volta che viene aggiunta una nuova attività, una scadenza predefinita e una descrizione viene aggiunto all'attività. La scadenza predefinita è di data 1 luglio 2009.
+
+     [!code-vb[SPProjectTaskList#1](../sharepoint/codesnippet/VisualBasic/projecttasklist1/projecttasklisteventreceiver/projecttasklisteventreceiver.vb#1)]
+     [!code-csharp[SPProjectTaskList#1](../sharepoint/codesnippet/CSharp/projecttasklist/projecttasklisteventreceiver/projecttasklisteventreceiver.cs#1)]
+
+## <a name="CustomizeFeature"></a> Personalizzazione di Project Task List Feature
+
+Quando si crea una soluzione di SharePoint, Visual Studio crea automaticamente le funzionalità per l'impostazione predefinita gli elementi di progetto. È possibile personalizzare le impostazioni di elenco attività di progetto per il sito di SharePoint utilizzando la finestra di progettazione di funzionalità.
+
+1. In **Esplora**, espandere **funzionalità**.
+
+2. Aprire il menu di scelta rapida per **Feature1**, quindi scegliere **Visualizza finestra di progettazione**.
+
+3. Nel **titolo** immettere **Project Task List Feature**.
+
+4. Nel **ambito** scegliere **Web**.
+
+5. Nel **proprietà** finestra immettere **1.0.0.0** come valore per il **versione** proprietà.
+
+## <a name="CustomizePackage"></a> Il pacchetto dell'elenco attività di progetto di personalizzazione
+
+Quando si crea un progetto SharePoint, Visual Studio aggiunge automaticamente le funzionalità che contengono gli elementi di progetto predefiniti per il pacchetto. È possibile personalizzare le impostazioni di elenco attività di progetto per il sito di SharePoint utilizzando la finestra di progettazione del pacchetto.
+
+1. In **SolutionExplorer**, aprire il menu di scelta rapida per **pacchetto**, quindi scegliere **Visualizza finestra di progettazione**.
+
+2. Nel **nome** immettere **ProjectTaskListPackage**.
+
+3. Selezionare il **Reimposta Server Web** casella di controllo.
+
+## <a name="BuildTest"></a> Compilazione e l'elenco attività del progetto di test
+
+Quando si esegue il progetto, viene aperto il sito di SharePoint. Tuttavia, è necessario passare manualmente alla posizione dell'elenco attività.
+
+1. Premere F5 per compilare e distribuire l'elenco di attività del progetto.
+
+     Apre il sito di SharePoint.
+
+2. Scegliere il **Home** scheda.
+
+3. Nella barra laterale sinistra, scegliere il **elenco attività progetti** collegamento.
+
+     Viene visualizzata la pagina di elenco attività del progetto.
+
+4. Nel **strumenti elenco** scheda, scegliere il **elementi** scheda.
+
+5. Nel **elementi** gruppo, scegliere il **nuovo elemento** pulsante.
+
+6. Nel **titolo** testo immettere **Attività1**.
+
+7. Scegliere il **salvare** pulsante.
+
+     Dopo aver aggiornato il sito, il **Attività1** viene visualizzata l'attività con una data di scadenza di 1/7/2009.
+
+8. Scegliere **Attività1**.
+
+     La visualizzazione dettagliata dell'attività, verrà visualizzato la descrizione "This is a un'attività critica".
+
+## <a name="Deploy"></a> Elenco attività del progetto di distribuzione
+
+Dopo aver compilato e l'elenco attività del progetto di test, è possibile distribuirlo per il *sistema locale* o *sistema remoto*. Il sistema locale è lo stesso computer in cui è stata sviluppata la soluzione, mentre un sistema remoto è un computer diverso.
+
+### <a name="to-deploy-the-project-task-list-to-the-local-system"></a>Per distribuire l'elenco attività del progetto al sistema locale
+
+Nella barra dei menu di Visual Studio, scegliere **compilare**, **Distribuisci soluzione**.
+
+Visual Studio viene riciclato il pool di applicazioni IIS, le versioni esistenti della soluzione viene ritratta, copia il file di pacchetto (con estensione wsp) di soluzione SharePoint e quindi attiva le funzionalità. È ora possibile usare la soluzione in SharePoint. Per ulteriori informazioni sui passaggi di configurazione di distribuzione, vedere [procedura: modificare una configurazione di distribuzione di SharePoint](../sharepoint/how-to-edit-a-sharepoint-deployment-configuration.md).
+
+### <a name="to-deploy-the-project-task-list-to-a-remote-system"></a>Per distribuire l'elenco attività del progetto in un sistema remoto
+
+1. Nella barra dei menu di Visual Studio, scegliere **compilare**, **pubblica**.
+
+2. Nel **pubblica** finestra di dialogo scegliere la **pubblica su File System** pulsante di opzione.
+
+     È possibile modificare il percorso di destinazione nel **pubblica** la finestra di dialogo facendo clic sul pulsante con i puntini di sospensione ![icona puntini di sospensione](../sharepoint/media/ellipsisicon.gif "i puntini di sospensione icona") e quindi passare a un'altra posizione.
+
+3. Scegliere il **pubblica** pulsante.
+
+     Viene creato un file con estensione wsp per la soluzione.
+
+4. Copiare il file con estensione wsp nel sistema SharePoint remoto.
+
+5. Utilizzare il comando PowerShell `Add-SPUserSolution` comando per installare il pacchetto in installazione di SharePoint remoto. (Per le soluzioni farm, utilizzare il `Add-SPSolution` comando.)
+
+     Ad esempio `Add-SPUserSolution C:\MyProjects\ProjectTaskList\ProjectTaskList\bin\Debug\ProjectTaskList.wsp`.
+
+6. Utilizzare il comando PowerShell `Install-SPUserSolution` comando per distribuire la soluzione. (Per le soluzioni farm, utilizzare il `Install-SPSolution` comando.)
+
+     Ad esempio `Install-SPUserSolution -Identity ProjectTaskList.wsp -Site http://NewSiteName`.
+
+     Per ulteriori informazioni sulla distribuzione remota, vedere [tramite soluzioni](http://go.microsoft.com/fwlink/?LinkId=217680) e [aggiunta e distribuzione di soluzioni con PowerShell in SharePoint 2010](http://go.microsoft.com/fwlink/?LinkId=217682).
+
+## <a name="next-steps"></a>Passaggi successivi
+
+Maggiori informazioni su come personalizzare e distribuire soluzioni di SharePoint i seguenti argomenti:
+
+- [Procedura dettagliata: creare una colonna del sito, un tipo di contenuto e un elenco per SharePoint](../sharepoint/walkthrough-create-a-site-column-content-type-and-list-for-sharepoint.md)
+
+- [Procedura: Creare un ricevitore di eventi](../sharepoint/how-to-create-an-event-receiver.md)
+
+- [Windows PowerShell per SharePoint Server 2010](http://go.microsoft.com/fwlink/?LinkId=217684)
+
+## <a name="see-also"></a>Vedere anche
+
+[Creazione del pacchetto e distribuzione delle soluzioni SharePoint](../sharepoint/packaging-and-deploying-sharepoint-solutions.md)

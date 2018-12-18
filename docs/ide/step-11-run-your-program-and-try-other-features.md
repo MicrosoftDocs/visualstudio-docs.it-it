@@ -1,39 +1,21 @@
 ---
-title: "Passaggio 11: eseguire il programma e provare altre funzionalità | Microsoft Docs"
-ms.custom: 
+title: 'Passaggio 11: eseguire il programma e provare altre funzionalità | Microsoft Docs'
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - vs-acquisition
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: 656614d0-4fe7-4a67-8edc-c10919377d09
-caps.latest.revision: 12
 author: TerryGLee
 ms.author: tglee
-manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 5658ecf52637a38bc3c2a5ad9e85b2edebf7d445
-ms.openlocfilehash: 019d72fece70586013455bbe74f09b990c9fac80
-ms.contentlocale: it-it
-ms.lasthandoff: 02/22/2017
-
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: b089ca2c295f8128dadc9f0650540e5fef5f239a
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="step-11-run-your-program-and-try-other-features"></a>Passaggio 11: eseguire il programma e provare altre funzionalità
 Il programma è stato completato ed è pronto per l'esecuzione. È possibile eseguire il programma e impostare il colore di sfondo di PictureBox. Per continuare a esercitarsi, provare a migliorare il programma modificando il colore del form, personalizzando i pulsanti e la casella di controllo e modificando le proprietà del form.  

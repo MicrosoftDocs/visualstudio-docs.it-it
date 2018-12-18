@@ -1,45 +1,46 @@
 ---
-title: "IDebugTypeFieldBuilder2 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "Interfaccia IDebugTypeFieldBuilder2"
+title: IDebugTypeFieldBuilder2 | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology:
+- vs-ide-sdk
+ms.topic: conceptual
+helpviewer_keywords:
+- IDebugTypeFieldBuilder2 interface
 ms.assetid: 23911c5b-2bbf-4734-9976-87a0bd6ea36c
-caps.latest.revision: 6
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 6
+author: gregvanl
+ms.author: gregvanl
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: 4500f8e44a3008655d9a4068b96ce2cfcdbc2ac5
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# IDebugTypeFieldBuilder2
-[!INCLUDE[vs2017banner](../../../code-quality/includes/vs2017banner.md)]
-
-Estende **il IDebugTypeFieldBuilder** per poter creare tipi di matrice.  
+# <a name="idebugtypefieldbuilder2"></a>IDebugTypeFieldBuilder2
+Estende il **IDebugTypeFieldBuilder** per essere in grado di creare tipi di matrice.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
 IDebugTypeFieldBuilder2 : IDebugTypeFieldBuilder  
 ```  
   
-## Note per i chiamanti  
- Tale interfaccia può essere ottenuta dal provider del simbolo.  
+## <a name="notes-for-callers"></a>Note per i chiamanti  
+ Questa interfaccia può essere ottenuta dal provider di simboli.  
   
-## Metodi  
- Oltre ai metodi [IDebugTypeFieldBuilder](../../../extensibility/debugger/reference/idebugtypefieldbuilder.md) in un'interfaccia, l'interfaccia implementa il seguente metodo:  
+## <a name="methods"></a>Metodi  
+ Oltre ai metodi nel [IDebugTypeFieldBuilder](../../../extensibility/debugger/reference/idebugtypefieldbuilder.md) interfaccia, implementa il metodo seguente:  
   
 |Metodo|Descrizione|  
 |------------|-----------------|  
-|[CreateArrayOfType](../../../extensibility/debugger/reference/idebugtypefieldbuilder2-createarrayoftype.md)|Crea una matrice di tipo e le dimensioni specificate.|  
+|[CreateArrayOfType](../../../extensibility/debugger/reference/idebugtypefieldbuilder2-createarrayoftype.md)|Crea una matrice del tipo specificato e dimensioni.|  
   
-## Requisiti  
- intestazione: Sh.h  
+## <a name="requirements"></a>Requisiti  
+ Intestazione: Sh.h  
   
- Spazio dei nomi: Microsoft.VisualStudio.Debugger.Interop  
+ Namespace: Microsoft.VisualStudio.Debugger.Interop  
   
  Assembly: Microsoft.VisualStudio.Debugger.Interop.dll

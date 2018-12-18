@@ -1,66 +1,67 @@
 ---
-title: "BP_PASSCOUNT | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "BP_PASSCOUNT"
-helpviewer_keywords: 
-  - "Struttura BP_PASSCOUNT"
+title: BP_PASSCOUNT | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology:
+- vs-ide-sdk
+ms.topic: conceptual
+f1_keywords:
+- BP_PASSCOUNT
+helpviewer_keywords:
+- BP_PASSCOUNT structure
 ms.assetid: 791ac175-b897-4c70-873e-240da7e0ac89
-caps.latest.revision: 10
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 10
+author: gregvanl
+ms.author: gregvanl
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: f7437a61688958a1346b9c638ad07e3e55dc51f5
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# BP_PASSCOUNT
-[!INCLUDE[vs2017banner](../../../code-quality/includes/vs2017banner.md)]
-
-Viene descritto il conteggio e le condizioni in cui un punto di interruzione viene generato.  
+# <a name="bppasscount"></a>BP_PASSCOUNT
+Descrive il numero e le condizioni in cui viene generato un punto di interruzione condizionale.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp#  
-typedef struct _BP_PASSCOUNT {   
-   DWORD              dwPassCount;  
-   BP_PASSCOUNT_STYLE stylePassCount;  
+```cpp  
+typedef struct _BP_PASSCOUNT {   
+   DWORD              dwPassCount;  
+   BP_PASSCOUNT_STYLE stylePassCount;  
 } BP_PASSCOUNT;  
 ```  
   
-```c#  
-public struct BP_PASSCOUNT {   
-   public uint dwPassCount;  
-   public uint stylePassCount;  
+```csharp  
+public struct BP_PASSCOUNT {   
+   public uint dwPassCount;  
+   public uint stylePassCount;  
 };  
 ```  
   
-## Membri  
+## <a name="members"></a>Membri  
  `dwPassCount`  
- Il numero di volte per passare il punto di interruzione prima di generare.  
+ Il numero di volte per passare sul punto di interruzione prima che venga attivata.  
   
  `stylePassCount`  
- Un valore [BP\_PASSCOUNT\_STYLE](../../../extensibility/debugger/reference/bp-passcount-style.md) dell'enumerazione che specifica lo stile del conteggio della sessione del punto di interruzione.  
+ Un valore di [BP_PASSCOUNT_STYLE](../../../extensibility/debugger/reference/bp-passcount-style.md) conteggio esecuzioni test di enumerazione che specifica lo stile del punto di interruzione.  
   
-## Note  
- Questa struttura è un membro [BP\_REQUEST\_INFO](../../../extensibility/debugger/reference/bp-request-info.md) della struttura.  
+## <a name="remarks"></a>Note  
+ Questa struttura è membro il [BP_REQUEST_INFO](../../../extensibility/debugger/reference/bp-request-info.md) struttura.  
   
- Questa struttura passata come parametro[SetPassCount](../../../extensibility/debugger/reference/idebugboundbreakpoint2-setpasscount.md) ai metodi[SetPassCount](../../../extensibility/debugger/reference/idebugpendingbreakpoint2-setpasscount.md) e.  
+ Questa struttura viene inoltre passata come parametro per il[SetPassCount](../../../extensibility/debugger/reference/idebugboundbreakpoint2-setpasscount.md) e[SetPassCount](../../../extensibility/debugger/reference/idebugpendingbreakpoint2-setpasscount.md) metodi.  
   
-## Requisiti  
- intestazione: msdbg.h  
+## <a name="requirements"></a>Requisiti  
+ Intestazione: msdbg.h  
   
- Spazio dei nomi: Microsoft.VisualStudio.Debugger.Interop  
+ Namespace: Microsoft.VisualStudio.Debugger.Interop  
   
  Assembly: Microsoft.VisualStudio.Debugger.Interop.dll  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Strutture e unioni](../../../extensibility/debugger/reference/structures-and-unions.md)   
- [BP\_REQUEST\_INFO](../../../extensibility/debugger/reference/bp-request-info.md)   
+ [BP_REQUEST_INFO](../../../extensibility/debugger/reference/bp-request-info.md)   
  [SetPassCount](../../../extensibility/debugger/reference/idebugboundbreakpoint2-setpasscount.md)   
  [SetPassCount](../../../extensibility/debugger/reference/idebugpendingbreakpoint2-setpasscount.md)   
- [BP\_PASSCOUNT\_STYLE](../../../extensibility/debugger/reference/bp-passcount-style.md)
+ [BP_PASSCOUNT_STYLE](../../../extensibility/debugger/reference/bp-passcount-style.md)

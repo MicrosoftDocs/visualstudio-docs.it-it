@@ -1,27 +1,33 @@
 ---
-title: "IDebugDocumentText::GetText | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/18/2017"
-ms.prod: "windows-script-interfaces"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-apiname: IDebugDocumentText.GetText
-apilocation: pdm.dll
-helpviewer_keywords: 
-  - "IDebugDocumentText::GetText"
+title: IDebugDocumentText::GetText | Documenti Microsoft
+ms.custom: 
+ms.date: 01/18/2017
+ms.prod: windows-script-interfaces
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: reference
+apiname:
+- IDebugDocumentText.GetText
+apilocation:
+- pdm.dll
+helpviewer_keywords:
+- IDebugDocumentText::GetText
 ms.assetid: 3c940a30-6c0f-4deb-aa4d-21a0bdef8461
-caps.latest.revision: 8
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: 
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.openlocfilehash: 5a1006304974fab4959ad6313ffdc26793cdd345
+ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/27/2017
 ---
-# IDebugDocumentText::GetText
-Recupera i caratteri e\/o gli attributi del carattere associati a un intervallo di posizione del carattere.  
+# <a name="idebugdocumenttextgettext"></a>IDebugDocumentText::GetText
+Recupera i caratteri e/o gli attributi associati a un intervallo di posizione del carattere.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
 HRESULT GetText(  
@@ -33,32 +39,32 @@ HRESULT GetText(
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `cCharacterPosition`  
- \[in\] posizione dell'intervallo di posizione del carattere.  
+ [in] Posizione iniziale dell'intervallo di caratteri della posizione.  
   
  `pcharText`  
- \[in, out\] buffer di testo del carattere su.  Il buffer deve essere sufficiente per contenere i caratteri `cMaxChars`.  Se questo parametro è NULL, il metodo non restituisce i caratteri.  
+ [in, out] Un buffer di testo di carattere. Il buffer deve essere sufficientemente grande da contenere `cMaxChars` caratteri. Se questo parametro è NULL, il metodo non restituisce i caratteri.  
   
  `pstaTextAttr`  
- \[in, out\] buffer di attributi del carattere su.  Il buffer deve essere sufficiente per contenere i caratteri `cMaxChars`.  Se questo parametro è NULL, il metodo non restituisce gli attributi.  
+ [in, out] Un buffer di attributi del carattere. Il buffer deve essere sufficientemente grande da contenere `cMaxChars` caratteri. Se questo parametro è NULL, il metodo non restituisce gli attributi.  
   
  `pcNumChars`  
- \[in, out\] numero di caratteri\/attributi restituiti.  Questo parametro deve essere impostato su zero prima di chiamare questo metodo.  
+ [in, out] Ha restituito il numero di caratteri e attributi. Questo parametro deve essere impostato su zero prima di chiamare questo metodo.  
   
  `cMaxChars`  
- \[in\] numero di caratteri nell'intervallo di posizione del carattere.  Specifica inoltre il numero massimo di caratteri per restituire.  
+ [in] Numero di caratteri nell'intervallo di posizione di carattere. Specifica inoltre il numero massimo di caratteri da restituire.  
   
-## Valore restituito  
- Il metodo restituisce un tipo `HRESULT`.  I valori possibili sono, ma non sono limitati a, quelli nella tabella seguente.  
+## <a name="return-value"></a>Valore restituito  
+ Il metodo restituisce un tipo `HRESULT`. I valori possibili includono, ma non sono limitati a, quelli indicati nella tabella seguente.  
   
 |Valore|Descrizione|  
-|------------|-----------------|  
+|-----------|-----------------|  
 |`S_OK`|Il metodo è riuscito.|  
   
-## Note  
- Questo metodo recupera i caratteri e\/o gli attributi del carattere associati a una posizione di carattere variano.  L'intervallo di posizione di carattere è specificato da una posizione di carattere e da una serie di caratteri.  
+## <a name="remarks"></a>Note  
+ Questo metodo recupera i caratteri e/o gli attributi associati a un intervallo di posizione del carattere. L'intervallo di posizione del carattere è specificato da una posizione di carattere e un numero di caratteri.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Interfaccia IDebugDocumentText](../../winscript/reference/idebugdocumenttext-interface.md)   
- [Enumerazione SOURCE\_TEXT\_ATTR](../../winscript/reference/source-text-attr-enumeration.md)
+ [Enumerazione SOURCE_TEXT_ATTR](../../winscript/reference/source-text-attr-enumeration.md)

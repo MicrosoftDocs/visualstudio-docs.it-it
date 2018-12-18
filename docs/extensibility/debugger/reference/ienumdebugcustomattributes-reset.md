@@ -1,44 +1,45 @@
 ---
-title: "IEnumDebugCustomAttributes::Reset | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "IEnumCustomAttributes::Reset"
-helpviewer_keywords: 
-  - "IEnumDebugCustomAttributes::Reset"
+title: IEnumDebugCustomAttributes::Reset | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology:
+- vs-ide-sdk
+ms.topic: conceptual
+f1_keywords:
+- IEnumCustomAttributes::Reset
+helpviewer_keywords:
+- IEnumDebugCustomAttributes::Reset
 ms.assetid: e0db6518-5a71-4adb-a407-4d2ac7a3e369
-caps.latest.revision: 8
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 8
+author: gregvanl
+ms.author: gregvanl
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: 56be764861c63c7f0ca0d7fc94a3841c4483b2cf
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# IEnumDebugCustomAttributes::Reset
-[!INCLUDE[vs2017banner](../../../code-quality/includes/vs2017banner.md)]
-
+# <a name="ienumdebugcustomattributesreset"></a>IEnumDebugCustomAttributes::Reset
 Riporta all'inizio la sequenza di enumerazione.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp#  
+```cpp  
 HRESULT Reset(void);  
 ```  
   
-```c#  
+```csharp  
 int Reset();  
 ```  
   
-## Valore restituito  
- Se l'operazione riesce, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
+## <a name="return-value"></a>Valore restituito  
+ Se ha esito positivo, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
   
-## Note  
- Dopo che questo metodo viene chiamato, la successiva [Successivo](../../../extensibility/debugger/reference/ienumdebugcustomattributes-next.md) chiamata al metodo restituisce il primo elemento dell'enumerazione.  
+## <a name="remarks"></a>Note  
+ Dopo che questo metodo viene chiamato, la chiamata successiva al [Avanti](../../../extensibility/debugger/reference/ienumdebugcustomattributes-next.md) metodo restituisce il primo elemento dell'enumerazione.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IEnumDebugCustomAttributes](../../../extensibility/debugger/reference/ienumdebugcustomattributes.md)   
- [Successivo](../../../extensibility/debugger/reference/ienumdebugcustomattributes-next.md)
+ [avanti](../../../extensibility/debugger/reference/ienumdebugcustomattributes-next.md)

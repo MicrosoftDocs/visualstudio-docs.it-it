@@ -1,47 +1,46 @@
 ---
-title: "IDiaSymbol::get_udtKind | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "IDiaSymbol::get_udtKind (metodo)"
+title: 'Idiasymbol:: Get_udtkind | Documenti Microsoft'
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology: vs-ide-debug
+ms.topic: conceptual
+dev_langs:
+- C++
+helpviewer_keywords:
+- IDiaSymbol::get_udtKind method
 ms.assetid: 4002f887-aea6-4475-b302-67c57079fe0a
-caps.latest.revision: 8
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 8
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 4a1ddc76e6a791421be6f55d985d1c8d59715de8
+ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/18/2018
 ---
-# IDiaSymbol::get_udtKind
-[!INCLUDE[vs2017banner](../../code-quality/includes/vs2017banner.md)]
-
-Recupera la varietà di tipo definito \(UDT\) dall'utente.  
+# <a name="idiasymbolgetudtkind"></a>IDiaSymbol::get_udtKind
+Recupera la varietà di un tipo definito dall'utente (UDT).  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp#  
-HRESULT get_udtKind (   
-   DWORD* pRetVal  
+```C++  
+HRESULT get_udtKind (   
+   DWORD* pRetVal  
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `pRetVal`  
- \[out\]  restituisce un valore dal [Enumerazione UdtKind](../../debugger/debug-interface-access/udtkind.md) enumerazione che specifica il tipo di tipo definito dall'utente: struttura, classe, o unione.  
+ [out] Restituisce un valore di [UdtKind (enumerazione)](../../debugger/debug-interface-access/udtkind.md) enumerazione che specifica il tipo di un tipo definito dall'utente: struttura, classe o unione.  
   
-## Valore restituito  
- Se l'operazione riesce, restituisce `S_OK`; in caso contrario, restituisce  `S_FALSE` o codice di errore.  
+## <a name="return-value"></a>Valore restituito  
+ Se ha esito positivo, restituisce `S_OK`; in caso contrario, restituisce `S_FALSE` o codice di errore.  
   
 > [!NOTE]
->  un valore restituito di `S_FALSE` indica che la proprietà non è disponibile per il simbolo.  
+>  Valore restituito di `S_FALSE` significa che la proprietà non è disponibile per il simbolo.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IDiaSymbol](../../debugger/debug-interface-access/idiasymbol.md)   
- [Enumerazione UdtKind](../../debugger/debug-interface-access/udtkind.md)
+ [UdtKind (enumerazione)](../../debugger/debug-interface-access/udtkind.md)

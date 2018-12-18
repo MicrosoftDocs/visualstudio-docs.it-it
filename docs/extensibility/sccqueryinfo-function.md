@@ -1,41 +1,25 @@
 ---
 title: Funzione SccQueryInfo | Documenti Microsoft
-ms.custom: 
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - vs-ide-sdk
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: conceptual
 f1_keywords:
 - SccQueryInfo
 helpviewer_keywords:
 - SccQueryInfo function
 ms.assetid: 3973d336-a9b7-41a2-a4e6-bb8184a96aaf
-caps.latest.revision: 18
+author: gregvanl
 ms.author: gregvanl
-manager: ghogen
-translation.priority.mt:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: 5e2838709d7c2c2ad6e6b1eeef36c2cc0018a1a1
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
 ms.translationtype: MT
-ms.sourcegitcommit: 4a36302d80f4bc397128e3838c9abf858a0b5fe8
-ms.openlocfilehash: 4efd9b29a89bc490255c35558e5862ebc14b7fec
-ms.contentlocale: it-it
-ms.lasthandoff: 09/06/2017
-
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="sccqueryinfo-function"></a>SccQueryInfo (funzione)
 Questa funzione Ottiene informazioni sullo stato per un set di file selezionati nel controllo del codice sorgente.  
@@ -81,11 +65,11 @@ SCCRTN SccQueryInfo(
   
  Quando si utilizza questa funzione per estrarre i file, tenere presente quanto segue `MSSCCI` requisiti di stato:  
   
--   `SCC_STATUS_OUTBYUSER`viene impostato quando l'utente corrente ha estratto il file.  
+-   `SCC_STATUS_OUTBYUSER` viene impostato quando l'utente corrente ha estratto il file.  
   
--   `SCC_STATUS_CHECKEDOUT`Impossibile impostare `SCC_STATUS_OUTBYUSER` è impostata.  
+-   `SCC_STATUS_CHECKEDOUT` non può essere impostata a meno che non `SCC_STATUS_OUTBYUSER` è impostata.  
   
--   `SCC_STATUS_CHECKEDOUT`viene impostata solo quando il file è stato estratto nella directory di lavoro designato.  
+-   `SCC_STATUS_CHECKEDOUT` viene impostata solo quando il file viene estratto nella directory di lavoro designato.  
   
 -   Se il file è stato estratto dall'utente corrente in una directory diversa dalla directory di lavoro, `SCC_STATUS_OUTBYUSER` è impostata ma `SCC_STATUS_CHECKEDOUT` non.  
   

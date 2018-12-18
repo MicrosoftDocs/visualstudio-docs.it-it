@@ -1,14 +1,10 @@
 ---
-title: 'How to: Add an Entity to a Model | Microsoft Docs'
-ms.custom: 
+title: "Procedura: aggiungere un'entità a un modello | Documenti Microsoft"
+ms.custom: ''
 ms.date: 02/02/2017
-ms.prod: visual-studio-dev14
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - office-development
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: conceptual
 f1_keywords:
 - EntityTool
 dev_langs:
@@ -21,45 +17,45 @@ helpviewer_keywords:
 - Business Data Connectivity service [SharePoint development in Visual Studio], adding an entity
 - Business Data Connectivity service [SharePoint development in Visual Studio], entity
 - BDC [SharePoint development in Visual Studio], adding an entity
-ms.assetid: 139a6639-dabe-4e14-bb64-e5f4efb6f2fb
-caps.latest.revision: 23
-author: kempb
-ms.author: kempb
-manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: eb5c9550fd29b0e98bf63a7240737da4f13f3249
-ms.openlocfilehash: 16dc2a7c05f1b7290596be337cdec0fe2637bf32
-ms.contentlocale: it-it
-ms.lasthandoff: 08/30/2017
-
+author: TerryGLee
+ms.author: tglee
+manager: douge
+ms.workload:
+- office
+ms.openlocfilehash: f59f5e1b31baf9f731f58c9f21163c2a54f2a238
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# <a name="how-to-add-an-entity-to-a-model"></a>How to: Add an Entity to a Model
-  To create an entity, add an entity control from the Visual Studio **Toolbox** onto the Business Data Connectivity (BDC) designer.  
+# <a name="how-to-add-an-entity-to-a-model"></a>Procedura: aggiungere un'entità al modello
+  Per creare un'entità, aggiungere un controllo di entità da Visual Studio **della casella degli strumenti** nella finestra di progettazione (Applicativa dei dati).  
   
-### <a name="to-add-an-entity-to-the-model"></a>To add an entity to the model  
+### <a name="to-add-an-entity-to-the-model"></a>Per aggiungere un'entità al modello  
   
-1.  Create a BDC project, or open an existing BDC project. For more information, see [Creating a Business Data Connectivity Model](../sharepoint/creating-a-business-data-connectivity-model.md).  
+1.  Creare un progetto di integrazione applicativa dei dati o aprire un progetto di integrazione applicativa dei dati esistente. Per ulteriori informazioni, vedere [creazione di un modello di connettività dei dati di Business](../sharepoint/creating-a-business-data-connectivity-model.md).  
   
-2.  In the **Toolbox**, from the **BusinessDataCatalog** group, add an **Entity** control onto the designer.  
+2.  Nel **della casella degli strumenti**, dal **BusinessDataCatalog** gruppo, aggiungere un **entità** controllo nella finestra di progettazione.  
   
-     The new entity appears on the designer. Visual Studio adds an `<Entity>` element to the XML of the BDC model file in your project. For more information about the attributes of an Entity element, see [Entity](http://go.microsoft.com/fwlink/?LinkId=169296).  
+     La nuova entità viene visualizzata nella finestra di progettazione. Visual Studio aggiunge un `<Entity>` elemento al codice XML del file di modello di integrazione applicativa dei dati nel progetto. Per ulteriori informazioni sugli attributi di un elemento di entità, vedere [entità](http://go.microsoft.com/fwlink/?LinkId=169296).  
   
-3.  On the designer, open the shortcut menu for the entity, choose **Add**, and then choose **Identifier**.  
+3.  Nella finestra di progettazione, aprire il menu di scelta rapida per l'entità, scegliere **Aggiungi**, quindi scegliere **identificatore**.  
   
-     A new identifier appears on the entity.  
+     Verrà visualizzato un nuovo identificatore nell'entità.  
   
     > [!NOTE]  
-    >  You can change the name of the entity and the identifier in the **Properties** window.  
+    >  È possibile modificare il nome dell'entità e l'identificatore nel **proprietà** finestra.  
   
-4.  Define the fields of the entity in a class. You can either add a new class to the project or use an existing class created by using other tools such as the Object Relational Designer (O/R Designer). The following example shows an entity class named Contact.  
+4.  Definire i campi dell'entità in una classe. È possibile aggiungere una nuova classe al progetto o utilizzare una classe esistente creata utilizzando altri strumenti, ad esempio il Object Relational Designer (O/R Designer). Nell'esempio seguente viene illustrata una classe di entità denominata contatto.  
   
-     [!code-csharp[SP_BDC_Entity_Data_Class#1](../sharepoint/codesnippet/CSharp/sp_bdc_entity_data_class/bdcmodel1/contact.cs#1)]  [!code-vb[SP_BDC_Entity_Data_Class#1](../sharepoint/codesnippet/VisualBasic/sp_bdc_entity_data_class/bdcmodel1/contact.vb#1)]  
+     [!code-csharp[SP_BDC_Entity_Data_Class#1](../sharepoint/codesnippet/CSharp/sp_bdc_entity_data_class/bdcmodel1/contact.cs#1)]
+     [!code-vb[SP_BDC_Entity_Data_Class#1](../sharepoint/codesnippet/VisualBasic/sp_bdc_entity_data_class/bdcmodel1/contact.vb#1)]  
   
-## <a name="see-also"></a>See Also  
- [How to: Add a Creator Method](../sharepoint/how-to-add-a-creator-method.md)   
- [How to: Add a Deleter Method](../sharepoint/how-to-add-a-deleter-method.md)   
- [How to: Add an Updater Method](../sharepoint/how-to-add-an-updater-method.md)   
- [How to: Add a Finder Method](../sharepoint/how-to-add-a-finder-method.md)   
- [How to: Add a Specific Finder Method](../sharepoint/how-to-add-a-specific-finder-method.md)  
+## <a name="see-also"></a>Vedere anche  
+ [Procedura: aggiungere un metodo Creator](../sharepoint/how-to-add-a-creator-method.md)   
+ [Procedura: aggiungere un metodo Deleter](../sharepoint/how-to-add-a-deleter-method.md)   
+ [Procedura: aggiungere un metodo Updater](../sharepoint/how-to-add-an-updater-method.md)   
+ [Procedura: aggiungere un metodo Finder](../sharepoint/how-to-add-a-finder-method.md)   
+ [Procedura: Aggiungere un metodo Finder specifico](../sharepoint/how-to-add-a-specific-finder-method.md)  
   
   

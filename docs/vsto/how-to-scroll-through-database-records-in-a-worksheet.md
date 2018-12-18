@@ -1,51 +1,51 @@
 ---
-title: "Procedura: scorrere i record di un database in un foglio di lavoro"
-ms.custom: ""
-ms.date: "02/02/2017"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "office-development"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-helpviewer_keywords: 
-  - "dati [sviluppo per Office in Visual Studio], scorrimento di record di database"
-  - "database [sviluppo per Office in Visual Studio], scorrimento di record"
-  - "record [sviluppo per Office in Visual Studio], scorrimento"
-  - "fogli di lavoro [sviluppo per Office in Visual Studio], scorrimento di record"
-ms.assetid: aea4c86c-9d6d-47dd-8977-066e21945dab
-caps.latest.revision: 33
-author: "kempb"
-ms.author: "kempb"
-manager: "ghogen"
-caps.handback.revision: 32
+title: 'Procedura: scorrere i record del Database in un foglio di lavoro | Documenti Microsoft'
+ms.custom: ''
+ms.date: 02/02/2017
+ms.technology:
+- office-development
+ms.topic: conceptual
+dev_langs:
+- VB
+- CSharp
+helpviewer_keywords:
+- databases [Office development in Visual Studio], scrolling records
+- records [Office development in Visual Studio], scrolling
+- data [Office development in Visual Studio], scrolling database records
+- worksheets [Office development in Visual Studio], scrolling records
+author: TerryGLee
+ms.author: tglee
+manager: douge
+ms.workload:
+- office
+ms.openlocfilehash: a092cec68e59914b498ab3b935f58b6ef0c37f05
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# Procedura: scorrere i record di un database in un foglio di lavoro
-  Nella seguente procedura viene illustrato come utilizzare la finestra di progettazione per visualizzare un singolo campo di una tabella di database in un foglio di lavoro di Microsoft Office Excel, con controlli che consentono all'utente finale di scorrere tutti i record.  
+# <a name="how-to-scroll-through-database-records-in-a-worksheet"></a>Procedura: scorrere i record di un database in un foglio di lavoro
+  La procedura seguente viene illustrato come utilizzare la finestra di progettazione per visualizzare un singolo campo di una tabella di database in un foglio di lavoro di Microsoft Office Excel, con i controlli che consentono all'utente di scorrere tutti i record.  
   
- È possibile utilizzare la finestra di progettazione solo in progetti a livello di documento.  Tuttavia, è anche possibile aggiungere controlli e associarli ai dati a livello di codice durante la fase di esecuzione.  Per ulteriori informazioni, vedere [Procedura dettagliata: data binding semplice in un progetto di componente aggiuntivo VSTO](../vsto/walkthrough-simple-data-binding-in-vsto-add-in-project.md).  
+ È possibile utilizzare la finestra di progettazione solo nei progetti a livello di documento. Tuttavia, è possibile aggiungere controlli e associarli ai dati a livello di codice in fase di esecuzione. Per ulteriori informazioni, vedere [procedura dettagliata: Data Binding semplice in VSTO aggiuntivo progetto](../vsto/walkthrough-simple-data-binding-in-vsto-add-in-project.md).  
   
  [!INCLUDE[appliesto_xlalldoc](../vsto/includes/appliesto-xlalldoc-md.md)]  
   
-### Per scorrere i record di database in un foglio di lavoro  
+### <a name="to-scroll-through-database-records-in-a-worksheet"></a>Per scorrere i record del database in un foglio di lavoro  
   
-1.  Aprire un progetto Applicazione di Excel in Visual Studio.  
+1.  Aprire un progetto di applicazione di Excel in Visual Studio.  
   
-2.  Aprire la finestra **Origini dati** e creare un'origine dati dal database.  Per ulteriori informazioni, vedere [Procedura: connettersi ai dati di un database](~/data-tools/how-to-connect-to-data-in-a-database.md).  
+2.  Aprire il **origini dati** finestra e creare un'origine dati dal database. Per ulteriori informazioni, vedere [aggiungere nuove connessioni](../data-tools/add-new-connections.md).  
   
-3.  Espandere la tabella contenente i dati che si desidera mostrare e selezionare la colonna specifica.  
+3.  Espandere la tabella che contiene i dati che si desidera visualizzare e selezionare la colonna specifica.  
   
 4.  Aprire l'elenco di controlli e scegliere **NamedRange**.  
   
-5.  Trascinare il controllo <xref:Microsoft.Office.Tools.Excel.NamedRange> sulla cella in cui si desidera visualizzare i dati.  
+5.  Trascinare il <xref:Microsoft.Office.Tools.Excel.NamedRange> controllo nella cella in cui si desidera visualizzare i dati.  
   
-6.  Dalla scheda **Windows Form** della **Casella degli strumenti**, aggiungere un controllo <xref:System.Windows.Forms.BindingNavigator> al foglio di lavoro e impostare i controlli che si desidera utilizzare.  Per ulteriori informazioni, vedere [Cenni preliminari sul controllo BindingNavigator &#40;Windows Form&#41;](http://msdn.microsoft.com/library/4423eede-f8d1-4d02-822f-5bf8432680d0).  
+6.  Dal **Windows Form** scheda della finestra di **della casella degli strumenti**, aggiungere un <xref:System.Windows.Forms.BindingNavigator> al foglio di lavoro e impostare i controlli che si desidera utilizzare. Per altre informazioni, vedere [Cenni preliminari sul controllo BindingNavigator &#40;Windows Form&#41;](/dotnet/framework/winforms/controls/bindingnavigator-control-overview-windows-forms).  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Associazione di dati ai controlli nelle soluzioni Office](../vsto/binding-data-to-controls-in-office-solutions.md)  
   
   

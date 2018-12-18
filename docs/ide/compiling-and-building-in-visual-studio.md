@@ -1,32 +1,28 @@
 ---
 title: Compilazione e creazione in Visual Studio | Microsoft Docs
-ms.custom: 
-ms.date: 7/14/2017
-ms.reviewer: 
-ms.suite: 
+ms.custom: ''
+ms.date: 07/14/2017
 ms.technology:
 - vs-ide-general
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: conceptual
 helpviewer_keywords:
 - builds [Visual Studio], about building in Visual Studio
 - custom build steps, types of builds
 ms.assetid: c7958821-285f-4e28-9e7a-b5d8b40336a1
-caps.latest.revision: 28
 author: gewarren
 ms.author: gewarren
-manager: ghogen
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 3ce6cf8cada1bbca4acad74b0df37ffa7d0c656a
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
 ms.translationtype: HT
-ms.sourcegitcommit: e2b7ff9126e1cc38ac2e58d6be339b656a024e7f
-ms.openlocfilehash: 1a2db8a10664e1d4b38b1d6867c5a3bad1532b39
-ms.contentlocale: it-it
-ms.lasthandoff: 08/10/2017
-
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-
 # <a name="compiling-and-building-in-visual-studio"></a>Compilazione e creazione in Visual Studio
 
-L'esecuzione di una compilazione consente di creare assembly e applicazioni eseguibili dal codice sorgente, in qualsiasi fase di un ciclo di sviluppo. A livello generale il processo di compilazione è molto simile tra progetti di tipi diversi, quali Windows, ASP.NET, app per dispositivi mobili e altri ancora. Il processo di compilazione è anche molto simile tra linguaggi di programmazione come C#, Visual Basic, C++ e F#. 
+L'esecuzione di una build determina la creazione di assembly e applicazioni eseguibili dal codice sorgente in qualsiasi fase di un ciclo di sviluppo. A livello generale il processo di compilazione è molto simile tra progetti di tipi diversi, quali Windows, ASP.NET, app per dispositivi mobili e altri ancora. Il processo di compilazione è anche molto simile tra linguaggi di programmazione come C#, Visual Basic, C++ e F#. 
 
 Compilando spesso il codice è possibile identificare rapidamente gli errori in fase di compilazione, ad esempio sintassi non corretta, parole chiave con errori di digitazione e tipi non corrispondenti. È anche possibile rilevare e risolvere rapidamente gli errori di runtime, ad esempio errori logici e semantici, compilando frequentemente il codice ed eseguendo le versioni di debug.  
 
@@ -44,7 +40,7 @@ La documentazione di questa sezione approfondisce i dettagli del processo di com
 
 ## <a name="overview-of-building-from-the-ide"></a>Panoramica della compilazione nell'ambiente IDE  
 
-Quando si crea un progetto, Visual Studio crea configurazioni della build predefinite per il progetto e la soluzione che contiene il progetto.  Queste configurazioni definiscono come vengono compilati e distribuiti i progetti e le soluzioni. Le configurazioni di progetto, in particolare, sono uniche per la piattaforma di destinazione (ad esempio Windows o Linux) e il tipo di build (ad esempio una build di debug o di rilascio). È possibile modificare queste configurazioni come desiderato e anche creare configurazioni personalizzate in base alle esigenze.
+Quando si crea un progetto, Visual Studio crea configurazioni della build predefinite per il progetto e la soluzione che contiene il progetto.  Queste configurazioni definiscono come vengono compilati e distribuiti i progetti e le soluzioni. Le configurazioni di progetto, in particolare, sono univoche per la piattaforma di destinazione (ad esempio Windows o Linux) e il tipo di compilazione (ad esempio, di debug o di rilascio). È possibile modificare queste configurazioni come desiderato e anche creare configurazioni personalizzate in base alle esigenze.
 
 Per un'introduzione iniziale alla compilazione nell'ambiente IDE, vedere [Procedura dettagliata: Compilazione di un'applicazione](walkthrough-building-an-application.md).  
 
@@ -53,7 +49,7 @@ Quindi vedere [Compilazione e pulizia di progetti e soluzioni in Visual Studio](
 Successivamente è possibile esplorare molte altre attività:
 - [Informazioni sulle configurazioni della build](understanding-build-configurations.md)
 - [Informazioni sulle piattaforme di compilazione](understanding-build-platforms.md)
-- [Gestione delle proprietà di progetti e soluzioni](managing-project-and-solution-properties.md)  
+- [Gestire le proprietà di progetti e soluzioni](managing-project-and-solution-properties.md).  
 - Definizione degli eventi di compilazione in [C#](how-to-specify-build-events-csharp.md) e [Visual Basic](how-to-specify-build-events-visual-basic.md) 
 - [Impostazione delle opzioni di compilazione](reference/options-dialog-box-projects-and-solutions-build-and-run.md)
 - [Compilazione di più progetti in parallelo](../msbuild/building-multiple-projects-in-parallel-with-msbuild.md).  
@@ -61,4 +57,3 @@ Successivamente è possibile esplorare molte altre attività:
 ## <a name="see-also"></a>Vedere anche  
 
 - [Compilazione di progetti di siti Web](http://msdn.microsoft.com/Library/a9cbb88c-8fff-4c67-848b-98fbfd823193)   
-

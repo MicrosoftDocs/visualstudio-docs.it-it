@@ -1,60 +1,61 @@
 ---
-title: "IDebugGenericFieldDefinition::ConstructInstantiation | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "ConstructInstantiation"
-  - "IDebugGenericFieldDefinition::ConstructInstantiation"
+title: IDebugGenericFieldDefinition::ConstructInstantiation | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology:
+- vs-ide-sdk
+ms.topic: conceptual
+helpviewer_keywords:
+- ConstructInstantiation
+- IDebugGenericFieldDefinition::ConstructInstantiation
 ms.assetid: ef8ae261-a98b-4dc2-93b3-7c5191818ba2
-caps.latest.revision: 8
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 8
+author: gregvanl
+ms.author: gregvanl
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: d9250467aeec5a032c8e88054d868aa45ae7dda0
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# IDebugGenericFieldDefinition::ConstructInstantiation
-[!INCLUDE[vs2017banner](../../../code-quality/includes/vs2017banner.md)]
-
-Costruisce un'istanza del campo fornita una matrice di argomenti di tipo.  
+# <a name="idebuggenericfielddefinitionconstructinstantiation"></a>IDebugGenericFieldDefinition::ConstructInstantiation
+Costruisce un'istanza del campo Data una matrice di argomenti di tipo.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp#  
+```cpp  
 HRESULT ConstructInstantiation(  
-   ULONG32       cArgs,  
-   IDebugField** ppArgs,  
-   IDebugField** ppConstructedField  
+   ULONG32       cArgs,  
+   IDebugField** ppArgs,  
+   IDebugField** ppConstructedField  
 );  
 ```  
   
-```c#  
+```csharp  
 int ConstructInstantiation(  
-   uint            cArgs,  
-   IDebugField[]   ppArgs,  
-   out IDebugField ppConstructedField  
+   uint            cArgs,  
+   IDebugField[]   ppArgs,  
+   out IDebugField ppConstructedField  
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `cArgs`  
- \[in\]  Numero di argomenti nella matrice di `ppArgs` .  
+ [in] Numero di argomenti in di `ppArgs` matrice.  
   
  `ppArgs`  
- \[in\]  Allineare contenente gli argomenti di tipo.  gli argomenti di tipo devono essere tipi chiusi \(non generici o generics completamente creare un'istanza\).  
+ [in] Matrice che contiene gli argomenti di tipo. Gli argomenti di tipo devono essere tipi chiusi (generics non generico o istanziato completa).  
   
  `ppConstructedField`  
- \[out\]  restituisce [IDebugField](../../../extensibility/debugger/reference/idebugfield.md) l'interfaccia che rappresenta il nuovo campo.  
+ [out] Restituisce il [IDebugField](../../../extensibility/debugger/reference/idebugfield.md) interfaccia che rappresenta il nuovo campo.  
   
-## Valore restituito  
- Se l'operazione riesce, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
+## <a name="return-value"></a>Valore restituito  
+ Se ha esito positivo, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
   
-## Note  
- I vincoli non sono archiviati.  
+## <a name="remarks"></a>Note  
+ Vincoli non vengono controllati.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IDebugGenericFieldDefinition](../../../extensibility/debugger/reference/idebuggenericfielddefinition.md)

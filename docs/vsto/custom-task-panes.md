@@ -1,14 +1,10 @@
 ---
-title: Custom Task Panes | Microsoft Docs
-ms.custom: 
+title: Riquadri attività personalizzati | Documenti Microsoft
+ms.custom: ''
 ms.date: 02/02/2017
-ms.prod: visual-studio-dev14
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - office-development
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: conceptual
 dev_langs:
 - VB
 - CSharp
@@ -27,135 +23,135 @@ helpviewer_keywords:
 - custom task panes [Office development in Visual Studio]
 - task panes [Office development in Visual Studio], about custom task panes
 - custom task panes [Office development in Visual Studio], about custom task panes
-ms.assetid: 9a415109-5333-433e-95c6-3d59ce9c4d02
-caps.latest.revision: 52
-author: kempb
-ms.author: kempb
-manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: eb5c9550fd29b0e98bf63a7240737da4f13f3249
-ms.openlocfilehash: b99d43d4e775e118d60ba692f4dde615cbb6f5f6
-ms.contentlocale: it-it
-ms.lasthandoff: 08/30/2017
-
+author: TerryGLee
+ms.author: tglee
+manager: douge
+ms.workload:
+- office
+ms.openlocfilehash: acbe91b0a7150ac3a04f9a0b33c8b95d371caf53
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# <a name="custom-task-panes"></a>Custom Task Panes
-  Task panes are user interface panels that are typically docked to one side of a window in a Microsoft Office application. Custom task panes give you a way to create your own task pane and provide users with a familiar interface to access your solution's features. For example, the interface can contain controls that run code to modify documents or display data from a data source.  
+# <a name="custom-task-panes"></a>Riquadri attività personalizzati
+  I riquadri attività sono pannelli dell'interfaccia utente in genere ancorati a un lato di una finestra in un'applicazione di Microsoft Office. I riquadri attività personalizzati consentono di creare un riquadro attività basato sulle proprie esigenze specifiche e offrono agli utenti un'interfaccia utente nota per accedere alle funzionalità della soluzione. L'interfaccia può, ad esempio, contenere controlli che consentono di eseguire codice per la modifica dei documenti o per la visualizzazione dei dati di un'origine dati.  
   
  [!INCLUDE[appliesto_olkallapp](../vsto/includes/appliesto-olkallapp-md.md)]  
   
 > [!NOTE]  
->  A custom task pane differs from the actions pane. The actions pane is part of document-level customizations for Microsoft Office Word and Microsoft Office Excel. For more information, see [Actions Pane Overview](../vsto/actions-pane-overview.md).  
+>  Un riquadro attività personalizzato è diverso da un riquadro azioni. Il riquadro azioni fa parte delle personalizzazioni a livello di documento per Microsoft Office Word e Microsoft Office Excel. Per altre informazioni, vedere [Actions Pane Overview](../vsto/actions-pane-overview.md).  
   
-## <a name="benefits-of-custom-task-panes"></a>Benefits of Custom Task Panes  
- Custom task panes let you integrate your features into a familiar user interface. You can create a custom task pane quickly by using Visual Studio tools.  
+## <a name="benefits-of-custom-task-panes"></a>Vantaggi dei riquadri attività personalizzati  
+ I riquadri attività personalizzati consentono di integrare le funzionalità in un'interfaccia utente familiare. È possibile creare rapidamente un riquadro attività personalizzato usando gli strumenti di Visual Studio.  
   
-### <a name="familiar-user-interface"></a>Familiar User Interface  
- Users of applications in the Microsoft Office system are already familiar with using task panes such as the **Styles and Formatting** task pane in Word. Custom task panes behave like other task panes in the Microsoft Office system. Users can dock custom task panes to different sides of the application window, or they can drag custom task panes to any location in the window. You can create a VSTO Add-in that displays multiple custom task panes at the same time, and users can control each task pane individually.  
+### <a name="familiar-user-interface"></a>Interfaccia utente familiare  
+ Gli utenti delle applicazioni di Microsoft Office hanno già familiari con l'uso dei riquadri attività, ad esempio il **stili e formattazione** riquadro attività in Word. I riquadri attività personalizzati presentano un funzionamento simile a quello di altri riquadri attività di Microsoft Office. Gli utenti possono ancorare i riquadri attività personalizzati a diversi lati della finestra dell'applicazione oppure possono trascinare i riquadri attività personalizzati in qualsiasi posizione all'interno della finestra. È possibile creare un componente aggiuntivo VSTO in grado di visualizzare più riquadri attività personalizzati allo stesso tempo, garantendo agli utenti la possibilità di controllare ogni riquadro attività singolarmente.  
   
-### <a name="windows-forms-support"></a>Windows Forms Support  
- The user interface of a custom task pane that you create by using the Office development tools in Visual Studio is based on Windows Forms controls. You can use the familiar Windows Forms Designer to design the user interface for a custom task pane. You can also use the data binding support in Windows Forms to bind a data source to controls on the task pane.  
+### <a name="windows-forms-support"></a>Supporto di Windows Form  
+ L'interfaccia utente di un riquadro attività personalizzato creato mediante gli strumenti di sviluppo di Office in Visual Studio si basa sui controlli Windows Form. È possibile usare il noto strumento Progettazione Windows Form per progettare l'interfaccia utente per un riquadro attività personalizzato. È inoltre possibile usare il supporto del data binding dei Windows Form per associare un'origine dati ai controlli del riquadro attività.  
   
-## <a name="creating-a-custom-task-pane"></a>Creating a Custom Task Pane  
- You can create a basic custom task pane in two steps:  
+## <a name="creating-a-custom-task-pane"></a>Creazione di un riquadro attività personalizzato  
+ È possibile creare un riquadro attività personalizzato di base in due passaggi:  
   
-1.  Create a user interface for your custom task pane by adding Windows Forms controls to a <xref:System.Windows.Forms.UserControl> object.  
+1.  Creare un'interfaccia utente per il riquadro attività personalizzato aggiungendo controlli Windows Form a un oggetto <xref:System.Windows.Forms.UserControl>.  
   
-2.  Instantiate the custom task pane by passing the user control to the <xref:Microsoft.Office.Tools.CustomTaskPaneCollection> object in your VSTO Add-in. This collection returns a new <xref:Microsoft.Office.Tools.CustomTaskPane> object that you can use to modify the appearance of the task pane and respond to user events.  
+2.  Creare un'istanza del riquadro attività personalizzato passando il controllo utente all'oggetto <xref:Microsoft.Office.Tools.CustomTaskPaneCollection> nel componente aggiuntivo VSTO. Questa raccolta restituisce un nuovo oggetto <xref:Microsoft.Office.Tools.CustomTaskPane> che può essere usato per modificare l'aspetto del riquadro attività e per rispondere agli eventi utente.  
   
- For more information, see [How to: Add a Custom Task Pane to an Application](../vsto/how-to-add-a-custom-task-pane-to-an-application.md).  
+ Per ulteriori informazioni, vedere [procedura: aggiungere un riquadro attività personalizzato a un'applicazione](../vsto/how-to-add-a-custom-task-pane-to-an-application.md).  
   
-### <a name="creating-the-user-interface"></a>Creating the User Interface  
- All custom task panes that are created by using the Office development tools in Visual Studio contain a <xref:System.Windows.Forms.UserControl> object. This user control provides the user interface of your custom task pane. You can create the user control at design time or at run time. If you create the user control at design time, you can use the Windows Forms Designer to construct the user interface of your task pane.  
+### <a name="creating-the-user-interface"></a>Creazione dell'interfaccia utente  
+ Tutti i riquadri attività personalizzati creati tramite gli strumenti di sviluppo di Office in Visual Studio contengono un oggetto <xref:System.Windows.Forms.UserControl>. Tale controllo utente fornisce l'interfaccia utente del riquadro attività personalizzato e può essere creato in fase di progettazione o di esecuzione. Se viene creato in fase di progettazione, è possibile usare Progettazione Windows Form per costruire l'interfaccia utente del riquadro attività.  
   
-### <a name="instantiating-the-custom-task-pane"></a>Instantiating the Custom Task Pane  
- After you create a user control that contains the user interface of the custom task pane, you have to instantiate a <xref:Microsoft.Office.Tools.CustomTaskPane>. To do this, pass the user control to the <xref:Microsoft.Office.Tools.CustomTaskPaneCollection> in your VSTO Add-in by calling one of the <xref:Microsoft.Office.Tools.CustomTaskPaneCollection.Add%2A> methods. This collection is exposed as the `CustomTaskPanes` field of the `ThisAddIn` class. The following code example is intended to be run from the `ThisAddIn` class.  
+### <a name="instantiating-the-custom-task-pane"></a>Creazione di un'istanza del riquadro attività personalizzato  
+ Dopo aver creato un controllo utente contenente l'interfaccia utente del riquadro attività personalizzato, è necessario creare un'istanza di un oggetto <xref:Microsoft.Office.Tools.CustomTaskPane>. A questo scopo, passare il controllo utente all'oggetto <xref:Microsoft.Office.Tools.CustomTaskPaneCollection> nel componente aggiuntivo VSTO chiamando uno dei metodi <xref:Microsoft.Office.Tools.CustomTaskPaneCollection.Add%2A>. Tale raccolta viene esposta come campo `CustomTaskPanes` della classe `ThisAddIn`. Per usare l'esempio di codice seguente è necessario eseguirlo dalla classe `ThisAddIn`.  
   
- [!code-vb[Trin_TaskPaneBasic#2](../vsto/codesnippet/VisualBasic/Trin_TaskPaneBasic/ThisAddIn.vb#2)] [!code-csharp[Trin_TaskPaneBasic#2](../vsto/codesnippet/CSharp/Trin_TaskPaneBasic/ThisAddIn.cs#2)]  
+ [!code-vb[Trin_TaskPaneBasic#2](../vsto/codesnippet/VisualBasic/Trin_TaskPaneBasic/ThisAddIn.vb#2)]
+ [!code-csharp[Trin_TaskPaneBasic#2](../vsto/codesnippet/CSharp/Trin_TaskPaneBasic/ThisAddIn.cs#2)]  
   
- The <xref:Microsoft.Office.Tools.CustomTaskPaneCollection.Add%2A> methods return a new <xref:Microsoft.Office.Tools.CustomTaskPane> object. You can use this object to modify the appearance of the task pane and to respond to user events.  
+ I metodi <xref:Microsoft.Office.Tools.CustomTaskPaneCollection.Add%2A> restituiscono un nuovo oggetto <xref:Microsoft.Office.Tools.CustomTaskPane>, che può essere usato per modificare l'aspetto del riquadro attività e per rispondere agli eventi utente.  
   
-### <a name="controlling-the-task-pane-in-multiple-windows"></a>Controlling the Task Pane in Multiple Windows  
- Custom task panes are associated with a document frame window, which presents a view of a document or item to the user. The task pane is visible only when the associated window is visible.  
+### <a name="controlling-the-task-pane-in-multiple-windows"></a>Controllo del riquadro attività in più finestre  
+ I riquadri attività personalizzati sono associati a una finestra cornice di documento che presenta all'utente una visualizzazione di un documento o di un elemento. Il riquadro attività è visibile solo quando la finestra associata è visibile.  
   
- To determine which window displays the custom task pane, use the appropriate <xref:Microsoft.Office.Tools.CustomTaskPaneCollection.Add%2A> method overload when you create the task pane:  
+ Per determinare quale finestra visualizza il riquadro attività personalizzato, usare l'overload del metodo <xref:Microsoft.Office.Tools.CustomTaskPaneCollection.Add%2A> appropriato quando si crea il riquadro attività:  
   
--   To associate the task pane with the active window, use the <xref:Microsoft.Office.Tools.CustomTaskPaneCollection.Add%2A> method.  
+-   Per associare il riquadro attività alla finestra attiva, usare il metodo <xref:Microsoft.Office.Tools.CustomTaskPaneCollection.Add%2A>.  
   
--   To associate the task pane with a document that is hosted by a specified window, use the <xref:Microsoft.Office.Tools.CustomTaskPaneCollection.Add%2A> method.  
+-   Per associare il riquadro attività a un documento ospitato da una finestra specifica, usare il metodo <xref:Microsoft.Office.Tools.CustomTaskPaneCollection.Add%2A>.  
   
- Some Office applications require explicit instructions for when to create or display your task pane when more than one window is open. This makes it important to consider where to instantiate the custom task pane in your code to ensure that the task pane appears with the appropriate documents or items in the application. For more information, see [Managing Custom Task Panes in Application Windows](#Managing).  
+ Alcune applicazioni di Office richiedono istruzioni esplicite su quando creare o visualizzare il riquadro attività nei casi in cui siano aperte più finestre. In questi casi è importante prendere in considerazione il punto del codice in cui creare un'istanza del riquadro attività personalizzato per garantire che il riquadro attività visualizzato contenga i documenti o gli elementi appropriati dell'applicazione. Per ulteriori informazioni, vedere [la gestione dei riquadri attività personalizzati nelle finestre dell'applicazione](#Managing).  
   
-## <a name="accessing-the-application-from-the-task-pane"></a>Accessing the Application from the Task Pane  
- If you want to automate the application from the user control, you can directly access the object model by using `Globals.ThisAddIn.Application` in your code. The static `Globals` class provides access to the `ThisAddIn` object. The `Application` field of this object is the entry point into the object model of the application.  
+## <a name="accessing-the-application-from-the-task-pane"></a>Accesso all'applicazione dal riquadro attività  
+ Per automatizzare l'applicazione dal controllo utente, è possibile accedere direttamente al modello a oggetti usando la classe `Globals.ThisAddIn.Application` nel codice. La classe statica `Globals` consente di accedere all'oggetto `ThisAddIn`. Il campo `Application` di questo oggetto rappresenta il punto di ingresso nel modello a oggetti dell'applicazione.  
   
- For more information about the `Application` field of the `ThisAddIn` object, see [Programming VSTO Add-Ins](../vsto/programming-vsto-add-ins.md). For a walkthrough that demonstrates how to automate an application from a custom task pane, see [Walkthrough: Automating an Application from a Custom Task Pane](../vsto/walkthrough-automating-an-application-from-a-custom-task-pane.md). For more information about the `Globals` class, see [Global Access to Objects in Office Projects](../vsto/global-access-to-objects-in-office-projects.md).  
+ Per ulteriori informazioni sul `Application` campo il `ThisAddIn` , vedere [programmazione di componenti aggiuntivi VSTO](../vsto/programming-vsto-add-ins.md). Per una procedura dettagliata che illustri come automatizzare un'applicazione da un riquadro attività personalizzato, vedere [procedura dettagliata: automazione di un'applicazione da un riquadro attività personalizzato](../vsto/walkthrough-automating-an-application-from-a-custom-task-pane.md). Per ulteriori informazioni sul `Globals` classe, vedere [accesso globale a oggetti nei progetti di Office](../vsto/global-access-to-objects-in-office-projects.md).  
   
-## <a name="managing-the-user-interface-of-the-task-pane"></a>Managing the User Interface of the Task Pane  
- After you create the task pane, you can use properties and events of the <xref:Microsoft.Office.Tools.CustomTaskPane> object to control the user interface of the task pane and to respond when the user changes the task pane.  
+## <a name="managing-the-user-interface-of-the-task-pane"></a>Gestione dell'interfaccia utente del riquadro attività  
+ Dopo aver creato il riquadro attività è possibile usare le proprietà e gli eventi dell'oggetto <xref:Microsoft.Office.Tools.CustomTaskPane> per controllare l'interfaccia utente del riquadro attività e per definire il comportamento in risposta alle modifiche apportate dall'utente al riquadro attività.  
   
-### <a name="making-the-custom-task-pane-visible"></a>Making the Custom Task Pane Visible  
- By default, the task pane is not visible. To make the task pane visible, you must set the <xref:Microsoft.Office.Tools.CustomTaskPane.Visible%2A> property to **true**.  
+### <a name="making-the-custom-task-pane-visible"></a>Rendere visibile il riquadro attività personalizzato  
+ Per impostazione predefinita, il riquadro attività non è visibile. Per rendere visibile il riquadro attività, è necessario impostare il <xref:Microsoft.Office.Tools.CustomTaskPane.Visible%2A> proprietà **true**.  
   
- Users can close a task pane at any time by clicking the **Close** button (X) in the corner of the task pane. However, there is no default way for users to open the custom task pane again. If a user closes a custom task pane, that user cannot view the custom task pane again unless you provide a way to display it.  
+ Gli utenti possono chiudere un riquadro attività in qualsiasi momento facendo clic di **chiudere** pulsante (X) nell'angolo del riquadro attività. Non esiste, tuttavia, una modalità predefinita per riaprire il riquadro attività personalizzato. Se un utente chiude un riquadro attività personalizzato, potrà visualizzarlo di nuovo solo se viene fornito uno strumento che consente di eseguire tale operazione.  
   
- If you create a custom task pane in your VSTO Add-in, you should also create a UI element, such as a button, that users can click to display or hide your custom task pane. If you create a custom task pane in a Microsoft Office application that supports customizing the Ribbon, you can add a control group to the Ribbon with a button that displays or hides your custom task pane. For a walkthrough that demonstrates how to do this, see [Walkthrough: Synchronizing a Custom Task Pane with a Ribbon Button](../vsto/walkthrough-synchronizing-a-custom-task-pane-with-a-ribbon-button.md).  
+ Se si crea un riquadro attività personalizzato nel componente aggiuntivo VSTO, è consigliabile creare anche un elemento dell'interfaccia utente, ad esempio un pulsante, selezionabile dagli utenti per visualizzare o nascondere il riquadro stesso. Se il riquadro attività personalizzato viene creato in un'applicazione di Microsoft Office che supporta la personalizzazione della barra multifunzione, è possibile aggiungere un gruppo di controlli alla barra multifunzione contenente un pulsante che consente di visualizzare o nascondere il riquadro attività personalizzato. Per una procedura dettagliata che illustra come eseguire questa operazione, vedere [procedura dettagliata: sincronizzazione di un riquadro attività personalizzato con un pulsante della barra multifunzione](../vsto/walkthrough-synchronizing-a-custom-task-pane-with-a-ribbon-button.md).  
   
- If you create a custom task pane in a Microsoft Office application that does not support customizing the Ribbon, you can add a <xref:Microsoft.Office.Core.CommandBarButton> that displays or hides your custom task pane.  
+ Se si crea un riquadro attività personalizzato in un'applicazione di Microsoft Office che non supporta la personalizzazione della barra multifunzione, è possibile aggiungere un oggetto <xref:Microsoft.Office.Core.CommandBarButton> che consente di visualizzare o nascondere tale riquadro.  
   
-### <a name="modifying-the-appearance-of-the-task-pane"></a>Modifying the Appearance of the Task Pane  
- You can control the size and location of a custom task pane by using properties of the <xref:Microsoft.Office.Tools.CustomTaskPane> object. You can make many other changes to the appearance of a custom task pane by using properties of the <xref:System.Windows.Forms.UserControl> object that is contained in the custom task pane. For example, you can specify a background image for a custom task pane by using the <xref:System.Windows.Forms.Control.BackgroundImage%2A> property of the user control.  
+### <a name="modifying-the-appearance-of-the-task-pane"></a>Modifica dell'aspetto del riquadro attività  
+ È possibile controllare le dimensioni e la posizione di un riquadro attività personalizzato usando le proprietà dell'oggetto <xref:Microsoft.Office.Tools.CustomTaskPane>, nonché apportare molte altre modifiche all'aspetto del riquadro attività usando le proprietà dell'oggetto <xref:System.Windows.Forms.UserControl> contenuto nel riquadro stesso. È possibile, ad esempio, specificare un'immagine di sfondo per un riquadro attività personalizzato usando la proprietà <xref:System.Windows.Forms.Control.BackgroundImage%2A> del controllo utente.  
   
- The following table lists the changes you can make to a custom task pane by using <xref:Microsoft.Office.Tools.CustomTaskPane> properties.  
+ Nella tabella seguente sono elencate le modifiche che è possibile apportare a un riquadro attività personalizzato mediante le proprietà <xref:Microsoft.Office.Tools.CustomTaskPane>.  
   
-|Task|Property|  
+|Attività|Proprietà|  
 |----------|--------------|  
-|To change the size of the task pane|<xref:Microsoft.Office.Tools.CustomTaskPane.Height%2A><br /><br /> <xref:Microsoft.Office.Tools.CustomTaskPane.Width%2A>|  
-|To change the location of the task pane|<xref:Microsoft.Office.Tools.CustomTaskPane.DockPosition%2A>|  
-|To hide the task pane or make it visible|<xref:Microsoft.Office.Tools.CustomTaskPane.Visible%2A>|  
-|To prevent the user from changing the location of the task pane|<xref:Microsoft.Office.Tools.CustomTaskPane.DockPositionRestrict%2A>|  
+|Per modificare le dimensioni del riquadro attività|<xref:Microsoft.Office.Tools.CustomTaskPane.Height%2A><br /><br /> <xref:Microsoft.Office.Tools.CustomTaskPane.Width%2A>|  
+|Per modificare la posizione del riquadro attività|<xref:Microsoft.Office.Tools.CustomTaskPane.DockPosition%2A>|  
+|Per nascondere il riquadro attività o renderlo visibile|<xref:Microsoft.Office.Tools.CustomTaskPane.Visible%2A>|  
+|Per impedire che l'utente modifichi la posizione del riquadro attività|<xref:Microsoft.Office.Tools.CustomTaskPane.DockPositionRestrict%2A>|  
   
-### <a name="programming-custom-task-pane-events"></a>Programming Custom Task Pane Events  
- You might want your VSTO Add-in to respond when the user modifies the custom task pane. For example, if the user changes the orientation of the pane from vertical to horizontal, you might want to reposition the controls.  
+### <a name="programming-custom-task-pane-events"></a>Programmazione degli eventi del riquadro attività personalizzato  
+ È possibile che si desideri impostare il componente aggiuntivo VSTO in modo che risponda alle modifiche apportate dall'utente al riquadro attività personalizzato. Se, ad esempio, l'utente modifica l'orientamento del riquadro da verticale a orizzontale, potrebbe essere necessario riposizionare i controlli.  
   
- The following table lists the events that you can handle to respond to changes that the user makes to the custom task pane.  
+ Nella tabella seguente sono elencati gli eventi che è possibile gestire per rispondere alle modifiche apportate dall'utente al riquadro attività personalizzato.  
   
-|Task|Event|  
+|Attività|event|  
 |----------|-----------|  
-|To respond when the user changes the location of the task pane.|<xref:Microsoft.Office.Tools.CustomTaskPane.DockPositionChanged>|  
-|To respond when the user hides the task pane or makes it visible.|<xref:Microsoft.Office.Tools.CustomTaskPane.VisibleChanged>|  
+|Per definire il comportamento quando l'utente modifica la posizione del riquadro attività.|<xref:Microsoft.Office.Tools.CustomTaskPane.DockPositionChanged>|  
+|Per definire il comportamento quando l'utente nasconde o rende visibile il riquadro attività.|<xref:Microsoft.Office.Tools.CustomTaskPane.VisibleChanged>|  
   
-## <a name="cleaning-up-resources-used-by-the-task-pane"></a>Cleaning Up Resources Used by the Task Pane  
- After you create a custom task pane, the <xref:Microsoft.Office.Tools.CustomTaskPane> object remains in memory as long as your VSTO Add-in is running. The object remains in memory even after the user clicks the **Close** button (X) in the corner of the task pane.  
+## <a name="cleaning-up-resources-used-by-the-task-pane"></a>Pulizia delle risorse usate dal riquadro attività  
+ Dopo aver creato un riquadro attività personalizzato, l'oggetto <xref:Microsoft.Office.Tools.CustomTaskPane> rimane in memoria finché il componente aggiuntivo VSTO è in esecuzione.  L'oggetto rimane in memoria anche dopo che l'utente fa clic il **Chiudi** pulsante (X) nell'angolo del riquadro attività.  
   
- To clean up resources used by the task pane while the VSTO Add-in is still running, use the <xref:Microsoft.Office.Tools.CustomTaskPaneCollection.Remove%2A> or <xref:Microsoft.Office.Tools.CustomTaskPaneCollection.RemoveAt%2A> methods. These methods remove the specified <xref:Microsoft.Office.Tools.CustomTaskPane> object from the `CustomTaskPanes` collection, and they call the <xref:Microsoft.Office.Tools.CustomTaskPane.Dispose%2A> method of the object.  
+ Per pulire le risorse usate dal riquadro attività mentre il componente aggiuntivo VSTO è ancora in esecuzione, usare i metodi <xref:Microsoft.Office.Tools.CustomTaskPaneCollection.Remove%2A> o <xref:Microsoft.Office.Tools.CustomTaskPaneCollection.RemoveAt%2A>. Tali metodi rimuovono l'oggetto <xref:Microsoft.Office.Tools.CustomTaskPane> specificato dalla raccolta `CustomTaskPanes` ed effettuano quindi la chiamata al metodo <xref:Microsoft.Office.Tools.CustomTaskPane.Dispose%2A> dell'oggetto.  
   
- The [!INCLUDE[vsto_runtime](../vsto/includes/vsto-runtime-md.md)] automatically cleans up resources used by the custom task pane when the VSTO Add-in is unloaded. Do not call the <xref:Microsoft.Office.Tools.CustomTaskPaneCollection.Remove%2A> or <xref:Microsoft.Office.Tools.CustomTaskPaneCollection.RemoveAt%2A> methods in the `ThisAddIn_Shutdown` event handler in your project. These methods will throw an <xref:System.ObjectDisposedException>, because the [!INCLUDE[vsto_runtime](../vsto/includes/vsto-runtime-md.md)] cleans up resources used by the <xref:Microsoft.Office.Tools.CustomTaskPane> object before `ThisAddIn_Shutdown` is called. For more information about `ThisAddIn_Shutdown`, see [Events in Office Projects](../vsto/events-in-office-projects.md)  
+ In [!INCLUDE[vsto_runtime](../vsto/includes/vsto-runtime-md.md)] viene effettuata la pulizia automatica delle risorse usate dal riquadro attività personalizzato quando il componente aggiuntivo VSTO viene scaricato. Non chiamare il <xref:Microsoft.Office.Tools.CustomTaskPaneCollection.Remove%2A> o <xref:Microsoft.Office.Tools.CustomTaskPaneCollection.RemoveAt%2A> metodi di `ThisAddIn_Shutdown` gestore dell'evento nel progetto. Tali metodi generano un'eccezione <xref:System.ObjectDisposedException>, perché in [!INCLUDE[vsto_runtime](../vsto/includes/vsto-runtime-md.md)] viene effettuata la pulizia delle risorse usate dall'oggetto <xref:Microsoft.Office.Tools.CustomTaskPane> prima della chiamata a `ThisAddIn_Shutdown`. Per ulteriori informazioni `ThisAddIn_Shutdown`, vedere [eventi nei progetti di Office](../vsto/events-in-office-projects.md)  
   
-##  <a name="Managing"></a> Managing Custom Task Panes in Multiple Application Windows  
- When you create a custom task pane in an application that uses multiple windows to display documents and other items, you need to take extra steps to ensure that the task pane is visible when the user expects it to be.  
+##  <a name="Managing"></a> Gestione dei riquadri attività personalizzati in più finestre dell'applicazione  
+ Quando si crea un riquadro attività personalizzato in un'applicazione che usa più finestre per visualizzare documenti e altri elementi, è necessario effettuare altre azioni per assicurarsi che il riquadro attività sia visibile quando l'utente si aspetta che lo sia.  
   
- Custom task panes in all applications are associated with a document frame window, which presents a view of a document or item to the user. The task pane is visible only when the associated window is visible. However, not all applications use document frame windows the same way.  
+ I riquadri attività personalizzati in tutte le applicazioni sono associati a una finestra cornice del documento che presenta una visualizzazione di un documento o di un elemento all'utente. Il riquadro attività è visibile solo quando la finestra associata è visibile. Non tutte le applicazioni usano tuttavia le finestre cornice del documento nello stesso modo.  
   
- The following application groups have different development requirements:  
+ I gruppi di applicazioni seguenti hanno requisiti di sviluppo diversi:  
   
 -   [Outlook](#Outlook)  
   
--   [Word, InfoPath, and PowerPoint](#WordAndInfoPath)  
+-   [Word, InfoPath e PowerPoint](#WordAndInfoPath)  
   
- ![link to video](../vsto/media/playvideo.gif "link to video") For a related video demonstration, see [How Do I: Manage Task Panes in Word VSTO Add-ins?](http://go.microsoft.com/fwlink/?LinkId=136781).  
+ ![collegamento alla trasmissione video](../vsto/media/playvideo.gif "collegamento alla trasmissione video") per una dimostrazione video correlata, vedere [come ricerca per categorie: gestire i riquadri attività nei componenti aggiuntivi VSTO di Word?](http://go.microsoft.com/fwlink/?LinkId=136781).  
   
 ##  <a name="Outlook"></a> Outlook  
- When you create a custom task pane for Outlook, the custom task pane is associated with a specific Explorer or Inspector window. Explorers are windows that display the contents of a folder, and Inspectors are windows that display an item such as an e-mail message or a task.  
+ Quando si crea un riquadro attività personalizzato per Outlook, tale riquadro viene associato a una finestra di esplorazione o a una finestra di controllo specifica. Le finestre di esplorazione sono finestre che visualizzano il contenuto di una cartella, mentre le finestre di controllo visualizzano un elemento quale un messaggio di posta elettronica o un'attività.  
   
- If you want to display a custom task pane with multiple Explorer or Inspector windows, you need to create a new instance of the custom task pane when an Explorer or Inspector window opens. To do this, handle an event that is raised when an Explorer or Inspector window is created, and then create the task pane in the event handler. You can also handle Explorer and Inspector events to hide or display task panes depending on which window is visible.  
+ Per visualizzare un riquadro attività personalizzato con più finestre di esplorazione o di controllo, è necessario creare una nuova istanza del riquadro attività personalizzato quando viene aperta una nuova finestra di esplorazione o di controllo. A questo scopo, gestire un evento generato quando viene creata una finestra di esplorazione o di controllo, quindi creare il riquadro attività nel gestore eventi. È anche possibile gestire gli eventi relativi alle finestre di esplorazione e di controllo per nascondere o visualizzare i riquadri attività a seconda di quale finestra è visibile.  
   
- To associate the task pane with a specific Explorer or Inspector, use the <xref:Microsoft.Office.Tools.CustomTaskPaneCollection.Add%2A> method to create the task pane, and pass the <xref:Microsoft.Office.Interop.Outlook.Explorer> or <xref:Microsoft.Office.Interop.Outlook.Inspector> object to the *window* parameter. For more information about creating custom task panes, see [Custom Task Panes Overview](../vsto/custom-task-panes.md).  
+ Per associare il riquadro attività a un'esplorazione o di controllo specifici, usare il <xref:Microsoft.Office.Tools.CustomTaskPaneCollection.Add%2A> metodo per creare il riquadro attività e passare il <xref:Microsoft.Office.Interop.Outlook.Explorer> o <xref:Microsoft.Office.Interop.Outlook.Inspector> dell'oggetto per il *finestra* parametro. Per ulteriori informazioni sulla creazione di riquadri attività personalizzati, vedere [panoramica dei riquadri attività personalizzati](../vsto/custom-task-panes.md).  
   
- For a walkthrough that demonstrates how to create a task pane for every e-mail message that is opened, see [Walkthrough: Displaying Custom Task Panes with E-Mail Messages in Outlook](../vsto/walkthrough-displaying-custom-task-panes-with-e-mail-messages-in-outlook.md).  
+ Per una procedura dettagliata viene illustrato come creare un riquadro attività per ogni messaggio di posta elettronica aperto, vedere [procedura dettagliata: visualizzazione dei riquadri attività personalizzati con messaggi di posta elettronica in Outlook](../vsto/walkthrough-displaying-custom-task-panes-with-e-mail-messages-in-outlook.md).  
   
-### <a name="outlook-events"></a>Outlook Events  
- To monitor the state of Explorer windows, you can handle the following Explorer-related events:  
+### <a name="outlook-events"></a>Eventi di Outlook  
+ Per monitorare lo stato delle finestre di esplorazione, è possibile gestire gli eventi seguenti correlati all'esplorazione:  
   
 -   <xref:Microsoft.Office.Interop.Outlook.ExplorersEvents_Event.NewExplorer>  
   
@@ -165,7 +161,7 @@ ms.lasthandoff: 08/30/2017
   
 -   <xref:Microsoft.Office.Interop.Outlook.ExplorerEvents_10_Event.Deactivate>  
   
- To monitor the state of Inspector windows, you can handle the following Inspector-related events:  
+ Per controllare lo stato delle finestre di controllo, è possibile gestire gli eventi seguenti correlati al controllo:  
   
 -   <xref:Microsoft.Office.Interop.Outlook.InspectorsEvents_Event.NewInspector>  
   
@@ -175,20 +171,20 @@ ms.lasthandoff: 08/30/2017
   
 -   <xref:Microsoft.Office.Interop.Outlook.InspectorEvents_10_Event.Deactivate>  
   
-### <a name="preventing-multiple-instances-of-a-custom-task-pane-in-outlook"></a>Preventing Multiple Instances of a Custom Task Pane in Outlook  
- To prevent Outlook windows from displaying multiple instances of a custom task pane, explicitly remove the custom task pane from the `CustomTaskPanes` collection of the `ThisAddIn` class when each window is closed. Call the <xref:Microsoft.Office.Tools.CustomTaskPaneCollection.Remove%2A> method in an event that is raised when a window is closed, such as <xref:Microsoft.Office.Interop.Outlook.ExplorerEvents_10_Event.Close> or <xref:Microsoft.Office.Interop.Outlook.InspectorEvents_10_Event.Close>.  
+### <a name="preventing-multiple-instances-of-a-custom-task-pane-in-outlook"></a>Come impedire l'apertura di più istanze di un riquadro attività personalizzato in Outlook  
+ Per impedire la visualizzazione nelle finestre di Outlook di più istanze di un riquadro attività personalizzato, rimuovere esplicitamente il riquadro dalla raccolta `CustomTaskPanes` della classe `ThisAddIn` al momento della chiusura di ogni finestra. Chiamare il metodo <xref:Microsoft.Office.Tools.CustomTaskPaneCollection.Remove%2A> in un evento generato quando viene chiusa una finestra, ad esempio <xref:Microsoft.Office.Interop.Outlook.ExplorerEvents_10_Event.Close> o <xref:Microsoft.Office.Interop.Outlook.InspectorEvents_10_Event.Close>.  
   
- If you do not explicitly remove the custom task pane, Outlook windows might display multiple instances of the custom task pane. Outlook sometimes recycles windows, and recycled windows retain references to any custom task panes that were attached to them.  
+ Se non si rimuove esplicitamente il riquadro attività personalizzato, nelle finestre di Outlook potrebbero essere visualizzate più istanze di tale riquadro. In Outlook le finestre vengono talvolta riciclate e pertanto possono conservare riferimenti ai riquadri attività personalizzati a esse associati.  
   
-##  <a name="WordAndInfoPath"></a> Word, InfoPath, and PowerPoint  
- Word, InfoPath, and PowerPoint display each document in a different document frame window. When you create a custom task pane for these applications, the custom task pane is associated only with a specific document. If the user opens a different document, the custom task pane is hidden until the earlier document is visible again.  
+##  <a name="WordAndInfoPath"></a> Word, InfoPath e PowerPoint  
+ Word, InfoPath e PowerPoint visualizzano ogni documento in una finestra cornice documento diversa. Quando si crea un riquadro attività personalizzato per queste applicazioni, tale riquadro viene associato solo a un documento specifico. Se l'utente apre un documento diverso, il riquadro attività personalizzato viene nascosto fino a che il documento precedente non è nuovamente visibile.  
   
- If you want to display a custom task pane with multiple documents, create a new instance of the custom task pane when the user creates a new document or opens an existing document. To do this, handle events that are raised when a document is created or opened, and then create the task pane in the event handlers. You can also handle document events to hide or display task panes depending on which document is visible.  
+ Per visualizzare un riquadro attività personalizzato con più documenti, creare una nuova istanza del riquadro attività personalizzato quando l'utente crea un nuovo documento o ne apre uno esistente.  A questo scopo, gestire gli eventi generati quando viene creato o aperto un documento, quindi creare il riquadro attività nei gestori di eventi. È inoltre possibile gestire gli eventi del documento per nascondere o visualizzare i riquadri attività a seconda del documento visibile.  
   
- To associate the task pane with a specific document window, use the <xref:Microsoft.Office.Tools.CustomTaskPaneCollection.Add%2A> method to create the task pane, and pass a <xref:Microsoft.Office.Interop.Word.Window> (for Word),  <xref:Microsoft.Office.Interop.InfoPath.WindowObject> (for InfoPath), or <xref:Microsoft.Office.Interop.PowerPoint.DocumentWindow> (for PowerPoint) to the *window* parameter.  
+ Per associare il riquadro attività a una finestra del documento specifica, usare il <xref:Microsoft.Office.Tools.CustomTaskPaneCollection.Add%2A> metodo per creare il riquadro attività e passare un <xref:Microsoft.Office.Interop.Word.Window> (per Word), <xref:Microsoft.Office.Interop.InfoPath.WindowObject> (per InfoPath) o <xref:Microsoft.Office.Interop.PowerPoint.DocumentWindow> (per PowerPoint) per il *finestra*parametro.  
   
-### <a name="word-events"></a>Word Events  
- To monitor the state of document windows in Word, you can handle the following events:  
+### <a name="word-events"></a>Eventi di Word  
+ Per monitorare lo stato delle finestre di documento in Word, è possibile gestire gli eventi seguenti:  
   
 -   <xref:Microsoft.Office.Interop.Word.ApplicationEvents4_Event.DocumentBeforeClose>  
   
@@ -200,8 +196,8 @@ ms.lasthandoff: 08/30/2017
   
 -   <xref:Microsoft.Office.Interop.Word.ApplicationEvents4_Event.WindowDeactivate>  
   
-### <a name="infopath-events"></a>InfoPath Events  
- To monitor the state of document windows in InfoPath, you can handle the following events:  
+### <a name="infopath-events"></a>Eventi di InfoPath  
+ Per monitorare lo stato delle finestre di documento in InfoPath, è possibile gestire gli eventi seguenti:  
   
 -   <xref:Microsoft.Office.Interop.InfoPath._ApplicationEvents_Event.NewXDocument>  
   
@@ -213,8 +209,8 @@ ms.lasthandoff: 08/30/2017
   
 -   <xref:Microsoft.Office.Interop.InfoPath._ApplicationEvents_Event.XDocumentOpen>  
   
-### <a name="powerpoint-events"></a>PowerPoint Events  
- To monitor the state of document windows in PowerPoint, you can handle the following events:  
+### <a name="powerpoint-events"></a>Eventi di PowerPoint  
+ Per monitorare lo stato delle finestre di documento in PowerPoint, è possibile gestire gli eventi seguenti:  
   
 -   <xref:Microsoft.Office.Interop.PowerPoint.EApplication_Event.AfterNewPresentation>  
   
@@ -228,9 +224,8 @@ ms.lasthandoff: 08/30/2017
   
 -   <xref:Microsoft.Office.Interop.PowerPoint.EApplication_Event.WindowDeactivate>  
   
-## <a name="see-also"></a>See Also  
- [How to: Add a Custom Task Pane to an Application](../vsto/how-to-add-a-custom-task-pane-to-an-application.md)   
- [Walkthrough: Automating an Application from a Custom Task Pane](../vsto/walkthrough-automating-an-application-from-a-custom-task-pane.md)   
- [Walkthrough: Synchronizing a Custom Task Pane with a Ribbon Button](../vsto/walkthrough-synchronizing-a-custom-task-pane-with-a-ribbon-button.md)   
- [Walkthrough: Displaying Custom Task Panes with E-Mail Messages in Outlook](../vsto/walkthrough-displaying-custom-task-panes-with-e-mail-messages-in-outlook.md)  
-
+## <a name="see-also"></a>Vedere anche  
+ [Procedura: aggiungere un riquadro attività personalizzato a un'applicazione](../vsto/how-to-add-a-custom-task-pane-to-an-application.md)   
+ [Procedura dettagliata: Automazione di un'applicazione da un riquadro attività personalizzato](../vsto/walkthrough-automating-an-application-from-a-custom-task-pane.md)   
+ [Procedura dettagliata: Sincronizzazione di un riquadro attività personalizzato con un pulsante della barra multifunzione](../vsto/walkthrough-synchronizing-a-custom-task-pane-with-a-ribbon-button.md)   
+ [Procedura dettagliata: visualizzazione dei riquadri attività personalizzati con messaggi di posta elettronica in Outlook](../vsto/walkthrough-displaying-custom-task-panes-with-e-mail-messages-in-outlook.md)  

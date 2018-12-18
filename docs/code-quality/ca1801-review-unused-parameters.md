@@ -1,13 +1,8 @@
 ---
-title: 'CA1801: Review unused parameters | Microsoft Docs'
-ms.custom: 
+title: 'CA1801: Rivedere i parametri inutilizzati'
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- vs-devops-test
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.technology: vs-ide-code-analysis
+ms.topic: reference
 f1_keywords:
 - AvoidUnusedParameters
 - CA1801
@@ -16,73 +11,59 @@ helpviewer_keywords:
 - CA1801
 - ReviewUnusedParameters
 ms.assetid: 5d73545c-e153-4b7c-a7b2-be6bf5aca5be
-caps.latest.revision: 30
-author: stevehoag
-ms.author: shoag
-manager: wpickett
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: HT
-ms.sourcegitcommit: eb5c9550fd29b0e98bf63a7240737da4f13f3249
-ms.openlocfilehash: 3c640bad82bd7e84cafe1dcab69f565a9e6222c4
-ms.contentlocale: it-it
-ms.lasthandoff: 08/30/2017
-
+author: gewarren
+ms.author: gewarren
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: aae1661d848e2b7a49dc1873dbe1f555bef6abc0
+ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/19/2018
 ---
-# <a name="ca1801-review-unused-parameters"></a>CA1801: Review unused parameters
-|||  
-|-|-|  
-|TypeName|ReviewUnusedParameters|  
-|CheckId|CA1801|  
-|Category|Microsoft.Usage|  
-|Breaking Change|Non Breaking - If the member is not visible outside the assembly, regardless of the change you make.<br /><br /> Non Breaking - If you change the member to use the parameter within its body.<br /><br /> Breaking - If you remove the parameter and it is visible outside the assembly.|  
-  
-## <a name="cause"></a>Cause  
- A method signature includes a parameter that is not used in the method body. This rule does not examine the following methods:  
-  
--   Methods referenced by a delegate.  
-  
--   Methods used as event handlers.  
-  
--   Methods declared with the `abstract` (`MustOverride` in Visual Basic) modifier.  
-  
--   Methods declared with the `virtual` (`Overridable` in Visual Basic) modifier.  
-  
--   Methods declared with the `override` (`Overrides` in Visual Basic) modifier.  
-  
--   Methods declared with the `extern` (`Declare` statement in Visual Basic) modifier.  
-  
-## <a name="rule-description"></a>Rule Description  
- Review parameters in non-virtual methods that are not used in the method body to make sure no correctness exists around failure to access them. Unused parameters incur maintenance and performance costs.  
-  
- Sometimes a violation of this rule can point to an implementation bug in the method. For example, the parameter should have been used in the method body. Suppress warnings of this rule if the parameter has to exist because of backward compatibility.  
-  
-## <a name="how-to-fix-violations"></a>How to Fix Violations  
- To fix a violation of this rule, remove the unused parameter (a breaking change) or use the parameter in the method body (a non-breaking change).  
-  
-## <a name="when-to-suppress-warnings"></a>When to Suppress Warnings  
- It is safe to suppress a warning from this rule for previously shipped code for which the fix would be a breaking change.  
-  
-## <a name="example"></a>Example  
- The following example shows two methods. One method violates the rule and the other method satisfies the rule.  
-  
- [!code-csharp[FxCop.Usage.ReviewUnusedParameters#1](../code-quality/codesnippet/CSharp/ca1801-review-unused-parameters_1.cs)]  
-  
-## <a name="related-rules"></a>Related Rules  
- [CA1811: Avoid uncalled private code](../code-quality/ca1811-avoid-uncalled-private-code.md)  
-  
- [CA1812: Avoid uninstantiated internal classes](../code-quality/ca1812-avoid-uninstantiated-internal-classes.md)  
-  
- [CA1804: Remove unused locals](../code-quality/ca1804-remove-unused-locals.md)
+# <a name="ca1801-review-unused-parameters"></a>CA1801: Rivedere i parametri inutilizzati
+|||
+|-|-|
+|TypeName|ReviewUnusedParameters|
+|CheckId|CA1801|
+|Category|Microsoft.Usage|
+|Modifica importante|Non sostanziale - Se il membro non è visibile all'esterno dell'assembly, indipendentemente dalle modifiche apportate.<br /><br /> Non sostanziale - Se si modifica il membro per usare il parametro all'interno del corpo.<br /><br /> Sostanziale - Se si rimuove il parametro e è visibile all'esterno dell'assembly.|
+
+## <a name="cause"></a>Causa
+ Una firma di metodo include un parametro non utilizzato nel corpo del metodo. Questa regola esamina i metodi seguenti:
+
+-   Metodi a cui fa riferimento un delegato.
+
+-   Metodi usati come gestori eventi.
+
+-   I metodi dichiarati con la `abstract` (`MustOverride` in Visual Basic) modificatore.
+
+-   I metodi dichiarati con la `virtual` (`Overridable` in Visual Basic) modificatore.
+
+-   I metodi dichiarati con la `override` (`Overrides` in Visual Basic) modificatore.
+
+-   I metodi dichiarati con la `extern` (`Declare` istruzione in Visual Basic) modificatore.
+
+## <a name="rule-description"></a>Descrizione della regola
+ Rivedere i parametri dei metodi non virtuali che non vengono utilizzati nel corpo del metodo per non verificare che nessun correttezza esiste nell'errore di accesso. I parametri inutilizzati comportano costi di manutenzione e prestazioni.
+
+ Talvolta una violazione di questa regola può puntare a un bug di implementazione del metodo. Ad esempio, il parametro deve essere utilizzato nel corpo del metodo. Esclusione di avvisi di questa regola se il parametro deve essere presente per la compatibilità con le versioni precedenti.
+
+## <a name="how-to-fix-violations"></a>Come correggere le violazioni
+ Per correggere una violazione di questa regola, rimuovere il parametro non utilizzato (una modifica di rilievo) o usare il parametro nel corpo del metodo (una modifica non sostanziale).
+
+## <a name="when-to-suppress-warnings"></a>Esclusione di avvisi
+ È possibile eliminare un avviso da questa regola per il codice fornito in precedenza per il quale la correzione sarebbe una modifica di rilievo.
+
+## <a name="example"></a>Esempio
+ L'esempio seguente mostra due metodi. Un metodo viola la regola e l'altro metodo soddisfa la regola.
+
+ [!code-csharp[FxCop.Usage.ReviewUnusedParameters#1](../code-quality/codesnippet/CSharp/ca1801-review-unused-parameters_1.cs)]
+
+## <a name="related-rules"></a>Regole correlate
+ [CA1811: Evitare il codice privato non chiamato](../code-quality/ca1811-avoid-uncalled-private-code.md)
+
+ [CA1812: Evitare classi interne prive di istanze](../code-quality/ca1812-avoid-uninstantiated-internal-classes.md)
+
+ [CA1804: Rimuovere locali non usati](../code-quality/ca1804-remove-unused-locals.md)

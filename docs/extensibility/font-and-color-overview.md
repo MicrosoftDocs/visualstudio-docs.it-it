@@ -1,83 +1,84 @@
 ---
-title: "Tipo di carattere e colore Panoramica | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "editor [Visual Studio SDK], tipo di carattere e colore"
-  - "controllo tipo di carattere e colore [Visual Studio SDK], Editor"
+title: Tipo di carattere e colore Panoramica | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology:
+- vs-ide-sdk
+ms.topic: conceptual
+helpviewer_keywords:
+- editors [Visual Studio SDK], font and color
+- font and color control [Visual Studio SDK], editors
 ms.assetid: 2203e4e7-8b7f-44ec-8884-6ff718d4f278
-caps.latest.revision: 22
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 22
+author: gregvanl
+ms.author: gregvanl
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: 8185d5c931ccf0b3b15fba10405cf050eb7c6241
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# Tipo di carattere e colore Panoramica
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
-In questo argomento vengono illustrate le impostazioni di carattere e colore del testo nell'ambiente di sviluppo integrato di \(IDE\) [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] .  Inoltre vengono presentati i concetti di categorie e degli elementi della visualizzazione e viene descritto come Vspackage ed editor principale utilizzano gli attributi di testo.  
+# <a name="font-and-color-overview"></a>Panoramica di colore e tipo di carattere
+Questo argomento vengono illustrate le impostazioni di carattere e colori testo nel [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] ambiente di sviluppo integrato (IDE). Inoltre, introduce i concetti di categorie e di elementi visualizzati e viene descritto l'utilizzo degli attributi del testo VSPackage e l'editor di componenti di base.  
   
-## I tipi di carattere e la pagina delle proprietà di colori  
- È possibile gestire gli attributi di testo visualizzato nell'ambiente di sviluppo integrato di \(IDE\) [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] dalla pagina delle proprietà di **Tipi di carattere e colori** .  Per trovare la pagina delle proprietà di **Tipi di carattere e colori** , scegliere dal menu di **strumenti** , fare clic su **opzioni**.  Espandere **Ambiente** e fare clic su **Tipi di carattere e colori**.  
+## <a name="the-fonts-and-colors-property-page"></a>Tipi di carattere e colori pagina delle proprietà  
+ È possibile gestire gli attributi del testo visualizzato nel [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] ambiente di sviluppo integrato (IDE) tramite il **tipi di carattere e colori** pagina delle proprietà. Per trovare il **tipi di carattere e colori** nella pagina proprietà di **strumenti** menu, fare clic su **opzioni**. Espandere **ambiente**, quindi fare clic su **tipi di carattere e colori**.  
   
-## Categorie ed elementi della visualizzazione  
- I tipi di carattere e i colori sono organizzati in **categorie** e in **Visualizzare elementi**.  
+## <a name="categories-and-display-items"></a>Le categorie e elementi visualizzati  
+ Tipi di carattere e colori sono organizzati in **categorie** e **elementi visualizzati**.  
   
--   **categoria** è un contenitore logico o funzionale per una serie di **Visualizzare elementi**.  
+-   Oggetto **categoria** è un contenitore logico o funzionale per un numero di **elementi visualizzati**.  
   
-     Un elenco di **categorie** verrà visualizzato nella casella a discesa di **Impostazioni di visualizzazione per** della pagina delle proprietà di **Tipi di carattere e colori** .  
+     Un elenco di **categorie** è il **Mostra impostazioni per** casella di riepilogo a discesa del **tipi di carattere e colori** pagina delle proprietà.  
   
--   **elemento visualizzato** è un'entità ben definito di testo come un commento, una stringa, o una struttura di controllo che deve essere colorata se visualizzato.  
+-   Oggetto **elemento visualizzato** è un'entità testo ben definiti, ad esempio un commento, una stringa o una struttura di controllo che deve essere colorati quando visualizzata.  
   
- Ogni **elemento visualizzato** è in modo univoco definito all'interno di **categoria** che lo contiene.  Pertanto, più di un **categoria** può avere **elemento visualizzato** con lo stesso nome.  
+ Ogni **elemento visualizzato** è definito in modo univoco all'interno di **categoria** che lo contiene. Di conseguenza, più di un **categoria** può avere un **elemento visualizzato** con lo stesso nome.  
   
-## Controllo di un VSPackage tipi di carattere e colori  
- [!INCLUDE[vsipsdk](../extensibility/includes/vsipsdk_md.md)] consente Vspackage a:  
+## <a name="vspackage-control-of-fonts-and-colors"></a>Controllo VSPackage di tipi di carattere e colori  
+ Il [!INCLUDE[vsipsdk](../extensibility/includes/vsipsdk_md.md)] consente di VSPackage in:  
   
--   Definire il tipo di carattere e colori **categorie**.  
+-   Definire i tipi di carattere e colore **categorie**.  
   
--   Specificare i tipi di carattere e i colori utilizzati per presentare **Visualizzare elementi**.  
+-   Specificare i tipi di carattere e colori utilizzati per presentare **elementi visualizzati**.  
   
--   Interagire con la pagina delle proprietà di **Tipi di carattere e colori** .  
+-   Interagire con il **tipi di carattere e colori** pagina delle proprietà.  
   
--   **categorie** più di aggregazione in gruppi.  
+-   Aggregazione più **categorie** in gruppi.  
   
--   Mantenere le modifiche alle impostazioni predefinite.  
+-   Mantenere le modifiche apportate nelle impostazioni predefinite.  
   
- Esistono due modi per interagire con il tipo di carattere e le selezioni dei colori all'interno di [!INCLUDE[vsipsdk](../extensibility/includes/vsipsdk_md.md)].  
+ Esistono due modi per interagire con tipo di carattere e colore selezioni all'interno di [!INCLUDE[vsipsdk](../extensibility/includes/vsipsdk_md.md)].  
   
--   Un modo viene definito *colorazione della sintassi*.  Viene utilizzato da un package VS che consente di personalizzare l'editor esistente di [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] per implementare un servizio di linguaggio e creare un editor standard.  
+-   Una delle modalità è detta *colorazione della sintassi*. Viene utilizzato da un VSPackage che consente di personalizzare esistente [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] editor per implementare un servizio di linguaggio e creare un'origine dell'editor.  
   
-     Solo un **categoria** supporta questo meccanismo, cioé, **editor di testo**.  
+     Un solo **categoria** supporta questo meccanismo, vale a dire, il **Editor di testo**.  
   
--   Un'alternativa più generale supporta tutti gli altri **categorie** e componenti dell'interfaccia utente diverso dall'editor standard per la visualizzazione del testo.  Per ulteriori informazioni, vedere <xref:Microsoft.VisualStudio.Shell.Interop.IVsFontAndColorDefaultsProvider>.  
+-   Un'alternativa più generale supporta tutti gli altri **categorie** e i componenti dell'interfaccia utente diverso dall'editor di origine per la visualizzazione di testo. Per altre informazioni, vedere <xref:Microsoft.VisualStudio.Shell.Interop.IVsFontAndColorDefaultsProvider>.  
   
-## Impostazioni del testo dell'editor  
- Le impostazioni dei colori e tipi di carattere dell'editor principale di un oggetto del servizio di linguaggio dipendono da **editor di testocategoria** di ricerca nella casella a discesa di **Impostazioni di visualizzazione per** della pagina delle proprietà di **Tipi di carattere e colori** .  
+## <a name="core-editor-text-settings"></a>Impostazioni di testo dell'Editor di componenti di base  
+ Impostazioni di carattere e colori per l'editor di componenti di base di un oggetto servizio di linguaggio vengono gestite con il **testo EditorCategory** trovato nel **Mostra impostazioni per** casella di riepilogo a discesa del **tipi di carattere e colori** pagina delle proprietà.  
   
- Quando si utilizzano gli editor, è necessario utilizzare il meccanismo speciale di controllo del colore di carattere e che il servizio di linguaggio fornisce per controllare e estendere le impostazioni di **editor di testo** .  Il meccanismo è noto come *colorazione della sintassi* e fornisce:  
+ Quando si lavora con gli editor, è necessario utilizzare il carattere specializzato e il meccanismo di controllo di colore che fornisce il servizio di linguaggio per controllare ed estendere il **Editor di testo** impostazioni. Il meccanismo è detto *la colorazione della sintassi* e fornisce:  
   
--   Una tecnica semplificata per gestire i tipi di carattere e i colori degli elementi visualizzati.  
+-   Una tecnica semplificata per la gestione di carattere e colori degli elementi visualizzati.  
   
-     Per ulteriori informazioni, vedere <xref:Microsoft.VisualStudio.TextManager.Interop.IVsProvideColorableItems> e <xref:Microsoft.VisualStudio.TextManager.Interop.IVsColorableItem>.  
+     Per altre informazioni, vedere <xref:Microsoft.VisualStudio.TextManager.Interop.IVsProvideColorableItems> e <xref:Microsoft.VisualStudio.TextManager.Interop.IVsColorableItem>.  
   
--   Un meccanismo definito e ottimizzato di colorazione.  
+-   Un meccanismo di colorazione ben definiti e ottimizzata.  
   
-     Per ulteriori informazioni, vedere <xref:Microsoft.VisualStudio.TextManager.Interop.IVsColorizer>.  
+     Per altre informazioni, vedere <xref:Microsoft.VisualStudio.TextManager.Interop.IVsColorizer>.  
   
--   La possibilità a entrambi gli elementi della visualizzazione di incorporato di utilizzo da **editor di testocategoria** e estenderle.  
+-   La possibilità di entrambi utilizzano gli oggetti visualizzazione incorporate il **EditorCategory testo** e per consentire l'uso.  
   
-     Per ulteriori informazioni, vedere [Procedura: utilizzare gli elementi di colori predefiniti](../extensibility/internals/how-to-use-built-in-colorable-items.md) e [Elementi di colori personalizzati](../extensibility/internals/custom-colorable-items.md).  
+     Per ulteriori informazioni, vedere [come: elementi colorabile predefinito utilizzare](../extensibility/internals/how-to-use-built-in-colorable-items.md) e [personalizzate colorabile](../extensibility/internals/custom-colorable-items.md).  
   
--   Persistenza automatica dello stato corrente degli elementi in visualizzazione personalizzate che incorporate di con la categoria di **editor di testo** .  
+-   Persistenza automatico dell'oggetto corrente dello stato di entrambi predefinite e personalizzate visualizzare gli elementi con il **Editor di testo** categoria.  
   
- Per ulteriori informazioni sulla colorazione della sintassi vedere [In un servizio di linguaggio Legacy colorazione della sintassi](../extensibility/internals/syntax-coloring-in-a-legacy-language-service.md).  
+ Per ulteriori informazioni sulla sintassi, vedere colorazione [colorazione della sintassi in un servizio di linguaggio Legacy](../extensibility/internals/syntax-coloring-in-a-legacy-language-service.md).  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Interfacce legacy nell'Editor](../extensibility/legacy-interfaces-in-the-editor.md)   
- [In un servizio di linguaggio Legacy colorazione della sintassi](../extensibility/internals/syntax-coloring-in-a-legacy-language-service.md)
+ [Colorazione della sintassi in un servizio di linguaggio legacy](../extensibility/internals/syntax-coloring-in-a-legacy-language-service.md)

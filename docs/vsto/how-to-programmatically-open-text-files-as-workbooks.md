@@ -1,14 +1,10 @@
 ---
-title: 'How to: Programmatically Open Text Files as Workbooks | Microsoft Docs'
-ms.custom: 
+title: 'Procedura: aprire il file di testo come cartelle di lavoro | Documenti Microsoft'
+ms.custom: ''
 ms.date: 02/02/2017
-ms.prod: visual-studio-dev14
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - office-development
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: conceptual
 dev_langs:
 - VB
 - CSharp
@@ -16,39 +12,39 @@ helpviewer_keywords:
 - workbooks, opening text files as
 - text [Office development in Visual Studio], text files
 - text files, opening as workbooks
-ms.assetid: 056ae3d0-7fe7-4c28-a2a5-5a948baee0e6
-caps.latest.revision: 47
-author: kempb
-ms.author: kempb
-manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: eb5c9550fd29b0e98bf63a7240737da4f13f3249
-ms.openlocfilehash: 9966164165f768f438516ba9df993c09a6197b5b
-ms.contentlocale: it-it
-ms.lasthandoff: 08/30/2017
-
+author: TerryGLee
+ms.author: tglee
+manager: douge
+ms.workload:
+- office
+ms.openlocfilehash: cafe64ce693972bd9c254a6bdfc1dcbf70f004c9
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# <a name="how-to-programmatically-open-text-files-as-workbooks"></a>How to: Programmatically Open Text Files as Workbooks
-  You can open a text file as a workbook. You must pass in the name of the text file you want to open. You can specify several optional parameters, such as which row number to start parsing on and the column format of the data in the file.  
+# <a name="how-to-programmatically-open-text-files-as-workbooks"></a>Procedura: aprire file di testo come cartelle di lavoro a livello di codice
+  È possibile aprire un file di testo come una cartella di lavoro. È necessario passare il nome del file di testo che si desidera aprire. È possibile specificare diversi parametri facoltativi, ad esempio il numero di riga per iniziare l'analisi e il formato della colonna di dati nel file.  
   
  [!INCLUDE[appliesto_xlalldocapp](../vsto/includes/appliesto-xlalldocapp-md.md)]  
   
-## <a name="example"></a>Example  
- [!code-csharp[Trin_VstcoreExcelAutomation#80](../vsto/codesnippet/CSharp/Trin_VstcoreExcelAutomationCS/Sheet1.cs#80)] [!code-vb[Trin_VstcoreExcelAutomation#80](../vsto/codesnippet/VisualBasic/Trin_VstcoreExcelAutomation/Sheet1.vb#80)]  
+## <a name="example"></a>Esempio  
+ [!code-csharp[Trin_VstcoreExcelAutomation#80](../vsto/codesnippet/CSharp/Trin_VstcoreExcelAutomationCS/Sheet1.cs#80)]
+ [!code-vb[Trin_VstcoreExcelAutomation#80](../vsto/codesnippet/VisualBasic/Trin_VstcoreExcelAutomation/Sheet1.vb#80)]  
   
-## <a name="compiling-the-code"></a>Compiling the Code  
- This example requires the following components:  
+## <a name="compiling-the-code"></a>Compilazione del codice  
+ In questo esempio richiede i seguenti componenti:  
   
--   A comma-delimited text file named `Test.txt` that contains at least three lines of text.  
+-   Un file di testo delimitato da virgole denominato `Test.txt` che contiene almeno tre righe di testo.  
   
--   The text file `Test.txt` to be stored on drive C.  
+-   Il file di testo `Test.txt` siano archiviati nell'unità C.  
   
-## <a name="see-also"></a>See Also  
- [Working with Workbooks](../vsto/working-with-workbooks.md)   
- [How to: Programmatically Open Workbooks](../vsto/how-to-programmatically-open-workbooks.md)   
- [How to: Programmatically Create New Workbooks](../vsto/how-to-programmatically-create-new-workbooks.md)   
- [How to: Programmatically Save Workbooks](../vsto/how-to-programmatically-save-workbooks.md)   
- [How to: Programmatically Close Workbooks](../vsto/how-to-programmatically-close-workbooks.md)   
- [Optional Parameters in Office Solutions](../vsto/optional-parameters-in-office-solutions.md)  
+## <a name="see-also"></a>Vedere anche  
+ [Utilizzo di cartelle di lavoro](../vsto/working-with-workbooks.md)   
+ [Procedura: aprire cartelle di lavoro](../vsto/how-to-programmatically-open-workbooks.md)   
+ [Procedura: creare nuove cartelle di lavoro](../vsto/how-to-programmatically-create-new-workbooks.md)   
+ [Procedura: a livello di programmazione salvare cartelle di lavoro](../vsto/how-to-programmatically-save-workbooks.md)   
+ [Procedura: chiudere a livello di programmazione le cartelle di lavoro](../vsto/how-to-programmatically-close-workbooks.md)   
+ [Parametri facoltativi nelle soluzioni Office](../vsto/optional-parameters-in-office-solutions.md)  
   
   

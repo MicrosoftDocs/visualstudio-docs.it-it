@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- vs-ide-sdk
+ms.technology: msbuild
 ms.tgt_pltfrm: 
 ms.topic: article
 dev_langs:
@@ -18,30 +17,17 @@ helpviewer_keywords:
 - MSBuild, command line reference
 - msbuild.exe
 ms.assetid: edaa65ec-ab8a-42a1-84cb-d76d5b2f4584
-caps.latest.revision: 57
-author: kempb
-ms.author: kempb
+caps.latest.revision: 
+author: Mikejo5000
+ms.author: mikejo
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.workload:
+- multiple
+ms.openlocfilehash: 47179698fe7a65552c10ddf24c2f49733f60fd97
+ms.sourcegitcommit: 205d15f4558315e585c67f33d5335d5b41d0fcea
 ms.translationtype: HT
-ms.sourcegitcommit: 1c2afd23f9f6a7444b723a0f7d93ababad2624e7
-ms.openlocfilehash: 24103f33bb7d2157560801f70dbe7c1b8f0a9989
-ms.contentlocale: it-it
-ms.lasthandoff: 09/26/2017
-
+ms.contentlocale: it-IT
+ms.lasthandoff: 02/09/2018
 ---
 # <a name="msbuild-command-line-reference"></a>Riferimenti alla riga di comando di MSBuild
 Quando si usa MSBuild.exe per compilare un file di progetto o di soluzione, si possono includere varie opzioni per specificare diversi aspetti del processo.  
@@ -108,4 +94,3 @@ msbuild SlnFolders.sln /t:NotInSolutionfolder:Rebuild;NewFolder\InSolutionFolder
 ## <a name="see-also"></a>Vedere anche  
  [Informazioni di riferimento su MSBuild](../msbuild/msbuild-reference.md)   
  [Proprietà di progetto MSBuild comuni](../msbuild/common-msbuild-project-properties.md)
-

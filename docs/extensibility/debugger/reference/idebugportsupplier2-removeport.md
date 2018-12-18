@@ -1,52 +1,53 @@
 ---
-title: "IDebugPortSupplier2::RemovePort | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "IDebugPortSupplier2::RemovePort"
-helpviewer_keywords: 
-  - "IDebugPortSupplier2::RemovePort"
+title: IDebugPortSupplier2::RemovePort | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology:
+- vs-ide-sdk
+ms.topic: conceptual
+f1_keywords:
+- IDebugPortSupplier2::RemovePort
+helpviewer_keywords:
+- IDebugPortSupplier2::RemovePort
 ms.assetid: f5c1fbf2-9084-46f2-a682-7db963928df2
-caps.latest.revision: 9
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 9
+author: gregvanl
+ms.author: gregvanl
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: 9fc4fe83d88e23269b7979eb95733bda14f71725
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# IDebugPortSupplier2::RemovePort
-[!INCLUDE[vs2017banner](../../../code-quality/includes/vs2017banner.md)]
-
-rimuove una porta.  
+# <a name="idebugportsupplier2removeport"></a>IDebugPortSupplier2::RemovePort
+Rimuove una porta.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp#  
-HRESULT RemovePort(   
-   IDebugPort2* pPort  
+```cpp  
+HRESULT RemovePort(   
+   IDebugPort2* pPort  
 );  
 ```  
   
-```c#  
-int RemovePort(   
-   IDebugPort2 pPort  
+```csharp  
+int RemovePort(   
+   IDebugPort2 pPort  
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `pPort`  
- \[in\]  [IDebugPort2](../../../extensibility/debugger/reference/idebugport2.md) un oggetto che rappresenta la porta da rimuovere.  
+ [in] Un [IDebugPort2](../../../extensibility/debugger/reference/idebugport2.md) oggetto che rappresenta la porta da rimuovere.  
   
-## Valore restituito  
- Se l'operazione riesce, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
+## <a name="return-value"></a>Valore restituito  
+ Se ha esito positivo, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
   
-## Note  
- Questo metodo cancella la porta dall'interno del fornitore di porte delle porte attive.  
+## <a name="remarks"></a>Note  
+ Questo metodo rimuove la porta dall'elenco di porte attive interno del fornitore porta.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IDebugPortSupplier2](../../../extensibility/debugger/reference/idebugportsupplier2.md)   
  [IDebugPort2](../../../extensibility/debugger/reference/idebugport2.md)

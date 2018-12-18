@@ -1,40 +1,24 @@
 ---
 title: Parser servizio di linguaggio legacy e Scanner | Documenti Microsoft
-ms.custom: 
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - vs-ide-sdk
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: conceptual
 helpviewer_keywords:
 - parsers, language services [managed package framework]
 - language services [managed package framework], Parsers
 ms.assetid: 1ac3de27-a23b-438d-9593-389e45839cfa
-caps.latest.revision: 20
+author: gregvanl
 ms.author: gregvanl
-manager: ghogen
-translation.priority.mt:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: a838b193689d480c7e02053dd67adb6bfbd2314f
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
 ms.translationtype: MT
-ms.sourcegitcommit: 4a36302d80f4bc397128e3838c9abf858a0b5fe8
-ms.openlocfilehash: c95dbbeaf9dcd6e1014ce3d2af8a0398c6627fe3
-ms.contentlocale: it-it
-ms.lasthandoff: 09/26/2017
-
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="legacy-language-service-parser-and-scanner"></a>Scanner e Parser servizio di linguaggio legacy
 Il parser è il cuore del servizio di linguaggio. Le classi di lingua del file system distribuito (MPF, Managed Package Framework) richiedono un parser del linguaggio per selezionare le informazioni sul codice di visualizzazione. Un parser separa il testo in token lessicale e quindi identifica i token dal tipo e funzionalità.  

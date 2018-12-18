@@ -2,27 +2,27 @@
 title: Strumenti per il rilevamento e la gestione di istanze di Visual Studio | Microsoft Docs
 description: '{{PLACEHOLDER}}'
 ms.date: 08/14/2017
-ms.reviewer: 
-ms.suite: 
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
-- vs-ide-install
-ms.tgt_pltfrm: 
-ms.topic: article
+- vs-acquisition
+ms.tgt_pltfrm: ''
+ms.topic: conceptual
 helpviewer_keywords:
 - '{{PLACEHOLDER}}'
 - '{{PLACEHOLDER}}'
 ms.assetid: 85686707-14C0-4860-9B7A-66485D43D241
-author: timsneath
-ms.author: tims
-manager: ghogen
+author: tglee
+ms.author: tglee
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 2e2c0f6d6884590cfb793aa522984ed7f008c37f
+ms.sourcegitcommit: efd8c8e0a9ba515d47efcc7bd370eaaf4771b5bb
 ms.translationtype: HT
-ms.sourcegitcommit: f23906933add1f4706d8786b2950fb3b5d2e6781
-ms.openlocfilehash: 1e81071d8a67fd5b8c38bcf87629604efe6fa4a5
-ms.contentlocale: it-it
-ms.lasthandoff: 09/26/2017
-
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/03/2018
 ---
-
 # <a name="tools-for-detecting-and-managing-visual-studio-instances"></a>Strumenti per il rilevamento e la gestione di istanze di Visual Studio
 
 ## <a name="detecting-existing-visual-studio-instances"></a>Rilevamento di istanze di Visual Studio esistenti
@@ -53,7 +53,7 @@ Questi elementi non vengono archiviati nel Registro di sistema globale ed è qui
 1. Se si ha un'istanza aperta di Visual Studio 2017, chiuderla.
 2. Avviare `regedit.exe`.
 3. Selezionare il nodo `HKEY_LOCAL_MACHINE`.
-4. Nel menu principale di Regedit selezionare **File -> Carica hive... ** e quindi selezionare il file di registro privato archiviato nella cartella **AppData\Local**. Ad esempio:
+4. Nel menu principale di Regedit selezionare **File -> Carica hive...**  e quindi selezionare il file di registro privato archiviato nella cartella **AppData\Local**. Ad esempio:
    ```
    %localappdata%\Microsoft\VisualStudio\<config>\privateregistry.bin
    ```
@@ -66,3 +66,14 @@ Verrà chiesto di fornire un nome di hive, che diventerà il nome dell'hive isol
 > [!IMPORTANT]
 > Prima di avviare nuovamente Visual Studio, è necessario scaricare l'hive isolato appena creato. A questo scopo, nel menu principale di Regedit selezionare File -> Scarica Hive. (Se non si esegue questa operazione, il file rimarrà bloccato e non sarà possibile avviare Visual Studio).
 
+## <a name="get-support"></a>Supporto
+Non sempre tutto funziona correttamente. Se l'installazione di Visual Studio non riesce, vedere la pagina [Risoluzione degli errori di installazione e aggiornamento di Visual Studio 2017](troubleshooting-installation-issues.md). Se nessuna delle procedure di risoluzione dei problemi risulta utile, contattare Microsoft tramite chat in tempo reale per richiedere assistenza per l'installazione (solo in lingua inglese). Per informazioni dettagliate, vedere la [pagina del supporto di Visual Studio](https://www.visualstudio.com/vs/support/#talktous).
+
+Ecco alcune altre opzioni di supporto:
+* È possibile segnalare i problemi del prodotto a Microsoft tramite lo strumento [Segnala un problema](../ide/how-to-report-a-problem-with-visual-studio-2017.md) che viene visualizzato sia nel programma di installazione di Visual Studio che nell'IDE di Visual Studio.
+* È possibile condividere un suggerimento per il prodotto con Microsoft in [UserVoice](https://visualstudio.uservoice.com/forums/121579).
+* È possibile visualizzare lo stato dei problemi del prodotto nella [community degli sviluppatori di Visual Studio](https://developercommunity.visualstudio.com/), dove è possibile creare domande e trovare risposte.
+* È anche possibile comunicare con gli sviluppatori Microsoft e altri sviluppatori di Visual Studio partecipando alla [conversazione dedicata a Visual Studio nella community di Gitter](https://gitter.im/Microsoft/VisualStudio).  Per questa opzione è necessario un account [GitHub](https://github.com/).
+
+## <a name="see-also"></a>Vedere anche
+* [Guida dell'amministratore di Visual Studio](visual-studio-administrator-guide.md)

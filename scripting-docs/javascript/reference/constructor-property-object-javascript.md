@@ -1,48 +1,52 @@
 ---
-title: "Propriet&#224; constructor (Object) (JavaScript) | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/18/2017"
-ms.prod: "windows-client-threshold"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-javascript"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "constructor"
-dev_langs: 
-  - "JavaScript"
-  - "TypeScript"
-  - "DHTML"
-helpviewer_keywords: 
-  - "constructor (proprietà)"
+title: "Proprietà constructor (Object) (JavaScript) | Documenti Microsoft"
+ms.custom: 
+ms.date: 01/18/2017
+ms.prod: windows-client-threshold
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-javascript
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords:
+- constructor
+dev_langs:
+- JavaScript
+- TypeScript
+- DHTML
+helpviewer_keywords:
+- constructor property
 ms.assetid: 6f5d0e9d-e85f-4fde-b558-744510483d69
-caps.latest.revision: 17
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 17
+caps.latest.revision: 
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.openlocfilehash: 569dab69906aa167ef486923bd7ceb7455ac243e
+ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/27/2017
 ---
-# Propriet&#224; constructor (Object) (JavaScript)
+# <a name="constructor-property-object-javascript"></a>Proprietà constructor (Object) (JavaScript)
 Specifica la funzione che crea un oggetto.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
   
 object.constructor  
 ```  
   
-## Note  
- L'argomento `object` obbligatorio è il nome di un oggetto o di una funzione.  
+## <a name="remarks"></a>Note  
+ Obbligatorio `object` è il nome di un oggetto o funzione.  
   
- La proprietà `constructor` è un membro del prototipo di ogni oggetto che dispone di un prototipo.  Include tutti gli oggetti [!INCLUDE[javascript](../../javascript/includes/javascript-md.md)] intrinseci tranne gli oggetti `Math` e `Global`.  La proprietà `constructor` include un riferimento alla funzione che costruisce le istanze dell'oggetto specifico.  
+ La proprietà `constructor` è un membro del prototipo di ogni oggetto per cui esiste un prototipo. Sono inclusi tutti gli intrinseci [!INCLUDE[javascript](../../javascript/includes/javascript-md.md)] oggetti ad eccezione di `Global` e `Math` oggetti. La proprietà `constructor` contiene un riferimento alla funzione che costruisce istanze di tale oggetto specifico.  
   
-## Esempio  
- Nell'esempio seguente viene illustrato l'utilizzo della proprietà constructor.  
+## <a name="example"></a>Esempio  
+ Nell'esempio seguente viene illustrato l'utilizzo della proprietà di costruttore.  
   
-```javascript  
+```JavaScript  
 // A constructor function.  
 function MyObj() {  
     this.number = 1;  
@@ -64,8 +68,8 @@ if (y.constructor == MyObj)
   
 ```  
   
-## Requisiti  
+## <a name="requirements"></a>Requisiti  
  [!INCLUDE[jsv2](../../javascript/reference/includes/jsv2-md.md)]  
   
-## Vedere anche  
- [Proprietà prototype \(Object\)](../../javascript/reference/prototype-property-object-javascript.md)
+## <a name="see-also"></a>Vedere anche  
+ [Proprietà prototype (Object)](../../javascript/reference/prototype-property-object-javascript.md)

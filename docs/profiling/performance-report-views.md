@@ -1,50 +1,49 @@
 ---
-title: "Visualizzazioni dei report degli strumenti per la profilatura | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "report, strumenti per la profilatura"
-  - "report degli strumenti per la profilatura"
-  - "strumenti per la profilatura, visualizzazioni dei report"
+title: Visualizzazioni dei rapporti di prestazioni | Microsoft Docs
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology: vs-ide-debug
+ms.topic: conceptual
+helpviewer_keywords:
+- reports, profiling tools
+- profiling tools reports
+- profiling tools, report views
 ms.assetid: 3e84e513-dc64-40bb-b385-03281f28b519
-caps.latest.revision: 24
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 24
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 553a2a53543f25d3794cf07ef760e42a010197f1
+ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/19/2018
 ---
-# Visualizzazioni dei report degli strumenti per la profilatura
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
-In questa sezione vengono fornite informazioni di riferimento relative a rapporti e visualizzazioni degli strumenti di profilatura di [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)].  Le visualizzazioni dei file di dati di profilatura sono riportate nell'ambiente di sviluppo integrato \(IDE\) di [!INCLUDE[vs_current_short](../code-quality/includes/vs_current_short_md.md)].  I rapporti vengono generati tramite lo strumento da riga di comando [VSPerfReport](../profiling/vsperfreport.md).  
+# <a name="performance-report-views"></a>Visualizzazioni dei rapporti di prestazioni
+Questa sezione fornisce informazioni di riferimento relative ai rapporti e alle visualizzazioni degli strumenti di profilatura di [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)]. Le visualizzazioni dei file di dati di profilatura sono riportate nell'ambiente di sviluppo integrato (IDE) di [!INCLUDE[vs_current_short](../code-quality/includes/vs_current_short_md.md)]. I rapporti vengono generati tramite lo strumento da riga di comando [VSPerfReport](../profiling/vsperfreport.md).  
   
-## In questa sezione  
+## <a name="in-this-section"></a>In questa sezione  
  [Visualizzazioni dei dati comuni](../profiling/common-data-views.md)  
- Informazioni di riferimento relative a visualizzazioni e rapporti dei file di dati di profilatura comuni a tutti i metodi di profilatura.  
+ Informazioni di riferimento per le visualizzazioni e i rapporti dei file di dati di profilatura comuni a tutti i metodi di profilatura.  
   
- [Visualizzazioni dei dati del metodo di campionamento](../profiling/profiler-sampling-method-data-views.md)  
- Informazioni di riferimento relative a visualizzazioni e rapporti dei file di dati di profilatura generati tramite il metodo di campionamento.  
+ [Sampling Method Data Views](../profiling/profiler-sampling-method-data-views.md) (Visualizzazioni dei dati del metodo di campionamento)  
+ Informazioni di riferimento per le visualizzazioni e i rapporti dei file di dati di profilatura generati tramite il metodo di campionamento.  
   
- [Visualizzazioni dei dati del metodo di strumentazione](../profiling/instrumentation-method-data-views.md)  
- Informazioni di riferimento relative a visualizzazioni e rapporti dei file di dati di profilatura generati tramite il metodo di strumentazione.  
+ [Instrumentation Method Data Views](../profiling/instrumentation-method-data-views.md) (Visualizzazioni dei dati del metodo di strumentazione)  
+ Informazioni di riferimento per le visualizzazioni e i rapporti dei file di dati di profilatura generati tramite il metodo di strumentazione.  
   
  [Visualizzazioni dei dati di memoria .NET](../profiling/dotnet-memory-data-views.md)  
- Informazioni di riferimento relative a visualizzazioni e rapporti dei file di dati di profilatura che includono dati di memoria .NET.  
+ Informazioni di riferimento per le visualizzazioni e i rapporti dei file di dati di profilatura che includono dati di memoria .NET.  
   
  [Visualizzazioni dei dati su conflitti tra risorse](../profiling/resource-contention-data-views.md)  
- Informazioni di riferimento relative a visualizzazioni e rapporti dei file di dati di profilatura generati tramite il metodo di concorrenza.  
+ Informazioni di riferimento per le visualizzazioni e i rapporti dei file di dati di profilatura generati tramite il metodo di concorrenza.  
   
- [Visualizzatore di concorrenze](../profiling/concurrency-visualizer.md)  
- Informazioni di riferimento relative a visualizzazioni e rapporti dei file di dati di profilatura generati tramite il metodo di concorrenza e che includono di dati di esecuzione di thread.  
+ [Visualizzatore di concorrenza](../profiling/concurrency-visualizer.md)  
+ Informazioni di riferimento per le visualizzazioni e i rapporti dei file di dati di profilatura generati tramite il metodo di concorrenza che includono dati di esecuzione di thread.  
   
  [Visualizzazione Interazioni tra livelli](../profiling/tier-interactions-view.md)  
- Informazioni di riferimento relative a visualizzazioni e rapporti dei file di dati di profilatura che includono dati di interazione dei livelli.  
+ Informazioni di riferimento per le visualizzazioni e i rapporti dei file di dati di profilatura che includono dati di interazione tra livelli.  
   
-## Vedere anche  
- [Analisi dei dati degli strumenti per la profilatura](../profiling/analyzing-performance-tools-data.md)
+## <a name="see-also"></a>Vedere anche  
+ [Analisi dei dati degli strumenti per le prestazioni](../profiling/analyzing-performance-tools-data.md)

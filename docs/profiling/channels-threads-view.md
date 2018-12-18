@@ -1,53 +1,52 @@
 ---
-title: "Canali (visualizzazione Thread) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "vs.cv.threads.timeline.channelnames"
-helpviewer_keywords: 
-  - "Visualizzatore di concorrenza, canali (visualizzazione Thread)"
+title: Canali (visualizzazione Thread) | Microsoft Docs
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology: vs-ide-debug
+ms.topic: conceptual
+f1_keywords:
+- vs.cv.threads.timeline.channelnames
+helpviewer_keywords:
+- Concurrency Visualizer, Channels (Threads View)
 ms.assetid: 2f798c17-2363-42a4-be94-a5751d208eac
-caps.latest.revision: 16
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 16
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 92d7af966f171b4719e919bb15b279aff6951a7b
+ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/19/2018
 ---
-# Canali (visualizzazione Thread)
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
-Il visualizzatore di concorrenza mostra quattro tipi di canali: canali dei thread, canali dei dischi, canali del marcatore e canali della GPU.  
+# <a name="channels-threads-view"></a>Canali (visualizzazione Thread)
+Nel visualizzatore di concorrenza appaiono quattro tipi di canali: canali di thread, canali di disco, canali di indicatore e canali GPU.  
   
-## Canali di thread  
- Un canale di thread mostra lo stato del thread, in base al colore, per un solo thread.  Se ci si posiziona sul nome del canale, viene visualizzata la funzione di avvio per il thread specificato.  Il visualizzatore della concorrenza rileva diversi tipi di thread.  Nella tabella seguente sono riportati i tipi più comuni.  
+## <a name="thread-channels"></a>Canali di thread  
+ Un canale di thread indica lo stato del thread, in base al colore, per un solo thread. Quando si posiziona il mouse sul nome del canale, viene visualizzata la funzione di avvio per il thread specificato. Il visualizzatore di concorrenza rileva diversi tipi di thread. I tipi più comuni sono descritti nella tabella seguente.  
   
 |||  
 |-|-|  
-|Thread principale|Il thread che ha avviato l'app.|  
-|Thread processo di lavoro|Un thread creato dal thread principale dell'applicazione.|  
-|Thread processo di lavoro CLR|Un thread di lavoro creato dal Common Language Runtime \(CLR\).|  
-|Thread di supporto del debugger|Un thread di lavoro creato dal debugger di Visual Studio.|  
-|Thread ConcRT|Un thread creato dal runtime di concorrenza Microsoft.|  
-|Thread GDI|Un thread creato da GDIPlus.|  
-|Thread OLE\/RPC|Un thread creato come thread di lavoro RPC.|  
-|Thread RPC|Un thread creato come thread RPC.|  
-|Thread Winsock|Un thread creato come thread Winsock.|  
-|Pool di thread|Un thread creato dal pool di thread CLR.|  
+|Thread principale|Il thread che ha avviato l'applicazione.|  
+|Thread di lavoro|Thread creato dal thread principale dell'applicazione.|  
+|Thread processo di lavoro CLR|Thread di lavoro creato da Common Language Runtime (CLR).|  
+|Supporto debugger|Thread di lavoro creato dal debugger di Visual Studio.|  
+|Thread ConcRT|Thread creato dal runtime di concorrenza di Microsoft.|  
+|Thread GDI|Thread creato da GDIPlus.|  
+|Thread OLE/RPC|Thread creato come thread di lavoro RPC.|  
+|Thread RPC|Thread creato come thread RPC.|  
+|Thread Winsock|Thread creato come thread Winsock.|  
+|Pool di thread|Thread creato dal pool di thread RPC.|  
   
-## Canali di dischi  
- I canali dei dischi corrispondono alle unità fisiche nel computer.  Poiché esistono canali separati per operazioni di lettura e scrittura per ogni unità fisica sul sistema, ogni unità dispone di due canali.  I numeri dei dischi corrispondono ai nomi dei dispositivi del kernel.  Un canale del disco viene visualizzato solo se c'era attività sul disco.  
+## <a name="disk-channels"></a>Canali di disco  
+ I canali di disco corrispondono alle unità fisiche nel computer. Poiché esistono canali separati per le operazioni di lettura e scrittura per ogni unità fisica nel sistema, ogni unità ha due canali. I numeri di disco corrispondono ai nomi dei dispositivi Kernel. Un canale di disco viene visualizzato solo se era presente attività nel disco.  
   
-## Canali del marcatore  
- I canali del marcatore corrispondono agli eventi generati dall'applicazione e dalle librerie che essa utilizza.  Ad esempio, Task Parallel Library, Parallel Patterns Library, e AMP C\+\+ generano eventi che vengono visualizzati come marcatori.  Ogni canale del marcatore viene associato a un ID del thread, visualizzato accanto alla descrizione del canale.  L'id identifica il thread che ha generato l'evento.  La descrizione del canale include il nome del provider ETW \(Event Tracing for Windows\) che ha generato l'evento.  Se il canale visualizza eventi da [SDK del visualizzatore di concorrenza](../profiling/concurrency-visualizer-sdk.md), il nome della serie viene visualizzato.  
+## <a name="marker-channels"></a>Canali di indicatore  
+ I canali di indicatore corrispondono agli eventi generati dall'applicazione e dalle librerie usate dalla stessa. Ad esempio, Task Parallel Library, Parallel Patterns Library e C++ AMP generano eventi che vengono visualizzati come indicatori. Ogni canale di indicatore è associato un ID di thread, che viene visualizzato accanto alla descrizione del canale. L'ID identifica il thread che ha generato l'evento. La descrizione del canale include il nome del provider ETW (Event Tracing for Windows) che ha generato gli eventi. Se il canale visualizza eventi dall'[SDK del visualizzatore di concorrenza](../profiling/concurrency-visualizer-sdk.md), viene visualizzato anche il nome della serie.  
   
-## Canali della GPU  
- I canali della GPU visualizzano informazioni sull'attività DirectX 11 nel sistema.  Ogni motore DirectX associato alla scheda grafica possiede un canale separato.  I segmenti singoli rappresentano il tempo impiegato per l'elaborazione di un pacchetto DMA.  
+## <a name="gpu-channels"></a>Canali GPU  
+ I canali GPU visualizzano informazioni sull'attività di DirectX 11 nel sistema.  Ogni motore DirectX associato alla scheda grafica ha un canale separato.  I singoli segmenti rappresentano il tempo trascorso per elaborare un pacchetto DMA.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Visualizzazione Thread](../profiling/threads-view-parallel-performance.md)

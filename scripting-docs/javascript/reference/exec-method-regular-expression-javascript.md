@@ -1,58 +1,62 @@
 ---
-title: "Metodo exec (Regular Expression) (JavaScript) | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/18/2017"
-ms.prod: "windows-client-threshold"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-javascript"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "exec"
-dev_langs: 
-  - "JavaScript"
-  - "TypeScript"
-  - "DHTML"
-helpviewer_keywords: 
-  - "exec (metodo)"
-  - "stringhe corrispondenti"
+title: Metodo exec (Regular Expression) (JavaScript) | Documenti Microsoft
+ms.custom: 
+ms.date: 01/18/2017
+ms.prod: windows-client-threshold
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-javascript
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords:
+- exec
+dev_langs:
+- JavaScript
+- TypeScript
+- DHTML
+helpviewer_keywords:
+- matching strings
+- Exec method
 ms.assetid: 83092452-60cc-4218-b4ae-af9e3cb96c34
-caps.latest.revision: 17
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 17
+caps.latest.revision: 
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.openlocfilehash: 426cc1a8162b03090289cf737a03d64a75df77e9
+ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/27/2017
 ---
-# Metodo exec (Regular Expression) (JavaScript)
-Esegue una ricerca in una stringa utilizzando un criterio di ricerca di espressioni regolari e restituisce una matrice contenente i risultati della ricerca.  
+# <a name="exec-method-regular-expression-javascript"></a>Metodo exec (Regular Expression) (JavaScript)
+Esegue una ricerca in una stringa utilizzando un modello di espressione regolare e restituisce una matrice contenente i risultati della ricerca.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
   
 rgExp.exec(str)   
 ```  
   
-## Parametri  
+## <a name="parameters"></a>Parametri  
  `rgExp`  
- Obbligatorio.  Istanza di un oggetto **Regular Expression** contenente il criterio di ricerca di espressioni regolari e i flag applicabili.  
+ Obbligatorio. Un'istanza di un **espressione regolare** oggetto contenente il criterio di espressione regolare e i flag applicabili.  
   
  `str`  
- Obbligatorio.  Oggetto `String` o valore letterale stringa in cui eseguire la ricerca.  
+ Obbligatorio. Il `String` o valore letterale stringa in cui eseguire la ricerca.  
   
-## Note  
- Se mediante il metodo `exec` non viene trovata alcuna corrispondenza, verrà restituito `null`.  In caso contrario, verrà restituita una matrice da `exec` e le proprietà dell'oggetto `RegExp` globale verranno aggiornate in modo da riflettere i risultati della corrispondenza.  L'elemento zero della matrice contiene l'intera corrispondenza, mentre gli elementi da 1 a *n* contengono qualsiasi sottocorrispondenza presente all'interno della corrispondenza.  Il comportamento è identico a quello del metodo `match` senza il flag globale \(**g**\) impostato.  
+## <a name="remarks"></a>Note  
+ Se il `exec` metodo non viene trovata una corrispondenza, restituito `null`. Se viene trovata una corrispondenza, `exec` restituisce una matrice e le proprietà dell'oggetto globale `RegExp` oggetto vengono aggiornati per riflettere i risultati della corrispondenza. Elemento zero della matrice contiene l'intera corrispondenza, mentre gli elementi da 1 -  *n*  conterranno le sottocorrispondenze che si sono verificati all'interno della corrispondenza. Questo comportamento è identico a quello del `match` metodo senza il flag globale (**g**) impostato.  
   
- Se per un'espressione regolare è impostato il flag globale, in `exec` verrà cercata la stringa che ha inizio nella posizione indicata dal valore di `lastIndex`.  Se il flag globale non è impostato, in `exec` viene ignorato il valore di `lastIndex` e viene eseguita la ricerca dall'inizio della stringa.  
+ Se il flag globale è impostato per un'espressione regolare, `exec` inizio in corrispondenza della posizione indicata dal valore di stringa di ricerca `lastIndex`. Se il flag globale non è impostato, `exec` ignora il valore di `lastIndex` e ricerche dall'inizio della stringa.  
   
- La matrice restituita dal metodo `exec` ha tre proprietà: **input**, **index** e **lastIndex.** La proprietà **input** contiene l'intera stringa cercata.  La proprietà **index** contiene la posizione della sottostringa corrispondente all'interno dell'intera stringa cercata.  La proprietà `lastIndex` contiene la posizione che segue l'ultimo carattere nella corrispondenza.  
+ La matrice restituita dal `exec` metodo ha tre proprietà, **input**, **indice** e **lastIndex.** Il **input** proprietà contiene l'intera stringa cercata. Il **indice** proprietà contiene la posizione della sottostringa corrispondente all'interno dell'intera stringa cercata. Il `lastIndex` proprietà contiene la posizione dopo l'ultimo carattere nella corrispondenza.  
   
-## Esempio  
- Nell'esempio seguente viene illustrato l'utilizzo del metodo `exec`:  
+## <a name="example"></a>Esempio  
+ Nell'esempio seguente viene illustrato l'utilizzo del `exec` metodo:  
   
-```javascript  
+```JavaScript  
 function RegExpTest()  
 {  
    var ver = Number(ScriptEngineMajorVersion() + "." + ScriptEngineMinorVersion())  
@@ -79,15 +83,15 @@ function RegExpTest()
 }  
 ```  
   
-## Requisiti  
+## <a name="requirements"></a>Requisiti  
  [!INCLUDE[jsv3](../../javascript/reference/includes/jsv3-md.md)]  
   
- **Si applica a**: [Oggetto Regular Expression](../../javascript/reference/regular-expression-object-javascript.md)  
+ **Si applica a**: [oggetto di espressione regolare](../../javascript/reference/regular-expression-object-javascript.md)  
   
-## Vedere anche  
- [Metodo match \(String\)](../../javascript/reference/match-method-string-javascript.md)   
- [Oggetto RegExp](../../javascript/reference/regexp-object-javascript.md)   
- [Regular Expression Syntax \(JavaScript\)](http://msdn.microsoft.com/it-it/ab0766e1-7037-45ed-aa23-706f58358c0e)   
- [Metodo search \(String\)](../../javascript/reference/search-method-string-javascript.md)   
- [Metodo test \(Regular Expression\)](../../javascript/reference/test-method-regular-expression-javascript.md)   
- [Regular Expression Programming \(JavaScript\)](http://msdn.microsoft.com/it-it/3b62e27c-4f07-4726-a95b-6e841807bfaf)
+## <a name="see-also"></a>Vedere anche  
+ [Metodo Match (String)](../../javascript/reference/match-method-string-javascript.md)   
+ [RegExp (oggetto)](../../javascript/reference/regexp-object-javascript.md)   
+ [Sintassi di espressione regolare (JavaScript)](http://msdn.microsoft.com/en-us/ab0766e1-7037-45ed-aa23-706f58358c0e)   
+ [Metodo Search (String)](../../javascript/reference/search-method-string-javascript.md)   
+ [Metodo test (Regular Expression)](../../javascript/reference/test-method-regular-expression-javascript.md)   
+ [Programmazione di espressione regolare (JavaScript)](http://msdn.microsoft.com/en-us/3b62e27c-4f07-4726-a95b-6e841807bfaf)

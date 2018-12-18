@@ -1,87 +1,88 @@
 ---
-title: "DEBUG_ADDRESS | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "DEBUG_ADDRESS"
-helpviewer_keywords: 
-  - "Struttura DEBUG_ADDRESS"
+title: DEBUG_ADDRESS | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology:
+- vs-ide-sdk
+ms.topic: conceptual
+f1_keywords:
+- DEBUG_ADDRESS
+helpviewer_keywords:
+- DEBUG_ADDRESS structure
 ms.assetid: 79f5e765-9aac-4b6e-82ef-bed88095e9ba
-caps.latest.revision: 10
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 10
+author: gregvanl
+ms.author: gregvanl
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: 07312208967aeccfbd81f44587f84a43dfebf4c0
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# DEBUG_ADDRESS
-[!INCLUDE[vs2017banner](../../../code-quality/includes/vs2017banner.md)]
-
-questa struttura rappresenta un indirizzo.  
+# <a name="debugaddress"></a>DEBUG_ADDRESS
+Questa struttura rappresenta un indirizzo.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```cpp  
 typedef struct _tagDEBUG_ADDRESS {  
-   ULONG32             ulAppDomainID;  
-   GUID                guidModule;  
-   _mdToken            tokClass;  
-   DEBUG_ADDRESS_UNION addr;  
+   ULONG32             ulAppDomainID;  
+   GUID                guidModule;  
+   _mdToken            tokClass;  
+   DEBUG_ADDRESS_UNION addr;  
 } DEBUG_ADDRESS;  
 ```  
   
-```c#  
+```csharp  
 public struct DEBUG_ADDRESS {  
-   public uint                ulAppDomainID;  
-   public Guid                guidModule;  
-   public int                 tokClass;  
-   public DEBUG_ADDRESS_UNION addr;  
+   public uint                ulAppDomainID;  
+   public Guid                guidModule;  
+   public int                 tokClass;  
+   public DEBUG_ADDRESS_UNION addr;  
 }  
 ```  
   
-## termini  
+## <a name="terms"></a>Termini  
  ulAppDomainID  
- L'id processo  
+ L'ID del processo.  
   
  guidModule  
  Il GUID del modulo che contiene questo indirizzo.  
   
  tokClass  
- il token che identifica la classe o il tipo di questo indirizzo.  
+ Il token che identifica la classe o un tipo di questo indirizzo.  
   
 > [!NOTE]
->  Questo valore è specifico di un provider del simbolo e pertanto non ha senso generale oltre a identificatore per un tipo di classe.  
+>  Questo valore è specifico di un provider di simboli e pertanto non ha alcun significato generale diverso come identificatore per un tipo di classe.  
   
- addr  
- [DEBUG\_ADDRESS\_UNION](../../../extensibility/debugger/reference/debug-address-union.md) Una struttura, che contiene un'unione di strutture che descrivono i diversi tipi di indirizzo.  il valore `addr`.`dwKind` deriva [ADDRESS\_KIND](../../../extensibility/debugger/reference/address-kind.md) dall'enumerazione, che viene illustrato come interpretare l'unione.  
+ Addr  
+ Oggetto [DEBUG_ADDRESS_UNION](../../../extensibility/debugger/reference/debug-address-union.md) struttura, che contiene l'unione di strutture che descrivono i tipi di indirizzo. Il valore `addr`.`dwKind` proviene il [ADDRESS_KIND](../../../extensibility/debugger/reference/address-kind.md) enumerazione, che viene illustrato come interpretare l'unione.  
   
-## Note  
- Questa struttura viene passata [GetAddress](../../../extensibility/debugger/reference/idebugaddress-getaddress.md) al metodo da riempire.  
+## <a name="remarks"></a>Note  
+ Questa struttura viene passata per il [GetAddress](../../../extensibility/debugger/reference/idebugaddress-getaddress.md) metodo deve essere compilato.  
   
- **Avviso \[C\+\+ solo\]**  
+ **Avviso [solo C++]**  
   
- Se `addr.dwKind` è `ADDRESS_KIND_METADATA_LOCAL` e se `addr.addr.addrLocal.pLocal` non è un valore null, è necessario chiamare `Release` sul puntatore di token:  
+ Se `addr.dwKind` è `ADDRESS_KIND_METADATA_LOCAL` e se `addr.addr.addrLocal.pLocal` non è un valore null, sarà necessario chiamare `Release` sul puntatore token:  
   
 ```  
 if (addr.dwKind == ADDRESS_KIND_METADATA_LOCAL &&  addr.addr.addrLocal.pLocal != NULL)  
 {  
-    addr.addr.addrLocal.pLocal->Release();  
+    addr.addr.addrLocal.pLocal->Release();  
 }  
 ```  
   
-## Requisiti  
- intestazione: sh.h  
+## <a name="requirements"></a>Requisiti  
+ Intestazione: sh.h  
   
- Spazio dei nomi: Microsoft.VisualStudio.Debugger.Interop  
+ Namespace: Microsoft.VisualStudio.Debugger.Interop  
   
  Assembly: Microsoft.VisualStudio.Debugger.Interop.dll  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Strutture e unioni](../../../extensibility/debugger/reference/structures-and-unions.md)   
  [GetAddress](../../../extensibility/debugger/reference/idebugaddress-getaddress.md)   
- [DEBUG\_ADDRESS\_UNION](../../../extensibility/debugger/reference/debug-address-union.md)   
- [ADDRESS\_KIND](../../../extensibility/debugger/reference/address-kind.md)
+ [DEBUG_ADDRESS_UNION](../../../extensibility/debugger/reference/debug-address-union.md)   
+ [ADDRESS_KIND](../../../extensibility/debugger/reference/address-kind.md)

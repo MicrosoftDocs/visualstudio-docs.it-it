@@ -1,74 +1,47 @@
 ---
-title: "Migliorare la qualità del codice"
-ms.custom: na
-ms.date: 02/17/2017
-ms.reviewer: na
-ms.suite: na
-ms.technology:
-- vs-devops-test
-ms.tgt_pltfrm: na
-ms.topic: article
+title: Strumenti di test di Visual Studio | Microsoft Docs
+ms.date: 03/16/2018
+ms.technology: vs-ide-test
+ms.topic: conceptual
 helpviewer_keywords:
-- Visual Studio ALM
-- team-based development
-ms.assetid: 73baa961-c21f-43fe-bb92-3f59ae9b5945
-caps.latest.revision: 39
-ms.author: douge
+- testing tools [Visual Studio]
+- unit tests [Visual Studio]
+ms.author: gewarren
 manager: douge
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 11a9cee75f912c5fb31cf4a031644abe9c63d744
-ms.openlocfilehash: db500747061b436db2a0897e5b43a1cae4a3acae
-ms.contentlocale: it-it
-ms.lasthandoff: 06/03/2017
-
+ms.workload:
+- multiple
+author: gewarren
+ms.openlocfilehash: dec57e0f51b9033d9808c36a3ed9ed59c0221131
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# <a name="improve-code-quality"></a>Migliorare la qualità del codice
-Che cos'è la qualità del codice? Precisione, manutenibilità e anche eleganza sono tutti aspetti di cui tenere conto per la creazione di codice eccellente. Indipendentemente dalla definizione, gli strumenti di test di Visual Studio consentono allo sviluppatore e al team di creare e gestire standard elevati di eccellenza del codice.  
-  
- **Requisiti**  
-  
--   Alcuni degli strumenti e delle funzionalità descritte in questa sezione sono disponibili solo in edizioni specifiche di Visual Studio e non in tutte le versioni. I requisiti di edizione specifici sono elencati nella documentazione per questi strumenti e funzionalità.  
-  
-## <a name="in-this-section"></a>In questa sezione  
- Nella tabella seguente sono riportate descrizioni di attività comuni e collegamenti a informazioni aggiuntive sulla corretta esecuzione di queste attività.  
-  
-|||  
-|-|-|  
-|[Eseguire unit test del codice](../test/unit-test-your-code.md)|Esplora test facilita l'integrazione degli unit test nelle procedure di sviluppo. È possibile utilizzare il framework per unit test di Microsoft o uno tra i diversi framework di terze parti o open source.|  
-|[Live Unit Testing con Visual Studio](../test/live-unit-testing.md)|Live Unit Testing consente di eseguire automaticamente unit test in background e di visualizzare graficamente i risultati di code coverage e test nell'editor del codice di Visual Studio.|  
-|[Analisi della qualità delle applicazioni](../code-quality/analyzing-application-quality-by-using-code-analysis-tools.md)|Gli strumenti di analisi del codice statico trovano errori di progettazione, utilizzo, gestibilità e stile nel codice C++ e gestito. Molti di questi problemi possono causare bug che sono difficili da riprodurre nell'ambiente di test standard.|  
-|[Misurazione della complessità e della manutenibilità del codice gestito](../code-quality/measuring-complexity-and-maintainability-of-managed-code.md)|La metrica del codice è un insieme di misure del software in grado di fornire agli sviluppatori una migliore comprensione del codice che stanno sviluppando. Le metriche includono un indice di manutenibilità per funzioni e classi, complessità ciclomatica di funzioni, profondità dell'ereditarietà delle classi e quantità di accoppiamenti tra le classi.|  
-  
-## <a name="related-scenarios"></a>Scenari correlati  
- [Panoramica di DevOps per Team Services e TFS](https://www.visualstudio.com/docs/devops-alm-overview)  
- Se non si ha familiarità con Visual Studio Team Foundation e Visual Studio Team Services, è possibile acquisire ulteriori informazioni sul loro uso in un ambiente di sviluppo team per migliorare la produttività e ridurre i rischi correlati allo sviluppo dell'applicazione.  
-  
- [Analisi e modellazione dell'architettura](../modeling/analyze-and-model-your-architecture.md)  
- È possibile utilizzare [!INCLUDE[vsPreExt](../test/includes/vspreext_md.md)] per gestire le problematiche e le difficoltà legate alla progettazione del software. [!INCLUDE[vsPreShort](../test/includes/vspreshort_md.md)] consente di modellare visivamente l'applicazione, sia nello stato attuale sia nello stato futuro. È possibile creare e gestire diagrammi con i quali visualizzare i modelli logici dell'applicazione mentre vengono mappati ai modelli fisici allo scopo di poter modificare, convalidare e analizzare il software in fase di progettazione.  
-  
- [Test dell'applicazione](https://www.visualstudio.com/docs/test/overview)  
- È possibile utilizzare [!INCLUDE[vsPreShort](../test/includes/vspreshort_md.md)] e [!INCLUDE[vsUltShort](../test/includes/vsultshort_md.md)] per migliorare la produttività nell'intero ciclo di vita dei test. [!INCLUDE[vsPreShort](../test/includes/vspreshort_md.md)] o [!INCLUDE[vsUltShort](../test/includes/vsultshort_md.md)] consentono di pianificare il lavoro di test richiesto. È possibile creare, gestire, modificare ed eseguire sia test manuali che automatici. È inoltre possibile rivedere lo stato di avanzamento dei test in base al piano.  
-  
- [Protezione dell'applicazione con PreEmptive Protection - Dotfuscator](../ide/dotfuscator/index.md)  
- È possibile usare la versione gratuita di Dotfuscator Community Edition per proteggere segreti commerciali e altri dati di proprietà intellettuale, ridurre gli attacchi di pirateria e i rischi di contraffazione, nonché evitare manomissioni e operazioni di debug non autorizzate.  Dotfuscator offre funzionalità per la protezione avanzata degli assembly compilati senza richiedere altre attività di programmazione e nemmeno l'accesso al codice sorgente.
-  
- [Compilazione dell'applicazione](https://www.visualstudio.com/docs/build/overview)  
- È possibile utilizzare [!INCLUDE[esprbuild](../test/includes/esprbuild_md.md)] per creare e gestire compilazioni automatiche per il codice. [!INCLUDE[esprbuild](../test/includes/esprbuild_md.md)] consente di creare ed eliminare server per distribuire le compilazioni. Inoltre, è possibile analizzare le tendenze di compilazione.  
-  
- [Tenere traccia del lavoro tramite Visual Studio Online o Team Foundation Server](https://www.visualstudio.com/docs/work/overview)  
- È possibile utilizzare [!INCLUDE[vstsTfsLong](../test/includes/vststfslong_md.md)] per pianificare e tenere traccia dei progetti sia che si utilizzi il processo Agile, il processo formale o una variazione dei due. Pianificando i progetti, tenendo traccia dello stato di avanzamento rispetto al piano e apportando le modifiche necessarie, è possibile ridurre i rischi, evitare imprevisti e gestire il costo dei progetti.
+# <a name="testing-tools-in-visual-studio"></a>Strumenti di test di Visual Studio
 
+Gli strumenti di test di Visual Studio consentono allo sviluppatore e al team di creare e gestire standard di eccellenza del codice elevati.
+
+- La finestra **Esplora test** facilita l'integrazione degli [unit test](../test/unit-test-your-code.md) nelle procedure di sviluppo. È possibile utilizzare il framework per unit test di Microsoft o uno tra i diversi framework di terze parti o open source.
+
+- [IntelliTest](../test/generate-unit-tests-for-your-code-with-intellitest.md) genera automaticamente unit test e dati di test per il codice gestito.
+
+- [Code coverage](../test/using-code-coverage-to-determine-how-much-code-is-being-tested.md) determina la percentuale di codice del progetto che viene effettivamente testata dai test codificati come ad esempio gli unit test.
+
+- [Microsoft Fakes](../test/isolating-code-under-test-with-microsoft-fakes.md) consente di isolare il codice che si sta testando sostituendo altre parti dell'applicazione con stub o shim.
+
+- [Live Unit Testing](../test/live-unit-testing.md) consente di eseguire automaticamente unit test in background e di visualizzare graficamente i risultati di code coverage e test nell'editor del codice di Visual Studio.
+
+- I [test codificati dell'interfaccia utente](../test/use-ui-automation-to-test-your-code.md) consentono di testare l'applicazione tramite l'interfaccia utente.
+
+- I [test di carico](../test/quickstart-create-a-load-test-project.md) simulano il carico su un'applicazione server tramite l'esecuzione di unit test e test delle prestazioni Web.
+
+> [!NOTE]
+> Il testing unità è disponibile in tutte le edizioni di Visual Studio. Altri strumenti di test, come ad esempio Live Unit Testing, IntelliTest, e i test codificati dell'interfaccia utente sono disponibili solo in Visual Studio Enterprise Edition. Per altre informazioni sulle edizioni, vedere [Confronta gli IDE di Visual Studio 2017](https://www.visualstudio.com/vs/compare/).
+
+## <a name="related-scenarios"></a>Scenari correlati
+
+* [Exploratory & manual testing (VSTS)](/vsts/manual-test/) (Test manuali ed esplorativi VSTS)
+* [Load testing (VSTS)](/vsts/load-test/index) (Test di carico VSTS)
+* [Continuous testing (VSTS)](/vsts/build-release/test/index) (Test continuativi VSTS)
+* [DevOps overview for Team Services and TFS (VSTS)](/vsts/user-guide/devops-alm-overview) (Panoramica di DevOps per Team Services e TFS (VSTS))
+* [Strumenti di analisi del codice](../code-quality/analyzing-application-quality-by-using-code-analysis-tools.md)

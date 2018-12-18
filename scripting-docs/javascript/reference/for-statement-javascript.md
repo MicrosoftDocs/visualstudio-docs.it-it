@@ -1,69 +1,73 @@
 ---
-title: "Istruzione for (JavaScript) | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/18/2017"
-ms.prod: "windows-client-threshold"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-javascript"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "for_JavaScriptKeyword"
-dev_langs: 
-  - "JavaScript"
-  - "TypeScript"
-  - "DHTML"
-helpviewer_keywords: 
-  - "cicli (strutture), istruzioni for"
+title: Istruzione for (JavaScript) | Documenti Microsoft
+ms.custom: 
+ms.date: 01/18/2017
+ms.prod: windows-client-threshold
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-javascript
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords:
+- for_JavaScriptKeyword
+dev_langs:
+- JavaScript
+- TypeScript
+- DHTML
+helpviewer_keywords:
+- loop structures, for statements
 ms.assetid: bae0ec40-152e-43f3-969b-3696489ec5c4
-caps.latest.revision: 16
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 16
+caps.latest.revision: 
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.openlocfilehash: 7142dbb8c00a351918d0821c3ca7dba3d7b2acb6
+ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/27/2017
 ---
-# Istruzione for (JavaScript)
-Esegue un blocco di istruzioni fino a quando una condizione specificata non risulta true.  
+# <a name="for-statement-javascript"></a>Istruzione for (JavaScript)
+Esegue un blocco di istruzioni purché una determinata condizione è true.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
 for ([initialization]; [test]; [increment])  
-   statement   
+   statement   
 ```  
   
-## Parametri  
+## <a name="parameters"></a>Parametri  
  `initialization`  
- Facoltativo.  Espressione.  Viene eseguita una sola volta prima dell'esecuzione del ciclo.  
+ Parametro facoltativo. Un'espressione. Questa espressione viene eseguita una sola volta, prima che venga eseguito il ciclo.  
   
  `test`  
- Facoltativo.  Espressione booleana.  Se `test` è `true`, `statement` viene eseguito.  Se `test` è `false`, il ciclo viene terminato.  
+ Parametro facoltativo. Espressione booleana. Se `test` è `true`, `statement` viene eseguita. Se `test` se `false`, il ciclo viene interrotto.  
   
  `increment`  
- Facoltativo.  Espressione.  L'espressione di incremento viene eseguita al termine di ciascuna iterazione.  
+ Parametro facoltativo. Un'espressione. L'espressione di incremento viene eseguita alla fine di ogni iterazione del ciclo.  
   
  `statement`  
- Facoltativo.  Una o più istruzioni da eseguire se `test` è **true**.  Può trattarsi di un'istruzione composta.  
+ Parametro facoltativo. Una o più istruzioni da eseguire se `test` è **true**. Può essere un'istruzione composta.  
   
-## Note  
- Un ciclo `for` viene in genere utilizzato quando è noto il numero di cicli da eseguire.  Un ciclo `for` è utile per scorrere le matrici ed eseguire l'elaborazione sequenziale.  
+## <a name="remarks"></a>Note  
+ In genere utilizzato un `for` ciclo quando il ciclo è per essere eseguito un numero limitato di volte. Oggetto `for` ciclo è utile per scorrere le matrici e per eseguire elaborazione sequenziale.  
   
- Poiché il test di un'espressione condizionale avviene prima dell'esecuzione del ciclo, un'istruzione `for` viene eseguita zero o più volte.  
+ Il test di un'espressione condizionale avviene prima dell'esecuzione del ciclo, pertanto un `for` istruzione viene eseguito zero o più volte.  
   
- In qualsiasi riga di un blocco di istruzioni del ciclo `for` è possibile utilizzare l'istruzione `break` per uscire dal ciclo oppure l'istruzione `continue` per trasferire il controllo alla successiva iterazione del ciclo.  
+ In qualsiasi riga in un `for` blocco di istruzione di ciclo, è possibile utilizzare il `break` uscire dal ciclo oppure è possibile utilizzare il `continue` istruzione per trasferire il controllo all'iterazione successiva del ciclo.  
   
-## Esempio  
- Nell'esempio seguente l'istruzione `for` esegue le istruzioni incluse nel modo seguente:  
+## <a name="example"></a>Esempio  
+ Nell'esempio seguente, il `for` istruzione esegue le istruzioni incluse nel modo seguente:  
   
--   Innanzitutto, viene valutato il valore iniziale della variabile `i`.  
+-   Innanzitutto, il valore iniziale della variabile `i` viene valutata.  
   
--   Quindi, fino a quando il valore di `i` è minore o uguale a 9, vengono eseguite le istruzioni `document.write` e viene rivalutato `i`.  
+-   Quindi, purché il valore di `i` è minore o uguale a 9, il `document.write` le istruzioni vengono eseguite e `i` viene rivalutata.  
   
--   Quando `i` è maggiore di 9, la condizione diventa false e il controllo viene trasferito al di fuori del ciclo.  
+-   Quando `i` è maggiore di 9, la condizione non diventa false e il controllo viene trasferito all'esterno del ciclo.  
   
-```javascript  
+```JavaScript  
 // i is set to 0 at the start and is incremented by 1 at the  
 // end of each iteration.  
 // The loop terminates when i is not less than or equal to  
@@ -76,10 +80,10 @@ for (var i = 0; i <= 9; i++) {
 // Output: 0 1 2 3 4 5 6 7 8 9  
 ```  
   
-## Esempio  
- Tutte le espressioni dell'istruzione `for` sono facoltative.  Nell'esempio seguente le istruzioni `for` creano un ciclo infinito e viene utilizzata un'istruzione `break` per uscire dal ciclo.  
+## <a name="example"></a>Esempio  
+ Tutte le espressioni del `for` istruzione sono facoltativi. Nell'esempio seguente, il `for` istruzioni consentono di creare un ciclo infinito e un `break` istruzione viene utilizzata per uscire dal ciclo.  
   
-```javascript  
+```JavaScript  
 var j = 0;  
 for (;;) {  
     if (j >= 5) {  
@@ -92,9 +96,9 @@ for (;;) {
 // Output: 1 2 3 4 5  
 ```  
   
-## Requisiti  
+## <a name="requirements"></a>Requisiti  
  [!INCLUDE[jsv1](../../javascript/misc/includes/jsv1-md.md)]  
   
-## Vedere anche  
- [Istruzione for...in](../../javascript/reference/for-dot-dot-dot-in-statement-javascript.md)   
+## <a name="see-also"></a>Vedere anche  
+ [for.... nell'istruzione](../../javascript/reference/for-dot-dot-dot-in-statement-javascript.md)   
  [Istruzione while](../../javascript/reference/while-statement-javascript.md)

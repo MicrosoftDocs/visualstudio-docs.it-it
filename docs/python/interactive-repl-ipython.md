@@ -1,30 +1,31 @@
 ---
-title: REPL IPython in Visual Studio | Microsoft Docs
-ms.custom: 
-ms.date: 7/13/2017
-ms.reviewer: 
-ms.suite: 
+title: REPL IPython (finestra interattiva) | Microsoft Docs
+description: Utilizzo della finestra interattiva di Visual Studio in modalità IPython per un ambiente di sviluppo interattivo intuitivo e semplice da usare con funzionalità di elaborazione parallela interattiva.
+ms.custom: ''
+ms.date: 07/13/2017
+ms.reviewer: ''
+ms.suite: ''
 ms.technology:
 - devlang-python
-ms.devlang: python
-ms.tgt_pltfrm: 
-ms.topic: article
-ms.assetid: c9bd06b0-2021-4e55-b933-8346476224a8
-caps.latest.revision: 1
+dev_langs:
+- python
+ms.tgt_pltfrm: ''
+ms.topic: conceptual
 author: kraigb
 ms.author: kraigb
 manager: ghogen
+ms.workload:
+- python
+- data-science
+ms.openlocfilehash: 76f34e28e35af00ed6352177a00f669b351058d1
+ms.sourcegitcommit: 29ef88fc7d1511f05e32e9c6e7433e184514330d
 ms.translationtype: HT
-ms.sourcegitcommit: 6d25db4639f2c8391c1e32542701ea359f560178
-ms.openlocfilehash: 9553aa4944f652c7b8505b0d99d5c2b88167f872
-ms.contentlocale: it-it
-ms.lasthandoff: 07/18/2017
-
+ms.contentlocale: it-IT
+ms.lasthandoff: 03/28/2018
 ---
-
 # <a name="using-ipython-in-the-interactive-window"></a>Uso di IPython nella finestra interattiva
 
-La finestra interattiva di Visual Studio in modalità IPython costituisce un ambiente di sviluppo interattivo avanzato e al contempo intuitiva avanzato e semplice da usare che include funzionalità di elaborazione parallela interattiva. In questo argomento viene illustrato l'uso di IPython nella finestra interattiva di Visual Studio, in cui sono anche disponibili tutte le funzionalità della [finestra interattiva](interactive-repl.md) normale.
+La finestra interattiva di Visual Studio in modalità IPython costituisce un ambiente di sviluppo interattivo avanzato e al contempo intuitiva avanzato e semplice da usare che include funzionalità di elaborazione parallela interattiva. Questo articolo illustra l'uso di IPython nella finestra interattiva di Visual Studio, in cui sono anche disponibili tutte le funzionalità della [finestra interattiva](python-interactive-repl-in-visual-studio.md) normale.
 
 Per questa procedura dettagliata è necessario aver installato l'ambiente [Anaconda](https://www.continuum.io), che include IPython e le librerie necessarie.
 
@@ -35,7 +36,7 @@ Per questa procedura dettagliata è necessario aver installato l'ambiente [Anaco
 
 1. Osservare la scheda **Pacchetti** (o **pip**) e verificare che siano elencati `IPython` e `matplotlib`. In caso contrario, installarli qui.
 
-1. Selezionare la scheda **Panoramica** e quindi **Usa la modalità interattiva IPython.** In Visual Studio 2015 selezionare **Configure interactive options** (Configura opzioni interattive) per aprire la finestra di dialogo **Opzioni** e quindi impostare **Modalità interattiva** su IPython e selezionare **OK**.    
+1. Selezionare la scheda **Panoramica** e quindi **Usa la modalità interattiva IPython.** In Visual Studio 2015 selezionare **Configure interactive options** (Configura opzioni interattive) per aprire la finestra di dialogo **Opzioni** e quindi impostare **Modalità interattiva** su IPython e selezionare **OK**.
 
 1. Selezionare **Apri finestra interattiva** per visualizzare la finestra interattiva in modalità IPython. Potrebbe essere necessario reimpostare la finestra se è stata modificata solo la modalità interattiva. Potrebbe anche essere necessario premere INVIO se viene visualizzato solo un prompt >>>.
 
@@ -65,26 +66,25 @@ Per questa procedura dettagliata è necessario aver installato l'ambiente [Anaco
         xs = np.arange(20)
         ys = np.random.rand(20)
         # You can provide either a single color or an array. To demonstrate this,
-        # the first bar of each set will be colored cyan.
-        cs = [c] * len(xs) 
-        cs[0] = 'c' 
+        # the first bar of each set is colored cyan.
+        cs = [c] * len(xs)
+        cs[0] = 'c'
         ax.bar(xs, ys, zs=z, zdir='y', color=cs, alpha=0.8)
 
-    ax.set_xlabel('X') 
-    ax.set_ylabel('Y') 
-    ax.set_zlabel('Z') 
+    ax.set_xlabel('X')
+    ax.set_ylabel('Y')
+    ax.set_zlabel('Z')
     plt.show()
     ```
 
     ![Invio di codice dall'editor alla finestra interattiva](media/ipython-repl-05.png)
 
 1. Per visualizzare i grafici all'esterno della finestra interattiva, eseguire il codice invece di usare il comando **Debug > Avvia senza eseguire debug**.
-    
+
 In IPython sono disponibili molte altre funzionalità utili, ad esempio l'escape alla shell di sistema, la sostituzione delle variabili, l'acquisizione di output e così via. Per altre informazioni, vedere la [documentazione di IPython](http://ipython.org/documentation.html).
 
-## <a name="related-topics"></a>Argomenti correlati
+## <a name="related-articles"></a>Articoli correlati
 
 - Per usare Jupyter facilmente e senza installazione, provare la versione gratuita del [servizio ospitato Azure Notebooks](https://notebooks.azure.com/) che consente di mantenere e condividere i blocchi appunti con altri utenti.
 
-- È anche possibile eseguire Jupyter (precedentemente noto come IPython) nella propria macchina virtuale Windows o Linux in Azure. Per informazioni dettagliate, vedere [Creazione di una macchina virtuale di Azure, installazione di Jupyter ed esecuzione di Jupyter Notebook in Azure](https://docs.microsoft.com/azure/virtual-machines/virtual-machines-linux-jupyter-notebook).
-
+- È anche possibile eseguire Jupyter (precedentemente noto come IPython) nella propria macchina virtuale Windows o Linux in Azure. Per informazioni dettagliate, vedere [Creazione di una macchina virtuale di Azure, installazione di Jupyter ed esecuzione di Jupyter Notebook in Azure](/azure/virtual-machines/virtual-machines-linux-jupyter-notebook).

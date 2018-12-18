@@ -1,14 +1,10 @@
 ---
-title: 'Walkthrough: Automating an Application from a Custom Task Pane | Microsoft Docs'
-ms.custom: 
+title: "Procedura dettagliata: Automazione di un'applicazione da un riquadro attività personalizzato | Documenti Microsoft"
+ms.custom: ''
 ms.date: 02/02/2017
-ms.prod: visual-studio-dev14
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - office-development
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: conceptual
 dev_langs:
 - VB
 - CSharp
@@ -19,133 +15,137 @@ helpviewer_keywords:
 - custom task panes [Office development in Visual Studio], automating applications
 - custom task panes [Office development in Visual Studio], PowerPoint
 - task panes [Office development in Visual Studio], automating applications
-ms.assetid: 77be5ab5-e330-4564-87ec-9cba564ba8f9
-caps.latest.revision: 37
-author: kempb
-ms.author: kempb
-manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: eb5c9550fd29b0e98bf63a7240737da4f13f3249
-ms.openlocfilehash: 0b8ae724f9104943782583c523cffb3c1e6836da
-ms.contentlocale: it-it
-ms.lasthandoff: 08/30/2017
-
+author: TerryGLee
+ms.author: tglee
+manager: douge
+ms.workload:
+- office
+ms.openlocfilehash: c7269690e9ab7835f355939340d6c91dc56dd008
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# <a name="walkthrough-automating-an-application-from-a-custom-task-pane"></a>Walkthrough: Automating an Application from a Custom Task Pane
-  This walkthrough demonstrates how to create a custom task pane that automates PowerPoint. The custom task pane inserts dates into a slide when the user clicks a <xref:System.Windows.Forms.MonthCalendar> control that is on the custom task pane.  
+# <a name="walkthrough-automating-an-application-from-a-custom-task-pane"></a>Procedura dettagliata: automazione di un'applicazione da un riquadro attività personalizzato
+  Questa procedura dettagliata mostra come creare un riquadro attività personalizzato che consente di automatizzare PowerPoint. Il riquadro attività personalizzato inserisce le date in una diapositiva quando l'utente fa clic su un controllo <xref:System.Windows.Forms.MonthCalendar> che si trova nel riquadro attività personalizzato.  
   
  [!INCLUDE[appliesto_olkallapp](../vsto/includes/appliesto-olkallapp-md.md)]  
   
- Although this walkthrough uses PowerPoint specifically, the concepts demonstrated by the walkthrough are applicable to any applications that are listed above.  
+ Benché questa procedura dettagliata usi PowerPoint in modo specifico, i concetti illustrati sono applicabili a tutte le applicazioni elencate in precedenza.  
   
- This walkthrough illustrates the following tasks:  
+ Questa procedura dettagliata illustra le attività seguenti:  
   
--   Designing the user interface of the custom task pane.  
+-   Progettazione dell'interfaccia utente del riquadro attività personalizzato.  
   
--   Automating PowerPoint from the custom task pane.  
+-   Automazione di PowerPoint dal riquadro attività personalizzato.  
   
--   Displaying the custom task pane in PowerPoint.  
+-   Visualizzazione del riquadro attività personalizzato in PowerPoint.  
   
 > [!NOTE]  
->  Your computer might show different names or locations for some of the Visual Studio user interface elements in the following instructions. The Visual Studio edition that you have and the settings that you use determine these elements. For more information, see [Personalize the Visual Studio IDE](../ide/personalizing-the-visual-studio-ide.md).  
+>  I nomi o i percorsi visualizzati per alcuni elementi dell'interfaccia utente di Visual Studio nelle istruzioni seguenti potrebbero essere diversi nel computer in uso. La versione di Visual Studio in uso e le impostazioni configurate determinano questi elementi. Per altre informazioni, vedere [Personalizzare l'IDE di Visual Studio](../ide/personalizing-the-visual-studio-ide.md).  
   
-## <a name="prerequisites"></a>Prerequisites  
- You need the following components to complete this walkthrough:  
+## <a name="prerequisites"></a>Prerequisiti  
+ Per completare la procedura dettagliata, è necessario disporre dei componenti seguenti:  
   
 -   [!INCLUDE[vsto_vsprereq](../vsto/includes/vsto-vsprereq-md.md)]  
   
--   Microsoft PowerPoint 2010 or [!INCLUDE[PowerPoint_15_short](../vsto/includes/powerpoint-15-short-md.md)].  
+-   Microsoft PowerPoint 2010 o [!INCLUDE[PowerPoint_15_short](../vsto/includes/powerpoint-15-short-md.md)].  
   
-## <a name="creating-the-add-in-project"></a>Creating the Add-in Project  
- The first step is to create an VSTO Add-in project for PowerPoint.  
+## <a name="creating-the-add-in-project"></a>Creazione del progetto di componente aggiuntivo  
+ Il primo passaggio consiste nel creare un progetto di componente aggiuntivo VSTO per PowerPoint.  
   
-#### <a name="to-create-a-new-project"></a>To create a new project  
+#### <a name="to-create-a-new-project"></a>Per creare un nuovo progetto  
   
-1.  Create a PowerPoint VSTO Add-in project with the name **MyAddIn**, by using the PowerPoint Add-in project template. For more information, see [How to: Create Office Projects in Visual Studio](../vsto/how-to-create-office-projects-in-visual-studio.md).  
+1.  Creare un progetto di componente aggiuntivo VSTO per PowerPoint denominato **MyAddIn**, usando il modello per il progetto di componente aggiuntivo di PowerPoint. Per altre informazioni, vedere [How to: Create Office Projects in Visual Studio](../vsto/how-to-create-office-projects-in-visual-studio.md).  
   
-     [!INCLUDE[vsprvs](../sharepoint/includes/vsprvs-md.md)] opens the **ThisAddIn.cs** or **ThisAddIn.vb** code file and adds the **MyAddIn** project to **Solution Explorer**.  
+     [!INCLUDE[vsprvs](../sharepoint/includes/vsprvs-md.md)] apre il file di codice **ThisAddIn.cs** o **ThisAddIn.vb** e aggiunge il progetto **MyAddIn** a **Esplora soluzioni**.  
   
-## <a name="designing-the-user-interface-of-the-custom-task-pane"></a>Designing the User Interface of the Custom Task Pane  
- There is no visual designer for custom task panes, but you can design a user control with the layout you want. Later in this walkthrough, you will add the user control to the custom task pane.  
+## <a name="designing-the-user-interface-of-the-custom-task-pane"></a>Progettazione dell'interfaccia utente del riquadro attività personalizzato  
+ Non sono presenti finestre di visualizzazione visiva per i riquadri attività personalizzati, ma è possibile progettare un controllo utente con il layout desiderato. Più avanti in questa procedura dettagliata il controllo utente verrà aggiunto al riquadro attività personalizzato.  
   
-#### <a name="to-design-the-user-interface-of-the-custom-task-pane"></a>To design the user interface of the custom task pane  
+#### <a name="to-design-the-user-interface-of-the-custom-task-pane"></a>Per progettare l'interfaccia utente del riquadro attività personalizzato  
   
-1.  On the **Project** menu, click **Add User Control**.  
+1.  Nel menu **Progetto** fare clic su **Aggiungi controllo utente**.  
   
-2.  In the **Add New Item** dialog box, change the name of the user control to **MyUserControl**, and click **Add**.  
+2.  Nella finestra di dialogo **Aggiungi nuovo elemento** modificare il nome del controllo utente su **MyUserControl**e fare clic su **Aggiungi**.  
   
-     The user control opens in the designer.  
+     Il controllo utente viene visualizzato nella finestra di progettazione.  
   
-3.  From the **Common Controls** tab of the **Toolbox**, drag a **MonthCalendar** control to the user control.  
+3.  Nella scheda **Controlli comuni** della **casella degli strumenti**trascinare un controllo **MonthCalendar** nel controllo utente.  
   
-     If the **MonthCalendar** control is larger than the design surface of the user control, resize the user control to fit the **MonthCalendar** control.  
+     Se il controllo **MonthCalendar** è più ampio dell'area di progettazione del controllo utente, ridimensionare il controllo utente per adattare il controllo **MonthCalendar** .  
   
-## <a name="automating-powerpoint-from-the-custom-task-pane"></a>Automating PowerPoint from the Custom Task Pane  
- The purpose of the VSTO Add-in is to put a selected date on the first slide of the active presentation. Use the <xref:System.Windows.Forms.MonthCalendar.DateChanged> event of the control to add the selected date whenever it changes.  
+## <a name="automating-powerpoint-from-the-custom-task-pane"></a>Automazione di PowerPoint dal riquadro attività personalizzato  
+ Lo scopo del componente aggiuntivo VSTO è inserire una data selezionata nella prima diapositiva della presentazione attiva. Usare l'evento <xref:System.Windows.Forms.MonthCalendar.DateChanged> del controllo per aggiungere la data selezionata ogni volta che viene modificata.  
   
-#### <a name="to-automate-powerpoint-from-the-custom-task-pane"></a>To automate PowerPoint from the custom task pane  
+#### <a name="to-automate-powerpoint-from-the-custom-task-pane"></a>Per automatizzare PowerPoint dal riquadro attività personalizzato  
   
-1.  In the designer, double-click the <xref:System.Windows.Forms.MonthCalendar> control.  
+1.  Nella finestra di progettazione fare doppio clic sul controllo <xref:System.Windows.Forms.MonthCalendar> .  
   
-     The **MyUserControl.cs** or **MyUserControl.vb** file opens, and an event handler for the <xref:System.Windows.Forms.MonthCalendar.DateChanged> event is created.  
+     Il file **MyUserControl.cs** o **MyUserControl.vb** si apre e viene creato un gestore eventi per l'evento <xref:System.Windows.Forms.MonthCalendar.DateChanged> .  
   
-2.  Add the following code to the top of the file. This code creates aliases for the <xref:Microsoft.Office.Core> and <xref:Microsoft.Office.Interop.PowerPoint> namespaces.  
+2.  Aggiungere il codice seguente all'inizio del file. Questo codice crea gli alias per gli spazi dei nomi <xref:Microsoft.Office.Core> e <xref:Microsoft.Office.Interop.PowerPoint> .  
   
-     [!code-csharp[Trin_TaskPaneMonthCalendar#1](../vsto/codesnippet/CSharp/Trin_TaskPaneMonthCalendar/MyUserControl.cs#1)]  [!code-vb[Trin_TaskPaneMonthCalendar#1](../vsto/codesnippet/VisualBasic/Trin_TaskPaneMonthCalendar/MyUserControl.vb#1)]  
+     [!code-csharp[Trin_TaskPaneMonthCalendar#1](../vsto/codesnippet/CSharp/Trin_TaskPaneMonthCalendar/MyUserControl.cs#1)]
+     [!code-vb[Trin_TaskPaneMonthCalendar#1](../vsto/codesnippet/VisualBasic/Trin_TaskPaneMonthCalendar/MyUserControl.vb#1)]  
   
-3.  Add the following code to the `MyUserControl` class. This code declares a <xref:Microsoft.Office.Interop.PowerPoint.Shape> object as a member of `MyUserControl`. In the following step, you will use this <xref:Microsoft.Office.Interop.PowerPoint.Shape> to add a text box to a slide in the active presentation.  
+3.  Aggiungere il codice seguente alla classe `MyUserControl` . Questo codice dichiara un oggetto <xref:Microsoft.Office.Interop.PowerPoint.Shape> come membro di `MyUserControl`. Nel passaggio seguente viene usato <xref:Microsoft.Office.Interop.PowerPoint.Shape> per aggiungere una casella di testo a una diapositiva nella presentazione attiva.  
   
-     [!code-csharp[Trin_TaskPaneMonthCalendar#2](../vsto/codesnippet/CSharp/Trin_TaskPaneMonthCalendar/MyUserControl.cs#2)]  [!code-vb[Trin_TaskPaneMonthCalendar#2](../vsto/codesnippet/VisualBasic/Trin_TaskPaneMonthCalendar/MyUserControl.vb#2)]  
+     [!code-csharp[Trin_TaskPaneMonthCalendar#2](../vsto/codesnippet/CSharp/Trin_TaskPaneMonthCalendar/MyUserControl.cs#2)]
+     [!code-vb[Trin_TaskPaneMonthCalendar#2](../vsto/codesnippet/VisualBasic/Trin_TaskPaneMonthCalendar/MyUserControl.vb#2)]  
   
-4.  Replace the `monthCalendar1_DateChanged` event handler with the following code. This code adds a text box to the first slide in the active presentation, and then adds the currently selected date to the text box. This code uses the `Globals.ThisAddIn` object to access the object model of PowerPoint.  
+4.  Sostituire il gestore eventi `monthCalendar1_DateChanged` con il codice seguente. Questo codice aggiunge una casella di testo alla prima diapositiva nella presentazione attiva, quindi aggiunge la data attualmente selezionata alla casella di testo. Questo codice usa l'oggetto `Globals.ThisAddIn` per accedere al modello di oggetto di PowerPoint.  
   
-     [!code-csharp[Trin_TaskPaneMonthCalendar#3](../vsto/codesnippet/CSharp/Trin_TaskPaneMonthCalendar/MyUserControl.cs#3)]  [!code-vb[Trin_TaskPaneMonthCalendar#3](../vsto/codesnippet/VisualBasic/Trin_TaskPaneMonthCalendar/MyUserControl.vb#3)]  
+     [!code-csharp[Trin_TaskPaneMonthCalendar#3](../vsto/codesnippet/CSharp/Trin_TaskPaneMonthCalendar/MyUserControl.cs#3)]
+     [!code-vb[Trin_TaskPaneMonthCalendar#3](../vsto/codesnippet/VisualBasic/Trin_TaskPaneMonthCalendar/MyUserControl.vb#3)]  
   
-5.  In **Solution Explorer**, right-click the **MyAddIn** project and then click **Build**. Verify that the project builds without errors.  
+5.  In **Esplora soluzioni**fare clic con il pulsante destro del mouse sul progetto **MyAddIn** , quindi scegliere **Compila**. Verificare che il progetto venga compilato senza errori.  
   
-## <a name="displaying-the-custom-task-pane"></a>Displaying the Custom Task Pane  
- To display the custom task pane when the VSTO Add-in starts, add the user control to the task pane in the <xref:Microsoft.Office.Tools.AddIn.Startup> event handler of the VSTO Add-in.  
+## <a name="displaying-the-custom-task-pane"></a>Visualizzazione del riquadro attività personalizzato  
+ Per visualizzare il riquadro attività personalizzato quando viene avviato il componente aggiuntivo VSTO, aggiungere il controllo utente al riquadro attività nel gestore eventi <xref:Microsoft.Office.Tools.AddIn.Startup> del componente aggiuntivo VSTO.  
   
-#### <a name="to-display-the-custom-task-pane"></a>To display the custom task pane  
+#### <a name="to-display-the-custom-task-pane"></a>Per visualizzare il riquadro attività personalizzato  
   
-1.  In **Solution Explorer**, expand **PowerPoint**.  
+1.  In **Esplora soluzioni**espandere **PowerPoint**.  
   
-2.  Right-click **ThisAddIn.cs** or **ThisAddIn.vb** and click **View Code**.  
+2.  Fare clic con il pulsante destro del mouse su **ThisAddIn.cs** o **ThisAddIn.vb** , quindi scegliere **Visualizza codice**.  
   
-3.  Add the following code to the `ThisAddIn` class. This code declares instances of `MyUserControl` and <xref:Microsoft.Office.Tools.CustomTaskPane> as members of the `ThisAddIn` class.  
+3.  Aggiungere il codice seguente alla classe `ThisAddIn` . Questo codice dichiara le istanze di `MyUserControl` e <xref:Microsoft.Office.Tools.CustomTaskPane> come membri della classe `ThisAddIn` .  
   
-     [!code-vb[Trin_TaskPaneMonthCalendar#4](../vsto/codesnippet/VisualBasic/Trin_TaskPaneMonthCalendar/ThisAddIn.vb#4)]  [!code-csharp[Trin_TaskPaneMonthCalendar#4](../vsto/codesnippet/CSharp/Trin_TaskPaneMonthCalendar/ThisAddIn.cs#4)]  
+     [!code-vb[Trin_TaskPaneMonthCalendar#4](../vsto/codesnippet/VisualBasic/Trin_TaskPaneMonthCalendar/ThisAddIn.vb#4)]
+     [!code-csharp[Trin_TaskPaneMonthCalendar#4](../vsto/codesnippet/CSharp/Trin_TaskPaneMonthCalendar/ThisAddIn.cs#4)]  
   
-4.  Replace the `ThisAddIn_Startup` event handler with the following code. This code creates a new <xref:Microsoft.Office.Tools.CustomTaskPane> by adding the `MyUserControl` object to the `CustomTaskPanes` collection. The code also displays the task pane.  
+4.  Sostituire il gestore eventi `ThisAddIn_Startup` con il codice seguente. Questo codice crea un nuovo oggetto <xref:Microsoft.Office.Tools.CustomTaskPane> aggiungendo l'oggetto `MyUserControl` alla raccolta `CustomTaskPanes` . Il codice visualizza anche il riquadro attività.  
   
-     [!code-vb[Trin_TaskPaneMonthCalendar#5](../vsto/codesnippet/VisualBasic/Trin_TaskPaneMonthCalendar/ThisAddIn.vb#5)]  [!code-csharp[Trin_TaskPaneMonthCalendar#5](../vsto/codesnippet/CSharp/Trin_TaskPaneMonthCalendar/ThisAddIn.cs#5)]  
+     [!code-vb[Trin_TaskPaneMonthCalendar#5](../vsto/codesnippet/VisualBasic/Trin_TaskPaneMonthCalendar/ThisAddIn.vb#5)]
+     [!code-csharp[Trin_TaskPaneMonthCalendar#5](../vsto/codesnippet/CSharp/Trin_TaskPaneMonthCalendar/ThisAddIn.cs#5)]  
   
-## <a name="testing-the-add-in"></a>Testing the Add-In  
- When you run the project, PowerPoint opens and the VSTO Add-in displays the custom task pane. Click the <xref:System.Windows.Forms.MonthCalendar> control to test the code.  
+## <a name="testing-the-add-in"></a>Test del componente aggiuntivo  
+ Quando si esegue il progetto, PowerPoint si apre e il componente aggiuntivo VSTO visualizza il riquadro attività personalizzato. Fare clic sul controllo <xref:System.Windows.Forms.MonthCalendar> per testare il codice.  
   
-#### <a name="to-test-your-vsto-add-in"></a>To test your VSTO Add-in  
+#### <a name="to-test-your-vsto-add-in"></a>Per testare il componente aggiuntivo VSTO  
   
-1.  Press F5 to run your project.  
+1.  Premere F5 per eseguire il progetto.  
   
-2.  Confirm that the custom task pane is visible.  
+2.  Verificare che il riquadro attività personalizzato sia visibile.  
   
-3.  Click a date in the <xref:System.Windows.Forms.MonthCalendar> control on the task pane.  
+3.  Fare clic su una data nel controllo <xref:System.Windows.Forms.MonthCalendar> nel riquadro attività.  
   
-     The date is inserted into the first slide in the active presentation.  
+     La data viene inserita nella prima diapositiva della presentazione attiva.  
   
-## <a name="next-steps"></a>Next Steps  
- You can learn more about how to create custom task panes from these topics:  
+## <a name="next-steps"></a>Passaggi successivi  
+ Per altre informazioni su come creare i riquadri attività personalizzati, vedere gli argomenti seguenti:  
   
--   Create a custom task pane in an VSTO Add-in for a different application. For more information about the applications that support custom task panes, see [Custom Task Panes](../vsto/custom-task-panes.md).  
+-   Creare un riquadro attività personalizzato in un componente aggiuntivo VSTO per un'applicazione diversa. Per ulteriori informazioni sulle applicazioni che supportano i riquadri attività personalizzati, vedere [riquadri attività personalizzati](../vsto/custom-task-panes.md).  
   
--   Create a Ribbon button that can be used to hide or display a custom task pane. For more information, see [Walkthrough: Synchronizing a Custom Task Pane with a Ribbon Button](../vsto/walkthrough-synchronizing-a-custom-task-pane-with-a-ribbon-button.md).  
+-   Creare un pulsante della barra multifunzione da usare per visualizzare o nascondere un riquadro attività personalizzato. Per altre informazioni, vedere [Procedura dettagliata: sincronizzazione di un riquadro attività personalizzato con una barra multifunzione](../vsto/walkthrough-synchronizing-a-custom-task-pane-with-a-ribbon-button.md).  
   
--   Create a custom task pane for every e-mail message that is opened in Outlook. For more information, see [Walkthrough: Displaying Custom Task Panes with E-Mail Messages in Outlook](../vsto/walkthrough-displaying-custom-task-panes-with-e-mail-messages-in-outlook.md).  
+-   Creare un riquadro attività personalizzato per ogni messaggio di posta elettronica aperto in Outlook. Per altre informazioni, vedere [Procedura dettagliata: visualizzazione dei riquadri attività personalizzati con messaggi di posta elettronica in Outlook](../vsto/walkthrough-displaying-custom-task-panes-with-e-mail-messages-in-outlook.md).  
   
-## <a name="see-also"></a>See Also  
- [Custom Task Panes](../vsto/custom-task-panes.md)   
- [How to: Add a Custom Task Pane to an Application](../vsto/how-to-add-a-custom-task-pane-to-an-application.md)   
- [Walkthrough: Synchronizing a Custom Task Pane with a Ribbon Button](../vsto/walkthrough-synchronizing-a-custom-task-pane-with-a-ribbon-button.md)   
- [Walkthrough: Displaying Custom Task Panes with E-Mail Messages in Outlook](../vsto/walkthrough-displaying-custom-task-panes-with-e-mail-messages-in-outlook.md)  
+## <a name="see-also"></a>Vedere anche  
+ [Riquadri attività personalizzati](../vsto/custom-task-panes.md)   
+ [Procedura: aggiungere un riquadro attività personalizzato a un'applicazione](../vsto/how-to-add-a-custom-task-pane-to-an-application.md)   
+ [Procedura dettagliata: Sincronizzazione di un riquadro attività personalizzato con un pulsante della barra multifunzione](../vsto/walkthrough-synchronizing-a-custom-task-pane-with-a-ribbon-button.md)   
+ [Procedura dettagliata: visualizzazione dei riquadri attività personalizzati con messaggi di posta elettronica in Outlook](../vsto/walkthrough-displaying-custom-task-panes-with-e-mail-messages-in-outlook.md)  
   
   

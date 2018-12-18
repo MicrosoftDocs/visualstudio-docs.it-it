@@ -1,22 +1,19 @@
 ---
 title: Compilazione e pulizia di progetti e soluzioni
-description: 
+description: ''
 author: asb3993
 ms.author: amburns
 ms.date: 04/14/2017
-ms.topic: article
 ms.assetid: E4B6CB42-9FE2-43B9-93B7-BD4BD50518B1
+ms.openlocfilehash: 746aefbee359313e6e8a5f0e3b8387cb5eff9a16
+ms.sourcegitcommit: 4c0bc21d2ce2d8e6c9d3b149a7d95f0b4d5b3f85
 ms.translationtype: HT
-ms.sourcegitcommit: e2b7ff9126e1cc38ac2e58d6be339b656a024e7f
-ms.openlocfilehash: 849b52cff3fa85bcfb0b10c43a490d1a5fb40760
-ms.contentlocale: it-it
-ms.lasthandoff: 08/11/2017
-
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/20/2018
 ---
-
 # <a name="building-and-cleaning-projects-and-solutions"></a>Compilazione e pulizia di progetti e soluzioni
 
-Per informazioni su come compilare, ricompilare e pulire la soluzione e il progetto, seguire i passaggi descritti in questo argomento.
+Per informazioni su come compilare, ricompilare e pulire la soluzione e il progetto, seguire i passaggi descritti in questo articolo.
 
 ## <a name="to-build-rebuild-or-clean-an-entire-solution"></a>Per compilare, ricompilare o pulire un'intera soluzione
 

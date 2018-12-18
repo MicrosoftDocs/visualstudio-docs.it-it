@@ -1,52 +1,53 @@
 ---
-title: "IDebugBreakpointEvent2::EnumBreakpoints | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "IDebugBreakpointEvent2:::EnumBreakpoints"
-helpviewer_keywords: 
-  - "IDebugBreakpointEvent2:::EnumBreakpoints"
+title: IDebugBreakpointEvent2::EnumBreakpoints | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology:
+- vs-ide-sdk
+ms.topic: conceptual
+f1_keywords:
+- IDebugBreakpointEvent2:::EnumBreakpoints
+helpviewer_keywords:
+- IDebugBreakpointEvent2:::EnumBreakpoints
 ms.assetid: 606a9625-ee43-4e84-9a47-af9a50d2d005
-caps.latest.revision: 10
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 10
+author: gregvanl
+ms.author: gregvanl
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: 6015d9251d5e9cf26220d069a26a742cde89ad3d
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# IDebugBreakpointEvent2::EnumBreakpoints
-[!INCLUDE[vs2017banner](../../../code-quality/includes/vs2017banner.md)]
-
-Crea un enumeratore per tutti i punti di interruzione che hanno effettuato lo stato attivo sulla posizione corrente di codice.  
+# <a name="idebugbreakpointevent2enumbreakpoints"></a>IDebugBreakpointEvent2::EnumBreakpoints
+Crea un enumeratore per tutti i punti di interruzione viene generato in corrispondenza della posizione di codice.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp#  
+```cpp  
 HRESULT EnumBreakpoints(  
   IEnumDebugBoundBreakpoints2** ppEnum  
 );  
 ```  
   
-```c#  
+```csharp  
 int EnumBreakpoints(  
   out IEnumDebugBoundBreakpoints2 ppEnum  
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `ppEnum`  
- \[out\]  Restituisce [IEnumDebugBoundBreakpoints2](../../../extensibility/debugger/reference/ienumdebugboundbreakpoints2.md) un oggetto che enumera i punti di interruzione associati alla posizione corrente di codice.  
+ [out] Restituisce un [IEnumDebugBoundBreakpoints2](../../../extensibility/debugger/reference/ienumdebugboundbreakpoints2.md) oggetto che enumera tutti i punti di interruzione associati al percorso di codice corrente.  
   
-## Valore restituito  
- Se l'operazione riesce, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
+## <a name="return-value"></a>Valore restituito  
+ Se ha esito positivo, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
   
-## Note  
- Non tutti i punti di interruzione in una determinata posizione è possibile distribuire in un determinato momento, ad esempio un punto di interruzione con una condizione non genererà fino a riempire la condizione\).  
+## <a name="remarks"></a>Note  
+ Non tutti i punti di interruzione in una determinata posizione può essere generato in un determinato momento (ad esempio, un punto di interruzione con una condizione non funzionerà finché la condizione viene soddisfatta).  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IDebugBreakpointEvent2](../../../extensibility/debugger/reference/idebugbreakpointevent2.md)   
  [IEnumDebugBoundBreakpoints2](../../../extensibility/debugger/reference/ienumdebugboundbreakpoints2.md)

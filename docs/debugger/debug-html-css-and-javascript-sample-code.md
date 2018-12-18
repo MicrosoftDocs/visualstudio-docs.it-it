@@ -1,34 +1,32 @@
 ---
-title: "Debug del codice di esempio HTML, CSS e JavaScript | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "FSharp"
-  - "VB"
-  - "CSharp"
-  - "C++"
+title: Debug del codice di esempio HTML e CSS | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology: vs-ide-debug
+ms.topic: conceptual
+dev_langs:
+- CSharp
+- VB
+- FSharp
+- C++
 ms.assetid: 51893967-98c8-4141-ba40-03646f221760
-caps.latest.revision: 13
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 13
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 182cda17cdd8a9b08a6e0d8b0130efa887be6368
+ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/18/2018
 ---
-# Debug del codice di esempio HTML, CSS e JavaScript
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
-![Si applica a Windows e Windows Phone](~/debugger/media/windows_and_phone_content.png "windows\_and\_phone\_content")  
+# <a name="debug-html-and-css-sample-code"></a>Debug del codice di esempio HTML e CSS
   
- Il codice in questo argomento è il file di esempio relativo a [Guida introduttiva: Eseguire il debug di HTML e CSS](../debugger/quickstart-debug-html-and-css.md).  Gli errori presenti nella guida introduttiva, in base alla progettazione, vengono corretti in questa versione del codice.  
+ Il codice in questo argomento è il file di esempio per [Guida introduttiva: eseguire il Debug di HTML e CSS](../debugger/quickstart-debug-html-and-css.md). Gli errori presenti nella guida introduttiva, in base alla progettazione, vengono corretti in questa versione del codice.  
   
-## Codice di esempio  
- Il codice HTML seguente viene usato nel tag \<body\> della guida introduttiva.  
+## <a name="sample-code"></a>Codice di esempio  
+ Il codice HTML seguente viene utilizzato nel \<corpo > tag della Guida introduttiva.  
   
 ```html  
 <div id="flipTemplate" data-win-control="WinJS.Binding.Template"  
@@ -52,7 +50,7 @@ caps.handback.revision: 13
 }  
 ```  
   
- Nell'esempio di codice seguente viene illustrato il codice JavaScript completo in default.js.  I riferimenti agli spazi dei nomi WinJS necessari per questo codice si trovano nel file default.html del modello.  
+ Nell'esempio di codice seguente viene illustrato il codice JavaScript completo in default.js. I riferimenti agli spazi dei nomi WinJS per questo codice sono nel file default.html del modello.  
   
 ```javascript  
 (function () {  
@@ -62,7 +60,7 @@ caps.handback.revision: 13
     var activation = Windows.ApplicationModel.Activation;  
   
     var myData = [];  
-    for (var x = 0; x < 4; x++) {  
+    for (var x = 0; x < 3; x++) {  
         myData[x] = { flipImg: "/images/logo.png" }  
     };  
   
@@ -84,9 +82,9 @@ caps.handback.revision: 13
   
     function updateImages() {  
   
-        pages.setAt(0, { flipImg: "http://go.microsoft.com/fwlink/?LinkID=223195" });  
-        pages.setAt(1, { flipImg: "http://go.microsoft.com/fwlink/?LinkID=223196" });  
-        pages.setAt(2, { flipImg: "http://go.microsoft.com/fwlink/?LinkID=223197" });  
+        pages.setAt(0, { flipImg: "http://public-domain-photos.com/free-stock-photos-1/flowers/cactus-76.jpg" });  
+        pages.setAt(1, { flipImg: "http://public-domain-photos.com/free-stock-photos-1/flowers/cactus-77.jpg" });  
+        pages.setAt(2, { flipImg: "http://public-domain-photos.com/free-stock-photos-1/flowers/cactus-78.jpg" });  
     };  
   
     app.oncheckpoint = function (args) {  
@@ -103,5 +101,5 @@ caps.handback.revision: 13
 })();  
 ```  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Guida introduttiva: Eseguire il debug di HTML e CSS](../debugger/quickstart-debug-html-and-css.md)

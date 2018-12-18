@@ -1,43 +1,38 @@
 ---
-title: 'How to: Programmatically Create Appointments | Microsoft Docs'
-ms.custom: 
+title: 'Procedura: creare appuntamenti | Documenti Microsoft'
+ms.custom: ''
 ms.date: 02/02/2017
-ms.prod: visual-studio-dev14
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - office-development
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: conceptual
 dev_langs:
 - VB
 - CSharp
 helpviewer_keywords:
 - appointments [Office development in Visual Studio]
 - Outlook calendars [Office development in Visual Studio], creating appointments
-ms.assetid: 3ee1c03c-0bc3-49d7-8edf-b14fab9aceb8
-caps.latest.revision: 17
-author: kempb
-ms.author: kempb
-manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: eb5c9550fd29b0e98bf63a7240737da4f13f3249
-ms.openlocfilehash: d88729299d70f68944a0e93c6733c6ff83173da8
-ms.contentlocale: it-it
-ms.lasthandoff: 08/30/2017
-
+author: TerryGLee
+ms.author: tglee
+manager: douge
+ms.workload:
+- office
+ms.openlocfilehash: 15fc247e088e435e19ea42b5920fe01f62d66859
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# <a name="how-to-programmatically-create-appointments"></a>How to: Programmatically Create Appointments
-  This example creates an appointment and adds recipients to the appointment meeting request.  
+# <a name="how-to-programmatically-create-appointments"></a>Procedura: creare appuntamenti a livello di codice
+  In questo esempio viene creato un appuntamento e aggiunge i destinatari per la richiesta di appuntamento riunione.  
   
  [!INCLUDE[appliesto_olkallapp](../vsto/includes/appliesto-olkallapp-md.md)]  
   
-## <a name="example"></a>Example  
+## <a name="example"></a>Esempio  
  [!code-csharp[Trin_OL_CreateAppts#1](../vsto/codesnippet/CSharp/Trin_OL_CreateAppts/thisaddin.cs#1)]  
   
-## <a name="see-also"></a>See Also  
- [Working with Calendar Items](../vsto/working-with-calendar-items.md)   
- [How to: Programmatically Create a Custom Calendar](../vsto/how-to-programmatically-create-a-custom-calendar.md)   
- [How to: Programmatically Add an Entry to Outlook Contacts](../vsto/how-to-programmatically-add-an-entry-to-outlook-contacts.md)  
+## <a name="see-also"></a>Vedere anche  
+ [Uso degli elementi di calendario](../vsto/working-with-calendar-items.md)   
+ [Procedura: creare a livello di codice un calendario personalizzato](../vsto/how-to-programmatically-create-a-custom-calendar.md)   
+ [Procedura: Aggiungere una voce ai contatti di Outlook a livello di codice](../vsto/how-to-programmatically-add-an-entry-to-outlook-contacts.md)  
   
   

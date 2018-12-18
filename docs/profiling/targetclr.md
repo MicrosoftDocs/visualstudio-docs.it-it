@@ -1,48 +1,47 @@
 ---
-title: "TargetCLR | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: TargetCLR | Microsoft Docs
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology: vs-ide-debug
+ms.topic: conceptual
 ms.assetid: f9732480-287f-40f1-a4ff-b112e143b940
-caps.latest.revision: 11
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 11
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 1af1c4ac4220b387614653c8791d907fea8f264e
+ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/19/2018
 ---
-# TargetCLR
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
-L'opzione **TargetCLR** specifica la versione di Common Language Runtime \(CLR\) di cui eseguire il profilo quando in un'applicazione sono state caricate più versioni di CLR.  
+# <a name="targetclr"></a>TargetCLR
+L'opzione **TargetCLR** specifica la versione di Common Language Runtime (CLR) da sottoporre a profilatura quando in un'applicazione è caricata più di una versione di CLR.  
   
- Per impostazione predefinita, gli strumenti di profilatura di [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] utilizzano la prima versione di CLR caricata dall'applicazione.  
+ Per impostazione predefinita, gli strumenti di profilatura di [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] vengono applicati alla prima versione di CLR caricata dall'applicazione.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
 VSPerfCmd.exe {/Launch:AppName | /Attach:PID} /TargetCLR[:ClrVersion] [Options]   
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `ClrVersion`  
- Numero di versione di CLR.  Utilizzare il formato di versione **vN.N.NNNNN**.  
+ Numero di versione di CLR. Usare il formato di versione **vN.N.NNNNN**.  
   
-## Opzioni obbligatorie  
- L'opzione **TargetCLR** può essere utilizzata solo con le opzioni **Launch** o **Attach** .  
+## <a name="required-options"></a>Opzioni obbligatorie  
+ L'opzione **TargetCLR** può essere usata solo con le opzioni **Launch** o **Attach**.  
   
  **Launch:** `AppName`  
- Avvia l'applicazione specificata e l'esecuzione del profilo.  
+ Avvia l'applicazione specificata e avvia la profilatura.  
   
  **Attach:** `PID`  
- Avvia l'esecuzione del profilo per il processo specificato.  
+ Avvia la profilatura del processo specificato.  
   
-## Esempio  
- In questo esempio, l'opzione TargetCLR viene utilizzata per assicurarsi che venga eseguito il profilo della versione di CLR 4.0.11003.  
+## <a name="example"></a>Esempio  
+ In questo esempio, l'opzione TargetCLR viene usata per assicurarsi che venga sottoposta a profilatura la versione di CLR 4.0.11003.  
   
 ```  
 VSPerfCmd.exe /Start:Sample /Output:TestApp.exe.vsp  

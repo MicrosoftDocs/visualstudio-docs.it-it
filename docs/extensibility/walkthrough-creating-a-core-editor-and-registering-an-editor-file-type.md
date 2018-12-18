@@ -1,39 +1,23 @@
 ---
-title: Creazione di un Editor di componenti di base e la registrazione di un tipo di File Editor | Documenti di Microsoft"
-ms.custom: 
+title: Creazione di un Editor di componenti di base e la registrazione di un tipo di File Editor | Documenti Microsoft
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - vs-ide-sdk
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: conceptual
 helpviewer_keywords:
 - editors [Visual Studio SDK], legacy - walkthrough
 ms.assetid: 24d2bffd-a35c-46db-8515-fd60b884b7fb
-caps.latest.revision: 29
+author: gregvanl
 ms.author: gregvanl
-manager: ghogen
-translation.priority.mt:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: 6bb9b9443a60e54d875d6e3992a18ac1f0691244
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
 ms.translationtype: MT
-ms.sourcegitcommit: 4a36302d80f4bc397128e3838c9abf858a0b5fe8
-ms.openlocfilehash: dec3e53df108377dacfc53ba308029933654b789
-ms.contentlocale: it-it
-ms.lasthandoff: 09/26/2017
-
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="walkthrough-creating-a-core-editor-and-registering-an-editor-file-type"></a>Procedura dettagliata: Creazione di un Editor di componenti di base e la registrazione di un tipo di File dell'Editor
 Questa procedura dettagliata viene illustrato come creare un pacchetto VSPackage che inizia il [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] editor principale quando un file con estensione .myext viene caricato.  
@@ -338,7 +322,7 @@ Questa procedura dettagliata viene illustrato come creare un pacchetto VSPackage
   
 1.  In **Esplora**, doppio clic sul file resources. resx per aprirlo in una tabella di stringhe, in cui la voce **String1 è** selezionato.  
   
-2.  Modificare il nome dell'identificatore di `IDS_EDITORNAME` e il testo **MyPackage Editor.** Questa stringa verrà visualizzata come nome dell'editor.  
+2.  Modificare il nome dell'identificatore di `IDS_EDITORNAME` e il testo da **MyPackage Editor.** Questa stringa verrà visualizzata come nome dell'editor.  
   
 3.  Aprire il file VSPackage.resx e aggiungere una nuova stringa, impostare il nome su **101** e il valore da `IDS_EDITORNAME`. In questo modo il pacchetto con un ID di risorsa per accedere alla stringa che appena creato.  
   

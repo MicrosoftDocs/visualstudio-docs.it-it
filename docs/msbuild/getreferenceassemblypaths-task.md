@@ -1,43 +1,25 @@
 ---
-title: "Attività GetReferenceAssemblyPaths | Microsoft Docs"
-ms.custom: 
+title: Attività GetReferenceAssemblyPaths | Microsoft Docs
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- vs-ide-sdk
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.technology: msbuild
+ms.topic: reference
 dev_langs:
 - VB
 - CSharp
 - C++
 - jsharp
 ms.assetid: 178ef49c-5dee-405b-a14b-a37f41dc0609
-caps.latest.revision: 4
-author: kempb
-ms.author: kempb
-manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 11a9cee75f912c5fb31cf4a031644abe9c63d744
-ms.openlocfilehash: 6009ccb21696e207facfe6c172d4c131f13f8bc0
-ms.contentlocale: it-it
-ms.lasthandoff: 06/03/2017
-
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: b21b6bf720a4604d2f7aec2ca717c825c5476db9
+ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/19/2018
 ---
 # <a name="getreferenceassemblypaths-task"></a>Attività GetReferenceAssemblyPaths
 Restituisce i percorsi degli assembly di riferimento dei vari framework.  

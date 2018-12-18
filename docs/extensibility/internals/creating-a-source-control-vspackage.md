@@ -1,45 +1,46 @@
 ---
-title: "Creazione di un pacchetto di controllo di origine | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "controllo del codice sorgente [Visual Studio SDK], creazione di pacchetti di controllo di origine"
-  - "pacchetti di controllo di origine"
+title: Creazione di un pacchetto VSPackage controllo origine | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology:
+- vs-ide-sdk
+ms.topic: conceptual
+helpviewer_keywords:
+- source control [Visual Studio SDK], creating source control packages
+- source control packages
 ms.assetid: cca0a9ed-48ff-409f-8036-ed8db0f7533e
-caps.latest.revision: 23
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 23
+author: gregvanl
+ms.author: gregvanl
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: 8eb34efef22510d1d8f83590a6bdb7960d70ce49
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# Creazione di un pacchetto di controllo di origine
-[!INCLUDE[vs2017banner](../../code-quality/includes/vs2017banner.md)]
-
-Questa documentazione sono inclusi collegamenti a informazioni generali sull'architettura di un pacchetto del controllo del codice sorgente integrato con [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)], l'API definito dalle interfacce da implementare e dai servizi da utilizzare e un esempio in cui viene illustrata un'implementazione semplice del pacchetto del controllo del codice sorgente.  
+# <a name="creating-a-source-control-vspackage"></a>Creazione di un VSPackage di controllo di origine
+Questa documentazione include i collegamenti per la panoramica dell'architettura di un pacchetto di controllo del codice sorgente integrato con [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)], l'API che viene definito mediante le interfacce da implementare e i servizi per l'utilizzo e un esempio che illustra una semplice origine controllare l'implementazione del pacchetto.  
   
- Con un controllo del codice sorgente package VS, è possibile creare un percorso completo di integrazione per il controllo del codice sorgente integriate con [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)].  Consente al pacchetto per ignorare la UI predefinita del controllo del codice sorgente contenuto in [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)], per rispondere alle richieste del controllo del codice sorgente dal sistema del progetto e interagire con i componenti di [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] come **Esplora soluzioni**.  [!INCLUDE[vsipsdk](../../extensibility/includes/vsipsdk_md.md)] autorizza partner di [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] con un meccanismo per creare un package VS che possa integrarsi con [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] utilizzando un modello di servizi.  
+ Con un controllo del codice sorgente VSPackage, è possibile creare un percorso di integrazione per controllo del codice sorgente per l'integrazione con [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)]. Consente il pacchetto di ignorare il controllo del codice sorgente predefinite dell'interfaccia utente ospitati da [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)], rispondere alle richieste di controllo di origine del sistema del progetto e interagire con [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] componenti, ad esempio **Esplora**. Il [!INCLUDE[vsipsdk](../../extensibility/includes/vsipsdk_md.md)] conferisce [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] collabora con un meccanismo per creare un pacchetto VSPackage che può essere integrato con [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] utilizzando un modello di servizio.  
   
-## In questa sezione  
+## <a name="in-this-section"></a>In questa sezione  
  [Introduzione](../../extensibility/internals/getting-started-with-source-control-vspackages.md)  
- Viene descritto il pacchetto del controllo del codice sorgente, che rappresenta un'alternativa più avanzata al plug\-in controllo del codice sorgente per implementare funzionalità di controllo del codice sorgente in [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)].  
+ Viene descritto il pacchetto di controllo di origine, che è un'alternativa più avanzata per il plug-in per implementare le funzionalità di controllo di origine nel controllo del codice sorgente [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)].  
   
  [Architettura](../../extensibility/internals/source-control-vspackage-architecture.md)  
- Viene fornito un diagramma e illustrati i componenti di un pacchetto del controllo del codice sorgente.  
+ Viene presentato un diagramma e vengono illustrati i componenti di un pacchetto di controllo di origine.  
   
  [Funzionalità](../../extensibility/internals/source-control-vspackage-features.md)  
- Vengono descritte le varie funzionalità di un pacchetto del controllo del codice sorgente.  
+ Descrive le varie funzionalità di un pacchetto di controllo di origine.  
   
  [Elementi di progettazione](../../extensibility/internals/source-control-vspackage-design-elements.md)  
- Viene descritta la struttura del package VS che un pacchetto del controllo del codice sorgente deve implementare per l'integrazione approfondita.  
+ Descrive la struttura del pacchetto VSPackage che un pacchetto di controllo di origine deve implementare per l'integrazione completa.  
   
-## Sezioni correlate  
- [Creazione di plug\-in un controllo del codice sorgente](../../extensibility/internals/creating-a-source-control-plug-in.md)  
- Viene illustrato come creare un plug\-in del controllo del codice sorgente che fornisce la funzionalità di controllo del codice sorgente dell'interfaccia utente del controllo del codice sorgente di \(UI\) [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] .  
+## <a name="related-sections"></a>Sezioni correlate  
+ [Creazione di un plug-in del controllo del codice sorgente](../../extensibility/internals/creating-a-source-control-plug-in.md)  
+ Viene illustrato come creare un controllo del codice sorgente plug-in che fornisce controllo del codice sorgente nel [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] interfaccia di origine controllo utente (UI).  
   
  [Controllo del codice sorgente](../../extensibility/internals/source-control.md)  
- Vengono descritte le opzioni per implementare il controllo del codice sorgente come una funzionalità integrata di [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)].
+ Vengono descritte le opzioni per l'implementazione del controllo del codice sorgente come una funzionalità integrata di [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)].

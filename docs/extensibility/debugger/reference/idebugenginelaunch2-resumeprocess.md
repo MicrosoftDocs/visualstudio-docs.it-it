@@ -1,53 +1,54 @@
 ---
-title: "IDebugEngineLaunch2::ResumeProcess | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "IDebugEngineLaunch2::ResumeProcess"
-helpviewer_keywords: 
-  - "IDebugEngineLaunch2::ResumeProcess"
+title: IDebugEngineLaunch2::ResumeProcess | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology:
+- vs-ide-sdk
+ms.topic: conceptual
+f1_keywords:
+- IDebugEngineLaunch2::ResumeProcess
+helpviewer_keywords:
+- IDebugEngineLaunch2::ResumeProcess
 ms.assetid: 61ccc14e-75c6-44e7-aae4-57a9aac52089
-caps.latest.revision: 9
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 9
+author: gregvanl
+ms.author: gregvanl
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: 988cb08db3a60cdf2d0f11955d5acc8719c6560f
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# IDebugEngineLaunch2::ResumeProcess
-[!INCLUDE[vs2017banner](../../../code-quality/includes/vs2017banner.md)]
-
-Riprende elaborano l'esecuzione.  
+# <a name="idebugenginelaunch2resumeprocess"></a>IDebugEngineLaunch2::ResumeProcess
+Esecuzione dei processi viene ripreso.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp#  
-HRESULT ResumeProcess (   
-   IDebugProcess2* pProcess  
+```cpp  
+HRESULT ResumeProcess (   
+   IDebugProcess2* pProcess  
 );  
 ```  
   
-```c#  
-int ResumeProcess (   
-   IDebugProcess2 pProcess  
+```csharp  
+int ResumeProcess (   
+   IDebugProcess2 pProcess  
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `pProcess`  
- \[in\]  [IDebugProcess2](../../../extensibility/debugger/reference/idebugprocess2.md) Un oggetto che rappresenta il processo per riprendere.  
+ [in] Un [IDebugProcess2](../../../extensibility/debugger/reference/idebugprocess2.md) oggetto che rappresenta il processo di essere ripreso.  
   
-## Valore restituito  
- Se l'operazione riesce, restituisce `S_OK`; in caso contrario restituisce un codice di errore.  
+## <a name="return-value"></a>Valore restituito  
+ Se ha esito positivo, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
   
-## Note  
- Questo metodo viene chiamato dopo che un processo è stato avviato con una [LaunchSuspended](../../../extensibility/debugger/reference/idebugenginelaunch2-launchsuspended.md) chiamata al metodo.  
+## <a name="remarks"></a>Note  
+ Questo metodo viene chiamato dopo che un processo è stato avviato con una chiamata al [LaunchSuspended](../../../extensibility/debugger/reference/idebugenginelaunch2-launchsuspended.md) metodo.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IDebugEngineLaunch2](../../../extensibility/debugger/reference/idebugenginelaunch2.md)   
  [IDebugProcess2](../../../extensibility/debugger/reference/idebugprocess2.md)   
  [LaunchSuspended](../../../extensibility/debugger/reference/idebugenginelaunch2-launchsuspended.md)

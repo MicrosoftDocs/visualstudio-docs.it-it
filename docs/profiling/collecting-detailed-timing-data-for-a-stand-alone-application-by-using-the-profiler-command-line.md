@@ -1,56 +1,54 @@
 ---
-title: "Raccolta di dati di intervallo dettagliati per un&#39;applicazione autonoma tramite la riga di comando del profiler | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/05/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "strumenti per la profilatura, metodo di strumentazione"
-  - "metodo di profilatura strumentazione"
+title: Raccolta di dati di intervallo dettagliati per un'applicazione autonoma tramite la riga di comando del profiler | Microsoft Docs
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology: vs-ide-debug
+ms.topic: conceptual
+helpviewer_keywords:
+- profiling tools,instrumentation method
+- instrumentation profiling method
 ms.assetid: 4017d9d1-d609-4f41-8e4e-976abae746b3
-caps.latest.revision: 15
-caps.handback.revision: 15
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: c4edc21357e9ffac539a21416a815868702ceabd
+ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/19/2018
 ---
-# Raccolta di dati di intervallo dettagliati per un&#39;applicazione autonoma tramite la riga di comando del profiler
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
-In questa sezione vengono illustrate le procedure e le opzioni per la raccolta dei dati di prestazioni dettagliati per un componente \(autonomo\) client tramite il metodo di strumentazione dalla riga di comando.  
+# <a name="collecting-detailed-timing-data-for-a-stand-alone-application-by-using-the-profiler-command-line"></a>Raccolta di dati di intervallo dettagliati per un'applicazione autonoma tramite la riga di comando del profiler
+Questa sezione descrive le procedure e le opzioni per la raccolta di dati dettagliati sulle prestazioni per i componenti client autonomi tramite il metodo di strumentazione dalla riga di comando.  
   
-## Attività comuni  
+## <a name="common-tasks"></a>Attività comuni  
   
-|Task|Contenuto correlato|  
-|----------|-------------------------|  
-|**Profilare un'applicazione .NET Framework tramite strumentazione**|-   [Procedura: instrumentare un componente .NET e raccogliere dati di intervallo dettagliati](../profiling/how-to-instrument-a-stand-alone-dotnet-framework-component-and-collect-timing-data-with-the-profiler-from-the-command-line.md)|  
-|**Profilare un'applicazione C\/C\+\+ tramite strumentazione**|-   [Procedura: instrumentare un componente nativo e raccogliere dati di intervallo dettagliati](../profiling/how-to-instrument-a-native-stand-alone-component-and-collect-timing-data-with-the-profiler-from-the-command-line.md)|  
+|Attività|Contenuti correlati|  
+|----------|---------------------|  
+|**Sottoporre a profilatura un'applicazione .NET Framework tramite la strumentazione**|-   [How to: Instrument a .NET Component and Collect Detailed Timing Data](../profiling/how-to-instrument-a-stand-alone-dotnet-framework-component-and-collect-timing-data-with-the-profiler-from-the-command-line.md) (Procedura: Instrumentare un componente .NET e raccogliere dati di intervallo dettagliati)|  
+|**Sottoporre a profilatura un'applicazione C/C++ tramite la strumentazione**|-   [How to: Instrument a Native Component and Collect Detailed Timing Data](../profiling/how-to-instrument-a-native-stand-alone-component-and-collect-timing-data-with-the-profiler-from-the-command-line.md) (Procedura: Instrumentare un componente nativo e raccogliere dati di intervallo dettagliati)|  
 |**Aggiungere dati di interazione tra livelli**|-   [Raccolta di dati di interazione tra livelli](../profiling/adding-tier-interaction-data-from-the-command-line.md)|  
   
-## Attività correlate  
+## <a name="related-tasks"></a>Attività correlate  
   
-### Profilo di applicazioni autonome  
+### <a name="profiling-stand-alone-applications"></a>Profilatura di applicazioni autonome  
   
-|Task|Contenuto correlato|  
-|----------|-------------------------|  
+|Attività|Contenuto correlato|  
+|----------|---------------------|  
 |**Profilatura di applicazioni tramite campionamento**|-   [Raccolta di statistiche dell'applicazione tramite campionamento](../profiling/collecting-application-statistics-for-stand-alone-applications-by-using-the-profiler-command-line.md)|  
-|**Profilo dell'allocazione di memoria .NET e dell'operazione di Garbage Collection**|-   [Raccolta di dati di memoria .NET Framework](../profiling/collecting-dotnet-framework-memory-data-for-stand-alone-applications-by-using-the-profiler-command-line.md)|  
-|**Profilo dei conflitti di risorse e dell'attività dei thread**|-   [Raccolta di dati di concorrenza](../profiling/collecting-concurrency-data-for-stand-alone-applications-by-using-the-profiler-command-line.md)|  
+|**Profilatura dell'allocazione di memoria .NET e della garbage collection**|-   [Raccolta di dati di memoria di .NET Framework](../profiling/collecting-dotnet-framework-memory-data-for-stand-alone-applications-by-using-the-profiler-command-line.md)|  
+|**Profilatura dei conflitti di risorse e delle attività dei thread**|-   [Raccolta di dati di concorrenza](../profiling/collecting-concurrency-data-for-stand-alone-applications-by-using-the-profiler-command-line.md)|  
   
-### Profilatura mediante il metodo di strumentazione  
+### <a name="profiling-by-using-the-instrumentation-method"></a>Profilatura tramite il metodo di strumentazione  
   
-|Task|Contenuto correlato|  
-|----------|-------------------------|  
-|**Profilo di applicazioni ASP.NET**|-   [Raccolta di dati di intervallo dettagliati tramite strumentazione](../profiling/collecting-detailed-timing-data-for-an-aspnet-web-application-using-the-profiler-instrumentation-method-from-the-command-line.md)|  
+|Attività|Contenuto correlato|  
+|----------|---------------------|  
+|**Profilatura di applicazioni ASP.NET**|-   [Raccolta di dati di intervallo dettagliati tramite strumentazione](../profiling/collecting-detailed-timing-data-for-an-aspnet-web-application-using-the-profiler-instrumentation-method.md)|  
 |**Profilatura di servizi**|-   [Raccolta di dati di intervallo dettagliati tramite strumentazione](../profiling/collecting-detailed-timing-data-for-services-by-using-the-instrumentation-method-from-the-profiler-command-line.md)|  
   
-### Analisi dei rapporti e delle visualizzazioni dei dati di strumentazione  
- [Visualizzazioni dei dati del metodo di strumentazione](../profiling/instrumentation-method-data-views.md)  
+### <a name="analyzing-instrumentation-data-views-and-reports"></a>Analisi di visualizzazioni dati e di report di strumentazione  
+ [Instrumentation Method Data Views](../profiling/instrumentation-method-data-views.md) (Visualizzazioni dei dati del metodo di strumentazione)  
   
-## Riferimento  
+## <a name="reference"></a>Riferimenti  
  [Riferimenti agli strumenti di profilatura della riga di comando](../profiling/command-line-profiling-tools-reference.md)

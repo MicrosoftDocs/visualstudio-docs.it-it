@@ -1,56 +1,57 @@
 ---
-title: "IDebugEngine2::GetEngineID | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "IDebugEngine2::GetEngineID"
-helpviewer_keywords: 
-  - "IDebugEngine2::GetEngineID"
+title: IDebugEngine2::GetEngineID | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology:
+- vs-ide-sdk
+ms.topic: conceptual
+f1_keywords:
+- IDebugEngine2::GetEngineID
+helpviewer_keywords:
+- IDebugEngine2::GetEngineID
 ms.assetid: 0d5674c8-a9b9-4b72-8211-d2d68695775a
-caps.latest.revision: 10
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 10
+author: gregvanl
+ms.author: gregvanl
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: 97d5b4ec655838f32ccff7df562ae4f11bdc9a00
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# IDebugEngine2::GetEngineID
-[!INCLUDE[vs2017banner](../../../code-quality/includes/vs2017banner.md)]
-
-Ottiene il GUID del motore di \(DE\) debug.  
+# <a name="idebugengine2getengineid"></a>IDebugEngine2::GetEngineID
+Ottiene il GUID del motore di debug (DE).  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp#  
-HRESULT GetEngineID(   
-   GUID* pguidEngine  
+```cpp  
+HRESULT GetEngineID(   
+   GUID* pguidEngine  
 );  
 ```  
   
-```c#  
-int GetEngineID(   
-   out Guid pguidEngine  
+```csharp  
+int GetEngineID(   
+   out Guid pguidEngine  
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `pguidEngine`  
- \[out\]  Restituisce il GUID di DE.  
+ [out] Restituisce il GUID della DE.  
   
-## Valore restituito  
- Se l'operazione riesce, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
+## <a name="return-value"></a>Valore restituito  
+ Se ha esito positivo, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
   
-## Note  
- Alcuni esempi di GUID tipici comprendono `guidScriptEng`, `guidNativeEng`, o `guidSQLEng`.  I nuovi motori di debug creeranno il proprio GUID per l'identificazione.  
+## <a name="remarks"></a>Note  
+ Sono riportati alcuni esempi di GUID tipico `guidScriptEng`, `guidNativeEng`, o `guidSQLEng`. Motori di debug nuovo creerà i propri GUID per l'identificazione.  
   
-## Esempio  
- Nell'esempio seguente viene illustrato come implementare questo metodo per un oggetto semplice di `CEngine` che implementa [IDebugEngine2](../../../extensibility/debugger/reference/idebugengine2.md) l'interfaccia.  
+## <a name="example"></a>Esempio  
+ Nell'esempio seguente viene illustrato come implementare questo metodo per una semplice `CEngine` oggetto che implementa il [IDebugEngine2](../../../extensibility/debugger/reference/idebugengine2.md) interfaccia.  
   
-```cpp#  
+```cpp  
 HRESULT CEngine::GetEngineId(GUID *pguidEngine){    
    if (pguidEngine) {    
       // Set pguidEngine to guidBatEng, as defined in the Batdbg.idl file.    
@@ -64,5 +65,5 @@ HRESULT CEngine::GetEngineId(GUID *pguidEngine){
 }    
 ```  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IDebugEngine2](../../../extensibility/debugger/reference/idebugengine2.md)

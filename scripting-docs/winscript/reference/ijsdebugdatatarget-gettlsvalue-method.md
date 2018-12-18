@@ -1,25 +1,29 @@
 ---
-title: "Metodo IJsDebugDataTarget::GetTlsValue | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/18/2017"
-ms.prod: "windows-script-interfaces"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
+title: 'Metodo ijsdebugdatatarget:: GetTLSValue | Documenti Microsoft'
+ms.custom: 
+ms.date: 01/18/2017
+ms.prod: windows-script-interfaces
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: reference
 apiname: IJsDebugDataTarget.GetTlsValue
 apilocation: jscript9diag.dll
 ms.assetid: db575be9-7b24-45c5-9008-e4f2f76d6757
-caps.latest.revision: 4
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.openlocfilehash: 4205adfb24a1a64d4e90f3fdcaf5a5ecbc4028de
+ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/27/2017
 ---
-# Metodo IJsDebugDataTarget::GetTlsValue
-Per il thread in fase di debug, recupera il valore nello slot dell'archiviazione locale del thread \(TLS\) per l'indice TLS specificato.  
+# <a name="ijsdebugdatatargetgettlsvalue-method"></a>Metodo IJsDebugDataTarget::GetTlsValue
+Per il thread è in corso il debug, recupera il valore nello slot (TLS) di archiviazione locale di thread per l'indice specificato di TLS.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
 HRESULT GetTlsValue(  
@@ -29,23 +33,23 @@ HRESULT GetTlsValue(
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `threadId`  
- \[in\] Thread in esecuzione nel processo di destinazione da cui leggere.  
+ [in] Thread in esecuzione nel processo di destinazione da cui leggere.  
   
  `tlsIndex`  
- \[in\] Indice TLS che è stato allocato quando il processo di destinazione ha chiamato la funzione TlsAlloc.  
+ [in] L'indice TLS è stata allocata quando il processo di destinazione chiamata alla funzione TlsAlloc.  
   
  `pValue`  
- \[out\] Valore della dimensione del puntatore che è stato archiviato nello slot di TLS del thread.  Se il thread di destinazione è 32 bit, i 32 bit superiori di questo valore saranno pari a zero.  
+ [out] Il valore della dimensione del puntatore che è stato archiviato in uno slot TLS del thread. Se il thread di destinazione è a 32 bit, 32-bit superiori di questo valore sarà zero.  
   
-## Valore restituito  
+## <a name="return-value"></a>Valore restituito  
   
-## Note  
- Ogni thread di un processo dispone del relativo slot per ciascun indice TLS.  
+## <a name="remarks"></a>Note  
+ Ogni thread di un processo ha un proprio slot per ogni indice TLS.  
   
-## Requisiti  
- **Intestazione:** jscript9diag.h  
+## <a name="requirements"></a>Requisiti  
+ **Intestazione:** jscript9diag  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Interfaccia IJsDebugDataTarget](../../winscript/reference/ijsdebugdatatarget-interface.md)

@@ -1,48 +1,43 @@
 ---
-title: "Procedura: configurare l&#39;analisi del codice per un&#39;applicazione Web ASP.NET | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/16/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-devops-test"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "vs.codeanalysis.propertypages.asp"
-ms.assetid: b3000b31-fd9d-489e-81a2-a4bee49453ba
-caps.latest.revision: 13
-caps.handback.revision: 13
-author: "stevehoag"
-ms.author: "shoag"
-manager: "wpickett"
+title: "Procedura: configurare l'analisi codice per un'applicazione Web ASP.NET in Visual Studio"
+ms.date: 11/04/2016
+ms.technology: vs-ide-code-analysis
+ms.topic: conceptual
+f1_keywords:
+- vs.codeanalysis.propertypages.asp
+author: gewarren
+ms.author: gewarren
+manager: douge
+ms.workload:
+- aspnet
+ms.openlocfilehash: 4d950846811cf1792bf2ee302d37ebd686107fe6
+ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/19/2018
 ---
-# Procedura: configurare l&#39;analisi del codice per un&#39;applicazione Web ASP.NET
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
+# <a name="how-to-configure-code-analysis-for-an-aspnet-web-application"></a>Procedura: configurare l'analisi del codice per un'applicazione Web ASP.NET
 
-In [!INCLUDE[vsPreShort](../code-quality/includes/vspreshort_md.md)] e [!INCLUDE[vsUltShort](../code-quality/includes/vsultshort_md.md)] è possibile scegliere da un elenco di *set di regole* di analisi codice da applicare all'applicazione Web [!INCLUDE[vstecasp](../code-quality/includes/vstecasp_md.md)].  Il set di regole predefinito è il set Regole minime consigliate Microsoft.  È possibile selezionare un altro set di regole da applicare al sito Web.  
-  
-### Per configurare un set di regole per un progetto del framework di pagine ASP.NET  
-  
-1.  Selezionare il sito Web in **Esplora soluzioni**.  
-  
-2.  Scegliere **Configura analisi codice per il sito Web** dal menu **Analizza** .  
-  
-3.  Se è stata selezionata la soluzione e questa dispone di più di un progetto, selezionare la configurazione di compilazione e il sistema operativo di destinazione dagli elenchi **Configurazione** e **Piattaforma**.  
-  
-4.  Per ogni progetto nella soluzione fare clic sulla colonna **Set di regole**, quindi fare clic sul nome del set di regole da eseguire.  
-  
-5.  Per impostazione predefinita, l'analisi codice viene eseguita su tutti i progetti nella soluzione.  Per disabilitare o abilitare l'analisi codice per un particolare progetto, attenersi alla seguente procedura:  
-  
-    1.  Fare clic con il pulsante destro del mouse sul nome del progetto, quindi scegliere Proprietà.  
-  
-    2.  Selezionare o deselezionare la casella di controllo **Abilita analisi codice**.  È inoltre possibile eseguire manualmente l'analisi codice selezionando **Esegui analisi del codice su sito Web** dal menu **Analizza**.  
-  
-6.  Nell'elenco a discesa **Esegui il set di regole**, attenersi alla seguente procedura:  
-  
-    -   Selezionare il set di regole che si desidera utilizzare.  
-  
-    -   Selezionare **\<Sfoglia...\>** per specificare un set di regole personalizzato esistente non incluso nell'elenco.  
-  
-    -   Definire un set di regole personalizzato.  Per ulteriori informazioni, vedere [Creazione di set di regole personalizzate](../code-quality/creating-custom-code-analysis-rule-sets.md).
+In Visual Studio, è possibile selezionare da un elenco di analisi del codice *set di regole* da applicare al [!INCLUDE[vstecasp](../code-quality/includes/vstecasp_md.md)] applicazione Web. Il set di regole predefinito è regole minime consigliate di Microsoft. È possibile selezionare un altro set di regole da applicare al sito Web.
+
+1. Selezionare il sito Web in **Esplora**.
+
+2. Nel **Analizza** menu, fare clic su **Configura analisi codice per il sito Web**.
+
+3. Se è stata selezionata la soluzione e la soluzione contiene più di un progetto, selezionare il sistema operativo di destinazione e di configurazione compilazione dal **configurazione** e **piattaforma** Elenca.
+
+4. Per ogni progetto nella soluzione, scegliere il **del Set di regole** colonna e quindi scegliere il nome della regola impostata per l'esecuzione.
+
+5. Per impostazione predefinita, l'analisi del codice viene eseguito in tutti i progetti nella soluzione. Per disabilitare o abilitare l'analisi del codice per un particolare progetto, seguire questi passaggi:
+
+    1. Fare doppio clic sul nome del progetto e quindi fare clic su proprietà.
+
+    2. Selezionare o deselezionare il **Attiva analisi codice** casella di controllo. È anche possibile eseguire manualmente l'analisi del codice selezionando **Esegui analisi del codice sul sito Web** dal **Analizza** menu.
+
+6. Nel **eseguire il set di regole** elenco a discesa, attenersi alla procedura seguente:
+
+    - Selezionare il set di regole che si desidera utilizzare.
+
+    - Selezionare  **\<Sfoglia >** per specificare set di una regola personalizzata esistente non è presente nell'elenco.
+
+    - Definire un [set di regole personalizzate](../code-quality/how-to-create-a-custom-rule-set.md).

@@ -1,64 +1,63 @@
 ---
-title: "IDiaSession::findSymbolByAddr | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "IDiaSession::findSymbolByAddr (metodo)"
+title: IDiaSession::findSymbolByAddr | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology: vs-ide-debug
+ms.topic: conceptual
+dev_langs:
+- C++
+helpviewer_keywords:
+- IDiaSession::findSymbolByAddr method
 ms.assetid: c130abc5-4d0a-4d2d-8286-94fde36ddd4a
-caps.latest.revision: 9
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 9
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 06f3a19073c13415a2e1dd021911c391e63f87ae
+ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/18/2018
 ---
-# IDiaSession::findSymbolByAddr
-[!INCLUDE[vs2017banner](../../code-quality/includes/vs2017banner.md)]
-
-Recupera un tipo specificato di simboli che contiene, o è il più vicino a, un indirizzo specificato.  
+# <a name="idiasessionfindsymbolbyaddr"></a>IDiaSession::findSymbolByAddr
+Recupera un tipo di simbolo specificato che contiene o vicino a, un indirizzo specificato.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp#  
-HRESULT findSymbolByAddr (   
-   DWORD        isect,  
-   DWORD        offset,  
-   SymTagEnum   symtag,  
-   IDiaSymbol** ppSymbol  
+```C++  
+HRESULT findSymbolByAddr (   
+   DWORD        isect,  
+   DWORD        offset,  
+   SymTagEnum   symtag,  
+   IDiaSymbol** ppSymbol  
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `isect`  
- \[in\]  Specifica la parte della sezione relativa a.  
+ [in] Specifica il componente di sezione dell'indirizzo.  
   
  `offset`  
- \[in\]  Specifica il componente offset di indirizzo.  
+ [in] Specifica il componente di offset dell'indirizzo.  
   
  `symtag`  
- \[in\]  Tipo di simboli da cercare.  I valori vengono ricavati da [Enumerazione SymTagEnum](../../debugger/debug-interface-access/symtagenum.md) enumerazione.  
+ [in] Tipo di simbolo da trovare. I valori vengono prelevati i [SymTagEnum (enumerazione)](../../debugger/debug-interface-access/symtagenum.md) enumerazione.  
   
  `ppSymbol`  
- \[out\]  restituisce [IDiaSymbol](../../debugger/debug-interface-access/idiasymbol.md) oggetto che rappresenta il simbolo recuperato.  
+ [out] Restituisce un [IDiaSymbol](../../debugger/debug-interface-access/idiasymbol.md) recuperare l'oggetto che rappresenta il simbolo.  
   
-## Valore restituito  
- Se l'operazione riesce, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
+## <a name="return-value"></a>Valore restituito  
+ Se ha esito positivo, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
   
-## Esempio  
+## <a name="example"></a>Esempio  
   
-```cpp#  
+```C++  
 IDiaSymbol* pFunc;  
 pSession->findSymbolByAddr( isect, offset, SymTagFunction, &pFunc );  
 ```  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IDiaSession](../../debugger/debug-interface-access/idiasession.md)   
  [IDiaSymbol](../../debugger/debug-interface-access/idiasymbol.md)   
- [Enumerazione SymTagEnum](../../debugger/debug-interface-access/symtagenum.md)
+ [SymTagEnum (enumerazione)](../../debugger/debug-interface-access/symtagenum.md)

@@ -1,48 +1,48 @@
 ---
-title: "Cenni preliminari sull&#39;utilizzo di file di un database locale nelle soluzioni Office"
-ms.custom: ""
-ms.date: "02/02/2017"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "office-development"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-helpviewer_keywords: 
-  - "dati [sviluppo per Office in Visual Studio], locali"
-  - "dati locali [sviluppo per Office in Visual Studio]"
-  - "Applicazioni Office [sviluppo per Office in Visual Studio], dati"
-ms.assetid: 7a920e6b-f0c3-4a62-b5dd-02668a6177b6
-caps.latest.revision: 30
-author: "kempb"
-ms.author: "kempb"
-manager: "ghogen"
-caps.handback.revision: 29
+title: Utilizzo di file di Database locale in soluzioni di Office | Documenti Microsoft
+ms.custom: ''
+ms.date: 02/02/2017
+ms.technology:
+- office-development
+ms.topic: conceptual
+dev_langs:
+- VB
+- CSharp
+helpviewer_keywords:
+- Office applications [Office development in Visual Studio], data
+- data [Office development in Visual Studio], local
+- local data [Office development in Visual Studio]
+author: TerryGLee
+ms.author: tglee
+manager: douge
+ms.workload:
+- office
+ms.openlocfilehash: a171fe12a1476e19c46f0aef704342de375c7865
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# Cenni preliminari sull&#39;utilizzo di file di un database locale nelle soluzioni Office
-  È possibile includere un file di database, ad esempio un file di SQL Server Express \(con estensione mdf\) o di Microsoft Office Access \(mdb\), nella soluzione Office.  In questo modo, gli utenti finali possono gestire un database locale nelle situazioni in cui non è richiesta la gestione di un database centralizzato, ad esempio in una soluzione di inventario locale utilizzata solo in un singolo computer.  
+# <a name="using-local-database-files-in-office-solutions-overview"></a>Cenni preliminari sull'utilizzo di file di un database locale nelle soluzioni Office
+  È possibile includere un file di database, ad esempio un file di SQL Server Express (. mdf) o un file di Microsoft Office Access (mdb), nella soluzione Office. Ciò consente agli utenti finali di gestire un database locale nelle situazioni in cui la gestione di un database centralizzato non necessarie, ad esempio in una soluzione locale di inventario che viene utilizzata solo un singolo computer.  
   
  [!INCLUDE[appliesto_all](../vsto/includes/appliesto-all-md.md)]  
   
-## Importazione del file di database in un progetto  
- Per importare il file di database nel progetto, utilizzare la **Configurazione guidata origine dati** per creare un'origine dati basata sul file di database.  La procedura guidata consente di aggiungere al progetto il file di database e un DataSet tipizzato.  
+## <a name="importing-the-database-file-into-a-project"></a>L'importazione del File di Database in un progetto  
+ Per importare il file di database al progetto, utilizzare il **configurazione guidata origine dati** per creare un'origine dati in base al file di database. La procedura guidata aggiunge il file di database e un dataset tipizzato al progetto.  
   
-## Distribuzione del file di database  
- La **Configurazione guidata origine dati** utilizza un percorso relativo per creare connessioni al file di database locale.  Se si gestiscono i percorsi relativi dei file, ciò consente di copiare la soluzione da un computer a un altro.  
+## <a name="deploying-the-database-file"></a>Il File di Database di distribuzione  
+ Il **configurazione guidata origine dati** utilizza un percorso relativo per creare connessioni al file di database locale. In questo modo è possibile copiare la soluzione da un computer a un altro, se si gestiscono i percorsi relativi dei file.  
   
- Se si distribuisce la soluzione a un server e quindi si distribuisce il documento a ogni utente finale, è necessario distribuire manualmente anche il file di database e quindi installarlo nello stesso percorso relativo del documento.  Ciò significa che l'utente finale non potrà spostare il documento in un nuovo percorso sul computer se non sposta anche il file di database.  
+ Se si distribuisce la soluzione a un server e quindi distribuire il documento per ogni utente finale, è necessario distribuire il file di database manualmente e installarlo nella stessa posizione relativo al documento. Ciò significa che l'utente finale non è possibile spostare il documento in una nuova posizione nel proprio computer, a meno che non si anche sposta il file di database.  
   
-## File di database locali e memorizzazione del DataSet nella cache  
- Nelle soluzioni a livello di documento di Microsoft Office Excel e Microsoft Office Word, è possibile memorizzare nella cache dataset contenuti nel documento contrassegnando l'istanza del dataset con l'attributo <xref:Microsoft.VisualStudio.Tools.Applications.Runtime.CachedAttribute>.  Quando si aggiunge il file di database al progetto mediante la **Configurazione guidata origine dati**, verrà aggiunto automaticamente anche un dataset tipizzato.  Poiché i dati sono già locali nel computer dell'utente, l'attributo <xref:Microsoft.VisualStudio.Tools.Applications.Runtime.CachedAttribute> deve essere applicato a questo dataset solo in rari casi.  Per ulteriori informazioni, vedere [Memorizzazione di dati nella cache](../vsto/caching-data.md).  
+## <a name="local-database-files-and-caching-the-dataset"></a>File di Database locali e la memorizzazione nella cache il set di dati  
+ Nelle soluzioni a livello di documento per Microsoft Office Excel e Microsoft Office Word, è possibile memorizzare nella cache set di dati nel documento contrassegnando l'istanza del set di dati con l'attributo <xref:Microsoft.VisualStudio.Tools.Applications.Runtime.CachedAttribute>. Quando si aggiunge il file di database al progetto utilizzando il **configurazione guidata origine dati**, un dataset tipizzato viene aggiunto automaticamente al progetto. Raramente è necessario applicare <xref:Microsoft.VisualStudio.Tools.Applications.Runtime.CachedAttribute> per questo set di dati, poiché i dati sono già locali nel computer dell'utente. Per altre informazioni, vedere [Caching Data](../vsto/caching-data.md).  
   
-## Vedere anche  
- [Associazione di dati ai controlli nelle soluzioni Office](../vsto/binding-data-to-controls-in-office-solutions.md)   
- [Procedura: popolare documenti con dati da un database](../vsto/how-to-populate-documents-with-data-from-a-database.md)   
- [Procedura: Aggiornare un'origine dati con i dati inviati da un controllo host](../vsto/how-to-update-a-data-source-with-data-from-a-host-control.md)   
+## <a name="see-also"></a>Vedere anche  
+ [Associazione dati ai controlli nelle soluzioni Office](../vsto/binding-data-to-controls-in-office-solutions.md)   
+ [Procedura: popolare documenti con dati da un Database](../vsto/how-to-populate-documents-with-data-from-a-database.md)   
+ [Procedura: aggiornare un'origine dati con i dati da un controllo Host](../vsto/how-to-update-a-data-source-with-data-from-a-host-control.md)   
  [Distribuzione di una soluzione Office](../vsto/deploying-an-office-solution.md)   
  [Memorizzazione di dati nella cache](../vsto/caching-data.md)  
   

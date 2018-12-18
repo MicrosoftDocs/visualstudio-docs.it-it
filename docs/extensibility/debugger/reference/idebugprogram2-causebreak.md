@@ -1,48 +1,49 @@
 ---
-title: "IDebugProgram2::CauseBreak | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "IDebugProgram2::CauseBreak"
-helpviewer_keywords: 
-  - "IDebugProgram2::CauseBreak"
+title: IDebugProgram2::CauseBreak | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology:
+- vs-ide-sdk
+ms.topic: conceptual
+f1_keywords:
+- IDebugProgram2::CauseBreak
+helpviewer_keywords:
+- IDebugProgram2::CauseBreak
 ms.assetid: 07d353fc-68ab-4297-a18f-3d3c7a80e121
-caps.latest.revision: 8
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 8
+author: gregvanl
+ms.author: gregvanl
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: 81fb04db3342bb8ce7d5e314c9a912b873ffb627
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# IDebugProgram2::CauseBreak
-[!INCLUDE[vs2017banner](../../../code-quality/includes/vs2017banner.md)]
-
-Le richieste che il programma verrà interrotta la volta successiva che uno dei thread tenta di eseguire.  
+# <a name="idebugprogram2causebreak"></a>IDebugProgram2::CauseBreak
+Le richieste che il programma di arresta l'esecuzione alla successiva ora di uno dei tentativi thread di esecuzione.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp#  
-HRESULT CauseBreak(   
-   void   
+```cpp  
+HRESULT CauseBreak(   
+   void   
 );  
 ```  
   
-```c#  
+```csharp  
 int CauseBreak();  
 ```  
   
-## Valore restituito  
- Se l'operazione riesce, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
+## <a name="return-value"></a>Valore restituito  
+ Se ha esito positivo, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
   
-## Note  
- [IDebugBreakEvent2](../../../extensibility/debugger/reference/idebugbreakevent2.md) Un evento viene inviato quando il programma dopo tenta di eseguire codice dopo che questo metodo viene chiamato.  
+## <a name="remarks"></a>Note  
+ Un [IDebugBreakEvent2](../../../extensibility/debugger/reference/idebugbreakevent2.md) viene inviato l'evento quando viene quindi effettuato un tentativo eseguire codice dopo questo metodo viene chiamato.  
   
- Questo metodo è asincrono in quanto il metodo restituisce immediatamente senza necessariamente attendere il programma per arrestare.  
+ Questo metodo è asincrono, in quanto il metodo restituisce immediatamente senza attendere necessariamente il blocco del programma.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IDebugProgram2](../../../extensibility/debugger/reference/idebugprogram2.md)   
  [IDebugBreakEvent2](../../../extensibility/debugger/reference/idebugbreakevent2.md)

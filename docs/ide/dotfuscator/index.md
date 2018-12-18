@@ -1,10 +1,10 @@
 ---
 title: Dotfuscator Community Edition (CE) | Microsoft Docs
-ms.date: 2017-06-22
+ms.date: 2017-10-10
 ms.devlang: dotnet
 ms.technology:
 - vs-ide-general
-ms.topic: article
+ms.topic: conceptual
 keywords: Dotfuscator, Dotfuscator CE, PreEmptive, PreEmptive Solutions, PreEmptive Protection, protezione, community edition, offuscamento, .NET, gratuito, Visual Studio 2017
 helpviewer_keywords:
 - PreEmptive Protection Dotfuscator
@@ -16,29 +16,13 @@ helpviewer_keywords:
 description: Informazioni su come proteggere le applicazioni .NET con la versione gratuita di Dotfuscator Community Edition inclusa in Visual Studio 2017.
 ms.assetid: d9550502-0a82-49a6-b005-2caa791fbe02
 author: Joe-Sewell-PreEmptive
-manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 8ce85525f6af336682f6f8547c2f6c13dde73c8c
-ms.openlocfilehash: 15dd6127493b9977732fdb891a086f931e002459
-ms.contentlocale: it-it
-ms.lasthandoff: 06/23/2017
-
+manager: douge
+ms.openlocfilehash: e8e7fb56580e3b0b5a9db8e46d9b98b7c157f9f2
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-
 # <a name="dotfuscator-community-edition-ce"></a>Dotfuscator Community Edition (CE)
 
 *PreEmptive Protection - Dotfuscator* offre una soluzione di protezione completa per applicazioni .NET, facilmente integrabile in un ciclo di sviluppo software sicuro.
@@ -82,7 +66,7 @@ Dotfuscator CE offre funzionalità predefinite per la protezione di base,
 ma altre misure di protezione delle applicazioni sono disponibili per gli utenti registrati di Dotfuscator CE e per gli utenti di *PreEmptive Protection - Dotfuscator* Professional Edition, la soluzione più avanzata di [offuscamento .NET][net-obfuscator] attualmente disponibile.
 Per informazioni su come migliorare Dotfuscator, vedere la [pagina Upgrades][upgrades] (Aggiornamenti).
 
-## <a name="getting-started"></a>Introduzione
+## <a name="getting-started"></a>Attività iniziali
 
 Per iniziare a usare Dotfuscator CE da Visual Studio, digitare `dotfuscator` nella barra di ricerca **Avvio veloce** (CTRL+Q).
 
@@ -95,7 +79,7 @@ Per iniziare a usare Dotfuscator CE da Visual Studio, digitare `dotfuscator` nel
 
 Questa pagina e le relative pagine secondarie presentano una panoramica di alto livello delle funzionalità di Dotfuscator CE e forniscono [istruzioni per l'installazione dello strumento][install].
 
-Vedere la [Guida dell'utente completa di Dotfuscator CE sul sito preemptive.com][full] per istruzioni dettagliate sull'uso, incluse quelle per [iniziare a usare l'interfaccia utente di Dotfuscator CE][get-started].
+Vedere la [Guida dell'utente completa di Dotfuscator CE sul sito preemptive.com] [ full] per istruzioni dettagliate sull'uso, incluse quelle per [iniziare a usare l'interfaccia utente di Dotfuscator CE][get-started].
 
 <!-- Copyright © 2017 PreEmptive Solutions, LLC -->
 
@@ -120,9 +104,8 @@ Vedere la [Guida dell'utente completa di Dotfuscator CE sul sito preemptive.com]
 [debug]: https://www.preemptive.com/dotfuscator/ce/docs/help/checks_debug.html
 [shelflife]: https://www.preemptive.com/dotfuscator/ce/docs/help/checks_shelflife.html
 
-[exceptions]: https://www.preemptive.com/dotfuscator/ce/docs/help/analytics_exceptions.html
-[sessions]: https://www.preemptive.com/dotfuscator/ce/docs/help/analytics_sessions.html
-[features]: https://www.preemptive.com/dotfuscator/ce/docs/help/analytics_features.html
+[exceptions]: https://www.preemptive.com/dotfuscator/ce/docs/help/instrumentation_exceptions.html
+[sessions]: https://www.preemptive.com/dotfuscator/ce/docs/help/instrumentation_sessions.html
+[features]: https://www.preemptive.com/dotfuscator/ce/docs/help/instrumentation_features.html
 
 [full]: https://www.preemptive.com/dotfuscator/ce/docs/help/index.html
-

@@ -1,53 +1,52 @@
 ---
-title: "AssignCulture Task | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "http://schemas.microsoft.com/developer/msbuild/2003#AssignCulture"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "MSBuild, AssignCulture task"
-  - "AssignCulture task [MSBuild]"
+title: Attività AssignCulture | Microsoft Docs
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology: msbuild
+ms.topic: reference
+f1_keywords:
+- http://schemas.microsoft.com/developer/msbuild/2003#AssignCulture
+dev_langs:
+- VB
+- CSharp
+- C++
+- jsharp
+helpviewer_keywords:
+- MSBuild, AssignCulture task
+- AssignCulture task [MSBuild]
 ms.assetid: 8f8314cc-82a6-4f16-a62d-b9f0d1d5e274
-caps.latest.revision: 10
-author: "kempb"
-ms.author: "kempb"
-manager: "ghogen"
-caps.handback.revision: 10
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 26adf9bd97e10e25402db100ebb0140917ac6143
+ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/19/2018
 ---
-# AssignCulture Task
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
-Questa attività accetta un elenco di elementi che possono contenere una stringa di identificazione delle impostazioni cultura .NET valida come parte del nome di file e genera elementi con un metadato denominato `Culture` contenente l'identificatore delle impostazioni cultura corrispondente.  Ad esempio, poiché il nome di file Form1.fr\-fr.resx contiene l'identificatore delle impostazioni cultura incorporato "fr\-fr", verrà generato un elemento con lo stesso nome di file in cui il valore del metadato `Culture` sarà `fr-fr`.  L'attività genera inoltre un elenco di nomi di file dai quali l'identificatore delle impostazioni cultura è stato rimosso.  
+# <a name="assignculture-task"></a>Attività AssignCulture
+Questa attività accetta un elenco di elementi che possono contenere una stringa dell'identificatore di impostazioni cultura .NET valida come parte del nome file e genera elementi con metadati denominati `Culture` che contengono l'identificatore di impostazioni cultura corrispondente. Ad esempio, il nome di file Form1.fr-fr.resx contiene un identificatore di impostazioni cultura incorporato, "fr-fr", quindi questa attività genera un elemento con lo stesso nome di file con i metadati `Culture` uguali a `fr-fr`. L'attività genera inoltre un elenco di nomi di file con le impostazioni cultura rimosse dal nome del file.  
   
-## Parametri dell'attività  
- Nella tabella riportata di seguito sono descritti i parametri dell'attività `AssignCulture`.  
+## <a name="task-parameters"></a>Parametri dell'attività  
+ Nella tabella che segue vengono descritti i parametri dell'attività `AssignCulture`.  
   
 |Parametro|Descrizione|  
 |---------------|-----------------|  
-|`AssignedFiles`|Parametro di output <xref:Microsoft.Build.Framework.ITaskItem>`[]` facoltativo.<br /><br /> Contiene l'elenco di elementi ricevuti nel parametro `Files`. A ciascun elemento è stato aggiunto un metadato `Culture`.<br /><br /> Se l'elemento proveniente dal parametro `Files` contiene già un metadato `Culture`, viene utilizzato il metadato originale.<br /><br /> L'attività assegna una voce di metadati `Culture` solo se il nome file contiene un identificatore delle impostazioni cultura valido.  L'identificatore delle impostazioni cultura deve essere compreso tra gli ultimi due punti del nome di file.|  
-|`AssignedFilesWithCulture`|Parametro di output <xref:Microsoft.Build.Framework.ITaskItem>`[]` facoltativo.<br /><br /> Contiene il sottoinsieme degli elementi del parametro `AssignedFiles` che presentano un metadato `Culture`.|  
-|`AssignedFilesWithNoCulture`|Parametro di output <xref:Microsoft.Build.Framework.ITaskItem>`[]` facoltativo.<br /><br /> Contiene il sottoinsieme degli elementi del parametro `AssignedFiles` che non presentano un metadato `Culture`.|  
-|`CultureNeutralAssignedFiles`|Parametro di output <xref:Microsoft.Build.Framework.ITaskItem>`[]` facoltativo.<br /><br /> Contiene lo stesso elenco di elementi generato nel parametro `AssignedFiles`, con la differenza che l'identificatore delle impostazioni cultura è stato rimosso dal nome di file.<br /><br /> Le impostazioni cultura vengono rimosse dal nome di file soltanto se si tratta di un identificatore delle impostazioni cultura valido.|  
-|`Files`|Parametro <xref:Microsoft.Build.Framework.ITaskItem>`[]` obbligatorio.<br /><br /> Specifica l'elenco di file con i nomi di impostazioni cultura incorporati a cui assegnare determinate impostazioni cultura.|  
+|`AssignedFiles`|Parametro di output <xref:Microsoft.Build.Framework.ITaskItem>`[]` facoltativo.<br /><br /> Contiene l'elenco di elementi ricevuti nel parametro `Files`, con una voce di metadati `Culture` aggiunta a ogni elemento.<br /><br /> Se l'elemento proveniente dal parametro `Files` contiene già una voce di metadati `Culture`, viene usata la voce di metadati originale.<br /><br /> L'attività assegna una voce di metadati `Culture` solo se il nome del file contiene un identificatore di impostazioni cultura valido. L'identificatore di impostazioni cultura deve essere compreso tra gli ultimi due punti nel nome file.|  
+|`AssignedFilesWithCulture`|Parametro di output <xref:Microsoft.Build.Framework.ITaskItem>`[]` facoltativo.<br /><br /> Contiene il subset degli elementi del parametro `AssignedFiles` che hanno una voce di metadati `Culture`.|  
+|`AssignedFilesWithNoCulture`|Parametro di output <xref:Microsoft.Build.Framework.ITaskItem>`[]` facoltativo.<br /><br /> Contiene il subset degli elementi del parametro `AssignedFiles` che non hanno una voce di metadati `Culture`.|  
+|`CultureNeutralAssignedFiles`|Parametro di output <xref:Microsoft.Build.Framework.ITaskItem>`[]` facoltativo.<br /><br /> Contiene lo stesso elenco di elementi generato nel parametro `AssignedFiles`, eccetto le impostazioni cultura rimosse dal nome del file.<br /><br /> L'attività rimuove le impostazioni cultura dal nome del file solo se viene usato un identificatore di impostazioni cultura valido.|  
+|`Files`|Parametro <xref:Microsoft.Build.Framework.ITaskItem>`[]` obbligatorio.<br /><br /> Specifica l'elenco di file con nomi di impostazioni cultura incorporati a cui assegnare le impostazioni cultura.|  
   
-## Note  
- Oltre ai parametri sopra elencati, questa attività eredita i parametri dalla classe <xref:Microsoft.Build.Tasks.TaskExtension>, che eredita dalla classe <xref:Microsoft.Build.Utilities.Task>.  Per un elenco di tali parametri aggiuntivi e le relative descrizioni, vedere [TaskExtension Base Class](../msbuild/taskextension-base-class.md).  
+## <a name="remarks"></a>Note  
+ Oltre ai parametri elencati sopra, questa attività eredita i parametri dalla classe <xref:Microsoft.Build.Tasks.TaskExtension>, che a sua volta eredita dalla classe <xref:Microsoft.Build.Utilities.Task>. Per un elenco di questi parametri aggiuntivi e le rispettive descrizioni, vedere [TaskExtension Base Class](../msbuild/taskextension-base-class.md).  
   
-## Esempio  
- Nell'esempio riportato di seguito l'attività `AssignCulture` viene eseguita con la raccolta di elementi `ResourceFiles`.  
+## <a name="example"></a>Esempio  
+ Nell'esempio seguente viene eseguita l'attività `AssignCulture` con la raccolta di elementi `ResourceFiles`.  
   
-```  
+```xml  
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">  
     <ItemGroup>  
         <ResourceFiles Include="MyResource1.fr.resx"/>  
@@ -70,15 +69,15 @@ Questa attività accetta un elenco di elementi che possono contenere una stringa
 </Project>  
 ```  
   
- Nella tabella riportata di seguito viene descritto il valore degli elementi di output dopo l'esecuzione dell'attività.  I metadati degli elementi vengono visualizzati tra parentesi dopo l'elemento.  
+ La tabella seguente descrive il valore degli elementi di output dopo l'esecuzione dell'attività. I metadati degli elementi vengono visualizzati tra parentesi dopo l'elemento.  
   
-|Raccolta di elementi|Contenuto|  
-|--------------------------|---------------|  
-|`OutAssignedFiles`|`MyResource1.fr.resx (Culture="fr")`<br /><br /> `MyResource2.XX.resx` \(nessun metadato aggiuntivo\)|  
+|Raccolta di elementi|Sommario|  
+|---------------------|--------------|  
+|`OutAssignedFiles`|`MyResource1.fr.resx (Culture="fr")`<br /><br /> `MyResource2.XX.resx` (senza metadati aggiuntivi)|  
 |`OutAssignedFilesWithCulture`|`MyResource1.fr.resx (Culture="fr")`|  
-|`OutAssignedFilesWithNoCulture`|`MyResource2.XX.resx` \(nessun metadato aggiuntivo\)|  
-|`OutCultureNeutralAssignedFiles`|`MyResource1.resx (Culture="fr")`<br /><br /> `MyResource2.XX.resx (`nessun metadato aggiuntivo\)|  
+|`OutAssignedFilesWithNoCulture`|`MyResource2.XX.resx` (senza metadati aggiuntivi)|  
+|`OutCultureNeutralAssignedFiles`|`MyResource1.resx (Culture="fr")`<br /><br /> `MyResource2.XX.resx (` (senza metadati aggiuntivi)|  
   
-## Vedere anche  
- [Tasks](../msbuild/msbuild-tasks.md)   
- [Task Reference](../msbuild/msbuild-task-reference.md)
+## <a name="see-also"></a>Vedere anche  
+ [Attività](../msbuild/msbuild-tasks.md)   
+ [Riferimento alle attività](../msbuild/msbuild-task-reference.md)

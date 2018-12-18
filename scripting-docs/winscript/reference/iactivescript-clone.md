@@ -1,27 +1,33 @@
 ---
-title: "IActiveScript::Clone | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/18/2017"
-ms.prod: "windows-script-interfaces"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-apiname: IActiveScript.Clone
-apilocation: scrobj.dll
-helpviewer_keywords: 
-  - "IActiveScript_Clone"
+title: IActiveScript::Clone | Documenti Microsoft
+ms.custom: 
+ms.date: 01/18/2017
+ms.prod: windows-script-interfaces
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: reference
+apiname:
+- IActiveScript.Clone
+apilocation:
+- scrobj.dll
+helpviewer_keywords:
+- IActiveScript_Clone
 ms.assetid: aa000b2a-7085-448d-a422-f7adac7851cb
-caps.latest.revision: 8
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: 
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.openlocfilehash: 4b0b83bcf86bcc56701d11f22640df966334697b
+ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/27/2017
 ---
-# IActiveScript::Clone
-Duplica il motore di scripting corrente \(meno qualsiasi stato corrente di esecuzione, restituendo un motore di script caricato che non dispone di sito nel thread corrente.  Le proprietà del nuovo modulo di gestione di scripting saranno identiche alle proprietà che il motore di script originale in se sarebbe opportuno quindi fornire nuovamente lo stato inizializzato.  
+# <a name="iactivescriptclone"></a>IActiveScript::Clone
+Clona il motore di script corrente (meno qualsiasi stato corrente dell'esecuzione), la restituzione di un motore di script caricato che non dispone di alcun sito nel thread corrente. Le proprietà di questo nuovo motore di script sarà identiche alle proprietà del che motore di script originale sarà nella se ne sono stati eseguita la transizione allo stato inizializzato.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
 HRESULT Clone(  
@@ -29,26 +35,26 @@ HRESULT Clone(
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `ppscript`  
- \[out\] indirizzo di una variabile che riceve un puntatore a un'interfaccia [IActiveScript](../../winscript/reference/iactivescript.md) del motore di scripting duplicato.  L'host deve creare un sito e chiamare il metodo [IActiveScript::SetScriptSite](../../winscript/reference/iactivescript-setscriptsite.md) sul motore di scripting prima che sia stato inizializzato e, pertanto, utilizzabile.  
+ [out] Indirizzo di una variabile che riceve un puntatore di [IActiveScript](../../winscript/reference/iactivescript.md) interfaccia del motore di scripting clonato. L'host deve creare un sito e chiamare il [IActiveScript::SetScriptSite](../../winscript/reference/iactivescript-setscriptsite.md) metodo sul nuovo motore di scripting affinché sia nello stato non inizializzato e quindi utilizzabile.  
   
-## Valore restituito  
- Restituisce uno dei seguenti valori:  
+## <a name="return-value"></a>Valore restituito  
+ Restituisce uno dei valori seguenti:  
   
 |Valore restituito|Significato|  
-|-----------------------|-----------------|  
-|`S_OK`|Riuscita.|  
-|`E_NOTIMPL`|Metodo non supportato.|  
-|`E_POINTER`|Un puntatore non valido è stato specificato.|  
-|`E_UNEXPECTED`|La chiamata non era prevista, ad esempio il motore di scripting non è ancora stato caricato o non inizializzata\).|  
+|------------------|-------------|  
+|`S_OK`|Operazione completata.|  
+|`E_NOTIMPL`|Questo metodo non è supportato.|  
+|`E_POINTER`|È stato specificato un puntatore non valido.|  
+|`E_UNEXPECTED`|La chiamata non era previsto (ad esempio, il motore di script non è ancora caricato o inizializzato).|  
   
-## Note  
- Il metodo `IActiveScript::Clone` è un'ottimizzazione `IPersist*::Save`, `CoCreateInstance`e `IPersist*::Load`, in modo che lo stato di un nuovo modulo di gestione di script deve essere uguale a se lo stato del modulo di gestione di script originale è stato salvato e stato caricato in un nuovo modulo di gestione di script.  Gli elementi denominati siano duplicati nel motore di scripting duplicato, ma puntatori a oggetti specifici per ciascun elemento sono dimenticati e vengono ottenuti con il metodo [IActiveScriptSite::GetItemInfo](../../winscript/reference/iactivescriptsite-getiteminfo.md).  Ciò consente un modello a oggetti identico a punti di ingresso per thread \(un modello di apartment\) da utilizzare.  
+## <a name="remarks"></a>Note  
+ Il `IActiveScript::Clone` metodo è un'ottimizzazione di `IPersist*::Save`, `CoCreateInstance`, e `IPersist*::Load`, pertanto lo stato del motore di script nuovo deve essere lo stesso come se lo stato del motore di scripting originale sono stato salvato e caricato in un nuovo motore di scripting. Gli elementi denominati vengono duplicati nel motore di scripting clonato, ma puntatori a oggetti specifici per ogni elemento sono dimenticati e vengono forniti con il [IActiveScriptSite::GetItemInfo](../../winscript/reference/iactivescriptsite-getiteminfo.md) metodo. In questo modo un modello a oggetti identici con punti di ingresso per ogni thread (un modello di apartment) da utilizzare.  
   
- Questo metodo viene utilizzato per gli host server con multithreading che possono eseguire più istanze dello stesso script.  Il motore di scripting può restituire `E_NOTIMPL`in questo caso, l'host può ottenere lo stesso risultato duplicando lo stato persistente e creando una nuova istanza del motore di scripting con un'interfaccia `IPersist*`.  
+ Questo metodo viene utilizzato per gli host server multithreading che è possono eseguire più istanze dello stesso script. Il motore di script può restituire `E_NOTIMPL`, nel qual caso l'host può ottenere lo stesso risultato duplicando allo stato persistente e creare una nuova istanza del motore di script con un `IPersist*` interfaccia.  
   
- Questo metodo può essere chiamato dai thread non di base senza con conseguente callout di non base agli oggetti host o a un'interfaccia [IActiveScriptSite](../../winscript/reference/iactivescriptsite.md).  
+ Questo metodo può essere chiamato dal thread non di base senza callout non in base a oggetti host o al [IActiveScriptSite](../../winscript/reference/iactivescriptsite.md) interfaccia.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IActiveScript](../../winscript/reference/iactivescript.md)

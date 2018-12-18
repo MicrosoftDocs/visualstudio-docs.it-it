@@ -1,189 +1,190 @@
 ---
-title: "Modelli di sito Web supporto tecnico | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "Abbiamo i progetti, modelli di sito"
+title: Modelli di supporto di siti Web | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology:
+- vs-ide-sdk
+ms.topic: conceptual
+helpviewer_keywords:
+- we site projects, templates
 ms.assetid: 37173c97-486b-4b3c-8ed3-cf5890c4de23
-caps.latest.revision: 12
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 12
+author: gregvanl
+ms.author: gregvanl
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: af8e0d845157b475e4a5527443f55286828023cc
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# Modelli di sito Web supporto tecnico
-[!INCLUDE[vs2017banner](../../code-quality/includes/vs2017banner.md)]
+# <a name="web-site-support-templates"></a>Modelli di supporto di siti Web
+[!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] I modelli di progetto e di elemento di siti Web forniscono stub riutilizzabili e personalizzabili sito progetto e di elemento che consente di accelerare il processo di sviluppo, eliminando la necessità di creare nuovi progetti di sito Web e gli elementi da zero. Per ulteriori informazioni su [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] modelli, vedere [creazione Project and Item Templates](../../ide/creating-project-and-item-templates.md).
 
-il progetto di sito Web e i modelli di elemento di [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] sono disponibili stub elemento personalizzabili e riutilizzabili di progetto di sito Web che velocizzare il processo di sviluppo rimuovendo la necessità di creare nuovi progetti di sito Web ed elementi da zero.  per ulteriori informazioni sui modelli di [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] , vedere [Creazione di un progetto e di modelli di elemento personalizzati](../../ide/creating-project-and-item-templates.md).  
-  
-## Cartella dei modelli di progetto  
- I modelli del modello di progetto Web in genere vengono installati*percorso di installazione di Visual Studio*\[\] in \\Common7\\IDE\\ProjectTemplates\\Web \\, ciascuno in una sottocartella denominata in base al linguaggio di programmazione Web.  
-  
-## File di progetto  
- L'ambiente di sviluppo integrato di  [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)]\(IDE\) richiede un'estensione di file di progetto come per eseguire il mapping di un modello al tipo di progetto corrente.  Poiché i progetti Web non dispongono di un file di progetto, l'estensione di file di progetto fittizia .webproj è registrata per supportare questa.  
-  
- Facoltativamente, una stringa del nome della lingua è possibile aggiungere al modello per consentire al sistema di progetto Web per impostare la proprietà predefinita del linguaggio nella finestra di dialogo di **Aggiungi nuovo elemento** per gli elementi basati sul modello.  La stringa deve essere la prima riga del file e deve corrispondere al nome registrato in AddItemLanguageName nella registrazione del motore di Intellisense che il nome registrato nel sottotipo di progetto \(VsTemplate\).  Per ulteriori informazioni, vedere [Attributi di supporto del sito Web](../../extensibility/internals/web-site-support-attributes.md).  
-  
- Se la stringa non è presente, il sistema di progetto Web tenterà di determinare la lingua predefinita basata sull'attributo di linguaggio e sulle estensioni di file delle pagine aggiunte al progetto Web dal modello di progetto.  
-  
-## Modelli di progetto  
- I modelli di progetto di sito Web vengono utilizzati per compilare i nuovi siti Web in risposta al comando di **nuovo sito Web** il menu File.  tre tipi di progetto di sito Web sono attualmente supportati:  
-  
--   progetti di sito Web vuoti  
-  
--   Progetti di sito Web  
-  
--   Progetti di servizi Web  
-  
-### svuotare i progetti di sito Web  
- Questi file viene creato un nuovo sito Web vuoto in risposta al comando di **sito Web vuoto** , che è disponibile dopo avere fa riferimento a **nuovo sito Web** il menu File:  
-  
--   EmptyWeb.vstemplate  
-  
-     Il file modello che consentono la creazione di un nuovo sito Web vuoto.  
-  
--   EmptyWeb.webproj  
-  
-     Questo è un elemento del sistema del modello di progetto.  It satisfies the project file reference in the EmptyWeb.vstemplate file.  
-  
-### web.config  
- Questi file viene creato un nuovo sito Web in risposta al comando di **Sito Web ASP.NET** , che è disponibile dopo avere fa riferimento a **nuovo sito Web** il menu File:  
-  
--   Default.aspx  
-  
-     La home page predefinito per il nuovo sito Web.  L'attributo di linguaggio specifica il linguaggio e l'attributo codebehind CodeFile specifica il file dipendente che contiene il codice di codebehind associato a questa pagina.  
-  
--   Default.aspx.*estensione*  
-  
-     Il file dipendente che contiene il codice di codebehind per la home page predefinito.  Il linguaggio di codebehind determina *estensione* di questo file.  
-  
--   web.config  
-  
-     Il file di configurazione radice web.site.  
-  
--   WebApplication.vstemplate  
-  
-     Il file modello che determina il contenuto della soluzione del sito Web e forza la creazione della cartella App\_Data.  
-  
--   WebApplication.webproj  
-  
-     Questo è un elemento del sistema del modello di progetto.  Soddisfa il riferimento di file di progetto nel file di WebApplication.vstemplate.  
-  
-### Progetti di servizi Web  
- Questi file viene creato un nuovo sito Web in risposta al comando di **Servizio Web ASP.NET** disponibile una volta fa riferimento a **nuovo sito Web** il menu File:  
-  
--   Service.asmx  
-  
-     la pagina HTML per il nuovo servizio Web.  L'attributo di linguaggio specifica il linguaggio di codebehind e l'attributo CodeBehind specifica il file dipendente che contiene il codice di codebehind associato a questo servizio.  
-  
--   servizio. *estensione*  
-  
-     il file dipendente che implementa la classe di servizio.  Il linguaggio di codebehind determina *estensione* di questo file.  
-  
--   web.config  
-  
--   Il file di configurazione radice web.site.  
-  
--   WebService.vstemplate  
-  
-     Il file modello che determina il contenuto della soluzione del sito Web e forza la creazione App\_Data e delle cartelle App\_Code.  il servizio. il file di*estensione* viene copiato nella cartella App\_Code.  
-  
--   WebService.webproj  
-  
-     Questo è un elemento del sistema del modello di progetto.  Soddisfa il riferimento di file di progetto nel file di WebService.vstemplate.  
-  
-## Cartella del modello di elemento di progetto  
- I modelli Web del modello di elemento di progetto in genere vengono installati*percorso di installazione di Visual Studio*\[\] in \\Common7\\IDE\\ItemTemplates\\Web \\, ciascuno in una sottocartella denominata in base al linguaggio di programmazione Web.  
-  
-## Modelli di elementi di progetto  
- I modelli di elemento di progetto di sito Web vengono utilizzati per aggiungere nuove pagine Web a un sito Web in risposta al comando di **aggiungere l'elemento esistente** .  questi tipi di pagine Web sono attualmente supportati:  
-  
--   nuova classe  
-  
--   Nuova pagina HTML  
-  
--   Il Web Form  
-  
--   nuova pagina master  
-  
-### nuova classe  
- Questo modello consente di creare un nuovo file di origine che definisce una classe vuota in risposta al comando di **Aggiungere una nuova classe** .  
-  
--   classe. *estensione*  
-  
-     il file di origine che implementa la classe vuota.  Il linguaggio di codebehind determina *estensione* di questo file.  
-  
--   Class.vstemplate  
-  
-     Il file modello che crea il file di origine e determina il contenuto.  
-  
-### New HTML Page  
- Questo modello consente di creare una nuova pagina Web in risposta al comando di **Aggiungere una nuova pagina HTML** .  
-  
--   HTMLPage.htm  
-  
-     Il contenuto iniziale della pagina Web.  La pagina Web non dispone in genere di file dipendente codebehind associato.  Per creare una pagina intelligente con associato un file di codebehind, utilizzare il modello Web Form anziché.  
-  
--   HTMLPage.vstemplate  
-  
-     Il file modello che crea la pagina Web e determina il contenuto.  
-  
-### nuovo WebForm  
- Questo modello consente di creare una nuova pagina Web intelligente in risposta al comando di **aggiungere il nuovo Web Form** .  
-  
- Per creare un file di origine dipendente codebehind, **Codice del posto in file separato**selezionato.  In caso contrario, chiamare il metodo <xref:Microsoft.VisualStudio.TextManager.Interop.IVsProvideColorableItems.GetColorableItem%2A> del servizio di linguaggio per ottenere un elemento il colore.  
-  
- Per creare una pagina di contenuto per una pagina master selezionata, **pagina master selezionata**selezionato.  
-  
--   WebForm.aspx  
-  
-     Il contenuto iniziale della pagina Web.  La pagina Web non dispone di un file dipendente codebehind associato.  
-  
--   WebForm\_cb.aspx  
-  
-     Il contenuto iniziale della pagina Web.  Questa pagina Web dispone di un file dipendente codebehind associato.  
-  
--   Codebehind. *estensione*  
-  
-     Il file dipendente che implementa la classe del webform.  Il linguaggio di codebehind determina *estensione* di questo file.  
-  
--   ContentPage.aspx  
-  
-     Il contenuto iniziale della pagina Web come pagina contenuto.  La pagina Web non dispone di un file dipendente codebehind associato.  
-  
--   ContentPage\_cb.aspx  
-  
-     Il contenuto iniziale della pagina Web come pagina contenuto.  Questa pagina Web dispone di un file dipendente codebehind associato.  
-  
--   WebForm.vstemplate  
-  
-     Il file modello che determina il contenuto di una nuova pagina Web e del relativo file dipendente, se disponibile.  
-  
-### nuova pagina master  
- This template creates a new master page in response to the **Add New Master Page** command.  
-  
- Per creare un file di origine dipendente codebehind, **Codice del posto in file separato**selezionato.  In caso contrario, chiamare il metodo <xref:Microsoft.VisualStudio.TextManager.Interop.IVsProvideColorableItems.GetColorableItem%2A> del servizio di linguaggio per ottenere un elemento il colore.  
-  
--   MasterPage.master  
-  
-     Il contenuto iniziale della pagina master.  Questa pagina master non dispone di un file dipendente codebehind associato.  
-  
--   MasterPage\_cb.master  
-  
-     Il contenuto iniziale della pagina master.  Questa pagina master corrisponde un file dipendente codebehind associato.  
-  
--   Codebehind.*estensione*  
-  
-     Il file dipendente che implementa la classe della pagina master.  Il linguaggio di codebehind determina *estensione* di questo file.  
-  
--   MasterPage.vstemplate  
-  
-     Il file modello che determina il contenuto della nuova pagina master e del relativo file dipendente, se disponibile.  
-  
-## Vedere anche  
- [Sito Web di supporto](../../extensibility/internals/web-site-support.md)
+## <a name="project-template-folder"></a>Cartella modelli di progetto
+ Modelli di progetto Web sono in genere installati in [*percorso di installazione di Visual Studio*] \Common7\IDE\ProjectTemplates\Web\\, ciascuno in una sottocartella denominata in base al linguaggio di programmazione web.
+
+## <a name="project-file"></a>File di progetto
+ Il [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] ambiente di sviluppo integrato (IDE) richiede un'estensione di file di progetto come un modo per eseguire il mapping di un modello per il tipo di progetto corretti. Progetti Web non dispone di un file di progetto, viene registrato il webproj estensione file di progetto fittizio per eseguire il mapping del modello per il tipo di progetto.
+
+ Facoltativamente, aggiungere al modello, per consentire al sistema di progetto Web di impostare la lingua predefinita in una stringa del nome di lingua di **Aggiungi nuovo elemento** la finestra di dialogo per gli elementi in base al modello. La stringa deve essere la prima riga del file. Deve corrispondere al nome registrato in AddItemLanguageName nella registrazione motore IntelliSense e il nome registrato nel progetto Subtype(VsTemplate). Per ulteriori informazioni, vedere [sito Web supporto attributi](../../extensibility/internals/web-site-support-attributes.md).
+
+ Se la stringa non è presente, il sistema del progetto Web tenta di determinare la lingua predefinita in base alle estensioni di attributi e i file del linguaggio delle pagine aggiunte al progetto Web dal modello di progetto.
+
+## <a name="project-templates"></a>Modelli di progetto
+ Modelli di progetto di sito Web vengono utilizzati per creare nuovi siti Web in risposta al **nuovo sito Web** comando il **File** menu. Attualmente sono supportati tre tipi di progetto di sito Web:
+
+-   Progetti di sito Web vuoto
+
+-   Progetti di siti Web
+
+-   Progetti di servizi Web
+
+### <a name="empty-web-site-projects"></a>Progetti di sito Web vuoto
+ Questi file creano un nuovo sito Web vuoto in risposta al **sito Web vuoto** comando, è disponibile dopo aver scelto **File** > **nuovo sito Web**:
+
+-   EmptyWeb.vstemplate
+
+     Il file di modello che descrive la creazione del nuovo sito Web vuoto.
+
+-   EmptyWeb.webproj
+
+     Questo file è un elemento del sistema del modello di progetto. Il riferimento al file di progetto nel file EmptyWeb.vstemplate soddisfa.
+
+### <a name="web-site-projects"></a>Progetti di siti Web
+ Questi file creano un nuovo sito Web in risposta al **sito Web ASP.NET** comando, è disponibile dopo aver scelto **File** > **nuovo sito Web**:
+
+-   Default.aspx
+
+     Home page predefinita per il nuovo sito Web. L'attributo di linguaggio specifica language il codebehind e l'attributo CodeFile specifica il file dipendente contenente codice il codebehind associato a questa pagina.
+
+-   Default.aspx. *estensione*
+
+     Il file dipendente che contiene il codice sottostante per la home page predefinita. Lingua il codebehind determina il *estensione* di questo file.
+
+-   web.config
+
+     File di configurazione web.site principale.
+
+-   WebApplication.vstemplate
+
+     Il file di modello che determina il contenuto di Esplora il sito Web e forza la creazione della cartella App_Data.
+
+-   WebApplication.webproj
+
+     Questo file è un elemento del sistema del modello di progetto. Il riferimento al file di progetto nel file WebApplication.vstemplate soddisfa.
+
+### <a name="web-service-projects"></a>Progetti di servizi Web
+ Questi file creano un nuovo sito Web in risposta al **servizio Web ASP.NET** comando, è disponibile dopo aver scelto **File** > **nuovo sito Web**:
+
+-   Service.asmx
+
+     La pagina HTML per il nuovo servizio Web. L'attributo di linguaggio specifica language il codebehind e l'attributo CodeBehind specifica il file dipendente contenente codice il codebehind associato a questo servizio.
+
+-   Servizio. *Estensione*
+
+     Il file dipendente che implementa la classe del servizio. Lingua il codebehind determina il *estensione* di questo file.
+
+-   web.config
+
+-   File di configurazione web.site principale.
+
+-   WebService.vstemplate
+
+     Il file di modello che determina il contenuto di Esplora il sito Web e forza la creazione delle cartelle App_Data e App_Code. Il servizio. *estensione* file viene copiato nella cartella App_Code.
+
+-   WebService.webproj
+
+     Questo file è un elemento del sistema del modello di progetto. Il riferimento al file di progetto nel file WebService.vstemplate soddisfa.
+
+## <a name="project-item-template-folder"></a>Cartella del modello di elemento di progetto
+ Modelli di elemento di progetto Web sono in genere installati nel [*percorso di installazione di Visual Studio*] \Common7\IDE\ItemTemplates\Web\\, ciascuno in una sottocartella denominata in base al relativo linguaggio di programmazione web.
+
+## <a name="project-item-templates"></a>I modelli di progetto
+ I modelli di progetto di sito Web vengono utilizzati per aggiungere nuove pagine Web a un sito Web in risposta al **Aggiungi elemento esistente** comando. Questi tipi di pagine Web sono attualmente supportati:
+
+-   Nuova classe
+
+-   Nuova pagina HTML
+
+-   Nuovo Web Form
+
+-   Pagina master
+
+### <a name="new-class"></a>Nuova classe
+ Questo modello consente di creare un nuovo file di origine che definisce una classe vuota in risposta al **Aggiungi nuova classe** comando.
+
+-   Class. *Estensione*
+
+     Il file di origine che implementa la classe vuota. Lingua il codebehind determina il *estensione* di questo file.
+
+-   Class.vstemplate
+
+     Il file di modello che crea il file di origine e determina il relativo contenuto.
+
+### <a name="new-html-page"></a>Nuova pagina HTML
+ Questo modello consente di creare una nuova pagina Web in risposta al **Aggiungi nuova pagina HTML** comando.
+
+-   HTMLPage.htm
+
+     Il contenuto inizio della pagina Web. Questa pagina Web non è in genere alcun file dipendente il codebehind associato. Per creare una pagina intelligente con un file il codebehind associati, utilizzare il modello Web Form.
+
+-   HTMLPage.vstemplate
+
+     Il file di modello che crea la pagina Web e determina il relativo contenuto.
+
+### <a name="new-webform"></a>Nuovo Web Form
+ Questo modello consente di creare una nuova pagina Web smart in risposta al **Aggiungi nuovo Web Form** comando.
+
+ Per creare un file di origine il codebehind dipendenti, selezionare **inserire il codice in file separato**. In caso contrario, una singola pagina Web viene creata con un blocco di script vuoto e nessun \<pagina % % > direttive per collegare un file dipendente.
+
+ Per creare una pagina contenuto per una pagina master selezionata, selezionare **Seleziona pagina master**.
+
+-   WebForm.aspx
+
+     Il contenuto inizio della pagina Web. Questa pagina Web non dispone di alcun file dipendente il codebehind associato.
+
+-   WebForm_cb.aspx
+
+     Il contenuto inizio della pagina Web. Questa pagina Web è un file di dipendenti il codebehind associato.
+
+-   Codebehind. *Estensione*
+
+     Il file dipendente che implementa la classe di Web Form. Lingua il codebehind determina il *estensione* di questo file.
+
+-   ContentPage.aspx
+
+     Il contenuto inizio della pagina Web come una pagina di contenuto. Questa pagina Web non dispone di alcun file dipendente il codebehind associato.
+
+-   ContentPage_cb.aspx
+
+     Il contenuto inizio della pagina Web come una pagina di contenuto. Questa pagina Web è un file di dipendenti il codebehind associato.
+
+-   WebForm.vstemplate
+
+     Il file di modello che determina il contenuto della nuova pagina web e i relativi file dipendenti, se presente.
+
+### <a name="new-master-page"></a>Nuova pagina Master
+ Questo modello consente di creare una nuova pagina master in risposta al **Aggiungi pagina Master** comando.
+
+ Per creare un file di origine il codebehind dipendenti, selezionare **inserire il codice in file separato**. In caso contrario viene creata con un blocco di script vuoto e non una singola pagina Web \<pagina % % > direttive per collegare un file dipendente.
+
+-   MasterPage.master
+
+     Il contenuto inizio della pagina master. Questa pagina master non dispone di alcun file dipendente il codebehind associato.
+
+-   MasterPage_cb.master
+
+     Il contenuto inizio della pagina master. Questa pagina master è un file di dipendenti il codebehind associato.
+
+-   Codebehind. *estensione*
+
+     Il file dipendente che implementa la classe di pagina master. Lingua il codebehind determina il *estensione* di questo file.
+
+-   MasterPage.vstemplate
+
+     Il file di modello che determina il contenuto della nuova pagina master e i relativi file dipendenti, se presente.
+
+## <a name="see-also"></a>Vedere anche
+ [Supporto per siti Web](../../extensibility/internals/web-site-support.md)

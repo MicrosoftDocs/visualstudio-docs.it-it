@@ -1,27 +1,33 @@
 ---
-title: "Enumerazione BREAKREASON | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/18/2017"
-ms.prod: "windows-script-interfaces"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-apiname: BREAKREASON
-apilocation: scrobj.dll
-helpviewer_keywords: 
-  - "Enumerazione BREAKREASON"
+title: Enumerazione BREAKREASON | Documenti Microsoft
+ms.custom: ''
+ms.date: 01/18/2017
+ms.prod: windows-script-interfaces
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
+ms.topic: reference
+apiname:
+- BREAKREASON
+apilocation:
+- scrobj.dll
+helpviewer_keywords:
+- BREAKREASON enumeration
 ms.assetid: bde07ede-2f9b-4fa2-affc-f9405683f5f7
 caps.latest.revision: 8
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 8
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.openlocfilehash: bf1baa8b627df50db33cbd86302ce06e80c1cf34
+ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/27/2017
 ---
-# Enumerazione BREAKREASON
-Indica che causa l'interruzione.  
+# <a name="breakreason-enumeration"></a>Enumerazione BREAKREASON
+Indica la causa dell'interruzione.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
 typedef enum tagBREAKREASON {  
@@ -36,18 +42,18 @@ typedef enum tagBREAKREASON {
 } BREAKREASON;  
 ```  
   
-## Membri  
+## <a name="members"></a>Membri  
   
 |Membro|Descrizione|  
 |------------|-----------------|  
-|BREAKREASON\_STEP|Il motore di linguaggio è in modalità di esecuzione di istruzioni.|  
-|BREAKREASON\_BREAKPOINT|Il motore di linguaggio ha rilevato un punto di interruzione esplicito.|  
-|BREAKREASON\_DEBUGGER\_BLOCK|Il motore del linguaggio ha rilevato un blocco del debugger in un altro thread.|  
-|BREAKREASON\_HOST\_INITIATED|L'host ha richiesto di interruzione.|  
-|BREAKREASON\_LANGUAGE\_INITIATED|Il motore di linguaggio richiedeva di interruzione.|  
-|BREAKREASON\_DEBUGGER\_HALT|L'ide del debugger ha richiesto di interruzione.|  
-|BREAKREASON\_ERROR|Un errore di esecuzione ha causato l'interruzione.|  
-|BREAKREASON\_JIT|Causato dall'avvio del debug JIT.|  
+|BREAKREASON_STEP|Il motore del linguaggio è in modalità di esecuzione di istruzioni.|  
+|BREAKREASON_BREAKPOINT|Il motore del linguaggio ha rilevato un punto di interruzione esplicito.|  
+|BREAKREASON_DEBUGGER_BLOCK|Il motore del linguaggio ha rilevato un blocco di debugger in un altro thread.|  
+|BREAKREASON_HOST_INITIATED|L'host ha richiesto un'interruzione.|  
+|BREAKREASON_LANGUAGE_INITIATED|Il motore del linguaggio ha richiesto un'interruzione.|  
+|BREAKREASON_DEBUGGER_HALT|Il debugger IDE ha richiesto un'interruzione.|  
+|BREAKREASON_ERROR|Un errore di esecuzione ha causato l'interruzione.|  
+|BREAKREASON_JIT|Causato dall'avvio del debug JIT.|  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Costanti, enumerazioni e strutture del debugger di script ActiveX](../../winscript/reference/active-script-debugger-constants-enumerations-and-structures.md)

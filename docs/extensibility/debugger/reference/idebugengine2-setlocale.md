@@ -1,51 +1,52 @@
 ---
-title: "IDebugEngine2::SetLocale | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "IDebugEngine2::SetLocale"
-helpviewer_keywords: 
-  - "IDebugEngine2::SetLocale"
+title: IDebugEngine2::SetLocale | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology:
+- vs-ide-sdk
+ms.topic: conceptual
+f1_keywords:
+- IDebugEngine2::SetLocale
+helpviewer_keywords:
+- IDebugEngine2::SetLocale
 ms.assetid: cd0d2cf1-2aac-43da-a830-4bb3d696c219
-caps.latest.revision: 10
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 10
+author: gregvanl
+ms.author: gregvanl
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: eca2f05c290f27a6c3037ef14cbf32fd219b6253
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# IDebugEngine2::SetLocale
-[!INCLUDE[vs2017banner](../../../code-quality/includes/vs2017banner.md)]
-
-Imposta le impostazioni locali del motore di \(DE\) debug.  
+# <a name="idebugengine2setlocale"></a>IDebugEngine2::SetLocale
+Imposta le impostazioni locali del motore di debug (DE).  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp#  
-HRESULT SetLocale(   
-   WORD wLangID  
+```cpp  
+HRESULT SetLocale(   
+   WORD wLangID  
 );  
 ```  
   
-```c#  
-int SetLocale(   
-   ushort wLangID  
+```csharp  
+int SetLocale(   
+   ushort wLangID  
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `wLangID`  
- \[in\]  Specifica le impostazioni locali della lingua.  Ad esempio, 1033 per la lingua inglese.  
+ [in] Specifica le impostazioni locali della lingua. Ad esempio 1033 per l'inglese.  
   
-## Valore restituito  
- Se l'operazione riesce, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
+## <a name="return-value"></a>Valore restituito  
+ Se ha esito positivo, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
   
-## Note  
- Questo metodo viene chiamato dall'amministratore di debug della sessione \(SDM\) per propagare le impostazioni locali dell'IDE in modo da localizzare le stringhe restituite da DE correttamente.  
+## <a name="remarks"></a>Note  
+ Questo metodo viene chiamato dal gestore di sessione di debug (SDM) per propagare le impostazioni locali dell'IDE in modo che le stringhe restituite per la Germania sono localizzate in modo corretto.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IDebugEngine2](../../../extensibility/debugger/reference/idebugengine2.md)

@@ -1,50 +1,51 @@
 ---
-title: "IDebugPendingBreakpoint2::GetBreakpointRequest | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "IDebugPendingBreakpoint2::GetBreakpointRequest"
-helpviewer_keywords: 
-  - "Metodo IDebugPendingBreakpoint2::GetBreakpointRequest"
-  - "Metodo GetBreakpointRequest"
+title: IDebugPendingBreakpoint2::GetBreakpointRequest | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology:
+- vs-ide-sdk
+ms.topic: conceptual
+f1_keywords:
+- IDebugPendingBreakpoint2::GetBreakpointRequest
+helpviewer_keywords:
+- IDebugPendingBreakpoint2::GetBreakpointRequest method
+- GetBreakpointRequest method
 ms.assetid: cb1e36aa-4302-455c-98fb-6638a1ef5c46
-caps.latest.revision: 10
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 10
+author: gregvanl
+ms.author: gregvanl
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: 49e83eb882388ca69fac1da1ae43f488345fe141
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# IDebugPendingBreakpoint2::GetBreakpointRequest
-[!INCLUDE[vs2017banner](../../../code-quality/includes/vs2017banner.md)]
-
-Ottiene la richiesta del punto di interruzione utilizzata per creare questo punto di interruzione corrente.  
+# <a name="idebugpendingbreakpoint2getbreakpointrequest"></a>IDebugPendingBreakpoint2::GetBreakpointRequest
+Ottiene la richiesta di punto di interruzione che è stata utilizzata per creare il punto di interruzione in sospeso.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp#  
-HRESULT GetBreakpointRequest(   
-   IDebugBreakpointRequest2** ppBPRequest  
+```cpp  
+HRESULT GetBreakpointRequest(   
+   IDebugBreakpointRequest2** ppBPRequest  
 );  
 ```  
   
-```c#  
-int GetBreakpointRequest(   
-   out IDebugBreakpointRequest2 ppBPRequest  
+```csharp  
+int GetBreakpointRequest(   
+   out IDebugBreakpointRequest2 ppBPRequest  
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `ppBPRequest`  
- \[out\]  Restituisce [IDebugBreakpointRequest2](../../../extensibility/debugger/reference/idebugbreakpointrequest2.md) un oggetto che rappresenta la richiesta del punto di interruzione utilizzata per creare questo punto di interruzione corrente.  
+ [out] Restituisce un [IDebugBreakpointRequest2](../../../extensibility/debugger/reference/idebugbreakpointrequest2.md) oggetto che rappresenta la richiesta di punto di interruzione che è stata utilizzata per creare il punto di interruzione.  
   
-## Valore restituito  
- Se l'operazione riesce, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  Restituisce `E_BP_DELETED` se il punto di interruzione è stato eliminato.  
+## <a name="return-value"></a>Valore restituito  
+ Se ha esito positivo, restituisce `S_OK`; in caso contrario, restituisce un codice di errore. Restituisce `E_BP_DELETED` se il punto di interruzione è stato eliminato.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IDebugPendingBreakpoint2](../../../extensibility/debugger/reference/idebugpendingbreakpoint2.md)   
  [IDebugBreakpointRequest2](../../../extensibility/debugger/reference/idebugbreakpointrequest2.md)

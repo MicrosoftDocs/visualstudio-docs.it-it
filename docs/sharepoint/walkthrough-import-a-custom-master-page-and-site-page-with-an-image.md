@@ -1,63 +1,63 @@
 ---
-title: "Procedura dettagliata: importazione di una pagina master personalizzata e di una pagina del sito con un&#39;immagine"
-ms.custom: ""
-ms.date: "02/02/2017"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "office-development"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-helpviewer_keywords: 
-  - "importazione di elementi [sviluppo per SharePoint in Visual Studio]"
-  - "sviluppo per SharePoint in Visual Studio, importazione di elementi"
-ms.assetid: d1703957-81e2-47e1-b4ca-6a8d550d8da2
-caps.latest.revision: 21
-author: "kempb"
-ms.author: "kempb"
-manager: "ghogen"
-caps.handback.revision: 20
+title: "Procedura dettagliata: Importare una pagina Master personalizzata e pagina del sito con un'immagine | Documenti Microsoft"
+ms.custom: ''
+ms.date: 02/02/2017
+ms.technology:
+- office-development
+ms.topic: conceptual
+dev_langs:
+- VB
+- CSharp
+helpviewer_keywords:
+- SharePoint development in Visual Studio, importing items
+- importing items [SharePoint development in Visual Studio]
+author: TerryGLee
+ms.author: tglee
+manager: douge
+ms.workload:
+- office
+ms.openlocfilehash: f90f85e7f22cf3bdecf90aaf6f8d61af3f399a68
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# Procedura dettagliata: importazione di una pagina master personalizzata e di una pagina del sito con un&#39;immagine
-  In questa procedura dettagliata viene illustrato come importare una pagina master personalizzata di SharePoint e una pagina del sito con un'immagine in un progetto SharePoint per [!INCLUDE[vsprvs](../sharepoint/includes/vsprvs-md.md)].  
+# <a name="walkthrough-import-a-custom-master-page-and-site-page-with-an-image"></a>Procedura dettagliata: importazione di una pagina master personalizzata e di una pagina del sito con un'immagine
+  Questa procedura dettagliata viene illustrato come importare una pagina master personalizzata di SharePoint e una pagina del sito che dispone di un'immagine in un [!INCLUDE[vsprvs](../sharepoint/includes/vsprvs-md.md)] progetto SharePoint.  
   
- In questa procedura dettagliata viene mostrato come completare le attività seguenti:  
+ Questa procedura dettagliata viene illustrato come eseguire le attività seguenti:  
   
 -   Creare una pagina master personalizzata e una pagina del sito utilizzando un'immagine in SharePoint Designer.  
   
--   Esportare una pagina master personalizzata, un'immagine e una pagina del sito in un file \(con estensione wsp\) della soluzione SharePoint.  
+-   Esportare una pagina master personalizzata, immagine e la pagina del sito in un file di soluzione (con estensione wsp) di SharePoint.  
   
--   Importare e distribuire il file con estensione wsp in un progetto SharePoint per [!INCLUDE[vsprvs](../sharepoint/includes/vsprvs-md.md)] utilizzando il progetto Importa pacchetto di soluzione SharePoint.  
+-   Importare e distribuire il file con estensione wsp in un [!INCLUDE[vsprvs](../sharepoint/includes/vsprvs-md.md)] progetto SharePoint tramite il progetto Importa pacchetto di soluzione SharePoint.  
   
  [!INCLUDE[note_settings_general](../sharepoint/includes/note-settings-general-md.md)]  
   
-## Prerequisiti  
- Per completare questa procedura dettagliata, è necessario disporre dei componenti seguenti:  
+## <a name="prerequisites"></a>Prerequisiti  
+ È necessario disporre i componenti seguenti per completare questa procedura dettagliata:  
   
--   Edizioni supportate di [!INCLUDE[TLA#tla_win](../sharepoint/includes/tlasharptla-win-md.md)] e SharePoint.  [!INCLUDE[crdefault](../sharepoint/includes/crdefault-md.md)] [Requisiti per lo sviluppo di soluzioni SharePoint](../sharepoint/requirements-for-developing-sharepoint-solutions.md).  
+-   Le edizioni supportate di [!INCLUDE[TLA#tla_win](../sharepoint/includes/tlasharptla-win-md.md)] e SharePoint. [!INCLUDE[crdefault](../sharepoint/includes/crdefault-md.md)] [Requisiti per lo sviluppo di soluzioni SharePoint](../sharepoint/requirements-for-developing-sharepoint-solutions.md).  
   
 -   Visual Studio.  
   
 -   SharePoint Designer 2010.  
   
-## Creare elementi in SharePoint Designer  
- In questo esempio viene mostrato come creare tre elementi in SharePoint Designer per esportare una pagina master personalizzata, una pagina del sito che fa riferimento alla pagina master personalizzata e un file di immagine da visualizzare nella pagina del sito.  L'immagine viene aggiunta alla cartella \/images\/ in SharePoint.  
+## <a name="create-items-in-sharepoint-designer"></a>Creazione di elementi in SharePoint Designer  
+ In questo esempio viene illustrato come creare tre elementi in SharePoint Designer per l'esportazione: una pagina master personalizzata, una pagina del sito che fa riferimento la pagina master personalizzata e un file di immagine da visualizzare nella pagina del sito. L'immagine viene aggiunto alla cartella /images/ in SharePoint.  
   
-#### Per creare una pagina master personalizzata in SharePoint Designer  
+#### <a name="to-create-a-custom-master-page-in-sharepoint-designer"></a>Per creare una pagina master personalizzata in SharePoint Designer  
   
-1.  Nel riquadro di navigazione di SharePoint Designer selezionare l'oggetto del sito **Pagine master**.  
+1.  In SharePoint Designer, nel riquadro di spostamento, scegliere il **pagine Master** oggetto sito.  
   
-2.  Sulla barra multifunzione **Pagine master**, scegliere **Pagina master vuota**.  
+2.  Nel **pagine Master** della barra multifunzione, scegliere **pagina Master vuota**.  
   
-3.  Scegliere la nuova pagina master, quindi sulla barra multifunzione **Pagine master**, scegliere **Modifica file**.  
+3.  Scegliere la pagina master e quindi scegliere il **pagine Master** della barra multifunzione, scegliere **modifica File**.  
   
-4.  Nella parte inferiore di SharePoint Designer selezionare la scheda **Codice**.  
+4.  Nella parte inferiore della finestra di progettazione di SharePoint, scegliere il **codice** scheda.  
   
-5.  Sostituire il markup esistente con quello riportato di seguito.  
+5.  Sostituire il codice esistente con il markup seguente.  
   
     ```  
     <%@ Master Language="C#" %>  
@@ -78,39 +78,39 @@ caps.handback.revision: 20
     </html>  
     ```  
   
-6.  Salvare la pagina, scegliere la scheda **Pagine master** e rinominare la pagina master come **mybasic1.master**.  
+6.  Salvare la pagina, scegliere il **pagine Master** scheda e rinominare la pagina master come **mybasic1**.  
   
-## Aggiungere un'immagine al database del contenuto in SharePoint Designer  
- È possibile aggiungere un'immagine da visualizzare nella pagina del sito.  L'immagine viene distribuita nel database del contenuto SharePoint.  
+## <a name="add-an-image-to-the-content-database-in-sharepoint-designer"></a>Aggiungere un'immagine per il Database del contenuto in SharePoint Designer  
+ È ora possibile aggiungere un'immagine da visualizzare nella pagina del sito. Per il database del contenuto di SharePoint viene distribuita l'immagine.  
   
-#### Per aggiungere un'immagine al database del contenuto in SharePoint Designer  
+#### <a name="to-add-an-image-to-the-content-database-in-sharepoint-designer"></a>Per aggiungere un'immagine per il database del contenuto in SharePoint Designer  
   
-1.  Nel riquadro di navigazione, selezionare l'oggetto del sito **Tutti i file** quindi, nella visualizzazione struttura ad albero, selezionare la cartella **immagini**.  
+1.  Nel riquadro di spostamento, scegliere il **tutti i file** del sito di oggetto e quindi, nella visualizzazione albero, scegliere il **immagini** cartella.  
   
-2.  Sulla barra multifunzione **Tutti i file**, scegliere **Importa file**, scegliere un file desiderato e quindi selezionare il pulsante **OK**.  In questo esempio il file è denominato **myimg1.png**.  
+2.  Nel **tutti i file** della barra multifunzione, scegliere **i file di importazione**, scegliere un file di propria scelta e quindi scegliere il **OK** pulsante. In questo esempio, il file è denominato **myimg1**.  
   
-     Facoltativamente, è possibile creare una sottocartella per facilitare l'organizzare delle immagini.  
+     Facoltativamente, è possibile creare una sottocartella per organizzare le immagini.  
   
-3.  Chiudere la finestra di dialogo **Importa**.  
+3.  Chiudi il **importazione** la finestra di dialogo.  
   
-## Creare una pagina del sito  
- In questa pagina del sito di base viene utilizzata la pagina master personalizzata e viene visualizzata l'immagine che è stata aggiunta nel passaggio precedente.  
+## <a name="create-a-site-page"></a>Creare una pagina del sito  
+ Questa pagina del sito di base viene utilizzata la pagina master personalizzata e visualizza l'immagine che è stato aggiunto nel passaggio precedente.  
   
-#### Per creare una pagina del sito  
+#### <a name="to-create-a-site-page"></a>Per creare una pagina del sito  
   
-1.  Nel riquadro di navigazione, selezionare l'oggetto **Pagine sito**.  
+1.  Nel riquadro di spostamento, scegliere il **pagine del sito** oggetto.  
   
-2.  Sulla barra multifunzione **Pagine**, selezionare il pulsante **Pagina**, scegliere il tipo di pagina **ASPX** quindi assegnare un nuovo al file **mycontentpage1.aspx**.  
+2.  Nel **pagine** della barra multifunzione, scegliere il **pagina** pulsante, scegliere il **ASPX** pagina digitare e quindi denominare il nuovo file **MyContentPage1**.  
   
-     Facoltativamente, è possibile creare una sottocartella per facilitare l'organizzazione delle pagine del sito.  
+     Facoltativamente, è possibile creare una sottocartella per organizzare le pagine del sito.  
   
-3.  Nell'elenco delle pagine del sito, selezionare **MyContentPage1.aspx** per aprire la pagina delle proprietà quindi, nella parte inferiore della pagina, selezionare il collegamento **Modifica file**.  
+3.  Nell'elenco di pagine del sito, scegliere **Mycontentpage1** per aprire la pagina delle proprietà e quindi, nella parte inferiore della pagina, scegliere il **modifica file** collegamento.  
   
-     Se viene visualizzato un messaggio e indica che la pagina non contiene alcune aree che siano modificabili in modalità sicura e viene richiesto se si desidera aprire la pagina in modalità avanzata, selezionare il pulsante **Sì**.  
+     Se un messaggio visualizzato è indicato che questa pagina non contiene le aree che possono essere modificate in modalità provvisoria e viene chiesto se si desidera aprire questa pagina in modalità avanzata, scegliere il **Sì** pulsante.  
   
-4.  Nella parte inferiore della pagine, selezionare il pulsante **Codice**.  
+4.  Nella parte inferiore della pagina, scegliere il **codice** pulsante.  
   
-5.  Sostituire il markup esistente con quello riportato di seguito.  
+5.  Sostituire il codice esistente con il markup seguente.  
   
     ```  
     <%@ Import Namespace="Microsoft.SharePoint.ApplicationPages" %>  
@@ -128,59 +128,59 @@ caps.handback.revision: 20
   
 6.  Salvare la pagina del sito aggiornata.  
   
-## Esportare gli elementi da SharePoint  
- Esportare gli elementi da SharePoint in un file \(con estensione wsp\) della soluzione SharePoint.  
+## <a name="export-the-items-from-sharepoint"></a>Esportare gli elementi da SharePoint  
+ Esportare gli elementi da SharePoint in un file di soluzione (con estensione wsp) di SharePoint.  
   
-#### Per esportare elementi da SharePoint Designer  
+#### <a name="to-export-items-from-sharepoint-designer"></a>Per esportare gli elementi da SharePoint Designer  
   
-1.  In SharePoint Designer, nel riquadro di navigazione, selezionare l'oggetto **Sito team** quindi, nella barra multifunzione **Sito**, scegliere **Salva come modello**.  
+1.  In SharePoint Designer, nel riquadro di spostamento, scegliere il **sito del Team** oggetto e quindi scegliere il **sito** della barra multifunzione, scegliere **Salva come modello**.  
   
-2.  Nella finestra di dialogo **Salva come modello** inserire un nome file e un nome del modello, selezionare la casella di controllo **Includi contenuto**, quindi scegliere il pulsante **Fine**.  
+2.  Nel **Salva come modello** finestra di dialogo immettere un nome file e il nome del modello, selezionare il **includono contenuto** casella di controllo e quindi scegliere il **OK** pulsante.  
   
-     In questo modo viene salvato il contenuto del sito nel file con estensione wsp.  
+     Consente di salvare il contenuto del sito nel file con estensione wsp.  
   
-3.  Dopo aver esportato la soluzione, selezionare il collegamento **Raccolta soluzioni** per visualizzare l'elenco dei file di soluzione disponibili.  
+3.  Dopo la soluzione consente di esportare, scegliere il **raccolta soluzioni** link per visualizzare l'elenco dei file di soluzione disponibile.  
   
-4.  Aprire il menu di scelta rapida per il nuovo file con estensione .wsp e quindi scegliere **Salva destinazione come** per salvare il file nel sistema.  
+4.  Aprire il menu di scelta rapida per il nuovo file con estensione wsp e quindi scegliere **destinazione Salva come** salvarlo nel sistema.  
   
-## Importare gli elementi in Visual Studio  
- Importare il file .wap in [!INCLUDE[vsprvs](../sharepoint/includes/vsprvs-md.md)].  Dopo che il contenuto è stato importato, è possibile personalizzarlo, aggiungere altri elementi e quindi distribuirlo.  
+## <a name="import-the-items-into-visual-studio"></a>Importare gli elementi in Visual Studio  
+ Importare il file con estensione wsp [!INCLUDE[vsprvs](../sharepoint/includes/vsprvs-md.md)]. Dopo aver importato il contenuto, personalizzarlo, aggiungere altri elementi e quindi distribuirlo.  
   
-#### Per importare elementi dal file con estensione wsp in Visual Studio  
+#### <a name="to-import-items-from-the-wsp-file-into-visual-studio"></a>Per importare elementi dal file con estensione wsp in Visual Studio  
   
-1.  In [!INCLUDE[vsprvs](../sharepoint/includes/vsprvs-md.md)] creare un progetto **Importa pacchetto di soluzione SharePoint 2010**.  
+1.  In [!INCLUDE[vsprvs](../sharepoint/includes/vsprvs-md.md)], creare un **Importa pacchetto di soluzione SharePoint 2010** progetto.  
   
-2.  Nella pagina **Selezionare elementi da importare**, sotto **Modulo** nella colonna **Tipo** selezionare le caselle di controllo solamente per i file da importare riportati nella seguente tabella.  
+2.  Nel **selezionare gli elementi da importare** pagina **modulo** nel **tipo** colonna, selezionare le caselle di controllo solo i file nella tabella seguente per l'importazione.  
   
     |Nome file|Descrizione|  
     |---------------|-----------------|  
-    |\_catalogsmasterpage\_|Pagina master personalizzata.|  
-    |images\_|File di immagine nel file system di SharePoint.|  
-    |SitePages\_|Pagina del sito.|  
+    |_catalogsmasterpage\_|La pagina master personalizzata.|  
+    |images_|File di immagine nel file system di SharePoint.|  
+    |SitePages_|Pagina del sito.|  
   
-3.  Scegliere il pulsante **Fine** per importare gli elementi selezionati.  
+3.  Scegliere il **fine** per importare gli elementi selezionati.  
   
-4.  In **Esplora soluzioni** selezionare il nodo \_catalogsmasterpage\_ e impostare il valore della proprietà **Risoluzione conflitti di distribuzione** su **Automatica**.  
+4.  In **Esplora**, scegliere il _catalogsmasterpage\_ nodo e impostare il valore della relativa **risoluzione conflitti di distribuzione** proprietà **automatica**.  
   
-     In questo modo tutti i conflitti di distribuzione vengono risolti automaticamente.  
+     Ciò garantisce che i conflitti di distribuzione vengono risolti automaticamente.  
   
-5.  Se il nome della nuova pagina master corrisponde a quello di una pagina esistente, verificare che la pagina esistente non sia contrassegnata come Pagina master predefinita o Pagina master personalizzata in SharePoint Designer.  
+5.  Se la nuova pagina master con lo stesso nome di una pagina esistente, assicurarsi che la pagina esistente non è contrassegnata come pagina Master predefinita o una pagina Master personalizzata in SharePoint Designer.  
   
-     Se una pagina master esistente è contrassegnata come Pagina master predefinita o Pagina master personalizzata, si visualizzerà un errore di distribuzione per indicare che è impossibile eliminare la pagina master.  Per evitare questo problema, effettuare le operazioni riportate di seguito.  
+     Se una pagina master esistente è contrassegnata come pagina Master predefinita o pagina Master personalizzata, si verificherà un errore di distribuzione che indica che la pagina master non può essere eliminata. Per evitare questo problema, eseguire questa operazione:  
   
-    -   Se la pagina master esistente è impostata come Pagina master predefinita, impostare temporaneamente un'altra pagina master come Pagina master predefinita.  Dopo aver distribuito i file in SharePoint, impostare la nuova pagina master come Pagina master predefinita.  
+    -   Se la pagina master esistente è impostata come pagina Master predefinita, impostare temporaneamente un'altra pagina master come pagina Master predefinita. Dopo aver distribuito i file in SharePoint, è possibile impostare la nuova pagina master come pagina Master predefinita.  
   
-    -   Se la pagina master esistente è impostata come Pagina master personalizzata, impostare temporaneamente un'altra pagina master come Pagina master personalizzata.  Dopo aver distribuito i file in SharePoint, impostare la nuova pagina master come Pagina master personalizzata.  
+    -   Se la pagina master esistente è impostata come pagina Master personalizzata, impostare temporaneamente un'altra pagina master come pagina Master personalizzata. Dopo aver distribuito i file in SharePoint, è possibile impostare la nuova pagina master come pagina Master personalizzata.  
   
-6.  Sulla barra dei menu scegliere **Compilazione**, **Distribuisci soluzione**.  
+6.  Nella barra dei menu, scegliere **compilare**, **Distribuisci soluzione**.  
   
 7.  Aprire il sito di SharePoint per visualizzare gli elementi distribuiti.  
   
- Un modo alternativo per importare file in [!INCLUDE[vsprvs](../sharepoint/includes/vsprvs-md.md)] e distribuirli in SharePoint consiste nell'aggiungere i file in moduli in [!INCLUDE[vsprvs](../sharepoint/includes/vsprvs-md.md)].  [!INCLUDE[crdefault](../sharepoint/includes/crdefault-md.md)] [Procedura: importare una pagina master o un tema](../sharepoint/how-to-import-a-master-page-or-theme.md) e [Utilizzo di moduli per includere file nella soluzione](../sharepoint/using-modules-to-include-files-in-the-solution.md).  
+ Un modo alternativo per importare file in [!INCLUDE[vsprvs](../sharepoint/includes/vsprvs-md.md)] e distribuirle in SharePoint consiste nell'aggiungere i file in moduli in [!INCLUDE[vsprvs](../sharepoint/includes/vsprvs-md.md)]. [!INCLUDE[crdefault](../sharepoint/includes/crdefault-md.md)] [Procedura: importare una pagina Master o un tema](../sharepoint/how-to-import-a-master-page-or-theme.md) e [utilizzo di moduli per includere i file nella soluzione](../sharepoint/using-modules-to-include-files-in-the-solution.md).  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Importazione di elementi da un sito di SharePoint esistente](../sharepoint/importing-items-from-an-existing-sharepoint-site.md)   
- [Developing SharePoint Solutions](../sharepoint/developing-sharepoint-solutions.md)   
+ [Sviluppo di soluzioni SharePoint](../sharepoint/developing-sharepoint-solutions.md)   
  [Creazione di controlli utente riutilizzabili per web part o pagine applicazione](../sharepoint/creating-reusable-controls-for-web-parts-or-application-pages.md)  
   
   

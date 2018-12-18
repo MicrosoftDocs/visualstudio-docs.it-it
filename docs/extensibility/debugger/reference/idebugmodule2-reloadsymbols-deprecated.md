@@ -1,57 +1,58 @@
 ---
-title: "IDebugModule2::ReloadSymbols_Deprecated | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "IDebugModule2::ReloadSymbols"
-helpviewer_keywords: 
-  - "Metodo IDebugModule2::ReloadSymbols"
+title: IDebugModule2::ReloadSymbols_Deprecated | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology:
+- vs-ide-sdk
+ms.topic: conceptual
+f1_keywords:
+- IDebugModule2::ReloadSymbols
+helpviewer_keywords:
+- IDebugModule2::ReloadSymbols method
 ms.assetid: 0f9f0133-7d58-4cd9-a6ca-1141e095749d
-caps.latest.revision: 10
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 10
+author: gregvanl
+ms.author: gregvanl
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: dcd383130c1af1765014adfa438482543c336ede
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# IDebugModule2::ReloadSymbols_Deprecated
-[!INCLUDE[vs2017banner](../../../code-quality/includes/vs2017banner.md)]
-
-OBSOLETO.  NOT UTILIZZARE.  Ricaricare i simboli per questo modulo.  
+# <a name="idebugmodule2reloadsymbolsdeprecated"></a>IDebugModule2::ReloadSymbols_Deprecated
+OBSOLETE. NON USARE. Ricarica i simboli per questo modulo.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp#  
-HRESULT ReloadSymbols(   
-   LPCOLESTR pszUrlToSymbols,  
-   BSTR*     pbstrDebugMessage  
+```cpp  
+HRESULT ReloadSymbols(   
+   LPCOLESTR pszUrlToSymbols,  
+   BSTR*     pbstrDebugMessage  
 );  
 ```  
   
-```c#  
-int ReloadSymbols(   
-   string     pszUrlToSymbols,  
-   out string pbstrDebugMessage  
+```csharp  
+int ReloadSymbols(   
+   string     pszUrlToSymbols,  
+   out string pbstrDebugMessage  
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `pszUrlToSymbols`  
- \[in\]  Il percorso all'archivio simboli.  
+ [in] Il percorso dell'archivio simboli.  
   
  `pbstrDebugMessage`  
- \[out\]  Restituisce un messaggio informativo, ad esempio lo stato o un messaggio di errore, che viene visualizzata a destra del nome del modulo nella finestra moduli.  
+ [out] Restituisce un messaggio informativo, ad esempio un messaggio di stato o di errore, che viene visualizzato a destra del nome del modulo nella finestra moduli.  
   
-## Valore restituito  
- Se l'operazione riesce, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  Il modulo di debug deve sempre restituire `E_FAIL`.  
+## <a name="return-value"></a>Valore restituito  
+ Se ha esito positivo, restituisce `S_OK`; in caso contrario, restituisce un codice di errore. Un motore di debug deve sempre restituire `E_FAIL`.  
   
-## Note  
- Questo metodo non è più supportato.  Implementare [LoadSymbols](../Topic/IDebugModule3::LoadSymbols.md) il metodo.  
+## <a name="remarks"></a>Note  
+ Questo metodo non è più supportato. Implementare il [LoadSymbols](../../../extensibility/debugger/reference/idebugmodule3-loadsymbols.md) metodo invece.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IDebugModule2](../../../extensibility/debugger/reference/idebugmodule2.md)   
- [LoadSymbols](../Topic/IDebugModule3::LoadSymbols.md)
+ [LoadSymbols](../../../extensibility/debugger/reference/idebugmodule3-loadsymbols.md)

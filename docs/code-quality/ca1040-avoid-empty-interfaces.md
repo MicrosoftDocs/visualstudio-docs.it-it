@@ -1,13 +1,8 @@
 ---
-title: 'CA1040: Avoid empty interfaces | Microsoft Docs'
-ms.custom: 
+title: "CA1040: Evitare l'utilizzo di interfacce vuote"
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- vs-devops-test
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.technology: vs-ide-code-analysis
+ms.topic: reference
 f1_keywords:
 - CA1040
 - AvoidEmptyInterfaces
@@ -15,54 +10,42 @@ helpviewer_keywords:
 - AvoidEmptyInterfaces
 - CA1040
 ms.assetid: 120a741b-5fd1-4836-8453-7857e0cd0380
-caps.latest.revision: 16
-author: stevehoag
-ms.author: shoag
-manager: wpickett
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: HT
-ms.sourcegitcommit: eb5c9550fd29b0e98bf63a7240737da4f13f3249
-ms.openlocfilehash: e61c17e0c1dec573b60b241eaf57dbb27c6bca41
-ms.contentlocale: it-it
-ms.lasthandoff: 08/30/2017
-
+author: gewarren
+ms.author: gewarren
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 247344cac2f2f36d1db28d1fe217cbfa5d9b6234
+ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/19/2018
 ---
-# <a name="ca1040-avoid-empty-interfaces"></a>CA1040: Avoid empty interfaces
-|||  
-|-|-|  
-|TypeName|AvoidEmptyInterfaces|  
-|CheckId|CA1040|  
-|Category|Microsoft.Design|  
-|Breaking Change|Breaking|  
-  
-## <a name="cause"></a>Cause  
- The interface does not declare any members or implement two or more other interfaces.  
-  
-## <a name="rule-description"></a>Rule Description  
- Interfaces define members that provide a behavior or usage contract. The functionality that is described by the interface can be adopted by any type, regardless of where the type appears in the inheritance hierarchy. A type implements an interface by providing implementations for the members of the interface. An empty interface does not define any members. Therefore, it does not define a contract that can be implemented.  
-  
- If your design includes empty interfaces that types are expected to implement, you are probably using an interface as a marker or a way to identify a group of types. If this identification will occur at run time, the correct way to accomplish this is to use a custom attribute. Use the presence or absence of the attribute, or the properties of the attribute, to identify the target types. If the identification must occur at compile time, then it is acceptable to use an empty interface.  
-  
-## <a name="how-to-fix-violations"></a>How to Fix Violations  
- Remove the interface or add members to it. If the empty interface is being used to label a set of types, replace the interface with a custom attribute.  
-  
-## <a name="when-to-suppress-warnings"></a>When to Suppress Warnings  
- It is safe to suppress a warning from this rule when the interface is used to identify a set of types at compile time.  
-  
-## <a name="example"></a>Example  
- The following example shows an empty interface.  
-  
- [!code-csharp[FxCop.Design.InterfacesNotEmpty#1](../code-quality/codesnippet/CSharp/ca1040-avoid-empty-interfaces_1.cs)] [!code-cpp[FxCop.Design.InterfacesNotEmpty#1](../code-quality/codesnippet/CPP/ca1040-avoid-empty-interfaces_1.cpp)] [!code-vb[FxCop.Design.InterfacesNotEmpty#1](../code-quality/codesnippet/VisualBasic/ca1040-avoid-empty-interfaces_1.vb)]
+# <a name="ca1040-avoid-empty-interfaces"></a>CA1040: Evitare l'utilizzo di interfacce vuote
+|||
+|-|-|
+|TypeName|AvoidEmptyInterfaces|
+|CheckId|CA1040|
+|Category|Microsoft.Design|
+|Modifica importante|Interruzione|
+
+## <a name="cause"></a>Causa
+ L'interfaccia non dichiarato alcun membro né lo implementa due o più interfacce.
+
+## <a name="rule-description"></a>Descrizione della regola
+ Le interfacce definiscono membri che forniscono un comportamento o un contratto di utilizzo. La funzionalità descritta dall'interfaccia può essere adottata da qualsiasi tipo, indipendentemente dal punto in cui il tipo è visualizzato nella gerarchia di ereditarietà. Un tipo implementa un'interfaccia fornendo implementazioni per i membri dell'interfaccia. Un'interfaccia vuota non definisce alcun membro. Pertanto, non definisce un contratto che può essere implementato.
+
+ Se la progettazione include vuoto interfacce utilizzato dai tipi si prevede l'implementazione, probabilmente si utilizza un'interfaccia come marcatore o come un modo per identificare un gruppo di tipi. Se questa identificazione si verifica in fase di esecuzione, il modo corretto a questo scopo è utilizzare un attributo personalizzato. Utilizzare la presenza o assenza dell'attributo o le proprietà dell'attributo, per identificare i tipi di destinazione. Se l'identificazione deve verificarsi in fase di compilazione, è possibile utilizzare un'interfaccia vuota.
+
+## <a name="how-to-fix-violations"></a>Come correggere le violazioni
+ Rimuovere l'interfaccia o aggiungervi membri. Se è utilizzato per assegnare un'etichetta di un set di tipi di interfaccia vuota, è possibile sostituire l'interfaccia con un attributo personalizzato.
+
+## <a name="when-to-suppress-warnings"></a>Esclusione di avvisi
+ È possibile eliminare un avviso da questa regola quando l'interfaccia viene utilizzata per identificare un set di tipi in fase di compilazione.
+
+## <a name="example"></a>Esempio
+ Nell'esempio seguente viene illustrata un'interfaccia vuota.
+
+ [!code-csharp[FxCop.Design.InterfacesNotEmpty#1](../code-quality/codesnippet/CSharp/ca1040-avoid-empty-interfaces_1.cs)]
+ [!code-cpp[FxCop.Design.InterfacesNotEmpty#1](../code-quality/codesnippet/CPP/ca1040-avoid-empty-interfaces_1.cpp)]
+ [!code-vb[FxCop.Design.InterfacesNotEmpty#1](../code-quality/codesnippet/VisualBasic/ca1040-avoid-empty-interfaces_1.vb)]

@@ -1,79 +1,83 @@
 ---
-title: "Nozioni fondamentali su JavaScript | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/18/2017"
-ms.prod: "windows-client-threshold"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-javascript"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "JavaScript"
-  - "TypeScript"
-  - "DHTML"
-helpviewer_keywords: 
-  - "JavaScript, nozioni fondamentali"
+title: Nozioni fondamentali su JavaScript | Microsoft Docs
+ms.custom: 
+ms.date: 01/18/2017
+ms.prod: windows-client-threshold
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- devlang-javascript
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- JavaScript
+- TypeScript
+- DHTML
+helpviewer_keywords:
+- JavaScript, fundamentals
 ms.assetid: 0441e1e5-34e4-4d32-b188-f7fc35613478
-caps.latest.revision: 27
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 27
+caps.latest.revision: 
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.openlocfilehash: 01eb433680881975adc3ca05d6ce7a9ed9222bca
+ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/27/2017
 ---
-# Nozioni fondamentali su JavaScript
-[!INCLUDE[javascript](../javascript/includes/javascript-md.md)] è un linguaggio di script interpretato basato su un oggetto.  
+# <a name="javascript-fundamentals"></a>Nozioni fondamentali su JavaScript
+[!INCLUDE[javascript](../javascript/includes/javascript-md.md)] è un linguaggio di scripting interpretato e basato sugli oggetti.  
   
- Il linguaggio [!INCLUDE[javascript](../javascript/includes/javascript-md.md)] utilizza una sintassi simile a quella di C e supporta i costrutti strutturati, ad esempio `if...else`, `for` e `do...while`.  Le parentesi graffe \({}\) vengono utilizzate per delimitare i blocchi di istruzioni.  Il linguaggio supporta vari tipi di dati, inclusi `String`, `Number`, `Boolean`, `Object` e `Array`.  Include il supporto per funzionalità avanzate relative alla data, funzioni trigonometriche ed espressioni regolari.  
+ Il linguaggio [!INCLUDE[javascript](../javascript/includes/javascript-md.md)] usa una sintassi simile a quella di C e supporta i costrutti strutturati, ad esempio `if...else`, `for` e `do...while`. Le parentesi graffe ({}) vengono usate per delimitare i blocchi di istruzioni. Il linguaggio supporta vari tipi di dati, tra cui `String`, `Number`, `Boolean`, `Object` e `Array`. Include il supporto per funzionalità di data avanzate, funzioni trigonometriche ed espressioni regolari.  
   
- In [!INCLUDE[javascript](../javascript/includes/javascript-md.md)] vengono utilizzati prototipi invece di classi.  È possibile definire un oggetto creando una funzione costruttore.  
+ [!INCLUDE[javascript](../javascript/includes/javascript-md.md)] usa i prototipi invece delle classi. È possibile definire un oggetto creando una funzione del costruttore.  
   
- [!INCLUDE[javascript](../javascript/includes/javascript-md.md)] è un linguaggio non fortemente tipizzato, ovvero non consente di dichiarare i tipi di dati delle variabili in modo esplicito.  In molti casi [!INCLUDE[javascript](../javascript/includes/javascript-md.md)] esegue le conversioni automaticamente quando necessario.  Ad esempio, se si aggiunge un numero a un elemento costituito da testo \(una stringa\), il numero viene convertito in testo.  
+ [!INCLUDE[javascript](../javascript/includes/javascript-md.md)] è un linguaggio debolmente tipizzato, ovvero un linguaggio nel quale i tipi di dati delle variabili non vengono dichiarati in modo esplicito. In molti casi [!INCLUDE[javascript](../javascript/includes/javascript-md.md)] esegue automaticamente le conversioni quando sono necessarie. Se ad esempio si aggiunge un numero a un elemento costituito da testo (stringa), il numero viene convertito in testo.  
   
-## In questa sezione  
+## <a name="in-this-section"></a>Contenuto della sezione  
  [Scrittura di codice JavaScript](../javascript/writing-javascript-code.md)  
- Vengono fornite informazioni sull'organizzazione degli elementi nel codice [!INCLUDE[javascript](../javascript/includes/javascript-md.md)].  
+ Descrive l'organizzazione degli elementi all'interno del codice [!INCLUDE[javascript](../javascript/includes/javascript-md.md)].  
   
- [Variabili JavaScript](../javascript/variables-javascript.md)  
- Viene spiegato il concetto di variabili in [!INCLUDE[javascript](../javascript/includes/javascript-md.md)].  
+ [Variabili di JavaScript](../javascript/variables-javascript.md)  
+ Illustra il concetto di variabili in [!INCLUDE[javascript](../javascript/includes/javascript-md.md)].  
   
  [Tipi di dati](../javascript/data-types-javascript.md)  
- Vengono enumerati i tipi di dati in [!INCLUDE[javascript](../javascript/includes/javascript-md.md)] e viene illustrato lo scopo di ogni tipo.  
+ Enumera i tipi di dati in [!INCLUDE[javascript](../javascript/includes/javascript-md.md)] e illustra lo scopo di ogni tipo.  
   
  [Operatori](../javascript/operators-javascript.md)  
  Viene fornito un elenco di operatori con collegamenti alle informazioni su ogni operatore.  
   
  [Precedenza tra gli operatori](../javascript/operator-subtractprecedence-javascript.md)  
- Vengono illustrate le regole che controllano l'ordine in cui le operazioni vengono eseguite quando viene valutata un'espressione.  
+ Spiega le regole che controllano l'ordine di esecuzione delle operazioni quando viene valutata un'espressione.  
   
  [Controllo del flusso di programma](../javascript/controlling-program-flow-javascript.md)  
- Vengono illustrate le istruzioni condizionali e i cicli in [!INCLUDE[javascript](../javascript/includes/javascript-md.md)].  
+ Descrive le istruzioni condizionali e i cicli in [!INCLUDE[javascript](../javascript/includes/javascript-md.md)].  
   
  [Funzioni](../javascript/functions-javascript.md)  
- Vengono descritte le funzioni predefinite e viene illustrato come creare nuove funzioni.  
+ Descrive le funzioni predefinite e spiega come creare nuove funzioni.  
   
  [Oggetti](../javascript/objects-and-arrays-javascript.md)  
- Viene spiegato il concetto di oggetti in [!INCLUDE[javascript](../javascript/includes/javascript-md.md)].  
+ Descrive il concetto di oggetti in [!INCLUDE[javascript](../javascript/includes/javascript-md.md)].  
   
  [Oggetti intrinseci](../javascript/intrinsic-objects-javascript.md)  
- Vengono elencati gli oggetti che, per impostazione predefinita, fanno parte di [!INCLUDE[javascript](../javascript/includes/javascript-md.md)] e viene illustrato lo scopo di ogni oggetto.  
+ Elenca gli oggetti che appartengono a [!INCLUDE[javascript](../javascript/includes/javascript-md.md)] per impostazione predefinita e spiega lo scopo di ogni oggetto.  
   
  [Creazione di oggetti personalizzati](../javascript/creating-objects-javascript.md)  
- Viene illustrato come creare un oggetto definendo una funzione costruttore.  
+ Illustra come creare un oggetto definendo una funzione del costruttore.  
   
  [Calcoli di data e ora](../javascript/calculating-dates-and-times-javascript.md)  
- Viene descritto come eseguire attività comuni relative a calendario e orologio, ad esempio la modifica e il confronto di date e il calcolo del tempo trascorso.  
+ Descrive come eseguire attività comuni relative a calendari e orologi, ad esempio la modifica e il confronto di date e il calcolo del tempo trascorso.  
   
  [Stringhe di data e ora](../javascript/date-and-time-strings-javascript.md)  
- Viene illustrato come formattare le stringhe di data e ora.  
+ Spiega come formattare le stringhe di data e ora.  
   
  [Visualizzazione di testo in una pagina Web](../javascript/displaying-text-in-a-webpage-javascript.md)  
- Vengono descritte le diverse modalità di visualizzazione del testo.  
+ Descrive le varie modalità di visualizzazione del testo.  
   
-## Sezioni correlate  
+## <a name="related-sections"></a>Sezioni correlate  
  [JavaScript avanzato](../javascript/advanced/advanced-javascript.md)  
- Vengono illustrate funzionalità avanzate di [!INCLUDE[javascript](../javascript/includes/javascript-md.md)], ad esempio ricorsione, matrici, risoluzione dei problemi e così via.  
+ Descrive le funzionalità [!INCLUDE[javascript](../javascript/includes/javascript-md.md)] avanzate, ad esempio ricorsione, matrici, risoluzione dei problemi e così via.  
   
- [Riferimento al linguaggio JavaScript](../javascript/reference/javascript-reference.md)  
- Vengono descritti gli elementi che costituiscono il linguaggio [!INCLUDE[javascript](../javascript/includes/javascript-md.md)].
+ [Riferimenti sul linguaggio JavaScript](../javascript/reference/javascript-reference.md)  
+ Descrive gli elementi che costituiscono il linguaggio [!INCLUDE[javascript](../javascript/includes/javascript-md.md)].

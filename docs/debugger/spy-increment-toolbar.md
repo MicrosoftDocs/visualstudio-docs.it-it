@@ -1,50 +1,48 @@
 ---
-title: "Spy++ Toolbar | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/05/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "Spy++ toolbar"
+title: Barra degli strumenti di Spy + + | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology: vs-ide-debug
+ms.topic: conceptual
+helpviewer_keywords:
+- Spy++ toolbar
 ms.assetid: 949c18fb-bb25-42ed-9130-c4a47869f24d
-caps.latest.revision: 8
-caps.handback.revision: 8
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: f90c9f249ea0091d7cd5b899ffcd9b7cdadc5a7c
+ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/18/2018
 ---
-# Spy++ Toolbar
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
-La barra degli strumenti viene visualizzata sotto la barra dei menu in Spy\+\+.  Per visualizzare o nascondere la barra degli strumenti, scegliere **Barra degli strumenti** dal menu **Visualizza**.  
+# <a name="spy-toolbar"></a>Barra degli strumenti di Spy++
+La barra degli strumenti viene visualizzata nella barra dei menu di Spy + +. Per visualizzare o nascondere la barra degli strumenti nel **vista** menu, fare clic su **barra degli strumenti**.  
   
- I seguenti controlli sono disponibili nella barra degli strumenti.  
+ I controlli seguenti sono disponibili sulla barra degli strumenti.  
   
-## Elenco UIElement  
+## <a name="uielement-list"></a>Elenco UIElement  
   
 |Button|Effetto|  
-|------------|-------------|  
-|![Pulsante Finestre di Spy&#43;&#43;](~/debugger/media/icon_spy--_windows.gif "Icon\_Spy\+\+\_Windows")|Viene mostrata una visualizzazione struttura ad albero delle finestre e dei controlli nel sistema.  Per ulteriori informazioni, vedere [Windows View](../debugger/windows-view.md).|  
-|![Pulsante Processi di Spy&#43;&#43;](~/debugger/media/icon_spy--_processes.gif "Icon\_Spy\+\+\_Processes")|Viene mostrata una visualizzazione struttura ad albero dei processi nel sistema.  Per ulteriori informazioni, vedere [Processes View](../debugger/processes-view.md).|  
-|![Pulsante Thread di Spy&#43;&#43;](~/debugger/media/icon_spy--_threads.gif "Icon\_Spy\+\+\_Threads")|Viene mostrata una visualizzazione struttura ad albero dei thread nel sistema.  Per ulteriori informazioni, vedere [Threads View](../debugger/threads-view.md).|  
-|![Pulsante Messaggi di Spy&#43;&#43;](~/debugger/media/icon_spy--_messages.gif "Icon\_Spy\+\+\_Messages")|Consente di creare una finestra che visualizza messaggi e di aprire la finestra di dialogo **Opzioni messaggio** in modo che sia possibile selezionare sia la finestra di cui saranno visualizzati i messaggi sia le altre opzioni.  Per ulteriori informazioni, vedere [Messages View](../debugger/messages-view.md).|  
-|![Pulsante Avvia registro di Spy&#43;&#43;](~/debugger/media/icon_spy--_startlog.gif "Icon\_Spy\+\+\_StartLog")|Consente di avviare la registrazione di messaggi e di visualizzarne il flusso.  Questo controllo è disponibile solo quando una finestra **Messaggi** è la finestra attiva.  Per ulteriori informazioni, vedere [How to: Start and Stop the Message Log Display](../debugger/how-to-start-and-stop-the-message-log-display.md).|  
-|![Pulsante Arresta registro di Spy&#43;&#43;](~/debugger/media/icon_spy--_stoplog.gif "Icon\_Spy\+\+\_StopLog")|Consente di arrestare la registrazione di messaggi e la visualizzazione del relativo flusso.  Questo controllo è disponibile solo quando una finestra **Messaggi** è la finestra attiva.  Per ulteriori informazioni, vedere [How to: Start and Stop the Message Log Display](../debugger/how-to-start-and-stop-the-message-log-display.md).|  
-|![Pulsante Opzioni registro di Spy&#43;&#43;](~/debugger/media/icon_spy--_logoptions.gif "Icon\_Spy\+\+\_LogOptions")|Viene visualizzata la finestra di dialogo [Opzioni messaggio](../debugger/message-options-dialog-box.md).  Utilizzare questa finestra di dialogo per selezionare i tipi di finestre e messaggi per la visualizzazione.  Questo controllo è disponibile solo quando una finestra **Messaggi** è la finestra attiva.|  
-|![Pulsante Cancella log di Spy&#43;&#43;](~/debugger/media/spy--_clearlog.gif "Spy\+\+\_ClearLog")|Consente di cancellare il contenuto della finestra **Messaggi** attiva.  Questo controllo è disponibile solo quando una finestra **Messaggi** è la finestra attiva.|  
-|![Pulsante Trova finestra di Spy&#43;&#43;](~/debugger/media/icon_spy--_findwindow.gif "Icon\_Spy\+\+\_FindWindow")|Apre la finestra di dialogo [Trova finestra](../debugger/find-window-dialog-box.md) per impostare i criteri di ricerca della finestra e visualizzare le proprietà o i messaggi.  Per ulteriori informazioni, vedere [How to: Use the Finder Tool](../debugger/how-to-use-the-finder-tool.md).|  
-|![Pulsante Trova prima finestra di Spy&#43;&#43;](~/debugger/media/icon_spy--_window.gif "Icon\_Spy\+\+\_Window")|Consente di cercare una finestra, un processo, un thread o un messaggio corrispondente nella visualizzazione corrente.|  
-|![Pulsante Trova finestra successiva di Spy&#43;&#43;](~/debugger/media/icon_spy--_nextwindow.gif "Icon\_Spy\+\+\_NextWindow")|Consente di cercare la finestra, il processo, il thread o il messaggio successivo corrispondente nella visualizzazione corrente.  Questo controllo \(e il comando di menu correlato\) è disponibile solo quando viene restituito un risultato di ricerca valido e non univoco.  Ad esempio quando si utilizza un handle di finestra come criterio di ricerca nella struttura ad albero della finestra, verranno restituiti risultati univoci poiché è disponibile una sola finestra con tale handle nella struttura ad albero della finestra; in questo caso, l'opzione **Trova successivo** non è disponibile.|  
-|![Pulsante Trova finestra precedente di Spy&#43;&#43;](~/debugger/media/icon_spy--_prevwindow.gif "Icon\_Spy\+\+\_PrevWindow")|Consente di cercare la finestra, il processo, il thread o il messaggio precedente corrispondente nella visualizzazione corrente.  Questo controllo \(e il comando di menu correlato\) è disponibile solo quando viene restituito un risultato di ricerca valido e non univoco.  Ad esempio quando si utilizza un handle di finestra come criterio di ricerca nella struttura ad albero della finestra, verranno restituiti risultati univoci poiché è disponibile una sola finestra con tale handle nella struttura ad albero della finestra; in questo caso, l'opzione **Trova precedente** non è disponibile.|  
-|![Pulsante di visualizzazione proprietà di Spy&#43;&#43;](~/debugger/media/icon_spy--_propexp.gif "Icon\_Spy\+\+\_PropExp")|Vengono visualizzare le proprietà della finestra selezionata nella visualizzazione finestre.|  
-|![Pulsante Aggiorna di Spy&#43;&#43;](~/debugger/media/icon_spy--_refresh.gif "Icon\_Spy\+\+\_Refresh")|Aggiorna le visualizzazioni di sistema.|  
+|------------|------------|  
+|![Spy&#43; &#43; pulsante di Windows](../debugger/media/icon_spy--_windows.gif "Icon_Spy + + Windows")|Consente di visualizzare una visualizzazione albero dei controlli windows e nel sistema. Per ulteriori informazioni, vedere [Windows Vista](../debugger/windows-view.md).|  
+|![Spy&#43; &#43; elabora pulsante](../debugger/media/icon_spy--_processes.gif "Icon_Spy + + _Processes")|Consente di visualizzare una visualizzazione albero dei processi nel sistema. Per ulteriori informazioni, vedere [visualizzazione processi](../debugger/processes-view.md).|  
+|![Spy&#43; &#43; pulsante di thread](../debugger/media/icon_spy--_threads.gif "Icon_Spy + + _Threads")|Consente di visualizzare una visualizzazione albero dei thread nel sistema. Per ulteriori informazioni, vedere [visualizzazione thread](../debugger/threads-view.md).|  
+|![Spy&#43; &#43; pulsante i messaggi](../debugger/media/icon_spy--_messages.gif "Icon_Spy + + _Messages")|Crea una finestra per visualizzare i messaggi della finestra e apre il **Opzioni messaggio** nella finestra di dialogo in cui è possibile selezionare la finestra in cui i messaggi verranno visualizzati e le altre opzioni. Per ulteriori informazioni, vedere [visualizzazione messaggi](../debugger/messages-view.md).|  
+|![Spy&#43; &#43; avviare pulsante registro](../debugger/media/icon_spy--_startlog.gif "Icon_Spy + + _StartLog")|Inizia la registrazione dei messaggi e consente di visualizzare il flusso di messaggi. Questo controllo è disponibile solo quando un **messaggi** finestra è la finestra attiva. Per ulteriori informazioni, vedere [procedura: avviare e arrestare la visualizzazione del Log dei messaggi](../debugger/how-to-start-and-stop-the-message-log-display.md).|  
+|![Spy&#43; &#43; pulsante Arresta registro](../debugger/media/icon_spy--_stoplog.gif "Icon_Spy + + _StopLog")|Registrazione e la visualizzazione del flusso di messaggi dei messaggi si interrompe. Questo controllo è disponibile solo quando un **messaggi** finestra è la finestra attiva. Per ulteriori informazioni, vedere [procedura: avviare e arrestare la visualizzazione del Log dei messaggi](../debugger/how-to-start-and-stop-the-message-log-display.md).|  
+|![Spy&#43; &#43; pulsante Opzioni registri](../debugger/media/icon_spy--_logoptions.gif "Icon_Spy + + _LogOptions")|Consente di visualizzare il [Opzioni messaggio](../debugger/message-options-dialog-box.md) la finestra di dialogo. Utilizzare questa finestra di dialogo per selezionare windows e di tipi per la visualizzazione di messaggi. Questo controllo è disponibile solo quando un **messaggi** finestra è la finestra attiva.|  
+|![Spy&#43; &#43; Log pulsante Cancella](../debugger/media/spy--_clearlog.gif "Spy + + _ClearLog")|Cancella il contenuto dell'oggetto attivo **messaggi** finestra. Questo controllo è disponibile solo quando un **messaggi** finestra è la finestra attiva.|  
+|![Spy&#43; &#43; pulsante Trova finestra](../debugger/media/icon_spy--_findwindow.gif "Icon_Spy + + _FindWindow")|Apre il [Trova finestra](../debugger/find-window-dialog-box.md) nella finestra di dialogo che consente di impostare i criteri di ricerca di finestra e visualizzare le proprietà o i messaggi. Per ulteriori informazioni, vedere [procedura: utilizzare lo strumento di ricerca](../debugger/how-to-use-the-finder-tool.md).|  
+|![Spy&#43; &#43; pulsante Trova prima finestra](../debugger/media/icon_spy--_window.gif "Icon_Spy + + _Window")|Consente la visualizzazione corrente per una finestra corrispondente, processo, thread o messaggio.|  
+|![Spy&#43; &#43; pulsante Trova finestra successiva](../debugger/media/icon_spy--_nextwindow.gif "Icon_Spy + + _NextWindow")|Consente la visualizzazione corrente per la finestra corrispondente successiva, processo, thread o messaggio. Questo controllo (e il comando di menu correlate) è disponibile solo se è presente un risultato di ricerca valido che non è univoco. Ad esempio, quando si usa un handle di finestra come criterio di ricerca nell'albero della finestra, produce risultati univoci in quanto è solo una finestra nell'albero della finestra con tale handle; In questo caso, **Trova successivo** non è disponibile.|  
+|![Spy&#43; &#43; precedente pulsante Trova finestra](../debugger/media/icon_spy--_prevwindow.gif "Icon_Spy + + _PrevWindow")|Consente la visualizzazione corrente per la finestra corrispondente precedente, processo, thread o messaggio. Questo controllo (e il comando di menu correlate) è disponibile solo se è presente un risultato di ricerca valido che non è univoco. Ad esempio, quando si usa un handle di finestra come criterio di ricerca nell'albero della finestra, produce risultati univoci in quanto è solo una finestra nell'albero della finestra con tale handle; In questo caso, **Trova precedente** non è disponibile.|  
+|![Spy&#43; &#43; pulsante delle proprietà Explorer](../debugger/media/icon_spy--_propexp.gif "Icon_Spy + + _PropExp")|Visualizza le proprietà della finestra che viene selezionato nella visualizzazione delle finestre.|  
+|![Spy&#43; &#43; pulsante Aggiorna](../debugger/media/icon_spy--_refresh.gif "Icon_Spy + + _Refresh")|Aggiorna le viste di sistema.|  
   
-## Vedere anche  
- [Using Spy\+\+](../debugger/using-spy-increment.md)   
- [Spy\+\+ Views](../debugger/spy-increment-views.md)   
- [Spy\+\+ Reference](../debugger/spy-increment-reference.md)
+## <a name="see-also"></a>Vedere anche  
+ [Utilizzo di Spy + +](../debugger/using-spy-increment.md)   
+ [Visualizzazioni di Spy + +](../debugger/spy-increment-views.md)   
+ [riferimenti per Spy++](../debugger/spy-increment-reference.md)

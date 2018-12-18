@@ -1,64 +1,65 @@
 ---
-title: "IEnumDebugCodeContexts2 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "IEnumDebugCodeContexts2"
-helpviewer_keywords: 
-  - "IEnumDebugCodeContexts2"
+title: IEnumDebugCodeContexts2 | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology:
+- vs-ide-sdk
+ms.topic: conceptual
+f1_keywords:
+- IEnumDebugCodeContexts2
+helpviewer_keywords:
+- IEnumDebugCodeContexts2
 ms.assetid: 72915146-215f-4c99-a034-131b2b474e0e
-caps.latest.revision: 13
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 13
+author: gregvanl
+ms.author: gregvanl
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: dc6ff9a173bcfbb87606fe493697857d7ec2b323
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# IEnumDebugCodeContexts2
-[!INCLUDE[vs2017banner](../../../code-quality/includes/vs2017banner.md)]
-
-Questa interfaccia enumera i contesti di codice associati alla sessione di debug, o con un programma o un documento specifico.  
+# <a name="ienumdebugcodecontexts2"></a>IEnumDebugCodeContexts2
+Questa interfaccia consente di enumerare i contesti di codice associati, la sessione di debug o con un particolare programma o il documento.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
 IEnumDebugCodeContexts2 : IUnknown  
 ```  
   
-## Note per gli implementatori  
- Il motore \(DE\) di debug implementa questa interfaccia per rappresentare un elenco dei contesti di codice per una particolare posizione del testo in un programma, o un elenco dei contesti di codice per un particolare contesto del documento.  
+## <a name="notes-for-implementers"></a>Note per gli implementatori  
+ Il motore di debug (DE) implementa questa interfaccia per rappresentare un elenco di contesti di codice per una posizione di testo specifico in un programma, o un elenco di contesti di codice per un contesto di un documento specifico.  
   
-## Note per i chiamanti  
- La funzione restituisce false quando `N` è 0, altrimenti `get<0>(tpl1) != get<0>(tpl2) || get<1>(tpl1) != get<1>(tpl2) || ... || get<N - 1>(tpl1) == get<N - 1>(tpl2)`.  
+## <a name="notes-for-callers"></a>Note per i chiamanti  
+ Chiamare [EnumCodeContexts](../../../extensibility/debugger/reference/idebugprogram2-enumcodecontexts.md) per ottenere l'interfaccia che rappresenta un elenco di contesti di codice per una posizione di un testo specifico nel documento di origine del programma.  
   
- Chiamare [EnumCodeContexts](../../../extensibility/debugger/reference/idebugdocumentcontext2-enumcodecontexts.md) per ottenere questa interfaccia che rappresenta un elenco di tutti i contesti di codice in un documento di origine specifico.  
+ Chiamare [EnumCodeContexts](../../../extensibility/debugger/reference/idebugdocumentcontext2-enumcodecontexts.md) per ottenere l'interfaccia che rappresenta un elenco di tutti i contesti di codice in un documento di origine specifico.  
   
-## Metodi nell'ordine di Vtable  
- Nella tabella seguente sono elencati i metodi di `IEnumDebugCodeContexts2`.  
+## <a name="methods-in-vtable-order"></a>Metodi nell'ordine Vtable  
+ Nella tabella seguente sono illustrati i metodi di `IEnumDebugCodeContexts2`.  
   
 |Metodo|Descrizione|  
 |------------|-----------------|  
-|[Successivo](../../../extensibility/debugger/reference/ienumdebugcodecontexts2-next.md)|Recupera un numero specificato dei contesti di codice in una sequenza di enumerazione.|  
-|[Skip](../../../extensibility/debugger/reference/ienumdebugcodecontexts2-skip.md)|Ignora un numero specificato dei contesti di codice in una sequenza di enumerazione.|  
-|[Reimposta](../../../extensibility/debugger/reference/ienumdebugcodecontexts2-reset.md)|Reimposta una sequenza di enumerazione all'inizio.|  
-|[Clona](../../../extensibility/debugger/reference/ienumdebugcodecontexts2-clone.md)|Crea un enumeratore che contiene lo stesso stato di enumerazione dell'enumeratore corrente.|  
-|[GetCount](../../../extensibility/debugger/reference/ienumdebugcodecontexts2-getcount.md)|Ottiene il numero dei contesti di codice in un enumeratore.|  
+|[avanti](../../../extensibility/debugger/reference/ienumdebugcodecontexts2-next.md)|Recupera un numero di contesti di codice in una sequenza di enumerazione specificato.|  
+|[Skip](../../../extensibility/debugger/reference/ienumdebugcodecontexts2-skip.md)|Ignora un numero di contesti di codice in una sequenza di enumerazione specificato.|  
+|[Reimpostazione](../../../extensibility/debugger/reference/ienumdebugcodecontexts2-reset.md)|Reimposta una sequenza di enumerazione all'inizio.|  
+|[Clone](../../../extensibility/debugger/reference/ienumdebugcodecontexts2-clone.md)|Crea un enumeratore che contiene lo stesso stato di enumerazione come enumerazione corrente.|  
+|[GetCount](../../../extensibility/debugger/reference/ienumdebugcodecontexts2-getcount.md)|Ottiene il numero di contesti di codice in un enumeratore.|  
   
-## Note  
- Chiamate [EnumCodeContexts](../../../extensibility/debugger/reference/idebugprogram2-enumcodecontexts.md) di Visual Studio per popolare un elenco dei contesti di codice che l'utente può effettuare quando si imposta l'istruzione successiva o visualizzando il disassembly per un file di origine.  I contesti di codice più possono verificarsi, ad esempio, quando sono presenti più istanze del modello c \+\+\-style.  
+## <a name="remarks"></a>Note  
+ Chiamate di Visual Studio [EnumCodeContexts](../../../extensibility/debugger/reference/idebugprogram2-enumcodecontexts.md) per popolare un elenco di contesti di codice l'utente può scegliere quando visualizzare o impostare l'istruzione successiva il disassembly per un file di origine. Più contesti di codice possono verificarsi, ad esempio, quando sono presenti più istanze di un modello di stile di C++.  
   
-## Requisiti  
- intestazione: msdbg.h  
+## <a name="requirements"></a>Requisiti  
+ Intestazione: msdbg.h  
   
- Spazio dei nomi: Microsoft.VisualStudio.Debugger.Interop  
+ Namespace: Microsoft.VisualStudio.Debugger.Interop  
   
  Assembly: Microsoft.VisualStudio.Debugger.Interop.dll  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Interfacce di base](../../../extensibility/debugger/reference/core-interfaces.md)   
  [EnumCodeContexts](../../../extensibility/debugger/reference/idebugprogram2-enumcodecontexts.md)   
  [EnumCodeContexts](../../../extensibility/debugger/reference/idebugdocumentcontext2-enumcodecontexts.md)

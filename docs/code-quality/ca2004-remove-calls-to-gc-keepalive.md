@@ -1,45 +1,42 @@
 ---
-title: "CA2004: Rimuovere le chiamate a GC.KeepAlive | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/05/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-devops-test"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "RemoveCallsToGCKeepAlive"
-  - "CA2004"
-helpviewer_keywords: 
-  - "RemoveCallsToGCKeepAlive"
-  - "CA2004"
+title: 'CA2004: Rimuovere le chiamate a GC.KeepAlive'
+ms.date: 11/04/2016
+ms.technology: vs-ide-code-analysis
+ms.topic: reference
+f1_keywords:
+- RemoveCallsToGCKeepAlive
+- CA2004
+helpviewer_keywords:
+- RemoveCallsToGCKeepAlive
+- CA2004
 ms.assetid: bc543b5b-23eb-4b45-abc2-9325cd254ac2
-caps.latest.revision: 15
-caps.handback.revision: 15
-author: "stevehoag"
-ms.author: "shoag"
-manager: "wpickett"
+author: gewarren
+ms.author: gewarren
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: e2f05764f5147a064815cdb744420686fb6a5a7c
+ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/19/2018
 ---
-# CA2004: Rimuovere le chiamate a GC.KeepAlive
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
+# <a name="ca2004-remove-calls-to-gckeepalive"></a>CA2004: Rimuovere le chiamate a GC.KeepAlive
+|||
+|-|-|
+|TypeName|RemoveCallsToGCKeepAlive|
+|CheckId|CA2004|
+|Category|Microsoft.Reliability|
+|Modifica importante|Non sostanziale|
 
-|||  
-|-|-|  
-|TypeName|RemoveCallsToGCKeepAlive|  
-|CheckId|CA2004|  
-|Categoria|Microsoft.Reliability|  
-|Breaking Change|Non sostanziale|  
-  
-## Causa  
- Le classi utilizzano `SafeHandle` ma contengono ancora chiamate a `GC.KeepAlive`.  
-  
-## Descrizione della regola  
- Se si effettua la conversione all'utilizzo di `SafeHandle`, rimuovere tutte le chiamate a `GC.KeepAlive` \(oggetto\).  In questo caso, non dovrebbe essere necessario per le classi chiamare `GC.KeepAlive`,  ``  presumendo che non dispongano di un finalizzatore ma si affidino a `SafeHandle` per completare l'handle del sistema operativo.  Anche se le conseguenze dell'uscita in una chiamata a `GC.KeepAlive` potrebbero essere trascurabili in termini di prestazioni, la percezione che una chiamata a `GC.KeepAlive` sia necessaria o sufficiente a risolvere un problema di durata che potrebbe non esistere più rende particolarmente difficile la gestione del codice.  
-  
-## Come correggere le violazioni  
- Rimuovere le chiamate a `GC.KeepAlive`.  
-  
-## Esclusione di avvisi  
- È possibile escludere questo avviso solo se non è tecnicamente corretto effettuare la conversione all'utilizzo di `SafeHandle` nella propria classe.
+## <a name="cause"></a>Causa
+ Utilizzo di classi `SafeHandle` ma contengono ancora chiamate a `GC.KeepAlive`.
+
+## <a name="rule-description"></a>Descrizione della regola
+ Se si desidera convertire in `SafeHandle` utilizzo, rimuovere tutte le chiamate a `GC.KeepAlive` (oggetto). In questo caso, le classi non necessario chiamare `GC.KeepAlive`, supponendo che non dispone di un finalizzatore, ma si basano su `SafeHandle` per completare l'handle del sistema operativo per loro.  Anche se il costo di lasciare in una chiamata a `GC.KeepAlive` potrebbe essere trascurabile in termini di prestazioni, la percezione che una chiamata a `GC.KeepAlive` sia necessaria o sufficiente per risolvere un problema che potrebbe non esistere più difficile il codice di durata Gestisci.
+
+## <a name="how-to-fix-violations"></a>Come correggere le violazioni
+ Rimuovere le chiamate a `GC.KeepAlive`.
+
+## <a name="when-to-suppress-warnings"></a>Esclusione di avvisi
+ È possibile eliminare questo avviso solo se non è tecnicamente corretto convertire in `SafeHandle` utilizzo della classe.

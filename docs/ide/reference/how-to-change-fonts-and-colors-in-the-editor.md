@@ -1,13 +1,10 @@
 ---
-title: 'Procedura: Modificare i tipi di carattere e i colori usati nell&quot;editor | Microsoft Docs'
-ms.custom: 
+title: "Procedura: Modificare i tipi di carattere e i colori usati nell'editor | Microsoft Docs"
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
 ms.technology:
 - vs-ide-general
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: conceptual
 helpviewer_keywords:
 - editors, fonts
 - text, color
@@ -15,30 +12,16 @@ helpviewer_keywords:
 - text, fonts
 - editors, text color
 ms.assetid: 3f7629d1-1cdf-4046-9a31-0632517f234d
-caps.latest.revision: 11
-author: kempb
-ms.author: kempb
-manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 5ea9179ad37514ffad4876177b05150eecc22def
-ms.openlocfilehash: 7ee0bae36003baff806dc010082668bec019a837
-ms.contentlocale: it-it
-ms.lasthandoff: 05/24/2017
-
+author: gewarren
+ms.author: gewarren
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 0510cbc9d6f98f9c36347c6be93d768e483aa24a
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="how-to-change-fonts-and-colors-in-the-editor"></a>Procedura: modificare i tipi di carattere e i colori utilizzati nell'editor
 È possibile modificare il tipo di carattere predefinito, le dimensioni del carattere e i colori di sfondo e primo piano dei diversi **elementi di visualizzazione** del testo nell'Editor del codice. Quando si modificano le impostazioni del carattere tenere presente le informazioni seguenti:  

@@ -1,38 +1,42 @@
 ---
-title: "Argomento replacer non valido | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/18/2017"
-ms.prod: "windows-client-threshold"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "javascript"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "VS.WebClient.Help.SCRIPT5035"
-dev_langs: 
-  - "JavaScript"
-  - "TypeScript"
-  - "DHTML"
+title: Argomento replacer non valido | Documenti Microsoft
+ms.custom: 
+ms.date: 01/18/2017
+ms.prod: windows-client-threshold
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- javascript
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- VS.WebClient.Help.SCRIPT5035
+dev_langs:
+- JavaScript
+- TypeScript
+- DHTML
 ms.assetid: 4727186f-facd-4aa6-9447-bbefbae83f07
-caps.latest.revision: 12
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 12
+caps.latest.revision: 
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.openlocfilehash: 588909bae9c5cf198d3108490111b36d5a2d182b
+ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/27/2017
 ---
-# Argomento replacer non valido
-È stato effettuato un tentativo di richiamare `JSON.stringify` con un argomento non valido.  L'argomento `replacer` deve essere una funzione o una matrice.  
+# <a name="invalid-replacer-argument"></a>Argomento Replacer non valido
+È stato effettuato un tentativo di richiamare `JSON.stringify` con un argomento che non è valido. Il `replacer` argomento deve essere una funzione o una matrice.  
   
-### Per correggere l'errore  
+### <a name="to-correct-this-error"></a>Per correggere l'errore  
   
--   Modificare l'argomento `replacer` in una funzione o in una matrice.  
+-   Modifica il `replacer` argomento in una funzione o una matrice.  
   
-## Esempio  
- Il codice presente in questo esempio genera un errore di runtime perché `memberfilter` è un oggetto invece di una funzione o di una matrice.  
+## <a name="example"></a>Esempio  
+ Il codice in questo esempio provoca un errore di runtime perché `memberfilter` è un oggetto anziché una funzione o una matrice.  
   
-```javascript  
+```JavaScript  
 var contact = new Object();  
 contact.firstname = "Jesper";  
 contact.surname = "Aaberg";  
@@ -44,7 +48,7 @@ var memberfilter = new Object();
 var jsontext = JSON.stringify(contact, memberfilter, "\t");  
 ```  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Oggetto JSON](../../javascript/reference/json-object-javascript.md)   
- [Funzione JSON.parse](../../javascript/reference/json-parse-function-javascript.md)   
+ [Funzione JSON. Parse](../../javascript/reference/json-parse-function-javascript.md)   
  [Errori di runtime JavaScript](../../javascript/reference/javascript-run-time-errors.md)

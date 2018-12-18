@@ -1,13 +1,13 @@
 ---
 title: Usare i parametri della riga di comando per installare Visual Studio | Microsoft Docs
-ms.custom: 
-ms.date: 08/14/2017
+ms.custom: ''
+ms.date: 01/17/2018
 ms.reviewer: tims
-ms.suite: 
+ms.suite: ''
 ms.technology:
-- vs-ide-install
-ms.tgt_pltfrm: 
-ms.topic: article
+- vs-acquisition
+ms.tgt_pltfrm: ''
+ms.topic: conceptual
 f1_keywords:
 - command-line parameters
 - switches
@@ -15,13 +15,14 @@ f1_keywords:
 ms.assetid: 480f3cb4-d873-434e-a8bf-82cff7401cf2
 author: TerryGLee
 ms.author: tglee
-manager: ghogen
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 348634224d76b3a7f51246f2be49720173ab8cd3
+ms.sourcegitcommit: efd8c8e0a9ba515d47efcc7bd370eaaf4771b5bb
 ms.translationtype: HT
-ms.sourcegitcommit: f23906933add1f4706d8786b2950fb3b5d2e6781
-ms.openlocfilehash: 12db04604356a9b6a8b565b7bfaf9db2eab199c1
-ms.contentlocale: it-it
-ms.lasthandoff: 08/14/2017
-
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="use-command-line-parameters-to-install-visual-studio-2017"></a>Usare i parametri della riga di comando per installare Visual Studio 2017
 Quando si installa Visual Studio 2017 da un prompt dei comandi, è possibile usare diversi parametri della riga di comando per controllare o personalizzare l'installazione. Dalla riga di comando è possibile eseguire le azioni seguenti:
@@ -41,7 +42,10 @@ Insieme alle opzioni della riga di comando viene usato il programma di bootstrap
 
 > Sintassi: `vs_enterprise.exe [command] <options>...`
 
-(Sostituire `vs_enterprise.exe` con l'edizione del prodotto da installare. Per alcuni esempi, vedere la pagina [Esempi di parametri della riga di comando](command-line-parameter-examples.md).)
+(Sostituire `vs_enterprise.exe` con l'edizione del prodotto da installare.
+
+>[!TIP]
+> Per altri esempi di come usare la riga di comando per installare Visual Studio 2017, vedere la pagina [Esempi di parametri della riga di comando](command-line-parameter-examples.md).)
 
 | **Comando** | **Descrizione** |
 | ----------------------- | --------------- |
@@ -87,15 +91,15 @@ Insieme alle opzioni della riga di comando viene usato il programma di bootstrap
 | **Opzioni di installazione avanzate** | **Descrizione** |
 | ----------------------- | --------------- |
 | `--channelId <id>` | **Facoltativa**: ID del canale per l'istanza che da installare. È obbligatorio per il comando di installazione e viene ignorato per gli altri comandi se è specificata l'opzione `--installPath`. |
-| `--channelUri <uri>` | **Facoltativa**: URI del manifesto del canale. Può essere usato per il comando di installazione e viene ignorato per gli altri comandi. |
-| `--installChannelUri <uri>` | **Facoltativa**: URI del manifesto del canale da usare per l'installazione. L'URI specificato da `--channelUri` (che deve essere specificato quando si specifica `--installChannelUri`) viene usato per rilevare gli aggiornamenti. Se non si vuole ricevere gli aggiornamenti, è necessario specificare `--channelUri` senza un argomento. Può essere usato per il comando di installazione e viene ignorato per gli altri comandi. |
+| `--channelUri <uri>` | **Facoltativa**: URI del manifesto del canale. Se non si desiderano aggiornamenti, `--channelUri` può puntare a un file inesistente, ad esempio, --channelUri C:\nonesiste.chman. Può essere usato per il comando di installazione e viene ignorato per gli altri comandi. |
+| `--installChannelUri <uri>` | **Facoltativa**: URI del manifesto del canale da usare per l'installazione. L'URI specificato da `--channelUri` (che deve essere specificato quando si specifica `--installChannelUri`) viene usato per rilevare gli aggiornamenti. Può essere usato per il comando di installazione e viene ignorato per gli altri comandi. |
 | `--installCatalogUri <uri>` | **Facoltativa**: URI del manifesto del catalogo da usare per l'installazione. Se specificato, il gestore del canale prova a scaricare il manifesto del catalogo da questo URI prima di usare l'URI nel manifesto del canale di installazione. Questo parametro viene usato per supportare l'installazione offline, in cui verrà creata la cache di layout con il catalogo dei prodotti già scaricato. Può essere usato per il comando di installazione e viene ignorato per gli altri comandi. |
 | `--productId <id>` | **Facoltativa**: ID del prodotto per l'istanza che verrà installata. Prepopolata nelle condizioni di normale installazione. |
 | `--wait` | **Facoltativa**: il processo attenderà fino al completamento dell'installazione prima di restituire un codice di uscita. Ciò è utile nell'automazione delle installazioni quando è necessario attendere il completamento dell'installazione per gestire il codice da essa restituito. |
 | `--locale <language-locale>` | **Facoltativa**: modifica la lingua di visualizzazione dell'interfaccia utente per il programma di installazione. L'impostazione verrà resa persistente. Per altre informazioni, vedere la sezione [Elenco delle impostazioni locali delle lingue](#list-of-language-locales) in questa pagina.|
 | `--cache` | **Novità di 15.2, facoltativa**: se presente, i pacchetti verranno mantenuti anche dopo l'installazione per eventuali ripristini successivi. Sostituisce l'impostazione dei criteri globali usata per installazioni successive, correzioni o modifiche. I criteri predefiniti prevedono di memorizzare i pacchetti nella cache. Questa impostazione viene ignorata per il comando di disinstallazione. Per altre informazioni, leggere come [disabilitare o spostare la cache dei pacchetti](disable-or-move-the-package-cache.md). |
 | `--nocache` | **Novità in 15.2, facoltativa**: se presente, i pacchetti vengono eliminati dopo essere stati installati o riparati. Verranno nuovamente scaricati solo se necessario ed eliminati di nuovo dopo l'uso. Sostituisce l'impostazione dei criteri globali usata per installazioni successive, correzioni o modifiche. I criteri predefiniti prevedono di memorizzare i pacchetti nella cache. Questa impostazione viene ignorata per il comando di disinstallazione. Per altre informazioni, leggere come [disabilitare o spostare la cache dei pacchetti](disable-or-move-the-package-cache.md). |
-| `--noUpdateInstaller` | **Novità in 15.2, facoltativa**: se è presente, impedisce al programma di installazione di aggiornarsi quando è specificata la modalità non interattiva. Il programma di installazione non riuscirà a eseguire il comando e restituirà un codice di uscita diverso da zero se è noUpdateInstaller con modalità non interattiva quando è richiesto un aggiornamento del programma di installazione. | 
+| `--noUpdateInstaller` | **Novità in 15.2, facoltativa**: se è presente, impedisce al programma di installazione di aggiornarsi quando è specificata la modalità non interattiva. Il programma di installazione non riuscirà a eseguire il comando e restituirà un codice di uscita diverso da zero se è noUpdateInstaller con modalità non interattiva quando è richiesto un aggiornamento del programma di installazione. |
 | `--noWeb` | **Novità in 15.3, facoltativa**: il programma di installazione scarica ora qualsiasi contenuto che viene installato da Internet.  Tutti i contenuti installati devono essere disponibili in un layout offline.  Se nel layout mancano contenuti, il programma di installazione ha esito negativo.  Per altre informazioni, vedere [Distribuzione da un'installazione di rete](create-a-network-installation-of-visual-studio.md). |
 
 ## <a name="list-of-workload-ids-and-component-ids"></a>Elenco di ID di carichi di lavoro e ID di componenti
@@ -133,11 +137,17 @@ A seconda del risultato dell'operazione, la variabile di ambiente `%ERRORLEVEL%`
 
 Durante ogni operazione nella directory `%TEMP%` vengono generati diversi file di log che indicano lo stato di avanzamento dell'installazione. Ordinare la cartella per data e cercare i file che iniziano con `dd_bootstrapper`, `dd_client` e `dd_setup` per individuare quelli che si riferiscono rispettivamente al programma di avvio automatico, all'app del programma di installazione e al motore di installazione.
 
+## <a name="get-support"></a>Supporto
+Non sempre tutto funziona correttamente. Se l'installazione di Visual Studio non riesce, vedere la pagina [Risoluzione degli errori di installazione e aggiornamento di Visual Studio 2017](troubleshooting-installation-issues.md). Se nessuna delle procedure di risoluzione dei problemi risulta utile, contattare Microsoft tramite chat in tempo reale per richiedere assistenza per l'installazione (solo in lingua inglese). Per informazioni dettagliate, vedere la [pagina del supporto di Visual Studio](https://www.visualstudio.com/vs/support/#talktous).
+
+Ecco alcune altre opzioni di supporto:
+* È possibile segnalare i problemi del prodotto a Microsoft tramite lo strumento [Segnala un problema](../ide/how-to-report-a-problem-with-visual-studio-2017.md) che viene visualizzato sia nel programma di installazione di Visual Studio che nell'IDE di Visual Studio.
+* È possibile condividere un suggerimento per il prodotto con Microsoft in [UserVoice](https://visualstudio.uservoice.com/forums/121579).
+* È possibile visualizzare lo stato dei problemi del prodotto nella [community degli sviluppatori di Visual Studio](https://developercommunity.visualstudio.com/), dove è possibile creare domande e trovare risposte.
+* È anche possibile comunicare con gli sviluppatori Microsoft e altri sviluppatori di Visual Studio partecipando alla [conversazione dedicata a Visual Studio nella community di Gitter](https://gitter.im/Microsoft/VisualStudio).  Per questa opzione è necessario un account [GitHub](https://github.com/).
+
 ## <a name="see-also"></a>Vedere anche
 
- * [Installare Visual Studio 2017](install-visual-studio.md)
- * [Creare un'installazione offline di Visual Studio 2017](create-an-offline-installation-of-visual-studio.md)
  * [Command-line parameter examples for Visual Studio 2017 installation](command-line-parameter-examples.md) (Esempi di parametri della riga di comando per l'installazione di Visual Studio 2017)
+ * [Creare un'installazione offline di Visual Studio 2017](create-an-offline-installation-of-visual-studio.md)
  * [Automatizzare l'installazione di Visual Studio con un file di risposta](automated-installation-with-response-file.md)
- * [Come segnalare un problema con Visual Studio 2017](../ide/how-to-report-a-problem-with-visual-studio-2017.md)
-

@@ -1,13 +1,9 @@
 ---
 title: StartTrackingContextWithRoot | Microsoft Docs
-ms.custom: 
+ms.custom: ''
 ms.date: 11/04/2016
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- vs-ide-sdk
-ms.tgt_pltfrm: 
-ms.topic: article
+ms.technology: msbuild
+ms.topic: conceptual
 apiname:
 - StartTrackingContextWithRoot
 apilocation:
@@ -16,30 +12,16 @@ apitype: COM
 helpviewer_keywords:
 - StartTrackingContextWithRoot
 ms.assetid: f6ef2b76-8035-4a14-8195-aa221c46ef48
-caps.latest.revision: 6
-author: kempb
-ms.author: kempb
-manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 11a9cee75f912c5fb31cf4a031644abe9c63d744
-ms.openlocfilehash: 0d85ad00cf6aea7f546464a048c04618125e1c4a
-ms.contentlocale: it-it
-ms.lasthandoff: 06/03/2017
-
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: da93697f273257d166bf377e9c84b03d59d06f78
+ms.sourcegitcommit: 42ea834b446ac65c679fa1043f853bea5f1c9c95
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/19/2018
 ---
 # <a name="starttrackingcontextwithroot"></a>StartTrackingContextWithRoot
 Avvia un contesto di verifica usando un file di risposta che specifica un marcatore radice.  

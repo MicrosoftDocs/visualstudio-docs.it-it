@@ -1,56 +1,56 @@
 ---
-title: "Defining Custom SharePoint Project Item Types"
-ms.custom: ""
-ms.date: "02/02/2017"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "office-development"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-helpviewer_keywords: 
-  - "SharePoint project items, defining your own types"
-  - "project items [SharePoint development in Visual Studio], defining your own types"
-  - "SharePoint development in Visual Studio, defining new project item types"
-ms.assetid: be300c24-fd1b-4fc7-a4e9-a5df1d81d3fc
-caps.latest.revision: 22
-author: "kempb"
-ms.author: "kempb"
-manager: "ghogen"
-caps.handback.revision: 21
+title: Definizione di tipi di elemento di progetto SharePoint personalizzato | Documenti Microsoft
+ms.custom: ''
+ms.date: 02/02/2017
+ms.technology:
+- office-development
+ms.topic: conceptual
+dev_langs:
+- VB
+- CSharp
+helpviewer_keywords:
+- SharePoint project items, defining your own types
+- project items [SharePoint development in Visual Studio], defining your own types
+- SharePoint development in Visual Studio, defining new project item types
+author: TerryGLee
+ms.author: tglee
+manager: douge
+ms.workload:
+- office
+ms.openlocfilehash: 1d212b81e74ba05cd482ab0e2c31e6cd8a4ea697
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# Defining Custom SharePoint Project Item Types
-  Definire un nuovo tipo di elemento di progetto SharePoint quando si desidera creare un nuovo genere di elemento di progetto SharePoint.  Ad esempio, Visual Studio non include gli elementi di progetto SharePoint per l'aggiunta di campi o azioni personalizzate a un sito di SharePoint.  È possibile definire tipi personalizzati di elementi di progetto SharePoint per la creazione di campi, azioni personalizzate o altri tipi di componenti di SharePoint.  
+# <a name="defining-custom-sharepoint-project-item-types"></a>Definizione di tipi di elementi di progetto SharePoint
+  Definire un nuovo tipo di elemento di progetto SharePoint quando si desidera creare un nuovo tipo di elemento di progetto SharePoint. Ad esempio, Visual Studio non include elementi di progetto SharePoint per l'aggiunta di campi o azioni personalizzate a un sito di SharePoint. È possibile definire i propri tipi di elementi di progetto SharePoint per la creazione di campi, le azioni personalizzate o altri tipi di componenti di SharePoint.  
   
-## Attività per la definizione di tipi di elementi di progetto SharePoint  
- Per definire un tipo di elemento di progetto personalizzato, compilare un assembly di Visual Studio Extension che implementa l'interfaccia <xref:Microsoft.VisualStudio.SharePoint.ISharePointProjectItemTypeProvider>.  Per ulteriori informazioni, vedere [How to: Define a SharePoint Project Item Type](../sharepoint/how-to-define-a-sharepoint-project-item-type.md).  
+## <a name="tasks-for-defining-sharepoint-project-item-types"></a>Attività per la definizione di tipi di elemento di progetto SharePoint  
+ Per definire un tipo di elemento di progetto personalizzati, compilare un assembly di estensione di Visual Studio che implementa il <xref:Microsoft.VisualStudio.SharePoint.ISharePointProjectItemTypeProvider> interfaccia. Per ulteriori informazioni, vedere [procedura: definire un tipo di elemento di progetto SharePoint](../sharepoint/how-to-define-a-sharepoint-project-item-type.md).  
   
- Quando si definisce un tipo di elemento di progetto personalizzato, è possibile aggiungervi la seguente funzionalità.  
+ Quando si definisce un tipo di elemento di progetto personalizzati, è anche possibile aggiungere le funzionalità seguenti per l'elemento del progetto:  
   
--   Aggiungere una voce di menu di scelta rapida a un elemento di progetto.  La voce di menu viene visualizzata quando si apre il menu di scelta rapida per l'elemento di progetto in **Esplora soluzioni** fare clic con il pulsante destro del mouse sull'elemento di progetto o scegliendolo e scegliendo lo spostamento \+ chiavi F10.  Per ulteriori informazioni, vedere [How to: Add a Shortcut Menu Item to a Custom SharePoint Project Item Type](../sharepoint/how-to-add-a-shortcut-menu-item-to-a-custom-sharepoint-project-item-type.md).  
+-   Aggiungere una voce di menu di scelta rapida per l'elemento del progetto. La voce di menu viene visualizzata quando si apre il menu di scelta rapida per l'elemento del progetto in **Esplora** chiavi facendovi clic sopra l'elemento del progetto o selezionandolo e quindi premendo MAIUSC + F10. Per ulteriori informazioni, vedere [procedura: aggiungere una voce di Menu di scelta rapida a un tipo di elemento di progetto SharePoint personalizzato](../sharepoint/how-to-add-a-shortcut-menu-item-to-a-custom-sharepoint-project-item-type.md).  
   
--   Aggiungere una proprietà personalizzata all'elemento di progetto.  La proprietà viene visualizzata nella finestra **Proprietà** quando si seleziona l'elemento di progetto in **Esplora soluzioni**.  Per ulteriori informazioni, vedere [How to: Add a Property to a Custom SharePoint Project Item Type](../sharepoint/how-to-add-a-property-to-a-custom-sharepoint-project-item-type.md).  
+-   Aggiungere una proprietà personalizzata per l'elemento del progetto. La proprietà viene visualizzata nel **proprietà** finestra quando si sceglie l'elemento del progetto in **Esplora**. Per ulteriori informazioni, vedere [procedura: aggiungere una proprietà a un tipo di elemento di progetto SharePoint personalizzato](../sharepoint/how-to-add-a-property-to-a-custom-sharepoint-project-item-type.md).  
   
- Per consentire ad altri sviluppatori di utilizzare l'elemento di progetto in Visual Studio, creare un file con estensione spdata e un modello di elemento o un modello di progetto associato all'elemento di progetto.  Per ulteriori informazioni, vedere [Creating Item Templates and Project Templates for SharePoint Project Items](../sharepoint/creating-item-templates-and-project-templates-for-sharepoint-project-items.md).  
+ Per consentire ad altri sviluppatori di utilizzare l'elemento di progetto in Visual Studio, creare un file con estensione spdata e creare un modello di elemento o un modello di progetto che è associato l'elemento del progetto. Per ulteriori informazioni, vedere [la creazione di modelli di elemento e i modelli di progetto per gli elementi di progetto SharePoint](../sharepoint/creating-item-templates-and-project-templates-for-sharepoint-project-items.md).  
   
-## Informazioni sulla relazione tra tipi di elementi di progetto e istanze di elementi di progetto  
- Quando si definisce un tipo di elemento di progetto SharePoint, l'estensione viene caricata in Visual Studio quando un elemento di progetto del tipo associato viene aggiunto a un progetto SharePoint.  Ad esempio, se si definisce un nuovo tipo di elemento di progetto **Azione personalizzata**, l'estensione viene caricata in Visual Studio quando un utente aggiunge un elemento di progetto **Azione personalizzata** a un progetto.  In Visual Studio viene utilizzata la stessa istanza dell'estensione per tutte le istanze del tipo di elemento di progetto associato.  Nell'esempio precedente se l'utente aggiunge al progetto un secondo elemento di progetto **Azione personalizzata**, per personalizzare il secondo elemento di progetto verrà utilizzata la stessa istanza dell'estensione.  
+## <a name="understanding-the-relationship-between-project-item-types-and-project-item-instances"></a>Le relazioni tra tipi di elemento di progetto e istanze di elementi di progetto  
+ Quando si definisce un tipo di elemento di progetto SharePoint, Visual Studio consente di caricare l'estensione quando viene aggiunto un elemento di progetto del tipo associato a un progetto SharePoint. Ad esempio, se si definisce un nuovo **l'azione personalizzata** tipo di elemento di progetto, Visual Studio consente di caricare l'estensione quando un utente aggiunge un **l'azione personalizzata** elemento di progetto per un progetto. Visual Studio Usa la stessa istanza dell'estensione per tutte le istanze del tipo di elemento di progetto associato. Nell'esempio precedente, se l'utente aggiunge un secondo **l'azione personalizzata** dell'elemento di progetto al progetto, la stessa istanza dell'estensione viene utilizzata per personalizzare il secondo elemento di progetto.  
   
- Per accedere a una specifica istanza del tipo di elemento di progetto personalizzato, gestire uno degli eventi <xref:Microsoft.VisualStudio.SharePoint.ISharePointProjectItemEvents> del parametro *projectItemTypeDefinition* nell'implementazione del metodo <xref:Microsoft.VisualStudio.SharePoint.ISharePointProjectItemTypeProvider.InitializeType%2A>.  Ad esempio per determinare quando un elemento di progetto del tipo personalizzato viene aggiunto a un progetto, gestire l'evento <xref:Microsoft.VisualStudio.SharePoint.ISharePointProjectItemEvents.ProjectItemAdded>.  Per ulteriori informazioni, vedere [How to: Define a SharePoint Project Item Type](../sharepoint/how-to-define-a-sharepoint-project-item-type.md).  
+ Per accedere a un'istanza specifica del tipo di elemento di progetto, gestire uno del <xref:Microsoft.VisualStudio.SharePoint.ISharePointProjectItemEvents> gli eventi del *projectItemTypeDefinition* parametro nell'implementazione del <xref:Microsoft.VisualStudio.SharePoint.ISharePointProjectItemTypeProvider.InitializeType%2A> metodo. Per determinare quando un elemento di progetto del tipo personalizzato viene aggiunto a un progetto, ad esempio, è consigliabile gestire il <xref:Microsoft.VisualStudio.SharePoint.ISharePointProjectItemEvents.ProjectItemAdded> evento. Per ulteriori informazioni, vedere [procedura: definire un tipo di elemento di progetto SharePoint](../sharepoint/how-to-define-a-sharepoint-project-item-type.md).  
   
-## Vedere anche  
- [How to: Define a SharePoint Project Item Type](../sharepoint/how-to-define-a-sharepoint-project-item-type.md)   
- [How to: Add a Property to a Custom SharePoint Project Item Type](../sharepoint/how-to-add-a-property-to-a-custom-sharepoint-project-item-type.md)   
- [How to: Add a Shortcut Menu Item to a Custom SharePoint Project Item Type](../sharepoint/how-to-add-a-shortcut-menu-item-to-a-custom-sharepoint-project-item-type.md)   
- [Creating Item Templates and Project Templates for SharePoint Project Items](../sharepoint/creating-item-templates-and-project-templates-for-sharepoint-project-items.md)   
- [Walkthrough: Creating a Custom Action Project Item with an Item Template, Part 1](../sharepoint/walkthrough-creating-a-custom-action-project-item-with-an-item-template-part-1.md)   
- [Procedura dettagliata: Creazione di un elemento di progetto Colonna del sito con un modello di progetto, parte 1](../sharepoint/walkthrough-creating-a-site-column-project-item-with-a-project-template-part-1.md)   
- [Walkthrough: Creating a Custom Action Project Item with an Item Template, Part 2](../sharepoint/walkthrough-creating-a-custom-action-project-item-with-an-item-template-part-2.md)   
- [Procedura dettagliata: Creazione di un elemento di progetto Colonna del sito con un modello di progetto, parte 2](../sharepoint/walkthrough-creating-a-site-column-project-item-with-a-project-template-part-2.md)   
- [Deploying Extensions for the SharePoint Tools in Visual Studio](../sharepoint/deploying-extensions-for-the-sharepoint-tools-in-visual-studio.md)  
+## <a name="see-also"></a>Vedere anche  
+ [Procedura: definire un tipo di elemento di progetto SharePoint](../sharepoint/how-to-define-a-sharepoint-project-item-type.md)   
+ [Procedura: aggiungere una proprietà a un tipo di elemento di progetto SharePoint personalizzato](../sharepoint/how-to-add-a-property-to-a-custom-sharepoint-project-item-type.md)   
+ [Procedura: aggiungere una voce di Menu di scelta rapida a un tipo di elemento di progetto SharePoint personalizzato](../sharepoint/how-to-add-a-shortcut-menu-item-to-a-custom-sharepoint-project-item-type.md)   
+ [Creazione di modelli di elementi e modelli di progetto per gli elementi di progetto SharePoint](../sharepoint/creating-item-templates-and-project-templates-for-sharepoint-project-items.md)   
+ [Procedura dettagliata: Creazione di un elemento di progetto azione personalizzata con un modello di elemento, parte 1](../sharepoint/walkthrough-creating-a-custom-action-project-item-with-an-item-template-part-1.md)   
+ [Procedura dettagliata: Creazione di un elemento di progetto colonna del sito con un modello di progetto, parte 1](../sharepoint/walkthrough-creating-a-site-column-project-item-with-a-project-template-part-1.md)   
+ [Procedura dettagliata: Creazione di un elemento di progetto azione personalizzata con un modello di elemento, parte 2](../sharepoint/walkthrough-creating-a-custom-action-project-item-with-an-item-template-part-2.md)   
+ [Procedura dettagliata: Creazione di un elemento di progetto colonna del sito con un modello di progetto, parte 2](../sharepoint/walkthrough-creating-a-site-column-project-item-with-a-project-template-part-2.md)   
+ [Distribuzione di estensioni per gli strumenti di SharePoint in Visual Studio](../sharepoint/deploying-extensions-for-the-sharepoint-tools-in-visual-studio.md)  
   
   

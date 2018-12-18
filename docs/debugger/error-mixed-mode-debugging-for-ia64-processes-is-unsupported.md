@@ -1,36 +1,33 @@
 ---
-title: "Errore: il debug in modalit&#224; mista per i processi IA64 non &#232; supportato | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/15/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "vs.debug.error.interop_unsupported_ia64"
-dev_langs: 
-  - "FSharp"
-  - "VB"
-  - "CSharp"
-  - "C++"
-ms.assetid: b60e9660-02da-4dea-9e6d-8cb64e996bdf
-caps.latest.revision: 6
-caps.handback.revision: 6
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
+title: 'Errore: Debug in modalità mista per i processi IA64 non è supportato | Documenti Microsoft'
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology: vs-ide-debug
+ms.topic: troubleshooting
+f1_keywords:
+- vs.debug.error.interop_unsupported_ia64
+dev_langs:
+- CSharp
+- VB
+- FSharp
+- C++
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: 0446463142447dc05dc8ef50fb489585db21b381
+ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/18/2018
 ---
-# Errore: il debug in modalit&#224; mista per i processi IA64 non &#232; supportato
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
+# <a name="error-mixed-mode-debugging-for-ia64-processes-is-unsupported"></a>Errore: il debug in modalità mista per i processi IA64 non è supportato
 Il debugger di [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] non supporta il debug di codice nativo e gestito misto in un processo basato su Itanium.  
   
-### Per correggere l'errore  
+### <a name="to-correct-this-error"></a>Per correggere l'errore  
   
 -   Compilare una versione a 32 bit dell'applicazione per il debug.  
   
-## Vedere anche  
- [Impostare Remote Tools sul dispositivo](../Topic/Set%20Up%20the%20Remote%20Tools%20on%20the%20Device.md)
+## <a name="see-also"></a>Vedere anche  
+ [Debug remoto](../debugger/remote-debugging.md)

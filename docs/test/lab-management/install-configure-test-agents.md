@@ -1,71 +1,28 @@
 ---
-title: Installare e configurare agenti di test | Microsoft Docs
-ms.custom: 
-ms.date: 05/02/2017
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- vs-devops-test
-ms.tgt_pltfrm: 
-ms.topic: article
+title: Installare agenti di test e test controller per Visual Studio | Microsoft Docs
+ms.date: 03/02/2018
+ms.technology: vs-ide-test
+ms.topic: conceptual
 helpviewer_keywords:
 - configure test agents, test lab
-ms.assetid: EBAA2E04-A97A-4047-B739-8DBA7F2D5074
-caps.latest.revision: 56
-ms.author: douge
+author: gewarren
+ms.author: gewarren
 manager: douge
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 45d36934cf1c46902cac566203cddf4a118b7fe4
-ms.openlocfilehash: b7a186778434bc07c169c9f80879c8bc3607bcde
-ms.contentlocale: it-it
-ms.lasthandoff: 06/02/2017
-
+ms.workload:
+- multiple
+ms.openlocfilehash: 0bc5790ef520e86bf853cee6086bd6c8739cc23a
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# <a name="install-and-configure-test-agents"></a>Installare e configurare agenti di test
+# <a name="install-test-agents-and-test-controllers"></a>Installare agenti di test e test controller
 
-Per gli scenari di test che usano Visual Studio e Visual Studio Team Services o Team Foundation Server (TFS) non è necessario un controller di test, perché Agents for Microsoft Visual Studio gestisce Orchestration comunicando con Team Services o TFS. Un esempio è il caso in cui si eseguono test continui con i flussi di lavoro di build e release in Team Services o TFS.
+Per gli scenari di test che usano Visual Studio e Visual Studio Team Services (VSTS) o Team Foundation Server (TFS), non occorre un test controller. Gli agenti per Visual Studio gestiscono l'orchestrazione mediante la comunicazione con VSTS o TFS. Uno scenario potrebbe essere l'esecuzione continuativa di test per i flussi di lavoro di compilazione e versione in VSTS o TFS.
 
-Se è necessario che l'agente di test o il controller di test funzioni con TFS 2013, usare Agents per Microsoft Visual Studio 2013 Update 5 e configurare il controller di test.
+Potrebbe anche essere utile valutare se è preferibile usare la [gestione di compilazione e versione](use-build-or-rm-instead-of-lab-management.md) anziché Lab Management.
 
-Considerare anche se può risultare più facile [usare invece Build o Release Management](use-build-or-rm-instead-of-lab-management.md).
-
-## <a name="what-do-i-need"></a>Cosa è necessario?
-
-**Dove è possibile ottenere il controller di test e gli agenti di test?**
-
-* Se si eseguono test usando attività Build vNext e si vuole installare agenti da una directory locale: 
-
-  * [Scaricare Agents per Microsoft Visual Studio 2015 RTM e Update 1](http://go.microsoft.com/fwlink/p/?LinkId=619266). 
-
-  * [Scaricare Agents per Microsoft Visual Studio 2017 e Visual Studio 2015 Update 2](https://www.visualstudio.com/downloads/download-visual-studio-vs). Scegliere **Tools for Visual Studio 2015** e quindi selezionare **Agents per Visual Studio 2015** nella barra di spostamento a sinistra.
-
-* [Scaricare Agents per Microsoft Visual Studio 2013 Update 5](http://go.microsoft.com/fwlink/p/?LinkId=619264) se si vuole eseguire:
-
-  * Test di carico usando computer remoti in posizioni locali.
-
-  * Test continui in remoto con Microsoft Test Manager o MSTest e impostazioni test per ambienti lab.
-
-  * Test continui con TFS 2013.
-
-Questi programmi di installazione sono disponibili come file ISO (CD virtuali) per facilitarne l'installazione nelle macchine virtuali. 
-
-[È possibile combinare versioni di TFS, di Microsoft Test Manager, del controller di test e dell'agente di test?](#MixedVersions)
-
-**Quali sono i requisiti di sistema per l'installazione del controller di test e degli agenti di test?**
+## <a name="system-requirements"></a>Requisiti di sistema
 
 | Elemento | Requisiti |
 | ---- | ------------ |
@@ -73,38 +30,37 @@ Questi programmi di installazione sono disponibili come file ISO (CD virtuali) p
 | **Controller** | Windows 10<br />Windows 8, Windows 8.1<br />Windows 7 Service Pack 1<br />Windows Server 2012, Windows Server 2012 R2<br />Windows Server 2008 Release 2, Service Pack 1 |
 | **.NET Framework** | .NET Framework 4.5 |
 
-## <a name="q--a"></a>Domande e risposte
+## <a name="install-the-test-controller-and-test-agents"></a>Installare il test controller e gli agenti di test
 
-<!-- BEGINSECTION class="m-qanda" -->
+È possibile scaricare gli agenti per Visual Studio 2017 da [visualstudio.com](https://www.visualstudio.com/downloads/?q=agents). Scorrere fino in fondo alla pagina e cercare *Agents per Visual Studio 2017*. Selezionare l'opzione *Agente* o *Controller* e quindi scegliere *Download*. Eseguire il file eseguibile scaricato per installare l'agente di test o il test controller.
 
-<a name="MixedVersions"></a>
+È possibile scaricare gli agenti per Visual Studio 2015 e Visual Studio 2013 dalla pagina di [download precedente](https://www.visualstudio.com/vs/older-downloads/).
 
-####<a name="q-can-i-mix-versions-of-tfs-microsoft-test-manager-the-test-controller-and-test-agent"></a>D: È possibile combinare versioni di TFS, di Microsoft Test Manager, del controller di test e dell'agente di test?
+Questi programmi di installazione sono disponibili come file ISO per facilitarne l'installazione nelle macchine virtuali.
 
-R: Sì, le combinazioni compatibili e supportate sono elencate di seguito:
+## <a name="compatible-versions-of-tfs-microsoft-test-manager-the-test-controller-and-test-agent"></a>Versioni compatibili di TFS, Microsoft Test Manager, test controller e agente di test
 
-| TFS | Microsoft Test Manager con Lab Center | Controller | Agente |
+È possibile combinare diverse versioni di TFS, Microsoft Test Manager (MTM), test controller e agente di test come indicato nella tabella seguente:
+
+| TFS | MTM con Centro lab | Controller | Agente |
 | --- | -------------------------------------- | ---------- | ----- |
+| 2017: aggiornamento dalla versione 2015 o nuova installazione | 2017 | 2017 | 2017 |
+| 2017: aggiornamento dalla versione 2015 o nuova installazione | 2017 | 2013 Update 5 | 2013 Update 5 |
+| 2017: aggiornamento dalla versione 2015 o nuova installazione | 2015 | 2013 Update 5 | 2013 Update 5 |
 | 2015: aggiornamento da 2013 | 2013 | 2013 |2013 |
 | 2015: nuova installazione | 2013 | 2013 | 2013 |
 | 2015: aggiornamento da 2013 o nuova installazione | 2015 | 2013 | 2013 |
 | 2013 | 2015 | 2013 | 2013 |
 
-####<a name="q-will-the-test-agent-2015-support-all-the-scenarios-supported-by-test-controller-and-test-agent-of-visual-studio-2013"></a>D: Test Agent 2015 supporta tutti gli scenari supportati dal controller di test e dall'agente di test di Visual Studio 2013?
+## <a name="upgrade-from-visual-studio-2013-test-agents"></a>Eseguire l'aggiornamento da agenti di test di Visual Studio 2013
 
-R: È consigliabile usare Agents per Visual Studio in tutti i nuovi scenari di test automatizzato. Per scaricare e installare gli agenti di test nel computer è possibile usare l'attività Deploy Test Agents (Distribuisci agenti di test) in una definizione di compilazione.
-La tabella seguente visualizza gli scenari supportati da Agents per Visual Studio 2013 e le alternative per Team Foundation Server (TFS) 2015 e Team Services (TS).
+È consigliabile usare gli agenti per Visual Studio in tutti i nuovi scenari di test automatizzato. Per scaricare e installare gli agenti di test nel computer, è possibile usare l'attività *Deploy Test Agents* (Distribuisci agenti di test) in una definizione di compilazione.
 
-| Scenari supportati da Agents per Visual Studio 2013 | Alternativa in TFS e TS |
+La tabella seguente visualizza gli scenari supportati da Agents per Visual Studio 2013 e le alternative per Team Foundation Server (TFS) 2015 e VSTS:
+
+| Scenari supportati da Agents per Visual Studio 2013 | Alternativa in TFS e VSTS |
 | --- | --- |
-| Flusso di lavoro compilazione, distribuzione e test in Visual Studio | Gli utenti possono usare una [definizione di compilazione](https://www.visualstudio.com/team-services/continuous-integration/) (non una compilazione XAML) per gli scenari di compilazione, distribuzione e test in TFS. |
-| Test di carico (test delle prestazioni) usando computer remoti in posizioni locali | Per eseguire i test carico in locale usare Test Controller o Test Agent 2013 Update 5. [Altre informazioni](https://msdn.microsoft.com/en-us/library/ff400223.aspx). |
+| Flusso di lavoro compilazione, distribuzione e test in Visual Studio | Gli utenti possono usare una [definizione di compilazione](/vsts/build-release/) (non una compilazione XAML) per gli scenari di compilazione, distribuzione e test in TFS. |
+| Test di carico (test delle prestazioni) usando computer remoti in posizioni locali | Per eseguire i test di carico in locale, usare Test Controller e Test Agents 2013 Update 5. |
 | Esecuzione remota di test automatizzati da Microsoft Test Manager usando un ambiente lab | Attualmente non è disponibile nessuna alternativa per questo scenario. È consigliabile usare l'attività Esegui test funzionali nelle definizioni di compilazione e di versione (non in una compilazione XAML) per eseguire i test in modalità remota. |
 | Sviluppatori che eseguono test remoti in Visual Studio | Non è più supportato. |
-
-<!-- ENDSECTION -->
-
-## <a name="see-also"></a>Vedere anche
-
-* [Configurazione di computer e raccolta di informazioni diagnostiche tramite impostazioni test](https://msdn.microsoft.com/library/dd286743%28v=vs.140%29.aspx)
-

@@ -1,67 +1,66 @@
 ---
-title: "Finestra di dialogo Ricerca finestre | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "Ricerca finestre"
+title: Finestra di dialogo ricerca | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology: vs-ide-debug
+ms.topic: reference
+helpviewer_keywords:
+- Window Search
 ms.assetid: 9c30390d-dc3c-4c27-ae1a-9d92dc076d2b
-caps.latest.revision: 4
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 4
+author: mikejo5000
+ms.author: mikejo
+manager: douge
+ms.workload:
+- multiple
+ms.openlocfilehash: ce03cbf4b361bf341f98f46b4a67871ee9994177
+ms.sourcegitcommit: 3d10b93eb5b326639f3e5c19b9e6a8d1ba078de1
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/18/2018
 ---
-# Finestra di dialogo Ricerca finestre
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
-Utilizzare questa finestra di dialogo per trovare e selezionare il nodo per una finestra specifica in [Visualizzazione finestre](../debugger/windows-view.md).  Per visualizzare questa finestra di dialogo, spostare lo stato attivo sulla finestra di visualizzazione finestre.  Successivamente scegliere **Trova finestra** dal menu **Cerca**.  
+# <a name="window-search-dialog-box"></a>Finestra di dialogo Ricerca finestre
+Utilizzare questa finestra di dialogo per individuare e selezionare il nodo per una finestra specifica in [Windows Vista](../debugger/windows-view.md). Per visualizzare questa finestra di dialogo, spostare lo stato attivo alla finestra di visualizzazione di Windows. Scegliere quindi **Trova finestra** dal **ricerca** menu.  
   
- È possibile utilizzare lo **Strumento di ricerca** per selezionare una finestra, immettere l'handle di finestra oppure identificare la finestra tramite la didascalia e la classe.  
+ È possibile utilizzare il **strumento di ricerca** per selezionare una finestra, oppure è possibile immettere l'handle di finestra o identificare la finestra dalla didascalia e la classe.  
   
  Sono disponibili le impostazioni seguenti:  
   
  **Strumento di ricerca**  
- Strumento di trascinamento della selezione utilizzato per selezionare una finestra.  
+ Lo strumento di trascinamento e rilascio utilizzato per selezionare una finestra.  
   
- **Nascondi Spy\+\+**  
- Consente di rimuovere la finestra principale di Spy\+\+, mantenendo la finestra di dialogo **Ricerca finestre** visibile in primo piano rispetto alle altre applicazioni.  
+ **Nascondere Spy + +**  
+ Rimuove la finestra principale di Spy + + e lascia il **mantenendo** la finestra di dialogo di primo piano rispetto alle altre applicazioni.  
   
  **Handle**  
- ID univoco della finestra da cercare.  
+ ID univoco della finestra per la ricerca.  
   
- **Didascalia**  
- Testo nella didascalia della finestra da cercare.  
+ **Caption**  
+ Il testo della didascalia della finestra per la ricerca.  
   
  **Classe**  
- Classe della finestra da cercare.  
+ La classe della finestra per la ricerca.  
   
- **Direzione di ricerca \(Su o Giù\)**  
- Direzione iniziale della ricerca.  
+ **Direzione della ricerca verso l'alto o verso il basso**  
+ La direzione iniziale della ricerca.  
   
-## Sezioni correlate  
+## <a name="related-sections"></a>Sezioni correlate  
  [Ricerca di una finestra nella visualizzazione finestre](../debugger/how-to-search-for-a-window-in-windows-view.md)  
- Viene illustrato come individuare una finestra specifica nella visualizzazione finestre.  
+ Viene illustrato come trovare una finestra specifica nella visualizzazione di Windows.  
   
- [Visualizzazione finestre](../debugger/windows-view.md)  
- Viene mostrata una visualizzazione struttura ad albero delle finestre e dei controlli disponibili.  
+ [visualizzazione finestre](../debugger/windows-view.md)  
+ Consente di visualizzare una visualizzazione albero dei controlli e finestre disponibili.  
   
- [Visualizzazioni di Spy\+\+](../debugger/spy-increment-views.md)  
- Vengono illustrate le visualizzazioni struttura ad albero di Spy\+\+ relative a finestre, messaggi, processi e thread.  
+ [Visualizzazioni di Spy++](../debugger/spy-increment-views.md)  
+ Vengono illustrate le visualizzazioni ad albero Spy + + di windows, i messaggi, thread e processi.  
   
- [Utilizzo di Spy\+\+](../debugger/using-spy-increment.md)  
- Vengono illustrati lo strumento Spy\+\+ e il relativo utilizzo.  
+ [Uso di Spy++](../debugger/using-spy-increment.md)  
+ Vengono presentati lo strumento Spy + + e come può essere usato.  
   
  [Finestra di dialogo Trova finestra](../debugger/find-window-dialog-box.md)  
- Utilizzata per visualizzare le proprietà o i messaggi di una finestra specifica.  
+ Consente di visualizzare le proprietà o i messaggi da una finestra specifica.  
   
  [Finestra di dialogo Proprietà finestra](../debugger/window-properties-dialog-box.md)  
- Utilizzata per visualizzare le proprietà di una finestra selezionata nella visualizzazione finestre.  
+ Consente di visualizzare le proprietà di una finestra selezionato nella visualizzazione di Windows.  
   
- [Riferimenti per Spy\+\+](../debugger/spy-increment-reference.md)  
- Sono incluse le sezioni in cui vengono descritti tutti i menu e le finestre di dialogo di Spy\+\+.
+ [riferimenti per Spy++](../debugger/spy-increment-reference.md)  
+ Include le sezioni che descrivono ogni Spy + + menu e finestra di dialogo.

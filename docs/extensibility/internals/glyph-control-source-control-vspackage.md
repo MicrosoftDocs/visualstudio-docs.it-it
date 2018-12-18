@@ -1,41 +1,42 @@
 ---
-title: "Icona controllo (origine controllo VSPackage) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "glifi, pacchetti di controllo di origine"
-  - "pacchetti di controllo di origine, glifi"
+title: Icona controllo (origine controllo VSPackage) | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology:
+- vs-ide-sdk
+ms.topic: conceptual
+helpviewer_keywords:
+- glyphs, source control packages
+- source control packages, glyphs
 ms.assetid: b9413b08-b3c3-4fc3-a6e0-3dc0db3652d7
-caps.latest.revision: 20
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 20
+author: gregvanl
+ms.author: gregvanl
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: c3787b0afad7f89743950a922d5b19c2d204bdd9
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# Icona controllo (origine controllo VSPackage)
-[!INCLUDE[vs2017banner](../../code-quality/includes/vs2017banner.md)]
-
-La parte dell'integrazione approfondita disponibile nel controllo del codice sorgente Vspackage è la possibilità di visualizzare i propri icone per indicare lo stato degli elementi nel controllo del codice sorgente.  
+# <a name="glyph-control-source-control-vspackage"></a>Icona controllo (origine controllo VSPackage)
+Parte dell'integrazione completa disponibile per i pacchetti VSPackage di controllo del codice sorgente è la possibilità di visualizzare le proprie icone per indicare lo stato degli elementi nel controllo del codice sorgente.  
   
-## Livelli di controllo del glifo  
- Un'icona di stato viene visualizzata un'icona che indica lo stato corrente di un elemento quando viene visualizzato, ad esempio in **Esplora soluzioni** o in **Visualizzazione classi**.  Un controllo del codice sorgente VSPackage possibile utilizzare due livelli di controllo del glifo.  È possibile limitare la scelta dei glifi a un insieme predefinito di glifi forniti dall'IDE di [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] , o possibile definire un set personalizzato dei glifi da visualizzare.  
+## <a name="levels-of-glyph-control"></a>Livelli di controllo del glifo  
+ Un'icona di stato è un'icona che indica lo stato corrente di un elemento quando è visualizzato, ad esempio in **Esplora** o in **Visualizzazione classi**. Un controllo del codice sorgente VSPackage può esercitare due livelli di controllo del glifo. È possibile limitare il numero di icone da un set predefinito di glifi fornito dal [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] IDE oppure è possibile definire un set personalizzato di glifi da visualizzare.  
   
-### Set predefinito di glifi  
- Per determinare le icone di stato associati a un elemento in **Esplora soluzioni**, un progetto il glifo di stato dal controllo del codice sorgente utilizzando dell'entity\_M:Microsoft.VisualStudio.Shell.Interop.IVsSccManager2.GetSccGlyph\(System.Int32, System.String\[\], Microsoft.VisualStudio.Shell.Interop.VsStateIcon\[\], System.UInt32\[\]\).  Un controllo del codice sorgente VSPackage possibile decidere di mantenere la scelta dei glifi limitati ai glifi predefiniti forniti dall'IDE.  In questo caso, il package VS il passaggio di una matrice di valori che rappresentano le enumerazioni di glifo definite in vsshell.idl.  Per ulteriori informazioni, vedere <xref:Microsoft.VisualStudio.Shell.Interop.VsStateIcon> . Si tratta di un insieme predefinito di glifi impostati dall'IDE, ad esempio un lucchetto per il glifo “archiviato e un segno di spunta come “ha avuto„ il glifo.  
+### <a name="default-set-of-glyphs"></a>Set predefinito di icone  
+ Per determinare le icone di stato che sono associate a un elemento **Esplora**, un progetto richiede l'icona di stato dal controllo di origine utilizzando il <xref:Microsoft.VisualStudio.Shell.Interop.IVsSccManager2.GetSccGlyph%2A>. Un controllo del codice sorgente VSPackage può decidere di mantenere la scelta di glifi limitato ai glifi predefiniti forniti dall'IDE. In questo caso, il pacchetto VSPackage nuovamente passa una matrice di valori che rappresentano le enumerazioni glifo definiti in vsshell.idl. Per ulteriori informazioni, vedere <xref:Microsoft.VisualStudio.Shell.Interop.VsStateIcon> . Si tratta di un set predefinito di glifi impostata dall'IDE, ad esempio un lucchetto per l'icona "Selezionata In" e un segno di spunta come il glifo "Estratto".  
   
-### Personalizzato insieme di glifi  
- Un controllo del codice sorgente VSPackage possibile utilizzare i propri glifi per “un aspetto univoco e proprio„ quando viene installato.  Quando un nuovo controllo del codice sorgente VSPackage è attivo, deve poter iniziare utilizzando i propri glifi anche se un controllo del codice sorgente precedente VSPackage viene caricato ma inattivo.  In questa modalità, il controllo del codice sorgente VSPackage ancora possibile utilizzare le icone esistenti per gestire un essere coerente con [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] se scegliere.  
+### <a name="custom-set-of-glyphs"></a>Insieme di glifi personalizzati  
+ Un controllo del codice sorgente VSPackage è possibile utilizzare i proprio glifi per un "un aspetto univoco" quando viene installato. Quando un nuovo controllo del codice sorgente VSPackage è attivo, deve essere in grado di iniziare a usare i proprio glifi anche se un precedente controllo origine VSPackage viene ancora caricato, ma inattiva. In questa modalità, il controllo del codice sorgente VSPackage ancora possibile usare le icone esistente per mantenere un aspetto coerente con [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] se sceglie.  
   
- Il servizio di <xref:Microsoft.VisualStudio.Shell.Interop.SVsSccManager> supporta un'interfaccia, <xref:Microsoft.VisualStudio.Shell.Interop.IVsSccGlyphs>, che il package VS possibile implementare e che saranno richiesto dall'IDE.  Quando l'ide esegue una richiesta, [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] a sua volta tenterà di ottenere questa interfaccia dal controllo del codice sorgente attualmente registrato VSPackage.  Se l'interfaccia esiste nel package VS registrato, la richiesta dell'IDE per i glifi personalizzati ha esito positivo; in caso contrario, l'ide di [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] utilizza il relativo set predefinito di glifi.  
+ Il <xref:Microsoft.VisualStudio.Shell.Interop.SVsSccManager> servizio supporta un'interfaccia, <xref:Microsoft.VisualStudio.Shell.Interop.IVsSccGlyphs>, che il pacchetto VSPackage può implementare facoltativamente e che verrà richiesto di immettere dall'IDE. Quando l'IDE effettua una richiesta, [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] verrà a sua volta tenta di ottenere questa interfaccia dal controllo di origine attualmente registrata VSPackage. Se l'interfaccia esiste nel pacchetto VSPackage registrato, la richiesta dell'IDE per icone personalizzate ha esito positivo; in caso contrario, il [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] IDE Usa il set predefinito di icone.  
   
- Il metodo di <xref:Microsoft.VisualStudio.Shell.Interop.IVsSccGlyphs.GetCustomGlyphList%2A> viene utilizzato da [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] per ottenere un elenco di immagini che mostrano i diversi stati del controllo del codice sorgente.  Il controllo del codice sorgente VSPackage restituisce all'handle all'elenco di immagini per i glifi personalizzati.  L'ide esegue una copia dell'elenco immagini in questa fase e utilizzarla in un secondo momento per selezionare i glifi da visualizzare.  Se la nuova interfaccia non è supportata o il metodo di `IVsSccGlyphs::GetCustomGlyphList` restituisce E\_NOTIMPL, quindi l'ide ottiene i glifi dall'elenco predefinito dei glifi forniti da [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)].  
+ Il <xref:Microsoft.VisualStudio.Shell.Interop.IVsSccGlyphs.GetCustomGlyphList%2A> metodo viene utilizzato da [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] per ottenere un elenco di immagini di controllo del codice sorgente vari stati. Restituisce il controllo del codice sorgente VSPackage all'IDE di un handle all'elenco di immagini per il relativo icone personalizzate. L'IDE crea una copia dell'elenco immagini a questo punto e viene utilizzato in un secondo momento per scegliere le icone da visualizzare. Se non è supportata la nuova interfaccia o `IVsSccGlyphs::GetCustomGlyphList` restituisce E_NOTIMPL, quindi l'IDE Ottiene relativo glifi dall'elenco predefinito di glifi forniti da [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)].  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  <xref:Microsoft.VisualStudio.Shell.Interop.IVsSccGlyphs>   
  <xref:Microsoft.VisualStudio.Shell.Interop.VsStateIcon>   
  <xref:Microsoft.VisualStudio.Shell.Interop.SVsSccManager>

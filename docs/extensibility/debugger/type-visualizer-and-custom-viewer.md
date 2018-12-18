@@ -1,39 +1,40 @@
 ---
-title: "Tipo visualizzatore e Visualizzatore personalizzato | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "debug [debug SDK], visualizzatore personalizzato"
-  - "debug del Visualizzatore di tipo [debug SDK]"
+title: Digitare visualizzatore e il visualizzatore personalizzato | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology:
+- vs-ide-sdk
+ms.topic: conceptual
+helpviewer_keywords:
+- debugging [Debugging SDK], custom viewer
+- debugging [Debugging SDK], type visualizer
 ms.assetid: fd3691e6-9c78-4767-846f-43f85ada4375
-caps.latest.revision: 13
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 13
+author: gregvanl
+ms.author: gregvanl
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: d419130cd93c6cc2f7dcff132fdafc8986bfd30a
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# Tipo visualizzatore e Visualizzatore personalizzato
-[!INCLUDE[vs2017banner](../../code-quality/includes/vs2017banner.md)]
-
-Un visualizzatore del tipo è un componente che visualizza un blocco di dati in un formato specifico.  Questo formato il metodo è attivo completamente fino all'implementatore del visualizzatore, sia l'utente finale o un fornitore di terze parti di visualizzatori.  
+# <a name="type-visualizer-and-custom-viewer"></a>Visualizzatore di tipo e il visualizzatore personalizzato
+Un visualizzatore di tipo è un componente che consente di visualizzare i dati in un formato molto specifico. Questo formato è interamente dipende dall'implementatore del visualizzatore, ovvero l'utente finale o un fornitore di terze parti di visualizzatori.  
   
- Un visualizzatore personalizzato fa parte di un analizzatore di espressioni personalizzato che visualizza un blocco di dati in un formato specifico.  Questo formato il metodo è attivo completamente fino all'implementatore del visualizzatore personalizzato, ovvero il formato spetta al responsabile dell'implementazione dell'analizzatore di \(EE\) espressioni.  
+ Un visualizzatore personalizzato è la parte di un analizzatore di espressioni personalizzato che consente di visualizzare i dati in un formato molto specifico. Questo formato è interamente dipende dall'implementatore del visualizzatore personalizzato, il che significa che il formato è dipende dall'implementatore dell'analizzatore di espressioni (Java EE).  
   
-## Supporto per i visualizzatori di tipi in un analizzatore di espressioni  
- L'EE possibile supportare i visualizzatori del tipo supporta un set di interfacce accessibili ai visualizzatori: interfacce come [IEEVisualizerService](../../extensibility/debugger/reference/ieevisualizerservice.md) e [IEEVisualizerDataProvider](../../extensibility/debugger/reference/ieevisualizerdataprovider.md).  Si noti, tuttavia, che l'EE non è responsabile dell'implementazione del visualizzatore del tipo: l'EE solo consente l'accesso esterno dei visualizzatori alle informazioni sul tipo.  Tali controlli possono essere forniti con l'EE e siano installati nella posizione appropriata in Visual Studio, fornito da un altro fornitore di terze parti o anche dall'utente finale.  
+## <a name="support-for-type-visualizers-in-an-expression-evaluator"></a>Supporto per i visualizzatori di tipo in un analizzatore di espressioni  
+ Un EE possibilità di supportare i visualizzatori di tipo che supporta un set di interfacce accessibile ai visualizzatori: interfacce, ad esempio [IEEVisualizerService](../../extensibility/debugger/reference/ieevisualizerservice.md) e [IEEVisualizerDataProvider](../../extensibility/debugger/reference/ieevisualizerdataprovider.md). Si noti tuttavia che l'analizzatore di Espressioni non è responsabile dell'implementazione del Visualizzatore di tipo stesso: l'analizzatore di Espressioni semplicemente consente i visualizzatori esterni di accedere a informazioni relative al tipo. Questi visualizzatori potrebbero essere forniti con l'analizzatore di Espressioni e installati nella posizione appropriata in Visual Studio, forniti da un altro fornitore di terze parti o anche dall'utente finale.  
   
-## Supporto per i visualizzatori personalizzati in un analizzatore di espressioni  
- L'EE inoltre possibile supportare i visualizzatori personalizzati in cui l'EE stessa viene fornito il codice per visualizzare il tipo di dati.  Un visualizzatore personalizzato implementa [IDebugCustomViewer](../../extensibility/debugger/reference/idebugcustomviewer.md) l'interfaccia, dove gestisce tutte le funzioni di visualizzare i dati formato è previsto, il visualizzatore dispone di controllo completo sulla visualizzazione e anche possibile consentire i dati da modificare.  Tutti i visualizzatori personalizzati forniti dall'EE forniti con l'EE quando il prodotto viene fornito.  
+## <a name="support-for-custom-viewers-in-an-expression-evaluator"></a>Supporto per i visualizzatori personalizzati disponibili in un analizzatore di espressioni  
+ Un EE supporta anche i visualizzatori personalizzati in cui l'analizzatore di Espressioni fornisce il codice per la visualizzazione del tipo di dati. Un visualizzatore personalizzato implementa il [IDebugCustomViewer](../../extensibility/debugger/reference/idebugcustomviewer.md) è richiesta l'interfaccia che gestisce tutti i compiti di mostrare i dati nel formato desiderato; il visualizzatore ha il pieno controllo sulla visualizzazione e può anche consentire il modifica dei dati. Qualsiasi visualizzatori personalizzati forniti dal motore di esecuzione forniti con l'analizzatore di Espressioni quando la distribuzione del prodotto.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Componenti del debugger](../../extensibility/debugger/debugger-components.md)   
  [Analizzatore di espressioni](../../extensibility/debugger/expression-evaluator.md)   
- [Il motore di debug](../../extensibility/debugger/debug-engine.md)   
+ [Motore di debug](../../extensibility/debugger/debug-engine.md)   
  [IDebugCustomViewer](../../extensibility/debugger/reference/idebugcustomviewer.md)   
  [IEEVisualizerService](../../extensibility/debugger/reference/ieevisualizerservice.md)   
  [IEEVisualizerDataProvider](../../extensibility/debugger/reference/ieevisualizerdataprovider.md)

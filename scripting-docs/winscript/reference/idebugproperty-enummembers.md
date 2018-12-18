@@ -1,55 +1,61 @@
 ---
-title: "IDebugProperty::EnumMembers | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/18/2017"
-ms.prod: "windows-script-interfaces"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-apiname: IDebugProperty.EnumMembers
-apilocation: scrobj.dll
-helpviewer_keywords: 
-  - "IDebugProperty::EnumMembers"
+title: IDebugProperty::EnumMembers | Documenti Microsoft
+ms.custom: ''
+ms.date: 01/18/2017
+ms.prod: windows-script-interfaces
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
+ms.topic: reference
+apiname:
+- IDebugProperty.EnumMembers
+apilocation:
+- scrobj.dll
+helpviewer_keywords:
+- IDebugProperty::EnumMembers
 ms.assetid: 8ce398a5-6452-4804-ae8f-5c54cd11c661
 caps.latest.revision: 8
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 8
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.openlocfilehash: 9cb57f2609fcd9a80e2a9e0dfd63637e6f700047
+ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/27/2017
 ---
-# IDebugProperty::EnumMembers
+# <a name="idebugpropertyenummembers"></a>IDebugProperty::EnumMembers
 Enumera i membri di una proprietà.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
 HRESULT EnumMembers (  
-   DBGPROP_INFO_FLAGS dwFieldSpec,  
-   UINT nRadix,  
-   REFIID refiid,  
-   IEnumDebugPropertyInfo** ppEnum  
+   DBGPROP_INFO_FLAGSdwFieldSpec,  
+   UINTnRadix,  
+   REFIIDrefiid,  
+   IEnumDebugPropertyInfo**ppEnum  
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `dwFieldSpec`  
- \[in\] specifica le costanti `DBGPROP_INFO_FLAGS` che determinano quali campi nelle strutture enumerate le proprietà di debug devono essere riempiti.  
+ [in] Specifica il `DBGPROP_INFO_FLAGS` costanti che determinano quali campi nelle strutture di proprietà di debug enumerato sono da compilare.  
   
  `nRadix`  
- \[in\] base da utilizzare nell'interpretazione delle informazioni numerica.  
+ [in] Base per essere utilizzato per interpretare le informazioni numeriche.  
   
  `refiid`  
- \[in\] questo IID viene passato per filtrare enumeratore.  L'iid è una delle interfacce `IDebugPropertyEnumType` che ereditano da `IDebugPropertyEnumType_All`.  
+ [in] Questo IID viene passato per il filtro dell'enumeratore. L'IID fa parte di `IDebugPropertyEnumType` interfacce da cui ereditare `IDebugPropertyEnumType_All`.  
   
  `ppEnum`  
- \[out\] restituisce l'interfaccia `IEnumDebugPropertyInfo` che enumera le proprietà del membro.  
+ [out] Restituisce il `IEnumDebugPropertyInfo` interfaccia che enumera le proprietà del membro.  
   
-## Valore restituito  
- Restituisce `HRESULT`valido, in genere `S_OK`.  
+## <a name="return-value"></a>Valore restituito  
+ Restituisce un oggetto valido `HRESULT`, in genere `S_OK`.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Interfaccia IDebugProperty](../../winscript/reference/idebugproperty-interface.md)   
- [DBGPROP\_INFO\_FLAGS](../../winscript/reference/dbgprop-info-flags.md)   
- [Interfaccia IDebugPropertyEnumType\_All](../../winscript/reference/idebugpropertyenumtype-all-interface.md)   
+ [DBGPROP_INFO_FLAGS](../../winscript/reference/dbgprop-info-flags.md)   
+ [Interfaccia IDebugPropertyEnumType_All](../../winscript/reference/idebugpropertyenumtype-all-interface.md)   
  [Interfaccia IEnumDebugPropertyInfo](../../winscript/reference/ienumdebugpropertyinfo-interface.md)

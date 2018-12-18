@@ -1,51 +1,52 @@
 ---
-title: "IDebugClassField::DoesInterfaceExist | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "IDebugClassField::DoesInterfaceExist"
-helpviewer_keywords: 
-  - "Metodo IDebugClassField::DoesInterfaceExist"
+title: IDebugClassField::DoesInterfaceExist | Documenti Microsoft
+ms.custom: ''
+ms.date: 11/04/2016
+ms.technology:
+- vs-ide-sdk
+ms.topic: conceptual
+f1_keywords:
+- IDebugClassField::DoesInterfaceExist
+helpviewer_keywords:
+- IDebugClassField::DoesInterfaceExist method
 ms.assetid: cc0c8642-1a76-4fda-a309-7018a34883c9
-caps.latest.revision: 9
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 9
+author: gregvanl
+ms.author: gregvanl
+manager: douge
+ms.workload:
+- vssdk
+ms.openlocfilehash: a7c4a09af356951e7e26b6c9b6b0af5922b9f53b
+ms.sourcegitcommit: 6a9d5bd75e50947659fd6c837111a6a547884e2a
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 04/16/2018
 ---
-# IDebugClassField::DoesInterfaceExist
-[!INCLUDE[vs2017banner](../../../code-quality/includes/vs2017banner.md)]
-
-Determina se una specifica interfaccia è definita nella classe.  
+# <a name="idebugclassfielddoesinterfaceexist"></a>IDebugClassField::DoesInterfaceExist
+Determina se un'interfaccia specifica è definita nella classe.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp#  
-HRESULT DoesInterfaceExist(   
-   LPCOLESTR pszInterfaceName  
+```cpp  
+HRESULT DoesInterfaceExist(   
+   LPCOLESTR pszInterfaceName  
 );  
 ```  
   
-```c#  
+```csharp  
 int DoesInterfaceExist(  
-   [In] string pszInterfaceName  
+   [In] string pszInterfaceName  
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `pszInterfaceName`  
- \[in\]  Stringa contenente il nome dell'interfaccia per trovare.  
+ [in] Stringa contenente il nome dell'interfaccia da cercare.  
   
-## Valore restituito  
- Se l'operazione riesce, restituisce S\_OK, restituisce S\_FALSE se l'interfaccia non esiste; in caso contrario, restituisce un codice di errore.  
+## <a name="return-value"></a>Valore restituito  
+ Se ha esito positivo, restituisce S_OK, restituisce S_FALSE se l'interfaccia non esiste. in caso contrario, restituisce un codice di errore.  
   
-## Note  
- Questo metodo in effetti ottiene un'enumerazione di tutte le interfacce e individuare l'elenco un'interfaccia corrispondente.  
+## <a name="remarks"></a>Note  
+ In effetti, questo metodo ottiene un'enumerazione di tutte le interfacce e Cerca nell'elenco per l'interfaccia corrispondente.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IDebugClassField](../../../extensibility/debugger/reference/idebugclassfield.md)
