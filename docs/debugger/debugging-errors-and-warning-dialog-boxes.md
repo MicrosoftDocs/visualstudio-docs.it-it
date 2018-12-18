@@ -1,40 +1,41 @@
 ---
-title: "Finestre di dialogo di errore e di avviso per il debug | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "VS.WebClient.AccessRequiredDialog"
-dev_langs: 
-  - "FSharp"
-  - "VB"
-  - "CSharp"
-  - "C++"
-helpviewer_keywords: 
-  - "debugger, errori"
-  - "debug [Visual Studio], errori"
-  - "errori [debugger]"
-  - "errori [Visual Studio], debugger"
-  - "risoluzione dei problemi di Visual Studio, errori del debugger"
+title: Debug degli errori e le finestre di dialogo di avviso | Documenti Microsoft
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: vs-ide-debug
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords: VS.WebClient.AccessRequiredDialog
+dev_langs:
+- CSharp
+- VB
+- FSharp
+- C++
+helpviewer_keywords:
+- errors [debugger]
+- troubleshooting Visual Studio, debugger errors
+- debugging [Visual Studio], errors
+- debugger, errors
+- errors [Visual Studio], debugger
 ms.assetid: 73baaf39-3026-48c9-be48-8b9ba0063cde
-caps.latest.revision: 10
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.workload: multiple
+ms.openlocfilehash: 547c9befa5868aee669bc663bf5f7542e8d09ab7
+ms.sourcegitcommit: 9e6ff74da1afd8bd2f0e69387ce81f2a74619182
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 01/04/2018
 ---
-# Finestre di dialogo di errore e di avviso per il debug
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
+# <a name="debugging-errors-and-warning-dialog-boxes"></a>Finestre di dialogo di errore e di avviso per il debug
 Di seguito sono riportate le finestre di errore e di avviso che possono essere visualizzate quando si effettua il debug di un'applicazione.  
   
-## In questa sezione  
- [Finestra di dialogo Asserzione non riuscita](../debugger/assertion-failed-dialog-box.md)  
+## <a name="in-this-section"></a>In questa sezione  
+ [Asserzione non riuscita (finestra di dialogo)](../debugger/assertion-failed-dialog-box.md)  
   
  [Finestra di dialogo Impossibile modificare il valore](../debugger/cannot-change-value-dialog-box.md)  
   
@@ -42,13 +43,13 @@ Di seguito sono riportate le finestre di errore e di avviso che possono essere v
   
  [Finestra di dialogo Eseguibile per la sessione di debug](../debugger/executable-for-debugging-session-dialog-box.md)  
   
- [Finestra di dialogo Impossibile applicare le modifiche del codice](../debugger/edit-and-continue-dialog-box-cpp.md)  
+ [Impossibile applicare le modifiche finestra di dialogo](../debugger/edit-and-continue-dialog-box-cpp.md)  
   
- [Finestra di dialogo Debugger di Microsoft Visual Studio \(generata eccezione\)](../debugger/microsoft-visual-studio-debugger-exception-thrown-dialog-box.md)  
+ [Finestra di dialogo Debugger di Microsoft Visual Studio (generata eccezione)](../debugger/microsoft-visual-studio-debugger-exception-thrown-dialog-box.md)  
   
- [Finestra di dialogo Codice sorgente non disponibile per il percorso corrente](../debugger/no-source-available.md)  
+ [Codice sorgente non disponibile per la finestra di dialogo percorso corrente](../debugger/no-source-available.md)  
   
- [Finestra di dialogo Nessuna informazione sui simboli](http://msdn.microsoft.com/it-it/18de4888-9cca-4059-a165-48b135fee4c9)  
+ [Nessuna finestra di dialogo informazioni sui simboli](http://msdn.microsoft.com/en-us/18de4888-9cca-4059-a165-48b135fee4c9)  
   
  [Finestra di dialogo Risolvi ambiguità](../debugger/resolve-ambiguity-dialog-box.md)  
   
@@ -56,17 +57,17 @@ Di seguito sono riportate le finestre di errore e di avviso che possono essere v
   
  [Impossibile connettersi al computer](../debugger/error-unable-to-connect-to-the-machine-name-the-machine-cannot-be-found-on-the-network.md)  
   
- [Errore: Impossibile eseguire il debug perché nel sistema è attivato un debugger del kernel](../debugger/error-debugging-isn-t-possible-because-a-kernel-debugger-is-enabled-on-the-system.md)  
+ [Errore: impossibile eseguire il debug perché nel sistema è attivato un debugger del kernel](../debugger/error-debugging-isn-t-possible-because-a-kernel-debugger-is-enabled-on-the-system.md)  
   
-## Sezioni correlate  
- [Debug di script e applicazioni Web: errori e risoluzione dei problemi](../debugger/debugging-web-applications-errors-and-troubleshooting.md)  
+## <a name="related-sections"></a>Sezioni correlate  
+ [Debug di Script e applicazioni Web: errori e risoluzione dei problemi](../debugger/debugging-web-applications-errors-and-troubleshooting.md)  
   
- [Errori del debug remoto](../debugger/remote-debugging-errors-and-troubleshooting.md)  
+ [Errori di debug remoto](../debugger/remote-debugging-errors-and-troubleshooting.md)  
   
- [Errori di connessione](http://msdn.microsoft.com/it-it/2820d904-a068-4fcb-bbfb-bbbe5195d6ae)  
+ [Gli errori di connessione](http://msdn.microsoft.com/en-us/2820d904-a068-4fcb-bbfb-bbbe5195d6ae)  
   
- [Risoluzione dei problemi relativi all'impostazione del debug SQL](http://msdn.microsoft.com/it-it/b3ec8303-4c0d-449c-8d19-4932c1d820a7)  
+ [Risoluzione dei problemi di impostazione del debug SQL](http://msdn.microsoft.com/en-us/b3ec8303-4c0d-449c-8d19-4932c1d820a7)  
   
- [Domande frequenti sul debug di Visual C\+\+](../debugger/debugging-native-code-faqs.md)  
+ [Debug di domande frequenti su Visual C++](../debugger/debugging-native-code-faqs.md)  
   
  [Sicurezza del debugger](../debugger/debugger-security.md)

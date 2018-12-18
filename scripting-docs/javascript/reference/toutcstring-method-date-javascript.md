@@ -1,49 +1,51 @@
 ---
-title: "Metodo toUTCString (Date) (JavaScript) | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/18/2017"
-ms.prod: "windows-client-threshold"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-javascript"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "toUTCString"
-dev_langs: 
-  - "JavaScript"
-  - "TypeScript"
-  - "DHTML"
-helpviewer_keywords: 
-  - "toUTCString (metodo)"
-  - "date UTC, conversione in stringhe"
+title: Metodo toUTCString (Date) (JavaScript) | Documenti Microsoft
+ms.custom: 
+ms.date: 01/18/2017
+ms.prod: windows-client-threshold
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-javascript
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords: toUTCString
+dev_langs:
+- JavaScript
+- TypeScript
+- DHTML
+helpviewer_keywords:
+- UTC dates, converting to strings
+- toUTCString method
 ms.assetid: eb0983ed-7884-42fa-a2cc-de92b3111207
-caps.latest.revision: 9
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.openlocfilehash: 0bd5efc43152c1af2dd467b73dce235e8fe52f29
+ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/27/2017
 ---
-# Metodo toUTCString (Date) (JavaScript)
-Restituisce una data convertita in una stringa utilizzando il formato UTC \(Tempo universale coordinato, Universal Coordinated Time\).  
+# <a name="toutcstring-method-date-javascript"></a>Metodo toUTCString (Date) (JavaScript)
+Restituisce una data convertita in una stringa utilizzando l'ora UTC (Universal Coordinated Time).  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
   
 dateObj.toUTCString()   
 ```  
   
-## Note  
- Il riferimento `dateObj` obbligatorio è un oggetto `Date`.  
+## <a name="remarks"></a>Note  
+ Obbligatorio `dateObj` si intende qualsiasi riferimento `Date` oggetto.  
   
- Mediante il metodo `toUTCString` viene restituito un oggetto `String` contenente la data formattata in base alla convenzione UTC e in un formato di agevole lettura.  
+ Il `toUTCString` metodo restituisce un `String` oggetto che contiene la data formattata utilizzando la convenzione UTC in un formato di agevole lettura.  
   
-## Esempio  
- Nell'esempio seguente viene illustrato l'utilizzo del metodo `toUTCString`.  
+## <a name="example"></a>Esempio  
+ Nell'esempio riportato di seguito viene illustrato l'utilizzo del metodo `toUTCString`.  
   
-```javascript  
+```JavaScript  
 function toUTCStrDemo(){  
    var d, s;                   //Declare variables.  
    d = new Date();             //Create Date object.  
@@ -53,10 +55,10 @@ function toUTCStrDemo(){
 }  
 ```  
   
-## Requisiti  
+## <a name="requirements"></a>Requisiti  
  [!INCLUDE[jsv3](../../javascript/reference/includes/jsv3-md.md)]  
   
- **Si applica a**: [Oggetto Date](../../javascript/reference/date-object-javascript.md)  
+ **Si applica a**: [Date Object](../../javascript/reference/date-object-javascript.md)  
   
-## Vedere anche  
- [Metodo toGMTString \(Date\)](../../javascript/reference/togmtstring-method-date-javascript.md)
+## <a name="see-also"></a>Vedere anche  
+ [Metodo toGMTString (Date)](../../javascript/reference/togmtstring-method-date-javascript.md)

@@ -1,121 +1,101 @@
 ---
-title: Add new data sources | Microsoft Docs
+title: Aggiungere nuove origini dati | Documenti Microsoft
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords:
-- vs.datasource.datasourcefieldspicker
-dev_langs:
-- VB
-- CSharp
-- C++
-- aspx
+f1_keywords: vs.datasource.datasourcefieldspicker
 helpviewer_keywords:
 - data [Visual Studio], data sources
 - data sources
 ms.assetid: ed28c625-bb89-4037-bfde-cfa435d182a2
-caps.latest.revision: 56
-author: mikeblome
-ms.author: mblome
+caps.latest.revision: "56"
+author: gewarren
+ms.author: gewarren
 manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: HT
-ms.sourcegitcommit: 9e6c28d42bec272c6fd6107b4baf0109ff29197e
-ms.openlocfilehash: b8e9d2a517e673cd7f44f1a392d6179f1c6b0801
-ms.contentlocale: it-it
-ms.lasthandoff: 08/22/2017
-
+ms.technology: vs-data-tools
+ms.workload: data-storage
+ms.openlocfilehash: 865f575aefedb5813a72d7a0bb2024bc85313db0
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="add-new-data-sources"></a>Add new data sources
-In the context of .NET data tools in Visual Studio, the term *data source* refers to .NET objects that connect to a data store and expose the data to a .NET application. The Visual Studio designers can consume the output of the data source to generate the boilerplate code that binds the data to forms when you drag and drop database objects from the **Data Sources** window. This kind of data source can be:  
+# <a name="add-new-data-sources"></a>Aggiungere nuove origini dati
+Nel contesto di strumenti di dati .NET in Visual Studio, il termine *origine dati* fa riferimento a oggetti .NET che si connettono a un archivio dati e di espongono i dati a un'applicazione .NET. Le finestre di progettazione di Visual Studio possono usare l'output dell'origine dati per generare il codice boilerplate che associa i dati a un form quando si trascinano gli oggetti di database di **origini dati** finestra. Questo tipo di origine dati può essere:  
   
--   A class in an Entity Framework model that is associated with some kind of database.  
+-   Una classe in un modello di Entity Framework che è associata a un tipo di database.  
   
--   A dataset that is associated with some kind of database.  
+-   Un set di dati è associata a un tipo di database.  
   
--   A class that represents a network service such as a Windows Communication Foundation (WCF) data service or a REST service.  
+-   Una classe che rappresenta un servizio di rete, ad esempio un servizio dati di Windows Communication Foundation (WCF) o un servizio REST.  
   
--   A class that represents a SharePoint service.  
+-   Una classe che rappresenta un servizio di SharePoint.  
   
--   A class or collection in your solution.  
+-   Una classe o una raccolta nella soluzione.  
   
 > [!NOTE]
->  If you are not using data-binding features, datasets, Entity Framework, LINQ to SQL, WCF, or SharePoint, the concept of a "data source" does not apply. Just connect directly to the database by using the SQLCommand objects and communicate directly with the database.  
+>  Se non si utilizzano funzionalità di associazione dati, set di dati, Entity Framework, LINQ to SQL, WCF o SharePoint, il concetto di "data source" non è applicabile. È sufficiente connettersi direttamente al database utilizzando gli oggetti di SQLCommand e comunicare direttamente con il database.  
   
- You create and edit data sources by using the **Data Source Configuration Wizard** in a Windows Forms or Windows Presentation Foundation application. For Entity Framework, first create your entity classes, and then start the wizard by selecting **Project** > **Add New Data Source** (described in more detail later in this article).  
+ Per creare e modificare origini dati utilizzando il **configurazione guidata origine dati** in un'applicazione Windows Form o Windows Presentation Foundation. Prima di creare classi di entità per Entity Framework, e quindi avviare la procedura guidata selezionando **progetto** > **Aggiungi nuova origine dati** (descritto in dettaglio più avanti in questo articolo).  
   
- ![Data Source Configuration Wizard](../data-tools/media/data-source-configuration-wizard.png "Data Source Configuration Wizard")  
+ ![Configurazione guidata origine dati](../data-tools/media/data-source-configuration-wizard.png "configurazione guidata origine dati")  
   
- After you create a data source, it appears in the **Data Sources** tool window (Shift+Alt+D or **View** > **Other Windows** > **Data Source**). You can drag a data source from the **Data Sources** window onto a form design surface or control. This causes boilerplate code to be generated—code that displays the data that originates in the data store to the user. The following illustration shows a dataset that has been dropped onto a Windows form. If you selected F5 on the application, the data from the underlying database would appear in the form's controls.  
+ Dopo aver creato un'origine dati, viene visualizzato nel **origini dati** finestra degli strumenti (Maiusc + Alt + D o **vista** > **altre finestre**  >  **Origine dati**). È possibile trascinare un'origine dati dal **origini dati** finestra un controllo o l'area di progettazione form. In questo modo il codice di boilerplate da generare, ovvero codice che visualizza i dati che hanno origine nell'archivio dati per l'utente. Nella figura seguente viene illustrato un set di dati che è stato eliminato in un Windows form. Se si seleziona F5 sull'applicazione, i dati dal database sottostante appariranno nei controlli del form.  
   
- ![Data Source drag operation](../data-tools/media/raddata-data-source-drag-operation.png "raddata Data Source drag operation")  
+ ![Operazione di trascinamento con origine dati](../data-tools/media/raddata-data-source-drag-operation.png "operazione di trascinamento raddata origine dati")  
   
-## <a name="data-source-for-a-database-or-a-database-file"></a>Data source for a database or a database file  
+## <a name="data-source-for-a-database-or-a-database-file"></a>Origine dati per un database o un file di database  
   
-### <a name="dataset"></a>Dataset  
- To create a dataset as a data source, run the **Data Source Configuration Wizard** (**Project** > **Add New Data Source**) and choose the **Database** data-source type. Follow the prompts to specify a new or existing database connection, or a database file.  
+### <a name="dataset"></a>Set di dati  
+ Per creare un set di dati come origine dati, eseguire il **configurazione guidata origine dati** (**progetto** > **Aggiungi nuova origine dati**) e scegliere il  **Database** tipo di origine dati. Seguire le istruzioni per specificare una connessione di database nuovo o esistente o un file di database.  
   
-### <a name="entity-classes"></a>Entity classes  
- To create an Entity Framework model as a data source, first run the **Entity Data Model Wizard** to create the entity classes (**Project** > **Add New Item** > **ADO.NET Entity Data Model**).  
+### <a name="entity-classes"></a>Classi di entità  
+ Per creare un modello di Entity Framework come origine dati, eseguire innanzitutto il **procedura guidata Entity Data Model** per creare le classi di entità (**progetto** > **Aggiungi nuovo elemento**  >  **ADO.NET Entity Data Model**).  
   
- ![New Entity Framework model project item](../data-tools/media/raddata-new-entity-framework-model-project-item.png "raddata New Entity Framework model project item")  
+ ![Nuovo elemento di progetto di modello di Entity Framework](../data-tools/media/raddata-new-entity-framework-model-project-item.png "raddata elemento del progetto modello nuovo Entity Framework")  
   
- Choose the method by which you want to generate the model.  
+ Scegliere il metodo mediante il quale si desidera generare il modello.  
   
- ![Entity Data Model Wizard](../data-tools/media/raddata-entity-data-model-wizard.png "raddata Entity Data Model Wizard")  
+ ![Procedura guidata Entity Data Model](../data-tools/media/raddata-entity-data-model-wizard.png "raddata procedura guidata Entity Data Model")  
   
- Add the model as a data source. The classes that were generated appear in the **Data Source Configuration Wizard** when you choose the **Objects** category.  
+ Aggiungere il modello come origine dati. Le classi generate vengono visualizzate nel **configurazione guidata origine dati** quando si sceglie il **oggetti** categoria.  
   
- ![Data Source Configuration Wizard with Entity Classes](../data-tools/media/raddata-data-source-configuration-wizard-with-entity-classes.png "raddata Data Source Configuration Wizard with Entity Classes")  
+ ![Configurazione guidata origine dati con le classi di entità](../data-tools/media/raddata-data-source-configuration-wizard-with-entity-classes.png "raddata configurazione guidata origine dati con le classi di entità")  
   
-## <a name="data-source-for-a-service"></a>Data source for a service  
- To create a data source from a service, run the **Data Source Configuration Wizard** and choose the **Service** data-source type. This is really just a shortcut to the **Add Service Reference** dialog box, which you can also access by right-clicking the project in **Solution Explorer** and selecting **Add service reference**.  
+## <a name="data-source-for-a-service"></a>Origine dati per un servizio  
+ Per creare un'origine dati da un servizio, eseguire il **configurazione guidata origine dati** e scegliere il **servizio** tipo di origine dati. Si tratta in realtà solo un collegamento di **Aggiungi riferimento al servizio** nella finestra di dialogo è inoltre possibile accedere facendo clic con il progetto in **Esplora** e selezionando **Aggiungi riferimento al servizio** .  
   
- When you create a data source from a service, Visual Studio adds a service reference to your project. Visual Studio also creates proxy objects that correspond to the objects that the service returns. For example, a service that returns a dataset is represented in your project as a dataset; a service that returns a specific type is represented in your project as the type returned.  
+ Quando si crea un'origine dati da un servizio, Visual Studio aggiunge un riferimento al servizio al progetto. Visual Studio crea anche gli oggetti proxy che corrispondono agli oggetti restituite dal servizio. Ad esempio, un servizio che restituisce un set di dati è rappresentato nel progetto come un set di dati; un servizio che restituisce che un tipo specifico è rappresentato nel progetto come tipo restituito.  
   
- You can create a data source from the following types of services:  
+ Uno dei seguenti tipi di servizi, è possibile creare un'origine dati:  
   
--   WCF Data Services. For more information, see [Overview](/dotnet/framework/data/wcf/wcf-data-services-overview).  
+-   WCF Data Services. Per ulteriori informazioni, vedere [Panoramica](/dotnet/framework/data/wcf/wcf-data-services-overview).  
   
--   WCF data services. For more information, see [Windows Communication Foundation Services and WCF Data Services in Visual Studio](../data-tools/windows-communication-foundation-services-and-wcf-data-services-in-visual-studio.md).  
+-   Servizi WCF. Per ulteriori informazioni, vedere [servizi Windows Communication Foundation e WCF Data Services in Visual Studio](../data-tools/windows-communication-foundation-services-and-wcf-data-services-in-visual-studio.md).  
   
--   Web services.  
+-   Servizi Web.  
   
     > [!NOTE]
-    >  The items that appear in the **Data Sources** window are dependent on the data that the service returns. Some services might not provide enough information for the **Data Source Configuration Wizard** to create bindable objects. For example, if the service returns an untyped dataset, no items will appear in the **Data Sources** window when you complete the wizard. This is because untyped datasets do not provide a schema, and therefore the wizard does not have enough information to create the data source.  
+    >  Gli elementi visualizzati nel **origini dati** finestra dipendono i dati che restituisce il servizio. Alcuni servizi potrebbero non fornire informazioni sufficienti affinché il **configurazione guidata origine dati** per creare oggetti associabili. Ad esempio, se il servizio restituisce un dataset non tipizzato, verrà visualizzato alcun elemento nella **origini dati** finestra una volta completata la procedura guidata. In questo modo DataSet non tipizzati non forniscono uno schema, e pertanto la procedura guidata non ha informazioni sufficienti per creare l'origine dati.  
   
-## <a name="data-source-for-an-object"></a>Data source for an object  
- You can create a data source from any object that exposes one or more public properties by running the **Data Source Configuration Wizard** and then selecting the **Object** data-source type. All public properties of an object are displayed in the **Data Sources** window.   If you are using Entity Framework and have generated a model, this is where you find the entity classes that will be the data sources for your application.  
+## <a name="data-source-for-an-object"></a>Origine dati per un oggetto  
+ È possibile creare un'origine dati da qualsiasi oggetto che espone uno o più proprietà pubbliche eseguendo il **configurazione guidata origine dati** e quindi selezionando il **oggetto** tipo di origine dati. Cui vengono visualizzate tutte le proprietà pubbliche di un oggetto di **origini dati** finestra.   Se si utilizza Entity Framework e hanno generato un modello, si tratta di dove è trovare le classi di entità che saranno le origini dati per l'applicazione.  
   
- On the **Select the Data Objects** page, expand the nodes in the tree view to locate the objects that you want to bind to. The tree view contains nodes for your project and for assemblies and other projects that are referenced by your project.  
+ Nel **selezionare gli oggetti dati** pagina, espandere i nodi nella visualizzazione albero per individuare gli oggetti che si desidera associare. La visualizzazione albero contiene nodi per il progetto e per l'assembly e altri progetti a cui fa riferimento il progetto.  
   
- If you want to bind to an object in an assembly or project that does not appear in the tree view, click **Add Reference** and use the **Add Reference Dialog Box** to add a reference to the assembly or project. After you add the reference, the assembly or project is added to the tree view.  
-  
-> [!NOTE]
->  You may need to build the project that contains your objects before the objects appear in the tree view.  
+ Se si desidera associare a un oggetto in un assembly o un progetto che non viene visualizzato nella visualizzazione albero, fare clic su **Aggiungi riferimento** e utilizzare il **dialogo Aggiungi riferimento** per aggiungere un riferimento all'assembly o al progetto. Dopo aver aggiunto il riferimento, l'assembly o il progetto viene aggiunto alla visualizzazione albero.  
   
 > [!NOTE]
->  To support drag-and-drop data binding, objects that implement the <xref:System.ComponentModel.ITypedList> or <xref:System.ComponentModel.IListSource> interface must have a default constructor. Otherwise, Visual Studio cannot instantiate the data-source object, and it will display an error when you drag the item to the design surface.  
+>  Potrebbe essere necessario compilare il progetto che contiene gli oggetti prima che gli oggetti vengono visualizzati nella visualizzazione albero.  
   
-## <a name="data-source-for-a-sharepoint-list"></a>Data source for a SharePoint list  
- You can create a data source from a SharePoint list by running the **Data Source Configuration Wizard** and selecting the **SharePoint** data-source type. SharePoint exposes data through [!INCLUDE[ssAstoria](../data-tools/includes/ssastoria_md.md)], so creating a SharePoint data source is the same as creating a data source from a service. Selecting the **SharePoint** item in the **Data Source Configuration Wizard** opens the **Add Service Reference** dialog box, where you connect to the SharePoint data service by pointing to the SharePoint server.  This requires the SharePoint SDK.  
+> [!NOTE]
+>  Per supportare l'associazione di dati di trascinamento e rilascio, gli oggetti che implementano il <xref:System.ComponentModel.ITypedList> o <xref:System.ComponentModel.IListSource> interfaccia deve avere un costruttore predefinito. In caso contrario, Visual Studio non è possibile creare un'istanza di oggetto origine dati e verrà visualizzato un errore quando si trascina l'elemento nell'area di progettazione.  
   
-## <a name="see-also"></a>See Also  
- [Visual Studio data tools for .NET](../data-tools/visual-studio-data-tools-for-dotnet.md)
+## <a name="data-source-for-a-sharepoint-list"></a>Origine dati per un elenco SharePoint  
+ È possibile creare un'origine dati da un elenco SharePoint eseguendo il **configurazione guidata origine dati** e selezionando il **SharePoint** tipo di origine dati. Espone i dati mediante SharePoint [!INCLUDE[ssAstoria](../data-tools/includes/ssastoria_md.md)], pertanto la creazione di un'origine dati SharePoint è analoga alla creazione di un'origine dati da un servizio. Selezione di **SharePoint** elemento il **configurazione guidata origine dati** apre il **Aggiungi riferimento al servizio** nella finestra di dialogo in cui connettono al servizio dati di SharePoint facendo riferimento al server di SharePoint.  Questa operazione richiede il SDK di SharePoint.  
+  
+## <a name="see-also"></a>Vedere anche  
+ [Visual Studio Data Tools per .NET](../data-tools/visual-studio-data-tools-for-dotnet.md)

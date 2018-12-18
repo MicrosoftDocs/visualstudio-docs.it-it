@@ -1,45 +1,46 @@
 ---
-title: "IEnumDebugFrameInfo2::Reset | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "IEnumDebugFrameInfo2::Reset"
-helpviewer_keywords: 
-  - "IEnumDebugFrameInfo2::Reset"
+title: IEnumDebugFrameInfo2::Reset | Documenti Microsoft
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: vs-ide-sdk
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: IEnumDebugFrameInfo2::Reset
+helpviewer_keywords: IEnumDebugFrameInfo2::Reset
 ms.assetid: e149b559-f072-480b-9552-a452b147f3a8
-caps.latest.revision: 9
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: gregvanl
+ms.author: gregvanl
+manager: ghogen
+ms.workload: vssdk
+ms.openlocfilehash: 34aceab3b4abfd431e0d264a6cd82af5f611e869
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
-# IEnumDebugFrameInfo2::Reset
-[!INCLUDE[vs2017banner](../../../code-quality/includes/vs2017banner.md)]
-
-Reimposta l'enumerazione al primo elemento.  
+# <a name="ienumdebugframeinfo2reset"></a>IEnumDebugFrameInfo2::Reset
+Reimposta il primo elemento dell'enumerazione.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp#  
+```cpp  
 HRESULT Reset(  
-   void  
+   void  
 );  
 ```  
   
-```c#  
+```csharp  
 int Reset();  
 ```  
   
-## Valore restituito  
- Se l'operazione riesce, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
+## <a name="return-value"></a>Valore restituito  
+ Se ha esito positivo, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
   
-## Note  
- Dopo che questo metodo viene chiamato, la successiva [Successivo](../Topic/IEnumDebugFrameInfo2::Next.md) chiamata al metodo restituisce il primo elemento dell'enumerazione.  
+## <a name="remarks"></a>Note  
+ Dopo che questo metodo viene chiamato, la chiamata successiva al [Avanti](../../../extensibility/debugger/reference/ienumdebugframeinfo2-next.md) metodo restituisce il primo elemento dell'enumerazione.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IEnumDebugFrameInfo2](../../../extensibility/debugger/reference/ienumdebugframeinfo2.md)

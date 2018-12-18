@@ -1,48 +1,48 @@
 ---
-title: "IDiaEnumFrameData::frameByVA | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "IDiaEnumFrameData::frameByVA (metodo)"
+title: IDiaEnumFrameData::frameByVA | Documenti Microsoft
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: vs-ide-debug
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords: IDiaEnumFrameData::frameByVA method
 ms.assetid: 0b1e441b-710a-46d8-8060-bed39071c834
-caps.latest.revision: 8
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.workload: multiple
+ms.openlocfilehash: 2dc2a371ac5ad322cde175c6da44d03c0235bd77
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
-# IDiaEnumFrameData::frameByVA
-[!INCLUDE[vs2017banner](../../code-quality/includes/vs2017banner.md)]
-
-Restituisce un frame indirizzo \(VA\) virtuale.  
+# <a name="idiaenumframedataframebyva"></a>IDiaEnumFrameData::frameByVA
+Restituisce un intervallo di indirizzi virtuali (VA).  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp#  
-HRESULT frameByVA(   
-   ULONGLONG       virtualAddress,  
-   IDiaFrameData** frame  
+```C++  
+HRESULT frameByVA(   
+   ULONGLONG       virtualAddress,  
+   IDiaFrameData** frame  
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  virtualAddress  
- \[in\]  Inserire il frame di interesse.  
+ [in] VA del frame di interesse.  
   
- frame  
- \[out\]  restituisce [IDiaFrameData](../../debugger/debug-interface-access/idiaframedata.md) oggetto che rappresenta il frame contenente l'indirizzo fornito.  
+ cornice  
+ [out] Restituisce un [IDiaFrameData](../../debugger/debug-interface-access/idiaframedata.md) oggetto che rappresenta il frame che contiene l'indirizzo fornito.  
   
-## Valore restituito  
- Se l'operazione riesce, restituisce `S_OK`.  Restituisce `S_FALSE` se nessun dati del frame corrisponde all'indirizzo specificato.  In caso contrario, restituisce un codice di errore.  
+## <a name="return-value"></a>Valore restituito  
+ Se ha esito positivo, restituisce `S_OK`. Restituisce `S_FALSE` se nessun frame di dati corrisponde all'indirizzo specificato. In caso contrario, verrà restituito un codice di errore.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IDiaEnumFrameData](../../debugger/debug-interface-access/idiaenumframedata.md)   
  [IDiaFrameData](../../debugger/debug-interface-access/idiaframedata.md)

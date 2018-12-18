@@ -1,54 +1,51 @@
 ---
-title: "Valori della metrica del codice | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-general"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "metrica del codice"
-  - "analisi codice"
-  - "misura di qualità del codice"
-ms.assetid: bc38831e-2083-4ea4-8527-ee41499a342f
-caps.latest.revision: 20
-author: "erickson-doug"
-ms.author: "douge"
-manager: "douge"
-caps.handback.revision: 20
+title: Calcola metrica codice in Visual Studio | Documenti Microsoft
+ms.custom: 
+ms.date: 12/12/2017
+ms.reviewer: 
+ms.suite: 
+ms.technology: vs-ide-code-analysis
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords: code metrics [Visual Studio]
+author: gewarren
+ms.author: gewarren
+manager: ghogen
+ms.workload: multiple
+ms.openlocfilehash: dc9a688892ca7ec08a89c4da8e1732b5e2b3e267
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
-# Valori della metrica del codice
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
+# <a name="code-metrics-values"></a>Valori della metrica del codice
 
-La metrica del codice è un insieme di misure del software in grado di fornire agli sviluppatori una migliore comprensione del codice che stanno sviluppando.  Sfruttando la metrica del codice, è possibile capire quali tipi e\/o metodi rielaborare o testare in modo più approfondito.  I team di sviluppo possono così identificare rischi potenziali, comprendere lo stato corrente di un progetto e tenere traccia dei progressi durante lo sviluppo del software.  
-  
-## Misurazioni del software  
- Nell'elenco riportato di seguito vengono illustrati i risultati della metrica codice calcolati da [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)]:  
-  
--   **Indice di gestibilità** \- Calcola un valore di indice tra 0 e 100 che rappresenta la relativa semplicità di gestione del codice.  Un valore alto indica una migliore gestibilità.  È possibile utilizzare le classificazioni codificate con colori differenti per identificare rapidamente i punti critici del codice.  Una classificazione verde è compresa tra 20 e 100 e indica che il codice ha una buona manutenibilità.  Una classificazione gialla è compresa tra 10 e 19 e indica che il codice ha una discreta manutenibilità.  Una classificazione rossa è compresa tra 0 e 9 e indica una bassa manutenibilità.  
-  
--   **Complessità ciclomatica** \- Misura la complessità strutturale del codice.  Viene creata calcolando il numero di percorsi di codice diversi nel flusso del programma.  Un programma con un flusso di controllo complesso richiederà più test per raggiungere un buon code coverage e sarà meno gestibile.  
-  
-    > [!NOTE]
-    >  In alcuni casi, il calcolo della complessità ciclomatica per un metodo in [!INCLUDE[vs_dev10_long](../code-quality/includes/vs_dev10_long_md.md)] differisce dalle versioni precedenti.  Per ulteriori informazioni, vedere la sezione "Modifiche nei calcoli di complessità del codice di Visual Studio 2010" di [Risoluzione dei problemi relativi alla metrica codice](../code-quality/troubleshooting-code-metrics-issues.md).  
-  
--   **Profondità dell'Ereditarietà** \- Indica il numero di definizioni della classe che estendono alla radice della gerarchia di classi.  Più la gerarchia è profonda e più potrebbe diventare difficile capire dove i particolari metodi e campi siano definiti o\/e ridefiniti.  
-  
--   **Accoppiamento di classi** \- Misura l'accoppiamento di classi univoche tramite parametri, variabili locali, tipi restituiti, chiamate al metodo, creazioni di istanze generiche o sulla base di modelli, classi di base, implementazioni dell'interfaccia, campi definiti in base a tipologie esterne e decorazione dell'attributo.  Secondo i canoni della progettazione di software,tipologie e metodi devono avere coesione alta e accoppiamento basso.  Un alto indice di accoppiamento è indice di una progettazione difficile da riutilizzare e gestire, a causa delle molte interdipendenze con altre tipologie.  
-  
--   **Righe di Codice** \- Indica il numero approssimativo di righe nel codice.  Il conteggio è basato sul codice IL e non corrisponde perciò al numero esatto di righe nel file di codice sorgente.  Un conteggio molto alto potrebbe indicare che un tipo o metodo sta tentando di fare troppo lavoro e deve essere suddiviso.  Potrebbe anche indicare che il tipo o il metodo potrebbe essere di difficile gestione.  
-  
-## Metodi anonimi  
- Un *metodo anonimo* è semplicemente un metodo privo di nome.  I metodi anonimi vengono usati il più delle volte per passare un blocco di codice come parametro di delegato.  I risultati delle metriche per un metodo anonimo dichiarato in un membro specifico,come ad esempio un metodo o una funzione di accesso, vengono associati al membro che dichiara il metodo.  Non vengono quindi associati al membro che chiama il metodo.  
-  
- Per ulteriori informazioni sulle modalità con cui la metrica del codice tratta i metodi anonimi, vedere [Metodi anonimi e analisi del codice](../code-quality/anonymous-methods-and-code-analysis.md).  
-  
-## Codice generato  
- Tramite alcuni strumenti di software e compilatori, viene generato del codice aggiuntivo per i progetti che lo sviluppatore del progetto non vede o non deve modificare.  In genere, la metrica del codice ignora il codice generato durante il calcolo dei valori delle metriche.  In questo modo, consente ai valori delle metriche di riflettere ciò che lo sviluppatore può vedere e modificare.  
-  
- Il codice generato per le Windows Form non viene ignorato, perché è codice che lo sviluppatore può vedere e modificare.  
-  
-## Vedere anche  
- [Misurazione della complessità e della manutenibilità del codice gestito](../code-quality/measuring-complexity-and-maintainability-of-managed-code.md)
+La maggiore complessità delle applicazioni software moderne aumenta anche la difficoltà di rendere il codice affidabile e gestibile. La metrica del codice è un insieme di misure del software in grado di fornire agli sviluppatori una migliore comprensione del codice che stanno sviluppando. Sfruttando la metrica del codice, gli sviluppatori possono comprendere quali tipi e/o i metodi devono essere rielaborati oppure più approfonditi. I team di sviluppo possono identificare i potenziali rischi, comprendere lo stato corrente di un progetto e rilevare lo stato di avanzamento durante lo sviluppo di software.
+
+Gli sviluppatori possono utilizzare Visual Studio per generare dati di metrica del codice che misurano la complessità e della manutenibilità del codice gestito. Dati di metrica codice possono essere generati per un'intera soluzione o un singolo progetto.
+
+## <a name="software-measurements"></a>Misure del software
+
+L'elenco seguente mostra i risultati della metrica codice [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] Calcola:
+
+- **Indice di manutenibilità** -calcola un valore di indice compreso tra 0 e 100 che rappresenta la relativa semplicità di gestione del codice. Un valore elevato indica una migliore gestibilità. Classificazioni codificato tramite colori consente di identificare rapidamente i punti critici del codice. Una classificazione verde è compreso tra 20 e 100 e indica che il codice ha una buona manutenibilità. Una classificazione gialla è compreso tra 10 e 19 e indica che il codice è moderatamente gestibile. Una classificazione rossa è compresa tra 0 e 9 e indica una manutenibilità insufficiente.
+
+- **Complessità ciclomatica** -misura la complessità strutturale del codice. Viene creato per il calcolo del numero di percorsi del codice diversi nel flusso del programma. Un programma con il flusso di controllo complessi richiederà più test per ottenere un buon code coverage e sarà meno gestibile.
+
+- **Profondità dell'ereditarietà** -indica il numero di definizioni di classi che estendono alla radice della gerarchia di classi. Maggiore è la profondità della gerarchia più difficile è possibile conoscere in cui vengono definiti determinati metodi e campi o / e ridefinito.
+
+- **Accoppiamento** -misura l'accoppiamento di classi univoche tramite parametri, variabili locali, tipi restituiti, chiamate al metodo, creazioni di istanza generica o modello, le classi di base, le implementazioni dell'interfaccia, i campi definiti nei tipi esterni, e decorazione dell'attributo. Progettazione di software impone che i tipi e metodi devono avere coesione alta e accoppiamento basso. Accoppiamento elevato indica una progettazione che è difficile da riutilizzare e gestire a causa delle molte interdipendenze con altri tipi.
+
+- **Righe di codice** -indica il numero approssimativo di righe di codice. Il conteggio è basato sul codice IL e pertanto non il numero esatto di righe nel file di codice sorgente. Un numero molto elevato potrebbe indicare che un tipo o metodo sta tentando di eseguire una quantità eccessiva di lavoro e deve essere suddiviso. Può inoltre indicare che il tipo o metodo potrebbe essere difficile da gestire.
+
+## <a name="anonymous-methods"></a>Metodi anonimi
+
+Un *metodo anonimo* è semplicemente un metodo che non ha nome. Metodi anonimi vengono utilizzati principalmente per passare un blocco di codice come un parametro del delegato. Risultati di metrica per un metodo anonimo che viene dichiarato in un membro, ad esempio un metodo o una funzione di accesso, sono associati al membro che dichiara il metodo. Non sono associate con il membro che chiama il metodo.
+
+Per ulteriori informazioni su come metrica del codice tratta i metodi anonimi, vedere [metodi anonimi e analisi del codice](../code-quality/anonymous-methods-and-code-analysis.md).
+
+## <a name="generated-code"></a>Codice generato
+
+Alcuni strumenti software e i compilatori di generano il codice che viene aggiunto a un progetto e che lo sviluppatore di progetto non consente di visualizzare o non deve modificare. In genere, la metrica del codice ignora il codice generato durante il calcolo dei valori delle metriche. In questo modo i valori della metrica in base a ciò che lo sviluppatore può visualizzare e modificare.
+
+Codice generato per Windows Form non viene ignorato, poiché si tratta di codice che lo sviluppatore può visualizzare e modificare.

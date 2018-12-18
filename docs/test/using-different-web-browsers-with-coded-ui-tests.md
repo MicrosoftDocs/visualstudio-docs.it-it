@@ -1,37 +1,22 @@
 ---
-title: Uso di Web browser diversi con test codificati dell&quot;interfaccia utente | Microsoft Docs
+title: Uso di Web browser diversi con test codificati dell'interfaccia utente | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- vs-devops-test
+ms.technology: vs-devops-test
 ms.tgt_pltfrm: 
 ms.topic: article
-ms.assetid: a859595f-6517-43f2-9d61-c706cb55a388
-caps.latest.revision: 23
-ms.author: douge
-manager: douge
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 47057e9611b824c17077b9127f8d2f8b192d6eb8
-ms.openlocfilehash: 28ce78165492b6f74cdd85ba79eae26e4d68d32c
-ms.contentlocale: it-it
-ms.lasthandoff: 05/13/2017
-
+ms.author: gewarren
+manager: ghogen
+ms.workload:
+- multiple
+author: gewarren
+ms.openlocfilehash: 4573d87bbb7d5f447bf6d2038cec310132a0c9f7
+ms.sourcegitcommit: 69b898d8d825c1a2d04777abf6d03e03fefcd6da
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="using-different-web-browsers-with-coded-ui-tests"></a>Uso di Web browser diversi con test codificati dell'interfaccia utente
 I test codificati dell'interfaccia utente possono automatizzare il test delle applicazioni Web registrando i test tramite Internet Explorer. È quindi possibile personalizzare il test e riprodurlo usando Internet Explorer o un altro tipo di browser per queste applicazioni Web.  
@@ -94,7 +79,7 @@ I test codificati dell'interfaccia utente possono automatizzare il test delle ap
     > [!TIP]
     >  È anche possibile scaricare i componenti Selenium per il test codificato dell'interfaccia utente tra più browser facendo clic [qui](http://visualstudiogallery.msdn.microsoft.com/11cfc881-f8c9-4f96-b303-a2780156628d/).  
   
- Per altre informazioni sulla creazione e l'uso di test codificati dell'interfaccia utente, vedere [Creazione di test codificati dell'interfaccia utente](../test/use-ui-automation-to-test-your-code.md#VerifyingCodeUsingCUITCreate).  
+ Per altre informazioni sulla creazione e l'uso di test codificati dell'interfaccia utente, vedere [Creazione di test codificati dell'interfaccia utente](../test/use-ui-automation-to-test-your-code.md).  
   
 ### <a name="enable-debugging"></a>Abilita debug  
  Per abilitare il debug dell'applicazione Web è necessario completare le opzioni di configurazione seguenti:  
@@ -117,17 +102,17 @@ I test codificati dell'interfaccia utente possono automatizzare il test delle ap
  *Altre informazioni*  
  **Note**  
   
--   ![Prerequisito](~/test/media/prereq.png "Prereq") Il Web browser Apple Safari non è supportato.  
+-   ![Prerequisito](../test/media/prereq.png "Prereq") Il Web browser Apple Safari non è supportato.  
   
--   ![Prerequisito](~/test/media/prereq.png "Prereq") L'azione di avvio del Web browser deve far parte del test codificato dell'interfaccia utente.  
+-   ![Prerequisito](../test/media/prereq.png "Prereq") L'azione di avvio del Web browser deve fare parte del test codificato dell'interfaccia utente.  
   
      Se il Web browser è già aperto e si desidera eseguire i passaggi, la riproduzione avrà esito negativo a meno che non si usi Internet Explorer. Pertanto è consigliabile includere l'avvio del Web browser come parte dei test codificati dell'interfaccia utente.  
   
--   ![Prerequisito](~/test/media/prereq.png "Prereq") L'automazione di azioni dell'interfaccia utente specifiche del browser quali l'ingrandimento, la riduzione al minimo e il ripristino non è supportata.  
+-   ![Prerequisito](../test/media/prereq.png "Prereq") L'automazione di azioni dell'interfaccia utente specifiche del browser quali l'ingrandimento, la riduzione al minimo e il ripristino non è supportata.  
   
  **Suggerimenti**  
   
--   ![Suggerimento](~/test/media/tip.png "Tip") È possibile configurare l'output in modo da includere le schermate nei log codificati dell'interfaccia utente. A tale scopo, è necessario impostare alcune impostazioni di configurazione nel file QTAgent32.exe.config. Per impostazione predefinita, questo file è installato nel percorso seguente:  
+-   ![Suggerimento](../test/media/tip.png "Tip") È possibile configurare l'output in modo da includere le schermate nei log codificati dell'interfaccia utente. A tale scopo, è necessario impostare alcune impostazioni di configurazione nel file QTAgent32.exe.config. Per impostazione predefinita, questo file è installato nel percorso seguente:  
   
      **C:\Programmi (x86)\Microsoft Visual Studio 11.0\Common7\IDE**  
   
@@ -171,4 +156,3 @@ I test codificati dell'interfaccia utente possono automatizzare il test delle ap
  [Usare l'automazione dell'interfaccia utente per testare il codice](../test/use-ui-automation-to-test-your-code.md)   
  [Configurazioni e piattaforme supportate per i test codificati dell'interfaccia utente e le registrazioni delle azioni](../test/supported-configurations-and-platforms-for-coded-ui-tests-and-action-recordings.md)   
  [Analisi dei test codificati dell'interfaccia utente usando i log dei test codificati dell'interfaccia utente](../test/analyzing-coded-ui-tests-using-coded-ui-test-logs.md)
-

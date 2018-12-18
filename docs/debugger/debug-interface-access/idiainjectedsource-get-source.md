@@ -1,51 +1,51 @@
 ---
-title: "IDiaInjectedSource::get_source | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "IDiaInjectedSource::get_source (metodo)"
+title: 'Idiainjectedsource:: Get_source | Documenti Microsoft'
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: vs-ide-debug
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords: IDiaInjectedSource::get_source method
 ms.assetid: 3c0b5386-321f-4f8f-85cc-e2ee7b4cc3d2
-caps.latest.revision: 8
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.workload: multiple
+ms.openlocfilehash: c58989c6958aa8a604f5e7c7a9ef5c4d3eb84f1f
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
-# IDiaInjectedSource::get_source
-[!INCLUDE[vs2017banner](../../code-quality/includes/vs2017banner.md)]
-
-Recupera i byte del codice sorgente.  
+# <a name="idiainjectedsourcegetsource"></a>IDiaInjectedSource::get_source
+Recupera i byte di codice sorgente.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp#  
-HRESULT get_source (   
-   DWORD  cbData,  
-   DWORD* pcbData,  
-   BYTE   data[]  
+```C++  
+HRESULT get_source (   
+   DWORD  cbData,  
+   DWORD* pcbData,  
+   BYTE   data[]  
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `cbData`  
- \[in\]  Il numero di byte che rappresenta la dimensione del buffer di dati.  
+ [in] Il numero di byte che rappresenta le dimensioni del buffer di dati.  
   
  `pcbData`  
- \[out\]  Restituisce il numero di byte che rappresenta i byte restituiti.  se `data` viene  `NULL`, quindi  `pcbData` è il numero totale di byte dei dati disponibili.  
+ [out] Restituisce il numero di byte che rappresenta i byte. Se `data` è `NULL`, quindi `pcbData` è disponibile il numero totale di byte di dati.  
   
  `data[]`  
- \[out\]  Un buffer che sia compilato con byte di origine.  
+ [out] Un buffer che deve essere compilato con i byte di origine.  
   
-## Valore restituito  
- Se l'operazione riesce, restituisce `S_OK`.  Restituisce `S_FALSE` se questa proprietà non è supportata.  In caso contrario, restituisce un codice di errore.  
+## <a name="return-value"></a>Valore restituito  
+ Se ha esito positivo, restituisce `S_OK`. Restituisce `S_FALSE` se questa proprietà non è supportata. In caso contrario, verrà restituito un codice di errore.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IDiaInjectedSource](../../debugger/debug-interface-access/idiainjectedsource.md)

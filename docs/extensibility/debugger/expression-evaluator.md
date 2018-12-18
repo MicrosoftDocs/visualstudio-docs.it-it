@@ -1,45 +1,48 @@
 ---
-title: "Analizzatore di espressioni | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "espressioni [Debugging SDK]"
-  - "debug [debug SDK], la valutazione di espressioni"
-  - "valutazione di espressioni"
+title: L'analizzatore di espressioni | Documenti Microsoft
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: vs-ide-sdk
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- expressions [Debugging SDK]
+- debugging [Debugging SDK], expression evaluation
+- expression evaluation
 ms.assetid: f9381b2f-99aa-426c-aea0-d9c15f3c859b
-caps.latest.revision: 19
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 19
+caps.latest.revision: "19"
+author: gregvanl
+ms.author: gregvanl
+manager: ghogen
+ms.workload: vssdk
+ms.openlocfilehash: 55aaa595c49d0c50cff5f874d1b322c3adbb9729
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
-# Analizzatore di espressioni
-[!INCLUDE[vs2017banner](../../code-quality/includes/vs2017banner.md)]
-
-Gli analizzatori \(EE\) di espressioni che esaminano la sintassi di un linguaggio per analizzare e valutare variabili ed espressioni in fase di esecuzione, consentendo li da visualizzare dall'utente quando l'ide è in modalità di interruzione.  
+# <a name="expression-evaluator"></a>Analizzatore di espressioni
+Analizzatori di espressioni (Java EE) esaminare la sintassi di una lingua per analizzare e valutare variabili ed espressioni in fase di esecuzione, di modo che possano essere visualizzati dall'utente quando l'ambiente IDE è in modalità di interruzione.  
   
-## Utilizzando gli analizzatori di espressioni  
- Le espressioni vengono create [ParseText](../../extensibility/debugger/reference/idebugexpressioncontext2-parsetext.md) utilizzando il metodo, come segue:  
+## <a name="using-expression-evaluators"></a>Usando gli analizzatori di espressioni  
+ Le espressioni vengono create utilizzando il [ParseText](../../extensibility/debugger/reference/idebugexpressioncontext2-parsetext.md) (metodo), come indicato di seguito:  
   
-1.  il motore di debug \(DE\) implementa [IDebugExpressionContext2](../../extensibility/debugger/reference/idebugexpressioncontext2.md) l'interfaccia.  
+1.  Il motore di debug (DE) implementa il [IDebugExpressionContext2](../../extensibility/debugger/reference/idebugexpressioncontext2.md) interfaccia.  
   
-2.  Il pacchetto di debug ottiene un oggetto di `IDebugExpressionContext2` [IDebugStackFrame2](../../extensibility/debugger/reference/idebugstackframe2.md) da un'interfaccia e chiama quindi il metodo di `IDebugStackFrame2::ParseText` per ottenere [IDebugExpression2](../../extensibility/debugger/reference/idebugexpression2.md) un oggetto.  
+2.  Ottiene il pacchetto di debug un `IDebugExpressionContext2` dell'oggetto da un [IDebugStackFrame2](../../extensibility/debugger/reference/idebugstackframe2.md) interfaccia e quindi chiama il `IDebugStackFrame2::ParseText` metodo in modo da ottenere un [IDebugExpression2](../../extensibility/debugger/reference/idebugexpression2.md) oggetto.  
   
-3.  Il pacchetto di debug chiama [EvaluateSync](../../extensibility/debugger/reference/idebugexpression2-evaluatesync.md) il metodo o [EvaluateAsync](../../extensibility/debugger/reference/idebugexpression2-evaluateasync.md) il metodo per ottenere il valore dell'espressione.  `IDebugExpression2::EvaluateAsync` viene chiamato dal comando\/finestra di controllo immediato.  Tutti gli altri componenti dell'interfaccia utente chiamano `IDebugExpression2::EvaluateSync`.  
+3.  Le chiamate di pacchetto di debug di [EvaluateSync](../../extensibility/debugger/reference/idebugexpression2-evaluatesync.md) metodo o [EvaluateAsync](../../extensibility/debugger/reference/idebugexpression2-evaluateasync.md) metodo per ottenere il valore dell'espressione. `IDebugExpression2::EvaluateAsync`viene chiamato dalla finestra di comando/controllo immediato. Tutti gli altri componenti dell'interfaccia utente chiamano `IDebugExpression2::EvaluateSync`.  
   
-4.  Il risultato della valutazione di un'espressione è [IDebugProperty2](../../extensibility/debugger/reference/idebugproperty2.md) un oggetto, che contiene il nome, il tipo e il valore del risultato della valutazione di un'espressione.  
+4.  Il risultato della valutazione dell'espressione è un [IDebugProperty2](../../extensibility/debugger/reference/idebugproperty2.md) oggetto che contiene nome, tipo e il valore del risultato della valutazione dell'espressione.  
   
- Durante la valutazione di un'espressione, l'EE richiede le informazioni da parte del provider del simbolo.  Il provider del simbolo vengono fornite informazioni sui simboli utilizzato per l'identificazione e la comprensione dell'espressione analizzata.  
+ Durante la valutazione dell'espressione, l'analizzatore di Espressioni richiede informazioni dal componente di provider di simboli. Il provider di simboli fornisce le informazioni sui simboli utilizzate per identificare e comprendere l'espressione analizzata.  
   
- Quando la valutazione asincrona dell'espressione è completa, un evento asincrono viene inviato da DE tramite gestione \(SDM\) di debug della sessione per notificare all'IDE che la valutazione delle espressioni è completa.  Quando la valutazione sincrona di espressione viene completata, il risultato della valutazione viene restituito dalla chiamata al metodo di `IDebugExpression2::EvaluateSync` .  
+ Quando la valutazione dell'espressione asincrona è stata completata, viene inviato un evento asincrono per la Germania tramite Gestore di sessione di debug (SDM) per notificare l'IDE che la valutazione dell'espressione è stata completata. Una volta completata la valutazione dell'espressione sincrona, il risultato della valutazione viene restituito dalla chiamata al `IDebugExpression2::EvaluateSync` metodo.  
   
-## note di implementazione  
- I motori di debug di [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] previsto per comunicare con l'analizzatore di espressioni che utilizza le interfacce \(CLR\) di Common Language Runtime.  Di conseguenza, un analizzatore di espressioni che funziona con i motori di debug di [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] deve supportare il CLR \(un elenco completo di tutte le interfacce di debug di CLR è disponibile in debugref.doc, che fa parte di [!INCLUDE[winsdklong](../../deployment/includes/winsdklong_md.md)]\).  
+## <a name="implementation-notes"></a>Note di implementazione  
+ Il [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] prevedono motori di debug comunicare con l'analizzatore di espressioni utilizzando le interfacce di Common Language Runtime (CLR). Di conseguenza, un analizzatore di espressioni che funziona con il [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] motori di debug devono supportare Common Language Runtime (un elenco completo di tutte le interfacce di debug di CLR è reperibile in debugref.doc, che fa parte di [!INCLUDE[winsdklong](../../deployment/includes/winsdklong_md.md)]).  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Componenti del debugger](../../extensibility/debugger/debugger-components.md)

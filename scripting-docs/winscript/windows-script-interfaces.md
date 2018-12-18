@@ -1,36 +1,40 @@
 ---
-title: "Interfacce Windows Script | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/18/2017"
-ms.prod: "windows-script-interfaces"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: Interfacce Windows Script | Microsoft Docs
+ms.custom: 
+ms.date: 01/18/2017
+ms.prod: windows-script-interfaces
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 4c750627-6797-4857-9f5e-e5f54371f83c
-caps.latest.revision: 10
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.openlocfilehash: 200a1ac1bf273e2515e1e17b6f83c2020ff9884d
+ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/27/2017
 ---
-# Interfacce Windows Script
-Le interfacce di Microsoft Windows Script consentono a un'applicazione per aggiungere script e l'automazione OLE.  Gli host di script che si basano sullo script di Windows possono utilizzare i moduli di gestione di script da più database di origine e da fornitori per gestire gli script tra i componenti.  L'implementazione dello stesso linguaggio di script, la sintassi, il formato persistente, modello di esecuzione e così via viene lasciato al fornitore dello script.  
+# <a name="windows-script-interfaces"></a>Interfacce Windows Script
+Le interfacce Microsoft Windows Script consentono a un'applicazione di aggiungere script e automazione OLE. Gli host di scripting basati su Windows Script possono usare motori di script provenienti da più origini e fornitori per la gestione di script tra i componenti. L'implementazione dello script (lingua, sintassi, formato persistente, modello di esecuzione e così via) viene lasciata al fornitore dello script.  
   
- La documentazione di Windows è suddivisa nelle sezioni seguenti:  
+ La documentazione di Windows Script è suddivisa nelle sezioni seguenti:  
   
- [Windows Script Host](../winscript/windows-script-hosts.md)  
+ [Host Windows Script](../winscript/windows-script-hosts.md)  
   
- [Motori di script Windows](../winscript/windows-script-engines.md)  
+ [Motori Windows Script](../winscript/windows-script-engines.md)  
   
- [Panoramica di debug script ActiveX](../winscript/active-script-debugging-overview.md)  
+ [Panoramica del debug di script ActiveX](../winscript/active-script-debugging-overview.md)  
   
- [Panoramica di profilatura di script ActiveX](../winscript/active-script-profiling-overview.md)  
+ [Panoramica della profilatura di script ActiveX](../winscript/active-script-profiling-overview.md)  
   
- [Riferimenti interfacce Windows Script](../winscript/reference/windows-script-interfaces-reference.md)  
+ [Riferimenti sulle interfacce Windows Script](../winscript/reference/windows-script-interfaces-reference.md)  
   
-## Sfondo di Windows  
- Le interfacce di finestre sono suddivisi in due categorie: Host di finestre e il motore di script di Windows.  Un host crea un motore di scripting e le chiamate sul modulo per eseguire script.  Esempi di host di finestre sono:  
+## <a name="windows-script-background"></a>Contesto di Windows Script  
+ Le interfacce di Windows Script rientrano in due categorie: host e motori di Windows Script. Un host consente di creare un motore di script e chiama il motore per eseguire gli script. Esempi di host di Windows Script:  
   
 -   Microsoft Internet Explorer  
   
@@ -38,51 +42,51 @@ Le interfacce di Microsoft Windows Script consentono a un'applicazione per aggiu
   
 -   Shell  
   
- I moduli di gestione di script di Windows possono essere compilati per qualsiasi linguaggio o ambiente di runtime, tra cui:  
+ I motori di Windows Script possono essere sviluppati per qualsiasi lingua o ambiente di runtime, tra cui:  
   
--   Scripting edition Microsoft Visual Basic \(VBScript\)  
+-   Microsoft Visual Basic Scripting Edition (VBScript)  
   
 -   Perl  
   
 -   Lisp  
   
- Per semplificare l'implementazione dell'host flessibile possibile, un wrapper di automazione OLE per lo script di Windows è fornito.  Tuttavia, un host che utilizza questo oggetto wrapper per creare un'istanza del motore di scripting non dispone del livello di controllo sullo spazio dei nomi in fase di esecuzione, il modello di persistenza, e così via, che se utilizzare direttamente lo script di Windows.  
+ Per aumentare al massimo la flessibilità dell'implementazione dell'host, viene offerto un wrapper di automazione OLE per Windows Script. Un host che usa questo oggetto wrapper per creare un'istanza di motore di script non possiede tuttavia il livello di controllo sullo spazio dei nomi in fase di esecuzione, il modello di persistenza, e così via, che avrebbe se usasse direttamente Windows Script.  
   
- La progettazione dello script di Windows isola elementi di interfaccia necessari solo in un ambiente di progettazione in modo da host nonauthoring quali i browser e visualizzatori\) e i moduli di gestione di script \(ad esempio, VBScript\) possono essere mantenuti leggeri.  
+ La progettazione di Windows Script consente di isolare gli elementi dell'interfaccia richiesti solo in un ambiente di creazione in modo che gli host non di creazione (ad esempio, browser e visualizzatori) e i motori di script (ad esempio, VBScript) possano essere mantenuti leggeri.  
   
-## L'architettura di base di Windows  
- Nella figura seguente viene illustrata l'interazione tra Windows Script Host e un modulo di gestione di script di Windows.  
+## <a name="windows-script-basic-architecture"></a>Architettura di base di Windows Script  
+ Nella figura seguente viene illustrata l'interazione tra un host di Windows Script e un motore di Windows Script.  
   
- I passaggi relativi all'interazione tra l'host e il motore l'elenco seguente sono riportati.  
+ I passaggi necessari per l'interazione tra l'host e il motore figurano nell'elenco seguente.  
   
-1.  Creare un progetto.  L'host carica un progetto o un documento.  \(Questo passaggio non è determinato nello script di Windows, ma è incluso di seguito per completezza.\)  
+1.  Creare un progetto. L'host carica un progetto o documento. (Questo passaggio non è specifico di Windows Script, ma è incluso di seguito per completezza.)  
   
-2.  Creare il modulo di gestione di script di Windows.  L'host chiama `CoCreateInstance` per creare un modulo di gestione di script di Windows, specificando l'identificatore di classe \(CLSID\) del motore di scripting specifico da utilizzare.  Ad esempio, il browser HTML di Internet Explorer riceve identificatore di classe del motore di scripting con l'attributo di CLSID\= di tag HTML \<OBJECT\> .  
+2.  Creare il motore di Windows Script. L'host chiama `CoCreateInstance` per creare un nuovo motore di Windows Script, che specifica l'identificatore di classe (CLSID) del motore di script specifico da usare. Ad esempio, il browser HTML di Internet Explorer riceve l'identificatore di classe del motore di script tramite il CLSID = attributo del tag HTML \<OBJECT>.  
   
-3.  Caricamento dello script.  Se il contenuto dello script sono stati salvati in modo permanente, l'host chiama il metodo di `IPersist*::Load` del modulo di gestione di script per inserirgli un'archiviazione, il flusso, o il contenitore delle proprietà dello script.  In caso contrario, l'host utilizza `IPersist*::InitNew` o il metodo di [IActiveScriptParse::InitNew](../winscript/reference/iactivescriptparse-initnew.md) per creare uno script null.  Un host che gestisce uno script come testo può utilizzare [IActiveScriptParse::ParseScriptText](../winscript/reference/iactivescriptparse-parsescripttext.md) per portare al motore di scripting il testo dello script, dopo avere chiamato `IActiveScriptParse::InitNew`.  
+3.  Caricare lo script. Se il contenuto dello script è stato reso persistente, l'host chiama il metodo `IPersist*::Load` del motore di script per inserirlo nella risorsa di archiviazione dello script, stream o contenitore delle proprietà. In caso contrario, l'host usa il metodo `IPersist*::InitNew` o [IActiveScriptParse::InitNew](../winscript/reference/iactivescriptparse-initnew.md) per creare uno script Null. Un host che gestisce uno script come testo può usare [IActiveScriptParse::ParseScriptText](../winscript/reference/iactivescriptparse-parsescripttext.md) per inserire il testo dello script nel motore di script, dopo la chiamata `IActiveScriptParse::InitNew`.  
   
-4.  Aggiungere denominato gli elementi.  Per ogni elemento denominato di primo livello quali pagine e di form\) incluso nello spazio dei nomi del motore di scripting, l'host chiama il metodo di [IActiveScript::AddNamedItem](../winscript/reference/iactivescript-addnameditem.md) per creare una voce nello spazio dei nomi del modulo.  Questo passaggio non è necessaria per gli elementi denominati di primo livello fanno già parte dello stato persistente lo script caricato nel passaggio 3.  Un host non utilizza `IActiveScript::AddNamedItem` per aggiungere elementi denominati sottolivello \(come controlli in una pagina HTML\); invece, il motore ottiene indirettamente gli elementi di sottolivello gli elementi di livello principale tramite le interfacce di `ITypeInfo` e di `IDispatch` dell'host.  
+4.  Aggiungere gli elementi denominati. Per ogni nome elemento di livello principale (ad esempio, pagine e moduli) importato nello spazio dei nomi del motore di script, l'host chiama il metodo [IActiveScript::AddNamedItem](../winscript/reference/iactivescript-addnameditem.md) per creare una voce nello spazio dei nomi del motore. Questo passaggio non è necessario se gli elementi denominati di livello principale fanno già parte dello stato persistente dello script caricato nel passaggio 3. Un host non usa `IActiveScript::AddNamedItem` per aggiungere elementi denominati di sottolivello (ad esempio, i controlli in una pagina HTML), invece, il motore ottiene indirettamente gli elementi di sottolivello dagli elementi di livello principale tramite le interfacce `ITypeInfo` e `IDispatch` dell'host.  
   
-5.  Eseguire lo script.  L'host induce il motore per avviare lo script impostando il flag di SCRIPTSTATE\_CONNECTED nel metodo di [IActiveScript::SetScriptState](../winscript/reference/iactivescript-setscriptstate.md).  Questa chiamata si esegue tutte le attività di costruzione del motore di scripting, inclusi un'associazione statica, agganciando fino a eventi \(vedere di seguito\) e il codice in esecuzione, in modo simile a una funzione basati su script di `main()`.  
+5.  Per eseguire lo script. L'host fa sì che il motore avvii l'esecuzione dello script, impostando il flag SCRIPTSTATE_CONNECTED nel metodo [IActiveScript::SetScriptState](../winscript/reference/iactivescript-setscriptstate.md). Questa chiamata eseguirebbe probabilmente qualsiasi operazione di costruzione del motore di script, tra cui associazione statica, associazione a eventi (vedere sotto) ed esecuzione di codice, in modo simile a una funzione `main()` inserita nello script.  
   
-6.  Ottenere le informazioni sull'elemento.  Ogni volta che il motore di gestione di script necessario associare un simbolo con un elemento di primo livello, chiama il metodo di [IActiveScriptSite::GetItemInfo](../winscript/reference/iactivescriptsite-getiteminfo.md), che restituisce informazioni sull'elemento specificato.  
+6.  Ottenere informazioni sugli elementi. Ogni volta che il motore di script deve associare un simbolo a un elemento di livello principale, chiama il metodo [IActiveScriptSite::GetItemInfo](../winscript/reference/iactivescriptsite-getiteminfo.md), che restituisce informazioni sull'elemento specificato.  
   
-7.  Associare eventi.  Prima di iniziare effettivo di script, il motore di scripting si connette agli eventi di tutti gli oggetti rilevanti mediante l'interfaccia di `IConnectionPoint`.  
+7.  Associare gli eventi. Prima di avviare lo script effettivo, il motore di script si connette agli eventi di tutti gli oggetti rilevanti tramite l'interfaccia `IConnectionPoint`.  
   
-8.  Richiamare le proprietà e i metodi.  Mentre lo script, il motore di scripting esegue i riferimenti ai metodi e le proprietà degli oggetti denominati in `IDispatch::Invoke` o altri meccanismi di associazione OLE standard.  
+8.  Chiamare proprietà e metodi. Mentre lo script è in esecuzione, il motore di script realizza riferimenti a metodi e proprietà in oggetti denominati tramite `IDispatch::Invoke` o altri meccanismi di associazione standard OLE.  
   
-## Termini dello script di Windows  
- Questo elenco contiene le definizioni dei termini correlati scripting\- utilizzati in questo documento.  
+## <a name="windows-script-terms"></a>Termini relativi a Windows Script  
+ Questo elenco contiene le definizioni dei termini di scripting usati in questo documento.  
   
 |Termine|Definizione|  
-|-------------|-----------------|  
-|Oggetto di codice|Un'istanza creata nel motore di scripting associato a un elemento denominato, ad esempio il modulo di un form in Visual Basic, o la classe c\+\+ associata a un elemento denominato.  Preferibilmente, questo è un oggetto di \(COM\) Component Object Model\) OLE all'automazione OLE supportate nell'host o un'altra entità dello script non possono modificare l'oggetto di codice.|  
-|Elemento denominato|Un oggetto COM OLE \(possibilmente uno che supporta automazione OLE\) che l'host ha interessante allo script.  Gli esempi includono la pagina HTML e il browser in un Web browser e il documento e le finestre di dialogo di Microsoft Word.|  
-|Script|I dati che costituiscono il programma che il motore di scripting esegue.  Uno script può essere tutti i dati eseguibili contigui, incluse le parti di testo, blocchi di `pcode`, o addirittura di codici eseguibili a specifici di byte.  Un host di caricare uno script nel motore di scripting con una delle interfacce di `IPersist*` o l'interfaccia di [IActiveScriptParse](../winscript/reference/iactivescriptparse.md).|  
-|Motore di scripting|L'oggetto OLE che elabora gli script.  Un motore di scripting implementa le interfacce di [IActiveScriptParse](../winscript/reference/iactivescriptparse.md), facoltativamente, e di [IActiveScript](../winscript/reference/iactivescript.md).|  
-|Host di script|L'applicazione o il programma che possiedono il modulo di gestione di script di Windows.  L'host implementa le interfacce di [IActiveScriptSiteWindow](../winscript/reference/iactivescriptsitewindow.md), facoltativamente, e di [IActiveScriptSite](../winscript/reference/iactivescriptsite.md).|  
-|Scriptlet|Una parte di script che viene associato a un oggetto tramite l'interfaccia di [IActiveScriptParse](../winscript/reference/iactivescriptparse.md).  La raccolta di aggregazione di scriptlets è lo script.|  
-|Linguaggio di script|Il linguaggio in cui uno script viene scritto \(VBScript, ad esempio\) e la semantica del linguaggio.|  
+|----------|----------------|  
+|Oggetto codice|Istanza creata dal motore di script associata a un elemento denominato, ad esempio il modulo di una maschera in Visual Basic o una classe C++ associata a un elemento denominato. Si tratta preferibilmente di un oggetto OLE COM (Component Object Model) che supporta l'automazione OLE, pertanto l'host o altre entità non di script possono modificare l'oggetto di codice.|  
+|Elemento denominato|Oggetto OLE COM (preferibilmente un oggetto che supporta l'automazione OLE) che l'host ritiene interessante per lo script. Alcuni esempi sono la pagina HTML e il browser in un Web browser, il documento e le finestre di dialogo in Microsoft Word.|  
+|Script|Dati che costituiscono il programma eseguito dal motore di script. Uno script può essere qualsiasi serie di dati eseguibili contigui, tra cui parti di testo, blocchi di `pcode` o anche codici byte eseguibili specifici del computer. Un host carica lo script nel motore di script tramite una delle interfacce `IPersist*` o tramite l'interfaccia [IActiveScriptParse](../winscript/reference/iactivescriptparse.md).|  
+|Motore di script|Oggetto OLE che elabora lo script. Un motore di script implementa l'interfaccia [IActiveScript](../winscript/reference/iactivescript.md) e, facoltativamente, l'interfaccia [IActiveScriptParse](../winscript/reference/iactivescriptparse.md).|  
+|Host di scripting|Applicazione o programma a cui appartiene il motore di Windows Script. L'host implementa l'interfaccia [IActiveScriptSite](../winscript/reference/iactivescriptsite.md) e, facoltativamente, l'interfaccia [IActiveScriptSiteWindow](../winscript/reference/iactivescriptsitewindow.md).|  
+|Scriptlet|Parte di uno script che viene allegata a un oggetto tramite l'interfaccia [IActiveScriptParse](../winscript/reference/iactivescriptparse.md). La raccolta di aggregazione di scriptlet è lo script.|  
+|Linguaggio di scripting|Linguaggio in cui è scritto uno script (ad esempio, VBScript) e semantica del linguaggio.|  
   
-## Vedere anche  
- [Windows Script Interfaces](../winscript/windows-script-interfaces.md)
+## <a name="see-also"></a>Vedere anche  
+ [Interfacce Windows Script](../winscript/windows-script-interfaces.md)

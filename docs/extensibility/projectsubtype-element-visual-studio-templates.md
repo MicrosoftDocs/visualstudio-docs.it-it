@@ -1,72 +1,78 @@
 ---
-title: "Elemento ProjectSubType (modelli di Visual Studio) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-general"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "http://schemas.microsoft.com/developer/vstemplate/2005#ProjectSubType"
-helpviewer_keywords: 
-  - "<ProjectSubType> (elemento) [modelli di Visual Studio]"
-  - "ProjectSubType (elemento) [modelli di Visual Studio]"
+title: Elemento ProjectSubType (modelli di Visual Studio) | Documenti Microsoft
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: vs-ide-general
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: http://schemas.microsoft.com/developer/vstemplate/2005#ProjectSubType
+helpviewer_keywords:
+- ProjectSubType element [Visual Studio Templates]
+- <ProjectSubType> element [Visual Studio Templates]
 ms.assetid: f6895cd4-3e95-4f0e-aa9e-8c7750f46ed4
-caps.latest.revision: 13
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 13
+caps.latest.revision: "13"
+author: gregvanl
+ms.author: gregvanl
+manager: ghogen
+ms.workload: vssdk
+ms.openlocfilehash: 11effbe7e1fc6c7380ba8dbc8da3f2fe14614b5b
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
-# Elemento ProjectSubType (modelli di Visual Studio)
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
-Classifica il modello in una sottocategoria del valore specificato nell'elemento `ProjectType`.  
+# <a name="projectsubtype-element-visual-studio-templates"></a>Elemento ProjectSubType (modelli di Visual Studio)
+Classifica il modello in una sottocategoria del valore specificato nel `ProjectType` elemento.  
   
-## Sintassi  
+ \<VSTemplate >  
+ \<TemplateData >  
+ \<ProjectSubType >  
+  
+## <a name="syntax"></a>Sintassi  
   
 ```  
 <ProjectSubType> SubType </ProjectSubType>  
 ```  
   
-## Attributi ed elementi  
- Nelle seguenti sezioni sono illustrati attributi, elementi figlio ed elementi padre.  
+## <a name="attributes-and-elements"></a>Attributi ed elementi  
+ Nelle sezioni seguenti vengono descritti gli attributi, gli elementi figlio e gli elementi padre.  
   
-### Attributi  
+### <a name="attributes"></a>Attributi  
  Nessuno.  
   
-### Elementi figlio  
+### <a name="child-elements"></a>Elementi figlio  
  Nessuno.  
   
-### Elementi padre  
+### <a name="parent-elements"></a>Elementi padre  
   
 |Elemento|Descrizione|  
-|--------------|-----------------|  
-|[TemplateData](../extensibility/templatedata-element-visual-studio-templates.md)|Elemento obbligatorio.<br /><br /> Classifica il modello e definisce la modalità di visualizzazione per la finestra di dialogo **Nuovo progetto** o **Aggiungi nuovo elemento**.|  
+|-------------|-----------------|  
+|[TemplateData](../extensibility/templatedata-element-visual-studio-templates.md)|Elemento obbligatorio.<br /><br /> Classifica il modello in base alla categoria e definisce la modalità di visualizzazione nella finestra di dialogo **Nuovo progetto** o **Aggiungi nuovo elemento** .|  
   
-## Valore di testo  
+## <a name="text-value"></a>Valore di testo  
  È necessario specificare un valore di testo.  
   
- Questo valore definisce la sottocategoria del modello.  
+ Questo valore specifica la sottocategoria del modello.  
   
-## Note  
+## <a name="remarks"></a>Note  
  `ProjectSubType` è un elemento figlio facoltativo di `TemplateData`.  
   
- L'elemento `ProjectSubType` fornisce una sottocategoria dell'elemento [ProjectType](../extensibility/projecttype-element-visual-studio-templates.md).  Questo valore può includere:  
+ Il `ProjectSubType` elemento fornisce una sottocategoria di [ProjectType](../extensibility/projecttype-element-visual-studio-templates.md) elemento. Questo valore può includere:  
   
--   `SmartDevice-NETCFv1`: specifica che il modello è destinato a [!INCLUDE[Compact](../extensibility/includes/compact_md.md)] versione 1.0.  
+-   `SmartDevice-NETCFv1`: Specifica che il modello è destinato il [!INCLUDE[Compact](../extensibility/includes/compact_md.md)] versione 1.0.  
   
--   `SmartDevice-NETCFv2`: specifica che il modello è destinato a [!INCLUDE[Compact](../extensibility/includes/compact_md.md)] versione 2.0.  
+-   `SmartDevice-NETCFv2`: Specifica che il modello è destinato il [!INCLUDE[Compact](../extensibility/includes/compact_md.md)] versione 2.0.  
   
- Se il modello contiene un elemento `ProjectType` con un valore di `Web`, l'elemento `ProjectSubType` specifica il linguaggio di programmazione del modello.  Per l'elemento è possibile specificare i seguenti valori:  
+ Se il modello contiene un `ProjectType` elemento con un valore di `Web`, `ProjectSubType` elemento specifica il linguaggio di programmazione del modello. Questo elemento può avere i valori seguenti:  
   
--   `CSharp`: specifica che dal modello verrà creato un progetto o un elemento Web di [!INCLUDE[csprcs](../data-tools/includes/csprcs_md.md)].  
+-   `CSharp`: Specifica che il modello crea un [!INCLUDE[csprcs](../data-tools/includes/csprcs_md.md)] progetto Web o un elemento.  
   
--   `VisualBasic`: specifica che dal modello verrà creato un progetto o un elemento Web di [!INCLUDE[vbprvb](../code-quality/includes/vbprvb_md.md)].  
+-   `VisualBasic`: Specifica che il modello crea un [!INCLUDE[vbprvb](../code-quality/includes/vbprvb_md.md)] progetto Web o un elemento.  
   
-## Esempio  
- Nell'esempio riportato di seguito vengono illustrati i metadati di un modello di progetto per un'applicazione per dispositivi di [!INCLUDE[csprcs](../data-tools/includes/csprcs_md.md)] destinata a [!INCLUDE[Compact](../extensibility/includes/compact_md.md)] versione 2.0.  
+## <a name="example"></a>Esempio  
+ L'esempio seguente mostra i metadati per un modello di progetto per un [!INCLUDE[csprcs](../data-tools/includes/csprcs_md.md)] destinata applicazione dispositivo il [!INCLUDE[Compact](../extensibility/includes/compact_md.md)] versione 2.0.  
   
 ```  
 <VSTemplate Type="Project" Version="3.0.0"  
@@ -93,7 +99,7 @@ Classifica il modello in una sottocategoria del valore specificato nell'elemento
 </VSTemplate>  
 ```  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Riferimenti allo schema dei modelli di Visual Studio](../extensibility/visual-studio-template-schema-reference.md)   
- [Creazione di un progetto e di modelli di elemento personalizzati](../ide/creating-project-and-item-templates.md)   
- [Elemento ProjectType \(modelli di Visual Studio\)](../extensibility/projecttype-element-visual-studio-templates.md)
+ [Creazione di modelli di progetti e di elementi](../ide/creating-project-and-item-templates.md)   
+ [Elemento ProjectType (modelli di Visual Studio)](../extensibility/projecttype-element-visual-studio-templates.md)

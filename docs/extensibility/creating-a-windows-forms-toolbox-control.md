@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- vs-ide-sdk
+ms.technology: vs-ide-sdk
 ms.tgt_pltfrm: 
 ms.topic: article
 helpviewer_keywords:
@@ -13,29 +12,16 @@ helpviewer_keywords:
 - toolbox
 - windows forms
 ms.assetid: 0be6ffc1-8afd-4d02-9a5d-e27dde05fde6
-caps.latest.revision: 19
+caps.latest.revision: "19"
+author: gregvanl
 ms.author: gregvanl
 manager: ghogen
-translation.priority.mt:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.workload: vssdk
+ms.openlocfilehash: 4229d9045dfe64fcb320eca7cf004de56e7f8f0d
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
 ms.translationtype: MT
-ms.sourcegitcommit: 4a36302d80f4bc397128e3838c9abf858a0b5fe8
-ms.openlocfilehash: 028ad27e35d3174e4588550acf52b13e2c5599a5
-ms.contentlocale: it-it
-ms.lasthandoff: 09/26/2017
-
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="creating-a-windows-forms-toolbox-control"></a>Creazione di un controllo casella degli strumenti di Windows Form
 Il modello di elemento di controllo della casella degli strumenti di Windows Form incluso in Visual Studio Extensibility Tools (VS SDK) consente di creare un controllo che viene aggiunto automaticamente al **della casella degli strumenti** quando l'estensione è installata. In questo argomento viene illustrato come utilizzare il modello per creare un controllo semplice contatore che è possibile distribuire ad altri utenti.  
@@ -69,10 +55,10 @@ Il modello di elemento di controllo della casella degli strumenti di Windows For
   
 5.  Nel **proprietà** finestra, impostare i valori seguenti per i controlli nell'area di progettazione.  
   
-    |Controllo|Proprietà|Valore|  
+    |Control|Proprietà|Valore|  
     |-------------|--------------|-----------|  
     |`Label1`|**per**|""|  
-    |`Button1`|**Nome**|btnReset|  
+    |`Button1`|**Name**|btnReset|  
     |`Button1`|**per**|Reimposta|  
   
 ### <a name="coding-the-user-control"></a>Codifica del controllo utente  

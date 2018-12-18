@@ -1,34 +1,36 @@
 ---
-title: "How to: Control Messages View | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "Spy++, Messages View"
-  - "Messages view, controlling"
+title: 'Procedura: controllare la visualizzazione messaggi | Documenti Microsoft'
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: vs-ide-debug
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- Spy++, Messages View
+- Messages view, controlling
 ms.assetid: 32685ab2-6c5b-41fc-b429-29260caef585
-caps.latest.revision: 4
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.workload: multiple
+ms.openlocfilehash: 042382e37fbd64043ba8d7273a5f0215d2ea9756
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
-# How to: Control Messages View
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
-Spy\+\+ garantisce un ampio controllo sul contenuto di una finestra [Visualizzazione messaggi](../debugger/messages-view.md).  È possibile [avviare e arrestare](../debugger/how-to-start-and-stop-the-message-log-display.md) la visualizzazione in qualsiasi momento e specificare:  
+# <a name="how-to-control-messages-view"></a>Procedura: controllare la visualizzazione messaggi
+Con Spy + +, è necessario un controllo notevole sul contenuto di un [visualizzazione messaggi](../debugger/messages-view.md) finestra. È possibile [avviare e arrestare](../debugger/how-to-start-and-stop-the-message-log-display.md) visualizzando i messaggi in qualsiasi momento, è possibile specificare:  
   
--   I tipi di messaggio che si desidera visualizzare.  
+-   I tipi di messaggi a cui si desidera visualizzare.  
   
--   Le finestre che si desidera monitorare.  
+-   Le finestre a cui si desidera monitorare.  
   
--   Il formato di visualizzazione delle righe del messaggio.  
+-   Il formato di visualizzazione per le righe di messaggio.  
   
- Queste impostazioni sono disponibili nella [finestra di dialogo Opzioni messaggio](../debugger/message-options-dialog-box.md) e si applicano solo alla finestra [Visualizzazione messaggi](../debugger/messages-view.md) attiva.  Per aprire questa finestra di dialogo, scegliere **Registra messaggi** dal menu **Spy**.  
+ Queste impostazioni sono disponibili le [finestra di dialogo Opzioni messaggio](../debugger/message-options-dialog-box.md), e si applicano solo a attivo [visualizzazione messaggi](../debugger/messages-view.md) finestra. Per aprire questa finestra di dialogo, scegliere **messaggi di Log** dal **Spy** menu.  
   
- Sono disponibili tre riquadri a schede di opzioni messaggio.  Per gli ulteriori informazioni, vedere [Scheda Finestre, finestra di dialogo Opzioni messaggio](../debugger/windows-tab-message-options-dialog-box.md), [Scheda Messaggi, finestra di dialogo Opzioni messaggio](../debugger/messages-tab-message-options-dialog-box.md) e [Scheda Output, finestra di dialogo Opzioni messaggio](../debugger/output-tab-message-options-dialog-box.md).
+ Tre riquadri a schede Opzioni di messaggio sono disponibili. Per ulteriori informazioni, vedere [scheda finestre, finestra di dialogo Opzioni messaggio](../debugger/windows-tab-message-options-dialog-box.md), [scheda messaggi, finestra di dialogo Opzioni messaggio](../debugger/messages-tab-message-options-dialog-box.md), e [scheda Output, finestra di dialogo Opzioni messaggio](../debugger/output-tab-message-options-dialog-box.md).

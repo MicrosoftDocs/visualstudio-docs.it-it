@@ -1,100 +1,119 @@
 ---
 title: Opzioni, Editor di testo, C#, Avanzate | Microsoft Docs
-ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- vs-ide-general
+ms.technology: vs-ide-general
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - VS.ToolsOptionsPages.Text_Editor.CSharp.Outlining
-- VS.ToolsOptionsPages.Text_Editor.Visual_JSharp.Advanced
-- VS.ToolsOptionsPages.Text_Editor.Visual_JSharp.Outlining
 - VS.ToolsOptionsPages.Text_Editor.CSharp.Advanced
 helpviewer_keywords:
 - XML comments
 - XML documentation, generating
 - outlining options [C#]
-- outlining options [J#]
 - XML documentation, creating
-ms.assetid: 947f9d9a-b0f3-408d-9866-d82895bcee31
-caps.latest.revision: 22
-author: kempb
-ms.author: kempb
+author: gewarren
+ms.author: gewarren
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 5ea9179ad37514ffad4876177b05150eecc22def
-ms.openlocfilehash: 61a061b6a58b18451fc53c8d53f77889cc1ea253
-ms.contentlocale: it-it
-ms.lasthandoff: 05/24/2017
-
+ms.workload:
+- dotnet
+ms.openlocfilehash: 5d6cf8b655151e9b07111b6ac6fd64b6ad3c845f
+ms.sourcegitcommit: 238cd48787391aa0ed1eb684f3f04e80f7958705
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 02/12/2018
 ---
 # <a name="options-text-editor-c-advanced"></a>Opzioni, Editor di testo, C#, Avanzate
-Usare questa finestra di dialogo per modificare le impostazioni di formattazione dell'editor, di refactoring del codice e dei commenti della documentazione XML per Visual C#. Per accedere a questa finestra di dialogo, fare clic su **Opzioni** nel menu **Strumenti**, spandere la cartella **Editor di testo**, espandere **C#** e quindi fare clic su **Avanzate**.  
-  
+
+Usare la pagina di opzioni **Avanzate** per modificare le impostazioni di formattazione dell'editor, di refactoring del codice e dei commenti in formato documentazione XML per C#. Per accedere a questa pagina di opzioni, scegliere **Strumenti** > **Opzioni** e quindi scegliere **Editor di testo** > **C#** > **Avanzate**.
+
 > [!NOTE]
->  Le finestre di dialogo e i comandi di menu visualizzati potrebbero essere diversi da quelli descritti nella Guida a seconda delle impostazioni attive o dell'edizione del programma. Per modificare le impostazioni, scegliere **Importa/Esporta impostazioni** dal menu **Strumenti** . Per altre informazioni, vedere [Personalizzare l'IDE di Visual Studio](../../ide/personalizing-the-visual-studio-ide.md).  
-  
-## <a name="outlining"></a>struttura  
- Attiva modalità struttura all'apertura del file  
- Se selezionata, visualizza automaticamente la struttura del file di codice che consente di creare blocchi comprimibili del codice. Alla prima apertura di un file, i blocchi #regions e i blocchi di codice inattivi vengono compressi.  
-  
-## <a name="editor-help"></a>Guida Editor  
- Sottolinea errori nell'editor  
- Identifica gli errori di compilazione nel codice. Quando questa opzione è selezionata, vengono visualizzate sottolineature ondulate con colori che hanno un significato specifico:  
-  
--   Gli errori di analisi sono visualizzati in rosso.  
-  
--   Gli errori di compilazione sono visualizzati in blu.  
-  
--   Gli avvisi di compilazione sono visualizzati in verde.  
-  
--   Le modifiche [Modifica e continuazione](../../debugger/edit-and-continue.md) non valide sono visualizzate in viola.  
-  
- Spostare il puntatore sul segmento di codice sottolineato per visualizzare una descrizione comando con informazioni sull'errore.  
-  
- Mostra errori di semantica in tempo reale  
- Identifica alcuni errori di compilazione senza compilazione esplicita, ad esempio la dichiarazione e l'uso di un tipo sconosciuto o il riferimento a una proprietà sconosciuta.  
-  
- Evidenzia riferimenti a simbolo sotto il cursore  
- Quando il cursore viene posizionato all'interno di un simbolo o quando si fa clic su un simbolo, vengono evidenziate tutte le istanze del simbolo nel file di codice.  
-  
-## <a name="refactoring"></a>Refactoring  
- Verifica risultati del refactoring  
- Visualizza la finestra di dialogo **Risultati verifica** quando si tenta di eseguire il refactoring di codice contenente errori di compilazione o quando il refactoring fa in modo che un riferimento di codice venga associato a un elemento diverso dal binding originale.  
-  
- Avvisa in caso di membri con riferimenti generati dal compilatore  
- Visualizza una finestra di dialogo di avviso quando si tenta di eseguire il refactoring di un membro che ha lo stesso nome del riferimento generato dal compilatore.  
-  
-## <a name="xml-documentation-comments"></a>Commenti relativi alla documentazione XML  
- Genera commenti relativi alla documentazione XML per ///  
- Se selezionata, questa opzione inserisce automaticamente i tag \<summary> di inizio e di fine per i commenti della documentazione XML dopo che è stata digitata l'introduzione di commento ///. Per altre informazioni sulla documentazione XML, vedere [Commenti relativi alla documentazione XML](/dotnet/csharp/programming-guide/xmldoc/xml-documentation-comments).  
-  
-## <a name="implement-interface"></a>Implementa interfaccia  
- Racchiudi il codice generato tra #region  
- Inserisce un membro #region \<*nome interfaccia*> prima e dopo i metodi quando viene usata Implementa interfaccia o Implementa interfaccia in modo esplicito.  
-  
-## <a name="organize-usings"></a>Organizza using  
- Inserisci prima le direttive 'System' durante l'ordinamento delle direttive using  
- Se selezionata, le direttive using `System` vengono visualizzate prima delle altre direttive using. Per altre informazioni, vedere Organizza using in [IntelliSense per Visual C#](../../ide/visual-csharp-intellisense.md#automatic-code-generation).  
-  
-## <a name="see-also"></a>Vedere anche  
- [Commenti relativi alla documentazione XML](/dotnet/csharp/programming-guide/xmldoc/xml-documentation-comments)   
- [Setting Language-Specific Editor Options](../../ide/reference/setting-language-specific-editor-options.md)  (Impostazione delle opzioni dell'editor specifiche del linguaggio)  
- [IntelliSense per Visual C#](../../ide/visual-csharp-intellisense.md)
+> Le finestre di dialogo e i comandi di menu visualizzati potrebbero essere diversi da quelli descritti nella Guida a seconda delle impostazioni attive o dell'edizione del programma. Per modificare le impostazioni, scegliere **Importa/Esporta impostazioni** dal menu **Strumenti** . Per altre informazioni, vedere [Personalizzare l'IDE di Visual Studio](../../ide/personalizing-the-visual-studio-ide.md).
+
+## <a name="analysis"></a>Analisi
+
+- Abilita analisi della soluzione completa
+
+   Abilita l'analisi del codice per tutti i file nella soluzione e non solo per i file di codice aperti. Per altre informazioni, vedere [Analisi della soluzione completa](../../code-quality/how-to-enable-and-disable-full-solution-analysis-for-managed-code.md).
+
+- Esegui analisi delle funzionalità dell'editor in processo esterno (sperimentale)
+
+## <a name="using-directives"></a>Direttive using
+
+- Inserisci prima le direttive 'System' durante l'ordinamento delle direttive using
+
+- Separa gruppi di direttive using
+
+- Suggerisci le direttive using per i tipi in assembly di riferimento
+
+- Suggerisci le direttive using per i tipi in pacchetti NuGet
+
+## <a name="highlighting"></a>Evidenziazione
+
+- Evidenzia riferimenti a simbolo sotto il cursore
+
+   Quando il cursore viene posizionato all'interno di un simbolo o quando si fa clic su un simbolo, vengono evidenziate tutte le istanze del simbolo nel file di codice.
+
+- Evidenzia parole chiave correlate sotto il cursore
+
+## <a name="outlining"></a>struttura
+
+- Attiva modalità struttura all'apertura del file
+
+   Se selezionata, visualizza automaticamente la struttura del file di codice che consente di creare blocchi comprimibili del codice. Alla prima apertura di un file, i blocchi #regions e i blocchi di codice inattivi vengono compressi.
+
+- Mostra separatori di riga routine
+
+- Mostra la struttura per i costrutti a livello di dichiarazione
+
+- Mostra la struttura per i costrutti a livello di codice
+
+- Mostra la struttura per i commenti e le aree del preprocessore
+
+- Comprimi #regions durante la compressione delle definizioni
+
+## <a name="fading"></a>Dissolvenza
+
+- Applica dissolvenza a direttive using non usate
+
+- Applica dissolvenza a codice non eseguibile
+
+## <a name="block-structure-guides"></a>Guide per strutture a blocchi
+
+- Mostra le guide per i costrutti a livello di dichiarazione
+
+- Mostra le guide per i costrutti a livello di codice
+
+## <a name="editor-help"></a>Guida Editor
+
+- Genera commenti relativi alla documentazione XML per ///
+
+   Se selezionata, questa opzione inserisce elementi XML per i commenti in formato documentazione XML dopo la digitazione dell'introduzione al commento `///`. Per altre informazioni sulla documentazione XML, vedere [Commenti in formato documentazione XML (Guida per programmatori C#)](/dotnet/csharp/programming-guide/xmldoc/xml-documentation-comments).
+
+- Inserisci \* all'inizio di nuove righe quando si scrivono commenti /\* \*/
+
+- Mostra anteprima per verifica ridenominazione
+
+- Dividi valori letterali stringa dopo INVIO
+
+- Segnala segnaposto non validi in chiamate 'string.Format'
+
+## <a name="extract-method"></a>Estrai metodo
+
+- Non inserire out o ref in struct personalizzato
+
+## <a name="implement-interface-or-abstract-class"></a>Implementa interfaccia o classe astratta
+
+- Posiziona proprietà, eventi e metodi inseriti: con altri membri dello stesso tipo o alla fine
+
+- Durante la generazione di proprietà: preferisci proprietà generate o preferisci proprietà automatiche
+
+## <a name="see-also"></a>Vedere anche
+
+[Procedura: Inserire commenti XML per la generazione di documentazione](../../ide/reference/generate-xml-documentation-comments.md)  
+[Commenti in formato documentazione XML (Guida per programmatori C#)](/dotnet/csharp/programming-guide/xmldoc/xml-documentation-comments)  
+[Documentazione del codice con i commenti XML (Guida per C#)](/dotnet/csharp/codedoc)  
+[Impostazione delle opzioni dell'editor specifiche del linguaggio](../../ide/reference/setting-language-specific-editor-options.md)  
+[IntelliSense per C#](../../ide/visual-csharp-intellisense.md)

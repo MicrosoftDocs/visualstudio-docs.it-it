@@ -4,34 +4,20 @@ ms.custom:
 ms.date: 04/26/2017
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- vs-ide-sdk
+ms.technology: vs-ide-sdk
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: 446773a9-e6f7-4c0c-8dbc-9e303bf32eb1
-caps.latest.revision: 2
+caps.latest.revision: "2"
+author: gregvanl
 ms.author: gregvanl
 manager: ghogen
-translation.priority.mt:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 9524ecc3cadef58821fba857de8e82e59eea9b43
-ms.openlocfilehash: b36b5e35758ad10109328d6f001e043ad7dcbe15
-ms.contentlocale: it-it
-ms.lasthandoff: 05/04/2017
-
+ms.workload: vssdk
+ms.openlocfilehash: a45fd22cce46cb9e43a649fb969980f42b395db2
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="animations-for-visual-studio"></a>Animazioni per Visual Studio
 ## <a name="animation-fundamentals"></a>Nozioni fondamentali di animazione  
@@ -55,7 +41,7 @@ Seguire queste regole per garantire gli stili di animazione semplice e coerente 
   
 -   Se possibile, **utilizzare un'animazione sottile al passaggio del mouse** per indicare gli elementi interattivi sotto il mouse.  
   
--   Se si basano su animazioni nelle funzionalità, quindi **forniscono un mezzo per disattivarli** in locale (per tutte le funzionalità) come un'opzione di **strumenti > Opzioni** finestra di dialogo.  
+-   Se si basano su animazioni nelle funzionalità, quindi **forniscono un mezzo per disattivarli** in locale (per tutte le caratteristiche) come opzione nel **strumenti > Opzioni** finestra di dialogo.  
   
 -   **Solo un'animazione deve essere eseguita in un momento** e trasmettere solo una parte delle informazioni. Lo spostamento o il tentativo di comunicare più operazioni di più di un oggetto può generare confusione. 
   
@@ -103,7 +89,7 @@ Nell'interfaccia utente di Visual Studio, animazione funziona solo come strument
  Le animazioni dell'interfaccia utente vengono in genere utilizzati nei quattro modi: visualizzare, attirare l'attenzione, simulare, e stato di avanzamento o tempi di risposta indicatori.  
   
 #### <a name="visualize"></a>Visualizzare  
-Animazione può evidenziare la natura tridimensionale di oggetti e rendono più semplice per gli utenti di visualizzare la struttura spaziale. A tale scopo, l'animazione potrebbe necessario per ruotare l'oggetto in un cerchio completo, lenta attivare avanti e indietro, o portare l'oggetto più vicino e leggermente aumentarne le dimensioni per evidenziare lo stato attivo o rollover.  
+Animazione può evidenziare la natura tridimensionale di oggetti e rendono più semplice per gli utenti di visualizzare la struttura spaziale. A tale scopo, l'animazione potrebbe necessario per ruotare l'oggetto in un cerchio completo, lenta riattivarla avanti e indietro, o portare l'oggetto più vicino e leggermente aumentarne le dimensioni per evidenziare lo stato attivo o rollover.  
   
 Anche se gli oggetti tridimensionali possono essere spostati con il controllo utente, la finestra di progettazione deve determinare in anticipo (a livello di codice o manualmente) come al meglio animare un movimento che vengono fornite informazioni sugli ottimale dell'oggetto. Questo programmato animazione può quindi essere attivato dall'utente posizionando il cursore sull'oggetto, mentre i movimenti controllata dall'utente richiedono all'utente di imparare a modificare l'oggetto. Limitare lo spostamento di un singolo asse o di orientamento alla volta. la scala, rotazione, o convertire, ma non più contemporaneamente.  
   
@@ -150,7 +136,7 @@ Vengono illustrate informazioni complesse e variabile:
   
 -   Calcolo pivot per la struttura in un nodo  
   
--   Riorientamento  
+-   Il riorientamento  
   
 -   Ridurre a icona e Ingrandisci, o espandere e comprimere  
   
@@ -228,12 +214,12 @@ Le animazioni in Visual Studio sono progettate per fornire una funzione specific
   
 Questa illustrazione mostra gli stili di animazione consigliati per Visual Studio. Alcuna animazione o meno evidenti animazioni come dissolvenza in entrata / uscita, più di frequente non vengono utilizzate. Non è limitato di applicazione di animazioni di spostamento come espandere e comprimere, X e Y posizione, modifica e la rotazione. 
   
-![Stili di animazione consigliati per Visual Studio](../../extensibility/ux-guidelines/media/1202-a_vsanimstyles.png "1202-a_VSAnimStyles")<br />Stili di animazione consigliati per Visual Studio
+![Gli stili di animazione consigliati per Visual Studio](../../extensibility/ux-guidelines/media/1202-a_vsanimstyles.png "1202 a_VSAnimStyles")<br />Stili di animazione consigliati per Visual Studio
   
 #### <a name="appear-and-disappear"></a>Vengono visualizzati e nascosti  
 Con questo modello, un elemento passa dalla visibile a out-di-visualizzazione e viceversa senza un'animazione di transizione.  
   
-![Vengono visualizzati e nascosti animazione](../../extensibility/ux-guidelines/media/1202-b_appearanddisappear.png "1202-b_AppearAndDisappear")<br />Vengono visualizzati e nascosti animazione  
+![Vengono visualizzati e nascosti animazione](../../extensibility/ux-guidelines/media/1202-b_appearanddisappear.png "1202 b_AppearAndDisappear")<br />Vengono visualizzati e nascosti animazione  
   
 ##### <a name="correct-usage"></a>Utilizzo corretto  
 Elementi dell'interfaccia utente aggiornati necessario immediatamente compaiano o scompaiano in modo che l'utente non è né distrarre né nascosto. Inoltre, animazioni lento potrebbe essere considerate un trascinamento di prestazioni, che non si verifica con lo stile vengono visualizzati e scompaiono.  
@@ -254,7 +240,7 @@ L'intervallo di tempo in genere è zero secondi.
 #### <a name="fade-in-and-fade-out"></a>Dissolvenza in entrata e dissolvenza  
 Con questo modello, un elemento dell'interfaccia utente esegue la transizione da (% 0 opacità) non è visibile a visibile (100% di opacità) o viceversa.  
   
-![Animazione di dissolvenza in entrata e dissolvenza](../../extensibility/ux-guidelines/media/1202-c_fadeinfadeout.png "1202-c_FadeInFadeOut")<br />Animazione di dissolvenza in entrata e dissolvenza  
+![Animazione di dissolvenza in entrata e dissolvenza](../../extensibility/ux-guidelines/media/1202-c_fadeinfadeout.png "1202 c_FadeInFadeOut")<br />Animazione di dissolvenza in entrata e dissolvenza  
   
 ##### <a name="correct-usage"></a>Utilizzo corretto  
 Animazione dell'interfaccia utente più comune è consigliato. È un leggero effetto che aggiunge interesse senza interrompere il flusso. In alcuni casi, l'utente potrebbe anche considerano il fatto che sia presente un'animazione, percepire semplice e di sistema dell'interfaccia utente di propagazione.  
@@ -280,7 +266,7 @@ Animazione dell'interfaccia utente più comune è consigliato. È un leggero eff
 #### <a name="color-blend-from-a-to-b"></a>Colore di blend da A B  
 Con questo modello, un elemento dell'interfaccia utente consente di modificare da colore A B.  
   
-![Animazione di sfumatura di colore](../../extensibility/ux-guidelines/media/1202-d_colorblend.png "1202-d_ColorBlend")<br />Animazione di sfumatura di colore  
+![Animazione di miscele di colore](../../extensibility/ux-guidelines/media/1202-d_colorblend.png "1202 d_ColorBlend")<br />Animazione di sfumatura di colore  
   
 ##### <a name="correct-usage"></a>Utilizzo corretto  
 Come una transizione animata quando un elemento dell'interfaccia utente cambia colore da uno stato o contesto a un altro.  
@@ -304,7 +290,7 @@ Come una transizione animata quando un elemento dell'interfaccia utente cambia c
 #### <a name="expand-and-contract"></a>Espandere e comprimere  
 Con questo modello, un elemento dell'interfaccia utente si espande in X, Y o entrambe le direzioni.  
   
-![Espandere e comprimere animazione](../../extensibility/ux-guidelines/media/1202-e_expandcontract.png "1202-e_ExpandContract")<br />Espandere e comprimere animazione  
+![Espandere e comprimere animazione](../../extensibility/ux-guidelines/media/1202-e_expandcontract.png "1202 e_ExpandContract")<br />Espandere e comprimere animazione  
   
 ##### <a name="correct-usage"></a>Utilizzo corretto  
 Come una transizione animata quando un elemento dell'interfaccia utente cambia dimensioni da un contesto a un altro.  
@@ -328,7 +314,7 @@ Come una transizione animata quando un elemento dell'interfaccia utente cambia d
 #### <a name="x-y-position-change"></a>Modifica di posizione X-Y  
 Con questo modello, un elemento dell'interfaccia utente cambia la posizione X o Y o entrambi.  
   
-![Animazione di modifica posizione X-Y](~/extensibility/ux-guidelines/media/1202-f_xypositionchange.png "1202-f_XYPositionChange")<br />Animazione di modifica posizione X-Y  
+![Animazione di modifica della posizione X-Y](../../extensibility/ux-guidelines/media/1202-f_xypositionchange.png "1202 f_XYPositionChange")<br />Animazione di modifica posizione X-Y  
   
 ##### <a name="correct-usage"></a>Utilizzo corretto  
 Come una transizione animata quando un elemento dell'interfaccia utente cambia posizione da un contesto a un altro.  
@@ -351,7 +337,7 @@ Riordinamento di scheda
 #### <a name="rotate"></a>Ruota  
 Con questo modello, Ruota l'elemento dell'interfaccia utente.  
   
-![Animazione di rotazione di elemento dell'interfaccia utente](~/extensibility/ux-guidelines/media/1202-g_rotate.png "1202-g_Rotate")<br />Animazione di rotazione di elemento dell'interfaccia utente  
+![Animazione di rotazione di elemento dell'interfaccia utente](../../extensibility/ux-guidelines/media/1202-g_rotate.png "1202 g_Rotate")<br />Animazione di rotazione di elemento dell'interfaccia utente  
   
 ##### <a name="correct-usage"></a>Utilizzo corretto  
 Solo per l'indicatore di stato rotante indeterminato.  
@@ -370,56 +356,56 @@ Indicatore di stato indeterminato (rotazione)
 ### <a name="common-shell-ui-actions-and-recommended-animations"></a>Le azioni dell'interfaccia utente della shell comuni e le animazioni consigliate  
   
 #### <a name="tab-open"></a>Scheda aperta  
-![Scheda animazione di apertura](../../extensibility/ux-guidelines/media/1202-h_tabopen.png "1202-h_TabOpen")<br />Scheda animazione di apertura  
+![Scheda animazione di apertura](../../extensibility/ux-guidelines/media/1202-h_tabopen.png "1202 h_TabOpen")<br />Scheda animazione di apertura  
     
 -   Stile: vengono visualizzati  
   
 -   Durata: zero secondi  
 
 #### <a name="tab-close"></a>Chiudi scheda  
-![Scheda animazione di chiusura](../../extensibility/ux-guidelines/media/1202-i_tabclose.png "1202-i_TabClose")<br />Scheda animazione di chiusura  
+![Scheda animazione di chiusura](../../extensibility/ux-guidelines/media/1202-i_tabclose.png "1202 i_TabClose")<br />Scheda animazione di chiusura  
   
 -   Stile: Modificare la posizione X  
   
 -   Durata: 200 millisecondi  
   
 #### <a name="tab-reorder"></a>Riordinamento di scheda  
-![Animazione di riordinamento della scheda in Visual Studio](../../extensibility/ux-guidelines/media/1202-j_tabreorder.png "1202-j_TabReorder")<br />Animazione di riordinamento della scheda
+![Scheda animazione di riordinamento in Visual Studio](../../extensibility/ux-guidelines/media/1202-j_tabreorder.png "1202 j_TabReorder")<br />Animazione di riordinamento della scheda
 
 -   Stile: Modificare la posizione X  
   
 -   Durata: 200 millisecondi  
     
 #### <a name="close-floating-document"></a>Chiusura documento mobile  
-![Animazione di chiusura per documento mobile](../../extensibility/ux-guidelines/media/1202-k_closefloatingdocument.png "1202-k_CloseFloatingDocument")<br />Animazione di chiusura per documento mobile  
+![Chiudi mobile animazione documento](../../extensibility/ux-guidelines/media/1202-k_closefloatingdocument.png "1202 k_CloseFloatingDocument")<br />Animazione di chiusura per documento mobile  
    
 -   Stile: vengono visualizzati  
   
 -   Durata: 200 millisecondi   
  
 #### <a name="window-state-transition"></a>Transizione di stato di finestra  
-![Animazione di transizione di stato di finestra](../../extensibility/ux-guidelines/media/1202-l_windowstatetransition.png "1202-l_WindowStateTransition")<br />Animazione di transizione di stato di finestra  
+![Animazione di transizione di stato finestra](../../extensibility/ux-guidelines/media/1202-l_windowstatetransition.png "1202 l_WindowStateTransition")<br />Animazione di transizione di stato di finestra  
     
 -   Style: per garantire la coerenza con le altre finestre, lasciare che il sistema operativo corrente definiscono l'animazione di chiusura del documento.  
   
 -   Durata: 200 millisecondi  
   
 #### <a name="menu-open"></a>Aprirlo menu  
-![Animazione di apertura di menu](../../extensibility/ux-guidelines/media/1202-m_menuopen.png "1202-m_MenuOpen")<br />Animazione di apertura di menu  
+![Animazione del menu aprirlo](../../extensibility/ux-guidelines/media/1202-m_menuopen.png "1202 m_MenuOpen")<br />Animazione di apertura di menu  
     
 -   Stile: dissolvenza  
   
 -   Durata: 200 millisecondi  
   
 #### <a name="menu-close"></a>Chiudere menu  
-![Animazione di chiusura di menu](../../extensibility/ux-guidelines/media/1202-n_menuclose.png "1202-n_MenuClose")<br />Animazione di chiusura di menu  
+![Animazione di chiusura dal menu](../../extensibility/ux-guidelines/media/1202-n_menuclose.png "1202 n_MenuClose")<br />Animazione di chiusura di menu  
     
 -   Stile: dissolvenza  
   
 -   Durata: 200 millisecondi  
   
 #### <a name="auto-hide-tool-window-reveal"></a>Mostra finestra di strumento Nascondi automaticamente  
-![Animazione di comparsa finestra dello strumento Nascondi automaticamente](../../extensibility/ux-guidelines/media/1202-o_autohidetoolwindowreveal.png "1202-o_AutoHideToolWindowReveal")<br />Animazione di comparsa finestra dello strumento Nascondi automaticamente  
+![Animazione di comparsa finestra dello strumento Nascondi automaticamente](../../extensibility/ux-guidelines/media/1202-o_autohidetoolwindowreveal.png "1202 o_AutoHideToolWindowReveal")<br />Animazione di comparsa finestra dello strumento Nascondi automaticamente  
 
 -   Stile: vengono visualizzati  
   

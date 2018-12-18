@@ -1,72 +1,72 @@
 ---
-title: "ProjectItemFolder Element"
-ms.custom: ""
-ms.date: "02/02/2017"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "office-development"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-helpviewer_keywords: 
-  - "ProjectItemFolder element"
-ms.assetid: 15b386dd-f523-4425-9fcc-517325681358
-caps.latest.revision: 12
-author: "kempb"
-ms.author: "kempb"
-manager: "ghogen"
-caps.handback.revision: 11
+title: ProjectItemFolder (elemento) | Documenti Microsoft
+ms.custom: 
+ms.date: 02/02/2017
+ms.reviewer: 
+ms.suite: 
+ms.technology: office-development
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- VB
+- CSharp
+helpviewer_keywords: ProjectItemFolder element
+author: TerryGLee
+ms.author: tglee
+manager: ghogen
+ms.workload: office
+ms.openlocfilehash: df3c5b91e5f95d6ec794bff08c2251c5bf5e5307
+ms.sourcegitcommit: f9fbf1f55f9ac14e4e5c6ae58c30dc1800ca6cda
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 01/10/2018
 ---
-# ProjectItemFolder Element
+# <a name="projectitemfolder-element"></a>Elemento ProjectItemFolder
   Rappresenta una cartella mappata.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
 <ProjectItemFolder Target = "Path of SharePoint folder the mapped folder corresponds to"  
     Type = "Type of deployment for the mapped folder" />  
 ```  
   
-## Tipo  
+## <a name="type"></a>Tipo  
  **ProjectItemFolderType**  
   
-## Attributi ed elementi  
+## <a name="attributes-and-elements"></a>Attributi ed elementi  
  Nelle sezioni seguenti vengono descritti gli attributi, gli elementi figlio e gli elementi padre.  
   
-### Attributi  
+### <a name="attributes"></a>Attributi  
   
 |Attributo|Descrizione|  
 |---------------|-----------------|  
-|**Target**|Attributo **xs:string** obbligatorio.<br /><br /> Il percorso della cartella nell'installazione di SharePoint cui corrisponde la cartella mappata, relativa alla cartella radice distribuzione.  La cartella radice di distribuzione è determinata dal tipo di distribuzione specificato dall'attributo **Type**.<br /><br /> Per ulteriori informazioni, vedere le descrizioni per le proprietà **Deployment Path** and **Deployment Root** sugli elementi di progetto di SharePoint in  [Developing SharePoint Solutions](../sharepoint/developing-sharepoint-solutions.md).|  
-|**Type**|Attributo **xs:string** obbligatorio.<br /><br /> Il tipo di distribuzione per la cartella mappata.  Per ulteriori informazioni sui possibili valori, vedere la descrizione per la proprietà **Deployment Type** degli elementi di progetto di SharePoint in [Developing SharePoint Solutions](../sharepoint/developing-sharepoint-solutions.md).|  
+|**Destinazione**|Richiesto **xs: String** attributo.<br /><br /> Il percorso della cartella di installazione di SharePoint il mapping della cartella corrispondente, rispetto alla cartella radice di distribuzione. Cartella radice di distribuzione è determinata dal tipo di distribuzione specificato per il **tipo** attributo.<br /><br /> Per ulteriori informazioni, vedere le descrizioni per il **percorso distribuzione** e **radice distribuzione** gli elementi nel progetto di proprietà di SharePoint [lo sviluppo di soluzioni SharePoint](../sharepoint/developing-sharepoint-solutions.md).|  
+|**Type**|Richiesto **xs: String** attributo.<br /><br /> Il tipo di distribuzione per la cartella mappata. Per ulteriori informazioni sui possibili valori, vedere la descrizione per il **tipo di distribuzione** proprietà degli elementi di progetto SharePoint in [lo sviluppo di soluzioni SharePoint](../sharepoint/developing-sharepoint-solutions.md).|  
   
-### Elementi figlio  
+### <a name="child-elements"></a>Elementi figlio  
  Nessuno.  
   
-### Elementi padre  
+### <a name="parent-elements"></a>Elementi padre  
   
 |Elemento|Descrizione|  
-|--------------|-----------------|  
-|[ProjectItem](../sharepoint/projectitem-element.md)|Rappresenta un elemento di progetto SharePoint.  Si tratta dell'elemento radice obbligatorio del file spdata.|  
+|-------------|-----------------|  
+|[ProjectItem](../sharepoint/projectitem-element.md)|Rappresenta un elemento di progetto SharePoint. Questo è l'elemento radice obbligatorio del file con estensione spdata.|  
   
-## Note  
- Per ulteriori informazioni sulle cartelle mappate, vedere [Procedura: aggiungere e rimuovere cartelle mappate](../sharepoint/how-to-add-and-remove-mapped-folders.md).  
+## <a name="remarks"></a>Note  
+ Per ulteriori informazioni sui mapping di cartelle, vedere [procedura: aggiungere e rimuovere cartelle mappata](../sharepoint/how-to-add-and-remove-mapped-folders.md).  
   
-## Informazioni sull'elemento  
+## <a name="element-information"></a>Informazioni sull'elemento  
   
 |||  
 |-|-|  
-|**Spazio dei nomi**|http:\/\/schemas.microsoft.com\/VisualStudio\/2010\/SharePointTools\/SharePointProjectItemModel|  
-|**Nome schema**|Schema dell'elemento di progetto SharePoint|  
+|**Spazio dei nomi**|http://schemas.microsoft.com/VisualStudio/2010/SharePointTools/SharePointProjectItemModel|  
+|**Nome dello schema**|Schema di elemento di progetto SharePoint|  
 |**File di convalida**|ProjectItemModelSchema.xsd|  
 |**Può essere vuoto**|No|  
   
-## Vedere anche  
- [SharePoint Project Item Schema Reference](../sharepoint/sharepoint-project-item-schema-reference.md)   
- [Procedura: aggiungere e rimuovere cartelle mappate](../sharepoint/how-to-add-and-remove-mapped-folders.md)  
+## <a name="see-also"></a>Vedere anche  
+ [Riferimento allo Schema elemento di progetto SharePoint](../sharepoint/sharepoint-project-item-schema-reference.md)   
+ [Procedura: Aggiungere e rimuovere cartelle mappate](../sharepoint/how-to-add-and-remove-mapped-folders.md)  
   
   

@@ -7,14 +7,12 @@ ms.date: 04/14/2017
 ms.topic: article
 ms.technology: vs-ide-debug
 ms.assetid: 527E6BEC-EF15-4002-ACB5-62AE1C16F6B7
-ms.translationtype: HT
-ms.sourcegitcommit: e2b7ff9126e1cc38ac2e58d6be339b656a024e7f
 ms.openlocfilehash: 5f1eda5ccf6f308c626d525bbe7069a84ce3154b
-ms.contentlocale: it-it
-ms.lasthandoff: 08/11/2017
-
+ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/27/2017
 ---
-
 # <a name="data-visualizations"></a>Visualizzazioni dati
 
 Visual Studio per Mac include il supporto dell'interfaccia utente per il debugger, consentendo visualizzazioni dei valori di una variabile, un campo o una proprietà durante il debug. Questi visualizzatori dei dati mostrano una versione estesa dei dati e permettono agli sviluppatori di esaminare strutture note, ad esempio visualizzando il colore di uno struct di colore.
@@ -25,7 +23,7 @@ I visualizzatori nel riquadro **Locale** per il debug possono essere avviati fac
 
 L'elenco seguente presenta molte delle nuove visualizzazioni per il debug in Visual Studio per Mac.
 
-## <a name="point"></a>Punti
+## <a name="point"></a>Punto
 Un oggetto Point/PointF o CGPoint in iOS e Mac viene visualizzato come tupla che mostra i valori X e Y nel riquadro del debug:
 
  ![Visualizzazione dei punti](media/data-visualizations-image10.png)
@@ -36,7 +34,7 @@ Un oggetto Size/SizeF CGSize in iOS e Mac viene visualizzato come rettangolo. L'
 ![Visualizzazione delle dimensioni](media/data-visualizations-image11.png)
 
 
-## <a name="rectangle"></a>Rettangoli
+## <a name="rectangle"></a>Rettangolo
 Un oggetto Rectangle/RectangleF o CGRect in iOS e Mac mostra le dimensioni e l'origine. Come per gli oggetti Size, l'oggetto viene disegnato in modo da ridimensionarsi, fino a 250 px:
 
  ![Visualizzazione dei rettangoli](media/data-visualizations-image12.png)
@@ -46,7 +44,7 @@ Le coordinate vengono tracciate su una mappa, aggiungendo la posizione al centro
 
 ![Visualizzazione delle coordinate](media/data-visualizations-image13.png)
 
-## <a name="color"></a>Colori
+## <a name="color"></a>Colore
 Visualizza le proprietà UIColor, CGColor e Color, indicando l'anteprima del colore, i componenti RGBA, i valori di tonalità-luminosità-saturazione e il valore esadecimale del colore:
 
 ![Visualizzazione dei colori](media/data-visualizations-image14.png)
@@ -66,7 +64,7 @@ Il visualizzatore mostra un oggetto `NSBezierPath`:
 ![Visualizzazione delle curve di Bézier](media/data-visualizations-image16.png)
 
 
-## <a name="string"></a>Stringhe
+## <a name="string"></a>Stringa
 
 Una stringa di meno di 100 caratteri viene visualizzata completamente, senza anteprima. Le stringhe più lunghe vengono visualizzate completamente nell'anteprima. Le stringhe sono modificabili e il visualizzatore include un pulsante di modifica, che permette la modifica del valore della stringa nell'anteprima o nell'editor dei valori delle stringhe, mostrato di seguito:
 
@@ -106,4 +104,3 @@ Di seguito sono elencati altri tipi che hanno visualizzatori incorporati propri:
     *   Mostra un collegamento ipertestuale su cui è possibile fare clic.
 *   **IntPtr**
     *   Visualizza una rappresentazione esadecimale di un oggetto IntPtr.
-

@@ -1,36 +1,39 @@
 ---
-title: "Considerazioni per scaricare e ricaricare progetti annidati | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "progetti annidati, scaricare e ricaricare"
-  - "progetti [Visual Studio SDK], scaricare e ricaricare nidificati"
+title: Considerazioni per scaricare e ricaricare annidati progetti | Documenti Microsoft
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: vs-ide-sdk
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- nested projects, unloading and reloading
+- projects [Visual Studio SDK], unloading and reloading nested
 ms.assetid: 06c3427e-c874-45b1-b9af-f68610ed016c
-caps.latest.revision: 12
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 12
+caps.latest.revision: "12"
+author: gregvanl
+ms.author: gregvanl
+manager: ghogen
+ms.workload: vssdk
+ms.openlocfilehash: fd45ebf8be2732cded5c84f18338f104b76840cf
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
-# Considerazioni per scaricare e ricaricare progetti annidati
-[!INCLUDE[vs2017banner](../../code-quality/includes/vs2017banner.md)]
-
-Quando si distribuiscono i tipi di progetto annidati, è necessario eseguire passaggi aggiuntivi quando si scaricano e si ricarica i progetti.  Per poter aggiornare i listener agli eventi della soluzione, è necessario correttamente generare eventi di `OnAfterLoadProject` e di `OnBeforeUnloadProject` .  
+# <a name="considerations-for-unloading-and-reloading-nested-projects"></a>Considerazioni per scaricare e ricaricare progetti annidati
+Quando si implementano i tipi di progetto annidato, è necessario eseguire passaggi aggiuntivi quando si scarica e ricaricare i progetti. Per notificare correttamente listener per gli eventi della soluzione, è necessario aumentare in modo corretto il `OnBeforeUnloadProject` e `OnAfterLoadProject` eventi.  
   
- Un motivo che è necessario generare questi eventi in questo modo è che non si desidera che il \(SCC\) controllo del codice sorgente per rimuovere elementi da server e quindi aggiungerli nuovamente come qualcosa di nuovo se c " è un'operazione di `Get` da SCC.  In tal caso, un nuovo file verrebbe caricata da SCC ed è necessario scaricare e ricaricare tutti i file nel caso siano diversi.  Lo SCC chiama `ReloadItem`.  L'implementazione della chiamata è di eliminare il progetto e di ricrearlo ancora implementando `IVsFireSolutionEvents` per chiamare `OnBeforeUnloadProject` e `OnAfterLoadProject`.  Quando si esegue questa implementazione, lo SCC è presente che il progetto temporaneamente è stato eliminato e aggiunto nuovamente.  Di conseguenza, lo SCC non funziona nel progetto come se il progetto è effettivamente in sia stato eliminato dal server e quindi sia stato aggiunto nuovamente.  
+ Un motivo per cui è necessario generare questi eventi in questo modo è che non si desidera controllo del codice sorgente (SCC) per eliminare gli elementi dal server e quindi aggiungerli nuovamente come qualcosa di nuovo se è presente un `Get` dell'operazione di controllo del codice sorgente. In tal caso, un nuovo file verranno caricato fuori controllo del codice sorgente ed è necessario scaricare e ricaricare tutti i file nel caso in cui sono diversi. Chiamate di controllo del codice sorgente `ReloadItem`. L'implementazione di tale chiamata consiste nell'eliminare il progetto e ricrearlo nuovamente implementando `IVsFireSolutionEvents` chiamare `OnBeforeUnloadProject` e `OnAfterLoadProject`. Quando si esegue questa implementazione, il controllo del codice sorgente viene informato che il progetto è stato temporaneamente eliminato e aggiunto nuovamente. Di conseguenza, il controllo del codice sorgente non è compatibile con il progetto come se il progetto è stato effettivamente eliminato dal server e quindi aggiunto nuovamente.  
   
-## ricaricare i progetti  
- Per supportare ricaricare i progetti annidati, si implementa il metodo di <xref:Microsoft.VisualStudio.Shell.Interop.IVsPersistHierarchyItem2.ReloadItem%2A> .  Nell'implementazione di `ReloadItem`, chiudere i progetti annidati e li si ricrea.  
+## <a name="reloading-projects"></a>Ricaricamento di progetti  
+ Per supportare il ricaricamento di progetti annidati, si implementa il <xref:Microsoft.VisualStudio.Shell.Interop.IVsPersistHierarchyItem2.ReloadItem%2A> metodo. Nell'implementazione di `ReloadItem`, si chiudere progetti annidati e quindi ricrearli.  
   
- In genere, quando un progetto è ricaricato, l'IDE genera gli eventi <xref:Microsoft.VisualStudio.Shell.Interop.IVsSolutionEvents3.OnBeforeUnloadProject%2A> e `M:Microsoft.VisualStudio.Shell.Interop.IVsSolutionEvents3.OnAfterLoadProject(Microsoft.VisualStudio.Shell.Interop.IVsHierarchy,Microsoft.VisualStudio.Shell.Interop.IVsHierarchy)`.  Tuttavia, per i progetti annidati che verranno eliminate e ricaricati, il progetto padre avvia il processo, non l'ide.  Poiché il progetto padre non genera eventi della soluzione e l'ide non dispone di informazioni relative all'inizializzazione del processo, gli eventi non vengono generati.  
+ In genere quando un progetto è stato ricaricato, l'IDE genera il <xref:Microsoft.VisualStudio.Shell.Interop.IVsSolutionEvents3.OnBeforeUnloadProject%2A> e `M:Microsoft.VisualStudio.Shell.Interop.IVsSolutionEvents3.OnAfterLoadProject(Microsoft.VisualStudio.Shell.Interop.IVsHierarchy,Microsoft.VisualStudio.Shell.Interop.IVsHierarchy)` eventi. Tuttavia, per i progetti annidati che verranno eliminati e quindi ricaricati, il progetto principale avvia il processo, non l'IDE. Poiché il progetto principale non genera eventi di soluzione e l'IDE non dispone di informazioni sull'inizializzazione del processo, gli eventi non vengono generati.  
   
- Per gestire questo processo, le chiamate `QueryInterface` di progetto padre sull'interfaccia di <xref:Microsoft.VisualStudio.Shell.Interop.IVsFireSolutionEvents> fuori dall'interfaccia di <xref:Microsoft.VisualStudio.Shell.Interop.IVsSolution> .  `IVsFireSolutionEvents` dispone di funzioni che comunicano all'IDE di generare l'evento di `OnBeforeUnloadProject` per scaricare il progetto annidato e quindi genera l'evento di `OnAfterLoadProject` per ricaricare lo stesso progetto.  
+ Per gestire questo processo, le chiamate di progetto padre `QueryInterface` sul <xref:Microsoft.VisualStudio.Shell.Interop.IVsFireSolutionEvents> interfaccia disattivato il <xref:Microsoft.VisualStudio.Shell.Interop.IVsSolution> interfaccia. `IVsFireSolutionEvents`sono disponibili funzioni che indicano l'IDE per generare il `OnBeforeUnloadProject` evento per scaricare il progetto annidato e quindi generare il `OnAfterLoadProject` evento di ricaricare il progetto stesso.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  <xref:Microsoft.VisualStudio.Shell.Interop.IVsSolutionEvents3>   
- [Progetti di annidamento](../../extensibility/internals/nesting-projects.md)
+ [Annidamento dei progetti](../../extensibility/internals/nesting-projects.md)

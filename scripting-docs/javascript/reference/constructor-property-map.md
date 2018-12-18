@@ -1,38 +1,41 @@
 ---
-title: "Propriet&#224; constructor (Map) | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/18/2017"
-ms.prod: "windows-client-threshold"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-javascript"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-dev_langs: 
-  - "JavaScript"
-  - "TypeScript"
-  - "DHTML"
+title: "Proprietà constructor (Map) | Documenti Microsoft"
+ms.custom: 
+ms.date: 01/18/2017
+ms.prod: windows-client-threshold
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-javascript
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+dev_langs:
+- JavaScript
+- TypeScript
+- DHTML
 ms.assetid: a90d6a29-bd64-4e01-8d2f-988b7e3e4a24
-caps.latest.revision: 3
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.openlocfilehash: 7050f4a7eab149862c08ea755361b5bd0d297299
+ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/27/2017
 ---
-# Propriet&#224; constructor (Map)
+# <a name="constructor-property-map"></a>Proprietà constructor (Map)
 Specifica la funzione che crea una mappa.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```javascript  
+```JavaScript  
 map.constructor  
 ```  
   
-## Note  
- L'oggetto `map` richiesto è il nome della mappa.  
+## <a name="remarks"></a>Note  
+ Obbligatorio `map` è il nome della mappa.  
   
- La proprietà `constructor` è un membro del prototipo di ogni oggetto che dispone di un prototipo.  Include tutti gli oggetti JavaScript intrinseci tranne gli oggetti `Global` e `Math`.  La proprietà `constructor` include un riferimento alla funzione che costruisce le istanze dell'oggetto specifico.  
+ La proprietà `constructor` è un membro del prototipo di ogni oggetto per cui esiste un prototipo. Sono inclusi tutti gli oggetti JavaScript intrinseci ad eccezione degli oggetti `Global` e `Math`. La proprietà `constructor` contiene un riferimento alla funzione che costruisce istanze di tale oggetto specifico.  
   
-## Requisiti  
+## <a name="requirements"></a>Requisiti  
  [!INCLUDE[jsv11](../../javascript/reference/includes/jsv11-md.md)]

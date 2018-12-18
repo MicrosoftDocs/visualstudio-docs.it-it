@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- vs-ide-sdk
+ms.technology: msbuild
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
@@ -19,36 +18,23 @@ helpviewer_keywords:
 - MSBuild, GenerateBootstrapper task
 - GenerateBootstrapper task [MSBuild]
 ms.assetid: ca3ba2c6-d2ea-41f2-b7e3-0fc2b0730460
-caps.latest.revision: 13
-author: kempb
-ms.author: kempb
+caps.latest.revision: 
+author: Mikejo5000
+ms.author: mikejo
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 47057e9611b824c17077b9127f8d2f8b192d6eb8
-ms.openlocfilehash: e22d2cb649528d527cf37e80fda0ad49671863d3
-ms.contentlocale: it-it
-ms.lasthandoff: 05/13/2017
-
+ms.workload:
+- multiple
+ms.openlocfilehash: 3feb529b76b9de8c70b87954e928a75158361f6b
+ms.sourcegitcommit: 205d15f4558315e585c67f33d5335d5b41d0fcea
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 02/09/2018
 ---
 # <a name="generatebootstrapper-task"></a>Attività GenerateBootstrapper
 Consente di rilevare, scaricare e installare automaticamente un'applicazione e i relativi prerequisiti. Funge da programma di installazione singolo che integra i programmi di installazione separati per tutti i componenti che costituiscono un'applicazione.  
   
 ## <a name="task-parameters"></a>Parametri dell'attività  
- Nella tabella che segue vengono descritti i parametri dell'attività `GenerateBootstrapper`.  
+ Nella tabella che segue vengono descritti i parametri dell'attività `GenerateBootstrapper` .  
   
 -   `ApplicationFile`  
   
@@ -82,7 +68,7 @@ Consente di rilevare, scaricare e installare automaticamente un'applicazione e i
   
 -   `BootstrapperItems`  
   
-     Parametro facoltativo <xref:Microsoft.Build.Framework.ITaskItem>`[]`.  
+     Parametro <xref:Microsoft.Build.Framework.ITaskItem>`[]` facoltativo.  
   
      Specifica i prodotti da compilare nel programma di avvio automatico. Gli elementi passati a questo parametro devono avere la sintassi seguente:  
   

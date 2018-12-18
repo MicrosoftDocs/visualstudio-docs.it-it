@@ -1,27 +1,30 @@
 ---
-title: "IActiveScriptAuthor::RemoveNamedItem | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/18/2017"
-ms.prod: "windows-script-interfaces"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
+title: IActiveScriptAuthor::RemoveNamedItem | Documenti Microsoft
+ms.custom: 
+ms.date: 01/18/2017
+ms.prod: windows-script-interfaces
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: reference
 apiname: IActiveScriptAuthor.RemoveNamedItem
 apilocation: scrobj.dll
-helpviewer_keywords: 
-  - "IActiveScriptAuthor::RemoveNamedItem"
+helpviewer_keywords: IActiveScriptAuthor::RemoveNamedItem
 ms.assetid: 1173ef46-39a5-4bc1-8e0c-89259a16be16
-caps.latest.revision: 14
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 14
+caps.latest.revision: "14"
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.openlocfilehash: 0f3acc7d61d63ce4fb4fe53729ce43324b9718a8
+ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/27/2017
 ---
-# IActiveScriptAuthor::RemoveNamedItem
-Rimuove un oggetto `NamedItem` dallo spazio dei nomi del motore di creazione di script.  
+# <a name="iactivescriptauthorremovenameditem"></a>IActiveScriptAuthor::RemoveNamedItem
+Rimuove un `NamedItem` oggetto dallo spazio dei nomi dello script del motore di creazione.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
 HRESULT RemoveNamedItem(  
@@ -29,21 +32,21 @@ HRESULT RemoveNamedItem(
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `pszName`  
- \[in\] indirizzo del buffer che identifica l'oggetto `NamedItem` per rimuovere.  
+ [in] L'indirizzo del buffer che identifica il `NamedItem` oggetto da rimuovere.  
   
-## Valore restituito  
- Oggetto `HRESULT`.  I valori possibili sono, ma non sono limitati a, quelli nella tabella seguente.  
+## <a name="return-value"></a>Valore restituito  
+ Oggetto `HRESULT`. I valori possibili includono, ma non sono limitati a, quelli indicati nella tabella seguente.  
   
 |Valore|Descrizione|  
-|------------|-----------------|  
+|-----------|-----------------|  
 |`S_OK`|Il metodo è riuscito.|  
-|`S_FALSE`|L'oggetto `NamedItem` non è presente nello spazio dei nomi del motore di creazione di script.|  
+|`S_FALSE`|Il `NamedItem` oggetto non è presente nello spazio dei nomi dello script del motore di creazione.|  
   
-## Note  
- [IActiveScript::AddNamedItem](../../winscript/reference/iactivescript-addnameditem.md) viene utilizzato per inserire l'oggetto `NamedItem` nello spazio dei nomi degli script del motore di creazione.  
+## <a name="remarks"></a>Note  
+ [IActiveScript::AddNamedItem](../../winscript/reference/iactivescript-addnameditem.md) viene utilizzato per inserire il `NamedItem` oggetto nello script di creazione dello spazio dei nomi del motore.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Interfaccia IActiveScriptAuthor](../../winscript/reference/iactivescriptauthor-interface.md)   
  [IActiveScriptAuthor::AddNamedItem](../../winscript/reference/iactivescriptauthor-addnameditem.md)

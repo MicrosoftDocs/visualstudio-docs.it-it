@@ -1,83 +1,84 @@
 ---
-title: "Procedura: popolare fogli di lavoro con dati da un database"
-ms.custom: ""
-ms.date: "02/02/2017"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "office-development"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-helpviewer_keywords: 
-  - "dati [sviluppo per Office in Visual Studio], aggiunta a fogli di lavoro"
-  - "database [sviluppo per Office in Visual Studio], compilazione di fogli di lavoro"
-  - "fogli di lavoro [sviluppo per Office in Visual Studio], compilazione"
-ms.assetid: e9e37cf1-53ca-45d0-8409-5428be7f96c5
-caps.latest.revision: 39
-author: "kempb"
-ms.author: "kempb"
-manager: "ghogen"
-caps.handback.revision: 38
+title: 'Procedura: popolare fogli di lavoro con dati da un Database | Documenti Microsoft'
+ms.custom: 
+ms.date: 02/02/2017
+ms.reviewer: 
+ms.suite: 
+ms.technology: office-development
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- VB
+- CSharp
+helpviewer_keywords:
+- worksheets [Office development in Visual Studio], populating
+- databases [Office development in Visual Studio], populating worksheets
+- data [Office development in Visual Studio], adding to worksheets
+author: TerryGLee
+ms.author: tglee
+manager: ghogen
+ms.workload: office
+ms.openlocfilehash: 5a5cfe5d15e1b883de46809523f1d1acaecddc91
+ms.sourcegitcommit: f9fbf1f55f9ac14e4e5c6ae58c30dc1800ca6cda
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 01/10/2018
 ---
-# Procedura: popolare fogli di lavoro con dati da un database
-  È possibile accedere ai dati dei progetti di Office a livello di documento nella stessa modalità di accesso ai dati dei progetti Windows Form.  Per inserire i dati nella soluzione si utilizzano infatti gli stessi strumenti e lo stesso codice. Inoltre, per visualizzare i dati si possono persino utilizzare i controlli Windows Form.  È inoltre possibile sfruttare i controlli host, oggetti nativi di Microsoft Office Excel che sono stati estesi con eventi e funzionalità di associazione dati.  Per ulteriori informazioni, vedere [Panoramica degli elementi e dei controlli host](../vsto/host-items-and-host-controls-overview.md).  
+# <a name="how-to-populate-worksheets-with-data-from-a-database"></a>Procedura: popolare fogli di lavoro con dati da un database
+  È possibile accedere a dati nei progetti di Office a livello di documento nello stesso modo di accedere ai dati nei progetti Windows Form. Per inserire i dati nella soluzione si possono usare gli stessi strumenti e lo stesso codice e per visualizzarli è possibile persino usare i controlli Windows Form. Inoltre, possono sfruttare i controlli chiamati controlli host, ossia oggetti nativi di Microsoft Office Excel che sono stati migliorati con eventi e funzionalità di associazione dati. Per altre informazioni, vedere [Host Items and Host Controls Overview](../vsto/host-items-and-host-controls-overview.md).  
   
  [!INCLUDE[appliesto_xlalldoc](../vsto/includes/appliesto-xlalldoc-md.md)]  
   
- Nell'esempio seguente viene mostrato come aggiungere controlli con associazione a dati in progetti a livello di documento mediante una finestra di progettazione.  Per un esempio relativo all'aggiunta in fase di esecuzione di controlli con associazione a dati nei progetti a livello di applicazione, vedere [Procedura dettagliata: Data binding complesso in un progetto di componente aggiuntivo VSTO](../vsto/walkthrough-complex-data-binding-in-vsto-add-in-project.md).  
+ Nell'esempio seguente viene mostrato come aggiungere controlli con associazione a dati in progetti a livello di documento mediante una finestra di progettazione. Per un esempio di come aggiungere controlli associati a dati nei progetti a livello di applicazione in fase di esecuzione, vedere [procedura dettagliata: Data Binding complesso in VSTO aggiuntivo progetto](../vsto/walkthrough-complex-data-binding-in-vsto-add-in-project.md).  
   
- ![Collegamento a video](~/data-tools/media/playvideo.gif "Collegamento a video") Per una dimostrazione video correlata, vedere la [procedura relativa al trasferimento di dati in una cartella di lavoro di Excel](http://go.microsoft.com/fwlink/?LinkID=130277)e [la procedura relativa all'utilizzo di dati di database in Excel](http://go.microsoft.com/fwlink/?LinkID=130287).  
+ ![collegamento a video](../vsto/media/playvideo.gif "collegamento a video") per una dimostrazione video correlata, vedere [come si ricerca per categorie: trasferimento dati in un foglio di lavoro Excel?](http://go.microsoft.com/fwlink/?LinkID=130277), e [come ricerca per categorie: utilizzare Database dei dati in Excel?](http://go.microsoft.com/fwlink/?LinkID=130287).  
   
-## Aggiunta di un controllo con associazione a dati a un foglio di lavoro in fase di progettazione  
+## <a name="adding-a-data-bound-control-to-a-worksheet-at-design-time"></a>Aggiunta di un controllo con associazione a dati a un foglio di lavoro in fase di progettazione  
   
-#### Per popolare un foglio di lavoro con i dati di un database  
+#### <a name="to-populate-a-worksheet-with-data-from-a-database"></a>Per popolare un foglio di lavoro con i dati da un database  
   
-1.  Aprire un progetto a livello di documento di Excel in Visual Studio, tenendo aperto il foglio di lavoro nella finestra di progettazione.  
+1.  Aprire un progetto a livello di documento di Excel in Visual Studio, aprire il foglio di lavoro nella finestra di progettazione.  
   
-2.  Aprire la finestra **Origini dati** e creare un'origine dati per il progetto.  Per ulteriori informazioni, vedere [Procedura: connettersi ai dati di un database](~/data-tools/how-to-connect-to-data-in-a-database.md).  
+2.  Aprire la finestra **Origini dati** e creare un'origine dati per il progetto. Per ulteriori informazioni, vedere [aggiungere nuove connessioni](../data-tools/add-new-connections.md).  
   
-3.  Trascinare la tabella o il campo desiderato dalla finestra **Origini dati** sul foglio di lavoro.  
+3.  Trascinare il campo o la tabella da cui si desidera il **origini dati** finestra al foglio di lavoro.  
   
- Uno dei controlli seguenti viene creato sul foglio di lavoro:  
+ Uno dei seguenti controlli viene creato nel foglio di lavoro:  
   
--   Se si trascina un campo, sul foglio di lavoro viene creato un controllo <xref:Microsoft.Office.Tools.Excel.NamedRange>.  Per ulteriori informazioni, vedere [Controllo NamedRange](../vsto/namedrange-control.md).  
+-   Se si trascina un campo, un <xref:Microsoft.Office.Tools.Excel.NamedRange> nel foglio di lavoro viene creato. Per ulteriori informazioni, vedere [controllo NamedRange](../vsto/namedrange-control.md).  
   
--   Se si trascina una tabella, sul foglio di lavoro viene creato un controllo <xref:Microsoft.Office.Tools.Excel.ListObject>.  Per ulteriori informazioni, vedere [Controllo ListObject](../vsto/listobject-control.md).  
+-   Se si trascina una tabella, una <xref:Microsoft.Office.Tools.Excel.ListObject> nel foglio di lavoro viene creato. Per altre informazioni, vedere [ListObject Control](../vsto/listobject-control.md).  
   
- È possibile aggiungere un controllo differente selezionando la tabella o il campo nella finestra **Origini dati** e scegliendo un controllo differente dall'elenco a discesa.  
+ È possibile aggiungere un controllo diverso selezionando la tabella o campo di **origini dati** finestra e quindi scegliendo un controllo diverso dall'elenco a discesa.  
   
-## Oggetti del progetto  
- Oltre al controllo, i seguenti oggetti relativi ai dati vengono aggiunti automaticamente al progetto:  
+## <a name="objects-in-the-project"></a>Oggetti del progetto  
+ Oltre al controllo, gli oggetti relativi ai dati seguenti vengono aggiunti automaticamente al progetto:  
   
--   Un dataset tipizzato che incapsula le tabelle dati a cui ci si è connessi nel database.  Per ulteriori informazioni, vedere [Utilizzo di dataset in Visual Studio](../data-tools/dataset-tools-in-visual-studio.md).  
+-   Un set di dati tipizzato che incapsula le tabelle dati a cui ci si è connessi nel database. Per ulteriori informazioni, vedere [strumenti Dataset in Visual Studio](/visualstudio/data-tools/dataset-tools-in-visual-studio).  
   
--   Un oggetto <xref:System.Windows.Forms.BindingSource> che connette il controllo al dataset tipizzato.  Per ulteriori informazioni, vedere [Cenni preliminari sul componente BindingSource](http://msdn.microsoft.com/library/be838caf-fcb0-4b68-827f-58b2c04b747f).  
+-   Un oggetto <xref:System.Windows.Forms.BindingSource> che connette il controllo al set di dati tipizzato. Per altre informazioni, vedere [BindingSource Component Overview](/dotnet/framework/winforms/controls/bindingsource-component-overview).  
   
--   Un oggetto TableAdapter che connette il dataset tipizzato al database.  Per ulteriori informazioni, vedere [Cenni preliminari sugli oggetti TableAdapter](/visual-studio/data-tools/tableadapter-overview).  
+-   Un oggetto TableAdapter che connette il dataset tipizzato al database. Per altre informazioni, vedere [TableAdapter Overview](../data-tools/fill-datasets-by-using-tableadapters.md#tableadapter-overview).  
   
--   Un oggetto TableAdapterManager, utilizzato per coordinare i TableAdapter nel dataset per attivare gli aggiornamenti gerarchici.  Per ulteriori informazioni, vedere [Aggiornamento gerarchico](../data-tools/hierarchical-update.md) e [Panoramica di TableAdapterManager](http://msdn.microsoft.com/library/33076d42-6b41-491a-ac11-6c6339aea650).  
+-   TableAdapterManager utilizzato per coordinare gli adattatori di tabella nel set di dati per abilitare gli aggiornamenti gerarchici. Per ulteriori informazioni, vedere [aggiornamento gerarchico](../data-tools/hierarchical-update.md) e [TableAdapterManager riferimento](../data-tools/fill-datasets-by-using-tableadapters.md#tableadaptermanager-reference).  
   
- Quando si esegue il progetto, nel controllo verrà visualizzato il primo record dell'origine dati.  È possibile utilizzare <xref:System.Windows.Forms.BindingSource> per consentire agli utenti di scorrere i record.  
+ Quando si esegue il progetto, il controllo visualizza il primo record dell'origine dati. È possibile usare <xref:System.Windows.Forms.BindingSource> per consentire agli utenti di scorrere i record.  
   
-#### Per scorrere i record  
+#### <a name="to-scroll-through-the-records"></a>Per scorrere i record  
   
--   Utilizzare i metodi <xref:System.Windows.Forms.BindingSource> quali <xref:System.Windows.Forms.BindingSource.MoveNext%2A> e <xref:System.Windows.Forms.BindingSource.MovePrevious%2A>.  
+-   Usare i metodi <xref:System.Windows.Forms.BindingSource> quali <xref:System.Windows.Forms.BindingSource.MoveNext%2A> e <xref:System.Windows.Forms.BindingSource.MovePrevious%2A>.  
   
- Per informazioni su come inviare aggiornamenti al dataset tipizzato e al database, vedere [Procedura: Aggiornare un'origine dati con i dati inviati da un controllo host](../vsto/how-to-update-a-data-source-with-data-from-a-host-control.md).  
+ Per informazioni su come inviare aggiornamenti al set di dati tipizzato e al database, vedere [procedura: aggiornare un'origine dati con i dati da un controllo Host](../vsto/how-to-update-a-data-source-with-data-from-a-host-control.md).  
   
-## Vedere anche  
- [Associazione di dati ai controlli nelle soluzioni Office](../vsto/binding-data-to-controls-in-office-solutions.md)   
- [Cenni preliminari sulle origini dati](../data-tools/add-new-data-sources.md)   
- [Associazione di controlli Windows Form ai dati in Visual Studio](../Topic/Binding%20Windows%20Forms%20controls%20to%20data%20in%20Visual%20Studio.md)   
- [Procedura: Popolare documenti con i dati di oggetti](../vsto/how-to-populate-documents-with-data-from-objects.md)   
- [Procedura: popolare documenti con dati da un database](../vsto/how-to-populate-documents-with-data-from-a-database.md)   
- [Procedura: Compilare documenti con dati forniti da servizi](../vsto/how-to-populate-documents-with-data-from-services.md)   
- [Procedura: Aggiornare un'origine dati con i dati inviati da un controllo host](../vsto/how-to-update-a-data-source-with-data-from-a-host-control.md)   
- [Ricerca di categorie: Trasferire i dati in un foglio di lavoro di Excel](http://go.microsoft.com/fwlink/?LinkID=130277)   
- [Ricerca di categorie: Utilizzare dati del database in Excel?](http://go.microsoft.com/fwlink/?LinkID=130287)  
+## <a name="see-also"></a>Vedere anche  
+ [Associazione dati ai controlli nelle soluzioni Office](../vsto/binding-data-to-controls-in-office-solutions.md)   
+ [Aggiungere nuove origini dati](/visualstudio/data-tools/add-new-data-sources)   
+ [Associazione di controlli Windows Form ai dati in Visual Studio](../data-tools/bind-windows-forms-controls-to-data-in-visual-studio.md)   
+ [Procedura: popolare documenti con dati da oggetti](../vsto/how-to-populate-documents-with-data-from-objects.md)   
+ [Procedura: popolare documenti con dati da un Database](../vsto/how-to-populate-documents-with-data-from-a-database.md)   
+ [Procedura: popolare documenti con dati da servizi](../vsto/how-to-populate-documents-with-data-from-services.md)   
+ [Procedura: aggiornare un'origine dati con i dati da un controllo Host](../vsto/how-to-update-a-data-source-with-data-from-a-host-control.md)   
+ [Procedura relativa al trasferimento dati in un foglio di lavoro di Excel](http://go.microsoft.com/fwlink/?LinkID=130277)   
+ [Procedura per usare i dati del Database in Excel?](http://go.microsoft.com/fwlink/?LinkID=130287)  
   
   

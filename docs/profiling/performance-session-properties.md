@@ -1,116 +1,118 @@
 ---
-title: "Propriet&#224; della sessione di prestazioni | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "strumenti per la profilatura, proprietà"
-  - "proprietà (pagine), strumenti per la profilatura"
-  - "strumenti per le prestazioni, proprietà della sessione di prestazioni"
+title: "Proprietà della sessione di prestazioni | Microsoft Docs"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: vs-ide-debug
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- Profiling Tools,properties
+- property pages,Profiling Tools
+- performance tools, performance session properties
 ms.assetid: c3a86913-172b-488f-a31a-cea01a71b2ea
-caps.latest.revision: 16
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 16
+caps.latest.revision: "16"
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.workload: multiple
+ms.openlocfilehash: 2038f69117c94752d14c9e8ce6f22aea98a67353
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
-# Propriet&#224; della sessione di prestazioni
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
-Una **sessione di prestazioni** consente di configurare le impostazioni che determinano la modalità di profilo dell'applicazione  e di memorizzare i rapporti generati per una sessione di profilo.  
+# <a name="performance-session-properties"></a>Proprietà della sessione di prestazioni
+Una **sessione di prestazioni** consente di configurare le impostazioni che determinano la modalità di profilatura dell'applicazione. Include inoltre i rapporti generati per la sessione di profilatura.  
   
  **Requisiti**  
   
 -   [!INCLUDE[vsUltLong](../code-quality/includes/vsultlong_md.md)], [!INCLUDE[vsPreLong](../code-quality/includes/vsprelong_md.md)], [!INCLUDE[vsPro](../code-quality/includes/vspro_md.md)]  
   
- Creare una **sessione di prestazioni**, eseguendo la **Creazione guidata sessione di prestazioni** o creando manualmente una sessione.  La **Sessione prestazioni** viene visualizzata in **Esplora prestazioni** una volta creata la **Sessione prestazioni**.  
+ È possibile creare una **sessione di prestazioni** eseguendo la **Creazione guidata sessione di prestazioni** o creando manualmente una sessione. La **sessione di prestazioni** viene visualizzata in **Esplora prestazioni** dopo che è stata creata la **sessione di prestazioni**.  
   
- Per visualizzare le proprietà della **sessione di prestazioni**, selezionare il nome della sessione in **Esplora prestazioni**, fare clic con il pulsante destro del mouse e scegliere **Proprietà**.  
+ Per visualizzare le proprietà della **sessione di prestazioni**, selezionare il nome della sessione in **Esplora prestazioni**, fare clic con il pulsante destro del mouse e quindi selezionare **Proprietà**.  
   
  La sessione di prestazioni presenta le pagine delle proprietà seguenti:  
   
-## Generale  
- Queste impostazioni consentono di selezionare il metodo di profilatura, aggiungere i dati della durata e della raccolta dell'oggetto .NET e specificare la posizione e le convenzioni di denominazione predefinite del rapporto.  
+## <a name="general"></a>Generale  
+ Queste impostazioni consentono di selezionare il metodo di profilatura, aggiungere dati di durata e raccolta di oggetti .NET e specificare il percorso e le convenzioni di denominazione predefiniti del rapporto.  
   
- Per ulteriori informazioni, vedere:  
+ Per altre informazioni, vedere:  
   
  [Procedura: Scegliere un metodo di raccolta](../profiling/how-to-choose-collection-methods.md)  
   
  [Raccolta di dati di durata e allocazione di memoria .NET](../profiling/collecting-dotnet-memory-allocation-and-lifetime-data.md)  
   
- [Procedura: impostare le opzioni relative ai nomi file dei dati di profilatura](../profiling/how-to-set-performance-data-file-name-options.md)  
+ [Procedura: Impostare le opzioni relative ai nomi file dei dati sulle prestazioni](../profiling/how-to-set-performance-data-file-name-options.md)  
   
-## Avvio  
- Queste impostazioni consentono di scegliere da un elenco di binari e di specificare il relativo ordine di avvio.  
+## <a name="launch"></a>Launch  
+ Queste impostazioni consentono di effettuare una selezione da un elenco di file binari e specificare il relativo ordine di avvio.  
   
- Per ulteriori informazioni, vedere [Procedura: Specificare l'inizio del file binario](../profiling/how-to-specify-the-binary-to-start.md).  
+ Per altre informazioni, vedere [Procedura: Specificare il file binario da avviare](../profiling/how-to-specify-the-binary-to-start.md).  
   
-## Campionamento  
- Quando si utilizza il metodo di analisi mediante campionamento, queste impostazioni consentono di selezionare l'intervallo di campionamento e l'evento di esempio.  Un evento di esempio viene utilizzato per raccogliere i dati di analisi in un intervallo specifico.  Se, ad esempio, l'evento di esempio è costituito dai cicli di clock e l'intervallo di campionamento è impostato su 10.000.000, i dati di analisi verranno raccolti ogni 10 milioni di cicli di clock.  Sono disponibili i quattro tipi di eventi di esempio riportati di seguito.  
+## <a name="sampling"></a>Campionamento  
+ Queste impostazioni consentono di selezionare l'evento e l'intervallo di campionamento quando si usa il campionamento come metodo di profilatura. Un evento di campionamento viene usato per raccogliere i dati di profilatura secondo l'intervallo specificato. Ad esempio, se l'evento di campionamento è costituito dai cicli di clock e l'intervallo di campionamento è impostato su 10.000.000, i dati di profilatura verranno raccolti ogni 10 milioni di cicli di clock. Sono disponibili i quattro tipi di eventi di campionamento seguenti:  
   
 -   Cicli di clock per i problemi legati alla CPU  
   
 -   Errori di pagina per i problemi relativi alla memoria  
   
--   Chiamate di sistema per i problemi associati all'I\/O  
+-   Chiamate di sistema per i problemi associati all'I/O  
   
 -   Contatori di prestazioni per i problemi di prestazioni ridotte  
   
--   Eventi di esempio aggiuntivi possono essere specificati in base ai contatori delle prestazioni disponibili.  
+-   È possibile specificare eventi di campionamento aggiuntivi in base ai contatori delle prestazioni disponibili.  
   
- Per ulteriori informazioni, vedere [Procedura: Scegliere eventi di campionamento](../profiling/how-to-choose-sampling-events.md).  
+ Per altre informazioni, vedere [Procedura: Scegliere eventi di campionamento](../profiling/how-to-choose-sampling-events.md).  
   
-## Binary  
- Queste impostazioni consentono di specificare se si desidera rilocare il binario instrumentato in un'altra posizione.  Se, ad esempio, si esegue il profilo di My.DLL e si sceglie di non rilocare il binario instrumentato, viene creata una copia di backup di My.DLL denominata My.Orig.DLL.  Successivamente My.DLL viene modificato con l'inserimento di controlli per la raccolta di dati.  Se si sceglie di rilocare il binario instrumentato, il binario originale non viene rinominato e il binario instrumentato viene copiato nel percorso specificato in modo da essere utilizzato durante la strumentazione.  
+## <a name="binary"></a>Binario  
+ Queste impostazioni consentono di specificare se si desidera rilocare il file binario instrumentato in un'altra posizione. Ad esempio, se si esegue la profilatura di My.DLL e si sceglie di non rilocare il file binario instrumentato, viene creata una copia di backup di My.DLL denominata My.Orig.DLL. Successivamente, My.DLL viene modificato con l'inserimento di probe per la raccolta dei dati. Se si decide di rilocare il file binario instrumentato, il file binario originale non viene rinominato e il file binario instrumentato viene copiato nel percorso specificato in modo da essere usato durante la strumentazione.  
   
- Per ulteriori informazioni, vedere [Procedura: Specificare l'inizio del file binario](../profiling/how-to-specify-the-binary-to-start.md).  
+ Per altre informazioni, vedere [Procedura: Specificare il file binario da avviare](../profiling/how-to-specify-the-binary-to-start.md).  
   
-## Interazioni tra livelli  
- Per ulteriori informazioni, vedere [Raccolta di dati di interazione tra livelli](../profiling/collecting-tier-interaction-data.md).  
+## <a name="tier-interactions"></a>Interazioni tra livelli  
+ Per altre informazioni, vedere [Raccolta di dati di interazione tra livelli](../profiling/collecting-tier-interaction-data.md).  
   
-## Strumentazione  
- Queste impostazioni consentono di raccogliere dati sulle prestazioni per il codice JScript nelle pagine Web di [!INCLUDE[vstecasp](../code-quality/includes/vstecasp_md.md)] e specificare gli eventi **pre\-strumentazione** e **post\-strumentazione** che devono verificarsi prima o dopo il processo di strumentazione.  
+## <a name="instrumentation"></a>Strumentazione  
+ Queste impostazioni consentono di raccogliere i dati sulle prestazioni per il codice JScript nelle pagine Web di [!INCLUDE[vstecasp](../code-quality/includes/vstecasp_md.md)] e di specificare gli eventi di **pre-strumentazione** e **post-strumentazione** che devono verificarsi prima o dopo il processo di strumentazione.  
   
- Per ulteriori informazioni, vedere:  
+ Per altre informazioni, vedere:  
   
- [Procedura: Profilare codice JavaScript \(ECMA\) nelle pagine Web](../profiling/how-to-profile-javascript-code-in-web-pages.md)  
+ [Procedura: Profilare codice JavaScript nelle pagine Web](../profiling/how-to-profile-javascript-code-in-web-pages.md)  
   
- [Procedura: Specificare comandi pre\- e post\-strumentazione](../profiling/how-to-specify-pre-and-post-instrument-commands.md)  
+ [Procedura: Specificare comandi pre- e post-strumentazione](../profiling/how-to-specify-pre-and-post-instrument-commands.md)  
   
-## Contatori della CPU  
- Queste impostazioni consentono di raccogliere dati sui contatori di prestazioni CPU quando si utilizza il metodo di profilo basato su strumentazione.  I contatori di prestazioni portabili sono disponibili indipendentemente dalla progettazione o dal produttore della CPU.  Gli eventi piattaforma sono specifici della progettazione e del produttore della CPU.  Per ulteriori informazioni sui contatori di prestazioni relativi al processore, vedere la documentazione relativa al processore specifico.  
+## <a name="cpu-counters"></a>Contatori CPU  
+ Queste impostazioni consentono di raccogliere i dati sui contatori delle prestazioni della CPU quando si usa il metodo di profilatura della strumentazione. I contatori delle prestazioni portatili sono disponibili indipendentemente dal modello o dal produttore della CPU. Gli eventi piattaforma invece sono specifici del modello e del produttore della CPU. Per altre informazioni sui contatori di prestazioni relative al processore, vedere la documentazione relativa al processore specifico.  
   
- Per ulteriori informazioni, vedere [Procedura: Raccogliere i dati dei contatori CPU](../profiling/how-to-collect-cpu-counter-data.md).  
+ Per altre informazioni, vedere [Procedura: Raccogliere i dati dei contatori CPU](../profiling/how-to-collect-cpu-counter-data.md).  
   
-## Eventi Windows  
- Durante l'analisi, è possibile raccogliere i dati dai provider di tracce eventi.  Per visualizzare tali dati è possibile utilizzare lo strumento della riga di comando VSPerfReport.exe `/calltrace`.  Per ulteriori informazioni su Event Tracing for Windows \(ETW\), vedere [Sulla traccia degli eventi](http://go.microsoft.com/fwlink/?linkid=90752).  
+## <a name="windows-events"></a>Eventi Windows  
+ Durante la profilatura, è possibile raccogliere i dati dai provider di traccia eventi. I dati possono essere visualizzati usando l'opzione `/calltrace` dello strumento da riga di comando VSPerfReport.exe. Per altre informazioni su Event Tracing for Windows (ETW), vedere [About Event Tracing](http://go.microsoft.com/fwlink/?linkid=90752) (Informazioni su Event Tracing).  
   
- Per ulteriori informazioni, vedere:  
+ Per altre informazioni, vedere:  
   
- [Procedura: Raccogliere dati ETW \(Event Tracing for Windows\)](../profiling/how-to-collect-event-tracing-for-windows-etw-data.md)  
+ [Procedura: Raccogliere dati ETW (Event Tracing for Windows)](../profiling/how-to-collect-event-tracing-for-windows-etw-data.md)  
   
- [VSPerfReport](../profiling/vsperfreport.md).  
+ [VSPerfReport](../profiling/vsperfreport.md)  
   
-## Contatori Windows  
- Questa opzione consente di raccogliere dati dai contatori Performance Monitor di Windows.  Per raccogliere questi dati, selezionare la casella di controllo **Raccogli contatori delle prestazioni Windows**.  L'intervallo di raccolta può essere impostato nella casella **Intervallo di raccolta**.  Potrebbero essere inoltre disponibili **Categoria del contatore** e **Istanza**.  Sono disponibili alcuni contatori predefiniti di Performance Monitor di Windows.  
+## <a name="windows-counters"></a>Contatori Windows  
+ Questa opzione consente di raccogliere i dati dai contatori di Windows Performance Monitor. Per raccogliere questi dati, selezionare la casella di controllo **Raccogliere contatori Windows**. L'intervallo di raccolta può essere impostato nella casella **Intervallo di raccolta**. Potrebbero essere inoltre disponibili le opzioni **Categoria contatori** e **Istanza**. Sono disponibili alcuni contatori predefiniti di Windows Performance Monitor.  
   
- Per ulteriori informazioni, vedere [Procedura: Raccogliere i dati dei contatori Windows](../profiling/how-to-collect-windows-counter-data.md).  
+ Per altre informazioni, vedere [Procedura: Raccogliere i dati dei contatori Windows](../profiling/how-to-collect-windows-counter-data.md).  
   
-## Avanzate  
- Queste impostazioni consentono di aggiungere opzioni al processo di strumentazione specificando uno o più opzioni dello strumento di analisi della riga di comando [VSInstr](../profiling/vsinstr.md).  È inoltre possibile specificare la versione di Common Runtime di cui eseguire il profilo quando l'applicazione utilizza più di una versione.  
+## <a name="advanced"></a>Avanzate  
+ Queste impostazioni consentono di aggiungere opzioni al processo di strumentazione specificando una o più opzioni dello strumento di profilatura da riga di comando [VSInstr](../profiling/vsinstr.md). È inoltre possibile specificare la versione di Common Runtime di cui eseguire la profilatura quando l'applicazione usa più di una versione.  
   
- Per ulteriori informazioni, vedere:  
+ Per altre informazioni, vedere:  
   
- [Procedura: Specificare il runtime di .NET Framework da profilare negli scenari di esecuzione side\-by\-side](../profiling/how-to-specify-the-dotnet-framework-runtime.md)  
+ [Procedura: Specificare il Runtime di .NET Framework](../profiling/how-to-specify-the-dotnet-framework-runtime.md)  
   
  [Procedura: Specificare opzioni di strumentazione aggiuntive](../profiling/how-to-specify-additional-instrumentation-options.md)  
   
-## Vedere anche  
- [Cenni preliminari](../profiling/overviews-performance-tools.md)   
- [Configurazione di sessioni di prestazioni](../profiling/configuring-performance-sessions.md)   
+## <a name="see-also"></a>Vedere anche  
+ [Overviews](../profiling/overviews-performance-tools.md)  (Panoramiche)  
+ [Configuring Performance Sessions](../profiling/configuring-performance-sessions.md)  (Configurazione di sessioni di prestazioni)  
  [Controllo della raccolta di dati](../profiling/controlling-data-collection.md)

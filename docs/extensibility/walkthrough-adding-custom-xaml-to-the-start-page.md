@@ -1,48 +1,35 @@
 ---
-title: 'Procedura dettagliata: Aggiunta di XAML personalizzato nella pagina iniziale | Documenti di Microsoft'
+title: 'Procedura dettagliata: Aggiunta di XAML personalizzato alla pagina iniziale | Documenti Microsoft'
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- vs-ide-sdk
+ms.technology: vs-ide-sdk
 ms.tgt_pltfrm: 
 ms.topic: article
 helpviewer_keywords:
 - custom start page
 - xaml start page
 ms.assetid: 9af4d5f9-1cfc-4221-aea7-c8cd3f7571a6
-caps.latest.revision: 12
+caps.latest.revision: "12"
+author: gregvanl
 ms.author: gregvanl
 manager: ghogen
-translation.priority.mt:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: 5db97d19b1b823388a465bba15d057b30ff0b3ce
-ms.openlocfilehash: c19658e44daf96b6db96c503de1b59127b673111
-ms.lasthandoff: 02/22/2017
-
+ms.workload: vssdk
+ms.openlocfilehash: 65875823e2bc6e09eb0439a267a9c25acada87fa
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="walkthrough-adding-custom-xaml-to-the-start-page"></a>Procedura dettagliata: Aggiunta di XAML personalizzato nella pagina iniziale
-Questa procedura dettagliata viene illustrato come creare una pagina iniziale personalizzata di Visual Studio che contiene un Web browser.  
+# <a name="walkthrough-adding-custom-xaml-to-the-start-page"></a>Procedura dettagliata: Aggiunta di XAML personalizzato alla pagina iniziale
+Questa procedura dettagliata viene illustrato come creare una pagina iniziale personalizzata di Visual Studio contenente un Web browser.  
   
 ## <a name="adding-custom-xaml"></a>Aggiunta di XAML personalizzato  
   
 1.  Creare una pagina iniziale seguendo le istruzioni in [la creazione di una pagina iniziale personalizzata](../extensibility/creating-a-custom-start-page.md).  
   
-2.  Nel file MainWindow. XAML, individuare il \<griglia > sezione.  
+2.  Nel file MainWindow. XAML, è possibile trovare il \<griglia > sezione.  
   
 3.  Aggiungere un \<TabControl > elemento e un \<TabItem > all'interno di \< griglia > elemento, come illustrato nell'esempio seguente.  
   
@@ -78,32 +65,32 @@ Questa procedura dettagliata viene illustrato come creare una pagina iniziale pe
   
 1.  Premere F5.  
   
-     Verrà visualizzata l'istanza sperimentale di Visual Studio con la pagina iniziale personalizzata installato ma non è selezionata.  
+     Apre l'istanza sperimentale di Visual Studio, con la pagina iniziale personalizzata installata ma non è selezionata.  
   
-2.  Nell'istanza sperimentale di Visual Studio, aprire il **strumenti /Options / ambiente** pagina.  
+2.  Nell'istanza sperimentale di Visual Studio, aprire il **Strumenti/opzioni / ambiente** pagina.  
   
-3.  Selezionare **avvio**. Nel **Personalizza pagina iniziale** elenco, selezionare il file con estensione XAML e fare clic su **OK**.  
+3.  Selezionare **avvio**. Nel **Personalizza pagina iniziale** elenco, selezionare il file XAML e fare clic su **OK**.  
   
 4.  Scegliere **Pagina iniziale** dal menu **Visualizza**.  
   
 5.  Fare clic su di **Bing** scheda.  
   
-     Verrà visualizzata una pagina web Bing.  
+     Si dovrebbe essere una pagina web di Bing.  
   
 6.  Fare clic su di **MyButton** scheda.  
   
-     Verrà visualizzato un **MyProject** pulsante, viene aperta la **nuovo progetto** finestra di dialogo.  
+     Verrà visualizzato un **MyProject** pulsante, verrà visualizzata la **nuovo progetto** finestra di dialogo.  
   
 7.  Chiudere l'istanza sperimentale.  
   
-## <a name="applying-the-custom-start-page"></a>Applicare la pagina iniziale personalizzata  
+## <a name="applying-the-custom-start-page"></a>L'applicazione della pagina iniziale personalizzata  
   
 #### <a name="to-test-the-custom-start-page"></a>Per testare la pagina iniziale personalizzata  
   
-1.  In **Strumenti / opzioni / ambiente**selezionare **avvio**. Nel **Personalizza pagina iniziale** elenco, selezionare il file con estensione XAML e fare clic su **OK**.  
+1.  In **Strumenti / opzioni / ambiente**selezionare **avvio**. Nel **Personalizza pagina iniziale** elenco, selezionare il file XAML e fare clic su **OK**.  
   
 ## <a name="next-steps"></a>Passaggi successivi  
- La pagina iniziale di Visual Studio contiene ora una scheda che consente di visualizzare una finestra del browser Web e una scheda MyButton. È possibile creare pagine iniziali personalizzate che dispongono di altre funzionalità utilizzando il *codice* modello per aggiungere una DLL personalizzata, come illustrato nella [aggiunta controllo utente alla pagina avvio](../extensibility/adding-user-control-to-the-start-page.md). È possibile condividere pagine iniziali personalizzate con altri utenti pubblicando il file con estensione VSIX risultante per il [Visual Studio Gallery](http://go.microsoft.com/fwlink/?LinkID=123847) sito Web o in un altro sito Web o di rete condivisione. Per ulteriori informazioni, vedere [distribuzione pagine iniziali personalizzate](../extensibility/deploying-custom-start-pages.md).  
+ La pagina iniziale di Visual Studio contiene ora una scheda che contiene una scheda del Web browser e una scheda MyButton. È possibile creare pagine iniziali personalizzate che dispongono di altre funzionalità utilizzando il *codice* modello per aggiungere un file dll personalizzato, come illustrato nella [aggiunta controllo utente alla pagina avvio](../extensibility/adding-user-control-to-the-start-page.md). È possibile condividere pagine iniziali personalizzate con altri utenti pubblicando il file VSIX risultante il [Visual Studio Gallery](http://go.microsoft.com/fwlink/?LinkID=123847) sito Web o a un altro sito Web o rete condividere. Per ulteriori informazioni, vedere [distribuzione pagine iniziali di personalizzato](../extensibility/deploying-custom-start-pages.md).  
   
 ## <a name="see-also"></a>Vedere anche  
  [Personalizzazione della pagina iniziale](../ide/customizing-the-start-page-for-visual-studio.md)   

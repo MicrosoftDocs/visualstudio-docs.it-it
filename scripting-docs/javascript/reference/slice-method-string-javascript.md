@@ -1,61 +1,63 @@
 ---
-title: "Metodo slice (String) (JavaScript) | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/18/2017"
-ms.prod: "windows-client-threshold"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-javascript"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "slice"
-dev_langs: 
-  - "JavaScript"
-  - "TypeScript"
-  - "DHTML"
-helpviewer_keywords: 
-  - "slice (metodo)"
-  - "stringhe [Visual Studio], restituzione di caratteri"
+title: Metodo slice (String) (JavaScript) | Documenti Microsoft
+ms.custom: 
+ms.date: 01/18/2017
+ms.prod: windows-client-threshold
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-javascript
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords: slice
+dev_langs:
+- JavaScript
+- TypeScript
+- DHTML
+helpviewer_keywords:
+- strings [Visual Studio], returning characters
+- slice method
 ms.assetid: 80cd77a6-3718-492e-8e96-f909d8721d91
-caps.latest.revision: 16
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 16
+caps.latest.revision: "16"
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.openlocfilehash: 1baa0a05a2d6aa8c06cc962761c8e557632d034c
+ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/27/2017
 ---
-# Metodo slice (String) (JavaScript)
+# <a name="slice-method-string-javascript"></a>Metodo slice (String) (JavaScript)
 Restituisce una sezione di una stringa.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
   
 stringObj.slice(start, [end])   
 ```  
   
-## Parametri  
+## <a name="parameters"></a>Parametri  
  `stringObj`  
- Necessario.  Un oggetto `String` o un valore letterale stringa.  
+ Obbligatorio. Oggetto `String` o valore letterale stringa.  
   
  `start`  
- Necessario.  Indice dell'inizio della parte specificata di `stringObj`.  
+ Obbligatorio. L'indice dell'inizio della parte specificata di `stringObj`.  
   
  `end`  
- Opzionale.  Indice della fine della parte specificata di `stringObj`.  La sottostringa include i caratteri fino al carattere indicato da `end` escluso.  Se questo valore viene omesso, verrà restituita la stringa compresa tra la posizione iniziale specificata e la fine di `stringObj`.  
+ Parametro facoltativo. L'indice alla fine della parte specificata di `stringObj`. La sottostringa include i caratteri fino a, ma non è incluso, il carattere indicato da `end`. Se questo valore viene omesso, la sottostringa continua fino alla fine di `stringObj`.  
   
-## Note  
- Il metodo `slice` restituisce l'oggetto `String` che include la parte specificata di `stringObj`.  
+## <a name="remarks"></a>Note  
+ Il `slice` metodo restituisce un `String` contenente la parte specificata dell'oggetto `stringObj`.  
   
- Il metodo `slice` esegue la copia fino al carattere indicato da `end` escluso.  
+ Il `slice` metodo copia fino al punto, ma non include il carattere indicato da `end`.  
   
- Se `start` è negativo, verrà considerato come *length* \+ `start` dove *length* è la lunghezza della stringa.  Se `end` è negativo, verrà considerato come *length* \+ `end`.  Se `end` viene omesso, la copia continua fino alla fine di `stringObj`.  Se `end` si trova prima di `start`, nessun carattere verrà copiato nella nuova stringa.  
+ Se `start` è negativo, viene considerato come *lunghezza*  +  `start` in *lunghezza* è la lunghezza della stringa. Se `end` è negativo, viene considerato come *lunghezza* + `end`. Se `end` viene omesso, la copia continua fino alla fine di `stringObj`. Se `end` si verifica prima `start`, non caratteri vengono copiati nella nuova stringa.  
   
-## Esempio  
- Nel primo esempio, il metodo `slice` restituisce l'intera stringa.  Nel secondo esempio, il metodo `slice` restituisce l'intera stringa, eccetto l'ultimo carattere.  
+## <a name="example"></a>Esempio  
+ Nel primo esempio, il `slice` metodo restituisce l'intera stringa. Nel secondo esempio, il `slice` metodo restituisce l'intera stringa, tranne l'ultimo carattere.  
   
-```javascript  
+```JavaScript  
 var str1 = "all good boys do fine";  
   
 var slice1 = str1.slice(0);  
@@ -76,10 +78,10 @@ document.write(slice4);
   
 ```  
   
-## Requisiti  
+## <a name="requirements"></a>Requisiti  
  [!INCLUDE[jsv3](../../javascript/reference/includes/jsv3-md.md)]  
   
- **Si applica a**: [Oggetto String](../../javascript/reference/string-object-javascript.md)  
+ **Si applica a**: [oggetto stringa](../../javascript/reference/string-object-javascript.md)  
   
-## Vedere anche  
- [Metodo slice \(Array\)](../../javascript/reference/slice-method-array-javascript.md)
+## <a name="see-also"></a>Vedere anche  
+ [Metodo slice (Array)](../../javascript/reference/slice-method-array-javascript.md)

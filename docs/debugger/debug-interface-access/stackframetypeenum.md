@@ -1,67 +1,67 @@
 ---
-title: "StackFrameTypeEnum | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "StackFrameTypeEnum (enumerazione)"
+title: StackFrameTypeEnum | Documenti Microsoft
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: vs-ide-debug
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords: StackFrameTypeEnum enumeration
 ms.assetid: 61e40163-eee0-4c1f-af47-cef3771bdc41
-caps.latest.revision: 7
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.workload: multiple
+ms.openlocfilehash: 4dcb46fc2fb3936e0cee91426b4787945bd14f59
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
-# StackFrameTypeEnum
-[!INCLUDE[vs2017banner](../../code-quality/includes/vs2017banner.md)]
-
-specifica il tipo di stack frame.  
+# <a name="stackframetypeenum"></a>StackFrameTypeEnum
+Specifica il tipo di frame dello stack.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp  
+```C++  
 enum StackFrameTypeEnum {  
-   FrameTypeFPO,  
-   FrameTypeTrap,  
-   FrameTypeTSS,  
-   FrameTypeStandard,  
-   FrameTypeFrameData,  
-   FrameTypeUnknown = -1  
+   FrameTypeFPO,  
+   FrameTypeTrap,  
+   FrameTypeTSS,  
+   FrameTypeStandard,  
+   FrameTypeFrameData,  
+   FrameTypeUnknown = -1  
 };  
 ```  
   
-## Elementi  
+## <a name="elements"></a>Elementi  
  `FrameTypeFPO`  
- Puntatore ai frame omesso, Informazioni aggiornate dell'omissione dei puntatori.  
+ Puntatore ai frame omessi. Informazioni FPO disponibili.  
   
  `FrameTypeTrap`  
- Il frame tuttavia del kernel.  
+ Frame di Trap kernel.  
   
  `FrameTypeTSS`  
- Il frame tuttavia del kernel.  
+ Frame di Trap kernel.  
   
  `FrameTypeStandard`  
- Stack frame standard di EBP.  
+ Frame dello stack EBP standard.  
   
  `FrameTypeFrameData`  
- Puntatore ai frame omesso, Informazioni aggiornate di dati della pagina.  
+ Puntatore ai frame omessi. Informazioni frame di dati disponibili.  
   
  `FrameTypeUnknown`  
- Pagina che non dispone di alcune informazioni di debug.  
+ Frame che non dispone di eventuali informazioni di debug.  
   
-## Note  
- I valori in questa enumerazione restituiti da una chiamata a [IDiaStackFrame::get\_type](../../debugger/debug-interface-access/idiastackframe-get-type.md) metodo.  
+## <a name="remarks"></a>Note  
+ I valori di questa enumerazione vengono restituiti da una chiamata al [idiastackframe:: Get_type](../../debugger/debug-interface-access/idiastackframe-get-type.md) metodo.  
   
-## Requisiti  
- intestazione: cvconst.h  
+## <a name="requirements"></a>Requisiti  
+ Intestazione: cvconst.h  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Enumerazioni e strutture](../../debugger/debug-interface-access/enumerations-and-structures.md)   
- [IDiaStackFrame::get\_type](../../debugger/debug-interface-access/idiastackframe-get-type.md)
+ [IDiaStackFrame::get_type](../../debugger/debug-interface-access/idiastackframe-get-type.md)

@@ -1,39 +1,42 @@
 ---
-title: "Determinazione dello stato del comando tramite gli assembly di interoperabilit&#224; | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "assembly di interoperabilità, determinare lo stato del comando"
-  - "comandi (gestione) con gli assembly di interoperabilità, stato"
+title: "Determinazione dello stato del comando con gli assembly di interoperabilità | Documenti Microsoft"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: vs-ide-sdk
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- interop assemblies, determining command status
+- command handling with interop assemblies, status
 ms.assetid: 2f5104d1-7b4c-4ca0-a626-50530a8f7f5c
-caps.latest.revision: 18
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 18
+caps.latest.revision: "18"
+author: gregvanl
+ms.author: gregvanl
+manager: ghogen
+ms.workload: vssdk
+ms.openlocfilehash: 5b7b695288bec904e1e576f9f566944613c97f31
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
-# Determinazione dello stato del comando tramite gli assembly di interoperabilit&#224;
-[!INCLUDE[vs2017banner](../../code-quality/includes/vs2017banner.md)]
-
-Un VSPackage deve tenere traccia dello stato dei comandi che è possibile gestire. L'ambiente non può determinare se un comando gestito all'interno del package VS diventa abilitato o disabilitato. È responsabilità del package VS per informare l'ambiente sugli stati di comando, ad esempio, lo stato di generale comandi, ad esempio **Taglia**, **Copia**, e **Incolla**.  
+# <a name="determining-command-status-by-using-interop-assemblies"></a>Determinazione dello stato del comando con gli assembly di interoperabilità
+Un pacchetto VSPackage deve tenere traccia dello stato dei comandi che è possibile gestire. L'ambiente non può determinare quando un comando di gestione all'interno del pacchetto VSPackage diventa abilitato o disabilitato. È responsabilità di un VSPackage per informare l'ambiente sugli stati di comando, ad esempio, lo stato di generale i comandi come **Taglia**, **copia**, e **Incolla**.  
   
-## Origini di notifica di stato  
- L'ambiente riceve informazioni sui comandi tramite VSPackage <xref:Microsoft.VisualStudio.OLE.Interop.IOleCommandTarget.QueryStatus%2A> metodo, che fa parte dell'implementazione del VSPackage del <xref:Microsoft.VisualStudio.OLE.Interop.IOleCommandTarget> interfaccia. L'ambiente chiama il <xref:Microsoft.VisualStudio.OLE.Interop.IOleCommandTarget.QueryStatus%2A> metodo di VSPackage in due condizioni:  
+## <a name="status-notification-sources"></a>Origini di notifica di stato  
+ L'ambiente riceve informazioni sui comandi tramite VSPackage <xref:Microsoft.VisualStudio.OLE.Interop.IOleCommandTarget.QueryStatus%2A> metodo, che fa parte dell'implementazione del pacchetto VSPackage del <xref:Microsoft.VisualStudio.OLE.Interop.IOleCommandTarget> interfaccia. L'ambiente chiama il <xref:Microsoft.VisualStudio.OLE.Interop.IOleCommandTarget.QueryStatus%2A> metodo di VSPackage in due condizioni:  
   
--   Quando un utente apre un menu principale o un menu di scelta rapida \(pulsante destro del mouse\), l'ambiente viene eseguito il <xref:Microsoft.VisualStudio.OLE.Interop.IOleCommandTarget.QueryStatus%2A> metodo su tutti i comandi di menu per determinare il proprio stato.  
+-   Quando un utente apre un menu principale o un menu di scelta rapida (pulsante destro del mouse), l'ambiente è stato eseguito il <xref:Microsoft.VisualStudio.OLE.Interop.IOleCommandTarget.QueryStatus%2A> metodo su tutti i comandi di menu per determinare il proprio stato.  
   
--   Quando il package VS richiede che l'ambiente di aggiornare l'interfaccia utente \(UI\). Questo avviene quando i comandi che sono attualmente visibili all'utente, ad esempio il **Taglia**, **Copia**, e **Incolla** raggruppamento sulla barra degli strumenti standard, diventano abilitate e disabilitate in risposta alle azioni dell'utente e di contesto.  
+-   Quando il pacchetto VSPackage richiede che l'ambiente di aggiornare l'interfaccia utente (UI). Questo errore si verifica come i comandi che sono attualmente visibili all'utente, ad esempio il **Taglia**, **copia**, e **Incolla** sulla barra degli strumenti standard di raggruppamento, diventano abilitati e disabilitati risposta alle azioni dell'utente e di contesto.  
   
- Poiché la shell ospita più package VS, se sono stati richiesti per eseguire il polling ogni VSPackage per determinare lo stato del comando eccessivamente sarebbero peggiorare le prestazioni della shell. Al contrario, il VSPackage attivamente necessario informare l'ambiente quando cambia la relativa interfaccia utente al momento della modifica. Per ulteriori informazioni sulla notifica di aggiornamento, vedere [Aggiornamento dell'interfaccia utente](../../extensibility/updating-the-user-interface.md).  
+ Poiché la shell ospita più pacchetti VSPackage, se sono stati richiesti per eseguire il polling ogni VSPackage per determinare lo stato del comando eccessivamente sarebbero negativamente sulle prestazioni della shell. Al contrario, il pacchetto VSPackage deve notificare attivamente l'ambiente quando cambia la relativa interfaccia utente al momento della modifica. Per ulteriori informazioni sulla notifica di aggiornamento, vedere [aggiornamento dell'interfaccia utente](../../extensibility/updating-the-user-interface.md).  
   
-## Errore di notifica di stato  
- Errore di notifica di una modifica dello stato di comando nell'ambiente del pacchetto Visual Studio è possibile inserire l'interfaccia utente in uno stato incoerente. Tenere presente che qualsiasi i menu o nel contesto dei comandi di menu può trovarsi su una barra degli strumenti dall'utente. Pertanto, l'aggiornamento dell'interfaccia utente solo quando si apre un menu dal menu o nel contesto non è sufficiente.  
+## <a name="status-notification-failure"></a>Stato di errore di notifica  
+ Errore di un VSPackage per notificare l'ambiente di un cambiamento di stato del comando è possibile inserire l'interfaccia utente in uno stato incoerente. Tenere presente che qualsiasi i contesto o i menu dei comandi di menu può essere inserito su una barra degli strumenti dall'utente. Pertanto, l'aggiornamento dell'interfaccia utente solo quando si apre un menu di menu o nel contesto non è sufficiente.  
   
-## Vedere anche  
- [Come package VS aggiungere elementi dell'interfaccia utente](../../extensibility/internals/how-vspackages-add-user-interface-elements.md)   
+## <a name="see-also"></a>Vedere anche  
+ [Come VSPackage aggiungono elementi dell'interfaccia utente](../../extensibility/internals/how-vspackages-add-user-interface-elements.md)   
  [Implementazione](../../extensibility/internals/command-implementation.md)

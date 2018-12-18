@@ -1,59 +1,60 @@
 ---
-title: "IDebugProgram2::Attach | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "IDebugProgram2::Attach"
-helpviewer_keywords: 
-  - "IDebugProgram2::Attach"
+title: IDebugProgram2::Attach | Documenti Microsoft
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: vs-ide-sdk
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: IDebugProgram2::Attach
+helpviewer_keywords: IDebugProgram2::Attach
 ms.assetid: de069fbf-a565-4905-b102-f5658c55aacd
-caps.latest.revision: 11
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 11
+caps.latest.revision: "11"
+author: gregvanl
+ms.author: gregvanl
+manager: ghogen
+ms.workload: vssdk
+ms.openlocfilehash: 3c42f8ca3fb8fc0f449e0bdc826f73951d21e98e
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
-# IDebugProgram2::Attach
-[!INCLUDE[vs2017banner](../../../code-quality/includes/vs2017banner.md)]
-
-Connette al programma.  
+# <a name="idebugprogram2attach"></a>IDebugProgram2::Attach
+Collega al programma.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp#  
-HRESULT Attach(   
-   IDebugEventCallback2* pCallback  
+```cpp  
+HRESULT Attach(   
+   IDebugEventCallback2* pCallback  
 );  
 ```  
   
-```c#  
-int Attach(   
-   IDebugEventCallback2 pCallback  
+```csharp  
+int Attach(   
+   IDebugEventCallback2 pCallback  
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `pCallback`  
- \[in\]  [IDebugEventCallback2](../../../extensibility/debugger/reference/idebugeventcallback2.md) Un oggetto da utilizzare per la notifica di eventi di debug.  
+ [in] Un [IDebugEventCallback2](../../../extensibility/debugger/reference/idebugeventcallback2.md) oggetto da utilizzare per la notifica degli eventi di debug.  
   
-## Valore restituito  
- Se l'operazione riesce, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  Nella seguente tabella vengono illustrati alcuni codici errori possibili.  
+## <a name="return-value"></a>Valore restituito  
+ Se ha esito positivo, restituisce `S_OK`; in caso contrario, restituisce un codice di errore. La tabella seguente illustra alcuni possibili codici di errore.  
   
 |Valore|Descrizione|  
-|------------|-----------------|  
-|`E_ATTACH_DEBUGGER_ALREADY_ATTACHED`|Il programma specificato è già connesso al debugger.|  
-|`E_ATTACH_DEBUGGEE_PROCESS_SECURITY_VIOLATION`|Una violazione della sicurezza è stata apportata durante la routine di connessione.|  
-|`E_ATTACH_CANNOT_ATTACH_TO_DESKTOP`|Un programma desktop non può essere collegato al debugger.|  
+|-----------|-----------------|  
+|`E_ATTACH_DEBUGGER_ALREADY_ATTACHED`|Il programma specificato è già collegato al debugger.|  
+|`E_ATTACH_DEBUGGEE_PROCESS_SECURITY_VIOLATION`|Si è verificata una violazione di sicurezza durante la procedura di collegamento.|  
+|`E_ATTACH_CANNOT_ATTACH_TO_DESKTOP`|Il debugger non è possibile collegare un programma desktop.|  
   
-## Note  
- Il modulo \(DE\) di debug non chiama mai questo metodo per l'associazione a un programma.  Se il DE viene eseguito nello spazio degli indirizzi del programma, [OnAttach](../../../extensibility/debugger/reference/idebugprogramnodeattach2-onattach.md) viene chiamato il metodo.  Se le esecuzioni di DE nella sessione di debug lo spazio degli \(SDM\) indirizzi di amministratore, [Attach](../../../extensibility/debugger/reference/idebugengine2-attach.md) viene chiamato il metodo.  
+## <a name="remarks"></a>Note  
+ Un motore di debug (DE) non chiama mai connessi a un programma di questo metodo. Se la Germania viene eseguito nello spazio degli indirizzi del programma, il [OnAttach](../../../extensibility/debugger/reference/idebugprogramnodeattach2-onattach.md) metodo viene chiamato. Se l'esecuzione DE nel gestore di sessione debug (SDM) di spazio, indirizzi di [collegamento](../../../extensibility/debugger/reference/idebugengine2-attach.md) metodo viene chiamato.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IDebugProgram2](../../../extensibility/debugger/reference/idebugprogram2.md)   
  [IDebugEventCallback2](../../../extensibility/debugger/reference/idebugeventcallback2.md)   
  [OnAttach](../../../extensibility/debugger/reference/idebugprogramnodeattach2-onattach.md)   

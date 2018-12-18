@@ -1,38 +1,38 @@
 ---
-title: "Nessuna attivit&#224; di thread da mostrare (Visualizzazione thread) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "vs.cv.threads.nothreadreport"
-helpviewer_keywords: 
-  - "Visualizzatore di concorrenze, Nessuna attività di thread da mostrare (Visualizzazione thread)"
+title: "Nessuna attività di thread da mostrare (visualizzazione dei thread) | Microsoft Docs"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: vs-ide-debug
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: vs.cv.threads.nothreadreport
+helpviewer_keywords: Concurrency Visualizer, No Thread Activity to Show (Threads View)
 ms.assetid: aa5ae9d0-561d-4ef8-b36b-258ce553d50a
-caps.latest.revision: 8
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.workload: multiple
+ms.openlocfilehash: c6f002ec676ab74f9fa135ebba9270a724f3e8c1
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
-# Nessuna attivit&#224; di thread da mostrare (Visualizzazione thread)
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
-Quest'area mostra dati sui thread non nascosti nell'intervallo di tempo attualmente visibile.  
+# <a name="no-thread-activity-to-show-threads-view"></a>Nessuna attività di thread da mostrare (Visualizzazione thread)
+Quest'area mostra i dati sui thread non nascosti nell'intervallo di tempo attualmente visibile.  
   
- Se non sono visibili informazioni, verificare le impostazioni seguenti:  
+ Se non sono disponibili informazioni, controllare le impostazioni seguenti:  
   
--   Il livello di zoom è elevato?  Provare a ridurre lo zoom o a scorrere per portare l'attività di thread nell'intervallo.  
+-   Livello di zoom eccessivo Provare a fare zoom indietro oppure a scorrere per visualizzare altre attività di thread nell'intervallo.  
   
--   Ci sono troppi thread nascosti?  In tal caso, provare a visualizzare tutti i thread  
+-   Troppi thread nascosti In questo caso, provare a visualizzare tutti i thread.  
   
--   Se è selezionato **Just My Code**, è possibile visualizzare solo dati sul codice.  Provare a cancellare l'impostazione per accertare se è presente attività di thread di sistema.  
+-   Se è selezionata l'opzione **Just My Code**, è possibile visualizzare solo i dati sul codice. Provare a deselezionare questa impostazione per verificare se è presente qualsiasi attività di thread di sistema.  
   
--   Verificare che Riduzione rumore sia impostata su una soglia bassa.  
+-   Assicurarsi che sia impostato un livello di soglia basso per Riduzione rumore.  
   
-## Vedere anche  
- [Visualizzazione Thread](../profiling/threads-view-parallel-performance.md)
+## <a name="see-also"></a>Vedere anche  
+ [Threads View](../profiling/threads-view-parallel-performance.md) (Visualizzazione Thread)

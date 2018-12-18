@@ -6,14 +6,12 @@ ms.author: amburns
 ms.date: 04/14/2017
 ms.topic: article
 ms.assetid: 78107CFA-9308-4293-A92A-9B552A259E15
-ms.translationtype: HT
-ms.sourcegitcommit: e2b7ff9126e1cc38ac2e58d6be339b656a024e7f
 ms.openlocfilehash: e435418c0c77f1577e9db8ab35d76d6bd54f8447
-ms.contentlocale: it-it
-ms.lasthandoff: 08/11/2017
-
+ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/27/2017
 ---
-
 # <a name="understanding-build-configurations"></a>Informazioni sulle configurazioni della build
 
 ## <a name="project-build-configurations"></a>Configurazioni della build di progetti 
@@ -69,4 +67,3 @@ L'elenco seguente offre alcuni esempi di dati che possono essere inclusi nelle c
 * Progetto WatchKit
     * Modalità (Glance, notifica)
     * Payload di notifica
-

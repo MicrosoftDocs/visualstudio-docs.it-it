@@ -1,42 +1,44 @@
 ---
-title: "Operatore OR logico (||) (JavaScript) | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/18/2017"
-ms.prod: "windows-client-threshold"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-javascript"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "||"
-dev_langs: 
-  - "JavaScript"
-  - "TypeScript"
-  - "DHTML"
-helpviewer_keywords: 
-  - "|| (operatore)"
-  - "OR (operatore logico)"
+title: Logica o un operatore (|) (JavaScript) | Documenti Microsoft
+ms.custom: 
+ms.date: 01/18/2017
+ms.prod: windows-client-threshold
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-javascript
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords: '||'
+dev_langs:
+- JavaScript
+- TypeScript
+- DHTML
+helpviewer_keywords:
+- '|| operator'
+- logical OR operator
 ms.assetid: 95295331-6269-4311-8391-dc1c68e116ab
-caps.latest.revision: 7
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.openlocfilehash: 80c8e1bcae57e13642a0c77ae75c7c2aac58ace6
+ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/27/2017
 ---
-# Operatore OR logico (||) (JavaScript)
+# <a name="logical-or-operator--javascript"></a>Operatore OR logico (||) (JavaScript)
 Esegue una disgiunzione logica tra due espressioni.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
   
 result = expression1 || expression2  
 ```  
   
-## Parametri  
- *result*  
+## <a name="parameters"></a>Parametri  
+ *risultato*  
  Qualsiasi variabile.  
   
  *expression1*  
@@ -45,29 +47,29 @@ result = expression1 || expression2
  *expression2*  
  Qualsiasi espressione.  
   
-## Note  
- Se una o entrambe le espressioni restituiscono **True**, *result* sarà **True**.  Nella tabella seguente viene illustrata la modalità di determinazione di *result*:  
+## <a name="remarks"></a>Note  
+ Se una o entrambe le espressioni restituiscono **True**, *risultato* è **True**. Nella tabella seguente viene illustrato come *risultato* è determinato:  
   
-|Se `expression1` è|Ed `expression2` è|`result` sarà|  
-|------------------------|------------------------|-------------------|  
+|Se `expression1` è|E `expression2` è|Il `result` è|  
+|-------------------------|--------------------------|---------------------|  
 |True|True|True|  
 |True|False|True|  
 |False|True|True|  
 |False|False|False|  
   
- In [!INCLUDE[javascript](../../javascript/includes/javascript-md.md)] si utilizzano le seguenti regole per la conversione di valori non booleani in valori booleani:  
+ [!INCLUDE[javascript](../../javascript/includes/javascript-md.md)] utilizza le regole seguenti per la conversione di valori non booleani in valori booleani:  
   
 -   Tutti gli oggetti sono considerati true.  
   
--   Le stringhe sono considerate false se, e solo se, sono vuote.  
+-   Le stringhe sono considerate false se e solo se sono vuote.  
   
--   `null` e undefined sono considerati false.  
+-   `null`e non definite vengono considerate false.  
   
--   I valori numerici sono false se, e solo se, sono uguali a 0.  
+-   I numeri sono false se e solo se sono uguali a 0.  
   
-## Requisiti  
+## <a name="requirements"></a>Requisiti  
  [!INCLUDE[jsv1](../../javascript/misc/includes/jsv1-md.md)]  
   
-## Vedere anche  
- [Precedenza tra gli operatori](../../javascript/operator-subtractprecedence-javascript.md)   
- [Riepilogo degli operatori \(JavaScript\)](../../javascript/misc/operator-subtractsummary-javascript.md)
+## <a name="see-also"></a>Vedere anche  
+ [Precedenza tra operatori](../../javascript/operator-subtractprecedence-javascript.md)   
+ [Riepilogo degli operatori (JavaScript)](../../javascript/misc/operator-subtractsummary-javascript.md)

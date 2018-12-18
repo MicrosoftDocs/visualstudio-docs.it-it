@@ -4,36 +4,21 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.tgt_pltfrm: 
 ms.topic: article
 helpviewer_keywords:
 - layer models, navigating in program code
 - layer models, updating in program code
-ms.assetid: c60edc87-33ee-4964-a954-40069f9febf3
-caps.latest.revision: 20
-author: alexhomer1
-ms.author: ahomer
-manager: douge
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+author: gewarren
+ms.author: gewarren
+manager: ghogen
+ms.workload:
+- multiple
+ms.technology: vs-ide-modeling
+ms.openlocfilehash: e79479e97efd953c1366348454eee70773faf07a
+ms.sourcegitcommit: 205d15f4558315e585c67f33d5335d5b41d0fcea
 ms.translationtype: MT
-ms.sourcegitcommit: 4a36302d80f4bc397128e3838c9abf858a0b5fe8
-ms.openlocfilehash: cfe4f389516a3421bdc0d8643790dbb9c7cc2733
-ms.contentlocale: it-it
-ms.lasthandoff: 09/26/2017
-
+ms.contentlocale: it-IT
+ms.lasthandoff: 02/09/2018
 ---
 # <a name="navigate-and-update-layer-models-in-program-code"></a>Esplorare e aggiornare i modelli di livello nel codice del programma
 Questo argomento descrive gli elementi e le relazioni nei modelli di livello, che è possibile esplorare e aggiornare usando codice programma. Per ulteriori informazioni sui diagrammi dipendenza dal punto di vista dell'utente, vedere [diagrammi dipendenza: riferimento](../modeling/layer-diagrams-reference.md) e [diagrammi dipendenza: linee guida](../modeling/layer-diagrams-guidelines.md).  
@@ -137,7 +122,7 @@ public void ... (...)
   
  ![Ogni oggetto ILayerElement è presentato da un oggetto IShape. ] (../modeling/media/layerapi_shapes.png "LayerApi_Shapes")  
   
- <xref:Microsoft.VisualStudio.ArchitectureTools.Extensibility.Presentation.IShape> e <xref:Microsoft.VisualStudio.ArchitectureTools.Extensibility.Presentation.IDiagram> sono usati anche per visualizzare modelli UML. Per ulteriori informazioni, vedere [visualizzare un modello UML nei diagrammi](../modeling/display-a-uml-model-on-diagrams.md).  
+ <xref:Microsoft.VisualStudio.ArchitectureTools.Extensibility.Presentation.IShape> e <xref:Microsoft.VisualStudio.ArchitectureTools.Extensibility.Presentation.IDiagram> sono usati anche per visualizzare modelli UML. 
   
 ## <a name="see-also"></a>Vedere anche  
  [Aggiunta di comandi e movimenti a diagrammi di dipendenza](../modeling/add-commands-and-gestures-to-layer-diagrams.md)   
@@ -145,4 +130,3 @@ public void ... (...)
  [Aggiungere proprietà personalizzate ai diagrammi di dipendenza](../modeling/add-custom-properties-to-layer-diagrams.md)   
  [Diagrammi di dipendenza: riferimento](../modeling/layer-diagrams-reference.md)   
  [Diagrammi delle dipendenze: linee guida](../modeling/layer-diagrams-guidelines.md)   
-

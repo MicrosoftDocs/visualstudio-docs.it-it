@@ -1,27 +1,30 @@
 ---
-title: "IDebugFormatter::GetStringForVariant | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/18/2017"
-ms.prod: "windows-script-interfaces"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
+title: IDebugFormatter::GetStringForVariant | Documenti Microsoft
+ms.custom: 
+ms.date: 01/18/2017
+ms.prod: windows-script-interfaces
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: reference
 apiname: IDebugFormatter.GetStringForVariant
 apilocation: jscript.dll
-helpviewer_keywords: 
-  - "IDebugFormatter::GetStringForVariant"
+helpviewer_keywords: IDebugFormatter::GetStringForVariant
 ms.assetid: 95189d03-1126-433e-8513-659107b3df16
-caps.latest.revision: 8
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.openlocfilehash: bfc31b0fdbf6d1f4a29b1322dc3a3c4015f9c8ff
+ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/27/2017
 ---
-# IDebugFormatter::GetStringForVariant
-Restituisce una stringa che rappresenta il valore VARIABILE specificato.  
+# <a name="idebugformattergetstringforvariant"></a>IDebugFormatter::GetStringForVariant
+Restituisce una stringa che rappresenta il valore di variante specificato.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
 HRESULT GetStringForVariant(  
@@ -31,25 +34,25 @@ HRESULT GetStringForVariant(
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `pvar`  
- \[in\] VARIANT da rappresentare come stringa.  
+ [in] VARIANTE per essere rappresentato come una stringa.  
   
  `nRadix`  
- \[in\] base da utilizzare per valori numerici.  
+ [in] Radice da utilizzare per i valori numerici.  
   
  `pbstrValue`  
- \[out\] stringa che rappresenta `pvar`.  
+ [out] Stringa che rappresenta `pvar`.  
   
-## Valore restituito  
- Il metodo restituisce un tipo `HRESULT`.  I valori possibili sono, ma non sono limitati a, quelli nella tabella seguente.  
+## <a name="return-value"></a>Valore restituito  
+ Il metodo restituisce un tipo `HRESULT`. I valori possibili includono, ma non sono limitati a, quelli indicati nella tabella seguente.  
   
 |Valore|Descrizione|  
-|------------|-----------------|  
+|-----------|-----------------|  
 |`S_OK`|Il metodo è riuscito.|  
   
-## Note  
- Questo metodo restituisce una stringa che rappresenta il valore variabile specificato.  
+## <a name="remarks"></a>Note  
+ Questo metodo restituisce una stringa che rappresenta il valore di tipo variant specificato.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Interfaccia IDebugFormatter](../../winscript/reference/idebugformatter-interface.md)

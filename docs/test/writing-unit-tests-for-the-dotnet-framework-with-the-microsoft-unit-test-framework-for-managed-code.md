@@ -4,37 +4,21 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- vs-devops-test
+ms.technology: vs-devops-test
 ms.tgt_pltfrm: 
 ms.topic: article
-ms.assetid: fbeba971-c468-4429-8017-0f12ab55638c
-caps.latest.revision: 5
-ms.author: douge
-manager: douge
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: 5ab78b6b8eaa8156ed2c8a807b1d8a80e75afa84
-ms.openlocfilehash: 474e1bc75b8c0615e5da66b27e74b8c5964dedf5
-ms.lasthandoff: 04/04/2017
-
+ms.author: gewarren
+manager: ghogen
+ms.workload: dotnet
+author: gewarren
+ms.openlocfilehash: 1535c4204cdab2dadac9a417620a11cca81c8cfb
+ms.sourcegitcommit: 7ae502c5767a34dc35e760ff02032f4902c7c02b
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 01/09/2018
 ---
 # <a name="writing-unit-tests-for-the-net-framework-with-the-microsoft-unit-test-framework-for-managed-code"></a>Scrittura di unit test per .NET Framework con il framework unit test di Microsoft per codice gestito
-## <a name="in-this-section"></a>In questa sezione  
+## <a name="in-this-section"></a>Contenuto della sezione  
  [Procedura dettagliata: creazione ed esecuzione di unit test per codice gestito](../test/walkthrough-creating-and-running-unit-tests-for-managed-code.md)  
   
  [Guida introduttiva allo sviluppo basato su test con Esplora test](../test/quick-start-test-driven-development-with-test-explorer.md)  
@@ -50,4 +34,3 @@ ms.lasthandoff: 04/04/2017
  [Procedura: scegliere come destinazione una versione precedente di .NET](../test/how-to-configure-unit-tests-to-target-an-earlier-version-of-the-dotnet-framework.md)  
   
  [Progetto di esempio per la creazione di unit test](../test/sample-project-for-creating-unit-tests.md)
-

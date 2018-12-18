@@ -1,65 +1,67 @@
 ---
-title: "How to: Specify a Publish Page for a ClickOnce Application | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-deployment"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-helpviewer_keywords: 
-  - "deploying applications [ClickOnce], specifying publish page"
-  - "Publish Page property"
-  - "publishing, ClickOnce"
-  - "ClickOnce deployment, specifying publish page"
+title: 'Procedura: specificare una pagina di pubblicazione per un''applicazione ClickOnce | Documenti Microsoft'
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: vs-ide-deployment
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- VB
+- CSharp
+- C++
+helpviewer_keywords:
+- deploying applications [ClickOnce], specifying publish page
+- Publish Page property
+- publishing, ClickOnce
+- ClickOnce deployment, specifying publish page
 ms.assetid: 9d70eebb-bdee-4b42-8e7e-7a07e199bdf7
-caps.latest.revision: 18
-author: "stevehoag"
-ms.author: "shoag"
-manager: "wpickett"
-caps.handback.revision: 18
+caps.latest.revision: "18"
+author: stevehoag
+ms.author: shoag
+manager: wpickett
+ms.workload: multiple
+ms.openlocfilehash: 491ef29c955c5ab06b8539ec5089f2ed32feaf36
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
-# How to: Specify a Publish Page for a ClickOnce Application
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
-Quando viene pubblicata un'applicazione [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)], insieme all'applicazione viene generata e pubblicata una pagina Web predefinita \(publish.htm\).  Questa pagina contiene il nome dell'applicazione, un collegamento per installare l'applicazione e\/o eventuali componenti prerequisiti, nonché un collegamento a un argomento della Guida in cui vengono fornite informazioni sull'applicazione [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)].  La proprietà **Publish Page** del progetto consente di specificare un nome per la pagina Web relativa all'applicazione [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)].  
+# <a name="how-to-specify-a-publish-page-for-a-clickonce-application"></a>Procedura: specificare una pagina di pubblicazione per un'applicazione ClickOnce
+Quando si pubblica un [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] un'applicazione, una pagina Web predefinita (publish.htm) viene generata e pubblicata insieme all'applicazione. Questa pagina contiene il nome dell'applicazione, un collegamento per installare l'applicazione e/o tutti i prerequisiti e un collegamento a un argomento della Guida che descrivono [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)]. Il **pubblica pagina** proprietà per il progetto consente di specificare un nome per la pagina Web per il [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] dell'applicazione.  
   
- Una volta specificata la pagina di pubblicazione, alla successiva pubblicazione l'applicazione verrà copiata nel percorso di pubblicazione e, se pubblicata nuovamente, non verrà sovrascritta.  In questo modo, sarà possibile personalizzare l'aspetto della pagina senza preoccuparsi di perdere le modifiche apportate.  Per ulteriori informazioni, vedere [Procedura: Personalizzare la pagina Web predefinita ClickOnce](../deployment/how-to-customize-the-default-web-page-for-a-clickonce-application.md).  
+ Dopo la pagina di pubblicazione è stata specificata, la volta successiva che si pubblica, viene copiato nel percorso di pubblicazione; non verrà sovrascritto se si pubblica nuovamente. Se si desidera personalizzare l'aspetto della pagina, è possibile farlo senza preoccuparsi di perdere le modifiche. Per ulteriori informazioni, vedere [procedura: personalizzare la pagina Web predefinita ClickOnce](../deployment/how-to-customize-the-default-web-page-for-a-clickonce-application.md).  
   
- La proprietà **Publish Page** può essere impostata nella finestra di dialogo **Opzioni di pubblicazione**, accessibile dal riquadro **Pubblica** di **Progettazione progetti**.  
+ Il **pubblica pagina** proprietà può essere impostata **opzioni di pubblicazione** la finestra di dialogo, accessibile dal **pubblica** riquadro del **progettazione**.  
   
-### Per specificare una pagina Web personalizzata per un'applicazione ClickOnce  
+### <a name="to-specify-a-custom-web-page-for-a-clickonce-application"></a>Per specificare una pagina Web personalizzata per un'applicazione ClickOnce  
   
 1.  Con un progetto selezionato in **Esplora soluzioni**, scegliere **Proprietà** dal menu **Progetto**.  
   
-2.  Selezionare il riquadro **Pubblica**.  
+2.  Selezionare il **pubblica** riquadro.  
   
-3.  Scegliere il pulsante **Opzioni** per aprire la finestra di dialogo **Opzioni di pubblicazione**.  
+3.  Fare clic su di **opzioni** pulsante per aprire la **opzioni di pubblicazione** la finestra di dialogo.  
   
-4.  Fare clic su **Distribuzione**.  
+4.  Fare clic su **distribuzione**.  
   
-5.  Nella finestra di dialogo **Opzioni di pubblicazione** assicurarsi che la casella di controllo **Apri pagina Web di distribuzione dopo la pubblicazione** sia selezionata \(impostazione predefinita\).  
+5.  Nel **opzioni di pubblicazione** finestra di dialogo, assicurarsi che il **pagina web di distribuzione aperti dopo la pubblicazione** casella di controllo è selezionata (deve essere selezionato per impostazione predefinita).  
   
-6.  Nella casella **Pagina Web di distribuzione** immettere il nome della pagina Web, quindi scegliere **OK**.  
+6.  Nel **pagina web di distribuzione:** casella, immettere il nome della pagina Web e quindi fare clic su **OK**.  
   
-### Per impedire che la pagina di pubblicazione venga avviata a ogni pubblicazione  
+### <a name="to-prevent-the-publish-page-from-launching-each-time-you-publish"></a>Per impedire l'avvio di ogni volta che pubblica la pagina di pubblicazione  
   
 1.  Con un progetto selezionato in **Esplora soluzioni**, scegliere **Proprietà** dal menu **Progetto**.  
   
-2.  Selezionare il riquadro **Pubblica**.  
+2.  Selezionare il **pubblica** riquadro.  
   
-3.  Scegliere il pulsante **Opzioni** per aprire la finestra di dialogo **Opzioni di pubblicazione**.  
+3.  Fare clic su di **opzioni** pulsante per aprire la **opzioni di pubblicazione** la finestra di dialogo.  
   
-4.  Fare clic su **Distribuzione**.  
+4.  Fare clic su **distribuzione**.  
   
-5.  Nella finestra di dialogo **Opzioni di pubblicazione** deselezionare la casella di controllo **Apri pagina Web di distribuzione dopo la pubblicazione**.  
+5.  Nel **opzioni di pubblicazione** la finestra di dialogo, deseleziona il **pagina web di distribuzione aperti dopo la pubblicazione** casella di controllo.  
   
-## Vedere anche  
- [Publishing ClickOnce Applications](../deployment/publishing-clickonce-applications.md)   
- [How to: Publish a ClickOnce Application using the Publish Wizard](../Topic/How%20to:%20Publish%20a%20ClickOnce%20Application%20using%20the%20Publish%20Wizard.md)   
- [Procedura: Personalizzare la pagina Web predefinita ClickOnce](../deployment/how-to-customize-the-default-web-page-for-a-clickonce-application.md)
+## <a name="see-also"></a>Vedere anche  
+ [Pubblicazione di applicazioni ClickOnce](../deployment/publishing-clickonce-applications.md)   
+ [Procedura: Pubblicare un'applicazione ClickOnce mediante la Pubblicazione guidata](../deployment/how-to-publish-a-clickonce-application-using-the-publish-wizard.md)   
+ [Procedura: personalizzare la pagina Web predefinita ClickOnce](../deployment/how-to-customize-the-default-web-page-for-a-clickonce-application.md)

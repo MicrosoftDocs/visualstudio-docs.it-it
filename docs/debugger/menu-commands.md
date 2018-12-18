@@ -1,56 +1,58 @@
 ---
-title: "Menu Commands | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "Spy++, menu commands"
-  - "menu commands, Spy++"
+title: I comandi di menu | Documenti Microsoft
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: vs-ide-debug
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- Spy++, menu commands
+- menu commands, Spy++
 ms.assetid: 9d1aab27-9ac0-4096-8e12-c47503acb2e9
-caps.latest.revision: 4
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.workload: multiple
+ms.openlocfilehash: f1aa79c58bcb5c9281811319db80c002b03e2be3
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
-# Menu Commands
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
-Nella Guida di questa sezione vengono illustrati i comandi disponibili nei menu di Spy\+\+.  
+# <a name="menu-commands"></a>Comandi di menu
+Gli argomenti della Guida in questa sezione elenca i comandi disponibili nel menu di Spy + +.  
   
-## In questa sezione  
- [Comandi di menu di Spy](../debugger/spy-menu-commands.md)  
- Vengono descritti tutti i comandi disponibili nel menu **Spy**.  
+## <a name="in-this-section"></a>In questa sezione  
+ [Spy (comandi di menu)](../debugger/spy-menu-commands.md)  
+ Descrive tutti i comandi disponibili dal **Spy** menu.  
   
- [Comandi del menu Struttura ad albero](../debugger/tree-menu-commands.md)  
- Vengono descritti tutti i comandi disponibili nel menu **Struttura ad albero**.  
+ [Comandi del menu Albero](../debugger/tree-menu-commands.md)  
+ Descrive tutti i comandi disponibili dal **albero** menu.  
   
  [Comandi del menu Cerca](../debugger/search-menu-commands.md)  
- Vengono descritti tutti i comandi disponibili nel menu **Cerca**.  
+ Descrive tutti i comandi disponibili dal **ricerca** menu.  
   
  [Comandi del menu Visualizza](../debugger/view-menu-commands.md)  
- Vengono descritti tutti i comandi disponibili nel menu **Visualizza**.  
+ Descrive tutti i comandi disponibili dal **vista** menu.  
   
  [Comandi del menu Messaggi](../debugger/messages-menu-commands.md)  
- Vengono descritti tutti i comandi disponibili nel menu **Messaggi**.  
+ Descrive tutti i comandi disponibili dal **messaggi** menu.  
   
  [Comandi del menu Finestra](../debugger/window-menu-commands.md)  
- Vengono descritti tutti i comandi disponibili nel menu **Finestra**.  
+ Descrive tutti i comandi disponibili dal **finestra** menu.  
   
- [Comandi del menu ?](../debugger/help-menu-commands.md)  
- Vengono descritti tutti i comandi disponibili nel menu **?**.  
+ [Comandi del menu?](../debugger/help-menu-commands.md)  
+ Descrive tutti i comandi disponibili dal **Guida** menu.  
   
-## Sezioni correlate  
- [Utilizzo di Spy\+\+](../debugger/using-spy-increment.md)  
- Vengono illustrati lo strumento Spy\+\+ e il relativo utilizzo.  
+## <a name="related-sections"></a>Sezioni correlate  
+ [Uso di Spy++](../debugger/using-spy-increment.md)  
+ Vengono presentati lo strumento Spy + + e come può essere usato.  
   
- [Visualizzazioni di Spy\+\+](../debugger/spy-increment-views.md)  
- Vengono illustrate le visualizzazioni struttura ad albero di Spy\+\+ relative a finestre, messaggi, processi e thread.  
+ [Visualizzazioni di Spy++](../debugger/spy-increment-views.md)  
+ Vengono illustrate le visualizzazioni ad albero Spy + + di windows, i messaggi, thread e processi.  
   
- [Riferimenti per Spy\+\+](../debugger/spy-increment-reference.md)  
- Sono incluse questa sezione e le altre sezioni in cui vengono descritte tutte le finestre di dialogo di Spy\+\+.
+ [riferimenti per Spy++](../debugger/spy-increment-reference.md)  
+ Sono inclusi in questa sezione e le altre sezioni che descrivono ogni la finestra di dialogo di Spy + +.

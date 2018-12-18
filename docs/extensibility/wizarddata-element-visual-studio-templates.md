@@ -1,30 +1,35 @@
 ---
-title: "Elemento WizardData (modelli di Visual Studio) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-general"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "http://schemas.microsoft.com/developer/vstemplate/2005#WizardData"
-helpviewer_keywords: 
-  - "<WizardData> (elemento) [modelli di Visual Studio]"
-  - "WizardData (elemento) [modelli di Visual Studio]"
+title: Elemento WizardData (modelli di Visual Studio) | Documenti Microsoft
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: vs-ide-general
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: http://schemas.microsoft.com/developer/vstemplate/2005#WizardData
+helpviewer_keywords:
+- WizardData element [Visual Studio Templates]
+- <WizardData> element [Visual Studio Templates]
 ms.assetid: d0403a16-5d07-4fe5-b474-19ae3d9fd3ab
-caps.latest.revision: 9
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: gregvanl
+ms.author: gregvanl
+manager: ghogen
+ms.workload: vssdk
+ms.openlocfilehash: 2e6303d9334086f14bcbb7a090dd26df81e1abae
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
-# Elemento WizardData (modelli di Visual Studio)
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
-Specifica un codice XML personalizzato  
+# <a name="wizarddata-element-visual-studio-templates"></a>Elemento WizardData (modelli di Visual Studio)
+Specifica XML personalizzate  
   
-## Sintassi  
+ \<VSTemplate >  
+ \<WizardData >  
+  
+## <a name="syntax"></a>Sintassi  
   
 ```  
 <WizardData>  
@@ -33,33 +38,33 @@ Specifica un codice XML personalizzato
 </WizardData>  
 ```  
   
-## Attributi ed elementi  
- Nelle seguenti sezioni sono illustrati attributi, elementi figlio ed elementi padre.  
+## <a name="attributes-and-elements"></a>Attributi ed elementi  
+ Nelle sezioni seguenti vengono descritti gli attributi, gli elementi figlio e gli elementi padre.  
   
-### Attributi  
+### <a name="attributes"></a>Attributi  
  Nessuno.  
   
-### Elementi figlio  
+### <a name="child-elements"></a>Elementi figlio  
  Nessuno.  
   
-### Elementi padre  
+### <a name="parent-elements"></a>Elementi padre  
   
 |Elemento|Descrizione|  
-|--------------|-----------------|  
-|[VSTemplate](../extensibility/vstemplate-element-visual-studio-templates.md)|Elemento obbligatorio.<br /><br /> Contiene tutti i metadati per il modello di progetto, il modello di elemento o lo starter kit.|  
+|-------------|-----------------|  
+|[VSTemplate](../extensibility/vstemplate-element-visual-studio-templates.md)|Elemento obbligatorio.<br /><br /> Contiene tutti i metadati per il modello di progetto, un modello di elemento o lo starter kit.|  
   
-## Valore di testo  
+## <a name="text-value"></a>Valore di testo  
  Il valore di testo è facoltativo.  
   
- Questo testo specifica il codice XML personalizzato da passare all'estensione della procedura guidata personalizzata specificata nell'elemento [WizardExtension](../extensibility/wizardextension-element-visual-studio-templates.md).  
+ Tale testo specifica il codice XML personalizzato per passare all'estensione della creazione guidata personalizzata specificata nel [WizardExtension](../extensibility/wizardextension-element-visual-studio-templates.md) elemento.  
   
-## Note  
- In questo elemento è possibile specificare qualunque codice XML.  Il codice XML verrà passato come parametro all'estensione della procedura guidata personalizzata, permettendo all'estensione di utilizzare i contenuti di questo elemento.  Su questi dati non viene eseguita nessuna convalida.  
+## <a name="remarks"></a>Note  
+ In questo elemento, è possibile specificare qualsiasi codice XML. Il codice XML verrà passato come parametro per l'estensione della creazione guidata personalizzata, consentendo l'estensione da utilizzare il contenuto di questo elemento. Viene eseguita alcuna convalida sui dati.  
   
- I contenuti dell'elemento `WizardData` vengono passati invariati come parametro all'interno di un dizionario di stringhe di parametri nel metodo `IWizard.RunStarted`.  Il parametro viene chiamato $WizardData$.  
+ Il contenuto del `WizardData` elemento vengono passati invariati come parametro all'interno di dizionario di stringhe di parametri di `IWizard.RunStarted` (metodo). Il parametro è denominato $WizardData$.  
   
-## Esempio  
- Nell'esempio riportato di seguito vengono illustrati i metadati per il modello di progetto standard di un'applicazione Windows di [!INCLUDE[csprcs](../data-tools/includes/csprcs_md.md)].  
+## <a name="example"></a>Esempio  
+ Nell'esempio seguente vengono illustrati i metadati per il modello di progetto standard per un [!INCLUDE[csprcs](../data-tools/includes/csprcs_md.md)] applicazione Windows.  
   
 ```  
 <VSTemplate Version="3.0.0" Type="Item"  
@@ -92,8 +97,8 @@ Specifica un codice XML personalizzato
 </VSTemplate>  
 ```  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Riferimenti allo schema dei modelli di Visual Studio](../extensibility/visual-studio-template-schema-reference.md)   
- [Creazione di un progetto e di modelli di elemento personalizzati](../ide/creating-project-and-item-templates.md)   
- [Elemento WizardExtension \(modelli di Visual Studio\)](../extensibility/wizardextension-element-visual-studio-templates.md)   
- [Procedura: utilizzare procedure guidate con modelli di progetto](../extensibility/how-to-use-wizards-with-project-templates.md)
+ [Creazione di modelli di progetti e di elementi](../ide/creating-project-and-item-templates.md)   
+ [Elemento WizardExtension (modelli di Visual Studio)](../extensibility/wizardextension-element-visual-studio-templates.md)   
+ [Procedura: Usare procedure guidate con modelli di progetto](../extensibility/how-to-use-wizards-with-project-templates.md)

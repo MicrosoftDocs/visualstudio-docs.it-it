@@ -4,37 +4,22 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- vs-ide-sdk
+ms.technology: vs-ide-sdk
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords:
-- IDebugEngineProgram2
-helpviewer_keywords:
-- IDebugEngineProgram2 interface
+f1_keywords: IDebugEngineProgram2
+helpviewer_keywords: IDebugEngineProgram2 interface
 ms.assetid: 151003a9-2e4d-4acf-9f4d-365dfa6b9596
-caps.latest.revision: 11
+caps.latest.revision: "11"
+author: gregvanl
 ms.author: gregvanl
 manager: ghogen
-translation.priority.mt:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: ca7c86466fa23fb21a932f26dc24e37c71cf29b4
-ms.openlocfilehash: 2897213b9c94a2c8a140c12bfdbc3d4deb29052e
-ms.lasthandoff: 04/05/2017
-
+ms.workload: vssdk
+ms.openlocfilehash: 896370d83634580e46f666a8fb9f56f768bf06a0
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="idebugengineprogram2"></a>IDebugEngineProgram2
 Questa interfaccia fornisce supporto per il debug multithreading.  
@@ -56,7 +41,7 @@ IDebugEngineProgram2 : IUnknown
   
 |Metodo|Descrizione|  
 |------------|-----------------|  
-|[Arresta](../../../extensibility/debugger/reference/idebugengineprogram2-stop.md)|Arresta tutti i thread in esecuzione in questo programma.|  
+|[Stop](../../../extensibility/debugger/reference/idebugengineprogram2-stop.md)|Arresta tutti i thread in esecuzione in questo programma.|  
 |[WatchForThreadStep](../../../extensibility/debugger/reference/idebugengineprogram2-watchforthreadstep.md)|Verifica la presenza di esecuzione (o arresto di controllo per l'esecuzione) a cui si verificano sul thread specificato.|  
 |[WatchForExpressionEvaluationOnThread](../../../extensibility/debugger/reference/idebugengineprogram2-watchforexpressionevaluationonthread.md)|Consente o impedisce valutazione dell'espressione si verifica sul thread specificato, anche se il programma viene arrestato.|  
   

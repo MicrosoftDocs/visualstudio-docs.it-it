@@ -1,78 +1,61 @@
 ---
 title: Opzioni, Editor di testo, C#, Formattazione | Microsoft Docs
-ms.custom: 
-ms.date: 11/04/2016
+ms.date: 02/09/2018
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- vs-ide-general
-ms.tgt_pltfrm: 
+ms.technology: vs-ide-general
 ms.topic: article
 f1_keywords:
 - VS.ToolsOptionsPages.Text_Editor.CSharp.Formatting.Spacing
 - VS.ToolsOptionsPages.Text_Editor.CSharp.Formatting.NewLines
-- VS.ToolsOptionsPages.Text_Editor.Visual_JSharp.Formatting.General
 - VS.ToolsOptionsPages.Text_Editor.CSharp.Formatting.Indentation
-- VS.ToolsOptionsPages.Text_Editor.Visual_JSharp.Formatting.NewLines
-- VS.ToolsOptionsPages.Text_Editor.Visual_JSharp.Formatting.Indentation
-- VS.ToolsOptionsPages.Text_Editor.Visual_JSharp.Formatting.Wrapping
 - VS.ToolsOptionsPages.Text_Editor.CSharp.Formatting.Wrapping
 - VS.ToolsOptionsPages.Text_Editor.CSharp.Formatting
 - VS.ToolsOptionsPages.Text_Editor.CSharp.Formatting.General
-- VS.ToolsOptionsPages.Text_Editor.Visual_JSharp.Formatting.Spacing
-- VS.ToolsOptionsPages.Text_Editor.Visual_JSharp.Formatting
 helpviewer_keywords:
-- formatting [C#]
-- formatting [J#]
-- Text Editor Options dialog box, formatting
+- formatting options [C#]
+- Text editor Options dialog box, formatting
 ms.assetid: 5a7bb668-1d0c-4ffe-9508-24592813162e
-caps.latest.revision: 23
 author: gewarren
 ms.author: gewarren
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 5ea9179ad37514ffad4876177b05150eecc22def
-ms.openlocfilehash: a157bb6b5e29bb90fcd033f58657887f610b4835
-ms.contentlocale: it-it
-ms.lasthandoff: 05/24/2017
-
+ms.workload:
+- dotnet
+ms.openlocfilehash: 639082683ad0b65b294307df0740aa4d9c6069d0
+ms.sourcegitcommit: 238cd48787391aa0ed1eb684f3f04e80f7958705
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 02/12/2018
 ---
 # <a name="options-text-editor-c-formatting"></a>Opzioni, Editor di testo, C#, Formattazione
-Usare la pagina delle proprietà **Formattazione** per impostare le opzioni di formattazione del codice nell'editor del codice. Per accedere a questa finestra di dialogo, scegliere **Opzioni** dal menu **Strumenti**, espandere **Editor di testo**, espandere **C#** e quindi fare clic su **Formattazione**.  
-  
+
+Usare la pagina di opzioni **Formattazione** per impostare le opzioni di formattazione del codice nell'editor del codice. Per accedere a questa pagina di opzioni, scegliere **Strumenti** > **Opzioni** e quindi scegliere **Editor di testo** > **C#**  >  **Stile codice** > **Formattazione**.
+
 > [!NOTE]
->  Le finestre di dialogo e i comandi di menu visualizzati potrebbero essere diversi da quelli descritti nella Guida a seconda delle impostazioni attive o dell'edizione del programma. Per modificare le impostazioni, scegliere **Importa/Esporta impostazioni** dal menu **Strumenti** . Per altre informazioni, vedere [Personalizzare l'IDE di Visual Studio](../../ide/personalizing-the-visual-studio-ide.md).  
-  
-## <a name="general-settings"></a>Impostazioni generali  
- Le impostazioni generali hanno effetto sulla modalità con la quale l'editor del codice applica le opzioni di formattazione al codice.  
-  
-## <a name="uielement-list"></a>Elenco UIElement  
-  
-|Label|Descrizione|  
-|-----------|-----------------|  
-|**Formatta automaticamente istruzione completata dopo l'immissione di ;**|Quando questa opzione è selezionata, vengono formattate le istruzioni al completamento in base alle opzioni di formattazione selezionate per l'editor del codice. Deselezionare questa opzione se non si vuole modificare le istruzioni con l'editor di codice.|  
-|**Formatta automaticamente blocco completato dopo l'immissione di }**|Quando l'opzione è selezionata, i blocchi di codice vengono formattati in base alle opzioni di formattazione selezionate per l'editor di codice subito dopo il completamento del blocco. Deselezionare questa opzione se non si vuole modificare i blocchi con l'editor di codice.|  
-|**Modifica rientro dopo operazione Incolla**|Quando l'opzione è selezionata, il testo inserito nell'editor di codice viene formattato in base alle opzioni di formattazione selezionate per l'editor di codice. Deselezionare questa opzione se non si vuole modificare il testo inserito.|  
-  
-## <a name="preview-window"></a>Finestra di anteprima  
- I riquadri delle opzioni **Rientro**, **Nuove righe**, **Spaziatura** e **Ritorno a capo** visualizzano una finestra di anteprima. La finestra di anteprima illustra l'effetto di ogni opzione. Per usare la finestra di anteprima, selezionare un'opzione di formattazione. La finestra di anteprima illustra un esempio dell'opzione selezionata. Se si modifica questa impostazione, ad esempio si seleziona o deseleziona una casella di controllo, la finestra di anteprima viene aggiornata per visualizzare l'effetto della nuova impostazione.  
-  
-## <a name="remarks"></a>Note  
- Le opzioni di rientro nelle pagine **Tabulazioni** per ogni lingua solo determinano solo il punto in cui l'editor del codice posiziona il cursore quando si preme INVIO alla fine di una riga. Le opzioni di rientro in **Formattazione** si applicano quando il codice viene formattato automaticamente, ad esempio quando si inserisce codice nel file ed è selezionata l'opzione **Modifica rientro dopo operazione Incolla** o quando il blocco da formattare viene digitato manualmente.  
-  
-## <a name="see-also"></a>Vedere anche  
- [Generale, Ambiente, finestra di dialogo Opzioni](../../ide/reference/general-environment-options-dialog-box.md)
+> Le finestre di dialogo e i comandi di menu visualizzati potrebbero essere diversi da quelli descritti nella Guida a seconda delle impostazioni attive o dell'edizione del programma. Per modificare le impostazioni, scegliere **Importa/Esporta impostazioni** dal menu **Strumenti** . Per altre informazioni, vedere [Personalizzare l'IDE di Visual Studio](../../ide/personalizing-the-visual-studio-ide.md).
+
+## <a name="general-settings"></a>Impostazioni generali
+
+Le impostazioni generali hanno effetto sulla modalità con la quale l'editor del codice applica le opzioni di formattazione al codice.
+
+## <a name="uielement-list"></a>Elenco UIElement
+
+|Label|Descrizione|
+|-----------|-----------------|
+|**Formatta automaticamente durante la digitazione**|Quando questa opzione è deselezionata, le opzioni **Formatta automaticamente istruzione dopo :** e **Formatta automaticamente blocco dopo }** sono disabilitate.|
+|**Formatta automaticamente istruzione dopo ;**|Quando questa opzione è selezionata, le istruzioni vengono formattate al completamento in base alle opzioni di formattazione selezionate per l'editor.|
+|**Formatta automaticamente blocco dopo }**|Quando questa opzione è selezionata, i blocchi di codice vengono formattati in base alle opzioni di formattazione selezionate per l'editor subito dopo il completamento del blocco di codice.|
+|**Formatta automaticamente dopo INVIO**|Quando questa opzione è selezionata, il testo viene formattato dopo la pressione di **INVIO**, in base alle opzioni di formattazione selezionate per l'editor.|
+|**Formatta automaticamente dopo operazione Incolla**|Quando questa opzione è selezionata, il testo incollato nell'editor viene formattato in base alle opzioni di formattazione selezionate per l'editor.|
+
+## <a name="preview-window"></a>Finestra di anteprima
+
+I riquadri delle opzioni **Rientro**, **Nuove righe**, **Spaziatura** e **Ritorno a capo** visualizzano una finestra di anteprima. La finestra di anteprima illustra l'effetto di ogni opzione. Per usare la finestra di anteprima, selezionare un'opzione di formattazione. La finestra di anteprima illustra un esempio dell'opzione selezionata. Quando si modifica un'impostazione selezionando un pulsante di opzione o una casella di controllo, la finestra di anteprima viene aggiornata per mostrare l'effetto della nuova impostazione.
+
+## <a name="remarks"></a>Note
+
+Le opzioni di rientro nelle pagine **Tabulazioni** per ogni linguaggio determinano solo il punto in cui l'editor del codice posiziona il cursore quando si preme **INVIO** alla fine di una riga. Le opzioni di rientro in **Formattazione** si applicano quando il codice viene formattato automaticamente, ad esempio quando si incolla codice nel file ed è selezionata l'opzione **Formatta automaticamente dopo operazione Incolla** o quando il blocco da formattare viene digitato manualmente.
+
+## <a name="see-also"></a>Vedere anche
+
+[Generale, Ambiente, finestra di dialogo Opzioni](../../ide/reference/general-environment-options-dialog-box.md)

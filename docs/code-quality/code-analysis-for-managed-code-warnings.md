@@ -1,36 +1,37 @@
 ---
-title: "Analisi del codice per gli avvisi del codice gestito | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-devops-test"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "vc.project.vcfxcoptool.enablefxcop"
-helpviewer_keywords: 
-  - "analisi codice, codice gestito"
-  - "analisi del codice gestito, avvisi"
-  - "avvisi dell'analisi del codice gestito"
-  - "avvisi, analisi del codice gestito"
+title: Analisi del codice per avvisi del codice gestito | Documenti Microsoft
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: vs-ide-code-analysis
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: vc.project.vcfxcoptool.enablefxcop
+helpviewer_keywords:
+- managed code analyis, warnings
+- warnings, managed code analysis
+- managed code analysis warnings
+- code analysis,managed code
 ms.assetid: 3c2741ff-0d3a-42e6-acd5-d42310bd03c4
-caps.latest.revision: 20
-author: "stevehoag"
-ms.author: "shoag"
-manager: "wpickett"
-caps.handback.revision: 20
+caps.latest.revision: "20"
+author: gewarren
+ms.author: gewarren
+manager: ghogen
+ms.workload: dotnet
+ms.openlocfilehash: 689fe39cfb8a7719efbba15b412800d9dfa78361
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
-# Analisi del codice per gli avvisi del codice gestito
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
+# <a name="code-analysis-for-managed-code-warnings"></a>Analisi del codice per gli avvisi del codice gestito
 Lo strumento di analisi del codice gestito fornisce avvisi che indicano le violazioni delle regole nelle librerie del codice gestito. Gli avvisi sono organizzati in aree di regole, ad esempio progettazione, localizzazione, prestazioni e sicurezza. Ogni avviso indica una violazione di una regola di analisi del codice gestito. Questa sezione fornisce descrizioni dettagliate ed esempi per ogni avviso di analisi del codice gestito.  
   
  La tabella seguente mostra il tipo di informazioni fornite per ogni avviso.  
   
 |Elemento|Descrizione|  
-|--------------|-----------------|  
+|----------|-----------------|  
 |Tipo|TypeName per la regola.|  
 |CheckId|Identificatore univoco per la regola. CheckId e Category vengono usati per l'eliminazione di un avviso nell'origine.|  
 |Category|Categoria dell'avviso.|  
@@ -42,21 +43,21 @@ Lo strumento di analisi del codice gestito fornisce avvisi che indicano le viola
 |Codice di esempio|Esempi che violano la regola ed esempi corretti che soddisfano la regola.|  
 |Avvisi correlati|Avvisi correlati.|  
   
-## In questa sezione  
+## <a name="in-this-section"></a>In questa sezione  
   
 |||  
 |-|-|  
 |[Avvisi generati da CheckId](../code-quality/code-analysis-warnings-for-managed-code-by-checkid.md)|Elenchi di tutti gli avvisi generati da CheckId|  
 |[Avvisi di crittografia](../code-quality/cryptography-warnings.md)|Avvisi che supportano applicazioni e librerie più sicure attraverso l'uso corretto della crittografia.|  
-|[Avvisi di progettazione](../code-quality/design-warnings.md)|Avvisi che supportano la progettazione corretta delle librerie secondo quanto specificato nelle linee guida di progettazione di [!INCLUDE[dnprdnshort](../code-quality/includes/dnprdnshort_md.md)].|  
+|[Avvisi di progettazione](../code-quality/design-warnings.md)|Avvisi che supportano la progettazione corretta delle librerie secondo quanto specificato nelle linee guida di progettazione di [!INCLUDE[dnprdnshort](../code-quality/includes/dnprdnshort_md.md)] .|  
 |[Avvisi di globalizzazione](../code-quality/globalization-warnings.md)|Avvisi che supportano applicazioni e librerie internazionalizzate.|  
 |[Avvisi di interoperabilità](../code-quality/interoperability-warnings.md)|Avvisi che supportano l'interazione con i client COM.|  
 |[Avvisi di manutenibilità](../code-quality/maintainability-warnings.md)|Avvisi che supportano la manutenzione di applicazioni e librerie.|  
-|[Avvisi di mobilità](../code-quality/mobility-warnings.md)|Avvisi che supportano l'utilizzo efficiente dell'energia.|  
-|[Avvisi di denominazione](../code-quality/naming-warnings.md)|Gli avvisi che supportano l'osservanza delle convenzioni di denominazione delle linee guida di progettazione di [!INCLUDE[dnprdnshort](../code-quality/includes/dnprdnshort_md.md)].|  
+|[Mobility Warnings](../code-quality/mobility-warnings.md)|Avvisi che supportano l'utilizzo efficiente dell'energia.|  
+|[Avvisi di denominazione](../code-quality/naming-warnings.md)|Gli avvisi che supportano l'osservanza delle convenzioni di denominazione delle linee guida di progettazione di [!INCLUDE[dnprdnshort](../code-quality/includes/dnprdnshort_md.md)] .|  
 |[Avvisi di prestazioni](../code-quality/performance-warnings.md)|Avvisi che supportano applicazioni e librerie ad alte prestazioni.|  
-|[Avvisi di portabilità](../code-quality/portability-warnings.md)|Avvisi che supportano la portabilità tra piattaforme diverse.|  
+|[Portability Warnings](../code-quality/portability-warnings.md)|Avvisi che supportano la portabilità tra piattaforme diverse.|  
 |[Avvisi di affidabilità](../code-quality/reliability-warnings.md)|Avvisi che supportano l'affidabilità di applicazioni e librerie, ad esempio il corretto utilizzo di memoria e thread.|  
 |[Avvisi di sicurezza](../code-quality/security-warnings.md)|Avvisi che supportano applicazioni e librerie più sicure.|  
 |[Avvisi di utilizzo](../code-quality/usage-warnings.md)|Avvisi che supportano l'utilizzo appropriato di [!INCLUDE[dnprdnshort](../code-quality/includes/dnprdnshort_md.md)].|  
-|[Errori dei criteri per l'analisi del codice](../code-quality/code-analysis-policy-errors.md)|Errori che si verificano se i criteri di analisi del codice non sono soddisfatti al momento dell'archiviazione.|
+|[Code Analysis Policy Errors](../code-quality/code-analysis-policy-errors.md)|Errori che si verificano se i criteri di analisi del codice non sono soddisfatti al momento dell'archiviazione.|

@@ -1,27 +1,29 @@
 ---
-title: "Funzione JsParseSerializedScript | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/18/2017"
-ms.prod: "windows-client-threshold"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "jsrt/JsParseSerializedScript"
-helpviewer_keywords: 
-  - "JsParseSerializedScript (funzione)"
+title: Funzione JsParseSerializedScript | Microsoft Docs
+ms.custom: 
+ms.date: 01/18/2017
+ms.prod: windows-client-threshold
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords: jsrt/JsParseSerializedScript
+helpviewer_keywords: JsParseSerializedScript function
 ms.assetid: 40d0c7c4-fd5b-46ed-9e65-38c2db2fc859
-caps.latest.revision: 13
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 13
+caps.latest.revision: "13"
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.openlocfilehash: 7eb18c8537d7bdfe69969293b66a5909ba7c3fa1
+ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/27/2017
 ---
-# Funzione JsParseSerializedScript
+# <a name="jsparseserializedscript-function"></a>Funzione JsParseSerializedScript
 Analizza uno script serializzato e restituisce una funzione che rappresenta lo script.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
 STDAPI_(JsErrorCode) JsParseSerializedScript(  
@@ -33,7 +35,7 @@ STDAPI_(JsErrorCode) JsParseSerializedScript(
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `script`  
  Script da analizzare.  
   
@@ -49,16 +51,16 @@ STDAPI_(JsErrorCode) JsParseSerializedScript(
  `result`  
  Funzione che rappresenta il codice di script.  
   
-## Valore restituito  
- Il codice `JsNoError` se l'operazione ha avuto esito positivo. In caso contrario, un codice di errore.  
+## <a name="return-value"></a>Valore restituito  
+ Codice `JsNoError` se l'operazione ha avuto esito positivo; in caso contrario, un codice di errore.  
   
-## Note  
+## <a name="remarks"></a>Note  
  Richiede un contesto di script attivo.  
   
  Il buffer non viene mantenuto in memoria dal motore di script, quindi il codice deve mantenerlo attivo finché potrebbe essere usato per eseguire script.  
   
-## Requisiti  
+## <a name="requirements"></a>Requisiti  
  **Intestazione:** jsrt.h  
   
-## Vedere anche  
- [Riferimenti \(Runtime JavaScript\)](../chakra-hosting/reference-javascript-runtime.md)
+## <a name="see-also"></a>Vedere anche  
+ [Riferimenti (Runtime JavaScript)](../chakra-hosting/reference-javascript-runtime.md)

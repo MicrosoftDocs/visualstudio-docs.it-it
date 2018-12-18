@@ -1,43 +1,28 @@
 ---
-title: Elemento LocationField (modelli di progetto Visual Studio) | Documenti di Microsoft
+title: Elemento LocationField (modelli di progetto di Visual Studio) | Documenti Microsoft
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- vs-ide-general
+ms.technology: vs-ide-general
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords:
-- http://schemas.microsoft.com/developer/vstemplate/2005#LocationField
-helpviewer_keywords:
-- LocationField element [Visual Studio project templates]
+f1_keywords: http://schemas.microsoft.com/developer/vstemplate/2005#LocationField
+helpviewer_keywords: LocationField element [Visual Studio project templates]
 ms.assetid: 6aaaa155-6ce0-4f7f-aa50-8d63d7a7c992
-caps.latest.revision: 13
+caps.latest.revision: "13"
+author: gregvanl
 ms.author: gregvanl
 manager: ghogen
-translation.priority.mt:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: 5db97d19b1b823388a465bba15d057b30ff0b3ce
-ms.openlocfilehash: 50a88925f718caa3a76281b6e96632204f66c67c
-ms.lasthandoff: 02/22/2017
-
+ms.workload: vssdk
+ms.openlocfilehash: 1aa4acf4b0d2aeb83e4ea4feb70ace3ae55ea2b2
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="locationfield-element-visual-studio-project-templates"></a>Elemento LocationField (modelli di progetto Visual Studio)
-Consente di specificare o meno il **percorso** casella di testo il **nuovo progetto** la finestra di dialogo è abilitata, disabilitata o nascosta per il modello di progetto.  
+Specifica se il **percorso** casella di testo nel **nuovo progetto** la finestra di dialogo è abilitata, disabilitata o nascosta per il modello di progetto.  
   
  \<VSTemplate >  
  \<TemplateData >  
@@ -69,11 +54,11 @@ Consente di specificare o meno il **percorso** casella di testo il **nuovo proge
   
  I valori di testo validi sono:  
   
--   `Enabled`, che specifica il **percorso** casella della finestra il **nuovo progetto** è attivata la finestra di dialogo.  
+-   `Enabled`, che consente di specificare che il **percorso** casella della finestra il **nuovo progetto** è attivata la finestra di dialogo.  
   
--   `Disabled`, che specifica il **percorso** casella della finestra il **nuovo progetto** la finestra di dialogo è disabilitata.  
+-   `Disabled`, che consente di specificare che il **percorso** casella della finestra il **nuovo progetto** la finestra di dialogo è disabilitata.  
   
--   `Hidden`, che specifica il **percorso** casella della finestra il **nuovo progetto** viene nascosta la finestra di dialogo.  
+-   `Hidden`, che consente di specificare che il **percorso** casella del **nuovo progetto** la finestra di dialogo è nascosto.  
   
 ## <a name="remarks"></a>Note  
  Il valore predefinito è `Enabled`.  
@@ -111,5 +96,5 @@ Consente di specificare o meno il **percorso** casella di testo il **nuovo proge
 ```  
   
 ## <a name="see-also"></a>Vedere anche  
- [Visual Studio Template Schema Reference](../extensibility/visual-studio-template-schema-reference.md)   
+ [Riferimenti allo schema dei modelli di Visual Studio](../extensibility/visual-studio-template-schema-reference.md)   
  [Creazione di modelli di progetti e di elementi](../ide/creating-project-and-item-templates.md)

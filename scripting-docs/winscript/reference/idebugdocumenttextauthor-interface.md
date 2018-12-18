@@ -1,30 +1,33 @@
 ---
-title: "Interfaccia IDebugDocumentTextAuthor | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/18/2017"
-ms.prod: "windows-script-interfaces"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-helpviewer_keywords: 
-  - "Interfaccia IDebugDocumentTextAuthor"
+title: Interfaccia IDebugDocumentTextAuthor | Documenti Microsoft
+ms.custom: 
+ms.date: 01/18/2017
+ms.prod: windows-script-interfaces
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: reference
+helpviewer_keywords: IDebugDocumentTextAuthor interface
 ms.assetid: c1f3b32c-25c3-4203-bf09-942d314ffc0d
-caps.latest.revision: 8
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.openlocfilehash: d29bfa1b3f23ce206e2fe63fd669548a074e3dd6
+ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/27/2017
 ---
-# Interfaccia IDebugDocumentTextAuthor
-Fornito da documenti di testo che supporta la modifica.  
+# <a name="idebugdocumenttextauthor-interface"></a>Interfaccia IDebugDocumentTextAuthor
+Fornito da documenti di testo che supportano la modifica.  
   
- Oltre ai metodi ereditati da `IDebugDocumentText`, l'interfaccia `IDebugDocumentTextAuthor` espone i metodi seguenti.  
+ Oltre ai metodi ereditati da `IDebugDocumentText`, `IDebugDocumentTextAuthor` interfaccia espone i metodi seguenti.  
   
-## Metodi nell'ordine Vtable  
+## <a name="methods-in-vtable-order"></a>Metodi nell'ordine Vtable  
   
 |Metodo|Descrizione|  
 |------------|-----------------|  
-|[IDebugDocumentTextAuthor::InsertText](../../winscript/reference/idebugdocumenttextauthor-inserttext.md)|Inserire il nuovo testo nel documento.|  
+|[IDebugDocumentTextAuthor::InsertText](../../winscript/reference/idebugdocumenttextauthor-inserttext.md)|Inserisce il nuovo testo del documento.|  
 |[IDebugDocumentTextAuthor::RemoveText](../../winscript/reference/idebugdocumenttextauthor-removetext.md)|Rimuove il testo dal documento.|  
-|[IDebugDocumentTextAuthor::ReplaceText](../../winscript/reference/idebugdocumenttextauthor-replacetext.md)|Sostituire il testo nel documento.|
+|[IDebugDocumentTextAuthor::ReplaceText](../../winscript/reference/idebugdocumenttextauthor-replacetext.md)|Sostituisce il testo nel documento.|

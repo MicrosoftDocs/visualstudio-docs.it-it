@@ -1,24 +1,23 @@
 ---
 title: Progettazione di XAML in Visual Studio | Microsoft Docs
 ms.custom: 
-ms.date: 7/17/2017
+ms.date: 07/17/2017
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- vs-ide-designers
+ms.technology: vs-ide-designers
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: 288e2415-9fcf-408e-bc35-9848315e14fd
-caps.latest.revision: 4
+caps.latest.revision: "4"
 author: gewarren
 ms.author: gewarren
 manager: ghogen
+ms.workload: uwp
+ms.openlocfilehash: cd71c63ab20dc943d1e0c7ac94d374c9d3bca359
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
 ms.translationtype: HT
-ms.sourcegitcommit: 6d25db4639f2c8391c1e32542701ea359f560178
-ms.openlocfilehash: 535cd67469897e84a749e3e1c58c2695ddddd006
-ms.contentlocale: it-it
-ms.lasthandoff: 07/18/2017
-
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="designing-xaml-in-visual-studio"></a>Progettazione di XAML in Visual Studio
 

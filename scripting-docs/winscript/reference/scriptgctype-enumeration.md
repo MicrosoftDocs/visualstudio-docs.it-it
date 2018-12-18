@@ -1,38 +1,38 @@
 ---
-title: "Enumerazione SCRIPTGCTYPE | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/18/2017"
-ms.prod: "windows-script-interfaces"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
+title: Enumerazione SCRIPTGCTYPE | Documenti Microsoft
+ms.custom: 
+ms.date: 01/18/2017
+ms.prod: windows-script-interfaces
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: reference
 ms.assetid: f289cc7d-2a69-4720-bee0-ea27d054f308
-caps.latest.revision: 3
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.openlocfilehash: 8d42187cc7467bea9d777f35bb208c4e42cabb31
+ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/27/2017
 ---
-# Enumerazione SCRIPTGCTYPE
-Il tipo di operazione da eseguire.  Utilizzato nel metodo [IActiveScriptGarbageCollector::CollectGarbage](../../winscript/reference/iactivescriptgarbagecollector-collectgarbage.md).  
+# <a name="scriptgctype-enumeration"></a>Enumerazione SCRIPTGCTYPE
+Il tipo di garbage collection da eseguire. Utilizzato nel [IActiveScriptGarbageCollector::CollectGarbage](../../winscript/reference/iactivescriptgarbagecollector-collectgarbage.md) metodo.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```cpp  
-typedef enum tagSCRIPTGCTYPE {  
-    SCRIPTGCTYPE_NORMAL           = 0,  
-    SCRIPTGCTYPE_EXHAUSTIVE       = 1,  
-} SCRIPTGCTYPE;  
-  
+typedef enum tagSCRIPTGCTYPE {    SCRIPTGCTYPE_NORMAL           = 0,    SCRIPTGCTYPE_EXHAUSTIVE       = 1,} SCRIPTGCTYPE;  
 ```  
   
-## Valori di enumerazione  
+## <a name="enumeration-values"></a>Valori di enumerazione  
   
 |||  
 |-|-|  
-|SCRIPTGCTYPE\_NORMAL|Scegliere la modalità normale.  Il valore Integer è 0.|  
-|SCRIPTGCTYPE\_EXHAUSTIVE|Scegliere il Garbage Collection completa.  Il valore Integer è 1.|  
+|SCRIPTGCTYPE_NORMAL|Eseguire una normale operazione di garbage collection. Il valore intero è 0.|  
+|SCRIPTGCTYPE_EXHAUSTIVE|Eseguire l'operazione completa di garbage collection. Il valore intero è 1.|  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Costanti, enumerazioni e codici di errore dello script ActiveX](../../winscript/reference/active-script-constants-enumerations-and-error-codes.md)

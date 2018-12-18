@@ -1,36 +1,36 @@
 ---
-title: "Ricerche nel file PDB | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/15/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "PDB (file)"
-  - "PDB (file), ricerca"
+title: L'esecuzione di query di. Il File PDB | Documenti Microsoft
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: vs-ide-debug
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- PDB files
+- .pdb files, querying
 ms.assetid: 8da07d1c-2712-45f9-8fbf-f34040408a8a
-caps.latest.revision: 10
-caps.handback.revision: 10
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
+caps.latest.revision: "10"
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.workload: multiple
+ms.openlocfilehash: da12d0cde9e8dae0d291985bc8bf88931ab35ec5
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
-# Ricerche nel file PDB
-[!INCLUDE[vs2017banner](../../code-quality/includes/vs2017banner.md)]
-
-Un file di database di programma \(estensione pdb\) è un file binario che contiene il tipo e le informazioni di debug sui simboli raccolti nel corso della compilazione e di collegare il progetto.  Un file PDB viene creato quando si compila il programma c C\+\+ con \/C **\/ZI** o  **\/Zi** oppure  [!INCLUDE[vbprvb](../../code-quality/includes/vbprvb_md.md)],  [!INCLUDE[csprcs](../../data-tools/includes/csprcs_md.md)], o  [!INCLUDE[jsprjscript](../../debugger/debug-interface-access/includes/jsprjscript_md.md)] programma con  **\/debug** opzione.  I file oggetti contengono riferimenti nel file con estensione pdb per le informazioni di debug.  Per ulteriori informazioni sui file PDB, vedere [File PDB](http://msdn.microsoft.com/it-it/1761c84e-8c2c-4632-9649-b5f99964ed3f).  Un'applicazione di diametro possibile utilizzare i seguenti passaggi generali per ottenere dettagli sui vari simboli, oggetti e dati elementari all'interno di un'immagine eseguibile.  
+# <a name="querying-the-pdb-file"></a>Ricerche nel file PDB
+Un file di database di programma (estensione pdb) è un file binario che contiene informazioni sul debug simbolici raccolti nel corso di compilazione e collegamento del progetto e tipo. Un file PDB viene creato quando si compila un programma C/C++ con **/ZI** o **/Zi** o [!INCLUDE[vbprvb](../../code-quality/includes/vbprvb_md.md)], [!INCLUDE[csprcs](../../data-tools/includes/csprcs_md.md)], o [!INCLUDE[jsprjscript](../../debugger/debug-interface-access/includes/jsprjscript_md.md)] programmare con il **/debug** opzione. File oggetto contengono riferimenti nel file con estensione PDB per le informazioni di debug. Per ulteriori informazioni sui file pdb, vedere [file PDB](http://msdn.microsoft.com/en-us/1761c84e-8c2c-4632-9649-b5f99964ed3f). Un'applicazione di DIA è possibile utilizzare i passaggi generali seguenti per ottenere i dettagli sui diversi simboli, oggetti e gli elementi di dati all'interno di un'immagine eseguibile.  
   
-### Per eseguire una query sul file pdb  
+### <a name="to-query-the-pdb-file"></a>Per eseguire query sul file con estensione pdb  
   
-1.  Acquisire un'origine dati creando [IDiaDataSource](../../debugger/debug-interface-access/idiadatasource.md) interfaccia.  
+1.  Acquisire un'origine dati creando un [IDiaDataSource](../../debugger/debug-interface-access/idiadatasource.md) interfaccia.  
   
-    ```cpp#  
+    ```C++  
     CComPtr<IDiaDataSource> pSource;  
     hr = CoCreateInstance( CLSID_DiaSource,  
                            NULL,  
@@ -44,9 +44,9 @@ Un file di database di programma \(estensione pdb\) è un file binario che conti
     }  
     ```  
   
-2.  chiamata [IDiaDataSource::loadDataFromPdb](../../debugger/debug-interface-access/idiadatasource-loaddatafrompdb.md) o  [IDiaDataSource::loadDataForExe](../../debugger/debug-interface-access/idiadatasource-loaddataforexe.md) per caricare le informazioni di debug.  
+2.  Chiamare [idiadatasource:: Loaddatafrompdb](../../debugger/debug-interface-access/idiadatasource-loaddatafrompdb.md) o [idiadatasource:: Loaddataforexe](../../debugger/debug-interface-access/idiadatasource-loaddataforexe.md) per caricare le informazioni di debug.  
   
-    ```cpp#  
+    ```C++  
     wchar_t wszFilename[ _MAX_PATH ];  
     mbstowcs( wszFilename, szFilename, sizeof( wszFilename )/sizeof( wszFilename[0] ) );  
     if ( FAILED( pSource->loadDataFromPdb( wszFilename ) ) )  
@@ -58,9 +58,9 @@ Un file di database di programma \(estensione pdb\) è un file binario che conti
     }  
     ```  
   
-3.  chiamata [IDiaDataSource::openSession](../../debugger/debug-interface-access/idiadatasource-opensession.md) per aprire  [IDiaSession](../../debugger/debug-interface-access/idiasession.md) per accedere alle informazioni di debug.  
+3.  Chiamare [idiadatasource:: OpenSession](../../debugger/debug-interface-access/idiadatasource-opensession.md) per aprire un [IDiaSession](../../debugger/debug-interface-access/idiasession.md) per ottenere l'accesso alle informazioni di debug.  
   
-    ```cpp#  
+    ```C++  
     CComPtr<IDiaSession> psession;  
     if ( FAILED( pSource->openSession( &psession ) ) )   
     {  
@@ -68,9 +68,9 @@ Un file di database di programma \(estensione pdb\) è un file binario che conti
     }  
     ```  
   
-4.  Utilizzare i metodi in `IDiaSession` per eseguire una query per i simboli nell'origine dati.  
+4.  Utilizzare i metodi in `IDiaSession` per eseguire query per i simboli nell'origine dati.  
   
-    ```cpp#  
+    ```C++  
     CComPtr<IDiaSymbol> pglobal;  
     if ( FAILED( psession->get_globalScope( &pglobal) ) )  
     {  
@@ -78,9 +78,9 @@ Un file di database di programma \(estensione pdb\) è un file binario che conti
     }  
     ```  
   
-5.  utilizzare `IDiaEnum*` interfacce da enumerare e analizzare dai simboli o altri elementi di informazioni di debug.  
+5.  Utilizzare il `IDiaEnum*` interfacce di enumerare e analizzare i simboli o altri elementi di informazioni di debug.  
   
-    ```cpp#  
+    ```C++  
     CComPtr<IDiaEnumTables> pTables;  
     if ( FAILED( psession->getEnumTables( &pTables ) ) )  
     {  
@@ -93,5 +93,5 @@ Un file di database di programma \(estensione pdb\) è un file binario che conti
     }  
     ```  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IDiaDataSource](../../debugger/debug-interface-access/idiadatasource.md)

@@ -1,0 +1,45 @@
+- name: Visual Studio Tools per AI
+  href: index.yml
+  items:
+    - name: Panoramica
+      items:
+        - name: Informazioni su Visual Studio Tools per AI
+          href: about-ai-tools.md
+    - name: Installazione
+      href: installation.md
+    - name: Guide rapide introduttive
+      items:
+        - name: Tensorflow + Python
+          href: tensorflow-local.md
+    - name: Esercitazioni
+      items:
+        - name: TensorFlow + Azure Deep Learning VM
+          href: tensorflow-vm.md
+    - name: Guide pratiche
+      items:
+        - name: Creare un progetto
+          items:
+            - name: Creare un progetto dalla raccolta di esempi
+              href: create-project-gallery.md
+            - name: Creare un progetto da codice esistente
+              href: create-project-existing.md
+            - name: Creare un progetto da un modello
+              href: create-project.md
+            - name: Creare un progetto da un repository GitHub
+              href: create-project-repo.md
+        - name: Eseguire il training del modello
+          href: train-model.md
+        - name: Visualizzare i dettagli di un processo
+          href: job-details.md
+        - name: Monitorare l'utilizzo della GPU
+          href: monitor-gpu.md
+        - name: Monitorare TensorBoard
+          href: monitor-tensorboard.md
+        - name: Gestire l'archiviazione
+          href: manage-storage.md
+    - name: Esempi
+      items:
+        - name: GitHub
+          href: 'https://github.com/Microsoft/samples-for-ai'
+        - name: Raccolta di Machine Learning
+          href: 'https://gallery.cortanaintelligence.com/projects'

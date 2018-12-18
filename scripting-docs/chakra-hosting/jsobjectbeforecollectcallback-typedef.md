@@ -1,23 +1,27 @@
 ---
-title: "Typedef JsObjectBeforeCollectCallback | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/18/2017"
-ms.prod: "windows-client-threshold"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
+title: Typedef JsObjectBeforeCollectCallback | Microsoft Docs
+ms.custom: 
+ms.date: 01/18/2017
+ms.prod: windows-client-threshold
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: reference
 ms.assetid: f21a064a-579f-44cb-9d21-76b62e8c18f5
-caps.latest.revision: 3
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.openlocfilehash: 7d11de01c44792d3e41cc2721a404f2ed906f02e
+ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/27/2017
 ---
-# Typedef JsObjectBeforeCollectCallback
+# <a name="jsobjectbeforecollectcallback-typedef"></a>Typedef JsObjectBeforeCollectCallback
 Callback chiamato prima della raccolta di un oggetto.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
 typedef void (CALLBACK *JsObjectBeforeCollectCallback)(  
@@ -26,18 +30,18 @@ typedef void (CALLBACK *JsObjectBeforeCollectCallback)(
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `ref`  
  Oggetto da raccogliere.  
   
  `callbackState`  
  Stato passato a `JsSetObjectBeforeCollectCallback`.  
   
-## Note  
+## <a name="remarks"></a>Note  
  Questa API è supportata solo in modalità Edge.  
   
-## Requisiti  
+## <a name="requirements"></a>Requisiti  
  jsrt.h  
   
-## Vedere anche  
- [Riferimenti \(Runtime JavaScript\)](../chakra-hosting/reference-javascript-runtime.md)
+## <a name="see-also"></a>Vedere anche  
+ [Riferimenti (Runtime JavaScript)](../chakra-hosting/reference-javascript-runtime.md)

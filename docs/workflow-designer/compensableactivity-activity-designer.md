@@ -1,46 +1,50 @@
 ---
-title: "ActivityDesigner CompensableActivity | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "System.Activities.Statements.CompensableActivity.UI"
+title: ActivityDesigner CompensableActivity | Documenti Microsoft
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords: System.Activities.Statements.CompensableActivity.UI
 ms.assetid: e0340d89-d39e-4a52-8557-13e27040d7b5
-caps.latest.revision: 6
-author: "ErikRe"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 6
+caps.latest.revision: "6"
+author: ErikRe
+ms.author: erikre
+manager: erikre
+ms.workload: multiple
+ms.openlocfilehash: 670fc24ee800794bd9b013d5e5aaab6dbb98bcd9
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
-# ActivityDesigner CompensableActivity
-L'ActivityDesigner **CompensableActivity** viene utilizzato per creare e configurare un'attività <xref:System.Activities.Statements.CompensableActivity>.  
+# <a name="compensableactivity-activity-designer"></a>ActivityDesigner CompensableActivity
+Il **CompensableActivity** ActivityDesigner viene utilizzato per creare e configurare un <xref:System.Activities.Statements.CompensableActivity> attività.  
   
-## Attività CompensableActivity  
+## <a name="the-compensableactivity-activity"></a>Attività CompensableActivity  
  <xref:System.Activities.Statements.CompensableActivity> definisce un'unità di lavoro che può essere confermata o compensata dopo l'esito positivo del completamento.  
   
-### Utilizzo dell'ActivityDesigner CompensableActivity  
- L'ActivityDesigner **CompensableActivity** è disponibile nella categoria **Transazione** della **Casella degli strumenti**, a cui è possibile accedere facendo clic sulla scheda **Casella degli strumenti** a sinistra della [!INCLUDE[wfd2](../workflow-designer/includes/wfd2_md.md)]. In alternativa, scegliere **Barra degli strumenti** dal menu **Visualizza** o premere la combinazione CTRL\+ALT\+X.  
+### <a name="using-the-compensableactivity-activity-designer"></a>Utilizzo dell'ActivityDesigner CompensableActivity  
+ Il **CompensableActivity** ActivityDesigner è reperibile nel **transazione** categoria del **della casella degli strumenti**, accessibile facendo clic il **della casella degli strumenti**  scheda sul lato sinistro del [!INCLUDE[wfd2](../workflow-designer/includes/wfd2_md.md)] (in alternativa, selezionare **barra degli strumenti** dal **vista** menu oppure premere CTRL + ALT + X.)  
   
- L'ActivityDesigner **CompensableActivity** può essere trascinato dalla **Casella degli strumenti** e rilasciato nel punto in cui vengono in genere posizionate le attività nell'area della [!INCLUDE[wfd2](../workflow-designer/includes/wfd2_md.md)], , ad esempio all'interno di un elemento <xref:System.Activities.Statements.Sequence>.In questo modo viene creata un'attività <xref:System.Activities.Statements.CompensableActivity> con un elemento <xref:System.Activities.Activity.DisplayName%2A> predefinito di CompensableActivity.È possibile modificare il valore di <xref:System.Activities.Activity.DisplayName%2A> nell'intestazione dell'ActivityDesigner **CompensableActivity** o nella casella**DisplayName** della griglia delle proprietà.  
+ Il **CompensableActivity** da, è possibile trascinare l'ActivityDesigner di **della casella degli strumenti** e rilasciato nel [!INCLUDE[wfd2](../workflow-designer/includes/wfd2_md.md)] area ovunque posizionate le attività vengono in genere, ad esempio all'interno un <xref:System.Activities.Statements.Sequence>. In questo modo viene creata un'attività <xref:System.Activities.Statements.CompensableActivity> con un elemento <xref:System.Activities.Activity.DisplayName%2A> predefinito di CompensableActivity. Il <xref:System.Activities.Activity.DisplayName%2A> possibile modificare il valore nell'intestazione del **CompensableActivity** ActivityDesigner o nel **DisplayName** casella della griglia delle proprietà.  
   
-### Proprietà di CompensableActivity  
- Nella tabella seguente sono elencate le proprietà di <xref:System.Activities.Statements.CompensableActivity> e ne viene descritta la modalità di utilizzo nella finestra di progettazione.È possibile modificare le proprietà <xref:System.Activities.Activity.DisplayName%2A> e <xref:System.Activities.Activity%601.Result%2A> nella griglia delle proprietà ma le altre proprietà devono essere modificate nell'area di [!INCLUDE[wfd2](../workflow-designer/includes/wfd2_md.md)].  
+### <a name="the-compensableactivity-properties"></a>Proprietà di CompensableActivity  
+ Nella tabella seguente sono elencate le proprietà di <xref:System.Activities.Statements.CompensableActivity> e ne viene descritta la modalità di utilizzo nella finestra di progettazione. È possibile modificare le proprietà <xref:System.Activities.Activity.DisplayName%2A> e <xref:System.Activities.Activity%601.Result%2A> nella griglia delle proprietà ma le altre proprietà devono essere modificate nell'area di [!INCLUDE[wfd2](../workflow-designer/includes/wfd2_md.md)].  
   
-|Nome proprietà|Obbligatoria|Utilizzo|  
-|--------------------|------------------|--------------|  
-|<xref:System.Activities.Activity.DisplayName%2A>|False|Nome descrittivo facoltativo dell'attività <xref:System.Activities.Statements.CompensableActivity>.Il valore predefinito è CompensableActivity.|  
-|<xref:System.Activities.Activity%601.Result%2A>|False|Specifica il valore restituito di <xref:System.Activities.Statements.CompensableActivity>.Questa proprietà deve essere modificata nella griglia delle proprietà.|  
-|<xref:System.Activities.Statements.CompensableActivity.Body%2A>|True|Specifica l'attività per la quale viene fornita la logica di compensazione, di annullamento e di conferma.Per aggiungere l'attività <xref:System.Activities.Statements.CompensableActivity.Body%2A>, rilasciare un'attività dalla **Casella degli strumenti** nella casella **Body** dell'ActivityDesigner **CompensableActivity** con il testo di suggerimento "Rilasciare l'attività".|  
-|<xref:System.Activities.Statements.CompensableActivity.CancellationHandler%2A>|False|Specifica l'attività eseguita in caso di annullamento.Per aggiungere l'attività, rilasciarne la finestra di progettazione dalla **Casella degli strumenti** nella casella **CancellationHandler** dell'ActivityDesigner **CompensableActivity** con il testo di suggerimento "Rilasciare l'attività".|  
-|<xref:System.Activities.Statements.CompensableActivity.CompensationHandler%2A>|False|Specifica l'attività da eseguire quando si esegue la compensazione per l'attività <xref:System.Activities.Statements.CompensableActivity.Body%2A>.È possibile richiamare questo gestore in modo esplicito utilizzando l'attività <xref:System.Activities.Statements.Compensate>.<br /><br /> Per aggiungere l'attività, rilasciarne la finestra di progettazione dalla **Casella degli strumenti** nella casella **CompensationHandler** dell'ActivityDesigner **CompensableActivity** con il testo di suggerimento "Rilasciare l'attività".|  
-|<xref:System.Activities.Statements.CompensableActivity.ConfirmationHandler%2A>|False|Specifica l'attività da eseguire quando si conferma l'attività <xref:System.Activities.Statements.CompensableActivity.Body%2A>.È possibile richiamare questo gestore in modo esplicito utilizzando l'attività <xref:System.Activities.Statements.Confirm>.<br /><br /> Per aggiungere l'attività, rilasciarne la finestra di progettazione dalla **Casella degli strumenti** nella casella **ConfirmationHandler** dell'ActivityDesigner **CompensableActivity** con il testo di suggerimento "Rilasciare l'attività".|  
+|Nome proprietà|Obbligatorio|Utilizzo|  
+|-------------------|--------------|-----------|  
+|<xref:System.Activities.Activity.DisplayName%2A>|False|Nome descrittivo facoltativo dell'attività <xref:System.Activities.Statements.CompensableActivity>. Il valore predefinito è CompensableActivity.|  
+|<xref:System.Activities.Activity%601.Result%2A>|False|Specifica il valore restituito di <xref:System.Activities.Statements.CompensableActivity>. Questa proprietà deve essere modificata nella griglia delle proprietà.|  
+|<xref:System.Activities.Statements.CompensableActivity.Body%2A>|True|Specifica l'attività per la quale viene fornita la logica di compensazione, di annullamento e di conferma. Per aggiungere il <xref:System.Activities.Statements.CompensableActivity.Body%2A> attività, trascinare un'attività dal **della casella degli strumenti** nel **corpo** casella il **CompensableActivity** ActivityDesigner con testo di suggerimento "Drop attività".|  
+|<xref:System.Activities.Statements.CompensableActivity.CancellationHandler%2A>|False|Specifica l'attività eseguita in caso di annullamento. Per aggiungere l'attività, eliminare la finestra di progettazione dal **della casella degli strumenti** nel **CancellationHandler** casella il **CompensableActivity** ActivityDesigner con testo di suggerimento "Drop Attività".|  
+|<xref:System.Activities.Statements.CompensableActivity.CompensationHandler%2A>|False|Specifica l'attività da eseguire quando si esegue la compensazione per l'attività <xref:System.Activities.Statements.CompensableActivity.Body%2A>. È possibile richiamare questo gestore in modo esplicito usando l'attività <xref:System.Activities.Statements.Compensate>.<br /><br /> Per aggiungere l'attività, rilasciarne la finestra di progettazione dal **della casella degli strumenti** nel **CompensationHandler** casella il **CompensableActivity** ActivityDesigner con testo di suggerimento " Rilasciare l'attività".|  
+|<xref:System.Activities.Statements.CompensableActivity.ConfirmationHandler%2A>|False|Specifica l'attività da eseguire quando si conferma l'attività <xref:System.Activities.Statements.CompensableActivity.Body%2A>. È possibile richiamare questo gestore in modo esplicito usando l'attività <xref:System.Activities.Statements.Confirm>.<br /><br /> Per aggiungere l'attività, rilasciarne la finestra di progettazione dal **della casella degli strumenti** nel **ConfirmationHandler** casella il **CompensableActivity** ActivityDesigner con testo di suggerimento " Rilasciare l'attività".|  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Transazione](../workflow-designer/transaction-activity-designers.md)   
  [CancellationScope](../workflow-designer/cancellationscope-activity-designer.md)   
- [Compensate](../workflow-designer/compensate-activity-designer.md)   
- [Confirm](../workflow-designer/confirm-activity-designer.md)   
+ [Compensare](../workflow-designer/compensate-activity-designer.md)   
+ [Conferma](../workflow-designer/confirm-activity-designer.md)   
  [TransactionScope](../workflow-designer/transactionscope-activity-designer.md)

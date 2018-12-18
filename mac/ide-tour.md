@@ -1,19 +1,17 @@
 ---
-title: Presentazione di Visual Studio per Mac
+title: Presentazione di Visual Studio per Mac | Microsoft Docs
 description: Visual Studio per Mac offre un ambiente di sviluppo integrato per creare applicazioni .NET in macOS, inclusi siti Web ASP.NET Core e progetti Xamarin per iOS, Android, Mac e Xamarin.Forms.
 author: asb3993
 ms.author: amburns
 ms.date: 04/14/2017
 ms.topic: article
 ms.assetid: 7DC64A52-AA41-4F3A-A8A1-8A20BCD81CC7
+ms.openlocfilehash: 0f8f3ba04d4e5a8949bc57cb8cf61d470690d786
+ms.sourcegitcommit: f40311056ea0b4677efcca74a285dbb0ce0e7974
 ms.translationtype: HT
-ms.sourcegitcommit: e2b7ff9126e1cc38ac2e58d6be339b656a024e7f
-ms.openlocfilehash: 04f7ec6474aafedeccdbbf704486c431a4258f61
-ms.contentlocale: it-it
-ms.lasthandoff: 08/11/2017
-
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/31/2017
 ---
-
 # <a name="visual-studio-for-mac-tour"></a>Presentazione di Visual Studio per Mac
 
 Visual Studio per Mac fa evolvere Xamarin Studio, l'IDE di Xamarin incentrato sui dispositivi mobili, in un ambiente di sviluppo mobile-first, cloud-first per Mac. Questo strumento per sviluppatori permette di sfruttare la potenza di .NET per creare applicazioni per tutte le piattaforme, per soddisfare le esigenze degli utenti.
@@ -57,7 +55,7 @@ In questa posizione i file per il codice sorgente, le risorse, l'interfaccia ute
 
 Per altre informazioni sull'uso di progetti e soluzioni in Visual Studio per Mac, vedere [Progetti e soluzioni](~/projects-and-solutions.md).
 
-## <a name="assembly-references"></a>Riferimenti ad assembly
+## <a name="assembly-references"></a>Riferimenti dell'assembly
  
 I riferimenti ad assembly per ogni progetto sono disponibili nella cartella Riferimenti illustrata di seguito:
 

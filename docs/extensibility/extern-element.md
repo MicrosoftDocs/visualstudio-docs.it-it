@@ -4,39 +4,24 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- vs-ide-sdk
+ms.technology: vs-ide-sdk
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords:
-- Extern
+f1_keywords: Extern
 helpviewer_keywords:
 - VSCT XML schema elements, Extern
 - Extern element (VSCT XML schema)
 ms.assetid: db6c3ddd-a1ba-450a-897a-bb568a5377fc
-caps.latest.revision: 15
+caps.latest.revision: "15"
+author: gregvanl
 ms.author: gregvanl
 manager: ghogen
-translation.priority.mt:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.workload: vssdk
+ms.openlocfilehash: ff198f5c4b574bf3a27ae1ee8fb6ffdd482c7f71
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
 ms.translationtype: MT
-ms.sourcegitcommit: 47057e9611b824c17077b9127f8d2f8b192d6eb8
-ms.openlocfilehash: d4559aa03af16faf955594c3850281e6cf7b4903
-ms.contentlocale: it-it
-ms.lasthandoff: 09/06/2017
-
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="extern-element"></a>Elemento extern
 L'elemento Extern fa riferimento a tutti i file esterni intestazione (h) di tipo merge con il file con estensione vsct in fase di compilazione. I file da unire devono trovarsi nel percorso di inclusione specificato per il compilatore VSCT o a cui fa riferimento un [elemento Include](../extensibility/include-element.md). I file potrebbero essere altri file con estensione vsct o file di intestazione C++.  
@@ -60,8 +45,8 @@ Elemento extern
 |Attributo|Descrizione|  
 |---------------|-----------------|  
 |href|Obbligatorio. Il percorso al file di intestazione:<br /><br /> href="stdidcmd.h"|  
-|Condizione|Parametro facoltativo. Vedere [attributi condizionali](../extensibility/vsct-xml-schema-conditional-attributes.md).|  
-|language|Parametro facoltativo. La lingua predefinita di tutte [ \<stringhe >](../extensibility/strings-element.md) elementi della tabella di comando:<br /><br /> Language = "en-us"|  
+|Condizione|Facoltativo. Vedere [attributi condizionali](../extensibility/vsct-xml-schema-conditional-attributes.md).|  
+|language|Facoltativo. La lingua predefinita di tutte [ \<stringhe >](../extensibility/strings-element.md) elementi della tabella di comando:<br /><br /> Language = "en-us"|  
   
 ### <a name="child-elements"></a>Elementi figlio  
   

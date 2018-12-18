@@ -4,36 +4,19 @@ ms.custom:
 ms.date: 05/02/2017
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- vs-devops-test
+ms.technology: vs-devops-test
 ms.tgt_pltfrm: 
 ms.topic: article
-helpviewer_keywords:
-- unit testing, create unit tests
-ms.assetid: 9DE41406-8D39-427E-99D9-987E99103B73
-caps.latest.revision: 56
-ms.author: douge
-manager: douge
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: c559290c8e88c8b4e37feabc7014188fad15434d
-ms.openlocfilehash: b36882588281fc95ff4814c148cd428d09196fa1
-ms.contentlocale: it-it
-ms.lasthandoff: 06/08/2017
-
+helpviewer_keywords: unit testing, create unit tests
+ms.author: gewarren
+manager: ghogen
+ms.workload: multiple
+author: gewarren
+ms.openlocfilehash: 0da910ddf48d0f270aa5e624628d0d6b937e9ae1
+ms.sourcegitcommit: 7ae502c5767a34dc35e760ff02032f4902c7c02b
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 01/09/2018
 ---
 # <a name="developer-testing-tools-scenarios-and-capabilities"></a>Strumenti di test, scenari e funzionalità per sviluppatori
 
@@ -68,7 +51,7 @@ IntelliTest riduce significativamente l'impegno necessario per creare e gestire 
 
 Testare l'interfaccia utente (UI) con le soluzioni più popolari o approvate dalla community.
 I test codificati dell'interfaccia utente consentono di creare test completamente automatici per convalidare le funzionalità e il comportamento dell'interfaccia utente dell'applicazione.
-Sono in grado di automatizzare il testing dell'interfaccia utente in diverse tecnologie, tra cui le app di Windows Store basate su XAML, le app browser e le app di SharePoint.
+Sono in grado di automatizzare il testing dell'interfaccia utente in diverse tecnologie, tra cui le app UWP basate su XAML, le app browser e le app di SharePoint.
 
 Sia che si scelgano i test codificati dell'interfaccia utente più evoluti, sia che si usino test generici basati su browser con Selenium, Visual Studio offre tutti gli strumenti necessari. 
 
@@ -76,7 +59,7 @@ Sia che si scelgano i test codificati dell'interfaccia utente più evoluti, sia 
 
 * [Usare l'automazione dell'interfaccia utente per testare il codice](use-ui-automation-to-test-your-code.md)
 * [Creazione, modifica e gestione di un test codificato dell'interfaccia utente](walkthrough-creating-editing-and-maintaining-a-coded-ui-test.md)
-* [Testare app di Windows Store 8.1 e UWP con test codificati dell'interfaccia utente](test-windows-store-8-1-apps-with-coded-ui-tests.md)
+* [Testare app UWP con test codificati dell'interfaccia utente](test-windows-store-8-1-apps-with-coded-ui-tests.md)
 * [Testare app di Windows Phone 8.1 e UWP con test codificati dell'interfaccia utente](test-windows-phone-8-1-apps-with-coded-ui-tests.md)
 * [Test delle applicazioni di SharePoint 2010 con test codificati dell'interfaccia utente](testing-sharepoint-2010-applications-with-coded-ui-tests.md)
 * [Lab sull'esecuzione di test codificati dell'interfaccia utente con Visual Studio Enterprise](http://download.microsoft.com/download/6/2/B/62B60ECE-B9DC-4E8A-A97C-EA261BFB935E/Docs/Introduction%20to%20Coded%20UI%20Tests%20with%20Visual%20Studio%20Enterprise%202015.docx)
@@ -105,17 +88,16 @@ Esplora test consente agli sviluppatori di creare, gestire e ottenere il massimo
 
 * [Eseguire unit test del codice](unit-test-your-code.md)
 * [Eseguire unit test con Esplora test](run-unit-tests-with-test-explorer.md)
-* [Scrittura di unit test per C/C++](writing-unit-tests-for-c-cpp-with-the-microsoft-unit-testing-framework-for-cpp.md)
+* [Scrittura di unit test per C/C++](writing-unit-tests-for-c-cpp.md)
 * [Installare framework di unit test di terze parti](install-third-party-unit-test-frameworks.md)
 
 Visual Studio è anche estendibile e consente l'uso di adattatori di unit test di terze parti come NUnit e xUnit.net. Inoltre, la funzionalità di clonazione del codice implica la produzione di software di qualità elevata poiché consente di identificare i blocchi di codice semanticamente simile che possono essere candidati per le normali operazioni di refactoring o correzione di bug.
 
 ![Integrazione con test di terze parti](media/devtest-thirdparty.png)
 
-## <a name="also-see"></a>Vedere anche
+## <a name="see-also"></a>Vedere anche
 
 * [Introduzione agli unit test](getting-started-with-unit-testing.md)
 * [Post di blog su come velocizzare l'esecuzione di unit test in Team Foundation Server](http://blogs.msdn.com/b/visualstudioalm/archive/2015/07/30/speeding-up-test-execution-in-tfs.aspx)
 * [Post di blog sull'esecuzione di unit test paralleli e sensibili al contesto](https://blogs.msdn.microsoft.com/visualstudioalm/2016/02/08/parallel-and-context-sensitive-test-execution-with-visual-studio-2015-update-1/)
 * [Lab su unit test, code coverage e analisi dei cloni di codice con Visual Studio](http://download.microsoft.com/download/6/2/B/62B60ECE-B9DC-4E8A-A97C-EA261BFB935E/Docs/Unit%20Testing,%20Code%20Coverage%20and%20Code%20Clone%20Analysis%20with%20Visual%20Studio%202015.docx)
-

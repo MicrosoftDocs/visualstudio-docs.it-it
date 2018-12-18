@@ -1,40 +1,22 @@
 ---
-title: Configurazioni e piattaforme supportate per i test codificati dell&quot;interfaccia utente e le registrazioni delle azioni | Microsoft Docs
+title: Configurazioni e piattaforme supportate per i test codificati dell'interfaccia utente e le registrazioni delle azioni | Microsoft Docs
 ms.custom: 
 ms.date: 2015-10-04
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- vs-devops-test
+ms.technology: vs-devops-test
 ms.tgt_pltfrm: 
 ms.topic: article
-helpviewer_keywords:
-- coded UI tests
-ms.assetid: 544742b5-4ec1-4d51-b941-72b2f6ff17bc
-caps.latest.revision: 106
-ms.author: douge
-manager: douge
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 47057e9611b824c17077b9127f8d2f8b192d6eb8
-ms.openlocfilehash: cbc542a413b63b4da4a4d8699c06b313ff32f86c
-ms.contentlocale: it-it
-ms.lasthandoff: 05/13/2017
-
+helpviewer_keywords: coded UI tests
+ms.author: gewarren
+manager: ghogen
+ms.workload: multiple
+author: gewarren
+ms.openlocfilehash: d2cc29115108b1a5d308a227ed0be30d44e56d67
+ms.sourcegitcommit: 7ae502c5767a34dc35e760ff02032f4902c7c02b
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 01/09/2018
 ---
 # <a name="supported-configurations-and-platforms-for-coded-ui-tests-and-action-recordings"></a>Configurazioni e piattaforme supportate per i test codificati dell'interfaccia utente e le registrazioni delle azioni
 La tabella seguente riporta le configurazioni e le piattaforme supportate per i test codificati dell'interfaccia utente per Visual Studio Enterprise. Queste configurazioni si applicano anche alle registrazioni delle azioni create tramite [!INCLUDE[MTRlong](../test/includes/mtrlong_md.md)].  
@@ -63,9 +45,9 @@ La tabella seguente riporta le configurazioni e le piattaforme supportate per i 
 |Piattaforma|Livello di supporto|  
 |--------------|----------------------|  
 |App di Windows Phone|Sono supportate solo le app Phone basate su WinRT-XAML.|  
-|App di Windows Store|Sono supportate solo le app Store basate su XAML.|  
+|App UWP|Sono supportate solo le app UWP basate su XAML.|  
 |App di Windows universale|Sono supportate solo le app di Windows universale basate su XAML per desktop e telefono.|  
-|Microsoft Edge|In Visual Studio 2015 Update 2 e versioni successive mediante l'[estensione di test codificato dell'interfaccia utente tra browser](https://visualstudiogallery.msdn.microsoft.com/11cfc881-f8c9-4f96-b303-a2780156628d)|  
+|Microsoft Edge|La registrazione dei passaggi dell'azione o l'utilizzo del generatore per la visualizzazione delle proprietà dell'oggetto non è supportata. I test possono essere riprodotti nei browser Edge, usando Visual Studio 2015 Update 2 e versioni successive tramite [l'estensione di test codificati dell'interfaccia utente tra più browser](https://visualstudiogallery.msdn.microsoft.com/11cfc881-f8c9-4f96-b303-a2780156628d)|  
 |Internet Explorer 8<br /><br /> Internet Explorer 9<br /><br /> Internet Explorer 10 **Importante:**  Internet Explorer 10 è supportato solo su desktop. <br /><br /> Internet Explorer 11 **Importante:**  Internet Explorer 11 è supportato solo su desktop.|Completamente supportato.<br /><br /> -   **Supporto per HTML5 in Internet Explorer 9 e in Internet Explorer 10** - Registrazione, riproduzione e convalida dei test codificati dell'interfaccia utente dei controlli HTML5: audio, video, ProgressBar e dispositivo di scorrimento. Per altre informazioni, vedere [Uso dei controlli HTML5 nei test codificati dell'interfaccia utente](../test/using-html5-controls-in-coded-ui-tests.md). **Avviso:**      Un test codificato dell'interfaccia utente creato in Internet Explorer 10 potrebbe non funzionare in Internet Explorer 9 o Internet Explorer 8. Questo perché Internet Explorer 10 include controlli HTML5 come audio, video, ProgressBar e dispositivo di scorrimento. Questi controlli HTML5 non sono riconosciuti da Internet Explorer 9 o da Internet Explorer 8. Analogamente, il test codificato dell'interfaccia utente creato in Internet Explorer 9 potrebbe includere alcuni controlli HTML5 non riconosciuti in Internet Explorer 8.<br />-   **Supporto per il controllo ortografico in Internet Explorer 10** - Internet Explorer 10 include funzionalità di controllo ortografico per tutte le caselle di testo. In tal modo è possibile scegliere da un elenco di correzioni suggerite. Il test codificato dell'interfaccia utente ignorerà le azioni dell'utente, come ad esempio la selezione di un suggerimento alternativo di ortografia. Solo il testo finale digitato nella casella di testo verrà registrato.<br />     Per il test codificato dell'interfaccia utente che usa il controllo ortografico vengono registrate le azioni seguenti: Aggiungi al dizionario, Copia, Seleziona tutto e Ignora.<br />-   **Supporto per Internet Explorer 64 bit in esecuzione in Windows 8** - In precedenza, le versioni a 64 bit di Internet Explorer non erano supportate per la registrazione e la riproduzione. Con [!INCLUDE[win8](../debugger/includes/win8_md.md)] e [!INCLUDE[vs_dev11_long](../data-tools/includes/vs_dev11_long_md.md)], i test codificati dell'interfaccia utente sono stati abilitati per le versioni a 64 bit di Internet Explorer. **Avviso:**      Il supporto a 64 bit in Internet Explorer si applica solo quando si esegue [!INCLUDE[win8](../debugger/includes/win8_md.md)] o versioni successive.<br />-   **Supporto per i siti aggiunti in Internet Explorer 9** - In Internet Explorer 9 sono stati introdotti i siti aggiunti. Con i siti aggiunti è possibile accedere ai siti preferiti direttamente dalla barra delle applicazioni di Windows, senza dover prima aprire Internet Explorer. I test codificati dell'interfaccia utente possono ora generare azioni di intenzione sui siti aggiunti. Per altre informazioni sui siti aggiunti, vedere [Siti aggiunti](http://go.microsoft.com/fwlink/?LinkId=220037).<br />-   **Supporto per tag di Internet Explorer 9** - Con Internet Explorer 9 sono stati introdotti i seguenti tag semantici: section, nav, article, aside, hgroup, header, footer, figure, figcaption e mark. I test codificati dell'interfaccia utente ignorano tutti questi tag semantici durante la registrazione. È possibile aggiungere asserzioni a questi tag usando il generatore di test codificati dell'interfaccia utente. È possibile usare il riquadro di navigazione nel generatore di test codificati dell'interfaccia utente per passare a uno di questi elementi e visualizzarne le proprietà.<br />-   **Gestione facilitata degli spazi vuoti tra le versioni di Internet Explorer** - Esistono alcune differenze nella gestione degli spazi vuoti in Internet Explorer 8, Internet Explorer 9 e Internet Explorer 10. Il test codificato dell'interfaccia utente gestisce le differenze senza problemi. Un test codificato dell'interfaccia utente creato in Internet Explorer 8 ad esempio, viene quindi riprodotto correttamente in Internet Explorer 9 e in Internet Explorer 10.<br />-   **L'area di notifica di Internet Explorer viene ora registrata con l'attributo "Continua in caso di errore" impostato:**  Tutte le azioni sull'area di notifica di Internet Explorer vengono registrate con l'attributo "Continua in caso di errore" impostato. Se la barra di notifica non viene visualizzata durante la riproduzione, le azioni verranno ignorate e il test codificato dell'interfaccia utente proseguirà con l'azione successiva.|  
 |Controlli di terze parti WPF e Windows Forms|Completamente supportato.<br /><br /> Per abilitare i controlli di terze parti nelle applicazioni Windows Form e WPF, è necessario aggiungere i riferimenti e il codice. Per altre informazioni, vedere la pagina [Abilitare il test codificato dell'interfaccia utente per i controlli](../test/enable-coded-ui-testing-of-your-controls.md).|  
 |Internet Explorer 6<br /><br /> Internet Explorer 7|Non supportato.|  
@@ -87,7 +69,6 @@ La tabella seguente riporta le configurazioni e le piattaforme supportate per i 
   
  Per altre informazioni sulla creazione di estensioni per supportare altre piattaforme, vedere [Abilitare il test codificato dell'interfaccia utente per i controlli](../test/enable-coded-ui-testing-of-your-controls.md) ed [Estensione di test codificati dell'interfaccia utente e registrazioni delle azioni per supportare Microsoft Excel](../test/extending-coded-ui-tests-and-action-recordings-to-support-microsoft-excel.md).  
   
-## <a name="see-also"></a>Vedere anche  
- [Usare l'automazione dell'interfaccia utente per testare il codice](../test/use-ui-automation-to-test-your-code.md)   
- [Generazione di un test codificato dell'interfaccia utente da una registrazione delle azioni esistente](/devops-test-docs/test/generating-a-coded-ui-test-from-an-existing-action-recording)
+## <a name="see-also"></a>Vedere anche
 
+[Usare l'automazione dell'interfaccia utente per testare il codice](../test/use-ui-automation-to-test-your-code.md)  

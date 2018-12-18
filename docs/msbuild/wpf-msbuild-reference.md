@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- vs-ide-sdk
+ms.technology: msbuild
 ms.tgt_pltfrm: 
 ms.topic: article
 dev_langs:
@@ -17,35 +16,22 @@ helpviewer_keywords:
 - build support [WPF]
 - MSBuild [WPF]
 ms.assetid: 94b12890-365d-479a-b239-71109fbcb462
-caps.latest.revision: 4
-author: kempb
-ms.author: kempb
+caps.latest.revision: 
+author: Mikejo5000
+ms.author: mikejo
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 5ea9179ad37514ffad4876177b05150eecc22def
-ms.openlocfilehash: 126bcc37899efcc373f2bd92c054a02d6e4aca6b
-ms.contentlocale: it-it
-ms.lasthandoff: 05/24/2017
-
+ms.workload:
+- multiple
+ms.openlocfilehash: c059d22b5b29e524f4c230b7fd9fb5a20ab2fbb3
+ms.sourcegitcommit: 205d15f4558315e585c67f33d5335d5b41d0fcea
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 02/09/2018
 ---
 # <a name="wpf-msbuild-reference"></a>Informazioni di riferimento su MSBuild WPF
 Windows Presentation Foundation (WPF) estende Microsoft Build Engine (MSBuild) con supporto aggiuntivo per la compilazione, documentato in questa sezione.  
   
-## <a name="in-this-section"></a>Contenuto della sezione  
+## <a name="in-this-section"></a>In questa sezione  
  [File con estensione targets](../msbuild/wpf-dot-targets-files.md)  
  Descrive i file WPF con estensione targets.  
   

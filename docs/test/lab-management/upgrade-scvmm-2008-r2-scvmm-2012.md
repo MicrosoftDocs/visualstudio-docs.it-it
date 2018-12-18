@@ -4,36 +4,19 @@ ms.custom:
 ms.date: 05/02/2017
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- vs-devops-test
+ms.technology: vs-devops-test
 ms.tgt_pltfrm: 
 ms.topic: article
-helpviewer_keywords:
-- Upgrade SCVMM 2008 R2 to SCVMM 2012, test lab
-ms.assetid: 5be92444-c701-43c7-8b2a-77df8e02bc27
-caps.latest.revision: 56
-ms.author: douge
-manager: douge
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 45d36934cf1c46902cac566203cddf4a118b7fe4
-ms.openlocfilehash: b7874e87ea81bf6b0818b4b9eefba0f86bd2a2e2
-ms.contentlocale: it-it
-ms.lasthandoff: 06/02/2017
-
+helpviewer_keywords: Upgrade SCVMM 2008 R2 to SCVMM 2012, test lab
+ms.author: gewarren
+manager: ghogen
+ms.workload: multiple
+author: gewarren
+ms.openlocfilehash: 51d907dfe25d8f27065b2a4d8bbecaa3e98e42a1
+ms.sourcegitcommit: 7ae502c5767a34dc35e760ff02032f4902c7c02b
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 01/09/2018
 ---
 # <a name="upgrade-scvmm-2008-r2-to-scvmm-2012"></a>Aggiornamento di SCVMM 2008 R2 a SCVMM 2012
 
@@ -77,4 +60,3 @@ Dopo l'esecuzione del comando **upgradeSCVMM**, prima di iniziare a usare Lab Ma
 ## <a name="see-also"></a>Vedere anche
 
 * [Modificare le configurazioni di Lab Management esistenti](https://msdn.microsoft.com/library/ee704508%28v=vs.140%29.aspx)
-

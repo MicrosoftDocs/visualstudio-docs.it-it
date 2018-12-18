@@ -1,43 +1,29 @@
 ---
-title: "Aggiungere proprietà personalizzate a diagrammi di dipendenza | Documenti di Microsoft"
+title: "Aggiungere proprietà personalizzate ai diagrammi dipendenza | Documenti Microsoft"
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.tgt_pltfrm: 
 ms.topic: article
 helpviewer_keywords:
 - dependency diagrams, adding custom properties
-ms.assetid: 52b3ac25-d10b-4507-a1fe-209ccb4d2777
-caps.latest.revision: 21
-author: alexhomer1
-ms.author: ahomer
-manager: douge
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: 8f84f22444a5df5b9f4f4af44cd8ee9136403467
-ms.openlocfilehash: 6c7e43c180ac5210d9c29961ed7330b370a99075
-ms.lasthandoff: 02/22/2017
-
+author: gewarren
+ms.author: gewarren
+manager: ghogen
+ms.workload:
+- multiple
+ms.technology: vs-ide-modeling
+ms.openlocfilehash: f05c5f5a16b0d44794bf6fdcc6990a206dec30f5
+ms.sourcegitcommit: 205d15f4558315e585c67f33d5335d5b41d0fcea
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 02/09/2018
 ---
-# <a name="add-custom-properties-to-dependency-diagrams"></a>Aggiungere proprietà personalizzate a diagrammi di dipendenza
-Quando si scrive codice delle estensioni per diagrammi di dipendenza, è possibile archiviare i valori con qualsiasi elemento in un diagramma di dipendenza. I valori saranno permanenti quando il diagramma viene salvato e riaperto. È possibile configurare anche queste proprietà vengono visualizzate nel **proprietà** finestra in modo che gli utenti possono vedere e modificarli. Ad esempio, è possibile consentire agli utenti di specificare un'espressione regolare per ogni livello e scrivere il codice di convalida per verificare che i nomi delle classi in ogni livello siano conformi al modello specificato dall'utente.  
+# <a name="add-custom-properties-to-dependency-diagrams"></a>Aggiungere proprietà personalizzate ai diagrammi di dipendenza
+Quando si scrive codice di estensione per i diagrammi di dipendenza, è possibile archiviare i valori con qualsiasi elemento in un diagramma di dipendenza. I valori saranno permanenti quando il diagramma viene salvato e riaperto. È inoltre possibile impostare queste proprietà vengono visualizzate nel **proprietà** finestra in modo che gli utenti possono vedere e modificarli. Ad esempio, è possibile consentire agli utenti di specificare un'espressione regolare per ogni livello e scrivere il codice di convalida per verificare che i nomi delle classi in ogni livello siano conformi al modello specificato dall'utente.  
   
 ## <a name="properties-not-visible-to-the-user"></a>Proprietà non visibili all'utente  
- Se si desidera semplicemente il codice associ i valori a qualsiasi elemento in un diagramma di dipendenza, è necessario definire un componente MEF. Esiste un dizionario denominato `Properties` <xref:Microsoft.VisualStudio.ArchitectureTools.Extensibility.Layer.ILayerElement>.</xref:Microsoft.VisualStudio.ArchitectureTools.Extensibility.Layer.ILayerElement> Aggiungere semplicemente i valori marshalable al dizionario di qualsiasi elemento del livello. I valori saranno salvati come parte del diagramma delle dipendenze. Per ulteriori informazioni, vedere [Naviga e aggiornare i modelli nel codice del programma di livello](../modeling/navigate-and-update-layer-models-in-program-code.md).  
+ Se si desidera solo il codice associ i valori a qualsiasi elemento in un diagramma di dipendenze, è necessario definire un componente MEF. Esiste un dizionario denominato `Properties` in <xref:Microsoft.VisualStudio.ArchitectureTools.Extensibility.Layer.ILayerElement>. Aggiungere semplicemente i valori marshalable al dizionario di qualsiasi elemento del livello. Verranno salvate come parte del diagramma di dipendenza. Per ulteriori informazioni, vedere [Naviga e aggiornare i modelli nel codice programma dei livelli](../modeling/navigate-and-update-layer-models-in-program-code.md).  
   
 ## <a name="properties-that-the-user-can-edit"></a>Proprietà modificabili dall'utente  
  **Preparazione iniziale**  
@@ -45,13 +31,13 @@ Quando si scrive codice delle estensioni per diagrammi di dipendenza, è possibi
 > [!IMPORTANT]
 >  Per fare in modo che le proprietà vengano visualizzate, è necessario apportare le seguenti modifiche in ogni computer in cui si desidera che le proprietà del livello siano visibili.  
 >   
->  1.  Eseguire il blocco note utilizzando **Esegui come amministratore**. Aprire `%ProgramFiles%\Microsoft Visual Studio [version]\Common7\IDE\Extensions\Microsoft\Architecture Tools\ExtensibilityRuntime\extension.vsixmanifest`  
+>  1.  Eseguire il blocco note con **Esegui come amministratore**. Aprire `%ProgramFiles%\Microsoft Visual Studio [version]\Common7\IDE\Extensions\Microsoft\Architecture Tools\ExtensibilityRuntime\extension.vsixmanifest`  
 > 2.  Nell'elemento `Content` aggiungere:  
 >   
 >     ```xml  
 >     <MefComponent>Microsoft.VisualStudio.ArchitectureTools.Extensibility.Layer.Provider.dll</MefComponent>  
 >     ```  
-> 3.  Sotto il **Visual Studio Tools** sezione del menu start dell'applicazione di Visual Studio, aprire **Developer Command Prompt**.  
+> 3.  Sotto il **Visual Studio Tools** sezione del menu start applicazione di Visual Studio, aprire **prompt dei comandi per sviluppatori**.  
 >   
 >      Immettere:  
 >   
@@ -60,9 +46,9 @@ Quando si scrive codice delle estensioni per diagrammi di dipendenza, è possibi
 >      `devenv /rootSuffix Exp /updateConfiguration`  
 > 4.  Riavviare Visual Studio.  
   
- **Assicurarsi che il codice sia in un progetto VSIX**  
+ **Verificare che il codice sia in un progetto VSIX**  
   
- Se la proprietà fa parte di un comando, di un movimento o di un progetto di convalida, non è necessario aggiungere alcun valore. Il codice per la proprietà personalizzata deve essere specificato in un progetto Extensibility di Visual Studio definito come componente MEF. Per ulteriori informazioni, vedere [aggiungere comandi e movimenti a diagrammi di dipendenza](../modeling/add-commands-and-gestures-to-layer-diagrams.md) o [aggiungere la convalida architettura personalizzati a diagrammi di dipendenza](../modeling/add-custom-architecture-validation-to-layer-diagrams.md).  
+ Se la proprietà fa parte di un progetto di convalida, un movimento o un comando, è necessario aggiungere alcun valore. Il codice per la proprietà personalizzata deve essere specificato in un progetto Extensibility di Visual Studio definito come componente MEF. Per ulteriori informazioni, vedere [aggiungere comandi e movimenti a diagrammi di dipendenza](../modeling/add-commands-and-gestures-to-layer-diagrams.md) o [aggiunta di convalida dell'architettura personalizzati a diagrammi dipendenza](../modeling/add-custom-architecture-validation-to-layer-diagrams.md).  
   
  **Definire la proprietà personalizzata**  
   
@@ -77,7 +63,7 @@ public class MyProperty
 }  
 ```  
   
- È possibile definire le proprietà in <xref:Microsoft.VisualStudio.ArchitectureTools.Extensibility.Layer.ILayerElement>o una qualsiasi delle classi derivate, che includono:</xref:Microsoft.VisualStudio.ArchitectureTools.Extensibility.Layer.ILayerElement>  
+ È possibile definire le proprietà in <xref:Microsoft.VisualStudio.ArchitectureTools.Extensibility.Layer.ILayerElement> o nelle relative classi derivate che includono:  
   
 -   `ILayerModel` - il modello  
   
@@ -176,5 +162,4 @@ namespace MyNamespace
 ```  
   
 ## <a name="see-also"></a>Vedere anche  
- [Estendere i diagrammi di dipendenza](../modeling/extend-layer-diagrams.md)
-
+ [Estendere i diagrammi delle dipendenze](../modeling/extend-layer-diagrams.md)

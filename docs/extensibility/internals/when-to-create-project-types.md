@@ -1,64 +1,66 @@
 ---
-title: "Creazione di tipi di progetto | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "condizioni per la creazione di tipi di progetto"
+title: Quando creare tipi di progetto | Documenti Microsoft
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: vs-ide-sdk
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords: project types, conditions for creating
 ms.assetid: 26adc860-ee4a-4f5c-95e1-e41b207dd7e6
-caps.latest.revision: 14
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 14
+caps.latest.revision: "14"
+author: gregvanl
+ms.author: gregvanl
+manager: ghogen
+ms.workload: vssdk
+ms.openlocfilehash: f766619054ed1912d677ac08fad511cfd3a3dcb4
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
-# Creazione di tipi di progetto
-[!INCLUDE[vs2017banner](../../code-quality/includes/vs2017banner.md)]
-
-creare un nuovo tipo di progetto fornisce una base per personalizzare [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] per gli utenti.  tuttavia, creare un nuovo tipo di progetto non è obbligatorio per tutte le personalizzazioni di [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] .  Le linee guida seguenti devono aiutare a determinare se un nuovo tipo di progetto è obbligatorio per lo scenario.  
+# <a name="when-to-create-project-types"></a>Quando creare tipi di progetto
+Creare un nuovo tipo di progetto fornisce una base per la personalizzazione [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] per gli utenti. Tuttavia, creare un nuovo tipo di progetto non è obbligatorio per tutti [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] personalizzazioni. Le linee guida seguenti consentono di determinare se un nuovo tipo di progetto è obbligatorio per lo scenario.  
   
-## creare un nuovo tipo di progetto  
- You must create a project type if you want to customize [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] to act in one or more of the following ways:  
+## <a name="create-a-new-project-type"></a>Creare un nuovo tipo di progetto  
+ È necessario creare un tipo di progetto se si desidera personalizzare [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] di agire in uno o più dei modi seguenti:  
   
--   Partecipare alla compilazione, la distribuzione, le configurazioni e il controllo del codice sorgente.  
+-   Partecipa a compilazione, distribuzione, le configurazioni e controllo del codice sorgente.  
   
--   Supporto di debug offrono.  
+-   Offre supporto per il debug.  
   
--   elementi di progetto visualizzati in **Esplora soluzioni**.  
+-   Visualizzare gli elementi di progetto in **Esplora**.  
   
--   utilizzare la finestra di dialogo di **nuovo progetto** o di **aprire il progetto** .  
+-   Utilizzare il **Apri progetto** o **nuovo progetto** la finestra di dialogo.  
   
--   Annidamento di progetto di supporto.  
+-   Supporta l'annidamento di progetto.  
   
-## estendere un tipo di progetto esistente  
- È possibile creare un nuovo tipo di progetto che può utilizzare [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] nei seguenti modi per modificare o estendere il comportamento di un tipo di progetto esistente, ad esempio, modificando il processo di compilazione per i progetti [!INCLUDE[vcprvc](../../code-quality/includes/vcprvc_md.md)] :  
+## <a name="extend-an-existing-project-type"></a>Estendere un tipo di progetto esistente  
+ Si potrebbe voler creare un nuovo tipo di progetto che è possibile utilizzare [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] nei modi seguenti per modificare o estendere il comportamento di un tipo di progetto esistente, ad esempio, la modifica del processo di compilazione per [!INCLUDE[vcprvc](../../code-quality/includes/vcprvc_md.md)] progetti:  
   
--   Utilizzare i file più come una singola unità.  
+-   Come una singola unità di lavoro con più file.  
   
--   Visualizzare un singolo file come gerarchia di sottomarino\-elementi.  
+-   Visualizzare un singolo file come una gerarchia di elementi secondari.  
   
--   Visualizzare un contesto del comando intorno agli editor.  
+-   Visualizzare un contesto di comando per l'editor.  
   
 -   Visualizzare un contesto del servizio per gli editor.  
   
-## utilizzare un tipo di progetto esistente  
- Creare un nuovo progetto non è necessario talvolta.  Nella tabella seguente vengono illustrate le attività che non è necessario creare un tipo di progetto di.  
+## <a name="use-an-existing-project-type"></a>Utilizzare un tipo di progetto esistente  
+ Crea un nuovo progetto in alcuni casi non è necessario. Nella tabella seguente sono elencate le attività che non si dispone di un tipo di progetto per creare.  
   
-|Task|Descrizione|  
+|Attività|Descrizione|  
 |----------|-----------------|  
-|comandi di gestione|Tutto il package VS possibile gestire i comandi.|  
-|compilare un editor|Editor personalizzati possono essere registrati.  Per ulteriori informazioni, vedere [Document Windows and Editors](http://msdn.microsoft.com/it-it/603625e1-62b6-413a-bc44-089346e166bc).|  
-|finestre proprietarie|È possibile creare sia lo strumento che le finestre di documento senza aggiungere un nuovo tipo di progetto.|  
-|Esporre le proprietà nella Finestra Proprietà|Tutti gli oggetti possono esporre le proprietà.|  
+|Gestione dei comandi|Qualsiasi pacchetto VSPackage può gestire i comandi.|  
+|La creazione di un editor|Editor personalizzati possono essere registrati. Per ulteriori informazioni, vedere [editor e finestre di documento](http://msdn.microsoft.com/en-us/603625e1-62b6-413a-bc44-089346e166bc).|  
+|Proprietario di windows|È possibile creare documenti e degli strumenti di windows senza aggiungere un nuovo tipo di progetto.|  
+|Esposizione delle proprietà nella finestra proprietà|Tutti gli oggetti possono esporre le proprietà.|  
   
-## creare un sottotipo di progetto  
- È possibile utilizzare i sottotipi di progetto per estendere un tipo di progetto gestito senza dover creare un nuovo tipo di progetto.  I sottotipi di progetto utilizzano l'aggregazione COM per estendere i progetti gestiti scritti in Microsoft [!INCLUDE[vbprvb](../../code-quality/includes/vbprvb_md.md)] o in[!INCLUDE[csprcs](../../data-tools/includes/csprcs_md.md)].  Con aggregazione COM, è possibile riutilizzare gran parte dell'implementazione gestita del sistema di progetto e di personalizzazione per uno scenario specifico con aggregazione e l'utilizzo di supporto delle interfacce.  per ulteriori informazioni sui sottotipi di progetto, vedere [Progetto \(sottotipi\)](../../extensibility/internals/project-subtypes.md).  
+## <a name="create-a-project-subtype"></a>Creare un sottotipo di progetto  
+ È possibile utilizzare i sottotipi di progetto per estendere un tipo di progetto gestito senza la necessità di creare un nuovo tipo di progetto. Sottotipi di progetto usare aggregazione COM per estendere i progetti gestiti, scritti in Microsoft [!INCLUDE[vbprvb](../../code-quality/includes/vbprvb_md.md)] o [!INCLUDE[csprcs](../../data-tools/includes/csprcs_md.md)]. Con l'aggregazione COM, è possibile riutilizzare la maggior parte dell'implementazione di sistema di progetto gestito e personalizzare per un determinato scenario tramite l'aggregazione e l'utilizzo di interfacce di supporto. Per ulteriori informazioni su sottotipi di progetto, vedere [sottotipi di progetto](../../extensibility/internals/project-subtypes.md).  
   
-## Vedere anche  
- [Document Windows and Editors](http://msdn.microsoft.com/it-it/603625e1-62b6-413a-bc44-089346e166bc)   
+## <a name="see-also"></a>Vedere anche  
+ [Editor e finestre di documento](http://msdn.microsoft.com/en-us/603625e1-62b6-413a-bc44-089346e166bc)   
  [Elenco di controllo: Creazione di nuovi tipi di progetto](../../extensibility/internals/checklist-creating-new-project-types.md)   
  [Gerarchie in Visual Studio](../../extensibility/internals/hierarchies-in-visual-studio.md)

@@ -1,58 +1,61 @@
 ---
-title: "Creazione di un&#39;estensione con un comando di Menu | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "scrivere un vspackage"
-  - "package VS"
-  - "esercitazioni"
-  - "pacchetto di Visual studio"
+title: Creazione di un'estensione con un comando di Menu | Documenti Microsoft
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: vs-ide-sdk
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- write a vspackage
+- vspackage
+- tutorials
+- visual studio package
 ms.assetid: f97104c8-2bcb-45c7-a3c9-85abeda8df98
-caps.latest.revision: 56
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 56
+caps.latest.revision: "56"
+author: gregvanl
+ms.author: gregvanl
+manager: ghogen
+ms.workload: vssdk
+ms.openlocfilehash: 3d4e1be21a7471d318a3429dae60f484227a4f26
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
-# Creazione di un&#39;estensione con un comando di Menu
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
-Questa procedura dettagliata viene illustrato come creare un'estensione con un comando di menu che consente di avviare il blocco note.  
+# <a name="creating-an-extension-with-a-menu-command"></a>Creazione di un'estensione con un comando di Menu
+Questa procedura dettagliata viene illustrato come creare un'estensione con un comando di menu che consente di avviare Blocco note.  
   
-## Prerequisiti  
- A partire da Visual Studio 2015, non installare Visual Studio SDK dall'area download. È incluso come funzionalità facoltativa nel programma di installazione di Visual Studio. È inoltre possibile installare il SDK di Visual Studio in un secondo momento. Per altre informazioni, vedere [L'installazione di Visual Studio SDK](../extensibility/installing-the-visual-studio-sdk.md).  
+## <a name="prerequisites"></a>Prerequisiti  
+ A partire da Visual Studio 2015, non installare Visual Studio SDK dall'area download. È incluso come funzionalità facoltativa nel programma di installazione di Visual Studio. È anche possibile installare il SDK di Visual Studio in un secondo momento. Per ulteriori informazioni, vedere [l'installazione di Visual Studio SDK](../extensibility/installing-the-visual-studio-sdk.md).  
   
-## Creazione di un comando di Menu  
+## <a name="creating-a-menu-command"></a>Creazione di un comando di Menu  
   
-1.  Creare un progetto VSIX denominato **FirstMenuCommand**. È possibile trovare il modello di progetto VSIX nel **Nuovo progetto** nella finestra di dialogo **Visual c\# \/ Extensibility**.  
+1.  Creare un progetto VSIX denominato **FirstMenuCommand**. È possibile trovare il modello di progetto VSIX nel **nuovo progetto** nella finestra di dialogo **Visual c# / Extensibility**.  
   
-2.  Quando si apre il progetto, aggiungere un modello di elemento di comando personalizzato denominato **FirstCommand**. Nel **Esplora**, del mouse sul nodo del progetto e scegliere **Aggiungi \/ nuovo elemento**. Nel **Aggiungi nuovo elemento** finestra di dialogo, andare a **Visual c\# \/ Extensibility** e selezionare **comando personalizzato**. Nel **nome** campo nella parte inferiore della finestra, modificare il nome del file di comando in **FirstCommand.cs**.  
+2.  Quando si apre il progetto, aggiungere un modello di elemento di comando personalizzato denominato **FirstCommand**. Nel **Esplora**del mouse sul nodo del progetto e scegliere **Aggiungi / nuovo elemento**. Nel **Aggiungi nuovo elemento** finestra di dialogo, passa a **Visual c# / Extensibility** e selezionare **comando personalizzato**. Nel **nome** campo nella parte inferiore della finestra, modificare il nome del file di comando in **FirstCommand.cs**.  
   
 3.  Compilare il progetto e avviare il debug.  
   
-     Verrà visualizzata l'istanza sperimentale di Visual Studio. Per ulteriori informazioni sull'istanza sperimentale, vedere [L'istanza sperimentale](../extensibility/the-experimental-instance.md).  
+     Viene visualizzata l'istanza sperimentale di Visual Studio. Per ulteriori informazioni sull'istanza sperimentale, vedere [l'istanza sperimentale](../extensibility/the-experimental-instance.md).  
   
-4.  Nell'istanza sperimentale, aprire il  **Strumenti \/ estensioni e aggiornamenti** finestra. Verrà visualizzato il **FirstMenuCommand** estensione qui. \(Se si apre **estensioni e aggiornamenti** nell'istanza di lavoro di Visual Studio, non verrà visualizzato **FirstMenuCommand**\).  
+4.  Nell'istanza sperimentale, aprire il **strumenti / estensioni e aggiornamenti** finestra. Verrà visualizzato il **FirstMenuCommand** estensione qui. (Se si apre **estensioni e aggiornamenti** nell'istanza di lavoro di Visual Studio, non verrà visualizzato **FirstMenuCommand**).  
   
-     Passare ora al **strumenti** menu nell'istanza sperimentale. Dovrebbe essere **richiamare FirstCommand** comando. A questo punto viene semplicemente visualizzata una finestra di messaggio che afferma "FirstCommandPackage all'interno di FirstMenuCommand.FirstCommand.MenuItemCallback\(\)". Vedremo come effettivamente avviare Blocco note di questo comando nella sezione successiva.  
+     Passare quindi al **strumenti** menu nell'istanza sperimentale. Dovrebbe essere **richiamare FirstCommand** comando. A questo punto, solo apparirà una finestra di messaggio che afferma "FirstCommandPackage all'interno di FirstMenuCommand.FirstCommand.MenuItemCallback()". Vedremo come effettivamente avviare Blocco note di questo comando nella sezione successiva.  
   
-## Modificare il gestore di comandi di Menu  
- Ora aggiornare il gestore del comando per avviare il blocco note.  
+## <a name="changing-the-menu-command-handler"></a>Modifica il gestore del comando di Menu  
+ Ora consente di aggiornare il gestore del comando per avviare il blocco note.  
   
 1.  Arrestare il debug e tornare all'istanza di lavoro di Visual Studio. Aprire il file FirstCommand.cs e aggiungere la seguente istruzione using:  
   
-    ```c#  
+    ```csharp  
     using System.Diagnostics;  
     ```  
   
-2.  Individuare il costruttore FirstCommand privato. Questo è il comando è collegato al servizio di comando e viene specificato il gestore del comando. Modificare il nome del gestore comando per StartNotepad, come indicato di seguito:  
+2.  Trovare il costruttore FirstCommand privato. Si tratta in cui il comando viene collegato al servizio di comando e viene specificato il gestore del comando. Modificare il nome del gestore comando per StartNotepad, come indicato di seguito:  
   
-    ```c#  
+    ```csharp  
     private FirstCommand(Package package)  
     {  
         if (package == null)  
@@ -73,9 +76,9 @@ Questa procedura dettagliata viene illustrato come creare un'estensione con un c
     }  
     ```  
   
-3.  Rimuovere il metodo MenuItemCallback e aggiungere un metodo StartNotepad che verrà semplicemente avviare Blocco note:  
+3.  Rimuovere il metodo MenuItemCallback e aggiungere un metodo StartNotepad che verrà avviato solo il blocco note:  
   
-    ```c#  
+    ```csharp  
     private void StartNotepad(object sender, EventArgs e)  
     {  
         Process proc = new Process();  
@@ -84,16 +87,16 @@ Questa procedura dettagliata viene illustrato come creare un'estensione con un c
     }  
     ```  
   
-4.  Provare ora a eseguire l'operazione. Quando si avvia il debug del progetto e fare clic su **Strumenti \/ richiamare FirstCommand**, si dovrebbe essere visualizzata un'istanza del blocco note.  
+4.  Provare ora a eseguire l'operazione. Quando si avvia il debug del progetto e fare clic su **strumenti / richiamare FirstCommand**, si dovrebbe essere visualizzata un'istanza del blocco note.  
   
      È possibile utilizzare un'istanza di <xref:System.Diagnostics.Process> classe per l'esecuzione di qualsiasi file eseguibile, non solo il blocco note. Provare con calc.exe, ad esempio.  
   
-## Pulizia ambiente sperimentale  
- Se si siano sviluppando più estensioni, o semplicemente esplorare i risultati con diverse versioni del codice dell'estensione, l'ambiente sperimentale potrebbe smettere di funzionare nel modo desiderato. In questo caso, è necessario eseguire lo script di reimpostazione. Viene chiamato **Reimposta istanza sperimentale di Visual Studio 2015**, e fornito come parte di Visual Studio SDK. Questo script rimuove tutti i riferimenti per le estensioni dell'ambiente sperimentale, in modo da iniziare da zero.  
+## <a name="cleaning-up-the-experimental-environment"></a>Pulizia dell'ambiente sperimentale  
+ Se si siano sviluppando più estensioni, o semplicemente esplorare risultati con diverse versioni del codice di estensione, l'ambiente sperimentale potrebbe smettere di funzionare nel modo desiderato. In questo caso, è necessario eseguire lo script di reimpostazione. Viene chiamato **Reimposta l'istanza sperimentale di Visual Studio 2015**, e fornito come parte di Visual Studio SDK. Questo script rimuove tutti i riferimenti per le estensioni nell'ambiente sperimentale di conseguenza, iniziare da zero.  
   
  È possibile ottenere questo script in uno dei due modi:  
   
-1.  Dal desktop, trovare **Reimposta istanza sperimentale di Visual Studio 2015**.  
+1.  Dal desktop, trovare **Reimposta l'istanza sperimentale di Visual Studio 2015**.  
   
 2.  Dalla riga di comando, eseguire le operazioni seguenti:  
   
@@ -102,34 +105,34 @@ Questa procedura dettagliata viene illustrato come creare un'estensione con un c
   
     ```  
   
-## Distribuzione dell'estensione  
- Ora che avete l'estensione di uno strumento in esecuzione nel modo desiderato, è necessario preoccuparsi di condividerla con amici e colleghi. Che è facile, purché hanno installato Visual Studio 2015. È necessario effettuare è inviare file con estensione VSIX è stato compilato. \(Assicurarsi di compilare la soluzione in modalità di rilascio.\)  
+## <a name="deploying-your-extension"></a>L'estensione di distribuzione  
+ Dopo aver creato l'estensione degli strumenti in esecuzione nel modo desiderato, è necessario preoccuparsi di condividerla con i colleghi e amici. Che è facile, purché dispongano di Visual Studio 2015 installati. È necessario effettuare è inviare loro il file con estensione VSIX è stato compilato. (Assicurarsi di compilare in modalità di rilascio.)  
   
- È possibile trovare il file con estensione VSIX per questa estensione nella directory bin FirstMenuCommand. In particolare, se che è stata compilata la configurazione di rilascio, sarà:  
+ È possibile trovare il file. VSIX per questa estensione nella directory bin FirstMenuCommand. In particolare, se che è stata compilata la configurazione di rilascio, sarà:  
   
- **\< directory del codice \> \\FirstMenuCommand\\FirstMenuCommand\\bin\\Release\\ FirstMenuCommand.vsix**  
+ **\<directory del codice > \FirstMenuCommand\FirstMenuCommand\bin\Release\ FirstMenuCommand.vsix**  
   
- Per installare l'estensione, l'amico deve chiudere tutte le istanze aperte di Visual Studio, quindi fare doppio clic sul file con estensione VSIX, che visualizza il **programma di installazione di VSIX**. I file vengono copiati il **%LocalAppData%\\Microsoft\\VisualStudio\\14.0\\Extensions** directory.  
+ Per installare l'estensione, amico è necessario chiudere tutte le istanze aperte di Visual Studio, quindi fare doppio clic sul file con estensione VSIX, che consente di visualizzare il **VSIX Installer**. I file vengono copiati il **%LocalAppData%\Microsoft\VisualStudio\14.0\Extensions** directory.  
   
- Quando l'amico Visualizza nuovamente Visual Studio, sarà disponibile l'estensione FirstMenuCommand in **Strumenti \/ estensioni e aggiornamenti**. È possibile passare a **estensioni e aggiornamenti** per disinstallare o disabilitare l'estensione, troppo.  
+ Quando amica visualizzata nuovamente Visual Studio, sarà disponibile l'estensione FirstMenuCommand **strumenti / estensioni e aggiornamenti**. È possibile passare a **estensioni e aggiornamenti** per disinstallare o disabilitare l'estensione, troppo.  
   
-## Passaggi successivi  
- Questa procedura dettagliata è stato illustrato solo una piccola parte delle quali è possibile eseguire con un'estensione di Visual Studio. Ecco un breve elenco di altre operazioni \(relativamente semplice\) con le estensioni di Visual Studio:  
+## <a name="next-steps"></a>Passaggi successivi  
+ Questa procedura dettagliata è stato illustrato solo una piccola parte di operazioni possibili con un'estensione di Visual Studio. Ecco un breve elenco di altre operazioni (relativamente semplice) con le estensioni di Visual Studio:  
   
 1.  È possibile eseguire molte altre operazioni con un comando di menu semplice:  
   
-    1.  Aggiungere un'icona personalizzata: [Aggiunta di icone ai comandi di Menu](../extensibility/adding-icons-to-menu-commands.md)  
+    1.  Aggiungere un'icona personalizzata: [aggiunta di icone ai comandi di Menu](../extensibility/adding-icons-to-menu-commands.md)  
   
-    2.  Modificare il testo del comando di menu: [Modifica del testo di un comando di Menu](../extensibility/changing-the-text-of-a-menu-command.md)  
+    2.  Modificare il testo del comando di menu: [modifica del testo di un comando di Menu](../extensibility/changing-the-text-of-a-menu-command.md)  
   
-    3.  Aggiungere un collegamento nel menu a un comando: [Scelte rapide da tastiera di associazione di voci di Menu](../extensibility/binding-keyboard-shortcuts-to-menu-items.md)  
+    3.  Aggiungere un collegamento nel menu a un comando: [associazione tasti di scelta rapida alle voci di Menu](../extensibility/binding-keyboard-shortcuts-to-menu-items.md)  
   
-2.  Aggiungere diversi tipi di comandi, menu e barre degli strumenti: [Estensione menu e comandi](../extensibility/extending-menus-and-commands.md)  
+2.  Aggiungere diversi tipi di comandi, menu e barre degli strumenti: [estensione menu e comandi](../extensibility/extending-menus-and-commands.md)  
   
-3.  Aggiungere finestre degli strumenti ed estendere le finestre degli strumenti di Visual Studio incorporate: [Estensione e personalizzazione di finestre degli strumenti](../extensibility/extending-and-customizing-tool-windows.md)  
+3.  Aggiungere finestre degli strumenti ed estendere le finestre degli strumenti di Visual Studio predefinite: [estensione e le finestre degli strumenti personalizzazione](../extensibility/extending-and-customizing-tool-windows.md)  
   
-4.  Aggiungere altre funzionalità IntelliSense e i suggerimenti di codice agli editor di codice esistente: [Estensione dell'Editor e servizi di linguaggio](../extensibility/extending-the-editor-and-language-services.md)  
+4.  Aggiungere i suggerimenti di codice, IntelliSense e altre funzionalità esistenti di editor di codice: [estensione dell'Editor e i servizi di linguaggio](../extensibility/extending-the-editor-and-language-services.md)  
   
-5.  Aggiungere l'estensione di pagine delle proprietà e le opzioni e impostazioni utente: [Estensione di proprietà e la finestra proprietà](../extensibility/extending-properties-and-the-property-window.md) e [Opzioni e impostazioni utente estensione](../extensibility/extending-user-settings-and-options.md)  
+5.  Aggiungere pagine delle proprietà e le opzioni e impostazioni utente per l'estensione: [estensione di proprietà e la finestra proprietà](../extensibility/extending-properties-and-the-property-window.md) e [opzioni e impostazioni utente di estensione](../extensibility/extending-user-settings-and-options.md)  
   
- Altri tipi di estensioni richiedono un po' più operazioni, ad esempio creare un nuovo tipo di progetto \([Estensione di progetti](../extensibility/extending-projects.md)\), creare un nuovo tipo di editor \([Creazione di finestre di progettazione ed editor personalizzati](../extensibility/creating-custom-editors-and-designers.md)\), o l'implementazione dell'estensione in una shell isolata: [Visual Studio isolato Shell](../extensibility/visual-studio-isolated-shell.md)
+ Altri tipi di estensioni richiedono più lunga, ad esempio la creazione di un nuovo tipo di progetto ([estensione progetti](../extensibility/extending-projects.md)), creare un nuovo tipo di editor ([creare editor personalizzati e finestre di progettazione](../extensibility/creating-custom-editors-and-designers.md)), o implementazione dell'estensione in una shell isolata: [Visual Studio Isolated Shell](../extensibility/visual-studio-isolated-shell.md)

@@ -40,7 +40,7 @@
 #### [Funzione ArrayBuffer.isView (ArrayBuffer)](arraybuffer-isview-function-arraybuffer.md)
 #### [Metodo slice (ArrayBuffer)](slice-method-arraybuffer.md)
 ### [Oggetto arguments](arguments-object-javascript.md)
-#### [Proprietà&0;...n (arguments)](0-dot-dot-dot-n-properties-arguments-javascript.md)
+#### [Proprietà 0...n (arguments)](0-dot-dot-dot-n-properties-arguments-javascript.md)
 #### [Proprietà callee (arguments)](callee-property-arguments-javascript.md)
 #### [Proprietà length (arguments)](length-property-arguments-javascript.md)
 ### [Oggetto Boolean](boolean-object-javascript.md)

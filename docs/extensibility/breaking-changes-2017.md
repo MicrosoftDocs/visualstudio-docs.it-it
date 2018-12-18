@@ -4,35 +4,20 @@ ms.custom:
 ms.date: 11/09/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- vs-ide-sdk
+ms.technology: vs-ide-sdk
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: 54d5af60-0b44-4ae1-aa57-45aa03f89f3d
-caps.latest.revision: 1
+caps.latest.revision: "1"
 author: gregvanl
 ms.author: gregvanl
 manager: ghogen
-translation.priority.mt:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.workload: vssdk
+ms.openlocfilehash: 068b71a78149bb1c52e28bc47245d0dc888496bc
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
 ms.translationtype: MT
-ms.sourcegitcommit: 17defdd0b96ec1c3273fc6b845af844b031a4a17
-ms.openlocfilehash: ac7a99673eb4dc23dd53a46c3c93fd735325c255
-ms.contentlocale: it-it
-ms.lasthandoff: 09/06/2017
-
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="changes-in-visual-studio-2017-extensibility"></a>Modifiche in Visual Studio 2017 estendibilità
 
@@ -123,8 +108,3 @@ La maggior parte degli assembly principali di Visual Studio non vengono più ins
 * Componenti esterni possono trovare il percorso di Visual Studio [seguendo le istruzioni riportate qui](https://blogs.msdn.microsoft.com/heaths/2016/09/15/changes-to-visual-studio-15-setup).
 * È consigliabile utilizzano i componenti esterni di [Gestione impostazioni esterno](https://msdn.microsoft.com/en-us/library/microsoft.visualstudio.settings.externalsettingsmanager.aspx) invece di lettura/scrittura direttamente alle chiavi del Registro di sistema di Visual Studio.
 * Controllare se i componenti che utilizza l'estensione hanno implementato un'altra tecnica per la registrazione. Ad esempio, le estensioni di debugger possono essere in grado di sfruttare i vantaggi del nuovo [msvsmon registrazione COM file JSON](migrate-debugger-COM-registration.md).
-
-## <a name="change-lightweight-solution-load"></a>Modifica: Caricamento della soluzione semplice
-
-Semplice soluzione caricare (LSL) riduce il tempo di caricamento di soluzioni non completamente il caricamento di progetti fino a quando l'utente inizia a lavorare con tali. Questo può influire le estensioni si supponga che un progetto è stato caricato completamente. Vedere [caricamento della soluzione Lightweight](lightweight-solution-load-extension-impact.md) per ottenere informazioni se l'estensione potrebbe avere effetti e ottenere informazioni aggiuntive sull'aggiornamento dell'estensione.
-

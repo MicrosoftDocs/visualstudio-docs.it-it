@@ -1,11 +1,10 @@
 ---
-title: 'CA1045: Do not pass types by reference | Microsoft Docs'
+title: 'CA1045: Non passare tipi riferimento | Documenti Microsoft'
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- vs-devops-test
+ms.technology: vs-ide-code-analysis
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
@@ -15,91 +14,77 @@ helpviewer_keywords:
 - CA1045
 - DoNotPassTypesByReference
 ms.assetid: bcc3900a-e092-4bb8-896f-cb83f6289968
-caps.latest.revision: 18
-author: stevehoag
-ms.author: shoag
-manager: wpickett
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: HT
-ms.sourcegitcommit: eb5c9550fd29b0e98bf63a7240737da4f13f3249
-ms.openlocfilehash: 7c067a3eddf961e5b970619ab356ee87a041807f
-ms.contentlocale: it-it
-ms.lasthandoff: 08/30/2017
-
+caps.latest.revision: "18"
+author: gewarren
+ms.author: gewarren
+manager: ghogen
+ms.workload: multiple
+ms.openlocfilehash: 7542e21963f272dd10180203a52bee9994de2cdc
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="ca1045-do-not-pass-types-by-reference"></a>CA1045: Do not pass types by reference
+# <a name="ca1045-do-not-pass-types-by-reference"></a>CA1045: Non passare i tipi per riferimento
 |||  
 |-|-|  
 |TypeName|DoNotPassTypesByReference|  
 |CheckId|CA1045|  
-|Category|Microsoft.Design|  
-|Breaking Change|Breaking|  
+|Category|Microsoft. Design|  
+|Modifica importante|Interruzione|  
   
-## <a name="cause"></a>Cause  
- A public or protected method in a public type has a `ref` parameter that takes a primitive type, a reference type, or a value type that is not one of the built-in types.  
+## <a name="cause"></a>Causa  
+ Un metodo pubblico o protetto in un tipo pubblico presenta un `ref` parametro che accetta un tipo primitivo, un tipo riferimento o un tipo di valore che non è uno dei tipi incorporati.  
   
-## <a name="rule-description"></a>Rule Description  
- Passing types by reference (using `out` or `ref`) requires experience with pointers, understanding how value types and reference types differ, and handling methods that have multiple return values. Also, the difference between `out` and `ref` parameters is not widely understood.  
+## <a name="rule-description"></a>Descrizione della regola  
+ Passaggio di tipi per riferimento (mediante `out` o `ref`) richiede esperienza nell'utilizzo dei puntatori, conoscenza delle differenziano tra tipi di valore e tipi di riferimento e la gestione di metodi che presentano più valori restituiti. Inoltre, la differenza tra `out` e `ref` parametri non è sempre nota.  
   
- When a reference type is passed "by reference," the method intends to use the parameter to return a different instance of the object. (Passing a reference type by reference is also known as using a double pointer, pointer to a pointer, or double indirection.) Using the default calling convention, which is pass "by value," a parameter that takes a reference type already receives a pointer to the object. The pointer, not the object to which it points, is passed by value. Passing by value means that the method cannot change the pointer to have it point to a new instance of the reference type, but can change the contents of the object to which it points. For most applications this is sufficient and yields the behavior that you want.  
+ Quando un tipo di riferimento viene passato "riferimento", il metodo intenzione di utilizzare il parametro per restituire un'istanza diversa dell'oggetto. (Il passaggio di un tipo di riferimento per riferimento è noto anche come mediante un puntatore doppio, puntatore a un puntatore o un riferimento indiretto doppio.) Utilizzando il valore predefinito convenzione, il passaggio "per valore", un parametro che accetta un tipo di riferimento già riceve un puntatore all'oggetto. Il puntatore, non l'oggetto a cui fa riferimento, viene passato per valore. Il passaggio per valore indica che il metodo non è possibile modificare il puntatore affinché punti a una nuova istanza del riferimento a un tipo, ma è possibile modificare il contenuto dell'oggetto a cui fa riferimento. Per la maggior parte delle applicazioni ciò è sufficiente e produce il comportamento desiderato.  
   
- If a method must return a different instance, use the return value of the method to accomplish this. See the <xref:System.String?displayProperty=fullName> class for a variety of methods that operate on strings and return a new instance of a string. By using this model, it is left to the caller to decide whether the original object is preserved.  
+ Se un metodo deve restituire un'istanza diversa, utilizzare il valore restituito del metodo per eseguire questa operazione. Vedere la <xref:System.String?displayProperty=fullName> classe per un'ampia gamma di metodi che operano su stringhe e restituisce una nuova istanza di una stringa. Tramite questo modello, questa viene lasciata al chiamante di decidere se l'oggetto originale verrà mantenuta.  
   
- Although return values are commonplace and heavily used, the correct application of `out` and `ref` parameters requires intermediate design and coding skills. Library architects who design for a general audience should not expect users to master working with `out` or `ref` parameters.  
+ Anche se i valori restituiti siano comuni e ampiamente utilizzati, l'applicazione corretta di `out` e `ref` parametri richiede progettazione intermedia competenze e codifica. Per un pubblico generico non possono prevedere gli utenti in grado di utilizzare con gli architetti di libreria `out` o `ref` parametri.  
   
 > [!NOTE]
->  When you work with parameters that are large structures, the additional resources that are required to copy these structures could cause a performance effect when you pass by value. In these cases, you might consider using `ref` or `out` parameters.  
+>  Quando si lavora con i parametri che sono strutture di grandi dimensioni, le risorse aggiuntive necessarie per copiare queste strutture potrebbero causare un effetto sulle prestazioni quando si passa per valore. In questi casi, è possibile utilizzare `ref` o `out` parametri.  
   
-## <a name="how-to-fix-violations"></a>How to Fix Violations  
- To fix a violation of this rule that is caused by a value type, have the method return the object as its return value. If the method must return multiple values, redesign it to return a single instance of an object that holds the values.  
+## <a name="how-to-fix-violations"></a>Come correggere le violazioni  
+ Per correggere una violazione di questa regola causata da un tipo di valore, il metodo con restituire l'oggetto come relativo valore restituito. Se il metodo deve restituire più valori, riprogettare per restituire una singola istanza di un oggetto che contiene i valori.  
   
- To fix a violation of this rule that is caused by a reference type, make sure that the behavior that you want is to return a new instance of the reference. If it is, the method should use its return value to do this.  
+ Per correggere una violazione di questa regola causata da un tipo riferimento, assicurarsi che il comportamento che si desidera sia per restituire una nuova istanza del riferimento. Questo caso, il metodo deve utilizzare il valore restituito per eseguire questa operazione.  
   
-## <a name="when-to-suppress-warnings"></a>When to Suppress Warnings  
- It is safe to suppress a warning from this rule; however, this design could cause usability issues.  
+## <a name="when-to-suppress-warnings"></a>Esclusione di avvisi  
+ È consigliabile escludere un avviso da questa regola. Tuttavia, questa progettazione potrebbe provocare problemi di usabilità.  
   
-## <a name="example"></a>Example  
- The following library shows two implementations of a class that generates responses to the feedback of the user. The first implementation (`BadRefAndOut`) forces the library user to manage three return values. The second implementation (`RedesignedRefAndOut`) simplifies the user experience by returning an instance of a container class (`ReplyData`) that manages the data as a single unit.  
+## <a name="example"></a>Esempio  
+ La libreria seguente mostra le due implementazioni di una classe che genera le risposte per i commenti e suggerimenti dell'utente. La prima implementazione (`BadRefAndOut`) impone all'utente di libreria di gestire tre valori restituiti. L'implementazione del secondo (`RedesignedRefAndOut`) semplifica l'esperienza utente tramite la restituzione di un'istanza di una classe contenitore (`ReplyData`) che gestisce i dati come una singola unità.  
   
  [!code-csharp[FxCop.Design.NoRefOrOut#1](../code-quality/codesnippet/CSharp/ca1045-do-not-pass-types-by-reference_1.cs)]  
   
-## <a name="example"></a>Example  
- The following application illustrates the experience of the user. The call to the redesigned library (`UseTheSimplifiedClass` method) is more straightforward, and the information that is returned by the method is easily managed. The output from the two methods is identical.  
+## <a name="example"></a>Esempio  
+ L'applicazione riportata di seguito viene illustrata l'esperienza dell'utente. La chiamata alla libreria riprogettata (`UseTheSimplifiedClass` (metodo)) è più semplice, e può essere gestite facilmente le informazioni restituite dal metodo. L'output dei due metodi è identico.  
   
  [!code-csharp[FxCop.Design.TestNoRefOrOut#1](../code-quality/codesnippet/CSharp/ca1045-do-not-pass-types-by-reference_2.cs)]  
   
-## <a name="example"></a>Example  
- The following example library illustrates how `ref` parameters for reference types are used, and shows a better way to implement this functionality.  
+## <a name="example"></a>Esempio  
+ La libreria di esempio seguente viene illustrato come `ref` vengono utilizzati i parametri per i tipi di riferimento e Mostra un modo migliore per implementare questa funzionalità.  
   
  [!code-csharp[FxCop.Design.RefByRefNo#1](../code-quality/codesnippet/CSharp/ca1045-do-not-pass-types-by-reference_3.cs)]  
   
-## <a name="example"></a>Example  
- The following application calls each method in the library to demonstrate the behavior.  
+## <a name="example"></a>Esempio  
+ La seguente applicazione chiama ogni metodo nella libreria per illustrare il comportamento.  
   
  [!code-csharp[FxCop.Design.TestRefByRefNo#1](../code-quality/codesnippet/CSharp/ca1045-do-not-pass-types-by-reference_4.cs)]  
   
- This example produces the following output.  
+ Questo esempio produce il seguente output:  
   
- **Changing pointer - passed by value:**  
+ **Modifica del puntatore - passato per valore:**  
 **12345**  
 **12345**  
-**Changing pointer - passed by reference:**  
+**Modifica del puntatore, passato per riferimento:**  
 **12345**  
-**12345 ABCDE**  
-**Passing by return value:**  
-**12345 ABCDE**   
-## <a name="related-rules"></a>Related Rules  
- [CA1021: Avoid out parameters](../code-quality/ca1021-avoid-out-parameters.md)
+**ABCDE 12345**  
+**Passaggio per valore restituito:**  
+**ABCDE 12345**   
+## <a name="related-rules"></a>Regole correlate  
+ [CA1021: Evitare parametri out](../code-quality/ca1021-avoid-out-parameters.md)

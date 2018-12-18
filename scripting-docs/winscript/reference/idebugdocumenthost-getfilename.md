@@ -1,27 +1,30 @@
 ---
-title: "IDebugDocumentHost::GetFileName | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/18/2017"
-ms.prod: "windows-script-interfaces"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
+title: IDebugDocumentHost::GetFileName | Documenti Microsoft
+ms.custom: 
+ms.date: 01/18/2017
+ms.prod: windows-script-interfaces
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: reference
 apiname: IDebugDocumentHost.GetFileName
 apilocation: scrobj.dll
-helpviewer_keywords: 
-  - "IDebugDocumentHost::GetFileName"
+helpviewer_keywords: IDebugDocumentHost::GetFileName
 ms.assetid: b814a848-8a3d-468d-9282-c5c0354b22a1
-caps.latest.revision: 8
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.openlocfilehash: 909c431a389a2589d48b6228534b16675ea41383
+ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/27/2017
 ---
-# IDebugDocumentHost::GetFileName
+# <a name="idebugdocumenthostgetfilename"></a>IDebugDocumentHost::GetFileName
 Restituisce il nome del documento senza informazioni sul percorso.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
 HRESULT GetFileName(  
@@ -29,19 +32,19 @@ HRESULT GetFileName(
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `pbstrShortName`  
- \[out\] stringa di un oggetto contenente il nome breve del documento.  
+ [out] Stringa contenente il nome breve del documento.  
   
-## Valore restituito  
- Il metodo restituisce un tipo `HRESULT`.  I valori possibili sono, ma non sono limitati a, quelli nella tabella seguente.  
+## <a name="return-value"></a>Valore restituito  
+ Il metodo restituisce un tipo `HRESULT`. I valori possibili includono, ma non sono limitati a, quelli indicati nella tabella seguente.  
   
 |Valore|Descrizione|  
-|------------|-----------------|  
+|-----------|-----------------|  
 |`S_OK`|Il metodo è riuscito.|  
   
-## Note  
- Questo metodo restituisce il nome breve del documento senza informazioni sul percorso.  Il nome breve viene utilizzato in genere in situazioni nella finestra di dialogo **Salva con nome**.  
+## <a name="remarks"></a>Note  
+ Questo metodo restituisce il nome breve del documento senza informazioni sul percorso. Il nome breve viene in genere utilizzato in situazioni, ad esempio il **Salva con nome...**  la finestra di dialogo.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Interfaccia IDebugDocumentHost](../../winscript/reference/idebugdocumenthost-interface.md)

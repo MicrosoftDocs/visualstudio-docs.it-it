@@ -1,27 +1,30 @@
 ---
-title: "IDispatchEx::GetNextDispID | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/18/2017"
-ms.prod: "windows-script-interfaces"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
+title: IDispatchEx::GetNextDispID | Documenti Microsoft
+ms.custom: 
+ms.date: 01/18/2017
+ms.prod: windows-script-interfaces
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: reference
 apiname: IDispatchEx.GetNextDispID
 apilocation: scrobj.dll
-helpviewer_keywords: 
-  - "Metodo GetNextDispID"
+helpviewer_keywords: GetNextDispID method
 ms.assetid: 8263d441-85ee-47f4-bdba-fbf2ad07e85f
-caps.latest.revision: 8
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.openlocfilehash: ece7bde3230da370c8434cef7f780a92604df34c
+ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/27/2017
 ---
-# IDispatchEx::GetNextDispID
+# <a name="idispatchexgetnextdispid"></a>IDispatchEx::GetNextDispID
 Enumera i membri dell'oggetto.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
 HRESULT GetNextDispID(  
@@ -31,32 +34,32 @@ HRESULT GetNextDispID(
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `grfdex`  
- Determina il set di elementi deve essere enumerato.  Può trattarsi di una combinazione dei valori seguenti:  
+ Determina il set di elementi da enumerare. Può trattarsi di una combinazione dei valori seguenti:  
   
 |Valore|Significato|  
-|------------|-----------------|  
-|fdexEnumDefault|Richieste che l'oggetto enumera gli elementi predefiniti.  L'oggetto è consentito per enumerare qualsiasi set di elementi.|  
-|fdexEnumAll|Richieste che l'oggetto enumera elementi.  L'oggetto è consentito per enumerare qualsiasi set di elementi.|  
+|-----------|-------------|  
+|fdexEnumDefault|Richieste che l'oggetto enumera gli elementi predefiniti. L'oggetto è possibile enumerare un set di elementi.|  
+|fdexEnumAll|Richieste che l'oggetto enumera tutti gli elementi. L'oggetto è possibile enumerare un set di elementi.|  
   
  `id`  
- Identifica il membro corrente.  GetNextDispID recupera l'elemento nell'enumerazione dopo questa.  Utilizzare GetDispID o una chiamata precedente a GetNextDispID ottenere questo identificatore.  Utilizza il valore di DISPID\_STARTENUM per ottenere il primo identificatore del primo elemento.  
+ Identifica il membro corrente. GetNextDispID recupera l'elemento nell'enumerazione dopo questo. Usa GetDispID o una precedente chiamata a GetNextDispID per ottenere questo identificatore. Usa il valore DISPID_STARTENUM per ottenere il primo identificatore del primo elemento.  
   
  `pid`  
- L'indirizzo di una variabile di SPECIFICARE che riceve l'identificatore dell'elemento successivo nell'enumerazione.  
+ Indirizzo di una variabile DISPID che riceve l'identificatore dell'elemento successivo nell'enumerazione.  
   
- Se un membro viene eliminato da `DeleteMemberByName` o da `DeleteMemberByDispID`, le necessità `DISPID` di rimanere valido per `GetNextDispID`.  
+ Se un membro viene eliminato da `DeleteMemberByName` o `DeleteMemberByDispID`, `DISPID` deve rimanere valido per `GetNextDispID`.  
   
-## Valore restituito  
- Restituisce uno dei seguenti valori:  
+## <a name="return-value"></a>Valore restituito  
+ Restituisce uno dei valori seguenti:  
   
 |||  
 |-|-|  
-|`S_OK`|Riuscita.|  
-|`S_FALSE`|L'enumerazione viene eseguita.|  
+|`S_OK`|Operazione completata.|  
+|`S_FALSE`|Viene eseguita l'enumerazione.|  
   
-## Esempio  
+## <a name="example"></a>Esempio  
   
 ```  
 HRESULT hr;  
@@ -79,7 +82,7 @@ HRESULT hr;
    }  
 ```  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Interfaccia IDispatchEx](../../winscript/reference/idispatchex-interface.md)   
  [IDispatchEx::GetDispID](../../winscript/reference/idispatchex-getdispid.md)   
  [IDispatchEx::GetNextDispID](#lrfidispatchexgetnextdispid)   

@@ -1,12 +1,10 @@
 ---
-title: 'How to: Programmatically Display Worksheet Comments | Microsoft Docs'
+title: 'Procedura: visualizzare a livello di codice i commenti in un foglio di lavoro | Documenti Microsoft'
 ms.custom: 
 ms.date: 02/02/2017
-ms.prod: visual-studio-dev14
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- office-development
+ms.technology: office-development
 ms.tgt_pltfrm: 
 ms.topic: article
 dev_langs:
@@ -15,38 +13,38 @@ dev_langs:
 helpviewer_keywords:
 - worksheets, comments
 - comments, worksheets
-ms.assetid: f5ce5e7f-bae4-40b7-951c-0f15b140aaf2
-caps.latest.revision: 43
-author: kempb
-ms.author: kempb
+author: TerryGLee
+ms.author: tglee
 manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: eb5c9550fd29b0e98bf63a7240737da4f13f3249
-ms.openlocfilehash: f2357066857982dfdc51731ed3f627a22304f2f1
-ms.contentlocale: it-it
-ms.lasthandoff: 08/30/2017
-
+ms.workload: office
+ms.openlocfilehash: c43e33030cffc78bc8ee4a0665c9334bc6e8bca7
+ms.sourcegitcommit: f9fbf1f55f9ac14e4e5c6ae58c30dc1800ca6cda
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 01/10/2018
 ---
-# <a name="how-to-programmatically-display-worksheet-comments"></a>How to: Programmatically Display Worksheet Comments
-  You can programmatically show and hide comments in Microsoft Office Excel worksheets.  
+# <a name="how-to-programmatically-display-worksheet-comments"></a>Procedura: Visualizzare commenti in un foglio di lavoro a livello di codice
+  A livello di codice è possibile visualizzare e nascondere i commenti nei fogli di lavoro di Microsoft Office Excel.  
   
  [!INCLUDE[appliesto_xlalldocapp](../vsto/includes/appliesto-xlalldocapp-md.md)]  
   
-### <a name="to-display-all-comments-on-a-worksheet-in-a-document-level-customization"></a>To display all comments on a worksheet in a document-level customization  
+### <a name="to-display-all-comments-on-a-worksheet-in-a-document-level-customization"></a>Per visualizzare tutti i commenti in un foglio di lavoro in una personalizzazione a livello di documento  
   
-1.  Set the <xref:Microsoft.Office.Interop.Excel.Comment.Visible%2A> property to **true** if you want to show comments; otherwise **false**. This code must be placed in a sheet class, not in the `ThisWorkbook` class.  
+1.  Impostare la proprietà <xref:Microsoft.Office.Interop.Excel.Comment.Visible%2A> su **true** se si vogliono visualizzare i commenti, in caso contrario impostare su **false**. Questo codice deve essere inserito in una classe foglio, non nella classe `ThisWorkbook` .  
   
-     [!code-csharp[Trin_VstcoreExcelAutomation#31](../vsto/codesnippet/CSharp/Trin_VstcoreExcelAutomationCS/Sheet1.cs#31)]  [!code-vb[Trin_VstcoreExcelAutomation#31](../vsto/codesnippet/VisualBasic/Trin_VstcoreExcelAutomation/Sheet1.vb#31)]  
+     [!code-csharp[Trin_VstcoreExcelAutomation#31](../vsto/codesnippet/CSharp/Trin_VstcoreExcelAutomationCS/Sheet1.cs#31)]
+     [!code-vb[Trin_VstcoreExcelAutomation#31](../vsto/codesnippet/VisualBasic/Trin_VstcoreExcelAutomation/Sheet1.vb#31)]  
   
-### <a name="to-display-all-comments-on-a-worksheet-in-an-application-level-vsto-add-in"></a>To display all comments on a worksheet in an application-level VSTO Add-in  
+### <a name="to-display-all-comments-on-a-worksheet-in-an-application-level-vsto-add-in"></a>Per visualizzare tutti i commenti in un foglio di lavoro in un componente aggiuntivo VSTO a livello di applicazione  
   
-1.  Set the <xref:Microsoft.Office.Interop.Excel.Comment.Visible%2A> property to **true** if you want to show comments; otherwise **false**.  
+1.  Impostare la proprietà <xref:Microsoft.Office.Interop.Excel.Comment.Visible%2A> su **true** se si vogliono visualizzare i commenti, in caso contrario impostare su **false**.  
   
-     [!code-csharp[Trin_VstcoreExcelAutomationAddIn#21](../vsto/codesnippet/CSharp/trin_vstcoreexcelautomationaddin/ThisAddIn.cs#21)]  [!code-vb[Trin_VstcoreExcelAutomationAddIn#21](../vsto/codesnippet/VisualBasic/trin_vstcoreexcelautomationaddin/ThisAddIn.vb#21)]  
+     [!code-csharp[Trin_VstcoreExcelAutomationAddIn#21](../vsto/codesnippet/CSharp/trin_vstcoreexcelautomationaddin/ThisAddIn.cs#21)]
+     [!code-vb[Trin_VstcoreExcelAutomationAddIn#21](../vsto/codesnippet/VisualBasic/trin_vstcoreexcelautomationaddin/ThisAddIn.vb#21)]  
   
-## <a name="see-also"></a>See Also  
- [Working with Worksheets](../vsto/working-with-worksheets.md)   
- [How to: Programmatically Add and Delete Worksheet Comments](../vsto/how-to-programmatically-add-and-delete-worksheet-comments.md)   
- [Host Items and Host Controls Overview](../vsto/host-items-and-host-controls-overview.md)  
+## <a name="see-also"></a>Vedere anche  
+ [Utilizzo dei fogli di lavoro](../vsto/working-with-worksheets.md)   
+ [Procedura: aggiungere a livello di codice ed eliminare commenti di foglio di lavoro](../vsto/how-to-programmatically-add-and-delete-worksheet-comments.md)   
+ [Panoramica degli elementi e dei controlli host](../vsto/host-items-and-host-controls-overview.md)  
   
   

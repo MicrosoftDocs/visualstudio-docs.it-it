@@ -1,34 +1,37 @@
 ---
-title: "Supporto per progetti annidati | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "Aggiunta guidata elemento"
-  - "progetti annidati, supporto della procedura guidata"
-  - "Creazione guidata nuovo progetto"
+title: Supporto della procedura guidata per i progetti annidati | Documenti Microsoft
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: vs-ide-sdk
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- Add Item wizard
+- nested projects, wizard support
+- New Project wizard
 ms.assetid: 1b496acc-b326-4cdb-bb48-e3b5c6f12e05
-caps.latest.revision: 11
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 11
+caps.latest.revision: "11"
+author: gregvanl
+ms.author: gregvanl
+manager: ghogen
+ms.workload: vssdk
+ms.openlocfilehash: 757968aabfc256cda37a103d48c8d12f1fc16fa5
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
-# Supporto per progetti annidati
-[!INCLUDE[vs2017banner](../../code-quality/includes/vs2017banner.md)]
-
-L'ide esegue due procedure guidate che il progetto padre per i progetti annidati possibile implementare: la procedura guidata di **nuovo progetto** e la procedura guidata di **aggiungere l'elemento** .  
+# <a name="wizard-support-for-nested-projects"></a>Supporto della procedura guidata per i progetti annidati
+Nell'IDE vengono eseguiti due procedure guidate che può implementare il progetto principale per i progetti annidati: il **nuovo progetto** procedura guidata e **Aggiungi elemento** procedura guidata.  
   
- Se un utente avvia la procedura guidata di **nuovo progetto** selezionando **aggiungere il progetto** e facendo clic su **nuovo progetto** il menu File o selezionando **aggiungere** e fare clic con il pulsante destro del mouse **nuovo progetto** in Esplora soluzioni, le esecuzioni dell'IDE il comando di **AddProject** e l'implementazione del progetto padre del comando di **AddProject** restituisce un file di progetto di modello, o un file della procedura guidata \(.vsz\) contenente un set di parametri di contesto.  
+ Se un utente avvia il **nuovo progetto** procedura guidata selezionando **Aggiungi progetto** e facendo clic su **nuovo progetto** dal menu File oppure selezionando **Aggiungi** pulsante destro del mouse **nuovo progetto** in Esplora soluzioni, viene eseguito l'IDE di **AddProject** comando e l'implementazione del progetto padre del **AddProject**comando restituisce un file di progetto di modello o un file di procedura guidata (vsz) che include un set di parametri di contesto.  
   
- Analogamente, un'implementazione del progetto padre delle procedure guidate di **AddItem** restituisce un file VSZ che dispone di un set diverso di parametri di contesto.  
+ Analogamente, implementazione di un progetto padre di **AddItem** procedure guidate restituisce un file VSZ che include un set diverso di parametri di contesto.  
   
- Per ulteriori informazioni sulle procedure guidate, vedere [Procedura guidata \(. File vsz\)](../../extensibility/internals/wizard-dot-vsz-file.md) [Parametri di contesto](../../extensibility/internals/context-parameters.md) [Procedura guidata \(. File vsz\)](../../extensibility/internals/wizard-dot-vsz-file.md)e [La registrazione di progetto e modelli di elemento](../../extensibility/internals/registering-project-and-item-templates.md).  
+ Per ulteriori informazioni sulle procedure guidate, vedere [guidata (. File vsz)](../../extensibility/internals/wizard-dot-vsz-file.md), [parametri di contesto](../../extensibility/internals/context-parameters.md) e [registrazione Project and Item Templates](../../extensibility/internals/registering-project-and-item-templates.md).  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  <xref:Microsoft.VisualStudio.Shell.Interop.IVsUIHierarchy>   
- [Progetti di annidamento](../../extensibility/internals/nesting-projects.md)
+ [Annidamento dei progetti](../../extensibility/internals/nesting-projects.md)

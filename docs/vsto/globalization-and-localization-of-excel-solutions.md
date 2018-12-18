@@ -1,108 +1,105 @@
 ---
-title: Globalization and Localization of Excel Solutions | Microsoft Docs
+title: Globalizzazione e localizzazione di soluzioni di Excel | Documenti Microsoft
 ms.custom: 
 ms.date: 02/02/2017
-ms.prod: visual-studio-dev14
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- office-development
+ms.technology: office-development
 ms.tgt_pltfrm: 
 ms.topic: article
 dev_langs:
 - VB
 - CSharp
-helpviewer_keywords:
-- globalization [Office development in Visual Studio], configuring
-ms.assetid: c5fccd45-cb3a-441c-89bf-257e9faf4587
-caps.latest.revision: 24
-author: kempb
-ms.author: kempb
+helpviewer_keywords: globalization [Office development in Visual Studio], configuring
+author: TerryGLee
+ms.author: tglee
 manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: eb5c9550fd29b0e98bf63a7240737da4f13f3249
-ms.openlocfilehash: 644848e67c3d948e994702cbf50bc56c5c08b145
-ms.contentlocale: it-it
-ms.lasthandoff: 08/30/2017
-
+ms.workload: office
+ms.openlocfilehash: 66c997dd8de6801d790b7653ca414cac0996ddc9
+ms.sourcegitcommit: f9fbf1f55f9ac14e4e5c6ae58c30dc1800ca6cda
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 01/10/2018
 ---
-# <a name="globalization-and-localization-of-excel-solutions"></a>Globalization and Localization of Excel Solutions
-  This section contains information about special considerations for Microsoft Office Excel solutions that will be run on computers that have non-English settings for Windows. Most aspects of globalizing and localizing Microsoft Office solutions are the same as you encounter when you create other kinds of solutions using Visual Studio. For general information, see [Globalizing and Localizing Applications](/visualstudio/ide/globalizing-and-localizing-applications).  
+# <a name="globalization-and-localization-of-excel-solutions"></a>Globalizzazione e localizzazione di soluzioni di Excel
+  Questa sezione contiene considerazioni speciali per le soluzioni Microsoft Office Excel eseguite in computer che hanno impostazioni di Windows non in inglese. Gli aspetti da considerare per la globalizzazione e la localizzazione di soluzioni Microsoft Office sono gli stessi implicati negli altri tipi di soluzioni create con Visual Studio. Per informazioni di carattere generale, vedere [Globalizing and Localizing Applications](/visualstudio/ide/globalizing-and-localizing-applications).  
   
- By default, host controls in Microsoft Office Excel work correctly in any Windows regional setting, as long as all data that is passed or manipulated using managed code is formatted using English (United States) formatting. In projects that target the [!INCLUDE[net_v40_short](../sharepoint/includes/net-v40-short-md.md)] or the [!INCLUDE[net_v45](../vsto/includes/net-v45-md.md)], this behavior is controlled by the common language runtime (CLR).  
+ Per impostazione predefinita, i controlli host in Microsoft Office Excel funzionano correttamente con tutte le impostazioni internazionali di Windows, a condizione che tutti i dati passati o modificati tramite codice gestito vengano formattati usando la formattazione per la lingua inglese (Stati Uniti). Nei progetti destinati a [!INCLUDE[net_v40_short](../sharepoint/includes/net-v40-short-md.md)] o [!INCLUDE[net_v45](../vsto/includes/net-v45-md.md)], questo comportamento viene controllato da Common Language Runtime (CLR).  
   
  [!INCLUDE[appliesto_xlalldocapp](../vsto/includes/appliesto-xlalldocapp-md.md)]  
   
-## <a name="formatting-data-in-excel-with-various-regional-settings"></a>Formatting Data in Excel with Various Regional Settings  
- You must format all data that has locale-sensitive formatting, such as dates and currency, using the English (United States) data format (locale ID 1033) before you pass it to Microsoft Office Excel or read the data from code in your Office project.  
+## <a name="formatting-data-in-excel-with-various-regional-settings"></a>Formattazione dei dati in Excel con varie impostazioni internazionali  
+ Tutti i dati con formattazione dipendente dalle impostazioni locali, ad esempio le date e la valuta, devono essere formattati usando il formato dati inglese (Stati Uniti) con ID delle impostazioni locali 1033 prima di essere passati a Microsoft Office Excel o prima che vengano letti dal codice del progetto di Office.  
   
- By default, when you develop an Office solution in Visual Studio, the Excel object model expects locale ID 1033 data formatting (this is also called locking the object model to locale ID 1033). This behavior matches the way that Visual Basic for Applications works. However, you can modify this behavior in your Office solutions.  
+ Per impostazione predefinita, quando si sviluppa una soluzione Office in Visual Studio, il modello a oggetti di Excel si aspetta la formattazione dei dati secondo l'ID delle impostazioni locali 1033 (tale operazione viene anche definita blocco del modello a oggetti sull'ID delle impostazioni locali 1033). Questo comportamento corrisponde alla modalità di funzionamento di Visual Basic, Applications Edition. Tuttavia, questo comportamento può essere modificato nelle soluzioni Office.  
   
-### <a name="understanding-how-the-excel-object-model-always-expects-locale-id-1033"></a>Understanding How the Excel Object Model Always Expects Locale ID 1033  
- By default, Office solutions that you create by using Visual Studio are not affected by the end user's locale settings, and always behave as though the locale is English (United States). For example, if you get or set the <xref:Microsoft.Office.Interop.Excel.Range.Value2%2A> property in Excel, the data must be formatted the way that locale ID 1033 expects. If you use a different data format, you might get unexpected results.  
+### <a name="understanding-how-the-excel-object-model-always-expects-locale-id-1033"></a>Comprendere come il modello a oggetti di Excel si aspetta sempre l'ID delle impostazioni locali 1033  
+ Per impostazione predefinita, le impostazioni locali dell'utente finale non hanno effetto sulle soluzioni Office create con Visual Studio, il cui comportamento rimane sempre quello relativo alle impostazioni locali per la lingua inglese (Stati Uniti). Ad esempio, se si ottiene o si imposta la proprietà <xref:Microsoft.Office.Interop.Excel.Range.Value2%2A> in Excel, i dati devono essere formattati nel modo previsto dall'ID delle impostazioni locali 1033. Se si usa un formato dati diverso, si potrebbero ottenere risultati imprevisti.  
   
- Even though you use the English (United States) format for data that is passed or manipulated by managed code, Excel interprets and displays the data correctly according to the end user's locale setting. Excel can format the data correctly because the managed code passes locale ID 1033 along with the data, which indicates that the data is in English (United States) format and therefore must be reformatted to match the user's locale setting.  
+ Anche se si usa il formato inglese (Stati Uniti) per i dati passati o modificati da codice gestito, Excel interpreta e visualizza i dati correttamente in base alle impostazioni locali dell'utente finale. In Excel i dati vengono formattati in maniera corretta perché il codice gestito passa l'ID delle impostazioni locali 1033 insieme ai dati, a indicare che i dati sono nel formato inglese (Stati Uniti) e quindi devono essere riformattati in modo da corrispondere alle impostazioni locali dell'utente.  
   
- For example, if end users have their regional options set to the German (Germany) locale, they expect the date June 29, 2005, to be formatted this way: 29.06.2005. However, if your solution passes the date to Excel as a string, you must format the date according to English (United States) format: 6/29/2005. If the cell is formatted as a Date cell, Excel will display the date in German (Germany) format.  
+ Se ad esempio le opzioni internazionali degli utenti finali sono impostate sulle impostazioni locali per la lingua tedesca (Germania), ci si aspetta che la data 29 giugno 2005 sia formattata come segue: 29.06.2005. Tuttavia, se la soluzione passa la data a Excel sotto forma di stringa, è necessario formattare la data in base al formato inglese (Stati Uniti): 6/29/2005. Se la cella viene formattata come una cella di data, Excel visualizzerà la data nel formato della lingua tedesca (Germania).  
   
-### <a name="passing-other-locale-ids-to-the-excel-object-model"></a>Passing Other Locale IDs to the Excel Object Model  
- The common language runtime (CLR) automatically passes locale ID 1033 to all methods and properties in the Excel object model that accept locale-sensitive data. There is no way to change this behavior automatically for all calls into the object model. However, you can pass a different locale ID to a specific method by using <xref:System.Type.InvokeMember%2A> to call the method and by passing the locale ID to the *culture* parameter of the method.  
+### <a name="passing-other-locale-ids-to-the-excel-object-model"></a>Trasmissione degli altri ID delle impostazioni locali al modello a oggetti di Excel  
+ Common Language Runtime (CLR) passa automaticamente l'ID delle impostazioni locali 1033 a tutti i metodi e le proprietà nel modello a oggetti di Excel che accettano i dati dipendenti dalle impostazioni locali. Non è possibile modificare automaticamente questo comportamento per tutte le chiamate nel modello a oggetti. Tuttavia, è possibile passare un ID delle impostazioni locali diverso a un metodo specifico usando <xref:System.Type.InvokeMember%2A> per chiamare il metodo e passando l'ID delle impostazioni locali al parametro *culture* del metodo.  
   
-## <a name="localizing-document-text"></a>Localizing Document Text  
- The document, template, or workbook in your project probably includes static text, which must be localized separately from the assembly and other managed resources. A straightforward way to do this is to make a copy of the document and translate the text using Microsoft Office Word or Microsoft Office Excel. This process works even if you make no changes to the code, because any number of documents can be linked to the same assembly.  
+## <a name="localizing-document-text"></a>Localizzazione del testo dei documenti  
+ I documenti, i modelli o le cartelle di lavoro contenute in un progetto includono in genere testo statico che deve essere localizzato separatamente dall'assembly e dalle altre risorse gestite. Un metodo diretto per effettuare questa operazione consiste nell'eseguire una copia del documento e tradurre il testo in Microsoft Office Word o Microsoft Office Excel. Questo processo funziona anche se non si apportano modifiche al codice, in quanto è possibile collegare un numero illimitato di documenti allo stesso assembly.  
   
- You must still make sure that any part of your code that interacts with the document text continues to match the language of the text, and that bookmarks, named ranges, and other display fields accommodate any reformatting of the Office document that was necessary to adjust for different grammar and text length. For document templates that contain relatively little text, you might want to consider storing the text in resource files, and then loading the text at run time.  
+ È tuttavia necessario assicurarsi che tutte le parti del codice che interagiscono con il testo del documento continuino a corrispondere alla lingua del testo e che i segnalibri, gli intervalli denominati e gli altri campi visualizzati si adattino alle eventuali riformattazioni del documento di Office necessarie per rispettare le differenze nella grammatica e nella lunghezza del testo. Per i modelli di documenti che contengono testo relativamente breve, è possibile memorizzare il testo in file di risorse per poi caricarlo in fase di esecuzione.  
   
-### <a name="text-direction"></a>Text Direction  
- In Excel, you can set a property of the worksheet to render text right to left. Host controls, or any control that has a `RightToLeft` property, that are placed on the designer automatically match these settings at run time. Word does not have a document setting for bi-directional text (you just change your alignment of text), so the controls cannot be mapped to this setting. Instead, you must set the text alignment for each control. It is possible to write code to walk through all of the controls and force them to render text from right to left.  
+### <a name="text-direction"></a>Orientamento del testo  
+ In Excel, è possibile impostare una proprietà del foglio di lavoro per il rendering del testo da destra a sinistra. I controlli host, o i controlli con la proprietà `RightToLeft` , posizionati nella finestra di progettazione riflettono automaticamente queste impostazioni in fase di esecuzione. I documenti di Word non hanno una specifica impostazione per il testo bidirezionale (è possibile modificare solo l'allineamento del testo) a cui mappare i controlli, che devono quindi essere impostati individualmente. È possibile scrivere codice per esaminare tutti i controlli e imporre il rendering del testo da destra a sinistra.  
   
-### <a name="changing-culture"></a>Changing Culture  
- Your document-level customization code typically shares the main UI thread of Excel, so any changes you make to the thread culture affects everything else that is running on that thread; the change is not restricted to your customization.  
+### <a name="changing-culture"></a>Modifica delle impostazioni cultura  
+ Il codice di personalizzazione a livello di documento in genere condivide il thread principale dell'interfaccia utente di Excel, per cui tutte le modifiche apportate alle impostazioni cultura del thread influiscono su qualsiasi altro elemento in esecuzione su tale thread. La modifica non è limitata alla personalizzazione.  
   
- Windows Forms controls are initialized before application-level VSTO Add-ins are started by the host application. In these situations, the culture should be changed before setting the UI controls.  
+ I controlli Windows Form vengono inizializzati prima dell'avvio dei componenti aggiuntivi VSTO a livello di applicazione da parte dell'applicazione host. In queste situazioni, le impostazioni cultura devono essere modificate prima dell'impostazione dei controlli dell'interfaccia utente.  
   
-## <a name="installing-the-language-packs"></a>Installing the Language Packs  
- If you have non-English settings for Windows, you can install the [!INCLUDE[vsto_runtime](../vsto/includes/vsto-runtime-md.md)] Language Packs to see [!INCLUDE[vsto_runtime](../vsto/includes/vsto-runtime-md.md)] messages in the same language as Windows. If any end users run your solutions with non-English settings for Windows, they must have the correct language pack to see runtime messages in the same language as Windows. The [!INCLUDE[vsto_runtime](../vsto/includes/vsto-runtime-md.md)] Language Packs are available from the [Microsoft Download Center](http://www.microsoft.com/downloads).  
+## <a name="installing-the-language-packs"></a>Installazione dei Language Pack  
+ Se Windows è impostato su una lingua diversa dall'inglese, è possibile installare i Language Pack di [!INCLUDE[vsto_runtime](../vsto/includes/vsto-runtime-md.md)] in modo da visualizzare i messaggi di [!INCLUDE[vsto_runtime](../vsto/includes/vsto-runtime-md.md)] nella stessa lingua di Windows. Se gli utenti finali eseguono le soluzioni con le impostazioni non in lingua inglese per Windows, devono avere il Language Pack corretto per visualizzare i messaggi di runtime nella stessa lingua di Windows. I Language Pack di [!INCLUDE[vsto_runtime](../vsto/includes/vsto-runtime-md.md)] sono disponibili nell' [Area download Microsoft](http://www.microsoft.com/downloads).  
   
- In addition, the redistributable .NET Framework Language Packs are necessary for ClickOnce messages. The .NET Framework Language Packs are available from the [Microsoft Download Center](http://www.microsoft.com/downloads).  
+ Inoltre, sono necessari i Language Pack per .NET Framework ridistribuibili per i messaggi di ClickOnce. I Language Pack di .NET Framework sono disponibili nell' [Area download Microsoft](http://www.microsoft.com/downloads).  
   
-## <a name="regional-settings-and-excel-com-calls"></a>Regional Settings and Excel COM Calls  
- Whenever a managed client calls a method on a COM object and it needs to pass in culture-specific information, it does so using the <xref:System.Globalization.CultureInfo.CurrentCulture%2A> (locale) that matches the current thread locale. The current thread locale is inherited from the user's regional settings by default. However, when you make a call into the Excel object model from an Excel solution created by using the Office development tools in Visual Studio, the English (United States) data format (locale ID 1033) is passed to the Excel object model automatically. You must format all data that has locale-sensitive formatting, such as dates and currency, using the English (United States) data format before you pass it to Microsoft Office Excel or read the data from your project code.  
+## <a name="regional-settings-and-excel-com-calls"></a>Impostazioni internazionali e chiamate COM di Excel  
+ Ogni volta che un client gestito chiama un metodo su un oggetto COM e deve passare informazioni specifiche delle impostazioni cultura, usa la proprietà <xref:System.Globalization.CultureInfo.CurrentCulture%2A> (impostazioni locali) che corrisponde alle impostazioni locali del thread corrente, che per impostazione predefinita vengono ereditate dalle impostazioni internazionali dell'utente. Tuttavia, quando si effettua una chiamata nel modello a oggetti di Excel da una soluzione Excel creata tramite gli strumenti di sviluppo di Office in Visual Studio, il formato dati inglese (Stati Uniti) con ID delle impostazioni locali 1033 viene passato automaticamente al modello a oggetti di Excel. Tutti i dati con formattazione dipendente dalle impostazioni locali, ad esempio le date e la valuta, devono essere formattati usando il formato dati inglese (Stati Uniti) prima di essere passati a Microsoft Office Excel o prima che vengano letti dal codice del progetto.  
   
-## <a name="considerations-for-storing-data"></a>Considerations for Storing Data  
- To ensure that your data is correctly interpreted and displayed, you should also consider that problems can occur when an application is storing data, such as Excel worksheet formulas, in string literals (hard-coded) instead of in strongly-typed objects. You should use data that is formatted assuming a culture-invariant or English (United States) (the LCID value 1033) style.  
+## <a name="considerations-for-storing-data"></a>Considerazioni relative all'archiviazione di dati  
+ Per garantire che i dati vengano interpretati e visualizzati correttamente, è necessario considerare anche i problemi che possono verificarsi quando un'applicazione archivia i dati, come le formule dei fogli di lavoro di Excel, in valori letterali stringa (hardcoded) anziché in oggetti fortemente tipizzati. È consigliabile usare i dati formattati presumendo uno stile indipendente dalle impostazioni cultura o impostato sulla lingua inglese (Stati Uniti) con ID delle impostazioni locali 1033.  
   
-### <a name="applications-that-use-string-literals"></a>Applications That Use String Literals  
- Possible values that might be hard-coded include date literals that are written in English (United States) format, and Excel worksheet formulas that contain localized function names. Another possibility might be a hard-coded string that contains a number such as "1,000"; in some cultures, this is interpreted as one thousand, but in other cultures, it represents one point zero. Calculations and comparisons performed on the wrong format might result in incorrect data.  
+### <a name="applications-that-use-string-literals"></a>Applicazioni che usano valori letterali stringa  
+ Tra i valori che potrebbero essere specificati a livello di codice (hardcoded) sono inclusi i valori letterali data scritti in formato inglese (Stati Uniti) e le formule dei fogli di lavoro di Excel che contengono nomi di funzioni localizzati. Un'altra possibilità potrebbe essere una stringa hardcoded contenente un numero come "1,000". In alcune impostazioni cultura questo numero viene interpretato come "mille", mentre in altre come "uno virgola zero". I calcoli e i confronti eseguiti con un formato errato possono produrre dati non corretti.  
   
- Excel interprets any strings in accordance with the LCID that is passed with the string. This can be a problem if the format of the string does not correspond to the LCID that is passed. Excel solutions created by using the Office development tools in Visual Studio use the LCID 1033 (en-US) when passing all data. Excel displays the data according to the regional settings and Excel user interface language. Visual Basic for Applications (VBA) also works this way; strings are formatted as en-US and VBA almost always passes 0 (language neutral) as the LCID. For example, the following VBA code displays a correctly-formatted value for May 12, 2004, in accordance with the current user locale setting:  
+ Excel interpreta ogni stringa in base all'ID delle impostazioni locali passato con la stringa. Ciò può rappresentare un problema se il formato della stringa non corrisponde all'ID delle impostazioni locali passato. Le soluzioni Excel create tramite gli strumenti di sviluppo di Office in Visual Studio usano l'ID delle impostazioni locali 1033 (en-US) quando vengono passati tutti i dati. Excel visualizza i dati in base alle impostazioni internazionali e alla lingua dell'interfaccia utente di Excel. Visual Basic, Applications Edition (VBA) funziona allo stesso modo. Le stringhe vengono formattate come en-US e VBA passa quasi sempre 0 (valore che indica l'indipendenza dalla lingua) come LCID. Ad esempio, il codice VBA seguente visualizza un valore formattato correttamente per la data 12 maggio 2004, in base alle impostazioni locali correnti dell'utente:  
   
 ```  
 'VBA  
 Application.ActiveCell.Value2 = "05/12/04"  
 ```  
   
- The same code, when used in a solution created by using the Office development tools in Visual Studio and passed to Excel through COM interop, produces the same results when the date is formatted in en-US style.  
+ Lo stesso codice, se usato in una soluzione creata tramite gli strumenti di sviluppo di Office in Visual Studio e passato a Excel tramite l'interoperabilità COM, produce gli stessi risultati quando la data viene formattata in stile en-US.  
   
- For example:  
+ Ad esempio:  
   
- [!code-vb[Trin_VstcoreCreatingExcel#6](../vsto/codesnippet/VisualBasic/Trin_VstcoreCreatingExcelVB/Sheet1.vb#6)] [!code-csharp[Trin_VstcoreCreatingExcel#6](../vsto/codesnippet/CSharp/Trin_VstcoreCreatingExcelCS/Sheet1.cs#6)]  
+ [!code-vb[Trin_VstcoreCreatingExcel#6](../vsto/codesnippet/VisualBasic/Trin_VstcoreCreatingExcelVB/Sheet1.vb#6)]
+ [!code-csharp[Trin_VstcoreCreatingExcel#6](../vsto/codesnippet/CSharp/Trin_VstcoreCreatingExcelCS/Sheet1.cs#6)]  
   
- You should work with strongly-typed data instead of string literals whenever possible. For example, instead of storing a date in a string literal, store it as a <xref:System.Double>, then convert it to a <xref:System.DateTime> object for manipulation.  
+ Quando possibile, si consiglia di usare dati fortemente tipizzati invece di valori letterali stringa. Ad esempio, invece di archiviare una data in un valore letterale stringa, archiviarla come valore <xref:System.Double>, quindi convertirla in un oggetto <xref:System.DateTime> per la modifica.  
   
- The following code example takes a date that a user enters into cell A5, stores it as a <xref:System.Double>, then converts it to a <xref:System.DateTime> object for display in cell A7. Cell A7 must be formatted to display a date.  
+ L'esempio di codice seguente accetta una data immessa dall'utente nella cella A5, quindi la archivia come valore <xref:System.Double>, infine la converte in un oggetto <xref:System.DateTime> per la visualizzazione nella cella A7. La cella A7 deve essere formattata per la visualizzazione della data.  
   
- [!code-vb[Trin_VstcoreCreatingExcel#7](../vsto/codesnippet/VisualBasic/Trin_VstcoreCreatingExcelVB/Sheet1.vb#7)] [!code-csharp[Trin_VstcoreCreatingExcel#7](../vsto/codesnippet/CSharp/Trin_VstcoreCreatingExcelCS/Sheet1.cs#7)]  
+ [!code-vb[Trin_VstcoreCreatingExcel#7](../vsto/codesnippet/VisualBasic/Trin_VstcoreCreatingExcelVB/Sheet1.vb#7)]
+ [!code-csharp[Trin_VstcoreCreatingExcel#7](../vsto/codesnippet/CSharp/Trin_VstcoreCreatingExcelCS/Sheet1.cs#7)]  
   
-### <a name="excel-worksheet-functions"></a>Excel Worksheet Functions  
- Worksheet function names are translated internally for most language versions of Excel. However, due to potential language and COM interop issues it is strongly recommended that you use only English function names in your code.  
+### <a name="excel-worksheet-functions"></a>Funzioni dei fogli di lavoro di Excel  
+ I nomi delle funzioni dei fogli di lavoro sono tradotti internamente per la maggior parte delle versioni localizzate di Excel. Tuttavia, per evitare potenziali problemi relativi alla lingua e all'interoperabilità COM, si consiglia di usare nel codice solo i nomi delle funzioni in inglese.  
   
-### <a name="applications-that-use-external-data"></a>Applications That Use External Data  
- Any code that opens or otherwise uses external data, such as files that include comma-separated values (CSV files) exported from a legacy system, might also be affected if such files are exported using any format besides en-US. Database access might not be affected because all values should be in binary format, unless the database stores dates as strings or performs operations that do not use binary format. Also, if you construct SQL queries using data from Excel, you might need to ensure they are in en-US format, depending on the function you use.  
+### <a name="applications-that-use-external-data"></a>Applicazioni che usano dati esterni  
+ Anche il codice che apre o usa in altro modo dati esterni, ad esempio file che includono valori separati da virgole (CSV) esportati da un sistema legacy, può essere interessato se tali file vengono esportati in un altro formato diverso da en-US. L'accesso al database potrebbe non essere influenzato, in quanto si presuppone che tutti i valori siano in formato binario, a meno che il database non archivi date sotto forma di stringhe o esegua operazioni che non usano il formato binario. Inoltre, se si creano query SQL mediante i dati di Excel, a seconda della funzione usata potrebbe essere necessario verificare che siano in formato en-US.  
   
-## <a name="see-also"></a>See Also  
- [How to: Target the Office Multilingual User Interface](../vsto/how-to-target-the-office-multilingual-user-interface.md)   
- [Designing and Creating Office Solutions](../vsto/designing-and-creating-office-solutions.md)   
- [Optional Parameters in Office Solutions](../vsto/optional-parameters-in-office-solutions.md)  
+## <a name="see-also"></a>Vedere anche  
+ [Procedura: l'interfaccia utente multilingue di Office di destinazione](../vsto/how-to-target-the-office-multilingual-user-interface.md)   
+ [Progettazione e creazione di soluzioni Office](../vsto/designing-and-creating-office-solutions.md)   
+ [Parametri facoltativi nelle soluzioni Office](../vsto/optional-parameters-in-office-solutions.md)  
   
   

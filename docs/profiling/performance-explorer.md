@@ -4,41 +4,24 @@ ms.custom:
 ms.date: 06/19/2017
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- vs-ide-debug
+ms.technology: vs-ide-debug
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
 - vs.performance
 - vs.performance.wizard.website
-helpviewer_keywords:
-- performance tools [Visual Studio ALM]
+helpviewer_keywords: performance tools [Visual Studio ALM]
 ms.assetid: df52b717-a55d-4b1d-8c2e-d5a6a38042f4
-caps.latest.revision: 45
+caps.latest.revision: "45"
 author: mikejo5000
 ms.author: mikejo
 manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: Human Translation
-ms.sourcegitcommit: baf12bba10dfba15f10d75fd1f7a4cdc4000e441
-ms.openlocfilehash: 1c3893e6028dd0efeee8d4f4b62d73765a8d2e18
-ms.contentlocale: it-it
-ms.lasthandoff: 06/21/2017
-
+ms.workload: multiple
+ms.openlocfilehash: f95197bcd7315f432ce2fff2bd1e5dae1005e7e7
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="performance-explorer"></a>Esplora prestazioni
 Gli [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] strumenti di profilatura di Visual Studio consentono agli sviluppatori di misurare, valutare e risolvere i problemi correlati alle prestazioni riscontrati nel codice. Questi strumenti sono completamente integrati nell'IDE per fornire un'esperienza utente trasparente e accessibile.  

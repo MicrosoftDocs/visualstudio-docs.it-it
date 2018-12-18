@@ -1,11 +1,10 @@
 ---
-title: 'Procedura: Compilare destinazioni specifiche all&quot;interno di soluzioni tramite MSBuild.exe | Microsoft Docs'
+title: 'Procedura: Compilare destinazioni specifiche all''interno di soluzioni tramite MSBuild.exe | Microsoft Docs'
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- vs-ide-sdk
+ms.technology: msbuild
 ms.tgt_pltfrm: 
 ms.topic: article
 helpviewer_keywords:
@@ -13,29 +12,17 @@ helpviewer_keywords:
 - msbuild.exe, building specific targets in a solution
 - MSBuild, msbuild.exe
 ms.assetid: f46feb9b-4c16-4fec-b6e1-36a959692ba3
-caps.latest.revision: 10
-author: kempb
-ms.author: kempb
+caps.latest.revision: 
+author: Mikejo5000
+ms.author: mikejo
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: 3ba7680d46345f2b49019659c715cfb418933d39
-ms.openlocfilehash: 22c46117f929447dc9a85b940bdaac911b35a7d8
-ms.lasthandoff: 02/22/2017
-
+ms.workload:
+- multiple
+ms.openlocfilehash: 66ec27d619b64353bf0cbac6a8b92c582ef5a590
+ms.sourcegitcommit: 205d15f4558315e585c67f33d5335d5b41d0fcea
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 02/09/2018
 ---
 # <a name="how-to-build-specific-targets-in-solutions-by-using-msbuildexe"></a>Procedura: compilare destinazioni specifiche all'interno di soluzioni tramite MSBuild.exe
 È possibile usare MSBuild per compilare destinazioni specifiche di progetti specifici in una soluzione.  

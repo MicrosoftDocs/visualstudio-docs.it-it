@@ -4,36 +4,20 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- vs-acquisition
+ms.technology: vs-acquisition
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: dc2746f4-0b5c-4674-9ef7-f40f94150f52
-caps.latest.revision: 20
+caps.latest.revision: "20"
 author: TerryGLee
 ms.author: tglee
 manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 5db97d19b1b823388a465bba15d057b30ff0b3ce
-ms.openlocfilehash: 07048d1ab89599609d7ece1e69056e6dd1dd7eea
-ms.contentlocale: it-it
-ms.lasthandoff: 02/22/2017
-
+ms.workload: multiple
+ms.openlocfilehash: c7cf60293ca2d0a0ebd18dc9715d2954bd1128b2
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="step-5-add-controls-to-your-form"></a>Passaggio 5: aggiungere controlli al form
 In questo passaggio si aggiungono controlli, ad esempio un controllo `PictureBox` e un controllo `CheckBox`, al form. Si aggiungeranno quindi pulsanti al form.  
@@ -50,7 +34,7 @@ In questo passaggio si aggiungono controlli, ad esempio un controllo `PictureBox
   
 4.  Scegliere il nuovo controllo PictureBox per selezionarlo, quindi scegliere il triangolo nero sul nuovo controllo PictureBox per visualizzare il relativo elenco attività, come illustrato nell'immagine seguente.  
   
-     ![Attività di PictureBox](../ide/media/express_pictureboxtasks.png "Express_PictureBoxTasks")  
+     ![Attività PictureBox ](../ide/media/express_pictureboxtasks.png "Express_PictureBoxTasks")  
 Attività di PictureBox  
   
     > [!NOTE]

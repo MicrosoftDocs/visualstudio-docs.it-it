@@ -1,64 +1,66 @@
 ---
-title: "Controllo di esecuzione | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "debug [debug SDK], controllo di esecuzione"
+title: Controllo dell'esecuzione | Documenti Microsoft
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: vs-ide-sdk
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords: debugging [Debugging SDK], control of execution
 ms.assetid: 97071846-007e-450f-95a6-f072d0f5e61e
-caps.latest.revision: 9
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: gregvanl
+ms.author: gregvanl
+manager: ghogen
+ms.workload: vssdk
+ms.openlocfilehash: a76b14f28bdb74345813931fc334f98090abd93c
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
-# Controllo di esecuzione
-[!INCLUDE[vs2017banner](../../code-quality/includes/vs2017banner.md)]
-
-Il motore \(DE\) di debug in genere invia uno dei seguenti eventi come ultimo evento startup:  
+# <a name="control-of-execution"></a>Controllo di esecuzione
+Il motore di debug (DE) in genere uno dei seguenti eventi Invia come ultimo evento di avvio:  
   
--   L'evento del punto di ingresso, se connessione a un programma appena avviato  
+-   L'evento punto di ingresso, se la connessione a un programma appena avviato  
   
--   L'evento completo di caricamento, se connessione a un programma già in esecuzione  
+-   L'evento complete di carico, se la connessione a un programma che è già in esecuzione  
   
- Entrambi questi eventi sono interrompendo gli eventi, quindi attende di DE una risposta dall'utilizzo dell'IDE.  Per ulteriori informazioni, vedere [modalità operative](../../extensibility/debugger/operational-modes.md).  
+ Entrambi questi eventi sono eventi di arresto, vale a dire che la Germania attende una risposta da parte dell'utente tramite l'IDE. Per ulteriori informazioni, vedere [modalità operative](../../extensibility/debugger/operational-modes.md).  
   
-## Arrestare evento  
- Quando un evento bloccato viene inviato alla sessione di debug:  
+## <a name="stopping-event"></a>L'evento di arresto  
+ Quando viene inviato un evento di arresto per la sessione di debug:  
   
-1.  Il programma e il thread che contengono il puntatore all'istruzione corrente possono essere ottenuti dall'interfaccia eventi.  
+1.  Il programma e il thread che contengono il puntatore all'istruzione corrente può essere ottenuti dall'interfaccia di eventi.  
   
-2.  L'ide determina che presentano file di codice sorgente e posizione, che visualizza evidenziato nell'editor.  
+2.  L'IDE determina il file del codice sorgente corrente e la posizione, che viene visualizzata evidenziata nell'editor.  
   
-3.  La sessione di debug in genere risponde al primo evento bloccato chiamando il metodo di **continuare** del programma.  
+3.  La sessione di debug in genere risponde a questo evento di arresto prima chiamando il programma **continua** metodo.  
   
-4.  Il programma quindi viene eseguito fino a che non verrà incontrato un termine bloccato, come raggiungere un punto di interruzione, nel qual caso il DE invia un evento del punto di interruzione alla sessione di debug.  L'evento del punto di interruzione è ancora un evento bloccato e attende di DE una risposta dell'utente.  
+4.  Quindi, il programma viene eseguito finché non viene rilevata una condizione di interruzione, ad esempio raggiunge un punto di interruzione, in cui la Germania case invia un evento punto di interruzione per la sessione di debug. L'evento punto di interruzione è un evento di arresto e la Germania è nuovo in attesa di una risposta dell'utente.  
   
-5.  Se si sceglie di eseguire istruzioni in, in, o da una funzione, l'ide richiesto la sessione di debug a chiamare il metodo di `Step` del programma, passando l'unità del passaggio \(istruzione, l'istruzione, o riga\) e il tipo di passaggio\-che è, se l'esecuzione in, in, o dalla funzione.  Quando il passaggio è completo, il DE invia un evento completo del passaggio alla sessione di debug, che è un evento bloccato.  
+5.  Se si sceglie di eseguire l'istruzione, in o da una funzione, l'IDE si comporta la sessione di debug per chiamare il programma `Step` metodo, passando l'unità di passaggio (istruzione, istruzione o riga) e il tipo di passaggio, vale a dire se eseguire l'istruzione, in , o dalla funzione. Una volta completato il passaggio, la Germania invia un evento di completamento del passaggio per la sessione di debug, ovvero un evento di arresto.  
   
-     In alternativa  
+     oppure  
   
-     Se si sceglie di continuare a eseguire il puntatore all'istruzione corrente, l'ide richiesto la sessione di debug a chiamare il metodo di **di esecuzione** del programma.  Il programma verrà ripresa fino a quando incontra la condizione bloccato seguente.  
+     Se si sceglie di continuare l'esecuzione dal puntatore all'istruzione corrente, l'IDE si comporta la sessione di debug per chiamare il programma **Execute** metodo. Il programma riprende l'esecuzione finché incontra la condizione di interruzione successiva.  
   
-     In alternativa  
+     oppure  
   
-     Se la sessione di debug deve ignorare un evento bloccato particolare, la sessione di debug chiama il metodo di **continuare** del programma.  Se il programma sta eseguendo, su, o da una funzione quando ha rilevato la condizione bloccato, quindi continua il passaggio.  
+     Se la sessione di debug per ignorare un evento di arresto particolare, la sessione di debug chiama il programma **continua** metodo. Se il programma è stato l'esecuzione di istruzioni in su o da una funzione quando si è verificato la condizione di interruzione, quindi continua il passaggio.  
   
- A livello di codice, quando il DE rileva una condizione bloccato, invia tali eventi arrestare come [IDebugLoadCompleteEvent2](../../extensibility/debugger/reference/idebugloadcompleteevent2.md) o [IDebugEntryPointEvent2](../../extensibility/debugger/reference/idebugentrypointevent2.md) gestione \(SDM\) di debug della sessione per implementare un'interfaccia di [IDebugEventCallback2](../../extensibility/debugger/reference/idebugeventcallback2.md) .  Il DE passes le interfacce di [IDebugThread2](../../extensibility/debugger/reference/idebugthread2.md) e di [IDebugProgram2](../../extensibility/debugger/reference/idebugprogram2.md) che rappresentano il programma e il thread che contengono il puntatore all'istruzione corrente.  Lo SDM chiama [IDebugThread2:: EnumFrameInfo](../../extensibility/debugger/reference/idebugthread2-enumframeinfo.md) per ottenere lo stack frame superiore e chiama [IDebugStackFrame2:: GetDocumentContext](../../extensibility/debugger/reference/idebugstackframe2-getdocumentcontext.md) per ottenere il contesto del documento associato al puntatore all'istruzione corrente.  Questo contesto del documento è in genere un nome file, una riga e un numero di colonne di codice sorgente.  L'ide utilizza questi per evidenziare il codice sorgente contenente il puntatore all'istruzione corrente.  
+ A livello di codice quando la Germania rileva una condizione di interruzione, invia tali eventi di arresto come [IDebugLoadCompleteEvent2](../../extensibility/debugger/reference/idebugloadcompleteevent2.md) o [IDebugEntryPointEvent2](../../extensibility/debugger/reference/idebugentrypointevent2.md) per la gestione di debug (SDM) di sessione per mezzo di un [IDebugEventCallback2](../../extensibility/debugger/reference/idebugeventcallback2.md) interfaccia. I passaggi di DE la [IDebugProgram2](../../extensibility/debugger/reference/idebugprogram2.md) e [IDebugThread2](../../extensibility/debugger/reference/idebugthread2.md) interfacce che rappresentano il programma e il thread che contiene il puntatore all'istruzione corrente. Le chiamate SDM [IDebugThread2::EnumFrameInfo](../../extensibility/debugger/reference/idebugthread2-enumframeinfo.md) per ottenere il frame superiore dello stack e chiama [IDebugStackFrame2::GetDocumentContext](../../extensibility/debugger/reference/idebugstackframe2-getdocumentcontext.md) per ottenere il contesto di documento associato all'istruzione corrente puntatore. Il contesto di questo documento viene generalmente origine codice file name, riga e colonna. L'IDE li usa per evidenziare il codice sorgente che contiene il puntatore all'istruzione corrente.  
   
- Lo SDM in genere risponde al primo evento bloccato chiamando [IDebugProgram2:: continuare](../../extensibility/debugger/reference/idebugprogram2-continue.md).  Il programma quindi viene eseguito fino a che non verrà incontrato un termine bloccato, come raggiungere un punto di interruzione, nel qual caso il DE invia [interfaccia IDebugBreakpointEvent2](../../extensibility/debugger/reference/idebugbreakpointevent2.md) a SDM.  L'evento del punto di interruzione è ancora un evento bloccato e attende di DE una risposta dell'utente.  
+ Il SDM in genere risponde a questo evento di arresto prima chiamando [IDebugProgram2::Continue](../../extensibility/debugger/reference/idebugprogram2-continue.md). Quindi il programma viene eseguito finché non viene rilevata una condizione di interruzione, ad esempio raggiunge un punto di interruzione, in cui invia i case di DE un [IDebugBreakpointEvent2 interfaccia](../../extensibility/debugger/reference/idebugbreakpointevent2.md) per il SDM. L'evento punto di interruzione è un evento di arresto e la Germania è nuovo in attesa di una risposta dell'utente.  
   
- Se si sceglie di eseguire istruzioni in, in, o da una funzione, l'ide richiesto lo SDM a chiamare [IDebugProgram2:: passaggio](../../extensibility/debugger/reference/idebugprogram2-step.md), passando [STEPUNIT](../../extensibility/debugger/reference/stepunit.md) \(istruzione, l'istruzione, o riga\) e [STEPKIND](../../extensibility/debugger/reference/stepkind.md), ovvero, se l'esecuzione in, in, o dalla funzione.  Quando il passaggio è completo, il DE invia un'interfaccia di [IDebugStepCompleteEvent2](../../extensibility/debugger/reference/idebugstepcompleteevent2.md) a SDM, che è un evento bloccato.  
+ Se si sceglie di eseguire l'istruzione, in o da una funzione, l'IDE si comporta SDM chiamare [IDebugProgram2::Step](../../extensibility/debugger/reference/idebugprogram2-step.md), passandogli il [STEPUNIT](../../extensibility/debugger/reference/stepunit.md) (istruzione, istruzione o riga) e [ STEPKIND](../../extensibility/debugger/reference/stepkind.md), vale a dire, se si desidera eseguire, su o dalla funzione. Una volta completato il passaggio, la Germania invia un [IDebugStepCompleteEvent2](../../extensibility/debugger/reference/idebugstepcompleteevent2.md) interfaccia SDM, il che è un evento di arresto.  
   
- Se si sceglie di continuare a eseguire il puntatore all'istruzione corrente, l'ide chiede a SDM di chiamare [IDebugProgram2:: di esecuzione](../../extensibility/debugger/reference/idebugprogram2-execute.md).  Il programma verrà ripresa fino a quando incontra la condizione bloccato seguente.  
+ Se si sceglie di continuare l'esecuzione dal puntatore all'istruzione corrente, l'IDE chiede SDM chiamare [IDebugProgram2::Execute](../../extensibility/debugger/reference/idebugprogram2-execute.md). Il programma riprende l'esecuzione finché incontra la condizione di interruzione successiva.  
   
- Se il pacchetto di debug è di ignorare un evento bloccato particolare, il pacchetto di debug chiama lo SDM, che chiama [IDebugProgram2:: continuare](../../extensibility/debugger/reference/idebugprogram2-continue.md).  Se il programma sta eseguendo, su, o da una funzione quando ha rilevato la condizione bloccato, quindi continua il passaggio.  Ciò implica che il programma di gestire uno stato in esecuzione, in modo che sia possibile continuare.  
+ Se il pacchetto di debug per ignorare un evento di arresto particolare, il pacchetto di debug chiama SDM, il quale vengono chiamate [IDebugProgram2::Continue](../../extensibility/debugger/reference/idebugprogram2-continue.md). Se il programma è stato l'esecuzione di istruzioni in su o da una funzione quando si è verificato la condizione di interruzione, quindi continua il passaggio. Ciò implica che il programma gestisce uno stato di avanzamento nell'esecuzione, in modo che è in grado di continuare.  
   
- Le chiamate che lo SDM a `Step`, **di esecuzione**e **continuare** è asincrono, ovvero lo SDM richiedere la chiamata per restituire rapidamente.  Se il DE invia lo SDM un evento bloccato sullo stesso thread prima di `Step`, di **di esecuzione**, o di restituzione di **continuare** , lo SDM il blocco.  
+ Le chiamate verso il SDM `Step`, **Execute**, e **continua** sono asincrona, il che significa che il SDM prevede la chiamata per restituire rapidamente. Se la Germania invia il SDM un evento di arresto sullo stesso thread prima `Step`, **Execute**, o **continua** viene restituito, si blocca la SDM.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Attività di debug](../../extensibility/debugger/debugging-tasks.md)

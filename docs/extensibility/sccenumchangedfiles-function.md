@@ -1,63 +1,64 @@
 ---
-title: "Funzione SccEnumChangedFiles | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "SccEnumChangedFiles"
-helpviewer_keywords: 
-  - "Funzione SccEnumChangedFiles"
+title: Funzione SccEnumChangedFiles | Documenti Microsoft
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: vs-ide-sdk
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: SccEnumChangedFiles
+helpviewer_keywords: SccEnumChangedFiles function
 ms.assetid: 76cac510-107b-4c1a-ba60-9c39b6db2e71
-caps.latest.revision: 12
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 12
+caps.latest.revision: "12"
+author: gregvanl
+ms.author: gregvanl
+manager: ghogen
+ms.workload: vssdk
+ms.openlocfilehash: a3a124bbcadbf798f22b59111637038a09af7d75
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
-# Funzione SccEnumChangedFiles
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
+# <a name="sccenumchangedfiles-function"></a>SccEnumChangedFiles (funzione)
 Dato un elenco di file locali, questa funzione determina quali file sono diversi rispetto alle versioni corrispondenti nel database del controllo del codice sorgente.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```cpp  
 SCCRTN SccEnumChangedFiles(  
-   LPVOID  pContext,  
-   HWND    hWnd,  
-   LONG    cFiles,  
-   LPCSTR* lpFileNames,  
-   LONG*   plIsFileDifferent  
+   LPVOID  pContext,  
+   HWND    hWnd,  
+   LONG    cFiles,  
+   LPCSTR* lpFileNames,  
+   LONG*   plIsFileDifferent  
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  pContext  
- \[in\] Il puntatore di contesto plug\-in del controllo di origine.  
+ [in] Il puntatore di contesto plug-in controllo di origine.  
   
  hWnd  
- \[in\] Handle di finestra IDE che il plug\-in del controllo del codice sorgente è possibile utilizzare come padre per finestre di dialogo che fornisce.  
+ [in] Un handle di finestra dell'IDE che il plug-in controllo del codice sorgente è possibile utilizzare come un elemento padre per eventuali finestre di dialogo che fornisce.  
   
  cFiles  
- \[in\] Numero di nomi di file specificati nel `lpFileNames` matrice. Specifica inoltre le dimensioni di `plIsFileDifferent` matrice.  
+ [in] Numero di nomi di file specificato nella `lpFileNames` matrice. Specifica inoltre dimensioni di `plIsFileDifferent` matrice.  
   
  lpFileNames  
- \[in\] Matrice di nomi di file locale da verificare.  
+ [in] Matrice di nomi di file locale da verificare.  
   
  plIsFileDifferent  
- \[in, out\] Matrice di valori che indica lo stato di differenza di ogni file \(matrice deve avere almeno `cFiles` voci\). Diverso da zero indica che il file è diverso.  
+ [in, out] Matrice di valori che indica lo stato di differenza di ogni file (matrice deve avere almeno `cFiles` voci). Diverso da zero indica che il file è diverso.  
   
-## Valore restituito  
- Implementazione di plug\-in controllo dell'origine di questa funzione deve restituire uno dei valori seguenti:  
+## <a name="return-value"></a>Valore restituito  
+ Implementazione di plug-in controllo dell'origine di questa funzione deve restituire uno dei valori seguenti:  
   
 |Valore|Descrizione|  
-|------------|-----------------|  
-|SCC\_OK|Operazione completata correttamente.|  
-|SCC\_UNSPECIFIEDERROR|Errore generico.|  
+|-----------|-----------------|  
+|SCC_OK|Operazione completata correttamente.|  
+|SCC_UNSPECIFIEDERROR|Errore generico.|  
   
-## Vedere anche  
- [Funzioni API plug\-in del controllo sorgente](../extensibility/source-control-plug-in-api-functions.md)
+## <a name="see-also"></a>Vedere anche  
+ [Funzioni API del plug-in del controllo del codice sorgente](../extensibility/source-control-plug-in-api-functions.md)

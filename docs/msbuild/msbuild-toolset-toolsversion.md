@@ -1,11 +1,10 @@
 ---
 title: Set di strumenti di MSBuild (ToolsVersion) | Microsoft Docs
 ms.custom: 
-ms.date: 11/04/2016
+ms.date: 01/31/2018
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- vs-ide-sdk
+ms.technology: msbuild
 ms.tgt_pltfrm: 
 ms.topic: article
 helpviewer_keywords:
@@ -14,40 +13,29 @@ helpviewer_keywords:
 - MSBuild, targeting a specific .NET framework
 - multitargeting [MSBuild]
 ms.assetid: 40040ee7-4620-4043-a6d8-ccba921421d1
-caps.latest.revision: 30
-author: kempb
-ms.author: kempb
+author: Mikejo5000
+ms.author: mikejo
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 9713f09b7379b14b9362e3853a910948935c501e
-ms.openlocfilehash: 6a45db14ee055c4fbdf738cf36df503a4a1fffd0
-ms.contentlocale: it-it
-ms.lasthandoff: 05/31/2017
-
+ms.workload:
+- multiple
+ms.openlocfilehash: e274fa60ff209436be9d11f52464d7b42972ef47
+ms.sourcegitcommit: f219ef323b8e1c9b61f2bfd4d3fad7e3d5fb3561
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="msbuild-toolset-toolsversion"></a>Set di strumenti di MSBuild (ToolsVersion)
 Per lo sviluppo di un'applicazione, MSBuild usa un set di strumenti che comprende attività, destinazioni e strumenti. In genere, un set di strumenti di MSBuild include un file microsoft.common.tasks, un file microsoft.common.targets e compilatori come csc.exe e vbc.exe. La maggior parte dei set di strumenti può essere usata per compilare applicazioni in più versioni di .NET Framework e in più piattaforme di sistema. Tuttavia, il set di strumenti di MSBuild 2.0 consente di scegliere come destinazione soltanto .NET Framework 2.0.  
   
 ## <a name="toolsversion-attribute"></a>Attributo ToolsVersion  
- Specificare il set di strumenti nell'attributo `ToolsVersion` per l'elemento [Project](../msbuild/project-element-msbuild.md) nel file di progetto. L'esempio seguente specifica che il progetto deve essere compilato con il set di strumenti di MSBuild 12.0.  
+ Specificare il set di strumenti nell'attributo `ToolsVersion` per l'elemento [Project](../msbuild/project-element-msbuild.md) nel file di progetto. L'esempio seguente specifica che il progetto deve essere compilato usando il set di strumenti di MSBuild 15.0.  
   
 ```xml  
-<Project ToolsVersion="12.0" ... </Project>  
-```  
+<Project ToolsVersion="15.0" ... </Project>  
+``` 
+
+> [!NOTE] 
+> Alcuni tipi di progetto usano l'attributo `sdk` invece di `ToolsVersion`. Per altre informazioni, vedere [Pacchetti, metadati e framework](/dotnet/core/packages) e [Aggiunte al formato csproj per .NET Core](/dotnet/core/tools/csproj).
   
 ## <a name="how-the-toolsversion-attribute-works"></a>Funzionamento dell'attributo ToolsVersion  
  Quando si crea un progetto in Visual Studio oppure si aggiorna un progetto esistente, nel file di progetto viene incluso automaticamente un attributo denominato `ToolsVersion` e il relativo valore corrisponde alla versione di MSBuild inclusa nell'edizione di Visual Studio. Per altre informazioni, vedere [Sviluppo per una versione specifica di .NET Framework](../ide/targeting-a-specific-dotnet-framework-version.md).  
@@ -87,7 +75,7 @@ Per lo sviluppo di un'applicazione, MSBuild usa un set di strumenti che comprend
   
 -   Con i metodi <xref:Microsoft.Build.Utilities.ToolLocationHelper>  
   
- Le proprietà del set di strumenti specificano i percorsi degli strumenti. MSBuild usa il valore dell'attributo `ToolsVersion` nel file di progetto per individuare la chiave corrispondente del Registro di sistema e quindi usa le informazioni della chiave del Registro di sistema per impostare le proprietà del set di strumenti. Ad esempio, se `ToolsVersion` ha il valore `12.0`, MSBuild imposterà le proprietà del set di strumenti in base alla chiave del Registro di sistema HKLM\Software\Microsoft\MSBuild\ToolsVersions\12.0.  
+ Le proprietà del set di strumenti specificano i percorsi degli strumenti. A partire da Visual Studio 2017, MSBuild non ha più una posizione fissa. Per impostazione predefinita, si trova nella cartella MSBuild\15.0\Bin relativa al percorso di installazione di Visual Studio. Nelle versioni precedenti, MSBuild usa il valore dell'attributo `ToolsVersion` nel file di progetto per individuare la chiave corrispondente del Registro di sistema e quindi usa le informazioni della chiave del Registro di sistema per impostare le proprietà del set di strumenti. Ad esempio, se `ToolsVersion` ha il valore `12.0`, MSBuild imposterà le proprietà del set di strumenti in base alla chiave del Registro di sistema HKLM\Software\Microsoft\MSBuild\ToolsVersions\12.0.  
   
  Le proprietà del set di strumenti sono:  
   
@@ -110,7 +98,7 @@ Per lo sviluppo di un'applicazione, MSBuild usa un set di strumenti che comprend
 -   <xref:Microsoft.Build.Utilities.ToolLocationHelper.GetPathToBuildTools%2A> restituisce il percorso degli strumenti di compilazione.  
   
 ### <a name="sub-toolsets"></a>Subset di strumenti  
- Come descritto precedentemente in questo argomento, MSBuild usa una chiave del Registro di sistema per specificare il percorso degli strumenti di base. Se la chiave ha una sottochiave, MSBuild la usa per specificare il percorso di un subset di strumenti che contiene ulteriori strumenti. In questo caso, il set di strumenti viene definito combinando le definizioni delle proprietà definite in entrambe le chiavi.  
+ Per le versioni di MSBuild precedenti alla 15.0, MSBuild usa una chiave del Registro di sistema per specificare il percorso degli strumenti di base. Se la chiave ha una sottochiave, MSBuild la usa per specificare il percorso di un subset di strumenti che contiene ulteriori strumenti. In questo caso, il set di strumenti viene definito combinando le definizioni delle proprietà definite in entrambe le chiavi.  
   
 > [!NOTE]
 >  Se i nomi delle proprietà del set di strumenti sono in conflitto, il valore definito per il percorso della sottochiave ha la precedenza sul valore definito per il percorso della chiave radice.  
@@ -121,7 +109,7 @@ Per lo sviluppo di un'applicazione, MSBuild usa un set di strumenti che comprend
   
 -   "11.0" indica i subset di strumenti di .NET Framework 4.5  
   
--   "12.0" indica i subset di strumenti di .NET Framework 4.5.1  
+-   "12.0" indica i subset di strumenti di .NET Framework 4.5.1 
   
  Con ToolsVersion 4.0 usare i subset di strumenti 10.0 e 11.0. Nelle versioni successive, la versione del subset di strumenti e ToolsVersion corrisponderanno.  
   
@@ -134,4 +122,3 @@ Per lo sviluppo di un'applicazione, MSBuild usa un set di strumenti che comprend
 ## <a name="see-also"></a>Vedere anche  
  [Configurazioni standard e personalizzate del set di strumenti](../msbuild/standard-and-custom-toolset-configurations.md)   
  [Multitargeting](../msbuild/msbuild-multitargeting-overview.md)
-

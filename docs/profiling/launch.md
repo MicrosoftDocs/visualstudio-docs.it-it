@@ -1,54 +1,56 @@
 ---
-title: "Avvio | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: Launch | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: vs-ide-debug
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: f81bde5c-3394-4b79-a315-c2f6491689b3
-caps.latest.revision: 13
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 13
+caps.latest.revision: "13"
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.workload: multiple
+ms.openlocfilehash: 3b8a584e8e024416ec9c3feca63297eed4497624
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
-# Avvio
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
-L'opzione **Launch** avvia il profiler mediante il metodo di campionamento, inoltre avvia l'applicazione specificata.  
+# <a name="launch"></a>Launch
+L'opzione **Launch** avvia il profiler usando il metodo di campionamento e avvia anche l'applicazione specificata.  
   
- Per utilizzare l'opzione **Launch** è necessario specificare il metodo **Sample** nell'opzione **Start**.  
+ Per usare l'opzione **Launch**, è necessario specificare il metodo **Sample** nell'opzione **Start**.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
 VSPerfCmd.exe /Launch:AppName [Options]  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `AppName`  
- Nome dell'applicazione da avviare.  I percorsi completi e parziali dalla directory corrente sono supportati.  
+ Nome dell'applicazione da avviare. Sono supportati percorsi completi e parziali dalla directory corrente.  
   
-## Opzioni valide  
- Le opzioni VSPerfCmd seguenti possono essere combinate con l'opzione **Launch** su una sola riga di comando.  
+## <a name="valid-options"></a>Opzioni valide  
+ Le seguenti opzioni di VSPerfCmd possono essere combinate con l'opzione **Launch** in una singola riga di comando.  
   
  **Start:** `Method`  
- Inizializza la sessione del profiler dalla riga di comando e imposta il metodo di profilo specificato.  
+ Inizializza la sessione del profiler da riga di comando e imposta il metodo di profilatura specificato.  
   
- **GlobalOn**e **GlobalOff**  
- Riprende \(**GlobalOn**\) o sospende \(**GlobalOff**\) l'esecuzione del profilo, ma non termina la sessione di profilo.  
+ **GlobalOn** e **GlobalOff**  
+ Riprende (**GlobalOn**) o sospende (**GlobalOff**) la profilatura, ma non termina la sessione di profilatura.  
   
  **ProcessOn:** `PID` e **ProcessOff**:`PID`  
- Riprende \(**ProcessOn**\) o sospende \(**ProcessOff**\) l'esecuzione del profilo per il processo specificato.  
+ Riprende (**ProcessOn**) o sospende (**ProcessOff**) la profilatura per il processo specificato.  
   
  **TargetCLR**  
- Specifica la versione di Common Language Runtime \(CLR\) di .NET Framework di cui eseguire il profilo quando in una sessione di profilo sono caricate più versioni.  Per impostazione predefinita, viene eseguito il profilo della prima versione caricata.  
+ Specifica la versione di Common Language Runtime (CLR) .NET Framework da sottoporre a profilatura quando in una sessione di profilatura è caricata più di una versione. Per impostazione predefinita, viene sottoposta a profilatura la prima versione caricata.  
   
-## Opzioni esclusive  
- Le opzioni seguenti possono essere utilizzate solo con l'opzione **Launch**.  
+## <a name="exclusive-options"></a>Opzioni esclusive  
+ È possibile usare le opzioni seguenti solo con l'opzione **Launch**.  
   
  **Console**  
  Avvia l'applicazione della riga di comando specificata in una nuova finestra.  
@@ -57,33 +59,33 @@ VSPerfCmd.exe /Launch:AppName [Options]
  Specifica l'elenco di argomenti da passare all'applicazione.  
   
  **LineOff**  
- Disabilita la raccolta dei dati di profilo a livello di riga.  
+ Disabilita la raccolta dei dati di profilatura a livello di riga.  
   
-## Opzioni di campionamento  
- È possibile specificare una delle seguenti opzioni di intervallo di campionamento nella riga di comando **Launch**.  L'intervallo di campionamento predefinito è 10.000.000 cicli di clock del processore.  
+## <a name="sampling-options"></a>Opzioni di campionamento  
+ È possibile specificare una delle opzioni seguenti per l'intervallo di campionamento nella riga di comando di **Launch**. L'intervallo di campionamento predefinito è 10.000.000 cicli di clock del processore.  
   
- **Timer**\[**:**`Cycles`\]**PF**\[**:**`Events`\]**Sys**\[**:**`Events`\]**Counter**\[**:**`Name`,`Reload`,`FriendlyName`\]**GC**\[:**allocation**&#124;**lifetime**\]  
- Specifica il tipo e il numero dell'intervallo di campionamento.  
+ **Timer**[**:**`Cycles`]**PF**[**:**`Events`]**Sys**[**:**`Events`]**Counter**[**:**`Name`,`Reload`,`FriendlyName`]**GC**[:**allocation**&#124;**lifetime**]  
+ Specifica il numero e tipo di intervallo di campionamento.  
   
--   **Timer**: esegue il campionamento ogni `Cycles` cicli di clock del processore non interrotti.  Se `Cycles` non è specificato, vengono utilizzati 10.000.000 cicli.  
+-   **Timer**: esegue il campionamento di ogni `Cycles` dei cicli di clock del processore non interrotti. Se non si specifica `Cycles`, vengono usati 10.000.000 di cicli.  
   
--   **PF**: esegue il campionamento ogni `Events` errori di pagina.  Se `Events` non è specificato, vengono utilizzati 10 errori di pagina.  
+-   **PF**: esegue il campionamento di ogni `Events` errori di pagina. Se non si specifica `Events`, vengono usati 10 errori di pagina.  
   
--   **Sys**: esegue il campionamento ogni chiamate di `Events` al sistema operativo.  Se `Events` non è specificato, vengono utilizzate 10 chiamate di sistema.  
+-   **Sys**: esegue il campionamento di ogni `Events` chiamate del sistema operativo. Se non si specifica `Events`, vengono usate 10 chiamate del sistema.  
   
--   **Counter**: esegue il campionamento ogni numero `Reload` del contatore delle prestazioni della CPU specificato da `Name`.  Facoltativamente, `FriendlyName` può specificare una stringa da utilizzare come intestazione di colonna nei rapporti del profiler.  
+-   **Counter**: esegue il campionamento ogni `Reload` dei contatori delle prestazioni della CPU specificato da `Name`. Facoltativamente, `FriendlyName` può specificare una stringa da usare come intestazione di colonna nei report del profiler.  
   
--   **GC**: raccoglie i dati di memoria .NET.  Per impostazione predefinita \(**allocation**\), i dati vengono raccolti a ogni evento di allocazione della memoria.  Quando viene specificato il parametro **lifetime**, i dati vengono raccolti anche a ogni evento di Garbage Collection.  
+-   **GC**: raccoglie dati di memoria .NET. Per impostazione predefinita, (**allocation**), i dati vengono raccolti in corrispondenza di ogni evento di allocazione di memoria. Quando si specifica il parametro **lifetime**, i dati vengono raccolti anche in corrispondenza di ogni evento di Garbage Collection.  
   
-## Esempio  
- In questo esempio viene illustrato l'utilizzo di **Launch** per avviare un'applicazione.  
+## <a name="example"></a>Esempio  
+ Questo esempio illustra l'uso di **Launch** per avviare un'applicazione.  
   
 ```  
 VSPerfCmd.exe /Start:Sample /Output:TestApp.exe.vsp  
 VSPerfCmd.exe /Launch:TestApp.exe  
 ```  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [VSPerfCmd](../profiling/vsperfcmd.md)   
  [Profilatura di applicazioni autonome](../profiling/command-line-profiling-of-stand-alone-applications.md)   
  [Profilatura di applicazioni Web ASP.NET](../profiling/command-line-profiling-of-aspnet-web-applications.md)   

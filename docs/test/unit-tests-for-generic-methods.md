@@ -4,43 +4,31 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- vs-devops-test
+ms.technology: vs-devops-test
 ms.tgt_pltfrm: 
 ms.topic: article
 helpviewer_keywords:
 - generics, and unit tests
 - unit tests, and generics
-ms.assetid: ffc89814-a7df-44fc-aef5-dd3dfeb28a9b
-caps.latest.revision: 47
-ms.author: douge
-manager: douge
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: 5658ecf52637a38bc3c2a5ad9e85b2edebf7d445
-ms.openlocfilehash: 14850bf6bf761060cd1e276d1bc38668d04f6b3c
-ms.lasthandoff: 02/22/2017
-
+ms.author: gewarren
+manager: ghogen
+ms.workload:
+- multiple
+author: gewarren
+ms.openlocfilehash: 61c4afb816d5cd0be3628d9c801f578a5210b4a2
+ms.sourcegitcommit: 69b898d8d825c1a2d04777abf6d03e03fefcd6da
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="unit-tests-for-generic-methods"></a>Unit test per metodi generici
-È possibile generare unit test per metodi generici procedendo esattamente come per altri metodi, come descritto in [Procedura: Creare ed eseguire uno unit test](http://msdn.microsoft.com/en-us/5e0f43cf-5e51-48e2-9c98-0eb9324bdc48). Le sezioni seguenti forniscono informazioni ed esempi relativi alla creazione di unit test per metodi generici.  
-  
-## <a name="type-arguments-and-type-constraints"></a>Argomenti di tipo e vincoli di tipo  
- Quando [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] genera uno unit test per una classe generica, ad esempio `MyList<T>`, vengono generati due metodi: un helper generico e un metodo di test. Se `MyList<T>` dispone di uno o più vincoli di tipo, l'argomento di tipo deve soddisfare tutti i vincoli. Per assicurarsi che il codice generico sottoposto a test funzioni come previsto per tutti gli input consentiti, il metodo di test chiama il metodo helper generico con tutti i vincoli che si desidera testare.  
-  
+
+È possibile generare unit test per metodi generici procedendo esattamente come per altri metodi. Le sezioni seguenti forniscono informazioni ed esempi relativi alla creazione di unit test per metodi generici.
+
+## <a name="type-arguments-and-type-constraints"></a>Argomenti di tipo e vincoli di tipo
+
+Quando Visual Studio genera uno unit test per una classe generica, ad esempio `MyList<T>`, vengono generati due metodi: un helper generico e un metodo di test. Se `MyList<T>` dispone di uno o più vincoli di tipo, l'argomento di tipo deve soddisfare tutti i vincoli. Per assicurarsi che il codice generico sottoposto a test funzioni come previsto per tutti gli input consentiti, il metodo di test chiama il metodo helper generico con tutti i vincoli che si desidera testare.
+
 ## <a name="examples"></a>Esempi  
  Gli esempi seguenti illustrano unit test per i metodi generici.  
   
@@ -212,7 +200,6 @@ namespace ClassLibrary2
 }  
 ```  
   
-## <a name="see-also"></a>Vedere anche  
- [Composizione di uno unit test](http://msdn.microsoft.com/en-us/a03d1ee7-9999-4e7c-85df-7d9073976144)   
- [Eseguire unit test del codice](../test/unit-test-your-code.md)
+## <a name="see-also"></a>Vedere anche
 
+[Eseguire unit test del codice](../test/unit-test-your-code.md)

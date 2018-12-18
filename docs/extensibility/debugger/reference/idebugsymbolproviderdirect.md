@@ -1,50 +1,52 @@
 ---
-title: "IDebugSymbolProviderDirect | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "Interfaccia IDebugSymbolProviderDirect"
+title: IDebugSymbolProviderDirect | Documenti Microsoft
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: vs-ide-sdk
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords: IDebugSymbolProviderDirect interface
 ms.assetid: 872b04a8-70de-4ab5-aceb-684c81828545
-caps.latest.revision: 6
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 6
+caps.latest.revision: "6"
+author: gregvanl
+ms.author: gregvanl
+manager: ghogen
+ms.workload: vssdk
+ms.openlocfilehash: a5b2e91a43be7ed1a605e4f54211b2acc5e2df8d
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
-# IDebugSymbolProviderDirect
-[!INCLUDE[vs2017banner](../../../code-quality/includes/vs2017banner.md)]
-
-Rappresenta un provider di simboli che ha accesso diretto ai metadati e supportano le interfacce del simbolo.  
+# <a name="idebugsymbolproviderdirect"></a>IDebugSymbolProviderDirect
+Rappresenta un provider di simboli che ha accesso diretto alle interfacce di simbolo di metadati e componenti di base.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
 IDebugSymbolProviderDirect: IUnknown  
 ```  
   
-## Metodi  
+## <a name="methods"></a>Metodi  
  Questa interfaccia implementa i metodi seguenti:  
   
 |Metodo|Descrizione|  
 |------------|-----------------|  
-|[GetAppIDFromAddress](../../../extensibility/debugger/reference/idebugsymbolproviderdirect-getappidfromaddress.md)|Recupera l'identificatore del dominio applicazione fornito l'indirizzo di debug.|  
-|[GetCurrentModulesInfo](../../../extensibility/debugger/reference/idebugsymbolproviderdirect-getcurrentmodulesinfo.md)|Recupera le informazioni sui moduli nel gruppo dei simboli.|  
-|[GetCurrentModulesState](../Topic/IDebugSymbolProviderDirect::GetCurrentModulesState.md)|Recupera le informazioni sul gruppo del simbolo di cui il provider del simbolo è un membro.|  
-|[GetMetaDataImport](../../../extensibility/debugger/reference/idebugsymbolproviderdirect-getmetadataimport.md)|Recupera le informazioni dei metadati di importazione.|  
-|[GetMethodFromAddress](../../../extensibility/debugger/reference/idebugsymbolproviderdirect-getmethodfromaddress.md)|Recupera le informazioni sul metodo all'indirizzo specificato di debug.|  
-|[GetSymUnmanagedReader](../../../extensibility/debugger/reference/idebugsymbolproviderdirect-getsymunmanagedreader.md)|Recupera un reader di simboli per il codice non gestito.|  
+|[GetAppIDFromAddress](../../../extensibility/debugger/reference/idebugsymbolproviderdirect-getappidfromaddress.md)|Recupera l'identificatore di dominio applicazione con l'indirizzo di debug.|  
+|[GetCurrentModulesInfo](../../../extensibility/debugger/reference/idebugsymbolproviderdirect-getcurrentmodulesinfo.md)|Recupera le informazioni sui moduli nel gruppo di simboli.|  
+|[GetCurrentModulesState](../../../extensibility/debugger/reference/idebugsymbolproviderdirect-getcurrentmodulesstate.md)|Recupera informazioni sul gruppo di simbolo di cui il provider di simbolo è un membro.|  
+|[GetMetaDataImport](../../../extensibility/debugger/reference/idebugsymbolproviderdirect-getmetadataimport.md)|Recupera le informazioni di importazione dei metadati.|  
+|[GetMethodFromAddress](../../../extensibility/debugger/reference/idebugsymbolproviderdirect-getmethodfromaddress.md)|Recupera informazioni sul metodo in corrispondenza dell'indirizzo di debug specificata.|  
+|[GetSymUnmanagedReader](../../../extensibility/debugger/reference/idebugsymbolproviderdirect-getsymunmanagedreader.md)|Recupera un lettore di simboli per codice non gestito.|  
   
-## Note  
- Tale interfaccia può essere utilizzata al posto della maggior parte delle altre interfacce di provider del simbolo.  Fornisce accesso diretto ai metadati e alle interfacce di `CorSym` .  
+## <a name="remarks"></a>Note  
+ Questa interfaccia consente invece la maggior parte delle altre interfacce di provider di simboli. Fornisce accesso diretto ai metadati e `CorSym` interfacce.  
   
-## Requisiti  
- intestazione: Sh.h  
+## <a name="requirements"></a>Requisiti  
+ Intestazione: Sh.h  
   
- Spazio dei nomi: Microsoft.VisualStudio.Debugger.Interop  
+ Namespace: Microsoft.VisualStudio.Debugger.Interop  
   
  Assembly: Microsoft.VisualStudio.Debugger.Interop.dll

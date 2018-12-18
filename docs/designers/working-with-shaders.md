@@ -4,21 +4,20 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- vs-ide-designers
+ms.technology: vs-ide-designers
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: 6b2ea1ed-b995-4e75-af19-c68fd37a3bc5
-caps.latest.revision: 8
+caps.latest.revision: "8"
 author: gewarren
 ms.author: gewarren
 manager: ghogen
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 5db97d19b1b823388a465bba15d057b30ff0b3ce
-ms.openlocfilehash: d2827e7f1a653092ed88be517be95df1236b50a8
-ms.contentlocale: it-it
-ms.lasthandoff: 02/22/2017
-
+ms.workload: multiple
+ms.openlocfilehash: bf96f1cdbdf8e3f995d8a1020a655b73d369cf7d
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="working-with-shaders"></a>Utilizzo degli shader
 È possibile usare la finestra di progettazione shader basata su grafico in [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] per progettare effetti shader personalizzati. È possibile usare gli shader nelle app o nei giochi basati su DirectX.  

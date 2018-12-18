@@ -1,73 +1,75 @@
 ---
-title: "VSPerf | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: VSPerf | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: vs-ide-debug
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: b5854e62-279e-4850-bfeb-0c6ef82f4805
-caps.latest.revision: 6
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 6
+caps.latest.revision: "6"
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.workload: multiple
+ms.openlocfilehash: ea6214987e12b8c5cf7e563b666822989d3a7015
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
-# VSPerf
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
-Utilizzare lo strumento da riga di comando **VsPerf** per:  
+# <a name="vsperf"></a>VSPerf
+Usare lo strumento della riga di comando **VsPerf** per:  
   
-1.  Profilare applicazioni di Windows Store dalla riga di comando quando Visual Studio non è installato sul dispositivo.  
+1.  Eseguire la profilatura di app UWP dalla riga di comando quando Visual Studio non è installato nel dispositivo.  
   
-2.  Profilare applicazioni desktop di Windows 8 e applicazioni Windows Server 2012 utilizzando il metodo di profilatura del campionamento.  
+2.  Eseguire la profilatura di applicazioni desktop Windows 8 e applicazioni Windows Server 2012 usando il metodo di profilatura di campionamento.  
   
- Per ulteriori informazioni sulle opzioni di profilatura, vedere [Profilatura delle applicazioni Windows 8 e Windows Server 2012](../profiling/performance-tools-on-windows-8-and-windows-server-2012-applications.md).  
+ Per altre informazioni sulle opzioni di profilatura, vedere [Strumenti per le prestazioni nelle applicazioni Windows 8 e Windows Server 2012](../profiling/performance-tools-on-windows-8-and-windows-server-2012-applications.md).  
   
 ##  <a name="BKMK_In_this_topic"></a> In questo argomento  
- In questo argomento vengono descritte le opzioni che è possibile utilizzare con lo strumento da riga di comando `vsperf.exe`.  In questo argomento sono contenute le sezioni seguenti:  
+ In questo argomento vengono descritte le opzioni che è possibile usare con lo strumento della riga di comando `vsperf.exe`. Di seguito sono elencate le diverse sezioni di questo argomento:  
   
- [solo Applicazioni Windows Store](#BKMK_windows_store_apps_only)  
+ [Solo app UWP](#BKMK_windows_store_apps_only)  
   
- [solo applicazioni Windows 8 desktop e applicazioni Windows Server 2012](#BKMK_Windows_8_classic_applications_and_Windows_Server_2012_applications_only)  
+ [Solo applicazioni desktop Windows 8 e applicazioni Windows Server 2012](#BKMK_Windows_8_classic_applications_and_Windows_Server_2012_applications_only)  
   
  [Tutte le applicazioni](#BKMK_All_applications)  
   
-##  <a name="BKMK_windows_store_apps_only"></a> solo Applicazioni Windows Store  
- Queste opzioni sono valide solo per le applicazioni di Windows Store.  
+##  <a name="BKMK_windows_store_apps_only"></a> Solo app UWP  
+ Queste opzioni si applicano solo alle app UWP.  
   
 |||  
 |-|-|  
-|**\/app:{AppName}**|Avvia il profiler e attende che l'applicazione specificata venga avviata dal menu Start.<br /><br /> Eseguire `vsperf /listapps` per visualizzare il nome dell'applicazione e il PackageFullName delle applicazioni installate.|  
-|**\/package:{PackageFullName}**|Avvia il profiler e attende che l'applicazione specificata venga avviata dal menu Start.<br /><br /> Eseguire `vsperf /listapps` per visualizzare il nome dell'applicazione e il PackageFullName delle applicazioni installate.|  
-|**\/js**|Obbligatorio per profilare applicazioni JavaScript.<br /><br /> Raccogliere dati di prestazioni dalle applicazioni JavaScript.<br /><br /> Utilizzare solo con \/package o \/attach.|  
-|**\/noclr**|Facoltativa.  Non raccogliere dati CLR.<br /><br /> Utilizzare solo con \/package o \/attach.<br /><br /> Ottimizzazione, i simboli gestiti non vengono risolti.|  
-|**\/listapps**|Nomi e PackageFullNames dell'elenco delle applicazione installate.|  
+|**/app:{AppName}**|Avvia il profiler e attende che l'app specificata venga avviata dal menu Start.<br /><br /> Eseguire `vsperf /listapps` per visualizzare i valori Name e PackageFullName delle app installate.|  
+|**/package:{PackageFullName}**|Avvia il profiler e attende che l'app specificata venga avviata dal menu Start.<br /><br /> Eseguire `vsperf /listapps` per visualizzare i valori Name e PackageFullName delle app installate.|  
+|**/js**|Obbligatorio per la profilatura delle app JavaScript.<br /><br /> Raccogliere dati sulle prestazioni dalle app JavaScript.<br /><br /> Usare solo con /package o /attach.|  
+|**/noclr**|Facoltativo. Non raccogliere dati CLR.<br /><br /> Usare solo con /package o /attach.<br /><br /> Ottimizzazione, non verrà eseguita la risoluzione di simboli gestiti.|  
+|**/listapps**|Elencare i valori Name e PackageFullName delle app installate.|  
   
-##  <a name="BKMK_Windows_8_classic_applications_and_Windows_Server_2012_applications_only"></a> solo applicazioni Windows 8 desktop e applicazioni Windows Server 2012  
- Queste opzioni non funzionano con le applicazioni di Windows Store.  
+##  <a name="BKMK_Windows_8_classic_applications_and_Windows_Server_2012_applications_only"></a> Solo applicazioni desktop Windows 8 e applicazioni Windows Server 2012  
+ Queste opzioni non funzionano per le app UWP.  
   
 |||  
 |-|-|  
-|**\/launch:{Executable}**|Inizia e avvia la profilatura del file eseguibile dato.|  
-|**\/args:{ExecutableArguments}**|Specifica gli argomenti della riga di comando di passare la destinazione di **\/launch**.|  
-|**\/console**|Esegue la destinazione di **\/launch** in una nuova finestra di comando.|  
+|**/launch:{Executable}**|Avvia il file eseguibile specificato e ne esegue la profilatura.|  
+|**/args:{ExecutableArguments}**|Specifica gli argomenti della riga di comando da passare alla destinazione **/launch**.|  
+|**/console**|Esegue la destinazione **/launch** in una nuova finestra di comando.|  
   
 ##  <a name="BKMK_All_applications"></a> Tutte le applicazioni  
- Queste opzioni si applicano a qualsiasi applicazione di Windows 8 o Windows Server 2012.  
+ Queste opzioni si applicano a tutte le applicazioni Windows 8 o Windows Server 2012.  
   
 |||  
 |-|-|  
-|**\/attach:{PID&#124;ProcessName}\[,PID&#124;ProcessName\]...**|Raccoglie i dati dai processi specificati.<br /><br /> Utilizzare Gestione attività per visualizzare i nomi dei processi e gli id dei processi \(PID\) delle applicazioni in esecuzione.|  
-|**\/file:{ReportName}**|Facoltativa.  Specifica un file di output \(sovrascrive il file esistente\).<br /><br /> Utilizzare solo con \/package o \/attach.|  
-|**\/pause**|Sospende la raccolta di dati.|  
-|**\/resume**|Riprende la raccolta di dati.|  
-|**\/stop**|Arresta la raccolta dati e termina i processi di destinazione.|  
-|**\/detach**|Arresta la raccolta dati, ma i processi di destinazione continuano l'esecuzione.|  
-|**\/status**|Mostrare lo stato del profiler.|  
+|**/attach:{PID&#124;ProcessName}[,PID&#124;ProcessName]...**|Raccoglie dati dai processi specificati.<br /><br /> Usare Gestione attività per visualizzare l'ID processo (PID) e i nomi dei processi delle app in esecuzione.|  
+|**/file:{ReportName}**|Facoltativo. Specifica il file di output (sovrascrive il file esistente).<br /><br /> Usare solo con /package o /attach.|  
+|**/pause**|Sospendere la raccolta dei dati.|  
+|**/resume**|Riprendere la raccolta dei dati.|  
+|**/stop**|Interrompere la raccolta dei dati e terminare i processi di destinazione.|  
+|**/detach**|Interrompere la raccolta dei dati, senza arrestare l'esecuzione dei processi di destinazione.|  
+|**/status**|Visualizzare lo stato del profiler.|  
   
-## Vedere anche  
- [Profilatura delle applicazioni Windows 8 e Windows Server 2012](../profiling/performance-tools-on-windows-8-and-windows-server-2012-applications.md)   
+## <a name="see-also"></a>Vedere anche  
+ [Strumenti per le prestazioni nelle applicazioni Windows 8 e Windows Server 2012](../profiling/performance-tools-on-windows-8-and-windows-server-2012-applications.md)   
  [Profilatura dalla riga di comando](../profiling/using-the-profiling-tools-from-the-command-line.md)

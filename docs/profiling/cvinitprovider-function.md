@@ -1,30 +1,30 @@
 ---
-title: "Funzione CvInitProvider | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "cvmarkers/CvInitProvider"
-helpviewer_keywords: 
-  - "CvInitProvider (metodo)"
+title: Funzione CvInitProvider | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: vs-ide-debug
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: cvmarkers/CvInitProvider
+helpviewer_keywords: CvInitProvider method
 ms.assetid: ba1863ad-e35f-4d34-a2f2-5e68957d1915
-caps.latest.revision: 3
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.workload: multiple
+ms.openlocfilehash: 15abebb58382674bc7943d7949dfddbc62524c91
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
-# Funzione CvInitProvider
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
-Inizializza il provider del marcatore.  Deve essere chiamato prima di tutte le altre funzioni del Visualizzatore di concorrenze SDK.  
+# <a name="cvinitprovider-function"></a>Funzione CvInitProvider
+Inizializza il provider di marcatori. Deve essere chiamata prima di qualsiasi altra funzione SDK del visualizzatore di concorrenza.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
 HRESULT CvInitProvider(  
@@ -33,18 +33,18 @@ HRESULT CvInitProvider(
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `pGuid`  
- GUID del provider.  Non può essere NULL.  
+ GUID del provider. Non può essere NULL.  
   
  `ppProvider`  
- Indirizzo di una variabile di output che memorizzerà il contesto del provider.  Non può essere NULL.  
+ Indirizzo di una variabile di output in cui verrà archiviato il contesto del provider. Non può essere NULL.  
   
-## Valore restituito  
- S\_OK quando il provider viene inizializzato con successo o codice di errore nel caso siano degli errori.  Utilizzare le macro SUCCEEDED\/FAILED per verificare la condizione di errore.  
+## <a name="return-value"></a>Valore restituito  
+ S_OK quando il provider è stato inizializzato correttamente oppure codice dell'errore nel caso in cui si siano verificati errori. Usare le macro SUCCEEDED/FAILED per controllare la condizione di errore.  
   
-## Requisiti  
+## <a name="requirements"></a>Requisiti  
  **Intestazione:** cvmarkers.h  
   
-## Vedere anche  
- [riferimento alla libreria C\+\+](../profiling/cpp-library-reference.md)
+## <a name="see-also"></a>Vedere anche  
+ [C++ Library Reference](../profiling/cpp-library-reference.md) (Riferimento alla libreria C++)

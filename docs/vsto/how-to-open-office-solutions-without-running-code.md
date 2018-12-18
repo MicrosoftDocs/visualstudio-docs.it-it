@@ -1,57 +1,58 @@
 ---
-title: "Procedura: aprire soluzioni Office senza eseguire codice"
-ms.custom: ""
-ms.date: "02/02/2017"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "office-development"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-helpviewer_keywords: 
-  - "assembly [sviluppo per Office in Visual Studio], esclusione"
-  - "esclusione di assembly"
-  - "documenti [sviluppo per Office in Visual Studio], apertura senza eseguire il codice"
-  - "documenti Office [sviluppo per Office in Visual Studio], apertura senza eseguire il codice"
-  - "Soluzioni Office [sviluppo per Office in Visual Studio], apertura"
-  - "apertura di soluzioni Office"
-  - "soluzioni [sviluppo per Office in Visual Studio], apertura"
-ms.assetid: a853d91c-9fd6-421a-b3a2-956b6b494b96
-caps.latest.revision: 23
-author: "kempb"
-ms.author: "kempb"
-manager: "ghogen"
-caps.handback.revision: 23
+title: 'Procedura: aprire soluzioni Office senza eseguire il codice | Documenti Microsoft'
+ms.custom: 
+ms.date: 02/02/2017
+ms.reviewer: 
+ms.suite: 
+ms.technology: office-development
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- VB
+- CSharp
+helpviewer_keywords:
+- Office solutions [Office development in Visual Studio], opening
+- opening Office solutions
+- bypassing assemblies
+- solutions [Office development in Visual Studio], opening
+- assemblies [Office development in Visual Studio], bypassing
+- Office documents [Office development in Visual Studio, opening without running code
+- documents [Office development in Visual Studio], opening without running code
+author: TerryGLee
+ms.author: tglee
+manager: ghogen
+ms.workload: office
+ms.openlocfilehash: bd7a401ab96cbb196d97b2e210b3ede0a624deb8
+ms.sourcegitcommit: f9fbf1f55f9ac14e4e5c6ae58c30dc1800ca6cda
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 01/10/2018
 ---
-# Procedura: aprire soluzioni Office senza eseguire codice
-  Una soluzione Microsoft Office creata con estensioni di codice gestito viene eseguita anche se il livello di sicurezza nell'applicazione di Office dell'utente finale è impostato su Elevato.  Ciò accade perché la sicurezza del codice dell'assembly .NET è gestita da Microsoft .NET Framework, non da Microsoft Office.  
+# <a name="how-to-open-office-solutions-without-running-code"></a>Procedura: aprire soluzioni Office senza eseguire codice
+  Una soluzione Microsoft Office creata con le estensioni di codice gestito viene eseguito anche se l'impostazione di sicurezza nell'applicazione Office dell'utente finale viene impostata su alto. In questo modo la sicurezza di codice assembly .NET è gestita da Microsoft .NET Framework, non da Microsoft Office.  
   
- In alcuni casi, tuttavia, potrebbe essere necessario aprire un documento senza eseguire il codice.  Ad esempio quando si desidera aggiornare l'aspetto di un documento prima che il codice lo modifichi, poiché il codice eseguito durante l'apertura del documento potrebbe alterarne il contenuto,  oppure quando si desidera inviare a un utente un documento con determinate informazioni senza che il codice venga eseguito e le alteri.  
+ Tuttavia, esistono volte quando si potrebbe desiderare di aprire un documento senza eseguire il codice. Ad esempio, il codice eseguito all'apertura del documento potrebbe alterare il contenuto, ma si desidera aggiornare l'aspetto il documento prima di modifiche del codice è. O è utile inviare il documento con determinate informazioni a un utente, e non si desidera il codice da eseguire ed eventualmente modificare il contenuto.  
   
  [!INCLUDE[appliesto_alldoc](../vsto/includes/appliesto-alldoc-md.md)]  
   
- Esistono diversi modi per aprire un documento o una cartella di lavoro contenente estensioni di codice gestito senza eseguire il codice dell'assembly.  
+ Esistono diversi modi per aprire un documento o una cartella di lavoro che contiene le estensioni di codice gestito senza eseguire il codice dell'assembly.  
   
-### Per ignorare l'assembly premendo MAIUSC  
+### <a name="to-bypass-the-assembly-by-using-the-shift-key"></a>Per ignorare l'assembly utilizzando il tasto MAIUSC  
   
--   Aprire documenti e cartelle di lavoro dal menu **File** tenendo premuto MAIUSC per impedire la generazione di eventi di inizializzazione da parte di Word e Excel mentre viene aperto il documento.  
+-   Aprire i documenti e cartelle di lavoro di **File** menu tenendo premuto il tasto MAIUSC per impedire la generazione di eventi di inizializzazione, mentre è aperto il documento di Word ed Excel.  
   
     > [!NOTE]  
-    >  Se si apre un documento o una cartella di lavoro dal riquadro attività della **Guida introduttiva**, tenendo premuto MAIUSC il codice non viene ignorato.  Inoltre, tenendo premuto MAIUSC non si impedisce la generazione di eventi dopo l'apertura del documento.  
+    >  Se si apre un documento o una cartella di lavoro dal **Introduzione** riquadro attività, tenere premuto MAIUSC il codice viene ignorato. Inoltre, tenere premuto MAIUSC non impedisce gli eventi viene generato dopo che il documento è aperto.  
   
-     Questo metodo si rivela utile se si desidera aprire un documento per effettuare modifiche senza che il codice venga eseguito e modifichi il documento per primo.  
+     Questo metodo è utile se si desidera aprire un documento per apportare modifiche senza che il codice in esecuzione e la modifica prima di tutto il documento.  
   
-### Per ignorare un assembly rinominandolo o rimuovendolo  
+### <a name="to-bypass-an-assembly-by-renaming-or-removing-it"></a>Per ignorare la ridenominazione o rimozione un assembly  
   
--   Se sul computer in cui si trova l'assembly si dispone delle autorizzazioni necessarie, sarà possibile rinominare o rimuovere l'assembly per impedire al documento o alla cartella di lavoro di trovarlo.  In questo modo viene generato un errore ogni volta che viene aperto il documento di Office.  
+-   Se si dispone delle autorizzazioni necessarie nel computer in cui si trova l'assembly, è possibile rinominare o rimuovere l'assembly in modo che il documento o la cartella di lavoro non riesce a trovarla. Ciò comporta un errore viene generato ogni volta che viene aperto il documento di Office.  
   
-     Se la soluzione è utilizzata da più persone, questo metodo ne impedirà l'utilizzo da parte di tutti gli utenti.  Questo può essere utile se viene identificato un problema nel codice o in un server a cui si fa riferimento e si desidera impedire a tutti gli utenti di eseguirlo.  
+     Se la soluzione viene utilizzata da più utenti, questo metodo impedisce in esecuzione per tutti gli elementi della soluzione. Può essere utile se viene rilevato un problema nel codice o un server di riferimento e si desidera arrestare tutti gli utenti di eseguirlo.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Sicurezza delle soluzioni Office](../vsto/securing-office-solutions.md)   
  [Distribuzione di una soluzione Office](../vsto/deploying-an-office-solution.md)   
  [Progettazione e creazione di soluzioni Office](../vsto/designing-and-creating-office-solutions.md)   

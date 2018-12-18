@@ -1,54 +1,55 @@
 ---
-title: "Metodo apply (Function) (JavaScript) | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/18/2017"
-ms.prod: "windows-client-threshold"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-javascript"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "apply"
-dev_langs: 
-  - "JavaScript"
-  - "TypeScript"
-  - "DHTML"
-helpviewer_keywords: 
-  - "apply (metodo)"
+title: Metodo Apply (Function) (JavaScript) | Documenti Microsoft
+ms.custom: 
+ms.date: 01/18/2017
+ms.prod: windows-client-threshold
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-javascript
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords: apply
+dev_langs:
+- JavaScript
+- TypeScript
+- DHTML
+helpviewer_keywords: Apply method
 ms.assetid: b36df78e-b14b-46ca-b5cb-de752d80f40a
-caps.latest.revision: 10
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.openlocfilehash: 5a06a37006937b07214bf5a314d5151c3b658acf
+ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/27/2017
 ---
-# Metodo apply (Function) (JavaScript)
-Chiama la funzione, sostituendo l'oggetto specificato per il valore `this` della funzione e la matrice specificata con gli argomenti della funzione.  
+# <a name="apply-method-function-javascript"></a>Metodo apply (Function) (JavaScript)
+Chiama la funzione, sostituendo l'oggetto specificato per il `this` valore della funzione e la matrice specificata per gli argomenti della funzione.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
 apply([thisObj[,argArray]])  
 ```  
   
-## Parametri  
+## <a name="parameters"></a>Parametri  
  `thisObj`  
- Facoltativo.  Oggetto da utilizzare come oggetto `this`.  
+ Parametro facoltativo. L'oggetto da utilizzare come il `this` oggetto.  
   
  `argArray`  
- Facoltativo.  Set di argomenti da passare alla funzione.  
+ Parametro facoltativo. Un set di argomenti da passare alla funzione.  
   
-## Note  
- Se `argArray` non è un oggetto valido, si verifica un errore "Previsto oggetto".  
+## <a name="remarks"></a>Note  
+ Se `argArray` non è un oggetto valido, quindi si verifica un errore "Oggetto previsto".  
   
- Se non viene fornito né l'argomento `argArray` né `thisObj`, l'oggetto `this` originale verrà utilizzato come `thisObj` e non verrà passato alcun argomento.  
+ Se non si specifica `argArray` né `thisObj` vengono forniti originale `this` oggetto viene utilizzato come `thisObj` e non vengono passati argomenti.  
   
-## Esempio  
- Nel codice seguente viene illustrato come utilizzare il metodo apply.  
+## <a name="example"></a>Esempio  
+ Il codice seguente viene illustrato come utilizzare il metodo apply.  
   
-```javascript  
+```JavaScript  
 function callMe(arg1, arg2){  
     var s = "";  
   
@@ -81,8 +82,8 @@ document.write(callMe.apply(3, [ 4, 5 ]));
   
 ```  
   
-## Requisiti  
+## <a name="requirements"></a>Requisiti  
  [!INCLUDE[jsv55](../../javascript/reference/includes/jsv55-md.md)]  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Oggetto Function](../../javascript/reference/function-object-javascript.md)

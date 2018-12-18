@@ -1,37 +1,40 @@
 ---
-title: "IActiveScriptSite::OnEnterScript | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/18/2017"
-ms.prod: "windows-script-interfaces"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
+title: IActiveScriptSite::OnEnterScript | Documenti Microsoft
+ms.custom: 
+ms.date: 01/18/2017
+ms.prod: windows-script-interfaces
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: reference
 apiname: IActiveScriptSite.OnEnterScript
 apilocation: scrobj.dll
-helpviewer_keywords: 
-  - "IActiveScriptSite_OnEnterScript"
+helpviewer_keywords: IActiveScriptSite_OnEnterScript
 ms.assetid: 1ed9178c-fe80-41c4-b74d-23b85f9cddbf
-caps.latest.revision: 7
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.openlocfilehash: eb4514770faaaad46c8590e6df03488e3d5bc679
+ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/27/2017
 ---
-# IActiveScriptSite::OnEnterScript
-All'host che il motore di scripting ha avviato il codice di script.  
+# <a name="iactivescriptsiteonenterscript"></a>IActiveScriptSite::OnEnterScript
+Comunica all'host che il motore di script ha iniziato a eseguire il codice di script.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
 HRESULT OnEnterScript(void);  
 ```  
   
-## Valore restituito  
- Se ha esito positivo restituisce `S_OK`.  
+## <a name="return-value"></a>Valore restituito  
+ Se l'esito è positivo, restituisce `S_OK`.  
   
-## Note  
- Il motore di scripting deve chiamare questo metodo in ogni voce o rientro nel motore di scripting.  Ad esempio, se lo script chiama un oggetto che viene generato un evento gestito nel motore di scripting, il motore di scripting deve chiamare `IActiveScriptSite::OnEnterScript` prima di eseguire l'evento e deve chiamare il metodo [IActiveScriptSite::OnLeaveScript](../../winscript/reference/iactivescriptsite-onleavescript.md) dopo aver eseguito l'evento ma prima di restituire l'oggetto che ha generato l'evento.  Le chiamate al metodo possono essere annidate.  Ogni chiamata a questo metodo richiede una chiamata corrispondente a `IActiveScriptSite::OnLeaveScript`.  
+## <a name="remarks"></a>Note  
+ Il motore di script è necessario chiamare questo metodo per ogni singola voce o il rientro nel motore di scripting. Ad esempio, se lo script chiama un oggetto che viene generato un evento gestito dal motore di script, il motore di script deve chiamare `IActiveScriptSite::OnEnterScript` prima esecuzione dell'evento e deve chiamare il [IActiveScriptSite::OnLeaveScript](../../winscript/reference/iactivescriptsite-onleavescript.md) metodo dopo l'esecuzione dell'evento, ma prima di restituire l'oggetto che ha generato l'evento. Chiamate a questo metodo possono essere nidificate. Ogni chiamata a questo metodo richiede una chiamata corrispondente a `IActiveScriptSite::OnLeaveScript`.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IActiveScriptSite](../../winscript/reference/iactivescriptsite.md)

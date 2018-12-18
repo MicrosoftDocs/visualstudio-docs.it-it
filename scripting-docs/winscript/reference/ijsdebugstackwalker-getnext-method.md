@@ -1,25 +1,29 @@
 ---
-title: "Metodo IJsDebugStackWalker::GetNext | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/18/2017"
-ms.prod: "windows-script-interfaces"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
+title: 'Metodo ijsdebugstackwalker:: GetNext | Documenti Microsoft'
+ms.custom: 
+ms.date: 01/18/2017
+ms.prod: windows-script-interfaces
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: reference
 apiname: IJsDebugStackWalker.GetNext
 apilocation: jscript9diag.dll
 ms.assetid: 0b124768-50d3-4a69-876c-1aa337839a4e
-caps.latest.revision: 4
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.openlocfilehash: 695bb6cecc2a27565dce21b4a965ad08d90d7be7
+ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/27/2017
 ---
-# Metodo IJsDebugStackWalker::GetNext
+# <a name="ijsdebugstackwalkergetnext-method"></a>Metodo IJsDebugStackWalker::GetNext
 Ottiene il frame successivo.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
 HRESULT GetNext(  
@@ -27,17 +31,17 @@ HRESULT GetNext(
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `ppFrame`  
- \[out\] Oggetto che rappresenta il frame dello stack.  
+ [out] Oggetto che rappresenta lo stack frame.  
   
-## Valore restituito  
+## <a name="return-value"></a>Valore restituito  
   
-## Note  
- Restituisce E\_JsDEBUG\_OUTSIDE\_OF\_VM quando non sono più presenti stack frame da enumerare  
+## <a name="remarks"></a>Note  
+ Restituisce E_JsDEBUG_OUTSIDE_OF_VM quando vi sono più stack frame da enumerare  
   
-## Requisiti  
- **Intestazione:** jscript9diag.h  
+## <a name="requirements"></a>Requisiti  
+ **Intestazione:** jscript9diag  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Interfaccia IJsDebugStackWalker](../../winscript/reference/ijsdebugstackwalker-interface.md)

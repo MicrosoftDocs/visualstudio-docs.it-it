@@ -1,41 +1,26 @@
 ---
 title: Tasti di scelta rapida (Help Viewer) | Microsoft Docs
 ms.custom: 
-ms.date: 11/04/2016
+ms.date: 11/02/2017
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- vs-help-viewer
+ms.technology: vs-help-viewer
 ms.tgt_pltfrm: 
 ms.topic: article
 helpviewer_keywords:
-- shortcut keys [Help Viewer 2.0]
-- Help Viewer 2.0, shortcut keys
+- shortcut keys [Help Viewer]
+- Help Viewer, shortcut keys
 ms.assetid: ec14c85d-7efb-441c-a46b-bee34a227e39
-caps.latest.revision: 22
+caps.latest.revision: "22"
 author: gewarren
 ms.author: gewarren
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 47057e9611b824c17077b9127f8d2f8b192d6eb8
-ms.openlocfilehash: 3d5a655a82180b7ffc82cf279b28750f55f5d4c8
-ms.contentlocale: it-it
-ms.lasthandoff: 05/13/2017
-
+ms.workload: multiple
+ms.openlocfilehash: 17f71324031bfdf01b32151288257b97c036056b
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="shortcut-keys-help-viewer"></a>Tasti di scelta rapida (visualizzatore della Guida)
 È possibile spostarsi in Microsoft Help Viewer usando i tasti di scelta rapida elencati nella tabella seguente:  
@@ -121,14 +106,17 @@ ms.lasthandoff: 05/13/2017
 |**Tasto o combinazione di tasti**|**Azione**|  
 |ALT+D|Impostare l'origine dell'installazione sul disco.|  
 |ALT+O|Impostare l'origine dell'installazione su online.|  
-|Tab|Passare lo stato attivo alla casella di testo **Percorso archivio locale**.|  
-|Tab|Passare lo stato attivo al pulsante **Sposta**.|  
+|Scheda|Passare lo stato attivo alla casella di testo **Percorso archivio locale**.|  
+|Scheda|Passare lo stato attivo al pulsante **Sposta**.|  
 |ALT+V|Aprire la finestra di dialogo **Sposta contenuto**.|  
 |CTRL+ALT+F|Passare lo stato attivo alla casella di testo **Filtra documentazione**.|  
-|Tab|Passare lo stato attivo all'elenco della documentazione.|  
+|Scheda|Passare lo stato attivo all'elenco della documentazione.|  
 |FRECCIA SU e FRECCIA GIÙ|Scorrere l'elenco della documentazione.|  
 |Spazio|Aggiungere un elemento all'elenco **Modifiche in sospeso**.|  
-|Tab|Passare lo stato attivo all'elenco **Modifiche in sospeso**.|  
+|Scheda|Passare lo stato attivo all'elenco **Modifiche in sospeso**.|  
 |FRECCIA SU e FRECCIA GIÙ|Scorrere l'elenco **Modifiche in sospeso**.|  
 |Spazio|Rimuovere un elemento dall'elenco **Modifiche in sospeso**.|  
 |ALT+T|Applicare tutte le modifiche in sospeso.|
+
+## <a name="see-also"></a>Vedere anche
+[Funzionalità di accessibilità di Help Viewer](../ide/accessibility-features-of-the-help-viewer.md)

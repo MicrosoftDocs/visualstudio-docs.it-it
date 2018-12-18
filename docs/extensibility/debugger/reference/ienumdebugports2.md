@@ -1,64 +1,65 @@
 ---
-title: "IEnumDebugPorts2 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "IEnumDebugPorts2"
-helpviewer_keywords: 
-  - "IEnumDebugPorts2"
+title: IEnumDebugPorts2 | Documenti Microsoft
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: vs-ide-sdk
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: IEnumDebugPorts2
+helpviewer_keywords: IEnumDebugPorts2
 ms.assetid: 1754eef3-cf62-42e0-b218-1911acba77d4
-caps.latest.revision: 12
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 12
+caps.latest.revision: "12"
+author: gregvanl
+ms.author: gregvanl
+manager: ghogen
+ms.workload: vssdk
+ms.openlocfilehash: 277189c9b5510df1da4802e42225ffafa4b6995c
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
-# IEnumDebugPorts2
-[!INCLUDE[vs2017banner](../../../code-quality/includes/vs2017banner.md)]
-
-questa interfaccia enumera le porte di un computer o di un fornitore di porte.  
+# <a name="ienumdebugports2"></a>IEnumDebugPorts2
+Questa interfaccia consente di enumerare le porte di un fornitore di computer o la porta.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
 IEnumDebugPorts2 : IUnknown  
 ```  
   
-## Note per gli implementatori  
- Un fornitore di porte personalizzato implementa questa interfaccia per rappresentare un elenco di porte create dal fornitore.  Visual Studio implementa questa interfaccia a supporto del proprio fornitore di porte.  
+## <a name="notes-for-implementers"></a>Note per gli implementatori  
+ Un fornitore di porta personalizzato implementa questa interfaccia per rappresentare un elenco delle porte create dal fornitore. Visual Studio implementa questa interfaccia per supportare il proprio fornitore di porta.  
   
-## Note per i chiamanti  
- Chiamare [EnumPorts](../../../extensibility/debugger/reference/idebugportsupplier2-enumports.md) per ottenere questa interfaccia che rappresenta un elenco di porte create dal fornitore di porte.  Chiamare [EnumPersistedPorts](../../../extensibility/debugger/reference/idebugportsupplier3-enumpersistedports.md) per ottenere questa interfaccia che rappresenta un elenco di porte che è stato salvato su disco.  
+## <a name="notes-for-callers"></a>Note per i chiamanti  
+ Chiamare [EnumPorts](../../../extensibility/debugger/reference/idebugportsupplier2-enumports.md) per ottenere l'interfaccia che rappresenta un elenco delle porte create per il fornitore della porta. Chiamare [EnumPersistedPorts](../../../extensibility/debugger/reference/idebugportsupplier3-enumpersistedports.md) per ottenere l'interfaccia che rappresenta un elenco di porte che sono state salvate su disco.  
   
-## Metodi nell'ordine di Vtable  
- Nella tabella seguente sono elencati i metodi di `IEnumDebugPorts2`.  
+## <a name="methods-in-vtable-order"></a>Metodi nell'ordine Vtable  
+ Nella tabella seguente sono illustrati i metodi di `IEnumDebugPorts2`.  
   
 |Metodo|Descrizione|  
 |------------|-----------------|  
-|[Successivo](../../../extensibility/debugger/reference/ienumdebugports2-next.md)|Recupera un numero specificato delle porte in una sequenza di enumerazione.|  
-|[Skip](../../../extensibility/debugger/reference/ienumdebugports2-skip.md)|Ignora un numero specificato delle porte in una sequenza di enumerazione.|  
-|[Reimposta](../../../extensibility/debugger/reference/ienumdebugports2-reset.md)|Reimposta una sequenza di enumerazione all'inizio.|  
-|[Clona](../../../extensibility/debugger/reference/ienumdebugports2-clone.md)|Crea un enumeratore che contiene lo stesso stato di enumerazione dell'enumeratore corrente.|  
-|[GetCount](../Topic/IEnumDebugPorts2::GetCount.md)|Ottiene il numero delle porte in un enumeratore.|  
+|[avanti](../../../extensibility/debugger/reference/ienumdebugports2-next.md)|Recupera un numero di porte in una sequenza di enumerazione specificato.|  
+|[Skip](../../../extensibility/debugger/reference/ienumdebugports2-skip.md)|Ignora un numero di porte in una sequenza di enumerazione specificato.|  
+|[Reimpostazione](../../../extensibility/debugger/reference/ienumdebugports2-reset.md)|Reimposta una sequenza di enumerazione all'inizio.|  
+|[Clone](../../../extensibility/debugger/reference/ienumdebugports2-clone.md)|Crea un enumeratore che contiene lo stesso stato di enumerazione come enumerazione corrente.|  
+|[GetCount](../../../extensibility/debugger/reference/ienumdebugports2-getcount.md)|Ottiene il numero di porte in un enumeratore.|  
   
-## Note  
- Visual Studio utilizza questa interfaccia consente di popolare un elenco di porte utilizzate per connettersi a processi.  
+## <a name="remarks"></a>Note  
+ Visual Studio Usa questa interfaccia per popolare un elenco di porte usate per la connessione a processi.  
   
- Il modulo di debug in genere non utilizza questa interfaccia.  
+ In genere, un motore di debug non utilizza questa interfaccia.  
   
-## Requisiti  
- intestazione: msdbg.h  
+## <a name="requirements"></a>Requisiti  
+ Intestazione: msdbg.h  
   
- Spazio dei nomi: Microsoft.VisualStudio.Debugger.Interop  
+ Namespace: Microsoft.VisualStudio.Debugger.Interop  
   
  Assembly: Microsoft.VisualStudio.Debugger.Interop.dll  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Interfacce di base](../../../extensibility/debugger/reference/core-interfaces.md)   
  [EnumPorts](../../../extensibility/debugger/reference/idebugcoreserver2-enumports.md)   
  [EnumPorts](../../../extensibility/debugger/reference/idebugportsupplier2-enumports.md)

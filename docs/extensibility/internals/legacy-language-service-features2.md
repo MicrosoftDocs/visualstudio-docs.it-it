@@ -1,64 +1,50 @@
 ---
-title: Linguaggio legacy servizio Features2 | Documenti di Microsoft
+title: Linguaggio legacy servizio Features2 | Documenti Microsoft
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- vs-ide-sdk
+ms.technology: vs-ide-sdk
 ms.tgt_pltfrm: 
 ms.topic: article
-helpviewer_keywords:
-- editors [Visual Studio SDK], code development aides
+helpviewer_keywords: editors [Visual Studio SDK], code development aides
 ms.assetid: 97c38622-ae0b-4ae0-90ed-604072c298d3
-caps.latest.revision: 16
+caps.latest.revision: "16"
+author: gregvanl
 ms.author: gregvanl
 manager: ghogen
-translation.priority.mt:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: 5db97d19b1b823388a465bba15d057b30ff0b3ce
-ms.openlocfilehash: 93bbf3ce9f8252254d1ca589761c4d7c2b01d9b4
-ms.lasthandoff: 02/22/2017
-
+ms.workload: vssdk
+ms.openlocfilehash: 92c33d46f7bc58de1bee0b6c782165a6c7cd8d5a
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="legacy-language-service-features"></a>Funzionalità del linguaggio legacy
-Negli argomenti seguenti vengono elencano alcune delle funzionalità del servizio linguaggio legacy che è possibile fornire.  
+Negli argomenti seguenti sono elencati alcune delle funzionalità di servizio di linguaggio legacy che è possibile fornire.  
   
- Servizi di linguaggio legacy vengono implementati come parte di un package VS, ma il modo più recente per implementare le funzionalità del servizio del linguaggio è l'utilizzo delle estensioni MEF. Per ulteriori informazioni sulla nuova modalità per implementare un servizio di linguaggio, vedere [Editor e le estensioni del servizio di linguaggio](../../extensibility/editor-and-language-service-extensions.md).  
+ Servizi di linguaggio legacy vengono implementati come parte di un VSPackage, ma il più recente per implementare le funzionalità del servizio di linguaggio consiste nell'utilizzare le estensioni MEF. Per ulteriori informazioni sul programma per implementare un servizio di linguaggio, vedere [Editor e le estensioni del servizio di linguaggio](../../extensibility/editor-and-language-service-extensions.md).  
   
 > [!NOTE]
->  Si consiglia di iniziare a utilizzare il nuovo editor API appena possibile. Verrà migliorare le prestazioni del servizio di linguaggio e consentono di sfruttare nuove funzionalità dell'editor.  
+>  Si consiglia di iniziare a usare il nuovo editor di API appena possibile. Verrà migliorare le prestazioni del servizio di linguaggio e consentono di sfruttare nuove funzionalità dell'editor.  
   
-## <a name="in-this-section"></a>Contenuto della sezione  
- [In un servizio di linguaggio Legacy colorazione della sintassi](../../extensibility/internals/syntax-coloring-in-a-legacy-language-service.md)  
+## <a name="in-this-section"></a>In questa sezione  
+ [Colorazione della sintassi in un servizio di linguaggio legacy](../../extensibility/internals/syntax-coloring-in-a-legacy-language-service.md)  
  Viene illustrato come implementare la colorazione della sintassi.  
   
- [Formattazione in un servizio di linguaggio Legacy automatica](../../extensibility/internals/automatic-formatting-in-a-legacy-language-service.md)  
+ [Formattazione automatica in un servizio di linguaggio legacy](../../extensibility/internals/automatic-formatting-in-a-legacy-language-service.md)  
  Viene illustrato come implementare la formattazione automatica.  
   
- [Informazioni sui parametri in un servizio di linguaggio Legacy](../../extensibility/internals/parameter-info-in-a-legacy-language-service1.md)  
+ [Informazioni sul parametro in un servizio di linguaggio Legacy](../../extensibility/internals/parameter-info-in-a-legacy-language-service1.md)  
  Viene illustrato come implementare la descrizione comando informazioni sul parametro di IntelliSense.  
   
- [Completamento delle istruzioni in un servizio di linguaggio Legacy](../../extensibility/internals/statement-completion-in-a-legacy-language-service.md)  
- Viene illustrato come implementare l'elenco di istruzioni di IntelliSense e l'elenco di completamento membro.  
+ [Completamento delle istruzioni in un servizio di linguaggio legacy](../../extensibility/internals/statement-completion-in-a-legacy-language-service.md)  
+ Viene illustrato come implementare l'elenco di completamento di membro e l'elenco delle istruzioni IntelliSense.  
   
- [Testo della struttura e nascosto in un servizio di linguaggio Legacy](../../extensibility/internals/outlining-and-hidden-text-in-a-legacy-language-service.md)  
- Viene illustrato come implementare il testo nascosto o della struttura.  
+ [Definizione della struttura e testo nascosto in un servizio di linguaggio legacy](../../extensibility/internals/outlining-and-hidden-text-in-a-legacy-language-service.md)  
+ Viene illustrato come implementare il testo nascosto o struttura.  
   
- [Procedura: fornire il supporto esteso della struttura in un servizio di linguaggio Legacy](../../extensibility/internals/how-to-provide-expanded-outlining-support-in-a-legacy-language-service.md)  
- Vengono illustrati alcuni dei passaggi di implementazione di supporto del debugger...  
+ [Procedura: Fornire il supporto per la struttura espansa in un servizio di linguaggio legacy](../../extensibility/internals/how-to-provide-expanded-outlining-support-in-a-legacy-language-service.md)  
+ Illustra alcuni passaggi di implementazione di supporto del debugger...  
   
 ## <a name="related-sections"></a>Sezioni correlate

@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- vs-ide-general
+ms.technology: vs-ide-general
 ms.tgt_pltfrm: 
 ms.topic: article
 helpviewer_keywords:
@@ -15,30 +14,16 @@ helpviewer_keywords:
 - build events [Visual Studio]
 - builds [Visual Studio], events
 ms.assetid: b4ce1ad9-5215-4b6f-b6a2-798b249aa335
-caps.latest.revision: 19
-author: kempb
-ms.author: kempb
+caps.latest.revision: "19"
+author: gewarren
+ms.author: gewarren
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 47057e9611b824c17077b9127f8d2f8b192d6eb8
-ms.openlocfilehash: 3058bf7c6714f18291353224a192218c1b59a480
-ms.contentlocale: it-it
-ms.lasthandoff: 05/13/2017
-
+ms.workload: dotnet
+ms.openlocfilehash: 1fcba0ef7abec3c8f5d71d34b8ff4e19e047d50b
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-specify-build-events-c"></a>Procedura: specificare eventi di compilazione (C#)
 È possibile usare gli eventi di compilazione per specificare i comandi da eseguire prima dell'inizio o al termine della compilazione. Gli eventi di compilazione vengono eseguiti solo se la compilazione raggiunge correttamente i punti corrispondenti nel processo di compilazione.  
@@ -163,7 +148,7 @@ ms.lasthandoff: 05/13/2017
   
 1.  Creare un'applicazione Windows per il progetto da pubblicare. Scegliere **Nuovo** dal menu **File**, quindi fare clic su **Progetto**.  
   
-2.  Nella finestra di dialogo **Nuovo progetto** espandere **Visual C#**, fare clic su **Windows** e quindi fare clic sul modello **Applicazione Windows Form**. Denominare il progetto `CSWinApp`.  
+2.  Nella finestra di dialogo **Nuovo progetto** espandere **Visual C#**, fare clic su **Desktop classico di Windows** e quindi fare clic sul modello **Applicazione Windows Form**. Denominare il progetto `CSWinApp`.  
   
 3.  Con il progetto selezionato in **Esplora soluzioni**, scegliere **Proprietà** dal menu **Progetto**.  
   

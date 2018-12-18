@@ -1,24 +1,26 @@
 ---
-title: "Procedura dettagliata: generazione di codice tramite modelli di testo | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "procedure dettagliate [modelli di testo], generazione di codice dell'applicazione"
-  - "procedure dettagliate [modelli di testo]"
-ms.assetid: 24602ade-baca-425e-a6ce-be09a2c7f7e1
-caps.latest.revision: 11
-author: "alancameronwills"
-ms.author: "awills"
-manager: "douge"
-caps.handback.revision: 11
+title: 'Procedura dettagliata: Generazione di codice tramite modelli di testo | Documenti Microsoft'
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.topic: article
+helpviewer_keywords:
+- walkthroughs [text templates], generating application code
+- walkthroughs [text templates]
+author: gewarren
+ms.author: gewarren
+manager: ghogen
+ms.workload:
+- multiple
+ms.technology: vs-ide-modeling
+ms.openlocfilehash: 46cbf0c6a28b10434ed364dffd77c4c01620d6ea
+ms.sourcegitcommit: 205d15f4558315e585c67f33d5335d5b41d0fcea
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 02/09/2018
 ---
-# Procedura dettagliata: generazione di codice tramite modelli di testo
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
+# <a name="walkthrough-generating-code-by-using-text-templates"></a>Procedura dettagliata: generazione di codice tramite modelli di testo
 La generazione del codice consente di creare codice di programma fortemente tipizzato e al tempo stesso facilmente modificato quando viene modificato il modello di origine. Ciò si differenzia dalla tecnica alternativa di scrivere un programma completamente generico che accetta un file di configurazione, che è più flessibile, ma genera codice più difficile da leggere e modificare e caratterizzato da prestazioni inferiori. Questa procedura dettagliata illustra tale vantaggio.  
   
 ## <a name="typed-code-for-reading-xml"></a>Codice tipizzato per leggere l'XML  
@@ -102,7 +104,7 @@ foreach (XmlNode artist in catalog.SelectNodes("artist"))
   
 4.  Per questa procedura dettagliata assegnare al file il nome `exampleXml.xml`. Impostare il contenuto del file in modo che sia l'XML mostrato nella sezione precedente.  
   
- ..  
+ .  
   
 ### <a name="add-a-test-code-file"></a>Aggiungere un file di codice di test  
  Aggiungere al progetto un file C# e scrivere in esso un esempio del codice che si vuole poter scrivere. Ad esempio:  

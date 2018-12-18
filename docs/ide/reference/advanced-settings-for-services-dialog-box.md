@@ -13,30 +13,17 @@ f1_keywords:
 helpviewer_keywords:
 - Advanced Settings for Services dialog box
 ms.assetid: 6dde4a2d-85e1-4275-aa55-24b84111be91
-caps.latest.revision: 14
-author: kempb
-ms.author: kempb
+caps.latest.revision: 
+author: gewarren
+ms.author: gewarren
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 3d32d11a430227800cb3ed53831a9565eb6adeb3
-ms.openlocfilehash: d0c542eb81e628a3eafe7b0ee39a179858c8011d
-ms.contentlocale: it-it
-ms.lasthandoff: 05/30/2017
-
+ms.workload:
+- multiple
+ms.openlocfilehash: 264f90329bfbf969f50dbc38073bdda26987fd26
+ms.sourcegitcommit: b18844078a30d59014b48a9c247848dea188b0ee
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 01/29/2018
 ---
 # <a name="advanced-settings-for-services-dialog-box"></a>Finestra di dialogo Impostazioni avanzate per i servizi
 I servizi delle applicazioni client offrono accesso semplificato a servizi di accesso, ruolo e profilo di [!INCLUDE[ajax_current_short](../../ide/reference/includes/ajax_current_short_md.md)] da applicazioni Windows Forms e Windows Presentation Foundation (WPF). Per configurare i servizi delle applicazioni client, è possibile usare la pagina **Servizi** in **Creazione progetti**. Per altre informazioni sulla pagina **Servizi**, vedere [Services Page, Project Designer](../../ide/reference/services-page-project-designer.md) (Pagina Servizi, Creazione progetti).  
@@ -45,14 +32,14 @@ I servizi delle applicazioni client offrono accesso semplificato a servizi di ac
   
  Per accedere alla finestra di dialogo **Impostazioni avanzate per i servizi**, selezionare un nodo del progetto in **Esplora soluzioni** e scegliere **Proprietà** dal menu **Progetto**. Quando **Progettazione progetti** si apre, fare clic sulla scheda **Servizi** e premere il **Avanzate**. Questo pulsante rimarrà disabilitato fino all'abilitazione dei servizi delle applicazioni client.  
   
-## <a name="task-list"></a>Elenco attività  
- [Procedura: Configurare i servizi delle applicazioni client](/dotnet/framework/common-client-technologies/how-to-configure-client-application-services)  
-  
- [How to: Work Offline with Client Application Services](http://msdn.microsoft.com/en-us/f792cb16-8520-4a0f-9dc9-07bfbc454e38) (Procedura: Lavorare offline con servizi delle applicazioni client)  
-  
-## <a name="uielement-list"></a>Elenco UIElement  
+## <a name="task-list"></a>Elenco attività
+
+- [Procedura: configurare i servizi delle applicazioni client](/dotnet/framework/common-client-technologies/how-to-configure-client-application-services)
+
+## <a name="uielement-list"></a>Elenco UIElement
+
  **Salva hash della password localmente per consentire l'accesso offline**  
- Specifica se un modulo crittografato della password dell'utente sarà memorizzato nella cache locale per consentire all'utente di accedere quando l'applicazione è in modalità offline. Per altre informazioni, vedere [How to: Work Offline with Client Application Services](http://msdn.microsoft.com/en-us/f792cb16-8520-4a0f-9dc9-07bfbc454e38) (Procedura: Lavorare offline con servizi delle applicazioni client). Questa opzione è selezionata per impostazione predefinita.  
+ Specifica se un modulo crittografato della password dell'utente sarà memorizzato nella cache locale per consentire all'utente di accedere quando l'applicazione è in modalità offline. Questa opzione è selezionata per impostazione predefinita.
   
  **Richiedi agli utenti di accedere di nuovo a ogni scadenza del cookie del server**  
  Specifica se gli utenti precedentemente autenticati vengono automaticamente riautenticati quando l'applicazione accede al servizio ruoli o profili e il cookie di autenticazione server è scaduto. Selezionare questa opzione per negare l'accesso ai servizi dell'applicazione e richiedere esplicitamente una nuova autenticazione se il cookie è scaduto. Questa opzione è utile per applicazioni distribuite in percorsi pubblici al fine di garantire che gli utenti che escono dall'applicazione non rimangano autenticati a tempo indeterminato mentre questa continua a essere eseguita. Per impostazione predefinita, questa opzione è deselezionata.  
@@ -65,8 +52,8 @@ I servizi delle applicazioni client offrono accesso semplificato a servizi di ac
  **Usa stringa di connessione personalizzata**  
  Specifica se i provider di servizi client useranno un archivio dati personalizzato per la cache locale. Per impostazione predefinita, i provider di servizi useranno il file system locale per la cache. Se si seleziona questa opzione, la casella di testo sarà automaticamente popolata con una stringa di connessione predefinita. È possibile mantenere la stringa di connessione predefinita per generare automaticamente e usare un database SQL Server Compact Edition oppure è possibile specificare una stringa di connessione a un database SQL Server esistente. Per altre informazioni, vedere [Procedura: Configurare i servizi delle applicazioni client](/dotnet/framework/common-client-technologies/how-to-configure-client-application-services). Per impostazione predefinita, questa opzione è deselezionata.  
   
-## <a name="see-also"></a>Vedere anche  
- [Servizi applicazioni client](/dotnet/framework/common-client-technologies/client-application-services)   
- [Services Page, Project Designer](../../ide/reference/services-page-project-designer.md)  (Pagina Servizi, Creazione progetti)  
- [Procedura: Configurare i servizi delle applicazioni client](/dotnet/framework/common-client-technologies/how-to-configure-client-application-services)   
- [How to: Work Offline with Client Application Services](http://msdn.microsoft.com/en-us/f792cb16-8520-4a0f-9dc9-07bfbc454e38) (Procedura: Lavorare offline con servizi delle applicazioni client)
+## <a name="see-also"></a>Vedere anche
+
+[Servizi applicazioni client](/dotnet/framework/common-client-technologies/client-application-services)  
+[Pagina Servizi, Creazione progetti](../../ide/reference/services-page-project-designer.md)  
+[Procedura: Configurare i servizi delle applicazioni client](/dotnet/framework/common-client-technologies/how-to-configure-client-application-services)

@@ -1,81 +1,83 @@
 ---
-title: "Operatore NOT bit per bit (~) (JavaScript) | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/18/2017"
-ms.prod: "windows-client-threshold"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-javascript"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "~"
-dev_langs: 
-  - "JavaScript"
-  - "TypeScript"
-  - "DHTML"
-helpviewer_keywords: 
-  - "bit per bit (operatori), NOT (operatore)"
-  - "NOT (operatore)"
+title: Bit per bit NOT (operatore) (~) (JavaScript) | Documenti Microsoft
+ms.custom: 
+ms.date: 01/18/2017
+ms.prod: windows-client-threshold
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-javascript
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords: ~
+dev_langs:
+- JavaScript
+- TypeScript
+- DHTML
+helpviewer_keywords:
+- NOT operator
+- bitwise operators, NOT operator
 ms.assetid: 39f92474-fe05-4a8b-9ad8-caca93f82bca
-caps.latest.revision: 10
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.openlocfilehash: aec64b055b260efb7a4b0d952aed9b3a5d7ddc82
+ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/27/2017
 ---
-# Operatore NOT bit per bit (~) (JavaScript)
-Esegue un'operazione NOT \(negazione\) bit per bit su un'espressione.  
+# <a name="bitwise-not-operator--javascript"></a>Operatore NOT bit per bit (~) (JavaScript)
+Esegue un'operazione NOT bit per bit (negazione) su un'espressione.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
   
 result = ~ expression  
 ```  
   
-## Parametri  
- *result*  
+## <a name="parameters"></a>Parametri  
+ *risultato*  
  Qualsiasi variabile.  
   
- *expression*  
+ *espressione*  
  Qualsiasi espressione.  
   
-## Note  
- Con tutti gli operatori unari, quale l'operatore `~`, le espressioni vengono valutate nel modo seguente:  
+## <a name="remarks"></a>Note  
+ Tutti gli operatori unari, ad esempio il `~` operatore, valutare le espressioni come indicato di seguito:  
   
--   Se l'operatore viene applicato a espressioni undefined o `null`, verrà generato un errore di runtime.  
+-   Se applicato undefined o `null` viene generato un errore di run-time espressioni.  
   
 -   Gli oggetti vengono convertiti in stringhe.  
   
--   Le stringhe vengono convertite in numeri se possibile.  In caso contrario, verrà generato un errore di runtime.  
+-   Le stringhe vengono convertite in numeri, se possibile. In caso contrario, viene generato un errore di run-time.  
   
--   I valori booleani vengono considerati come numeri e precisamente come 0 nel caso di false, come 1 nel caso di true.  
+-   I valori booleani vengono considerati come numeri (0 se è false, 1 se è true).  
   
- L'operatore viene applicato al numero risultante.  
+ L'operatore viene applicato per il numero risultante.  
   
- L'operatore `~` esamina la rappresentazione binaria dei valori dell'espressione ed esegue un'operazione di negazione bit per bit.  
+ Il `~` confrontata la rappresentazione binaria dei valori dell'espressione ed eseguita un'operazione di negazione bit per bit su di esso.  
   
- Le cifre pari a 1 nell'espressione diventano 0 nel risultato.  Le cifre pari a 0 nell'espressione diventano 1 nel risultato.  
+ Qualsiasi cifra che corrisponde a 1 dell'espressione diventa 0 nel risultato. Le cifre che corrisponde a 0 nell'espressione diventano un 1 nel risultato.  
   
- Nell'esempio seguente viene illustrato l'utilizzo dell'operatore NOT \(~\) bit per bit.  
+ Nell'esempio riportato di seguito viene illustrato l'utilizzo di bit per bit (~) l'operatore NOT.  
   
 ```  
 var temp = ~5;  
 ```  
   
- Il valore risultante è \-6, come illustrato nella tabella seguente.  
+ Il valore risultante è -6, come illustrato nella tabella seguente.  
   
-|Espressione|Valore binario \(complemento a due\)|Valore decimale|  
-|-----------------|------------------------------------------|---------------------|  
+|Espressione|Valore binario (complemento a due)|Valore decimale|  
+|----------------|---------------------------------------|-------------------|  
 |5|00000000 00000000 00000000 00000101|5|  
-|~5|11111111 11111111 11111111 11111010|\-6|  
+|~5|11111111 11111111 11111111 11111010|-6|  
   
-## Requisiti  
+## <a name="requirements"></a>Requisiti  
  [!INCLUDE[jsv1](../../javascript/misc/includes/jsv1-md.md)]  
   
-## Vedere anche  
- [Operatore di NOT logico \(\!\)](../../javascript/reference/logical-not-operator-decrement-exclpt-javascript.md)   
- [Precedenza tra gli operatori](../../javascript/operator-subtractprecedence-javascript.md)   
- [Riepilogo degli operatori \(JavaScript\)](../../javascript/misc/operator-subtractsummary-javascript.md)
+## <a name="see-also"></a>Vedere anche  
+ [Logico NOT (operatore) (!)](../../javascript/reference/logical-not-operator-decrement-exclpt-javascript.md)   
+ [Precedenza tra operatori](../../javascript/operator-subtractprecedence-javascript.md)   
+ [Riepilogo degli operatori (JavaScript)](../../javascript/misc/operator-subtractsummary-javascript.md)

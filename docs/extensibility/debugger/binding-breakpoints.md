@@ -1,58 +1,60 @@
 ---
-title: "Associazione dei punti di interruzione | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "punti di interruzione, l'associazione"
+title: Associazione dei punti di interruzione | Documenti Microsoft
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: vs-ide-sdk
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords: breakpoints, binding
 ms.assetid: 70737387-c52f-4dae-8865-77d4b203bf25
-caps.latest.revision: 12
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 12
+caps.latest.revision: "12"
+author: gregvanl
+ms.author: gregvanl
+manager: ghogen
+ms.workload: vssdk
+ms.openlocfilehash: 55416d6b156055d967424476f5add3b4ed75d18d
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
-# Associazione dei punti di interruzione
-[!INCLUDE[vs2017banner](../../code-quality/includes/vs2017banner.md)]
-
-Se che un utente ha impostato un punto di interruzione, forse premere F9, l'ide formula la richiesta e inserisce la sessione di debug per creare il punto di interruzione.  
+# <a name="binding-breakpoints"></a>Associazione dei punti di interruzione
+Se l'utente imposta un punto di interruzione, ad esempio premendo F9, l'IDE in cui viene creata la richiesta e richiede la sessione di debug per creare il punto di interruzione.  
   
-## impostare un punto di interruzione  
- Impostare un punto di interruzione è un processo in due fasi, perché il codice o i dati interessati dal punto di interruzione non può essere disponibili.  Innanzitutto, il punto di interruzione deve essere descritto quindi, mentre il codice o i dati diventino disponibili, deve essere associato a tali codice o dati, come segue:  
+## <a name="setting-a-breakpoint"></a>Impostazione di un punto di interruzione  
+ L'impostazione di un punto di interruzione è un processo in due passaggi, perché il codice o i dati interessati dal punto di interruzione potrebbero non essere ancora disponibili. Innanzitutto, il punto di interruzione deve essere descritte, e quindi come codice o i dati diventano disponibili, deve essere associato a tale codice o dati, come indicato di seguito:  
   
-1.  Il punto di interruzione è richiesto dai motori di debug rilevanti \(DEs\) e quindi il punto di interruzione verrà associato al codice o ai dati mentre diventa disponibile.  
+1.  Il punto di interruzione viene richiesto dai motori di debug pertinente (DEs), e quindi il punto di interruzione è associata al codice o dati appena sarà disponibile.  
   
-2.  La richiesta del punto di interruzione viene inviata la sessione di debug, che lo invia a qualsiasi DES rilevante.  Qualsiasi DE che sceglie per gestire il punto di interruzione viene creato un corrispondente in attesa del punto di interruzione.  
+2.  La richiesta di punto di interruzione viene inviata per la sessione di debug, che invia tutti DEs pertinente. Qualsiasi Germania che sceglie di gestire il punto di interruzione consente di creare un oggetto corrispondente in sospeso punto di interruzione.  
   
-3.  La sessione di debug raccoglie i punti di interruzione in attesa e li invia di nuovo al pacchetto di debug \(il componente di debug di Visual Studio\).  
+3.  La sessione di debug raccoglie i punti di interruzione in sospeso e li invia al pacchetto di debug (il componente di debug di Visual Studio).  
   
-4.  Il pacchetto di debug richiesto la sessione di debug per associare il punto di interruzione in sospeso al codice o ai dati.  La sessione di debug invia la richiesta a qualsiasi DES rilevante.  
+4.  Il pacchetto di debug richiede la sessione di debug per associare il punto di interruzione in sospeso a codice o i dati. La sessione di debug invia la richiesta a tutti DEs pertinente.  
   
-5.  Se il DE possibile associare il punto di interruzione, invia un evento associato il punto di interruzione della sessione di debug.  In caso contrario, invia un evento di errore del punto di interruzione invece.  
+5.  Se la Germania è in grado di associare il punto di interruzione, viene inviato che un punto di interruzione associato evento nuovamente alla sessione di debug. In caso contrario, invia un evento di errore del punto di interruzione.  
   
-## In attesa dei punti di interruzione  
- Di un punto di interruzione in attesa può essere associato a più percorsi di codice.  Ad esempio, una riga di codice sorgente per il modello c\+\+ possibile associare a ogni sequenza di codice generata dal modello.  La sessione di debug possibile utilizzare un evento associato il punto di interruzione per enumerare i contesti di codice limita a un punto di interruzione quando l'evento è stato inviato.  Più contesti di codice possono essere associati più avanti, in modo da DE possibile inviare gli eventi associati del punto di interruzione in per ogni richiesta di associazione.  Tuttavia, un DE deve inviare solo un evento di errore del punto di interruzione per richiesta di associazione.  
+## <a name="pending-breakpoints"></a>Punti di interruzione in sospeso  
+ Un punto di interruzione in sospeso è possibile associare a più percorsi di codice. Ad esempio, una riga di codice sorgente per un modello di C++ è possibile associare a ogni sequenza di codice generato dal modello. La sessione di debug è possibile utilizzare un evento associato del punto di interruzione per enumerare i contesti di codice associati a un punto di interruzione al momento che l'evento è stato inviato. Più contesti di codice possono essere associati in un secondo momento, in modo che la Germania può inviare che più punti di interruzione associato gli eventi per ogni richiesta di associazione. Tuttavia, un Germania deve inviare un solo evento di errore di punto di interruzione per ogni richiesta di associazione.  
   
-## Implementazione  
- A livello di codice, il pacchetto di debug chiama il gestore di debug della sessione \(SDM\) e gli fornisce [IDebugBreakpointRequest2](../../extensibility/debugger/reference/idebugbreakpointrequest2.md) un'interfaccia che esegue il wrapping [BP\_REQUEST\_INFO](../../extensibility/debugger/reference/bp-request-info.md) di una struttura, che descrive il punto di interruzione da impostare.  Sebbene i punti di interruzione possono essere di molti form, infine risolvono a un codice o a un contesto dati.  
+## <a name="implementation"></a>Implementazione  
+ A livello di codice, il pacchetto di debug chiama il debug di sessione di gestione (SDM) e le assegna un [IDebugBreakpointRequest2](../../extensibility/debugger/reference/idebugbreakpointrequest2.md) interfaccia che esegue il wrapping di un [BP_REQUEST_INFO](../../extensibility/debugger/reference/bp-request-info.md) struttura, che descrive il punto di interruzione. Anche se i punti di interruzione può essere di vario tipo, vengono risolte in un contesto di codice o i dati.  
   
- Lo SDM passa questa chiamata a ogni DE rilevante chiamando il [CreatePendingBreakpoint](../../extensibility/debugger/reference/idebugengine2-creatependingbreakpoint.md) metodo.  Se il DE sceglie di gestire il punto di interruzione, crea e restituisce [IDebugPendingBreakpoint2](../../extensibility/debugger/reference/idebugpendingbreakpoint2.md) un'interfaccia.  Lo SDM raccoglie queste interfacce e le passa al pacchetto di debug come singola interfaccia di `IDebugPendingBreakpoint2` .  
+ Il SDM passa la chiamata a ogni DE rilevanti chiamando il relativo [CreatePendingBreakpoint](../../extensibility/debugger/reference/idebugengine2-creatependingbreakpoint.md) metodo. Se la Germania sceglie di gestire il punto di interruzione, crea e restituisce un [IDebugPendingBreakpoint2](../../extensibility/debugger/reference/idebugpendingbreakpoint2.md) interfaccia. Il SDM raccoglie queste interfacce e li passa al pacchetto di debug come singolo `IDebugPendingBreakpoint2` interfaccia.  
   
- finora, nessun evento è stato generato.  
+ Finora, gli eventi non sono stati generati.  
   
- Il pacchetto di debug quindi tenta di associare il punto di interruzione in sospeso al codice o ai dati chiamando [Operazione di binding](../../extensibility/debugger/reference/idebugpendingbreakpoint2-bind.md), che viene implementato da DE.  
+ Il pacchetto di debug tenta quindi di associare il punto di interruzione in sospeso al codice o dati chiamando [associare](../../extensibility/debugger/reference/idebugpendingbreakpoint2-bind.md), che viene implementato per la Germania.  
   
- Se il punto di interruzione verrà associato, il DE invia [IDebugBreakpointBoundEvent2](../../extensibility/debugger/reference/idebugbreakpointboundevent2.md) un'interfaccia eventi al pacchetto di debug.  Il pacchetto di debug utilizza questa interfaccia per enumerare tutti i contesti di codice \(o di un contesto dati\) associati al punto di interruzione chiamando [EnumBoundBreakpoints](../../extensibility/debugger/reference/idebugbreakpointboundevent2-enumboundbreakpoints.md), che restituisce una o [IDebugBoundBreakpoint2](../../extensibility/debugger/reference/idebugboundbreakpoint2.md) più interfacce.  [GetBreakpointResolution](../../extensibility/debugger/reference/idebugboundbreakpoint2-getbreakpointresolution.md) L'interfaccia restituisce [IDebugBreakpointResolution2](../../extensibility/debugger/reference/idebugbreakpointresolution2.md) un'interfaccia e [GetResolutionInfo](../../extensibility/debugger/reference/idebugbreakpointresolution2-getresolutioninfo.md) restituisce [BP\_RESOLUTION\_INFO](../../extensibility/debugger/reference/bp-resolution-info.md) un che contiene il codice o il contesto dati.  
+ Se è associato il punto di interruzione, la Germania invia un [IDebugBreakpointBoundEvent2](../../extensibility/debugger/reference/idebugbreakpointboundevent2.md) interfaccia eventi per il pacchetto di debug. Il pacchetto debug viene utilizzata questa interfaccia consente di enumerare tutti i contesti di codice (o il contesto dei dati singolo) associata al punto di interruzione chiamando [EnumBoundBreakpoints](../../extensibility/debugger/reference/idebugbreakpointboundevent2-enumboundbreakpoints.md), che restituisce uno o più [IDebugBoundBreakpoint2](../../extensibility/debugger/reference/idebugboundbreakpoint2.md) interfacce. Il [GetBreakpointResolution](../../extensibility/debugger/reference/idebugboundbreakpoint2-getbreakpointresolution.md) interfaccia restituisce un [IDebugBreakpointResolution2](../../extensibility/debugger/reference/idebugbreakpointresolution2.md) interfaccia e [GetResolutionInfo](../../extensibility/debugger/reference/idebugbreakpointresolution2-getresolutioninfo.md) restituisce un [BP_ RESOLUTION_INFO](../../extensibility/debugger/reference/bp-resolution-info.md) un'unione che contiene il codice o i dati di contesto.  
   
- Se il DE non è possibile associare il punto di interruzione, invia una singola [IDebugBreakpointErrorEvent2](../../extensibility/debugger/reference/idebugbreakpointerrorevent2.md) interfaccia eventi al pacchetto di debug.  Il pacchetto di debug recupera il tipo di errore \(errore o avviso\) e il messaggio informativo chiamando [GetErrorBreakpoint](../../extensibility/debugger/reference/idebugbreakpointerrorevent2-geterrorbreakpoint.md), seguito da [GetBreakpointResolution](../../extensibility/debugger/reference/idebugerrorbreakpoint2-getbreakpointresolution.md) e [GetResolutionInfo](../../extensibility/debugger/reference/idebugerrorbreakpointresolution2-getresolutioninfo.md).  Ciò restituisce [BP\_ERROR\_RESOLUTION\_INFO](../../extensibility/debugger/reference/bp-error-resolution-info.md) una struttura che contiene il tipo e il messaggio di errore.  
+ Se la Germania è in grado di associare il punto di interruzione, viene inviato un singolo [IDebugBreakpointErrorEvent2](../../extensibility/debugger/reference/idebugbreakpointerrorevent2.md) interfaccia eventi per il pacchetto di debug. Il pacchetto di debug recupera il tipo di errore (errore o avviso) e un messaggio informativo chiamando [GetErrorBreakpoint](../../extensibility/debugger/reference/idebugbreakpointerrorevent2-geterrorbreakpoint.md), seguito da [GetBreakpointResolution](../../extensibility/debugger/reference/idebugerrorbreakpoint2-getbreakpointresolution.md) e [ GetResolutionInfo](../../extensibility/debugger/reference/idebugerrorbreakpointresolution2-getresolutioninfo.md). Restituisce un [BP_ERROR_RESOLUTION_INFO](../../extensibility/debugger/reference/bp-error-resolution-info.md) struttura che contiene il tipo di errore e il messaggio.  
   
- Se un DE gestisce un punto di interruzione non può essere associato, restituisce un errore di tipo `BPET_TYPE_ERROR`.  Il pacchetto di debug risponde visualizzare una finestra di dialogo errori e l'ide appoggia un glifo di esclamazione nel glifo di un punto di interruzione a sinistra della riga di codice sorgente.  
+ Se un Germania gestisce un punto di interruzione, ma non è possibile eseguirne l'associazione, viene restituito un errore di tipo `BPET_TYPE_ERROR`. Il pacchetto di debug risponde visualizzando una finestra di dialogo di errore e l'IDE posiziona un'icona di punto esclamativo all'interno dell'icona di punto di interruzione a sinistra della riga di codice sorgente.  
   
- Se un DE gestisce un punto di interruzione, non può eseguire l'associazione, ma un altro DE possibile associare, restituisce un avviso.  L'ide risponde inserendo un glifo dell'applicazione nel glifo di un punto di interruzione a sinistra della riga di codice sorgente.  
+ Se un Germania gestisce un punto di interruzione, non è possibile associare, ma un'altra Germania può eseguirne l'associazione, viene restituito un avviso. L'IDE risponde inserendo un glifo del punto all'interno dell'icona di punto di interruzione a sinistra della riga di codice sorgente.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Attività di debug](../../extensibility/debugger/debugging-tasks.md)

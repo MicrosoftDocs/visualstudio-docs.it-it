@@ -1,55 +1,56 @@
 ---
-title: "IDebugBinder::ResolveDynamicType | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "IDebugBinder::ResolveDynamicType"
-helpviewer_keywords: 
-  - "Metodo IDebugBinder::ResolveDynamicType"
+title: IDebugBinder::ResolveDynamicType | Documenti Microsoft
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: vs-ide-sdk
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: IDebugBinder::ResolveDynamicType
+helpviewer_keywords: IDebugBinder::ResolveDynamicType method
 ms.assetid: 2c36ef92-5b44-4cfd-988e-54a2e5a6710c
-caps.latest.revision: 8
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: gregvanl
+ms.author: gregvanl
+manager: ghogen
+ms.workload: vssdk
+ms.openlocfilehash: b1a6da92ae88939303d8d16cc401c152ecfb0c36
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
-# IDebugBinder::ResolveDynamicType
-[!INCLUDE[vs2017banner](../../../code-quality/includes/vs2017banner.md)]
-
-questo metodo restituisce il tipo esatto di variabile.  
+# <a name="idebugbinderresolvedynamictype"></a>IDebugBinder::ResolveDynamicType
+Questo metodo restituisce il tipo esatto di una variabile.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp#  
+```cpp  
 HRESULT ResolveDynamicType (  
-   IDebugDynamicField *pDynamic,  
-   IDebugField       **ppResolved  
+   IDebugDynamicField *pDynamic,  
+   IDebugField       **ppResolved  
 );  
 ```  
   
-```c#  
+```csharp  
 int ResolveDynamicType(  
-   IDebugDynamicField pDynamic,   
-   out IDebugField    ppResolved  
+   IDebugDynamicField pDynamic,   
+   out IDebugField    ppResolved  
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `pDynamic`  
- \[in\]  [IDebugDynamicField](../../../extensibility/debugger/reference/idebugdynamicfield.md) Una rappresentazione del tipo di variabile.  
+ [in] Un [IDebugDynamicField](../../../extensibility/debugger/reference/idebugdynamicfield.md) che rappresenta un tipo di una variabile.  
   
  `ppResolved`  
- \[out\]  Restituisce [IDebugField](../../../extensibility/debugger/reference/idebugfield.md) informazioni specifiche fornire informazioni sul tipo della variabile.  
+ [out] Restituisce un [IDebugField](../../../extensibility/debugger/reference/idebugfield.md) fornendo informazioni specifiche del tipo della variabile.  
   
-## Valore restituito  
- Se l'operazione riesce, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
+## <a name="return-value"></a>Valore restituito  
+ Se ha esito positivo, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IDebugBinder](../../../extensibility/debugger/reference/idebugbinder.md)   
  [IDebugField](../../../extensibility/debugger/reference/idebugfield.md)   
  [IDebugDynamicField](../../../extensibility/debugger/reference/idebugdynamicfield.md)

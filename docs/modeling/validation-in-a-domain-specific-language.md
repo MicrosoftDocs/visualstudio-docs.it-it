@@ -1,39 +1,41 @@
 ---
-title: "Convalida in un linguaggio specifico di dominio | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "Linguaggio specifico di dominio, i vincoli"
-  - "Linguaggio specifico di dominio, convalida"
-ms.assetid: 65b93df8-af3c-462b-904c-60292f8ed381
-caps.latest.revision: 33
-author: "alancameronwills"
-ms.author: "awills"
-manager: "douge"
-caps.handback.revision: 33
+title: Convalida in un linguaggio specifico di dominio | Documenti Microsoft
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.topic: article
+helpviewer_keywords:
+- Domain-Specific Language, constraints
+- Domain-Specific Language, validation
+author: gewarren
+ms.author: gewarren
+manager: ghogen
+ms.workload:
+- multiple
+ms.technology: vs-ide-modeling
+ms.openlocfilehash: 7eb2e734bd94608584ca700223fb75387eb484fb
+ms.sourcegitcommit: 205d15f4558315e585c67f33d5335d5b41d0fcea
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 02/09/2018
 ---
-# Convalida in un linguaggio specifico di dominio
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
+# <a name="validation-in-a-domain-specific-language"></a>Convalida in un linguaggio specifico di dominio
 Gli autori di un linguaggio specifico di dominio possono definire vincoli di convalida per verificare che il modello creato dall'utente sia significativo. Ad esempio, se il linguaggio specifico di dominio consente agli utenti di disegnare l'albero genealogico di determinate persone e dei relativi antenati, è possibile scrivere un vincolo per garantire che le date di nascita dei figli siano successive a quelle dei genitori.  
   
- È possibile configurare i vincoli di convalida eseguito quando viene salvato il modello, quando viene aperto e quando l'utente esegue esplicitamente il **convalida** comando di menu. È anche possibile eseguire la convalida sotto il controllo del programma, ad esempio in risposta alla modifica di un valore di proprietà o di una relazione.  
+ È possibile eseguire i vincoli di convalida quando viene salvato il modello, quando viene aperto e quando l'utente esegue in modo esplicito il **convalida** comando di menu. È anche possibile eseguire la convalida sotto il controllo del programma, ad esempio in risposta alla modifica di un valore di proprietà o di una relazione.  
   
- La convalida è particolarmente importante quando si scrivono modelli di testo o altri strumenti che elaborano i modelli degli utenti. Garantisce infatti che i modelli siano conformi alle precondizioni previste da questi strumenti.  
+ La convalida è particolarmente importante se si scrivono modelli di testo o altri strumenti di elaborare i modelli degli utenti. Garantisce infatti che i modelli siano conformi alle precondizioni previste da questi strumenti.  
   
 > [!WARNING]
->  È anche possibile consentire la definizione di vincoli di convalida in estensioni separate del linguaggio specifico di dominio, unitamente a comandi di menu e gestori movimenti dell'estensione. Gli utenti potranno quindi scegliere di installare queste estensioni in aggiunta al linguaggio specifico di dominio. Per ulteriori informazioni, vedere [estendere il DSL mediante MEF](../modeling/extend-your-dsl-by-using-mef.md).  
+>  È anche possibile consentire la definizione di vincoli di convalida in estensioni separate del linguaggio specifico di dominio, unitamente a comandi di menu e gestori movimenti dell'estensione. Gli utenti potranno quindi scegliere di installare queste estensioni in aggiunta al linguaggio specifico di dominio. Per ulteriori informazioni, vedere [estendere il modello DSL tramite MEF](../modeling/extend-your-dsl-by-using-mef.md).  
   
 ## <a name="running-validation"></a>Esecuzione della convalida  
  Quando un utente modifica un modello, ovvero un'istanza del linguaggio specifico di dominio, la convalida viene eseguita in seguito alle azioni seguenti:  
   
--   Nel diagramma e scegliere **convalida tutto**.  
+-   Il diagramma e scegliere **convalidare tutti**.  
   
--   Pulsante destro del mouse sul nodo principale in Esplora risorse di DSL e selezionare **convalida tutto**  
+-   Pulsante destro del mouse il nodo principale in soluzioni di DSL e selezionare **convalidare tutti**  
   
 -   L'utente salva il modello.  
   
@@ -41,7 +43,7 @@ Gli autori di un linguaggio specifico di dominio possono definire vincoli di con
   
 -   È anche possibile scrivere codice programma che esegue la convalida, ad esempio includendolo in un comando di menu oppure in risposta a una modifica.  
   
- Gli errori di convalida verranno visualizzati nel **elenco errori** finestra. L'utente può fare doppio clic su un messaggio di errore per selezionare gli elementi del modello che sono la causa dell'errore.  
+ Verranno visualizzati gli errori di convalida nel **elenco errori** finestra. L'utente può fare doppio clic su un messaggio di errore per selezionare gli elementi del modello che sono la causa dell'errore.  
   
 ## <a name="defining-validation-constraints"></a>Definizione dei vincoli di convalida  
  Per definire vincoli di convalida, è possibile aggiungere metodi di convalida alle classi di dominio o alle relazioni del linguaggio specifico di dominio. Durante l'esecuzione della convalida, avviata dall'utente o controllata dal programma, vengono eseguiti alcuni o tutti i metodi di convalida. Ogni metodo viene applicato a ogni istanza della propria classe e possono essere presenti diversi metodi di convalida in ogni classe.  
@@ -49,35 +51,35 @@ Gli autori di un linguaggio specifico di dominio possono definire vincoli di con
  Ogni metodo di convalida segnala gli eventuali errori trovati.  
   
 > [!NOTE]
->  I metodi di convalida segnalano gli errori, ma non modificano il modello. Se si desidera modificare o impedire determinate modifiche, vedere [alternative alla convalida](#alternatives).  
+>  I metodi di convalida segnalano gli errori, ma non modificano il modello. Se si desidera modificare o impedire modifiche specifiche, vedere [alternative per la convalida](#alternatives).  
   
 #### <a name="to-define-a-validation-constraint"></a>Per definire un vincolo di convalida  
   
-1.  Abilitare la convalida nel **editor\convalida** nodo:  
+1.  Abilitare la convalida nel **Editor\Validation** nodo:  
   
     1.  Aprire **Dsl\DslDefinition.dsl**.  
   
     2.  In Esplora DSL, espandere il **Editor** nodo e selezionare **convalida**.  
   
-    3.  Nella finestra Proprietà impostare il **utilizza**  proprietà `true`. È più pratico impostare tutte queste proprietà.  
+    3.  Nella finestra Proprietà impostare il **Usa** proprietà `true`. È più pratico impostare tutte queste proprietà.  
   
-    4.  Fare clic su **Trasforma tutti i modelli** sulla barra degli strumenti di Esplora soluzioni.  
+    4.  Fare clic su **Trasforma tutti i modelli** nella barra degli strumenti Esplora soluzioni.  
   
-2.  Scrivere le definizioni di classe parziali per una o più classi di dominio o relazioni di dominio Scrivere un nuovo file di codice in queste definizioni di **Dsl** progetto.  
+2.  Scrivere le definizioni di classe parziali per una o più classi di dominio o relazioni di dominio Queste definizioni di scrittura in un nuovo file di codice il **Dsl** progetto.  
   
 3.  Aggiungere questo attributo all'inizio di ogni classe:  
   
-    ```c#  
+    ```csharp  
     [ValidationState(ValidationState.Enabled)]  
     ```  
   
     -   Per impostazione predefinita, questo attributo abiliterà inoltre la convalida per le classi derivate. Per disabilitare la convalida per una classe derivata specifica, è possibile usare `ValidationState.Disabled`.  
   
-4.  Aggiungere i metodi di convalida alle classi. Ogni metodo di convalida può avere qualsiasi nome, ma un parametro di tipo <xref:Microsoft.VisualStudio.Modeling.Validation.ValidationContext>.  
+4.  Aggiungere i metodi di convalida alle classi. Al metodo di convalida è possibile assegnare un nome qualsiasi, ma deve includere un parametro di tipo <xref:Microsoft.VisualStudio.Modeling.Validation.ValidationContext>.  
   
      Deve inoltre essere preceduto da uno o più attributi `ValidationMethod`:  
   
-    ```c#  
+    ```csharp  
     [ValidationMethod (ValidationCategories.Open | ValidationCategories.Save | ValidationCategories.Menu ) ]  
     ```  
   
@@ -85,7 +87,7 @@ Gli autori di un linguaggio specifico di dominio possono definire vincoli di con
   
  Ad esempio:  
   
-```c#  
+```csharp  
 using Microsoft.VisualStudio.Modeling;  
 using Microsoft.VisualStudio.Modeling.Validation;  
   
@@ -126,7 +128,7 @@ public partial class ParentsHaveChildren
   
  Notare gli aspetti seguenti su questo codice:  
   
--   È possibile aggiungere metodi di convalida a classi di dominio o relazioni di dominio. Il codice per questi tipi è in **Dsl\Generated Code\Domain\*. cs**.  
+-   È possibile aggiungere metodi di convalida a classi di dominio o relazioni di dominio. Il codice per questi tipi è in **Dsl\Generated Code\Domain\*cs**.  
   
 -   Ogni metodo di convalida viene applicato a ogni istanza delle relative classi e sottoclassi. Nel caso di una relazione di dominio ogni istanza è un collegamento tra due elementi del modello.  
   
@@ -136,14 +138,14 @@ public partial class ParentsHaveChildren
   
 -   Nella chiamata a LogError è possibile fornire un elenco di elementi di modello o collegamenti di relazione che verranno selezionati quando l'utente fa doppio clic sul messaggio di errore.  
   
--   Per informazioni su come leggere il modello nel codice del programma, vedere [esplorazione e aggiornamento di un modello nel codice programma](../modeling/navigating-and-updating-a-model-in-program-code.md).  
+-   Per informazioni su come leggere il modello nel codice programma, vedere [esplorazione e aggiornamento di un modello nel codice programma](../modeling/navigating-and-updating-a-model-in-program-code.md).  
   
  L'esempio si applica al seguente modello di dominio. La relazione ParentsHaveChildren include ruoli denominati Child e Parent.  
   
- ![Diagramma di definizione DSL &#45; modello di albero genealogico](~/modeling/media/familyt_person.png "FamilyT_Person")  
+ ![Diagramma della definizione DSL &#45; modello di albero genealogico](../modeling/media/familyt_person.png "FamilyT_Person")  
   
 ## <a name="validation-categories"></a>Categorie di convalida  
- Nel <xref:Microsoft.VisualStudio.Modeling.Validation.ValidationMethodAttribute> attributo, specificare quando deve essere eseguito il metodo di convalida.  
+ Nell'attributo <xref:Microsoft.VisualStudio.Modeling.Validation.ValidationMethodAttribute> viene specificato quando eseguire il metodo di convalida.  
   
 |Categoria|Esecuzione|  
 |--------------|---------------|  
@@ -175,13 +177,13 @@ public partial class Person
   
 ```  
   
- **Aggregazione dei vincoli di convalida.** Per applicare la convalida in un ordine prevedibile, definire un singolo metodo di convalida in una classe proprietario, tale elemento radice del modello. Questa tecnica consente inoltre di aggregare più segnalazioni in un unico messaggio.  
+ **L'aggregazione di vincoli di convalida.** Per applicare la convalida in un ordine prestabilito, definire un metodo di convalida singolo in una classe di proprietario, tale elemento radice del modello. Questa tecnica consente inoltre di aggregare più segnalazioni in un unico messaggio.  
   
  Presenta però alcuni svantaggi, in quanto il metodo combinato è più difficile da gestire e i vincoli devono includere tutti gli stessi attributi `ValidationCategories`. Se possibile, è quindi consigliabile mantenere ogni vincolo in un metodo separato.  
   
- **Passaggio di valori nella cache del contesto.** Il parametro di contesto dispone di un dizionario in cui è possibile inserire valori arbitrari. Il dizionario viene mantenuto per tutta la durata della convalida. Un particolare metodo di convalida potrebbe, ad esempio, mantenere un conteggio degli errori nel contesto e usarlo per evitare di visualizzare nella finestra degli errori un numero elevato di messaggi ripetuti. Ad esempio:  
+ **Passaggio di valori nella cache di contesto.** Il parametro di contesto è un dizionario in cui è possibile inserire valori arbitrari. Il dizionario viene mantenuto per tutta la durata della convalida. Un particolare metodo di convalida potrebbe, ad esempio, mantenere un conteggio degli errori nel contesto e usarlo per evitare di visualizzare nella finestra degli errori un numero elevato di messaggi ripetuti. Ad esempio:  
   
-```c#  
+```csharp  
 List<ParentsHaveChildren> erroneousLinks;  
 if (!context.TryGetCacheValue("erroneousLinks", out erroneousLinks))  
 erroneousLinks = new List<ParentsHaveChildren>();  
@@ -192,16 +194,16 @@ if (erroneousLinks.Count < 5) { context.LogError( ... ); }
 ```  
   
 ## <a name="validation-of-multiplicities"></a>Convalida delle molteplicità  
- I metodi di convalida per verificare la molteplicità minima vengono generati automaticamente per il linguaggio specifico di dominio. Il codice è scritto in **Dsl\Generated Code\MultiplicityValidation.cs**. Questi metodi hanno effetto quando si abilita la convalida nel **editor\convalida** nodo in Esplora DSL.  
+ I metodi di convalida per verificare la molteplicità minima vengono generati automaticamente per il linguaggio specifico di dominio. Il codice è scritto in **Dsl\Generated Code\MultiplicityValidation.cs**. Questi metodi hanno effetto quando si abilita la convalida nel **Editor\Validation** nodo in Esplora DSL.  
   
  Se si imposta la molteplicità di un ruolo di una relazione di dominio su 1..* o 1..1, ma l'utente non crea un collegamento di questa relazione, verrà visualizzato un messaggio di errore di convalida.  
   
- Ad esempio, se il linguaggio DSL con classi Person e Town e una relazione PersonLivesInTown con una relazione **1...\*** presso il ruolo di città, quindi per ogni utente che non dispone di alcun paese, un messaggio di errore verrà visualizzato.  
+ Ad esempio, se dispone di tale linguaggio DSL classi utente e città e una relazione PersonLivesInTown con una relazione **1...\***  il ruolo di città, per ogni utente che non dispone di alcun paese, un messaggio di errore verrà quindi visualizzati.  
   
 ## <a name="running-validation-from-program-code"></a>Esecuzione della convalida dal codice programma  
- È possibile eseguire la convalida creando o accedendo a un oggetto ValidationController. Se si vuole che gli errori vengano visualizzati nella finestra degli errori, usare il controller ValidationController allegato al documento DocData del diagramma. Ad esempio, se si intende scrivere un comando di menu, `CurrentDocData.ValidationController` è disponibile nella classe del set di comandi:  
+ È possibile eseguire la convalida creando o accedendo a un oggetto ValidationController. Se si desidera che gli errori da visualizzare all'utente nella finestra di errore, utilizzare ValidationController collegato a DocData del diagramma. Ad esempio, se si intende scrivere un comando di menu, `CurrentDocData.ValidationController` è disponibile nella classe del set di comandi:  
   
-```c#  
+```csharp  
 using Microsoft.VisualStudio.Modeling;  
 using Microsoft.VisualStudio.Modeling.Validation;  
 using Microsoft.VisualStudio.Modeling.Shell;  
@@ -219,7 +221,7 @@ partial class MyLanguageCommandSet
   
  È anche possibile creare un controller di convalida separato e gestire gli errori manualmente. Ad esempio:  
   
-```c#  
+```csharp  
 using Microsoft.VisualStudio.Modeling;  
 using Microsoft.VisualStudio.Modeling.Validation;  
 using Microsoft.VisualStudio.Modeling.Shell;  
@@ -236,11 +238,11 @@ if (!validator.Validate(store, ValidationCategories.Save))
 ```  
   
 ## <a name="running-validation-when-a-change-occurs"></a>Esecuzione della convalida in caso di modifica  
- Se si vuole che l'utente venga avvertito immediatamente nel caso in cui il modello non è più valido, è possibile definire un evento dell'archivio che esegue la convalida. Per ulteriori informazioni sugli eventi dell'archivio, vedere [gestori propagare le modifiche apportate all'esterno il modello di eventi](../modeling/event-handlers-propagate-changes-outside-the-model.md).  
+ Se si vuole che l'utente venga avvertito immediatamente nel caso in cui il modello non è più valido, è possibile definire un evento dell'archivio che esegue la convalida. Per ulteriori informazioni sugli eventi di archivio, vedere [gestori propagare le modifiche di fuori di modello di eventi](../modeling/event-handlers-propagate-changes-outside-the-model.md).  
   
  Oltre al codice di convalida, aggiungere un file di codice personalizzato per il **DslPackage** progetto, con contenuto simile all'esempio seguente. Questo codice usa il controller `ValidationController` allegato al documento. Questo controller visualizza gli errori di convalida nell'elenco errori di [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)].  
   
-```c#  
+```csharp  
 using System;  
 using System.Linq;  
 using Microsoft.VisualStudio.Modeling;  
@@ -301,14 +303,14 @@ namespace Company.FamilyTree
   
  I gestori vengono inoltre chiamati dopo operazioni Undo o Redo che influiscono su collegamenti o elementi.  
   
-##  <a name="a-namecustoma-custom-validation-categories"></a><a name="custom"></a> Categorie di convalida personalizzate  
+##  <a name="custom"></a>Categorie di convalida personalizzata  
  Oltre alle categorie di convalida standard, come Menu e Open, è possibile definire categorie personalizzate e richiamarle dal codice programma. L'utente non può invece richiamarle direttamente.  
   
  Le categorie personalizzate vengono in genere usate per definire una categoria che verifica se il modello soddisfa le precondizioni di un determinato strumento.  
   
  Per aggiungere un metodo di convalida a una determinata categoria, specificare prima del nome un attributo simile al seguente:  
   
-```c#  
+```csharp  
 [ValidationMethod(CustomCategory = "PreconditionsForGeneratePartsList")]  
 [ValidationMethod(ValidationCategory.Menu)]   
 private void TestForCircularLinks(ValidationContext context)   
@@ -321,7 +323,7 @@ private void TestForCircularLinks(ValidationContext context)
   
  Per richiamare una convalida personalizzata:  
   
-```c#  
+```csharp  
   
 // Invoke all validation methods in a custom category:   
 validationController.ValidateCustom  
@@ -329,18 +331,18 @@ validationController.ValidateCustom
    "PreconditionsForGeneratePartsList");  
 ```  
   
-##  <a name="a-namealternativesa-alternatives-to-validation"></a><a name="alternatives"></a> Alternative alla convalida  
+##  <a name="alternatives"></a>Alternative per la convalida  
  I vincoli di convalida segnalano gli errori, ma non modificano il modello. Se, invece, si vuole evitare che il modello non sia più valido, è possibile usare altre tecniche,  
   
  che però non sono consigliate. È in genere preferibile lasciare che sia l'utente a decidere come correggere un modello non valido.  
   
- **Regolare la modifica per ripristinare il modello di validità.** Ad esempio, se l'utente imposta una proprietà di sopra del valore massimo consentito, è possibile reimpostare la proprietà sul valore massimo. definendo a tale scopo una regola. Per ulteriori informazioni, vedere [propagare le modifiche all'interno di modello delle regole](../modeling/rules-propagate-changes-within-the-model.md).  
+ **Regolare la modifica e ripristinare il modello di validità.** Ad esempio, se l'utente imposta una proprietà di sopra del valore massimo consentito, è possibile reimpostare la proprietà sul valore massimo. definendo a tale scopo una regola. Per ulteriori informazioni, vedere [propagare le modifiche all'interno di modello di regole](../modeling/rules-propagate-changes-within-the-model.md).  
   
- **Esegue il rollback della transazione se viene tentata una modifica non valida.** È inoltre possibile definire una regola per questo scopo, ma in alcuni casi è possibile eseguire l'override di un gestore di proprietà **onvaluechanging ()**, o eseguire l'override di un metodo, ad esempio `OnDeleted().` eseguire il rollback di una transazione, utilizzare `this.Store.TransactionManager.CurrentTransaction.Rollback().` Per ulteriori informazioni, vedere [gestori di modifica del valore proprietà dominio](../modeling/domain-property-value-change-handlers.md).  
+ **Esegue il rollback della transazione se viene tentata una modifica non valida.** È inoltre possibile definire una regola per questo scopo, ma in alcuni casi è possibile eseguire l'override di un gestore della proprietà **OnValueChanging()**, o eseguire l'override di un metodo, ad esempio `OnDeleted().` eseguire il rollback di una transazione, utilizzare `this.Store.TransactionManager.CurrentTransaction.Rollback().` per ulteriori informazioni informazioni, vedere [gestori di Modifica valore proprietà dominio](../modeling/domain-property-value-change-handlers.md).  
   
 > [!WARNING]
 >  Assicurarsi di informare l'utente dell'adattamento della modifica o del rollback. Ad esempio, usare `System.Windows.Forms.MessageBox.Show("message").`  
   
 ## <a name="see-also"></a>Vedere anche  
  [Esplorazione e aggiornamento di un modello nel codice programma](../modeling/navigating-and-updating-a-model-in-program-code.md)   
- [I gestori eventi propagano le modifiche apportate all'esterno del modello](../modeling/event-handlers-propagate-changes-outside-the-model.md)
+ [I gestori eventi propagano le modifiche al di fuori del modello](../modeling/event-handlers-propagate-changes-outside-the-model.md)

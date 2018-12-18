@@ -1,41 +1,40 @@
 ---
-title: "Procedura: installare un visualizzatore | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "FSharp"
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "JScript"
-  - "VB"
-  - "CSharp"
-  - "C++"
-helpviewer_keywords: 
-  - "debugger, visualizzatori"
-  - "visualizzatori, installazione"
+title: 'Procedura: installare un visualizzatore | Documenti Microsoft'
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: vs-ide-debug
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- CSharp
+- VB
+- FSharp
+- C++
+- JScript
+helpviewer_keywords:
+- debugger, visualizers
+- visualizers, installing
 ms.assetid: 3310ef43-515c-4d97-b0f9-51047247d3da
-caps.latest.revision: 26
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 26
+caps.latest.revision: "26"
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.workload: multiple
+ms.openlocfilehash: e9864a2a8f3f39e368ae1293b4b27fc0a8d9e056
+ms.sourcegitcommit: f9fbf1f55f9ac14e4e5c6ae58c30dc1800ca6cda
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 01/10/2018
 ---
-# Procedura: installare un visualizzatore
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
-Dopo avere creato un visualizzatore, è necessario installarlo in modo da renderlo disponibile in [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)].  Per installare un visualizzatore è sufficiente seguire una semplice procedura.  
+# <a name="how-to-install-a-visualizer"></a>Procedura: installare un visualizzatore
+Dopo avere creato un visualizzatore, è necessario installarlo in modo da renderlo disponibile in [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)]. Per installare un visualizzatore è sufficiente seguire una semplice procedura.  
   
 > [!NOTE]
->  Nelle app di **Store** sono supportati solo i visualizzatori di testo standard, HTML, XML e JSON.  Non sono supportati i visualizzatori personalizzati \(creati dall'utente\).  
+>  Nelle App UWP, solo il testo standard, sono supportati i visualizzatori HTML, XML e JSON. Non sono supportati i visualizzatori personalizzati (creati dall'utente).  
   
-### Per installare un visualizzatore  
+### <a name="to-install-a-visualizer"></a>Per installare un visualizzatore  
   
 1.  Individuare la DLL contenente il visualizzatore compilato.  
   
@@ -49,6 +48,6 @@ Dopo avere creato un visualizzatore, è necessario installarlo in modo da render
   
 4.  Riavviare la sessione di debug.  
   
-## Vedere anche  
- [Visualizzatori](../debugger/create-custom-visualizers-of-data.md)   
- [Procedura: scrivere un visualizzatore](../debugger/how-to-write-a-visualizer.md)
+## <a name="see-also"></a>Vedere anche  
+ [Creazione di visualizzatori personalizzati](../debugger/create-custom-visualizers-of-data.md)   
+ [Procedura: Scrivere un visualizzatore](../debugger/how-to-write-a-visualizer.md)

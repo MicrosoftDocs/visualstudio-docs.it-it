@@ -1,65 +1,68 @@
 ---
-title: "I comandi, menu e barre degli strumenti | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "menu [Visual Studio SDK], comandi"
-  - "comandi [Visual Studio]"
-  - "i comandi di barre degli strumenti [Visual Studio]"
+title: I comandi, menu e barre degli strumenti | Documenti Microsoft
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: vs-ide-sdk
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- menus [Visual Studio SDK], commands
+- commands [Visual Studio]
+- toolbars [Visual Studio], commands
 ms.assetid: 07b4ed90-dbbd-40df-b6c9-8395fd6f2ab6
-caps.latest.revision: 60
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 60
+caps.latest.revision: "60"
+author: gregvanl
+ms.author: gregvanl
+manager: ghogen
+ms.workload: vssdk
+ms.openlocfilehash: fa1513bcd61ac63fb9d2a59f69a8b2ce22cf5114
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
-# I comandi, menu e barre degli strumenti
-[!INCLUDE[vs2017banner](../../code-quality/includes/vs2017banner.md)]
-
-Menu e barre degli strumenti sono che i modo gli utenti di accedere ai comandi di VSPackage. I comandi sono funzioni che eseguono attività, ad esempio la stampa del documento, aggiornamento di una vista o la creazione di un nuovo file. Menu e barre degli strumenti sono agevolmente con interfaccia grafica per presentare i comandi per gli utenti. I comandi correlati sono in genere raggruppati nello stesso menu o sulla barra degli strumenti.  
+# <a name="commands-menus-and-toolbars"></a>I comandi, menu e barre degli strumenti
+Menu e barre degli strumenti sono che consente agli utenti di accedere ai comandi nel pacchetto VSPackage. I comandi sono funzioni che eseguono attività, ad esempio la stampa di un documento, l'aggiornamento di una visualizzazione o la creazione di un nuovo file. Menu e barre degli strumenti sono pratici metodi grafici per presentare i comandi agli utenti. In genere, i comandi correlati sono raggruppati nello stesso menu o sulla stessa barra degli strumenti.  
   
--   In genere, i menu vengono visualizzati come stringhe di parola in cluster in una riga nella parte superiore dell'ambiente di sviluppo integrato \(IDE\) o una finestra degli strumenti. Anche i menu possono essere visualizzati come risultato di un evento mouse e vengono definiti i menu di scelta rapida in tale contesto. Quando si fa clic, menu espandono per visualizzare uno o più comandi. Comandi, quando si fa clic, possono eseguire operazioni o avviare sottomenu contenenti altri comandi. Alcuni nomi noti menu sono File, modifica, visualizzazione e finestra. Per altre informazioni, vedere [Estensione menu e comandi](../../extensibility/extending-menus-and-commands.md).  
+-   I menu vengono in genere visualizzati come stringhe di una sola parola raggruppate su una riga nella parte superiore dell'ambiente di sviluppo integrato (IDE, Integrated Development Environment) o in una finestra degli strumenti. I menu possono essere visualizzati anche come risultato di un evento di clic con il pulsante destro del mouse e in tal caso vengono definiti menu di scelta rapida. Quando si fa clic su di essi, i menu si espandono per visualizzare uno o più comandi. Facendo clic sui comandi è possibile eseguire attività oppure aprire sottomenu che contengono altri comandi. Alcuni nomi di menu molto noti sono File, Modifica, Visualizza e Finestra. Per ulteriori informazioni, vedere [estensione menu e comandi](../../extensibility/extending-menus-and-commands.md).  
   
--   Barre degli strumenti sono in genere le righe di pulsanti e altri controlli, ad esempio le caselle combinate, caselle di riepilogo, caselle di testo e controller di menu. Tutti i controlli della barra degli strumenti sono associati i comandi. Quando si fa clic su un pulsante della barra degli strumenti, viene attivato il comando associato. Pulsanti della barra degli strumenti sono in genere le icone che suggeriscono i comandi sottostanti, ad esempio una stampante per un comando di stampa. In un controllo elenco a discesa, ogni elemento nell'elenco è associato a un comando diverso. Un controller di menu è un ibrido in cui un lato del controllo è un pulsante della barra degli strumenti e l'altro lato è una freccia in giù visualizzata altri comandi quando si fa clic. Per altre informazioni, vedere [Aggiunta di un Controller di Menu per una barra degli strumenti](../../extensibility/adding-a-menu-controller-to-a-toolbar.md).  
+-   Le barre degli strumenti sono in genere righe di pulsanti e altri controlli, ad esempio caselle combinate, caselle di riepilogo, caselle di testo e controller di menu. Tutti i controlli delle barre degli strumenti sono associati a comandi. Quando si fa clic su un pulsante della barra degli strumenti, viene attivato il comando associato. I pulsanti della barra degli strumenti hanno in genere icone che suggeriscono i comandi sottostanti, ad esempio una stampante per un comando Stampa. In un controllo elenco a discesa, ogni elemento nell'elenco è associato a un comando diverso. Un controller di menu è un oggetto ibrido in cui un lato del controllo è un pulsante della barra degli strumenti e l'altro lato è una freccia rivolta verso il basso che visualizza altri comandi quando si fa clic su di essa. Per ulteriori informazioni, vedere [aggiunta di un Controller di Menu per una barra degli strumenti](../../extensibility/adding-a-menu-controller-to-a-toolbar.md).  
   
--   Quando si crea un comando, è inoltre necessario creare un gestore eventi per esso. Il gestore eventi determina quando il comando è visibile o abilitata, consente di modificare il testo e garantisce che il comando risponde in modo appropriato \("route"\) quando attivato. Nella maggior parte dei casi, l'IDE gestisce i comandi tramite il <xref:Microsoft.VisualStudio.OLE.Interop.IOleCommandTarget> interfaccia. I comandi [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] route in modo gerarchico, a partire dal contesto del comando più interna, in base alla selezione locale e procedere con il contesto più esterno, in base alla selezione globale. I comandi aggiunti al menu principale sono immediatamente disponibili per lo script. Per altre informazioni, vedere [Confronto tra oggetti MenuCommand e OleMenuCommand](../../misc/menucommands-vs-olemenucommands.md) e [Selezione oggetti di contesto](../../extensibility/internals/selection-context-objects.md).  
+-   Quando si crea un comando, è anche necessario creare un gestore eventi per esso. Il gestore eventi determina quando il comando è visibile o abilitato, consente di modificarne il testo e garantisce che il comando risponda in modo appropriato ("routing") quando attivato. Nella maggior parte dei casi, l'IDE gestisce i comandi usando il <xref:Microsoft.VisualStudio.OLE.Interop.IOleCommandTarget> interfaccia. I comandi [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] route in modo gerarchico, a partire dal contesto del comando più interno, in base alla selezione locale e procedendo verso il contesto più esterno, in base alla selezione globale. I comandi aggiunti al menu principale sono immediatamente disponibili per lo scripting. Per ulteriori informazioni, vedere [tra oggetti MenuCommand e. OleMenuCommands](../../extensibility/menucommands-vs-olemenucommands.md) e [selezione oggetti di contesto](../../extensibility/internals/selection-context-objects.md).  
   
- Per definire nuovi menu e barre degli strumenti, è necessario descrivere tali in un file di tabella comandi di Visual Studio \(vsct\). Il modello di pacchetto di Visual Studio crea il file, con gli elementi necessari per supportare qualsiasi comandi, barre degli strumenti ed editor selezionato nel modello. In alternativa, è possibile scrivere il proprio file. vsct, utilizzando lo schema xml descritto qui: [Riferimento allo Schema XML VSCT](../../extensibility/vsct-xml-schema-reference.md).  
+ Per definire nuovi menu e barre degli strumenti, è necessario descriverli in un file VSCT (Visual Studio Command Table). Il modello di pacchetto di Visual Studio crea automaticamente questo file, insieme agli elementi necessari per supportare qualsiasi comando, barra degli strumenti ed editor selezionato nel modello. In alternativa, è possibile scrivere il proprio file vsct, usando il linguaggio xml schema descritto qui: [VSCT XML Schema Reference](../../extensibility/vsct-xml-schema-reference.md).  
   
- Per ulteriori informazioni sull'utilizzo dei file. vsct, vedere [Tabella di comandi di Visual Studio \(. File Vsct\)](../../extensibility/internals/visual-studio-command-table-dot-vsct-files.md).  
+ Per ulteriori informazioni sull'utilizzo dei file con estensione vsct, vedere [Visual Studio Command Table (. File Vsct)](../../extensibility/internals/visual-studio-command-table-dot-vsct-files.md).  
   
- Negli argomenti di questa sezione viene descritta il comandi, menu e barre degli strumenti in VSPackage.  
+ Negli argomenti di questa sezione spiegano il funzionamento di comandi, menu e barre degli strumenti in VSPackage.  
   
-## In questa sezione  
- [Come package VS aggiungere elementi dell'interfaccia utente](../../extensibility/internals/how-vspackages-add-user-interface-elements.md)  
- Una descrizione approfondita della specifica di formato di tabella comandi.  
+## <a name="in-this-section"></a>In questa sezione  
+ [Come i pacchetti VSPackage aggiungono elementi dell'interfaccia utente](../../extensibility/internals/how-vspackages-add-user-interface-elements.md)  
+ Una descrizione dettagliata della specifica di formato di tabella comandi.  
   
- [Tabella di comandi di Visual Studio \(. File Vsct\)](../../extensibility/internals/visual-studio-command-table-dot-vsct-files.md)  
- Viene descritto un compilatore per le tabelle di comando e la sintassi basata su XML.  
+ [File Visual Studio Command Table (VSCT)](../../extensibility/internals/visual-studio-command-table-dot-vsct-files.md)  
+ Viene descritto un basato su XML e alla sintassi per le tabelle di comando.  
   
- [Comando predefinito, gruppo e il posizionamento della barra degli strumenti](../../extensibility/internals/default-command-group-and-toolbar-placement.md)  
- Descrive barre degli strumenti, gruppi, menu e comandi predefiniti.  
+ [Posizionamento predefinito di comandi, gruppi e barre degli strumenti](../../extensibility/internals/default-command-group-and-toolbar-placement.md)  
+ Descrive barre degli strumenti, gruppi, i menu e comandi predefiniti.  
   
- [Gruppi, menu e comandi definiti dall'IDE](../../extensibility/internals/ide-defined-commands-menus-and-groups.md)  
- Specifica il menu predefiniti, comandi e i gruppi di comando disponibili per il [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] IDE.  
+ [Comandi, menu e gruppi definiti dall'IDE](../../extensibility/internals/ide-defined-commands-menus-and-groups.md)  
+ Specifica il menu predefiniti, comandi e i gruppi di comandi disponibili per il [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] IDE.  
   
- [Progettazione di comando](../../extensibility/internals/command-design.md)  
- Viene illustrato come progettare i comandi.  
+ [Progettazione dei comandi](../../extensibility/internals/command-design.md)  
+ Descrive come progettare i comandi.  
   
- [Ottimizzazione di Menu e comandi della barra degli strumenti](../../extensibility/internals/optimizing-menu-and-toolbar-commands.md)  
+ [Ottimizzazione dei comandi di menu e barre degli strumenti](../../extensibility/internals/optimizing-menu-and-toolbar-commands.md)  
  Vengono fornite indicazioni per i comandi.  
   
- [Rendere disponibili i comandi](../../extensibility/internals/making-commands-available.md)  
+ [Miglioramento della disponibilità dei comandi](../../extensibility/internals/making-commands-available.md)  
  Viene illustrato come rendere disponibili i comandi di Visual Studio.  
   
- [Comandi e menu che utilizzano gli assembly di interoperabilità](../../extensibility/internals/commands-and-menus-that-use-interop-assemblies.md)  
+ [Comandi e menu che usano assembly di interoperabilità](../../extensibility/internals/commands-and-menus-that-use-interop-assemblies.md)  
  Viene illustrato come implementare i comandi che usano gli assembly di interoperabilità.  
   
-## Sezioni correlate  
- [Routing dei comandi in VS](../../extensibility/internals/command-routing-in-vspackages.md)  
- Viene illustrato il routing dei comandi in VSPackage.
+## <a name="related-sections"></a>Sezioni correlate  
+ [Routing dei comandi nei pacchetti VSPackage](../../extensibility/internals/command-routing-in-vspackages.md)  
+ Viene illustrato il routing di comandi in VSPackage.

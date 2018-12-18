@@ -1,56 +1,58 @@
 ---
-title: "Informazioni sui valori dei dati di campionamento negli strumenti per la profilatura | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "profilatura del campionamento (metodo)"
-  - "strumenti per la profilatura, campionamento"
+title: Informazioni sui valori dei dati di campionamento | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: vs-ide-debug
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- sampling profiling method
+- Profiling Tools, sampling
 ms.assetid: fad540a8-24b6-4ff9-91ce-e67e9a58399d
-caps.latest.revision: 22
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 22
+caps.latest.revision: "22"
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.workload: multiple
+ms.openlocfilehash: 95869fd4c3b52853417c847d32f7507c90471c2d
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
-# Informazioni sui valori dei dati di campionamento negli strumenti per la profilatura
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
-Il metodo di profilatura di *campionamento* degli strumenti di profilatura di [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] interrompe il processore del computer a intervalli impostati e raccoglie lo stack delle chiamate di funzione.  Uno *stack di chiamate* è una struttura dinamica che archivia le informazioni sulle funzioni in esecuzione sul processore.  
+# <a name="understanding-sampling-data-values"></a>Informazioni sui valori dei dati di campionamento
+Il metodo di profilatura di *campionamento* degli strumenti di profilatura di [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] interrompe il processore del computer a intervalli prestabiliti e raccoglie lo stack di chiamate della funzione. Lo *stack di chiamate* è una struttura dinamica che archivia informazioni sulle funzioni in esecuzione nel processore.  
   
  **Requisiti**  
   
 -   [!INCLUDE[vsUltLong](../code-quality/includes/vsultlong_md.md)], [!INCLUDE[vsPreLong](../code-quality/includes/vsprelong_md.md)], [!INCLUDE[vsPro](../code-quality/includes/vspro_md.md)]  
   
- L'analisi del profiler determina se il processore esegue il codice nel processo di destinazione.  Se il processore non esegue il codice nel processo di destinazione, il campione viene ignorato.  
+ L'analisi del profiler determina se il processore esegue codice nel processo di destinazione. Se il processore non esegue codice nel processo di destinazione, il campione viene ignorato.  
   
- Se il processore esegue il codice di destinazione, il profiler incrementa i numeri dei campioni per ogni funzione nello stack di chiamate.  Nel momento in cui è stato raccolto il campione, una sola funzione nello stack di chiamate sta eseguendo codice.  Le altre funzioni dello stack sono elementi padre nella gerarchia delle chiamate di funzione in attesa della restituzione degli elementi figlio.  
+ Se il processore esegue il codice di destinazione, il profiler incrementa i conteggi dei campioni per ogni funzione nello stack di chiamate. Nel momento in cui viene acquisito il campione, una sola funzione nello stack di chiamate esegue codice. Le altre funzioni nello stack sono elementi padre nella gerarchia delle chiamate di funzioni che sono in attesa dei valori restituiti dalle relative funzioni figlio.  
   
- Per l'evento di esempio, il profiler incrementa il numero del campione *esclusivo* della funzione che esegue effettivamente le istruzioni.  Poiché un campione esclusivo fa parte anche dei campioni totali \(*inclusivi*\) della funzione, viene incrementato anche il numero del campione inclusivo della funzione.  
+ Per l'evento di campionamento, il profiler incrementa il conteggio dei campioni *esclusivi* della funzione che sta attualmente eseguendo le proprie istruzioni. Dato che un campione esclusivo fa anche parte del totale (*inclusivo*) dei campioni della funzione, viene incrementato anche il conteggio dei campioni inclusivi della funzione attiva.  
   
- Il profiler incrementa il numero del campione inclusivo di tutte le altre funzioni dello stack di chiamate.  
+ Il profiler incrementa il numero di campioni inclusivi di tutte le altre funzioni nello stack di chiamate.  
   
-## Campioni inclusivi  
- Numero totale dei campioni raccolti durante l'esecuzione della funzione di destinazione.  
+## <a name="inclusive-samples"></a>Campioni inclusivi  
+ Numero totale di campioni raccolti durante l'esecuzione della funzione di destinazione.  
   
- Sono compresi i campioni raccolti durante l'esecuzione diretta del codice della funzione e i campioni raccolti durante l'esecuzione delle funzioni figlio chiamate dalla funzione di destinazione.  
+ Sono inclusi campioni raccolti durante l'esecuzione diretta del codice della funzione e campioni raccolti durante l'esecuzione delle funzioni figlio chiamate dalla funzione di destinazione.  
   
-## Campioni esclusivi  
- Numero totale dei campioni raccolti durante l'esecuzione diretta delle istruzioni della funzione di destinazione.  
+## <a name="exclusive-samples"></a>Campioni esclusivi  
+ Numero di campioni raccolti durante l'esecuzione diretta delle istruzioni della funzione di destinazione.  
   
  Nei campioni esclusivi non sono compresi i campioni raccolti durante l'esecuzione delle funzioni chiamate dalla funzione di destinazione.  
   
-## Percentuale campioni inclusivi  
- Percentuale del numero totale di campioni inclusivi nell'esecuzione dell'analisi che sono campioni inclusivi della funzione o dell'intervallo di dati.  
+## <a name="inclusive-percent"></a>% inclusivi  
+ Percentuale del numero totale di campioni inclusivi nell'esecuzione della profilatura che sono campioni inclusivi della funzione o dell'intervallo di dati.  
   
-## Percentuale campioni esclusivi  
- Percentuale del numero totale di campioni esclusivi nell'esecuzione dell'analisi che sono campioni esclusivi della funzione o dell'intervallo di dati.  
+## <a name="exclusive-percent"></a>% esclusivi  
+ Percentuale del numero totale di campioni esclusivi nell'esecuzione della profilatura che sono campioni esclusivi della funzione o dell'intervallo di dati.  
   
-## Vedere anche  
- [Procedura: Scegliere un metodo di raccolta](../profiling/how-to-choose-collection-methods.md)   
- [Analisi dei dati degli strumenti per la profilatura](../profiling/analyzing-performance-tools-data.md)
+## <a name="see-also"></a>Vedere anche  
+ [How to: Choose Collection Methods](../profiling/how-to-choose-collection-methods.md)  (Procedura: Scegliere un metodo di raccolta)  
+ [Analisi dei dati degli strumenti per le prestazioni](../profiling/analyzing-performance-tools-data.md)

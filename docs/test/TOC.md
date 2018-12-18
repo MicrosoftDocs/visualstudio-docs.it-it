@@ -1,184 +1,91 @@
-# [Migliorare la qualità del codice](improve-code-quality.md)
-
-## [Scenari di test](developer-testing-scenarios.md)
-
-## [Eseguire unit test del codice](unit-test-your-code.md)
-
-### [Guida introduttiva](getting-started-with-unit-testing.md)
-
-### [Nozioni fondamentali sugli unit test](unit-test-basics.md)
-
-### [Creare un progetto di unit test](create-a-unit-test-project.md)
-
-### [Comando Crea unit test](create-unit-tests-menu.md)
-
-### [Generare unit test per il codice con IntelliTest](generate-unit-tests-for-your-code-with-intellitest.md)
-
-### [Manuale di riferimento per IntelliTest](intellitest-manual/introduction.md)
-
-#### [Panoramica](intellitest-manual/introduction.md)
-
-#### [Introduzione](intellitest-manual/getting-started.md)
-
-#### [Indice delle sezioni](intellitest-manual/index.md)
-
-#### [Generazione di test](intellitest-manual/test-generation.md)
-
-#### [Esecuzione simbolica dinamica](intellitest-manual/input-generation.md)
-
-#### [Limiti di esplorazione](intellitest-manual/exploration-bounds.md)
-
-#### [Glossario degli attributi](intellitest-manual/attribute-glossary.md)
-
-#### [Impostazioni a cascata](intellitest-manual/settings-waterfall.md)
-
-#### [Classi helper statiche](intellitest-manual/static-helper-classes.md)
-
-#### [Avvisi ed errori](intellitest-manual/warnings-and-errors.md)
-
-### [Installare framework di unit test di terze parti](install-third-party-unit-test-frameworks.md)
-
-### [Aggiornare progetti di unit test di Visual Studio 2010](upgrade-visual-studio-2010-unit-test-projects.md)
-
-### [Eseguire unit test con Esplora test](run-unit-tests-with-test-explorer.md)
-
-#### [Eseguire uno unit test come processo a 64 bit](run-a-unit-test-as-a-64-bit-process.md)
-
-#### [Procedura dettagliata: creazione ed esecuzione di unit test per le applicazioni Windows Store](walkthrough-creating-and-running-unit-tests-for-windows-store-apps.md)
-
-### [Configurazione di unit test usando un file con estensione runsettings](configure-unit-tests-by-using-a-dot-runsettings-file.md)
-
-### [Scrittura di unit test per .NET Framework con il framework unit test di Microsoft per codice gestito](writing-unit-tests-for-the-dotnet-framework-with-the-microsoft-unit-test-framework-for-managed-code.md)
-
-#### [Procedura dettagliata: creazione ed esecuzione di unit test per codice gestito](walkthrough-creating-and-running-unit-tests-for-managed-code.md)
-
-#### [Guida introduttiva allo sviluppo basato su test con Esplora test](quick-start-test-driven-development-with-test-explorer.md)
-
-#### [Uso di membri Microsoft.VisualStudio.TestTools.UnitTesting in unit test](using-microsoft-visualstudio-testtools-unittesting-members-in-unit-tests.md)
-
-#### [Uso di classi Assert](using-the-assert-classes.md)
-
-#### [Isolamento del codice sottoposto a test con Microsoft Fakes](isolating-code-under-test-with-microsoft-fakes.md)
-
-##### [Uso di stub per isolare le parti dell'applicazione l'una dall'altra per unit test](using-stubs-to-isolate-parts-of-your-application-from-each-other-for-unit-testing.md)
-
-##### [Uso di shim per isolare l'applicazione da altri assembly per gli unit test](using-shims-to-isolate-your-application-from-other-assemblies-for-unit-testing.md)
-
-##### [Generazione del codice, compilazione e convenzioni di denominazione in Microsoft Fakes](code-generation-compilation-and-naming-conventions-in-microsoft-fakes.md)
-
-#### [Procedura: Creare uno unit test basato sui dati](how-to-create-a-data-driven-unit-test.md)
-
-##### [Procedura dettagliata: uso di un file di configurazione per definire un'origine dati](walkthrough-using-a-configuration-file-to-define-a-data-source.md)
-
-#### [Esecuzione di unit test per metodi generici](unit-tests-for-generic-methods.md)
-
-#### [Procedura: Configurare unit test destinati a una versione precedente di .NET Framework](how-to-configure-unit-tests-to-target-an-earlier-version-of-the-dotnet-framework.md)
-
-#### [Progetto di esempio per la creazione di unit test](sample-project-for-creating-unit-tests.md)
-
-### [Scrittura di unit test per C/C++ con il framework unit test di Microsoft per C++](writing-unit-tests-for-c-cpp-with-the-microsoft-unit-testing-framework-for-cpp.md)
-
-#### [Esecuzione di unit test delle applicazioni C++ esistenti con Esplora test](unit-testing-existing-cpp-applications-with-test-explorer.md)
-
-#### [Uso di Microsoft.VisualStudio.TestTools.CppUnitTestFramework](using-microsoft-visualstudio-testtools-cppunittestframework.md)
-
-### [Uso di code coverage per determinare la quantità di codice testato](using-code-coverage-to-determine-how-much-code-is-being-tested.md)
-
+# [Strumenti di test di Visual Studio](improve-code-quality.md)
+# [Scenari di test](developer-testing-scenarios.md)
+# [Eseguire unit test del codice](unit-test-your-code.md)
+## [Introduzione](getting-started-with-unit-testing.md)
+## [Nozioni fondamentali sugli unit test](unit-test-basics.md)
+## [Creare un progetto di unit test](create-a-unit-test-project.md)
+## [Comando Crea unit test](create-unit-tests-menu.md)
+## [IntelliTest](generate-unit-tests-for-your-code-with-intellitest.md)
+### [Panoramica](intellitest-manual/introduction.md)
+### [Introduzione](intellitest-manual/getting-started.md)
+### [Indice delle sezioni](intellitest-manual/index.md)
+### [Generazione di test](intellitest-manual/test-generation.md)
+### [Esecuzione simbolica dinamica](intellitest-manual/input-generation.md)
+### [Limiti di esplorazione](intellitest-manual/exploration-bounds.md)
+### [Glossario degli attributi](intellitest-manual/attribute-glossary.md)
+### [Impostazioni a cascata](intellitest-manual/settings-waterfall.md)
+### [Classi helper statiche](intellitest-manual/static-helper-classes.md)
+### [Avvisi ed errori](intellitest-manual/warnings-and-errors.md)
+## [Installare framework di unit test di terze parti](install-third-party-unit-test-frameworks.md)
+## [Eseguire unit test con Esplora test](run-unit-tests-with-test-explorer.md)
+### [Eseguire uno unit test come processo a 64 bit](run-a-unit-test-as-a-64-bit-process.md)
+### [Procedura dettagliata: Creazione ed esecuzione di unit test per app UWP](walkthrough-creating-and-running-unit-tests-for-windows-store-apps.md)
+### [Domande frequenti su Esplora test](test-explorer-faq.md)
+## [Configurazione di unit test usando un file con estensione runsettings](configure-unit-tests-by-using-a-dot-runsettings-file.md)
+## [Scrittura di unit test per codice gestito](writing-unit-tests-for-the-dotnet-framework-with-the-microsoft-unit-test-framework-for-managed-code.md)
+### [Procedura dettagliata: Creazione ed esecuzione di unit test per codice gestito](walkthrough-creating-and-running-unit-tests-for-managed-code.md)
+### [Guida introduttiva allo sviluppo basato su test con Esplora test](quick-start-test-driven-development-with-test-explorer.md)
+### [Uso di membri Microsoft.VisualStudio.TestTools.UnitTesting in unit test](using-microsoft-visualstudio-testtools-unittesting-members-in-unit-tests.md)
+### [Uso di classi Assert](using-the-assert-classes.md)
+### [Isolamento del codice sottoposto a test con Microsoft Fakes](isolating-code-under-test-with-microsoft-fakes.md)
+#### [Uso di stub per isolare le parti dell'applicazione l'una dall'altra per unit test](using-stubs-to-isolate-parts-of-your-application-from-each-other-for-unit-testing.md)
+#### [Uso di shim per isolare l'applicazione da altri assembly per gli unit test](using-shims-to-isolate-your-application-from-other-assemblies-for-unit-testing.md)
+#### [Generazione del codice, compilazione e convenzioni di denominazione in Microsoft Fakes](code-generation-compilation-and-naming-conventions-in-microsoft-fakes.md)
+### [Procedura: Creare uno unit test basato sui dati](how-to-create-a-data-driven-unit-test.md)
+#### [Procedura dettagliata: uso di un file di configurazione per definire un'origine dati](walkthrough-using-a-configuration-file-to-define-a-data-source.md)
+### [Unit test per metodi generici](unit-tests-for-generic-methods.md)
+### [Procedura: Configurare unit test destinati a una versione precedente di .NET Framework](how-to-configure-unit-tests-to-target-an-earlier-version-of-the-dotnet-framework.md)
+### [Progetto di esempio per la creazione di unit test](sample-project-for-creating-unit-tests.md)
+## [Scrittura di unit test per codice C/C++](writing-unit-tests-for-c-cpp.md)
+### [Usare il framework di unit test Microsoft per C++](how-to-use-microsoft-test-framework-for-cpp.md)
+### [Usare il framework di test C++ di Google](how-to-use-google-test-for-cpp.md)
+### [Usare Boost.Test](how-to-use-boost-test-for-cpp.md)
+### [Usare CTest](how-to-use-ctest-for-cpp.md)
+### [Scrivere unit test per DLL C/C++](how-to-write-unit-tests-for-cpp-dlls.md)
+### [Procedura dettagliata: Scrittura di unit test per DLL C/C++](walkthrough-writing-unit-tests-for-cpp-dlls.md)
+### [Informazioni di riferimento sulle API del framework di unit test Microsoft per C++](microsoft-visualstudio-testtools-cppunittestframework-api-reference.md)
+## [Creare ed eseguire unit test per app UWP](create-and-run-unit-tests-for-a-store-app-in-visual-studio.md)
+### [Testing unità di una DLL UWP C++](unit-testing-a-visual-cpp-dll-for-store-apps.md)
+### [Esecuzione di unit test di codice di Visual C# in un'app UWP](unit-testing-visual-csharp-code-in-a-store-app.md)
+### [Eseguire unit test per app UWP](run-unit-tests-for-store-apps-in-visual-studio.md)
+## [Uso di code coverage per determinare la quantità di codice testato](using-code-coverage-to-determine-how-much-code-is-being-tested.md)
 ### [Personalizzazione dell'analisi code coverage](customizing-code-coverage-analysis.md)
-
-#### [Analisi del code coverage nei test di verifica della compilazione](analyzing-code-coverage-in-build-verification-tests.md)
-
-#### [Risoluzione dei problemi di code coverage](troubleshooting-code-coverage.md)
-
-### [Uso di emulatori per isolare gli unit test per le applicazioni di SharePoint 2010](using-emulators-to-isolate-unit-tests-for-sharepoint-2010-applications.md)
-
+### [Analisi del code coverage nei test di verifica della compilazione](analyzing-code-coverage-in-build-verification-tests.md)
+### [Risoluzione dei problemi di code coverage](troubleshooting-code-coverage.md)
+## [Uso di emulatori per isolare gli unit test per le applicazioni di SharePoint 2010](using-emulators-to-isolate-unit-tests-for-sharepoint-2010-applications.md)
+# [Introduzione di Live Unit Testing](live-unit-testing-intro.md)
+## [Novità di Live Unit Testing](live-unit-testing-whats-new.md)
+## [Introduzione a Live Unit Testing](live-unit-testing-start.md)
 ## [Usare Live Unit Testing in Visual Studio 2017 Enterprise Edition](live-unit-testing.md)
-
-### [Domande frequenti su Live Unit Testing](live-unit-testing-faq.md)
-
-## [Usare l'automazione dell'interfaccia utente per testare il codice](use-ui-automation-to-test-your-code.md)
-
-### [Procedura dettagliata: creazione, modifica e gestione di un test codificato dell'interfaccia utente](walkthrough-creating-editing-and-maintaining-a-coded-ui-test.md)
-
-### [Eseguire test delle app di Windows Store per Windows UWP e Windows 8.1 con i test codificati dell'interfaccia utente](test-windows-store-8-1-apps-with-coded-ui-tests.md)
-
-### [Eseguire test delle app di Windows Phone per Windows UWP e Windows 8.1 con i test codificati dell'interfaccia utente](test-windows-phone-8-1-apps-with-coded-ui-tests.md)
-
-### [Impostare una proprietà di automazione univoca dei controlli Windows Store per il test](set-a-unique-automation-property-for-windows-store-controls-for-testing.md)
-
-### [Uso dei controlli HTML5 nei test codificati dell'interfaccia utente](using-html5-controls-in-coded-ui-tests.md)
-
-### [Test delle applicazioni di SharePoint 2010 con test codificati dell'interfaccia utente](testing-sharepoint-2010-applications-with-coded-ui-tests.md)
-
-### [Creazione di un test codificati dell'interfaccia utente basato sui dati](creating-a-data-driven-coded-ui-test.md)
-
-### [Impostazione dei test codificati dell'interfaccia utente per l'attesa di eventi specifici durante la riproduzione](making-coded-ui-tests-wait-for-specific-events-during-playback.md)
-
-### [Uso di Web browser diversi con i test dell'interfaccia utente](using-different-web-browsers-with-coded-ui-tests.md)
-
-### [Modifica di test codificati dell'interfaccia utente usando l'editor di test codificato dell'interfaccia utente](editing-coded-ui-tests-using-the-coded-ui-test-editor.md)
-
-### [Analisi dei test codificati dell'interfaccia utente usando i log dei test codificati dell'interfaccia utente](analyzing-coded-ui-tests-using-coded-ui-test-logs.md)
-
-### [Composizione di un test codificato dell'interfaccia utente](anatomy-of-a-coded-ui-test.md)
-
-### [Procedure consigliate per i test codificati dell'interfaccia utente](best-practices-for-coded-ui-tests.md)
-
-### [Test di un'applicazione di grandi dimensioni con più mappe dell'interfaccia utente](testing-a-large-application-with-multiple-ui-maps.md)
-
-### [Abilitare il test codificato dell'interfaccia utente per i controlli](enable-coded-ui-testing-of-your-controls.md)
-
-### [Configurazioni e piattaforme supportate per i test codificati dell'interfaccia utente e le registrazioni delle azioni](supported-configurations-and-platforms-for-coded-ui-tests-and-action-recordings.md)
-
-### [Estensione di test codificati dell'interfaccia utente e registrazioni delle azioni per supportare Microsoft Excel](extending-coded-ui-tests-and-action-recordings-to-support-microsoft-excel.md)
-
-#### [Componente aggiuntivo di Excel di esempio per i test codificati dell'interfaccia utente](sample-excel-add-in-for-coded-ui-testing.md)
-
-#### [Interfaccia Excel Communicator di esempio](sample-excel-communicator-interface.md)
-
-#### [Estensione di esempio per i test codificati dell'interfaccia utente per Excel](sample-coded-ui-test-extension-for-excel.md)
-
-##### [Estensione Excel di esempio: classe ExtensionPackage](sample-excel-extension-extensionpackage-class.md)
-
-##### [Estensione Excel di esempio: classe TechnologyManager](sample-excel-extension-technologymanager-class.md)
-
-##### [Estensione Excel di esempio: classe PropertyProvider](sample-excel-extension-propertyprovider-class.md)
-
-##### [Estensione Excel di esempio: classi Element](sample-excel-extension-element-classes.md)
-
-##### [Estensione Excel di esempio: classe ActionFilter](sample-excel-extension-actionfilter-class.md)
-
-### [Aggiornamento dei test codificati dell'interfaccia utente da Visual Studio 2010](upgrading-coded-ui-tests-from-visual-studio-2010.md)
-
-## [Analisi della qualità delle applicazioni](../code-quality/analyzing-application-quality-by-using-code-analysis-tools.md)
-
-## [Risoluzione dei problemi degli strumenti di qualità](troubleshooting-quality-tools.md)
-
-### [Risoluzione dei problemi di analisi del codice](troubleshooting-code-analysis-issues.md)
-
-### [Risoluzione dei problemi relativi alla metrica del codice](troubleshooting-code-metrics-issues.md)
-
-## [Test delle applicazioni Store con Visual Studio](testing-store-apps-with-visual-studio.md)
-
-### [Creare ed eseguire unit test per un'app dello Store in Visual Studio](create-and-run-unit-tests-for-a-store-app-in-visual-studio.md)
-
-#### [Esecuzione di unit test di una DLL di Visual C++ per le app dello Store](unit-testing-a-visual-cpp-dll-for-store-apps.md)
-
-#### [Esecuzione di unit test di codice Visual C# in un'app dello Store](unit-testing-visual-csharp-code-in-a-store-app.md)
-
-#### [Eseguire unit test per le app dello Store in Visual Studio](run-unit-tests-for-store-apps-in-visual-studio.md)
-
-### [Analizzare la qualità del codice della app dello Store con l'analisi statica del codice di Visual Studio](analyze-the-code-quality-of-store-apps-using-visual-studio-static-code-analysis.md)
-
-#### [Analizzare la qualità del codice Visual Basic e C# nelle app dello Store con l'analisi statica del codice di Visual Studio](analyze-visual-basic-and-csharp-code-quality-in-store-apps-using-visual-studio-static-code-analysis.md)
-
-#### [Analizzare la qualità del codice C++ nelle app dello Store con l'analisi statica del codice di Visual Studio](analyze-cpp-code-quality-of-store-apps-using-visual-studio-static-code-analysis.md)
-
-## [Gestione del lab di test](lab-management/using-a-lab-environment-for-your-application-lifecycle.md)
-
-### [Usare la gestione con Compilazione/Versione per i test automatizzati](lab-management/use-build-or-rm-instead-of-lab-management.md)
-
-### [Installare e configurare agenti di test](lab-management/install-configure-test-agents.md)
-
-### [Aggiornamento di SCVMM 2008 R2 a SCVMM 2012](lab-management/upgrade-scvmm-2008-r2-scvmm-2012.md)
-
+## [Domande frequenti su Live Unit Testing](live-unit-testing-faq.md)
+# [Usare l'automazione dell'interfaccia utente per testare il codice](use-ui-automation-to-test-your-code.md)
+## [Procedura dettagliata: Creazione, modifica e gestione di un test codificato dell'interfaccia utente](walkthrough-creating-editing-and-maintaining-a-coded-ui-test.md)
+## [Testare app UWP di Windows con test codificati dell'interfaccia utente](test-windows-store-8-1-apps-with-coded-ui-tests.md)
+## [Eseguire test delle app di Windows Phone per Windows UWP e Windows 8.1 con i test codificati dell'interfaccia utente](test-windows-phone-8-1-apps-with-coded-ui-tests.md)
+## [Impostare una proprietà di automazione univoca dei controlli UWP per il test](set-a-unique-automation-property-for-windows-store-controls-for-testing.md)
+## [Uso dei controlli HTML5 nei test codificati dell'interfaccia utente](using-html5-controls-in-coded-ui-tests.md)
+## [Test delle applicazioni di SharePoint 2010 con test codificati dell'interfaccia utente](testing-sharepoint-2010-applications-with-coded-ui-tests.md)
+## [Creazione di un test codificati dell'interfaccia utente basato sui dati](creating-a-data-driven-coded-ui-test.md)
+## [Impostazione dei test codificati dell'interfaccia utente per l'attesa di eventi specifici durante la riproduzione](making-coded-ui-tests-wait-for-specific-events-during-playback.md)
+## [Uso di Web browser diversi con i test dell'interfaccia utente](using-different-web-browsers-with-coded-ui-tests.md)
+## [Modifica di test codificati dell'interfaccia utente con l'editor di test codificato dell'interfaccia utente](editing-coded-ui-tests-using-the-coded-ui-test-editor.md)
+## [Analisi dei test codificati dell'interfaccia utente usando i log dei test codificati dell'interfaccia utente](analyzing-coded-ui-tests-using-coded-ui-test-logs.md)
+## [Composizione di un test codificato dell'interfaccia utente](anatomy-of-a-coded-ui-test.md)
+## [Procedure consigliate per i test codificati dell'interfaccia utente](best-practices-for-coded-ui-tests.md)
+## [Test di un'applicazione di grandi dimensioni con più mappe dell'interfaccia utente](testing-a-large-application-with-multiple-ui-maps.md)
+## [Abilitare il test codificato dell'interfaccia utente per i controlli](enable-coded-ui-testing-of-your-controls.md)
+## [Configurazioni e piattaforme supportate per i test codificati dell'interfaccia utente e le registrazioni delle azioni](supported-configurations-and-platforms-for-coded-ui-tests-and-action-recordings.md)
+## [Estensione di test codificati dell'interfaccia utente e registrazioni delle azioni per supportare Microsoft Excel](extending-coded-ui-tests-and-action-recordings-to-support-microsoft-excel.md)
+### [Componente aggiuntivo di Excel di esempio per i test codificati dell'interfaccia utente](sample-excel-add-in-for-coded-ui-testing.md)
+### [Interfaccia Excel Communicator di esempio](sample-excel-communicator-interface.md)
+### [Estensione di esempio per i test codificati dell'interfaccia utente per Excel](sample-coded-ui-test-extension-for-excel.md)
+#### [Estensione Excel di esempio: classe ExtensionPackage](sample-excel-extension-extensionpackage-class.md)
+#### [Estensione Excel di esempio: classe TechnologyManager](sample-excel-extension-technologymanager-class.md)
+#### [Estensione Excel di esempio: classe PropertyProvider](sample-excel-extension-propertyprovider-class.md)
+#### [Estensione Excel di esempio: classi Element](sample-excel-extension-element-classes.md)
+#### [Estensione Excel di esempio: classe ActionFilter](sample-excel-extension-actionfilter-class.md)
+## [Aggiornamento dei test codificati dell'interfaccia utente da Visual Studio 2010](upgrading-coded-ui-tests-from-visual-studio-2010.md)
+# [Gestione del lab di test](lab-management/using-a-lab-environment-for-your-application-lifecycle.md)
+## [Usare la gestione con Compilazione/Versione per i test automatizzati](lab-management/use-build-or-rm-instead-of-lab-management.md)
+## [Installare e configurare agenti di test](lab-management/install-configure-test-agents.md)
+## [Aggiornamento di SCVMM 2008 R2 a SCVMM 2012](lab-management/upgrade-scvmm-2008-r2-scvmm-2012.md)

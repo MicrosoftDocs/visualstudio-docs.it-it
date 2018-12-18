@@ -1,28 +1,29 @@
 ---
-title: "Funzione GetVstoSolutionMetadata"
-ms.custom: ""
-ms.date: "02/02/2017"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "office-development"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-ms.assetid: e8195838-fb9f-42b2-bb76-7ae3753f7751
-caps.latest.revision: 6
-author: "kempb"
-ms.author: "kempb"
-manager: "ghogen"
-caps.handback.revision: 5
+title: Funzione GetVstoSolutionMetadata | Documenti Microsoft
+ms.custom: 
+ms.date: 02/02/2017
+ms.reviewer: 
+ms.suite: 
+ms.technology: office-development
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- VB
+- CSharp
+author: TerryGLee
+ms.author: tglee
+manager: ghogen
+ms.workload: office
+ms.openlocfilehash: a102c0a0849240b60b6e1e728bb4e252c94ab43e
+ms.sourcegitcommit: f9fbf1f55f9ac14e4e5c6ae58c30dc1800ca6cda
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 01/10/2018
 ---
-# Funzione GetVstoSolutionMetadata
-  Questa API supporta l'infrastruttura di Office e non deve essere utilizzato direttamente dal codice.  
+# <a name="getvstosolutionmetadata-function"></a>Funzione GetVstoSolutionMetadata
+  Questa API supporta l'infrastruttura Office e non può essere utilizzato direttamente dal codice.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
 HRESULT WINAPI GetVstoSolutionMetadata(  
@@ -31,14 +32,14 @@ HRESULT WINAPI GetVstoSolutionMetadata(
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
   
 |Parametro|Descrizione|  
 |---------------|-----------------|  
-|*lpwszSolutionMetadataKey*|Non utilizzare.|  
-|*ppSolutionInfo*|Non utilizzare.|  
+|*lpwszSolutionMetadataKey*|Non usare.|  
+|*ppSolutionInfo*|Non usare.|  
   
-## Valore restituito  
- Se la funzione ha esito positivo, restituisce **S\_OK**.  Se la funzione ha esito negativo, restituisce un codice di errore.  
+## <a name="return-value"></a>Valore restituito  
+ Se la funzione ha esito positivo, restituisce **S_OK**. Se la funzione ha esito negativo, restituisce un codice di errore.  
   
   

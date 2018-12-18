@@ -1,62 +1,64 @@
 ---
-title: "Metodo concat (Array) (JavaScript) | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/18/2017"
-ms.prod: "windows-client-threshold"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-javascript"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "concat"
-dev_langs: 
-  - "JavaScript"
-  - "TypeScript"
-  - "DHTML"
-helpviewer_keywords: 
-  - "concat (metodo) (array)"
-  - "Concat (metodo)"
+title: Metodo concat (Array) (JavaScript) | Documenti Microsoft
+ms.custom: 
+ms.date: 01/18/2017
+ms.prod: windows-client-threshold
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-javascript
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords: concat
+dev_langs:
+- JavaScript
+- TypeScript
+- DHTML
+helpviewer_keywords:
+- concat method (array)
+- Concat method
 ms.assetid: bc2b4a6a-209e-4d59-8c24-59db01d53b1e
-caps.latest.revision: 16
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 16
+caps.latest.revision: "16"
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.openlocfilehash: 19f3a216a36f9ad8c422036476e46b89b6ee488c
+ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/27/2017
 ---
-# Metodo concat (Array) (JavaScript)
-Combina due o più matrici.  
+# <a name="concat-method-array-javascript"></a>Metodo concat (Array) (JavaScript)
+Consente di combinare due o più matrici.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
   
 array1.concat([item1[, item2[, . . . [, itemN]]]])   
 ```  
   
-## Parametri  
+## <a name="parameters"></a>Parametri  
  `array1`  
- Obbligatorio.  Oggetto `Array` a cui sono concatenate tutte le altre matrici.  
+ Obbligatorio. Il `Array` l'oggetto in cui vengono concatenati altre matrici.  
   
  `item1,. . ., itemN`  
- Facoltativo.  Elementi aggiuntivi da aggiungere alla fine di `array1`.  
+ Parametro facoltativo. Altri elementi da aggiungere alla fine di `array1`.  
   
-## Note  
- Il metodo `concat` restituisce un oggetto `Array` che contiene la concatenazione di `array1` e degli altri elementi forniti.  
+## <a name="remarks"></a>Note  
+ Il `concat` metodo restituisce un `Array` oggetto contenente la concatenazione di `array1` e degli altri elementi specificati.  
   
- Gli elementi da aggiungere \(*item1 itemN*\) alla matrice vengono aggiunti in ordine a partire dal primo elemento dell'elenco.  Se uno degli elementi è una matrice, il relativo contenuto viene aggiunto alla fine di `array1`.  Se non è una matrice, l'elemento viene aggiunto alla fine della matrice come singolo elemento.  
+ Gli elementi da aggiungere (*item1 itemN*) nella matrice vengono aggiunti, a partire dal primo elemento nell'elenco. Se uno degli elementi è una matrice, il relativo contenuto viene aggiunti alla fine di `array1`. Se l'elemento è diverso da una matrice, viene aggiunto alla fine della matrice come un singolo elemento di matrice.  
   
- Elementi di matrici di origine vengono copiati nella matrice risultante nel modo seguente:  
+ Gli elementi delle matrici di origine vengono copiati nella matrice risultante come indicato di seguito:  
   
--   Se un oggetto viene copiato da una delle matrici da concatenare alla nuova matrice, il riferimento dell'oggetto continua a puntare allo stesso oggetto.  Una modifica apportata alla nuova matrice o alla matrice originale verrà apportata a entrambe le matrici.  
+-   Se un oggetto viene copiato da qualsiasi delle matrici di essere concatenate a una nuova matrice, il riferimento all'oggetto continua a puntare allo stesso oggetto. Una modifica nella nuova matrice o matrice originale comporterà una modifica a altro.  
   
--   Se alla nuova matrice viene aggiunto un valore numerico o stringa, viene copiato solo il valore.  La modifica del valore in una matrice non influisce sul valore dell'altra.  
+-   Se nella nuova matrice viene aggiunto un valore di numero o stringa, viene copiato solo il valore. La modifica del valore in una matrice non influirà sul valore a altro.  
   
-## Esempio  
- Nell'esempio riportato di seguito viene illustrato come utilizzare il metodo `concat` quando abbinato a una matrice:  
+## <a name="example"></a>Esempio  
+ Nell'esempio seguente viene illustrato come utilizzare il `concat` metodo con una matrice:  
   
-```javascript  
+```JavaScript  
 var a, b, c, d;  
 a = new Array(1,2,3);  
 b = "dog";  
@@ -69,9 +71,9 @@ document.write(d);
   
 ```  
   
-## Requisiti  
+## <a name="requirements"></a>Requisiti  
  [!INCLUDE[jsv3](../../javascript/reference/includes/jsv3-md.md)]  
   
-## Vedere anche  
- [Metodo concat \(String\)](../../javascript/reference/concat-method-string-javascript.md)   
- [Metodo join \(Array\)](../../javascript/reference/join-method-array-javascript.md)
+## <a name="see-also"></a>Vedere anche  
+ [Metodo concat (String)](../../javascript/reference/concat-method-string-javascript.md)   
+ [Metodo join (Array)](../../javascript/reference/join-method-array-javascript.md)

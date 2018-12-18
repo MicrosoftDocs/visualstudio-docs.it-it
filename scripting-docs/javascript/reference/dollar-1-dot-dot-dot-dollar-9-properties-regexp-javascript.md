@@ -1,53 +1,54 @@
 ---
-title: "Propriet&#224; $1...$9 (RegExp) (JavaScript) | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/18/2017"
-ms.prod: "windows-client-threshold"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-javascript"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "$1...$9"
-dev_langs: 
-  - "JavaScript"
-  - "TypeScript"
-  - "DHTML"
-helpviewer_keywords: 
-  - "$1...$9 (proprietà)"
+title: "$1, la proprietà $9 (RegExp) (JavaScript) | Documenti Microsoft"
+ms.custom: 
+ms.date: 01/18/2017
+ms.prod: windows-client-threshold
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-javascript
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords: $1...$9
+dev_langs:
+- JavaScript
+- TypeScript
+- DHTML
+helpviewer_keywords: $1...$9 properties
 ms.assetid: 8bd84851-f62f-4eb1-a93d-b67135ea091a
-caps.latest.revision: 18
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 18
+caps.latest.revision: "18"
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.openlocfilehash: fc1926d6281c9003c432c9c9e89a73a48a584ef4
+ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/27/2017
 ---
-# Propriet&#224; $1...$9 (RegExp) (JavaScript)
-Restituisce le nove parti memorizzate più di recente individuate durante l'applicazione di un criterio di ricerca.  Sola lettura.  
+# <a name="19-properties-regexp-javascript"></a>Proprietà $1...$9 (RegExp) (JavaScript)
+Restituisce che le nove memorizzate recente trovate durante la ricerca di parti. Sola lettura.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
   
 RegExp.$n   
 ```  
   
-## Parametri  
+## <a name="parameters"></a>Parametri  
  `RegExp`  
- Sempre l'oggetto globale `RegExp`.  
+ Sempre globale `RegExp` oggetto.  
   
  `n`  
- Qualsiasi numero intero compreso tra 1 e 9.  
+ Qualsiasi valore intero compreso tra 1 e 9.  
   
-## Note  
- I valori delle proprietà **$1...$9** vengono modificati ogni volta che viene individuata una corrispondenza corretta tra parentesi.  In un criterio di ricerca di espressioni regolari è possibile specificare qualsiasi numero di sottostringhe tra parentesi, ma soltanto le ultime nove vengono archiviate.  
+## <a name="remarks"></a>Note  
+ I valori del **$1... $9** proprietà vengono modificate ogni volta che viene individuata una corrispondenza tra parentesi ha esito positivo. Può essere specificato un numero qualsiasi di sottostringhe tra parentesi nel criterio di espressione regolare, ma possono essere archiviate solo i nove più recente.  
   
-## Esempio  
- Nell'esempio seguente viene eseguita una ricerca di espressioni regolari.  Visualizza le corrispondenze e le sottocorrispondenze dell'oggetto `RegExp` globale.  Le sottocorrispondenze rappresentano le corrispondenze corrette tra parentesi contenute nelle proprietà `$1…$9`.  Nell'esempio vengono inoltre visualizzate le corrispondenze e le sottocorrispondenze della matrice restituita dal metodo `exec`.  
+## <a name="example"></a>Esempio  
+ Nell'esempio seguente esegue una ricerca di espressioni regolari. Visualizza le corrispondenze e submatches da globale `RegExp` oggetto. Le sottocorrispondenze coincidano tra parentesi corretta contenuti nel `$1...$9` proprietà. L'esempio inoltre Visualizza corrispondenze e submatches dalla matrice restituita dal `exec` metodo.  
   
-```javascript  
+```JavaScript  
 var newLine = "<br />";  
   
 var re = /(\w+)@(\w+)\.(\w+)/g  
@@ -103,10 +104,10 @@ document.write(s);
   
 ```  
   
-## Requisiti  
+## <a name="requirements"></a>Requisiti  
  [!INCLUDE[jsv1](../../javascript/misc/includes/jsv1-md.md)]  
   
- **Si applica a**: [Oggetto RegExp](../../javascript/reference/regexp-object-javascript.md)  
+ **Si applica a**: [RegExp (oggetto)](../../javascript/reference/regexp-object-javascript.md)  
   
-## Vedere anche  
- [Regular Expression Syntax \(JavaScript\)](http://msdn.microsoft.com/it-it/ab0766e1-7037-45ed-aa23-706f58358c0e)
+## <a name="see-also"></a>Vedere anche  
+ [Sintassi di espressione regolare (JavaScript)](http://msdn.microsoft.com/en-us/ab0766e1-7037-45ed-aa23-706f58358c0e)

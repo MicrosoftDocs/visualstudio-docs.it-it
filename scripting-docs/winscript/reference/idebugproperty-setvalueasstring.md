@@ -1,44 +1,47 @@
 ---
-title: "IDebugProperty::SetValueAsString | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/18/2017"
-ms.prod: "windows-script-interfaces"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
+title: IDebugProperty::SetValueAsString | Documenti Microsoft
+ms.custom: 
+ms.date: 01/18/2017
+ms.prod: windows-script-interfaces
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: reference
 apiname: IDebugProperty.SetValueAsString
 apilocation: scrobj.dll
-helpviewer_keywords: 
-  - "IDebugProperty::SetValueAsString"
+helpviewer_keywords: IDebugProperty::SetValueAsString
 ms.assetid: cad8d7b2-19a5-4a29-9000-cafdecdc238b
-caps.latest.revision: 8
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.openlocfilehash: 88a7cba4ec83c5428dd4da4a23ce554702177e76
+ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/27/2017
 ---
-# IDebugProperty::SetValueAsString
+# <a name="idebugpropertysetvalueasstring"></a>IDebugProperty::SetValueAsString
 Imposta il valore di una proprietà da una stringa specificata.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
 HRESULT SetValueAsString (  
-   LPCOLESTR pszValue,  
-   UINT nRadix,  
+   LPCOLESTR pszValue,  
+   UINTnRadix,  
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `pszValue`  
- \[in\] il valore da impostare.  
+ [in] Il valore da impostare.  
   
  `nRadix`  
- \[in\] base da utilizzare nell'interpretazione delle informazioni numerica.  
+ [in] Base per essere utilizzato per interpretare le informazioni numeriche.  
   
-## Valore restituito  
- Restituisce `HRESULT`valido, in genere `S_OK`.  
+## <a name="return-value"></a>Valore restituito  
+ Restituisce un oggetto valido `HRESULT`, in genere `S_OK`.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Interfaccia IDebugProperty](../../winscript/reference/idebugproperty-interface.md)

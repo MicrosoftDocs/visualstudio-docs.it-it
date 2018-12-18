@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- vs-ide-general
+ms.technology: vs-ide-general
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
@@ -17,63 +16,42 @@ f1_keywords:
 - File Properties.CustomTool
 - FileProperties
 helpviewer_keywords:
-- suo files
-- file types, Visual Studio
-- file extensions
-- solutions, solution files
-- solution files
 - .sln files
-- Visual Studio, file types and extensions
-- extensions, file types
-- sln files
 - .suo files
-- file extensions, Visual Studio
-- file types
-ms.assetid: 0ba5007b-465d-4efa-b1e4-f0ee68527649
-caps.latest.revision: 19
-author: kempb
-ms.author: kempb
+- file types [Visual Studio]
+- file extensions [Visual Studio]
+- solution files [Visual Studio]
+- sln files
+- suo files
+author: gewarren
+ms.author: gewarren
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: ca7c86466fa23fb21a932f26dc24e37c71cf29b4
-ms.openlocfilehash: b8f389deae83848893e59daec16630c911925f19
-ms.lasthandoff: 04/05/2017
-
+ms.workload: multiple
+ms.openlocfilehash: d05b7b5f1510777c758998572e78757c47148fa1
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="project-and-solution-file-types"></a>Tipi di file di soluzioni e di progetto
-[!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] supporta molti tipi di file. In una installazione specifica, i componenti installati determinano i tipi di file supportati. Questo argomento descrive i tipi di file di soluzione e di progetto supportati in alcune installazioni tipiche. Per informazioni su altri tipi di file, eseguire una ricerca in base alle estensioni di file per ogni tipo.  
-  
-## <a name="solution-files-sln-and-suo"></a>File di soluzione (.sln e .suo)  
- [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] usa due tipi di file (.sln e .suo) per archiviare le impostazioni specifiche delle soluzioni. Questi file, noti collettivamente come file di soluzione, forniscono a Esplora soluzioni le informazioni necessarie per visualizzare un'interfaccia grafica per la gestione dei file. Consentono all'utente di concentrarsi sui progetti e sugli obiettivi finali anziché sull'ambiente stesso ogni volta che si riprendono le attività di sviluppo.  
-  
-|Estensione|Nome|Descrizione|  
-|---------------|----------|-----------------|  
-|sln|Soluzione di [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)]|Organizza progetti, elementi di progetto ed elementi della soluzione nella soluzione.|  
-|suo|Solution User Options|Tiene traccia delle personalizzazioni a livello dell'utente apportate in Visual Studio, ad esempio i punti di interruzione.|  
-  
-## <a name="project-files"></a>File di progetto  
- [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] usa diversi formati di file per archiviare le informazioni specifiche dei progetti. Per altre informazioni, vedere gli argomenti della Guida seguenti:  
-  
- [!INCLUDE[vcprvc](../../code-quality/includes/vcprvc_md.md)]  
- [Tipi di file creati per i progetti di Visual C++](/cpp/ide/file-types-created-for-visual-cpp-projects)  
-  
- [Creazione e gestione di progetti Visual C++](/cpp/ide/creating-and-managing-visual-cpp-projects)  
-  
- [Unicode](/cpp/mfc/unicode-in-mfc)  
-  
-## <a name="see-also"></a>Vedere anche  
- [Solutions and Projects](../../ide/solutions-and-projects-in-visual-studio.md) (Soluzioni e progetti)
+
+Visual Studio supporta molti tipi di file. In una installazione specifica, i componenti installati determinano i tipi di file supportati. Questo argomento descrive i tipi di file di soluzione e di progetto supportati in alcune installazioni tipiche.
+
+## <a name="solution-files-sln-and-suo"></a>File di soluzione (.sln e .suo)
+
+Visual Studio usa due tipi di file (.sln e .suo) per archiviare le impostazioni delle soluzioni. Questi file, noti collettivamente come file di soluzione, forniscono a Esplora soluzioni le informazioni necessarie per visualizzare un'interfaccia grafica per la gestione dei file.
+
+|Estensione|nome|Descrizione|
+|---------------|----------|-----------------|
+|sln|Soluzione Visual Studio|Organizza progetti, elementi di progetto ed elementi della soluzione nella soluzione.|
+|suo|Solution User Options|Tiene traccia delle personalizzazioni a livello dell'utente apportate in Visual Studio, ad esempio i punti di interruzione.|
+
+## <a name="project-files"></a>File di progetto
+
+I progetti possono contenere molti tipi di file diversi. Ad esempio, i file di codice C# hanno l'estensione **.cs** e i file di C++ hanno l'estensione **.cpp**. Le risorse vengono archiviate nei file **.resx** e XAML nei file **XAML**. I file [App.config](../../ide/managing-application-settings-dotnet.md) contengono informazioni sull'applicazione che non devono essere incluse nel codice dell'applicazione&mdash; ad esempio le stringhe di connessione.
+
+Per ulteriori informazioni sui tipi di file nei progetti C++, vedere [Tipi di file creati per i progetti di Visual C++](/cpp/ide/file-types-created-for-visual-cpp-projects) e [Unicode nella libreria Microsoft Foundation Class](/cpp/mfc/unicode-in-mfc)
+
+## <a name="see-also"></a>Vedere anche
+
+[Solutions and Projects](../../ide/solutions-and-projects-in-visual-studio.md) (Soluzioni e progetti)

@@ -1,54 +1,55 @@
 ---
-title: "IDiaSession::findAcceleratorInlineesByName | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
+title: IDiaSession::findAcceleratorInlineesByName | Documenti Microsoft
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: vs-ide-debug
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
 ms.assetid: e203e5c2-6563-43fa-be56-3063955043ab
-caps.latest.revision: 3
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.workload: multiple
+ms.openlocfilehash: 084fa6d3021e7657ae0aef639a110450ed9f083d
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
-# IDiaSession::findAcceleratorInlineesByName
-[!INCLUDE[vs2017banner](../../code-quality/includes/vs2017banner.md)]
-
-Restituisce un'enumerazione di simboli per i frame inline che corrispondono al nome di funzione inline specificato.  
+# <a name="idiasessionfindacceleratorinlineesbyname"></a>IDiaSession::findAcceleratorInlineesByName
+Restituisce un'enumerazione dei simboli per i frame inline corrispondente al nome di funzione inline specificati.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp#  
-HRESULT findAcceleratorInlineeLinesByName (   
-   LPCOLESTR             name,  
+```C++  
+HRESULT findAcceleratorInlineeLinesByName (   
+   LPCOLESTR             name,  
    DWORD                 option,  
-   IDiaEnumSymbols**     ppResult  
+   IDiaEnumSymbols**     ppResult  
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `name`  
- \[in\] il nome della funzione dell'entità incorporata da cercare.  
+ [in] Il nome della funzione inline per eseguire la ricerca.  
   
  `option`  
- \[in\] le opzioni di ricerca del nome possibile utilizzare quando si cercano frame inline che corrispondono a `name`.  Per ulteriori informazioni, vedere [Enumerazione NameSearchOptions](../../debugger/debug-interface-access/namesearchoptions.md).  
+ [in] Le opzioni di ricerca del nome da utilizzare durante la ricerca di inline frame che corrispondono a `name`. Per ulteriori informazioni, vedere [NameSearchOptions (enumerazione)](../../debugger/debug-interface-access/namesearchoptions.md).  
   
  `ppResult`  
- \[out\] puntatore A un puntatore a interfaccia `IDiaEnumSymbols` inizializzato con il risultato.  
+ [out] Un puntatore a un `IDiaEnumSymbols` puntatore a interfaccia che viene inizializzato con il risultato.  
   
-## Valore restituito  
- In caso di esito positivo, restituisce `S_OK`; in caso contrario, restituisce un codice errore.  
+## <a name="return-value"></a>Valore restituito  
+ Se ha esito positivo, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
   
-## Note  
- Questa funzione cerca i inlinees solo all'interno delle funzioni dello stub dei tasti di scelta rapida.  Ignora i record nativi di routine C\+\+.  
+## <a name="remarks"></a>Note  
+ La funzione Cerca per inline solo all'interno di funzioni stub di tasti di scelta rapida. Ignora i record di procedure C++ nativi.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IDiaSession](../../debugger/debug-interface-access/idiasession.md)   
  [IDiaEnumSymbols](../../debugger/debug-interface-access/idiaenumsymbols.md)   
  [IDiaSymbol](../../debugger/debug-interface-access/idiasymbol.md)

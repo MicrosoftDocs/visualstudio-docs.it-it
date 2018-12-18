@@ -1,59 +1,62 @@
 ---
-title: "Visualizzazione di file utilizzando il comando Apri File | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "tipi di progetto, il comando Apri File di supporto"
-  - "Apri file (comando)"
-  - "persistenza, il comando Apri File di supporto"
+title: Visualizzazione di file utilizzando il comando Apri File | Documenti Microsoft
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: vs-ide-sdk
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- project types, supporting Open File command
+- Open File command
+- persistence, supporting Open File command
 ms.assetid: 4fff0576-b2f3-4f17-9769-930f926f273c
-caps.latest.revision: 13
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 13
+caps.latest.revision: "13"
+author: gregvanl
+ms.author: gregvanl
+manager: ghogen
+ms.workload: vssdk
+ms.openlocfilehash: 75d714399f851aa479f398064e576790c793fffa
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
-# Visualizzazione di file utilizzando il comando Apri File
-[!INCLUDE[vs2017banner](../../code-quality/includes/vs2017banner.md)]
-
-Nei passaggi seguenti viene descritto come l'ide gestisce il comando di **file aperto** , disponibile nel menu File di [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)].  I passaggi viene descritto inoltre come i progetti devono rispondere alle chiamate provenienti da questo comando.  
+# <a name="displaying-files-by-using-the-open-file-command"></a>Visualizzazione di file utilizzando il comando Apri File
+I passaggi seguenti descrivono il modo in cui l'IDE gestisce il **Apri File** comando, è disponibile nel **File** menu [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)]. Viene descritta anche la modalità con cui i progetti devono risposta alle chiamate provenienti da questo comando.  
   
- Quando un utente sceglie il comando di **file aperto** il menu File e selezionare un file nella finestra di dialogo di **file aperto** , il seguente processo si verifica.  
+ Quando un utente fa clic il **Apri File** comando il **File** dal menu e seleziona un file dal **Apri** si verifica il processo seguente nella finestra di dialogo.  
   
-1.  Utilizzando la tabella in esecuzione di documento, l'ide determina se il file è già aperto in un progetto.  
+1.  Utilizzando la tabella documenti in esecuzione, l'IDE determina se il file è già aperto in un progetto.  
   
-    -   Se il file è aperto, l'ide rifa la finestra.  
+    -   Se il file è aperto, l'IDE riemerga la finestra.  
   
-    -   If the file is not open, the IDE calls <xref:Microsoft.VisualStudio.Shell.Interop.IVsProject3.IsDocumentInProject%2A> to query each project to determine which project can open the file.  
+    -   Se il file non è aperto, l'IDE chiama <xref:Microsoft.VisualStudio.Shell.Interop.IVsProject3.IsDocumentInProject%2A> per ogni progetto per determinare quale progetto è possibile aprire il file di query.  
   
         > [!NOTE]
-        >  In your project implementation of <xref:Microsoft.VisualStudio.Shell.Interop.IVsProject3.IsDocumentInProject%2A>, provide a priority value that indicates the level at which your project opens the file.  I valori di priorità sono forniti nell'enumerazione <xref:Microsoft.VisualStudio.Shell.Interop.VSDOCUMENTPRIORITY> .  
+        >  Nell'implementazione del progetto <xref:Microsoft.VisualStudio.Shell.Interop.IVsProject3.IsDocumentInProject%2A>, fornire un valore che indica il livello in cui il progetto viene aperto il file di priorità. Vengono forniti valori di priorità nel <xref:Microsoft.VisualStudio.Shell.Interop.VSDOCUMENTPRIORITY> enumerazione.  
   
-2.  Ogni progetto risponde a un livello di priorità che indica l'importanza che posiziona su come progetto aprire il file.  
+2.  Ogni progetto risponde con un livello di priorità che indica l'importanza viene inserito in corso il progetto per aprire il file.  
   
-3.  L'ide utilizza i criteri seguenti per determinare quale progetto viene aperto il file:  
+3.  L'IDE Usa i criteri seguenti per determinare quale progetto viene aperto il file:  
   
-    -   Il progetto che risponde alla priorità più alta DP\_Intrinsic\) viene aperto il file.  Se più di un progetto risponde alla priorità, il primo progetto rispondere viene aperto il file.  
+    -   Il file verrà aperto il progetto che risponde con la priorità più alta (DP_Intrinsic). Se più di un progetto risponde con la priorità, il progetto prima di rispondere apre il file.  
   
-    -   Se nessun progetto risponde con la priorità più alta DP\_Intrinsic\), ma tutti i progetti compatibili con lo stesso, la priorità più bassa, il progetto viene aperto il file.  Se non esiste alcun progetto, viene attivato il primo progetto rispondere viene aperto il file.  
+    -   Se non risponde del progetto con la priorità più alta (DP_Intrinsic), ma tutti i progetti risponde con la priorità più bassa, stesso, il progetto attivo apre il file. Se è attivo alcun progetto, il progetto prima di rispondere apre il file.  
   
-    -   Se nessun progetto attesta la proprietà del file \(DP\_Unsupported\), il progetto file esterni viene aperto il file.  
+    -   Se nessun progetto le attestazioni di proprietà del file (DP_Unsupported), il progetto file esterni apre il file.  
   
-         Se un'istanza di progetto file esterni viene creata, il progetto non sempre con il valore DP\_CanAddAsExternal.  questo valore indica che il progetto può aprire il file.  Questo progetto viene utilizzato ospitare i file aperti non presenti in qualsiasi altro progetto.  Elenco di elementi nel progetto non viene salvato in modo permanente; questo progetto è visibile in **Esplora soluzioni** solo quando viene utilizzato per aprire un file.  
+         Se viene creata un'istanza del progetto file esterni, il progetto risponde sempre con il valore DP_CanAddAsExternal. Questo valore indica che il progetto è possibile aprire il file. Questo progetto viene utilizzato per ospitare i file aperti che non sono presenti in qualsiasi altro progetto. L'elenco di elementi in questo progetto non è persistente; Questo progetto è visibile in **Esplora** solo quando viene utilizzato per aprire un file.  
   
-         Se il progetto file esterni non indica che può aprire il file, un'istanza del progetto non è stata creata.  In questo caso, l'ide crea un'istanza di file esterni progetti e indica al progetto aprire il file.  
+         Se il progetto file esterni non indica che è possibile aprire il file, un'istanza del progetto non è stata creata. In questo caso, l'IDE crea un'istanza del progetto file esterni e indica il progetto per aprire il file.  
   
-4.  Non appena l'ide determina il progetto viene aperto il file, chiama il metodo di <xref:Microsoft.VisualStudio.Shell.Interop.IVsProject3.OpenItem%2A> per quel progetto.  
+4.  Non appena l'IDE determina quale progetto viene aperto il file, chiama il <xref:Microsoft.VisualStudio.Shell.Interop.IVsProject3.OpenItem%2A> metodo su tale progetto.  
   
-5.  Il progetto quindi con l'opzione di aprire il file utilizzando un editor specifico del progetto o un editor standard.  Per ulteriori informazioni, vedere rispettivamente [Procedura: aprire gli editor specifici del progetto](../../extensibility/how-to-open-project-specific-editors.md) e [Procedura: aprire gli editor Standard](../../extensibility/how-to-open-standard-editors.md).  
+5.  Il progetto è quindi possibile aprire il file usando un editor specifico del progetto o un editor standard. Per ulteriori informazioni, vedere [come: gli editor aperti specifici del progetto](../../extensibility/how-to-open-project-specific-editors.md) e [procedura: aprire gli editor Standard](../../extensibility/how-to-open-standard-editors.md)rispettivamente.  
   
-## Vedere anche  
- [Visualizzazione di file utilizzando l'aperto con il comando](../../extensibility/internals/displaying-files-by-using-the-open-with-command.md)   
+## <a name="see-also"></a>Vedere anche  
+ [Visualizzazione di file tramite l'apertura con il comando](../../extensibility/internals/displaying-files-by-using-the-open-with-command.md)   
  [Apertura e salvataggio di elementi di progetto](../../extensibility/internals/opening-and-saving-project-items.md)   
- [Procedura: aprire gli editor specifici del progetto](../../extensibility/how-to-open-project-specific-editors.md)   
- [Procedura: aprire gli editor Standard](../../extensibility/how-to-open-standard-editors.md)
+ [Procedura: apertura degli editor specifici del progetto](../../extensibility/how-to-open-project-specific-editors.md)   
+ [Procedura: Aprire gli editor standard](../../extensibility/how-to-open-standard-editors.md)

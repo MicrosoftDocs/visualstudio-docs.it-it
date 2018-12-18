@@ -1,45 +1,49 @@
 ---
-title: "ActivityDesigner Parallel | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "System.Activities.Statements.Parallel.UI"
+title: ActivityDesigner Parallel | Documenti Microsoft
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords: System.Activities.Statements.Parallel.UI
 ms.assetid: 0306dc3b-075a-4091-ac3a-96486fbabed5
-caps.latest.revision: 10
-author: "ErikRe"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: ErikRe
+ms.author: erikre
+manager: erikre
+ms.workload: multiple
+ms.openlocfilehash: 8be40a9cae29291951a320422755f0ff5d1f7365
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
-# ActivityDesigner Parallel
+# <a name="parallel-activity-designer"></a>ActivityDesigner Parallel
 L'attività <xref:System.Activities.Statements.Parallel> esegue contemporaneamente una raccolta delle attività figlio.  
   
-## Attività Parallel  
- L'attività <xref:System.Activities.Statements.Parallel> archivia le relative attività figlio in una raccolta <xref:System.Activities.Statements.Parallel.Branches%2A>.Utilizzare l'attività <xref:System.Activities.Statements.Parallel> anziché l'attività <xref:System.Activities.Statements.Sequence> se alcune delle attività figlio possono diventare inattive.  
+## <a name="the-parallel-activity"></a>Attività Parallel  
+ L'attività <xref:System.Activities.Statements.Parallel> archivia le relative attività figlio in una raccolta <xref:System.Activities.Statements.Parallel.Branches%2A>. Usare l'attività <xref:System.Activities.Statements.Parallel> anziché l'attività <xref:System.Activities.Statements.Sequence> se alcune delle attività figlio possono diventare inattive.  
   
- L'attività <xref:System.Activities.Statements.Parallel> include una proprietà <xref:System.Activities.Statements.Parallel.CompletionCondition%2A> contenente un'espressione [!INCLUDE[vbprvb](../code-quality/includes/vbprvb_md.md)] specificata dall'utente.L'attività <xref:System.Activities.Statements.Parallel> valuta tale proprietà in seguito al completamento di ogni ramo.Se restituisce **True**, l'attività <xref:System.Activities.Statements.Parallel> viene completata senza eseguire gli altri rami.Se <xref:System.Activities.Statements.Parallel.CompletionCondition%2A> non restituisce **True**, l'attività <xref:System.Activities.Statements.Parallel> viene completata dopo che tutte le relative attività figlio sono state completate.  
+ L'attività <xref:System.Activities.Statements.Parallel> include una proprietà <xref:System.Activities.Statements.Parallel.CompletionCondition%2A> contenente un'espressione [!INCLUDE[vbprvb](../code-quality/includes/vbprvb_md.md)] specificata dall'utente. L'attività <xref:System.Activities.Statements.Parallel> valuta tale proprietà in seguito al completamento di ogni ramo. Se restituisce **True**, quindi il <xref:System.Activities.Statements.Parallel> attività viene completata senza eseguire gli altri rami. Se il <xref:System.Activities.Statements.Parallel.CompletionCondition%2A> non restituisce **True**, quindi il <xref:System.Activities.Statements.Parallel> attività viene completata quando tutte le relative attività figlio sono stati completati.  
   
-### Utilizzo dell'ActivityDesigner Parallel  
- L'ActivityDesigner **Parallel** è disponibile nella categoria **Flusso di controllo** della **Casella degli strumenti**, a cui è possibile accedere facendo clic sulla scheda **Casella degli strumenti** sul lato sinistro della [!INCLUDE[wfd2](../workflow-designer/includes/wfd2_md.md)]. In alternativa, selezionare **Casella degli strumenti** dal menu **Visualizza** oppure premere la combinazione CTRL\+ALT\+X.  
+### <a name="using-the-parallel-activity-designer"></a>Utilizzo dell'ActivityDesigner Parallel  
+ Il **parallela** ActivityDesigner è reperibile nel **flusso di controllo** categoria del **della casella degli strumenti**, accessibile facendo clic il **dellacaselladeglistrumenti**scheda sul lato sinistro del [!INCLUDE[wfd2](../workflow-designer/includes/wfd2_md.md)] (in alternativa, selezionare **barra degli strumenti** dal **vista** menu oppure premere CTRL + ALT + X.)  
   
- L'ActivityDesigner **Parallel** può essere trascinato dalla **Casella degli strumenti** e rilasciato nel punto in cui in genere si posizionano gli ActivityDesigner nell'area della [!INCLUDE[wfd2](../workflow-designer/includes/wfd2_md.md)], ad esempio, all'interno dell'ActivityDesigner **Sequence**.Dopo averlo rilasciato in [!INCLUDE[wfd2](../workflow-designer/includes/wfd2_md.md)], viene creata un'attività <xref:System.Activities.Statements.Parallel>, che per impostazione predefinita contiene una proprietà <xref:System.Activities.Activity.DisplayName%2A> di **Parallel** .  
+ Il **parallelo** da, è possibile trascinare l'ActivityDesigner di **della casella degli strumenti** e rilasciato nel [!INCLUDE[wfd2](../workflow-designer/includes/wfd2_md.md)] superficie ovunque attività vengono in genere posizionate, ad esempio, all'interno di un **Sequenza** ActivityDesigner. Dopo averlo rilasciato nel [!INCLUDE[wfd2](../workflow-designer/includes/wfd2_md.md)], viene creato un <xref:System.Activities.Statements.Parallel> attività, che per impostazione predefinita contiene un <xref:System.Activities.Activity.DisplayName%2A> di **parallela**  
   
- Per aggiungere un'attività alla raccolta <xref:System.Activities.Statements.Parallel.Branches%2A> dell'attività Parallel, trascinare un altro ActivityDesigner dalla **Casella degli strumenti** e rilasciarlo sul triangolo all'interno dell'ActivityDesigner **Parallel**.I triangoli si trovano di fianco alle attività contenute nei rami.È possibile aggiungere ulteriori attività ripetendo questa procedura.È possibile riordinare le attività trascinandole e rilasciandole all'interno dell'ActivityDesigner **Parallel**.  
+ Per aggiungere un'attività per il <xref:System.Activities.Statements.Parallel.Branches%2A> raccolta dell'attività parallel, trascinare un altro ActivityDesigner dal **della casella degli strumenti** e rilasciarla sul triangolo all'interno di **parallela** ActivityDesigner. I triangoli si trovano di fianco alle attività contenute nei rami. È possibile aggiungere ulteriori attività ripetendo questa procedura. Le attività possono essere riordinate trascinandoli e rilasciandoli all'interno di **parallela** ActivityDesigner.  
   
-### Proprietà di ParallelActivity in Progettazione flussi di lavoro  
+### <a name="parallel-activity-properties-in-the-workflow-designer"></a>Proprietà di ParallelActivity in Progettazione flussi di lavoro  
  Nella tabella seguente sono elencate le proprietà dell'attività Parallel e ne viene descritta la modalità di utilizzo nella finestra di progettazione.  
   
-|Nome proprietà|Obbligatoria|Utilizzo|  
-|--------------------|------------------|--------------|  
-|<xref:System.Activities.Activity.DisplayName%2A>|False|Specifica il nome descrittivo visualizzato nell'intestazione dell'ActivityDesigner.Il valore predefinito è **Parallel**.Facoltativamente, è possibile modificare il valore nella griglia **Proprietà** o direttamente nell'intestazione dell'ActivityDesigner.|  
+|Nome proprietà|Obbligatorio|Utilizzo|  
+|-------------------|--------------|-----------|  
+|<xref:System.Activities.Activity.DisplayName%2A>|False|Specifica il nome descrittivo visualizzato nell'intestazione dell'ActivityDesigner. Il valore predefinito è **parallela**. Il valore può essere modificato facoltativamente nel **proprietà** griglia o direttamente nell'intestazione dell'ActivityDesigner.|  
 |<xref:System.Activities.Statements.Parallel.Branches%2A>|True|Contiene la raccolta di attività figlio da eseguire.|  
-|<xref:System.Activities.Statements.Parallel.CompletionCondition%2A>|False|Restituisce il risultato dopo il completamento di un ramo.Se restituisce **True**, i rami in sospeso pianificati vengono annullati.Se questa proprietà non è impostata o restituisce **False**, l'attività viene completata quando tutte le relative attività figlio sono state completate.Il valore predefinito è **null**.|  
+|<xref:System.Activities.Statements.Parallel.CompletionCondition%2A>|False|Restituisce il risultato dopo il completamento di un ramo. Se restituisce **True**, quindi pianificati in sospeso di rami vengono annullati. Se questa proprietà non è impostata o restituisce **False**, l'attività viene completata quando tutte le relative attività figlio sono stati completati. Il valore predefinito è **null**.|  
   
-## Vedere anche  
- [Sequence](../workflow-designer/sequence-activity-designer.md)   
- [ParallelForEach\<T\>](../workflow-designer/parallelforeach-t-activity-designer.md)   
+## <a name="see-also"></a>Vedere anche  
+ [Sequenza](../workflow-designer/sequence-activity-designer.md)   
+ [ParallelForEach\<T >](../workflow-designer/parallelforeach-t-activity-designer.md)   
  [Flusso di controllo](../workflow-designer/control-flow-activity-designers.md)

@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 03/13/2017
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- vs-ide-sdk
+ms.technology: msbuild
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
@@ -19,29 +18,17 @@ helpviewer_keywords:
 - <When> Element [MSBuild]
 - When Element [MSBuild]
 ms.assetid: eb27de6f-4e71-4e87-87e2-d93f7bf5899c
-caps.latest.revision: 9
-author: kempb
-ms.author: kempb
+caps.latest.revision: 
+author: Mikejo5000
+ms.author: mikejo
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: 0e5a449ef396e7b9fd23a2c018bdc7f8791b7b38
-ms.openlocfilehash: 030ab9a96c9f96504b7a78ff4364cb27256fee6a
-ms.lasthandoff: 03/13/2017
-
+ms.workload:
+- multiple
+ms.openlocfilehash: 99da11e22b7e74feee4da4fa25b502bac563f0b2
+ms.sourcegitcommit: 205d15f4558315e585c67f33d5335d5b41d0fcea
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 02/09/2018
 ---
 # <a name="when-element-msbuild"></a>Elemento When (MSBuild)
 Specifica un blocco di codice selezionabile dall'elemento `Choose`.  
@@ -144,4 +131,3 @@ Specifica un blocco di codice selezionabile dall'elemento `Choose`.
 ## <a name="see-also"></a>Vedere anche  
  [Costrutti condizionali](../msbuild/msbuild-conditional-constructs.md)   
  [Informazioni di riferimento sullo schema del file di progetto](../msbuild/msbuild-project-file-schema-reference.md)
-

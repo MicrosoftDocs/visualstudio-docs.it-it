@@ -1,5 +1,5 @@
 ---
-title: Debug con Xamarin
+title: Debug con Xamarin | Microsoft Docs
 description: "Il debug è una parte comune e necessaria della programmazione. In quanto IDE completo, Visual Studio per Mac contiene un intero gruppo di funzionalità per semplificare il debug. Dal debug sicuro alla visualizzazione dei dati, questo articolo descrive come sfruttare tutte le potenzialità del debug in Visual Studio per Mac."
 author: asb3993
 ms.author: amburns
@@ -7,15 +7,12 @@ ms.date: 04/14/2017
 ms.topic: article
 ms.technology: vs-ide-debug
 ms.assetid: BB7A084D-9AC2-48B5-8076-6C8518796BBA
+ms.openlocfilehash: 6d85c318b60e065be86d242bf3199b3716c59ada
+ms.sourcegitcommit: f40311056ea0b4677efcca74a285dbb0ce0e7974
 ms.translationtype: HT
-ms.sourcegitcommit: e2b7ff9126e1cc38ac2e58d6be339b656a024e7f
-ms.openlocfilehash: d416c0967daa3354e09660e3b618e0cc6f3b49f7
-ms.contentlocale: it-it
-ms.lasthandoff: 08/11/2017
-
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/31/2017
 ---
-
-
 # <a name="debugging-with-xamarin"></a>Debug con Xamarin
 
 
@@ -103,4 +100,3 @@ Poiché questa funzionalità usa più memoria durante il debug, è disattivata p
 Per abilitare questa funzionalità, passare a **Visual Studio per Mac > Preferenze > Debugger** e assicurarsi che l'opzione **Esegui solo il debug del codice del progetto senza eseguire l'istruzione nel codice del framework**. sia **deselezionata**, come mostrato di seguito:
 
  ![Opzione Esegui solo il debug del codice del progetto senza eseguire l'istruzione nel codice del framework](media/debugging-image8.png)
-

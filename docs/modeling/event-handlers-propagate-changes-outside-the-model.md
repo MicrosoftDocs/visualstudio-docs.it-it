@@ -1,47 +1,49 @@
 ---
-title: "I gestori eventi propagano le modifiche al di fuori del modello | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "Linguaggio specifico di dominio, eventi"
-  - "Linguaggio specifico di dominio, programmazione di modelli di dominio"
-ms.assetid: 0ac8d1e4-239f-4370-ba1d-3769bb38b8a5
-caps.latest.revision: 18
-author: "alancameronwills"
-ms.author: "awills"
-manager: "douge"
-caps.handback.revision: 18
+title: I gestori eventi propagano le modifiche apportate all'esterno del modello | Documenti Microsoft
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.topic: article
+helpviewer_keywords:
+- Domain-Specific Language, programming domain models
+- Domain-Specific Language, events
+author: gewarren
+ms.author: gewarren
+manager: ghogen
+ms.workload:
+- multiple
+ms.technology: vs-ide-modeling
+ms.openlocfilehash: 8b5c957fbc3ae5eb3e71f087c57cbf07188de2ff
+ms.sourcegitcommit: 205d15f4558315e585c67f33d5335d5b41d0fcea
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 02/09/2018
 ---
-# I gestori eventi propagano le modifiche al di fuori del modello
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
-Nell'SDK di visualizzazione e modellazione di, è possibile definire i gestori eventi dell'archivio per propagare le modifiche alle risorse all'esterno dell'archivio, ad esempio variabili non archivio, i file, i modelli in altri archivi, o altro [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] estensioni.  I gestori eventi dell'archivio vengono eseguite dopo la fine della transazione nella quale evento scatenante si è verificato.  Vengono eseguiti in un'operazione di annullamento o ripristino.  Di conseguenza, a differenza delle regole di archiviazione, gli eventi dell'archivio sono particolarmente utili per aggiornare i valori al di fuori dell'archivio.  A differenza degli eventi di .NET, i gestori eventi dell'archivio vengono registrati per ascoltare classe: non è necessario registrare un gestore distinto per ogni istanza.  Per ulteriori informazioni su come scegliere tra diversi modi per gestire le modifiche, vedere [Risposta alle modifiche e propagazione delle modifiche](../modeling/responding-to-and-propagating-changes.md).  
+# <a name="event-handlers-propagate-changes-outside-the-model"></a>I gestori eventi propagano le modifiche al di fuori del modello
+In Visualization and Modeling SDK, è possibile definire i gestori di eventi di archivio per propagare le modifiche alle risorse all'esterno di archivio, ad esempio non archiviare variabili, i file, i modelli in altri archivi o altri [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] estensioni. Dopo la fine della transazione in cui si è verificato l'evento trigger vengono eseguiti i gestori di eventi di archivio. Vengono inoltre eseguite in un'operazione di annullamento o ripetizione. Diversamente dalle regole di archivio, di conseguenza, gli eventi di archiviazione sono più utili per l'aggiornamento dei valori che non rientrano nell'archivio. A differenza degli eventi di .NET, gestori di eventi di archivio vengono registrati per l'ascolto su una classe: non è necessario registrare un gestore separato per ogni istanza. Per ulteriori informazioni su come scegliere tra diversi modi per gestire le modifiche, vedere [propagazione delle modifiche e risposta agli](../modeling/responding-to-and-propagating-changes.md).  
   
- L'area grafica e altri controlli dell'interfaccia utente sono esempi di risorse esterne che possono essere gestite dagli eventi dell'archivio.  
+ L'area con interfaccia grafica e altri controlli dell'interfaccia utente sono esempi di risorse esterne che possono essere gestiti dall'archivio eventi.  
   
-### Per definire un evento dell'archivio  
+### <a name="to-define-a-store-event"></a>Per definire un evento di archiviazione  
   
-1.  Scegliere il tipo di evento che si desidera monitorare.  Per un elenco completo, esaminare le proprietà di <xref:Microsoft.VisualStudio.Modeling.EventManagerDirectory>.  Ogni proprietà corrisponde a un tipo di evento.  Il più delle volte tipi di evento utilizzati sono:  
+1.  Scegliere il tipo di evento che si desidera monitorare. Per un elenco completo, esaminare le proprietà di <xref:Microsoft.VisualStudio.Modeling.EventManagerDirectory>. Ogni proprietà corrisponde a un tipo di evento. Utilizzato con maggiore frequenza sono tipi di evento:  
   
-    -   `ElementAdded` \- attivato quando un elemento del modello, un collegamento di relazione, una forma o un connettore viene creato.  
+    -   `ElementAdded`-attivata quando un elemento del modello, viene creato il collegamento di relazione, forma o il connettore.  
   
-    -   ElementPropertyChanged \- attivato se il valore di un oggetto `Normal` la proprietà del dominio viene modificata.  L'evento viene attivato solo se i valori nuovi e precedenti non sono uguali.  L'evento non può essere applicato alle proprietà uguali e personalizzate di archiviazione.  
+    -   ElementPropertyChanged - attivato quando il valore di un `Normal` viene modificata la proprietà dominio. L'evento viene generato solo se i valori nuovi e precedenti non sono uguali. L'evento non può essere applicato alle proprietà di archiviazione calcolate e personalizzate.  
   
-         Impossibile applicare al ruolo delle proprietà che corrispondono ai collegamenti della relazione.  Utilizzare, invece `ElementAdded` per monitorare la relazione di dominio.  
+         Non può essere applicato alle proprietà del ruolo che corrispondono ai collegamenti delle relazioni. Utilizzare invece `ElementAdded` per monitorare la relazione di dominio.  
   
-    -   `ElementDeleted` \- attivato dopo un elemento del modello, una relazione, una forma o un connettore è stato eliminato.  È ancora possibile accedere ai valori della proprietà dell'elemento, ma non disporrà di relazioni con altri elementi.  
+    -   `ElementDeleted`-attivata dopo un elemento del modello, relazione, forma o il connettore è stato eliminato. È comunque possibile accedere i valori delle proprietà dell'elemento, ma non avrà Nessuna relazione agli altri elementi.  
   
-2.  aggiungere una definizione di classe parziale per *TheDsl***DocData** in un file di codice distinto in  **DslPackage** progetto.  
+2.  Aggiungere una definizione di classe parziale per *YourDsl * * * DocData** in un file di codice separato nella **DslPackage** progetto.  
   
-3.  Scrivere il codice dell'evento come metodo, come nell'esempio seguente.  può essere `static`, a meno che non si desideri accedere a  `DocData`.  
+3.  Scrivere il codice dell'evento come un metodo, come nell'esempio seguente. Può essere `static`, a meno che non si desidera accedere a `DocData`.  
   
-4.  override `OnDocumentLoaded()` per registrare il gestore.  Se si dispone di più di un gestore, è possibile usufruire di tutti nella stessa posizione.  
+4.  Eseguire l'override `OnDocumentLoaded()` per registrare il gestore. Se si dispone di più di un gestore, è possibile registrare tutti nella stessa posizione.  
   
- La posizione del codice di registrazione non è essenziale.  `DocView.LoadView()` è un percorso alternativo.  
+ Il percorso del codice di registrazione non critico. `DocView.LoadView()`è un percorso alternativo.  
   
 ```  
 using System;  
@@ -57,7 +59,7 @@ namespace Company.MusicLib
     // Register store events here or in DocView.LoadView().  
     protected override void OnDocumentLoaded()  
     {  
-      base.OnDocumentLoaded(); // Don’t forget this.  
+      base.OnDocumentLoaded(); // Don't forget this.  
   
       #region Store event handler registration.       
       Store store = this.Store;  
@@ -90,12 +92,12 @@ namespace Company.MusicLib
   
 ```  
   
-## Utilizzando gli eventi per apportare regolazioni annullabile nell'archivio  
- Gli eventi dell'archivio generalmente non sono utilizzati per la propagazione delle modifiche nell'archivio, poiché il gestore eventi viene eseguito dopo che la transazione viene eseguito il commit.  Al contrario, si utilizzerebbe una regola dell'archivio.  Per ulteriori informazioni, vedere [Le regole propagano le modifiche all'interno del modello](../modeling/rules-propagate-changes-within-the-model.md).  
+## <a name="using-events-to-make-undoable-adjustments-in-the-store"></a>Utilizzo di eventi per apportare modifiche annullabili nell'archivio  
+ Gli eventi di archiviazione non vengono utilizzati in genere per la propagazione delle modifiche all'interno dell'archivio, perché il gestore dell'evento viene eseguito dopo che viene eseguito il commit della transazione. Utilizzare invece una regola di archivio. Per ulteriori informazioni, vedere [propagare le modifiche all'interno di modello di regole](../modeling/rules-propagate-changes-within-the-model.md).  
   
- Tuttavia, è possibile utilizzare in un gestore eventi per eseguire aggiornamenti aggiuntivi all'archivio, se si desidera che l'utente possa annullare separatamente gli aggiornamenti aggiuntivi dall'evento originale.  Ad esempio, si supponga che i caratteri minuscoli vengano la convenzione utilizzata in genere per i titoli dell'album.  È possibile scrivere un gestore eventi dell'archivio che corregge il titolo in minuscolo dopo che l'utente ha immesso in lettere maiuscole.  Ma è possibile utilizzare il comando annulla per annullare la correzione, il ripristino dei caratteri maiuscoli.  Una seconda annulla rimuoverebbe la modifica dell'utente.  
+ Tuttavia, è possibile utilizzare un gestore eventi per eseguire aggiornamenti aggiuntivi, l'archivio, se si desidera che l'utente la possibilità di annullare gli aggiornamenti aggiuntivi separatamente dall'evento originale. Si supponga, ad esempio, di caratteri minuscoli convenzione abituale per i titoli degli album. È possibile scrivere un gestore eventi di archivio che corregge il titolo in lettere minuscole, dopo che l'utente ha digitato in lettere maiuscole. Ma l'utente potrebbe usare il comando Annulla per annullare la correzione, ripristino i caratteri maiuscoli. Modifica dell'utente rimuove una seconda fase di rollback.  
   
- Al contrario, se si scrivessero una regola di eseguire la stessa operazione, la modifica dell'utente e la correzione verrebbe nella stessa transazione, in modo che l'utente non può annullare la modifica senza perdere la modifica originale.  
+ Al contrario, se si scrive una regola di archivio per eseguire la stessa operazione, la modifica dell'utente e la correzione sarebbe nella stessa transazione, in modo che l'utente non è riuscito ad annullare la regolazione senza perdere le modifiche originali.  
   
 ```  
   
@@ -163,29 +165,32 @@ private static void AlbumTitleAdjuster(object sender,
   
  Se si scrive un evento che aggiorna l'archivio:  
   
--   utilizzo `store.InUndoRedoOrRollback` per evitare apportare modifiche agli elementi del modello di annullamento.  Il gestore delle transazioni imposterà un archivio di nuovo allo stato originale.  
+-   Utilizzare `store.InUndoRedoOrRollback` per evitare di apportare modifiche agli elementi del modello di annullamento. Il gestore delle transazioni verrà impostato tutti gli elementi nell'archivio allo stato originale.  
   
--   utilizzo `store.InSerializationTransaction` per evitare apportare modifiche mentre il modello viene caricato dal file.  
+-   Utilizzare `store.InSerializationTransaction` per evitare di apportare modifiche, mentre il modello viene caricato dal file.  
   
--   Le modifiche causano l'aggiornamento di ulteriori eventi a essere attivate.  Assicurarsi di evitare un ciclo infinito.  
+-   Le modifiche provochino ulteriormente gli eventi deve essere attivata. Assicurarsi di evitare un ciclo infinito.  
   
-## Tipi di eventi dell'archivio  
- Ogni tipo di evento corrisponde a una raccolta in Store.EventManagerDirectory.  È possibile aggiungere o rimuovere i gestori eventi in qualsiasi momento, ma è solito aggiungerli quando il documento viene caricato.  
+## <a name="store-event-types"></a>Archiviare i tipi di evento  
+ Ogni tipo di evento corrisponde a una raccolta in Store.EventManagerDirectory. È possibile aggiungere o rimuovere i gestori eventi in qualsiasi momento, ma è normale per aggiungerle quando il documento viene caricato.  
   
-|`EventManagerDirectory` nome proprietà|eseguito quando|  
-|--------------------------------------------|---------------------|  
-|ElementAdded|Un'istanza di una classe di dominio, una relazione di dominio, una forma, un connettore o di un diagramma viene creata.|  
-|ElementDeleted|Un elemento del modello è stato rimosso dalla directory dell'elemento dell'archivio e non è più l'origine o la destinazione di una relazione.  L'elemento non viene eliminato dalla memoria, ma viene mantenuto nel caso di un'operazione di annullamento futura.|  
-|ElementEventsBegun|Richiamato alla fine di una transazione esterna.|  
-|ElementEventsEnded|richiamato quando tutti gli altri eventi sono stati elaborati.|  
-|ElementMoved|Un elemento del modello è stato spostato da una partizione dell'archivio a un altro.<br /><br /> Questa operazione non è correlata alla posizione di una forma sul diagramma.|  
-|ElementPropertyChanged|Il valore di una proprietà del dominio è stato modificato.  Questa operazione viene eseguita solo se i valori nuovi e precedenti sono diversi.|  
-|RolePlayerChanged|Uno dei due ruoli \(estremità\) di una relazione fa riferimento un nuovo elemento.|  
-|RolePlayerOrderChanged|In un ruolo con molteplicità maggiore di 1, la sequenza di plug\-in è stato modificato.|  
+|`EventManagerDirectory`Nome della proprietà|È stata eseguita quando|  
+|-------------------------------------------|-------------------|  
+|ElementAdded|Viene creata un'istanza di classe di dominio, relazione di dominio, forma, connettore o diagramma.|  
+|ElementDeleted|Un elemento del modello è stato rimosso dalla directory degli elementi dell'archivio e non è più l'origine o la destinazione di una relazione. L'elemento non viene eliminata dalla memoria, ma verrà mantenuto in caso di un annullamento future.|  
+|ElementEventsBegun|Chiamato alla fine di una transazione esterna.|  
+|ElementEventsEnded|Richiamato quando sono stati elaborati tutti gli altri eventi.|  
+|ElementMoved|Un elemento del modello è stato spostato dalla partizione di un archivio a un altro.<br /><br /> Non è correlato alla posizione di una forma nel diagramma.|  
+|ElementPropertyChanged|Il valore di una proprietà di dominio è stato modificato. Questa operazione venga eseguita solo se i valori nuovi e precedenti sono uguali.|  
+|RolePlayerChanged|Uno dei due ruoli (estremità) di una relazione fa riferimento a un nuovo elemento.|  
+|RolePlayerOrderChanged|In un ruolo con molteplicità maggiore di 1, è stata modificata la sequenza di collegamenti.|  
 |TransactionBeginning||  
 |TransactionCommitted||  
 |TransactionRolledBack||  
   
-## Vedere anche  
- [Risposta alle modifiche e propagazione delle modifiche](../modeling/responding-to-and-propagating-changes.md)   
- [codice di esempio: schemi circuitali](http://code.msdn.microsoft.com/Visualization-Modeling-SDK-763778e8)
+## <a name="see-also"></a>Vedere anche  
+ [Risponde a e la propagazione delle modifiche](../modeling/responding-to-and-propagating-changes.md)   
+ [Codice di esempio: diagrammi circuito](http://code.msdn.microsoft.com/Visualization-Modeling-SDK-763778e8)
+ 
+[!INCLUDE[modeling_sdk_info](includes/modeling_sdk_info.md)]
+ 

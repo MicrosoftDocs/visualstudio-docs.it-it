@@ -1,57 +1,59 @@
 ---
-title: "Funzione escape (JavaScript) | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/18/2017"
-ms.prod: "windows-client-threshold"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-javascript"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "escape"
-dev_langs: 
-  - "JavaScript"
-  - "TypeScript"
-  - "DHTML"
-helpviewer_keywords: 
-  - "codifica di oggetti String"
-  - "Escape (metodo)"
-  - "esadecimale"
-  - "String (object), codifica"
+title: Funzione escape (JavaScript) | Documenti Microsoft
+ms.custom: 
+ms.date: 01/18/2017
+ms.prod: windows-client-threshold
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-javascript
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords: escape
+dev_langs:
+- JavaScript
+- TypeScript
+- DHTML
+helpviewer_keywords:
+- encoding string objects
+- Escape method
+- hexadecimal
+- String object, encoding
 ms.assetid: caa92bea-ba69-4109-a68a-6e2debda463a
-caps.latest.revision: 11
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 11
+caps.latest.revision: "11"
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.openlocfilehash: b53a447ae6dde917c12a4711d9038136dc4500cf
+ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/27/2017
 ---
-# Funzione escape (JavaScript)
-Codifica le stringhe in modo che siano leggibili su tutti i computer.  Deprecato.  
+# <a name="escape-function-javascript"></a>Funzione escape (JavaScript)
+Codifica delle stringhe in modo che possano essere letti su tutti i computer. Deprecato.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
 escape(charString)   
 ```  
   
-## Note  
- L'argomento `charString` obbligatorio è un oggetto `String` o un valore letterale stringa da codificare.  
+## <a name="remarks"></a>Note  
+ Obbligatorio `charString` è qualsiasi valore `String` oggetto o un valore letterale da codificare.  
   
- La funzione **escape** restituisce un valore stringa in formato Unicode che include il contenuto di `charstring`.  Tutti gli spazi, i segni di punteggiatura, i caratteri accentati e qualsiasi altro carattere non ASCII vengono sostituiti con il formato di codifica `%`*xx*, dove *xx* equivale al numero esadecimale che rappresenta il carattere.  Uno spazio, ad esempio, viene restituito come "%20".  
+ Il **escape** funzione restituisce un valore stringa (in formato Unicode) che contiene il contenuto di `charstring`. Tutti gli spazi, segni di punteggiatura, i caratteri accentati e altri caratteri non ASCII vengono sostituiti con `%` *xx* codifica, in cui *xx* equivalente per il numero esadecimale che rappresenta il carattere. Ad esempio, uno spazio viene restituito come "% 20".  
   
- I caratteri con valore maggiore di 255 vengono archiviati nel formato **%u** *xxxx*.  
+ I caratteri con un valore maggiore di 255 vengono archiviati usando il **%u** *xxxx* formato.  
   
 > [!NOTE]
->  La funzione **escape** non deve essere utilizzata per codificare gli URI \(Uniform Resource Identifier\).  In alternativa, utilizzare le funzioni `encodeURI` e `encodeURIComponent`.  
+>  Il **escape** funzione non deve essere usata per codificare Uniform Resource Identifiers (URI). Utilizzare `encodeURI` e `encodeURIComponent` funzioni.  
   
- **Si applica a**: [Oggetto Global](../../javascript/reference/global-object-javascript.md)  
+ **Si applica a**: [oggetto globale](../../javascript/reference/global-object-javascript.md)  
   
-## Requisiti  
+## <a name="requirements"></a>Requisiti  
  [!INCLUDE[jsv1](../../javascript/misc/includes/jsv1-md.md)]  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Funzione encodeURI](../../javascript/reference/encodeuri-function-javascript.md)   
  [Funzione encodeURIComponent](../../javascript/reference/encodeuricomponent-function-javascript.md)   
  [Oggetto String](../../javascript/reference/string-object-javascript.md)   

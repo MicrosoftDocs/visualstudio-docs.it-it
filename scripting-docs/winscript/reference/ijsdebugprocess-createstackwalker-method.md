@@ -1,25 +1,29 @@
 ---
-title: "Metodo IJsDebugProcess::CreateStackWalker | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/18/2017"
-ms.prod: "windows-script-interfaces"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
+title: 'Metodo ijsdebugprocess:: Createstackwalker | Documenti Microsoft'
+ms.custom: 
+ms.date: 01/18/2017
+ms.prod: windows-script-interfaces
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: reference
 apiname: IJsDebugProcess.CreateStackWalker
 apilocation: jscript9diag.dll
 ms.assetid: 9d02e21d-7900-4942-8d17-cd04a2261463
-caps.latest.revision: 4
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.openlocfilehash: 66ca7594f4e3c6ef44aa8cde1d92f17d46a9aa30
+ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/27/2017
 ---
-# Metodo IJsDebugProcess::CreateStackWalker
-Metodo factory del percorso di chiamate nello stack.  
+# <a name="ijsdebugprocesscreatestackwalker-method"></a>Metodo IJsDebugProcess::CreateStackWalker
+Metodo factory per walker dello stack.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
 HRESULT CreateStackWalker(  
@@ -28,20 +32,20 @@ HRESULT CreateStackWalker(
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `threadId`  
- \[in\] ID di thread.  
+ [in] ID del thread.  
   
  `ppStackWalker`  
- \[out\] Nuovo oggetto del percorso chiamate dello stack.  
+ [out] Nuovo oggetto walker dello stack.  
   
-## Valore restituito  
+## <a name="return-value"></a>Valore restituito  
   
-## Note  
- Restituisce E\_JsDEBUG\_UNKNOWN\_THREAD se il thread non presenta codice JavaScript.  Questo metodo può essere chiamato solo all'interruzione del processo di destinazione.  
+## <a name="remarks"></a>Note  
+ Restituisce E_JsDEBUG_UNKNOWN_THREAD se il thread non dispone di JavaScript su di esso. Questo metodo può essere chiamato solo durante il processo di destinazione viene arrestato.  
   
-## Requisiti  
- **Intestazione:** jscript9diag.h  
+## <a name="requirements"></a>Requisiti  
+ **Intestazione:** jscript9diag  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Interfaccia IJsDebugProcess](../../winscript/reference/ijsdebugprocess-interface.md)

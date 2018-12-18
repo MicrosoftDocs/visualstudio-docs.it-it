@@ -1,27 +1,30 @@
 ---
-title: "IVariantChangeType::ChangeType | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/18/2017"
-ms.prod: "windows-script-interfaces"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
+title: IVariantChangeType::ChangeType | Documenti Microsoft
+ms.custom: 
+ms.date: 01/18/2017
+ms.prod: windows-script-interfaces
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: reference
 apiname: IVariantChangeType.ChangeType
 apilocation: scrobj.dll
-helpviewer_keywords: 
-  - "IVariantChangeType::ChangeType"
+helpviewer_keywords: IVariantChangeType::ChangeType
 ms.assetid: 52374764-c42e-49af-a219-ee00c535a118
-caps.latest.revision: 8
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.openlocfilehash: d742d1bd57c85aa75c9ccd60479d08c1a559fb37
+ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/27/2017
 ---
-# IVariantChangeType::ChangeType
-Accetta un valore variabile e crea un nuovo variant con un tipo specificato.  
+# <a name="ivariantchangetypechangetype"></a>IVariantChangeType::ChangeType
+Accetta un valore variant e crea una nuova variante con un tipo specificato.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
 HRESULT ChangeType(  
@@ -32,28 +35,28 @@ HRESULT ChangeType(
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `pvarDst`  
- \[in, out\] variante di Oggetto per contenere il valore rappresentato da `pvarSrc`, ma con il tipo specificato da `vtNew`.  
+ [in, out] Una variante di contenere il valore rappresentato da `pvarSrc`, ma con il tipo specificato dal `vtNew`.  
   
  `pvarSrc`  
- \[in\] valore variabile di Oggetto per convertire un nuovo tipo.  
+ [in] Un valore variant da modificare in un nuovo tipo.  
   
  `lcid`  
- \[in\] il contesto delle impostazioni locali da utilizzare quando convertono gli argomenti a o dalle stringhe.  
+ [in] Contesto delle impostazioni locali da utilizzare durante la conversione gli argomenti a o da stringhe.  
   
  `vtNew`  
- \[in\] specifica il tipo `pvarDst` diventino.  
+ [in] Specifica il tipo per `pvarDst` diventi.  
   
-## Valore restituito  
- Il metodo restituisce un tipo `HRESULT`.  I valori possibili sono, ma non sono limitati a, quelli nella tabella seguente.  
+## <a name="return-value"></a>Valore restituito  
+ Il metodo restituisce un tipo `HRESULT`. I valori possibili includono, ma non sono limitati a, quelli indicati nella tabella seguente.  
   
 |Valore|Descrizione|  
-|------------|-----------------|  
+|-----------|-----------------|  
 |`S_OK`|Il metodo è riuscito.|  
   
-## Note  
- Gli argomenti `pvarSrc` e `pvarDst` possono essere uguali, nel qual caso il valore originale viene sovrascritto.  Questo metodo passa `pvarDst` alla funzione `VariantClear` e di conseguenza `pvarDst` deve essere inizializzato su un valore valido.  
+## <a name="remarks"></a>Note  
+ Il `pvarDst` e `pvarSrc` argomenti possono essere uguali, nel qual caso il valore originale viene sovrascritto. Questo metodo passa `pvarDst` per il `VariantClear` funzione e di conseguenza `pvarDst` deve essere inizializzato su un valore valido.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Interfaccia IVariantChangeType](../../winscript/reference/ivariantchangetype-interface.md)

@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- vs-ide-sdk
+ms.technology: vs-ide-sdk
 ms.tgt_pltfrm: 
 ms.topic: article
 helpviewer_keywords:
@@ -13,32 +12,19 @@ helpviewer_keywords:
 - font and color control [Visual Studio SDK], categories
 - colors, accessing built-in schemes
 ms.assetid: 6905845e-e88e-4805-adcf-21da39108ec7
-caps.latest.revision: 23
+caps.latest.revision: "23"
+author: gregvanl
 ms.author: gregvanl
 manager: ghogen
-translation.priority.mt:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: ca7c86466fa23fb21a932f26dc24e37c71cf29b4
-ms.openlocfilehash: f646bb0a1606bd5944c945c5db89083fa265afbd
-ms.contentlocale: it-it
-ms.lasthandoff: 04/05/2017
-
+ms.workload: vssdk
+ms.openlocfilehash: c5d8af96857fa3e3c02ce8ea29711eaffbb532e9
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-access-the-built-in-fonts-and-color-scheme"></a>Procedura: accedere ai tipi di carattere incorporati e una combinazione di colori
-Ambiente di sviluppo integrato (IDE) di Visual Studio ha una combinazione di tipi di carattere e colori associata a una finestra dell'editor. È possibile accedere a questo schema tramite il <xref:Microsoft.VisualStudio.TextManager.Interop.IVsTextView>interfaccia.</xref:Microsoft.VisualStudio.TextManager.Interop.IVsTextView>  
+Ambiente di sviluppo integrato (IDE) di Visual Studio è una combinazione di tipi di carattere e colori associata a una finestra dell'editor. È possibile accedere a questo schema tramite il <xref:Microsoft.VisualStudio.TextManager.Interop.IVsTextView> interfaccia.  
   
  Per utilizzare lo schema di colori e i tipi di carattere incorporati, un pacchetto VSPackage deve:  
   
@@ -57,7 +43,7 @@ Ambiente di sviluppo integrato (IDE) di Visual Studio ha una combinazione di tip
      Questo GUID è utilizzato per identificare in modo univoco una categoria**.** Questa categoria riutilizza specifica di colori e tipi di carattere predefiniti dell'IDE.  
   
     > [!NOTE]
-    >  Durante il recupero di dati carattere e colori con il <xref:Microsoft.VisualStudio.Shell.Interop.IVsFontAndColorEvents>o altre interfacce, VSPackage utilizzano questo GUID per fare riferimento a informazioni predefinite.</xref:Microsoft.VisualStudio.Shell.Interop.IVsFontAndColorEvents>  
+    >  Durante il recupero di dati carattere e colori con il <xref:Microsoft.VisualStudio.Shell.Interop.IVsFontAndColorEvents> o altre interfacce, VSPackage utilizzano questo GUID per fare riferimento a informazioni predefinite.  
   
 2.  Nome della categoria deve essere aggiunto a una tabella di stringhe all'interno di file di risorse (RC) del pacchetto VSPackage, in modo che possa essere localizzata in base alle esigenze quando visualizzati nell'IDE di.  
   
@@ -73,12 +59,12 @@ Ambiente di sviluppo integrato (IDE) di Visual Studio ha una combinazione di tip
   
 2.  Popolare il Registro di sistema per l'utilizzo di tipi di carattere azionari e combinazione di colori con quattro valori:  
   
-    |Nome|Tipo|Dati|Descrizione|  
+    |nome|Tipo|Dati|Descrizione|  
     |----------|----------|----------|-----------------|  
-    |Categoria|REG_SZ|GUID|Un GUID arbitrario che identifica una categoria che contiene lo schema di carattere e colori predefinito.|  
+    |Category|REG_SZ|GUID|Un GUID arbitrario che identifica una categoria che contiene lo schema di carattere e colori predefinito.|  
     |Pacchetto|REG_SZ|GUID|{F5E7E71D-1401-11D1-883B-0000F87579D2}<br /><br /> Questo GUID è usato da tutti i pacchetti VSPackage che utilizzano le configurazioni predefinite di carattere e colori.|  
-    |Elemento NameID|REG_DWORD|ID|L'ID di risorsa di un nome di categoria localizzabile nel pacchetto VSPackage.|  
-    |ToolWindowPackage|REG_SZ|GUID|Il GUID del pacchetto VSPackage che implementa il <xref:Microsoft.VisualStudio.TextManager.Interop.IVsTextView>interfaccia.</xref:Microsoft.VisualStudio.TextManager.Interop.IVsTextView>|  
+    |Elemento NameID|REG_DWORD|Id|L'ID di risorsa di un nome di categoria localizzabile nel pacchetto VSPackage.|  
+    |ToolWindowPackage|REG_SZ|GUID|Il GUID del pacchetto VSPackage che implementa il <xref:Microsoft.VisualStudio.TextManager.Interop.IVsTextView> interfaccia.|  
   
 3.  
   
@@ -86,9 +72,9 @@ Ambiente di sviluppo integrato (IDE) di Visual Studio ha una combinazione di tip
   
 1.  Creare un'istanza di `T:Microsoft.VisualStudio.TextManager.Interop.IVsTextEditorPropertyCategoryContainer` interfaccia come parte dell'implementazione e l'inizializzazione della finestra.  
   
-2.  Chiamare il <xref:Microsoft.VisualStudio.TextManager.Interop.IVsTextEditorPropertyCategoryContainer.GetPropertyCategory%2A>per ottenere un'istanza di `T:Microsoft.VisualStudio.TextManager.Interop.IVsTextEditorPropertyContainer` interfaccia corrispondente all'oggetto corrente <xref:Microsoft.VisualStudio.TextManager.Interop.IVsTextView>istanza.</xref:Microsoft.VisualStudio.TextManager.Interop.IVsTextView> </xref:Microsoft.VisualStudio.TextManager.Interop.IVsTextEditorPropertyCategoryContainer.GetPropertyCategory%2A>  
+2.  Chiamare il <xref:Microsoft.VisualStudio.TextManager.Interop.IVsTextEditorPropertyCategoryContainer.GetPropertyCategory%2A> per ottenere un'istanza di `T:Microsoft.VisualStudio.TextManager.Interop.IVsTextEditorPropertyContainer` interfaccia corrispondente all'oggetto corrente <xref:Microsoft.VisualStudio.TextManager.Interop.IVsTextView> istanza.  
   
-3.  Chiamare <xref:Microsoft.VisualStudio.TextManager.Interop.IVsTextEditorPropertyContainer.SetProperty%2A>due volte.</xref:Microsoft.VisualStudio.TextManager.Interop.IVsTextEditorPropertyContainer.SetProperty%2A>  
+3.  Chiamare <xref:Microsoft.VisualStudio.TextManager.Interop.IVsTextEditorPropertyContainer.SetProperty%2A> due volte.  
   
     -   Chiamare una volta con `VSEDITPROPID_ViewGeneral_ColorCategory`come argomento.  
   

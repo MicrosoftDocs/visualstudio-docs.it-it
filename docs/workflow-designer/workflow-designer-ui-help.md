@@ -1,27 +1,32 @@
 ---
-title: "Guida dell&#39;interfaccia utente della finestra di progettazione dei flussi di lavoro | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-helpviewer_keywords: 
-  - "Progettazione flussi di lavoro di Visual Studio 2010 [WFD], guida dell'interfaccia utente"
-  - "Progettazione flussi di lavoro [WFD], guida dell'interfaccia utente"
+title: Guida all'interfaccia utente della finestra di progettazione del flusso di lavoro | Documenti Microsoft
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: reference
+helpviewer_keywords:
+- Visual Studio 2010 Workflow Designer [WFD], user interface help
+- Workflow Designer [WFD], user interface help
 ms.assetid: f7afc443-7c7f-4b0f-9517-c58070a640de
-caps.latest.revision: 5
-author: "ErikRe"
-ms.author: "erikre"
-manager: "erikre"
-caps.handback.revision: 5
+caps.latest.revision: "5"
+author: ErikRe
+ms.author: erikre
+manager: erikre
+ms.workload: multiple
+ms.openlocfilehash: fcaa711d1241056eff486e0984cf9326555b9eb2
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
-# Guida dell&#39;interfaccia utente della finestra di progettazione dei flussi di lavoro
-In questa sezione sono inclusi gli argomenti della Guida sensibile al contesto di [!INCLUDE[wfd1](../workflow-designer/includes/wfd1_md.md)].Durante l'utilizzo di [!INCLUDE[vs2010](../modeling/includes/vs2010_md.md)] è possibile accedere a tali argomenti dall'interfaccia utente premendo **F1** quando viene visualizzata una finestra di dialogo di [!INCLUDE[wfd2](../workflow-designer/includes/wfd2_md.md)].  
+# <a name="workflow-designer-ui-help"></a>Guida dell'interfaccia utente della finestra di progettazione dei flussi di lavoro
+Contenuto della sezione sono inclusi gli argomenti della Guida sensibile al contesto di [!INCLUDE[wfd1](../workflow-designer/includes/wfd1_md.md)]. Quando si utilizza [!INCLUDE[vs2010](../misc/includes/vs2010_md.md)], è possibile accedere a questi argomenti dall'interfaccia utente premendo **F1** quando un [!INCLUDE[wfd2](../workflow-designer/includes/wfd2_md.md)] la finestra di dialogo è aperta.  
   
  Nella sezione sono inoltre contenuti diversi argomenti relativi alla navigazione e ai messaggi di errore.  
   
-## In questa sezione  
+## <a name="in-this-section"></a>In questa sezione  
  [Finestra di dialogo Cerca e seleziona un tipo .NET](../workflow-designer/browse-and-select-a-dotnet-type-dialog-box.md)  
   
  [Finestra di dialogo Definizione di CorrelatesOn](../workflow-designer/correlateson-definition-dialog-box.md)  
@@ -38,7 +43,7 @@ In questa sezione sono inclusi gli argomenti della Guida sensibile al contesto d
   
  [Scheda System.Activities, finestra di dialogo Scegli elementi della Casella degli strumenti](../workflow-designer/system-activities-tab-choose-toolbox-items-dialog-box.md)  
   
- [Caratteristiche della shell di Progettazione flussi di lavoro](../workflow-designer/workflow-designer-shell-features.md)  
+ [Funzionalità della shell di Progettazione flussi di lavoro](../workflow-designer/workflow-designer-shell-features.md)  
   
  [Tasti di scelta rapida](../workflow-designer/keyboard-shortcuts-in-the-workflow-designer.md)  
   

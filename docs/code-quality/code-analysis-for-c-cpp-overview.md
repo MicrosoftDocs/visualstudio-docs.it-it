@@ -1,55 +1,64 @@
 ---
-title: "Cenni preliminari sull&#39;analisi del codice per C/C++ | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/15/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-devops-test"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "#pragma (direttive), analisi codice"
-  - "annotazioni, analisi codice"
-  - "integrazione compilazione, analisi codice"
-  - "C, analisi codice"
-  - "analisi del codice C/C++"
-  - "C++, analisi codice"
-  - "criteri di archiviazione, analisi codice"
-  - "strumento di analisi del codice"
-  - "analisi codice, C/C++"
-  - "riga di comando, analisi codice"
-  - "IDE, analisi codice"
-  - "pragma (direttiva), analisi codice"
+title: Analisi del codice per C/C++ Panoramica | Documenti Microsoft
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- vs-ide-code-analysis
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- annotations, code analysis
+- build integration, code analysis
+- C/C++ code analysis
+- IDE, code analysis
+- pragma directive, code analysis
+- code analysis, C/C++
+- code analysis tool
+- command line, code analysis
+- C++, code analysis
+- check-in policies, code analysis
+- '#pragma directives, code analysis'
+- C, code analysis
 ms.assetid: 81f0c9e8-f471-4de5-aac4-99db336a8809
-caps.latest.revision: 25
-caps.handback.revision: 25
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
+caps.latest.revision: 
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload:
+- cplusplus
+ms.openlocfilehash: 2261921e4266f1b58ed31650ac1ff1bb7c028942
+ms.sourcegitcommit: d6327b978661c0a745bf4b59f32d8171607803a3
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 02/01/2018
 ---
-# Cenni preliminari sull&#39;analisi del codice per C/C++
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
+# <a name="code-analysis-for-cc-overview"></a>Analisi del codice per C/C++ overview
 
-Lo strumento di analisi del codice C\/C\+\+ fornisce informazioni destinate agli sviluppatori sui possibili errori nel codice sorgente C\/C\+\+.  Gli errori di codifica più comuni segnalati dallo strumento includono i sovraccarichi del buffer, l'annullamento dell'inizializzazione della memoria, le dereferenziazioni al puntatore null e le perdite di memoria e risorse.  
+Lo strumento di analisi del codice C/C++ fornisce agli sviluppatori informazioni sui possibili errori nel codice sorgente C/C++. Gli errori di codifica più comuni segnalati dallo strumento includono i sovraccarichi del buffer, la memoria non inizializzata, dereferenziazioni al puntatore null e perdite di memoria e risorse.  
   
-## Integrazione nell'IDE \(Integrated Development Environment\)  
- Per semplificarne l'utilizzo da parte degli sviluppatori, lo strumento di analisi è stato completamente integrato nell'IDE di [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)].  Durante il processo di compilazione, tutti gli avvisi generati dal codice sorgente vengono visualizzati nella finestra Elenco errori.  È possibile passare al codice sorgente che ha attivato l'avviso e visualizzare informazioni aggiuntive sulla causa e sulle possibili soluzioni al problema.  
+## <a name="ide-integrated-development-environment-integration"></a>Integrazione nell'IDE (Integrated Development Environment)  
+ Per rendere più naturale per gli sviluppatori di utilizzare lo strumento di analisi, è completamente integrato all'interno di [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] IDE. Durante il processo di compilazione, tutti gli avvisi generati per il codice sorgente vengono visualizzati nell'elenco errori. È possibile passare al codice sorgente che ha provocato l'avviso e, è possibile visualizzare informazioni aggiuntive sulla causa e possibili soluzioni del problema.  
   
-## Supporto della direttiva \#pragma  
- Gli sviluppatori possono utilizzare la direttiva `#pragma` per considerare gli avvisi come errori. Abilitarli o disabilitarli ed eliminare gli avvisi per singole righe di codice.  Per ulteriori informazioni, vedere [How to: Enable and Disable Code Analysis for Specific C\/C\+\+ Warnings](http://msdn.microsoft.com/it-it/910b8518-71f1-4b2e-b012-70647795642a).  
+## <a name="pragma-support"></a>supporto #pragma  
+ Gli sviluppatori possono utilizzare il `#pragma` direttiva per considerarli come errori; abilitare o disabilitare gli avvisi e l'esclusione di avvisi per singole righe di codice. Per ulteriori informazioni, vedere [procedura: impostare le proprietà di analisi codice per progetti C/C++ ](how-to-set-code-analysis-properties-for-c-cpp-projects.md).  
   
-## Supporto dell'annotazione  
- Le annotazioni migliorano la precisione dell'analisi del codice e  forniscono ulteriori informazioni sulle condizioni Pre e Post sui parametri di funzione e sui tipi restituiti.  Per ulteriori informazioni, vedere [Procedura: specificare informazioni aggiuntive sul codice utilizzando \_\_analysis\_assume](../code-quality/how-to-specify-additional-code-information-by-using-analysis-assume.md).  
+## <a name="annotation-support"></a>Supporto delle annotazioni  
+ Annotazioni migliorano l'accuratezza dell'analisi del codice. Annotazioni informazioni aggiuntive sul pre e post-condizioni nei parametri di funzione e tipi restituiscono. Per ulteriori informazioni, vedere [procedura: specificare informazioni aggiuntive di codice utilizzando analysis_assume](../code-quality/how-to-specify-additional-code-information-by-using-analysis-assume.md)  
   
-## Eseguire lo strumento di analisi del codice come parte dei criteri di archiviazione  
- È possibile richiedere che tutte le archiviazioni di codice sorgente soddisfino determinati criteri.  In particolare, si desidera assicurarsi che l'analisi sia stata eseguita nell'ambito della build locale più recente.  Per ulteriori informazioni sull'abilitazione dei criteri di archiviazione dell'analisi codice, vedere [Creazione e utilizzo di criteri di archiviazione di analisi codice](../code-quality/creating-and-using-code-analysis-check-in-policies.md).  
+## <a name="run-analysis-tool-as-part-of-check-in-policy"></a>Eseguire lo strumento di analisi come parte di criteri di archiviazione  
+ Si potrebbe voler richiedono che tutte le origine codice archiviazioni soddisfino determinati criteri. In particolare, si desidera assicurarsi che l'analisi è stata eseguita come un passaggio di compilazione locale più recente. Per ulteriori informazioni sull'abilitazione di criteri di controllo dell'analisi codice, vedere [creazione e utilizzo Check-In Criteri di analisi codice](../code-quality/creating-and-using-code-analysis-check-in-policies.md)  
   
-## Integrazione di Team Build  
- È possibile utilizzare le funzionalità integrate del sistema di compilazione per eseguire lo strumento di analisi del codice nell'ambito del processo di compilazione di [!INCLUDE[esprtfs](../code-quality/includes/esprtfs_md.md)].  Per ulteriori informazioni, vedere [Compilare l'applicazione](../Topic/Build%20the%20application.md).  
+## <a name="team-build-integration"></a>Integrazione di Team Build  
+ È possibile utilizzare le funzionalità integrate del sistema di compilazione per eseguire lo strumento di analisi codice come il [!INCLUDE[esprtfs](../code-quality/includes/esprtfs_md.md)] processo di compilazione. Per altre informazioni, vedere [Compilazione e versione](/vsts/build-release/index).  
   
-## Supporto dalla riga di comando.  
- Oltre all'integrazione completa all'interno dell'ambiente di sviluppo, gli sviluppatori possono utilizzare anche lo strumento di analisi dalla riga di comando, come illustrato nell'esempio seguente:  
+## <a name="command-line-support"></a>Supporto della riga di comando  
+ Oltre all'integrazione completa nell'ambiente di sviluppo, gli sviluppatori possono utilizzare lo strumento di analisi dalla riga di comando, come illustrato nell'esempio seguente:  
   
  `C:\>cl /analyze Sample.cpp`
+
+## <a name="see-also"></a>Vedere anche
+
+[Analisi della qualità del Driver tramite gli strumenti di analisi codice](/windows-hardware/drivers/develop/analyzing-driver-quality-by-using-code-analysis-tools)  
+[Analisi del codice per gli avvisi di driver](/windows-hardware/drivers/devtest/prefast-for-drivers-warnings)

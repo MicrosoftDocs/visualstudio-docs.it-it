@@ -1,58 +1,59 @@
 ---
-title: "Utilizzo di risorse tridimensionali per giochi e app | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-general"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "vs.graphics"
+title: Utilizzo di risorse 3D per giochi e app | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: vs-ide-designers
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: vs.graphics
 ms.assetid: 910d673b-c884-4eeb-9928-0e89f3d38cb6
-caps.latest.revision: 24
-author: "BrianPeek"
-ms.author: "brpeek"
-manager: "ghogen"
-caps.handback.revision: 24
+caps.latest.revision: "24"
+author: gewarren
+ms.author: gewarren
+manager: ghogen
+ms.workload: multiple
+ms.openlocfilehash: a4b0cc6e7105f91a4192d2c079854c8953736eaf
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
-# Utilizzo di risorse tridimensionali per giochi e app
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
-In questo documento vengono descritti gli strumenti di [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] che è possibile utilizzare per creare o modificare modelli 3D, trame e shader per i giochi e le app basati su DirectX.  
+# <a name="working-with-3-d-assets-for-games-and-apps"></a>Utilizzo di risorse tridimensionali per giochi e app
+Questo documento descrive gli strumenti di [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] che è possibile usare per creare o modificare modelli 3D, trame e shader per app e giochi DirectX.  
   
-## Sviluppo dell'applicazione DirectX in Visual Studio  
- Un'applicazione DirectX in genere combina la logica di programma, l'API DirectX e i programmi HLSL insieme agli asset audio e visivi tridimensionali per presentare un'esperienza multimediale interattiva e complessa.  [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] include gli strumenti da utilizzare con immagini e trame, modelli 3D e shader senza lasciare che venga utilizzato un altro strumento dall'IDE.  Gli strumenti di Visual Studio sono particolarmente adatti per creare risorse *segnaposto*, che possono essere utilizzate per eseguire i test sul codice o sui prototipi di build prima di incaricare le risorse pronte alla produzione e per verificare e modificare le risorse pronte alla produzione durante il debug dell'app.  
+## <a name="directx-app-development-in-visual-studio"></a>Sviluppo di app DirectX in Visual Studio  
+ In genere un'app DirectX unisce logica di programmazione, API DirectX e i programmi HLSL (High Level Shading Language) ad audio e risorse visive 3D per offrire un'esperienza multimediale dettagliata e interattiva.[!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] include strumenti utili per lavorare con immagini, trame, modelli 3D e shader senza uscire dall'IDE per usare un altro strumento. Gli strumenti di Visual Studio sono particolarmente adatti per creare risorse *segnaposto* che è possibile usare per testare codice o creare prototipi prima di commissionare le risorse pronte per la produzione e per analizzare e modificare le risorse pronte per la produzione quando si esegue il debug dell'app.  
   
- Di seguito vengono riportate maggiori informazioni sui tipi di asset che è possibile utilizzare in [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)].  
+ Di seguito altre informazioni sui tipi di risorse che è possibile usare in [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)].  
   
-### Immagini e trame  
- Immagini e trame forniscono il colore e il dettaglio visivo in giochi e app.  Nella grafica tridimensionale, le trame sono disponibili in diversi formati, tipi e geometrie per supportare utilizzi diversi.  Ad esempio, i mapping normali forniscono normali alla superficie per pixel per un'illuminazione più dettagliata dei modelli tridimensionali e i mapping del cubo forniscono la trama in tutte le direzioni per utilizzi come lo sky\-boxing, la reflection e il mapping a trama sferica.  Le trame possono produrre mappe MIP per supportare il rendering efficiente a livelli di dettaglio diversi e può supportare canali di colore e ordinamenti di colore diversi.  Le trame possono essere archiviate in diversi formati compressi che occupano meno memoria grafica dedicata e consentono alle GPU di accedere alle trame in modo più efficiente.  
+### <a name="images-and-textures"></a>Immagini e trame  
+ Le immagini e le trame definiscono colore e dettagli visivi in giochi e app. Nella grafica 3D esistono trame di vari formati, tipi e geometrie per supportare diversi usi. Ad esempio, le mappe comuni offrono normali alla superficie per ogni pixel per un'illuminazione più dettagliata dei modelli 3D mentre le mappe cubo offrono trama in tutte le direzioni per usi quali sky boxing, riflessi e mapping di trama sferica. Le trame offrono mappe MIP per supportare un rendering efficiente a livelli di dettaglio diversi e possono supportare canali e ordinamenti di colore diversi. Le trame possono essere archiviate in vari formati compressi che occupano meno memoria grafica dedicata e consentono alle GPU di accedere alle trame in modo più efficiente.  
   
- È possibile utilizzare l'editor di immagini [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] utilizzare le immagini e le trame in molti tipi e formati comuni.  
+ È possibile usare l'Editor immagini di [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] per lavorare con immagini e trame nei numerosi tipi e formati comuni.  
   
-### Modelli 3D  
- I modelli tridimensionali creano lo spazio e la forma nei giochi e nelle applicazioni.  Come minimo, nei modelli viene codificata la posizione dei punti nello spazio 3D, noti come *vertici*, insieme ai dati di indicizzazione per definire le righe o i triangoli che rappresentano la forma del modello.  È possibile associare i dati aggiuntivi a tali vertici \(ad esempio le informazioni sui colori, i vettori delle normali, o gli attributi specifici dell'applicazione\).  Ogni modello può inoltre definire gli attributi a livello di oggetto \(ad esempio, quale shader viene utilizzato per calcolare l'aspetto della superficie dell'oggetto, o che trama è applicata\).  
+### <a name="3-d-models"></a>3D (modelli)  
+ I modelli 3D creano spazio e forma in giochi e app. I modelli codificano la posizione dei punti nello spazio 3D, noti come *vertici*, insieme all'indicizzazione dati, per definire linee o triangoli che rappresentano la forma del modello. A questi vertici è possibile aggiungere dati aggiuntivi, ad esempio informazioni sul colore, vettori normali o attributi specifici dell'applicazione. Ogni modello può anche definire attributi a livello di oggetto, ad esempio quali shader usare per definire l'aspetto dell'area dell'oggetto o quale trama applicare.  
   
- È possibile utilizzare l'editor di modelli [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] per utilizzare i modelli 3D in diversi formati comuni.  
+ È possibile usare l'Editor modello di [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] per lavorare con modelli 3D in diversi formati comuni.  
   
-### Shader  
- Gli shader sono piccoli programmi specifici di dominio eseguiti nella GPU.  Gli shader determinano quali modelli tridimensionali vengono trasformati nelle forme sullo schermo e come ogni pixel in quelli forme è colorato.  Creando uno shader e applicandolo a un oggetto nel gioco o nell'applicazione, è possibile assegnare all'oggetto un aspetto univoco.  
+### <a name="shaders"></a>Shader  
+ Gli shader sono piccoli programmi specifici di dominio che vengono eseguiti nell'unità di elaborazione grafica (GPU). Gli shader determinano quali modelli 3D vengono trasformati in forme su schermo e in che modo viene colorato ogni pixel contenuto in queste forme. Creando e applicando uno shader a un oggetto nel gioco o nell'app, è possibile assegnare all'oggetto un aspetto univoco.  
   
- È possibile utilizzare la finestra di progettazione di shader [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)], che è uno strumento di progettazione basato su grafico di shader, per creare effetti visivi personalizzati senza conoscere la programmazione di HLSL.  
+ È possibile usare la finestra di progettazione shader di [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)], ovvero uno strumento di progettazione shader basato su grafico, per creare effetti visivi personalizzati senza conoscere la programmazione HLSL.  
   
 > [!NOTE]
->  Per ulteriori informazioni su come iniziare a programmare con le DirectX, vedere [DirectX](http://go.microsoft.com/fwlink/p/?LinkId=224633).  Per ulteriori informazioni sul debug di un'applicazione basata su DirectX, vedere [Diagnostica grafica \(Debug grafica DirectX\)](../debugger/visual-studio-graphics-diagnostics.md).  
+>  Per altre informazioni su come iniziare la programmazione DirectX, vedere [DirectX](http://go.microsoft.com/fwlink/p/?LinkId=224633). Per altre informazioni su come eseguire il debug di un'app DirectX, vedere [Diagnostica della grafica (Debug grafica DirectX)](../debugger/visual-studio-graphics-diagnostics.md).  
   
-## Compatibilità tra versioni DirectX  
- [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] utilizza DirectX per eseguire il rendering delle risorse 2D e 3D.  È possibile selezionare il renderer di DirectX 11 o il renderer di software WARP.  Il renderer di DirectX 11 offre un rendering a elevate prestazioni e con accelerazione hardware nelle GPU DirectX 11 e DirectX 10.  Il renderer WARP consente di assicurarsi che le risorse funzionino con un'ampia gamma di computer, inclusi quelli che non sono dotati di hardware moderno per la grafica e quelli che sono dotati di hardware per la grafica integrato.  Per ulteriori informazioni su WARP, vedere la pagina relativa alla [Guida per la piattaforma avanzata \(WARP\) di Rasterizzazione](http://go.microsoft.com/fwlink/p/?LinkId=224634).  
+## <a name="directx-version-compatibility"></a>Compatibilità tra versioni DirectX  
+ [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] usa DirectX per eseguire il rendering di risorse 2D e 3D. È possibile selezionare il renderer di DirectX 11 o il renderer software di WARP (Windows Advanced Rasterization Platform). Il renderer di DirectX 11 offre un rendering a prestazioni elevate e con accelerazione hardware in GPU DirectX 11 e DirectX 10. Il renderer WARP consente di verificare se le risorse usano un'ampia gamma di computer, tra cui computer senza hardware grafico moderno e computer con hardware grafico integrato. Per altre informazioni su WARP, vedere [Windows Advanced Rasterization Platform (WARP) Guide](http://go.microsoft.com/fwlink/p/?LinkId=224634) (Guida per Windows Advanced Rasterization Platform).  
   
-## Argomenti correlati  
+## <a name="related-topics"></a>Argomenti correlati  
   
 |Titolo|Descrizione|  
-|------------|-----------------|  
-|[Uso di trame e immagini](../designers/working-with-textures-and-images.md)|Viene descritto come utilizzare [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] per utilizzare le immagini e le trame.|  
-|[Utilizzo dei modelli tridimensionali](../designers/working-with-3-d-models.md)|Viene descritto come utilizzare [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] per utilizzare i modelli tridimensionali.|  
-|[Utilizzo degli shader](../designers/working-with-shaders.md)|Viene descritto come utilizzare la finestra di Progettazione shader di [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] per la creazione e la modifica degli effetto dello shader personalizzati.|  
-|[Utilizzo delle risorse tridimensionali nel gioco o nell'app](../designers/using-3-d-assets-in-your-game-or-app.md)|Viene descritto come utilizzare le risorse create tramite l'editor immagini, l'editor di modello, o la finestra di progettazione shader nel gioco o nell'applicazione.|
+|-----------|-----------------|  
+|[Uso di trame e immagini](../designers/working-with-textures-and-images.md)|Viene descritto come usare [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] per lavorare con immagini e texture.|  
+|[Uso dei modelli tridimensionali](../designers/working-with-3-d-models.md)|Viene descritto come usare [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] per lavorare con modelli 3D.|  
+|[Uso degli shader](../designers/working-with-shaders.md)|Viene descritto come usare la finestra di progettazione shader di [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] per creare e modificare gli effetti di shader personalizzati.|  
+|[Uso delle risorse tridimensionali nel gioco o nell'app](../designers/using-3-d-assets-in-your-game-or-app.md)|Viene descritto come usare le risorse, quali risorse sono state create con l'Editor immagini, l'Editor modello o la finestra di progettazione shader nel gioco o nell'app.|

@@ -1,61 +1,61 @@
 ---
-title: "DiaAddressMapEntry | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "DiaAddressMapEntry (enumerazione)"
+title: DiaAddressMapEntry | Documenti Microsoft
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: vs-ide-debug
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords: DiaAddressMapEntry enumeration
 ms.assetid: 5d0ae226-981d-4541-a801-fc4993fe663b
-caps.latest.revision: 9
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.workload: multiple
+ms.openlocfilehash: 2d6886ed55fbe8c48beabf81144a9551efa1a562
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
-# DiaAddressMapEntry
-[!INCLUDE[vs2017banner](../../code-quality/includes/vs2017banner.md)]
-
-Viene descritta una voce in una mappa di indirizzo.  
+# <a name="diaaddressmapentry"></a>DiaAddressMapEntry
+Descrive una voce nella mappa di un indirizzo.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp#  
-struct DiaAddressMapEntry {   
-   DWORD rva,  
-   DWORD rvaTo  
+```C++  
+struct DiaAddressMapEntry {   
+   DWORD rva,  
+   DWORD rvaTo  
 };  
 ```  
   
-## Elementi  
+## <a name="elements"></a>Elementi  
  `rva`  
- Un indirizzo virtuale dell'\(RVA\) immagine A.  
+ Un indirizzo virtuale relativo (RVA) nell'immagine A.  
   
  `rvaTo`  
- Indirizzo virtuale relativo `rva` viene eseguito il mapping nell'immagine B.  
+ L'indirizzo virtuale relativo `rva` viene mappato a nell'immagine B.  
   
-## Note  
- Un mapping di indirizzo fornisce una conversione da un layout dell'immagine \(\) a un altro \(B\).  una matrice di `DiaAddressMapEntry` strutture ordinate da  `rva` definisce un mapping address.  
+## <a name="remarks"></a>Note  
+ Mappa di un indirizzo fornisce una conversione dal layout di un'immagine (A) a un altro (B). Matrice di `DiaAddressMapEntry` strutture ordinate `rva` definisce un mapping di indirizzi.  
   
- Per convertire un indirizzo, `addrA`, nell'immagine A un indirizzo,  `addrB`nell'immagine, B, effettuare i passaggi seguenti:  
+ Per convertire un indirizzo, `addrA`, nell'immagine A un indirizzo, `addrB`, nell'immagine B, eseguire la procedura seguente:  
   
-1.  Trovare il mapping della voce, `e`, al massimo  `rva` minore o uguale a  `addrA`.  
+1.  Cercare la mappa per la voce, `e`, con il valore massimo `rva` minore o uguale a `addrA`.  
   
-2.  set `delta = addrA – e.rva`.  
+2.  Set `delta = addrA - e.rva`.  
   
-3.  set `addrB = e.rvaTo + delta`.  
+3.  Set `addrB = e.rvaTo + delta`.  
   
- una matrice di `DiaAddressMapEntry` le strutture viene passata a  [IDiaAddressMap::set\_addressMap](../../debugger/debug-interface-access/idiaaddressmap-set-addressmap.md) metodo.  
+ Matrice di `DiaAddressMapEntry` strutture viene passato per il [idiaaddressmap:: Set_addressmap](../../debugger/debug-interface-access/idiaaddressmap-set-addressmap.md) metodo.  
   
-## Requisiti  
- intestazione: dia2.h  
+## <a name="requirements"></a>Requisiti  
+ Intestazione: dia2.h  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Enumerazioni e strutture](../../debugger/debug-interface-access/enumerations-and-structures.md)   
- [IDiaAddressMap::set\_addressMap](../../debugger/debug-interface-access/idiaaddressmap-set-addressmap.md)
+ [IDiaAddressMap::set_addressMap](../../debugger/debug-interface-access/idiaaddressmap-set-addressmap.md)

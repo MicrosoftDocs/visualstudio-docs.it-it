@@ -1,31 +1,32 @@
 ---
-title: "Funzione SccDirQueryInfo | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "SccDirQueryInfo"
-helpviewer_keywords: 
-  - "Funzione SccDirQueryInfo"
+title: Funzione SccDirQueryInfo | Documenti Microsoft
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: vs-ide-sdk
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: SccDirQueryInfo
+helpviewer_keywords: SccDirQueryInfo function
 ms.assetid: 459e2d99-573d-47c4-b834-6d82c5e14162
-caps.latest.revision: 14
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 14
+caps.latest.revision: "14"
+author: gregvanl
+ms.author: gregvanl
+manager: ghogen
+ms.workload: vssdk
+ms.openlocfilehash: c7a930c0fcdffbc76bba431012d76dd6d13686d0
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
-# Funzione SccDirQueryInfo
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
+# <a name="sccdirqueryinfo-function"></a>SccDirQueryInfo (funzione)
 Questa funzione esamina un elenco di directory completo per il relativo stato corrente.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp#  
+```cpp  
 SCCRTN SccDirQueryInfo(  
 LPVOID  pContext,  
 LONG    nDirs,  
@@ -34,37 +35,37 @@ LPLONG  lpStatus
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  pContext  
- \[in\] La struttura di contesto plug\-in del controllo di origine.  
+ [in] La struttura di contesto plug-in controllo di origine.  
   
  nDirs  
- \[in\] Il numero di directory selezionato deve essere sottoposto a query.  
+ [in] Il numero di directory selezionato deve essere sottoposto a query.  
   
  lpDirNames  
- \[in\] Matrice di percorsi completi delle directory in cui eseguire la query.  
+ [in] Matrice di percorsi completi delle directory in cui eseguire la query.  
   
  lpStatus  
- \[in, out\] Una struttura di matrice per il controllo del codice sorgente del plug\-in per restituire i flag di stato \(vedere [Codice di stato di directory](../extensibility/directory-status-code-enumerator.md) per informazioni dettagliate\).  
+ [in, out] Una struttura di matrice per il plug-in per restituire i flag di stato del controllo del codice sorgente (vedere [codice di stato Directory](../extensibility/directory-status-code-enumerator.md) per informazioni dettagliate).  
   
-## Valore restituito  
- Implementazione di plug\-in controllo dell'origine di questa funzione deve restituire uno dei valori seguenti:  
+## <a name="return-value"></a>Valore restituito  
+ Implementazione di plug-in controllo dell'origine di questa funzione deve restituire uno dei valori seguenti:  
   
 |Valore|Descrizione|  
-|------------|-----------------|  
-|SCC\_OK|La query è riuscita.|  
-|SCC\_E\_OPNOTSUPPORTED|Il sistema di controllo del codice sorgente non supporta questa operazione.|  
-|SCC\_E\_ACCESSFAILURE|Si è verificato un problema di accesso di sistema di controllo di origine, probabilmente a causa di problemi di contesa o di rete. È consigliabile un nuovo tentativo.|  
-|SCC\_E\_NONSPECIFICERROR<br /><br /> SCC\_E\_UNKNOWNERROR|Errore non specificato.|  
+|-----------|-----------------|  
+|SCC_OK|La query è riuscita.|  
+|SCC_E_OPNOTSUPPORTED|Il sistema di controllo del codice sorgente non supporta questa operazione.|  
+|SCC_E_ACCESSFAILURE|Si è verificato un problema di accesso di sistema di controllo di origine, probabilmente a causa di problemi di contesa o di rete. È consigliabile un nuovo tentativo.|  
+|SCC_E_NONSPECIFICERROR<br /><br /> SCC_E_UNKNOWNERROR|Errore non specifico.|  
   
-## Note  
- La funzione riempie la matrice restituita con una maschera di bit dal `SCC_DIRSTATUS` famiglia \(vedere [Codice di stato di directory](../extensibility/directory-status-code-enumerator.md)\), una voce per ogni directory specificata. La matrice di stato viene allocata dal chiamante.  
+## <a name="remarks"></a>Note  
+ La funzione riempie la matrice restituita con maschera di bit di bit dal `SCC_DIRSTATUS` famiglia (vedere [codice di stato Directory](../extensibility/directory-status-code-enumerator.md)), una voce per ogni directory specificata. Matrice di stato viene allocata dal chiamante.  
   
- L'IDE utilizza questa funzione prima di una directory viene rinominata per verificare la directory di controllo del codice sorgente eseguendo una query se dispone di un progetto corrispondente. Se la directory non è incluso nel controllo del codice sorgente, l'IDE fornirà l'avviso appropriato all'utente.  
+ Prima di una directory viene rinominata per verificare la directory di controllo del codice sorgente eseguendo una query se dispone di un progetto corrispondente, l'IDE Usa questa funzione. Se la directory non è incluso nel controllo del codice sorgente, l'IDE è possibile fornire l'avviso corretto all'utente.  
   
 > [!NOTE]
->  Se un plug\-in del controllo del codice sorgente sceglie di non implementare uno o più dei valori di stato, non è implementata bit deve essere impostato su zero.  
+>  Se un plug-in controllo del codice sorgente sceglie di non implementare una o più dei valori di stato, bit non implementata devono essere impostati su zero.  
   
-## Vedere anche  
- [Funzioni API plug\-in del controllo sorgente](../extensibility/source-control-plug-in-api-functions.md)   
+## <a name="see-also"></a>Vedere anche  
+ [Funzioni API plug-in controllo di origine](../extensibility/source-control-plug-in-api-functions.md)   
  [Codice di stato di directory](../extensibility/directory-status-code-enumerator.md)

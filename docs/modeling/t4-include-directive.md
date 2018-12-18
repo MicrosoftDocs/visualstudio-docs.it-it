@@ -1,24 +1,26 @@
 ---
-title: "T4 Include Directive | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 8c3de9f3-755a-47c5-a30a-65717dcaaac2
-caps.latest.revision: 6
-author: "alancameronwills"
-ms.author: "awills"
-manager: "douge"
-caps.handback.revision: 6
+title: T4 Direttiva Include | Documenti Microsoft
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.topic: article
+author: gewarren
+ms.author: gewarren
+manager: ghogen
+ms.workload:
+- multiple
+ms.technology: vs-ide-modeling
+ms.openlocfilehash: 0de398b381cd1e45ff43b3eb1df79c9becd829c4
+ms.sourcegitcommit: 205d15f4558315e585c67f33d5335d5b41d0fcea
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 02/09/2018
 ---
-# T4 Include Directive
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
-In un modello di testo di [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)], è possibile includere testo da un altro file tramite una direttiva `<#@include#>`.  È possibile inserire le direttive `include` ovunque all'interno di un modello di testo prima del primo blocco della funzionalità di classe `<#+ ... #>`.  I file inclusi possono contenere anche direttive `include` e altre direttive.  Questo consente all'utente di condividere un codice del modello e un boilerplate tra modelli.  
+# <a name="t4-include-directive"></a>Direttiva include T4
+In un modello di testo di [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)], è possibile includere testo da un altro file tramite una direttiva `<#@include#>`. È possibile inserire le direttive `include` ovunque all'interno di un modello di testo prima del primo blocco della funzionalità di classe `<#+ ... #>`. I file inclusi possono contenere anche direttive `include` e altre direttive. Questo consente all'utente di condividere un codice del modello e un boilerplate tra modelli.  
   
-## Utilizzo delle direttive Include  
+## <a name="using-include-directives"></a>Utilizzo delle direttive Include  
   
 ```  
 <#@ include file="filePath" [once="true"] #>  
@@ -26,11 +28,11 @@ In un modello di testo di [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.m
   
 -   `filePath` possono essere assoluti o relativi al file modello corrente.  
   
-     Inoltre, le estensioni specifiche di [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] possono specificare le proprie directory per cercare i file di inclusione.  Ad esempio, una volta installato l'SDK di visualizzazione e modellazione \(Strumenti DSL\), la seguente cartella viene aggiunta all'elenco di inclusione: `Program Files\Microsoft Visual Studio 10.0\Common7\IDE\Extensions\Microsoft\DSL SDK\DSL Designer\11.0\TextTemplates`.  
+     Inoltre, le estensioni specifiche di [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] possono specificare le proprie directory per cercare i file di inclusione. Ad esempio, dopo aver installato il SDK di visualizzazione e modellazione (strumenti DSL), la cartella seguente viene aggiunto all'elenco di inclusione: `Program Files\Microsoft Visual Studio 10.0\Common7\IDE\Extensions\Microsoft\DSL SDK\DSL Designer\11.0\TextTemplates`.  
   
-     Queste cartelle di inclusione aggiuntive potrebbero dipendere dall'estensione del file incluso.  Ad esempio, la cartella di inclusione di Strumenti DSL è accessibile soltanto ai file inclusi con l'estensione `.tt`  
+     Queste cartelle di inclusione aggiuntive potrebbero dipendere dall'estensione del file incluso. Ad esempio, la cartella di inclusione di Strumenti DSL è accessibile soltanto ai file inclusi con l'estensione `.tt`  
   
--   `filePath` può includere le variabili di ambiente delimitate da "%".  Ad esempio:  
+-   `filePath` può includere le variabili di ambiente delimitate da "%". Ad esempio:  
   
     ```  
     <#@ include file="%HOMEPATH%\MyIncludeFile.t4" #>  
@@ -38,15 +40,15 @@ In un modello di testo di [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.m
   
 -   Il nome di un file incluso non deve utilizzare l'estensione `".tt"`.  
   
-     È possibile utilizzare un'altra estensione, quale `".t4"` per i file inclusi.  Questo perché, quando si aggiunge un file `.tt` in un progetto, [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] imposta automaticamente la proprietà **Strumento personalizzato** su `TextTemplatingFileGenerator`.  Non è in genere consigliabile che i file inclusi vengano trasformati singolarmente.  
+     È possibile utilizzare un'altra estensione, quale `".t4"` per i file inclusi. Questo avviene perché, quando si aggiunge un `.tt` file a un progetto, [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] imposta automaticamente la **lo strumento personalizzato** proprietà `TextTemplatingFileGenerator`. Non è in genere consigliabile che i file inclusi vengano trasformati singolarmente.  
   
-     D'altra parte, occorre tener presente che in alcuni casi, l'estensione di file determina in quali cartelle aggiuntive verranno cercati i file di inclusione.  Questo potrebbe essere importante quando si dispone di un file incluso che include altri file.  
+     D'altra parte, occorre tener presente che in alcuni casi, l'estensione di file determina in quali cartelle aggiuntive verranno cercati i file di inclusione. Questo potrebbe essere importante quando si dispone di un file incluso che include altri file.  
   
--   Il contenuto incluso viene elaborato più o meno come se facesse parte del modello di testo che include.  Tuttavia, è possibile includere un file che contiene un blocco della funzionalità di classe `<#+...#>` anche se la direttiva `include` è seguita da testo ordinario e blocchi di controllo standard.  
+-   Il contenuto incluso viene elaborato più o meno come se facesse parte del modello di testo che include. Tuttavia, è possibile includere un file che contiene un blocco della funzionalità di classe `<#+...#>` anche se la direttiva `include` è seguita da testo ordinario e blocchi di controllo standard.  
   
--   Utilizzare `once="true"` per verificare che un modello sia incluso una sola volta, anche se viene chiamato da più file di inclusione.  
+-   Utilizzare `once="true"` per garantire che un modello sia incluso una sola volta, anche se viene chiamato da più di un file di inclusione.  
   
-     Questa funzionalità semplifica la compilazione di una libreria di frammenti T4 riutilizzabili che è possibile includere senza preoccuparsi che siano già inclusi in un altro frammento. Ad esempio, si supponga di avere una libreria di frammenti molto precisi relativi all'elaborazione di modelli e alla generazione di C\#. A loro volta, questi vengono utilizzati da utilità specifiche delle attività, quali la generazione di eccezioni, che è quindi possibile utilizzare da qualsiasi modelli più specifici dell'applicazione.  Se si crea il grafico dipendenze, si noterà che alcuni frammenti verranno inclusi più volte.  Ma il parametro `once` impedisce le inclusioni successive.  
+     Rende questa funzionalità è più facile creare una libreria di frammenti di codice T4 riutilizzabile che è possibile includere in verrà senza doversi preoccupare che alcuni altri frammento ha già incluse.  Si supponga, ad esempio, che si dispone di una raccolta di frammenti di codice specifici che gestiscono l'elaborazione di modello e la generazione di c#.  Che a sua volta, vengono utilizzati da alcune utilità di più attività specifiche, ad esempio la generazione di eccezioni, è quindi possibile utilizzare qualsiasi modello più specifici dell'applicazione. Se si crea il grafico dipendenze, si noterà che alcuni frammenti verranno inclusi più volte. Ma il parametro `once` impedisce le inclusioni successive.  
   
  **MyTextTemplate.tt:**  
   
@@ -109,10 +111,10 @@ Output message 5 (from top template).
   
 ```  
   
-##  <a name="msbuild"></a> Utilizzo delle proprietà del progetto in MSBuild e Visual Studio  
- Sebbene sia possibile utilizzare le macro di Visual Studio, ad esempio $\(SolutionDir\), in una direttiva include, non funzionano in MSBuild.  Se si desidera trasformare i modelli nel computer di compilazione, è necessario utilizzare le proprietà del progetto.  
+##  <a name="msbuild"></a>Le proprietà di progetto in MSBuild e Visual Studio  
+ Sebbene sia possibile usare macro di Visual Studio, ad esempio $ (SolutionDir) in una direttiva include, non funzionano in MSBuild. Se si desidera trasformare i modelli nel computer di compilazione, è necessario utilizzare le proprietà del progetto.  
   
- Modificare il file con estensione csproj o vbproj per definire una proprietà del progetto.  In questo esempio viene definita una proprietà denominata `myIncludeFolder`:  
+ Modificare il file con estensione csproj o vbproj per definire una proprietà del progetto. In questo esempio viene definita una proprietà denominata `myIncludeFolder`:  
   
 ```xml  
 <!-- Define a project property, myIncludeFolder: -->  

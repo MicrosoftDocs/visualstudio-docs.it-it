@@ -1,48 +1,35 @@
 ---
-title: "Disattivare gli avvisi di compatibilità per Plug-in del controllo codice sorgente | Documenti di Microsoft"
+title: "Disattivare gli avvisi di compatibilità per i Plug-in del controllo codice sorgente | Documenti Microsoft"
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- vs-ide-sdk
+ms.technology: vs-ide-sdk
 ms.tgt_pltfrm: 
 ms.topic: article
 helpviewer_keywords:
 - source control plug-ins, turning off compatibility warnings
 - compatibility warnings, turning off
 ms.assetid: ba318e12-921b-4b7a-a8c2-12c712be1dbf
-caps.latest.revision: 21
+caps.latest.revision: "21"
+author: gregvanl
 ms.author: gregvanl
 manager: ghogen
-translation.priority.mt:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: d5bc147592bfc36247c35f23ac2885055d096af3
-ms.openlocfilehash: e1dda3bd8c41efcf74a1b27f764fdfbf817f8d63
-ms.lasthandoff: 02/22/2017
-
+ms.workload: vssdk
+ms.openlocfilehash: 622c0d4a75289e5025051b339b959a6b0b56442d
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="how-to-turn-off-compatibility-warnings-for-source-control-plug-ins"></a>Procedura: disabilitare gli avvisi di compatibilità per Plug-in del controllo codice sorgente
-Un utente potrebbe vedere alcuni avvisi di compatibilità quando si utilizza controllo del codice sorgente in [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)]. Gli avvisi presentati dipendono le funzionalità del plug-in del controllo del codice sorgente e possono essere disabilitati come dettagliate qui.  
+# <a name="how-to-turn-off-compatibility-warnings-for-source-control-plug-ins"></a>Procedura: disattivare gli avvisi di compatibilità per i Plug-in del controllo codice sorgente
+Un utente potrebbe vedere alcuni avvisi di compatibilità quando si utilizza controllo del codice sorgente in [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)]. Gli avvisi presentati dipendono dalle funzionalità di plug-in controllo del codice sorgente e possono essere disabilitati come dettagliate qui.  
   
-### <a name="to-disable-the-warning-to-ensure-optimal-source-control-integration-with-visual-studio"></a>Per disabilitare l'avviso: "per garantire l'integrazione del controllo codice sorgente ottimale con Visual Studio..."  
+### <a name="to-disable-the-warning-to-ensure-optimal-source-control-integration-with-visual-studio"></a>Per disabilitare l'avviso: "per garantire l'integrazione del controllo origine ottimale con Visual Studio..."  
   
 -   Impostare la seguente voce del Registro di sistema (se necessario, aggiungere il valore):  
   
-     HKEY_CURRENT_USER\Software\Microsoft\VisualStudio\8.0\SourceControl\DontDisplayCheckDotNETCompatible = DWORD:&00000;001  
+     HKEY_CURRENT_USER\Software\Microsoft\VisualStudio\8.0\SourceControl\DontDisplayCheckDotNETCompatible = DWORD: 00000001  
   
      Questo avviso viene visualizzato per tutti non[!INCLUDE[vsvss](../extensibility/includes/vsvss_md.md)] plug-in.  
   
@@ -50,13 +37,13 @@ Un utente potrebbe vedere alcuni avvisi di compatibilità quando si utilizza con
   
 -   Impostare i seguenti valori del Registro di sistema (se necessario, aggiungere i valori):  
   
-     HKEY_CURRENT_USER\Software\Microsoft\VisualStudio\8.0\SourceControl\WarnedOldMSSCCIProvider = DWORD:&00000;000  
+     HKEY_CURRENT_USER\Software\Microsoft\VisualStudio\8.0\SourceControl\WarnedOldMSSCCIProvider = DWORD: 00000000  
   
-     HKEY_CURRENT_USER\Software\Microsoft\VisualStudio\8.0\SourceControl\UseOldSCC = DWORD:&00000;001  
+     HKEY_CURRENT_USER\Software\Microsoft\VisualStudio\8.0\SourceControl\UseOldSCC = DWORD: 00000001  
   
-     Questo avviso viene visualizzato se il plug-in del controllo del codice sorgente non supportano in modo esplicito la rientranza per più progetti (vale a dire, se è possibile verificare in un solo file e al progetto in un momento).  
+     Questo avviso viene visualizzato se il plug-in controllo del codice sorgente non supportano in modo esplicito della reentrancy per più progetti (ovvero, se è possibile verificare in un solo file e di progetto in un momento).  
   
-     È consigliabile per il supporto della reentrancy (`SCC_CAP_REENTRANT` funzionalità); verrà rimosso l'avviso. Tuttavia, se questo supporto non è possibile, è possono impostare queste voci del Registro di sistema.  
+     È consigliabile per il supporto della reentrancy (`SCC_CAP_REENTRANT` funzionalità); verrà rimosso questo avviso. Tuttavia, se tale supporto non è possibile, è possono impostare queste voci del Registro di sistema.  
   
 ## <a name="see-also"></a>Vedere anche  
- [Flag di capacità](../extensibility/capability-flags.md)
+ [Flag di funzionalità](../extensibility/capability-flags.md)

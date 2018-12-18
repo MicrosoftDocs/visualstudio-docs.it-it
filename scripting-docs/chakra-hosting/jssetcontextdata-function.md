@@ -1,22 +1,26 @@
 ---
-title: "Funzione JsSetContextData | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/18/2017"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: Funzione JsSetContextData | Microsoft Docs
+ms.custom: 
+ms.date: 01/18/2017
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: be90aa6a-b001-4a6f-90c5-c2135e913be0
-caps.latest.revision: 4
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.openlocfilehash: c03c34578855cf5ed6de10a43b8295a8273a4319
+ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/27/2017
 ---
-# Funzione JsSetContextData
+# <a name="jssetcontextdata-function"></a>Funzione JsSetContextData
 Imposta i dati interni di JsrtContext.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
 STDAPI_(JsErrorCode) JsSetContextData(  
@@ -26,21 +30,21 @@ STDAPI_(JsErrorCode) JsSetContextData(
   
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `context`  
  Contesto su cui impostare i dati.  
   
  `data`  
  Puntatore ai dati da impostare.  
   
-## Valore restituito  
+## <a name="return-value"></a>Valore restituito  
  Codice `JsNoError` se l'operazione ha avuto esito positivo; in caso contrario, un codice di errore.  
   
-## Note  
+## <a name="remarks"></a>Note  
  Richiede un contesto di script attivo.  
   
-## Requisiti  
+## <a name="requirements"></a>Requisiti  
  **Intestazione:** jsrt.h  
   
-## Vedere anche  
- [Riferimenti \(Runtime JavaScript\)](../chakra-hosting/reference-javascript-runtime.md)
+## <a name="see-also"></a>Vedere anche  
+ [Riferimenti (Runtime JavaScript)](../chakra-hosting/reference-javascript-runtime.md)

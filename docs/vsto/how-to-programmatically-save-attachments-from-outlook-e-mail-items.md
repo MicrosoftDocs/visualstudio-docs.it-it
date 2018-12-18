@@ -1,12 +1,10 @@
 ---
-title: 'How to: Programmatically Save Attachments from Outlook E-Mail Items | Microsoft Docs'
+title: 'Procedura: a livello di programmazione salvare allegati da elementi di posta elettronica di Outlook | Documenti Microsoft'
 ms.custom: 
 ms.date: 02/02/2017
-ms.prod: visual-studio-dev14
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- office-development
+ms.technology: office-development
 ms.tgt_pltfrm: 
 ms.topic: article
 dev_langs:
@@ -18,33 +16,31 @@ helpviewer_keywords:
 - saving e-mail attachments
 - mail items [Office development in Visual Studio], attachments
 - attachments [Office development in Visual Studio]
-ms.assetid: 2f05e2bb-ae4f-407c-a6da-a3b1a4c31ab3
-caps.latest.revision: 23
-author: kempb
-ms.author: kempb
+author: TerryGLee
+ms.author: tglee
 manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: eb5c9550fd29b0e98bf63a7240737da4f13f3249
-ms.openlocfilehash: 860e0506aebbeeaa1829cf052cc1dbc87685c3fd
-ms.contentlocale: it-it
-ms.lasthandoff: 08/30/2017
-
+ms.workload: office
+ms.openlocfilehash: f87b05b45fafab3ad28a6da6a98391b8d121be7e
+ms.sourcegitcommit: f9fbf1f55f9ac14e4e5c6ae58c30dc1800ca6cda
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 01/10/2018
 ---
-# <a name="how-to-programmatically-save-attachments-from-outlook-e-mail-items"></a>How to: Programmatically Save Attachments from Outlook E-Mail Items
-  This example saves e-mail attachments to a specified folder when the mail is received in the inbox.  
+# <a name="how-to-programmatically-save-attachments-from-outlook-e-mail-items"></a>Procedura: Salvare allegati da elementi di posta elettronica di Outlook a livello di codice
+  In questo esempio gli allegati di posta elettronica vengono salvati in una cartella specificata quando si riceve posta nella posta in arrivo.  
   
 > [!IMPORTANT]  
->  This example works only if you add a folder named **TestFileSave** at the root of the C directory.  
+>  Questo esempio funziona solo se si aggiunge una cartella denominata **TestFileSave** alla radice della directory C.  
   
  [!INCLUDE[appliesto_olkallapp](../vsto/includes/appliesto-olkallapp-md.md)]  
   
-## <a name="example"></a>Example  
+## <a name="example"></a>Esempio  
  [!code-csharp[Trin_OL_SaveAttachments#1](../vsto/codesnippet/CSharp/Trin_OL_SaveAttachments/thisaddin.cs#1)]  
   
-## <a name="see-also"></a>See Also  
- [Working with Mail Items](../vsto/working-with-mail-items.md)   
- [How to: Programmatically Retrieve a Folder by Name](../vsto/how-to-programmatically-retrieve-a-folder-by-name.md)   
- [How to: Programmatically Perform Actions When an E-Mail Message Is Received](../vsto/how-to-programmatically-perform-actions-when-an-e-mail-message-is-received.md)   
- [How to: Programmatically Search Within a Specific Folder](../vsto/how-to-programmatically-search-within-a-specific-folder.md)  
+## <a name="see-also"></a>Vedere anche  
+ [Utilizzo di elementi di posta elettronica](../vsto/working-with-mail-items.md)   
+ [Procedura: recuperare a livello di codice di una cartella per nome](../vsto/how-to-programmatically-retrieve-a-folder-by-name.md)   
+ [Procedura: eseguire a livello di programmazione azioni quando viene ricevuto un messaggio di posta elettronica](../vsto/how-to-programmatically-perform-actions-when-an-e-mail-message-is-received.md)   
+ [Procedura: Eseguire la ricerca in una cartella specifica a livello di codice](../vsto/how-to-programmatically-search-within-a-specific-folder.md)  
   
   

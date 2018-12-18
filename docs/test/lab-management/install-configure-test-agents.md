@@ -4,36 +4,21 @@ ms.custom:
 ms.date: 05/02/2017
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- vs-devops-test
+ms.technology: vs-devops-test
 ms.tgt_pltfrm: 
 ms.topic: article
 helpviewer_keywords:
 - configure test agents, test lab
-ms.assetid: EBAA2E04-A97A-4047-B739-8DBA7F2D5074
-caps.latest.revision: 56
-ms.author: douge
-manager: douge
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 45d36934cf1c46902cac566203cddf4a118b7fe4
-ms.openlocfilehash: b7a186778434bc07c169c9f80879c8bc3607bcde
-ms.contentlocale: it-it
-ms.lasthandoff: 06/02/2017
-
+ms.author: gewarren
+manager: ghogen
+ms.workload:
+- multiple
+author: gewarren
+ms.openlocfilehash: 5caa566e15f7f3c4c69f8d33a6c7dd0eead38785
+ms.sourcegitcommit: d6327b978661c0a745bf4b59f32d8171607803a3
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="install-and-configure-test-agents"></a>Installare e configurare agenti di test
 
@@ -98,7 +83,7 @@ La tabella seguente visualizza gli scenari supportati da Agents per Visual Studi
 | Scenari supportati da Agents per Visual Studio 2013 | Alternativa in TFS e TS |
 | --- | --- |
 | Flusso di lavoro compilazione, distribuzione e test in Visual Studio | Gli utenti possono usare una [definizione di compilazione](https://www.visualstudio.com/team-services/continuous-integration/) (non una compilazione XAML) per gli scenari di compilazione, distribuzione e test in TFS. |
-| Test di carico (test delle prestazioni) usando computer remoti in posizioni locali | Per eseguire i test carico in locale usare Test Controller o Test Agent 2013 Update 5. [Altre informazioni](https://msdn.microsoft.com/en-us/library/ff400223.aspx). |
+| Test di carico (test delle prestazioni) usando computer remoti in posizioni locali | Per eseguire i test carico in locale usare Test Controller o Test Agent 2013 Update 5. [Altre informazioni](https://msdn.microsoft.com/library/ff400223.aspx). |
 | Esecuzione remota di test automatizzati da Microsoft Test Manager usando un ambiente lab | Attualmente non è disponibile nessuna alternativa per questo scenario. È consigliabile usare l'attività Esegui test funzionali nelle definizioni di compilazione e di versione (non in una compilazione XAML) per eseguire i test in modalità remota. |
 | Sviluppatori che eseguono test remoti in Visual Studio | Non è più supportato. |
 
@@ -107,4 +92,3 @@ La tabella seguente visualizza gli scenari supportati da Agents per Visual Studi
 ## <a name="see-also"></a>Vedere anche
 
 * [Configurazione di computer e raccolta di informazioni diagnostiche tramite impostazioni test](https://msdn.microsoft.com/library/dd286743%28v=vs.140%29.aspx)
-

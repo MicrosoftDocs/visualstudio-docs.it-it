@@ -4,24 +4,23 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.tgt_pltfrm: 
 ms.topic: article
-ms.assetid: 452318ff-8ecf-46d0-8ca0-4013d0cdafaf
-caps.latest.revision: 17
-author: alancameronwills
-ms.author: awills
-manager: douge
+author: gewarren
+ms.author: gewarren
+manager: ghogen
+ms.workload:
+- multiple
+ms.technology: vs-ide-modeling
+ms.openlocfilehash: 7eb6bc6542350439250ace3dbaa7f2ba920e93ed
+ms.sourcegitcommit: 205d15f4558315e585c67f33d5335d5b41d0fcea
 ms.translationtype: MT
-ms.sourcegitcommit: 4a36302d80f4bc397128e3838c9abf858a0b5fe8
-ms.openlocfilehash: 17652a19df04d016db54429ab7bc7d407768df87
-ms.contentlocale: it-it
-ms.lasthandoff: 09/26/2017
-
+ms.contentlocale: it-IT
+ms.lasthandoff: 02/09/2018
 ---
 # <a name="creating-a-windows-forms-based-domain-specific-language"></a>Creazione di un linguaggio specifico di dominio basato su Windows Form
 È possibile utilizzare Windows Form per visualizzare lo stato di un modello di linguaggio specifico di dominio (DSL), anziché utilizzare un diagramma DSL. Questo argomento viene illustrata l'associazione di un Windows Form a un linguaggio DSL, usando il [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] Visualization and Modeling SDK.  
   
- ![DSL &#45; WPF &#45; 2](../modeling/media/dsl-wpf-2.png "DSL-Wpf-2")  
+ ![DSL&#45;Wpf&#45;2](../modeling/media/dsl-wpf-2.png "DSL-Wpf-2")  
 Un'istanza DSL, che visualizza un'interfaccia utente di Windows Form ed Esplora modelli.  
   
 ## <a name="creating-a-windows-forms-dsl"></a>Creazione di un Windows Form DSL  
@@ -72,7 +71,7 @@ Un'istanza DSL, che visualizza un'interfaccia utente di Windows Form ed Esplora 
 ## <a name="updating-the-dsl-definition"></a>L'aggiornamento della definizione DSL  
  Le operazioni seguenti che in questa procedura dettagliata viene utilizzata la definizione di DSL.  
   
- ![DSL &#45; WPF &#45; 1](../modeling/media/dsl-wpf-1.png "DSL-Wpf-1")  
+ ![DSL&#45;Wpf&#45;1](../modeling/media/dsl-wpf-1.png "DSL-Wpf-1")  
   
 #### <a name="to-update-the-dsl-definition"></a>Per aggiornare la definizione DSL  
   
@@ -125,13 +124,13 @@ Un'istanza DSL, che visualizza un'interfaccia utente di Windows Form ed Esplora 
   
 2.  Scegliere **oggetto**, **Avanti**.  
   
-     Espandere **Dsl**, **Company.FarmApp**e selezionare **Farm**, che corrisponde alla classe radice del modello. Scegliere **fine**.  
+     Espandere **Dsl**, **Company.FarmApp**e selezionare **Farm**, che corrisponde alla classe radice del modello. Scegliere **Fine**.  
   
      In Esplora soluzioni, il **dell'interfaccia utente** progetto contiene ora **Properties\DataSources\Farm.datasource**  
   
      Le proprietà e relazioni della classe modello vengono visualizzati nella finestra Origini dati.  
   
-     ![DslWpf &#45; 3](../modeling/media/dslwpf-3.png "DslWpf-3")  
+     ![DslWpf&#45;3](../modeling/media/dslwpf-3.png "DslWpf-3")  
   
 #### <a name="to-connect-your-model-to-a-form"></a>Per connettere il modello a un form  
   
@@ -306,7 +305,7 @@ Schema dei collegamenti tra origini dati e viste.
   
      Dovrebbe essere possibile modificare il nome dell'elemento nella visualizzazione griglia dati. È anche possibile eliminare da qui.  
   
- ![DSL &#45; WPF &#45; 2](../modeling/media/dsl-wpf-2.png "DSL-Wpf-2")  
+ ![DSL&#45;Wpf&#45;2](../modeling/media/dsl-wpf-2.png "DSL-Wpf-2")  
   
 ### <a name="about-the-code-to-add-an-element"></a>Informazioni sul codice per aggiungere un elemento  
  Per i pulsanti del nuovo elemento, il seguente codice alternativo è leggermente più semplice.  

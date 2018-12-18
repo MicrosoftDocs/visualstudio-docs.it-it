@@ -1,40 +1,40 @@
 ---
-title: "Procedura: specificare informazioni aggiuntive sul codice utilizzando __analysis_assume | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-devops-test"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "__analysis_assume"
-helpviewer_keywords: 
-  - "__analysis_assume"
+title: 'Procedura: specificare informazioni aggiuntive sul codice utilizzando analysis_assume | Documenti Microsoft'
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: vs-ide-code-analysis
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: __analysis_assume
+helpviewer_keywords: __analysis_assume
 ms.assetid: 51205d97-4084-4cf4-a5ed-3eeaf67deb1b
-caps.latest.revision: 10
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.workload: multiple
+ms.openlocfilehash: 72b72ce474a24d77b3b40513c2e69fb5ab4aea59
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
-# Procedura: specificare informazioni aggiuntive sul codice utilizzando __analysis_assume
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
-È possibile fornire suggerimenti allo strumento di analisi del codice per codice C\/C\+\+ per semplificare il processo di analisi e ridurre gli avvisi.  Per fornire informazioni aggiuntive, utilizzare la funzione seguente:  
+# <a name="how-to-specify-additional-code-information-by-using-analysisassume"></a>Procedura: specificare informazioni aggiuntive sul codice utilizzando __analysis_assume
+È possibile fornire suggerimenti per lo strumento di analisi codice per il codice C/C++ che guida il processo di analisi e ridurre gli avvisi. Per fornire informazioni aggiuntive, utilizzare la funzione seguente:  
   
  `__analysis_assume(`  `expr`  `)`  
   
- `expr`\- qualsiasi espressione che deve restituire true.  
+ `expr`-qualsiasi espressione che deve per restituire true.  
   
- Lo strumento di analisi del codice presuppone che la condizione rappresentata dall'espressione sia vera nel punto in cui la funzione viene visualizzata e rimanga vera finché non viene apportata una modifica all'espressione, ad esempio tramite assegnazione a una variabile.  
+ Lo strumento di analisi del codice si presuppone che la condizione rappresentata dall'espressione sia true nel punto in cui la funzione viene visualizzata e rimanga true finché l'espressione viene modificata, ad esempio, tramite l'assegnazione alla variabile.  
   
 > [!NOTE]
->  `__analysis_assume` non influisce sull'ottimizzazione del codice.  Al di fuori dello strumento di analisi del codice, la funzione `__analysis_assume` viene definita operazione no\-op.  
+>  `__analysis_assume`non influisce sull'ottimizzazione del codice. Lo strumento di analisi del codice, di fuori `__analysis_assume` è definito come alcuna operazione.  
   
-## Esempio  
- Nel codice seguente viene utilizzato `__analysis_assume` per correggere l'avviso [C6388](../code-quality/c6388.md) dell'analisi del codice:  
+## <a name="example"></a>Esempio  
+ Il codice seguente usa `__analysis_assume` per correggere l'avviso di analisi del codice [C6388](../code-quality/c6388.md):  
   
 ```  
 #include<windows.h>  
@@ -57,5 +57,5 @@ void test( )
 }  
 ```  
   
-## Vedere anche  
- [\_\_assume](/visual-cpp/intrinsics/assume)
+## <a name="see-also"></a>Vedere anche  
+ [__assume](/cpp/intrinsics/assume)

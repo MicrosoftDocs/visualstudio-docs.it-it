@@ -1,52 +1,54 @@
 ---
-title: "Metodo getTimezoneOffset (Date) (JavaScript) | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/18/2017"
-ms.prod: "windows-client-threshold"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-javascript"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "getTimeZoneOffset"
-dev_langs: 
-  - "JavaScript"
-  - "TypeScript"
-  - "DHTML"
-helpviewer_keywords: 
-  - "getTimezoneOffset (metodo)"
-  - "fusi orari [Visual Studio]"
+title: Metodo getTimezoneOffset (Date) (JavaScript) | Documenti Microsoft
+ms.custom: 
+ms.date: 01/18/2017
+ms.prod: windows-client-threshold
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-javascript
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords: getTimeZoneOffset
+dev_langs:
+- JavaScript
+- TypeScript
+- DHTML
+helpviewer_keywords:
+- getTimezoneOffset method
+- time zones [Visual Studio]
 ms.assetid: 58ee22b0-4688-45bd-a337-cc23119b09ce
-caps.latest.revision: 16
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 16
+caps.latest.revision: "16"
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.openlocfilehash: e49a3c8b7060e6097300f8aaf99b2ef869833018
+ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/27/2017
 ---
-# Metodo getTimezoneOffset (Date) (JavaScript)
-Ottiene la differenza, espressa in minuti, tra l'ora nel computer locale e l'ora UTC \(Universal Coordinated Time\).  
+# <a name="gettimezoneoffset-method-date-javascript"></a>Metodo getTimezoneOffset (Date) (JavaScript)
+Ottiene la differenza in minuti tra l'ora del computer locale e l'ora UTC (Universal Coordinated Time).  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
   
 dateObj.getTimezoneOffset()   
 ```  
   
-#### Parametri  
- Il riferimento di `dateObj` obbligatorio è un oggetto `Date`.  
+#### <a name="parameters"></a>Parametri  
+ Il riferimento `dateObj` obbligatorio è un oggetto `Date` .  
   
-## Valore restituito  
- Restituisce il numero di minuti tra l'ora nel computer corrente \(il computer client o, se questo metodo viene chiamato da uno script server, il server\) e l'ora UTC.  Il numero è positivo se l'ora locale del computer corrente è posteriore all'ora UTC \(ad esempio, l'ora legale Pacifico\) e negativo se l'ora locale del computer corrente è antecedente all'ora UTC \(ad esempio il Giappone\).  Se un server a New York viene contattato da un client a Los Angeles il 1° dicembre, il metodo `getTimezoneOffset` restituisce il numero 480 se eseguito nel client oppure 300 se eseguito nel server.  
+## <a name="return-value"></a>Valore restituito  
+ Restituisce il numero di minuti tra l'ora del computer corrente (computer client o, se questo metodo viene chiamato da uno script del server, il computer server) e l'ora UTC. È positivo se l'ora locale del computer corrente è protetto da UTC (ad esempio, ora legale Pacifico) e negativo se l'ora locale del computer corrente è avanti rispetto all'ora UTC (ad esempio, Giappone). Se un server in New York City viene contattato da un client a Los Angeles l'1 dicembre `getTimezoneOffset` restituirà 480 se viene eseguito sul client o 300 se eseguita sul server.  
   
-## Note  
+## <a name="remarks"></a>Note  
   
-## Esempio  
+## <a name="example"></a>Esempio  
  Nell'esempio seguente viene illustrato come utilizzare il metodo `getTimezoneOffset`.  
   
-```javascript  
+```JavaScript  
 var date =  new Date();  
 var minutes = date.getTimezoneOffset();  
   
@@ -60,10 +62,10 @@ else
   
 ```  
   
-## Requisiti  
+## <a name="requirements"></a>Requisiti  
  [!INCLUDE[jsv1](../../javascript/misc/includes/jsv1-md.md)]  
   
- **Si applica a**: [Oggetto Date](../../javascript/reference/date-object-javascript.md)  
+ **Si applica a**: [Date Object](../../javascript/reference/date-object-javascript.md)  
   
-## Vedere anche  
- [Metodo getTime \(Date\)](../../javascript/reference/gettime-method-date-javascript.md)
+## <a name="see-also"></a>Vedere anche  
+ [Metodo getTime (Date)](../../javascript/reference/gettime-method-date-javascript.md)

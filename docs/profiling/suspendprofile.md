@@ -1,28 +1,29 @@
 ---
-title: "SuspendProfile | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "SuspendProfile"
+title: SuspendProfile | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: vs-ide-debug
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords: SuspendProfile
 ms.assetid: 7c8de6e6-bb88-4353-92c3-ce7290310d61
-caps.latest.revision: 8
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.workload: multiple
+ms.openlocfilehash: fd39cc9116ffed336f45bb31b859b5f1d8b92735
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
-# SuspendProfile
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
-Il metodo `SuspendProfile` incrementa il contatore Suspend\/Resume per il livello di analisi specificato.  
+# <a name="suspendprofile"></a>SuspendProfile
+Il metodo `SuspendProfile` incrementa il contatore Suspend/Resume per il livello di profilatura specificato.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
 PROFILE_COMMAND_STATUS PROFILERAPI SuspendProfile(  
@@ -30,49 +31,49 @@ PROFILE_COMMAND_STATUS PROFILERAPI SuspendProfile(
                        unsigned int dwId);  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `Level`  
   
- Indica il livello di analisi al quale può essere applicata la raccolta dei dati sulle prestazioni.  Gli enumeratori **PROFILE\_CONTROL\_LEVEL** seguenti possono essere utilizzati per indicare uno dei tre livelli a cui può essere applicata la raccolta dei dati sulle prestazioni:  
+ Indica il livello di profilatura a cui può essere applicata la raccolta di dati sulle prestazioni. Gli enumeratori **PROFILE_CONTROL_LEVEL** seguenti possono essere usati per indicare uno dei tre livelli a cui può essere applicata la raccolta di dati sulle prestazioni:  
   
 |Enumerator|Descrizione|  
 |----------------|-----------------|  
-|PROFILE\_GLOBALLEVEL|L'impostazione del livello globale influisce su tutti i processi e i thread della sessione durante l'esecuzione del profilo.|  
-|PROFILE\_PROCESSLEVEL|L'impostazione del livello di processo influisce su tutti i thread appartenenti al processo specificato.|  
-|PROFILE\_THREADLEVEL|L'impostazione del livello di profilo dei thread influisce sul thread specificato.|  
+|PROFILE_GLOBALLEVEL|Impostazione del livello globale con effetti su tutti i processi e i thread nell'esecuzione della profilatura.|  
+|PROFILE_PROCESSLEVEL|Impostazione del livello processo con effetti su tutti i thread che fanno parte del processo specificato.|  
+|PROFILE_THREADLEVEL|Impostazione del livello thread con effetti sul thread specificato.|  
   
  `dwId`  
   
  Identificatore del processo o del thread generato dal sistema.  
   
-## Valore proprietà\/Valore restituito  
- La funzione indica esito positivo o negativo utilizzando l'enumerazione **PROFILE\_COMMAND\_STATUS**.  Il valore restituito può essere uno dei seguenti:  
+## <a name="property-valuereturn-value"></a>Valore proprietà/Valore restituito  
+ La funzione indica esito l'esito positivo o negativo usando l'enumerazione **PROFILE_COMMAND_STATUS**. Il valore restituito può essere uno dei seguenti:  
   
 |Enumerator|Descrizione|  
 |----------------|-----------------|  
-|PROFILE\_ERROR\_ID\_NOEXIST|L'ID elemento di profilo non esiste.|  
-|PROFILE\_ERROR\_LEVEL\_NOEXIST|Il livello di profilo specificato non esiste.|  
-|PROFILE\_ERROR\_MODE\_NEVER|La modalità di profilo è stata impostata su NEVER quando è stata chiamata la funzione.|  
-|PROFILE\_ERROR\_NOT\_YET\_IMPLEMENTED|Non è ancora stata eseguita l'implementazione della chiamata alla funzione di profilo, del livello di profilo o della combinazione di entrambi.|  
-|PROFILE\_OK|La chiamata è stata eseguita correttamente.|  
+|PROFILE_ERROR_ID_NOEXIST|L'ID dell'elemento di profilatura non esiste.|  
+|PROFILE_ERROR_LEVEL_NOEXIST|Il livello di profilatura specificato non esiste.|  
+|PROFILE_ERROR_MODE_NEVER|La modalità di profilatura è stata impostata su NEVER al momento della chiamata della funzione.|  
+|PROFILE_ERROR_NOT_YET_IMPLEMENTED|La chiamata della funzione di profilatura, il livello di profilatura o la combinazione di chiamata e livello non sono ancora stati implementati.|  
+|PROFILE_OK|La chiamata è stata completata correttamente.|  
   
-## Note  
- Il valore iniziale del contatore Suspend\/Resume è 0.  Ogni chiamata a SuspendProfile e a ResumeProfile rispettivamente aggiunge e sottrae 1 al conteggio Suspend\/Resume.  
+## <a name="remarks"></a>Note  
+ Il valore iniziale del contatore Suspend/Resume è 0. Ogni chiamata a SuspendProfile aggiunge 1 al conteggio di Suspend/Resume. Ogni chiamata a ResumeProfile sottrae 1.  
   
- Quando il conteggio Suspend\/Resume è maggiore di 0, lo stato Suspend\/Resume del livello è OFF.  Quando il conteggio è minore o uguale a 0, lo stato Suspend\/Resume è ON.  
+ Quando il conteggio di Suspend/Resume è maggiore di 0, lo stato di Suspend/Resume per il livello è OFF. Quando il conteggio è minore o uguale a 0, lo stato di Suspend/Resume è ON.  
   
- Quando gli stati Start\/Stop e Suspend\/Resume sono entrambi impostati su ON, lo stato di profilo del livello è ON.  Per il profilo di un thread è necessario che gli stati a livello globale, di processo e di thread siano tutti impostati su ON.  
+ Se lo stato di Start/Stop e lo stato di Suspend/Resume sono entrambi ON, lo stato di profilatura per il livello è ON. Affinché un thread venga incluso nella profilatura, gli stati dei livelli globale, processo e thread per il thread devono essere tutti ON.  
   
-## Equivalente .NET Framework  
+## <a name="net-framework-equivalent"></a>Equivalente .NET Framework  
  Microsoft.VisualStudio.Profiler.dll  
   
-## Informazioni sulla funzione  
+## <a name="function-information"></a>Informazioni sulla funzione  
  Intestazione: dichiarata in VSPerf.h  
   
  Libreria di importazione: VSPerf.lib  
   
-## Esempio  
- Nell'esempio riportato di seguito viene illustrato il metodo SuspendProfile.  Nell'esempio si presuppone che sia stata effettuata una chiamata precedente a StartProfile per il processo o il thread identificato da [PROFILE\_CURRENTID](../profiling/profile-currentid.md).  
+## <a name="example"></a>Esempio  
+ L'esempio seguente illustra il metodo SuspendProfile. Questo esempio presuppone l'esecuzione di una chiamata precedente a StartProfile per il processo o thread identificato da [PROFILE_CURRENTID](../profiling/profile-currentid.md).  
   
 ```  
 void ExerciseSuspendProfile()  
@@ -106,5 +107,5 @@ void ExerciseSuspendProfile()
 }  
 ```  
   
-## Vedere anche  
- [Riferimenti per le API del profiler di Visual Studio \(native\)](../profiling/visual-studio-profiler-api-reference-native.md)
+## <a name="see-also"></a>Vedere anche  
+ [Riferimenti per le API del profiler di Visual Studio (native)](../profiling/visual-studio-profiler-api-reference-native.md)

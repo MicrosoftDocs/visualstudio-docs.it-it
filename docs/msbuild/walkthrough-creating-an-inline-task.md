@@ -1,43 +1,30 @@
 ---
-title: "Procedura dettagliata: Creazione di un&quot;attività inline | Microsoft Docs"
+title: "Procedura dettagliata: Creazione di un'attività inline | Microsoft Docs"
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- vs-ide-sdk
+ms.technology: msbuild
 ms.tgt_pltfrm: 
 ms.topic: article
 helpviewer_keywords:
 - MSBuild, tutorial
 - MSBuild, tasks
 ms.assetid: 438194cb-668c-41a9-a7e2-c118d14c1ea7
-caps.latest.revision: 14
-author: kempb
-ms.author: kempb
+caps.latest.revision: 
+author: Mikejo5000
+ms.author: mikejo
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: 79460291e91f0659df0a4241e17616e55187a0e2
-ms.openlocfilehash: b211beb5f5e09daf0628e33e417e9aad97d0d7e2
-ms.lasthandoff: 02/22/2017
-
+ms.workload:
+- multiple
+ms.openlocfilehash: fb08d3f4774f0d21c44a29414955f30509456757
+ms.sourcegitcommit: 205d15f4558315e585c67f33d5335d5b41d0fcea
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 02/09/2018
 ---
 # <a name="walkthrough-creating-an-inline-task"></a>Procedura dettagliata: Creazione di un'attività inline
-Le attività MSBuild vengono in genere create mediante la compilazione di una classe che implementa l'interfaccia <xref:Microsoft.Build.Framework.ITask>. A partire dalla versione 4 di .NET Framework è possibile creare attività inline nel file di progetto. Non è necessario creare un assembly separato per ospitare l'attività. Per altre informazioni, vedere [Inline Tasks](../msbuild/msbuild-inline-tasks.md) (Attività inline).  
+Le attività di MSBuild in genere vengono create compilando una classe che implementa l'interfaccia <xref:Microsoft.Build.Framework.ITask>. A partire dalla versione 4 di .NET Framework è possibile creare attività inline nel file di progetto. Non è necessario creare un assembly separato per ospitare l'attività. Per altre informazioni, vedere [Inline Tasks](../msbuild/msbuild-inline-tasks.md) (Attività inline).  
   
  Questa procedura dettagliata mostra come creare ed eseguire le attività inline seguenti:  
   
@@ -55,7 +42,7 @@ Le attività MSBuild vengono in genere create mediante la compilazione di una cl
   
 -   Modificare il file di progetto in Visual Studio per creare l'attività inline.  
   
--   Usare la **finestra del prompt dei comandi** per compilare il progetto ed esaminare i risultati.  
+-   Usare la **finestra del prompt dei comandi**  per compilare il progetto ed esaminare i risultati.  
   
 ## <a name="creating-and-modifying-an-msbuild-project"></a>Creazione e modifica di un progetto MSBuild  
  Il sistema dei progetti di Visual Studio si basa su MSBuild. È pertanto possibile creare un file di progetto di compilazione usando Visual Studio. In questa sezione si crea un file di progetto Visual C#. In alternativa, è possibile creare un file di progetto di Visual Basic. Nel contesto di questa esercitazione, le differenze tra i due file di progetto sono trascurabili.  
@@ -108,7 +95,7 @@ Le attività MSBuild vengono in genere create mediante la compilazione di una cl
   
 ##### <a name="to-run-the-hello-task"></a>Per eseguire l'attività Hello  
   
-1.  Fare clic su **Start**, scegliere **Tutti i programmi,**, quindi individuare la cartella **Strumenti di Visual Studio** e infine fare clic su **Prompt dei comandi di Visual Studio**.  
+1.  Fare clic su **Start**, scegliere **Tutti i programmi,** , quindi individuare la cartella **Strumenti di Visual Studio** e infine fare clic su **Prompt dei comandi di Visual Studio**.  
   
 2.  Nella **finestra del prompt dei comandi** individuare la cartella contenente il file di progetto, in questo caso D:\InlineTasks\InlineTasks\\.  
   
@@ -270,5 +257,5 @@ Le attività MSBuild vengono in genere create mediante la compilazione di una cl
   
 ## <a name="see-also"></a>Vedere anche  
  [Inline Tasks](../msbuild/msbuild-inline-tasks.md)  (Attività inline)  
- [Tasks](../msbuild/msbuild-tasks.md)  (Attività)  
+ [Attività](../msbuild/msbuild-tasks.md)   
  [Destinazioni](../msbuild/msbuild-targets.md)

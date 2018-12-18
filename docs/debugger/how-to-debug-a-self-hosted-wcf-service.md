@@ -1,61 +1,63 @@
 ---
-title: "Procedura: eseguire il debug di un servizio WCF indipendente | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "FSharp"
-  - "VB"
-  - "CSharp"
-  - "C++"
-helpviewer_keywords: 
-  - "debug, WCF"
-  - "WCF, debug"
-  - "WCF, servizio indipendente"
+title: 'Procedura: eseguire il Debug di un servizio WCF Self-Hosted | Documenti Microsoft'
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: vs-ide-debug
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- CSharp
+- VB
+- FSharp
+- C++
+helpviewer_keywords:
+- debugging, WCF
+- WCF, self-hosted service
+- WCF, debugging
 ms.assetid: 288922be-ba3f-411e-af50-bba39c9529cc
-caps.latest.revision: 25
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 25
+caps.latest.revision: "25"
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.workload: multiple
+ms.openlocfilehash: 004e4685af33a33248d3fab7c39504300de2ed95
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
-# Procedura: eseguire il debug di un servizio WCF indipendente
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
-Un *servizio indipendente* è un servizio WCF che non viene eseguito in IIS, nell'host dei servizi WCF o nel server di sviluppo [!INCLUDE[vstecasp](../code-quality/includes/vstecasp_md.md)].  La modalità più semplice per eseguire il debug di un servizio WCF indipendente è configurare [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] in modo che vengano avviati client e server quando si sceglie **Avvia debug** dal menu **Debug**.  
+# <a name="how-to-debug-a-self-hosted-wcf-service"></a>Procedura: eseguire il debug di un servizio WCF indipendente
+Oggetto *servizio indipendente* è un servizio WCF che non viene eseguito in IIS, l'Host del servizio WCF, o [!INCLUDE[vstecasp](../code-quality/includes/vstecasp_md.md)] Server di sviluppo. Il modo più semplice per eseguire il debug di un servizio WCF indipendente consiste nel configurare [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] per avviare i client e server quando si sceglie **Avvia debug** sul **Debug** menu.  
   
- Se il servizio WCF è indipendente o è un processo che non può essere avviato in questa modalità, ad esempio un servizio NT, non è possibile utilizzare questo metodo.  È possibile invece effettuare una delle seguenti operazioni:  
+ Se il servizio WCF è indipendente all'interno o un processo che non può essere avviato in questo modo, ad esempio il servizio NT, è possibile utilizzare questo metodo. È possibile invece effettuare una delle seguenti:  
   
--   Connettere manualmente il debugger al processo di hosting.  Per ulteriori informazioni, vedere [Connessione a processi in esecuzione](../debugger/attach-to-running-processes-with-the-visual-studio-debugger.md).  
+-   Connettere manualmente il debugger al processo di hosting. Per ulteriori informazioni, vedere [connettersi a processi in esecuzione](../debugger/attach-to-running-processes-with-the-visual-studio-debugger.md).  
   
-     —oppure—  
+     oppure  
   
--   Avviare il debug del client e quindi eseguire istruzioni nella chiamata al servizio.  Richiede l'attivazione del debug nel file app.config.  Per ulteriori informazioni, vedere [Limitazioni del debug di WCF](../debugger/limitations-on-wcf-debugging.md).  
+-   Avviare il debug di client e quindi eseguire una chiamata al servizio. Questo richiede l'abilitazione del debug nel file app. config. Per ulteriori informazioni, [limitazioni del debug di WCF](../debugger/limitations-on-wcf-debugging.md).  
   
-### Per avviare client e host da Visual Studio  
+### <a name="to-start-both-client-and-host-from-visual-studio"></a>Per avviare i client e host da Visual Studio  
   
-1.  Creare una soluzione [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] contenente entrambi i progetti client e server.  
+1.  Creare un [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] soluzione contenente progetti client e server.  
   
-2.  Configurare la soluzione in modo che quando si sceglie **Avvia** dal menu **Debug** vengano avviati entrambi i processi client e server.  
+2.  Configurare la soluzione per avviare i processi client e server quando si sceglie **avviare** sul **Debug** menu.  
   
-    1.  Fare clic con il pulsante destro del mouse sul nome della soluzione in **Esplora soluzioni**.  
+    1.  In **Esplora**, fare doppio clic sul nome della soluzione.  
   
     2.  Fare clic su **Imposta progetti di avvio**.  
   
-    3.  Nella finestra di dialogo **Proprietà di \<nome\> soluzione** selezionare l'opzione **Progetti di avvio multipli**.  
+    3.  Nel **soluzione \<nome > proprietà** nella finestra di dialogo **più progetti di avvio**.  
   
-    4.  Nella griglia **Progetti di avvio multipli**, nella riga che corrisponde al progetto server fare clic su **Azione** e scegliere **Avvia**.  
+    4.  Nel **più progetti di avvio** griglia, nella riga che corrisponde al progetto server, fare clic su **azione** e scegliere **avviare**.  
   
-    5.  Nella riga che corrisponde al progetto client fare clic su **Azione** e scegliere **Avvia**.  
+    5.  Fare clic sulla riga che corrisponde al progetto client, **azione** e scegliere **avviare**.  
   
     6.  Fare clic su **OK**.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Debug dei servizi WCF](../debugger/debugging-wcf-services.md)   
  [Limitazioni del debug di WCF](../debugger/limitations-on-wcf-debugging.md)   
- [Procedura: eseguire istruzioni nei servizi WCF](../debugger/how-to-step-into-wcf-services.md)
+ [Procedura: Eseguire istruzioni nei servizi WCF](../debugger/how-to-step-into-wcf-services.md)

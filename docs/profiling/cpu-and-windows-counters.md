@@ -4,50 +4,34 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- vs-ide-debug
+ms.technology: vs-ide-debug
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords:
-- vs.performance.property.counters
+f1_keywords: vs.performance.property.counters
 helpviewer_keywords:
 - Windows counters in Profiling Tools
 - CPU counters in Profiling Tools
 ms.assetid: d2c45c6a-f975-45ab-b8a5-4768ddd518fb
-caps.latest.revision: 28
+caps.latest.revision: "28"
 author: mikejo5000
 ms.author: mikejo
 manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: 5db97d19b1b823388a465bba15d057b30ff0b3ce
-ms.openlocfilehash: 51d524bafd6e5014c1542b05d9fd3a908eca41df
-ms.lasthandoff: 02/22/2017
-
+ms.workload: multiple
+ms.openlocfilehash: d22300bc675de5074497589af53b304b9a1caa4d
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="cpu-and-windows-counters"></a>Contatori CPU e Windows
 Il profiler di Visual Studio consente di raccogliere dati sulle prestazioni generati dal sistema operativo (contatori Windows) e dati sulle prestazioni generati dal processore (contatori CPU).  
   
- **Requirements**  
+ **Requisiti**  
   
 -   [!INCLUDE[vsUltLong](../code-quality/includes/vsultlong_md.md)], [!INCLUDE[vsPreLong](../code-quality/includes/vsprelong_md.md)], [!INCLUDE[vsPro](../code-quality/includes/vspro_md.md)]  
   
 > [!NOTE]
->  Le funzionalità di sicurezza avanzate di Windows 8 e Windows Server 2012 hanno richiesto modifiche significative riguardo alla modalità di raccolta dei dati su queste piattaforme da parte del profiler di Visual Studio. Le app di Windows Store richiedono nuove tecniche di raccolta. Vedere [Performance Tools on Windows 8 and Windows Server 2012 applications](../profiling/performance-tools-on-windows-8-and-windows-server-2012-applications.md) (Strumenti per le prestazioni nelle applicazioni Windows 8 e Windows Server 2012).  
+>  Le funzionalità di sicurezza avanzate di Windows 8 e Windows Server 2012 hanno richiesto modifiche significative riguardo alla modalità di raccolta dei dati su queste piattaforme da parte del profiler di Visual Studio. Le app UWP richiedono anche nuove tecniche di raccolta. Vedere [Performance Tools on Windows 8 and Windows Server 2012 applications](../profiling/performance-tools-on-windows-8-and-windows-server-2012-applications.md) (Strumenti per le prestazioni nelle applicazioni Windows 8 e Windows Server 2012).  
   
 ## <a name="windows-counters"></a>Contatori Windows  
  I contatori Windows fanno parte dell'infrastruttura diagnostica di Windows che offre informazioni sulle prestazioni del sistema operativo o di un'applicazione, servizio o driver. I contatori Windows dipendono dalla configurazione del computer in uso e potrebbero non essere disponibili in altri computer. I contatori di prestazioni di Windows vengono raccolti nel file di dati di profilatura come contrassegni e possono quindi essere usati per filtrare visualizzazioni e report.  
@@ -112,7 +96,7 @@ Il profiler di Visual Studio consente di raccogliere dati sulle prestazioni gene
   
          **Nota** Fare clic su **Annulla** per tornare alla configurazione di campionamento precedente.  
   
-     -oppure-  
+     oppure  
   
     -   Selezionare **Contatori CPU** e quindi **Raccogli contatori CPU**. I contatori CPU sono elencati in **Contatori disponibili**.  
   
@@ -141,7 +125,7 @@ Il profiler di Visual Studio consente di raccogliere dati sulle prestazioni gene
   
      **\<Directory degli strumenti per le prestazioni di Visual Studio > \VSPerfCmd /QueryCounters.**  
   
-     dove **\<Directory degli strumenti per le prestazioni di Visual Studio>** è il percorso alla directory degli strumenti per le prestazioni della propria installazione di Visual Studio, in genere  
+     dove  **\<Directory degli strumenti per le prestazioni di Visual Studio>** è il percorso alla directory degli strumenti per le prestazioni della propria installazione di Visual Studio, in genere  
   
      C:\Programmi\Microsoft Visual Studio 10.0\Team Tools\Strumenti per le prestazioni  
   
@@ -149,4 +133,4 @@ Il profiler di Visual Studio consente di raccogliere dati sulle prestazioni gene
  [Overviews](../profiling/overviews-performance-tools.md)  (Panoramiche)  
  [How to: Choose Sampling Events](../profiling/how-to-choose-sampling-events.md)  (Procedura: Scegliere eventi di campionamento)  
  [How to: Collect CPU Counter Data](../profiling/how-to-collect-cpu-counter-data.md)  (Procedura: Raccogliere i dati dei contatori CPU)  
- [How to: Collect Windows Counter Data](../profiling/how-to-collect-windows-counter-data.md) (Procedura: Raccogliere i dati dei contatori Windows)
+ [Procedura: Raccogliere i dati dei contatori Windows](../profiling/how-to-collect-windows-counter-data.md)

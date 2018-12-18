@@ -1,59 +1,65 @@
 ---
-title: "Elemento FullClassName (estensione della Creazione guidata modelli di Visual Studio) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-general"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "http://schemas.microsoft.com/developer/vstemplate/2005#FullClassName"
-helpviewer_keywords: 
-  - "FullClassName (elemento) [modello di progetto Visual Studio]"
+title: Elemento FullClassName (estensione della creazione guidata modello di Visual Studio) | Documenti Microsoft
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: vs-ide-general
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: http://schemas.microsoft.com/developer/vstemplate/2005#FullClassName
+helpviewer_keywords: FullClassName element [Visual Studio project template]
 ms.assetid: 651e1010-d529-4856-85ff-c77ceca5d2ed
-caps.latest.revision: 9
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: gregvanl
+ms.author: gregvanl
+manager: ghogen
+ms.workload: vssdk
+ms.openlocfilehash: 9df7004767641b9693745b2250eef4948d9e908d
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
-# Elemento FullClassName (estensione della Creazione guidata modelli di Visual Studio)
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
-Il nome completo della classe che implementa l'interfaccia `IWizard`.  
+# <a name="fullclassname-element-visual-studio-template-wizard-extension"></a>Elemento FullClassName (estensione della Creazione guidata modelli di Visual Studio)
+Il nome completo della classe che implementa il `IWizard` interfaccia.  
   
-## Sintassi  
+ \<VSTemplate >  
+ \<WizardExtension >  
+ ...  
+ \<FullClassName >  
+  
+## <a name="syntax"></a>Sintassi  
   
 ```  
 <FullClassName>ClassName</FullClassName>  
 ```  
   
-## Attributi ed elementi  
- Nelle seguenti sezioni sono illustrati attributi, elementi figlio ed elementi padre.  
+## <a name="attributes-and-elements"></a>Attributi ed elementi  
+ Nelle sezioni seguenti vengono descritti gli attributi, gli elementi figlio e gli elementi padre.  
   
-### Attributi  
+### <a name="attributes"></a>Attributi  
  Nessuno.  
   
-### Elementi figlio  
+### <a name="child-elements"></a>Elementi figlio  
  Nessuno.  
   
-### Elementi padre  
+### <a name="parent-elements"></a>Elementi padre  
   
 |Elemento|Descrizione|  
-|--------------|-----------------|  
-|[WizardExtension](../extensibility/wizardextension-element-visual-studio-templates.md)|Contiene gli elementi di registrazione per personalizzare la creazione guidata dei modelli.|  
+|-------------|-----------------|  
+|[WizardExtension](../extensibility/wizardextension-element-visual-studio-templates.md)|Contiene gli elementi di registrazione per la creazione guidata modello di personalizzazione.|  
   
-## Valore di testo  
+## <a name="text-value"></a>Valore di testo  
  È necessario specificare un valore di testo.  
   
- Tale testo specifica la classe che implementa l'interfaccia `IWizard`.  La classe indicata deve esistere nell'assembly specificato dall'elemento [Assembly](../extensibility/assembly-element-visual-studio-template-wizard-extension.md).  
+ Tale testo specifica la classe che implementa il `IWizard` interfaccia. La classe specificata deve essere presente nell'assembly specificato per il [Assembly](../extensibility/assembly-element-visual-studio-template-wizard-extension.md) elemento.  
   
-## Note  
- `FullClassName` è un elemento figlio obbligatorio dell'elemento `WizardExtension`.  
+## <a name="remarks"></a>Note  
+ `FullClassName` è un elemento figlio obbligatorio di `WizardExtension`.  
   
-## Esempio  
- Nell'esempio riportato di seguito vengono illustrati i metadati per il modello di progetto standard di un'applicazione Windows di [!INCLUDE[csprcs](../data-tools/includes/csprcs_md.md)].  
+## <a name="example"></a>Esempio  
+ Nell'esempio seguente vengono illustrati i metadati per il modello di progetto standard per un [!INCLUDE[csprcs](../data-tools/includes/csprcs_md.md)] applicazione Windows.  
   
 ```  
 <VSTemplate Version="3.0.0" Type="Item"  
@@ -83,7 +89,7 @@ Il nome completo della classe che implementa l'interfaccia `IWizard`.
 </VSTemplate>  
 ```  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Riferimenti allo schema dei modelli di Visual Studio](../extensibility/visual-studio-template-schema-reference.md)   
- [Creazione di un progetto e di modelli di elemento personalizzati](../ide/creating-project-and-item-templates.md)   
- [Procedura: utilizzare procedure guidate con modelli di progetto](../extensibility/how-to-use-wizards-with-project-templates.md)
+ [Creazione di modelli di progetti e di elementi](../ide/creating-project-and-item-templates.md)   
+ [Procedura: Usare procedure guidate con modelli di progetto](../extensibility/how-to-use-wizards-with-project-templates.md)

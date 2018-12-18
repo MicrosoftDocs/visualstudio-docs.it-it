@@ -1,29 +1,33 @@
 ---
-title: "Interfacce del debugger dello script ActiveX | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/18/2017"
-ms.prod: "windows-script-interfaces"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-helpviewer_keywords: 
-  - "Interfacce del debugger dello script ActiveX"
-  - "activdbg.h"
+title: Interfacce del Debugger dello Script ActiveX | Documenti Microsoft
+ms.custom: 
+ms.date: 01/18/2017
+ms.prod: windows-script-interfaces
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: reference
+helpviewer_keywords:
+- Active Script Debugger interfaces
+- activdbg.h
 ms.assetid: bf4750b1-4e58-442b-ab56-254e640de61d
-caps.latest.revision: 15
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 15
+caps.latest.revision: "15"
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.openlocfilehash: d4a3d17a8ff43bb3bd18641c2298f5436f40d925
+ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/27/2017
 ---
-# Interfacce del debugger dello script ActiveX
+# <a name="active-script-debugger-interfaces"></a>Interfacce del debugger dello script ActiveX
 I file di intestazione activdbg.h e activdbg100.h forniscono le interfacce, le enumerazioni e le strutture elencate in questa sezione. Vengono utilizzati per il debug dello script.  
   
 > [!NOTE]
 >  Le interfacce `IJSDebug*` e l'interfaccia `IEnumJsStackFrames` sono state rilasciate inizialmente con Internet Explorer 11 per il debug del codice nativo tramite script. Il file di intestazione per queste interfacce è jscript9diag.h.  
   
-## In questa sezione  
+## <a name="in-this-section"></a>Contenuto della sezione  
  Le seguenti interfacce consentono il debug indipendente dalla lingua e dall'host:  
   
 -   [Costanti, enumerazioni e strutture del debugger di script ActiveX](../../winscript/reference/active-script-debugger-constants-enumerations-and-structures.md)  
@@ -34,9 +38,9 @@ I file di intestazione activdbg.h e activdbg100.h forniscono le interfacce, le e
   
 -   [Interfaccia IActiveScriptErrorDebug110](../../winscript/reference/iactivescripterrordebug110-interface.md)  
   
--   [Interfaccia IActiveScriptSiteDebug Interface](../../winscript/reference/iactivescriptsitedebug-interface.md)  
+-   [Interfaccia IActiveScriptSiteDebug](../../winscript/reference/iactivescriptsitedebug-interface.md)  
   
--   [IActiveScriptSiteDebug32 Interface](../../winscript/reference/iactivescriptsitedebug32-interface.md)  
+-   [Interfaccia IActiveScriptSiteDebug32](../../winscript/reference/iactivescriptsitedebug32-interface.md)  
   
 -   [Interfaccia IActiveScriptSiteDebugEx](../../winscript/reference/iactivescriptsitedebugex-interface.md)  
   
@@ -178,5 +182,5 @@ I file di intestazione activdbg.h e activdbg100.h forniscono le interfacce, le e
   
 -   [Costanti, enumerazioni e strutture del debugger di script ActiveX](../../winscript/reference/active-script-debugger-constants-enumerations-and-structures.md)  
   
-## Vedere anche  
- [Panoramica di debug script ActiveX](../../winscript/active-script-debugging-overview.md)
+## <a name="see-also"></a>Vedere anche  
+ [Panoramica del debug di script ActiveX](../../winscript/active-script-debugging-overview.md)

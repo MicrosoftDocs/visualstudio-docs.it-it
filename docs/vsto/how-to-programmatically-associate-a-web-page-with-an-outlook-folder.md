@@ -1,12 +1,10 @@
 ---
-title: 'How to: Programmatically Associate a Web Page with an Outlook Folder | Microsoft Docs'
+title: 'Procedura: associare una pagina Web una cartella di Outlook a livello di codice | Documenti Microsoft'
 ms.custom: 
 ms.date: 02/02/2017
-ms.prod: visual-studio-dev14
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- office-development
+ms.technology: office-development
 ms.tgt_pltfrm: 
 ms.topic: article
 dev_langs:
@@ -16,29 +14,27 @@ helpviewer_keywords:
 - folders [Office development in Visual Studio], Web pages and
 - Outlook [Office development in Visual Studio], Web pages attached to folders
 - Web pages [Office development in Visual Studio], Outlook folders
-ms.assetid: b211b1b2-11e4-4316-87b7-98a3d10f95d1
-caps.latest.revision: 16
-author: kempb
-ms.author: kempb
+author: TerryGLee
+ms.author: tglee
 manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: eb5c9550fd29b0e98bf63a7240737da4f13f3249
-ms.openlocfilehash: c3f4eeb5aa8de09da03c1d2d3a1b97967c70b4af
-ms.contentlocale: it-it
-ms.lasthandoff: 08/30/2017
-
+ms.workload: office
+ms.openlocfilehash: 0fa0ccb3035bc4be8e316c96bd5da8c166dcb4b8
+ms.sourcegitcommit: f9fbf1f55f9ac14e4e5c6ae58c30dc1800ca6cda
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 01/10/2018
 ---
-# <a name="how-to-programmatically-associate-a-web-page-with-an-outlook-folder"></a>How to: Programmatically Associate a Web Page with an Outlook Folder
-  This example checks for a folder named `HtmlView` in Microsoft Office Outlook. If the folder does not exist, the code creates the folder and assigns a Web page to it. If the folder exists, the code displays the folder contents.  
+# <a name="how-to-programmatically-associate-a-web-page-with-an-outlook-folder"></a>Procedura: associare una pagina Web a una cartella di Outlook a livello di codice
+  In questo esempio cerca una cartella denominata `HtmlView` in Microsoft Office Outlook. Se la cartella non esiste, il codice viene creata la cartella e assegna una pagina Web. Se la cartella esiste, il codice visualizza il contenuto della cartella.  
   
  [!INCLUDE[appliesto_olkallapp](../vsto/includes/appliesto-olkallapp-md.md)]  
   
-## <a name="example"></a>Example  
+## <a name="example"></a>Esempio  
  [!code-csharp[Trin_OL_HTMLFolder#1](../vsto/codesnippet/CSharp/Trin_OL_HTMLFolder/thisaddin.cs#1)]  
   
-## <a name="see-also"></a>See Also  
- [Working with Folders](../vsto/working-with-folders.md)   
- [How to: Programmatically Retrieve a Folder by Name](../vsto/how-to-programmatically-retrieve-a-folder-by-name.md)   
- [How to: Programmatically Create Custom Folder Items](../vsto/how-to-programmatically-create-custom-folder-items.md)  
+## <a name="see-also"></a>Vedere anche  
+ [Utilizzo delle cartelle](../vsto/working-with-folders.md)   
+ [Procedura: recuperare a livello di codice di una cartella per nome](../vsto/how-to-programmatically-retrieve-a-folder-by-name.md)   
+ [Procedura: Creare cartelle personalizzate a livello di codice](../vsto/how-to-programmatically-create-custom-folder-items.md)  
   
   

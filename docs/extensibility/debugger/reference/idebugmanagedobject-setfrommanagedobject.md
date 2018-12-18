@@ -1,51 +1,52 @@
 ---
-title: "IDebugManagedObject::SetFromManagedObject | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "IDebugManagedObject::SetFromManagedObject"
-helpviewer_keywords: 
-  - "Metodo IDebugManagedObject::SetFromManagedObject"
+title: IDebugManagedObject::SetFromManagedObject | Documenti Microsoft
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: vs-ide-sdk
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: IDebugManagedObject::SetFromManagedObject
+helpviewer_keywords: IDebugManagedObject::SetFromManagedObject method
 ms.assetid: 8700ee8d-2704-4580-bccc-046837a24edd
-caps.latest.revision: 9
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: gregvanl
+ms.author: gregvanl
+manager: ghogen
+ms.workload: vssdk
+ms.openlocfilehash: da0526c060175a6e00a7b45a7ef2e347dba0d89e
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
-# IDebugManagedObject::SetFromManagedObject
-[!INCLUDE[vs2017banner](../../../code-quality/includes/vs2017banner.md)]
-
-Imposta il valore dell'istanza dell'oggetto classe di valore dall'istanza della classe di valore fornito come parametro.  
+# <a name="idebugmanagedobjectsetfrommanagedobject"></a>IDebugManagedObject::SetFromManagedObject
+Imposta il valore dell'istanza dell'oggetto della classe di valore dall'istanza della classe di valori fornita come parametro.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp#  
-HRESULT SetFromManagedObject(   
-   IUnknown* pManagedObject  
+```cpp  
+HRESULT SetFromManagedObject(   
+   IUnknown* pManagedObject  
 );  
 ```  
   
-```c#  
+```csharp  
 int SetFromManagedObject(  
-   object pManagedObject  
+   object pManagedObject  
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `pManagedObject`  
- \[in\]  un'interfaccia che rappresenta l'oggetto gestito che contiene il nuovo valore.  
+ [in] Un'interfaccia che rappresenta l'oggetto gestito che contiene il nuovo valore.  
   
-## Valore restituito  
- Se l'operazione riesce, restituisce S\_OK, in caso contrario, restituisce un codice di errore.  
+## <a name="return-value"></a>Valore restituito  
+ Se ha esito positivo, restituisce S_OK; in caso contrario, restituisce un codice di errore.  
   
-## Note  
- Questo metodo viene utilizzato per modificare l'oggetto gestito come rappresentato [IDebugManagedObject](../../../extensibility/debugger/reference/idebugmanagedobject.md) dall'oggetto.  
+## <a name="remarks"></a>Note  
+ Questo metodo viene utilizzato per modificare l'oggetto gestito, come rappresentato dal [IDebugManagedObject](../../../extensibility/debugger/reference/idebugmanagedobject.md) oggetto.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IDebugManagedObject](../../../extensibility/debugger/reference/idebugmanagedobject.md)

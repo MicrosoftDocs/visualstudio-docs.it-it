@@ -1,66 +1,69 @@
 ---
-title: "Completamento di membro in un servizio di linguaggio Legacy | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "IntelliSense, descrizione membro completamento"
-  - "Completamento del membro supporto in servizi di linguaggio [framework pacchetto gestito]"
-  - "servizi di linguaggio [framework gestito pacchetto], completamento IntelliSense membro"
+title: Completamento di membro in un servizio di linguaggio Legacy | Documenti Microsoft
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: vs-ide-sdk
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- IntelliSense, Member Completion tool tip
+- Member Completion, supporting in language services [managed package framework]
+- language services [managed package framework], IntelliSense Member Completion
 ms.assetid: 500f718d-9028-49a4-8615-ba95cf47fc52
-caps.latest.revision: 21
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 21
+caps.latest.revision: "21"
+author: gregvanl
+ms.author: gregvanl
+manager: ghogen
+ms.workload: vssdk
+ms.openlocfilehash: e77511bdaaa96dc75f5be75c175b63fcd3cc3253
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
-# Completamento di membro in un servizio di linguaggio Legacy
-[!INCLUDE[vs2017banner](../../code-quality/includes/vs2017banner.md)]
-
-Il completamento di membri IntelliSense è una descrizione comandi che visualizza un elenco di possibili membri di un ambito specifico, ad esempio una classe, struttura, enumerazione o dello spazio dei nomi. Ad esempio, in c\#, se l'utente digita "this" seguito da un punto, un elenco di tutti i membri della classe o struttura nell'ambito corrente è presentato in un elenco da cui l'utente può selezionare.  
+# <a name="member-completion-in-a-legacy-language-service"></a>Completamento di membro in un servizio di linguaggio Legacy
+Il completamento di membro IntelliSense è una descrizione comando che consente di visualizzare un elenco di possibili membri di un ambito specifico, ad esempio una classe, struttura, enumerazione o dello spazio dei nomi. Ad esempio, in c#, se l'utente digita "this" seguito da un punto, un elenco di tutti i membri della classe o struttura nell'ambito corrente viene visualizzato un elenco da cui l'utente può selezionare.  
   
- Il framework di pacchetto gestito \(MPF\) fornisce supporto per la descrizione comando e la gestione dell'elenco nella descrizione comando; è sufficiente è cooperazione dal parser per fornire i dati visualizzati nell'elenco.  
+ Il framework di pacchetto gestito (MPF) fornisce supporto per la descrizione comando e la gestione dell'elenco nella descrizione comando; tutto ciò che serve è cooperazione dal parser per fornire i dati visualizzati nell'elenco.  
   
- Servizi di linguaggio legacy vengono implementati come parte di un package VS, ma il modo più recente per implementare le funzionalità del servizio del linguaggio è l'utilizzo delle estensioni MEF. Per ulteriori informazioni, vedere [Estensione dell'Editor e servizi di linguaggio](../../extensibility/extending-the-editor-and-language-services.md).  
+ Servizi di linguaggio legacy vengono implementati come parte di un VSPackage, ma il più recente per implementare le funzionalità del servizio di linguaggio consiste nell'utilizzare le estensioni MEF. Per ulteriori dettagli, vedere [estensione dell'Editor e i servizi di linguaggio](../../extensibility/extending-the-editor-and-language-services.md).  
   
 > [!NOTE]
->  Si consiglia di iniziare a utilizzare il nuovo editor API appena possibile. Verrà migliorare le prestazioni del servizio di linguaggio e consentono di sfruttare nuove funzionalità dell'editor.  
+>  Si consiglia di iniziare a usare il nuovo editor di API appena possibile. Verrà migliorare le prestazioni del servizio di linguaggio e consentono di sfruttare nuove funzionalità dell'editor.  
   
-## Come funziona  
- Di seguito sono due modi in cui viene visualizzato un elenco di membri utilizzando le classi MPF:  
+## <a name="how-it-works"></a>Come funziona  
+ Di seguito sono indicati i due modi in cui viene visualizzato un elenco di membri utilizzando le classi MPF:  
   
--   Posizionare il punto di inserimento su un identificatore o dopo un carattere di completamento del membro e selezionando **Elenca membri** dal **IntelliSense** menu.  
+-   Posizionare il punto di inserimento in un identificatore o dopo un carattere di completamento del membro e selezionando **Elenca membri** dal **IntelliSense** menu.  
   
 -   Il <xref:Microsoft.VisualStudio.Package.IScanner> scanner rileva un carattere di completamento del membro e imposta un trigger di token <xref:Microsoft.VisualStudio.Package.TokenTriggers> per tale carattere.  
   
- Un carattere di completamento membro indica che un membro di una classe, struttura o enumerazione consiste nel seguire. In c\# o Visual Basic, ad esempio, il carattere di completamento membro è un `.`, mentre in C\+\+ il carattere è un `.` o `->`. Il valore trigger viene impostato durante l'analisi di carattere selezionare il membro.  
+ Un carattere di completamento membro indica che un membro di classe, struttura o enumerazione consiste nel seguire. In c# o Visual Basic, ad esempio, il carattere di completamento del membro è un `.`, mentre in C++ il carattere è un `.` o `->`. Il valore trigger è impostato per l'analisi di carattere selezionare il membro.  
   
-### Il comando di elenco di membri in IntelliSense  
- Il <xref:Microsoft.VisualStudio.VSConstants.VSStd2KCmdID> comando avvia una chiamata al <xref:Microsoft.VisualStudio.Package.Source.Completion%2A> metodo la <xref:Microsoft.VisualStudio.Package.Source> classe e il <xref:Microsoft.VisualStudio.Package.Source.Completion%2A> \(metodo\), a sua volta, chiama il <xref:Microsoft.VisualStudio.Package.LanguageService.ParseSource%2A> parser di metodo con il motivo di analisi di <xref:Microsoft.VisualStudio.Package.ParseReason>.  
+### <a name="the-intellisense-member-list-command"></a>Il comando di elenco di membri in IntelliSense  
+ Il <xref:Microsoft.VisualStudio.VSConstants.VSStd2KCmdID> comando avvia una chiamata al <xref:Microsoft.VisualStudio.Package.Source.Completion%2A> metodo il <xref:Microsoft.VisualStudio.Package.Source> classe e il <xref:Microsoft.VisualStudio.Package.Source.Completion%2A> metodo, a sua volta chiama il <xref:Microsoft.VisualStudio.Package.LanguageService.ParseSource%2A> parser di metodo con il motivo di analisi di <xref:Microsoft.VisualStudio.Package.ParseReason>.  
   
- Il parser determina il contesto della posizione corrente, nonché il token in o immediatamente prima della posizione corrente. In base a questo token, viene presentato un elenco di dichiarazioni. Ad esempio, in c\#, se si posiziona il cursore su un membro di classe e selezionare **Elenca membri**, si ottiene un elenco di tutti i membri della classe. Se si posiziona il cursore dopo un periodo che segue una variabile oggetto, ottenere un elenco di tutti i membri della classe di tale oggetto rappresenta. Si noti che se il punto di inserimento viene posizionato su un membro quando viene visualizzato l'elenco dei membri, selezionare un membro dall'elenco sostituisce il membro che è attivo il cursore con uno nell'elenco.  
+ Il parser determina il contesto della posizione corrente, nonché il token in o immediatamente prima della posizione corrente. In base a questo token, viene presentato un elenco di dichiarazioni. Ad esempio, in c#, se si posiziona il cursore su un membro di classe e selezionare **Elenca membri**, viene visualizzato un elenco di tutti i membri della classe. Se si posiziona il cursore dopo un periodo che segue una variabile oggetto, si ottiene un elenco di tutti i membri della classe di tale oggetto rappresenta. Si noti che se il punto di inserimento viene posizionato su un membro quando viene visualizzato l'elenco dei membri, selezionarlo nell'elenco di un membro sostituisce il membro che il punto di inserimento si trova in con uno nell'elenco.  
   
-### Il Trigger di Token  
- Il <xref:Microsoft.VisualStudio.Package.TokenTriggers> trigger avvia una chiamata al <xref:Microsoft.VisualStudio.Package.Source.Completion%2A> metodo il <xref:Microsoft.VisualStudio.Package.Source> classe e il <xref:Microsoft.VisualStudio.Package.Source.Completion%2A> metodo chiama a sua volta, il parser con il motivo di analisi di <xref:Microsoft.VisualStudio.Package.ParseReason> \(se il trigger di token è inoltre incluso il <xref:Microsoft.VisualStudio.Package.TokenTriggers> flag, il motivo per l'analisi è <xref:Microsoft.VisualStudio.Package.ParseReason> che combina selezione dei membri e l'evidenziazione delle parentesi graffe\).  
+### <a name="the-token-trigger"></a>Il Token Trigger  
+ Il <xref:Microsoft.VisualStudio.Package.TokenTriggers> trigger avvia una chiamata al <xref:Microsoft.VisualStudio.Package.Source.Completion%2A> metodo il <xref:Microsoft.VisualStudio.Package.Source> classe e <xref:Microsoft.VisualStudio.Package.Source.Completion%2A> metodo chiama a sua volta, il parser con il motivo di analisi di <xref:Microsoft.VisualStudio.Package.ParseReason> (se il trigger di token è inoltre incluso il <xref:Microsoft.VisualStudio.Package.TokenTriggers> flag, il motivo di analisi è <xref:Microsoft.VisualStudio.Package.ParseReason> che combina selezione membro e l'evidenziazione delle parentesi graffe).  
   
- Il parser determina il contesto dell'oggetto corrente della posizione nonché digitato prima che il membro selezionare carattere. Da queste informazioni, il parser crea un elenco di tutti i membri dell'ambito richiesto. Incluso in questo elenco di dichiarazioni di <xref:Microsoft.VisualStudio.Package.AuthoringScope> oggetto restituito dal <xref:Microsoft.VisualStudio.Package.LanguageService.ParseSource%2A> \(metodo\). Se vengono restituite tutte le dichiarazioni, viene visualizzata la descrizione comando completamento membro. La descrizione comandi sono gestito da un'istanza di <xref:Microsoft.VisualStudio.Package.CompletionSet> \(classe\).  
+ Il parser determina il contesto dell'oggetto corrente della posizione nonché digitato prima che il membro selezionare carattere. Tali informazioni, il parser crea un elenco di tutti i membri dell'ambito richiesto. Questo elenco di dichiarazioni viene archiviato nel <xref:Microsoft.VisualStudio.Package.AuthoringScope> oggetto restituito dal <xref:Microsoft.VisualStudio.Package.LanguageService.ParseSource%2A> metodo. Se vengono restituite tutte le dichiarazioni, viene visualizzata la descrizione comando del completamento di membro. La descrizione comandi sono gestito da un'istanza di <xref:Microsoft.VisualStudio.Package.CompletionSet> classe.  
   
-## Abilita il supporto per il completamento di membro  
- È necessario disporre di `CodeSense` voce del Registro di sistema è impostato su 1 per supportare qualsiasi operazione di IntelliSense. Questa voce del Registro di sistema può essere impostata con un parametro denominato passato per il <xref:Microsoft.VisualStudio.Shell.ProvideLanguageServiceAttribute> attributo utente associato al pacchetto di linguaggio. Le classi del servizio di linguaggio leggono il valore di questa voce del Registro di sistema dalla <xref:Microsoft.VisualStudio.Package.LanguagePreferences.EnableCodeSense%2A> proprietà la <xref:Microsoft.VisualStudio.Package.LanguagePreferences> classe.  
+## <a name="enabling-support-for-member-completion"></a>Abilitazione del supporto per il completamento di membro  
+ È necessario disporre di `CodeSense` voce del Registro di sistema è impostato su 1 per supportare qualsiasi operazione IntelliSense. Questa voce del Registro di sistema può essere impostata con un parametro denominato passato per il <xref:Microsoft.VisualStudio.Shell.ProvideLanguageServiceAttribute> attributo utente associato al pacchetto di linguaggio. Le classi del servizio di linguaggio leggere il valore di questa voce del Registro di sistema dal <xref:Microsoft.VisualStudio.Package.LanguagePreferences.EnableCodeSense%2A> proprietà la <xref:Microsoft.VisualStudio.Package.LanguagePreferences> classe.  
   
  Se lo scanner restituisce il token trigger di <xref:Microsoft.VisualStudio.Package.TokenTriggers>, il parser restituisce un elenco di dichiarazioni, quindi viene visualizzato l'elenco di completamento del membro.  
   
-## Supporto completamento membro nello Scanner  
- Lo scanner deve essere in grado di rilevare un carattere di completamento del membro e impostare il trigger di token <xref:Microsoft.VisualStudio.Package.TokenTriggers> quando tale carattere viene analizzato.  
+## <a name="supporting-member-completion-in-the-scanner"></a>Lo Scanner di supporto di completamento di membro  
+ Lo scanner deve essere in grado di rilevare un carattere di completamento del membro e imposta il token trigger di <xref:Microsoft.VisualStudio.Package.TokenTriggers> quando tale carattere viene analizzato.  
   
-### Esempio  
- Ecco un esempio semplificato di rilevare il carattere di completamento del membro e l'impostazione appropriata <xref:Microsoft.VisualStudio.Package.TokenTriggers> flag. Questo esempio è solo a scopo illustrativo. Si presuppone che lo scanner contiene un metodo `GetNextToken` che identifica e restituisce i token da una riga di testo. Nell'esempio di codice imposta semplicemente il trigger quando viene rilevato il tipo di carattere corretto.  
+### <a name="example"></a>Esempio  
+ Ecco un esempio semplificato di rilevare il carattere di completamento del membro e l'impostazione appropriata <xref:Microsoft.VisualStudio.Package.TokenTriggers> flag. Questo esempio è solo a scopo illustrativo. Si presuppone che lo scanner contiene un metodo `GetNextToken` che identifica e restituisce un token da una riga di testo. Nell'esempio di codice imposta semplicemente il trigger quando viene rilevato il tipo di carattere corretto.  
   
-```c#  
+```csharp  
 using Microsoft.VisualStudio.Package;  
 using Microsoft.VisualStudio.TextManager.Interop;  
   
@@ -91,17 +94,17 @@ namespace TestLanguagePackage
 }  
 ```  
   
-## Supporto di membro completamento nel Parser  
- Per il completamento di membro, la <xref:Microsoft.VisualStudio.Package.Source> classe chiamate di <xref:Microsoft.VisualStudio.Package.AuthoringScope.GetDeclarations%2A> metodo. È necessario implementare l'elenco in una classe che deriva dalla <xref:Microsoft.VisualStudio.Package.Declarations> classe. Vedere la <xref:Microsoft.VisualStudio.Package.Declarations> classe per informazioni dettagliate sui metodi di cui è necessario implementare.  
+## <a name="supporting-member-completion-in-the-parser"></a>Il Parser di supporto di completamento membro  
+ Per il completamento di membro, il <xref:Microsoft.VisualStudio.Package.Source> classe chiama il <xref:Microsoft.VisualStudio.Package.AuthoringScope.GetDeclarations%2A> metodo. È necessario implementare l'elenco in una classe derivata dalla <xref:Microsoft.VisualStudio.Package.Declarations> classe. Vedere la <xref:Microsoft.VisualStudio.Package.Declarations> classe per informazioni dettagliate sui metodi di cui è necessario implementare.  
   
- Il parser viene chiamato con <xref:Microsoft.VisualStudio.Package.ParseReason> o <xref:Microsoft.VisualStudio.Package.ParseReason> quando viene digitato un carattere di selezione del membro. Il percorso specificato <xref:Microsoft.VisualStudio.Package.ParseRequest> oggetto si trova immediatamente dopo il membro selezionato carattere. Il parser deve raccogliere i nomi di tutti i membri che possono essere visualizzati in un elenco di membri in tale particolare punto nel codice sorgente. Quindi il parser deve analizzare la riga corrente per determinare l'ambito che il consenso dell'utente associato al carattere selezionare membro.  
+ Il parser viene chiamato con <xref:Microsoft.VisualStudio.Package.ParseReason> o <xref:Microsoft.VisualStudio.Package.ParseReason> quando viene digitato un carattere di selezione del membro. Il percorso specificato <xref:Microsoft.VisualStudio.Package.ParseRequest> oggetto viene immediatamente dopo che il membro selezionare carattere. Il parser deve raccogliere i nomi di tutti i membri che possono essere visualizzati in un elenco di membri in tale particolare punto nel codice sorgente. Quindi il parser deve analizzare la riga corrente per determinare l'ambito in cui che l'utente desidera associato con il carattere di selezione del membro.  
   
- Questo ambito è in base al tipo dell'identificatore prima che il membro selezionare carattere. In c\#, si consideri ad esempio la variabile membro `languageService` che dispone di un tipo di `LanguageService`, digitando **languageService.** produce un elenco di tutti i membri della `LanguageService` classe. Anche in c\#, digitare **questo.** produce un elenco di tutti i membri della classe nell'ambito corrente.  
+ Questo ambito è in base al tipo dell'identificatore prima che il membro selezionare carattere. In c#, si consideri ad esempio la variabile membro `languageService` che ha un tipo di `LanguageService`, digitando **languageService.** produce un elenco di tutti i membri del `LanguageService` classe. Anche in c#, digitare **questo.** produce un elenco di tutti i membri della classe nell'ambito corrente.  
   
-### Esempio  
- Nell'esempio seguente viene illustrato come popolare un <xref:Microsoft.VisualStudio.Package.Declarations> elenco. Questo codice presuppone che il parser crea una dichiarazione e lo aggiunge all'elenco chiamando un `AddDeclaration` metodo la `TestAuthoringScope` classe.  
+### <a name="example"></a>Esempio  
+ Nell'esempio seguente viene illustrato come popolare un <xref:Microsoft.VisualStudio.Package.Declarations> elenco. Questo codice presuppone che il parser costruisce una dichiarazione e lo aggiunge all'elenco chiamando un `AddDeclaration` metodo la `TestAuthoringScope` classe.  
   
-```c#  
+```csharp  
 using System.Collections;  
 using Microsoft.VisualStudio.Package;  
 using Microsoft.VisualStudio.TextManager.Interop;  

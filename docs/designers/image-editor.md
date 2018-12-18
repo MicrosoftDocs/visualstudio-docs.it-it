@@ -4,24 +4,23 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- vs-ide-designers
+ms.technology: vs-ide-designers
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
 - vs.graphics.designer.imageeditor
 - vs.graphics.imageeditor
 ms.assetid: fc71d502-c548-4863-8afc-12a1d3ec90d4
-caps.latest.revision: 45
+caps.latest.revision: "45"
 author: gewarren
 ms.author: gewarren
 manager: ghogen
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 5db97d19b1b823388a465bba15d057b30ff0b3ce
-ms.openlocfilehash: 0def4c66be3cf1bbd65c9cb0dea5e3366f65aae1
-ms.contentlocale: it-it
-ms.lasthandoff: 02/22/2017
-
+ms.workload: multiple
+ms.openlocfilehash: df78a45b5bc5dded132b58cb37b87d4198ad1e7e
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="image-editor"></a>Editor di immagini
 Questo documento descrive come usare l'editor di immagini di [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] per visualizzare e modificare le risorse di trama e di immagine.  
@@ -133,7 +132,7 @@ Questo documento descrive come usare l'editor di immagini di [!INCLUDE[vsprvs](.
 |**Riempimento**|Usa la selezione di colore attiva per riempire un'area dell'immagine. L'area interessata include il pixel a cui viene applicato il riempimento e ogni pixel dello stesso colore che sia connesso al primo tramite pixel dello stesso colore. Se il riempimento viene applicato all'interno di una selezione attiva, l'area interessata sarà vincolata dalla selezione.<br /><br /> Per impostazione predefinita, la selezione di colore attiva viene fusa insieme all'area interessata dell'immagine in base alla componente alfa. Per usare la selezione di colore attiva per sovrascrivere l'area interessata, tenere premuto MAIUSC quando si usa lo strumento di riempimento.|  
 |**Gomma**|Imposta i pixel sul colore completamente trasparente se l'immagine supporta un canale alfa. In caso contrario, imposta i pixel sul colore di sfondo attivo.|  
 |**Linea**, **Rettangolo**, **Rettangolo arrotondato**, **Ellisse**|Disegna una forma in un'immagine. È possibile impostare il colore e lo spessore del contorno nella finestra **Proprietà**.<br /><br /> Per disegnare una primitiva con larghezza e altezza uguali, tenere premuto MAIUSC mentre si esegue il disegno.|  
-|**Testo**|Usa la selezione del colore di primo piano per tracciare del testo. Il colore di sfondo è determinato dalla selezione del colore di sfondo. Per uno sfondo trasparente, il valore alfa della selezione del colore di sfondo deve essere 0. Mentre l'area di testo è attiva, è possibile specificare se il testo viene tracciato usando un tratto con anti-aliasing ed è possibile impostare per il testo le opzioni **Valore**, **Tipo di carattere** e **Dimensione** e lo stile **Grassetto**, **Corsivo** o **Sottolineato** nella finestra **Proprietà**. Il contenuto e l'aspetto del testo viene completato quando l'area di testo non è più attiva.|  
+|**per**|Usa la selezione del colore di primo piano per tracciare del testo. Il colore di sfondo è determinato dalla selezione del colore di sfondo. Per uno sfondo trasparente, il valore alfa della selezione del colore di sfondo deve essere 0. Mentre l'area di testo è attiva, è possibile specificare se il testo viene tracciato usando un tratto con anti-aliasing ed è possibile impostare per il testo le opzioni **Valore**, **Tipo di carattere** e **Dimensione** e lo stile **Grassetto**, **Corsivo** o **Sottolineato** nella finestra **Proprietà**. Il contenuto e l'aspetto del testo viene completato quando l'area di testo non è più attiva.|  
 |**Ruota**|Ruota l'immagine di 90 gradi in senso orario.|  
 |**Taglia**|Taglia l'immagine in base alla selezione attiva.|  
   
@@ -200,14 +199,14 @@ Questo documento descrive come usare l'editor di immagini di [!INCLUDE[vsprvs](.
   
  Di seguito sono elencate le combinazioni di tasti di modifica valide:  
   
-|CTRL|MAIUSC|ALT|Descrizione|  
+|CTRL|Shift|ALT|Descrizione|  
 |----------|-----------|---------|-----------------|  
 ||||Ridimensiona il contenuto dell'area selezionata.|  
-||MAIUSC||Ridimensiona in modo proporzionale il contenuto dell'area selezionata.|  
+||Shift||Ridimensiona in modo proporzionale il contenuto dell'area selezionata.|  
 |||ALT|Ridimensiona l'area selezionata. In questo modo viene definita una nuova area di selezione.|  
-||MAIUSC|ALT|Ridimensiona in modo proporzionale l'area selezionata. In questo modo viene definita una nuova area di selezione.|  
+||Shift|ALT|Ridimensiona in modo proporzionale l'area selezionata. In questo modo viene definita una nuova area di selezione.|  
 |CTRL|||Copia e quindi ridimensiona il contenuto dell'area selezionata.|  
-|CTRL|MAIUSC||Copia e quindi ridimensiona in modo proporzionale il contenuto dell'area selezionata.|  
+|CTRL|Shift||Copia e quindi ridimensiona in modo proporzionale il contenuto dell'area selezionata.|  
   
 ####  <a name="ToolProperties"></a> Proprietà degli strumenti  
  Quando è selezionato uno strumento, è possibile usare la finestra **Proprietà** per specificare i dettagli su come questo deve agire sull'immagine. Ad esempio, è possibile impostare lo spessore dello strumento **Matita** o il colore dello strumento **Pennello**.  
@@ -220,7 +219,7 @@ Questo documento descrive come usare l'editor di immagini di [!INCLUDE[vsprvs](.
 |----------|----------------|  
 |Tutti gli strumenti e le selezioni|**Rotazione di**<br /> Definisce il numero di gradi, in senso orario, in base al quale viene ruotato lo strumento o la selezione.|  
 |**Matita**, **Pennello**, **Aerografo**, **Gomma**|**Spessore**<br /> Definisce le dimensioni dell'area interessata dallo strumento.|  
-|**Testo**|**Anti-alias**<br /> Traccia il testo usando bordi con anti-aliasing. In questo modo il testo assume un aspetto più uniforme.<br /><br /> **Valore**<br /> Testo da tracciare.<br /><br /> **Tipo di carattere**<br /> Tipo di carattere usato per tracciare il testo.<br /><br /> **Dimensione**<br /> Dimensione del testo.<br /><br /> **Grassetto**<br /> Applica il grassetto.<br /><br /> **Corsivo**<br /> Applica il corsivo.<br /><br /> **Sottolineato**<br /> Applica la sottolineatura.|  
+|**per**|**Anti-alias**<br /> Traccia il testo usando bordi con anti-aliasing. In questo modo il testo assume un aspetto più uniforme.<br /><br /> **Valore**<br /> Testo da tracciare.<br /><br /> **Tipo di carattere**<br /> Tipo di carattere usato per tracciare il testo.<br /><br /> **Dimensione**<br /> Dimensione del testo.<br /><br /> **Grassetto**<br /> Applica il grassetto.<br /><br /> **Corsivo**<br /> Applica il corsivo.<br /><br /> **Sottolineato**<br /> Applica la sottolineatura.|  
 |**Primitiva 2D**|**Anti-alias**<br /> Disegna le primitive usando bordi con anti-aliasing. In questo modo, le primitive assumono un aspetto più uniforme.<br /><br /> **Spessore**<br /> Definisce lo spessore della linea che forma il contorno della primitiva.<br /><br /> **Raggio X**<br /> (Solo rettangolo arrotondato) Definisce il raggio di arrotondamento per i bordi superiore e inferiore della primitiva.<br /><br /> **Raggio Y**<br /> (Solo rettangolo arrotondato) Definisce il raggio di arrotondamento per i bordi destro e sinistro della primitiva.|  
 |**Matita**, **Pennello**, **Aerografo**, **Primitiva 2D**|**Canali**<br /> Abilita o disabilita i canali di colore specifici per la visualizzazione e il disegno. Se per un canale di colore specifico è impostata l'opzione **Visualizzazione**, tale canale è visibile nell'immagine. In caso contrario, non è visibile. Se per un canale di colore specifico è impostata l'opzione **Disegno**, tale canale è interessato dalle operazioni di disegno. In caso contrario, non lo è.|  
 |**Selezione con bacchetta magica**, **Riempimento**|**Tolleranza**<br /> Definisce la differenza massima tra i colori adiacenti considerati simili, in modo da includere un numero minore o maggiore di colori simili nell'area interessata o selezionata. Per impostazione predefinita, il valore è 32. In questo modo, i pixel adiacenti in 32 tonalità (più chiare o più scure) del colore originale vengono considerati come parte dell'area.|  
@@ -273,6 +272,6 @@ Questo documento descrive come usare l'editor di immagini di [!INCLUDE[vsprvs](.
   
 |Titolo|Descrizione|  
 |-----------|-----------------|  
-|[Uso di risorse tridimensionali per giochi e app](../designers/working-with-3-d-assets-for-games-and-apps.md)|Fornisce informazioni generali sugli strumenti disponibili in [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] per usare le risorse grafiche come trame, immagini, modelli 3D ed effetti shader.|  
+|[Working with 3-D Assets for Games and Apps](../designers/working-with-3-d-assets-for-games-and-apps.md) (Uso di risorse 3D per giochi e app)|Fornisce informazioni generali sugli strumenti disponibili in [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] per usare le risorse grafiche come trame, immagini, modelli 3D ed effetti shader.|  
 |[Editor dei modelli](../designers/model-editor.md)|Descrive come usare l'editor dei modelli di [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] per lavorare con modelli 3D.|  
 |[Finestra di progettazione shader](../designers/shader-designer.md)|Descrive come utilizzare Progettazione shader di [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] con shader.|

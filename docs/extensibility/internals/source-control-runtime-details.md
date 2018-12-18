@@ -1,30 +1,32 @@
 ---
-title: "Dettagli di Runtime di controllo di origine | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "controllo del codice sorgente [Visual Studio SDK], informazioni di runtime"
+title: Origine controllo Runtime dettagli | Documenti Microsoft
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: vs-ide-sdk
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords: source control [Visual Studio SDK], runtime details
 ms.assetid: 1acd30e0-f98c-4bde-b9cd-4076845887df
-caps.latest.revision: 12
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 12
+caps.latest.revision: "12"
+author: gregvanl
+ms.author: gregvanl
+manager: ghogen
+ms.workload: vssdk
+ms.openlocfilehash: 9b27aa56cdcf48ded56f9a43e40a1e65f3491536
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
-# Dettagli di Runtime di controllo di origine
-[!INCLUDE[vs2017banner](../../code-quality/includes/vs2017banner.md)]
-
-Un progetto verrà aggiunto al controllo del codice sorgente quando l'utente aggiunge un file del progetto al controllo del codice sorgente, o tramite un controller di automazione, ad esempio una procedura guidata.  Un progetto non specifica per se stesso incluso nel controllo del codice sorgente, supporta il controllo del codice sorgente, ma deve essere aggiunto a manualmente.  
+# <a name="source-control-runtime-details"></a>Dettagli dell'origine controllo Runtime
+Quando l'utente aggiunge un file nel progetto di controllo del codice sorgente o tramite un controller di automazione, ad esempio una procedura guidata, viene aggiunto un progetto al controllo del codice sorgente. Un progetto non è specificato per se stesso che sia in controllo del codice sorgente; supporta controllo del codice sorgente, ma devono essere aggiunti manualmente a esso.  
   
-## La registrazione con un pacchetto del controllo del codice sorgente  
- When a file in your project is added to source control, the environment calls <xref:Microsoft.VisualStudio.Shell.Interop.IVsSccProject2.SetSccLocation%2A> to provide you four opaque strings that are used as cookies by the source control system.  Archiviare queste stringhe nel file di progetto.  These strings should be passed to the Source Control Stub \(the Visual Studio component that manages source control packages\) on startup of the project type by calling <xref:Microsoft.VisualStudio.Shell.Interop.IVsSccManager2.RegisterSccProject%2A>.  Questa operazione consente a sua volta carica il package appropriato del controllo del codice sorgente e inoltra la chiamata all'implementazione di `IVsSccManager2::RegisterSccProject`.  
+## <a name="registering-with-a-source-control-package"></a>Registrazione con un pacchetto di controllo di origine  
+ Quando un file nel progetto viene aggiunto al controllo del codice sorgente, l'ambiente chiama <xref:Microsoft.VisualStudio.Shell.Interop.IVsSccProject2.SetSccLocation%2A> per fornire quattro stringhe opache che vengono utilizzate come i cookie per il controllo del codice sorgente. Archiviare queste stringhe nel file di progetto. Queste stringhe devono essere passate allo stub del controllo origine (il componente di Visual Studio che gestisce i pacchetti di controllo di origine) all'avvio del tipo di progetto per la chiamata <xref:Microsoft.VisualStudio.Shell.Interop.IVsSccManager2.RegisterSccProject%2A>. Ciò a sua volta carica il pacchetto di controllo di origine appropriato e inoltra la chiamata alla relativa implementazione di `IVsSccManager2::RegisterSccProject`.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  <xref:Microsoft.VisualStudio.Shell.Interop.IVsSccManager2.RegisterSccProject%2A>   
  <xref:Microsoft.VisualStudio.Shell.Interop.IVsSccProject2.SetSccLocation%2A>   
- [Supporto di controllo del codice sorgente](../../extensibility/internals/supporting-source-control.md)
+ [Supporto del controllo del codice sorgente](../../extensibility/internals/supporting-source-control.md)

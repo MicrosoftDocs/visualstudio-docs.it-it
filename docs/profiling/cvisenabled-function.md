@@ -1,32 +1,34 @@
 ---
-title: "Funzione CvIsEnabled | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "cvmarkers/CvIsEnabledEx"
-  - "cvmarkers/CvIsEnabled"
-helpviewer_keywords: 
-  - "CvIsEnabled (metodo)"
-  - "CvIsEnabledEx (metodo)"
+title: Funzione CvIsEnabled | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: vs-ide-debug
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- cvmarkers/CvIsEnabledEx
+- cvmarkers/CvIsEnabled
+helpviewer_keywords:
+- CvIsEnabled method
+- CvIsEnabledEx method
 ms.assetid: 2e4fea6d-758d-4150-8744-6102a1d58c1c
-caps.latest.revision: 3
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.workload: multiple
+ms.openlocfilehash: f7459b155192869f02541d65da9cfaa80f22ddd9
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
-# Funzione CvIsEnabled
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
-Determina se una sessione ha attivato lo specifico provider ETW.  
+# <a name="cvisenabled-function"></a>Funzione CvIsEnabled
+Determina se vi sono sessioni che hanno abilitato il provider ETW specifico.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
 HRESULT CvIsEnabled(  
@@ -39,7 +41,7 @@ HRESULT CvIsEnabledEx(
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `category`  
  Categoria.  
   
@@ -47,13 +49,13 @@ HRESULT CvIsEnabledEx(
  Livello di importanza.  
   
  `pProvider`  
- Oggetto provider valido.  Non può essere NULL.  
+ Oggetto provider valido. Non può essere NULL.  
   
-## Valore restituito  
- S\_OK se il provider è attualmente abilitato.  S\_FALSE se il provider è attualmente disabilitato.  Codice di errore nel caso siano alcuni errori.  Utilizzare la macro FAILED per controllare la condizione di errore e quindi per controllare S\_OK\/S\_FALSE.  
+## <a name="return-value"></a>Valore restituito  
+ S_OK se il provider è stato abilitato correttamente. S_FALSE se il provider attualmente è disabilitato. Codice dell'errore nel caso in cui si siano verificati errori. Usare la macro FAILED per verificare la condizione di errore e quindi verificare la presenza di S_OK/S_FALSE.  
   
-## Requisiti  
+## <a name="requirements"></a>Requisiti  
  **Intestazione:** cvmarkers.h  
   
-## Vedere anche  
- [riferimento alla libreria C\+\+](../profiling/cpp-library-reference.md)
+## <a name="see-also"></a>Vedere anche  
+ [C++ Library Reference](../profiling/cpp-library-reference.md) (Riferimento alla libreria C++)

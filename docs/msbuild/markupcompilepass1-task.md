@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- vs-ide-sdk
+ms.technology: msbuild
 ms.tgt_pltfrm: 
 ms.topic: article
 dev_langs:
@@ -19,30 +18,17 @@ helpviewer_keywords:
 - converting XAML projects to compiled binary format [WPF MSBuild]
 - MarkupCompilePass1 task [WPF MSBuild], converting XAML to binary format
 ms.assetid: 693d6945-fd6f-4698-8f64-9dfcb71052d3
-caps.latest.revision: 8
-author: kempb
-ms.author: kempb
+caps.latest.revision: 
+author: Mikejo5000
+ms.author: mikejo
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 3d32d11a430227800cb3ed53831a9565eb6adeb3
-ms.openlocfilehash: 88b72484342e3658babf519ab746be3dc71aadb6
-ms.contentlocale: it-it
-ms.lasthandoff: 05/30/2017
-
+ms.workload:
+- multiple
+ms.openlocfilehash: ce65ca299bf8d43aa1ae22ee2c1bd0cf5300b68d
+ms.sourcegitcommit: 205d15f4558315e585c67f33d5335d5b41d0fcea
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 02/09/2018
 ---
 # <a name="markupcompilepass1-task"></a>Attività MarkupCompilePass1
 L'attività <xref:Microsoft.Build.Tasks.Windows.MarkupCompilePass1> converte i file di progetto [!INCLUDE[TLA#tla_xaml](../msbuild/includes/tlasharptla_xaml_md.md)] non localizzabili al formato binario compilato.  
@@ -62,8 +48,8 @@ L'attività <xref:Microsoft.Build.Tasks.Windows.MarkupCompilePass1> converte i f
 |`DefineConstants`|Parametro **String** facoltativo.<br /><br /> Specifica che viene mantenuto il valore corrente di **DefineConstants**, con effetti sulla generazione dell'assembly di destinazione. L'eventuale modifica di questo parametro può comportare la modifica anche dell'API pubblica nell'assembly di destinazione, con possibili effetti sulla compilazione dei file [!INCLUDE[TLA2#tla_titlexaml](../msbuild/includes/tla2sharptla_titlexaml_md.md)] che fanno riferimento ai tipi locali.|  
 |`ExtraBuildControlFiles`|Parametro **ITaskItem[]** facoltativo.<br /><br /> Specifica un elenco di file che controllano l'attivazione di una ricompilazione durante la riesecuzione dell'attività <xref:Microsoft.Build.Tasks.Windows.MarkupCompilePass1>. La ricompilazione viene attivata in caso di modifica di uno di questi file.|  
 |`GeneratedBamlFiles`|Parametro di output **ITaskItem[]** facoltativo.<br /><br /> Contiene l'elenco dei file generati in formato binario [!INCLUDE[TLA2#tla_xaml](../msbuild/includes/tla2sharptla_xaml_md.md)].|  
-|`GeneratedCodeFiles`|Parametro di output facoltativo **ITaskItem[]**.<br /><br /> Contiene l'elenco dei file di codice gestito generati.|  
-|`GeneratedLocalizationFiles`|Parametro di output facoltativo **ITaskItem[]**.<br /><br /> Contiene l'elenco dei file di localizzazione generati per ogni file [!INCLUDE[TLA2#tla_xaml](../msbuild/includes/tla2sharptla_xaml_md.md)] localizzabile.|  
+|`GeneratedCodeFiles`|Parametro di output **ITaskItem[]** facoltativo.<br /><br /> Contiene l'elenco dei file di codice gestito generati.|  
+|`GeneratedLocalizationFiles`|Parametro di output **ITaskItem[]** facoltativo.<br /><br /> Contiene l'elenco dei file di localizzazione generati per ogni file [!INCLUDE[TLA2#tla_xaml](../msbuild/includes/tla2sharptla_xaml_md.md)] localizzabile.|  
 |`HostInBrowser`|Parametro **String** facoltativo.<br /><br /> Specifica se l'assembly generato è un'applicazione browser [!INCLUDE[TLA#tla_xbap](../msbuild/includes/tlasharptla_xbap_md.md)]. Le opzioni valide sono **true** e **false**. Se **true**, verrà generato codice per supportare l'hosting del browser.|  
 |`KnownReferencePaths`|Parametro **String[]** facoltativo.<br /><br /> Specifica i riferimenti ad assembly che non vengono modificati durante il processo di compilazione. Include assembly che si trovano in [!INCLUDE[TLA#tla_gac](../msbuild/includes/tlasharptla_gac_md.md)], in una directory di installazione di [!INCLUDE[TLA#tla_netframewk](../misc/includes/tlasharptla_netframewk_md.md)] e così via.|  
 |`Language`|Parametro **String** obbligatorio.<br /><br /> Specifica il linguaggio gestito supportato dal compilatore. Le opzioni valide sono **C#**, **VB**, **JScript** e **C++**.|  

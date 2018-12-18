@@ -4,34 +4,20 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- vs-ide-sdk
+ms.technology: vs-ide-sdk
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: 3a01d333-6e31-423f-ae06-5091a4fcb7a9
-caps.latest.revision: 22
+caps.latest.revision: "22"
+author: gregvanl
 ms.author: gregvanl
 manager: ghogen
-translation.priority.mt:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.workload: vssdk
+ms.openlocfilehash: 43376b304637ffe59d443ee82350d5492133db2f
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
 ms.translationtype: MT
-ms.sourcegitcommit: 4a36302d80f4bc397128e3838c9abf858a0b5fe8
-ms.openlocfilehash: 8db7d203b599c11ce8fea07ed3647771c879a256
-ms.contentlocale: it-it
-ms.lasthandoff: 09/26/2017
-
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="faq-converting-add-ins-to-vspackage-extensions"></a>Domande frequenti: conversione di componenti aggiuntivi in VSPackage Extensions
 I componenti aggiuntivi sono deprecati. Per creare una nuova estensione di Visual Studio, è necessario creare un'estensione VSIX. Ecco le risposte ad alcune domande frequenti su come convertire un componente aggiuntivo di Visual Studio in un'estensione VSIX.  
@@ -83,7 +69,7 @@ I componenti aggiuntivi sono deprecati. Per creare una nuova estensione di Visua
   
 1.  Creare un VSPackage contenente un comando di menu. (Per ulteriori informazioni, vedere [creazione di un'estensione con un comando di Menu](../extensibility/creating-an-extension-with-a-menu-command.md).)  
   
-2.  Aprire il file che contiene la definizione del VSPackage. (In un progetto c#, ha * \<nome progetto >*Package.cs.)  
+2.  Aprire il file che contiene la definizione del VSPackage. (In un progetto c#, ha  *\<nome progetto >*Package.cs.)  
   
 3.  Aggiungere al file le istruzioni `using` seguenti:  
   
@@ -145,7 +131,7 @@ I componenti aggiuntivi sono deprecati. Per creare una nuova estensione di Visua
   
 #### <a name="to-get-the-dte-object-from-a-vspackage"></a>Per recuperare l'oggetto DTE da un VSPackage  
   
-1.  In un progetto VSIX con un modello di elemento di pacchetto di Visual Studio, cercare il * \<nome progetto >*Package.cs file. Si tratta della classe che deriva da <xref:Microsoft.VisualStudio.Shell.Package> e consente di interagire con Visual Studio. In questo caso, usare il relativo <xref:Microsoft.VisualStudio.Shell.Package.GetService%2A> per recuperare l'oggetto <xref:EnvDTE80.DTE2>.  
+1.  In un progetto VSIX con un modello di elemento di pacchetto di Visual Studio, cercare il  *\<nome progetto >*Package.cs file. Si tratta della classe che deriva da <xref:Microsoft.VisualStudio.Shell.Package> e consente di interagire con Visual Studio. In questo caso, usare il relativo <xref:Microsoft.VisualStudio.Shell.Package.GetService%2A> per recuperare l'oggetto <xref:EnvDTE80.DTE2>.  
   
 2.  Aggiungere queste istruzioni `using`:  
   
@@ -177,7 +163,7 @@ I componenti aggiuntivi sono deprecati. Per creare una nuova estensione di Visua
   
 1.  Creare un VSPackage che dispone di un comando di menu, come nel [come avviare lo sviluppo di estensioni VSIX?](../extensibility/faq-converting-add-ins-to-vspackage-extensions.md#BKMK_StartDeveloping) sezione.  
   
-2.  Aprire il file che contiene la definizione del VSPackage. (In un progetto c#, ha * \<nome progetto >*Package.cs.)  
+2.  Aprire il file che contiene la definizione del VSPackage. (In un progetto c#, ha  *\<nome progetto >*Package.cs.)  
   
 3.  Aggiungere queste istruzioni `using`:  
   
@@ -225,7 +211,7 @@ I componenti aggiuntivi sono deprecati. Per creare una nuova estensione di Visua
   
 1.  Creare un VSPackage che dispone di un comando di menu, come nel [come avviare lo sviluppo di estensioni VSIX?](../extensibility/faq-converting-add-ins-to-vspackage-extensions.md#BKMK_StartDeveloping) sezione.  
   
-2.  Aprire il file che contiene la definizione del VSPackage. (In un progetto c#, ha * \<nome progetto >*Package.cs.)  
+2.  Aprire il file che contiene la definizione del VSPackage. (In un progetto c#, ha  *\<nome progetto >*Package.cs.)  
   
 3.  Aggiungere queste istruzioni `using`:  
   

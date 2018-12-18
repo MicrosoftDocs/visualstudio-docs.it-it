@@ -17,37 +17,24 @@ helpviewer_keywords:
 - multithreaded debugging, tutorial
 - tutorials, multithreaded debugging
 ms.assetid: 62df746b-b0f6-4df4-83cf-b1d9d2e72833
-caps.latest.revision: 38
+caps.latest.revision: 
 author: mikejo5000
 ms.author: mikejo
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: HT
-ms.sourcegitcommit: 1d4298d60886d8fe8b402b59b1838a4171532ab1
-ms.openlocfilehash: 3ffb550707280d76756cbd144ed03f4143ce144b
-ms.contentlocale: it-it
-ms.lasthandoff: 09/26/2017
-
+ms.workload:
+- multiple
+ms.openlocfilehash: 0d2766a394c88d2040a8f062c33add4e3f7af019
+ms.sourcegitcommit: 9a2f937e42305db6e3eaa7aadc235b0ba9aafc83
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 01/29/2018
 ---
 # <a name="get-started-debugging-a-multithreaded-application-in-visual-studio"></a>Introduzione al debug di un'applicazione multithreading in Visual Studio
 Visual Studio fornisce numerosi strumenti e gli elementi dell'interfaccia utente per eseguire il debug di applicazioni multithreading. In questa esercitazione viene illustrato come utilizzare gli indicatori dei thread, il **stack in parallelo** finestra il **espressioni di controllo parallelo** finestra punti di interruzione condizionali e i punti di interruzione di filtro. In questa esercitazione richiede solo pochi minuti, ma il suo completamento consentirà di acquisire familiarità con le funzionalità per il debug di applicazioni multithreading.
 
 |         |         |
 |---------|---------|
-| ![Guardare un video](../install/media/video-icon.png "WatchVideo") | [Guardare un video](#video) con multithreading di debug che illustra una procedura simile. |
+|  ![icona della telecamera](../install/media/video-icon.png "Guardare un video")  |    [Guardare un video](https://mva.microsoft.com/en-US/training-courses-embed/getting-started-with-visual-studio-2017-17798/Debugging-Multi-threaded-Apps-in-Visual-Studio-2017-MoZPKMD6D_111787171) con multithreading di debug che illustra una procedura simile. |
 
 Altri argomenti forniscono informazioni aggiuntive sull'utilizzo di altri strumenti di debug con multithreading:
 
@@ -214,7 +201,7 @@ Per iniziare questa esercitazione, è necessario un progetto di applicazione mul
   
 -   Nell'editor del codice sorgente, cercare il codice seguente: 
   
-    ```CSharp  
+    ```csharp  
     Thread.Sleep(3000);  
     Console.WriteLine();  
     ```  
@@ -243,7 +230,7 @@ Per iniziare questa esercitazione, è necessario un progetto di applicazione mul
   
 4.  Nell'editor del codice sorgente, individuare la riga che contiene il punto di interruzione:  
   
-    ```CSharp  
+    ```csharp  
     Thread.Sleep(3000);  
     ```  
   
@@ -389,12 +376,6 @@ In alcuni casi, può essere utile seguire l'esecuzione di un singolo thread nel 
 
 - Per passare a un altro thread, vedere [procedura: passare a un altro Thread durante il debug](../debugger/how-to-switch-to-another-thread-while-debugging.md) 
 
-## <a name="video"></a>Guardare un video sul debug con multithreading
-
-<div style="padding-top: 56.25%; position: relative; width: 100%;">
-<iframe style="position: absolute;top: 0;left: 0;right: 0;bottom: 0;" width="100%" height="100%" src="https://mva.microsoft.com/en-US/training-courses-embed/getting-started-with-visual-studio-2017-17798/Debugging-Multi-threaded-Apps-in-Visual-Studio-2017-MoZPKMD6D_111787171" frameborder="0" allowfullscreen></iframe>
-</div>
-
 #### <a name="to-learn-more-about-the-parallel-stack-and-parallel-watch-windows"></a>Per ulteriori informazioni sulle finestre Stack paralleli ed espressioni di controllo parallelo  
   
 - Vedere [procedura: utilizzare la finestra Stack paralleli](../debugger/using-the-parallel-stacks-window.md) 
@@ -404,4 +385,3 @@ In alcuni casi, può essere utile seguire l'esecuzione di un singolo thread nel 
 ## <a name="see-also"></a>Vedere anche  
  [Debug di applicazioni multithreading](../debugger/debug-multithreaded-applications-in-visual-studio.md)   
  [Procedura: Passare a un altro thread durante il debug](../debugger/how-to-switch-to-another-thread-while-debugging.md)
-

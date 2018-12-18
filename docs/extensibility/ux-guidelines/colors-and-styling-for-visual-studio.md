@@ -1,37 +1,23 @@
 ---
 title: I colori e stili per Visual Studio | Documenti Microsoft
 ms.custom: 
-ms.date: 04/26/2017
+ms.date: 07/31/2017
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- vs-ide-sdk
+ms.technology: vs-ide-sdk
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: 0e384ea1-4d9e-4307-8884-6e183900732c
-caps.latest.revision: 4
+caps.latest.revision: "4"
+author: gregvanl
 ms.author: gregvanl
 manager: ghogen
-translation.priority.mt:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 9524ecc3cadef58821fba857de8e82e59eea9b43
-ms.openlocfilehash: 93bfad7dc919364770a7d225c09db8b432cf1be0
-ms.contentlocale: it-it
-ms.lasthandoff: 05/04/2017
-
+ms.workload: vssdk
+ms.openlocfilehash: 40e795238e46885707cfd6eff715a27a5f53f85c
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="colors-and-styling-for-visual-studio"></a>I colori e stili per Visual Studio
 ## <a name="using-color-in-visual-studio"></a>Utilizzo di colore in Visual Studio  
@@ -61,15 +47,14 @@ Scegliere il metodo più adattato per gli elementi dell'interfaccia utente.
 | L'interfaccia utente | Metodo | Cosa sono? |  
 | --- | --- | --- |  
 | Non è stato incorporato o finestre di dialogo autonomo. | **Colori di sistema** | I nomi di sistema che consentono il sistema operativo definire il colore e l'aspetto degli elementi dell'interfaccia utente, quali controlli di finestra di dialogo comune. |
-| Si dispone di interfaccia utente personalizzata che si desidera siano coerenti con l'ambiente di Visual Studio globale e si dispongono di elementi dell'interfaccia utente che corrispondono alla categoria e un significato semantico dei token condiviso. | **Colori condivisi comuni** | I nomi di token di colore predefiniti per specifici elementi dell'interfaccia utente esistente |
+| Si dispone di un'interfaccia utente personalizzata che si desidera siano coerenti con l'ambiente di Visual Studio globale e si dispongono di elementi dell'interfaccia utente che corrispondono alla categoria e un significato semantico dei token condiviso. | **Colori condivisi comuni** | I nomi di token di colore predefiniti per specifici elementi dell'interfaccia utente esistente |
 | Si dispone di un singole funzionalità o un gruppo di funzionalità e non è un colore non condiviso per gli elementi simili. | **Colori personalizzati** | Nomi di token di colore che sono specifici di un'area e non devono essere condivisa con altri dell'interfaccia utente |
 | Si desidera consentire all'utente finale di personalizzare l'interfaccia utente o il contenuto (ad esempio, per gli editor di testo o le finestre di progettazione specifiche). | **Personalizzazione dell'utente finale**<br /><br />**(Strumenti &gt; finestra di dialogo Opzioni)** | Le impostazioni definite nella pagina di "Tipi di carattere e colori" il **strumenti &gt; opzioni** finestra di dialogo o una pagina specializzata specifica di una funzionalità dell'interfaccia utente. |
-| Si dispone di un'interfaccia utente che sia stata creata in formato HTML. | **Daytona** | Consente l'interfaccia utente creati in HTML per accedere al servizio di colore e tipo di carattere. |
   
 ### <a name="visual-studio-themes"></a>Temi di Visual Studio  
 Visual Studio dispone di tre temi di colore diverso: chiaro, scuro e blu. Verifica inoltre rileva la modalità contrasto elevato, ovvero una combinazione di colori di sistema progettata per l'accessibilità.  
   
-Gli utenti viene richiesto di selezionare un tema durante il primo utilizzo di Visual Studio e sono in grado di scorrere i temi in un secondo momento, passare a **strumenti &gt; opzioni &gt; ambiente &gt; generale** e scegliendo un nuovo tema dal menu di riepilogo a discesa "colori".  
+Gli utenti viene richiesto di selezionare un tema durante il primo utilizzo di Visual Studio e sono in grado di scorrere i temi in un secondo momento, passare a **strumenti &gt; opzioni &gt; ambiente &gt; generale** e scegliendo un nuovo tema dal il menu a discesa "colori".  
   
 Gli utenti possono inoltre utilizzare Pannello di controllo per alternare i relativi sistemi interi tema a contrasto elevato. Se un utente seleziona un tema a contrasto elevato, quindi il selettore del tema colori di Visual Studio non influenza più colori in Visual Studio, anche se tutte le modifiche al tema vengono salvate per quando l'utente esce dalla modalità a contrasto elevato. Per ulteriori informazioni sulla modalità a contrasto elevato, vedere [colori a contrasto elevato scelta](../../extensibility/ux-guidelines/colors-and-styling-for-visual-studio.md#BKMK_ChoosingHighContrastColors).
   
@@ -92,10 +77,7 @@ Vedere: [esposizione di colori per gli utenti finali](../../extensibility/ux-gui
   
 In alcuni casi, è possibile consentire all'utente finale di personalizzare l'interfaccia utente, ad esempio, quando si crea un editor di codice o l'area di progettazione. Componenti dell'interfaccia utente personalizzabili si trovano nel **tipi di carattere e colori** sezione del **strumenti &gt; opzioni** finestra di dialogo, in cui gli utenti possono scegliere di modificare il colore primo piano, colore di sfondo o entrambi.  
   
-![Strumenti &gt; finestra di dialogo Opzioni](../../extensibility/ux-guidelines/media/0301-a_toolsoptionsdialog.png "0301-a_ToolsOptionsDialog")<br />Strumenti &gt; finestra di dialogo Opzioni
-  
-### <a name="web-ui-colors"></a>Colori interfaccia utente Web  
-È sempre comune la modifica dei componenti dell'interfaccia utente tramite HTML in modo che possono essere utilizzati in Visual Studio Online e in Visual Studio. Interfaccia utente scritte in HTML deve comunque utilizzare il servizio VSColor quando viene eseguito in ambiente di Visual Studio. Per informazioni su Daytona e come usarlo, vedere [Daytona e interfaccia utente web](../../extensibility/ux-guidelines/colors-and-styling-for-visual-studio.md#BKMK_DaytonaAndWebUI).  
+![Strumenti &gt; finestra di dialogo Opzioni](../../extensibility/ux-guidelines/media/0301-a_toolsoptionsdialog.png "0301 a_ToolsOptionsDialog")<br />Strumenti &gt; finestra di dialogo Opzioni
   
 ##  <a name="BKMK_TheVSColorService"></a>Il servizio VSColor  
 Visual Studio fornisce un servizio di colore di ambiente, denominato anche il servizio VSColor o il colore della shell. Questo servizio consente di associare i valori di colore degli elementi dell'interfaccia utente a un set contenente i colori per ogni tema di colori nome-valore. Il servizio VSColor deve essere utilizzato per tutti gli elementi dell'interfaccia utente, in modo che i colori automaticamente modificati per riflettere il tema selezionato dall'utente corrente, in modo che l'interfaccia utente associato al servizio colori ambiente integrerà con nuovi temi nelle future versioni di Visual Studio.  
@@ -103,7 +85,7 @@ Visual Studio fornisce un servizio di colore di ambiente, denominato anche il se
 ### <a name="how-the-service-works"></a>Funzionamento del servizio  
 Il servizio colori ambiente legge che vscolors definito nel pkgdef per il componente dell'interfaccia utente. Questi VSColors viene quindi fatto riferimento nel markup XAML o nel codice e vengono caricati tramite il `IVsUIShell5.GetThemedColor` o `DynamicResource` mapping.  
   
-![Architettura del servizio colori ambiente](../../extensibility/ux-guidelines/media/0302-a_environmentcolorservicearchitecture.png "0302-a_EnvironmentColorServiceArchitecture")<br />Architettura del servizio colori ambiente
+![Architettura del servizio colori ambiente](../../extensibility/ux-guidelines/media/0302-a_environmentcolorservicearchitecture.png "0302 a_EnvironmentColorServiceArchitecture")<br />Architettura del servizio colori ambiente
   
 ### <a name="accessing-the-service"></a>L'accesso al servizio
 Esistono diversi modi per utilizza il servizio VSColor, a seconda di quale tipo di colore i token di accesso e il tipo di codice si dispone.  
@@ -288,22 +270,22 @@ Solo un numero limitato di colori di sistema può essere utilizzato per i temi d
 ### <a name="system-color-set"></a>Set di colori di sistema  
 La tabella in [Blog del Team WPF: riferimento SystemColors](http://blogs.msdn.com/b/wpf/archive/2010/11/30/systemcolors-reference.aspx) indica il set completo di nomi di colori di sistema e le corrispondenti tonalità visualizzate in ogni tema.  
   
-Quando l'applicazione di questo set di colori per l'interfaccia utente, limitato *è previsto che si perderanno dettagli presenti nei temi "normali"*. Di seguito è riportato un esempio dell'interfaccia utente con meno evidenti colori grigio che vengono utilizzati per distinguere le aree all'interno di una finestra degli strumenti. Quando viene utilizzata con la stessa finestra visualizzata in modalità a contrasto elevato, è possibile visualizzare tutti gli sfondi vengono la stessa tonalità che i bordi di tali aree sono indicati con bordo solo:  
+Quando l'applicazione di questo set di colori per l'interfaccia utente, limitato *è previsto che si perderanno dettagli presenti nei temi "normali"*. Di seguito è riportato un esempio dell'interfaccia utente con colori grigio minimi che consentono di distinguere le aree all'interno di una finestra degli strumenti. Quando viene utilizzata con la stessa finestra visualizzata in modalità a contrasto elevato, è possibile visualizzare tutti gli sfondi vengono la stessa tonalità che i bordi di tali aree sono indicati con bordo solo:  
   
-![Esempio di come dettagli vengono perse in contrasto elevato](../../extensibility/ux-guidelines/media/030303-a_propertieswindow.png "030303-a_PropertiesWindow")<br />Esempio di come dettagli vengono perse in contrasto elevato
+![Esempio di come dettagli vengono perse in contrasto elevato](../../extensibility/ux-guidelines/media/030303-a_propertieswindow.png "030303 a_PropertiesWindow")<br />Esempio di come dettagli vengono perse in contrasto elevato
   
 #### <a name="choosing-text-colors-in-an-editor"></a>Scelta di colori del testo in un editor  
 Testo colorato viene utilizzato in un editor o in un'area di progettazione per indicare un significato, ad esempio consentire l'identificazione immediata dei gruppi di elementi simili. Un tema a contrasto elevato, tuttavia, non è la possibilità di distinguere tra più di tre colori del testo. WindowText, GrayText e HotTrackText sono i colori soli disponibili nelle aree WindowBackground. Poiché non è possibile utilizzare più di tre colori, scegliere con attenzione le differenze più importanti che si desidera visualizzare in modalità a contrasto elevato.  
   
 Tonalità per ognuno dei nomi di token è consentiti in una superficie dell'editor, come appaiono in ogni tema a contrasto elevato:  
   
-![Confronto di editor a contrasto elevato](../../extensibility/ux-guidelines/media/030303-b_hceditorcomparison.png "030303-b_HCEditorComparison")<br />Confronto di editor a contrasto elevato
+![Confronto di editor a contrasto elevato](../../extensibility/ux-guidelines/media/030303-b_hceditorcomparison.png "030303 b_HCEditorComparison")<br />Confronto di editor a contrasto elevato
   
 Esempi dell'area di editor del tema blu:  
   
-![Editor con tema blu](~/extensibility/ux-guidelines/media/030303-c_editorblue.png "030303-c_EditorBlue")<br />Editor con tema blu
+![Editor con tema blu](../../extensibility/ux-guidelines/media/030303-c_editorblue.png "030303 c_EditorBlue")<br />Editor con tema blu
   
-![Editor con tema a contrasto elevato #1](../../extensibility/ux-guidelines/media/030303-d_editorhc1.png "030303-d_EditorHC1")<br />Editor con tema a contrasto elevato #1
+![Editor con tema a contrasto elevato #1](../../extensibility/ux-guidelines/media/030303-d_editorhc1.png "030303 d_EditorHC1")<br />Editor con tema a contrasto elevato #1
   
 ### <a name="usage-patterns"></a>Modelli di utilizzo
 Molti elementi dell'interfaccia utente comuni sono già definiti colori a contrasto elevato. È possibile fare riferimento questi modelli di utilizzo quando si sceglie un sistema di nomi di colori in modo che gli elementi dell'interfaccia utente sono coerenti con i componenti simili.  
@@ -312,7 +294,7 @@ Molti elementi dell'interfaccia utente comuni sono già definiti colori a contra
 | --- | --- |
 | ActiveCaption | -Active IDE e icone di finestra rafted pulsante al passaggio del mouse e premere<br />-Sfondo della barra del titolo per IDE e rafted windows<br />-Sfondo della barra di stato predefinito |
 | ActiveCaptionText | -Active IDE e rafted windows per il colore della barra del titolo (testo e icone)<br />-In background e il bordo dei pulsanti finestra attiva nel passaggio del mouse e premere |
-| Controllo | -Casella combinata elenco a discesa e ricerca controllare l'impostazione predefinita e in background, incluso il pulsante di menu a discesa disabilitato<br />-Lo sfondo di pulsante di ancoraggio destinazione<br />-Sfondo della barra dei comandi<br />-Sfondo della finestra strumento |
+| Control | -Casella combinata elenco a discesa e ricerca controllare l'impostazione predefinita e in background, incluso il pulsante di menu a discesa disabilitato<br />-Lo sfondo di pulsante di ancoraggio destinazione<br />-Sfondo della barra dei comandi<br />-Sfondo della finestra strumento |
 | ControlDark | -Sfondo IDE<br />-Menu e comandi il separatore barra<br />: Bordo barra dei comandi<br />-Shadows menu<br />-Strumento bordo predefinito e al passaggio del mouse sulla scheda della finestra e il separatore<br />-Documento e lo sfondo di pulsante di overflow<br />-Bordo glifo di ancoraggio destinazione |
 | ControlDarkDark |Finestra della scheda di documento con stato non attivo e selezionato |
 | ControlLight |-Bordo sottoscheda Nascondi automaticamente<br />-Bordo dell'elenco combinata casella e l'elenco a discesa<br />-Ancorare bordo e uno sfondo di destinazione |
@@ -339,7 +321,7 @@ Talvolta si desidera consentire all'utente finale di personalizzare l'interfacci
 ### <a name="building-a-vspackage-for-your-customizable-colors"></a>La creazione di un pacchetto VSPackage per i colori personalizzabili  
 Un pacchetto VSPackage può controllare i tipi di carattere e colori tramite categorie personalizzate e visualizzare gli elementi nella pagina delle proprietà dei tipi di carattere e colori. Quando si utilizza questo meccanismo, i pacchetti VSPackage devono implementare il [IVsFontAndColorDefaultsProvider](https://msdn.microsoft.com/en-us/library/microsoft.visualstudio.shell.interop.ivsfontandcolordefaultsprovider.aspx) interfaccia e le relative interfacce associate.  
   
-In sostanza, questo meccanismo può essere utilizzato per modificare tutti gli elementi di visualizzazione esistente e le categorie che li contengono. Tuttavia, e non deve essere utilizzato per modificare la categoria Editor di testo o i relativi elementi visualizzati. Per ulteriori informazioni sulla categoria di Editor di testo, vedere [tipo di carattere e colore Panoramica](https://msdn.microsoft.com/en-us/library/bb165065.aspx).  
+In sostanza, questo meccanismo può essere utilizzato per modificare tutti gli elementi di visualizzazione esistente e le categorie che li contengono. Tuttavia, e non deve essere utilizzato per modificare la categoria Editor di testo o i relativi elementi visualizzati. Per ulteriori informazioni sulla categoria di Editor di testo, vedere [tipo di carattere e colore Panoramica](../font-and-color-overview.md).  
   
 Per implementare le categorie personalizzate o visualizzare gli elementi, un pacchetto VSPackage deve:  
   
@@ -356,9 +338,9 @@ Creare un tipo speciale di voce del Registro di sistema categoria `[HKLM\SOFTWAR
   
 Popolare il Registro di sistema con due valori:  
 
-| Nome | Tipo | Dati | Descrizione |
+| nome | Tipo | Dati | Descrizione |
 | --- | --- | --- | --- |
-| Categoria | REG_SZ | GUID | Creato da un GUID per identificare la categoria |
+| Category | REG_SZ | GUID | Creato da un GUID per identificare la categoria |
 | Pacchetto | REG_SZ | GUID | Il GUID del servizio che supporta la categoria di VSPackage |
   
  Il servizio specificato nel Registro di sistema deve fornire un'implementazione di [IVsFontAndColorDefaults](https://msdn.microsoft.com/en-us/library/microsoft.visualstudio.shell.interop.ivsfontandcolordefaults.aspx) per la categoria corrispondente.  
@@ -368,19 +350,19 @@ Creare un tipo speciale di voce del Registro di sistema categoria `[HKLM\SOFTWAR
   
 Popolare il Registro di sistema con due valori:
 
-| Nome | Tipo | Dati | Descrizione |
+| nome | Tipo | Dati | Descrizione |
 |--- | --- | --- | --- |
-| Categoria | REG_SZ | GUID | Creato da un GUID per identificare la categoria |
+| Category | REG_SZ | GUID | Creato da un GUID per identificare la categoria |
 | Pacchetto | REG_SZ | GUID | Il GUID del servizio che supporta la categoria di VSPackage |
   
 Il servizio specificato nel Registro di sistema deve fornire un'implementazione di `T:Microsoft.VisualStudio.Shell.Interop.IVsFontAndColorGroup` per il gruppo corrispondente.
 
-![Implementazione dell'interfaccia IVsFontAndColorGroup](../../extensibility/ux-guidelines/media/0304-a_fontandcolorgroup.png "0304-a_FontAndColorGroup")<br />Implementazione di`IVsFontAndColorGroup`
+![Implementazione dell'interfaccia IVsFontAndColorGroup](../../extensibility/ux-guidelines/media/0304-a_fontandcolorgroup.png "0304 a_FontAndColorGroup")<br />Implementazione di`IVsFontAndColorGroup`
   
 ### <a name="to-implement-ide-support"></a>Per implementare il supporto IDE  
-Implementare [GetObject](https://msdn.microsoft.com/en-us/library/microsoft.visualstudio.shell.interop.ivsfontandcolordefaultsprovider.getobject.aspx), che restituisce un [IVsFontAndColorDefaults](https://msdn.microsoft.com/en-us/library/microsoft.visualstudio.shell.interop.ivsfontandcolordefaults.aspx) interfaccia o un `T:Microsoft.VisualStudio.Shell.Interop.IVsFontAndColorGroup` interfaccia all'IDE per ciascuna categoria o il gruppo GUID specificato.  
+Implementare [GetObject](https://msdn.microsoft.com/en-us/library/microsoft.visualstudio.shell.interop.ivsfontandcolordefaultsprovider.getobject.aspx), che restituisce un [IVsFontAndColorDefaults](https://msdn.microsoft.com/en-us/library/microsoft.visualstudio.shell.interop.ivsfontandcolordefaults.aspx) interfaccia o un `T:Microsoft.VisualStudio.Shell.Interop.IVsFontAndColorGroup` all'IDE per ciascuna categoria di interfaccia o un gruppo GUID specificato.  
   
-Per ogni categoria di supporta un pacchetto VSPackage implementa un'istanza separata del [IVsFontAndColorDefaults](https://msdn.microsoft.com/en-us/library/microsoft.visualstudio.shell.interop.ivsfontandcolordefaults.aspx) interfaccia.  
+Per ogni categoria supporta un pacchetto VSPackage implementa un'istanza separata del [IVsFontAndColorDefaults](https://msdn.microsoft.com/en-us/library/microsoft.visualstudio.shell.interop.ivsfontandcolordefaults.aspx) interfaccia.  
   
 I metodi implementati tramite [IVsFontAndColorDefaults](https://msdn.microsoft.com/en-us/library/microsoft.visualstudio.shell.interop.ivsfontandcolordefaults.aspx) deve fornire l'IDE con:  
   
@@ -408,7 +390,7 @@ L'IDE memorizza nella cache di informazioni sulle impostazioni di carattere e co
 Aggiornamento della cache viene eseguita tramite il [IvsFontAndColorCacheManager](https://msdn.microsoft.com/en-us/library/microsoft.visualstudio.shell.interop.ivsfontandcolorcachemanager.aspx) l'interfaccia e può essere eseguita a livello globale o solo in elementi.  
   
 ### <a name="handling-font-and-color-changes"></a>Gestione delle modifiche di carattere e colori  
-Per supportare correttamente la colorazione di testo che visualizza un VSPackage, il servizio di colorazione che supporta il pacchetto VSPackage deve rispondere alle modifiche apportate tramite la pagina delle proprietà di tipi di carattere e colori avviata dall'utente.  
+Per supportare correttamente la colorazione di testo che visualizza un VSPackage, il servizio di colorazione supporta il pacchetto VSPackage deve rispondere alle modifiche apportate tramite la pagina delle proprietà di tipi di carattere e colori avviata dall'utente.  
   
 A tale scopo, un pacchetto VSPackage deve:  
   
@@ -416,9 +398,9 @@ A tale scopo, un pacchetto VSPackage deve:
   
  **OR**  
   
--   **eseguire il polling dell'IDE per le modifiche**. Questo può avvenire tramite implementato dal sistema [IVsFontAndColorStorage](https://msdn.microsoft.com/en-us/library/microsoft.visualstudio.shell.interop.ivsfontandcolorstorage.aspx) interfaccia. Sebbene principalmente per il supporto di persistenza, il [GetItem](https://msdn.microsoft.com/en-us/library/microsoft.visualstudio.shell.interop.ivsfontandcolorstorage.getitem.aspx) metodo possibile ottenere informazioni di carattere e colori per gli elementi di visualizzazione. Per ulteriori informazioni sulle impostazioni di carattere e colori, vedere l'articolo MSDN [accesso archiviati tipo di carattere e le impostazioni dei colori](https://msdn.microsoft.com/en-us/library/bb166382.aspx).  
+-   **eseguire il polling dell'IDE per le modifiche**. Questo può avvenire tramite implementato dal sistema [IVsFontAndColorStorage](https://msdn.microsoft.com/en-us/library/microsoft.visualstudio.shell.interop.ivsfontandcolorstorage.aspx) interfaccia. Sebbene principalmente per il supporto di persistenza, il [GetItem](https://msdn.microsoft.com/en-us/library/microsoft.visualstudio.shell.interop.ivsfontandcolorstorage.getitem.aspx) metodo possibile ottenere informazioni di carattere e colori per gli elementi di visualizzazione. Per ulteriori informazioni sulle impostazioni di carattere e colori, vedere l'articolo MSDN [accesso archiviati tipo di carattere e le impostazioni dei colori](../accessing-stored-font-and-color-settings.md).  
   
-> **Nota:** per assicurarsi che il polling risultati siano corretti, usare il [IVsFontAndColorCacheManager](https://msdn.microsoft.com/en-us/library/microsoft.visualstudio.shell.interop.ivsfontandcolorcachemanager.aspx) interfaccia per determinare se sono necessari un scaricamento della cache e l'aggiornamento prima di chiamare i metodi di recupero del [IVsFontAndColorStorage](https://msdn.microsoft.com/en-us/library/microsoft.visualstudio.shell.interop.ivsfontandcolorstorage.aspx) interfaccia.
+> **Nota:** per assicurarsi che il polling risultati siano corretti, usare il [IVsFontAndColorCacheManager](https://msdn.microsoft.com/en-us/library/microsoft.visualstudio.shell.interop.ivsfontandcolorcachemanager.aspx) interfaccia per determinare se sono necessari un scaricamento della cache e l'aggiornamento prima di chiamare i metodi di recupero del [ IVsFontAndColorStorage](https://msdn.microsoft.com/en-us/library/microsoft.visualstudio.shell.interop.ivsfontandcolorstorage.aspx) interfaccia.
   
 #### <a name="registering-custom-font-and-color-category-without-implementing-interfaces"></a>Registrazione del carattere e colore categoria senza implementare interfacce  
 Esempio di codice riportato di seguito viene illustrato come registrare il tipo di carattere personalizzato e il colore di categoria senza l'implementazione di interfacce:  
@@ -433,8 +415,8 @@ HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\VisualStudio\8.0Exp\FontAndColors\CSharp T
 ```  
 
 In questo esempio di codice:   
--   `"NameID"` = l'ID di risorsa del nome della categoria localizzata nel pacchetto
--   `"ToolWindowPackage"` = GUID del pacchetto
+-   `"NameID"`= l'ID di risorsa del nome della categoria localizzata nel pacchetto
+-   `"ToolWindowPackage"`= GUID del pacchetto
 -   `"Category"="{9FF46859-A47E-47bf-8AC5-EC3DBE69D1FE}"`è solo un esempio e il valore effettivo può essere un nuovo GUID fornito dall'implementatore.  
   
 ### <a name="set-the-font-and-color-property-category-guid"></a>Impostare il tipo di carattere e colore proprietà GUID di categoria  
@@ -465,272 +447,3 @@ catGUID);
 }  
 }  
 ```  
-  
-##  <a name="BKMK_DaytonaAndWebUI"></a>Daytona e interfaccia utente web  
-  
-### <a name="overview"></a>Panoramica  
-"Daytona" è un set di API, strumenti e servizi che consentono all'utente di creare plug-in con HTML, CSS e JavaScript che può essere utilizzato in un'ampia gamma di host, ad esempio Visual Studio o F12. I plug-in sono costituite da un componente portabile, che viene scritto in HTML, CSS e JavaScript, e i componenti facoltativi di specifica dell'host. Ogni host Daytona può avere un proprio set di convenzioni dell'interfaccia utente, implicite o esplicite, che un plug-in devono rispettare per poter essere visualizzato nativo al relativo ambiente. Alcuni host, come Visual Studio, consentire agli utenti di apportare modifiche al tema"predefinito" in modo che gli aspetti visivi dell'host non possono essere assegnati in modo statico durante la creazione di un foglio di stile. Ciò pone un problema per gli sviluppatori che creano i plug-in portabile. In questo argomento viene illustrato come creare web dell'interfaccia utente in Visual Studio usando l'host Daytona in modo che supporta sia i temi e contrasto elevato.  
-  
-### <a name="daytona-theming-mechanism"></a>Meccanismo di applicazione di temi Daytona  
-Il runtime Daytona fornisce un set di servizi che astrae le convenzioni dell'interfaccia utente e funzionalità dei temi dell'host. Questi servizi verificare che i plug-in automaticamente siano conformi alle aspettative dell'utente in base all'ambiente in cui in che sono ospitati visual. Questo comportamento viene fornito da tre funzionalità principali:  
-  
-1.  Un foglio di stile inseriti runtime (plugin.css) che si applica un set di regole CSS a interfaccia di un plug-in modo trasparente e gli stili il set predefinito di controlli HTML (ad esempio, HTMLInputElement e HTMLButtonElement  
-  
-2.  Un set di token fornita dall'host che può essere usato per elementi di stile dell'interfaccia utente utilizzando i valori che sono basate su tema anziché hardcoded  
-  
-    -  una sintassi dichiarativa per l'accesso a questi token con CSS  
-  
-    -  un'API per accedere a livello di codice token tema da JavaScript  
-  
-3.  Notifica di modifiche al tema  
-  
-#### <a name="runtime-injected-style-sheet"></a>Foglio di stile inseriti Runtime  
-Le coordinate di runtime Daytona con l'host per inserire uno stile finestra automaticamente temi, gli elementi dell'interfaccia utente standard di un plug-in. Vale a dire lo stile per i seguenti concetti:  
-  
--   Tipo di carattere ambiente  
-  
--   Colori di sfondo  
-  
--   Collegamenti ipertestuali  
-  
--   Controlli del form (ad esempio: `<select>`, `<input>`,`<button>`  
-  
--   Tabelle  
-  
--   Intestazioni  
-  
--   Barre di scorrimento  
-  
-Ciò significa che se l'interfaccia utente è costituita interamente controlli dell'interfaccia utente HTML standard, quindi alcuna attività aggiuntiva non è necessaria per rispondere correttamente alle modifiche al tema e per supportare il contrasto elevato.  
-  
-#### <a name="custom-ui"></a>Interfaccia utente personalizzata  
-In quasi tutti i casi, saranno sufficienti per fornire un'esperienza completa per un plug-in controlli dell'interfaccia utente HTML standard e personalizzata dell'interfaccia utente deve essere introdotte. Per supportare l'utilizzo di scelta e il colore del carattere appropriata, **token tema** deve essere utilizzato in modo dichiarativo in CSS o in modo imperativo tramite l'API JavaScript descritto di seguito. Il runtime Daytona si occuperà di aggiornare i fogli di stile che usa i token nel carico di plug-in e modifiche al tema.  
-  
-##### <a name="theme-tokens"></a>Token tema  
-Entrambi i token tema standard e specifiche degli host sono disponibili. I token standard sono sempre disponibili e inseriti dagli host. È preferibile utilizzare i token standard, laddove possibile. I token standard vengono garantiti deve essere fornito da tutti gli host Daytona e usarli rende intrinsecamente più portabile il plug-in. Il set di token standard è soggetta a modifiche, anche se devono essere aggiunti solo nuovi token e non deve essere rimossa. La versione di Visual Studio 2013 è documentata di seguito:  
-  
-| Nome token | Descrizione |
-| --- | --- |
-| `plugin-background-color` | Il colore di sfondo predefinito per il plug-in |
-| `plugin-color` | Il colore di primo piano predefinito per il plug-in |
-| `plugin-contextmenu-active-color` | Il colore di selezione di primo piano predefinito per i menu di scelta rapida quando sono attive (ha lo stato attivo) |
-| `plugin-contextmenu-background-color` | Il colore di sfondo predefinito per i menu di scelta rapida |
-| `plugin-contextmenu-border-color` | Colore del bordo predefinito per i menu di scelta rapida |
-| `plugin-contextmenu-color` | Il colore di primo piano predefinito per i menu di scelta rapida |
-| `plugin-contextmenu-hover-color` | Il colore di sfondo al passaggio del mouse predefinito per i menu di scelta rapida |
-| `plugin-contextmenu-hover-text-color` | Il colore di primo piano predefinito al passaggio del mouse per menu di scelta rapida |
-| `plugin-contextmenu-icon-checkbox` | Il colore dell'icona di casella di controllo predefinito per i menu di scelta rapida |
-| `plugin-contextmenu-inactive-text-color` | Il colore di selezione di primo piano predefinito per i menu di scelta rapida quando sono inattivi |
-| `plugin-contextmenu-separator-color` | Colore del separatore predefinito per i menu di scelta rapida |
-| `plugin-font-family` | La famiglia di caratteri predefinito da utilizzare per il plug-in |
-  
-In Visual Studio, le operazioni seguenti `plugin-font` i token sono in base alle impostazioni del carattere dell'ambiente:  
-  
--   `plugin-font-size`  
-  
--   `plugin-font-weight`  
-  
--   `plugin-highlight-background-color`  
-  
--   `plugin-highlight-color`  
-  
--   `plugin-inactive-color` 
-  
-Nell'esempio `plugin-link` token vengono utilizzati per lo stile `HTMLElements` (collegamenti ipertestuali):
-  
--   `plugin-link-color`  
-  
--   `plugin-link-active-color`  
-  
--   `plugin-link-hover-color`  
-  
-Plugin.CSS stili le barre di scorrimento per impostazione predefinita tramite i token seguenti per supportare meglio i temi in host diversi (in particolare, Visual Studio):
-  
--   `plugin-scrollbar-arrow-color`  
-  
--   `plugin-scrollbar-background-color`  
-  
--   `plugin-scrollbar-face-color`  
-  
-Nell'esempio `plugin-select` token vengono utilizzati per lo stile di `HTMLSelectElement` (combinata casella elenco a discesa):  
-  
--   `plugin-select-option-background-color` 
-  
--   `plugin-select-option-color`  
-  
--   `plugin-select-option-checked-background-color`  
-  
--   `plugin-select-option-checked-border-color`  
-  
--   `plugin-select-option-checked-foreground-color`  
-  
--   `plugin-select-option-hover-background-color`  
-  
--   `plugin-select-option-hover-border-color`  
-  
--   `plugin-select-option-hover-foreground-color`  
-  
--   `plugin-select-border-color`  
-  
--   `plugin-select-background-color`  
-  
--   `plugin-select-foreground-color`  
-  
--   `plugin-select-hover-background-color`  
-  
--   `plugin-select-hover-border-color`  
-  
--   `plugin-select-hover-foreground-color`  
-  
--   `plugin-table-border-color`  
-  
--   `plugin-table-header-background-color`  
-  
--   `plugin-table-header-color`  
-  
--   `plugin-textbox-border-color`  
-  
--   `plugin-textbox-background-color`  
-  
--   `plugin-textbox-color`  
-  
--   `plugin-textbox-disabled-background-color`  
-  
--   `plugin-textbox-disabled-border-color`  
-  
--   `plugin-textbox-disabled-color`  
-  
-Questi token devono essere utilizzati per *tutti* ad albero di viste e tabelle, perché contengono i valori predefiniti corretti impostati in diversi host per il supporto temi e contrasto elevato:  
-  
--   `plugin-treeview-content-background-color`  
-  
--   `plugin-treeview-content-color` 
-  
--   `plugin-treeview-content-inactive-selected-color`  
-  
--   `plugin-treeview-content-mouseover-background-color`  
-  
--   `plugin-treeview-content-mouseover-color`  
-  
--   `plugin-treeview-content-inactive-selected-color`  
-  
--   `plugin-treeview-content-selected-background-color`  
-  
--   `plugin-treeview-content-selected-border-color`  
-  
--   `plugin-treeview-content-selected-color`  
-  
-##### <a name="host-specific-tokens"></a>Token specifica dell'host  
-Oltre a supportare il set standard di token, gli host possono anche fornire i token non standard. A tale scopo, l'host di Visual Studio che consente il plug-in specificare gli alias token tema in una sezione di specifiche di Visual Studio del manifesto. Ad esempio:
-  
-```  
-"vs": {  
-    "theme_token_aliases": {   
-        "diagnostics-host-border": {   
-            "category": "f8a8b2a5-dd35-43f6-a382-fd6a61325c22",   
-            "key_type": "BackgroundColor",   
-            "name": "Border"   
-        },   
-        ...   
-    }   
-}    
-```  
-  
- In questo esempio introduce un token di tema denominato `diagnostics-host-border`, che è possibile fare riferimento in modo identico per i token standard indicati in precedenza. Il `category`, `key_type`, e `name` vengono utilizzati per risolvere il colore di `IVsFontAndColorStorage` interfaccia. In molti casi, è possibile trovare colori appropriati (con il `category`, `key_type`, e `name` informazioni) nei file XML si trova `VSCommonContent\themes`. Lo stesso meccanismo viene utilizzato se il pacchetto introduce nuovi colori configurabili: corrispondere il `category`, `key_type`, e `name` il colore che si desidera utilizzare. Gli autori di plug-in devono tentare di utilizzare i token standard ogni volta che è possibile e usare solo token specifica dell'host quando è assolutamente necessario.  
-  
-##### <a name="using-theme-tokens-in-css"></a>Uso di token del tema foglio di stile CSS  
- Token tema vengono definite tramite una sintassi di commento formattato in modo specifico. Le regole per l'analisi del token:  
-  
-1.  L'espressione di commento deve essere racchiusi tra parentesi quadre (`[ ]`).  
-  
-2.  Tutti gli spazi vuoti all'interno del commento, ma all'esterno dell'espressione, viene ignorato.  
-  
-3.  L'espressione di commento deve seguire direttamente la proprietà che viene sostituito.  
-  
-4.  Eventuali spazi vuoti iniziali o finali all'interno dell'espressione verranno rimosse.  
-  
-5.  Ogni nome di token all'interno dell'espressione deve essere racchiuso tra parentesi graffe (ad esempio, `{font-family}` e `{button-hover-color}`). In caso contrario, che verrà considerato come un valore letterale.  
-  
- Di seguito sono riportati esempi di come il token del parser sostituirà i valori CSS, supponendo che il `plugin-background-color` token con il valore di `#000` e `plugin-font-family` token con il valore di `Verdana`.
-  
-| Creazione di CSS | Analisi CSS | Note |  
-| --- | --- | --- |
-| `background-color: #fff; /*[{plugin-background-color}]*/` | `background-color: #000;` | Il valore predefinito viene sostituito con il valore di specifica dell'host dinamico. |  
-| `background-color: #fff; /*   [{plugin-background-color}]   */` | `background-color: #000;` | Lo spazio vuoto all'esterno dell'espressione viene ignorato. |  
-| `background-color: #fff; /*[   {plugin-background-color}   ]*/` | `background-color: #000;` | Vengono rimossi gli spazi iniziali e finali all'interno dell'espressione. |
-| `background-color: #fff; /*{plugin-background-color}*/` | `background-color: #fff;` | L'espressione non racchiusa tra parentesi quadre e pertanto il commento viene ignorato. |
-| `background-color: #fff; /*[plugin-background-color]*/` | `background-color: plugin-background-color;` | Il token non è racchiuso tra parentesi graffe e pertanto viene considerato come un valore letterale. |
-| `/*[{plugin-background-color}]*/ background-color: #fff;` | `background-color: #fff;` | Il commento non rispetta il valore della proprietà e pertanto viene ignorato. |
-| `background-color: #fff;  /*[{plugin-background-color}]*/` | `background-color: #fff;`| *Come sopra* |
-| `/*[{plugin-background-color}]*/  background-color: #fff;` | `background-color: #fff;` | *Come sopra* |
-| `font-family: Arial, sans-serif; /*[{plugin-font-family}, sans-serif]*/` | `font-family: Verdana, sans-serif;` | È stato sostituito il token e viene mantenuto il contenuto in formato letterale. |
-| `background-image: linear-gradient(0% #000, 100% #ccc); /*[linear-gradient(0% #000, 100% {plugin-background-color})]*/` | `background-image: linear-gradient(0% #000, 100% #000);` | *Come sopra* |
-  
-Se un file CSS include i token di tema deve essere contrassegnato per la `data-plugin-theme` attributo il `link` elemento nel file HTML. Ad esempio:  
-  
-```  
-<link href="default.css" rel="stylesheet" data-plugin-theme="true" />  
-```
-
-##### <a name="using-theme-tokens-from-javascript"></a>Uso di token del tema da JavaScript  
-Mentre l'interfaccia utente personalizzata deve essere tema da CSS laddove possibile, esistono scenari quando il valore di un tema di token è necessario accedere a livello di codice. Ad esempio, se l'interfaccia utente personalizzata viene disegnata su un `CanvasElement` che non eredita lo stile CSS, o se un elemento dell'interfaccia utente viene creata in modo dinamico come anziché un riferimento a fogli di stile. Gli scenari abilitati tramite l'API Daytona `Plugin.Theme.getValue`. Questa funzione restituisce un valore di tema fornita dall'host quando viene specificato un nome di token.  
-  
-| Non applicare un tema | Applicare un tema |
-| --- | --- |
-| `var surface = document.getElementById("surface").getContext("2d");  surface.fillStyle = "#ccc";  surface.fillRect(0, 0, 200, 200);` | `var surface = document.getElementById("surface").getContext("2d");  surface.fillStyle = ("plugin-background-color");  surface.fillRect(0, 0, 200, 200);` |
-| `var el = document.createElement("div");  el.style.backgroundColor = "#ccc";` | `var el = document.createElement("div");  el.style.backgroundColor = Plugin.Theme.getValue("plugin-background-color");` |  
-  
-Se i token vengono utilizzati da JavaScript, **deve gestire l'evento di modifica del tema per rispondere agli aggiornamenti**. Questo non è necessario per i token di tema utilizzati in modo dichiarativo nel foglio di stile CSS, come il runtime Daytona si occupa di esso per il plug-in. L'evento tema può essere gestito nel modo seguente:
-
-**Membro (gestore singolo)**
-```
-Plugin.Theme.onchange = function () 
-{
-    // re-draw dynamic UI here
-}
-```
-
-**Evento di DOM (più gestori)**
-```
-Plugin.Theme.addEventListener("change", function () 
-{
-    // re-draw dynamic UI here
-});
-```
-  
-In questo caso, sarebbe molto comune per richiamare `Plugin.Theme.getValue` in questi gestori, come il valore dei token di tema probabilmente modificato quando il tema modificato.  
-  
-##### <a name="standard-token-mapping"></a>Mapping di token standard  
-I token standard vengono mappati ai colori di ambiente e della Shell. Nell'elenco seguente offre una versione di che cosa sono i mapping.  
-  
-| Nome token | VS mapping (`EnvironmentColors`) |  
-| --- | --- |  
-| `plugin-color` | `ToolWindowTextColorKey` |
-| `plugin-background-color` | `ToolWindowBackgroundColorKey` |
-| `plugin-link-color` | `ControlLinkTextColorKey` |
-| `plugin-link-hover-color` | `ControlLinkTextHoverColorKey` |
-| `plugin-link-active-color` | `ControlLinkTextPressedColorKey` |
-| `plugin-highlight-color` | `HighlightTextColorKey` |
-| `plugin-highlight-background-color` | `HighlightColorKey` |
-| `plugin-table-header-background-color` | `GridHeadingBackgroundColorKey` |
-| `plugin-table-header-color` | `GridHeadingTextColorKey` |
-| `plugin-table-border-color` | `GridLineColorKey` |
-| `plugin-button-background-color` | `ButtonFaceColorKey` |
-| `plugin-button-hover-background-color` | `ButtonHighlightColorKey` | 
-| `plugin-button-color` | `ButtonTextColorKey` |
-| `plugin-button-border-color` | `ButtonBorderColorKey` |
-  
-##### <a name="theme-changes"></a>Modifiche al tema  
-Il Visual Studio host trigger plug-in tema cambia quando un utente apporta modifiche alle seguenti impostazioni:  
-  
-**Tema colori:**  
-  
-![Modifiche al tema di colore](~/extensibility/ux-guidelines/media/0305-a_colortheme.png "0305-a_ColorTheme")<br />Modifiche al tema a colori  
-  
-**Tema di ambiente:**  
-  
-![Modifiche al tema di ambiente](~/extensibility/ux-guidelines/media/0305-b_environmenttheme.png "0305-b_EnvironmentTheme")<br />Modifiche al tema dell'ambiente  
-  
-**Tema del sistema operativo** (solo quando si modifica in e da contrasto elevato):  
-  
-![Modifiche al tema del sistema operativo](../../extensibility/ux-guidelines/media/0305-c_ostheme.png "0305-c_OSTheme")<br />Modifiche al tema del sistema operativo

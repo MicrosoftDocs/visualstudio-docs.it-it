@@ -1,47 +1,49 @@
 ---
-title: "CA1308: Normalizzare le stringhe in lettere maiuscole | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-devops-test"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "CA1308"
-  - "NormalizeStringsToUppercase"
-helpviewer_keywords: 
-  - "NormalizeStringsToUppercase"
-  - "CA1308"
+title: 'CA1308: Normalizzare le stringhe in lettere maiuscole | Documenti Microsoft'
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: vs-ide-code-analysis
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- CA1308
+- NormalizeStringsToUppercase
+helpviewer_keywords:
+- NormalizeStringsToUppercase
+- CA1308
 ms.assetid: 7e9a7457-3f93-4938-ac6f-1389fba8d9cc
-caps.latest.revision: 11
-author: "stevehoag"
-ms.author: "shoag"
-manager: "wpickett"
-caps.handback.revision: 11
+caps.latest.revision: "11"
+author: gewarren
+ms.author: gewarren
+manager: ghogen
+ms.workload: multiple
+ms.openlocfilehash: 9064ca9861f609499971b9f5188f5b0006458c15
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
-# CA1308: Normalizzare le stringhe in lettere maiuscole
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
+# <a name="ca1308-normalize-strings-to-uppercase"></a>CA1308: Normalizzare le stringhe in lettere maiuscole
 |||  
 |-|-|  
 |TypeName|NormalizeStringsToUppercase|  
 |CheckId|CA1308|  
 |Category|Microsoft.Globalization|  
-|Breaking Change|Non sostanziale|  
+|Modifica importante|Non sostanziale|  
   
-## Causa  
- Un'operazione normalizza una stringa in minuscolo.  
+## <a name="cause"></a>Causa  
+ Un'operazione normalizza stringa in caratteri minuscoli.  
   
-## Descrizione della regola  
- Le stringhe devono essere normalizzate in maiuscolo.  Esiste un piccolo gruppo di caratteri che in caso di conversione in lettere minuscole non è in grado di completare un round trip.  Per completamento di un round trip si intende la conversione dei caratteri da un set di impostazioni locali a un altro che rappresenta i dati di tipo carattere in modo diverso, quindi recuperare accuratamente i caratteri originali dai caratteri convertiti.  
+## <a name="rule-description"></a>Descrizione della regola  
+ Le stringhe devono essere normalizzate in maiuscolo. Un piccolo gruppo di caratteri, quando vengono convertiti in caratteri minuscoli, non è possibile completare un round trip. Per completare un round trip mezzi per convertire i caratteri da una delle impostazioni locali a un altro che rappresenta i dati di tipo carattere in modo diverso, quindi in modo accurato recuperano i caratteri originali dai caratteri convertiti.  
   
-## Come correggere le violazioni  
- Modificare le operazioni che convertono le stringhe a minuscole in modo tale da convertirle a maiuscole.  Cambiare ad esempio `String.ToLower(CultureInfo.InvariantCulture)` in `String.ToUpper(CultureInfo.InvariantCulture)`  
+## <a name="how-to-fix-violations"></a>Come correggere le violazioni  
+ Modificare le operazioni che convertono le stringhe in caratteri minuscoli in modo che le stringhe vengono convertite in caratteri maiuscoli invece. Ad esempio, modificare `String.ToLower(CultureInfo.InvariantCulture)` a `String.ToUpper(CultureInfo.InvariantCulture)`.  
   
-## Esclusione di avvisi  
- L'eliminazione di un messaggio di avviso è sicura quando non si prendono decisioni di sicurezza in base al risultato, ad esempio nei casi in cui l'avviso venga visualizzato nell'interfaccia utente.  
+## <a name="when-to-suppress-warnings"></a>Esclusione di avvisi  
+ È possibile eliminare un messaggio di avviso quando si fanno decisione relativa alla sicurezza in base al risultato (ad esempio, quando si visualizza nell'interfaccia utente).  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Avvisi di globalizzazione](../code-quality/globalization-warnings.md)

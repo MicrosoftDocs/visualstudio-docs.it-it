@@ -1,33 +1,33 @@
 ---
-title: "Registrazione di VSPackage | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "VSPackages gestito, la registrazione"
-  - "registrazione, VSPackages gestito"
+title: Registrazione di pacchetti VSPackage | Documenti Microsoft
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: vs-ide-sdk
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- managed VSPackages, registering
+- registration, managed VSPackages
 ms.assetid: 79b9424e-7e9b-4fc8-9b9f-00212674573c
-caps.latest.revision: 20
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 20
+caps.latest.revision: "20"
+author: gregvanl
+ms.author: gregvanl
+manager: ghogen
+ms.workload: vssdk
+ms.openlocfilehash: 119e6dc088c6f6e80d79ab096d97b7404c530611
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
-# Registrazione di VSPackage
-[!INCLUDE[vs2017banner](../../code-quality/includes/vs2017banner.md)]
-
-[!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] si basa sui file .pkgdef per descrivere e individuare un VSPackage.  Un file .pkgdef contiene tutte le informazioni di registrazione che è aggiungerebbero in caso contrario al Registro di sistema.  Vspackage gestito viene registrato aggiungendo gli attributi al codice sorgente e quindi esegue [Utilità CreatePkgDef](../../extensibility/internals/createpkgdef-utility.md) l'assembly risultante per generare un file .pkgdef.  
+# <a name="registering-vspackages"></a>Registrazione di pacchetti VSPackage
+[!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)]si basa su file. pkgdef per descrivere e individuare un pacchetto VSPackage. Un file. pkgdef contiene tutte le informazioni di registrazione che, in caso contrario, verrebbero aggiunto al Registro di sistema. VSPackage gestiti sono registrati per l'aggiunta di attributi per il codice sorgente e quindi eseguendo il [CreatePkgDef utilità](../../extensibility/internals/createpkgdef-utility.md) sull'assembly risultante per generare un file. pkgdef.  
   
-## In questa sezione  
- [Specifica il percorso di File VSPackage alla Shell di Visual Studio](../../extensibility/internals/specifying-vspackage-file-location-to-the-vs-shell.md)  
- Viene descritto il percorso di caricamento per Vspackage.  
+## <a name="in-this-section"></a>In questa sezione  
+ [Definizione del percorso di file VSPackage nella shell di Visual Studio](../../extensibility/internals/specifying-vspackage-file-location-to-the-vs-shell.md)  
+ Descrive il percorso di caricamento per pacchetti VSPackage.  
   
- [Package VS della registrazione e annullamento della registrazione](../../extensibility/registering-and-unregistering-vspackages.md)  
- Viene spiegato come registrare un VSPackage.  
-  
- [Uso di un attributo di registrazione personalizzato per registrare un'estensione](/visual-cpp/misc/using-a-custom-registration-attribute-to-register-an-extension)  
- Viene descritto come creare un manifesto di registrazione che può essere utilizzato per implementare un VSPackage gestito.
+ [Registrazione e annullamento della registrazione di pacchetti VSPackage](../../extensibility/registering-and-unregistering-vspackages.md)  
+ Viene illustrato come registrare un VSPackage.  

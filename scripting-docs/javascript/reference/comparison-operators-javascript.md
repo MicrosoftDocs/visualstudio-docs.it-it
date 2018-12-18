@@ -1,45 +1,47 @@
 ---
-title: "Operatori di confronto (JavaScript) | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/18/2017"
-ms.prod: "windows-client-threshold"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-javascript"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "Comparison"
-dev_langs: 
-  - "JavaScript"
-  - "TypeScript"
-  - "DHTML"
-helpviewer_keywords: 
-  - "operatori di confronto, script"
-  - "operatore maggiore di"
-  - "operatori di confronto"
-  - "operatore maggiore o uguale a"
-  - "operatore di disuguaglianza"
-  - "operatore di identità"
+title: Gli operatori di confronto (JavaScript) | Documenti Microsoft
+ms.custom: 
+ms.date: 01/18/2017
+ms.prod: windows-client-threshold
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-javascript
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords: Comparison
+dev_langs:
+- JavaScript
+- TypeScript
+- DHTML
+helpviewer_keywords:
+- comparison operators, script
+- greater than operator
+- comparison operators
+- greater than or equal to operator
+- inequity operator
+- identity operator
 ms.assetid: 084f90f0-d010-47cf-96dd-13d637fc9b68
-caps.latest.revision: 9
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.openlocfilehash: 067d570523fc2241b4f2e0442785a49aedb15200
+ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/27/2017
 ---
-# Operatori di confronto (JavaScript)
+# <a name="comparison-operators-javascript"></a>Operatori di confronto (JavaScript)
 Restituisce un valore booleano che indica il risultato del confronto.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
   
 expression1 comparisonoperator expression2  
 ```  
   
-## Parametri  
+## <a name="parameters"></a>Parametri  
  `expression1`  
  Qualsiasi espressione.  
   
@@ -49,46 +51,46 @@ expression1 comparisonoperator expression2
  `expression2`  
  Qualsiasi espressione.  
   
-## Note  
- Nel confronto di stringhe in [!INCLUDE[javascript](../../javascript/includes/javascript-md.md)], viene utilizzato il valore del carattere Unicode dell'espressione stringa.  
+## <a name="remarks"></a>Note  
+ Quando si confrontano stringhe, [!INCLUDE[javascript](../../javascript/includes/javascript-md.md)] utilizza il valore del carattere Unicode dell'espressione stringa.  
   
- Di seguito viene descritto il comportamento dei vari gruppi di operatori a seconda del tipo e del valore di `expression1` e `expression2`:  
+ Di seguito viene descritto il comportano di vari gruppi di operatori a seconda del tipo e valore di `expression1` e `expression2`:  
   
- Operatori relazionali: `<`, `>`, `<=`, `>=`  
+ Operatori relazionali: `<`, `>`, `<=`,`>=`  
   
--   Viene eseguito il tentativo di convertire sia `expression1` sia `expression2` in numeri.  
+-   Tenta di convertire entrambi `expression1` e `expression2` in numeri.  
   
--   Se entrambe le espressioni sono stringhe, viene eseguito un confronto delle stringhe.  
+-   Se entrambe le espressioni sono stringhe, eseguire un confronto tra stringhe.  
   
--   Se una delle espressioni è `NaN`, viene restituito `false`.  
+-   Se delle espressioni è `NaN`, restituito `false`.  
   
--   Lo zero negativo equivale allo zero positivo.  
+-   Zero negativo è uguale a zero positivo.  
   
--   Un infinito negativo è minore di qualsiasi altro valore, compreso se stesso.  
+-   Valore di infinito negativo è minore di tutto, incluso se stesso.  
   
--   Un infinito positivo è maggiore di qualsiasi altro valore, compreso se stesso.  
+-   Un numero infinito positivo è maggiore di tutto, incluso se stesso.  
   
- Operatori di uguaglianza: `==`, `!=`  
+ Gli operatori di uguaglianza: `==`,`!=`  
   
--   Se i tipi delle due espressioni sono diversi, viene eseguito un tentativo di convertirli in stringa, numero o booleano.  
+-   Se i tipi delle due espressioni sono diversi, provare a convertirli in una stringa, numero o valore booleano.  
   
--   Il valore `NaN` è diverso da qualsiasi altro valore, compreso se stesso.  
+-   `NaN`non è uguale a qualsiasi elemento incluso se stesso.  
   
--   Lo zero negativo equivale allo zero positivo.  
+-   Zero negativo è uguale a zero positivo.  
   
--   `null` equivale sia a `null` sia a `undefined`.  
+-   `null`è uguale a entrambi `null` e `undefined`.  
   
--   I valori sono considerati uguali se sono stringhe identiche, valori numerici equivalenti, oggetti identici, valori booleani identici oppure se, quando di tipo diverso, è possibile assegnarli forzatamente a uno dei tipi precedenti.  
+-   I valori sono considerati uguali se sono stringhe identiche, valori numerici equivalenti, l'oggetto stesso, valori booleani identici, o (se tipi diversi) può essere assegnati a una di queste situazioni.  
   
 -   Qualsiasi altro confronto viene considerato diverso.  
   
- Operatore di identità: `===`, `!==`  
+ Operatori di identità: `===`,`!==`  
   
- Questi operatori si comportano allo stesso modo degli operatori di uguaglianza, eccetto per il fatto che non viene eseguita alcuna conversione del tipo.  Se i tipi di entrambe le espressioni sono diversi, queste espressioni restituiscono sempre `false`.  
+ Questi operatori si comportano come gli operatori di uguaglianza, ad eccezione del fatto che non viene eseguita alcuna conversione dei tipi. Se i tipi di entrambe le espressioni non sono uguali, queste espressioni restituiscono sempre `false`.  
   
-## Requisiti  
+## <a name="requirements"></a>Requisiti  
  [!INCLUDE[jsv1](../../javascript/misc/includes/jsv1-md.md)]  
   
-## Vedere anche  
- [Precedenza tra gli operatori](../../javascript/operator-subtractprecedence-javascript.md)   
- [Riepilogo degli operatori \(JavaScript\)](../../javascript/misc/operator-subtractsummary-javascript.md)
+## <a name="see-also"></a>Vedere anche  
+ [Precedenza tra operatori](../../javascript/operator-subtractprecedence-javascript.md)   
+ [Riepilogo degli operatori (JavaScript)](../../javascript/misc/operator-subtractsummary-javascript.md)

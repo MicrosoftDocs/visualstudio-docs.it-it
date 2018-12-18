@@ -4,22 +4,21 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.tgt_pltfrm: 
 ms.topic: article
 helpviewer_keywords:
 - Domain-Specific Language, store viewer
 - Domain-Specific Language, store
-ms.assetid: 0178db2e-ae99-4ed3-9b87-8620fa9fa8e4
-caps.latest.revision: 17
-author: alancameronwills
-ms.author: awills
-manager: douge
+author: gewarren
+ms.author: gewarren
+manager: ghogen
+ms.workload:
+- multiple
+ms.technology: vs-ide-modeling
+ms.openlocfilehash: 0d5d0b071014b5ec878b7d30b27b8cc07976d329
+ms.sourcegitcommit: 205d15f4558315e585c67f33d5335d5b41d0fcea
 ms.translationtype: MT
-ms.sourcegitcommit: 47057e9611b824c17077b9127f8d2f8b192d6eb8
-ms.openlocfilehash: 6fde5dfc012b43d71f6d8db2519607724eeeadc9
-ms.contentlocale: it-it
-ms.lasthandoff: 09/06/2017
-
+ms.contentlocale: it-IT
+ms.lasthandoff: 02/09/2018
 ---
 # <a name="debugging-by-using-the-store-viewer"></a>Esecuzione del debug utilizzando il Visualizzatore di archivio
 Con il Visualizzatore di archiviazione, è possibile esaminare lo stato di un *archiviare* utilizzato da [!INCLUDE[dsl](../modeling/includes/dsl_md.md)]. Nel Visualizzatore di archiviare vengono visualizzati tutti gli elementi del modello dominio in un negozio specifico, insieme alle proprietà dell'elemento e i collegamenti tra elementi.  

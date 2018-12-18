@@ -4,12 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- vs-ide-general
+ms.technology: vs-ide-general
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords:
-- VS.CommandWindow
+f1_keywords: VS.CommandWindow
 helpviewer_keywords:
 - IDE, Command window
 - Mark mode in Command window
@@ -17,30 +15,16 @@ helpviewer_keywords:
 - Command mode in Command window
 - IDE Command window
 ms.assetid: 48711628-1909-4713-a73e-d7b714c77f8a
-caps.latest.revision: 20
-author: kempb
-ms.author: kempb
+caps.latest.revision: "20"
+author: gewarren
+ms.author: gewarren
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 47057e9611b824c17077b9127f8d2f8b192d6eb8
-ms.openlocfilehash: 5aedd2d660c1a3225cf1d2023864b099c0f080c3
-ms.contentlocale: it-it
-ms.lasthandoff: 05/13/2017
-
+ms.workload: multiple
+ms.openlocfilehash: b3b1de69c905757c8d28922cd09eadd5abf7d05e
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="command-window"></a>Finestra di comando
 La finestra **Comando** consente di eseguire i comandi o gli alias direttamente nell'ambiente di sviluppo integrato (IDE) di [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)]. È possibile eseguire sia i comandi di menu che comandi che non vengono visualizzati nei menu. Per visualizzare la finestra **Comando**, scegliere **Altre finestre** dal menu **Visualizza** e selezionare **Finestra di comando**.  
@@ -86,21 +70,9 @@ La finestra **Comando** consente di eseguire i comandi o gli alias direttamente 
 ## <a name="the-equals--sign"></a>Segno di uguale (=)  
  La finestra usata per immettere il comando `EvaluateStatement` determina se interpretare un segno di uguale (=) come operatore di confronto o come operatore di assegnazione.  
   
- Nella finestra **Comando** il segno di uguale (=) viene interpretato come operatore di confronto. Non è possibile usare operatori di assegnazione nella finestra **Comando**. Pertanto, se ad esempio i valori delle variabili `varA` e `varB` sono diversi, il comando  
+ Nella finestra **Comando** il segno di uguale (=) viene interpretato come operatore di confronto. Non è possibile usare operatori di assegnazione nella finestra **Comando**. Pertanto, ad esempio, se i valori delle variabili `varA` e `varB` sono diversi, il comando `>Debug.EvaluateStatement(varA=varB)` restituirà il valore `False`.  
   
-```  
->Debug.EvaluateStatement(varA=varB)  
-```  
-  
- restituisce il valore `False`.  
-  
- Al contrario, nella finestra **Controllo immediato** il segno di uguale (=) viene interpretato come operatore di assegnazione. Il comando  
-  
-```  
->Debug.EvaluateStatement(varA=varB)  
-```  
-  
- assegna ad esempio alla variabile `varA` il valore della variabile `varB`.  
+ Al contrario, nella finestra **Controllo immediato** il segno di uguale (=) viene interpretato come operatore di assegnazione. Pertanto, ad esempio, il comando `>Debug.EvaluateStatement(varA=varB)` assegnerà la variabile `varA` al valore della variabile `varB`.  
   
 ## <a name="parameters-switches-and-values"></a>Parametri, opzioni e valori  
  Per alcuni comandi di [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] esistono argomenti, opzioni e valori obbligatori e facoltativi. Quando si usano questi comandi, vengono applicate alcune regole. Di seguito è riportato un esempio di un comando complesso con lo scopo di chiarirne la terminologia.  
@@ -122,19 +94,19 @@ Edit.ReplaceInFiles /case /pattern:regex var[1-3]+ oldpar
     > [!NOTE]
     >  Qualsiasi comando, parametro, opzione o valore contenente spazi deve essere racchiuso tra virgolette doppie.  
   
- La posizione di opzioni e parametri nella riga di comando è liberamente intercambiabile, ad eccezione del comando [Shell](../../ide/reference/shell-command.md), nel quale le opzioni e i parametri devono rispettare un ordine specifico.  
+La posizione di opzioni e parametri nella riga di comando è liberamente intercambiabile, ad eccezione del comando [Shell](../../ide/reference/shell-command.md), nel quale le opzioni e i parametri devono rispettare un ordine specifico.  
   
- Esistono due formati per quasi tutte le opzioni supportate da un comando: un formato breve (un carattere) e un formato esteso. Più opzioni in formato breve possono essere raggruppate. Ad esempio, è possibile esprimere `/p /g /m` anche nel formato `/pgm`.  
+Esistono due formati per quasi tutte le opzioni supportate da un comando: un formato breve (un carattere) e un formato esteso. Più opzioni in formato breve possono essere raggruppate. Ad esempio, è possibile esprimere `/p /g /m` anche nel formato `/pgm`.  
   
- Se alle opzioni in formato breve raggruppate viene assegnato un valore, tale valore viene applicato a ogni opzione. Ad esempio, `/pgm:123` equivale a `/p:123 /g:123 /m:123`. Se una delle opzioni del gruppo non accetta un valore, si verifica un errore.  
+Se alle opzioni in formato breve raggruppate viene assegnato un valore, tale valore viene applicato a ogni opzione. Ad esempio, `/pgm:123` equivale a `/p:123 /g:123 /m:123`. Se una delle opzioni del gruppo non accetta un valore, si verifica un errore.  
   
 ## <a name="escape-characters"></a>Caratteri di escape  
- Un accento circonflesso (^) in una riga di comando indica che il carattere immediatamente successivo viene interpretato letteralmente e non come carattere di controllo. In questo modo, è possibile incorporare virgolette diritte ("), spazi, barre iniziali, accenti circonflessi o qualsiasi altro carattere letterale nel valore di un parametro o di un'opzione, ad eccezione dei nomi di opzioni. Di seguito è riportato un esempio:  
+ Un accento circonflesso (^) in una riga di comando indica che il carattere immediatamente successivo viene interpretato letteralmente e non come carattere di controllo. In questo modo, è possibile incorporare virgolette diritte ("), spazi, barre iniziali, accenti circonflessi o qualsiasi altro carattere letterale nel valore di un parametro o di un'opzione, ad eccezione dei nomi di opzioni. Ad esempio,  
   
 ```  
 >Edit.Find ^^t /regex  
 ```  
-  
+
  L'accento circonflesso presenta lo stesso funzionamento sia all'interno sia all'esterno delle virgolette. Se corrisponde all'ultimo carattere sulla riga, viene ignorato. Nell'esempio riportato di seguito viene illustrato come cercare il criterio "^t".  
   
 ## <a name="use-quotes-for-path-names-with-spaces"></a>Usare le virgolette per nomi di percorso con spazi  

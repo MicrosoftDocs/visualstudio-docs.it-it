@@ -1,95 +1,98 @@
 ---
-title: "Procedura: implementare progetti annidati | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "progetti annidati, implementazione"
-  - "nidificazione di progetti [Visual Studio SDK]"
+title: 'Procedura: implementare progetti annidati | Documenti Microsoft'
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: vs-ide-sdk
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- nested projects, implementing
+- projects [Visual Studio SDK], nesting
 ms.assetid: d20b8d6a-f0e0-4115-b3a3-edda893ae678
-caps.latest.revision: 17
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 17
+caps.latest.revision: "17"
+author: gregvanl
+ms.author: gregvanl
+manager: ghogen
+ms.workload: vssdk
+ms.openlocfilehash: 757668070daacb449a6bc7cbd88ae629fe6487a5
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
-# Procedura: implementare progetti annidati
-[!INCLUDE[vs2017banner](../../code-quality/includes/vs2017banner.md)]
-
-Quando si crea un tipo di progetto annidato esistono numerosi passaggi aggiuntivi che devono essere implementati.  Un progetto padre assume le stesse responsabilità che la soluzione è per i progetti \(figlio\) annidati.  Il progetto padre è un contenitore dei progetti simili a una soluzione.  In particolare, esistono numerosi eventi che devono essere generati dalla soluzione e i progetti padre compilare la gerarchia dei progetti annidati.  Questi eventi sono descritti nel seguente processo di creazione dei progetti annidati.  
+# <a name="how-to-implement-nested-projects"></a>Procedura: implementare progetti annidati
+Quando si crea un tipo di progetto annidato sono sono un alcuni passaggi aggiuntivi che devono essere implementati. Un progetto padre assume alcune delle responsabilità stessa con la soluzione per i progetti nidificati (figlio). Il progetto principale è un contenitore di progetti è simili a una soluzione. In particolare, sono disponibili diversi eventi che devono essere generati per la soluzione e per i progetti padre per compilare la gerarchia di progetti annidati. Questi eventi sono descritte nel processo seguente per la creazione di progetti annidati.  
   
-### Per creare progetti annidati  
+### <a name="to-create-nested-projects"></a>Per creare progetti annidati  
   
-1.  L'ambiente di sviluppo \(IDE\) integrato \(IDE\) carica le informazioni del file di progetto e di avvio del progetto padre chiamando l'interfaccia di <xref:Microsoft.VisualStudio.Shell.Interop.IVsProjectFactory> .  Il progetto padre viene creato e aggiunto alla soluzione.  
+1.  Ambiente di sviluppo integrato (IDE) carica le informazioni di avvio e i file di progetto del progetto padre chiamando il <xref:Microsoft.VisualStudio.Shell.Interop.IVsProjectFactory> interfaccia. Il progetto principale viene creato e aggiunto alla soluzione.  
   
     > [!NOTE]
-    >  In questa fase, è troppo presto nel processo per il progetto padre creare il progetto annidato perché il progetto padre deve essere creato prima che i progetti figlio possono essere creati.  Attenendosi a questa sequenza, il progetto padre possibile applicare le impostazioni ai progetti figlio e i progetti figlio possono acquisire le informazioni dei progetti padre se necessari.  Questa sequenza viene se è necessaria sui client come controllo del codice sorgente \(SCC\) e Esplora soluzioni.  
+    >  A questo punto, è abbastanza recente del processo per il progetto principale creare il progetto annidato perché è necessario creare il progetto principale prima di possono creare i progetti figlio. Questa sequenza, il progetto principale è possibile applicare le impostazioni per i progetti figlio e i progetti figlio possono acquisire informazioni dai progetti padre, se necessario. Questa sequenza è se è necessario in dai client, ad esempio Esplora soluzioni e di controllo del codice sorgente (SCC).  
   
-     Il progetto padre deve attendere il metodo di <xref:Microsoft.VisualStudio.Shell.Interop.IVsParentProject.OpenChildren%2A> da chiamare dall'IDE prima di poter creare il proprio progetto o progetti annidati \(figlio\).  
+     Il progetto principale deve attendere il <xref:Microsoft.VisualStudio.Shell.Interop.IVsParentProject.OpenChildren%2A> metodo chiamato dall'IDE prima dei relativi nidificati (figlio) può creare i progetti.  
   
-2.  L'ide chiama `QueryInterface` nel progetto padre per <xref:Microsoft.VisualStudio.Shell.Interop.IVsParentProject>.  Se la chiamata ha esito positivo, l'ide chiama il metodo di <xref:Microsoft.VisualStudio.Shell.Interop.IVsParentProject.OpenChildren%2A> padre per aprire tutti progetti annidati per il progetto padre.  
+2.  Le chiamate IDE `QueryInterface` per il progetto padre per <xref:Microsoft.VisualStudio.Shell.Interop.IVsParentProject>. Se la chiamata ha esito positivo, le chiamate a IDE il <xref:Microsoft.VisualStudio.Shell.Interop.IVsParentProject.OpenChildren%2A> metodo dell'oggetto padre per aprire tutti i progetti nidificati per il progetto principale.  
   
-3.  Il progetto padre chiama il metodo di <xref:Microsoft.VisualStudio.Shell.Interop.IVsFireSolutionEvents.FireOnBeforeOpeningChildren%2A> per aggiornare i listener che i progetti annidati stanno per essere creati.  Lo SCC, ad esempio, ascoltano tali eventi per sapere se i passaggi della soluzione e nel processo di creazione di un progetto si verificano nell'ordine.  Se i passaggi seguenti si verificano verificato un errore, la soluzione potrebbe non essere registrata con controllo del codice sorgente correttamente.  
+3.  Le chiamate di progetto padre il <xref:Microsoft.VisualStudio.Shell.Interop.IVsFireSolutionEvents.FireOnBeforeOpeningChildren%2A> metodo per notificare ai listener che annidati progetti devono essere creati. Controllo del codice sorgente, ad esempio, è in ascolto per tali eventi a sapere se si verificano nell'ordine i passaggi nel processo di creazione di soluzioni e progetti. Se si verificano i passaggi nell'ordine errato, la soluzione potrebbe non essere registrata con controllo del codice sorgente in modo corretto.  
   
-4.  Il progetto padre chiama il metodo di <xref:Microsoft.VisualStudio.Shell.Interop.IVsSolution.AddVirtualProject%2A> o il metodo di <xref:Microsoft.VisualStudio.Shell.Interop.IVsSolution.AddVirtualProjectEx%2A> su ciascuno dei relativi progetti figlio.  
+4.  Le chiamate di progetto padre <xref:Microsoft.VisualStudio.Shell.Interop.IVsSolution.AddVirtualProject%2A> metodo o <xref:Microsoft.VisualStudio.Shell.Interop.IVsSolution.AddVirtualProjectEx%2A> metodo su ciascuno dei relativi progetti figlio.  
   
-     Passare <xref:Microsoft.VisualStudio.Shell.Interop.__VSADDVPFLAGS> al metodo di `AddVirtualProject` per indicare che il progetto \(annidato\) virtuale deve essere aggiunto nella finestra di progetto, escluso dalla compilazione, aggiunto al controllo del codice sorgente, e così via.  `VSADDVPFLAGS` consente di controllare la visibilità del progetto annidato e indicare che la funzionalità è associata.  
+     Si passa <xref:Microsoft.VisualStudio.Shell.Interop.__VSADDVPFLAGS> per il `AddVirtualProject` metodo per indicare che il progetto (nidificato) virtuale deve essere aggiunti alla finestra di progetto, escluso dalla compilazione, aggiunto al controllo del codice sorgente e così via. `VSADDVPFLAGS`Consente di controllare la visibilità del progetto annidato e indicare quali funzionalità sono associata.  
   
-     Se si ricarica un progetto figlio in precedenza esistente con un GUID del progetto memorizzato nel file del progetto padre, il progetto padre chiama `AddVirtualProjectEx`.  The only difference between `AddVirtualProject` and `AddVirtualProjectEX` is that `AddVirtualProjectEX` has a parameter to enable the parent project to specify a per instance `guidProjectID` for the child project to enable <xref:Microsoft.VisualStudio.Shell.Interop.IVsSolution.GetProjectOfGuid%2A> and <xref:Microsoft.VisualStudio.Shell.Interop.IVsSolution.GetProjectOfProjref%2A> to function correctly.  
+     Se si Ricarica progetto figlio già esistente che include un progetto GUID archiviato nel file di progetto del progetto padre, le chiamate di progetto padre `AddVirtualProjectEx`. L'unica differenza tra `AddVirtualProject` e `AddVirtualProjectEX` che `AddVirtualProjectEX` dispone di un parametro per abilitare il progetto principale specificare una per ogni istanza `guidProjectID` per il progetto figlio abilitare <xref:Microsoft.VisualStudio.Shell.Interop.IVsSolution.GetProjectOfGuid%2A> e <xref:Microsoft.VisualStudio.Shell.Interop.IVsSolution.GetProjectOfProjref%2A> alla funzione in modo corretto.  
   
-     Se non c " è GUID disponibile, ad esempio quando si aggiunge un nuovo progetto annidato, la soluzione viene creato uno per il progetto quando viene aggiunto al padre.  È responsabilità del progetto padre mantenere il GUID del progetto nel file di progetto.  Se si elimina un progetto annidato, il GUID per tale progetto può anche essere eliminati.  
+     Se non è presente alcun GUID disponibili, ad esempio quando si aggiunge un nuovo progetto nidificato, la soluzione viene creata una per il progetto al momento viene aggiunto all'elemento padre. È responsabilità del progetto per mantenere tale progetto GUID nel file di progetto principale. Se si elimina un progetto nidificato, il GUID per il progetto può anche essere eliminato.  
   
-5.  L'ide chiama il metodo di `M:Microsoft.VisualStudio.Shell.Interop.IVsParentProject.OpenChildren` in ogni progetto figlio del progetto padre.  
+5.  Le chiamate a IDE il `M:Microsoft.VisualStudio.Shell.Interop.IVsParentProject.OpenChildren` metodo su ogni progetto figlio del progetto principale.  
   
-     Il progetto padre deve implementare `IVsParentProject` se si desidera annidare i progetti.  Tuttavia il progetto padre non chiama mai `QueryInterface` per `IVsParentProject` anche se include progetti padre.  La soluzione gestisce la chiamata a `IVsParentProject` e, se viene distribuita, chiama `OpenChildren` per creare progetti annidati.  `AddVirtualProjectEX` viene sempre chiamato da `OpenChildren`.  Non deve essere mai chiamato dal progetto padre mantenere gli eventi di creazione della gerarchia in ordine.  
+     Il progetto padre deve implementare `IVsParentProject` se si desidera nidificare i progetti. Ma l'elemento padre progetto mai chiamate `QueryInterface` per `IVsParentProject` anche se presenta progetti principali disponibili al suo interno. La soluzione gestisce la chiamata a `IVsParentProject` e, se viene implementato, chiama `OpenChildren` per creare i progetti annidati. `AddVirtualProjectEX`viene sempre chiamato da `OpenChildren`. Non dovrebbe mai essere chiamato dal progetto padre per mantenere la gerarchia, gli eventi di creazione in ordine.  
   
-6.  L'ide chiama il metodo di <xref:Microsoft.VisualStudio.Shell.Interop.IVsSolutionEvents3.OnAfterOpenProject%2A> nel progetto figlio.  
+6.  Le chiamate a IDE il <xref:Microsoft.VisualStudio.Shell.Interop.IVsSolutionEvents3.OnAfterOpenProject%2A> metodo sul progetto figlio.  
   
-7.  Il progetto padre chiama il metodo di <xref:Microsoft.VisualStudio.Shell.Interop.IVsFireSolutionEvents.FireOnAfterOpeningChildren%2A> per aggiornare i listener che i progetti figlio per l'elemento padre sono stati creati.  
+7.  Le chiamate di progetto padre il <xref:Microsoft.VisualStudio.Shell.Interop.IVsFireSolutionEvents.FireOnAfterOpeningChildren%2A> metodo per notificare ai listener che siano stati creati i progetti figlio per l'elemento padre.  
   
-8.  L'ide chiama il metodo di <xref:Microsoft.VisualStudio.Shell.Interop.IVsFireSolutionEvents.FireOnAfterOpenProject%2A> nel progetto padre dopo tutti i progetti figlio sono stati aperti.  
+8.  Le chiamate a IDE il <xref:Microsoft.VisualStudio.Shell.Interop.IVsFireSolutionEvents.FireOnAfterOpenProject%2A> metodo sul progetto padre dopo l'apertura di tutti i progetti figlio.  
   
-     Se non ne esiste già, il progetto padre crea un GUID per ogni progetto annidato chiamando `CoCreateGuid`.  
-  
-    > [!NOTE]
-    >  `CoCreateGuid` è un'api COM chiamato quando un GUID deve essere creato.  Per ulteriori informazioni, vedere `CoCreateGuid` e i GUID in MSDN Library.  
-  
-     Il progetto padre archivia il GUID nel file di progetto da recuperare la prossima volta che viene aperto nell'IDE di.  Vedere il passaggio 4 per ulteriori informazioni sulla chiamata di `AddVirtualProjectEX` per recuperare `guidProjectID` per il progetto figlio.  
-  
-9. Il metodo di <xref:Microsoft.VisualStudio.Shell.Interop.IVsHierarchy.GetProperty%2A> viene quindi chiamato per il ID voce padre che per convenzione delegate nel progetto annidato.  <xref:Microsoft.VisualStudio.Shell.Interop.IVsHierarchy.GetProperty%2A> recupera le proprietà del nodo a annidare un progetto in cui si desidera delegare quando viene chiamato il metodo sul padre.  
-  
-     Poiché i progetti padre e figlio viene creata un'istanza a livello di codice, è possibile impostare le proprietà per i progetti annidati in questa fase.  
+     Se non esiste già, il progetto principale crea un GUID per ogni progetto annidato chiamando `CoCreateGuid`.  
   
     > [!NOTE]
-    >  Non solo si ricevono le informazioni sul contesto dal progetto annidato, ma è anche possibile chiedere se il progetto padre dispone di una qualsiasi contesto per tale elemento di <xref:Microsoft.VisualStudio.Shell.Interop.__VSHPROPID>.  In tal modo, è possibile aggiungere attributi aggiuntivi e le opzioni di menu della Guida dinamica specifici dei progetti annidati utente.  
+    >  `CoCreateGuid`è un'API COM chiamata quando un GUID da creare. Per ulteriori informazioni, vedere `CoCreateGuid` e i GUID in MSDN Library.  
   
-10. La gerarchia è compilata per la visualizzazione in Esplora soluzioni con una chiamata al metodo di <xref:Microsoft.VisualStudio.Shell.Interop.IVsHierarchy.GetNestedHierarchy%2A> .  
+     Il progetto principale archivia questo GUID nel relativo file di progetto per recuperare la prossima volta che viene aperto nell'IDE. Vedere il passaggio 4 per ulteriori informazioni relative al chiamante di `AddVirtualProjectEX` per recuperare il `guidProjectID` per il progetto figlio.  
   
-     Passare la gerarchia all'ambiente con `GetNestedHierarchy` per compilare la gerarchia per la visualizzazione in Esplora soluzioni.  In questo modo, la soluzione corrente che il progetto esiste e può essere gestito per compilare dal gestore di compilazione, oppure può consentire i file nel progetto sia inserito nel controllo del codice sorgente.  
+9. Il <xref:Microsoft.VisualStudio.Shell.Interop.IVsHierarchy.GetProperty%2A> viene quindi chiamato il metodo per l'elemento padre ItemID per convenzione delegare per il progetto annidato. Il <xref:Microsoft.VisualStudio.Shell.Interop.IVsHierarchy.GetProperty%2A> recupera le proprietà del nodo che consente di annidare un progetto che si desidera delegare quando viene chiamato sull'oggetto padre.  
   
-11. Quando tutti i progetti annidati per Project1 vengono creati, il controllo viene passato alla soluzione e il processo viene ripetuto per Project2.  
+     Poiché i progetti padre e figlio vengono creata un'istanza a livello di codice, è possibile impostare le proprietà dei progetti annidati a questo punto.  
   
-     Questo stesso processo per creare progetti annidati si verifica per un progetto figlio con un figlio.  In questo caso, se BuildProject1, che è un elemento figlio di Project1, era progetti figlio, verranno create dopo BuildProject1 e prima di Project2.  Il processo sono ricorsivi e la gerarchia viene compilata dall'alto verso il basso.  
+    > [!NOTE]
+    >  Non solo ricevono le informazioni sul contesto dal progetto nidificato, ma è inoltre possibile richiedere se il progetto principale dispone di alcun contesto per l'elemento controllando <xref:Microsoft.VisualStudio.Shell.Interop.__VSHPROPID>. In tal modo, è possibile aggiungere attributi aggiuntivi Guida dinamica e le opzioni di menu specifiche per singoli progetti annidati.  
   
-     Quando un progetto annidato viene chiuso perché l'utente ha chiuso la soluzione o il progetto specifico stessa, l'altro metodo su `IVsParentProject`, <xref:Microsoft.VisualStudio.Shell.Interop.IVsParentProject.CloseChildren%2A>, viene chiamato.  The parent project wraps calls to the <xref:Microsoft.VisualStudio.Shell.Interop.IVsSolution.RemoveVirtualProject%2A> method with the <xref:Microsoft.VisualStudio.Shell.Interop.IVsSolutionEvents3.OnBeforeClosingChildren%2A> and the <xref:Microsoft.VisualStudio.Shell.Interop.IVsSolutionEvents3.OnAfterClosingChildren%2A> methods to notify listeners to solution events that the nested projects are being closed.  
+10. La gerarchia viene compilata per la visualizzazione in Esplora soluzioni con una chiamata al <xref:Microsoft.VisualStudio.Shell.Interop.IVsHierarchy.GetNestedHierarchy%2A> metodo.  
   
- I seguenti argomenti riguardano di diversi altri concetti da considerare quando si distribuiscono progetti annidati:  
+     Passare la gerarchia dell'ambiente mediante `GetNestedHierarchy` per compilare la gerarchia per la visualizzazione in Esplora soluzioni. In questo modo, la soluzione sa che il progetto esista e può essere gestito per la compilazione dal gestore di compilazione oppure consentire i file del progetto da inserire nel controllo del codice sorgente.  
   
- [Considerazioni per scaricare e ricaricare progetti annidati](../../extensibility/internals/considerations-for-unloading-and-reloading-nested-projects.md)  
+11. Quando sono stati creati tutti i progetti annidati per Project1, il controllo viene passato nuovamente alla soluzione e il processo viene ripetuto per Project2.  
   
- [Supporto per progetti annidati](../../extensibility/internals/wizard-support-for-nested-projects.md)  
+     Lo stesso processo per la creazione di progetti annidati si verifica per un progetto figlio che include un elemento figlio. In questo caso, se BuildProject1, vale a dire un elemento figlio di Project1, conteneva progetti figlio, si creerebbe BuildProject1 e precede Project2. Il processo è ricorsiva e la gerarchia viene compilata dall'alto verso il basso.  
   
- [Implementazione di gestione dei comandi per progetti annidati](../../extensibility/internals/implementing-command-handling-for-nested-projects.md)  
+     Quando un progetto annidato viene chiuso perché l'utente ha chiuso la soluzione o di specifiche di progetto, l'altro metodo `IVsParentProject`, <xref:Microsoft.VisualStudio.Shell.Interop.IVsParentProject.CloseChildren%2A>, viene chiamato. Il progetto principale esegue il wrapping di chiamate per il <xref:Microsoft.VisualStudio.Shell.Interop.IVsSolution.RemoveVirtualProject%2A> metodo con il <xref:Microsoft.VisualStudio.Shell.Interop.IVsSolutionEvents3.OnBeforeClosingChildren%2A> e <xref:Microsoft.VisualStudio.Shell.Interop.IVsSolutionEvents3.OnAfterClosingChildren%2A> per notificare a listener di eventi di soluzione che i progetti annidati vengono chiusi.  
   
- [Il filtro nella finestra di dialogo AddItem per progetti annidati](../../extensibility/internals/filtering-the-additem-dialog-box-for-nested-projects.md)  
+ Gestiscono diversi altri concetti da considerare quando si implementano progetti annidati gli argomenti seguenti:  
   
-## Vedere anche  
+ [Considerazioni per lo scaricamento e il ricaricamento di progetti annidati](../../extensibility/internals/considerations-for-unloading-and-reloading-nested-projects.md)  
+  
+ [Supporto di procedure guidate per i progetti annidati](../../extensibility/internals/wizard-support-for-nested-projects.md)  
+  
+ [Implementazione della gestione dei comandi per i progetti annidati](../../extensibility/internals/implementing-command-handling-for-nested-projects.md)  
+  
+ [Applicazione di un filtro nella finestra di dialogo AddItem per i progetti annidati](../../extensibility/internals/filtering-the-additem-dialog-box-for-nested-projects.md)  
+  
+## <a name="see-also"></a>Vedere anche  
  [Aggiunta di elementi di Aggiungi nuovo elemento di finestre di dialogo](../../extensibility/internals/adding-items-to-the-add-new-item-dialog-boxes.md)   
  [La registrazione di progetto e modelli di elemento](../../extensibility/internals/registering-project-and-item-templates.md)   
  [Elenco di controllo: Creazione di nuovi tipi di progetto](../../extensibility/internals/checklist-creating-new-project-types.md)   
  [Parametri di contesto](../../extensibility/internals/context-parameters.md)   
- [Procedura guidata \(. File vsz\)](../../extensibility/internals/wizard-dot-vsz-file.md)
+ [File (con estensione vsz) della procedura guidata](../../extensibility/internals/wizard-dot-vsz-file.md)

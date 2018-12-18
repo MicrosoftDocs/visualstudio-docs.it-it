@@ -1,60 +1,61 @@
 ---
-title: "IDebugMethodField::EnumLocals | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "IDebugMethodField::EnumLocals"
-helpviewer_keywords: 
-  - "Metodo IDebugMethodField::EnumLocals"
+title: IDebugMethodField::EnumLocals | Documenti Microsoft
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: vs-ide-sdk
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: IDebugMethodField::EnumLocals
+helpviewer_keywords: IDebugMethodField::EnumLocals method
 ms.assetid: b0456a6d-2b96-49e2-a871-516571b4f6a5
-caps.latest.revision: 10
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: gregvanl
+ms.author: gregvanl
+manager: ghogen
+ms.workload: vssdk
+ms.openlocfilehash: 451c2ccad7d817946bd3d2c2e83ed27279124f2b
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
-# IDebugMethodField::EnumLocals
-[!INCLUDE[vs2017banner](../../../code-quality/includes/vs2017banner.md)]
-
+# <a name="idebugmethodfieldenumlocals"></a>IDebugMethodField::EnumLocals
 Crea un enumeratore per le variabili locali selezionate del metodo.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp#  
-HRESULT EnumLocals(   
-   IDebugAddress*     pAddress,  
-   IEnumDebugFields** ppLocals  
+```cpp  
+HRESULT EnumLocals(   
+   IDebugAddress*     pAddress,  
+   IEnumDebugFields** ppLocals  
 );  
 ```  
   
-```c#  
+```csharp  
 int EnumLocals(  
-   IDebugAddress        pAddress,   
-   out IEnumDebugFields ppLocals  
+   IDebugAddress        pAddress,   
+   out IEnumDebugFields ppLocals  
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `pAddress`  
- \[in\]  [IDebugAddress](../../../extensibility/debugger/reference/idebugaddress.md) Un oggetto che rappresenta l'indirizzo di debug che seleziona il contesto o l'ambito da cui ottenere le variabili locali.  
+ [in] Un [IDebugAddress](../../../extensibility/debugger/reference/idebugaddress.md) oggetto che rappresenta l'indirizzo di debug che consente di selezionare il contesto o l'ambito da cui ottenere le variabili locali.  
   
  `ppLocals`  
- \[out\]  Restituisce [IEnumDebugFields](../../../extensibility/debugger/reference/ienumdebugfields.md) un oggetto che rappresenta un elenco di locali; in caso contrario, restituisce un valore null se non vi sono locali.  
+ [out] Restituisce un [IEnumDebugFields](../../../extensibility/debugger/reference/ienumdebugfields.md) l'oggetto che rappresenta un elenco di variabili locali; in caso contrario, restituisce un valore null se non sono variabili non locali.  
   
-## Valore restituito  
- Se l'operazione riesce, restituisce S\_OK o restituisce S\_FALSE se non vi sono locali.  In caso contrario, restituisce un codice di errore.  
+## <a name="return-value"></a>Valore restituito  
+ Se ha esito positivo, restituisce S_OK o S_FALSE se sono non presenti variabili locali. In caso contrario, verrà restituito un codice di errore.  
   
-## Note  
- Solo le variabili definite all'interno del blocco contenente l'indirizzo specificato di debug vengono enumerate.  Se tutti i locali incluse variabili locali generati dal compilatore sono necessari, chiamare [EnumAllLocals](../../../extensibility/debugger/reference/idebugmethodfield-enumalllocals.md) il metodo.  
+## <a name="remarks"></a>Note  
+ Vengono enumerate solo le variabili definite all'interno del blocco che contiene l'indirizzo di debug specificata. Se sono necessarie tutte le variabili locali incluse le variabili locali generato dal compilatore, chiamare il [EnumAllLocals](../../../extensibility/debugger/reference/idebugmethodfield-enumalllocals.md) metodo.  
   
- Un metodo può contenere più contesti o i blocchi di definizione.  Ad esempio, il seguente metodo inventato contiene tre ambiti, i due blocchi interni e il corpo del metodo.  
+ Un metodo può contenere più contesti di ambito o blocchi. Ad esempio, il metodo seguente ristretto contiene tre ambiti, i due blocchi interni e il corpo del metodo.  
   
-```c#  
+```csharp  
 public void func(int index)  
 {  
     // Method body scope  
@@ -72,9 +73,9 @@ public void func(int index)
 }  
 ```  
   
- [IDebugMethodField](../../../extensibility/debugger/reference/idebugmethodfield.md) l'oggetto rappresenta il metodo stesso di `func` .  Chiamando il metodo di `EnumLocals` con [IDebugAddress](../../../extensibility/debugger/reference/idebugaddress.md) un insieme all'indirizzo di `Inner Scope 1` restituisce un'enumerazione che contiene la variabile di `temp1` , ad esempio.  
+ Il [IDebugMethodField](../../../extensibility/debugger/reference/idebugmethodfield.md) oggetto rappresenta il `func` metodo stesso. La chiamata di `EnumLocals` metodo con un [IDebugAddress](../../../extensibility/debugger/reference/idebugaddress.md) impostato sul `Inner Scope 1` indirizzo restituisce un'enumerazione contenente il `temp1` variabile, ad esempio.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IDebugMethodField](../../../extensibility/debugger/reference/idebugmethodfield.md)   
  [IDebugAddress](../../../extensibility/debugger/reference/idebugaddress.md)   
  [IEnumDebugFields](../../../extensibility/debugger/reference/ienumdebugfields.md)   

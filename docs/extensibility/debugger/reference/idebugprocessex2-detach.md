@@ -1,51 +1,52 @@
 ---
-title: "IDebugProcessEx2::Detach | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "IDebugProcessEx2::Detach"
-helpviewer_keywords: 
-  - "Metodo IDebugProcessEx2::Detach"
+title: IDebugProcessEx2::Detach | Documenti Microsoft
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: vs-ide-sdk
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: IDebugProcessEx2::Detach
+helpviewer_keywords: IDebugProcessEx2::Detach method
 ms.assetid: 66d54c2c-9302-47c8-9975-f30ed988ab29
-caps.latest.revision: 15
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 15
+caps.latest.revision: "15"
+author: gregvanl
+ms.author: gregvanl
+manager: ghogen
+ms.workload: vssdk
+ms.openlocfilehash: 40176b654f1a108e995a778eb4c7495b062f6114
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
-# IDebugProcessEx2::Detach
-[!INCLUDE[vs2017banner](../../../code-quality/includes/vs2017banner.md)]
-
-Questo metodo segnala al processo di una sessione si esegue il debug del processo.  
+# <a name="idebugprocessex2detach"></a>IDebugProcessEx2::Detach
+Questo metodo indica il processo che una sessione non è più il debug del processo.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp#  
-HRESULT Detach(   
-   IDebugSession2* pSession  
+```cpp  
+HRESULT Detach(   
+   IDebugSession2* pSession  
 );  
 ```  
   
-```c#  
+```csharp  
 int Detach(  
-   IDebugSession2 pSession  
+   IDebugSession2 pSession  
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `pSession`  
- \[in\]  Un valore che identifica in modo univoco la sessione per rimuovere questo processo.  
+ [in] Un valore che identifica in modo univoco la sessione per il processo da scollegare.  
   
-## Valore restituito  
- Se l'operazione riesce, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
+## <a name="return-value"></a>Valore restituito  
+ Se ha esito positivo, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
   
-## Note  
- Interfaccia passata in `pSession` deve essere considerata solo come cookie, un valore che identifica in modo univoco l'amministratore di debug della sessione in cui è collegato a questo processo; nessuno dei metodi in un'interfaccia fornita sono funzionanti.  
+## <a name="remarks"></a>Note  
+ L'interfaccia passato `pSession` è venga considerato solo un cookie, un valore che identifica in modo univoco il gestore di sessione di debug che originariamente connesso a questo processo, nessuno dei metodi dell'interfaccia fornite sono funzionali.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IDebugProcessEx2](../../../extensibility/debugger/reference/idebugprocessex2.md)

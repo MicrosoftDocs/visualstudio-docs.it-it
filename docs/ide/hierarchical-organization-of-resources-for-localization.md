@@ -1,29 +1,35 @@
 ---
-title: "Organizzazione gerarchica di risorse per la localizzazione | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-general"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "file di risorse, localizzato"
-  - "localizzazione [Visual Studio], risorse"
-  - "risorse fallback"
-  - "applicazioni internazionali [Visual Studio], risorse di archiviazione"
-  - "assembly satellite, gerarchie di risorse"
-  - "globalizzazione [Visual Studio], risorse"
-  - "assembly satellite"
-  - "risorse [Visual Studio] sistema di fallback"
-  - "file di risorse, processi fallback"
+title: Organizzazione gerarchica di risorse per la localizzazione | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- vs-ide-general
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- resource files, localized
+- localization [Visual Studio], resources
+- fallback resources
+- international applications [Visual Studio], storing resources
+- satellite assemblies, resource hierarchies
+- globalization [Visual Studio], resources
+- satellite assemblies
+- resources [Visual Studio], fallback system
+- resource files, fallback processes
 ms.assetid: dadf8f2c-f74c-44d7-bec0-a1e956d8d38d
-caps.latest.revision: 8
-author: "kempb"
-ms.author: "kempb"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: 
+author: gewarren
+ms.author: gewarren
+manager: ghogen
+ms.workload:
+- multiple
+ms.openlocfilehash: cc663c02d3151e6dd55c1c35388ac7b33f049bb1
+ms.sourcegitcommit: b18844078a30d59014b48a9c247848dea188b0ee
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 01/29/2018
 ---
 # <a name="hierarchical-organization-of-resources-for-localization"></a>Organizzazione gerarchica di risorse per la localizzazione
 In Visual Studio, le risorse localizzate (dati come stringhe e immagini specifiche di ogni impostazione cultura) vengono archiviate in file separati e caricate in base alle impostazioni cultura dell'interfaccia utente. Per comprendere come vengono caricate le risorse localizzate, è utile pensarle come organizzate in modo gerarchico.  
@@ -40,21 +46,15 @@ In Visual Studio, le risorse localizzate (dati come stringhe e immagini specific
   
  Il modo migliore per memorizzare le risorse consiste nel renderle il più generali possibile. Pertanto, quando possibile, è opportuno memorizzare stringhe, immagini e altre risorse localizzate nei file di risorse per le impostazioni cultura non associate ad alcun paese anziché in quelli per le impostazioni cultura specifiche. Ad esempio, se si dispone di risorse per le impostazioni cultura del francese belga ("fr-BE") e le risorse immediatamente sopra sono le risorse di fallback in inglese, può verificarsi un problema quando si tenta di usare l'applicazione su un sistema configurato per le impostazioni cultura del francese canadese. Il sistema cercherà un assembly satellite "fr-CA", non lo troverà e caricherà l'assembly principale che contiene la risorsa di fallback, ovvero l'inglese, invece di caricare le risorse per il francese. L'immagine seguente illustra questo spiacevole scenario.  
   
- ![Solo risorse specifiche](~/ide/media/vbspecificresourcesonly.gif "vbSpecificResourcesOnly")  
+ ![Solo risorse specifiche](../ide/media/vbspecificresourcesonly.gif "vbSpecificResourcesOnly")  
   
  Se si segue la procedura consigliata di inserimento di più risorse possibili in un file di risorse con impostazioni cultura non associate ad alcun paese per le impostazioni cultura "fr", l'utente francese canadese non visualizzerà le risorse contrassegnate per le impostazioni cultura "fr-BE", ma visualizzerà le stringhe in francese. L'immagine seguente illustra questo scenario più favorevole.  
   
- ![Elemento grafico NeutralSpecificResources](~/ide/media/vbneutralspecificresources.gif "vbNeutralSpecificResources")  
+ ![Elemento grafico NeutralSpecificResources](../ide/media/vbneutralspecificresources.gif "vbNeutralSpecificResources")  
   
-## <a name="see-also"></a>Vedere anche  
- [Linguaggi di risorse non associate ad alcun paese per la localizzazione](../ide/neutral-resources-languages-for-localization.md)   
- [Sicurezza e assembly satellite localizzati](../ide/security-and-localized-satellite-assemblies.md)   
- [Applicazioni localizzate](../ide/localizing-applications.md)   
- [Globalizzazione e localizzazione di applicazioni](../ide/globalizing-and-localizing-applications.md)   
- [How to: Set the Culture and UI Culture for Windows Forms Globalization](http://msdn.microsoft.com/en-us/694e049f-0b91-474a-9789-d35124f248f0)  (Procedura: Impostare le impostazioni cultura e le impostazioni cultura dell'interfaccia utente per la globalizzazione di Windows Forms)  
- [Procedura: Impostare le impostazioni cultura e le impostazioni cultura dell'interfaccia utente per la globalizzazione della pagina Web ASP.NET](http://msdn.microsoft.com/Library/76091f86-f967-4687-a40f-de87bd8cc9a0)
+## <a name="see-also"></a>Vedere anche
 
-
-<!--HONumber=Feb17_HO4-->
-
-
+[Lingue di risorse non associate ad alcun paese per la localizzazione](../ide/neutral-resources-languages-for-localization.md)  
+[Sicurezza e assembly satellite localizzati](../ide/security-and-localized-satellite-assemblies.md)  
+[Localizzazione di applicazioni](../ide/localizing-applications.md)  
+[Globalizzazione e localizzazione di applicazioni](../ide/globalizing-and-localizing-applications.md)

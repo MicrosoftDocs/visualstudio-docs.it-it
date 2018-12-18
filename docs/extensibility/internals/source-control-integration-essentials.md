@@ -1,57 +1,60 @@
 ---
-title: "Origine controllo integrazione Essentials | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "Integrazione del controllo codice sorgente, essentials"
-  - "Integrazione del controllo codice sorgente, cenni preliminari"
-  - "Essentials, integrazione del controllo codice sorgente"
+title: Origine controllo integrazione Essentials | Documenti Microsoft
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: vs-ide-sdk
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- Source Control Integration, essentials
+- Source Control Integration,overview
+- essentials, Source Control Integration
 ms.assetid: 442057cb-fd54-4283-96f8-2f6dc8bf2de7
-caps.latest.revision: 9
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: gregvanl
+ms.author: gregvanl
+manager: ghogen
+ms.workload: vssdk
+ms.openlocfilehash: 5d474e00186cf2110dd8e701d980a1a4562beb8c
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
-# Origine controllo integrazione Essentials
-[!INCLUDE[vs2017banner](../../code-quality/includes/vs2017banner.md)]
-
-[!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] supporta due tipi di elenchi di controllo del codice sorgente: un plug\-in controllo del codice sorgente che fornisce la funzionalità di base e compilato utilizzando il plug\-in controllo del codice sorgente API \(precedentemente noto come il MSSCCI API\) e a una soluzione basata VSPackage di integrazione del controllo del codice sorgente che fornisce le funzionalità più affidabile.  
+# <a name="source-control-integration-essentials"></a>Origine di controllo di integrazione di Essentials
+[!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)]supporta due tipi di integrazione del controllo codice sorgente: plug-in controllo di origine che fornisce funzionalità di base e viene compilato utilizzando l'API plug-in controllo origine (precedentemente noto come API MSSCCI) e una soluzione di integrazione del controllo origine dati basata su VSPackage che fornisce la funzionalità più affidabile.  
   
-## Plug\-in controllo del codice sorgente  
- Un plug\-in controllo del codice sorgente viene scritto come DLL che implementa il plug\-in controllo del codice sorgente API.  La funzionalità di integrazione del controllo del codice sorgente e di registrazione viene fornita tramite l'API.  Questo approccio è più facile l'implementazione di un controllo del codice sorgente VSPackage e utilizza l'interfaccia utente di [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] \(UI\) per la maggior parte delle operazioni di controllo del codice sorgente.  
+## <a name="source-control-plug-in"></a>Plug-in controllo del codice sorgente  
+ Un plug-in controllo di origine viene scritto come DLL che implementa l'API plug-in controllo di origine. La funzionalità di integrazione controllo la registrazione e di origine viene fornita tramite l'API. Questo approccio è più facile da implementare rispetto a un controllo del codice sorgente VSPackage e viene utilizzato il [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] interfaccia utente (UI) per la maggior parte delle operazioni del controllo codice sorgente.  
   
- Per implementare un plug\-in controllo del codice sorgente utilizzando il plug\-in controllo del codice sorgente API, attenersi alla seguente procedura:  
+ Per implementare un controllo del codice sorgente plug-in tramite l'API plug-in controllo di origine, seguire questi passaggi:  
   
-1.  Creazione di una DLL che implementa le funzioni specificate in [Plug\-in del controllo codice sorgente](../../extensibility/source-control-plug-ins.md).  
+1.  Creare una DLL che implementa le funzioni specificate nel [Plug-in controllo del codice sorgente](../../extensibility/source-control-plug-ins.md).  
   
-2.  Registrare la DLL utilizzando le voci del Registro di sistema appropriate, come descritto [Procedura: installare un plug\-in del controllo del codice sorgente](../../extensibility/internals/how-to-install-a-source-control-plug-in.md)in.  
+2.  Registrare la DLL apportando le voci del Registro di sistema appropriata, come descritto in [procedura: installare un plug-in controllo origine](../../extensibility/internals/how-to-install-a-source-control-plug-in.md).  
   
-3.  Creare un'interfaccia utente di supporto e visualizzare una volta richiesta dal pacchetto dell'adattatore di controllo del codice sorgente \(la parte di [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] che gestisce la funzionalità di controllo del codice sorgente tramite collegamenti del controllo del codice sorgente.  
+3.  Creare un file di supporto dell'interfaccia utente da visualizzare quando viene richiesto dal pacchetto di scheda di controllo di origine (il [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] componente che gestisce controllo del codice sorgente tramite plug-in del controllo codice sorgente).  
   
- Per ulteriori informazioni, vedere [Creazione di plug\-in un controllo del codice sorgente](../../extensibility/internals/creating-a-source-control-plug-in.md).  
+ Per ulteriori informazioni, vedere [la creazione di un plug-in controllo origine](../../extensibility/internals/creating-a-source-control-plug-in.md).  
   
-## Controllo del codice sorgente VSPackage  
- Un'implementazione di package VS del controllo del codice sorgente consente di compilare una sostituzione personalizzata per l'interfaccia utente del controllo del codice sorgente di [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)].  Questo approccio fornisce il controllo completo di integrazione del controllo del codice sorgente, ma è necessario specificare gli elementi dell'interfaccia utente e di implementare le interfacce del controllo del codice sorgente che sarebbero altrimenti fornite sotto vantaggi dell'utilizzo del plug\-in.  
+## <a name="source-control-vspackage"></a>Origine pacchetto VSPackage di controllo  
+ Implementazione di VSPackage un controllo del codice sorgente consente di sviluppare una sostituzione personalizzata per il [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] dell'interfaccia utente di controllo del codice sorgente. Questo approccio fornisce il controllo completo di integrazione del controllo codice sorgente, ma è necessario fornire elementi dell'interfaccia utente e implementare le interfacce di controllo di origine che in caso contrario verrebbero fornite con l'approccio di plug-in.  
   
- Per implementare un controllo del codice sorgente package VS, è necessario:  
+ Per implementare un controllo del codice sorgente VSPackage, è necessario:  
   
-1.  Creare e registrare possiedono il controllo del codice sorgente package VS, come descritto [Registrazione e la selezione](../../extensibility/internals/registration-and-selection-source-control-vspackage.md)in.  
+1.  Creare e registrare un controllo origine VSPackage, come descritto in [registrazione e la selezione](../../extensibility/internals/registration-and-selection-source-control-vspackage.md).  
   
-2.  Sostituire la UI predefinita del controllo del codice sorgente con l'interfaccia utente personalizzata.  Vedere [Interfaccia utente personalizzata](../../extensibility/internals/custom-user-interface-source-control-vspackage.md).  
+2.  Sostituire il controllo del codice sorgente predefinite dell'interfaccia utente con l'interfaccia utente personalizzata. Vedere [interfaccia utente personalizzata](../../extensibility/internals/custom-user-interface-source-control-vspackage.md).  
   
-3.  Specificare i glifi di utilizzo e gestione degli eventi del glifo di **Esplora soluzioni** .  Vedere [Icona controllo](../../extensibility/internals/glyph-control-source-control-vspackage.md).  
+3.  Specificare i glifi da utilizzare e gestire **Esplora** eventi glifo. Vedere [glifo controllo](../../extensibility/internals/glyph-control-source-control-vspackage.md).  
   
-4.  La modifica di query di handle e la query salvano gli eventi, [Query modifica Query Salva](../../extensibility/internals/query-edit-query-save-source-control-vspackage.md)come illustrato in.  
+4.  Gestire gli eventi di modifica di Query e salvare Query, come illustrato nella [salvare Query modifica Query](../../extensibility/internals/query-edit-query-save-source-control-vspackage.md).  
   
- Per ulteriori informazioni, vedere [Creazione di un pacchetto di controllo di origine](../../extensibility/internals/creating-a-source-control-vspackage.md).  
+ Per ulteriori informazioni, vedere [creando un pacchetto VSPackage controllo origine](../../extensibility/internals/creating-a-source-control-vspackage.md).  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Panoramica](../../extensibility/internals/source-control-integration-overview.md)   
- [Creazione di plug\-in un controllo del codice sorgente](../../extensibility/internals/creating-a-source-control-plug-in.md)   
- [Creazione di un pacchetto di controllo di origine](../../extensibility/internals/creating-a-source-control-vspackage.md)
+ [Creazione di plug-in un controllo del codice sorgente](../../extensibility/internals/creating-a-source-control-plug-in.md)   
+ [Creazione di un pacchetto VSPackage di controllo del codice sorgente](../../extensibility/internals/creating-a-source-control-vspackage.md)

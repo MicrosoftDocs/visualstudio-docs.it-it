@@ -1,48 +1,43 @@
 ---
-title: 'How to: Programmatically Retrieve a Folder by Name | Microsoft Docs'
+title: 'Procedura: recuperare a livello di codice di una cartella per nome | Documenti Microsoft'
 ms.custom: 
 ms.date: 02/02/2017
-ms.prod: visual-studio-dev14
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- office-development
+ms.technology: office-development
 ms.tgt_pltfrm: 
 ms.topic: article
 dev_langs:
 - VB
 - CSharp
-helpviewer_keywords:
-- Outlook folders [Office development in Visual Studio], retrieving by name
-ms.assetid: 7f819525-b431-4b57-9a7f-3a6454c74298
-caps.latest.revision: 16
-author: kempb
-ms.author: kempb
+helpviewer_keywords: Outlook folders [Office development in Visual Studio], retrieving by name
+author: TerryGLee
+ms.author: tglee
 manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: eb5c9550fd29b0e98bf63a7240737da4f13f3249
-ms.openlocfilehash: 137e83801cb74468dd095ba81831305e0534e456
-ms.contentlocale: it-it
-ms.lasthandoff: 08/30/2017
-
+ms.workload: office
+ms.openlocfilehash: 536abafec5d2d8792eb966c763a89b0c78dd49fc
+ms.sourcegitcommit: f9fbf1f55f9ac14e4e5c6ae58c30dc1800ca6cda
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 01/10/2018
 ---
-# <a name="how-to-programmatically-retrieve-a-folder-by-name"></a>How to: Programmatically Retrieve a Folder by Name
-  This example gets a reference to a named custom folder and then displays the contents of the folder.  
+# <a name="how-to-programmatically-retrieve-a-folder-by-name"></a>Procedura: recuperare una cartella per nome a livello di codice
+  In questo esempio Ottiene un riferimento a una cartella personalizzata denominata e quindi Visualizza il contenuto della cartella.  
   
  [!INCLUDE[appliesto_olkallapp](../vsto/includes/appliesto-olkallapp-md.md)]  
   
-## <a name="example"></a>Example  
+## <a name="example"></a>Esempio  
  [!code-csharp[Trin_OL_GetFolderName#1](../vsto/codesnippet/CSharp/Trin_OL_GetFolderName/thisaddin.cs#1)]  
   
-## <a name="compiling-the-code"></a>Compiling the Code  
- This example requires:  
+## <a name="compiling-the-code"></a>Compilazione del codice  
+ L'esempio presenta i requisiti seguenti:  
   
--   A folder named TestFolder.  
+-   Una cartella denominata TestFolder.  
   
-## <a name="see-also"></a>See Also  
- [Working with Folders](../vsto/working-with-folders.md)   
- [How to: Programmatically Search Within a Specific Folder](../vsto/how-to-programmatically-search-within-a-specific-folder.md)   
- [How to: Programmatically Search for a Specific Contact](../vsto/how-to-programmatically-search-for-a-specific-contact.md)   
- [How to: Programmatically Create Custom Folder Items](../vsto/how-to-programmatically-create-custom-folder-items.md)  
+## <a name="see-also"></a>Vedere anche  
+ [Utilizzo delle cartelle](../vsto/working-with-folders.md)   
+ [Procedura: eseguire la ricerca a livello di codice all'interno di una cartella specifica](../vsto/how-to-programmatically-search-within-a-specific-folder.md)   
+ [Procedura: eseguire la ricerca a livello di codice per un contatto specifico](../vsto/how-to-programmatically-search-for-a-specific-contact.md)   
+ [Procedura: Creare cartelle personalizzate a livello di codice](../vsto/how-to-programmatically-create-custom-folder-items.md)  
   
   

@@ -1,40 +1,24 @@
 ---
-title: "Impostare una proprietà di automazione univoca dei controlli Windows Store per il test | Microsoft Docs"
+title: "Impostare una proprietà di automazione univoca dei controlli UWP per il test | Microsoft Docs"
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- vs-devops-test
+ms.technology: vs-devops-test
 ms.tgt_pltfrm: 
 ms.topic: article
-ms.assetid: 9bdd74ff-2534-4fc7-a5c3-a77bf7843037
-caps.latest.revision: 10
-ms.author: douge
-manager: douge
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.author: gewarren
+manager: ghogen
+ms.workload: uwp
+author: gewarren
+ms.openlocfilehash: 0b1054dbbbe39c5b6beb2740f74e3dd84988d02b
+ms.sourcegitcommit: 7ae502c5767a34dc35e760ff02032f4902c7c02b
 ms.translationtype: HT
-ms.sourcegitcommit: 4a36302d80f4bc397128e3838c9abf858a0b5fe8
-ms.openlocfilehash: e931c898147cb93683ae618f96eed53ae13607ea
-ms.contentlocale: it-it
-ms.lasthandoff: 09/26/2017
-
+ms.contentlocale: it-IT
+ms.lasthandoff: 01/09/2018
 ---
-# <a name="set-a-unique-automation-property-for-windows-store-controls-for-testing"></a>Impostare una proprietà di automazione univoca dei controlli Windows Store per il test
-Per eseguire test codificati dell'interfaccia utente per un'applicazione di Windows Store basata su XAML, è necessario disporre di una proprietà di automazione univoca che identifichi ogni controllo.  
+# <a name="set-a-unique-automation-property-for-uwp-controls-for-testing"></a>Impostare una proprietà di automazione univoca dei controlli UWP per il test
+Per eseguire test codificati dell'interfaccia utente per un'applicazione UWP basata su XAML, è necessario disporre di una proprietà di automazione univoca che identifichi ogni controllo.  
   
  È possibile assegnare una proprietà di automazione univoca in base al tipo di controllo XAML nell'applicazione. Ecco come assegnare questa proprietà di automazione univoca nelle situazioni seguenti:  
   
@@ -219,5 +203,4 @@ private void CreateCheckBox(string txt, StackPanel panel)
 ```  
   
 ## <a name="see-also"></a>Vedere anche  
- [Testare app di Windows Store 8.1 e UWP con test codificati dell'interfaccia utente](../test/test-windows-store-8-1-apps-with-coded-ui-tests.md)
-
+ [Testare app UWP di Windows con test codificati dell'interfaccia utente](../test/test-windows-store-8-1-apps-with-coded-ui-tests.md)

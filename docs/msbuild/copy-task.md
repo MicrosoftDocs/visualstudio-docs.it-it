@@ -1,38 +1,43 @@
 ---
-title: "Copy Task | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "http://schemas.microsoft.com/developer/msbuild/2003#Copy"
-  - "MSBuild.Copy.SourceFileNotFound"
-  - "MSBuild.Copy.Retrying"
-  - "MSBuild.Copy.ExceededRetries"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "MSBuild, Copy task"
-  - "Copy task [MSBuild]"
+title: "Attività Copy | Microsoft Docs"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: msbuild
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- http://schemas.microsoft.com/developer/msbuild/2003#Copy
+- MSBuild.Copy.SourceFileNotFound
+- MSBuild.Copy.Retrying
+- MSBuild.Copy.ExceededRetries
+dev_langs:
+- VB
+- CSharp
+- C++
+- jsharp
+helpviewer_keywords:
+- MSBuild, Copy task
+- Copy task [MSBuild]
 ms.assetid: a46ba9da-3e4e-4890-b4ea-09a099b6bc40
-caps.latest.revision: 23
-author: "kempb"
-ms.author: "kempb"
-manager: "ghogen"
-caps.handback.revision: 21
+caps.latest.revision: 
+author: Mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.workload:
+- multiple
+ms.openlocfilehash: 4d00fa44fc6356cb8893cd3bdf20365330732810
+ms.sourcegitcommit: 205d15f4558315e585c67f33d5335d5b41d0fcea
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 02/09/2018
 ---
 # <a name="copy-task"></a>Attività Copy
 Copia i file in un nuovo percorso del file system.  
   
 ## <a name="parameters"></a>Parametri  
- Nella tabella che segue vengono descritti i parametri dell'attività `Copy`.  
+ Nella tabella che segue vengono descritti i parametri dell'attività `Copy` .  
   
 |Parametro|Descrizione|  
 |---------------|-----------------|  
@@ -68,7 +73,7 @@ Copia i file in un nuovo percorso del file system.
 ## <a name="remarks"></a>Note  
  È necessario specificare il parametro `DestinationFolder` o `DestinationFiles`, ma non entrambi. Se vengono specificati entrambi, l'attività avrà esito negativo e verrà registrato un errore.  
   
- Oltre ai parametri sopra elencati, questa attività eredita i parametri dalla classe <xref:Microsoft.Build.Tasks.TaskExtension>, che a sua volta eredita dalla classe <xref:Microsoft.Build.Utilities.Task>. Per un elenco di tali parametri aggiuntivi e le rispettive descrizioni, vedere [TaskExtension Base Class](../msbuild/taskextension-base-class.md) (Classe di base TaskExtension).  
+ Oltre ai parametri elencati sopra, questa attività eredita i parametri dalla classe <xref:Microsoft.Build.Tasks.TaskExtension>, che a sua volta eredita dalla classe <xref:Microsoft.Build.Utilities.Task>. Per un elenco di questi parametri aggiuntivi e le rispettive descrizioni, vedere [TaskExtension Base Class](../msbuild/taskextension-base-class.md).  
   
 ## <a name="example"></a>Esempio  
  Nell'esempio riportato di seguito gli elementi della raccolta `MySourceFiles` vengono copiati nella cartella c:\MyProject\Destination.  
@@ -113,8 +118,3 @@ Copia i file in un nuovo percorso del file system.
 ## <a name="see-also"></a>Vedere anche  
  [Attività](../msbuild/msbuild-tasks.md)   
  [Riferimento alle attività](../msbuild/msbuild-task-reference.md)
-
-
-<!--HONumber=Feb17_HO4-->
-
-

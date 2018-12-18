@@ -1,51 +1,52 @@
 ---
-title: "IEnumDebugObjects::GetCount | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "IEnumDebugObjects::GetCount"
-helpviewer_keywords: 
-  - "Metodo IEnumDebugObjects::GetCount"
+title: IEnumDebugObjects::GetCount | Documenti Microsoft
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: vs-ide-sdk
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: IEnumDebugObjects::GetCount
+helpviewer_keywords: IEnumDebugObjects::GetCount method
 ms.assetid: 9cbc5db4-03ae-479f-a664-13cad66ad210
-caps.latest.revision: 5
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 5
+caps.latest.revision: "5"
+author: gregvanl
+ms.author: gregvanl
+manager: ghogen
+ms.workload: vssdk
+ms.openlocfilehash: eea93b33e82023f811e40ae706b87658dfebe6ae
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
-# IEnumDebugObjects::GetCount
-[!INCLUDE[vs2017banner](../../../code-quality/includes/vs2017banner.md)]
-
+# <a name="ienumdebugobjectsgetcount"></a>IEnumDebugObjects::GetCount
 Questo metodo restituisce il numero di elementi nell'enumerazione.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp#  
+```cpp  
 HRESULT GetCount(  
-   [out] ULONG* pcelt  
+   [out] ULONG* pcelt  
 );  
 ```  
   
-```c#  
+```csharp  
 int GetCount(  
-   out uint pcelt  
+   out uint pcelt  
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `pcelt`  
- \[out\]  Restituisce il numero di elementi nell'enumerazione.  
+ [out] Restituisce il numero di elementi nell'enumerazione.  
   
-## Valore restituito  
- Se l'operazione riesce, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
+## <a name="return-value"></a>Valore restituito  
+ Se ha esito positivo, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
   
-## Note  
- Questo metodo non fa parte dell'interfaccia solito di enumerazione COM che specifica che solo esigenze dopo, di clonazione, di salto e reimposta da implementare.  
+## <a name="remarks"></a>Note  
+ Questo metodo non fa parte di solitamente si interfaccia COM di enumerazione che specifica che solo Avanti, clonazione, Skip e reimpostazione deve essere implementato.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IEnumDebugObjects](../../../extensibility/debugger/reference/ienumdebugobjects.md)

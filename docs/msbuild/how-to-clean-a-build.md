@@ -1,66 +1,69 @@
 ---
-title: "How to: Clean a Build | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "Exec task [MSBuild]"
-  - "MSBuild, cleaning a build"
-  - "directories [.NET Framework], for output items"
-  - "output, removing items"
+title: 'Procedura: Pulire una compilazione | Microsoft Docs'
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: msbuild
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- Exec task [MSBuild]
+- MSBuild, cleaning a build
+- directories [.NET Framework], for output items
+- output, removing items
 ms.assetid: 999ba473-b0c4-45c7-930a-63ea7a510509
-caps.latest.revision: 13
-author: "kempb"
-ms.author: "kempb"
-manager: "ghogen"
-caps.handback.revision: 13
+caps.latest.revision: 
+author: Mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.workload:
+- multiple
+ms.openlocfilehash: 6a459733e94657a711e6b28a0ae00952afae0543
+ms.sourcegitcommit: 205d15f4558315e585c67f33d5335d5b41d0fcea
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 02/09/2018
 ---
-# How to: Clean a Build
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
-Quando si pulisce una compilazione, tutti i file intermedi e di output vengono eliminati e rimangono solo i file di progetto e di componente.  Da tali file è quindi possibile compilare nuove istanze di file intermedi e di output.  La libreria di attività comuni fornita con [!INCLUDE[vstecmsbuild](../extensibility/internals/includes/vstecmsbuild_md.md)] include un'attività [Exec](../msbuild/exec-task.md) che può essere utilizzata per eseguire i comandi di sistema.  Per ulteriori informazioni sulla libreria di attività, vedere [Task Reference](../msbuild/msbuild-task-reference.md).  
+# <a name="how-to-clean-a-build"></a>Procedura: pulire una compilazione
+Quando si esegue la pulitura di una compilazione, vengono eliminati tutti i file intermedi e di output, lasciando solo i file di progetto e di componente. È quindi possibile compilare nuove istanze di file intermedi e di output dai file di progetto e di componente. La libreria di attività comuni fornita con [!INCLUDE[vstecmsbuild](../extensibility/internals/includes/vstecmsbuild_md.md)] include un'attività [Exec](../msbuild/exec-task.md) che è possibile usare per eseguire i comandi di sistema. Per altre informazioni sulla libreria di attività, vedere [Riferimenti delle attività](../msbuild/msbuild-task-reference.md).  
   
-## Creazione di una directory per gli elementi di output  
- Per impostazione predefinita, il file con estensione exe creato al momento della compilazione di un progetto viene memorizzato nella stessa directory dei file di progetto e di origine.  In genere, tuttavia, gli elementi di output vengono creati in una directory separata.  
+## <a name="creating-a-directory-for-output-items"></a>Creazione di una directory per gli elementi di output  
+ Per impostazione predefinita, il file con estensione exe creato quando si compila un progetto viene inserito nella stessa directory dei file di progetto e di origine. Gli elementi di output invece vengono in genere creati in una directory distinta.  
   
-#### Per creare una directory per gli elementi di output  
+#### <a name="to-create-a-directory-for-output-items"></a>Per creare una directory per gli elementi di output  
   
-1.  Utilizzare l'elemento `Property` per definire il percorso e il nome della directory.  Creare ad esempio una directory con nome `BuiltApp` nella directory che contiene i file di progetto e di origine:  
+1.  Usare l'elemento `Property` per definire il percorso e il nome della directory. Ad esempio, creare una directory denominata `BuiltApp` nella directory che contiene i file di progetto e di origine:  
   
      `<builtdir>BuiltApp</builtdir>`  
   
-2.  Se la directory non esiste, utilizzare l'attività [MakeDir](../msbuild/makedir-task.md) per crearla.  Di seguito è riportato un esempio:  
+2.  Usare l'attività [MakeDir](../msbuild/makedir-task.md) per creare la directory se la directory non esiste. Ad esempio:  
   
      `<MakeDir Directories = "$(builtdir)"`  
   
      `Condition = "!Exists('$(builtdir)')" />`  
   
-## Rimozione degli elementi di output  
- Prima di creare nuove istanze dei file intermedi e di output, è possibile eliminare tutte le precedenti istanze di tali file.  Per eliminare da un disco una directory e tutti i file e le directory in essa contenuti, utilizzare l'attività [RemoveDir](../msbuild/removedir-task.md).  
+## <a name="removing-the-output-items"></a>Rimozione degli elementi di output  
+ Prima di creare nuove istanze dei file intermedi e di output, è possibile cancellare tutte le istanze precedenti dei file intermedi e di output. Usare l'attività [RemoveDir](../msbuild/removedir-task.md) per eliminare una directory e tutti i file e le directory in essa contenuti da un disco.  
   
-#### Per eliminare una directory e tutti i file in essa contenuti  
+#### <a name="to-remove-a-directory-and-all-files-contained-in-the-directory"></a>Per rimuovere una directory e tutti i file contenuti nella directory  
   
--   Per eliminare la directory, utilizzare l'attività `RemoveDir`.  Di seguito è riportato un esempio:  
+-   Usare l'attività `RemoveDir` per rimuovere la directory. Ad esempio:  
   
      `<RemoveDir Directories="$(builtdir)" />`  
   
-## Esempio  
- Nell'esempio di codice riportato di seguito è presente una nuova destinazione, `Clean`, che utilizza l'attività `RemoveDir` per eliminare una directory e tutti i file e le directory in essa contenuti.  In questo esempio, inoltre, la destinazione `Compile` crea una directory separata per gli elementi di output che vengono eliminati quando la compilazione viene pulita.  
+## <a name="example"></a>Esempio  
+ Il progetto di esempio di codice seguente contiene una nuova destinazione, `Clean`, che usa l'attività `RemoveDir` per eliminare una directory e tutti i file e le directory in essa contenute. Anche in questo esempio, la destinazione `Compile` crea una directory distinta per gli elementi di output che vengono eliminati durante la pulizia della compilazione.  
   
- `Compile` viene definita come destinazione predefinita e viene, quindi, utilizzata automaticamente, a meno che si specifichino una o più destinazioni diverse.  Per specificare una destinazione diversa, utilizzare l'opzione della riga di comando **\/target**.  Di seguito è riportato un esempio:  
+ `Compile` è definito come destinazione predefinita che viene usata automaticamente se non vengono specificate una o più destinazioni diverse. Usare l'opzione della riga di comando **/target** per specificare una destinazione diversa. Ad esempio:  
   
  `msbuild <file name>.proj /target:Clean`  
   
- L'opzione **\/target** può essere abbreviata in **\/t** e applicata per specificare più di una destinazione.  Per utilizzare ad esempio la destinazione `Clean` e quindi la destinazione `Compile`, digitare:  
+ L'opzione **/target** può essere abbreviata in **/t** e può specificare più di una destinazione. Ad esempio, per usare la destinazione `Clean` e quindi la destinazione `Compile`, digitare:  
   
  `msbuild <file name>.proj /t:Clean;Compile`  
   
-```  
+```xml  
 <Project DefaultTargets = "Compile"  
     xmlns="http://schemas.microsoft.com/developer/msbuild/2003" >  
   
@@ -100,9 +103,9 @@ Quando si pulisce una compilazione, tutti i file intermedi e di output vengono e
 </Project>  
 ```  
   
-## Vedere anche  
- [Exec Task](../msbuild/exec-task.md)   
- [MakeDir Task](../msbuild/makedir-task.md)   
- [RemoveDir Task](../msbuild/removedir-task.md)   
- [Csc Task](../msbuild/csc-task.md)   
- [Targets](../msbuild/msbuild-targets.md)
+## <a name="see-also"></a>Vedere anche  
+ [Attività Exec](../msbuild/exec-task.md)   
+ [Attività MakeDir](../msbuild/makedir-task.md)   
+ [Attività RemoveDir](../msbuild/removedir-task.md)   
+ [Attività Csc](../msbuild/csc-task.md)   
+ [Destinazioni](../msbuild/msbuild-targets.md)

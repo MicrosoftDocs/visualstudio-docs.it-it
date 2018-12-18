@@ -4,42 +4,26 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- vs-ide-general
+ms.technology: vs-ide-general
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords:
-- VS.ErrorList
+f1_keywords: VS.ErrorList
 helpviewer_keywords:
 - Task List
 - build errors
 - Error List window
 - errors [Visual Studio], Error List window
 ms.assetid: b7f6d45a-733b-4ad8-bc2f-737a37509e56
-caps.latest.revision: 32
+caps.latest.revision: "32"
 author: gewarren
 ms.author: gewarren
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 5ea9179ad37514ffad4876177b05150eecc22def
-ms.openlocfilehash: ee881a2ecb205ad01a1d8be6229947dd748cb2b7
-ms.contentlocale: it-it
-ms.lasthandoff: 05/24/2017
-
+ms.workload: multiple
+ms.openlocfilehash: 227c23714231c87ba2ecac5fa7f50a632a73b123
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="error-list-window"></a>Finestra Elenco errori
 > [!NOTE]
@@ -59,11 +43,11 @@ ms.lasthandoff: 05/24/2017
   
 -   Cercare i termini specifici e l'ambito della ricerca solo nel progetto corrente o nel documento.  
   
- Per visualizzare l'**Elenco errori**, fare clic su**Visualizza/Elenco errori** o premere **CTRL+\\+E**.  
+Per visualizzare l'**Elenco errori**, fare clic su**Visualizza/Elenco errori** o premere **CTRL+\\+E**.  
   
- È possibile scegliere le schede **Errori**, **Avvisi** e **Messaggi** per visualizzare diversi livelli di informazioni.  
+È possibile scegliere le schede **Errori**, **Avvisi** e **Messaggi** per visualizzare diversi livelli di informazioni.  
   
- Per ordinare l'elenco, fare clic sull'intestazione di una colonna. Per ordinare nuovamente l'elenco in base a una colonna aggiuntiva, fare clic sull'intestazione di un'altra colonna tenendo premuto il tasto MAIUSC. Per selezionare le colonne da visualizzare e quelle da nascondere, scegliere **Mostra colonne** dal menu di scelta rapida. Per modificare l'ordine di visualizzazione delle colonne, trascinare l'intestazione di una colonna verso sinistra o verso destra.  
+Per ordinare l'elenco, fare clic sull'intestazione di una colonna. Per ordinare nuovamente l'elenco in base a una colonna aggiuntiva, fare clic sull'intestazione di un'altra colonna tenendo premuto il tasto MAIUSC. Per selezionare le colonne da visualizzare e quelle da nascondere, scegliere **Mostra colonne** dal menu di scelta rapida. Per modificare l'ordine di visualizzazione delle colonne, trascinare l'intestazione di una colonna verso sinistra o verso destra.  
   
 > [!NOTE]
 >  Le finestre di dialogo e i comandi di menu visualizzati potrebbero essere diversi da quelli descritti nella presente Guida a seconda delle impostazioni attive o dell'edizione del programma. Per modificare le impostazioni, fare clic su **Strumenti/Importa/Esporta impostazioni**. Per altre informazioni, vedere [Personalizzare l'IDE di Visual Studio](../../ide/personalizing-the-visual-studio-ide.md).  
@@ -82,9 +66,9 @@ ms.lasthandoff: 05/24/2017
   
 3.  **Documento corrente**: visualizza errori, avvisi e messaggi per il documento attualmente selezionato in **Editor** o in **Esplora soluzioni**.  
   
- Se ai risultati della ricerca è applicato un filtro, il nome del filtro viene visualizzato nella barra del titolo **Elenco errori**. I pulsanti **Errori**, **Avvisi** e **Messaggi** visualizzano il numero di elementi filtrati insieme al numero totale di elementi; ad esempio, i pulsanti visualizzano x di y errori. Se nessun filtro viene applicato, la barra del titolo indica solo "Elenco errori".  
+Se ai risultati della ricerca è applicato un filtro, il nome del filtro viene visualizzato nella barra del titolo **Elenco errori**. I pulsanti **Errori**, **Avvisi** e **Messaggi** visualizzano il numero di elementi filtrati insieme al numero totale di elementi; ad esempio, i pulsanti visualizzano x di y errori. Se nessun filtro viene applicato, la barra del titolo indica solo "Elenco errori".  
   
- L'elenco sul lato destro della barra degli strumenti specifica se visualizzare errori di compilazione (errori risultanti da un'operazione di compilazione) o di IntelliSense (errori rilevati prima di eseguire una compilazione) o di entrambi.  
+L'elenco sul lato destro della barra degli strumenti specifica se visualizzare errori di compilazione (errori risultanti da un'operazione di compilazione) o di IntelliSense (errori rilevati prima di eseguire una compilazione) o di entrambi.  
   
 ## <a name="search"></a>Cerca  
  Usare la casella di testo **Elenco errori di ricerca** sul lato destro della barra degli strumenti **Elenco errori** per trovare errori specifici nell'elenco errori. È possibile cercare una colonna visibile nell'elenco errori e i risultati di ricerca vengono sempre ordinati in base alla colonna con priorità di ordinamento anziché alla query o al filtro applicato. Se si sceglie il tasto **Esc** mentre è attivo l'**Elenco errori**, è possibile cancellare il termine di ricerca e i risultati di ricerca filtrati. È anche possibile fare clic sulla **X** sul lato destro della casella di testo per cancellare il contenuto.  

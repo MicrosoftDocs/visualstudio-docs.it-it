@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- vs-ide-sdk
+ms.technology: msbuild
 ms.tgt_pltfrm: 
 ms.topic: article
 apiname:
@@ -16,30 +15,17 @@ apitype: COM
 helpviewer_keywords:
 - EndTrackingContext
 ms.assetid: c2c5d794-8dc8-4594-8717-70dc79a0e75d
-caps.latest.revision: 3
-author: kempb
-ms.author: kempb
+caps.latest.revision: 
+author: Mikejo5000
+ms.author: mikejo
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 11a9cee75f912c5fb31cf4a031644abe9c63d744
-ms.openlocfilehash: ed89d29f5c8d2d8f3d87b1007c64344f40f7a1a9
-ms.contentlocale: it-it
-ms.lasthandoff: 06/03/2017
-
+ms.workload:
+- multiple
+ms.openlocfilehash: 327133c35a5d30ebd12812a2604120f8aebc4961
+ms.sourcegitcommit: 205d15f4558315e585c67f33d5335d5b41d0fcea
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 02/09/2018
 ---
 # <a name="endtrackingcontext"></a>EndTrackingContext
 Consente di terminare il contesto di verifica corrente.  

@@ -26,30 +26,17 @@ helpviewer_keywords:
 - resource files, fallback processes
 - user interface, culture setting
 ms.assetid: b0788993-e62d-4f68-8235-5f87b1d48525
-caps.latest.revision: 11
-author: kempb
-ms.author: kempb
+caps.latest.revision: 
+author: gewarren
+ms.author: gewarren
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 5658ecf52637a38bc3c2a5ad9e85b2edebf7d445
-ms.openlocfilehash: 5d04af26004b5915fcd373fda154ac79816e475c
-ms.contentlocale: it-it
-ms.lasthandoff: 05/19/2017
-
+ms.workload:
+- dotnet
+ms.openlocfilehash: 20eefe3933767e357d977e2f3a5a0626aa555c39
+ms.sourcegitcommit: b18844078a30d59014b48a9c247848dea188b0ee
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 01/29/2018
 ---
 # <a name="introduction-to-international-applications-based-on-the-net-framework"></a>Introduzione alle applicazioni internazionali basate su .NET Framework
 In [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)], la creazione di applicazioni predisposte per l'internazionalizzazione è composta da due parti: globalizzazione, ovvero il processo di progettazione di applicazioni in grado di adattarsi a impostazioni cultura diverse, e localizzazione, ovvero il processo di conversione di risorse per impostazioni cultura specifiche. Per informazioni generali sulla progettazione di applicazioni per utenti internazionali, vedere [Procedure consigliate per lo sviluppo di applicazioni internazionali](http://msdn.microsoft.com/Library/f08169c7-aad8-4ec3-9a21-9ebd3b89986c).  
@@ -62,7 +49,7 @@ In [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)], la creazione di ap
   
  Il sistema di progetto per Windows Form e Web Form consente di compilare file di risorse usando un modello di file di risorse Assembly, accedere alle risorse e compilare il progetto. Gli assembly satellite vengono creati insieme all'assembly principale.  
   
- Quando viene eseguita un'applicazione localizzata, il suo aspetto è determinato da due valori di impostazioni cultura. (Le *impostazioni cultura* sono un set di informazioni sulle preferenze relative alle convenzioni culturali, ambientali e linguistiche dell'utente). Le impostazioni cultura dell'interfaccia utente determinano le risorse che verranno caricate. Le impostazioni cultura dell'interfaccia utente vengono impostate come `UICulture` nei file Web.config e nelle direttive della pagina e come <xref:System.Globalization.CultureInfo.CurrentUICulture%2A> nel codice di Visual Basic o Visual C#. Le impostazioni cultura determinano la formattazione di valori quali numeri, date, valute e così via. Le impostazioni cultura vengono impostate come `Culture` nei file Web.config e nelle direttive della pagina, come <xref:System.Globalization.CultureInfo.CurrentCulture%2A> nel codice di Visual Basic o Visual C#.  
+ Quando viene eseguita un'applicazione localizzata, il suo aspetto è determinato da due valori di impostazioni cultura. (Le *impostazioni cultura* sono un set di informazioni sulle preferenze relative alle convenzioni culturali, ambientali e linguistiche dell'utente). Le impostazioni cultura dell'interfaccia utente determinano le risorse che verranno caricate. Le impostazioni cultura dell'interfaccia utente vengono impostate come `UICulture` nei file Web.config e nelle direttive della pagina e come <xref:System.Globalization.CultureInfo.CurrentUICulture%2A> nel codice di Visual Basic o C#. Le impostazioni cultura determinano la formattazione di valori quali numeri, date, valute e così via. Le impostazioni cultura vengono impostate come `Culture` nei file Web.config e nelle direttive della pagina, come <xref:System.Globalization.CultureInfo.CurrentCulture%2A> nel codice di Visual Basic o C#.  
   
 ## <a name="see-also"></a>Vedere anche  
  <xref:System.Globalization>   

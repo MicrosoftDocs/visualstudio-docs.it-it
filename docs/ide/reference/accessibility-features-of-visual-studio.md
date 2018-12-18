@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 08/22/2017
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- vs-ide-general
+ms.technology: vs-ide-general
 ms.tgt_pltfrm: 
 ms.topic: article
 helpviewer_keywords:
@@ -15,12 +14,12 @@ ms.assetid: aa1ada29-4d93-4bf0-af8b-03633fcb0fba
 author: TerryGLee
 ms.author: tglee
 manager: ghogen
+ms.workload: multiple
+ms.openlocfilehash: e947fa523b2d5e79e1df1966e6a4c3d9b6c8e7af
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
 ms.translationtype: HT
-ms.sourcegitcommit: 17defdd0b96ec1c3273fc6b845af844b031a4a17
-ms.openlocfilehash: 2f74439a5814d9939d9a4a3cd76cb430194375a6
-ms.contentlocale: it-it
-ms.lasthandoff: 09/06/2017
-
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="accessibility-features-of-visual-studio"></a>Funzionalità di accessibilità di Visual Studio
 > [!TIP]
@@ -41,7 +40,7 @@ Oltre alle utilità e alle funzionalità di accessibilità di Windows, sono disp
 > [!IMPORTANT]
 >  Le informazioni contenute in questa sezione sono valide solo per gli utenti che acquistano licenze di prodotti Microsoft negli Stati Uniti. Se il prodotto è stato acquistato al di fuori degli Stati Uniti, è possibile usare la scheda informativa complementare acclusa al pacchetto software oppure visitare la pagina [Contattaci del Supporto Tecnico Microsoft](http://support.microsoft.com/ContactUs) e fare clic sul collegamento **Individua le sedi Microsoft in tutto il mondo** nella parte inferiore della pagina. Questa pagina fornisce un elenco di numeri di telefono e di indirizzi dei servizi di supporto tecnico Microsoft. È possibile contattare la filiale Microsoft per scoprire se i tipi di prodotti e servizi descritti in questa sezione sono disponibili nella propria zona. Le informazioni sull'accessibilità sono disponibili in altre lingue, tra cui giapponese e francese.  
 
- Per altre informazioni, vedere gli argomenti seguenti:  
+ Per altre informazioni, vedere i seguenti argomenti:  
 
 -   [Procedura: Impostare le opzioni di accessibilità IDE](../../ide/reference/how-to-set-ide-accessibility-options.md)  
 
@@ -55,4 +54,3 @@ Oltre alle utilità e alle funzionalità di accessibilità di Windows, sono disp
 
 ## <a name="see-also"></a>Vedere anche  
  [Prodotti e servizi Microsoft per l'accessibilità](../../ide/reference/accessibility-products-and-services-from-microsoft.md)
-

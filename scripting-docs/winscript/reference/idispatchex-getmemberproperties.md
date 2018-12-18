@@ -1,27 +1,30 @@
 ---
-title: "IDispatchEx::GetMemberProperties | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/18/2017"
-ms.prod: "windows-script-interfaces"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
+title: IDispatchEx::GetMemberProperties | Documenti Microsoft
+ms.custom: 
+ms.date: 01/18/2017
+ms.prod: windows-script-interfaces
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: reference
 apiname: IDispatchEx.GetMemberProperties
 apilocation: scrobj.dll
-helpviewer_keywords: 
-  - "Metodo GetMemberProperties"
+helpviewer_keywords: GetMemberProperties method
 ms.assetid: 20d43209-12e2-472a-9bf3-81eced137b71
-caps.latest.revision: 8
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.openlocfilehash: 0d216bb7b21c8895337b9925007637c00d0deb37
+ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/27/2017
 ---
-# IDispatchEx::GetMemberProperties
-Recupera le proprietà di un membro.  
+# <a name="idispatchexgetmemberproperties"></a>IDispatchEx::GetMemberProperties
+Recupera le proprietà del membro.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
 HRESULT GetMemberProperties(  
@@ -31,49 +34,49 @@ HRESULT GetMemberProperties(
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `id`  
- Identifica il membro.  Utilizzare `GetDispID` o `GetNextDispID` ottenere l'identificatore di invio.  
+ Identifica il membro. Usa `GetDispID` o `GetNextDispID` per ottenere l'identificatore di invio.  
   
  `grfdexFetch`  
- Determina le proprietà da recuperare.  Può trattarsi di una combinazione dei valori elencati in `pgrfdex` e\/o una combinazione dei valori seguenti:  
+ Determina le proprietà da recuperare. Può trattarsi di una combinazione dei valori elencati in `pgrfdex` e/o una combinazione dei valori seguenti:  
   
 |Valore|Significato|  
-|------------|-----------------|  
-|grfdexPropCanAll|Combina il fdexPropCanGet, il fdexPropCanPut, il fdexPropCanPutRef, il fdexPropCanCall, il fdexPropCanConstruct e i fdexPropCanSourceEvents.|  
-|grfdexPropCannotAll|Combina il fdexPropCannotGet, il fdexPropCannotPut, il fdexPropCannotPutRef, il fdexPropCannotCall, il fdexPropCannotConstruct e i fdexPropCannotSourceEvents.|  
-|grfdexPropExtraAll|FdexPropNoSideEffects e fdexPropDynamicType le associazioni.|  
-|grfdexPropAll|Combina il grfdexPropCanAll, il grfdexPropCannotAll e il grfdexPropExtraAll.|  
+|-----------|-------------|  
+|grfdexPropCanAll|Combina fdexPropCanGet, fdexPropCanPut, fdexPropCanPutRef, fdexPropCanCall, fdexPropCanConstruct e fdexPropCanSourceEvents.|  
+|grfdexPropCannotAll|Combina fdexPropCannotGet, fdexPropCannotPut, fdexPropCannotPutRef, fdexPropCannotCall, fdexPropCannotConstruct e fdexPropCannotSourceEvents.|  
+|grfdexPropExtraAll|Combina fdexPropNoSideEffects e fdexPropDynamicType.|  
+|grfdexPropAll|Combina grfdexPropCanAll, grfdexPropCannotAll e grfdexPropExtraAll.|  
   
  `pgrfdex`  
- Indirizzo `DWORD` che riceve le proprietà richieste.  Può trattarsi di una combinazione dei valori seguenti:  
+ Indirizzo di un `DWORD` che riceve le proprietà richieste. Può trattarsi di una combinazione dei valori seguenti:  
   
 |Valore|Significato|  
-|------------|-----------------|  
-|fdexPropCanGet|Il membro può essere ottenuto utilizzando DISPATCH\_PROPERTYGET.|  
-|fdexPropCannotGet|Il membro non può essere ottenuto utilizzando DISPATCH\_PROPERTYGET.|  
-|fdexPropCanPut|Il membro può essere impostata utilizzando DISPATCH\_PROPERTYPUT.|  
-|fdexPropCannotPut|Il membro non può essere impostata utilizzando DISPATCH\_PROPERTYPUT.|  
-|fdexPropCanPutRef|Il membro può essere impostata utilizzando DISPATCH\_PROPERTYPUTREF.|  
-|fdexPropCannotPutRef|Il membro non può essere impostata utilizzando DISPATCH\_PROPERTYPUTREF.|  
-|fdexPropNoSideEffects|Il membro non ha effetti collaterali.  Ad esempio, un debugger potrebbe in modo sicuro ottenere\/set\/chiamata al membro senza modificare lo stato dello script che viene eseguito il debug.|  
-|fdexPropDynamicType|Il membro è dinamico e può cambiare durante la durata dell'oggetto.|  
-|fdexPropCanCall|Il membro può essere chiamato come metodo utilizzando DISPATCH\_METHOD.|  
-|fdexPropCannotCall|Il membro non può essere chiamato come metodo utilizzando DISPATCH\_METHOD.|  
-|fdexPropCanConstruct|Il membro può essere chiamato come costruttore che utilizza DISPATCH\_CONSTRUCT.|  
-|fdexPropCannotConstruct|Il membro non può essere chiamato come costruttore che utilizza DISPATCH\_CONSTRUCT.|  
+|-----------|-------------|  
+|fdexPropCanGet|Il membro può essere ottenuto utilizzando DISPATCH_PROPERTYGET.|  
+|fdexPropCannotGet|Il membro non può essere ottenuto utilizzando DISPATCH_PROPERTYGET.|  
+|fdexPropCanPut|Il membro può essere impostato utilizzando DISPATCH_PROPERTYPUT.|  
+|fdexPropCannotPut|Il membro non può essere impostato utilizzando DISPATCH_PROPERTYPUT.|  
+|fdexPropCanPutRef|Il membro può essere impostato utilizzando DISPATCH_PROPERTYPUTREF.|  
+|fdexPropCannotPutRef|Il membro non può essere impostato utilizzando DISPATCH_PROPERTYPUTREF.|  
+|fdexPropNoSideEffects|Il membro non dispone di tutti gli effetti collaterali. Ad esempio, un debugger potrebbe tranquillamente get/set/chiamata di questo membro senza modificare lo stato dello script in fase di debug.|  
+|fdexPropDynamicType|Il membro è dinamico e può variare nel corso della durata dell'oggetto.|  
+|fdexPropCanCall|Il membro può essere chiamato come un metodo utilizzando DISPATCH_METHOD.|  
+|fdexPropCannotCall|Il membro non può essere chiamato come un metodo utilizzando DISPATCH_METHOD.|  
+|fdexPropCanConstruct|Il membro può essere chiamato come costruttore utilizzando DISPATCH_CONSTRUCT.|  
+|fdexPropCannotConstruct|Il membro non può essere chiamato come costruttore con DISPATCH_CONSTRUCT.|  
 |fdexPropCanSourceEvents|Il membro può generare eventi.|  
 |fdexPropCannotSourceEvents|Il membro non può generare eventi.|  
   
-## Valore restituito  
- Restituisce uno dei seguenti valori:  
+## <a name="return-value"></a>Valore restituito  
+ Restituisce uno dei valori seguenti:  
   
 |||  
 |-|-|  
-|`S_OK`|Riuscita.|  
-|`DISP_E_UNKNOWNNAME`|Il nome non era noto.|  
+|`S_OK`|Operazione completata.|  
+|`DISP_E_UNKNOWNNAME`|Il nome non era nota.|  
   
-## Esempio  
+## <a name="example"></a>Esempio  
   
 ```  
 BSTR bstrName;  
@@ -90,7 +93,7 @@ BSTR bstrName;
    }  
 ```  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Interfaccia IDispatchEx](../../winscript/reference/idispatchex-interface.md)   
  [IDispatchEx::GetDispID](../../winscript/reference/idispatchex-getdispid.md)   
  [IDispatchEx::GetNextDispID](../../winscript/reference/idispatchex-getnextdispid.md)

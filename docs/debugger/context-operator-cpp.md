@@ -1,68 +1,68 @@
 ---
-title: "Operatore di contesto (C++) | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/05/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "vs.debug.operators"
-dev_langs: 
-  - "FSharp"
-  - "VB"
-  - "CSharp"
-  - "C++"
-helpviewer_keywords: 
-  - "espressioni [C++], debugger nativo"
-  - "valutazione"
-  - "identificatori di formato, espressioni"
-  - "operatore di contesto, in espressioni"
-  - "debug [C++], espressioni"
-  - "analizzatore di espressioni native"
+title: Operatore di contesto nel debugger (C++) | Documenti Microsoft
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: vs-ide-debug
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: vs.debug.operators
+dev_langs:
+- CSharp
+- VB
+- FSharp
+- C++
+helpviewer_keywords:
+- expressions [C++], native debugger
+- evaluation
+- format specifiers, expressions
+- context operator, in expressions
+- debugging [C++], expressions
+- native expression evaluator
 ms.assetid: 73cc9afe-f4a4-474e-bb89-5a33fb5e570c
-caps.latest.revision: 23
-caps.handback.revision: 23
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
+caps.latest.revision: "23"
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.workload: cplusplus
+ms.openlocfilehash: 1cae22698a0200dc0971f45dbcfd7b28005f8f0c
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
-# Operatore di contesto (C++)
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
-L'operatore di contesto in C\+\+ può essere usato per qualificare la posizione di un punto di interruzione, il nome di una variabile o un'espressione. L'operatore di contesto è utile per specificare un nome da un ambito esterno che altrimenti sarebbe nascosto da un nome locale.  
+# <a name="context-operator-in-the-visual-studio-debugger-c"></a>Operatore di contesto nel Debugger di Visual Studio (C++)
+L'operatore di contesto in C++ può essere usato per qualificare la posizione di un punto di interruzione, il nome di una variabile o un'espressione. L'operatore di contesto è utile per specificare un nome da un ambito esterno che altrimenti sarebbe nascosto da un nome locale.  
   
 ##  <a name="BKMK_Using_context_operators_to_specify_a_symbol"></a> Sintassi  
  Il contesto può essere specificato in due modi:  
   
-1.  {,,\[*module*\] } *expression*  
+1.  {,,[*module*] } *expression*  
   
-     Le parentesi graffe devono contenere due virgole e il nome o il percorso completo del modulo \(file eseguibile o DLL\).  
+     Le parentesi graffe devono contenere due virgole e il nome o il percorso completo del modulo (file eseguibile o DLL).  
   
      Ad esempio, per impostare un punto di interruzione nella funzione `SomeFunction` di EXAMPLE.dll:  
   
-    ```cpp  
+    ```C++  
     {,,EXAMPLE.dll}SomeFunction  
     ```  
   
-2.  *module*\!*expression*  
+2.  *module*!*expression*  
   
-    ```cpp  
+    ```C++  
     EXAMPLE.dll!SomeFunction  
     ```  
   
 -   *module* è il nome di un modulo. È possibile usare un percorso completo per distinguere i moduli che hanno lo stesso nome.  
   
-     Se il percorso di *module* include una virgola, uno spazio incorporato o una parentesi graffa, è necessario racchiudere il percorso tra virgolette in modo che il parser del contesto possa riconoscere correttamente la stringa. Poiché le virgolette singole vengono considerate parte di un nome di file di Windows, è necessario usare le virgolette doppie. Di seguito è riportato un esempio:  
+     Se il percorso di *module* include una virgola, uno spazio incorporato o una parentesi graffa, è necessario racchiudere il percorso tra virgolette in modo che il parser del contesto possa riconoscere correttamente la stringa. Poiché le virgolette singole vengono considerate parte di un nome di file di Windows, è necessario usare le virgolette doppie. Ad esempio,  
   
-    ```  
-    {,"a long, long, library name.dll", } g_Var  
+    ```C++  
+    {,,"a long, long, library name.dll"} g_Var  
     ```  
   
--   *expression* è una qualsiasi espressione C\+\+ valida che viene risolta in una destinazione valida, ad esempio un nome di funzione, un nome di variabile o un indirizzo del puntatore in *module*.  
+-   *expression* è una qualsiasi espressione C++ valida che viene risolta in una destinazione valida, ad esempio un nome di funzione, un nome di variabile o un indirizzo del puntatore in *module*.  
   
  Quando l'analizzatore di espressioni rileva un simbolo in un'espressione, ne esegue la ricerca nel seguente ordine:  
   
@@ -70,7 +70,7 @@ L'operatore di contesto in C\+\+ può essere usato per qualificare la posizione 
   
 2.  Ambito della funzione. Funzione corrente.  
   
-3.  Ambito della classe, se la posizione corrente si trova all'interno di una funzione membro C\+\+. Nell'ambito della classe sono incluse tutte le classi base. L'analizzatore di espressioni usa le regole di dominanza normali.  
+3.  Ambito della classe, se la posizione corrente si trova all'interno di una funzione membro C++. Nell'ambito della classe sono incluse tutte le classi base. L'analizzatore di espressioni usa le regole di dominanza normali.  
   
 4.  Simboli globali nel modulo corrente.  
   

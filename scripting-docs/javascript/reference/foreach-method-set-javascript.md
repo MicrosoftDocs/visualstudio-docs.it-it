@@ -1,64 +1,67 @@
 ---
-title: "Metodo forEach (Set) (JavaScript) | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/18/2017"
-ms.prod: "windows-client-threshold"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-javascript"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-dev_langs: 
-  - "JavaScript"
-  - "TypeScript"
-  - "DHTML"
+title: Metodo forEach (Set) (JavaScript) | Documenti Microsoft
+ms.custom: 
+ms.date: 01/18/2017
+ms.prod: windows-client-threshold
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-javascript
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+dev_langs:
+- JavaScript
+- TypeScript
+- DHTML
 ms.assetid: 813bff6e-6098-4260-ab6e-b0d2da6be94d
-caps.latest.revision: 8
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.openlocfilehash: b89c56b54fd74c25c43a84f2f0fd68922aa9f637
+ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/27/2017
 ---
-# Metodo forEach (Set) (JavaScript)
-Esegue l'azione specificata per ciascun elemento in un set.  
+# <a name="foreach-method-set-javascript"></a>Metodo forEach (Set) (JavaScript)
+Esegue l'azione specificata per ogni elemento in un set.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```javascript  
+```JavaScript  
 setObj.forEach(callbackfn[, thisArg])  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `setObj`  
- Necessario.  Un oggetto `Set`.  
+ Obbligatorio. Oggetto `Set`.  
   
  `callbackfn`  
- Necessario.  `callbackfn` accetta fino a tre argomenti.  Funzione che `forEach` chiama una volta per ogni elemento nel set.  
+ Obbligatorio. `callbackfn`accetta fino a tre argomenti. La funzione che `forEach` chiama una volta per ogni elemento nel set.  
   
  `thisArg`  
- Opzionale.  Un oggetto a cui la parola chiave `this` può fare riferimento nella funzione `callbackfn`.  Se `thisArg` viene omesso, si utilizza `undefined` come valore `this`.  
+ Parametro facoltativo. Un oggetto che il `this` (parola chiave) possono fare riferimento al `callbackfn` (funzione). Se `thisArg` viene omesso, si utilizza `undefined` come valore `this`.  
   
-## Eccezioni  
+## <a name="exceptions"></a>Eccezioni  
  Se l'argomento `callbackfn` non è un oggetto funzione, viene generata un'eccezione `TypeError`.  
   
-## Note  
+## <a name="remarks"></a>Note  
  La sintassi della funzione di callback è la seguente:  
   
  `function callbackfn(value, key, setObj)`  
   
- È possibile dichiarare la funzione di callback tramite un massimo di tre parametri, come illustrato nella tabella seguente.  
+ È possibile dichiarare la funzione di callback utilizzando fino a tre parametri, come illustrato nella tabella seguente.  
   
 |Argomento di callback|Definizione|  
-|---------------------------|-----------------|  
-|`value`|Un valore contenuto nel set.|  
-|`key`|Un valore contenuto nel set.  Un set non ha chiavi, quindi questo è uguale a `value`.|  
-|`setObj`|L'oggetto `Set` da attraversare.|  
+|-----------------------|----------------|  
+|`value`|Un valore incluso nel set.|  
+|`key`|Un valore incluso nel set. Un set non è presenti chiavi, pertanto questo valore è lo stesso come `value`.|  
+|`setObj`|Il `Set` oggetto da attraversare.|  
   
-## Esempio  
- Nell'esempio riportato di seguito viene illustrato l'utilizzo di `forEach`.  L'argomento `callbackfn` include il codice per la funzione di callback.  
+## <a name="example"></a>Esempio  
+ Nell'esempio riportato di seguito viene illustrato come usare `forEach`. Il `callbackfn` argomento include il codice per la funzione di callback.  
   
-```javascript  
+```JavaScript  
 var s = new Set();  
   
 s.add("scale");  
@@ -80,17 +83,17 @@ s.forEach(function(item, sameItem, s) {
 // Deleting item: 5  
 ```  
   
-## Esempio  
- Nell'esempio seguente viene illustrato che è possibile recuperare i membri da un set passando un solo parametro alla funzione di callback.  
+## <a name="example"></a>Esempio  
+ Nell'esempio seguente viene illustrato che è anche possibile recuperare i membri da un set passando un solo parametro alla funzione di callback.  
   
-```javascript  
+```JavaScript  
 var s = new Set();  
 s.add("Thomas Jefferson");  
 s.add(1776);  
 s.add("founding father");  
   
 s.forEach(function (item) {  
-    document.write(item.toString() + ", ");  
+    document.write(item.toString() + ", ");  
 });  
   
 // Output:  
@@ -98,5 +101,5 @@ s.forEach(function (item) {
   
 ```  
   
-## Requisiti  
+## <a name="requirements"></a>Requisiti  
  [!INCLUDE[jsv11](../../javascript/reference/includes/jsv11-md.md)]

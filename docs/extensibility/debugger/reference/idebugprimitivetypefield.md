@@ -1,42 +1,44 @@
 ---
-title: "IDebugPrimitiveTypeField | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "Interfaccia IDebugPrimitiveTypeField"
+title: IDebugPrimitiveTypeField | Documenti Microsoft
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: vs-ide-sdk
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords: IDebugPrimitiveTypeField interface
 ms.assetid: 73a428fd-797e-4ceb-8392-ba16f1c5226b
-caps.latest.revision: 6
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 6
+caps.latest.revision: "6"
+author: gregvanl
+ms.author: gregvanl
+manager: ghogen
+ms.workload: vssdk
+ms.openlocfilehash: 5e18b62d8d655729e47a2616d8a5eae9dae19e76
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
-# IDebugPrimitiveTypeField
-[!INCLUDE[vs2017banner](../../../code-quality/includes/vs2017banner.md)]
-
-Rappresenta un valore di enumerazione di [IDebugField](../../../extensibility/debugger/reference/idebugfield.md) tipo primitivo da un'interfaccia.  
+# <a name="idebugprimitivetypefield"></a>IDebugPrimitiveTypeField
+Rappresenta un valore di enumerazione di tipo primitivo da un [IDebugField](../../../extensibility/debugger/reference/idebugfield.md) interfaccia.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
 IDebugPrimitiveTypeField : IDebugField  
 ```  
   
-## Metodi  
- Oltre ai metodi [IDebugField](../../../extensibility/debugger/reference/idebugfield.md) in un'interfaccia, l'interfaccia implementa il seguente metodo:  
+## <a name="methods"></a>Metodi  
+ Oltre ai metodi nel [IDebugField](../../../extensibility/debugger/reference/idebugfield.md) interfaccia, implementa il metodo seguente:  
   
 |Metodo|Descrizione|  
 |------------|-----------------|  
 |[GetPrimitiveType](../../../extensibility/debugger/reference/idebugprimitivetypefield-getprimitivetype.md)|Recupera il tipo primitivo associato a questo campo.|  
   
-## Requisiti  
- intestazione: Sh.h  
+## <a name="requirements"></a>Requisiti  
+ Intestazione: Sh.h  
   
- Spazio dei nomi: Microsoft.VisualStudio.Debugger.Interop  
+ Namespace: Microsoft.VisualStudio.Debugger.Interop  
   
  Assembly: Microsoft.VisualStudio.Debugger.Interop.dll

@@ -1,42 +1,44 @@
 ---
-title: "Customizing T4 Text Transformation | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "text templates, API"
-  - "text templates, custom hosts"
-ms.assetid: 62cd9a3c-a6e1-4b29-93f5-f2a0cf47dc92
-caps.latest.revision: 28
-author: "alancameronwills"
-ms.author: "awills"
-manager: "douge"
-caps.handback.revision: 28
+title: Personalizzazione della trasformazione di testo T4 | Documenti Microsoft
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.topic: article
+helpviewer_keywords:
+- text templates, API
+- text templates, custom hosts
+author: gewarren
+ms.author: gewarren
+manager: ghogen
+ms.workload:
+- multiple
+ms.technology: vs-ide-modeling
+ms.openlocfilehash: db6d65c5dd0c79549516ff3b9c58b8b59c4be885
+ms.sourcegitcommit: 205d15f4558315e585c67f33d5335d5b41d0fcea
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 02/09/2018
 ---
-# Customizing T4 Text Transformation
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
-I modelli di testo sono una funzionalità di [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] che consente di generare codice programma o altri file di testo tramite un processo di trasformazione.  Tramite l'utilizzo di [!INCLUDE[vssdk_current_short](../modeling/includes/vssdk_current_short_md.md)], è possibile estendere il processo di trasformazione del modello predefinito personalizzando il processore di direttiva del modello di testo o l'host del modello di testo.  
+# <a name="customizing-t4-text-transformation"></a>Personalizzazione della trasformazione del testo T4
+Modelli di testo sono una funzionalità di [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] che consentono di generare codice programma o altri file di testo tramite un processo di trasformazione. Utilizzando [!INCLUDE[vssdk_current_short](../modeling/includes/vssdk_current_short_md.md)], è possibile estendere il processo di trasformazione del modello predefinito personalizzando il processore di direttiva del modello di testo o l'host del modello di testo.  
   
-## In questa sezione  
- [The Text Template Transformation Process](../modeling/the-text-template-transformation-process.md)  
- Viene descritto il funzionamento della trasformazione di testo e viene spiegato il ruolo dell'host del modello e dei processori di direttiva.  
+## <a name="in-this-section"></a>In questa sezione  
+ [Processo di trasformazione del modello di testo](../modeling/the-text-template-transformation-process.md)  
+ Viene descritto il funzionamento di trasformazione del testo e viene illustrato il ruolo dell'host del modello e i processori di direttiva.  
   
- [Creating Custom T4 Text Template Directive Processors](../modeling/creating-custom-t4-text-template-directive-processors.md)  
- Il processore di direttiva consente di gestire le direttive nel modello, ad esempio `<#@template#>.`. Viene eseguito durante la compilazione del modello e consente di caricare assembly e altre risorse.  Può inoltre inserire del codice che consentirà il caricamento di risorse in fase di runtime.  La definizione del processore di direttiva permette di ridurre la complessità dei modelli.  
+ [Creazione di processori di direttiva di modelli di testo T4 personalizzati](../modeling/creating-custom-t4-text-template-directive-processors.md)  
+ Il processore di direttiva riguarda le direttive nel modello, ad esempio `<#@template#>.` viene eseguito durante la compilazione del modello e caricare l'assembly e altre risorse. Inoltre possibile inserire il codice che caricherà le risorse in fase di esecuzione. Definendo il processore di direttiva, è possibile ridurre la complessità dei modelli.  
   
- [Invoking Text Transformation in a VS Extension](../modeling/invoking-text-transformation-in-a-vs-extension.md)  
- Se si scrive un'estensione di [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)], quale un comando di menu o un gestore eventi, l'estensione può utilizzare Text Templating Service per trasformare qualsiasi modello di testo.  È possibile passare i dati dei parametri nel modello tramite l'oggetto Session e ottenere i valori dal modello tramite la direttiva `<#@parameter#>`.  
+ [Richiamo della trasformazione del testo in un'estensione VS](../modeling/invoking-text-transformation-in-a-vs-extension.md)  
+ Se si sta scrivendo un [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] estensione, ad esempio un menu comando o un gestore eventi, l'estensione può utilizzare il servizio del modello di testo per trasformare qualsiasi modello di testo. È possibile passare i dati del parametro nel modello tramite l'oggetto di sessione e ottenere i valori all'interno del modello utilizzando il `<#@parameter#>` direttiva.  
   
- [Processing Text Templates by using a Custom Host](../modeling/processing-text-templates-by-using-a-custom-host.md)  
- Quando il codice del modello di testo viene eseguito, l'host fornisce l'accesso a file esterni e allo stato dell'applicazione.  Ad esempio, l'host nel quale vengono fornite le trasformazioni di testo in [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] può fornire l'accesso a Esplora soluzioni.  Inoltre, visualizza gli errori nella finestra di messaggio di errore.  Se si desidera eseguire delle trasformazioni di testo in un contesto diverso, è possibile definire un proprio host che fornisca l'accesso ai servizi disponibili in quel contesto.  
+ [Elaborazione di modelli di testo tramite un host personalizzato](../modeling/processing-text-templates-by-using-a-custom-host.md)  
+ Quando viene eseguito il codice del modello di testo, l'host fornisce l'accesso a file esterni e lo stato dell'applicazione. Ad esempio, l'host che esegue le trasformazioni di testo in [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] è possibile accedere a Esplora soluzioni. Inoltre, vengono visualizzati gli errori nella finestra di messaggio di errore. Se si desidera eseguire le trasformazioni di testo in un contesto diverso, è possibile definire il proprio host che consente di accedere ai servizi disponibili in tale contesto.  
   
- Se si scrive un'estensione di [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)], anziché scrivere un proprio host, considerare l'utilizzo del servizio di trasformazione del testo.  Per ulteriori informazioni, vedere [Invoking Text Transformation in a VS Extension](../modeling/invoking-text-transformation-in-a-vs-extension.md).  
+ Se si sta scrivendo un [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] estensione, è consigliabile utilizzare il servizio di trasformazione di testo esistente invece di scrivere il proprio host. Per ulteriori informazioni, vedere [richiamo di trasformazione del testo in un'estensione VS](../modeling/invoking-text-transformation-in-a-vs-extension.md).  
   
-## Riferimenti  
- [Writing a T4 Text Template](../modeling/writing-a-t4-text-template.md)  
+## <a name="reference"></a>Riferimenti  
+ [Scrittura di un modello di testo T4](../modeling/writing-a-t4-text-template.md)  
   
- Fornisce la sintassi di direttive e blocchi di controllo del modello di testo.
+ Fornisce la sintassi delle direttive di modello di testo e blocchi di controllo.

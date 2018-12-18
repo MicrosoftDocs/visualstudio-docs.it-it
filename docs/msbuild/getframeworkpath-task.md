@@ -1,56 +1,59 @@
 ---
-title: "GetFrameworkPath Task | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "http://schemas.microsoft.com/developer/msbuild/2003#GetFrameworkPath"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "jsharp"
-helpviewer_keywords: 
-  - "GetFrameworkPath task [MSBuild]"
-  - "MSBuild, GetFrameworkPath task"
+title: "Attività GetFrameworkPath | Microsoft Docs"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: msbuild
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- http://schemas.microsoft.com/developer/msbuild/2003#GetFrameworkPath
+dev_langs:
+- VB
+- CSharp
+- C++
+- jsharp
+helpviewer_keywords:
+- GetFrameworkPath task [MSBuild]
+- MSBuild, GetFrameworkPath task
 ms.assetid: 5b7bcdd7-d4a0-442d-af29-8aadb3b10598
-caps.latest.revision: 11
-author: "kempb"
-ms.author: "kempb"
-manager: "ghogen"
-caps.handback.revision: 11
+caps.latest.revision: 
+author: Mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.workload:
+- multiple
+ms.openlocfilehash: d672a204411c58b4a164db2ff02701544f4594bf
+ms.sourcegitcommit: 205d15f4558315e585c67f33d5335d5b41d0fcea
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 02/09/2018
 ---
-# GetFrameworkPath Task
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
+# <a name="getframeworkpath-task"></a>Attività GetFrameworkPath
 Recupera il percorso degli assembly [!INCLUDE[dnprdnshort](../code-quality/includes/dnprdnshort_md.md)].  
   
-## Parametri dell'attività  
- Nella tabella riportata di seguito sono descritti i parametri dell'attività `GetFrameworkPath`.  
+## <a name="task-parameters"></a>Parametri dell'attività  
+ Nella tabella che segue vengono descritti i parametri dell'attività `GetFrameworkPath`.  
   
 |Parametro|Descrizione|  
 |---------------|-----------------|  
-|`FrameworkVersion11Path`|Parametro di output `String` facoltativo.<br /><br /> Contiene il percorso degli assembly di .NET Framework 1.1, se presenti.  In caso contrario, restituisce `null`.|  
-|`FrameworkVersion20Path`|Parametro di output `String` facoltativo.<br /><br /> Contiene il percorso degli assembly di .NET Framework 2.0, se presenti.  In caso contrario, restituisce `null`.|  
-|`FrameworkVersion30Path`|Parametro di output `String` facoltativo.<br /><br /> Contiene il percorso degli assembly di .NET Framework 3.0, se presenti.  In caso contrario, restituisce `null`.|  
-|`FrameworkVersion35Path`|Parametro di output `String` facoltativo.<br /><br /> Contiene il percorso degli assembly di .NET Framework 3.5, se presenti.  In caso contrario, restituisce `null`.|  
-|`FrameworkVersion40Path`|Parametro di output `String` facoltativo.<br /><br /> Contiene il percorso degli assembly di .NET Framework 4.0, se presenti.  In caso contrario, restituisce `null`.|  
-|`Path`|Parametro di output `String` facoltativo.<br /><br /> Contiene il percorso degli assembly di .NET Framework più recenti, se disponibili.  In caso contrario, restituisce `null`.|  
+|`FrameworkVersion11Path`|Parametro di ouput facoltativo `String`.<br /><br /> Contiene il percorso agli assembly della versione 1.1 del framework, se presenti. In caso contrario restituisce `null`.|  
+|`FrameworkVersion20Path`|Parametro di ouput facoltativo `String`.<br /><br /> Contiene il percorso agli assembly della versione 2.0 del framework, se presenti. In caso contrario restituisce `null`.|  
+|`FrameworkVersion30Path`|Parametro di ouput facoltativo `String`.<br /><br /> Contiene il percorso agli assembly della versione 3.0 del framework, se presenti. In caso contrario restituisce `null`.|  
+|`FrameworkVersion35Path`|Parametro di ouput facoltativo `String`.<br /><br /> Contiene il percorso agli assembly della versione 3.5 del framework, se presenti. In caso contrario restituisce `null`.|  
+|`FrameworkVersion40Path`|Parametro di ouput facoltativo `String`.<br /><br /> Contiene il percorso agli assembly della versione 4.0 del framework, se presenti. In caso contrario restituisce `null`.|  
+|`Path`|Parametro di ouput facoltativo `String`.<br /><br /> Contiene il percorso agli assembly del framework più recente, se disponibili. In caso contrario restituisce `null`.|  
   
-## Note  
- Se sono installate più versioni di [!INCLUDE[dnprdnshort](../code-quality/includes/dnprdnshort_md.md)], viene restituita la versione su cui [!INCLUDE[vstecmsbuild](../extensibility/internals/includes/vstecmsbuild_md.md)] è stato progettato per essere eseguito.  
+## <a name="remarks"></a>Note  
+ Se sono installate diverse versioni di [!INCLUDE[dnprdnshort](../code-quality/includes/dnprdnshort_md.md)], l'attività restituisce la versione in cui deve essere eseguito [!INCLUDE[vstecmsbuild](../extensibility/internals/includes/vstecmsbuild_md.md)] in base alla progettazione.  
   
- Oltre ai parametri sopra elencati, questa attività eredita i parametri dalla classe <xref:Microsoft.Build.Tasks.TaskExtension>, che eredita dalla classe <xref:Microsoft.Build.Utilities.Task>.  Per un elenco di tali parametri aggiuntivi e le relative descrizioni, vedere [TaskExtension Base Class](../msbuild/taskextension-base-class.md).  
+ Oltre ai parametri elencati sopra, questa attività eredita i parametri dalla classe <xref:Microsoft.Build.Tasks.TaskExtension>, che a sua volta eredita dalla classe <xref:Microsoft.Build.Utilities.Task>. Per un elenco di questi parametri aggiuntivi e le rispettive descrizioni, vedere [TaskExtension Base Class](../msbuild/taskextension-base-class.md).  
   
-## Esempio  
- Nell'esempio riportato di seguito l'attività `GetFrameworkPath` viene utilizzata per memorizzare il percorso di [!INCLUDE[dnprdnshort](../code-quality/includes/dnprdnshort_md.md)] nella proprietà `FrameworkPath`.  
+## <a name="example"></a>Esempio  
+ Nell'esempio seguente viene usata l'attività `GetFrameworkPath` per archiviare il percorso a [!INCLUDE[dnprdnshort](../code-quality/includes/dnprdnshort_md.md)] nella proprietà `FrameworkPath`.  
   
-```  
+```xml  
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">  
     <Target Name="GetPath">  
         <GetFrameworkPath>  
@@ -62,6 +65,6 @@ Recupera il percorso degli assembly [!INCLUDE[dnprdnshort](../code-quality/inclu
 </Project>  
 ```  
   
-## Vedere anche  
- [Tasks](../msbuild/msbuild-tasks.md)   
- [Task Reference](../msbuild/msbuild-task-reference.md)
+## <a name="see-also"></a>Vedere anche  
+ [Attività](../msbuild/msbuild-tasks.md)   
+ [Riferimento alle attività](../msbuild/msbuild-task-reference.md)

@@ -1,51 +1,53 @@
 ---
-title: "Operatore delete (JavaScript) | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/18/2017"
-ms.prod: "windows-client-threshold"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-javascript"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "delete_JavaScriptKeyword"
-dev_langs: 
-  - "JavaScript"
-  - "TypeScript"
-  - "DHTML"
-helpviewer_keywords: 
-  - "elementi di matrice, eliminazione"
-  - "proprietà, eliminazione"
-  - "Operatore delete"
+title: Operatore Delete (JavaScript) | Documenti Microsoft
+ms.custom: 
+ms.date: 01/18/2017
+ms.prod: windows-client-threshold
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-javascript
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords: delete_JavaScriptKeyword
+dev_langs:
+- JavaScript
+- TypeScript
+- DHTML
+helpviewer_keywords:
+- array elements, deleting
+- properties, deleting
+- delete operator
 ms.assetid: 55c6487e-96ea-455b-a7ed-dc35c41ac2f3
-caps.latest.revision: 16
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 16
+caps.latest.revision: "16"
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.openlocfilehash: ee3def1977c0b29ee14ebf836f2d9ebb51d5a5ef
+ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/27/2017
 ---
-# Operatore delete (JavaScript)
+# <a name="delete-operator-javascript"></a>Operatore delete (JavaScript)
 Elimina una proprietà da un oggetto o rimuove un elemento da una matrice.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
 delete expression  
 ```  
   
-## Note  
- L'argomento `expression` è un'espressione [!INCLUDE[javascript](../../javascript/includes/javascript-md.md)] valida che genera solitamente un nome della proprietà o un elemento della matrice.  
+## <a name="remarks"></a>Note  
+ Il `expression` argomento è un valido [!INCLUDE[javascript](../../javascript/includes/javascript-md.md)] espressione comporta che, in genere un elemento di matrice o nome di proprietà.  
   
- Se il risultato di `expression` è un oggetto, la proprietà specificata in `expression` esiste e l'oggetto non ne consente l'eliminazione, viene restituito `false`.  
+ Se il risultato di `expression` è un oggetto, la proprietà specificata `expression` esiste, e l'oggetto non consentiranno da eliminare, `false` viene restituito.  
   
- In tutti gli altri casi, viene restituito `true`.  
+ In tutti gli altri casi, `true` viene restituito.  
   
-## Esempio  
+## <a name="example"></a>Esempio  
  Nell'esempio seguente viene illustrato come rimuovere un elemento da una matrice.  
   
-```javascript  
+```JavaScript  
 // Create an array.  
 var ar = new Array (10, 11, 12, 13, 14);  
   
@@ -61,10 +63,10 @@ document.write ("array: " + ar);
 //  array: 10,,12,13,14  
 ```  
   
-## Esempio  
+## <a name="example"></a>Esempio  
  Nell'esempio seguente viene illustrato come eliminare le proprietà da un oggetto.  
   
-```javascript  
+```JavaScript  
 // Create an object and add expando properties.  
 var myObj = new Object();  
 myObj.name = "Fred";  
@@ -83,9 +85,9 @@ document.write ("count: " + myObj.count);
 //  count: undefined  
 ```  
   
-## Requisiti  
+## <a name="requirements"></a>Requisiti  
  [!INCLUDE[jsv3](../../javascript/reference/includes/jsv3-md.md)]  
   
-## Vedere anche  
- [Precedenza tra gli operatori](../../javascript/operator-subtractprecedence-javascript.md)   
- [Riepilogo degli operatori \(JavaScript\)](../../javascript/misc/operator-subtractsummary-javascript.md)
+## <a name="see-also"></a>Vedere anche  
+ [Precedenza tra operatori](../../javascript/operator-subtractprecedence-javascript.md)   
+ [Riepilogo degli operatori (JavaScript)](../../javascript/misc/operator-subtractsummary-javascript.md)

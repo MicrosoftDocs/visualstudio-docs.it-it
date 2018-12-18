@@ -1,52 +1,53 @@
 ---
-title: "IDebugStackFrame3::GetUnwindCodeContext | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "IDebugStackFrame3::GetUnwindCodeContext"
-helpviewer_keywords: 
-  - "Metodo IDebugStackFrame3::GetUnwindCodeContext"
+title: IDebugStackFrame3::GetUnwindCodeContext | Documenti Microsoft
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: vs-ide-sdk
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: IDebugStackFrame3::GetUnwindCodeContext
+helpviewer_keywords: IDebugStackFrame3::GetUnwindCodeContext method
 ms.assetid: b25f7e7d-2b24-48e4-93b3-829e61d73ebf
-caps.latest.revision: 6
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 6
+caps.latest.revision: "6"
+author: gregvanl
+ms.author: gregvanl
+manager: ghogen
+ms.workload: vssdk
+ms.openlocfilehash: 9fb324df233faab6c7fa240697d582531d1438c2
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
-# IDebugStackFrame3::GetUnwindCodeContext
-[!INCLUDE[vs2017banner](../../../code-quality/includes/vs2017banner.md)]
-
-Restituisce il contesto di codice che rappresenta una posizione se uno stack viene rimosso l'operazione si è verificato.  
+# <a name="idebugstackframe3getunwindcodecontext"></a>IDebugStackFrame3::GetUnwindCodeContext
+Restituisce il contesto del codice che rappresenta una posizione se l'operazione di rimozione di uno stack si è verificato.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp#  
+```cpp  
 HRESULT GetUnwindCodeContext(  
-   IDebugCodeContext2 **ppCodeContext  
+   IDebugCodeContext2 **ppCodeContext  
 );  
 ```  
   
-```c#  
+```csharp  
 int GetUnwindCodeContext(  
-   out IDebugCodeContext2 ppCodeContext  
+   out IDebugCodeContext2 ppCodeContext  
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `ppCodeContext`  
- \[out\]  Restituisce [IDebugCodeContext2](../../../extensibility/debugger/reference/idebugcodecontext2.md) un oggetto che rappresenta la posizione del contesto di codice se uno stack viene rimosso verificato.  
+ [out] Restituisce un [IDebugCodeContext2](../../../extensibility/debugger/reference/idebugcodecontext2.md) oggetto che rappresenta la posizione del contesto di codice se si è verificato uno svuotamento dello stack.  
   
-## Valore restituito  
- Se l'operazione riesce, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
+## <a name="return-value"></a>Valore restituito  
+ Se ha esito positivo, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
   
-## Note  
- Anche se questo metodo potrebbe restituire un contesto di codice per la posizione dopo uno stack viene rimosso, non significa necessariamente che lo stack viene rimosso consente di verificare lo stack frame corrente.  
+## <a name="remarks"></a>Note  
+ Anche se questo metodo può restituire un contesto di codice per il percorso dopo la rimozione dello stack, non implica necessariamente che la rimozione dello stack può sono presenti nello stack frame corrente.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IDebugStackFrame3](../../../extensibility/debugger/reference/idebugstackframe3.md)   
  [IDebugCodeContext2](../../../extensibility/debugger/reference/idebugcodecontext2.md)

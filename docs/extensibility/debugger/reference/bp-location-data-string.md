@@ -1,63 +1,64 @@
 ---
-title: "BP_LOCATION_DATA_STRING | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "BP_LOCATION_DATA_STRING"
-helpviewer_keywords: 
-  - "Struttura BP_LOCATION_DATA_STRING"
+title: BP_LOCATION_DATA_STRING | Documenti Microsoft
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: vs-ide-sdk
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: BP_LOCATION_DATA_STRING
+helpviewer_keywords: BP_LOCATION_DATA_STRING structure
 ms.assetid: 445d6f3f-95b0-47ac-85e2-51b778240687
-caps.latest.revision: 10
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: gregvanl
+ms.author: gregvanl
+manager: ghogen
+ms.workload: vssdk
+ms.openlocfilehash: 98be0e0eec66d1829569f88b38f710ddc616be85
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
-# BP_LOCATION_DATA_STRING
-[!INCLUDE[vs2017banner](../../../code-quality/includes/vs2017banner.md)]
-
-Utilizzato per impostare i punti di interruzione di dati basati su una stringa che l'utente può immettere dall'ambiente di sviluppo integrato \(IDE\).  
+# <a name="bplocationdatastring"></a>BP_LOCATION_DATA_STRING
+Utilizzata per impostare i punti di interruzione di dati che si basano su una stringa che l'utente può immettere dall'ambiente di sviluppo integrato (IDE).  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp#  
-typedef struct _BP_LOCATION_DATA_STRING {   
-   IDebugThread2* pThread;  
-   BSTR           bstrContext;  
-   BSTR           bstrDataExpr;  
-   DWORD          dwNumElements;  
+```cpp  
+typedef struct _BP_LOCATION_DATA_STRING {   
+   IDebugThread2* pThread;  
+   BSTR           bstrContext;  
+   BSTR           bstrDataExpr;  
+   DWORD          dwNumElements;  
 } BP_LOCATION_DATA_STRING;  
 ```  
   
-## Membri  
+## <a name="members"></a>Membri  
  `pThread`  
- [IDebugThread2](../../../extensibility/debugger/reference/idebugthread2.md) L'oggetto che rappresenta il thread in cui il punto di interruzione si verifica.  
+ Il [IDebugThread2](../../../extensibility/debugger/reference/idebugthread2.md) oggetto che rappresenta il thread su cui si verifica il punto di interruzione.  
   
  `bstrContext`  
- Il contesto del punto di interruzione nel codice, in genere un nome di funzione o di metodo come indicato in uno stack di chiamate.  
+ Contesto del punto di interruzione all'interno del codice, in genere un nome di metodo o una funzione come illustrato in uno stack di chiamate.  
   
  `bstrDataExpr`  
- I dati supporti l'utente INVIO per impostare il punto di interruzione.  
+ La stringa di dati l'utente immette per impostare il punto di interruzione.  
   
  `dwNumElements`  
- Il numero di elementi nella stringa di dati in cui il punto di interruzione si verifica.  
+ Il numero di elementi nella stringa di dati in cui si verifica il punto di interruzione.  
   
-## Note  
- Questa struttura è un membro [BP\_LOCATION](../../../extensibility/debugger/reference/bp-location.md) della struttura come parte di unione.  
+## <a name="remarks"></a>Note  
+ Questa struttura è membro il [BP_LOCATION](../../../extensibility/debugger/reference/bp-location.md) struttura come parte di un'unione.  
   
-## Requisiti  
- intestazione: msdbg.h  
+## <a name="requirements"></a>Requisiti  
+ Intestazione: msdbg.h  
   
- Spazio dei nomi: Microsoft.VisualStudio.Debugger.Interop  
+ Namespace: Microsoft.VisualStudio.Debugger.Interop  
   
  Assembly: Microsoft.VisualStudio.Debugger.Interop.dll  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Strutture e unioni](../../../extensibility/debugger/reference/structures-and-unions.md)   
- [BP\_LOCATION](../../../extensibility/debugger/reference/bp-location.md)   
+ [BP_LOCATION](../../../extensibility/debugger/reference/bp-location.md)   
  [IDebugThread2](../../../extensibility/debugger/reference/idebugthread2.md)

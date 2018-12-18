@@ -1,53 +1,55 @@
 ---
-title: "IDebugActivateDocumentEvent2::GetDocumentContext | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "IDebugActivateDocumentEvent2::GetDocumentContext"
-helpviewer_keywords: 
-  - "Metodo GetDocumentContext"
-  - "Metodo IDebugActivateDocumentEvent2::GetDocumentContext"
+title: IDebugActivateDocumentEvent2::GetDocumentContext | Documenti Microsoft
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: vs-ide-sdk
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: IDebugActivateDocumentEvent2::GetDocumentContext
+helpviewer_keywords:
+- GetDocumentContext method
+- IDebugActivateDocumentEvent2::GetDocumentContext method
 ms.assetid: e7472069-7337-4ef4-8f8a-8c027a2e22f4
-caps.latest.revision: 10
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: gregvanl
+ms.author: gregvanl
+manager: ghogen
+ms.workload: vssdk
+ms.openlocfilehash: 92f715432170c7f9b6f109f33980d38e722b573b
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
-# IDebugActivateDocumentEvent2::GetDocumentContext
-[!INCLUDE[vs2017banner](../../../code-quality/includes/vs2017banner.md)]
-
-Ottiene il contesto del documento che specifica la posizione del documento a cui deve essere effettuato ad attivo dal package di debug.  
+# <a name="idebugactivatedocumentevent2getdocumentcontext"></a>IDebugActivateDocumentEvent2::GetDocumentContext
+Ottiene il contesto del documento che descrive la posizione del documento che deve essere reso attivo per il pacchetto di debug.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp#  
-HRESULT GetDocumentContext (   
-   IDebugDocumentContext2** ppDocContext  
+```cpp  
+HRESULT GetDocumentContext (   
+   IDebugDocumentContext2** ppDocContext  
 );  
 ```  
   
-```c#  
-int GetDocumentContext (   
-   out IDebugDocumentContext2 ppDocContext  
+```csharp  
+int GetDocumentContext (   
+   out IDebugDocumentContext2 ppDocContext  
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `ppDocContext`  
- \[out\]  Restituisce [IDebugDocumentContext2](../../../extensibility/debugger/reference/idebugdocumentcontext2.md) un oggetto che rappresenta una posizione in un documento del file di origine.  
+ [out] Restituisce un [IDebugDocumentContext2](../../../extensibility/debugger/reference/idebugdocumentcontext2.md) oggetto che rappresenta una posizione in un documento di file di origine.  
   
-## Note  
- Questo percorso può essere utilizzata per mostrare il cursore, ad esempio.  
+## <a name="remarks"></a>Note  
+ Questa posizione può essere utilizzata per indicare il punto di inserimento, ad esempio.  
   
-## Valore restituito  
- Se l'operazione riesce, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
+## <a name="return-value"></a>Valore restituito  
+ Se ha esito positivo, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IDebugActivateDocumentEvent2](../../../extensibility/debugger/reference/idebugactivatedocumentevent2.md)   
  [IDebugDocumentContext2](../../../extensibility/debugger/reference/idebugdocumentcontext2.md)

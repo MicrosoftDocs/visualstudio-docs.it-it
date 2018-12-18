@@ -1,70 +1,71 @@
 ---
-title: "Finestra di dialogo Propriet&#224; messaggio | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/05/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "opzioni messaggio"
-  - "opzioni di messaggio, Generale"
+title: "La finestra di dialogo proprietà del messaggio | Documenti Microsoft"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: vs-ide-debug
+ms.tgt_pltfrm: 
+ms.topic: reference
+helpviewer_keywords:
+- message options
+- message options, General
 ms.assetid: 58e9dc24-baf6-4ab8-916c-aea28b72e3b0
-caps.latest.revision: 4
-caps.handback.revision: 4
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
+caps.latest.revision: "4"
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.workload: multiple
+ms.openlocfilehash: ab11a037a5cf9d313e3269a5c3c8df464b120006
+ms.sourcegitcommit: 9e6ff74da1afd8bd2f0e69387ce81f2a74619182
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 01/04/2018
 ---
-# Finestra di dialogo Propriet&#224; messaggio
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
-Utilizzare questa finestra di dialogo per ottenere ulteriori informazioni su un messaggio specifico.  Per visualizzare questa finestra di dialogo, spostare lo stato attivo su una finestra [Visualizzazione messaggi](../debugger/messages-view.md).  Selezionare un nodo qualsiasi del messaggio nella struttura ad albero, quindi scegliere **Proprietà** dal menu **Visualizza**.  
+# <a name="message-properties-dialog-box"></a>Finestra di dialogo Proprietà messaggio
+Utilizzare questa finestra di dialogo per ottenere ulteriori informazioni su un messaggio specifico. Per visualizzare questa finestra di dialogo, spostare lo stato attivo su un [visualizzazione messaggi](../debugger/messages-view.md) finestra. Selezionare qualsiasi nodo di messaggio nell'albero, quindi scegliere **proprietà** dal **vista** menu.  
   
- La scheda **Generale** è l'unica visualizzata.  Sono disponibili le impostazioni seguenti:  
+ Il **generale** scheda è l'unica visualizzata. Sono disponibili le impostazioni seguenti:  
   
- **Window Handle**  
- ID univoco di questa finestra.  I numeri di handle della finestra vengono riutilizzati e pertanto identificano una finestra solo per la relativa durata.  Selezionare questo valore per visualizzare le proprietà di questa finestra.  
+ **Handle di finestra**  
+ ID univoco di questa finestra. I numeri degli handle di finestra vengono riutilizzati; una finestra consentono di identificare solo per la durata di tale finestra. Fare clic su questo valore per visualizzare le proprietà di questa finestra.  
   
- **Nesting Level**  
- Profondità di annidamento del messaggio, dove 0 corrisponde all'assenza di annidamento.  
+ **Livello di nidificazione**  
+ Profondità di annidamento di questo messaggio, dove 0 non è alcun annidamento.  
   
  **Messaggio**  
- Numero, stato e nome del messaggio della finestra selezionato.  
+ Numero, lo stato e nome del messaggio windows selezionati.  
   
  **lResult**  
- Valore del parametro *lResult*, se disponibile.  
+ Il valore di *lResult* parametro, se presente.  
   
  **wParam**  
- Valore del parametro *wParam*, se disponibile.  
+ Il valore di *wParam* parametro, se presente.  
   
  **lParam**  
- Valore del parametro *lParam*, se disponibile.  Questo valore viene decodificato se punta a una stringa o a una struttura.  
+ Il valore di *lParam* parametro, se presente. Questo valore viene decodificato in caso di un puntatore a una stringa o una struttura.  
   
-## Sezioni correlate  
+## <a name="related-sections"></a>Sezioni correlate  
  [Finestra di dialogo Opzioni messaggio](../debugger/message-options-dialog-box.md)  
- Utilizzata per selezionare i messaggi da elencare nella visualizzazione messaggi attiva.  
+ Consente di selezionare quali messaggi sono elencati nella visualizzazione messaggi attiva.  
   
  [Finestra di dialogo Ricerca messaggi](../debugger/message-search-dialog-box.md)  
- Utilizzata per individuare il nodo relativo a un messaggio specifico nella visualizzazione messaggi.  
+ Utilizzato per trovare il nodo di un messaggio specifico nella visualizzazione dei messaggi.  
   
- [Riferimenti per Spy\+\+](../debugger/spy-increment-reference.md)  
- Sono incluse le sezioni in cui vengono descritti tutti i menu e le finestre di dialogo di Spy\+\+.  
+ [riferimenti per Spy++](../debugger/spy-increment-reference.md)  
+ Include le sezioni che descrivono ogni Spy + + menu e finestra di dialogo.  
   
- [Apertura della visualizzazione messaggi da Trova finestra](_asug_choosing_message_options)  
- Viene illustrato come aprire la visualizzazione messaggi dalla finestra di dialogo Trova finestra.  
+ [Apertura della visualizzazione messaggi dalla finestra Trova](../debugger/how-to-open-messages-view-from-find-window.md)  
+ Viene illustrato come aprire la visualizzazione messaggi nella finestra di dialogo Trova finestra.  
   
  [Ricerca di un messaggio nella visualizzazione messaggi](../debugger/how-to-search-for-a-message-in-messages-view.md)  
- Viene illustrato come individuare un messaggio specifico nella visualizzazione messaggi.  
+ Viene illustrato come trovare un messaggio specifico nella visualizzazione dei messaggi.  
   
  [Visualizzazione messaggi](../debugger/messages-view.md)  
- Viene visualizzato il flusso di messaggi associato a una finestra, a un processo o a un thread.  
+ Consente di visualizzare il flusso di messaggi associato a una finestra di un processo o thread.  
   
- [Visualizzazioni di Spy\+\+](../debugger/spy-increment-views.md)  
- Vengono illustrate le visualizzazioni struttura ad albero di Spy\+\+ relative a finestre, messaggi, processi e thread.  
+ [Visualizzazioni di Spy++](../debugger/spy-increment-views.md)  
+ Vengono illustrate le visualizzazioni ad albero Spy + + di windows, i messaggi, thread e processi.  
   
- [Utilizzo di Spy\+\+](../debugger/using-spy-increment.md)  
- Vengono illustrati lo strumento Spy\+\+ e il relativo utilizzo.
+ [Uso di Spy++](../debugger/using-spy-increment.md)  
+ Vengono presentati lo strumento Spy + + e come può essere usato.

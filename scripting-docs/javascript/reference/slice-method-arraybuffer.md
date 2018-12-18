@@ -1,53 +1,56 @@
 ---
-title: "Metodo slice (ArrayBuffer) | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/18/2017"
-ms.prod: "windows-client-threshold"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-javascript"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-dev_langs: 
-  - "JavaScript"
-  - "TypeScript"
-  - "DHTML"
+title: Metodo slice (ArrayBuffer) | Documenti Microsoft
+ms.custom: 
+ms.date: 01/18/2017
+ms.prod: windows-client-threshold
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-javascript
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+dev_langs:
+- JavaScript
+- TypeScript
+- DHTML
 ms.assetid: 2dcc51ff-f444-4d51-80ba-3bcd845ba0ae
-caps.latest.revision: 5
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 5
+caps.latest.revision: "5"
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.openlocfilehash: 25fc10a02b4a3422a6720ad91c8bba29906da0e5
+ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/27/2017
 ---
-# Metodo slice (ArrayBuffer)
-Restituisce una sezione di un oggetto [ArrayBuffer](../../javascript/reference/arraybuffer-object.md).  
+# <a name="slice-method-arraybuffer"></a>Metodo slice (ArrayBuffer)
+Restituisce una sezione di un [ArrayBuffer](../../javascript/reference/arraybuffer-object.md).  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
 arrayBufferObj.slice(start, [end])   
 ```  
   
-## Parametri  
+## <a name="parameters"></a>Parametri  
  `arrayBufferObj`  
- Obbligatorio.  Oggetto [ArrayBuffer](../../javascript/reference/arraybuffer-object.md) da cui verrà copiata la sezione.  
+ Obbligatorio. Il [ArrayBuffer](../../javascript/reference/arraybuffer-object.md) la sezione verrà copiata dall'oggetto.  
   
  `start`  
- Obbligatorio.  Indice byte dell'inizio della sezione da copiare.  
+ Obbligatorio. Indice byte dell'inizio della sezione da copiare.  
   
  `end`  
- Facoltativo.  Indice byte della fine della sezione da copiare.  
+ Facoltativo. Indice byte della fine della sezione da copiare.  
   
-## Note  
- Il metodo `slice` restituisce un oggetto [ArrayBuffer](../../javascript/reference/arraybuffer-object.md) che contiene la parte specificata di `arrayBufferObj`.  
+## <a name="remarks"></a>Note  
+ Il `slice` metodo restituisce un [ArrayBuffer](../../javascript/reference/arraybuffer-object.md) oggetto che contiene la parte specificata di `arrayBufferObj`.  
   
- Il metodo `slice` copia, senza includerlo, fino al byte indicato da `end`.  Se `start` o `end` è negativo, l'indice specificato viene considerato rispettivamente come la somma di `length` e `start` o `end`, in cui `length` è la lunghezza dell'oggetto [ArrayBuffer](../../javascript/reference/arraybuffer-object.md).  Se `end` viene omesso, l'estrazione continua fino alla fine di `arrayBufferObj`.  Se `end` si verifica prima di `start`, non vengono copiati byte nel nuovo oggetto [ArrayBuffer](../../javascript/reference/arraybuffer-object.md).  
+ Il metodo `slice` copia, senza includerlo, fino al byte indicato da `end`. Se `start` o `end` è negativo, corrispondenza dell'indice specificato viene considerato come `length`  +  `start` o `end`, rispettivamente, in cui `length` è la lunghezza del [ArrayBuffer](../../javascript/reference/arraybuffer-object.md). Se `end` viene omesso, l'estrazione continua fino alla fine di `arrayBufferObj`. Se `end` si verifica prima `start`, non vengono copiati byte nel nuovo [ArrayBuffer](../../javascript/reference/arraybuffer-object.md).  
   
-## Esempio  
+## <a name="example"></a>Esempio  
  Gli esempi seguenti mostrano come usare il metodo `slice`.  
   
-```javascript  
+```JavaScript  
 var req = new XMLHttpRequest();  
     req.open('GET', "http://www.example.com");  
     req.responseType = "arraybuffer";  
@@ -67,8 +70,8 @@ var req = new XMLHttpRequest();
     }  
 ```  
   
-## Requisiti  
+## <a name="requirements"></a>Requisiti  
  [!INCLUDE[jsv11_winonly](../../javascript/reference/includes/jsv11-winonly-md.md)]  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Oggetto ArrayBuffer](../../javascript/reference/arraybuffer-object.md)

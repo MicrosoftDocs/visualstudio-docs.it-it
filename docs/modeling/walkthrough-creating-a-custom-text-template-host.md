@@ -1,30 +1,32 @@
 ---
-title: "Walkthrough: Creating a Custom Text Template Host | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "walkthroughs [text templates], custom host"
-  - "text templates, custom host walkthrough"
-ms.assetid: d00bc366-65ed-4229-885a-196ef9625f05
-caps.latest.revision: 51
-author: "alancameronwills"
-ms.author: "awills"
-manager: "douge"
-caps.handback.revision: 51
+title: 'Procedura dettagliata: Creazione di un Host del modello di testo personalizzato | Documenti Microsoft'
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.topic: article
+helpviewer_keywords:
+- walkthroughs [text templates], custom host
+- text templates, custom host walkthrough
+author: gewarren
+ms.author: gewarren
+manager: ghogen
+ms.workload:
+- multiple
+ms.technology: vs-ide-modeling
+ms.openlocfilehash: ad2bc2a049a0a96a8093289af4648f077f2d1478
+ms.sourcegitcommit: 205d15f4558315e585c67f33d5335d5b41d0fcea
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 02/09/2018
 ---
-# Walkthrough: Creating a Custom Text Template Host
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
-Un *host* *del modello di testo* fornisce un ambiente che consente l'esecuzione del *motore di trasformazione del modello di testo*.  L'host è responsabile della gestione dell'interazione del motore con il file system.  Il motore o il *processore di direttiva* che necessita di un file o un assembly può richiedere una risorsa dall'host.  L'host può quindi eseguire ricerche nelle directory e nella Global Assembly Cache per individuare le risorse richieste.  Per ulteriori informazioni, vedere [The Text Template Transformation Process](../modeling/the-text-template-transformation-process.md).  
+# <a name="walkthrough-creating-a-custom-text-template-host"></a>Procedura dettagliata: creazione di un host del modello di testo personalizzato
+Oggetto *modello di testo * * host* fornisce un ambiente che consente di *motore di trasformazione del modello di testo* per l'esecuzione. L'host è responsabile della gestione dell'interazione del motore con il file system. Il motore o *processore di direttiva* che necessita di un file o un assembly può richiedere una risorsa dall'host. L'host può quindi eseguire ricerche nelle directory e nella Global Assembly Cache per individuare le risorse richieste. Per ulteriori informazioni, vedere [il processo di trasformazione di modello di testo](../modeling/the-text-template-transformation-process.md).  
   
- È possibile scrivere un host personalizzato se si desidera utilizzare la funzionalità di *trasformazione del modello di testo* fuori da [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] o se si desidera integrare tale funzionalità negli strumenti personalizzati.  Per creare un host personalizzato, è necessario creare una classe che eredita da <xref:Microsoft.VisualStudio.TextTemplating.ITextTemplatingEngineHost>.  Per la documentazione dei singoli metodi, vedere <xref:Microsoft.VisualStudio.TextTemplating.ITextTemplatingEngineHost>.  
+ È possibile scrivere un host personalizzato se si desidera utilizzare il *trasformazione del modello di testo* funzionalità dall'esterno [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] o se si desidera integrare tale funzionalità negli strumenti personalizzati. Per creare un host personalizzato, è necessario creare una classe che eredita da <xref:Microsoft.VisualStudio.TextTemplating.ITextTemplatingEngineHost>. Per la documentazione dei singoli metodi, vedere <xref:Microsoft.VisualStudio.TextTemplating.ITextTemplatingEngineHost>.  
   
 > [!WARNING]
->  Se si scrive un'estensione o un pacchetto di [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)], anziché creare il proprio host, si consiglia di utilizzare il servizio del modello di testo.  Per ulteriori informazioni, vedere [Invoking Text Transformation in a VS Extension](../modeling/invoking-text-transformation-in-a-vs-extension.md).  
+>  Se si scrive un'estensione o un pacchetto di [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)], anziché creare il proprio host, si consiglia di utilizzare il servizio del modello di testo. Per ulteriori informazioni, vedere [richiamo di trasformazione del testo in un'estensione VS](../modeling/invoking-text-transformation-in-a-vs-extension.md).  
   
  Di seguito vengono illustrate le attività incluse nella procedura dettagliata:  
   
@@ -32,19 +34,19 @@ Un *host* *del modello di testo* fornisce un ambiente che consente l'esecuzione 
   
 -   Test dell'host personalizzato  
   
-## Prerequisiti  
+## <a name="prerequisites"></a>Prerequisiti  
  Per completare la procedura dettagliata, è necessario disporre di quanto segue:  
   
 -   Visual Studio 2010 o versione successiva  
   
--   SDK di Visual Studio  
+-   Visual Studio SDK  
   
-## Creazione di un host del modello di testo personalizzato  
- In questa procedura dettagliata, si crea un host personalizzato in un'applicazione eseguibile che può essere chiamata dalla riga di comando.  L'applicazione accetta un file modello di testo come argomento, legge il modello, chiama il motore per trasformare il modello e visualizza qualsiasi errore che si verifica nella finestra del prompt dei comandi.  
+## <a name="creating-a-custom-text-template-host"></a>Creazione di un host del modello di testo personalizzato  
+ In questa procedura dettagliata, si crea un host personalizzato in un'applicazione eseguibile che può essere chiamata dalla riga di comando. L'applicazione accetta un file modello di testo come argomento, legge il modello, chiama il motore per trasformare il modello e visualizza qualsiasi errore che si verifica nella finestra del prompt dei comandi.  
   
-#### Per creare un host personalizzato  
+#### <a name="to-create-a-custom-host"></a>Per creare un host personalizzato  
   
-1.  In Visual Studio, creare una nuova applicazione console in Visual Basic o C\# denominata CustomHost.  
+1.  In Visual Studio, creare una nuova applicazione console in Visual Basic o C# denominata CustomHost.  
   
 2.  Aggiungere riferimenti agli assembly riportati di seguito:  
   
@@ -54,7 +56,7 @@ Un *host* *del modello di testo* fornisce un ambiente che consente l'esecuzione 
   
 3.  Sostituire il codice nel file Program.cs o Module1.vb con il codice seguente:  
   
-    ```c#  
+    ```csharp  
     using System;  
     using System.IO;  
     using System.CodeDom.Compiler;  
@@ -404,7 +406,7 @@ Un *host* *del modello di testo* fornisce un ambiente che consente l'esecuzione 
     }  
     ```  
   
-    ```vb#  
+    ```vb  
     Imports System  
     Imports System.IO  
     Imports System.CodeDom.Compiler  
@@ -711,16 +713,16 @@ Un *host* *del modello di testo* fornisce un ambiente che consente l'esecuzione 
     End Namespace  
     ```  
   
-4.  Solo per [!INCLUDE[vbprvb](../code-quality/includes/vbprvb_md.md)], aprire il menu **Progetto** e fare clic su **Proprietà CustomHost**.  Nell'elenco **Oggetto di avvio** fare clic su **CustomHost.Program**.  
+4.  Per [!INCLUDE[vbprvb](../code-quality/includes/vbprvb_md.md)] solo, aprire il **progetto** dal menu **proprietà CustomHost**. Nel **oggetto di avvio** elenco, fare clic su **CustomHost**.  
   
-5.  Scegliere **Salva tutto** dal menu **File**.  
+5.  Nel **File** menu, fare clic su **Salva tutto**.  
   
-6.  Dal menu **Compila** fare clic su **Compila soluzione**.  
+6.  Scegliere **Compila soluzione** dal menu **Compila**.  
   
-## Test dell'host personalizzato  
+## <a name="testing-the-custom-host"></a>Test dell'host personalizzato  
  Per testare l'host personalizzato, si scrive un modello di testo, quindi si esegue l'host personalizzato, gli si passa il nome del modello di testo e si verifica che il modello venga trasformato.  
   
-#### Per creare un modello di testo per testare l'host personalizzato  
+#### <a name="to-create-a-text-template-to-test-the-custom-host"></a>Per creare un modello di testo per testare l'host personalizzato  
   
 1.  Creare un file di testo e denominarlo `TestTemplate.tt`.  
   
@@ -731,7 +733,7 @@ Un *host* *del modello di testo* fornisce un ambiente che consente l'esecuzione 
     > [!NOTE]
     >  Il linguaggio di programmazione non deve necessariamente essere uguale a quello dell'host personalizzato.  
   
-    ```c#  
+    ```csharp  
     Text Template Host Test  
   
     <#@ template debug="true" #>  
@@ -749,7 +751,7 @@ Un *host* *del modello di testo* fornisce un ambiente che consente l'esecuzione 
     #>  
     ```  
   
-    ```vb#  
+    ```vb  
     Text Template Host Test  
   
     <#@ template debug="true" language="VB"#>  
@@ -771,7 +773,7 @@ Un *host* *del modello di testo* fornisce un ambiente che consente l'esecuzione 
   
 3.  Salvare e chiudere il file.  
   
-#### Per testare l'host personalizzato  
+#### <a name="to-test-the-custom-host"></a>Per testare l'host personalizzato  
   
 1.  Aprire la finestra del prompt dei comandi.  
   
@@ -782,7 +784,7 @@ Un *host* *del modello di testo* fornisce un ambiente che consente l'esecuzione 
      `<YOUR PATH>CustomHost\bin\Debug\CustomHost.exe`  
   
     > [!NOTE]
-    >  Anziché digitare l'indirizzo, è possibile passare al file CustomHost.exe in **Esplora risorse** e trascinarlo nella finestra del prompt dei comandi.  
+    >  Anziché digitare l'indirizzo, è possibile passare al file CustomHost.exe in **Esplora** e quindi trascinare il file nella finestra del prompt dei comandi.  
   
 3.  Digitare uno spazio.  
   
@@ -793,11 +795,11 @@ Un *host* *del modello di testo* fornisce un ambiente che consente l'esecuzione 
      `C:\<YOUR PATH>TestTemplate.tt`  
   
     > [!NOTE]
-    >  Anziché digitare l'indirizzo, è possibile passare al file TestTemplate.tt in **Esplora risorse** e trascinarlo nella finestra del prompt dei comandi.  
+    >  Anziché digitare l'indirizzo, è possibile passare al file TestTemplate.tt in **Esplora** e quindi trascinare il file nella finestra del prompt dei comandi.  
   
      L'applicazione host personalizzata viene eseguita e completa il processo di trasformazione del modello di testo.  
   
-5.  In **Esplora risorse** passare alla cartella contenente il file TestTemplate.tt.  
+5.  In **Esplora**, passare alla cartella che contiene il file TestTemplate.tt.  
   
      Questa cartella contiene anche file TestTemplate1.txt.  
   
@@ -813,8 +815,8 @@ Un *host* *del modello di testo* fornisce un ambiente che consente l'esecuzione 
     This is a test  
     ```  
   
-## Passaggi successivi  
- In questa procedura dettagliata, è stato creato un host di trasformazione del modello di testo che supporta la funzionalità della trasformazione di base.  È possibile espandere l'host per supportare modelli di testo che chiamano processori di direttiva personalizzati o generati.  Per ulteriori informazioni, vedere [Procedura dettagliata: connessione di un host a un processore di direttiva generato](../modeling/walkthrough-connecting-a-host-to-a-generated-directive-processor.md).  
+## <a name="next-steps"></a>Passaggi successivi  
+ In questa procedura dettagliata, è stato creato un host di trasformazione del modello di testo che supporta la funzionalità della trasformazione di base. È possibile espandere l'host per supportare modelli di testo che chiamano processori di direttiva personalizzati o generati. Per ulteriori informazioni, vedere [procedura dettagliata: connessione di un Host a un processore di direttiva generato](../modeling/walkthrough-connecting-a-host-to-a-generated-directive-processor.md).  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  <xref:Microsoft.VisualStudio.TextTemplating.ITextTemplatingEngineHost>

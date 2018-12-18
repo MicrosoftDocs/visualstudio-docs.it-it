@@ -1,49 +1,51 @@
 ---
-title: "L&#39;invio di eventi di avvio dopo il lancio di un | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "debug [debug SDK], eventi di avvio"
+title: L'invio di eventi di avvio dopo un avvio | Documenti Microsoft
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: vs-ide-sdk
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords: debugging [Debugging SDK], startup events
 ms.assetid: 306ea0b4-6d9e-4871-8d8d-a4032d422940
-caps.latest.revision: 9
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: gregvanl
+ms.author: gregvanl
+manager: ghogen
+ms.workload: vssdk
+ms.openlocfilehash: 65e05d7da2acf5bd3eaf8dab1e3781d3d5b244a0
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
-# L&#39;invio di eventi di avvio dopo il lancio di un
-[!INCLUDE[vs2017banner](../../code-quality/includes/vs2017banner.md)]
-
-Una volta che il \(DE\) motore di debug è connesso al programma, invia una serie di eventi di avvio della sessione di debug.  
+# <a name="sending-startup-events-after-a-launch"></a>L'invio di eventi di avvio dopo un avvio
+Una volta collegato il motore di debug (DE) al programma, invia una serie di eventi di avvio alla sessione di debug  
   
- Gli eventi di avvio inviati alla sessione di debug sono inclusi i seguenti:  
+ Gli eventi di avvio inviati nuovamente alla sessione di debug includono:  
   
 -   Un evento di creazione del motore.  
   
 -   Un evento di creazione del programma.  
   
--   Eventi di caricamento di creazione e del modulo del thread.  
+-   Eventi di caricamento moduli e di creazione del thread.  
   
--   Un evento completo di caricamento, inviato quando il codice viene caricato ed è pronto per l'esecuzione, ma prima che il codice venga eseguito  
+-   Un evento di completamento carico, inviato quando il codice è caricato e pronto per l'esecuzione, ma prima che venga eseguito qualsiasi codice  
   
     > [!NOTE]
-    >  Quando questo evento ha proseguito fino, le variabili globali vengono inizializzate e l'esecuzione della routine di avvio.  
+    >  Quando si continua, questo evento vengono inizializzate le variabili globali ed eseguire routine di avvio.  
   
--   Altri possibili eventi di caricamento di creazione e del modulo del thread.  
+-   Possibili altri thread di creazione e eventi di caricamento moduli.  
   
--   Un evento di punto di ingresso, che segnala che il programma ha raggiunto il punto di ingresso principale, come **principale** o `WinMain`.  Questo evento viene in genere non viene inviato se si connette di DE a un programma già in esecuzione.  
+-   Un evento punto di ingresso, che segnala che il programma ha raggiunto il punto di ingresso principale, ad esempio **Main** o `WinMain`. Questo evento non viene inviato in genere se la Germania associa a un programma che è già in esecuzione.  
   
- A livello di codice, il DE innanzitutto invia l'amministratore \(SDM\) di debug della sessione un'interfaccia di [IDebugEngineCreateEvent2](../../extensibility/debugger/reference/idebugenginecreateevent2.md) , che rappresenta un evento di creazione del motore, è seguito da [IDebugProgramCreateEvent2](../../extensibility/debugger/reference/idebugprogramcreateevent2.md), che rappresenta un evento di creazione del programma.  
+ A livello di codice, prima di tutto la Germania invia gestore di sessione di debug (SDM) un [IDebugEngineCreateEvent2](../../extensibility/debugger/reference/idebugenginecreateevent2.md) interfaccia che rappresenta un evento di creazione del motore, seguito da un [IDebugProgramCreateEvent2](../../extensibility/debugger/reference/idebugprogramcreateevent2.md) , che rappresenta un evento di creazione del programma.  
   
- In genere ciò è seguita da uno o più eventi di caricamento di eventi di creazione di thread di [IDebugThreadCreateEvent2](../../extensibility/debugger/reference/idebugthreadcreateevent2.md) e il modulo di [IDebugModuleLoadEvent2](../../extensibility/debugger/reference/idebugmoduleloadevent2.md) .  
+ In genere è seguito da uno o più [IDebugThreadCreateEvent2](../../extensibility/debugger/reference/idebugthreadcreateevent2.md) gli eventi di creazione di thread e [IDebugModuleLoadEvent2](../../extensibility/debugger/reference/idebugmoduleloadevent2.md) eventi di caricamento moduli.  
   
- Quando il codice viene caricato ed è pronto per l'esecuzione, ma prima che il codice venga eseguito, il DE invia lo SDM un evento completo del caricamento di [IDebugLoadCompleteEvent2](../../extensibility/debugger/reference/idebugloadcompleteevent2.md) .  Infine, se il programma non è in esecuzione, il DE invia un evento di punto di ingresso di [IDebugEntryPointEvent2](../../extensibility/debugger/reference/idebugentrypointevent2.md) , segnalazione che il programma ha raggiunto il punto di ingresso principale ed è pronto per il debug.  
+ Quando il codice è caricato e pronto per l'esecuzione, ma prima che venga eseguito qualsiasi codice, la Germania invia il SDM un [IDebugLoadCompleteEvent2](../../extensibility/debugger/reference/idebugloadcompleteevent2.md) evento di caricamento completo. Infine, se il programma non è già in esecuzione, la Germania invia un [IDebugEntryPointEvent2](../../extensibility/debugger/reference/idebugentrypointevent2.md) evento punto di ingresso, significa che il programma ha raggiunto il punto di ingresso principale e pronta per il debug.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Controllo di esecuzione](../../extensibility/debugger/control-of-execution.md)   
  [Attività di debug](../../extensibility/debugger/debugging-tasks.md)

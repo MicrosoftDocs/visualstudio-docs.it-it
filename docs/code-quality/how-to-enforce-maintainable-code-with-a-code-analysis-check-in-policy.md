@@ -1,63 +1,67 @@
 ---
-title: "Procedura: Applicare codice di facile manutenibilit&#224; con criteri di archiviazione dell&#39;analisi del codice | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-general"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "analisi codice, criteri di archiviazione"
+title: "Procedura: applicare codice di facile manutenibilità con criteri di controllo dell'analisi codice | Documenti Microsoft"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: vs-ide-code-analysis
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- code analysis, check-in policies
 ms.assetid: d1b3b04f-4dd9-40e6-b2d4-b414d33fb647
-caps.latest.revision: 8
-author: "stevehoag"
-ms.author: "shoag"
-manager: "wpickett"
-caps.handback.revision: 8
+author: gewarren
+ms.author: gewarren
+manager: ghogen
+ms.workload:
+- multiple
+ms.openlocfilehash: 7ac4f31d1e93ed648bf2065bbff9dac8800c1d4f
+ms.sourcegitcommit: a07b789cc41ed72664f2c700c1f114476e7b0ddd
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 02/19/2018
 ---
-# Procedura: Applicare codice di facile manutenibilit&#224; con criteri di archiviazione dell&#39;analisi del codice
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
+# <a name="how-to-enforce-maintainable-code-with-a-code-analysis-check-in-policy"></a>Procedura: Applicare codice di facile manutenibilità con criteri di archiviazione dell'analisi del codice
 
-Gli sviluppatori possono utilizzare lo strumento metrica codice per misurare la complessità e la manutenibilità del codice, ma non possono richiamare la metrica del codice nei criteri di archiviazione.  Tuttavia, un team può abilitare le regole dell'analisi del codice che verificano la conformità del codice agli standard della metrica del codice e applicare le regole tramite i criteri di archiviazione.  Per ulteriori informazioni sulla metrica del codice, vedere [Valori della metrica del codice](../code-quality/code-metrics-values.md).  
-  
- Gli sviluppatori possono abilitare le regole Profondità dell'ereditarietà, Accoppiamenti di classi, Indice di manutenibilità e Complessità per applicare il codice di facile manutenibilità tramite i criteri di archiviazione dell'analisi del codice.  Le quattro regole sono disponibili nella categoria "Regole di manutenibilità" nell'editor dei criteri analisi codice.  
-  
- Gli amministratori del controllo della versione per [!INCLUDE[esprfound](../code-quality/includes/esprfound_md.md)] possono aggiungere le regole di manutenibilità dell'analisi del codice ai requisiti dei criteri di archiviazione.  Questi criteri di archiviazione richiedono che gli sviluppatori eseguano l'analisi del codice sulla base di queste regole modificate prima di iniziare un'archiviazione.  
-  
-### Per aprire l'editor dei criteri analisi codice  
-  
-1.  In **Team Explorer**, fare clic con il pulsante destro del mouse sul progetto team, fare clic su **Impostazioni progetto team**, quindi su **Controllo del codice sorgente**.  
-  
-     Viene visualizzata la finestra di dialogo **Controllo del codice sorgente**.  
-  
-2.  Nella scheda **Criteri di archiviazione**, fare clic su **Aggiungi**.  
-  
-     Verrà visualizzata la finestra di dialogo **Aggiungi criteri di archiviazione**.  
-  
-3.  Nell'elenco **Criteri di archiviazione**, selezionare la casella di controllo **Analisi codice** e scegliere **OK**.  
-  
-     Viene visualizzata la finestra di dialogo **Editor dei criteri analisi codice**.  
-  
-### Per attivare le regole di gestibilità dell'analisi del codice  
-  
-1.  Nella finestra di dialogo **Editor dei criteri analisi codice**, in **Impostazioni regole**, espandere il nodo **Regole di manutenibilità**.  
-  
-2.  Selezionare le caselle di controllo per le regole seguenti:  
-  
-    -   Profondità dell'ereditarietà: **CA1501 AvoidExcessiveInheritance** \- Soglia: avviso a una profondità superiore ai 5 livelli  
-  
-    -   Complessità: **CA1502 AvoidExcessiveComplexity** \- Soglia: avviso per un valore superiore a 25  
-  
-    -   Indice di manutenibilità: **CA1505 AvoidUnmaintainableCode** \- Soglia: avviso per un valore inferiore a 20  
-  
-    -   Accoppiamenti di classi: **CA1506 AvoidExcessiveClassCoupling** \- Soglia: avviso per un valore superiore a 80 per una classe e superiore a 30 per un metodo  
-  
-    -   Inoltre, se si desidera che la violazione di una regola impedisca la compilazione, selezionare la casella di controllo **Considera gli avvisi come errori** accanto alla descrizione della regola.  
-  
-3.  Fare clic su **OK**.  A questo punto verranno applicati i nuovi criteri alle future archiviazioni.  
-  
-## Vedere anche  
- [Valori della metrica del codice](../code-quality/code-metrics-values.md)   
- [Creazione e utilizzo di criteri di archiviazione di analisi codice](../code-quality/creating-and-using-code-analysis-check-in-policies.md)
+Gli sviluppatori possono utilizzare lo strumento di metrica del codice per misurare la complessità e della manutenibilità del codice, ma non è possibile richiamare la metrica del codice come parte di un criterio di controllo. Tuttavia, è possibile abilitare le regole di analisi del codice per verificare la conformità del codice standard di metrica del codice e applicare le regole tramite criteri di archiviazione. Per ulteriori informazioni sulla metrica del codice, vedere il [valori della metrica codice](../code-quality/code-metrics-values.md).
+
+È possibile abilitare la profondità dell'ereditarietà, accoppiamenti, indice di manutenibilità e le regole di complessità applicare il codice gestibile tramite criteri di controllo di analisi del codice. Le quattro di queste regole sono disponibili nella categoria "Regole di manutenibilità" nell'editor Criteri di analisi del codice.
+
+Gli amministratori del controllo della versione di Team Foundation possono aggiungere le regole di manutenibilità di analisi codice per i requisiti dei criteri di archiviazione. Questi check-in criteri richiedono agli sviluppatori di eseguire l'analisi del codice in base a queste regole modificate prima dell'avvio di un controllo aggiuntivo.
+
+## <a name="to-open-the-code-analysis-policy-editor"></a>Per aprire l'Editor criteri di analisi codice
+
+1. in **Team Explorer**, fare clic sul progetto team, fare clic su **impostazioni progetto Team**, quindi fare clic su **controllo del codice sorgente**.
+
+     The **Source Control** dialog box appears.
+
+2. scegliere il **criteri di archiviazione** scheda e fare clic su **Aggiungi**.
+
+     The **Add Check-in Policy** dialog box appears.
+
+3. nel **criteri di archiviazione** elenco, selezionare il **analisi del codice** casella di controllo e quindi fare clic su **OK**.
+
+     The **Code Analysis Policy Editor** dialog box appears.
+
+## <a name="to-enable-code-analysis-maintainability-rules"></a>Per abilitare le regole di manutenibilità analisi codice
+
+1. in il **Editor criteri di analisi codice** nella finestra di dialogo **le impostazioni delle regole**, espandere il **regole di gestibilità** nodo.
+
+2. selezionare le caselle di controllo per le regole seguenti:
+
+    -   Profondità dell'ereditarietà: **CA1501 AvoidExcessiveInheritance** -soglia: più di 5 livelli di avviso
+
+    -   Complessità: **CA1502 AvoidExcessiveComplexity** -soglia: avviso in più di 25.
+
+    -   Indice di manutenibilità: **CA1505 AvoidUnmaintainableCode** -soglia: avviso in meno di 20
+
+    -   Accoppiamenti di classi: **CA1506 AvoidExcessiveClassCoupling** -soglia: avviso più di 80 per una classe e più di 30 per un metodo
+
+    Inoltre, se si desidera una violazione delle regole per evitare una compilazione corretta, selezionare il **considera gli avvisi come errori** casella di controllo accanto alla descrizione della regola.
+
+3. fare clic su **OK**. Il nuovo criterio si applica ora a future archiviazioni.
+
+## <a name="see-also"></a>Vedere anche
+
+[Valori della metrica del codice](../code-quality/code-metrics-values.md)
+[creazione e utilizzo di criteri di controllo dell'analisi del codice](../code-quality/creating-and-using-code-analysis-check-in-policies.md)

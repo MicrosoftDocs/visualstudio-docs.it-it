@@ -1,71 +1,79 @@
 ---
-title: "Elemento dell&#39;oggetto KeyBinding | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "Elementi dello schema XML VSCT, KeyBindings"
-  - "Elemento dell'oggetto KeyBinding (VSCT XML schema)"
+title: Tasto di scelta rapida elemento | Documenti Microsoft
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: vs-ide-sdk
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- VSCT XML schema elements, KeyBindings
+- KeyBinding element (VSCT XML schema)
 ms.assetid: e55a1098-15df-42a9-9f87-e3a99cf437dd
-caps.latest.revision: 12
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 12
+caps.latest.revision: "12"
+author: gregvanl
+ms.author: gregvanl
+manager: ghogen
+ms.workload: vssdk
+ms.openlocfilehash: 2019a34e55148007cd75df12212bd4b0a897159c
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
-# Elemento dell&#39;oggetto KeyBinding
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
-L'elemento dell'oggetto KeyBinding specifica tasti di scelta rapida per i comandi.  
+# <a name="keybinding-element"></a>Tasto di scelta rapida elemento
+L'elemento KeyBinding specifica tasti di scelta rapida per i comandi.  
   
- Comandi possono avere una o due tasti di scelta rapida associati. Un esempio di una singola combinazione di tasti è CTRL \+ S per il **salvare** comando. Due tasti di scelta rapida richiedono due combinazioni di tasti successive per attivare un comando. Un esempio di un'associazione chiave duale è CTRL \+ K,CTRL \+ K per impostare un segnalibro.  
+ I comandi possono avere una o due tasti di scelta rapida associati. È di un esempio di una singola combinazione di tasti CTRL + S per il **salvare** comando. Tasti di scelta rapida doppi richiedono due combinazioni di tasti successive per attivare un comando. Un esempio di un'associazione duale di chiavi è CTRL + K, CTRL + K per impostare un segnalibro.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
 <Keybinding guid="MyGuid" id="MyId" Editor="MyEditor" key1="B" key2="x" mod1="Control" mod2="Alt" />  
 ```  
   
-## Attributi ed elementi  
+## <a name="attributes-and-elements"></a>Attributi ed elementi  
  Nelle sezioni seguenti vengono descritti gli attributi, gli elementi figlio e gli elementi padre.  
   
-### Attributi  
+### <a name="attributes"></a>Attributi  
   
 |Attributo|Descrizione|  
 |---------------|-----------------|  
-|GUID|Obbligatorio.|  
+|guid|Obbligatorio.|  
 |ID|Obbligatorio.|  
-|Editor|Obbligatorio. L'editor GUID indica il contesto di modifica per il quale sarà attivo il tasto di scelta rapida. Il valore di ambito globale di associazione è "guidVSStd97".|  
-|Key1|Obbligatorio. I valori validi includono tutti possibile digitare caratteri alfanumerici e inoltre valori esadecimali a due cifre preceduti da 0x e VK\_constants.|  
-|MOD1|Facoltativo. Qualsiasi combinazione di CTRL, ALT e MAIUSC separati da spazi.|  
-|Key2|Facoltativo. I valori validi includono tutti possibile digitare caratteri alfanumerici e inoltre valori esadecimali a due cifre preceduti da 0x e VK\_constants.|  
-|MOD2|Facoltativo. Qualsiasi combinazione di CTRL, ALT e MAIUSC separati da spazi.|  
+|editor|Obbligatorio. L'editor GUID indica il contesto di modifica per il quale sarà attivo il tasto di scelta rapida. Il valore di ambito di associazione globale è "guidVSStd97".|  
+|key1|Obbligatorio. I valori validi includono tutti possibile digitare caratteri alfanumerici e i valori esadecimali a due cifre preceduti da 0x e [VK_constants](https://msdn.microsoft.com/en-us/library/windows/desktop/dd375731.aspx).|  
+|MOD1|Facoltativo. Qualsiasi combinazione di MAIUSC separate da spazio CTRL e ALT.|  
+|key2|Facoltativo. I valori validi includono tutti possibile digitare caratteri alfanumerici e i valori esadecimali a due cifre preceduti da 0x e [VK_constants](https://msdn.microsoft.com/en-us/library/windows/desktop/dd375731.aspx).|  
+|MOD2|Facoltativo. Qualsiasi combinazione di MAIUSC separate da spazio CTRL e ALT.|  
 |emulatore|Facoltativo.|  
-|Condizione|Facoltativo. Vedere [Attributi condizionali](../extensibility/vsct-xml-schema-conditional-attributes.md).|  
+|Condizione|Facoltativo. Vedere [attributi condizionali](../extensibility/vsct-xml-schema-conditional-attributes.md).|  
   
-### Elementi figlio  
+### <a name="child-elements"></a>Elementi figlio  
   
 |Elemento|Descrizione|  
-|--------------|-----------------|  
+|-------------|-----------------|  
 |Padre||  
 |Annotazione||  
   
-### Elementi padre  
+### <a name="parent-elements"></a>Elementi padre  
   
 |Elemento|Descrizione|  
-|--------------|-----------------|  
-|[Elemento KeyBindings](../extensibility/keybindings-element.md)|Raggruppa gli elementi dell'oggetto KeyBinding e altri raggruppamenti KeyBindings.|  
+|-------------|-----------------|  
+|[Elemento KeyBindings](../extensibility/keybindings-element.md)|Gli elementi KeyBinding di gruppi e altri raggruppamenti di tasti di scelta rapida.|  
   
-## Esempio  
+## <a name="example"></a>Esempio  
   
 ```  
-<KeyBindings> <KeyBinding guid="guidWidgetPackage" id="cmdidUpdateWidget" editor="guidWidgetEditor" key1="VK_F5"/> <KeyBinding guid="guidWidgetPackage" id="cmdidRunWidget" editor="guidWidgetEditor" key1="VK_F5" mod1="Control"/> </KeyBindings>  
+<KeyBindings>  
+  <KeyBinding guid="guidWidgetPackage" id="cmdidUpdateWidget"   
+    editor="guidWidgetEditor" key1="VK_F5"/>  
+  <KeyBinding guid="guidWidgetPackage" id="cmdidRunWidget"   
+    editor="guidWidgetEditor" key1="VK_F5" mod1="Control"/>  
+</KeyBindings>  
 ```  
   
-## Vedere anche  
- [Elemento KeyBindings](../extensibility/keybindings-element.md)   
- [Tabella di comandi di Visual Studio \(. File Vsct\)](../extensibility/internals/visual-studio-command-table-dot-vsct-files.md)
+## <a name="see-also"></a>Vedere anche  
+ [Tasti di scelta rapida elemento](../extensibility/keybindings-element.md)   
+ [File Visual Studio Command Table (VSCT)](../extensibility/internals/visual-studio-command-table-dot-vsct-files.md)

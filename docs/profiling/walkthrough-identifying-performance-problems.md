@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- vs-ide-debug
+ms.technology: vs-ide-debug
 ms.tgt_pltfrm: 
 ms.topic: article
 helpviewer_keywords:
@@ -14,30 +13,16 @@ helpviewer_keywords:
 - performance, analyzing
 - profiling applications, walkthroughs
 ms.assetid: 36f6f123-0c14-4763-99c3-bd60ecb95b87
-caps.latest.revision: 53
+caps.latest.revision: "53"
 author: mikejo5000
 ms.author: mikejo
 manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: ca7c86466fa23fb21a932f26dc24e37c71cf29b4
-ms.openlocfilehash: a20a64818982484a56ba7dc82af890c729da40e4
-ms.lasthandoff: 04/05/2017
-
+ms.workload: multiple
+ms.openlocfilehash: da961d153713c996c6f057e7bb0366c747c87205
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="walkthrough-identifying-performance-problems"></a>Procedura dettagliata: Identificazione dei problemi di prestazioni
 Questa procedura dettagliata illustra come eseguire la profilatura di un'applicazione per identificare i problemi di prestazioni.  
@@ -105,9 +90,9 @@ Questa procedura dettagliata illustra come eseguire la profilatura di un'applica
   
 2.  La visualizzazione **Dettagli funzione** contiene due finestre. La finestra di distribuzione dei costi fornisce una visualizzazione grafica del lavoro svolto dalla funzione, del lavoro svolto dalle funzioni che questa ha chiamato e del contributo delle funzioni che hanno chiamato la funzione per il numero di istanze campionate. È possibile modificare la funzione rappresentata della visualizzazione facendo clic sul nome di una funzione. È ad esempio possibile fare clic su PeopleNS.People.GetPeople per rendere GetPeople la funzione selezionata.  
   
-     La finestra **Visualizzazione codice funzione** mostra il codice sorgente per la funzione, se disponibile, ed evidenzia le righe più costose della funzione selezionata. Quando è selezionata GetNames, è possibile notare che questa funzione legge una stringa dalle risorse dell'applicazione e quindi usa un <xref:System.IO.StringReader> per aggiungere ogni riga nella stringa a un <xref:System.Collections.ArrayList>. Non esiste un modo ovvio per ottimizzare questa funzione.  
+     La finestra **Visualizzazione codice funzione** mostra il codice sorgente per la funzione, se disponibile, ed evidenzia le righe più costose della funzione selezionata. Quando si seleziona GetNames, è possibile notare che questa funzione legge una stringa dalle risorse dell'applicazione e quindi usa una classe <xref:System.IO.StringReader> per aggiungere ogni riga nella stringa a una classe <xref:System.Collections.ArrayList>. Non esiste un modo ovvio per ottimizzare questa funzione.  
   
-3.  Poiché PeopleNS.People.GetPeople è il solo chiamante di GetNames, fare clic su GetPeople nella finestra di distribuzione dei costi per esaminarne il codice. Questo metodo restituisce un <xref:System.Collections.ArrayList> di oggetti PersonInformationNS.PersonInformation dai nomi di persone e di aziende prodotti da GetNames. Tuttavia, GetNames viene chiamata due volte ogni volta che viene creato un oggetto PersonInformation. È possibile vedere che il metodo può essere facilmente ottimizzato creando gli elenchi una sola volta all'inizio del metodo e indicizzando tali elenchi durante il ciclo di creazione di PersonInformation.  
+3.  Poiché PeopleNS.People.GetPeople è il solo chiamante di GetNames, fare clic su GetPeople nella finestra di distribuzione dei costi per esaminarne il codice. Questo metodo restituisce una classe <xref:System.Collections.ArrayList> di oggetti PersonInformationNS.PersonInformation dai nomi di persone e di aziende prodotti da GetNames. Tuttavia, GetNames viene chiamata due volte ogni volta che viene creato un oggetto PersonInformation. È possibile vedere che il metodo può essere facilmente ottimizzato creando gli elenchi una sola volta all'inizio del metodo e indicizzando tali elenchi durante il ciclo di creazione di PersonInformation.  
   
 4.  Una versione alternativa di GetPeople viene fornita con il codice dell'applicazione di esempio ed è possibile chiamare la funzione ottimizzata aggiungendo un simbolo di compilazione condizionale alle proprietà di compilazione. Nella finestra Esplora soluzioni fare clic con il pulsante destro del mouse sul progetto People e scegliere **Proprietà**. Fare clic su **Genera** nel menu della pagina delle proprietà e quindi digitare **OPTIMIZED_GETPEOPLE** nella casella di testo per il simbolo di compilazione condizionale. La versione ottimizzata di GetPeople sostituisce il metodo originale nella compilazione successiva.  
   
@@ -152,13 +137,13 @@ Questa procedura dettagliata illustra come eseguire la profilatura di un'applica
   
 1.  Il grafico della sequenza temporale della visualizzazione **Riepilogo** del report mostra l'utilizzo della CPU del programma per la durata dell'esecuzione della profilatura. L'operazione di esportazione dei dati dovrebbe essere il picco o il livello elevato sul lato destro del grafico. È possibile filtrare la sessione di prestazioni per visualizzare e analizzare solo i dati raccolti durante l'operazione di esportazione. Fare clic a sinistra del punto nel grafico in cui inizia l'operazione di esportazione dei dati. Fare nuovamente clic sul lato destro dell'operazione. Fare quindi clic su **Filtro in base a selezione** nell'elenco di collegamenti a destra della sequenza temporale.  
   
-     L'albero **Percorso critico** mostra che il metodo <xref:System.String.Concat%2A>, che viene chiamato dal metodo PeopleTrax.Form1.ExportData, usa una percentuale elevata di tempo. Poiché anche **System.String.Concat** è all'inizio dell'elenco **Funzioni con più lavoro individuale**, la riduzione del tempo impiegato nella funzione è un probabile punto di ottimizzazione.  
+     L'albero **Percorso critico** illustra che il metodo <xref:System.String.Concat%2A> chiamato dal metodo PeopleTrax.Form1.ExportData usa una percentuale elevata di tempo. Poiché anche **System.String.Concat** è all'inizio dell'elenco **Funzioni con più lavoro individuale**, la riduzione del tempo impiegato nella funzione è un probabile punto di ottimizzazione.  
   
 2.  Fare doppio clic su **System.String.Concat** in una delle tabelle di riepilogo per visualizzare altre informazioni nella visualizzazione Dettagli funzione.  
   
 3.  È possibile osservare che PeopleTrax.Form1.ExportData è l'unico metodo che chiama Concat. Fare clic su **PeopleTrax.Form1.ExportData** nell'elenco **Funzioni chiamanti** per selezionare il metodo come destinazione della visualizzazione Dettagli funzione.  
   
-4.  Esaminare il metodo nella finestra Visualizzazione codice funzione. Si noti che non sono presenti chiamate letterali a **System.String.Concat**. Sono invece presenti diversi usi dell'operando +=, che il compilatore sostituisce con chiamate a **System.String.Concat**. Qualsiasi modifica a una stringa in .NET Framework causa l'allocazione di una nuova stringa. .NET Framework include una classe <xref:System.Text.StringBuilder>, che è ottimizzata per la concatenazione delle stringhe.  
+4.  Esaminare il metodo nella finestra Visualizzazione codice funzione. Si noti che non sono presenti chiamate letterali a **System.String.Concat**. Sono invece presenti diversi usi dell'operando +=, che il compilatore sostituisce con chiamate a **System.String.Concat**. Qualsiasi modifica a una stringa in .NET Framework causa l'allocazione di una nuova stringa. .NET Framework include una classe <xref:System.Text.StringBuilder> ottimizzata per la concatenazione delle stringhe  
   
 5.  Per sostituire quest'area problematica con codice ottimizzato, aggiungere OPTIMIZED_EXPORTDATA come simbolo di compilazione condizionale al progetto PeopleTrax.  
   
@@ -175,6 +160,6 @@ Questa procedura dettagliata illustra come eseguire la profilatura di un'applica
  Quando si esegue nuovamente l'applicazione, sarà possibile osservare notevoli miglioramenti delle prestazioni. È consigliabile ripetere la sessione di profilatura, anche se si registrano miglioramenti delle prestazioni visibili all'utente. Esaminare i dati dopo aver risolto un problema è importante perché il primo problema potrebbe nascondere altri problemi.  
   
 ## <a name="see-also"></a>Vedere anche  
- [Panoramiche](../profiling/overviews-performance-tools.md)   
+ [Overviews](../profiling/overviews-performance-tools.md)  (Panoramiche)  
  [Introduzione](../profiling/getting-started-with-performance-tools.md)   
  [/Z7, /Zi, /ZI (Formato informazioni di debug)](/cpp/build/reference/z7-zi-zi-debug-information-format)

@@ -4,37 +4,24 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- vs-ide-sdk
+ms.technology: msbuild
 ms.tgt_pltfrm: 
 ms.topic: article
 helpviewer_keywords:
 - tasks
 - MSBuild, tasks
 ms.assetid: 5d3cc4a7-e5db-4f73-b707-8b6882fddcf8
-caps.latest.revision: 18
-author: kempb
-ms.author: kempb
+caps.latest.revision: 
+author: Mikejo5000
+ms.author: mikejo
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: 3ba7680d46345f2b49019659c715cfb418933d39
-ms.openlocfilehash: cde7cf37c372caff4faa9ec88ecc5958112f0c6f
-ms.lasthandoff: 02/22/2017
-
+ms.workload:
+- multiple
+ms.openlocfilehash: e1de29741f11413d8829902635c1284aa6e5bce6
+ms.sourcegitcommit: 205d15f4558315e585c67f33d5335d5b41d0fcea
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 02/09/2018
 ---
 # <a name="msbuild-tasks"></a>Attività MSBuild
 Una piattaforma di compilazione deve poter eseguire un numero illimitato di azioni durante il processo di compilazione. [!INCLUDE[vstecmsbuild](../extensibility/internals/includes/vstecmsbuild_md.md)] usa le *attività* per eseguire queste azioni. Un'attività è un'unità di codice eseguibile usata da [!INCLUDE[vstecmsbuild](../extensibility/internals/includes/vstecmsbuild_md.md)] per eseguire operazioni di compilazione atomiche.  
@@ -53,7 +40,7 @@ Una piattaforma di compilazione deve poter eseguire un numero illimitato di azio
   
  Per eseguire un'attività in un file di progetto di [!INCLUDE[vstecmsbuild](../extensibility/internals/includes/vstecmsbuild_md.md)], creare un elemento con il nome dell'attività come figlio di un elemento `Target`. Se un'attività accetta i parametri, questi vengono passati come attributi dell'elemento.  
   
- Le proprietà e gli elenchi di elementi di [!INCLUDE[vstecmsbuild](../extensibility/internals/includes/vstecmsbuild_md.md)] possono essere usati come parametri. Il codice seguente, ad esempio, chiama l'attività `MakeDir` e imposta il valore della proprietà `Directories` dell'oggetto `MakeDir` sul valore della proprietà `BuildDir` dichiarata nell'esempio precedente.  
+ [!INCLUDE[vstecmsbuild](../extensibility/internals/includes/vstecmsbuild_md.md)] Le proprietà e gli elenchi di elementi possono essere usati come parametri. Il codice seguente, ad esempio, chiama l'attività `MakeDir` e imposta il valore della proprietà `Directories` dell'oggetto `MakeDir` sul valore della proprietà `BuildDir` dichiarata nell'esempio precedente.  
   
 ```xml  
 <Target Name="MakeBuildDirectory">  
@@ -77,7 +64,7 @@ Una piattaforma di compilazione deve poter eseguire un numero illimitato di azio
 ```  
   
 ## <a name="included-tasks"></a>Attività incluse  
- In [!INCLUDE[vstecmsbuild](../extensibility/internals/includes/vstecmsbuild_md.md)] sono disponibili diverse attività, ad esempio [Copy](../msbuild/copy-task.md) per eseguire la copia dei file, [MakeDir](../msbuild/makedir-task.md) per creare le directory e [Csc](../msbuild/csc-task.md) per compilare i file di codice sorgente di [!INCLUDE[csprcs](../data-tools/includes/csprcs_md.md)]. Per un elenco completo delle attività disponibili e informazioni sull'uso, vedere [Informazioni di riferimento sulle attività](../msbuild/msbuild-task-reference.md).  
+ [!INCLUDE[vstecmsbuild](../extensibility/internals/includes/vstecmsbuild_md.md)] include diverse attività, ad esempio [Copy](../msbuild/copy-task.md) per eseguire la copia dei file, [MakeDir](../msbuild/makedir-task.md) per creare le directory e [Csc](../msbuild/csc-task.md) per compilare i file di codice sorgente di [!INCLUDE[csprcs](../data-tools/includes/csprcs_md.md)]. Per un elenco completo delle attività disponibili e informazioni sull'uso, vedere [Informazioni di riferimento sulle attività](../msbuild/msbuild-task-reference.md).  
   
 ## <a name="overridden-tasks"></a>Attività sottoposte a override  
  [!INCLUDE[vstecmsbuild](../extensibility/internals/includes/vstecmsbuild_md.md)] cerca le attività in più posizioni. La prima posizione sono i file con estensione OverrideTasks archiviati nelle directory di .NET Framework. Le attività in questi file eseguono l'override delle altre attività con gli stessi nomi, incluse le attività nel file di progetto. La seconda posizione sono i file con estensione Tasks archiviati nelle directory di .NET Framework. Se l'attività non è presente in nessuna di queste posizioni, viene usata l'attività nel file di progetto.  

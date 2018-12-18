@@ -1,56 +1,58 @@
 ---
-title: "Eliminazione di ~ SAK file | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/05/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "file temporanei"
-  - "~ sak file"
-  - "origine plug-in del controllo, ~ file SAK"
+title: Eliminazione di ~ SAK file | Documenti Microsoft
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: vs-ide-sdk
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- temporary files
+- ~sak files
+- source control plug-ins, ~SAK files
 ms.assetid: 5277b5fa-073b-4bd1-8ba1-9dc913aa3c50
-caps.latest.revision: 15
-caps.handback.revision: 15
-ms.author: "gregvanl"
-manager: "ghogen"
+caps.latest.revision: "15"
+author: gregvanl
+ms.author: gregvanl
+manager: ghogen
+ms.workload: vssdk
+ms.openlocfilehash: 8d72a42c89cc775b9312d301a052ee102d977728
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
-# Eliminazione di ~ SAK file
-[!INCLUDE[vs2017banner](../../code-quality/includes/vs2017banner.md)]
-
-In plug\-in controllo del codice sorgente l'API 1,2, i file di ~SAK sono stati sostituiti dai flag di funzionalità e le nuove funzioni che rilevano se un plug\-in controllo del codice sorgente supporta il file di MSSCCPRJ e estrazioni in modo condivisi.  
+# <a name="elimination-of-sak-files"></a>Eliminazione di ~ SAK file
+1.2 API di plug-in controllo di origine, il ~ SAK file sono stati sostituiti da flag di capacità e nuove funzioni di rilevare se un plug-in controllo del codice sorgente supporta il file MSSCCPRJ estrazioni condivise.  
   
-## file di ~SAK  
- Visual Studio .NET 2003. sono stati creati i file temporanei con prefisso ~SAK.  Questi file vengono utilizzati per determinare se un plug\-in controllo del codice sorgente supporta:  
+## <a name="sak-files"></a>~ Il file SAK  
+ Visual Studio .NET 2003 creati i file temporanei con preceduti ~ SAK. Questi file vengono usati per determinare se un plug-in controllo del codice sorgente supporta:  
   
--   il file di MSSCCPRJ.SCC.  
+-   Il MSSCCPRJ. File SCC.  
   
--   Completamenti della transazione \(condivisi\) più.  
+-   Estrazioni multiple (condivise).  
   
- Per i collegamenti che supportano le funzioni avanzate forniti nel plug\-in controllo del codice sorgente l'API 1,2, l'ide per rilevare queste funzionalità senza creare i file temporanei con l'utilizzo delle nuove funzionalità, flag e funzioni, dettagliate nelle sezioni seguenti.  
+ Per i plug-in che supportano le funzioni avanzate disponibili nella 1.2 di API plug-in controllo origine, l'IDE è possibile rilevare queste funzionalità senza creare file temporanei tramite l'utilizzo di nuove funzionalità, flag e funzioni, dettagliate nelle sezioni seguenti.  
   
-## nuovi flag di funzionalità  
+## <a name="new-capability-flags"></a>Nuovo flag di capacità  
  `SCC_CAP_SCCFILE`  
   
  `SCC_CAP_MULTICHECKOUT`  
   
-## nuove funzioni  
+## <a name="new-functions"></a>Nuove funzioni  
  [SccWillCreateSccFile](../../extensibility/sccwillcreatesccfile-function.md)  
   
  [SccIsMultiCheckoutEnabled](../../extensibility/sccismulticheckoutenabled-function.md)  
   
- Se un plug\-in controllo del codice sorgente supporta i completamenti della transazione \(condivisi\) più, quindi dichiarare la funzionalità di `SCC_CAP_MULTICHECKOUT` e implementa la funzione di `SccIsMultiCheckOutEnabled` .  Questa funzione viene chiamata ogni volta che un'operazione di completamento della transazione viene applicata a qualsiasi progetto incluso nel controllo del codice sorgente.  
+ Se un plug-in controllo del codice sorgente supporta più estrazioni (condivise), quindi dichiara il `SCC_CAP_MULTICHECKOUT` funzionalità e implementa il `SccIsMultiCheckOutEnabled` (funzione). Questa funzione viene chiamata ogni volta che si verifica un'operazione di estrazione in uno dei progetti di controllo del codice sorgente.  
   
- Se un plug\-in controllo del codice sorgente supporta la creazione e l'utilizzo di un file di MSSCCPRJ.SCC, quindi dichiarare la funzionalità di `SCC_CAP_SCCFILE` e implementa [SccWillCreateSccFile](../../extensibility/sccwillcreatesccfile-function.md).  Questa funzione viene chiamata con un elenco di file.  La funzione restituisce `TRUE/FALSE` per ciascun file di indicare se Visual Studio è necessario utilizzare un file di MSSCCPRJ.SCC per.  Se il plug\-in controllo del codice sorgente sceglie di non supportare queste nuove funzionalità e funzioni, può utilizzare la seguente chiave del Registro di sistema per disabilitare la creazione di questi file:  
+ Se un plug-in controllo del codice sorgente supporta la creazione e utilizzo di un MSSCCPRJ. File SCC, quindi si dichiara il `SCC_CAP_SCCFILE` funzionalità e implementa il [SccWillCreateSccFile](../../extensibility/sccwillcreatesccfile-function.md). Questa funzione viene chiamata con un elenco di file. La funzione restituisce `TRUE/FALSE` per ogni file indicare se un MSSCCPRJ deve essere usata da Visual Studio. File SCC relativo. Se il plug-in controllo del codice sorgente sceglie di non supportare queste nuove funzionalità e funzioni, è possibile utilizzare la seguente chiave del Registro di sistema per disabilitare la creazione di questi file:  
   
- \[\=dword HKEY\_CURRENT\_USER \\Software\\Microsoft\\VisualStudio\\8.0\\SourceControl\] "DoNotCreateTemporaryFilesInSourceControl ": 00000001  
+ [HKEY_CURRENT_USER\Software\Microsoft\VisualStudio\8.0\SourceControl] "DoNotCreateTemporaryFilesInSourceControl" = DWORD: 00000001  
   
 > [!NOTE]
->  Se questa chiave del Registro di sistema è impostata su dword: 00000000, è equivalente alla chiave che è inesistente e Visual Studio è ancora tenta di creare file temporanei.  Tuttavia, se la chiave del Registro di sistema è impostata su dword: 00000001, Visual Studio non tenta di creare file temporanei.  Anziché presuppone che il plug\-in controllo del codice sorgente non supporti il file di MSSCCPRJ.SCC e non supporti i completamenti della transazione condivisi.  
+>  Se questa chiave del Registro di sistema è impostata su DWORD: 00000000, è equivalente alla chiave da inesistente e Visual Studio continua a tentare di creare file temporanei. Tuttavia, se la chiave del Registro di sistema è impostata su DWORD: 00000001, Visual Studio non tenta di creare i file temporanei. In alternativa, si presuppone che il plug-in controllo del codice sorgente non supporta il MSSCCPRJ. File di controllo del codice sorgente e non supporta estrazioni condivise.  
   
-## Vedere anche  
- [Novità di origine controllo plug\-in API versione 1.2](../../extensibility/internals/what-s-new-in-the-source-control-plug-in-api-version-1-2.md)
+## <a name="see-also"></a>Vedere anche  
+ [Novità della versione 1.2 dell'API del plug-in del controllo del codice sorgente](../../extensibility/internals/what-s-new-in-the-source-control-plug-in-api-version-1-2.md)

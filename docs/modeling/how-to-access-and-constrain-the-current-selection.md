@@ -1,65 +1,67 @@
 ---
-title: "Procedura: accedere e vincolare la selezione corrente | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "Linguaggio specifico di dominio, accesso alla selezione corrente"
-ms.assetid: 2990981e-dfae-416f-b0d0-7197f1242dfa
-caps.latest.revision: 14
-author: "alancameronwills"
-ms.author: "awills"
-manager: "douge"
-caps.handback.revision: 14
+title: 'Procedura: accedere e limitare la selezione corrente | Documenti Microsoft'
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.topic: article
+helpviewer_keywords:
+- Domain-Specific Language, accessing the current selection
+author: gewarren
+ms.author: gewarren
+manager: ghogen
+ms.workload:
+- multiple
+ms.technology: vs-ide-modeling
+ms.openlocfilehash: 81036e04abc9eac2cbed2879839e95cce52166fc
+ms.sourcegitcommit: 205d15f4558315e585c67f33d5335d5b41d0fcea
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 02/09/2018
 ---
-# Procedura: accedere e vincolare la selezione corrente
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
-Quando si scrive un gestore comandi o movimenti per il linguaggio specifico di dominio, è possibile determinare quale elemento utente selezionata. È possibile inoltre impedire alcune forme o i campi selezionati. Ad esempio, è possibile disporre che, quando l'utente fa clic su un elemento decorator icona, viene selezionata invece la forma che lo contiene. Vincolare la selezione in questo modo riduce il numero di gestori che è necessario scrivere. Inoltre rende più semplice per l'utente, che è possibile fare clic su un punto qualsiasi nella forma senza la necessità di evitare l'elemento decorator.  
+# <a name="how-to-access-and-constrain-the-current-selection"></a>Procedura: accedere e vincolare la selezione corrente
+Quando si scrive un gestore comandi o movimenti per il linguaggio specifico di dominio, è possibile determinare quale elemento complessiva dell'utente. È possibile anche impedire alcune forme o i campi selezionati. Ad esempio, è possibile disporre che quando l'utente fa clic su un elemento decorator icona, la forma che lo contiene viene selezionata. Limitare la selezione in questo modo riduce il numero dei gestori che è necessario scrivere. Rende inoltre più semplice per l'utente, che è possibile fare clic su un punto qualsiasi nella forma senza la necessità di evitare l'elemento decorator.  
   
-## Accesso alla selezione corrente da un gestore del comando  
- La classe di set di comandi per un linguaggio specifico di dominio contiene i gestori di comando per i comandi personalizzati. La <xref:Microsoft.VisualStudio.Modeling.Shell.CommandSet> classe da cui deriva la classe di set di comandi per un linguaggio specifico di dominio, fornisce alcuni membri per l'accesso alla selezione corrente.  
+## <a name="accessing-the-current-selection-from-a-command-handler"></a>Accede alla selezione corrente da un gestore del comando  
+ Classe del set di comandi per un linguaggio specifico di dominio contiene i gestori di comando per i comandi personalizzati. Il <xref:Microsoft.VisualStudio.Modeling.Shell.CommandSet> (classe), da cui deriva la classe di set di comandi per un linguaggio specifico di dominio, fornisce alcuni membri per l'accesso alla selezione corrente.  
   
- A seconda del comando, il gestore del comando potrebbe essere la selezione in Progettazione modelli, in Esplora modelli o la finestra attiva.  
+ A seconda del comando, il gestore del comando potrebbe essere necessario la selezione in Progettazione modelli, in Esplora modelli o la finestra attiva.  
   
-#### Per accedere alle informazioni di selezione  
+#### <a name="to-access-selection-information"></a>Per accedere alle informazioni di selezione  
   
 1.  La <xref:Microsoft.VisualStudio.Modeling.Shell.CommandSet> classe definisce i membri seguenti che possono essere utilizzati per accedere alla selezione corrente.  
   
-    |Membro|Descrizione|  
+    |Member|Descrizione|  
     |------------|-----------------|  
-    |Metodo <xref:Microsoft.VisualStudio.Modeling.Shell.CommandSetLibrary.IsAnyDocumentSelectionCompartment%2A>|Restituisce `true` Se uno degli elementi selezionati nella finestra di progettazione del modello è una forma raggruppamento; in caso contrario, `false`.|  
-    |Metodo <xref:Microsoft.VisualStudio.Modeling.Shell.CommandSetLibrary.IsDiagramSelected%2A>|Restituisce `true` Se il diagramma è selezionata nella finestra di progettazione del modello; in caso contrario, `false`.|  
-    |Metodo <xref:Microsoft.VisualStudio.Modeling.Shell.CommandSetLibrary.IsSingleDocumentSelection%2A>|Restituisce `true` Se esattamente un elemento è selezionato nella finestra di progettazione del modello; in caso contrario, `false`.|  
-    |Metodo <xref:Microsoft.VisualStudio.Modeling.Shell.CommandSetLibrary.IsSingleSelection%2A>|Restituisce `true` Se esattamente un elemento è selezionato nella finestra attiva; in caso contrario, `false`.|  
+    |Metodo <xref:Microsoft.VisualStudio.Modeling.Shell.CommandSetLibrary.IsAnyDocumentSelectionCompartment%2A>|Restituisce `true` se uno degli elementi selezionati nella finestra di progettazione del modello è una forma raggruppamento; in caso contrario, `false`.|  
+    |Metodo <xref:Microsoft.VisualStudio.Modeling.Shell.CommandSetLibrary.IsDiagramSelected%2A>|Restituisce `true` se il diagramma selezionato nella finestra di progettazione del modello; in caso contrario, `false`.|  
+    |Metodo <xref:Microsoft.VisualStudio.Modeling.Shell.CommandSetLibrary.IsSingleDocumentSelection%2A>|Restituisce `true` se esattamente un elemento è selezionato nella finestra di progettazione del modello; in caso contrario, `false`.|  
+    |Metodo <xref:Microsoft.VisualStudio.Modeling.Shell.CommandSetLibrary.IsSingleSelection%2A>|Restituisce `true` se esattamente un elemento è selezionato nella finestra attiva; in caso contrario, `false`.|  
     |Proprietà <xref:Microsoft.VisualStudio.Modeling.Shell.CommandSetLibrary.CurrentDocumentSelection%2A>|Ottiene una raccolta di sola lettura degli elementi selezionati nella finestra di progettazione del modello.|  
     |Proprietà <xref:Microsoft.VisualStudio.Modeling.Shell.CommandSetLibrary.CurrentSelection%2A>|Ottiene una raccolta di sola lettura degli elementi selezionati nella finestra attiva.|  
-    |Proprietà <xref:Microsoft.VisualStudio.Modeling.Shell.CommandSetLibrary.SingleDocumentSelection%2A>|Ottiene l'elemento principale della selezione in Progettazione modelli.|  
-    |Proprietà <xref:Microsoft.VisualStudio.Modeling.Shell.CommandSetLibrary.SingleSelection%2A>|Ottiene l'elemento principale della selezione nella finestra attiva.|  
+    |Proprietà <xref:Microsoft.VisualStudio.Modeling.Shell.CommandSetLibrary.SingleDocumentSelection%2A>|Ottiene l'elemento primario della selezione in Progettazione modelli.|  
+    |Proprietà <xref:Microsoft.VisualStudio.Modeling.Shell.CommandSetLibrary.SingleSelection%2A>|Ottiene l'elemento primario della selezione nella finestra attiva.|  
   
-2.  Il <xref:Microsoft.VisualStudio.Modeling.Shell.CommandSet.CurrentDocView%2A> proprietà della <xref:Microsoft.VisualStudio.Modeling.Shell.CommandSet> classe fornisce l'accesso a di <xref:Microsoft.VisualStudio.Modeling.Shell.DiagramDocView> oggetto che rappresenta la finestra di progettazione del modello e fornisce accesso aggiuntivo gli elementi selezionati nella finestra di progettazione del modello.  
+2.  Il <xref:Microsoft.VisualStudio.Modeling.Shell.CommandSet.CurrentDocView%2A> proprietà del <xref:Microsoft.VisualStudio.Modeling.Shell.CommandSet> classe fornisce l'accesso per il <xref:Microsoft.VisualStudio.Modeling.Shell.DiagramDocView> oggetto che rappresenta la finestra di progettazione del modello e fornisce gli elementi selezionati in Progettazione modelli di accesso aggiuntivo.  
   
-3.  Inoltre, il codice generato definisce una proprietà di finestra strumento di Esplora risorse e una proprietà di selezione Esplora nel comando set \(classe\) per il linguaggio specifico di dominio.  
+3.  Inoltre, il codice generato definisce una proprietà di finestra strumento Esplora e classe per il linguaggio specifico di dominio di una proprietà di selezione Esplora nel comando set.  
   
-    -   La proprietà della finestra dello strumento explorer restituisce un'istanza della classe della finestra Esplora strumento per il linguaggio specifico di dominio. Classe della finestra dello strumento explorer deriva la <xref:Microsoft.VisualStudio.Modeling.Shell.ModelExplorerToolWindow> classe e rappresenta Esplora modelli per il linguaggio specifico di dominio.  
+    -   La proprietà della finestra dello strumento Esplora restituisce un'istanza della classe di finestra Esplora strumento per il linguaggio specifico di dominio. Deriva la classe della finestra dello strumento Esplora le <xref:Microsoft.VisualStudio.Modeling.Shell.ModelExplorerToolWindow> classe e rappresenta Esplora modelli per il linguaggio specifico di dominio.  
   
     -   Il `ExplorerSelection` proprietà restituisce l'elemento selezionato nella finestra di Esplora modelli per il linguaggio specifico di dominio.  
   
-## Determinare quale finestra è attiva  
- Il <xref:Microsoft.VisualStudio.Modeling.Shell.IMonitorSelectionService> contiene interfaccia definisce i membri che forniscono l'accesso allo stato di selezione corrente nella shell. È possibile ottenere un <xref:Microsoft.VisualStudio.Modeling.Shell.IMonitorSelectionService> oggetto di classe del pacchetto o la classe di set di comandi per il linguaggio specifico di dominio tramite il `MonitorSelection` definita nella classe di base di ogni proprietà. Deriva la classe del pacchetto la <xref:Microsoft.VisualStudio.Modeling.Shell.ModelingPackage> classe e la classe di set di comandi deriva la <xref:Microsoft.VisualStudio.Modeling.Shell.CommandSet> classe.  
+## <a name="determining-which-window-is-active"></a>Determinare quale finestra è attiva  
+ Il <xref:Microsoft.VisualStudio.Modeling.Shell.IMonitorSelectionService> contiene interfaccia definisce i membri che forniscono l'accesso allo stato di selezione corrente nella shell. È possibile ottenere un <xref:Microsoft.VisualStudio.Modeling.Shell.IMonitorSelectionService> oggetto di classe del pacchetto o la classe di comando set per il linguaggio specifico di dominio tramite il `MonitorSelection` definita nella classe di base di ogni proprietà. Deriva la classe del pacchetto di <xref:Microsoft.VisualStudio.Modeling.Shell.ModelingPackage> classe e la classe di comando set deriva il <xref:Microsoft.VisualStudio.Modeling.Shell.CommandSet> classe.  
   
-#### Per determinare da un gestore del comando, il tipo di finestra è attivo  
+#### <a name="to-determine-from-a-command-handler-what-type-of-window-is-active"></a>Per determinare da un gestore del comando è attivo il tipo di finestra  
   
-1.  Il <xref:Microsoft.VisualStudio.Modeling.Shell.CommandSetLibrary.MonitorSelection%2A> proprietà della <xref:Microsoft.VisualStudio.Modeling.Shell.CommandSet> classe restituisce un' <xref:Microsoft.VisualStudio.Modeling.Shell.IMonitorSelectionService> oggetto che fornisce accesso allo stato di selezione corrente nella shell.  
+1.  Il <xref:Microsoft.VisualStudio.Modeling.Shell.CommandSetLibrary.MonitorSelection%2A> proprietà del <xref:Microsoft.VisualStudio.Modeling.Shell.CommandSet> classe restituisce un <xref:Microsoft.VisualStudio.Modeling.Shell.IMonitorSelectionService> oggetto che fornisce accesso allo stato di selezione corrente nella shell.  
   
-2.  Il <xref:Microsoft.VisualStudio.Modeling.Shell.IMonitorSelectionService.CurrentSelectionContainer%2A> di proprietà di <xref:Microsoft.VisualStudio.Modeling.Shell.IMonitorSelectionService> interfaccia ottiene il contenitore di selezione attiva, che può essere diverso dalla finestra attiva.  
+2.  Il <xref:Microsoft.VisualStudio.Modeling.Shell.IMonitorSelectionService.CurrentSelectionContainer%2A> proprietà del <xref:Microsoft.VisualStudio.Modeling.Shell.IMonitorSelectionService> interfaccia ottiene il contenitore di selezione attiva, che può essere diverso dalla finestra attiva.  
   
-3.  Aggiungere che le seguenti proprietà per il comando set \(classe\) è il linguaggio specifico di dominio per determinare il tipo di finestra è attivo.  
+3.  Aggiungere che le seguenti proprietà per il comando set classe è il linguaggio specifico di dominio per determinare il tipo di finestra è attivo.  
   
-    ```c#  
+    ```csharp  
     // using Microsoft.VisualStudio.Modeling.Shell;  
   
     // Returns true if the model designer is the active selection container;  
@@ -85,29 +87,29 @@ Quando si scrive un gestore comandi o movimenti per il linguaggio specifico di d
     }  
     ```  
   
-## Vincolare la selezione  
- L'aggiunta di regole di selezione, è possibile controllare quali elementi sono selezionati quando l'utente seleziona un elemento del modello. Per consentire all'utente di considerare un numero di elementi come una singola unità, ad esempio, è possibile utilizzare una regola di selezione.  
+## <a name="constraining-the-selection"></a>Limitare la selezione  
+ Aggiungendo le regole di selezione, è possibile controllare quali elementi sono selezionati quando l'utente seleziona un elemento del modello. Per consentire all'utente di gestire un numero di elementi come una singola unità, ad esempio, è possibile utilizzare una regola di selezione.  
   
-#### Per creare una regola di selezione  
+#### <a name="to-create-a-selection-rule"></a>Per creare una regola di selezione  
   
-1.  Creare un file di codice personalizzato nel progetto DSL  
+1.  Creare un file di codice personalizzato nel progetto di DSL  
   
 2.  Definire una classe di regola di selezione che è derivata dalla <xref:Microsoft.VisualStudio.Modeling.Diagrams.DiagramSelectionRules> classe.  
   
 3.  Eseguire l'override di <xref:Microsoft.VisualStudio.Modeling.Diagrams.DiagramSelectionRules.GetCompliantSelection%2A> metodo della classe di regola di selezione per applicare i criteri di selezione.  
   
-4.  Aggiungere una definizione di classe parziale per la classe ClassDiagram al file di codice personalizzato.  
+4.  Aggiungere una definizione di classe parziale per la classe ClassDiagram nel file di codice personalizzato.  
   
-     La `ClassDiagram` classe deriva dalla <xref:Microsoft.VisualStudio.Modeling.Diagrams.Diagram> classe e viene definito nel file di codice generato, Diagram.cs, nel progetto DSL.  
+     Il `ClassDiagram` deriva dalla classe di <xref:Microsoft.VisualStudio.Modeling.Diagrams.Diagram> classe e viene definito nel file di codice generato, Diagram.cs, nel progetto DSL.  
   
-5.  Eseguire l'override di <xref:Microsoft.VisualStudio.Modeling.Diagrams.Diagram.SelectionRules%2A> proprietà della `ClassDiagram` classe per restituire la regola di selezione personalizzata.  
+5.  Eseguire l'override di <xref:Microsoft.VisualStudio.Modeling.Diagrams.Diagram.SelectionRules%2A> proprietà del `ClassDiagram` classe per restituire la regola di selezione personalizzata.  
   
-     L'implementazione predefinita della <xref:Microsoft.VisualStudio.Modeling.Diagrams.Diagram.SelectionRules%2A> proprietà ottiene un oggetto regola di selezione che non modifica la selezione.  
+     L'implementazione predefinita del <xref:Microsoft.VisualStudio.Modeling.Diagrams.Diagram.SelectionRules%2A> proprietà ottiene un oggetto regola di selezione che non modifica la selezione.  
   
-### Esempio  
- Il file di codice seguente crea una regola di selezione che si espande la selezione per includere tutte le istanze di ciascuna delle forme dominio che è stato inizialmente selezionato.  
+### <a name="example"></a>Esempio  
+ Il file di codice seguente crea una regola di selezione che si espande la selezione per includere tutte le istanze di ciascuna delle forme di dominio che è stato inizialmente selezionato.  
   
-```c#  
+```csharp  
 using System;  
 using System.Collections.Generic;  
 using Microsoft.VisualStudio.Modeling;  
@@ -205,7 +207,7 @@ namespace CompanyName.ProductName.GroupingDsl
 }  
 ```  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  <xref:Microsoft.VisualStudio.Modeling.Shell.CommandSet>   
  <xref:Microsoft.VisualStudio.Modeling.Shell.ModelingPackage>   
  <xref:Microsoft.VisualStudio.Modeling.Shell.DiagramDocView>   

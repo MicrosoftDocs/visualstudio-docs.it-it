@@ -1,28 +1,28 @@
 ---
-title: "Tempo di I/O (visualizzazione Thread) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "vs.cv.threads.timeline.io"
-helpviewer_keywords: 
-  - "Visualizzatore di concorrenze, Tempo di I/O (visualizzazione thread)"
+title: Periodo di I/O (visualizzazione dei thread) | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: vs-ide-debug
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: vs.cv.threads.timeline.io
+helpviewer_keywords: Concurrency Visualizer, I/O time (Threads View)
 ms.assetid: 0c4ec14d-d8dd-49c1-999c-dcbf4e8e1dc8
-caps.latest.revision: 5
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 5
+caps.latest.revision: "5"
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.workload: multiple
+ms.openlocfilehash: abea2c5ed246fe3463205894326a7f9611b56043
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
-# Tempo di I/O (visualizzazione Thread)
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
-Questi segmenti nella sequenza temporale sono associati a tempi di blocco suddivisi in categorie come I\/O.  Ciò significa che un thread è in attesa del completamento di un'operazione di I\/O.  È possibile che il thread sia stato bloccato in una API o da un'attesa del kernel correlata a I\/O che il visualizzatore di concorrenze calcola come I\/O.  Rientrano in questo gruppo le interfacce API `CreateFile()`, `ReadFile()` e `WSARecv()`.  
+# <a name="io-time-threads-view"></a>Tempo di I/O (visualizzazione Thread)
+Questi segmenti nella sequenza temporale sono associati ai periodi di blocco categorizzati come I/O. Ciò significa che un thread è in attesa del completamento di un'operazione di I/O. È possibile che il thread sia stato bloccato in un'API oppure da un tempo di attesa del kernel correlato all'I/O che il visualizzatore di concorrenza conteggia come I/O. Le interfacce API `CreateFile()`, `ReadFile()` e `WSARecv()` rientrano in questo gruppo.  
   
-## Vedere anche  
- [Visualizzazione Thread](../profiling/threads-view-parallel-performance.md)
+## <a name="see-also"></a>Vedere anche  
+ [Threads View](../profiling/threads-view-parallel-performance.md) (Visualizzazione Thread)

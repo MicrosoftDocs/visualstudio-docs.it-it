@@ -1,47 +1,48 @@
 ---
-title: "Funzione encodeURIComponent (JavaScript) | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/18/2017"
-ms.prod: "windows-client-threshold"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-javascript"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "encodeURIComponent"
-dev_langs: 
-  - "JavaScript"
-  - "TypeScript"
-  - "DHTML"
-helpviewer_keywords: 
-  - "encodeURIComponent (metodo)"
+title: Funzione encodeURIComponent (JavaScript) | Documenti Microsoft
+ms.custom: 
+ms.date: 01/18/2017
+ms.prod: windows-client-threshold
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-javascript
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords: encodeURIComponent
+dev_langs:
+- JavaScript
+- TypeScript
+- DHTML
+helpviewer_keywords: encodeURIComponent method
 ms.assetid: 8202bce6-1342-40dc-a5ef-ac6d210a7d15
-caps.latest.revision: 12
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 12
+caps.latest.revision: "12"
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.openlocfilehash: 56680e9bcfe1de61d8a1eabd0ff8d2eced01d603
+ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/27/2017
 ---
-# Funzione encodeURIComponent (JavaScript)
-Codifica una stringa di testo come componente valido di un URI \(Uniform Resource Identifier\).  
+# <a name="encodeuricomponent-function-javascript"></a>Funzione encodeURIComponent (JavaScript)
+Codifica una stringa di testo come un componente valido di un URI (Uniform Resource Identifier).  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
 encodeURIComponent(encodedURIString)  
 ```  
   
-## Note  
- L'argomento `encodedURIString` obbligatorio è un valore che rappresenta un componente URI codificato.  
+## <a name="remarks"></a>Note  
+ Obbligatorio `encodedURIString` argomento è un valore che rappresenta un componente URI codificato.  
   
- La funzione `encodeURIComponent` restituisce un URI codificato.  Se si passa il risultato a `decodeURIComponent`, viene restituita la stringa originale.  Dal momento che la funzione `encodeURIComponent` codifica tutti i caratteri, prestare attenzione se la stringa rappresenta un percorso quale \/folder1\/folder2\/default.html.  Le barre verranno codificate e non saranno valide se inviate come richiesta a un server Web.  Utilizzare la funzione `encodeURI` se la stringa contiene più di un componente URI.  
+ Il `encodeURIComponent` funzione restituisce un URI codificato. Se si passa il risultato a `decodeURIComponent`, viene restituita la stringa originale. Poiché il `encodeURIComponent` funzione codifica tutti i caratteri, prestare attenzione se la stringa rappresenta un percorso, ad esempio **/folder1/folder2/default.html**. I caratteri di barra verranno codificati e non sarà validi se inviato come richiesta a un server web. Utilizzare il `encodeURI` funzione se la stringa contiene più di un componente URI.  
   
-## Esempio  
- Il seguente codice prima codifica un componente URI e poi lo decodifica.  
+## <a name="example"></a>Esempio  
+ Il codice seguente consente innanzitutto di codificare un componente URI e lo decodifica.  
   
-```javascript  
+```JavaScript  
 var uriEncode = encodeURIComponent ("www.Not a URL.com");  
 var uriDecode = decodeURIComponent(uriEncode);  
   
@@ -54,9 +55,9 @@ document.write(uriDecode);
 // www.Not a URL.com  
 ```  
   
-## Requisiti  
+## <a name="requirements"></a>Requisiti  
  [!INCLUDE[jsv55](../../javascript/reference/includes/jsv55-md.md)]  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Funzione decodeURI](../../javascript/reference/decodeuri-function-javascript.md)   
- [Funzione decodeURIComponent](../../javascript/reference/decodeuricomponent-function-javascript.md)
+ [Funzione DecodeURIComponent](../../javascript/reference/decodeuricomponent-function-javascript.md)

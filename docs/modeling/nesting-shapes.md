@@ -1,25 +1,21 @@
 ---
-title: "Annidamento di forme | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 53066a5d-5b0c-4f60-adf1-60ac81cb9ab1
-caps.latest.revision: 2
-author: "alancameronwills"
-ms.author: "awills"
-manager: "douge"
-caps.handback.revision: 2
+title: Forme di annidamento | Documenti Microsoft
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.topic: article
+author: gewarren
+ms.author: gewarren
+manager: ghogen
+ms.workload:
+- multiple
+ms.technology: vs-ide-modeling
+ms.openlocfilehash: 0577db068f73aa221581a9b15851df131a523089
+ms.sourcegitcommit: 205d15f4558315e585c67f33d5335d5b41d0fcea
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 02/09/2018
 ---
-# Annidamento di forme
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
-Inserire qui l'introduzione.  
-  
-## Intestazione della sezione  
- Inserire qui il corpo della sezione.  
-  
-### Intestazione della sottosezione  
- Inserire qui il corpo della sottosezione.
+# <a name="nesting-shapes"></a>Annidamento di forme
+Vedere [blog di Jean-Marc Prieur](http://blogs.msdn.com/b/jmprieur/archive/2008/09/03/dsl-tools-support-of-nested-shapes-in-visual-studio-2008-sp1.aspx)

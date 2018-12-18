@@ -1,12 +1,10 @@
 ---
-title: 'Walkthrough: Binding Data to Controls on a Word Actions Pane | Microsoft Docs'
+title: 'Procedura dettagliata: Associazione dati a controlli in un riquadro delle azioni di Word | Documenti Microsoft'
 ms.custom: 
 ms.date: 02/02/2017
-ms.prod: visual-studio-dev14
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- office-development
+ms.technology: office-development
 ms.tgt_pltfrm: 
 ms.topic: article
 dev_langs:
@@ -19,226 +17,230 @@ helpviewer_keywords:
 - data binding [Office development in Visual Studio], actions panes
 - actions panes [Office development in Visual Studio], binding controls
 - smart documents [Office development in Visual Studio], data binding
-ms.assetid: 5ef72fc7-412b-4454-9890-4479a13ee7f9
-caps.latest.revision: 64
-author: kempb
-ms.author: kempb
+author: TerryGLee
+ms.author: tglee
 manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: eb5c9550fd29b0e98bf63a7240737da4f13f3249
-ms.openlocfilehash: 2c2504808ee3442e531d359059796b8117ab64a1
-ms.contentlocale: it-it
-ms.lasthandoff: 08/30/2017
-
+ms.workload: office
+ms.openlocfilehash: c53c8ba65c07f2c488f33835cb045524069e3285
+ms.sourcegitcommit: f9fbf1f55f9ac14e4e5c6ae58c30dc1800ca6cda
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 01/10/2018
 ---
-# <a name="walkthrough-binding-data-to-controls-on-a-word-actions-pane"></a>Walkthrough: Binding Data to Controls on a Word Actions Pane
-  This walkthrough demonstrates data binding to controls on an actions pane in Word. The controls demonstrate a master/detail relation between tables in a SQL Server database.  
+# <a name="walkthrough-binding-data-to-controls-on-a-word-actions-pane"></a>Procedura dettagliata: associazione di dati a controlli in un riquadro delle azioni di Word
+  Questa procedura dettagliata viene illustrata l'associazione di dati a controlli in un riquadro azioni in Word. I controlli mostrano una relazione master/detail tra le tabelle in un database SQL Server.  
   
  [!INCLUDE[appliesto_wdalldoc](../vsto/includes/appliesto-wdalldoc-md.md)]  
   
- This walkthrough illustrates the following tasks:  
+ Questa procedura dettagliata illustra le attività seguenti:  
   
--   Creating an actions pane with Windows Forms controls that are bound to data.  
+-   Creazione di un riquadro azioni con controlli Windows Form che sono associati a dati.  
   
--   Using a master/detail relationship to display data in the controls.  
+-   Utilizzo di una relazione master-Details per visualizzare dati nei controlli.  
   
--   Show the actions pane when the application opens.  
+-   Visualizzare il riquadro azioni all'apertura dell'applicazione.  
   
 > [!NOTE]  
->  Your computer might show different names or locations for some of the Visual Studio user interface elements in the following instructions. The Visual Studio edition that you have and the settings that you use determine these elements. For more information, see [Personalize the Visual Studio IDE](../ide/personalizing-the-visual-studio-ide.md).  
+>  I nomi o i percorsi visualizzati per alcuni elementi dell'interfaccia utente di Visual Studio nelle istruzioni seguenti potrebbero essere diversi nel computer in uso. La versione di Visual Studio in uso e le impostazioni configurate determinano questi elementi. Per altre informazioni, vedere [Personalizzare l'IDE di Visual Studio](../ide/personalizing-the-visual-studio-ide.md).  
   
-## <a name="prerequisites"></a>Prerequisites  
- You need the following components to complete this walkthrough:  
+## <a name="prerequisites"></a>Prerequisiti  
+ Per completare la procedura dettagliata, è necessario disporre dei componenti seguenti:  
   
 -   [!INCLUDE[vsto_vsprereq](../vsto/includes/vsto-vsprereq-md.md)]  
   
--   [!INCLUDE[Word_15_short](../vsto/includes/word-15-short-md.md)] or [!INCLUDE[Word_14_short](../vsto/includes/word-14-short-md.md)].  
+-   [!INCLUDE[Word_15_short](../vsto/includes/word-15-short-md.md)] o [!INCLUDE[Word_14_short](../vsto/includes/word-14-short-md.md)].  
   
--   Access to a server with the Northwind SQL Server sample database.  
+-   Accesso a un server con il database di esempio Northwind di SQL Server.  
   
--   Permissions to read from and write to the SQL Server database.  
+-   Autorizzazioni per leggere e scrivere nel database di SQL Server.  
   
-## <a name="creating-the-project"></a>Creating the Project  
- The first step is to create a Word Document project.  
+## <a name="creating-the-project"></a>Creazione del progetto  
+ Il primo passaggio consiste nel creare un progetto Documento di Word.  
   
-#### <a name="to-create-a-new-project"></a>To create a new project  
+#### <a name="to-create-a-new-project"></a>Per creare un nuovo progetto  
   
-1.  Create a Word Document project with the name **My Word Actions Pane**. In the wizard, select **Create a new document**.  
+1.  Creare un progetto documento di Word con il nome **My Word Actions Pane**. Nella procedura guidata, selezionare **creare un nuovo documento**.  
   
-     For more information, see [How to: Create Office Projects in Visual Studio](../vsto/how-to-create-office-projects-in-visual-studio.md).  
+     Per altre informazioni, vedere [How to: Create Office Projects in Visual Studio](../vsto/how-to-create-office-projects-in-visual-studio.md).  
   
-     Visual Studio opens the new Word document in the designer and adds the **My Word Actions Pane** project to **Solution Explorer**.  
+     Visual Studio apre il nuovo documento di Word nella finestra di progettazione e aggiunge il **My Word Actions Pane** progetto **Esplora**.  
   
-## <a name="adding-controls-to-the-actions-pane"></a>Adding Controls to the Actions Pane  
- For this walkthrough, you need an actions pane control that contains data-bound Windows Forms controls. Add a data source to the project, and then drag controls from the **Data Sources** window to the actions pane control.  
+## <a name="adding-controls-to-the-actions-pane"></a>Aggiunta di controlli al riquadro azioni  
+ Questa procedura dettagliata, è necessario un controllo riquadro azioni che contiene controlli Windows Form con associazione a dati. Aggiungere un'origine dati al progetto e quindi trascinare controlli dal **origini dati** finestra al controllo del riquadro azioni.  
   
-#### <a name="to-add-an-actions-pane-control"></a>To add an actions pane control  
+#### <a name="to-add-an-actions-pane-control"></a>Per aggiungere un controllo riquadro azioni  
   
-1.  Select the **My Word Actions Pane** project in **Solution Explorer**.  
+1.  Selezionare il **My Word Actions Pane** nel progetto **Esplora**.  
   
-2.  On the **Project** menu, click **Add New Item**.  
+2.  Nel menu **Progetto** fare clic su **Aggiungi nuovo elemento**.  
   
-3.  In the **Add New Item** dialog box, select **Actions Pane Control**, name it **ActionsControl**, and then click **Add**.  
+3.  Nel **Aggiungi nuovo elemento** nella finestra di dialogo **controllo riquadro azioni**, denominarlo **ActionsControl**, quindi fare clic su **Aggiungi**.  
   
-#### <a name="to-add-a-data-source-to-the-project"></a>To add a data source to the project  
+#### <a name="to-add-a-data-source-to-the-project"></a>Per aggiungere un'origine dati al progetto  
   
-1.  If the **Data Sources** window is not visible, display it by, on the menu bar, choosing **View**, **Other Windows**, **Data Sources**.  
-  
-    > [!NOTE]  
-    >  If **Show Data Sources** is not available, click the Word document and then check again.  
-  
-2.  Click **Add New Data Source** to start the **Data Source Configuration Wizard**.  
-  
-3.  Select **Database** and then click **Next**.  
-  
-4.  Select a data connection to the Northwind sample SQL Server database, or add a new connection by using the **New Connection** button.  
-  
-5.  Click **Next**.  
-  
-6.  Clear the option to save the connection if it is selected, and then click **Next**.  
-  
-7.  Expand the **Tables** node in the **Database objects** window.  
-  
-8.  Select the check box next to the **Suppliers** and **Products** tables.  
-  
-9. Click **Finish**.  
-  
- The wizard adds the **Suppliers** table and **Products** table to the **Data Sources** window. It also adds a typed dataset to your project that is visible in **Solution Explorer**.  
-  
-#### <a name="to-add-data-bound-windows-forms-controls-to-an-actions-pane-control"></a>To add data-bound Windows Forms controls to an actions pane control  
-  
-1.  In the **Data Sources** window, expand the **Suppliers** table.  
-  
-2.  Click the drop-down arrow on the **Company Name** node, and select **ComboBox**.  
-  
-3.  Drag **CompanyName** from the **Data Sources** window to the actions pane control.  
-  
-     A <xref:System.Windows.Forms.ComboBox> control is created on the actions pane control. At the same time, a <xref:System.Windows.Forms.BindingSource> named `SuppliersBindingSource`, a table adapter, and a <xref:System.Data.DataSet> are added to the project in the component tray.  
-  
-4.  Select `SuppliersBindingNavigator` in the **Component** tray and press DELETE. You will not use the `SuppliersBindingNavigator` in this walkthrough.  
+1.  Se la finestra **Origini dati** non è visibile, visualizzarla scegliendo **Visualizza**, **Altre finestre**e **Origini dati**dalla barra dei menu.  
   
     > [!NOTE]  
-    >  Deleting the `SuppliersBindingNavigator` does not remove all of the code that was generated for it. You can remove this code.  
+    >  Se **Mostra origini dati** non è disponibile, fare clic sul documento di Word e verificare nuovamente.  
   
-5.  Move the combo box so that it is under the label and change the **Size** property to **171, 21**.  
+2.  Fare clic su **Aggiungi nuova origine dati** per avviare il **configurazione guidata origine dati**.  
   
-6.  In the **Data Sources** window, expand the **Products** table that is a child of the **Suppliers** table.  
+3.  Selezionare **Database** e quindi fare clic su **Avanti**.  
   
-7.  Click the drop-down arrow on the **ProductName** node, and select **ListBox**.  
+4.  Selezionare una connessione dati al database di SQL Server di esempio Northwind, o aggiungere una nuova connessione utilizzando il **nuova connessione** pulsante.  
   
-8.  Drag **ProductName** to the actions pane control.  
+5.  Scegliere **Avanti**.  
   
-     A <xref:System.Windows.Forms.ListBox> control is created on the actions pane control. At the same time, a <xref:System.Windows.Forms.BindingSource> named `ProductBindingSource` and a table adapter are added to the project in the component tray.  
+6.  Deselezionare l'opzione per salvare la connessione se è selezionata, quindi scegliere **Avanti**.  
   
-9. Move the list box so that it is under the label and change the **Size** property to **171,95**.  
+7.  Espandere il **tabelle** nodo il **oggetti di Database** finestra.  
   
-10. Drag a <xref:System.Windows.Forms.Button> from the **Toolbox** onto the actions pane control and place it below the list box.  
+8.  Selezionare la casella di controllo accanto al **Suppliers** e **prodotti** tabelle.  
   
-11. Right-click the <xref:System.Windows.Forms.Button>, click **Properties** on the shortcut menu, and change the following properties.  
+9. Scegliere **Fine**.  
   
-    |Property|Value|  
+ La procedura guidata aggiunge il **Suppliers** tabella e **prodotti** tabella il **origini dati** finestra. Aggiunge un dataset tipizzato al progetto che è visibile in **Esplora**.  
+  
+#### <a name="to-add-data-bound-windows-forms-controls-to-an-actions-pane-control"></a>Per aggiungere controlli Windows Form con associazione a dati a un controllo riquadro azioni  
+  
+1.  Nel **origini dati** finestra, espandere il **Suppliers** tabella.  
+  
+2.  Fare clic sulla freccia a discesa di **nome società** nodo e selezionare **ComboBox**.  
+  
+3.  Trascinare **CompanyName** dal **origini dati** finestra al controllo del riquadro azioni.  
+  
+     Oggetto <xref:System.Windows.Forms.ComboBox> controllo viene creato sul controllo riquadro azioni. Allo stesso tempo, un <xref:System.Windows.Forms.BindingSource> denominato `SuppliersBindingSource`, un adattatore di tabella e un <xref:System.Data.DataSet> vengono aggiunti al progetto nella barra dei componenti.  
+  
+4.  Selezionare `SuppliersBindingNavigator` nel **componente** barra delle applicazioni e premere CANC. Non si utilizzerà il `SuppliersBindingNavigator` in questa procedura dettagliata.  
+  
+    > [!NOTE]  
+    >  L'eliminazione di `SuppliersBindingNavigator` non rimuove tutto il codice che è stato generato. È possibile rimuovere questo codice.  
+  
+5.  Spostare la casella combinata in modo da posizionarla sotto l'etichetta e la modifica di **dimensioni** proprietà **171, 21**.  
+  
+6.  Nel **origini dati** finestra, espandere il **prodotti** tabella figlio il **Suppliers** tabella.  
+  
+7.  Fare clic sulla freccia a discesa di **ProductName** nodo e selezionare **ListBox**.  
+  
+8.  Trascinare **ProductName** al controllo del riquadro azioni.  
+  
+     Oggetto <xref:System.Windows.Forms.ListBox> controllo viene creato sul controllo riquadro azioni. Allo stesso tempo, un <xref:System.Windows.Forms.BindingSource> denominato `ProductBindingSource` e un adattatore di tabella vengono aggiunti al progetto nella barra dei componenti.  
+  
+9. Spostare la casella di riepilogo in modo da posizionarla sotto l'etichetta e la modifica di **dimensioni** proprietà **171, 95**.  
+  
+10. Trascinare un <xref:System.Windows.Forms.Button> dal **della casella degli strumenti** nel riquadro azioni di controllo e posizionarla sotto la casella di riepilogo.  
+  
+11. Fare doppio clic su di <xref:System.Windows.Forms.Button>, fare clic su **proprietà** nel menu di scelta rapida e modificare le proprietà seguenti.  
+  
+    |Proprietà|Valore|  
     |--------------|-----------|  
-    |**Name**|**Insert**|  
-    |**Text**|**Insert**|  
+    |**Name**|**Inserisci**|  
+    |**per**|**Inserisci**|  
   
-12. Resize the user control to fit the controls.  
+12. Ridimensionare il controllo utente per contenere i controlli.  
   
-## <a name="setting-up-the-data-source"></a>Setting Up the Data Source  
- To set up the data source, add code to the <xref:System.Windows.Forms.UserControl.Load> event of the actions pane control to fill the control with data from the <xref:System.Data.DataTable>, and set the <xref:System.Windows.Forms.Binding.DataSource%2A> and <xref:System.Windows.Forms.BindingSource.DataMember%2A> properties for each control.  
+## <a name="setting-up-the-data-source"></a>Impostazione dell'origine dati  
+ Per impostare l'origine dati, aggiungere codice al <xref:System.Windows.Forms.UserControl.Load> evento del controllo del riquadro azioni per riempire il controllo con i dati di <xref:System.Data.DataTable>e impostare il <xref:System.Windows.Forms.Binding.DataSource%2A> e <xref:System.Windows.Forms.BindingSource.DataMember%2A> proprietà per ogni controllo.  
   
-#### <a name="to-load-the-control-with-data"></a>To load the control with data  
+#### <a name="to-load-the-control-with-data"></a>Per caricare i dati nel controllo  
   
-1.  In the <xref:System.Windows.Forms.UserControl.Load> event handler of the `ActionsControl` class, add the following code.  
+1.  Nel <xref:System.Windows.Forms.UserControl.Load> gestore dell'evento del `ActionsControl` classe, aggiungere il codice seguente.  
   
-     [!code-vb[Trin_VstcoreActionsPaneWord#1](../vsto/codesnippet/VisualBasic/Trin_VstcoreActionsPaneWordVB/ActionsControl.vb#1)]  [!code-csharp[Trin_VstcoreActionsPaneWord#1](../vsto/codesnippet/CSharp/Trin_VstcoreActionsPaneWordCS/ActionsControl.cs#1)]  
+     [!code-vb[Trin_VstcoreActionsPaneWord#1](../vsto/codesnippet/VisualBasic/Trin_VstcoreActionsPaneWordVB/ActionsControl.vb#1)]
+     [!code-csharp[Trin_VstcoreActionsPaneWord#1](../vsto/codesnippet/CSharp/Trin_VstcoreActionsPaneWordCS/ActionsControl.cs#1)]  
   
-2.  In C#, you must attach the event handler to the <xref:System.Windows.Forms.UserControl.Load> event. You can place this code in the `ActionsControl` constructor, after the call to `InitializeComponent`. For more information about how to create event handlers, see [How to: Create Event Handlers in Office Projects](../vsto/how-to-create-event-handlers-in-office-projects.md).  
+2.  In c#, è necessario collegare il gestore dell'evento per il <xref:System.Windows.Forms.UserControl.Load> evento. È possibile inserire il codice nel `ActionsControl` costruttore, dopo la chiamata a `InitializeComponent`. Per ulteriori informazioni su come creare gestori eventi, vedere [procedura: creare gestori eventi nei progetti di Office](../vsto/how-to-create-event-handlers-in-office-projects.md).  
   
      [!code-csharp[Trin_VstcoreActionsPaneWord#33](../vsto/codesnippet/CSharp/Trin_VstcoreActionsPaneWordCS/ActionsControl.cs#33)]  
   
-#### <a name="to-set-data-binding-properties-of-the-controls"></a>To set data binding properties of the controls  
+#### <a name="to-set-data-binding-properties-of-the-controls"></a>Impostare le proprietà di associazione di dati dei controlli  
   
-1.  Select the `CompanyNameComboBox` control.  
+1.  Selezionare il controllo `CompanyNameComboBox`.  
   
-2.  In the **Properties** window, click the button to the right of the **DataSource** property, and select **suppliersBindingSource**.  
+2.  Nel **proprietà** finestra, fare clic sul pulsante a destra del **DataSource** proprietà e selezionare **suppliersBindingSource**.  
   
-3.  Click the button to the right of the **DisplayMember** property, and select **CompanyName**.  
+3.  Fare clic sul pulsante a destra del **DisplayMember** proprietà e selezionare **CompanyName**.  
   
-4.  Expand the **DataBindings** property, click the button to the right of the **Text** property, and select **None**.  
+4.  Espandere il **DataBindings** proprietà, fare clic sul pulsante a destra del **testo** proprietà e selezionare **Nessuno**.  
   
-5.  Select the `ProductNameListBox` control.  
+5.  Selezionare il controllo `ProductNameListBox`.  
   
-6.  In the **Properties** window, click the button to the right of the **DataSource** property, and select **productsBindingSource**.  
+6.  Nel **proprietà** finestra, fare clic sul pulsante a destra del **DataSource** proprietà e selezionare **productsBindingSource**.  
   
-7.  Click the button to the right of the **DisplayMember** property, and select **ProductName**.  
+7.  Fare clic sul pulsante a destra del **DisplayMember** proprietà e selezionare **ProductName**.  
   
-8.  Expand the **DataBindings** property, click the button to the right of the **SelectedValue** property, and select **None**.  
+8.  Espandere il **DataBindings** proprietà, fare clic sul pulsante a destra del **SelectedValue** proprietà e selezionare **Nessuno**.  
   
-## <a name="adding-a-method-to-insert-data-into-a-table"></a>Adding a Method to Insert Data into a Table  
- The next task is to read the data from the bound controls and populate a table in your Word document. First, create a procedure for formatting the headings in the table, and then add the `AddData` method to create and format a Word table.  
+## <a name="adding-a-method-to-insert-data-into-a-table"></a>Aggiunta di un metodo per inserire dati in una tabella  
+ L'attività successiva consiste nel leggere i dati da controlli associati e popolare una tabella nel documento di Word. Innanzitutto, creare una routine per formattare le intestazioni della tabella e quindi aggiungere il `AddData` metodo per creare e formattare una tabella di Word.  
   
-#### <a name="to-format-the-table-headings"></a>To format the table headings  
+#### <a name="to-format-the-table-headings"></a>Per formattare le intestazioni della tabella  
   
-1.  In the `ActionsControl` class, create a method to format the headings of the table.  
+1.  Nel `ActionsControl` di classi, creare un metodo per formattare le intestazioni della tabella.  
   
-     [!code-vb[Trin_VstcoreActionsPaneWord#2](../vsto/codesnippet/VisualBasic/Trin_VstcoreActionsPaneWordVB/ActionsControl.vb#2)]  [!code-csharp[Trin_VstcoreActionsPaneWord#2](../vsto/codesnippet/CSharp/Trin_VstcoreActionsPaneWordCS/ActionsControl.cs#2)]  
+     [!code-vb[Trin_VstcoreActionsPaneWord#2](../vsto/codesnippet/VisualBasic/Trin_VstcoreActionsPaneWordVB/ActionsControl.vb#2)]
+     [!code-csharp[Trin_VstcoreActionsPaneWord#2](../vsto/codesnippet/CSharp/Trin_VstcoreActionsPaneWordCS/ActionsControl.cs#2)]  
   
-#### <a name="to-create-the-table"></a>To create the table  
+#### <a name="to-create-the-table"></a>Per creare la tabella  
   
-1.  In the `ActionsControl` class, write a method that will create a table if one does not already exist, and add data from the actions pane to the table.  
+1.  Nel `ActionsControl` classe, scrivere un metodo che verrà creata una tabella se non già esiste e aggiungere la tabella dati nel riquadro azioni.  
   
-     [!code-vb[Trin_VstcoreActionsPaneWord#3](../vsto/codesnippet/VisualBasic/Trin_VstcoreActionsPaneWordVB/ActionsControl.vb#3)]  [!code-csharp[Trin_VstcoreActionsPaneWord#3](../vsto/codesnippet/CSharp/Trin_VstcoreActionsPaneWordCS/ActionsControl.cs#3)]  
+     [!code-vb[Trin_VstcoreActionsPaneWord#3](../vsto/codesnippet/VisualBasic/Trin_VstcoreActionsPaneWordVB/ActionsControl.vb#3)]
+     [!code-csharp[Trin_VstcoreActionsPaneWord#3](../vsto/codesnippet/CSharp/Trin_VstcoreActionsPaneWordCS/ActionsControl.cs#3)]  
   
-#### <a name="to-insert-text-into-a-word-table"></a>To insert text into a Word table  
+#### <a name="to-insert-text-into-a-word-table"></a>Per inserire testo in una tabella di Word  
   
-1.  Add the following code to the <xref:System.Windows.Forms.Control.Click> event handler of the **Insert** button.  
+1.  Aggiungere il codice seguente per il <xref:System.Windows.Forms.Control.Click> gestore dell'evento del **inserire** pulsante.  
   
-     [!code-vb[Trin_VstcoreActionsPaneWord#4](../vsto/codesnippet/VisualBasic/Trin_VstcoreActionsPaneWordVB/ActionsControl.vb#4)]  [!code-csharp[Trin_VstcoreActionsPaneWord#4](../vsto/codesnippet/CSharp/Trin_VstcoreActionsPaneWordCS/ActionsControl.cs#4)]  
+     [!code-vb[Trin_VstcoreActionsPaneWord#4](../vsto/codesnippet/VisualBasic/Trin_VstcoreActionsPaneWordVB/ActionsControl.vb#4)]
+     [!code-csharp[Trin_VstcoreActionsPaneWord#4](../vsto/codesnippet/CSharp/Trin_VstcoreActionsPaneWordCS/ActionsControl.cs#4)]  
   
-2.  In C#, you must create an event handler for the <xref:System.Windows.Forms.Control.Click> event of the button.  You can place this code in the <xref:System.Windows.Forms.UserControl.Load> event handler of the `ActionsControl` class.  
+2.  In c#, è necessario creare un gestore eventi per il <xref:System.Windows.Forms.Control.Click> evento del pulsante.  È possibile inserire il codice nel <xref:System.Windows.Forms.UserControl.Load> gestore dell'evento del `ActionsControl` classe.  
   
      [!code-csharp[Trin_VstcoreActionsPaneWord#5](../vsto/codesnippet/CSharp/Trin_VstcoreActionsPaneWordCS/ActionsControl.cs#5)]  
   
-## <a name="showing-the-actions-pane"></a>Showing the Actions Pane  
- The actions pane becomes visible after controls are added to it.  
+## <a name="showing-the-actions-pane"></a>Visualizzazione del riquadro azioni  
+ Nel riquadro azioni diventa visibile dopo l'aggiungono di controlli a esso.  
   
-#### <a name="to-show-the-actions-pane"></a>To show the actions pane  
+#### <a name="to-show-the-actions-pane"></a>Per visualizzare il riquadro azioni  
   
-1.  In **Solution Explorer**, right-click **ThisDocument.vb** or **ThisDocument.cs**, and then click **View Code** on the shortcut menu.  
+1.  In **Esplora**, fare doppio clic su **ThisDocument. vb** o **ThisDocument. cs**, quindi fare clic su **Visualizza codice** nel menu di scelta rapida.  
   
-2.  Create a new instance of the control at the top of the `ThisDocument` class so that it looks like the following example.  
+2.  Creare una nuova istanza del controllo nella parte superiore del `ThisDocument` classe in modo che risulti simile al seguente.  
   
-     [!code-csharp[Trin_VstcoreActionsPaneWord#6](../vsto/codesnippet/CSharp/Trin_VstcoreActionsPaneWordCS/ThisDocument.cs#6)]  [!code-vb[Trin_VstcoreActionsPaneWord#6](../vsto/codesnippet/VisualBasic/Trin_VstcoreActionsPaneWordVB/ThisDocument.vb#6)]  
+     [!code-csharp[Trin_VstcoreActionsPaneWord#6](../vsto/codesnippet/CSharp/Trin_VstcoreActionsPaneWordCS/ThisDocument.cs#6)]
+     [!code-vb[Trin_VstcoreActionsPaneWord#6](../vsto/codesnippet/VisualBasic/Trin_VstcoreActionsPaneWordVB/ThisDocument.vb#6)]  
   
-3.  Add code to the <xref:Microsoft.Office.Tools.Word.Document.Startup> event handler of `ThisDocument` so that it looks like the following example.  
+3.  Aggiungere codice per il <xref:Microsoft.Office.Tools.Word.Document.Startup> gestore dell'evento di `ThisDocument` in modo che risulti simile al seguente.  
   
-     [!code-csharp[Trin_VstcoreActionsPaneWord#7](../vsto/codesnippet/CSharp/Trin_VstcoreActionsPaneWordCS/ThisDocument.cs#7)]  [!code-vb[Trin_VstcoreActionsPaneWord#7](../vsto/codesnippet/VisualBasic/Trin_VstcoreActionsPaneWordVB/ThisDocument.vb#7)]  
+     [!code-csharp[Trin_VstcoreActionsPaneWord#7](../vsto/codesnippet/CSharp/Trin_VstcoreActionsPaneWordCS/ThisDocument.cs#7)]
+     [!code-vb[Trin_VstcoreActionsPaneWord#7](../vsto/codesnippet/VisualBasic/Trin_VstcoreActionsPaneWordVB/ThisDocument.vb#7)]  
   
-## <a name="testing-the-application"></a>Testing the Application  
- Now you can test your document to verify that the actions pane appears when the document is opened. Test for the master/detail relationship in the controls on the actions pane, and make sure that data is populated in a Word table when the **Insert** button is clicked.  
+## <a name="testing-the-application"></a>Verifica dell'applicazione  
+ È ora possibile testare il documento per verificare che il riquadro azioni viene visualizzato quando il documento viene aperto. Verificare la relazione master/dettaglio nei controlli nel riquadro azioni e assicurarsi che i dati vengano inseriti in una parola tabella quando la **inserire** si fa clic sul pulsante.  
   
-#### <a name="to-test-your-document"></a>To test your document  
+#### <a name="to-test-your-document"></a>Per testare il documento  
   
-1.  Press F5 to run your project.  
+1.  Premere F5 per eseguire il progetto.  
   
-2.  Confirm that the actions pane is visible.  
+2.  Verificare che il riquadro azioni è visibile.  
   
-3.  Select a company in the combo box and verify that the items in the **Products** list box change.  
+3.  Selezionare una società nella casella combinata e verificare che gli elementi di **prodotti** elenco cambia.  
   
-4.  Select a product, click **Insert** on the actions pane, and verify that the product details are added to the table in Word.  
+4.  Selezionare un prodotto, fare clic su **inserire** nel riquadro azioni e verificare che i dettagli del prodotto vengono aggiunti alla tabella di Word.  
   
-5.  Insert additional products from various companies.  
+5.  Inserire ulteriori prodotti da società diverse.  
   
-## <a name="next-steps"></a>Next Steps  
- This walkthrough shows the basics of binding data to controls on an actions pane in Word. Here are some tasks that might come next:  
+## <a name="next-steps"></a>Passaggi successivi  
+ Questa procedura dettagliata illustra le nozioni fondamentali sull'associazione dati a controlli in un riquadro azioni in Word. Ecco alcune possibili attività successive:  
   
--   Binding data to controls in Excel. For more information, see [Walkthrough: Binding Data to Controls on an Excel Actions Pane](../vsto/walkthrough-binding-data-to-controls-on-an-excel-actions-pane.md).  
+-   Associazione dati a controlli in Excel. Per ulteriori informazioni, vedere [procedura dettagliata: associazione di dati a controlli in un riquadro azioni di Excel](../vsto/walkthrough-binding-data-to-controls-on-an-excel-actions-pane.md).  
   
--   Deploying the project. For more information, see [Deploying an Office Solution by Using ClickOnce](../vsto/deploying-an-office-solution-by-using-clickonce.md).  
+-   La distribuzione del progetto. Per ulteriori informazioni, vedere [distribuisce una soluzione Office tramite ClickOnce](../vsto/deploying-an-office-solution-by-using-clickonce.md).  
   
-## <a name="see-also"></a>See Also  
- [Actions Pane Overview](../vsto/actions-pane-overview.md)   
- [How to: Add an Actions Pane to Word Documents or Excel Workbooks](../vsto/how-to-add-an-actions-pane-to-word-documents-or-excel-workbooks.md)   
- [Binding Data to Controls in Office Solutions](../vsto/binding-data-to-controls-in-office-solutions.md)  
+## <a name="see-also"></a>Vedere anche  
+ [Panoramica del riquadro azioni](../vsto/actions-pane-overview.md)   
+ [Procedura: aggiungere un riquadro azioni ai documenti Word o le cartelle di lavoro di Excel](../vsto/how-to-add-an-actions-pane-to-word-documents-or-excel-workbooks.md)   
+ [Associazione di dati ai controlli nelle soluzioni Office](../vsto/binding-data-to-controls-in-office-solutions.md)  
   
   

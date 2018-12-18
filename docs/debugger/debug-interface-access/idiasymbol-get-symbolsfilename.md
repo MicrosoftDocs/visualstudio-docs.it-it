@@ -1,50 +1,50 @@
 ---
-title: "IDiaSymbol::get_symbolsFileName | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "IDiaSymbol::get_symbolsFileName (metodo)"
+title: IDiaSymbol::get_symbolsFileName | Documenti Microsoft
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: vs-ide-debug
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords: IDiaSymbol::get_symbolsFileName method
 ms.assetid: c1aa39ee-d645-431e-bf5f-0640c0998934
-caps.latest.revision: 8
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.workload: multiple
+ms.openlocfilehash: 3cfc7ee58cd3775274dfacce62d7b18f2d3300df
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
-# IDiaSymbol::get_symbolsFileName
-[!INCLUDE[vs2017banner](../../code-quality/includes/vs2017banner.md)]
-
-Recupera il nome del file da cui i simboli sono stati caricati.  
+# <a name="idiasymbolgetsymbolsfilename"></a>IDiaSymbol::get_symbolsFileName
+Recupera il nome del file da cui sono stati caricati i simboli.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp#  
-HRESULT get_symbolsFileName (   
-   BSTR* pRetVal  
+```C++  
+HRESULT get_symbolsFileName (   
+   BSTR* pRetVal  
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `pRetVal`  
- \[out\]  Restituisce il nome del file da cui i simboli sono stati caricati.  
+ [out] Restituisce il nome del file da cui sono stati caricati i simboli.  
   
-## Valore restituito  
- Se l'operazione riesce, restituisce `S_OK`; in caso contrario, restituisce  `S_FALSE` o un codice di errore.  
+## <a name="return-value"></a>Valore restituito  
+ Se ha esito positivo, restituisce `S_OK`; in caso contrario, restituisce `S_FALSE` o un codice di errore.  
   
 > [!NOTE]
->  un valore restituito di `S_FALSE` indica che la proprietà non è disponibile per il simbolo.  
+>  Valore restituito di `S_FALSE` significa che la proprietà non è disponibile per il simbolo.  
   
-## Note  
- Questa proprietà è valida solo per i simboli con un oggetto [Enumerazione SymTagEnum](../../debugger/debug-interface-access/symtagenum.md) valore di  `SymTagExe` che dispone anche di ambito globale.  
+## <a name="remarks"></a>Note  
+ Questa proprietà è valida solo per i simboli con un [SymTagEnum (enumerazione)](../../debugger/debug-interface-access/symtagenum.md) valore `SymTagExe` anche con ambito globale.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IDiaSymbol](../../debugger/debug-interface-access/idiasymbol.md)   
- [Enumerazione SymTagEnum](../../debugger/debug-interface-access/symtagenum.md)
+ [SymTagEnum (enumerazione)](../../debugger/debug-interface-access/symtagenum.md)

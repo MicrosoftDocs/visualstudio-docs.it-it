@@ -1,11 +1,9 @@
 ---
 title: Opzioni, Editor di testo, Generale | Microsoft Docs
-ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- vs-ide-general
+ms.technology: vs-ide-general
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
@@ -18,14 +16,12 @@ f1_keywords:
 - VS.ToolsOptionsPages.Text_Editor.T-SQL80.General
 - VS.ToolsOptionsPages.Text_Editor.CSS
 - VS.ToolsOptionsPages.Text_Editor.Plain_Text.General
-- VS.ToolsOptionsPages.Text_Editor.Visual_JSharp.General
 - VS.ToolsOptionsPages.Text_Editor.SQL_Script.General
 - VS.ToolsOptionsPages.Text_Editor.CSharp.General
 - VS.ToolsOptionsPages.Text_Editor.All_Languages
 - VS.ToolsOptionsPages.Text_Editor.T-SQL7.General
 - VS.ToolsOptionsPages.Text_Editor.Basic.General
 - VS.ToolsOptionsPages.Text_Editor.T-SQL.General
-- vs.toolsoptionspages.text_editor.visual_jsharp
 - VS.ToolsOptionsPages.Text_Editor.F#.Tabs
 - VS.ToolsOptionsPages.Text_Editor.F#
 - VS.ToolsOptionsPages.Text_Editor.PL/SQL.General
@@ -42,36 +38,24 @@ f1_keywords:
 - VS.ToolsOptionsPages.Text_Editor.T-SQL90.General
 - VS.ToolsOptionsPages.Text_Editor.General
 - VS.ToolsOptionsPages.Text_Editor.CSharp
+- VS.ToolsOptionsPages.Text_Editor.Python
+- VS.ToolsOptionsPages.Text_Editor.R
 helpviewer_keywords:
 - Text Editor Options dialog box
 - Code Editor
 - Text Editor [Visual Studio]
 - editors, global settings
 ms.assetid: 4ac21e48-3243-4141-9058-7eaf12b3cde7
-caps.latest.revision: 29
-author: kempb
-ms.author: kempb
+author: gewarren
+ms.author: gewarren
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 5ea9179ad37514ffad4876177b05150eecc22def
-ms.openlocfilehash: eee3b34e9f473c200463b65f1b839416f5dce0ec
-ms.contentlocale: it-it
-ms.lasthandoff: 05/24/2017
-
+ms.workload:
+- multiple
+ms.openlocfilehash: b3ccc9628b5757f1ab4533b084736602274d8c92
+ms.sourcegitcommit: 238cd48787391aa0ed1eb684f3f04e80f7958705
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 02/12/2018
 ---
 # <a name="options-text-editor-general"></a>Opzioni, Editor di testo, Generale
 Questa finestra di dialogo consente di modificare le impostazioni globali di [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] Code e dell'editor di testo. Per visualizzare questa finestra di dialogo, fare clic su **Opzioni** nel menu **Strumenti**, espandere la cartella **Editor di testo** e quindi fare clic su **Generale**.  

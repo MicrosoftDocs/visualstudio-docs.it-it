@@ -1,27 +1,30 @@
 ---
-title: "IDebugDocumentHelper::AddDeferredText | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/18/2017"
-ms.prod: "windows-script-interfaces"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
+title: IDebugDocumentHelper::AddDeferredText | Documenti Microsoft
+ms.custom: 
+ms.date: 01/18/2017
+ms.prod: windows-script-interfaces
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: reference
 apiname: IDebugDocumentHelper.AddDeferredText
 apilocation: pdm.dll
-helpviewer_keywords: 
-  - "IDebugDocumentHelper::AddDeferredText"
+helpviewer_keywords: IDebugDocumentHelper::AddDeferredText
 ms.assetid: 9463cfb0-76cc-45ee-b32c-f37dce2b2e0e
-caps.latest.revision: 8
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.openlocfilehash: c92909874429075bebc6a1f0a252573d049584e8
+ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/27/2017
 ---
-# IDebugDocumentHelper::AddDeferredText
-Notifica al supporto che il testo specificato è disponibile, ma non fornisce i caratteri.  
+# <a name="idebugdocumenthelperadddeferredtext"></a>IDebugDocumentHelper::AddDeferredText
+Notifica l'helper che il testo specificato è disponibile, ma non fornisce i caratteri.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
 HRESULT AddDeferredText(  
@@ -30,30 +33,30 @@ HRESULT AddDeferredText(
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `cChars`  
- \[in\] numero di caratteri \(Unicode\) da aggiungere.  
+ [in] Numero di caratteri (Unicode) da aggiungere.  
   
  `dwTextStartCookie`  
- \[in\] cookie host definite che rappresentano posizione iniziale di testo.  
+ [in] Cookie definito host che rappresenta la posizione iniziale del testo.  
   
-## Valore restituito  
- Il metodo restituisce un tipo `HRESULT`.  I valori possibili sono, ma non sono limitati a, quelli nella tabella seguente.  
+## <a name="return-value"></a>Valore restituito  
+ Il metodo restituisce un tipo `HRESULT`. I valori possibili includono, ma non sono limitati a, quelli indicati nella tabella seguente.  
   
 |Valore|Descrizione|  
-|------------|-----------------|  
+|-----------|-----------------|  
 |`S_OK`|Il metodo è riuscito.|  
-|`E_FAIL`|Il metodo non superato.|  
+|`E_FAIL`|Il metodo non è riuscita.|  
   
-## Note  
- Questo metodo consente all'host rinviare fornendo i caratteri per aggiungere finché non sono necessari necessario che, pur consentendo al supporto generare accurate le notifiche e le informazioni di dimensione.  Il parametro `dwTextStartCookie` è un cookie, definite dall'host, che rappresenta la posizione iniziale del testo.  Le chiamate successive a `IDebugDocumentText::GetText` devono fornire questi cookie.  Ad esempio, in un host che rappresenta il testo in byte, i cookie siano un offset di byte.  
+## <a name="remarks"></a>Note  
+ Questo metodo consente all'host di rinvio che fornisce i caratteri per aggiungere fino a quando non sono necessarie, consentendo il supporto generare notifiche accurate e informazioni sulle dimensioni. Il `dwTextStartCookie` parametro è un cookie, definito dall'host, che rappresenta la posizione iniziale del testo. Le chiamate successive a `IDebugDocumentText::GetText` deve fornire questo cookie. Ad esempio, in un host che rappresenta il testo in caratteri DBCS, il cookie può essere un offset di byte.  
   
- Si presuppone che una singola chiamata a `IDebugDocumentText::GetText` può ottenere i caratteri da più chiamate a `AddDeferredText`.  Le classi di supporto è possibile chiamare più volte lo stesso intervallo di caratteri posticipati.  
+ Si presuppone che una singola chiamata a `IDebugDocumentText::GetText` possono ottenere i caratteri da più chiamate a `AddDeferredText`. Classi helper anche potrebbero richiedere più di una volta per lo stesso intervallo di caratteri posticipate.  
   
 > [!NOTE]
->  Le chiamate a `AddDeferredText` non devono essere combinati con chiamate a `AddUnicodeText` o a `AddDBCSText`.  In questo caso, `E_FAIL` viene restituito.  
+>  Le chiamate a `AddDeferredText` non devono essere combinati con chiamate a `AddUnicodeText` o `AddDBCSText`. In questo caso, `E_FAIL` viene restituito.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Interfaccia IDebugDocumentHelper](../../winscript/reference/idebugdocumenthelper-interface.md)   
  [IDebugDocumentHelper::AddUnicodeText](../../winscript/reference/idebugdocumenthelper-addunicodetext.md)   
  [IDebugDocumentHelper::AddDBCSText](../../winscript/reference/idebugdocumenthelper-adddbcstext.md)   

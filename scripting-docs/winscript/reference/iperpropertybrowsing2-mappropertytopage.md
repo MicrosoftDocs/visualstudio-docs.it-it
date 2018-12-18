@@ -1,44 +1,47 @@
 ---
-title: "IPerPropertyBrowsing2::MapPropertyToPage | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/18/2017"
-ms.prod: "windows-script-interfaces"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
+title: IPerPropertyBrowsing2::MapPropertyToPage | Documenti Microsoft
+ms.custom: 
+ms.date: 01/18/2017
+ms.prod: windows-script-interfaces
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: reference
 apiname: IPerPropertyBrowsing2.MapPropertyToPage
 apilocation: scrobj.dll
-helpviewer_keywords: 
-  - "IPerPropertyBrowsing2::MapPropertyToPage"
+helpviewer_keywords: IPerPropertyBrowsing2::MapPropertyToPage
 ms.assetid: e6418a8e-500b-42e1-9b5a-52e6f7567f99
-caps.latest.revision: 8
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.openlocfilehash: 79b8d7cb9e1c8a9f79cdddc4f8d3404ff7a2036c
+ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/27/2017
 ---
-# IPerPropertyBrowsing2::MapPropertyToPage
-Restituisce il CLSID della pagina delle proprietà che può essere utilizzata per modificare questa proprietà.  
+# <a name="iperpropertybrowsing2mappropertytopage"></a>IPerPropertyBrowsing2::MapPropertyToPage
+Restituisce il CLSID della pagina delle proprietà che può essere utilizzato per modificare questa proprietà.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
 HRESULT MapPropertyToPage(  
-   DISPID  dispid,  
-   CLSID*  pClsidPropPage  
+   DISPID  dispid,  
+   CLSID*  pClsidPropPage  
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `dispid`  
- \[in\] inviare l'identificatore della proprietà di interesse.  
+ [in] ID dispatch della proprietà di interesse.  
   
  `pClsidPropPage`  
- \[out\] puntatore al CLSID che identifica la pagina delle proprietà associata alla proprietà.  Se il metodo ha esito negativo, \*`pClsidPropPage` è impostato su CLSID\_NULL.  
+ [out] Puntatore al CLSID che identifica la pagina delle proprietà associata alla proprietà. Se questo metodo non riesce, *`pClsidPropPage` è impostato su CLSID_NULL.  
   
-## Valore restituito  
- Restituisce `HRESULT`valido, in genere `S_OK`.  
+## <a name="return-value"></a>Valore restituito  
+ Restituisce un oggetto valido `HRESULT`, in genere `S_OK`.  
   
-## Vedere anche  
- [Interfaccia IPerPropertyBrowsing2](../../winscript/reference/iperpropertybrowsing2-interface-1.md)
+## <a name="see-also"></a>Vedere anche  
+ [Interfaccia 1 IPerPropertyBrowsing2](../../winscript/reference/iperpropertybrowsing2-interface-1.md)

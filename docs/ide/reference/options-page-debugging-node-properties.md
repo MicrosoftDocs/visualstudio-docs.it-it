@@ -9,29 +9,17 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: 564cc8b2-0084-420e-b560-200cc5621a7e
-caps.latest.revision: 9
-author: kempb
-ms.author: kempb
+caps.latest.revision: 
+author: gewarren
+ms.author: gewarren
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: 5658ecf52637a38bc3c2a5ad9e85b2edebf7d445
-ms.openlocfilehash: 7f9daff5a0f196a4cebdd41a91f67bd37815b121
-ms.lasthandoff: 02/22/2017
-
+ms.workload:
+- multiple
+ms.openlocfilehash: 690eb875b0b9251dddcb36c4ad7ded17c36b67cb
+ms.sourcegitcommit: d6327b978661c0a745bf4b59f32d8171607803a3
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="options-page-debugging-node-properties"></a>Pagina delle opzioni, proprietà del nodo Debug
 Le tabelle seguenti descrivono le pagine, o raccolte di proprietà, associate alla categoria **Debug**, `DTE.Properties("Debugging", <Property Page>)` della finestra di dialogo **Opzioni**.  
@@ -53,7 +41,7 @@ Le tabelle seguenti descrivono le pagine, o raccolte di proprietà, associate al
 |ShowAllMembers|Get/Set (Boolean)|Per gli oggetti non utente, determina se il debugger visualizza tutti i membri degli oggetti nelle finestre delle variabili. Questa opzione ha effetto solo se Just My Code è abilitato.|  
 |WarnIfNoUserCode|Get/Set (Boolean)|Determina se il debugger genera un avviso quando l'utente tenta di connettersi a un processo che non include il codice utente. Questa opzione ha effetto solo se Just My Code è abilitato.|  
 |EnablePropertyEvaluation|Get/Set (Boolean)|Determina se il debugger valuta automaticamente le proprietà e le chiamate a funzioni implicite nel codice gestito.|  
-|CallStringConversion|Get/Set (Boolean)|Determina se il debugger chiama in modo implicito una funzione di conversione delle stringhe su oggetti nelle finestre delle variabili. Questa opzione si applica solo al codice C# e JScript.|  
+|CallStringConversion|Get/Set (Boolean)|Determina se il debugger chiama in modo implicito una funzione di conversione delle stringhe su oggetti nelle finestre delle variabili.|  
 |EnableSourceServer|Get/Set (Boolean)|Determina se il debugger può accedere al codice da un server di origine.|  
 |PrintSourceServerDiagnostics|Get/Set (Boolean)|Determina se nella finestra di output vengono visualizzati messaggi diagnostici relativi al server di origine. Questa opzione non ha alcun effetto a meno che non sia abilitato l'accesso al server di origine.|  
 |HighlightEntireLine|Get/Set (Boolean)|Determina se il debugger evidenzia un'intera riga per i punti di interruzione e l'istruzione corrente.|  

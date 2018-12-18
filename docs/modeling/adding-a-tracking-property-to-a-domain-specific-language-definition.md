@@ -4,37 +4,22 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.tgt_pltfrm: 
 ms.topic: article
 helpviewer_keywords:
 - tracking properties [Domain-Specific Language Tools], walkthrough
 - Domain-Specific Language Tools, walkthroughs
 - walkthroughs [Domain-Specific Language Tools]
-ms.assetid: 4aa47777-de75-4897-a423-a3c4426b4125
-caps.latest.revision: 22
-author: alancameronwills
-ms.author: awills
-manager: douge
-translation.priority.mt:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+author: gewarren
+ms.author: gewarren
+manager: ghogen
+ms.workload:
+- multiple
+ms.technology: vs-ide-modeling
+ms.openlocfilehash: c0d6231882e8c7412248022abd2e8c578bbfad9f
+ms.sourcegitcommit: 205d15f4558315e585c67f33d5335d5b41d0fcea
 ms.translationtype: MT
-ms.sourcegitcommit: 4a36302d80f4bc397128e3838c9abf858a0b5fe8
-ms.openlocfilehash: ef5f86cb3b41af6cc9e7432cdbfb7365471320b8
-ms.contentlocale: it-it
-ms.lasthandoff: 09/26/2017
-
+ms.contentlocale: it-IT
+ms.lasthandoff: 02/09/2018
 ---
 # <a name="adding-a-tracking-property-to-a-domain-specific-language-definition"></a>Aggiunta di una proprietà di rilevamento alla definizione di un linguaggio specifico di dominio
 Questa procedura dettagliata viene illustrato come aggiungere una proprietà di rilevamento per un modello di dominio.  
@@ -43,7 +28,7 @@ Questa procedura dettagliata viene illustrato come aggiungere una proprietà di 
   
  Negli strumenti di linguaggio specifico di dominio (strumenti DSL), ad esempio, il nome visualizzato della proprietà di una classe di dominio ha un valore predefinito che viene calcolato utilizzando il nome della classe di dominio, ma un utente può modificare il valore in fase di progettazione o ripristinare il valore calcolato.  
   
- In questa procedura dettagliata, si crea un linguaggio specifico di dominio (DSL) che ha una proprietà che ha un valore predefinito in base alla proprietà Namespace predefinito del modello di rilevamento di Namespace. Per ulteriori informazioni sul rilevamento delle proprietà, vedere [la definizione di proprietà di rilevamento](http://msdn.microsoft.com/en-us/0538b0e4-6221-4e7d-911a-b92cd622f0be).  
+ In questa procedura dettagliata, si crea un linguaggio specifico di dominio (DSL) che ha una proprietà che ha un valore predefinito in base alla proprietà Namespace predefinito del modello di rilevamento di Namespace. Per ulteriori informazioni sul rilevamento delle proprietà, vedere [la definizione di proprietà di rilevamento](http://msdn.microsoft.com/0538b0e4-6221-4e7d-911a-b92cd622f0be).  
   
 -   Il supporto di strumenti DSL descrittori di proprietà di rilevamento. Tuttavia, è Impossibile utilizzare la finestra di progettazione DSL per aggiungere una proprietà di rilevamento per una lingua. Pertanto, è necessario aggiungere codice personalizzato per definire e implementare la proprietà di rilevamento.  
   
@@ -65,8 +50,8 @@ Questa procedura dettagliata viene illustrato come aggiungere una proprietà di 
 |||  
 |-|-|  
 |[!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)]|[http://go.microsoft.com/fwlink/?LinkID=185579](http://go.microsoft.com/fwlink/?LinkID=185579)|  
-|[!INCLUDE[vssdk_current_short](../modeling/includes/vssdk_current_short_md.md)]|[http://go.microsoft.com/fwlink/?LinkId=185580](http://go.microsoft.com/fwlink/?LinkID=185580)|  
-|[!INCLUDE[dsl](../modeling/includes/dsl_md.md)]|[http://go.microsoft.com/fwlink/?LinkId=185581](http://go.microsoft.com/fwlink/?LinkID=185581)|  
+|[!INCLUDE[vssdk_current_short](../modeling/includes/vssdk_current_short_md.md)]|[http://go.microsoft.com/fwlink/?LinkID=185580](http://go.microsoft.com/fwlink/?LinkID=185580)|  
+|[!INCLUDE[dsl](../modeling/includes/dsl_md.md)]|[http://go.microsoft.com/fwlink/?LinkID=185581](http://go.microsoft.com/fwlink/?LinkID=185581)|  
   
 ## <a name="creating-the-dsl-project"></a>Creazione del progetto DSL  
  Creare il progetto per il linguaggio specifico di dominio.  
@@ -120,7 +105,7 @@ Questa procedura dettagliata viene illustrato come aggiungere una proprietà di 
   
 3.  Per il **ExampleElement** dominio classe, aggiungere una proprietà di dominio denominata `Namespace`.  
   
-     Nel **proprietà** finestra per la nuova proprietà, impostare **è esplorabile** a **False**e impostare **tipo** a **CustomStorage **.  
+     Nel **proprietà** finestra per la nuova proprietà, impostare **è esplorabile** a **False**e impostare **tipo** a **CustomStorage** .  
   
 4.  Per il **ExampleElement** dominio classe, aggiungere una proprietà di dominio denominata `IsNamespaceTracking`.  
   
@@ -269,7 +254,7 @@ Questa procedura dettagliata viene illustrato come aggiungere una proprietà di 
 #### <a name="to-modify-the-type-descriptor-for-the-examplemodel-domain-class"></a>Per modificare il descrittore di tipo per la classe di dominio ExampleModel  
   
 1.  Aggiungere il codice seguente al file TypeDescriptor.cs.  
-  
+
     ```csharp  
     using System;  
     using System.ComponentModel;  
@@ -748,7 +733,7 @@ Questa procedura dettagliata viene illustrato come aggiungere una proprietà di 
   
 4.  Trascinare un **ExampleElement** elemento il **della casella degli strumenti** sulla superficie del diagramma.  
   
-5.  Nel **proprietà** finestra per l'elemento, seleziona il **elemento Namespace** , proprietà e modificare il valore da **DefaultNamespace** a ** OtherNamespace**.  
+5.  Nel **proprietà** finestra per l'elemento, seleziona il **elemento Namespace** , proprietà e modificare il valore da **DefaultNamespace** a  **OtherNamespace**.  
   
      Si noti che il valore di **elemento Namespace** viene ora visualizzato in grassetto.  
   
@@ -766,7 +751,7 @@ Questa procedura dettagliata viene illustrato come aggiungere una proprietà di 
   
 9. Modifica **Default Namespace** per il diagramma da **DefaultNamespace** a **NewNamespace**.  
   
-     Il **Namespace** delle tracce elemento prima di **Default Namespace** proprietà, mentre il **Namespace** del secondo elemento mantiene il valore aggiornato utente ** OtherNamespace**.  
+     Il **Namespace** delle tracce elemento prima di **Default Namespace** proprietà, mentre il **Namespace** del secondo elemento mantiene il valore aggiornato utente  **OtherNamespace**.  
   
 10. Salvare la soluzione e quindi chiudere la build sperimentale.  
   
@@ -778,4 +763,3 @@ Questa procedura dettagliata viene illustrato come aggiungere una proprietà di 
  <xref:Microsoft.VisualStudio.Modeling.Design.ElementTypeDescriptor>   
  [Come definire un linguaggio specifico di dominio](../modeling/how-to-define-a-domain-specific-language.md)   
  [Procedura: Creare una soluzione per un linguaggio specifico di dominio](../modeling/how-to-create-a-domain-specific-language-solution.md)   
-

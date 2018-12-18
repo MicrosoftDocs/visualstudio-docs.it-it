@@ -1,50 +1,51 @@
 ---
-title: "IDebugProgram2::EnumThreads | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "IDebugProgram2::EnumThreads"
-helpviewer_keywords: 
-  - "IDebugProgram2::EnumThreads"
+title: IDebugProgram2::EnumThreads | Documenti Microsoft
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: vs-ide-sdk
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: IDebugProgram2::EnumThreads
+helpviewer_keywords: IDebugProgram2::EnumThreads
 ms.assetid: 0f2a8c51-1315-4c96-8aa1-6a937dc2a769
-caps.latest.revision: 10
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: gregvanl
+ms.author: gregvanl
+manager: ghogen
+ms.workload: vssdk
+ms.openlocfilehash: 585085dcbac83b8d9995a568247ddb7744d3d85d
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
-# IDebugProgram2::EnumThreads
-[!INCLUDE[vs2017banner](../../../code-quality/includes/vs2017banner.md)]
-
-Recupera un elenco di thread in esecuzione nel programma.  
+# <a name="idebugprogram2enumthreads"></a>IDebugProgram2::EnumThreads
+Recupera un elenco dei thread in esecuzione del programma.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp#  
-HRESULT EnumThreads(   
-   IEnumDebugThreads2** ppEnum  
+```cpp  
+HRESULT EnumThreads(   
+   IEnumDebugThreads2** ppEnum  
 );  
 ```  
   
-```c#  
-int EnumThreads(   
-   out IEnumDebugThreads2 ppEnum  
+```csharp  
+int EnumThreads(   
+   out IEnumDebugThreads2 ppEnum  
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `ppEnum`  
- \[out\]  Restituisce [IEnumDebugThreads2](../../../extensibility/debugger/reference/ienumdebugthreads2.md) un oggetto che contiene un elenco di thread.  
+ [out] Restituisce un [IEnumDebugThreads2](../../../extensibility/debugger/reference/ienumdebugthreads2.md) oggetto che contiene un elenco dei thread.  
   
-## Valore restituito  
- Se l'operazione riesce, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
+## <a name="return-value"></a>Valore restituito  
+ Se ha esito positivo, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IDebugProgram2](../../../extensibility/debugger/reference/idebugprogram2.md)   
  [IEnumDebugThreads2](../../../extensibility/debugger/reference/ienumdebugthreads2.md)   
  [IDebugThread2](../../../extensibility/debugger/reference/idebugthread2.md)

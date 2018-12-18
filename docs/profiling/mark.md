@@ -1,42 +1,44 @@
 ---
-title: "Contrassegno | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: Mark | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: vs-ide-debug
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 1d72cef3-bb09-4bbb-8864-6ea0ab623ff9
-caps.latest.revision: 8
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.workload: multiple
+ms.openlocfilehash: 8fb616cd9b938bb2624d762272f98ae2ad1f7fe9
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
-# Contrassegno
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
-L'opzione **Mark** di VSPerfCmd.exe consente di inserire le informazioni specificate nel file dei dati di profilo.  Mark può essere elencato in un rapporto VSPerfReport a parte o nella visualizzazione Rapporto Mark dell'interfaccia utente del profiler.  **Mark** può essere utilizzato per specificare i punti iniziale e finale nei filtri di rapporto e visualizzazione.  
+# <a name="mark"></a>Contrassegno
+L'opzione **Mark** di VSPerfCmd.exe consente di inserire le informazioni specificate nel file di dati di profilatura. L'opzione Mark può essere elencata in un report di VSPerfReport separato o nella visualizzazione Contrassegni dell'interfaccia utente del profiler. È possibile usare **Mark** per specificare i punti di inizio e fine nel report e visualizzare i filtri.  
   
- **Mark** deve essere l'unica opzione specificata nella riga di comando.  
+ L'opzione **Mark** deve essere l'unica opzione specificata nella riga di comando.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
-VSPerfCmd.exe /Mark:MarkID,[MarkName]   
+VSPerfCmd.exe /Mark:MarkID,[MarkName]  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `MarkID`  
- Intero definito dall'utente elencato come MarkID nei rapporti e nelle visualizzazioni del profiler.  `MarkID` non deve essere necessariamente univoco.  
+ Intero definito dall'utente elencato come ID contrassegno nelle visualizzazioni e nei report del profiler. `MarkID` non deve essere univoco.  
   
  `MarkName`  
- \(Facoltativo\) Stringa definita dall'utente elencata come Nome contrassegno nei rapporti e nelle visualizzazioni del profiler.  Se non viene specificato `MarkName`, il campo Nome contrassegno dell'elenco relativo è vuoto.  Racchiudere tra virgolette doppie le stringhe che contengono spazi o barre \("\/"\).  
+ (Facoltativo) Stringa definita dall'utente elencata come Nome contrassegno nelle visualizzazioni e nei report del profiler. Se non si specifica `MarkName`, il campo Nome contrassegno dell'elenco dei contrassegni sarà vuoto. Racchiudere le stringhe che contengono spazi o barre ("/") tra virgolette.  
   
-## Esempio  
- In questo esempio viene inserito un contrassegno con ID 123 e un nome "TestMark".  
+## <a name="example"></a>Esempio  
+ Questo esempio inserisce un contrassegno con ID 123 e il nome di contrassegno "TestMark".  
   
 ```  
 VSPerfCmd.exe /Start:Sample /Output:TestApp.exe.vsp  
@@ -44,7 +46,7 @@ VSPerfCmd.exe /Launch:TestApp.exe
 VSPerfCmd.exe /Mark:123,TestMark  
 ```  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [VSPerfCmd](../profiling/vsperfcmd.md)   
  [Profilatura di applicazioni autonome](../profiling/command-line-profiling-of-stand-alone-applications.md)   
  [Profilatura di applicazioni Web ASP.NET](../profiling/command-line-profiling-of-aspnet-web-applications.md)   

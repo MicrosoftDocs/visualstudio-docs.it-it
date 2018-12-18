@@ -11,31 +11,17 @@ ms.topic: article
 helpviewer_keywords:
 - debugger
 ms.assetid: d2ee0301-ea78-43d8-851a-71b7b2043d73
-caps.latest.revision: 1
+caps.latest.revision: 
 author: mikejo5000
 ms.author: mikejo
 manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
+ms.workload:
+- multiple
+ms.openlocfilehash: 43955eedc5d7149396b3ad6dc7c380298b631d9e
+ms.sourcegitcommit: 5d43e9590e2246084670b79269cc9d99124bb3df
 ms.translationtype: HT
-ms.sourcegitcommit: 9e6c28d42bec272c6fd6107b4baf0109ff29197e
-ms.openlocfilehash: b4f4e312fb7717edfe950cf6977279a1bd67a458
-ms.contentlocale: it-it
-ms.lasthandoff: 09/06/2017
-
+ms.contentlocale: it-IT
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="profiling-feature-tour"></a>Panoramica delle funzionalità di profilatura
 
@@ -49,7 +35,7 @@ Durante il debug è possibile usare la finestra **Strumenti di diagnostica** per
 
 ![Visualizzazione di riepilogo di Strumenti diagnostici](../profiling/media/prof-tour-cpu-and-memory-graph.gif "Riepilogo di Strumenti di diagnostica")
 
-La finestra **Strumenti di diagnostica** è spesso il modo migliore per profilare le app, ma è anche possibile effettuare una valutazione finale delle app. Per altre informazioni sui diversi approcci, vedere [Esecuzione degli strumenti di profilatura con o senza il debugger](../profiling/running-profiling-tools-with-or-without-the-debugger.md).
+La finestra **Strumenti di diagnostica** è spesso il modo migliore per profilare le app, ma per le build di versione è anche possibile effettuare un'analisi dopo che l'app è terminata. Per altre informazioni sui diversi approcci, vedere [Esecuzione degli strumenti di profilatura con o senza il debugger](../profiling/running-profiling-tools-with-or-without-the-debugger.md). Per informazioni sugli strumenti di profilatura supportati per i diversi tipi di app, vedere [Quale strumento si deve usare?](#tool_support_info).
 
 ## <a name="analyze-cpu-usage"></a>Analizzare l'utilizzo della CPU
 
@@ -114,7 +100,7 @@ La finestra consente di selezionare più strumenti di profilatura in alcuni scen
 
 ## <a name="analyze-resource-consumption-xaml"></a>Analizzare il consumo di risorse (XAML)
 
-Nelle applicazioni XAML, ad esempio le app WPF desktop di Windows e le app di Windows Store, è possibile analizzare il consumo di risorse usando lo strumento Sequenza temporale dell'applicazione. È possibile ad esempio analizzare il tempo impiegato dall'applicazione per preparare i frame dell'interfaccia utente (layout e rendering), per soddisfare le richieste di rete e disco e in scenari come l'avvio dell'applicazione, il caricamento delle pagine e il ridimensionamento di Windows. Per usare lo strumento, scegliere **Sequenza temporale dell'applicazione** nel profiler delle prestazioni e quindi scegliere **Inizia**. Nell'applicazione seguire lo scenario con un sospetto problema di consumo delle risorse e quindi scegliere **Arresta raccolta** per generare il report.
+Nelle app XAML, ad esempio le app WPF desktop di Windows e le app UWP, è possibile analizzare il consumo di risorse usando lo strumento Sequenza temporale applicazione. È possibile ad esempio analizzare il tempo impiegato dall'applicazione per preparare i frame dell'interfaccia utente (layout e rendering), per soddisfare le richieste di rete e disco e in scenari come l'avvio dell'applicazione, il caricamento delle pagine e il ridimensionamento di Windows. Per usare lo strumento, scegliere **Sequenza temporale dell'applicazione** nel profiler delle prestazioni e quindi scegliere **Inizia**. Nell'applicazione seguire lo scenario con un sospetto problema di consumo delle risorse e quindi scegliere **Arresta raccolta** per generare il report.
 
 I framerate ridotti nel grafico della **velocità effettiva degli elementi visivi** possono corrispondere a problemi di visualizzazione che si riscontrano quando si esegue l'applicazione. Analogamente, i numeri elevati nell'**utilizzo dei thread di interfaccia utente** possono corrispondere a problemi di velocità di risposta dell'interfaccia utente. Nel report è possibile selezionare un periodo di tempo con un sospetto problema di prestazioni e quindi esaminare in dettaglio le attività del thread dell'interfaccia utente nella visualizzazione Dettagli sequenza temporale (riquadro inferiore).
 
@@ -136,13 +122,13 @@ Quando si seleziona un periodo di tempo nei grafici e si sceglie **Visualizza de
 
 ## <a name="analyze-performance-javascript"></a>Analizzare le prestazioni (JavaScript)
 
-Per le app HTML universali di Windows è possibile usare lo strumento Memoria JavaScript e lo strumento Velocità di risposta interfaccia utente HTML.
+Per le app UWP è possibile usare lo strumento Memoria JavaScript e lo strumento Velocità di risposta interfaccia utente HTML.
 
 Lo strumento Memoria JavaScript è simile allo strumento Utilizzo memoria disponibile per altri tipi di applicazioni. È possibile usare questo strumento per comprendere in che modo viene usata la memoria e individuare le perdite di memoria nell'applicazione. Per maggiori dettagli sullo strumento, vedere [Memoria JavaScript](../profiling/javascript-memory.md).
 
 ![Strumento di profilatura Memoria JavaScript](../profiling/media/diagjsmemory.png "Finestra di dialogo dello strumento Memoria JavaScript")
 
-Per diagnosticare la velocità di risposta dell'interfaccia utente, i tempi di caricamento lenti e gli aggiornamenti visivi lenti nelle app HTML universali di Windows, usare lo strumento Velocità di risposta interfaccia utente HTML. L'uso è simile a quello dello strumento Sequenza temporale dell'applicazione per altri tipi di applicazioni. Per altre informazioni, vedere [Velocità di risposta dell'interfaccia utente HTML](../profiling/html-ui-responsiveness.md).
+Per diagnosticare la velocità di risposta dell'interfaccia utente, i tempi di caricamento lenti e gli aggiornamenti visivi lenti nelle app UWP, usare lo strumento Velocità di risposta interfaccia utente HTML. L'uso è simile a quello dello strumento Sequenza temporale dell'applicazione per altri tipi di applicazioni. Per altre informazioni, vedere [Velocità di risposta dell'interfaccia utente HTML](../profiling/html-ui-responsiveness.md).
 
 ![Strumento di profilatura Velocità di risposta interfaccia utente HTML](../profiling/media/diaghtmlresp.png "Finestra di dialogo dello strumento Velocità di risposta interfaccia utente HTML")
 
@@ -160,25 +146,26 @@ Per altre informazioni, vedere [Utilizzo della rete](../profiling/network-usage.
 
 ## <a name="analyze-performance-legacy-tools"></a>Analizzare le prestazioni (strumenti precedenti)
 
-Se sono necessarie funzionalità, ad esempio la strumentazione, che non sono attualmente presenti negli strumenti Utilizzo CPU o Utilizzo memoria e si eseguono applicazioni desktop o ASP.NET, è possibile usare Esplora prestazioni per la profilatura. Lo strumento non è supportato nelle app UWP. Per altre informazioni, vedere [Esplora prestazioni](../profiling/performance-explorer.md)
+Se sono necessarie funzionalità, ad esempio la strumentazione, che non sono attualmente presenti negli strumenti Utilizzo CPU o Utilizzo memoria e si eseguono applicazioni desktop o ASP.NET, è possibile usare Esplora prestazioni per la profilatura. Lo strumento non è supportato nelle app UWP. Per altre informazioni, vedere [Esplora prestazioni](../profiling/performance-explorer.md).
 
 ![Strumento Esplora prestazioni](../profiling/media/prof-tour-performance-explorer.png "Esplora prestazioni")
 
-## <a name="which-tool-should-i-use"></a>Quale strumento utilizzare?  
+## <a name="tool_support_info"></a>Quale strumento si deve usare?  
+
 Nella tabella seguente sono riportati i diversi strumenti offerti da Visual Studio e i diversi tipi di progetto con cui possono essere usati:
   
-|Strumento di prestazioni|Desktop di Windows|Windows Store/universale|ASP.NET/ASP.NET Core|  
+|Strumento di prestazioni|Desktop di Windows|UWP|ASP.NET/ASP.NET Core|  
 |----------------------|---------------------|------------------------------|-------------|  
 |[Utilizzo memoria](../profiling/memory-usage.md)|sì|sì|sì|  
-|[Utilizzo CPU](../profiling/cpu-usage.md)|sì|sì|sì|  
-|[Utilizzo GPU](../debugger/gpu-usage.md)|sì|sì|no|  
-|[Sequenza temporale applicazione](../profiling/application-timeline.md)|sì|sì|no|  
+|[Utilizzo CPU](../profiling/cpu-usage.md)|sì|sì|sì (no per .NET Core/ASP.NET Core)|  
+|[Utilizzo GPU](../debugger/gpu-usage.md)|sì|sì|No|  
+|[Sequenza temporale applicazione](../profiling/application-timeline.md)|sì|sì|No|  
 |[PerfTips](../profiling/perftips.md)|sì|Sì per XAML, no per HTML|sì|  
-|[Esplora prestazioni](../profiling/performance-explorer.md)|sì|no|sì (no per ASP.NET Core)|  
-|[IntelliTrace](../debugger/intellitrace.md)|Solo .NET Enterprise|Solo .NET Enterprise|Solo .NET Enterprise|
-|[Utilizzo della rete](../profiling/network-usage.md)|no|sì|no| 
-|[HTML UI responsiveness](../profiling/html-ui-responsiveness.md)|no|Sì per HTML, no per XAML|no|  
-|[Memoria JavaScript](../profiling/javascript-memory.md)|no|Sì per HTML, no per XAML|no|  
+|[Esplora prestazioni](../profiling/performance-explorer.md)|sì|No|sì (no per ASP.NET Core)|  
+|[IntelliTrace](../debugger/intellitrace.md)|Solo .NET e Visual Studio Enterprise|Solo .NET e Visual Studio Enterprise|Solo .NET e Visual Studio Enterprise|
+|[Utilizzo della rete](../profiling/network-usage.md)|No|sì|No| 
+|[HTML UI responsiveness](../profiling/html-ui-responsiveness.md)|No|Sì per HTML, no per XAML|No|  
+|[Memoria JavaScript](../profiling/javascript-memory.md)|No|Sì per HTML, no per XAML|No|  
 
 ## <a name="see-also"></a>Vedere anche  
  [Debug in Visual Studio](../debugger/debugging-in-visual-studio.md)

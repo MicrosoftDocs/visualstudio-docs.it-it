@@ -1,40 +1,22 @@
 ---
-title: Estensione di esempio per i test codificati dell&quot;interfaccia utente per Excel | Microsoft Docs
+title: Estensione di esempio per i test codificati dell'interfaccia utente per Excel | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- vs-devops-test
+ms.technology: vs-devops-test
 ms.tgt_pltfrm: 
 ms.topic: article
-helpviewer_keywords:
-- coded UI tests, extensions for Excel
-ms.assetid: 451e4d14-7fac-42f9-af56-2bdc8414c6c7
-caps.latest.revision: 13
-ms.author: douge
-manager: douge
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 5ab78b6b8eaa8156ed2c8a807b1d8a80e75afa84
-ms.openlocfilehash: 46e8adfd4e4b66e743af8a0db5aecd3f40eb2de7
-ms.contentlocale: it-it
-ms.lasthandoff: 05/19/2017
-
+helpviewer_keywords: coded UI tests, extensions for Excel
+ms.author: gewarren
+manager: ghogen
+ms.workload: multiple
+author: gewarren
+ms.openlocfilehash: 4986d833807f5566b74d0879b13f74e3e9e68b07
+ms.sourcegitcommit: 7ae502c5767a34dc35e760ff02032f4902c7c02b
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 01/09/2018
 ---
 # <a name="sample-coded-ui-test-extension-for-excel"></a>Estensione di esempio per i test codificati dell'interfaccia utente per Excel
 Il componente dell'estensione dell'esempio viene eseguito nel processo del test codificato dell'interfaccia di [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] ed è organizzato in modo gerarchico, con la classe `ExtensionPackage` alla base. Al livello successivo si trovano le classi `TechnologyManager`, `ActionFilter` e `PropertyProvider`, con gli elementi di controllo al livello superiore.  
@@ -70,4 +52,3 @@ Architettura di estensione di Excel
  [Classe ActionFilter](../test/sample-excel-extension-actionfilter-class.md)   
  [Classi Element](../test/sample-excel-extension-element-classes.md)   
  [Classe PropertyProvider](../test/sample-excel-extension-propertyprovider-class.md)
-

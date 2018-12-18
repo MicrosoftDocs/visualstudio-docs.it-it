@@ -4,14 +4,14 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- vs-ide-sdk
+ms.technology: msbuild
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
 - http://schemas.microsoft.com/developer/msbuild/2003#ResolveAssemblyReference
 - MSBuild.ResolveAssemblyReference.TurnOnAutoGenerateBindingRedirects
 - MSBuild.ResolveAssemblyReference.FoundConflict
+- MSBuild.ResolveAssemblyRedirects.SuggestedRedirects
 dev_langs:
 - VB
 - CSharp
@@ -21,31 +21,17 @@ helpviewer_keywords:
 - ResolveAssemblyReference task [MSBuild]
 - MSBuild, ResolveAssemblyReference task
 ms.assetid: 4d56d848-b29b-4dff-86a2-0a96c9e4a170
-caps.latest.revision: 29
-author: kempb
-ms.author: kempb
+caps.latest.revision: 
+author: Mikejo5000
+ms.author: mikejo
 manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 11a9cee75f912c5fb31cf4a031644abe9c63d744
-ms.openlocfilehash: cf23ae07cbe6fda773405ca4a308487e0c92fec0
-ms.contentlocale: it-it
-ms.lasthandoff: 06/03/2017
-
+ms.workload:
+- multiple
+ms.openlocfilehash: 91585ea5e72bc2ceebf07d02c2398454f775b5b7
+ms.sourcegitcommit: a07b789cc41ed72664f2c700c1f114476e7b0ddd
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 02/19/2018
 ---
 # <a name="resolveassemblyreference-task"></a>Attività ResolveAssemblyReference
 Determina tutti gli assembly che dipendono dall'assembly specificato. Sono incluse le dipendenze di secondo e `n`ordine.  
@@ -71,7 +57,7 @@ Determina tutti gli assembly che dipendono dall'assembly specificato. Sono inclu
 |`FindSatellites`|Parametro `Boolean` facoltativo.<br /><br /> Se `true`, vengono trovati gli assembly satellite. Il valore predefinito è `true.`|  
 |`FindSerializationAssemblies`|Parametro `Boolean` facoltativo.<br /><br /> Se `true`, l'attività cerca gli assembly di serializzazione. Il valore predefinito è `true`.|  
 |`FullFrameworkAssemblyTables`|Parametro <xref:Microsoft.Build.Framework.ITaskItem>`[]` facoltativo.<br /><br /> Specifica gli elementi con metadati "FrameworkDirectory" per associare un elenco redist a una determinata directory del framework. Se l'associazione non viene eseguita, verrà registrato un errore. La logica di risoluzione dei riferimenti agli assembly usa la directory del framework di destinazione se non è impostato un oggetto FrameworkDirectory.|  
-|`FullFrameworkFolders`|Parametro facoltativo <xref:System.String?displayProperty=fullName>`[]`.<br /><br /> Specifica il set di cartelle che contengono una directory RedistList. Questa directory rappresenta il framework completo per un profilo client specificato, ad esempio %programfiles%\reference assemblies\microsoft\framework\v4.0.|  
+|`FullFrameworkFolders`|Parametro <xref:System.String?displayProperty=fullName>`[]` facoltativo.<br /><br /> Specifica il set di cartelle che contengono una directory RedistList. Questa directory rappresenta il framework completo per un profilo client specificato, ad esempio %programfiles%\reference assemblies\microsoft\framework\v4.0.|  
 |`FullTargetFrameworkSubsetNames`|Parametro `String[]` facoltativo.<br /><br /> Contiene un elenco di nomi di subset del framework di destinazione. Se un nome di subset nell'elenco corrisponde a uno nella proprietà del nome `TargetFrameworkSubset` , il sistema esclude il subset del framework di destinazione specifico in fase di compilazione.|  
 |`IgnoreDefaultInstalledAssemblyTables`|Parametro `Boolean` facoltativo.<br /><br /> Se `true`, l'attività cerca e usa tabelle di assembly installate aggiuntive (o "elenchi redist") che si trovano nella directory \RedistList in `TargetFrameworkDirectories`. Il valore predefinito è `false.`|  
 |`IgnoreDefaultInstalledAssemblySubsetTables`|Parametro `Boolean` facoltativo.<br /><br /> Se `true`, l'attività cerca e usa tabelle di subset di assembly installate aggiuntive (o "elenchi di subset") che si trovano nella directory \SubSetList in `TargetFrameworkDirectories`. Il valore predefinito è `false.`|  
@@ -126,4 +112,3 @@ Determina tutti gli assembly che dipendono dall'assembly specificato. Sono inclu
 ## <a name="see-also"></a>Vedere anche  
  [Attività](../msbuild/msbuild-tasks.md)   
  [Riferimento alle attività](../msbuild/msbuild-task-reference.md)
-

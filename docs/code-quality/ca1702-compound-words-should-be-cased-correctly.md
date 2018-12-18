@@ -1,58 +1,59 @@
 ---
-title: "CA1702: Le parole composte devono essere digitate correttamente con distinzione tra maiuscole e minuscole | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/14/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-devops-test"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "CA1702"
-  - "CompoundWordsShouldBeCasedCorrectly"
-helpviewer_keywords: 
-  - "CA1702"
-  - "CompoundWordsShouldBeCasedCorrectly"
+title: 'CA1702: Le parole composte devono essere digitate correttamente | Documenti Microsoft'
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: vs-ide-code-analysis
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- CA1702
+- CompoundWordsShouldBeCasedCorrectly
+helpviewer_keywords:
+- CA1702
+- CompoundWordsShouldBeCasedCorrectly
 ms.assetid: 05481245-7ad8-48c3-a456-3aa44b6160a6
-caps.latest.revision: 20
-caps.handback.revision: 20
-author: "stevehoag"
-ms.author: "shoag"
-manager: "wpickett"
+caps.latest.revision: "20"
+author: gewarren
+ms.author: gewarren
+manager: ghogen
+ms.workload: multiple
+ms.openlocfilehash: d410f3796cdb30a620f0e0260f8cd529a4428831
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
-# CA1702: Le parole composte devono essere digitate correttamente con distinzione tra maiuscole e minuscole
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
+# <a name="ca1702-compound-words-should-be-cased-correctly"></a>CA1702: Le parole composte devono essere digitate correttamente con distinzione tra maiuscole e minuscole
 |||  
 |-|-|  
-|TypeName|Leparolecompostedevonoesseredigitatecorrettamentecondistinzionetramaiuscoleeminuscole|  
+|TypeName|CompoundWordsShouldBeCasedCorrectly|  
 |CheckId|CA1702|  
-|Category|Microsoft.Naming|  
-|Breaking Change|Sostanziale \- Quando generato su assembly.<br /><br /> Non sostanziale \- Quando generato su parametri di tipo.|  
+|Category|Microsoft. naming|  
+|Modifica importante|Interruzione quando viene generato per gli assembly.<br /><br /> Non sostanziale - Quando generato su parametri di tipo.|  
   
-## Causa  
- Il nome di un identificatore contiene più parole, fra cui almeno una che sembra essere composta e digitata in modo non corretto.  
+## <a name="cause"></a>Causa  
+ Il nome di un identificatore contiene più parole e almeno una delle parole sembra essere una parola composta non è stata definita correttamente.  
   
-## Descrizione della regola  
- Il nome dell'identificatore viene distinto in parole, distinguendo fra maiuscole e minuscole.  Ogni combinazione formata da due parole contigue viene controllata dalla libreria di verifica ortografia Microsoft.  Quando viene riconosciuto, l'identificatore diviene causa di violazione della regola.  Esempi di parole composte con cui si verifichi una violazione sono rispettivamente "SommaControllo" e "MultiPart", che devono invece essere digitate nelle forme "Somma controllo" e "Multipart."  A causa del precedente uso comune, nella regola vengono incorporate numerose eccezioni e vengono contrassegnate molte parole singole, come "Toolbar" e "Filename", che dovrebbero essere digitate come due parole distinte, \(in questo caso "ToolBar" e "FileName"\).  
+## <a name="rule-description"></a>Descrizione della regola  
+ Il nome dell'identificatore è suddiviso in parole che si basano le maiuscole e minuscole. Ogni combinazione di due parole contigui viene controllata dalla libreria del correttore ortografico Microsoft. Se viene riconosciuto, l'identificatore produce una violazione della regola. Esempi di parole composte che causano una violazione sono "CheckSum" e "MultiPart", devono essere digitati "Checksum" e "Multipart", rispettivamente. A causa di uso comune precedente, nella regola sono incluse diverse eccezioni e vengono contrassegnate singole parole diverse, ad esempio "Toolbar" e "Nomefile", che devono essere digitati due parole (in questo caso, "ToolBar" e "Nomefile").  
   
- Le convenzioni di denominazione forniscono un aspetto comune alle librerie che si avvalgono di Common Language Runtime.  In questo modo si riduce la curva di apprendimento necessaria per le nuove librerie software e i clienti possono confidare nel fatto che la libreria è stata sviluppata da un esperto nello sviluppo di codice gestito.  
+ Convenzioni di denominazione forniscono un aspetto comune per librerie destinate a common language runtime. In questo modo si riduce la curva di apprendimento che è necessario per le nuove librerie software e aumenta la confidenza di clienti che la libreria è stata sviluppata da un utente che ha esperienza nello sviluppo di codice gestito.  
   
-## Come correggere le violazioni  
- Modificare il modo in modo che presenti le lettere maiuscole e minuscole corrette.  
+## <a name="how-to-fix-violations"></a>Come correggere le violazioni  
+ Modificare il nome in modo che si è maiuscole e minuscole.  
   
-## Esclusione di avvisi  
- La soppressione degli avvisi relativi a questa regola è considerata sicura quando le due parti della parola composta vengono riconosciute dal dizionario ortografico e si desidera utilizzare due parole.  
+## <a name="when-to-suppress-warnings"></a>Esclusione di avvisi  
+ È possibile eliminare un avviso da questa regola se entrambe le parti della parola composta vengono riconosciute dal dizionario e si desidera utilizzare due parole.  
   
-## Regole correlate  
+## <a name="related-rules"></a>Regole correlate  
  [CA1701: Le parole composte di una stringa di risorsa devono essere digitate correttamente con distinzione tra maiuscole e minuscole](../code-quality/ca1701-resource-string-compound-words-should-be-cased-correctly.md)  
   
  [CA1709: Gli identificatori devono essere digitati correttamente con distinzione tra maiuscole e minuscole](../code-quality/ca1709-identifiers-should-be-cased-correctly.md)  
   
  [CA1708: Gli identificatori non si devono differenziare solo in base alle maiuscole e minuscole](../code-quality/ca1708-identifiers-should-differ-by-more-than-case.md)  
   
-## Vedere anche  
- [Convenzioni di denominazione](../Topic/Naming%20Guidelines.md)   
- [Convenzioni di lettere maiuscole\/minuscole](../Topic/Capitalization%20Conventions.md)
+## <a name="see-also"></a>Vedere anche  
+ [Convenzioni di denominazione](/dotnet/standard/design-guidelines/naming-guidelines)   
+ [Convenzioni per l'uso di maiuscole e minuscole](/dotnet/standard/design-guidelines/capitalization-conventions)

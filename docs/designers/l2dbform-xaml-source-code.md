@@ -4,73 +4,58 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-csharp
+ms.technology: vs-ide-designers
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: 624e96d4-6d27-4195-8ac2-2f3835f6c57e
-caps.latest.revision: 2
-author: kempb
-ms.author: kempb
+caps.latest.revision: "2"
+author: gewarren
+ms.author: gewarren
 manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-translationtype: Human Translation
-ms.sourcegitcommit: 5db97d19b1b823388a465bba15d057b30ff0b3ce
-ms.openlocfilehash: b62eac5ab4b057e26ed4a0a34551655984449cf1
-ms.lasthandoff: 02/22/2017
-
+ms.workload: multiple
+ms.openlocfilehash: b815904a7ac2b8a050cd4b907698c43a91d929dc
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="l2dbformxaml-source-code"></a>Codice sorgente di L2DBForm.xaml
-Questo argomento contiene e descrive il file di codice sorgente XAML per [Esempio di data binding di WPF con LINQ to XML](../designers/wpf-data-binding-using-linq-to-xml-example.md), L2DBForm.xaml.  
+Questo argomento contiene e descrive il file di origine XAML per [WPF Data Binding Using LINQ to XML Example](../designers/wpf-data-binding-using-linq-to-xml-example.md), L2DBForm.xaml.  
   
 ## <a name="overall-ui-structure"></a>Struttura complessiva dell'interfaccia utente  
- Come è tipico per i progetti WPF, questo file contiene un elemento padre, ovvero un elemento XML <xref:System.Windows.Window> associato alla classe derivata `L2XDBFrom` nello spazio dei nomi `LinqToXmlDataBinding`.  
+ Come è tipico per i progetti WPF, questo file contiene un elemento padre, ovvero un elemento XML <xref:System.Windows.Window> associato alla classe derivata `L2XDBFrom` nello spazio dei nomi `LinqToXmlDataBinding` .  
   
- L'area client è contenuta all'interno di un oggetto <xref:System.Windows.Controls.StackPanel> a cui è assegnato uno sfondo azzurro. Il pannello contiene quattro sezioni dell'interfaccia utente <xref:System.Windows.Controls.DockPanel> separate da barre <xref:System.Windows.Controls.Separator>. Lo scopo di queste sezioni è descritto nella sezione **Note** dell'[argomento precedente](../designers/walkthrough-linqtoxmldatabinding-example.md).  
+ L'area client è contenuta all'interno di un oggetto <xref:System.Windows.Controls.StackPanel> per cui viene specificato uno sfondo azzurro. Il pannello contiene quattro sezioni dell'interfaccia utente <xref:System.Windows.Controls.DockPanel> separate da barre <xref:System.Windows.Controls.Separator> . Lo scopo di queste sezioni è descritto nella sezione **Note** dell'argomento precedente, [.](../designers/walkthrough-linqtoxmldatabinding-example.md)  
   
  Ogni sezione contiene un'etichetta che la identifica. Nelle prime due sezioni questa etichetta viene ruotata di 90 gradi tramite l'uso di un oggetto <xref:System.Windows.FrameworkElement.LayoutTransform%2A>. Il resto della sezione contiene gli elementi dell'interfaccia utente appropriati per lo scopo: blocchi di testo, caselle di testo, pulsanti e così via. A volte viene usato un elemento figlio <xref:System.Windows.Controls.StackPanel> per allineare questi controlli figlio.  
   
 ## <a name="window-resource-section"></a>Sezione delle risorse della finestra  
  Il tag di apertura di `<Window.Resources>` alla riga 9 indica l'inizio della sezione relativa alle risorse della finestra, che termina con il tag di chiusura alla riga 35.  
   
- Il tag `<ObjectDataProvider>`, che si estende dalla riga 11 alla riga 25, dichiara un oggetto <xref:System.Windows.Data.ObjectDataProvider>, denominato `LoadedBooks`, che usa <xref:System.Xml.Linq.XElement> come origine. <xref:System.Xml.Linq.XElement> viene inizializzato tramite l'analisi di un documento XML incorporato (elemento `CDATA`). Si noti che lo spazio vuoto viene conservato quando si dichiara il documento XML incorporato e anche quando lo si analizza, in quanto il controllo <xref:System.Windows.Controls.TextBlock>, usato per visualizzare l'XML non elaborato, non include funzionalità speciali di formattazione XML.  
+ Il tag `<ObjectDataProvider>` , che si estende dalla riga 11 alla riga 25, dichiara un oggetto <xref:System.Windows.Data.ObjectDataProvider>, denominato `LoadedBooks`, che usa <xref:System.Xml.Linq.XElement> come origine. <xref:System.Xml.Linq.XElement> viene inizializzato tramite l'analisi di un documento XML incorporato (elemento `CDATA` ). Si noti che lo spazio vuoto viene conservato quando si dichiara il documento XML incorporato e anche quando lo si analizza, in quanto il controllo <xref:System.Windows.Controls.TextBlock> , usato per visualizzare l'XML non elaborato, non include funzionalità speciali di formattazione XML.  
   
- Infine, viene definito un oggetto <xref:System.Windows.DataTemplate>, denominato `BookTemplate` dalla riga 28 alla riga 34. Questo modello verrà usato per visualizzare le voci nella sezione dell'interfaccia utente **Book List** . Vengono usati il data binding e le proprietà dinamiche di LINQ to XML per recuperare l'ID e il nome libro tramite le seguenti assegnazioni:  
+ Infine, viene definito un oggetto <xref:System.Windows.DataTemplate> denominato `BookTemplate` dalla riga 28 alla riga 34. Questo modello verrà usato per visualizzare le voci nella sezione dell'interfaccia utente **Book List** . Vengono usate l'associazione dati e le proprietà dinamiche di LINQ to XML per recuperare l'ID e il nome libro tramite le seguenti assegnazioni:  
   
 ```  
 Text="{Binding Path=Attribute[id].Value}"Text="{Binding Path=Value}"  
 ```  
   
-## <a name="data-binding-code"></a>Codice di data binding  
- Oltre che nell'elemento <xref:System.Windows.DataTemplate>, il data binding viene usato in diverse altre sezioni del file.  
+## <a name="data-binding-code"></a>Codice di associazione dati  
+ Oltre che nell'elemento <xref:System.Windows.DataTemplate> , l'associazione dati viene usata in diverse altre sezioni del file.  
   
- Nel tag di apertura di `<StackPanel>`, alla riga 38, la proprietà <xref:System.Windows.FrameworkElement.DataContext%2A> di questo pannello è impostata sul provider di dati `LoadedBooks`.  
+ Nel tag di apertura di `<StackPanel>` , alla riga 38, la proprietà <xref:System.Windows.FrameworkElement.DataContext%2A> di questo pannello è impostata sul provider di dati `LoadedBooks` .  
   
 ```  
 DataContext="{Binding Source={StaticResource LoadedBooks}}  
 ```  
   
- In questo modo l'oggetto <xref:System.Windows.Controls.TextBlock> denominato `tbRawXml`, alla riga 46, è in grado di visualizzare l'XML non elaborato tramite l'associazione alla proprietà `Xml` di questo provider di dati:  
+ In questo modo l'oggetto <xref:System.Windows.Controls.TextBlock> denominato `tbRawXml` , alla riga 46, è in grado di visualizzare l'XML non elaborato tramite l'associazione alla proprietà `Xml` di questo provider di dati:  
   
 ```  
 Text="{Binding Path=Xml}"   
 ```  
   
- L'oggetto <xref:System.Windows.Controls.ListBox> nella sezione dell'interfaccia utente **Book List**, dalla riga 58 alla riga 62, imposta il modello per i relativi elementi visualizzati sull'oggetto `BookTemplate` definito nella sezione delle risorse della finestra:  
+ L'oggetto <xref:System.Windows.Controls.ListBox> nella sezione dell'interfaccia utente **Book List** , dalla riga 58 alla riga 62, imposta il modello per i relativi elementi visualizzati sull'oggetto `BookTemplate` definito nella sezione delle risorse della finestra:  
   
 ```  
 ItemTemplate ="{StaticResource BookTemplate}"   
@@ -90,13 +75,13 @@ ItemTemplate ="{StaticResource BookTemplate}"
 DataContext="{Binding ElementName=lbBooks, Path=SelectedItem}"  
 ```  
   
- Usa quindi il data binding bidirezionale, in modo che i valori correnti degli elementi libro vengano visualizzati e aggiornati dalle due caselle di testo di questo pannello. Il data binding a proprietà dinamiche è simile a quello usato nel modello di dati `BookTemplate` :  
+ Usa quindi l'associazione dati bidirezionale, in modo che i valori correnti degli elementi libro vengano visualizzati e aggiornati dalle due caselle di testo di questo pannello. L'associazione dati a proprietà dinamiche è simile a quella usata nel modello di dati `BookTemplate` :  
   
 ```  
 Text="{Binding Path=Attribute[id].Value}"...Text="{Binding Path=Value}"  
 ```  
   
- L'ultima sezione dell'interfaccia utente, **Add New Book**, non usa il data binding nel codice XAML, ma tale codice è disponibile nel codice di gestione degli eventi nel file L2DBForm.xaml.cs.  
+ L'ultima sezione dell'interfaccia utente, **Add New Book**, non usa l'associazione dati nel codice XAML, ma tale codice è invece disponibile nel codice di gestione degli eventi nel file L2DBForm.xaml.cs.  
   
 ## <a name="example"></a>Esempio  
   

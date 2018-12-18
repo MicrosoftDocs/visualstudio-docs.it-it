@@ -1,14 +1,13 @@
 ---
 layout: LandingPage
-title: Profilatura delle app con Visual Studio
+title: Profilatura delle app con Visual Studio | Microsoft Docs
 description: Informazioni su come usare Visual Studio 2017 per la profilatura delle prestazioni di applicazioni, servizi e strumenti nel linguaggio preferito.
 ms.technology: vs-ide-debug
+ms.openlocfilehash: fa5b65a11a1275f805644efbc6a210d51c18292d
+ms.sourcegitcommit: a07b789cc41ed72664f2c700c1f114476e7b0ddd
 ms.translationtype: HT
-ms.sourcegitcommit: 5c28e68b89f6583dc35a91b275693c11e0259dfd
-ms.openlocfilehash: e90fc5b4997acd7a9228e8132eb00f6f32ed2d3d
-ms.contentlocale: it-it
-ms.lasthandoff: 07/13/2017
-
+ms.contentlocale: it-IT
+ms.lasthandoff: 02/19/2018
 ---
 # <a name="profiling-in-visual-studio"></a>Profilatura in Visual Studio
 
@@ -16,13 +15,13 @@ Gli strumenti di profilatura e diagnostica consentono di diagnosticare l'utilizz
 
 <ul class="panelContent cardsFTitle">
     <li>
-        <a href="https://docs.microsoft.com/en-us/visualstudio/profiling/profiling-feature-tour">
+        <a href="https://docs.microsoft.com/visualstudio/profiling/profiling-feature-tour">
         <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
-                            <img src="/en-us/media/common/i_road-map.svg" alt="">
+                            <img src="/media/common/i_road-map.svg" alt="">
                         </div>
                     </div>
                     <div class="cardText">
@@ -34,13 +33,13 @@ Gli strumenti di profilatura e diagnostica consentono di diagnosticare l'utilizz
         </a>
     </li>
     <li>
-        <a href="https://docs.microsoft.com/en-us/visualstudio/profiling/beginners-guide-to-performance-profiling">
+        <a href="https://docs.microsoft.com/visualstudio/profiling/beginners-guide-to-performance-profiling">
         <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
-                            <img src="/en-us/media/common/i_code-performance.svg" alt="">
+                            <img src="/media/common/i_code-performance.svg" alt="">
                         </div>
                     </div>
                     <div class="cardText">
@@ -52,13 +51,13 @@ Gli strumenti di profilatura e diagnostica consentono di diagnosticare l'utilizz
         </a>
     </li>
     <li>
-        <a href="https://docs.microsoft.com/en-us/visualstudio/profiling/beginners-guide-to-performance-profiling.md#video">
+        <a href="https://mva.microsoft.com/en-US/training-courses-embed/getting-started-with-visual-studio-2017-17798/Profiling-with-Diagnostics-Tools-in-Visual-Studio-2017-daHnzMD6D_9211787171">
         <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
-                            <img src="/en-us/media/common/i_video.svg" alt="">
+                            <img src="/media/common/i_video.svg" alt="">
                         </div>
                     </div>
                     <div class="cardText">
@@ -70,13 +69,13 @@ Gli strumenti di profilatura e diagnostica consentono di diagnosticare l'utilizz
         </a>
     </li>
     <li>
-        <a href="https://docs.microsoft.com/en-us/visualstudio/profiling/memory-usage">
+        <a href="https://docs.microsoft.com/visualstudio/profiling/memory-usage">
         <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
-                            <img src="/en-us/media/common/i_code-performance.svg" alt="">
+                            <img src="/media/common/i_code-performance.svg" alt="">
                         </div>
                     </div>
                     <div class="cardText">
@@ -88,13 +87,13 @@ Gli strumenti di profilatura e diagnostica consentono di diagnosticare l'utilizz
         </a>
     </li>
         <li>
-        <a href="https://docs.microsoft.com/en-us/visualstudio/profiling/application-timeline">
+        <a href="https://docs.microsoft.com/visualstudio/profiling/application-timeline">
         <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
-                            <img src="/en-us/media/common/i_get-started.svg" alt="">
+                            <img src="/media/common/i_get-started.svg" alt="">
                         </div>
                     </div>
                     <div class="cardText">
@@ -106,13 +105,13 @@ Gli strumenti di profilatura e diagnostica consentono di diagnosticare l'utilizz
         </a>
     </li>
     <li>
-        <a href="https://docs.microsoft.com/en-us/visualstudio/profiling/network-usage">
+        <a href="https://docs.microsoft.com/visualstudio/profiling/network-usage">
         <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
-                            <img src="/en-us/media/common/i_get-started.svg" alt="">
+                            <img src="/media/common/i_get-started.svg" alt="">
                         </div>
                     </div>
                     <div class="cardText">
@@ -124,13 +123,13 @@ Gli strumenti di profilatura e diagnostica consentono di diagnosticare l'utilizz
         </a>
     </li>
     <li>
-        <a href="https://docs.microsoft.com/en-us/visualstudio/debugger/gpu-usage">
+        <a href="https://docs.microsoft.com/visualstudio/debugger/gpu-usage">
         <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
-                            <img src="/en-us/media/common/i_get-started.svg" alt="">
+                            <img src="/media/common/i_get-started.svg" alt="">
                         </div>
                     </div>
                     <div class="cardText">
@@ -141,19 +140,18 @@ Gli strumenti di profilatura e diagnostica consentono di diagnosticare l'utilizz
         </div>
         </a>
     </li>
-    
-        <li>
-        <a href="https://docs.microsoft.com/en-us/visualstudio/profiling/analyze-energy-use-in-store-apps">
+    <li>
+        <a href="https://docs.microsoft.com/visualstudio/profiling/analyze-energy-use-in-store-apps">
         <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
-                            <img src="/en-us/media/common/i_get-started.svg" alt="">
+                            <img src="/media/common/i_get-started.svg" alt="">
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Analizzare il consumo di energia (app dello Store)</h3>
+                        <h3>Analizzare il consumo di energia (app UWP)</h3>
                     </div>
                 </div>
             </div>
@@ -161,13 +159,13 @@ Gli strumenti di profilatura e diagnostica consentono di diagnosticare l'utilizz
         </a>
     </li>
     <li>
-        <a href="https://docs.microsoft.com/en-us/visualstudio/profiling/what-s-new-in-profiling-tools">
+        <a href="https://docs.microsoft.com/visualstudio/profiling/what-s-new-in-profiling-tools">
         <div class="cardSize">
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage">
-                            <img src="/en-us/media/common/i_whats-new.svg" alt="">
+                            <img src="/media/common/i_whats-new.svg" alt="">
                         </div>
                     </div>
                     <div class="cardText">

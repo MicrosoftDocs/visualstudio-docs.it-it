@@ -1,71 +1,72 @@
 ---
-title: "IDebugPendingBreakpoint2 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "IDebugPendingBreakpoint2"
-helpviewer_keywords: 
-  - "Interfaccia IDebugPendingBreakpoint2"
+title: IDebugPendingBreakpoint2 | Documenti Microsoft
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: vs-ide-sdk
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: IDebugPendingBreakpoint2
+helpviewer_keywords: IDebugPendingBreakpoint2 interface
 ms.assetid: d416b095-917e-475e-b796-ec0a03ffb8da
-caps.latest.revision: 13
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 13
+caps.latest.revision: "13"
+author: gregvanl
+ms.author: gregvanl
+manager: ghogen
+ms.workload: vssdk
+ms.openlocfilehash: ef986bd657a080c08fd0ebb85908ba59757bf207
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
-# IDebugPendingBreakpoint2
-[!INCLUDE[vs2017banner](../../../code-quality/includes/vs2017banner.md)]
-
-Questa interfaccia rappresenta un punto di interruzione che è pronto per l'associazione a un percorso di codice.  
+# <a name="idebugpendingbreakpoint2"></a>IDebugPendingBreakpoint2
+Questa interfaccia rappresenta un punto di interruzione che è possibile associare a un percorso di codice.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
 IDebugPendingBreakpoint2 : IUnknown  
 ```  
   
-## Note per gli implementatori  
- Il motore di \(DE\) debug implementa questa interfaccia come parte del supporto per i punti di interruzione.  
+## <a name="notes-for-implementers"></a>Note per gli implementatori  
+ Il motore di debug (DE) implementa questa interfaccia come parte del supporto per i punti di interruzione.  
   
-## Note per i chiamanti  
- Una chiamata [CreatePendingBreakpoint](../../../extensibility/debugger/reference/idebugengine2-creatependingbreakpoint.md) crea un punto di interruzione in [IDebugBreakpointRequest2](../../../extensibility/debugger/reference/idebugbreakpointrequest2.md) attesa in un'interfaccia.  Una chiamata [Operazione di binding](../../../extensibility/debugger/reference/idebugpendingbreakpoint2-bind.md) crea un'interfaccia di `IDebugBreakpoint2` che rappresenta un punto di interruzione associato nel programma.  
+## <a name="notes-for-callers"></a>Note per i chiamanti  
+ Una chiamata a [CreatePendingBreakpoint](../../../extensibility/debugger/reference/idebugengine2-creatependingbreakpoint.md) crea un punto di interruzione in sospeso da un [IDebugBreakpointRequest2](../../../extensibility/debugger/reference/idebugbreakpointrequest2.md) interfaccia. Una chiamata a [associare](../../../extensibility/debugger/reference/idebugpendingbreakpoint2-bind.md) crea un `IDebugBreakpoint2` interfaccia che rappresenta un punto di interruzione associato nel programma.  
   
-## Metodi nell'ordine di Vtable  
- Nella tabella seguente sono elencati i metodi di `IDebugPendingBreakpoint2`.  
+## <a name="methods-in-vtable-order"></a>Metodi nell'ordine Vtable  
+ Nella tabella seguente sono illustrati i metodi di `IDebugPendingBreakpoint2`.  
   
 |Metodo|Descrizione|  
 |------------|-----------------|  
-|[CanBind](../../../extensibility/debugger/reference/idebugpendingbreakpoint2-canbind.md)|Determina se questo punto di interruzione corrente può essere associato a un percorso di codice.|  
-|[Operazione di binding](../../../extensibility/debugger/reference/idebugpendingbreakpoint2-bind.md)|Associa questo punto di interruzione corrente a uno o più percorsi di codice.|  
-|[GetState](../Topic/IDebugPendingBreakpoint2::GetState.md)|Ottiene lo stato di questo punto di interruzione corrente.|  
-|[GetBreakpointRequest](../../../extensibility/debugger/reference/idebugpendingbreakpoint2-getbreakpointrequest.md)|Ottiene la richiesta del punto di interruzione utilizzata per creare questo punto di interruzione corrente.|  
-|[Virtualizzare](../../../extensibility/debugger/reference/idebugpendingbreakpoint2-virtualize.md)|Alternare lo stato virtualizzato di questo punto di interruzione corrente.|  
-|[Abilita](../../../extensibility/debugger/reference/idebugpendingbreakpoint2-enable.md)|Alternare lo stato attivato di questo punto di interruzione corrente.|  
-|[SetCondition](../../../extensibility/debugger/reference/idebugpendingbreakpoint2-setcondition.md)|Imposta o modifica la condizione associata a questo punto di interruzione corrente.|  
-|[SetPassCount](../../../extensibility/debugger/reference/idebugpendingbreakpoint2-setpasscount.md)|Imposta o modifica il conteggio della sessione associato a questo punto di interruzione corrente.|  
-|[EnumBoundBreakpoints](../../../extensibility/debugger/reference/idebugpendingbreakpoint2-enumboundbreakpoints.md)|Enumera i punti di interruzione limitano da questo punto di interruzione corrente.|  
-|[EnumErrorBreakpoints](../Topic/IDebugPendingBreakpoint2::EnumErrorBreakpoints.md)|Enumera i punti di interruzione di errore in derivato da questo punto di interruzione corrente.|  
-|[Delete](../../../extensibility/debugger/reference/idebugpendingbreakpoint2-delete.md)|elimina questo punto di interruzione in corso e tutti i punti di interruzione limitano da.|  
+|[CanBind](../../../extensibility/debugger/reference/idebugpendingbreakpoint2-canbind.md)|Determina se è possibile associare il punto di interruzione in sospeso in un percorso di codice.|  
+|[Operazione di binding](../../../extensibility/debugger/reference/idebugpendingbreakpoint2-bind.md)|Associa il punto di interruzione in sospeso a uno o più percorsi di codice.|  
+|[GetState](../../../extensibility/debugger/reference/idebugpendingbreakpoint2-getstate.md)|Ottiene lo stato di questo punto di interruzione.|  
+|[GetBreakpointRequest](../../../extensibility/debugger/reference/idebugpendingbreakpoint2-getbreakpointrequest.md)|Ottiene la richiesta di punto di interruzione che è stata utilizzata per creare il punto di interruzione in sospeso.|  
+|[Virtualizzare](../../../extensibility/debugger/reference/idebugpendingbreakpoint2-virtualize.md)|Alterna lo stato virtualizzato di questo punto di interruzione.|  
+|[Abilitare](../../../extensibility/debugger/reference/idebugpendingbreakpoint2-enable.md)|Attiva o disattiva lo stato di abilitazione di questo punto di interruzione.|  
+|[SetCondition](../../../extensibility/debugger/reference/idebugpendingbreakpoint2-setcondition.md)|Imposta o modifica la condizione associata a questo punto di interruzione.|  
+|[SetPassCount](../../../extensibility/debugger/reference/idebugpendingbreakpoint2-setpasscount.md)|Imposta o modifica il numero di sessione associato a questo punto di interruzione.|  
+|[EnumBoundBreakpoints](../../../extensibility/debugger/reference/idebugpendingbreakpoint2-enumboundbreakpoints.md)|Enumera tutti i punti di interruzione associati da questo punto di interruzione in sospeso.|  
+|[EnumErrorBreakpoints](../../../extensibility/debugger/reference/idebugpendingbreakpoint2-enumerrorbreakpoints.md)|Enumera tutti i punti di interruzione di errore che ha generato da questo punto di interruzione in sospeso.|  
+|[Eliminazione](../../../extensibility/debugger/reference/idebugpendingbreakpoint2-delete.md)|Elimina il punto di interruzione in sospeso e tutti i punti di interruzione associati da esso.|  
   
-## Note  
- `IDebugPendingBreakpoint2` può essere considerato come un provider di tutte le informazioni necessarie necessarie per associare un punto di interruzione da codificare applicabile a uno o più programma.  
+## <a name="remarks"></a>Note  
+ `IDebugPendingBreakpoint2`può essere considerato come un provider di tutte le necessarie informazioni necessarie per associare un punto di interruzione al codice che può essere applicato a uno o più programmi.  
   
- Di un punto di interruzione in attesa potenzialmente possibile scrivere più di un punto di interruzione associato.  Ad esempio, un punto di interruzione nel modello di tipo c \+\+\-style potrebbe produrre un punto di interruzione associato per ogni istanza univoca del modello.  
+ Un punto di interruzione in sospeso può produrre più di un punto di interruzione associato. Ad esempio, un punto di interruzione in un modello di stile di C++ in grado di generare un punto di interruzione associato per ogni istanza univoca di tale modello.  
   
-## Requisiti  
- intestazione: msdbg.h  
+## <a name="requirements"></a>Requisiti  
+ Intestazione: msdbg.h  
   
- Spazio dei nomi: Microsoft.VisualStudio.Debugger.Interop  
+ Namespace: Microsoft.VisualStudio.Debugger.Interop  
   
  Assembly: Microsoft.VisualStudio.Debugger.Interop.dll  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [CreatePendingBreakpoint](../../../extensibility/debugger/reference/idebugengine2-creatependingbreakpoint.md)   
  [GetPendingBreakpoint](../../../extensibility/debugger/reference/idebugbreakpointboundevent2-getpendingbreakpoint.md)   
- [GetPendingBreakpoint](../Topic/IDebugBoundBreakpoint2::GetPendingBreakpoint.md)   
+ [GetPendingBreakpoint](../../../extensibility/debugger/reference/idebugboundbreakpoint2-getpendingbreakpoint.md)   
  [GetPendingBreakpoint](../../../extensibility/debugger/reference/idebugerrorbreakpoint2-getpendingbreakpoint.md)

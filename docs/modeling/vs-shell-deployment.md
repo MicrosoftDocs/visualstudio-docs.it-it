@@ -1,31 +1,34 @@
 ---
-title: "Distribuzione della shell di Visual Studio | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: be8f2ffe-a322-4ac0-9c9e-873bd28e5d5e
-caps.latest.revision: 2
-author: "alancameronwills"
-ms.author: "awills"
-manager: "douge"
-caps.handback.revision: 2
+title: Distribuzione di Visual Studio Shell | Documenti Microsoft
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.topic: article
+author: gewarren
+ms.author: gewarren
+manager: ghogen
+ms.workload:
+- multiple
+ms.technology: vs-ide-modeling
+ms.openlocfilehash: eb5446c8c3090624f327c234a1b518dc1928b6c9
+ms.sourcegitcommit: 205d15f4558315e585c67f33d5335d5b41d0fcea
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 02/09/2018
 ---
-# Distribuzione della shell di Visual Studio
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
+# <a name="vs-shell-deployment"></a>Distribuzione della shell di Visual Studio
 
-Una shell isolato consente di determinare quale funzionalità di Visual Studio sono necessarie per interagire con il linguaggio specifico di dominio e come tale soluzione deve essere visualizzato.  Per ulteriori informazioni su Visual Studio la shell isolato, vedere [Personalizzazione Shell isolata](../extensibility/customizing-the-isolated-shell.md).  È possibile trovare ulteriori informazioni su come personalizzare la shell isolato in [Personalizzare la Shell Isolated](http://msdn.microsoft.com/it-it/d75463cd-1155-42e4-8b7a-046ed6becbbf).  
+Una shell isolata consente di determinare quali Visual Studio funzionalità necessarie interagire con il linguaggio specifico di dominio e l'aspetto di tale soluzione. Per ulteriori informazioni sulla shell di Visual Studio isolated, vedere [personalizzazione Shell isolata](../extensibility/customizing-the-isolated-shell.md).
+
+## <a name="to-set-a-visual-studio-shell-as-the-deployment-target"></a>Per impostare una Shell di Visual Studio come destinazione di distribuzione
   
-### Per impostare una shell di Visual Studio come destinazione di distribuzione  
+1.  Nel **DslPackage** progetto, aprire **source.extension.tt**.  
   
-1.  in **DslPackage** progetto, aprire  **source.extension.tt**.  
-  
-2.  In `<SupportedProducts>` inserimento:  
+2.  In `<SupportedProducts>` inserire:  
   
     ```  
     <IsolatedShell Version="1.0">MyIsolatedShell</IsolatedShell>  
     ```  
   
-     di sostituzione *MyIsolatedShell* con il nome del pacchetto della shell isolato.
+     Sostituire *MyIsolatedShell* con il nome del pacchetto di shell isolata.

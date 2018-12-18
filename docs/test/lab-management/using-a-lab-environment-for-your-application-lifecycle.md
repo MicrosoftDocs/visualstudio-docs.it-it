@@ -4,36 +4,19 @@ ms.custom:
 ms.date: 05/02/2017
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- vs-devops-test
+ms.technology: vs-devops-test
 ms.tgt_pltfrm: 
 ms.topic: article
-helpviewer_keywords:
-- lab environment, test lab
-ms.assetid: b435eb39-dc7c-46fa-a91b-6e6dd614f01c
-caps.latest.revision: 56
-ms.author: douge
-manager: douge
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 45d36934cf1c46902cac566203cddf4a118b7fe4
-ms.openlocfilehash: 29b1343159cb91d3d5e4b9769c4103cc3565f986
-ms.contentlocale: it-it
-ms.lasthandoff: 06/02/2017
-
+helpviewer_keywords: lab environment, test lab
+ms.author: gewarren
+manager: ghogen
+ms.workload: multiple
+author: gewarren
+ms.openlocfilehash: 227068197de1d953ae6f3729888a1b6d2dfc164c
+ms.sourcegitcommit: 7ae502c5767a34dc35e760ff02032f4902c7c02b
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 01/09/2018
 ---
 # <a name="use-a-lab-environment-for-your-devops"></a>Usare un ambiente lab per DevOps
 
@@ -169,4 +152,3 @@ Di seguito sono riportati alcuni concetti aggiuntivi che è necessario conoscere
 * [Visual Studio Lab Management Guide](http://go.microsoft.com/fwlink/?LinkID=230951) (Guida di Visual Studio Lab Management)  
 * [Managing lab environments for testing](http://go.microsoft.com/fwlink/?LinkID=252614) (Gestione degli ambienti lab per l'esecuzione di test)  
 * [Blog di Visual Studio DevOps e Team Foundation Server](http://go.microsoft.com/fwlink/?LinkID=254496)  
-

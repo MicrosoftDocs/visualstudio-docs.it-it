@@ -1,66 +1,66 @@
 ---
-title: "Gestione dei canali | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "vs.cv.threads.tools.managechannels"
-helpviewer_keywords: 
-  - "Visualizzatore di concorrenza, gstione dei canali"
+title: Gestire i canali | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: vs-ide-debug
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: vs.cv.threads.tools.managechannels
+helpviewer_keywords: Concurrency Visualizer, Manage Channels
 ms.assetid: 507b06e9-bb56-4a72-8fd5-f91f958da6fc
-caps.latest.revision: 13
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 13
+caps.latest.revision: "13"
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.workload: multiple
+ms.openlocfilehash: 3915606f9bfaaf2a747ecd5ede0195116c346f0b
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
-# Gestione dei canali
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
-In **Visualizzazione thread** nel Visualizzatore di concorrenza, è possibile organizzare i canali per il processo in modo da poter esaminare determinati modelli.  È possibile ordinare i canali, alzarli e abbassarli e nasconderli o visualizzarli.  
+# <a name="manage-channels"></a>Gestione dei canali
+Nella **visualizzazione Thread** del visualizzatore di concorrenza è possibile organizzare i canali per il processo in modo da poter esaminare modelli specifici. È possibile ordinare i canali, spostarli verso l'alto o verso il basso e nasconderli o visualizzarli.  
   
-## Ordina per  
- È possibile utilizzare il comando Sort By per ordinare le thread in base a criteri diversi, basati sul livello di zoom corrente.  Ciò può risultare particolarmente utile quando si è in cerca di un modello particolare.  È possibile ordinare secondo questi criteri:  
+## <a name="sort-by"></a>Ordina per  
+ Il controllo Ordina per può essere usato per ordinare i thread in base a diversi criteri, sulla base del livello di zoom corrente. Ciò è particolarmente utile quando si sta cercando un determinato modello. È possibile ordinare i thread secondo i criteri seguenti:  
   
 |Criteri|Definizione|  
-|-------------|-----------------|  
-|Ora di inizio|Ordina i thread in base al tempo di inizio.  Si tratta dell'ordinamento predefinito.|  
-|Ora di fine|Ordina i thread in base ai relativi tempi di fine.|  
+|--------------|----------------|  
+|Ora di inizio|Ordina i thread in base all'ora di inizio. Si tratta dell'ordinamento predefinito.|  
+|Ora di fine|Ordina i thread in base all'ora di fine.|  
 |Esecuzione|Ordina i thread in base alla percentuale di tempo trascorso in fase di esecuzione.|  
 |Sincronizzazione|Ordina i thread in base alla percentuale di tempo trascorso in fase di sincronizzazione.|  
-|I\/O|Ordina i thread in base alla percentuale di tempo trascorsa in I\/O \(lettura e scrittura di dati\).|  
+|I/O|Ordina i thread in base alla percentuale di tempo trascorso in fase di I/O (lettura e scrittura di dati).|  
 |Sleep|Ordina i thread in base alla percentuale di tempo trascorso in fase di sospensione.|  
 |Paging|Ordina i thread in base alla percentuale di tempo trascorso in fase di paging.|  
-|Priorità|Ordina i thread in base alla percentuale di tempo trascorso in fase di annullamento.|  
-|Elaborazione interfaccia utente|Ordina i thread in base alla percentuale di tempo trascorso nell'elaborazione dell'interfaccia utente.|  
+|Precedenza|Ordina i thread in base alla percentuale di tempo trascorso in fase di precedenza.|  
+|Elaborazione interfaccia utente|Ordina i thread in base alla percentuale di tempo trascorso in fase di elaborazione dell'interfaccia utente.|  
   
-## Sposta il Canale Selezionato Su o Giù  
- È possibile utilizzare questi controlli per spostare un canale verso l'alto o verso il basso nell'elenco.  Ad esempio, è possibile posizionare i canali correlati accanto agli altri per esaminare un modello specifico oppure una relazione cross\-thread.  
+## <a name="move-selected-channel-up-or-down"></a>Spostare il canale selezionato verso l'alto o verso il basso  
+ È possibile usare questi controlli per spostare un canale verso l'alto o verso il basso nell'elenco. Ad esempio, è possibile posizionare i canali correlati uno accanto all'altro in modo da poter esaminare un determinato modello o una relazione cross-thread.  
   
-## Sposta il canale selezionato in cima o in fondo  
- È possibile spostare i canali selezionati nella parte superiore o inferiore dell'elenco in modo da poter esaminare un particolare modello, oppure spostare alcuni canali per allontanarli quando si esaminano gli altri.  
+## <a name="move-selected-channel-to-top-or-bottom"></a>Spostare il canale selezionato al primo o all'ultimo posto  
+ È possibile spostare i canali selezionati al primo o all'ultimo posto dell'elenco in modo da poter esaminare un determinato modello o escludere alcuni canali quando si esaminano gli altri.  
   
-## Nascondere i Canali Selezionati  
- Scegliere questo controllo quando si desidera nascondere i canali.  Se, ad esempio, viene visualizzato un thread che rappresenta una sincronizzazione al 100% per la durata del processo gestito, è probabilmente possibile nasconderlo mentre vengono analizzati altri thread.  
+## <a name="hide-selected-channels"></a>Nascondere i canali selezionati  
+ Scegliere questo controllo quando si vogliono nascondere i canali. Ad esempio, se un thread è al 100% della sincronizzazione per la durata del processo gestito, è possibile nasconderlo mentre si analizzano altri thread.  
   
 > [!NOTE]
->  Se un thread viene nascosto, viene anche rimosso dal tempo di calcolo mostrato nella legenda attiva e nei rapporti di profilo.  
+>  Se un thread viene nascosto, verrà rimosso anche dal tempo di calcolo visualizzato nella legenda attiva e nei rapporti del profilo.  
   
-## Mostra Tutti i Canali  
- Questo controllo è attivo quando uno o più canali vengono nascosti.  Se lo si sceglie, tutti gli elementi nascosti vengono mostrati e vengono inclusi nel calcolo del tempo.  
+## <a name="show-all-channels"></a>Mostra tutti i canali  
+ Questo controllo è attivo quando uno o più canali vengono nascosti. Se si specifica questo controllo, tutti gli elementi nascosti vengono visualizzati e vengono inclusi nel calcolo del tempo.  
   
-## Spostare i Marcatori in Cima  
- Se una traccia contiene gli eventi del marcatore, è possibile utilizzare questo comando per spostare i canali del marcatore nella parte superiore della sequenza temporale.  Il loro ordine relativo viene preservato.  
+## <a name="move-markers-to-top"></a>Sposta i marcatori all'inizio  
+ Se una traccia contiene eventi marcatori, è possibile usare questo comando per spostare i canali dei marcatori all'inizio della sequenza temporale. Viene comunque mantenuto il loro ordine relativo.  
   
-## Raggruppare i Marcatori in base ai Thread  
- Se una traccia contiene gli eventi del marcatore, è possibile utilizzare questo comando per raggruppare i canali del marcatore sotto un thread che ha generato gli eventi del marcatore.  I canali dei dischi vengono spostati nella parte superiore dell'elenco dei canale e i canali di GPU vengono spostati nella parte inferiore.  
+## <a name="group-markers-by-thread"></a>Raggruppare i marcatori in base ai thread  
+ Se una traccia contiene eventi marcatori, è possibile usare questo comando per raggruppare i canali dei marcatori sotto il thread che ha generato gli eventi marcatori.  I canali dei dischi vengono spostati all'inizio dell'elenco dei canali e i canali GPU vengono spostati alla fine.  
   
-## Vedere anche  
- [Controllo zoom \(visualizzazione Thread\)](../profiling/zoom-control-threads-view.md)   
- [Modalità misurazione attiva\/non attiva](../profiling/measure-mode-on-off.md)   
+## <a name="see-also"></a>Vedere anche  
+ [Controllo zoom (visualizzazione Thread)](../profiling/zoom-control-threads-view.md)   
+ [Modalità misurazione attiva/non attiva](../profiling/measure-mode-on-off.md)   
  [Visualizzazione Thread](../profiling/threads-view-parallel-performance.md)

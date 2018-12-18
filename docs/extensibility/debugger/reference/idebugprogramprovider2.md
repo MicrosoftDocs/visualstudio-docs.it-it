@@ -1,62 +1,63 @@
 ---
-title: "IDebugProgramProvider2 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "IDebugProgramProvider2"
-helpviewer_keywords: 
-  - "Interfaccia IDebugProgramProvider2"
+title: IDebugProgramProvider2 | Documenti Microsoft
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: vs-ide-sdk
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: IDebugProgramProvider2
+helpviewer_keywords: IDebugProgramProvider2 interface
 ms.assetid: a9ec7b3e-a59c-4069-b2ee-6f45916eeb78
-caps.latest.revision: 14
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 14
+caps.latest.revision: "14"
+author: gregvanl
+ms.author: gregvanl
+manager: ghogen
+ms.workload: vssdk
+ms.openlocfilehash: 37771a5ea9f35075200cd5d5309bc5836afd11bc
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
-# IDebugProgramProvider2
-[!INCLUDE[vs2017banner](../../../code-quality/includes/vs2017banner.md)]
-
-Questa interfaccia registrata consente che l'amministratore \(SDM\) di debug della sessione di ottenere informazioni sui programmi che “sono stati pubblicati„ tramite [IDebugProgramPublisher2](../../../extensibility/debugger/reference/idebugprogrampublisher2.md) l'interfaccia.  
+# <a name="idebugprogramprovider2"></a>IDebugProgramProvider2
+Questa interfaccia registrata consente il debug di sessione manager (SDM) per ottenere informazioni sui programmi "pubblicati" tramite la [IDebugProgramPublisher2](../../../extensibility/debugger/reference/idebugprogrampublisher2.md) interfaccia.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
 IDebugProgramProvider2 : IUnknown  
 ```  
   
-## Note per gli implementatori  
- Il motore \(DE\) di debug implementa questa interfaccia per fornire informazioni sui programmi in corso il debug.  Questa interfaccia è registrata nella sezione di DE del Registro di sistema utilizzando `metricProgramProvider`metrica, come descritto [Helper SDK per il debug](../../../extensibility/debugger/reference/sdk-helpers-for-debugging.md)in.  
+## <a name="notes-for-implementers"></a>Note per gli implementatori  
+ Il motore di debug (DE) implementa questa interfaccia per fornire informazioni sui programmi in corso il debug. Questa interfaccia è registrata nella sezione del Registro di sistema utilizzando la metrica DE `metricProgramProvider`, come descritto in [SDK helper per il debug](../../../extensibility/debugger/reference/sdk-helpers-for-debugging.md).  
   
-## Note per i chiamanti  
- Funzione di `CoCreateInstance` di chiamata COM con `CLSID` del provider di programma ottenuto dal Registro di sistema.  vedere l'esempio.  
+## <a name="notes-for-callers"></a>Note per i chiamanti  
+ Chiamata COM `CoCreateInstance` utilizzabile con il `CLSID` del provider viene ottenuto dal Registro di sistema. Vedere l'esempio.  
   
-## Metodi nell'ordine di Vtable  
+## <a name="methods-in-vtable-order"></a>Metodi nell'ordine Vtable  
   
 |Metodo|Descrizione|  
 |------------|-----------------|  
-|[GetProviderProcessData](../../../extensibility/debugger/reference/idebugprogramprovider2-getproviderprocessdata.md)|Ottiene le informazioni sui programmi in esecuzione, filtrato in diversi modi.|  
-|[GetProviderProgramNode](../../../extensibility/debugger/reference/idebugprogramprovider2-getproviderprogramnode.md)|Ottiene un nodo di programma, dato un ID processo specifica|  
-|[WatchForProviderEvents](../../../extensibility/debugger/reference/idebugprogramprovider2-watchforproviderevents.md)|Stabilisce un callback per controllare gli eventi del provider associati a tipi specifici di processi.|  
-|[SetLocale](../../../extensibility/debugger/reference/idebugprogramprovider2-setlocale.md)|Definire le impostazioni locali per tutte le risorse specifiche della lingua necessari di l DE.|  
+|[GetProviderProcessData](../../../extensibility/debugger/reference/idebugprogramprovider2-getproviderprocessdata.md)|Ottiene informazioni sui programmi in esecuzione, filtrati in modi diversi.|  
+|[GetProviderProgramNode](../../../extensibility/debugger/reference/idebugprogramprovider2-getproviderprogramnode.md)|Ottiene un nodo, viene assegnato un ID di processo specifico.|  
+|[WatchForProviderEvents](../../../extensibility/debugger/reference/idebugprogramprovider2-watchforproviderevents.md)|Stabilisce un callback per il controllo degli eventi del provider associati a tipi specifici di processi.|  
+|[SetLocale](../../../extensibility/debugger/reference/idebugprogramprovider2-setlocale.md)|Stabilisce una lingua per tutte le risorse specifiche della lingua necessarie per la Germania.|  
   
-## Note  
- In genere, un processo utilizza questa interfaccia per ottenere informazioni sui programmi in esecuzione nel processo.  
+## <a name="remarks"></a>Note  
+ In genere, un processo utilizza questa interfaccia per scoprire i programmi in esecuzione in tale processo.  
   
-## Requisiti  
- intestazione: msdbg.h  
+## <a name="requirements"></a>Requisiti  
+ Intestazione: msdbg.h  
   
- Spazio dei nomi: Microsoft.VisualStudio.Debugger.Interop  
+ Namespace: Microsoft.VisualStudio.Debugger.Interop  
   
  Assembly: Microsoft.VisualStudio.Debugger.Interop.dll  
   
-## Esempio  
+## <a name="example"></a>Esempio  
   
-```cpp#  
+```cpp  
 IDebugProgramProvider2 *GetProgramProvider(GUID *pDebugEngineGuid)  
 {  
     // This is typically defined globally.  For this example, it is  
@@ -83,7 +84,7 @@ IDebugProgramProvider2 *GetProgramProvider(GUID *pDebugEngineGuid)
 }  
 ```  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Interfacce di base](../../../extensibility/debugger/reference/core-interfaces.md)   
  [IDebugProgramPublisher2](../../../extensibility/debugger/reference/idebugprogrampublisher2.md)   
  [Helper SDK per il debug](../../../extensibility/debugger/reference/sdk-helpers-for-debugging.md)

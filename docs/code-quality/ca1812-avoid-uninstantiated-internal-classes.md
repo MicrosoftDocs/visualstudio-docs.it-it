@@ -1,45 +1,47 @@
 ---
-title: "CA1812: Evitare classi interne prive di istanze | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-devops-test"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "CA1812"
-  - "AvoidUninstantiatedInternalClasses"
-helpviewer_keywords: 
-  - "AvoidUninstantiatedInternalClasses"
-  - "CA1812"
+title: 'CA1812: Evitare classi interne prive di istanze | Documenti Microsoft'
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: vs-ide-code-analysis
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- CA1812
+- AvoidUninstantiatedInternalClasses
+helpviewer_keywords:
+- AvoidUninstantiatedInternalClasses
+- CA1812
 ms.assetid: 1bb92a42-322a-44cc-98a8-8858212c1e1f
-caps.latest.revision: 26
-author: "stevehoag"
-ms.author: "shoag"
-manager: "wpickett"
-caps.handback.revision: 26
+caps.latest.revision: "26"
+author: gewarren
+ms.author: gewarren
+manager: ghogen
+ms.workload: multiple
+ms.openlocfilehash: 705abf4785676cf673ff8c4c26fa951dc72e8e6d
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
-# CA1812: Evitare classi interne prive di istanze
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
+# <a name="ca1812-avoid-uninstantiated-internal-classes"></a>CA1812: Evitare classi interne prive di istanze
 |||  
 |-|-|  
 |TypeName|AvoidUninstantiatedInternalClasses|  
 |CheckId|CA1812|  
-|Categoria|Microsoft.Performance|  
-|Breaking Change|Non sostanziale|  
+|Category|Microsoft. Performance|  
+|Modifica importante|Non sostanziale|  
   
-## Causa  
+## <a name="cause"></a>Causa  
  Un'istanza di un tipo a livello di assembly non viene creata dal codice nell'assembly.  
   
-## Descrizione della regola  
- Mediante questa regola si tenta di individuare una chiamata a uno dei costruttori del tipo e viene segnalata una violazione se non viene trovata alcuna chiamata.  
+## <a name="rule-description"></a>Descrizione della regola  
+ Questa regola cerca di individuare una chiamata a uno dei costruttori del tipo e segnala una violazione, se viene trovata alcuna chiamata.  
   
- I tipi riportati di seguito non vengono esaminati da questa regola:  
+ I tipi seguenti non vengono esaminati da questa regola:  
   
--   Tipi di valore  
+-   Tipi valore  
   
 -   Tipi astratti  
   
@@ -47,54 +49,54 @@ caps.handback.revision: 26
   
 -   Delegati  
   
--   Tipi di matrice creati dal compilatore  
+-   Tipi di matrice emesso dal compilatore  
   
--   Tipi di cui non è possibile creare istanze e che definiscono soltanto metodi `static` \(`Shared` in Visual Basic\).  
+-   I tipi che non è possibile creare un'istanza e che definiscono `static` (`Shared` in Visual Basic) solo i metodi.  
   
- Se si applica <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute?displayProperty=fullName> all'assembly che si sta analizzando, questa regola non si verificherà in qualsiasi costruttore contrassegnato come `internal` poiché non è possibile stabilire se un campo è utilizzato da un altro assembly `friend`.  
+ Se si applica <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute?displayProperty=fullName> all'assembly che in fase di analisi, questa regola non verrà eseguita su qualsiasi costruttore contrassegnati come `internal` poiché non è possibile stabilire se un campo è utilizzato da un altro `friend` assembly.  
   
- Sebbene non sia possibile aggirare questa limitazione nell'analisi codice di [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)], il codice FxCop autonomo esterno verrà eseguito sui costruttori interni, se ogni assembly `friend` è presente nell'analisi.  
+ Sebbene sia possibile aggirare questa limitazione in [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] analisi codice, FxCop autonomo esterno verrà eseguito sui costruttori interni se ogni `friend` assembly è presente nell'analisi.  
   
-## Come correggere le violazioni  
- Per correggere una violazione di questa regola, rimuovere il tipo o aggiungere il codice che lo utilizza.  Se il tipo contiene solo metodi statici, aggiungere uno degli elementi riportati di seguito al tipo per impedire che il compilatore crei un costruttore di istanza pubblico predefinito:  
+## <a name="how-to-fix-violations"></a>Come correggere le violazioni  
+ Per correggere una violazione di questa regola, rimuovere il tipo o aggiungere il codice che lo utilizza. Se il tipo contiene solo i metodi statici, è possibile aggiungere uno dei seguenti al tipo per impedire al compilatore di creazione di un costruttore di istanza pubblico predefinito:  
   
--   Costruttore privato per i tipi destinati a [!INCLUDE[dnprdnshort](../code-quality/includes/dnprdnshort_md.md)] versioni 1.0 e 1.1.  
+-   Costruttore privato per i tipi che hanno come destinazione [!INCLUDE[dnprdnshort](../code-quality/includes/dnprdnshort_md.md)] versioni 1.0 e 1.1.  
   
--   Il modificatore `static` \(`Shared` in Visual Basic\) per i tipi destinati a [!INCLUDE[dnprdnlong](../code-quality/includes/dnprdnlong_md.md)].  
+-   Il `static` (`Shared` in Visual Basic) modificatore per i tipi che hanno come destinazione [!INCLUDE[dnprdnlong](../code-quality/includes/dnprdnlong_md.md)].  
   
-## Esclusione di avvisi  
- L'esclusione di un avviso da questa regola è sicura.  Si consiglia di eliminare questo avviso nelle situazioni seguenti:  
+## <a name="when-to-suppress-warnings"></a>Esclusione di avvisi  
+ È possibile eliminare un avviso da questa regola. Si consiglia di eliminare l'avviso nelle situazioni seguenti:  
   
--   La classe viene creata tramite metodi reflection ad associazione tardiva ad esempio <xref:System.Activator.CreateInstance?displayProperty=fullName>.  
+-   La classe viene creata tramite metodi reflection ad associazione tardiva, ad esempio <xref:System.Activator.CreateInstance%2A?displayProperty=fullName>.  
   
--   La classe viene creata automaticamente dal runtime o da [!INCLUDE[vstecasp](../code-quality/includes/vstecasp_md.md)].  Ad esempio, classi che implementano <xref:System.Configuration.IConfigurationSectionHandler?displayProperty=fullName> o <xref:System.Web.IHttpHandler?displayProperty=fullName>.  
+-   La classe viene creata automaticamente dal runtime o [!INCLUDE[vstecasp](../code-quality/includes/vstecasp_md.md)]. Ad esempio, le classi che implementano <xref:System.Configuration.IConfigurationSectionHandler?displayProperty=fullName> o <xref:System.Web.IHttpHandler?displayProperty=fullName>.  
   
--   La classe viene passata come un parametro di tipo generico con un nuovo vincolo.  Ad esempio, di seguito verrà attivata questa regola.  
+-   La classe viene passata come parametro di tipo generico che dispone di un nuovo vincolo. Nell'esempio seguente genera ad esempio, questa regola.  
   
-    ```c#  
+    ```csharp  
     internal class MyClass  
     {     
-        public DoSomething()     
-        {  
-        }  
+        public DoSomething()     
+        {  
+        }  
     }   
     public class MyGeneric<T> where T : new()  
     {  
-        public T Create()  
-        {  
-            return new T();     
-        }  
+        public T Create()  
+        {  
+            return new T();     
+        }  
     }  
     // [...]   
     MyGeneric<MyClass> mc = new MyGeneric<MyClass>();  
     mc.Create();  
     ```  
   
- In queste situazioni si consiglia di eliminare l'avviso.  
+ In questi casi, si consiglia che non visualizzare questo avviso.  
   
-## Regole correlate  
+## <a name="related-rules"></a>Regole correlate  
  [CA1811: Evitare il codice privato non chiamato](../code-quality/ca1811-avoid-uncalled-private-code.md)  
   
- [CA1801: Rivedere i parametri inutilizzati](../code-quality/ca1801-review-unused-parameters.md)  
+ [CA1801: Rivedere i parametri non usati](../code-quality/ca1801-review-unused-parameters.md)  
   
- [CA1804: rimuovere locali non utilizzati](../code-quality/ca1804-remove-unused-locals.md)
+ [CA1804: Rimuovere locali non usati](../code-quality/ca1804-remove-unused-locals.md)

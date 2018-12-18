@@ -1,105 +1,107 @@
 ---
-title: "Creating ClickOnce Applications for Others to Deploy | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-deployment"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-helpviewer_keywords: 
-  - "preserved branding information"
-  - "useManifestForTrust element"
-  - "customer deployments [ClickOnce]"
-  - "multiple ClickOnce deployment and branding"
-  - "ClickOnce applications, previous .NET Framework versions"
-  - "application manifests [ClickOnce]"
-  - "<useManifestForTrust> element"
-  - "manifests [ClickOnce]"
-  - "trust applications, ClickOnce"
-  - "ClickOnce applications, deployed by others"
-  - "ClickOnce applications, previous .NET Framework"
+title: Creazione di applicazioni ClickOnce per altri utenti per la distribuzione | Documenti Microsoft
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: vs-ide-deployment
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- VB
+- CSharp
+- C++
+helpviewer_keywords:
+- preserved branding information
+- useManifestForTrust element
+- customer deployments [ClickOnce]
+- multiple ClickOnce deployment and branding
+- ClickOnce applications, previous .NET Framework versions
+- application manifests [ClickOnce]
+- <useManifestForTrust> element
+- manifests [ClickOnce]
+- trust applications, ClickOnce
+- ClickOnce applications, deployed by others
+- ClickOnce applications, previous .NET Framework
 ms.assetid: d20766c7-4ef3-45ab-8aa0-3f15b61eccaa
-caps.latest.revision: 10
-author: "stevehoag"
-ms.author: "shoag"
-manager: "wpickett"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: stevehoag
+ms.author: shoag
+manager: wpickett
+ms.workload: multiple
+ms.openlocfilehash: d3a9762872f74b39d8cef387703488c01647dbcc
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
-# Creating ClickOnce Applications for Others to Deploy
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
-Non tutti gli sviluppatori che creano distribuzioni ClickOnce intendono provvedere personalmente alla relativa distribuzione.  Molti di essi assemblano semplicemente l'applicazione utilizzando ClickOnce e successivamente affidano i file a un cliente esterno quale una grande azienda.  Il cliente dunque si assume la responsabilità di ospitare l'applicazione nella propria rete.  In questo argomento vengono illustrati alcuni problemi relativi a questi tipi di distribuzione nelle versioni di .NET Framework precedenti alla versione 3.5.  Viene quindi descritta una soluzione innovativa disponibile grazie alla nuova funzionalità "Usa manifesto applicazione per informazioni sull'attendibilità" di .NET Framework 3.5.  Vengono infine consigliate strategie per la creazione di distribuzioni ClickOnce per clienti che utilizzano ancora versioni precedenti di .NET Framework.  
+# <a name="creating-clickonce-applications-for-others-to-deploy"></a>Creazione di applicazioni ClickOnce per la distribuzione da parte di terzi
+Non tutti gli sviluppatori che creano distribuzioni ClickOnce prevede di distribuire le applicazioni stesse. Molti di essi solo pacchetto propria applicazione tramite ClickOnce e quindi passare i file a un cliente, ad esempio un'azienda di grandi dimensioni. Il cliente si assume la responsabilità di ospitare l'applicazione nella propria rete. In questo argomento vengono illustrati alcuni problemi relativi a tali distribuzioni nelle versioni di .NET Framework precedenti alla versione 3.5. Viene quindi illustrata una nuova soluzione fornita utilizzando la nuova funzionalità di "Usa manifesto applicazione per l'attendibilità" in .NET Framework 3.5. Vengono infine con strategie consigliate per la creazione di distribuzioni ClickOnce per i clienti che utilizzano ancora versioni precedenti di .NET Framework.  
   
-## Problemi relativi alla creazione di distribuzioni per i clienti  
- Quando si programma di fornire una distribuzione a un cliente, si verificano diversi problemi.  Il primo problema riguarda la firma del codice.  Per poter essere distribuito attraverso una rete, il manifesto di distribuzione e il manifesto dell'applicazione di una distribuzione ClickOnce devono essere firmati entrambi con un certificato digitale.  Tale requisito comporta la necessità di scegliere se utilizzare il certificato dello sviluppatore o il certificato del cliente per la firma dei manifesti.  
+## <a name="issues-involved-in-creating-deployments-for-customers"></a>Problemi relativi alla creazione di distribuzioni per i clienti  
+ Alcuni problemi si verificano quando si prevede di fornire una distribuzione a un cliente. Il primo problema riguarda la firma del codice. Per essere distribuita attraverso una rete, il manifesto di distribuzione e manifesto dell'applicazione di una distribuzione di ClickOnce devono essere entrambi firmate con un certificato digitale. Questo genera la domanda se utilizzare il certificato dello sviluppatore o il certificato del cliente per la firma dei manifesti.  
   
- Questa decisione è di fondamentale importanza in quanto l'identità dell'applicazione ClickOnce si basa sulla firma digitale del manifesto di distribuzione.  Se lo sviluppatore firma il manifesto di distribuzione, potrebbero verificarsi conflitti se il cliente è un'azienda di grandi dimensioni e più reparti di tale azienda distribuiscono una versione personalizzata dell'applicazione.  
+ La domanda del certificato da utilizzare è critica, come l'identità dell'applicazione ClickOnce è basato sulla firma digitale del manifesto di distribuzione. Lo sviluppatore firma il manifesto di distribuzione, provocare conflitti se il cliente è un'azienda di grandi dimensioni e più di un reparto della società consente di distribuire una versione personalizzata dell'applicazione.  
   
- Si supponga ad esempio che Adventure Works disponga di un reparto contabile e di un reparto risorse umane.  Entrambi i reparti concedono in licenza un'applicazione ClickOnce di Microsoft Corporation che genera report dai dati memorizzati in un database SQL.  Microsoft fornisce a ogni reparto una versione dell'applicazione personalizzata per i rispettivi dati.  Se le applicazioni vengono firmate con lo stesso certificato Authenticode, un utente che prova a utilizzarle entrambe riscontrerà un errore, in quanto ClickOnce considera la seconda applicazione identica alla prima.  In questo caso, il cliente potrebbe subire effetti collaterali imprevedibili e indesiderati, inclusa la perdita dei dati memorizzati localmente dall'applicazione.  
+ Ad esempio Adventure Works dispone di un reparto finanziario e un reparto risorse umane. Entrambi i reparti di licenza di un'applicazione ClickOnce da Microsoft Corporation che genera i report dai dati archiviati in un database SQL. Microsoft fornisce a una versione dell'applicazione personalizzata per i dati di ogni reparto. Se le applicazioni sono firmate con lo stesso certificato Authenticode, un utente che tenta di utilizzare entrambe le applicazioni si verifica un errore, come ClickOnce considera la seconda applicazione identica al primo. In questo caso, il cliente potrebbe subire effetti collaterali imprevisti e indesiderati che includono la perdita di tutti i dati archiviati localmente dall'applicazione.  
   
- Un problema aggiuntivo relativo alla firma del codice è rappresentato dall'elemento `deploymentProvider` nel manifesto di distribuzione, che indica a ClickOnce la posizione in cui cercare eventuali aggiornamenti dell'applicazione.  Tale elemento deve essere aggiunto al manifesto di distribuzione prima di apporvi una firma.  Se viene aggiunto successivamente, è necessario firmare nuovamente il manifesto di distribuzione.  
+ Un problema aggiuntivo relativo alla firma del codice è il `deploymentProvider` elemento nel manifesto di distribuzione, che indica di ClickOnce la posizione in cui cercare gli aggiornamenti dell'applicazione. Questo elemento deve essere aggiunto al manifesto di distribuzione prima di firmarlo. Se questo elemento viene aggiunto in seguito, il manifesto di distribuzione deve essere firmato nuovamente.  
   
-### Richiesta della firma del manifesto di distribuzione da parte del cliente  
- Per risolvere il problema delle distribuzioni non univoche è possibile richiedere allo sviluppatore di firmare il manifesto dell'applicazione e al cliente di firmare il manifesto di distribuzione.  Questo approccio funziona ma purtroppo introduce altri problemi.  Poiché il certificato Authenticode deve rimanere una risorsa protetta, il cliente non può solo fornire il certificato allo sviluppatore per la firma della distribuzione.  Sebbene il cliente possa firmare autonomamente il manifesto di distribuzione utilizzando gli strumenti disponibili gratuitamente in .NET Framework SDK, questa operazione potrebbe richiedere competenze tecniche non sempre garantite da tutti i clienti.  In tali casi, lo sviluppatore in genere crea un'applicazione, un sito Web o un altro meccanismo grazie al quale il cliente può inviare la propria versione dell'applicazione per la firma.  
+### <a name="requiring-the-customer-to-sign-the-deployment-manifest"></a>Richiedere il cliente firmare il manifesto di distribuzione  
+ Per risolvere questo problema delle distribuzioni non univoco è avere allo sviluppatore di firmare il manifesto dell'applicazione e il cliente firmare il manifesto di distribuzione. Questo approccio funziona, introduce altri problemi. Poiché un certificato Authenticode deve rimanere una risorsa protetta, il cliente non solo di fornire il certificato dello sviluppatore per firmare la distribuzione. Mentre il cliente possa firmare il manifesto di distribuzione se stessi usando gli strumenti disponibili gratuitamente con .NET Framework SDK, tale operazione potrebbe richiedere informazioni più tecniche rispetto al cliente disponibilità o in grado di fornire. In questi casi, lo sviluppatore crea in genere un'applicazione, sito Web o un altro meccanismo tramite cui il cliente può inviare la propria versione dell'applicazione per la firma.  
   
-### Impatto della firma del cliente sulla sicurezza dell'applicazione ClickOnce  
- Anche se lo sviluppatore e il cliente concordano sulla necessità di assegnare al cliente il compito di firmare il manifesto dell'applicazione, questa soluzione genera altri problemi relativi all'identità dell'applicazione stessa, in particolare quando si lavora a una distribuzione di applicazioni attendibili.  Per ulteriori informazioni su questa funzionalità, vedere [Cenni preliminari sulla distribuzione di applicazioni attendibili](../deployment/trusted-application-deployment-overview.md). Si supponga che Adventure Works desideri configurare i propri computer client in modo da poter eseguire le applicazioni fornite da Microsoft Corporation con attendibilità totale.  Se Adventure Works firma il manifesto di distribuzione, ClickOnce utilizzerà la firma di sicurezza di Adventure Work per determinare il livello di attendibilità dell'applicazione.  
+### <a name="the-impact-of-customer-signing-on-clickonce-application-security"></a>L'impatto del cliente di firma per le applicazioni ClickOnce  
+ Anche se lo sviluppatore e il cliente accetta che il cliente deve firmare il manifesto dell'applicazione, questa genera altri problemi che racchiudono l'identità dell'applicazione, soprattutto quando si applica a una distribuzione di applicazioni attendibili. (Per ulteriori informazioni su questa funzionalità, vedere [Panoramica della distribuzione di applicazioni attendibili](../deployment/trusted-application-deployment-overview.md).) Si supponga che Adventure Works desidera configurare i computer client in modo che qualsiasi applicazione fornito da Microsoft Corporation viene eseguito con attendibilità totale. Se Adventure Works firma il manifesto di distribuzione, ClickOnce utilizzerà la firma di sicurezza Adventure Work per determinare il livello di attendibilità dell'applicazione.  
   
-## Creazione di distribuzioni del cliente utilizzando il manifesto dell'applicazione per l'attendibilità  
- ClickOnce di .NET Framework 3.5 contiene una nuova funzionalità che offre a sviluppatori e clienti una nuova soluzione per la firma dei manifesti.  Il manifesto dell'applicazione ClickOnce supporta un nuovo elemento denominato `<useManifestForTrust>` che consente agli sviluppatori di comunicare che la firma digitale del manifesto dell'applicazione deve essere utilizzata per prendere decisioni sull'attendibilità.  Lo sviluppatore utilizza gli strumenti di assemblaggio ClickOnce, quali Mage.exe, MageUI.exe e Visual Studio, per includere questo elemento nel manifesto dell'applicazione, nonché per incorporare il nome dell'Editore e il nome dell'applicazione nel manifesto.  
+## <a name="creating-customer-deployments-by-using-application-manifest-for-trust"></a>Creazione di distribuzioni dei clienti con manifesto dell'applicazione per la relazione di Trust  
+ ClickOnce in .NET Framework 3.5 contiene una nuova funzionalità che offre agli sviluppatori e ai clienti una nuova soluzione per lo scenario di modalità devono essere firmati i manifesti. Il manifesto dell'applicazione ClickOnce supporta un nuovo elemento denominato `<useManifestForTrust>` che consente agli sviluppatori indicare che la firma digitale del manifesto dell'applicazione è ciò che deve essere utilizzato per prendere decisioni sull'attendibilità. Lo sviluppatore utilizza gli strumenti di creazione di pacchetti di ClickOnce, ad esempio Visual Studio Mage.exe e MageUI.exe, includere l'elemento nel manifesto dell'applicazione, nonché per incorporare il nome del server di pubblicazione sia il nome dell'applicazione nel manifesto.  
   
- Quando si utilizza `<useManifestForTrust>`, il manifesto di distribuzione non deve essere firmato con un certificato Authenticode emesso da un'Autorità di certificazione.  Può essere invece firmato con un certificato autofirmato.  Un certificato autofirmato viene generato dal cliente o dallo sviluppatore utilizzando gli strumenti .NET Framework SDK standard e viene quindi applicato al manifesto di distribuzione utilizzando gli strumenti di distribuzione ClickOnce standard.  Per ulteriori informazioni, vedere [Makecert.exe \(Certificate Creation Tool\)](../Topic/Makecert.exe%20\(Certificate%20Creation%20Tool\).md).  
+ Quando si utilizza `<useManifestForTrust>`, il manifesto di distribuzione non deve essere firmato con un certificato Authenticode emesso da un'autorità di certificazione. In alternativa, possono essere firmato con un certificato autofirmato. Un certificato autofirmato generato dal cliente o lo sviluppatore utilizzando strumenti standard di .NET Framework SDK e quindi applicato al manifesto di distribuzione utilizzando gli strumenti di distribuzione ClickOnce standard. Per ulteriori informazioni, vedere [MakeCert](https://msdn.microsoft.com/library/windows/desktop/aa386968.aspx).  
   
- L'utilizzo di un certificato autofirmato per il manifesto di distribuzione presenta molti vantaggi.  `<useManifestForTrust>` semplifica la procedura di distribuzione in quanto elimina la necessità per il cliente di ottenere o creare il proprio certificato Authenticode e al tempo stesso consente allo sviluppatore di conservare la propria identità personale sull'applicazione.  Il risultato è un insieme di distribuzioni firmate più sicure e con identità di applicazione univoche.  In questo modo si evitano i potenziali conflitti derivati dalla distribuzione della stessa applicazione a più clienti.  
+ Usando un certificato autofirmato per il manifesto di distribuzione presenta molti vantaggi. Eliminando la necessità per il cliente di ottenere o creare il proprio certificato Authenticode, `<useManifestForTrust>` semplifica la distribuzione per il cliente, consentendo allo sviluppatore di mantenere le proprie identità personalizzazione dell'applicazione. Il risultato è un insieme di distribuzioni con segno che sono più sicure e identità di applicazione univoco. In questo modo si evita il potenziale conflitto che può verificarsi dalla distribuzione della stessa applicazione a più clienti.  
   
- Per informazioni dettagliate su come creare una distribuzione ClickOnce con la funzionalità `<useManifestForTrust>` attivata, vedere [Walkthrough: Manually Deploying a ClickOnce Application that Does Not Require Re\-Signing and that Preserves Branding Information](../deployment/walkthrough-manually-deploying-a-clickonce-application-that-does-not-require-re-signing-and-that-preserves-branding-information.md).  
+ Per informazioni dettagliate su come creare una distribuzione di ClickOnce con `<useManifestForTrust>` abilitata, vedere [procedura dettagliata: distribuzione manuale di un'applicazione ClickOnce che Does non richiedono nuova firma e che mantiene informazioni sulla personalizzazione](../deployment/walkthrough-manually-deploying-a-clickonce-application-that-does-not-require-re-signing-and-that-preserves-branding-information.md).  
   
-### Funzionamento del manifesto dell'applicazione per l'attendibilità in fase di esecuzione  
- Per comprendere meglio il funzionamento del manifesto dell'applicazione per l'attendibilità in fase di esecuzione, si consideri l'esempio seguente.  Microsoft crea un'applicazione ClickOnce destinata all'utilizzo con .NET Framework 3.5.  Il manifesto dell'applicazione utilizza l'elemento `<useManifestForTrust>` e viene firmato da Microsoft.  Adventure Works firma il manifesto di distribuzione utilizzando un certificato autofirmato.  I client Adventure Works vengono configurati in modo da considerare attendibili tutte le applicazioni firmate da Microsoft.  
+### <a name="how-application-manifest-for-trust-works-at-runtime"></a>Manifesto dell'applicazione come per l'attendibilità in fase di esecuzione  
+ Per ottenere una migliore comprensione del funzionamento del manifesto dell'applicazione per la relazione di trust in fase di esecuzione, si consideri l'esempio seguente. Un'applicazione ClickOnce destinate a .NET Framework 3.5 è stata creata da Microsoft. Il manifesto dell'applicazione utilizza il `<useManifestForTrust>` elemento e viene firmato da Microsoft. Adventure Works firma il manifesto di distribuzione utilizzando un certificato autofirmato. Adventure Works i client sono configurati per considerare attendibili tutte le applicazioni firmate da Microsoft.  
   
- Quando un utente fa clic su un collegamento al manifesto di distribuzione, ClickOnce installa l'applicazione nel computer dell'utente.  Grazie al certificato e alle informazioni sulla distribuzione, ClickOnce sul computer client è in grado di identificare in modo univoco l'applicazione.  Se l'utente prova a installare nuovamente la stessa applicazione da un percorso differente, ClickOnce può utilizzare tale identità per stabilire che l'applicazione è già presente sul client.  
+ Quando un utente fa clic su un collegamento al manifesto della distribuzione, ClickOnce installa l'applicazione nei computer dell'utente. Il certificato e sulla distribuzione di identificare in modo univoco l'applicazione ClickOnce nel computer client. Se l'utente tenta di installare di nuovo la stessa applicazione da un percorso diverso, ClickOnce è possibile utilizzare questa identità per stabilire che l'applicazione esiste già nel client.  
   
- Successivamente, ClickOnce esaminerà il certificato Authenticode utilizzato per firmare il manifesto dell'applicazione, in modo da determinare il livello di attendibilità da concedere.  Poiché Adventure Works ha configurato i propri client in modo da considerare attendibili tutte le applicazioni firmate da Microsoft, a questa applicazione ClickOnce viene concessa l'attendibilità totale.  Per ulteriori informazioni, vedere [Cenni preliminari sulla distribuzione di applicazioni attendibili](../deployment/trusted-application-deployment-overview.md).  
+ Successivamente, ClickOnce esamina il certificato Authenticode che viene utilizzato per firmare il manifesto dell'applicazione, che determina il livello di attendibilità da concedere. Poiché Adventure Works è stato configurato il client per considerare attendibili tutte le applicazioni firmate da Microsoft, l'applicazione ClickOnce viene concessa l'attendibilità totale. Per altre informazioni, vedere [Trusted Application Deployment Overview](../deployment/trusted-application-deployment-overview.md).  
   
-## Creazione di distribuzioni del cliente per le versioni precedenti  
- Si supponga che uno sviluppatore distribuisca applicazioni ClickOnce a clienti che utilizzano versioni precedenti di .NET Framework.  Nelle sezioni seguenti sono riepilogate diverse soluzioni consigliate, insieme con i vantaggi e gli svantaggi di ciascuna di esse.  
+## <a name="creating-customer-deployments-for-earlier-versions"></a>Creazione di distribuzioni dei clienti per le versioni precedenti  
+ Cosa accade se uno sviluppatore distribuisce le applicazioni ClickOnce per i clienti che utilizzano versioni precedenti di .NET Framework? Le sezioni seguenti riepilogano diverse soluzioni consigliate, con i vantaggi e svantaggi di ognuno.  
   
-### Firmare le distribuzioni per conto del cliente  
- Una strategia di distribuzione possibile prevede che lo sviluppatore crei un meccanismo atto a firmare distribuzioni per conto dei propri clienti utilizzando la chiave privata del cliente.  In questo modo lo sviluppatore non dovrà gestire più pacchetti di distribuzione o chiavi private.  È sufficiente che lo sviluppatore fornisca la stessa distribuzione a ogni cliente.  Sarà compito del cliente personalizzarla per il proprio ambiente utilizzando il servizio di firma.  
+### <a name="sign-deployments-on-behalf-of-customer"></a>Firmare le distribuzioni per conto cliente  
+ Una strategia di distribuzione è per gli sviluppatori creare un meccanismo per firmare le distribuzioni per conto di clienti, tramite la chiave privata del cliente. In questo modo lo sviluppatore non per la gestione delle chiavi private o più pacchetti di distribuzione. Lo sviluppatore fornisce solo la stessa distribuzione per ogni cliente. Spetta al cliente di personalizzarlo con il servizio di firma per il proprio ambiente.  
   
- Questo metodo presenta lo svantaggio di richiedere tempi e costi eccessivi per la relativa implementazione.  Sebbene sia possibile compilare un servizio utilizzando gli strumenti forniti con .NET Framework SDK, il ciclo di vita del prodotto richiederà tempi di sviluppo maggiori.  
+ Uno svantaggio di questo metodo è i tempi e costi necessari per l'implementazione. Mentre tale servizio può essere compilato utilizzando gli strumenti disponibili in .NET Framework SDK, vengono aggiunti più tempo di sviluppo al ciclo di vita del prodotto.  
   
- Come notato prima in questo argomento, un altro inconveniente è rappresentato dal fatto che la versione dell'applicazione fornita a ogni cliente presenterà la stessa identità e pertanto si correrà il rischio di generare conflitti.  Se questo aspetto rappresenta un problema, lo sviluppatore può modificare il campo Nome utilizzato durante la generazione del manifesto di distribuzione per assegnare a ogni applicazione un nome univoco.  In questo modo verrà creata un'identità separata per ogni versione dell'applicazione e verranno eliminati i possibili conflitti di identità.  Questo campo corrisponde all'argomento `-Name` di Mage.exe e al campo **Nome** nella scheda **Nome** di MageUI.exe.  
+ Come notato in precedenza in questo argomento, un altro svantaggio è che la versione di ciascun cliente dell'applicazione avrà la stessa identità di applicazione, che potrebbe provocare conflitti. Se si tratta di un problema, lo sviluppatore può modificare il campo nome che viene utilizzato quando si genera il manifesto di distribuzione per assegnare un nome univoco a ogni applicazione. Verrà creata un'identità distinta per ogni versione dell'applicazione ed eliminare qualsiasi potenziale conflitto di identità. Questo campo corrisponde alla `-Name` argomento di Mage.exe e al **nome** nel campo di **nome** scheda in MageUI.exe.  
   
- Si supponga, ad esempio, che lo sviluppatore abbia creato un'applicazione denominata Applicazione1.  Anziché creare un'unica distribuzione con il campo Nome impostato su Applicazione1, lo sviluppatore può creare diverse distribuzioni con una variante specifica del cliente per questo nome, ad esempio Applicazione1\-ClienteA, Applicazione1\-ClienteB e così via.  
+ Ad esempio, che lo sviluppatore ha creato un'applicazione denominata Application1. Anziché creare un'unica distribuzione con il campo nome impostato su Application1, lo sviluppatore può creare diverse distribuzioni con una variante di specifiche del cliente per questo nome, ad esempio Application1 ClienteA, Application1-ClienteB e così via.  
   
-### Distribuire utilizzando un package di installazione  
- Una seconda strategia di distribuzione possibile consiste nel generare un progetto di installazione Microsoft per l'esecuzione della distribuzione iniziale dell'applicazione ClickOnce.  Tale progetto può essere fornito in uno dei diversi formati disponibili, ad esempio come distribuzione MSI, come file eseguibile di installazione \(con estensione EXE\) o come file cabinet \(con estensione cab\) insieme a uno script batch.  
+### <a name="deploy-using-a-setup-package"></a>Distribuire mediante un pacchetto di installazione  
+ Una strategia di distribuzione possibili secondo consiste nel generare un progetto Microsoft Setup per eseguire la distribuzione iniziale dell'applicazione ClickOnce. Questo può essere fornito in uno dei diversi formati: in una distribuzione MSI, come un programma di installazione eseguibile (. File EXE) o come file cabinet (CAB) insieme a uno script batch.  
   
- Grazie a questa tecnica, lo sviluppatore fornisce al cliente una distribuzione che include i file dell'applicazione, il manifesto dell'applicazione e un manifesto di distribuzione da utilizzare come modello.  Il cliente esegue il programma di installazione, che richiede un URL di distribuzione, ovvero il percorso del server o della condivisione file dal quale gli utenti installeranno l'applicazione ClickOnce, nonché un certificato digitale.  L'applicazione di installazione può anche scegliere di richiedere ulteriori opzioni di configurazione ClickOnce, ad esempio l'intervallo per il controllo degli aggiornamenti.  Dopo aver raccolto queste informazioni, il programma di installazione genera il manifesto di distribuzione effettivo, lo firma e quindi pubblica l'applicazione ClickOnce nel percorso server designato.  
+ Utilizzando questa tecnica, lo sviluppatore fornisce al cliente una distribuzione che include i file dell'applicazione, il manifesto dell'applicazione e un manifesto di distribuzione che funge da un modello. Il cliente esegue il programma di installazione, che richiede un URL di distribuzione (il server o condivisione percorso da cui gli utenti installeranno l'applicazione ClickOnce file), nonché un certificato digitale. L'applicazione di installazione può anche scegliere per la richiesta di ulteriori opzioni di configurazione di ClickOnce, ad esempio di intervallo di controllo di aggiornamento. Quando queste informazioni vengono raccolte, il programma di installazione potrebbe generare il manifesto di distribuzione reale, firmarlo e pubblicare l'applicazione ClickOnce nel percorso server designato.  
   
- In una situazione del genere, il cliente può firmare il manifesto di distribuzione in tre modi differenti:  
+ Esistono tre modi che il cliente possa firmare il manifesto di distribuzione in questa situazione:  
   
-1.  Il cliente può utilizzare un certificato valido emesso da un'Autorità di certificazione \(CA\).  
+1.  Il cliente può utilizzare un certificato valido emesso da un'autorità di certificazione (CA).  
   
-2.  Una variante di questo approccio prevede che il cliente scelga di firmare il manifesto di distribuzione con un certificato autofirmato.  Lo svantaggio è che l'applicazione visualizzerà il messaggio "Editore sconosciuto" quando all'utente verrà chiesto il percorso di installazione.  Il vantaggio tuttavia è rappresentato dalla possibilità di evitare ai piccoli clienti i tempi lunghi e i costi elevati necessari per l'emissione di un certificato da parte di un'Autorità di certificazione.  
+2.  Una variante di questo approccio, il cliente può scegliere firmare il manifesto di distribuzione con un certificato autofirmato. Lo svantaggio è che ciò comporterà l'applicazione visualizzare le parole "Autore sconosciuto" quando l'utente viene chiesto di installarlo. Tuttavia, il vantaggio è che impedisce ai clienti più piccoli di dover dedicare tempo e denaro richiesto per un certificato emesso da un'autorità di certificazione.  
   
-3.  Lo sviluppatore può infine includere il proprio certificato autofirmato nel package di installazione.  Questo approccio introduce tuttavia i problemi potenziali relativi all'identità dell'applicazione descritti in precedenza nel presente argomento.  
+3.  Infine, lo sviluppatore può includere il proprio certificato autofirmato nel pacchetto di installazione. In questo modo i potenziali problemi con l'identità dell'applicazione descritti precedentemente in questo argomento.  
   
- L'inconveniente del metodo basato sul progetto di distribuzione per l'installazione è rappresentato dai tempi e i costi necessari per la compilazione di un'applicazione di distribuzione personalizzata.  
+ Lo svantaggio di metodo di installazione distribuzione progetto è il tempo e costi necessari per compilare un'applicazione di distribuzione personalizzata.  
   
-### Richiedere la generazione del manifesto di distribuzione al cliente  
- Una terza strategia di distribuzione possibile consiste nell'affidare al cliente solo i file e il manifesto dell'applicazione.  In questo scenario il cliente è responsabile dell'utilizzo di .NET Framework SDK per la generazione e la firma del manifesto di distribuzione.  
+### <a name="have-customer-generate-deployment-manifest"></a>Cliente generare il manifesto di distribuzione  
+ Una terza strategia di distribuzione è passare solo il file dell'applicazione e il manifesto dell'applicazione disattivata al cliente. In questo scenario, il cliente è responsabile per l'utilizzo di .NET Framework SDK per generare e firmare il manifesto di distribuzione.  
   
- Questo metodo presenta l'inconveniente di presupporre che il cliente installi gli strumenti .NET Framework SDK e disponga di uno sviluppatore o di un amministratore di sistema in grado di utilizzarli.  Alcuni clienti richiedono invece soluzioni per il cui utilizzo sono necessarie competenze tecniche scarse o nulle.  
+ Lo svantaggio di questo metodo è che richiede il cliente di installare gli strumenti di .NET Framework SDK e disporre di uno sviluppatore o un amministratore di sistema utilizzarli. Alcuni clienti potrebbero richiedere una soluzione che richiede poco o non necessarie competenze tecniche questa parte.  
   
-## Vedere anche  
- [Deploying ClickOnce Applications For Testing and Production Servers without Resigning](../deployment/deploying-clickonce-applications-for-testing-and-production-servers-without-resigning.md)   
- [Walkthrough: Manually Deploying a ClickOnce Application](../deployment/walkthrough-manually-deploying-a-clickonce-application.md)   
- [Walkthrough: Manually Deploying a ClickOnce Application that Does Not Require Re\-Signing and that Preserves Branding Information](../deployment/walkthrough-manually-deploying-a-clickonce-application-that-does-not-require-re-signing-and-that-preserves-branding-information.md)
+## <a name="see-also"></a>Vedere anche  
+ [Distribuzione di applicazioni ClickOnce per il test e i server di produzione senza riapposizione della firma](../deployment/deploying-clickonce-applications-for-testing-and-production-servers-without-resigning.md)   
+ [Procedura dettagliata: Distribuzione manuale di un'applicazione ClickOnce](../deployment/walkthrough-manually-deploying-a-clickonce-application.md)   
+ [Procedura dettagliata: distribuzione manuale di una applicazione ClickOnce che non richiede una nuova firma e mantiene le informazioni di personalizzazione](../deployment/walkthrough-manually-deploying-a-clickonce-application-that-does-not-require-re-signing-and-that-preserves-branding-information.md)

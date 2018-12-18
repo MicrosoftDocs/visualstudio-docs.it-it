@@ -1,35 +1,37 @@
 ---
-title: "Funzione Math.pow (JavaScript) | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/18/2017"
-ms.prod: "windows-client-threshold"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-javascript"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "pow"
-dev_langs: 
-  - "JavaScript"
-  - "TypeScript"
-  - "DHTML"
-helpviewer_keywords: 
-  - "elevamento a potenza"
-  - "Math (oggetto)"
-  - "pow (metodo)"
+title: Funzione Math.Pow (JavaScript) | Documenti Microsoft
+ms.custom: 
+ms.date: 01/18/2017
+ms.prod: windows-client-threshold
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-javascript
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords: pow
+dev_langs:
+- JavaScript
+- TypeScript
+- DHTML
+helpviewer_keywords:
+- exponentiation
+- pow method
+- Math object
 ms.assetid: 18465617-5d17-4bac-b251-fa57970fec3f
-caps.latest.revision: 12
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 12
+caps.latest.revision: "12"
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.openlocfilehash: c976ff7b414688703e817ba3c690cfe7e359483f
+ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/27/2017
 ---
-# Funzione Math.pow (JavaScript)
-Restituisce il valore di un'espressione di base elevata a una potenza specificata.  
+# <a name="mathpow-function-javascript"></a>Funzione Math.pow (JavaScript)
+Restituisce il valore di un'espressione di base per una potenza specificata.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
   
@@ -37,24 +39,24 @@ Math.pow(
 base, exponent)   
 ```  
   
-## Parametri  
+## <a name="parameters"></a>Parametri  
  *base*  
- Obbligatorio.  Valore di base dell'espressione.  
+ Obbligatorio. Valore di base dell'espressione.  
   
- *exponent*  
- Obbligatorio.  Valore esponente dell'espressione.  
+ *esponente*  
+ Obbligatorio. Il valore esponenziale dell'espressione.  
   
-## Esempio  
- Nell'esempio seguente un'espressione numerica uguale a baseexponent restituisce 1000.  
+## <a name="example"></a>Esempio  
+ Nell'esempio seguente, un'espressione numerica uguale a baseexponent restituisce 1000.  
   
-```javascript  
+```JavaScript  
 Math.pow(10,3);  
 ```  
   
-## Requisiti  
+## <a name="requirements"></a>Requisiti  
  [!INCLUDE[jsv1](../../javascript/misc/includes/jsv1-md.md)]  
   
- **Si applica a**: [Oggetto Math](../../javascript/reference/math-object-javascript.md)  
+ **Si applica a**: [Math (oggetto)](../../javascript/reference/math-object-javascript.md)  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Oggetto Math](../../javascript/reference/math-object-javascript.md)

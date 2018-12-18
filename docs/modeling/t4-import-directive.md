@@ -1,26 +1,28 @@
 ---
-title: "T4 Import Directive | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 713ca975-b9aa-4210-bf6d-b7660f5b193b
-caps.latest.revision: 3
-author: "alancameronwills"
-ms.author: "awills"
-manager: "douge"
-caps.handback.revision: 3
+title: T4 Direttiva Import | Documenti Microsoft
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.topic: article
+author: gewarren
+ms.author: gewarren
+manager: ghogen
+ms.workload:
+- multiple
+ms.technology: vs-ide-modeling
+ms.openlocfilehash: 3f59641d733e16730d02868c368d53d6cbee0e74
+ms.sourcegitcommit: 205d15f4558315e585c67f33d5335d5b41d0fcea
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 02/09/2018
 ---
-# T4 Import Directive
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
-Nei blocchi di codice di un modello di testo T4 di [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)], la direttiva `import` consente di fare riferimento agli elementi in un altro spazio dei nomi senza fornire un nome completo.  È l'equivalente di `using` in C\# o di `imports` in [!INCLUDE[vb_current_short](../debugger/includes/vb_current_short_md.md)].  
+# <a name="t4-import-directive"></a>Direttiva import T4
+Nei blocchi di codice di un modello di testo T4 di [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)], la direttiva `import` consente di fare riferimento agli elementi in un altro spazio dei nomi senza fornire un nome completo. È l'equivalente di `using` in C# o di `imports` in [!INCLUDE[vb_current_short](../debugger/includes/vb_current_short_md.md)].  
   
- Per cenni preliminari sulla scrittura dei modelli di testo T4, vedere [Writing a T4 Text Template](../modeling/writing-a-t4-text-template.md).  
+ Per una panoramica generale di scrittura di modelli di testo T4, vedere [scrittura di un modello di testo T4](../modeling/writing-a-t4-text-template.md).  
   
-## Utilizzo della direttiva Import  
+## <a name="using-the-import-directive"></a>Utilizzo della direttiva Import  
   
 ```  
 <#@ import namespace="namespace" #>  
@@ -36,18 +38,18 @@ Nei blocchi di codice di un modello di testo T4 di [!INCLUDE[vsprvs](../code-qua
 The file contains: <#=  fileContent #>  
 ```  
   
-## Importazioni standard  
+## <a name="standard-imports"></a>Importazioni standard  
  Lo spazio dei nomi seguente viene importato automaticamente, in modo che non sia necessario scrivere una direttiva di importazione:  
   
 -   `System`  
   
  Inoltre, se si utilizza una direttiva personalizzata, il processore di direttiva potrebbe importare alcuni spazi dei nomi automaticamente.  
   
- Ad esempio, se si scrivono modelli per un linguaggio specifico di dominio \(DSL\), non è necessario scrivere direttive di importazione per gli spazi dei nomi seguenti:  
+ Ad esempio, se si scrivono modelli per un linguaggio DSL, non è necessario scrivere direttive di importazione per gli spazi dei nomi seguenti:  
   
 -   `Microsoft.VisualStudio.Modeling`  
   
--   Lo spazio dei nomi del linguaggio DSL  
+-   Spazio dei nomi del linguaggio DSL  
   
-## Vedere anche  
- [T4 Assembly Directive](../modeling/t4-assembly-directive.md)
+## <a name="see-also"></a>Vedere anche  
+ [Direttiva assembly T4](../modeling/t4-assembly-directive.md)

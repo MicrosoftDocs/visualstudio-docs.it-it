@@ -1,11 +1,10 @@
 ---
-title: 'CA2225: Operator overloads have named alternates | Microsoft Docs'
+title: 'CA2225: Gli overload degli operatori hanno alternative con nome | Documenti Microsoft'
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- vs-devops-test
+ms.technology: vs-ide-code-analysis
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
@@ -15,110 +14,96 @@ helpviewer_keywords:
 - OperatorOverloadsHaveNamedAlternates
 - CA2225
 ms.assetid: af8f7ab1-63ad-4861-afb9-b7a7a2be15e1
-caps.latest.revision: 20
-author: stevehoag
-ms.author: shoag
-manager: wpickett
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: HT
-ms.sourcegitcommit: eb5c9550fd29b0e98bf63a7240737da4f13f3249
-ms.openlocfilehash: bc8e648b8a463b08ce520cde7bcec8efaeeec4c8
-ms.contentlocale: it-it
-ms.lasthandoff: 08/30/2017
-
+caps.latest.revision: "20"
+author: gewarren
+ms.author: gewarren
+manager: ghogen
+ms.workload: multiple
+ms.openlocfilehash: f8c7b71fc964f898aefc5e243c787be71a8a063a
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="ca2225-operator-overloads-have-named-alternates"></a>CA2225: Operator overloads have named alternates
+# <a name="ca2225-operator-overloads-have-named-alternates"></a>CA2225: Gli overload degli operatori hanno alternative con nome
 |||  
 |-|-|  
 |TypeName|OperatorOverloadsHaveNamedAlternates|  
 |CheckId|CA2225|  
-|Category|Microsoft.Usage|  
-|Breaking Change|Non Breaking|  
+|Category|Microsoft. Usage|  
+|Modifica importante|Non importante|  
   
-## <a name="cause"></a>Cause  
- An operator overload was detected, and the expected named alternative method was not found.  
+## <a name="cause"></a>Causa  
+ È stato rilevato un overload di operatore e il metodo alternativo denominato previsto non è stato trovato.  
   
-## <a name="rule-description"></a>Rule Description  
- Operator overloading allows the use of symbols to represent computations for a type. For example, a type that overloads the plus symbol (+) for addition would typically have an alternative member named 'Add'. The named alternative member provides access to the same functionality as the operator, and is provided for developers who program in languages that do not support overloaded operators.  
+## <a name="rule-description"></a>Descrizione della regola  
+ Overload di operatori consente l'utilizzo di simboli per rappresentare i calcoli per un tipo. Ad esempio, un tipo che esegue l'overload il simbolo di segno più (+) per l'aggiunta in genere avrebbe un membro alternativo denominato 'Add'. Il membro alternativo denominato fornisce l'accesso per la stessa funzionalità come l'operatore e viene fornito per gli sviluppatori che programmano in linguaggi che non supportano gli operatori di overload.  
   
- This rule examines the operators listed in the following table.  
+ Questa regola esamina gli operatori elencati nella tabella seguente.  
   
-|C#|Visual Basic|C++|Alternate name|  
+|C#|Visual Basic|C++|Nome alternativo|  
 |---------|------------------|-----------|--------------------|  
-|+ (binary)|+|+ (binary)|Add|  
-|+=|+=|+=|Add|  
-|&|And|&|BitwiseAnd|  
-|&=|And=|&=|BitwiseAnd|  
+|+ (binario)|+|+ (binario)|Aggiunta|  
+|+=|+=|+=|Aggiunta|  
+|&|E|&|BitwiseAnd|  
+|&=|E =|&=|BitwiseAnd|  
 |&#124;|Or|&#124;|BitwiseOr|  
-|&#124;=|Or=|&#124;=|BitwiseOr|  
-|--|N/A|--|Decrement|  
-|/|/|/|Divide|  
-|/=|/=|/=|Divide|  
+|&#124;=|O =|&#124;=|BitwiseOr|  
+|--|N/D|--|Operatore di conversione|  
+|/|/|/|Dividi|  
+|/=|/=|/=|Dividi|  
 |==|=|==|Equals|  
 |^|Xor|^|Xor|  
-|^=|Xor=|^=|Xor|  
+|^=|Xor =|^=|Xor|  
 |>|>|>|Compare|  
 |>=|>=|>=|Compare|  
-|++|N/A|++|Increment|  
+|++|N/D|++|Operatore di incremento|  
 |<>|!=|Equals|  
 |<<|<<|<<|LeftShift|  
 |<<=|<<=|<<=|LeftShift|  
 |<|<|<|Compare|  
 |<=|<=|\<=|Compare|  
-|&&|N/A|&&|LogicalAnd|  
-|&#124;&#124;|N/A|&#124;&#124;|LogicalOr|  
-|!|N/A|!|LogicalNot|  
-|%|Mod|%|Mod or Remainder|  
-|%=|N/A|%=|Mod|  
-|* (binary)|*|*|Multiply|  
-|*=|N/A|*=|Multiply|  
-|~|Not|~|OnesComplement|  
-|>>|>>|>>|RightShift|  
-=|N/A|>>=|RightShift|  
-|- (binary)|- (binary)|- (binary)|Subtract|  
-|-=|N/A|-=|Subtract|  
-|true|IsTrue|N/A|IsTrue (Property)|  
-|- (unary)|N/A|-|Negate|  
-|+ (unary)|N/A|+|Plus|  
-|false|IsFalse|False|IsTrue (Property)|  
+|&&|N/D|&&|LogicalAnd|  
+|&#124;&#124;|N/D|&#124;&#124;|LogicalOr|  
+|!|N/D|!|LogicalNot|  
+|%|Mod|%|Mod o resto|  
+|%=|N/D|%=|Mod|  
+|* (binario)|*|*|Per|  
+|*=|N/D|*=|Per|  
+|~|non|~|OnesComplement|  
+|>>|>>|>>|Tasto|  
+=|N/D|>>=|Tasto|  
+|-(binario)|-(binario)|-(binario)|Sottrai|  
+|-=|N/D|-=|Sottrai|  
+|true|IsTrue|N/D|IsTrue (proprietà)|  
+|-(unario)|N/D|-|Negare|  
+|+ (unario)|N/D|+|Plus|  
+|False|IsFalse|False|IsTrue (proprietà)|  
   
- N/A == Cannot be overloaded in the selected language.  
+ N/d = = Impossibile eseguire l'overload nella lingua selezionata.  
   
- The rule also checks implicit and explicit cast operators in a type (`SomeType`) by checking for methods named `ToSomeType` and `FromSomeType`.  
+ La regola controlla anche gli operatori di cast impliciti ed espliciti in un tipo (`SomeType`) controllando i metodi denominati `ToSomeType` e `FromSomeType`.  
   
- In C#, when a binary operator is overloaded, the corresponding assignment operator, if any, is also implicitly overloaded.  
+ In c#, quando viene eseguito l'overload di un operatore binario, l'operatore di assegnazione corrispondente, se presente, viene anche in modo implicito l'overload.  
   
-## <a name="how-to-fix-violations"></a>How to Fix Violations  
- To fix a violation of this rule, implement the alternative method for the operator; name it using the recommended alternative name.  
+## <a name="how-to-fix-violations"></a>Come correggere le violazioni  
+ Per correggere una violazione di questa regola, implementare il metodo alternativo per l'operatore. il nome utilizzando il nome alternativo consigliato.  
   
-## <a name="when-to-suppress-warnings"></a>When to Suppress Warnings  
- Do not suppress a warning from this rule if you are implementing a shared library. Applications can ignore a warning from this rule.  
+## <a name="when-to-suppress-warnings"></a>Esclusione di avvisi  
+ Non escludere un avviso da questa regola se si implementa una libreria condivisa. Le applicazioni possono ignorare un avviso da questa regola.  
   
-## <a name="example"></a>Example  
- The following example defines a structure that violates this rule. To correct the example, add a public `Add(int x, int y)` method to the structure.  
+## <a name="example"></a>Esempio  
+ L'esempio seguente definisce una struttura che viola questa regola. Per correggere l'esempio, aggiungere un pubblico `Add(int x, int y)` metodo alla struttura.  
   
  [!code-csharp[FxCop.Usage.OperatorOverloadsHaveNamedAlternates#1](../code-quality/codesnippet/CSharp/ca2225-operator-overloads-have-named-alternates_1.cs)]  
   
-## <a name="related-rules"></a>Related Rules  
- [CA1046: Do not overload operator equals on reference types](../code-quality/ca1046-do-not-overload-operator-equals-on-reference-types.md)  
+## <a name="related-rules"></a>Regole correlate  
+ [CA1046: Non eseguire l'overload dell'operatore "uguale a" per i tipi di riferimento](../code-quality/ca1046-do-not-overload-operator-equals-on-reference-types.md)  
   
- [CA2226: Operators should have symmetrical overloads](../code-quality/ca2226-operators-should-have-symmetrical-overloads.md)  
+ [CA2226: Gli operatori devono avere overload simmetrici](../code-quality/ca2226-operators-should-have-symmetrical-overloads.md)  
   
- [CA2224: Override equals on overloading operator equals](../code-quality/ca2224-override-equals-on-overloading-operator-equals.md)  
+ [CA2224: Eseguire l'override di Equals all'override dell'operatore](../code-quality/ca2224-override-equals-on-overloading-operator-equals.md)  
   
- [CA2218: Override GetHashCode on overriding Equals](../code-quality/ca2218-override-gethashcode-on-overriding-equals.md)  
+ [CA2218: Eseguire l'override di GetHashCode all'override di Equals](../code-quality/ca2218-override-gethashcode-on-overriding-equals.md)  
   
- [CA2231: Overload operator equals on overriding ValueType.Equals](../code-quality/ca2231-overload-operator-equals-on-overriding-valuetype-equals.md)
+ [CA2231: Eseguire l'overload dell'operatore "uguale a" all'override di ValueType.Equals](../code-quality/ca2231-overload-operator-equals-on-overriding-valuetype-equals.md)

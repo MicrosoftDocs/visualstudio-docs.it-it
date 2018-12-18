@@ -1,57 +1,58 @@
 ---
-title: "BP_RES_DATA_FLAGS | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "BP_RES_DATA_FLAGS"
-helpviewer_keywords: 
-  - "Enumerazione BP_RES_DATA_FLAGS"
+title: BP_RES_DATA_FLAGS | Documenti Microsoft
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: vs-ide-sdk
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: BP_RES_DATA_FLAGS
+helpviewer_keywords: BP_RES_DATA_FLAGS enumeration
 ms.assetid: d97611e2-def6-45a9-ad7d-eedf2ad4c82b
-caps.latest.revision: 8
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: gregvanl
+ms.author: gregvanl
+manager: ghogen
+ms.workload: vssdk
+ms.openlocfilehash: fbf8e227089a469711b6c13fc99b7c0a8ae672e6
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
-# BP_RES_DATA_FLAGS
-[!INCLUDE[vs2017banner](../../../code-quality/includes/vs2017banner.md)]
-
-Specifica se il punto di interruzione di dati sta emulando o distribuisce in hardware.  
+# <a name="bpresdataflags"></a>BP_RES_DATA_FLAGS
+Specifica se il punto di interruzione dei dati è emulata o implementato in hardware.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp#  
-enum enum_BP_RES_DATA_FLAGS {   
-   BP_RES_DATA_EMULATED = 0x0001  
+```cpp  
+enum enum_BP_RES_DATA_FLAGS {   
+   BP_RES_DATA_EMULATED = 0x0001  
 };  
 typedef DWORD BP_RES_DATA_FLAGS;  
 ```  
   
-```c#  
-public enum enum_BP_RES_DATA_FLAGS {   
-   BP_RES_DATA_EMULATED = 0x0001  
+```csharp  
+public enum enum_BP_RES_DATA_FLAGS {   
+   BP_RES_DATA_EMULATED = 0x0001  
 };  
 ```  
   
-## Membri  
- BP\_RES\_DATA\_EMULATED  
- specifica che il punto di interruzione di dati sta emulando.  
+## <a name="members"></a>Membri  
+ BP_RES_DATA_EMULATED  
+ Specifica che il punto di interruzione dei dati è emulata.  
   
-## Note  
- Utilizzato per il membro di `dwFlags` [BP\_RESOLUTION\_DATA](../../../extensibility/debugger/reference/bp-resolution-data.md) della struttura.  
+## <a name="remarks"></a>Note  
+ Utilizzato per il `dwFlags` appartenente il [BP_RESOLUTION_DATA](../../../extensibility/debugger/reference/bp-resolution-data.md) struttura.  
   
-## Requisiti  
- intestazione: msdbg.h  
+## <a name="requirements"></a>Requisiti  
+ Intestazione: msdbg.h  
   
- Spazio dei nomi: Microsoft.VisualStudio.Debugger.Interop  
+ Namespace: Microsoft.VisualStudio.Debugger.Interop  
   
  Assembly: Microsoft.VisualStudio.Debugger.Interop.dll  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Enumerazioni](../../../extensibility/debugger/reference/enumerations-visual-studio-debugging.md)   
- [BP\_RESOLUTION\_DATA](../../../extensibility/debugger/reference/bp-resolution-data.md)
+ [BP_RESOLUTION_DATA](../../../extensibility/debugger/reference/bp-resolution-data.md)

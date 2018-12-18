@@ -4,34 +4,20 @@ ms.custom:
 ms.date: 04/26/2017
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- vs-ide-sdk
+ms.technology: vs-ide-sdk
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: a793cf7a-f230-43ce-88d0-fa5d6f1aa9c7
-caps.latest.revision: 7
+caps.latest.revision: "7"
+author: gregvanl
 ms.author: gregvanl
 manager: ghogen
-translation.priority.mt:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 9524ecc3cadef58821fba857de8e82e59eea9b43
-ms.openlocfilehash: 19db4e41ef35ddbec4f43823d4bf66bb148a854f
-ms.contentlocale: it-it
-ms.lasthandoff: 05/04/2017
-
+ms.workload: vssdk
+ms.openlocfilehash: f9d04da421b3b59609269b4f91a487d22adc80e3
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="ux-essentials-for-visual-studio"></a>Essentials UX per Visual Studio
 ## <a name="best-practices"></a>Procedure consigliate  
@@ -81,7 +67,7 @@ ms.lasthandoff: 05/04/2017
  Interfaccia utente in Visual Studio deve funzionano correttamente in DPI tutti i fattori che Windows supporto di ridimensionamento: 150%, 200% e % 250.  
   
 ## <a name="anti-patterns"></a>Anti-pattern  
- Visual Studio contiene molti esempi dell'interfaccia utente che seguono il nostro indicazioni e procedure consigliate. Favorire la coerenza, gli sviluppatori spesso prestito da modelli di progettazione dell'interfaccia utente del prodotto simile a ciò che sta creando. Si tratta di un buon approccio che consente a unità di coerenza per l'interazione dell'utente e la progettazione di visual, in alcuni casi fornite funzionalità con alcuni dettagli che non soddisfano nostre linee guida a causa dei vincoli di pianificazione o l'esclusione di assegnazione di priorità. In questi casi, non è desiderabile che i team di copiare uno di questi "anti-pattern" in quanto essi proliferazione dell'interfaccia utente non valido o non coerenti all'interno dell'ambiente di Visual Studio.  
+ Visual Studio contiene molti esempi dell'interfaccia utente che il nostro linee guida e procedure consigliate. Favorire la coerenza, gli sviluppatori spesso prestito da modelli di progettazione dell'interfaccia utente del prodotto simile a ciò che sta creando. Si tratta di un buon approccio che consente a unità di coerenza per l'interazione dell'utente e la progettazione di visual, in alcuni casi fornite funzionalità con alcuni dettagli che non soddisfano nostre linee guida a causa dei vincoli di pianificazione o l'esclusione di assegnazione di priorità. In questi casi, non è desiderabile che i team di copiare uno di questi "anti-pattern" in quanto essi proliferazione dell'interfaccia utente non valido o non coerenti all'interno dell'ambiente di Visual Studio.  
   
 ### <a name="required-fieldssettings-shown-in-error-state-by-default"></a>I campi o le impostazioni necessarie visualizzate in stato di errore per impostazione predefinita  
   
@@ -99,7 +85,7 @@ ms.lasthandoff: 05/04/2017
   
  In questo caso, è un problema aggiuntivo perché l'icona utilizzata per l'avviso contiene un "&times;" icona, quindi sull'icona Rimuovi comune può essere usato accanto a esso. Di conseguenza, l'interfaccia utente usa un pulsante Rimuovi, un controllo più inefficace.  
   
- ![Immissione dell'interfaccia utente in uno stato di errore per impostazione predefinita è un anti-modello di Visual Studio.](~/extensibility/ux-guidelines/media/manifestdesignererrordeclarationsanti-pattern.png "ManifestDesignererrordeclarationsanti-pattern")<br />Immissione dell'interfaccia utente in uno stato di errore per impostazione predefinita è un anti-modello di Visual Studio.
+ ![Immissione dell'interfaccia utente in uno stato di errore per impostazione predefinita è un anti-modello di Visual Studio. ] (../../extensibility/ux-guidelines/media/manifestdesignererrordeclarationsanti-pattern.png "ManifestDesignererrordeclarationsanti modello")<br />Immissione dell'interfaccia utente in uno stato di errore per impostazione predefinita è un anti-modello di Visual Studio.
   
 #### <a name="alternatives"></a>Alternative  
  Una soluzione migliore per questo problema, è possibile:  
@@ -122,7 +108,7 @@ ms.lasthandoff: 05/04/2017
 Forzare l'utente di leggere il testo esplicativo prima della chiusura dell'interfaccia utente è un anti-pattern in Visual Studio. I collegamenti a video, progettati correttamente devono visualizzare una descrizione comando con informazioni aggiuntive al passaggio del mouse e fare clic su di "&times;" deve chiudere il messaggio senza necessità di ulteriore interazione.
 
 
- ![Esplicativo testo anti &#45; modello di &#45; non corretto](~/extensibility/ux-guidelines/media/incorrectuseofmultipleclicks.png "Incorrectuseofmultipleclicks")<br />Modello di collegamento video non corretto
+ ![Esplicativo testo anti &#45; modello di &#45; corretto](../../extensibility/ux-guidelines/media/incorrectuseofmultipleclicks.png "Incorrectuseofmultipleclicks")<br />Modello di collegamento video non corretto
   
 #### <a name="result"></a>Risultato  
  Anziché un semplice pulsante Chiudi (un solo clic), l'utente è costretto a utilizzare due clic distinti per semplicemente chiudere l'interfaccia utente in ogni punto in cui vengono visualizzati i collegamenti video.  
@@ -130,20 +116,20 @@ Forzare l'utente di leggere il testo esplicativo prima della chiusura dell'inter
 #### <a name="alternatives"></a>Alternative  
  La progettazione corretta per questa situazione, è possibile seguire il modello comune per Visual Studio, Office e Internet Explorer: al passaggio del mouse, l'utente può visualizzare la descrizione della descrizione e un solo clic consente di nascondere l'interfaccia utente.  
   
- ![Esplicativo testo anti &#45; modello di &#45; correggere](~/extensibility/ux-guidelines/media/explanatorytextanti-pattern-correct.png "Explanatorytextanti-pattern-correct")<br />Modello corretto collegamento video
+ ![Esplicativo testo anti &#45; modello di &#45; corretto](../../extensibility/ux-guidelines/media/explanatorytextanti-pattern-correct.png "Explanatorytextanti modello corretto")<br />Modello corretto collegamento video
   
 ### <a name="using-command-bars-for-settings"></a>Utilizzo delle barre dei comandi per le impostazioni  
  **Nella figura** rappresenta l'anti-pattern: inserimento di un'impostazione di sotto di un pulsante di comando che si applica solo al comando. In questo esercizio, sono disponibili comandi oltre ad avviare il debug, come visualizzazione nel Browser, Avvia senza eseguire debug ed Esegui istruzione, che rispetta l'impostazione selezionata.  
 
-  ![R: figura Comando barra anti-pattern](~/extensibility/ux-guidelines/media/commandbaranti-pattern-figurea.png "Commandbaranti-pattern-FigureA")<br />R: figura Comando barra anti-pattern
+  ![R: figura Comando anti-pattern della barra](../../extensibility/ux-guidelines/media/commandbaranti-pattern-figurea.png "Commandbaranti-modello-FigureA")<br />R: figura Comando barra anti-pattern
   
  Indesiderabili leggermente migliori, ma è ancora, è l'inserimento di impostazioni di questo tipo in barre degli strumenti, come illustrato nella **Figura B**. Mentre i pulsanti di menu combinato richiede meno spazio e di conseguenza un miglioramento rispetto a discesa, entrambe le progettazioni usano ancora una barra degli strumenti per alzare di livello un elemento che non è realmente un comando.  
  
- ![Figura b: migliore, ma comunque un anti-pattern della barra dei comandi](~/extensibility/ux-guidelines/media/commandbaranti-pattern-figureb.png "Commandbaranti-pattern-FigureB")<br />Figura b: migliore, ma comunque un anti-pattern della barra dei comandi
+ ![Figura b: una situazione migliore, ma comunque un anti-pattern della barra dei comandi](../../extensibility/ux-guidelines/media/commandbaranti-pattern-figureb.png "Commandbaranti-modello-FigureB")<br />Figura b: migliore, ma comunque un anti-pattern della barra dei comandi
  
   Nell'approccio corretto nel **figura C**, l'impostazione è collegata a una serie di comandi. È presente alcuna impostazione globale e si passa semplicemente tra quattro comandi. Questo è l'unico caso in cui i comandi nella barra degli strumenti sono accettabili. 
 
- ![Figura c: corretto utilizzo di pattern barra dei comandi di Visual Studio](~/extensibility/ux-guidelines/media/commandbaranti-pattern-figurec.png "Commandbaranti-pattern-FigureC")<br />Figura c: corretto utilizzo di pattern barra dei comandi di Visual Studio
+ ![Figura c: correggere l'utilizzo di pattern barra dei comandi di Visual Studio](../../extensibility/ux-guidelines/media/commandbaranti-pattern-figurec.png "Commandbaranti-modello-FigureC")<br />Figura c: corretto utilizzo di pattern barra dei comandi di Visual Studio
    
 ### <a name="control-anti-patterns"></a>Anti-pattern di controllo  
  Per alcuni anti-pattern sono semplicemente corretto utilizzo o la presentazione di un controllo o un gruppo di controlli.  
@@ -152,15 +138,15 @@ Forzare l'utente di leggere il testo esplicativo prima della chiusura dell'inter
  Sottolineare il testo deve essere utilizzato solo per i collegamenti ipertestuali.  
   
  **Non valido:**    
- ![Testo sottolineato che non è un collegamento ipertestuale è un anti-modello di Visual Studio.](~/extensibility/ux-guidelines/media/0102-g_grouplabelincorrect.png "0102-g_GroupLabelIncorrect")<br />Testo sottolineato che non è un collegamento ipertestuale è un anti-modello di Visual Studio.
+ ![Testo sottolineato che non è un collegamento ipertestuale è un anti-modello di Visual Studio. ] (../../extensibility/ux-guidelines/media/0102-g_grouplabelincorrect.png "0102 g_GroupLabelIncorrect")<br />Testo sottolineato che non è un collegamento ipertestuale è un anti-modello di Visual Studio.
   
  **Buona:**   
- ![Applicato lo stile corretto, testo collegamento ipertestuale non viene visualizzato solo nel tipo di carattere ambiente.](~/extensibility/ux-guidelines/media/0102-h_grouplabelcorrect.png "0102-h_GroupLabelCorrect")<br />Applicato lo stile corretto, non hyperlink testo verrà visualizzato solo il tipo di carattere ambiente.
+ ![Applicato lo stile corretto, testo collegamento ipertestuale non viene visualizzato solo nel tipo di carattere ambiente. ] (../../extensibility/ux-guidelines/media/0102-h_grouplabelcorrect.png "0102 h_GroupLabelCorrect")<br />Applicato lo stile corretto, testo collegamento ipertestuale non viene visualizzato solo nel tipo di carattere ambiente.
   
 #### <a name="clicking-on-a-check-box-results-in-a-pop-up-dialog"></a>Fare clic su una casella di controllo, viene generata una finestra di dialogo popup  
  Scegliere la casella di controllo "Abilita Desktop remoto per tutti i ruoli" della procedura guidata "Pubblica l'applicazione Azure" immediatamente viene visualizzata una finestra di dialogo popup, un anti-modello di Visual Studio. Inoltre, il campo casella di controllo non viene riempita con una casella di controllo dopo la selezione, un'altra interazione anti-pattern.  
   
- ![Aprire una finestra di dialogo al termine fare clic su una casella di controllo un anti-pattern Visual Studio.](~/extensibility/ux-guidelines/media/0102-i_checkboxpopup.png "0102-i_CheckboxPopup")<br />Aprire una finestra di dialogo al termine fare clic su una casella di controllo un anti-pattern Visual Studio.
+ ![Aprire una finestra di dialogo al termine fare clic su una casella di controllo un anti-pattern Visual Studio. ] (../../extensibility/ux-guidelines/media/0102-i_checkboxpopup.png "0102 i_CheckboxPopup")<br />Aprire una finestra di dialogo al termine fare clic su una casella di controllo un anti-pattern Visual Studio.
   
 ### <a name="hyperlink-anti-patterns"></a>Collegamenti ipertestuali per anti-pattern  
  Nell'esempio seguente contiene due anti-pattern.  
@@ -169,7 +155,7 @@ Forzare l'utente di leggere il testo esplicativo prima della chiusura dell'inter
   
 2.  "Ulteriori informazioni" non è il testo appropriato per un collegamento a un argomento concettuale. Obiettivo dell'utente è non per altre informazioni, che consiste nel comprendere le implicazioni di propria scelta.  
   
- ![Verrà ignorato il servizio di colore e l'utilizzo di "Ulteriori informazioni" per i collegamenti ipertestuali sono anti-pattern Visual Studio.](~/extensibility/ux-guidelines/media/0102-j_hyperlinkincorrect.png "0102-j_HyperlinkIncorrect")<br />Verrà ignorato il servizio di colore e l'utilizzo di "Ulteriori informazioni" per i collegamenti ipertestuali sono anti-pattern Visual Studio.  
+ ![Verrà ignorato il servizio di colore e l'utilizzo di "Ulteriori informazioni" per i collegamenti ipertestuali sono anti-pattern Visual Studio. ] (../../extensibility/ux-guidelines/media/0102-j_hyperlinkincorrect.png "0102 j_HyperlinkIncorrect")<br />Verrà ignorato il servizio di colore e l'utilizzo di "Ulteriori informazioni" per i collegamenti ipertestuali sono anti-pattern Visual Studio.  
   
  **Migliore soluzione:** porre la domanda facendo clic sul collegamento si chiede di specificare l'utente.  
   

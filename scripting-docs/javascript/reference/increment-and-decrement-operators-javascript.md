@@ -1,38 +1,41 @@
 ---
-title: "Operatori di incremento (++) e decremento (--) (JavaScript) | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/18/2017"
-ms.prod: "windows-client-threshold"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-javascript"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "--"
-  - "++"
-dev_langs: 
-  - "JavaScript"
-  - "TypeScript"
-  - "DHTML"
-helpviewer_keywords: 
-  - "operatori di incremento, sintassi"
-  - "++ (operatore)"
-  - "++ (operatore), informazioni"
-  - "operatori di decremento, sintassi"
-  - "-- (operatore)"
+title: Operatori di incremento (+ +) e decremento (-) (JavaScript) | Documenti Microsoft
+ms.custom: 
+ms.date: 01/18/2017
+ms.prod: windows-client-threshold
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-javascript
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords:
+- --
+- ++
+dev_langs:
+- JavaScript
+- TypeScript
+- DHTML
+helpviewer_keywords:
+- increment operators, syntax
+- ++ operator
+- ++ operator, about ++ operator
+- decrement operators, syntax
+- -- operator
 ms.assetid: 49eaf4cf-8818-478d-a429-cdd2ece20811
-caps.latest.revision: 11
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 11
+caps.latest.revision: "11"
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.openlocfilehash: 806bd321bb1f81d585a6595b8cf2842571164921
+ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/27/2017
 ---
-# Operatori di incremento (++) e decremento (--) (JavaScript)
-L'operatore di incremento incrementa il valore di una variabile di uno, mentre l'operatore di decremento decrementa il valore di uno.  
+# <a name="increment--and-decrement----operators-javascript"></a>Operatori di incremento (++) e decremento (--) (JavaScript)
+Gli incrementi di operatore di incremento e decrementa di operatore di decremento del valore di una variabile da uno.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
   
@@ -42,19 +45,19 @@ result = variable++
 result = variable--  
 ```  
   
-## Parametri  
+## <a name="parameters"></a>Parametri  
  `result`  
  Qualsiasi variabile.  
   
  `variable`  
  Qualsiasi variabile.  
   
-## Note  
- Se l'operatore compare prima della variabile, il valore viene modificato prima che l'espressione venga valutata.  Se l'operatore compare dopo la variabile, il valore viene modificato dopo che l'espressione è stata valutata.  In altre parole, dato `j = ++k;`, il valore di `j` è il valore originale di `k` più uno; dato `j = k++;`, il valore di `j` è il valore originale di `k`, che viene incrementato dopo che il relativo valore viene assegnato a `j`.  
+## <a name="remarks"></a>Note  
+ Se l'operatore viene visualizzato prima variabile, il valore viene modificato prima della valutazione dell'espressione. Se l'operatore viene visualizzato dopo la variabile, il valore viene modificato dopo l'espressione viene valutata.  In altre parole, dato `j = ++k;`, il valore di `j` è il valore originale di `k` più uno; specificato `j = k++;`, il valore di `j` è il valore originale di `k`, che viene incrementato dopo che il relativo valore viene assegnato a `j`.  
   
-## Requisiti  
+## <a name="requirements"></a>Requisiti  
  [!INCLUDE[jsv1](../../javascript/misc/includes/jsv1-md.md)]  
   
-## Vedere anche  
- [Precedenza tra gli operatori](../../javascript/operator-subtractprecedence-javascript.md)   
- [Riepilogo degli operatori \(JavaScript\)](../../javascript/misc/operator-subtractsummary-javascript.md)
+## <a name="see-also"></a>Vedere anche  
+ [Precedenza tra operatori](../../javascript/operator-subtractprecedence-javascript.md)   
+ [Riepilogo degli operatori (JavaScript)](../../javascript/misc/operator-subtractsummary-javascript.md)

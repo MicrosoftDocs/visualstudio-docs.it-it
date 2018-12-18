@@ -1,55 +1,57 @@
 ---
-title: "Procedura: Esportare uno shader | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-general"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: 'Procedura: Esportare uno shader | Microsoft Docs'
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: vs-ide-designers
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 0bd48bf4-9792-4456-a545-e462a2be668d
-caps.latest.revision: 11
-author: "BrianPeek"
-ms.author: "brpeek"
-manager: "ghogen"
-caps.handback.revision: 11
+caps.latest.revision: "11"
+author: gewarren
+ms.author: gewarren
+manager: ghogen
+ms.workload: multiple
+ms.openlocfilehash: 6b4c7cedd267ba02772db16e026803061933cf5d
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
-# Procedura: Esportare uno shader
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
-In questo documento viene illustrato come utilizzare la finestra di Progettazione shader per esportare uno shader nel linguaggio DGSL da utilizzare nella propria app.  
+# <a name="how-to-export-a-shader"></a>Procedura: Esportare uno shader
+Questo documento illustra come usare la finestra di progettazione shader per esportare uno shader DGSL (Directed Graph Shader Language) da usare nell'app.  
   
- In questo documento viene illustrata questa attività:  
+ Questo documento illustra questa attività:  
   
 -   Esportazione di uno shader  
   
-## Esportazione di uno shader  
- Dopo avere creato uno shader tramite la finestra di Progettazione shader e prima di utilizzarlo nell'applicazione, è necessario esportarlo in un formato che gli API della grafica possono comprendere.  È possibile esportare uno shader in diversi modi per soddisfare esigenze differenti.  
+## <a name="exporting-a-shader"></a>Esportazione di uno shader  
+ Dopo aver creato uno shader tramite la finestra di progettazione shader, prima di poterlo usare nell'app è necessario esportarlo in un formato supportato dall'API di grafica in uso. È possibile esportare uno shader in modi diversi, in base alle proprie esigenze.  
   
-#### Per esportare uno shader  
+#### <a name="to-export-a-shader"></a>Per esportare uno shader  
   
-1.  In [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] aprire un file **Visual Effect Graph \(.dgsl\)**.  
+1.  In [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] aprire un file **Visual Shader Graph (.dgsl)**.  
   
-     Se non si dispone di un file **Visual Effect Graph \(.dgsl\)** da aprire, crearne uno come descritto in [Procedura: Creare uno shader con colore di base](../designers/how-to-create-a-basic-color-shader.md).  
+     Se non ha un file **Visual Shader Graph (.dgsl)** da aprire, crearne uno come descritto in [Procedura: Creare uno shader con colore di base](../designers/how-to-create-a-basic-color-shader.md).  
   
-2.  Sulla barra degli strumenti **Progettazione shader**, scegliere **Avanzato**, **Esporta**, **Esporta come**.  Verrà visualizzata la finestra di dialogo **Esporta shader**.  
+2.  Nella barra degli strumenti **Progettazione shader** scegliere **Avanzate**, **Esporta**, **Esporta come**. Viene visualizzata la finestra di dialogo **Esporta shader**.  
   
-3.  Nell'elenco a discesa **Tipo file** scegliere il formato che si desidera esportare.  
+3.  Nell'elenco a discesa **Salva come** scegliere il formato in cui si vuole esportare il file.  
   
-     Di seguito sono riportati i formati che è possibile scegliere:  
+     Di seguito sono illustrati i formati che è possibile scegliere:  
   
-     **Pixel Shader HLSL \(hlsl\)**  
-     Esporta lo shader come codice sorgente High Level Shader Language \(HLSL\).  Questa opzione permette di modificare lo shader in un secondo momento, anche dopo che è stato distribuito in un'app.  Ciò può rendere più facile eseguire il debug e correggere il codice basato sui problemi dell'utente finale, ma rende più facile a un utente modificare lo shader in modi indesiderati, ad esempio per ottenere un vantaggio ingiusto in un gioco competitivo.  È inoltre possibile aumentare il tempo di caricamento dello shader.  
+     **Pixel shader HLSL (\*.hlsl)**  
+     Esporta lo shader come codice sorgente High Level Shader Language (HLSL). Questa opzione consente di modificare lo shader in un secondo momento, anche dopo essere stato distribuito in un'app. Offre quindi l'opportunità di eseguire il debug e correggere il codice in base ai problemi riscontrati dagli utenti finali, ma al tempo stesso rende anche più facile per un utente modificare lo shader in modi indesiderati, ad esempio per ottenere un vantaggio sleale in un gioco competitivo. È inoltre possibile aumentare il tempo di caricamento dello shader.  
   
-     **Pixel shader compilato \(\*.cso\)**  
-     Esporta lo shader come bytecode HLSL.  Questa opzione permette di modificare lo shader in un secondo momento, anche dopo che è stato distribuito in un'app.  Ciò può rendere più facile eseguire il debug e correggere il codice sulla base dei problemi dell'utente finale, ma poiché lo shader è precompilato, non comporta un sovraccarico di runtime aggiuntivo quando lo shader viene caricato dall'applicazione.  Utenti sufficientemente esperti possono modificare lo shader in modalità indesiderate, ma compilare lo shader rende questo molto più complesso.  
+     **Pixel shader compilato (\*.cso)**  
+     Esporta lo shader come bytecode HLSL. Questa opzione consente di modificare lo shader in un secondo momento, anche dopo essere stato distribuito in un'app. Offre quindi l'opportunità di eseguire il debug e correggere il codice in base ai problemi riscontrati dagli utenti finali ma, poiché lo shader è precompilato, non comporta un sovraccarico di runtime aggiuntivo quando lo shader viene caricato dall'app. Utenti sufficientemente esperti possono comunque modificare lo shader in modi indesiderati, ma la compilazione dello shader rende questa operazione molto più difficile.  
   
-     **Intestazione C\+\+ \(\*.h\)**  
-     Esporta lo shader come intestazione di tipo C che definisce una matrice di byte contenente il bytecode HLSL.  Questa opzione può allungare i tempi di debug e correzione del codice basata sui problemi dell'utente finale poiché l'applicazione deve essere ricompilata per testare la correzione.  Questa opzione rende la modifica dello shader in seguito alla distribuzione in un'applicazione un'operazione difficile, sebbene non impossibile. Tuttavia, questa operazione è molto più difficile per un utente che desidera modificare lo shader in modalità non desiderate.  
+     **Intestazione C++ (\*.h)**  
+     Esporta lo shader come intestazione di tipo C che definisce una matrice di byte contenente il bytecode HLSL. Questa opzione allunga i tempi necessari per eseguire il debug e correggere il codice in base ai problemi riscontrati dagli utenti finali, perché per testare la correzione è necessario ricompilare l'app. Questa opzione rende particolarmente difficile, seppure non impossibile, modificare lo shader dopo essere stato distribuito in un'app. Eventuali utenti che intendano modificare lo shader in modi indesiderati riscontreranno quindi grandi difficoltà.  
   
-4.  Nella casella combinata **Nome file** specificare un nome per lo shader esportato, quindi scegliere il pulsante **Salva**.  
+4.  Nella casella combinata **Nome file** specificare un nome per lo shader esportato e scegliere il pulsante **Salva**.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Procedura: Creare uno shader con colore di base](../designers/how-to-create-a-basic-color-shader.md)   
  [Finestra di progettazione shader](../designers/shader-designer.md)

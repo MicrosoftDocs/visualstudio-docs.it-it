@@ -1,66 +1,67 @@
 ---
-title: "Procedura: localizzare il codice"
-ms.custom: ""
-ms.date: "02/02/2017"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "office-development"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "VB"
-  - "CSharp"
-helpviewer_keywords: 
-  - "localizzazione di codice [sviluppo per SharePoint in Visual Studio]"
-  - "sviluppo per SharePoint in Visual Studio, localizzazione"
-ms.assetid: 0e852052-5ad4-4517-81cf-8865ec304441
-caps.latest.revision: 17
-author: "kempb"
-ms.author: "kempb"
-manager: "ghogen"
-caps.handback.revision: 16
+title: 'Procedura: localizzare il codice | Documenti Microsoft'
+ms.custom: 
+ms.date: 02/02/2017
+ms.reviewer: 
+ms.suite: 
+ms.technology: office-development
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- VB
+- CSharp
+- VB
+- CSharp
+helpviewer_keywords:
+- localizing code [SharePoint development in Visual Studio]
+- SharePoint development in Visual Studio, localizing
+author: TerryGLee
+ms.author: tglee
+manager: ghogen
+ms.workload: office
+ms.openlocfilehash: 95c029a7a90283314bdded2a6beeb7f023d7e827
+ms.sourcegitcommit: f9fbf1f55f9ac14e4e5c6ae58c30dc1800ca6cda
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 01/10/2018
 ---
-# Procedura: localizzare il codice
-  Nel codice non localizzato vengono utilizzati valori stringa hardcoded.  Per localizzare stringhe di codice, sostituirle con chiamate a <xref:System.Web.HttpContext.GetGlobalResourceObject%2A>, ovvero un metodo che fa riferimento a risorse localizzate.  
+# <a name="how-to-localize-code"></a>Procedura: localizzare il codice
+  Codice non localizzato Usa i valori stringa hardcoded. Per localizzare le stringhe di codice, sostituirli con chiamate a <xref:System.Web.HttpContext.GetGlobalResourceObject%2A>, che è un metodo che fa riferimento a risorse localizzate.  
   
-## Localizzazione del codice  
+## <a name="localizing-code"></a>Localizzazione di codice  
   
-#### Per localizzare il codice  
+#### <a name="to-localize-code"></a>Per localizzare il codice  
   
-1.  In **Esplora soluzioni** aprire il menu di scelta rapida per un elemento del progetto e quindi scegliere **Aggiungi**, **Modulo**.  
+1.  In **Esplora**, aprire il menu di scelta rapida per un elemento di progetto e quindi scegliere **Aggiungi**, **modulo**.  
   
-     Scegliere il modello **File di risorse**.  
+     Scegliere il **File di risorse** modello.  
   
     > [!NOTE]  
-    >  Assicurarsi di aggiungere il file di risorse a un elemento di progetto SharePoint in modo che sia disponibile la proprietà Tipo distribuzione.  Questa proprietà viene richiesta in un secondo momento nella procedura.  
+    >  Assicurarsi di aggiungere il file di risorse a un elemento di progetto SharePoint in modo che la proprietà del tipo di distribuzione è disponibile. Questa proprietà è necessario più avanti in questa procedura.  
   
-2.  Assegnare al file di risorse della lingua predefinita un nome di propria scelta con estensione resx, ad esempio MyAppResources.resx.  
+2.  Assegnare il file di risorse di lingua predefinita di un nome di propria scelta con estensione resx, ad esempio MyAppResources.  
   
 3.  Ripetere i passaggi 1 e 2 per aggiungere file di risorse separati all'elemento di progetto SharePoint, uno per ogni lingua localizzata.  
   
-     Utilizzare lo stesso nome base per ogni file di risorse localizzato, ma aggiungere l'ID delle impostazioni cultura.  Assegnare, ad esempio, a una risorsa localizzata in tedesco il nome MyAppResources.de\-DE.resx.  
+     Utilizzare lo stesso nome di base per ogni file di risorse localizzato, ma è aggiungere l'ID delle impostazioni cultura. Assegnare un nome, ad esempio, una risorsa localizzata tedesca MyAppResources.de-de.  
   
-4.  Aprire ogni file di risorse e aggiungere stringhe localizzate.  Utilizzare lo stesso ID stringa in ogni file.  
+4.  Aprire ogni file di risorse e aggiungere le stringhe localizzate. Utilizzare gli stessi ID di stringa in ogni file.  
   
-5.  Cambiare il valore della proprietà **Tipo distribuzione** di ogni file di risorse su **AppGlobalResource** per fare in modo che ogni file venga distribuito nella cartella App\_GlobalResources del server.  
+5.  Modificare il valore della **tipo di distribuzione** proprietà di ogni file di risorse per **AppGlobalResource** in modo che ogni file per cartella App_GlobalResources del server.  
   
-6.  Lasciare il valore della proprietà **Operazione di compilazione** di ogni file su **Risorsa incorporata**.  
+6.  Lasciare il valore di **azione di compilazione** proprietà di ogni file come **risorsa incorporata**.  
   
      Le risorse incorporate vengono compilate nella DLL del progetto.  
   
-7.  Compilare il progetto in modo da creare le DLL satellite delle risorse.  
+7.  Compilare il progetto per creare la risorsa DLL satellite.  
   
-8.  In **Progettazione pacchetti** scegliere la scheda **Avanzate** e aggiungere l'assembly satellite.  
+8.  Nel **Progettazione pacchetti**, scegliere il **avanzate** scheda e quindi aggiungere l'assembly satellite.  
   
-9. Nella casella **Percorso** anteporre una cartella con l'ID delle impostazioni cultura al percorso, ad esempio de\-DE\\*Project Item Name*.resources.dll.  
+9. Nel **percorso** casella, anteporre una cartella con l'ID delle impostazioni cultura al percorso, ad esempio de-DE\\*nome di elemento di progetto*. Resources.  
   
-10. Se la soluzione non fa già riferimento all'assembly System.Web, aggiungere tale riferimento e inserire nel codice una direttiva a <xref:System.Web>.  
+10. Se la soluzione non fa già riferimento all'assembly System. Web, aggiungere un riferimento a esso e aggiungere una direttiva nel codice per <xref:System.Web>.  
   
-11. Individuare tutte le stringhe hardcoded nel codice visibili agli utenti, ad esempio il testo dell'interfaccia utente, errori e testo del messaggio.  Sostituirle con una chiamata al metodo <xref:System.Web.HttpContext.GetGlobalResourceObject%2A> utilizzando la sintassi seguente:  
+11. Individuare tutte le stringhe hardcoded nel codice visibili agli utenti, ad esempio il testo dell'interfaccia utente, errori e testo del messaggio. Sostituirle con una chiamata al metodo <xref:System.Web.HttpContext.GetGlobalResourceObject%2A> utilizzando la sintassi seguente:  
   
     ```  
     HttpContext.GetGlobalResourceObject("Resource File Name", "String ID")  
@@ -68,14 +69,14 @@ caps.handback.revision: 16
   
 12. Premere il tasto F5 per compilare ed eseguire l'applicazione.  
   
-13. In SharePoint modificare la lingua di visualizzazione predefinita.  
+13. In SharePoint, modificare la lingua di visualizzazione da quello predefinito.  
   
-     Nell'applicazione verranno visualizzate le stringhe localizzate.  Per la visualizzazione delle risorse localizzate, è necessario che nel server SharePoint sia installato un Language Pack corrispondente alle impostazioni cultura del file di risorse.  
+     Le stringhe localizzate visualizzata nell'applicazione. Per visualizzare le risorse localizzate, il server di SharePoint deve disporre di un language pack installati che corrispondono alle impostazioni cultura del file di risorse.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Localizzazione di soluzioni SharePoint](../sharepoint/localizing-sharepoint-solutions.md)   
  [Procedura: localizzare una funzionalità](../sharepoint/how-to-localize-a-feature.md)   
- [Procedura: localizzare il markup ASPX](../sharepoint/how-to-localize-aspx-markup.md)   
- [Procedura: aggiungere un file di risorse](../sharepoint/how-to-add-a-resource-file.md)  
+ [Procedura: localizzare il Markup ASPX](../sharepoint/how-to-localize-aspx-markup.md)   
+ [Procedura: Aggiungere un file di risorse](../sharepoint/how-to-add-a-resource-file.md)  
   
   

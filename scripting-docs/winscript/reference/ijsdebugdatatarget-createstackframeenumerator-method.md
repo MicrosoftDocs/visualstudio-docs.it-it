@@ -1,25 +1,29 @@
 ---
-title: "Metodo IJsDebugDataTarget::CreateStackFrameEnumerator | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/18/2017"
-ms.prod: "windows-script-interfaces"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
+title: 'Metodo ijsdebugdatatarget:: Createstackframeenumerator | Documenti Microsoft'
+ms.custom: 
+ms.date: 01/18/2017
+ms.prod: windows-script-interfaces
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: reference
 apiname: IJsDebugDataTarget.CreateStackFrameEnumerator
 apilocation: jscript9diag.dll
 ms.assetid: cda172e5-18d0-43c5-81d8-432ab30ee70d
-caps.latest.revision: 4
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.openlocfilehash: 91c67dc3eb14217ffcdc41f0877df6837fcb0230
+ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/27/2017
 ---
-# Metodo IJsDebugDataTarget::CreateStackFrameEnumerator
+# <a name="ijsdebugdatatargetcreatestackframeenumerator-method"></a>Metodo IJsDebugDataTarget::CreateStackFrameEnumerator
 Crea un enumeratore per gli stack frame.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
 HRESULT CreateStackFrameEnumerator(  
@@ -28,17 +32,17 @@ HRESULT CreateStackFrameEnumerator(
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `threadId`  
- \[in\] Thread in esecuzione nel processo di destinazione.  
+ [in] Thread in esecuzione nel processo di destinazione.  
   
  `ppEnumerator`  
- \[out\] Enumeratore per gli stack frame.  
+ [out] L'enumeratore per gli stack frame.  
   
-## Valore restituito  
+## <a name="return-value"></a>Valore restituito  
   
-## Requisiti  
- **Intestazione:** jscript9diag.h  
+## <a name="requirements"></a>Requisiti  
+ **Intestazione:** jscript9diag  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Interfaccia IJsDebugDataTarget](../../winscript/reference/ijsdebugdatatarget-interface.md)

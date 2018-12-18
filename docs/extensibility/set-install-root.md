@@ -4,35 +4,20 @@ ms.custom:
 ms.date: 11/09/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- vs-ide-sdk
+ms.technology: vs-ide-sdk
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: 913c3745-8aa9-4260-886e-a05aecfb2225
-caps.latest.revision: 1
+caps.latest.revision: "1"
 author: gregvanl
 ms.author: gregvanl
 manager: ghogen
-translation.priority.mt:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.workload: vssdk
+ms.openlocfilehash: 970d823265fc25c7248b9953602f50f19c54bc95
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
 ms.translationtype: MT
-ms.sourcegitcommit: 4a36302d80f4bc397128e3838c9abf858a0b5fe8
-ms.openlocfilehash: da7f91cc71eb6d0bc403089a0e34b6d81165e026
-ms.contentlocale: it-it
-ms.lasthandoff: 09/06/2017
-
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="installing-outside-the-extensions-folder"></a>L'installazione all'esterno della cartella delle estensioni
 
@@ -90,4 +75,3 @@ Le modifiche di file con estensione csproj corrispondente saranno simile al segu
 ## <a name="extra-information"></a>Informazioni aggiuntive
 
 Le modifiche di progettazione alle proprietà si applicano solo ai riferimenti al progetto; è possibile impostare il `InstallRoot` metadati per gli elementi all'interno del progetto anche (usando gli stessi metodi descritti sopra).
-

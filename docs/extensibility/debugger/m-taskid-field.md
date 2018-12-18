@@ -1,39 +1,41 @@
 ---
-title: "m_taskId campo | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "campo m_taskId, classe di attività [motori di debug di .NET Framework]"
+title: Campo m_taskId | Documenti Microsoft
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: vs-ide-sdk
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords: m_taskId field, Task class [.NET Framework debug engines]
 ms.assetid: 9e4b827e-7c41-4fa3-b646-830aba2ec736
-caps.latest.revision: 8
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: gregvanl
+ms.author: gregvanl
+manager: ghogen
+ms.workload: vssdk
+ms.openlocfilehash: a3b32a56ed4a9e9c80618e52ff185b26aca1f7a4
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
-# m_taskId campo
-[!INCLUDE[vs2017banner](../../code-quality/includes/vs2017banner.md)]
-
-Il campo sottostante per la <xref:System.Threading.Tasks.Task.Id%2A?displayProperty=fullName> proprietà.  
+# <a name="mtaskid-field"></a>m_taskId campo
+Il campo sottostante per il <xref:System.Threading.Tasks.Task.Id%2A?displayProperty=fullName> proprietà.  
   
- **Spazio dei nomi:** <xref:System.Threading.Tasks?displayProperty=fullName>  
+ **Namespace:**<xref:System.Threading.Tasks?displayProperty=fullName>  
   
- **Assembly:** mscorlib \(in mscorlib. dll\)  
+ **Assembly:** mscorlib (in mscorlib. dll)  
   
- Poiché è possibile accedere a questo membro interno di .NET Framework, la sintassi seguente viene fornita in comune Intermediate Language \(CIL\).  
+ Poiché è possibile accedere a questo membro interno di .NET Framework, la sintassi seguente viene fornita in comune Intermediate Language (CIL).  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
 .field private int32 m_taskId  
 ```  
   
-## Note  
+## <a name="remarks"></a>Note  
   
-## Vedere anche  
- [Classe attività](../../extensibility/debugger/task-class-internal-members.md)
+## <a name="see-also"></a>Vedere anche  
+ [Classe di attività](../../extensibility/debugger/task-class-internal-members.md)

@@ -1,25 +1,29 @@
 ---
-title: "Metodo IJsDebugDataTarget::ReadNullTerminatedString | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/18/2017"
-ms.prod: "windows-script-interfaces"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
+title: 'Metodo ijsdebugdatatarget:: Readnullterminatedstring | Documenti Microsoft'
+ms.custom: 
+ms.date: 01/18/2017
+ms.prod: windows-script-interfaces
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: reference
 apiname: IJsDebugDataTarget.ReadNullTerminatedString
 apilocation: jscript9diag.dll
 ms.assetid: 64683b39-6fc2-40c4-82ae-2a6f58d392d5
-caps.latest.revision: 4
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.openlocfilehash: 94cb90b8b44aa5dab13a2e916dec22ae950e77ef
+ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/27/2017
 ---
-# Metodo IJsDebugDataTarget::ReadNullTerminatedString
-Legge il numero di caratteri specificato dalla destinazione.  
+# <a name="ijsdebugdatatargetreadnullterminatedstring-method"></a>Metodo IJsDebugDataTarget::ReadNullTerminatedString
+Legge il numero specificato di caratteri dalla destinazione.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
 HRESULT ReadNullTerminatedString(  
@@ -30,26 +34,26 @@ HRESULT ReadNullTerminatedString(
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `address`  
- \[in\] Indirizzo da cui leggere.  
+ [in] L'indirizzo da cui leggere.  
   
  `characterSize`  
- \[in\] dimensione di ciascun carattere della stringa  
+ [in] dimensione di ogni carattere nella stringa  
   
  `maxCharacters`  
- \[in\] Numero massimo di caratteri da leggere. Il valore maxCharacters deve essere accettabile.  Qualsiasi richiesta per più di 128 MB di memoria avrà esito negativo.  Se la stringa è maggiore di maxCharacters, la stringa risultante sarà troncata dopo il valore di maxCharacters.  
+ [in] Numero massimo di caratteri da leggere. maxCharacters dovrebbe essere ragionevole. Qualsiasi richiesta per più di 128MB di memoria avrà esito negativo.  Se la stringa è maggiore di maxCharacters, la stringa di risultato verrà troncata dopo maxCharacters.  
   
  `pString`  
- \[out\] Stringa BSTR letta dalla destinazione.  
+ [out] La stringa BSTR leggere dalla destinazione.  
   
-## Valore restituito  
+## <a name="return-value"></a>Valore restituito  
   
-## Note  
- Restituisce S\_FALSE se troncato.  
+## <a name="remarks"></a>Note  
+ Restituisce S_FALSE se non viene troncato.  
   
-## Requisiti  
- **Intestazione:** jscript9diag.h  
+## <a name="requirements"></a>Requisiti  
+ **Intestazione:** jscript9diag  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Interfaccia IJsDebugDataTarget](../../winscript/reference/ijsdebugdatatarget-interface.md)

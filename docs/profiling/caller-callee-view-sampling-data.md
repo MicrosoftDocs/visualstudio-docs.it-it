@@ -1,55 +1,57 @@
 ---
-title: "Visualizzazione Chiamante/chiamato: dati di campionamento del profiler | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "profilatura del campionamento (metodo), visualizzazione Chiamante/Chiamato"
-  - "visualizzazione Chiamante/Chiamato"
+title: 'Visualizzazione Chiamante/chiamato: dati di campionamento | Microsoft Docs'
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: vs-ide-debug
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- sampling profiling method,Caller/Callee view
+- Caller/Callee view
 ms.assetid: 28e85ed5-1512-4b59-bb84-138a2abca7dd
-caps.latest.revision: 14
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 14
+caps.latest.revision: "14"
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.workload: multiple
+ms.openlocfilehash: 81c10d85b9dc88115e7dbc57a03a6da4362fa945
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
-# Visualizzazione Chiamante/chiamato: dati di campionamento del profiler
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
-La visualizzazione Chiamante\/chiamato consente di visualizzare informazioni relative alla profilatura per una funzione selezionata e per le relative funzioni figlio.  Nella visualizzazione Chiamante\/chiamato sono presenti tre griglie.  
+# <a name="caller--callee-view---sampling-data"></a>Visualizzazione Chiamante/chiamato: dati di campionamento
+La visualizzazione Chiamante/chiamato consente di visualizzare informazioni di profilatura per una funzione selezionata e le relative funzioni padre e figlio. La visualizzazione Chiamante/chiamato contiene tre griglie.  
   
- **Funzione corrente** viene visualizzato nella griglia al centro e include le informazioni di profilatura per la funzione selezionata.  I valori includono tutte le chiamate campionate alla funzione.  
+ Nella griglia centrale **Funzione corrente** visualizza le informazioni di profilatura per la funzione selezionata. Sono incluse tutte le chiamate campionate alla funzione.  
   
- **Funzioni che hanno chiamato la funzione corrente** viene visualizzato nella griglia superiore e include i singoli contributi delle funzioni computer chiamante \(padre\) ai valori della funzione selezionata \(corrente\).  
+ La griglia superiore contiene **Funzioni che hanno chiamato la funzione corrente**, che visualizza i contributi individuali delle funzioni chiamanti (padre) i valori della funzione selezionata (corrente).  
   
- **Funzioni che sono state chiamate dalla funzione corrente** viene visualizzato nella griglia inferiore e include le informazioni di profilatura per le funzioni chiamate \(figlio\) della funzione selezionata quando la funzione figlio è stata chiamata dalla funzione corrente.  
+ Nella griglia inferiore **Funzioni che sono state chiamate dalla funzione corrente** visualizza informazioni di profilatura per le funzioni chiamate (figlio) della funzione selezionata quando la funzione figlio è stata chiamata dalla funzione corrente.  
   
 > [!NOTE]
->  Le funzionalità di sicurezza avanzate in Windows 8 e Windows Server 2012 necessarie modifiche significative in modo che il profiler di Visual Studio consente di raccogliere dati su queste piattaforme.  Le applicazioni di archivio di Windows richiedono nuove tecniche di raccolta.  Vedere [Profilatura delle applicazioni Windows 8 e Windows Server 2012](../profiling/performance-tools-on-windows-8-and-windows-server-2012-applications.md).  
+>  Le funzionalità di sicurezza avanzate di Windows 8 e Windows Server 2012 hanno richiesto modifiche significative riguardo alla modalità di raccolta dei dati su queste piattaforme da parte del profiler di Visual Studio. Le app UWP richiedono anche nuove tecniche di raccolta. Vedere [Performance Tools on Windows 8 and Windows Server 2012 applications](../profiling/performance-tools-on-windows-8-and-windows-server-2012-applications.md) (Strumenti per le prestazioni nelle applicazioni Windows 8 e Windows Server 2012).  
   
 |Colonna|Descrizione|  
-|-------------|-----------------|  
-|**ID processo**|ID di processo dell'esecuzione della profilatura.|  
-|**Nome di processo**|Nome del processo.|  
-|**Module Name**|Nome del modulo che contiene la funzione.|  
+|------------|-----------------|  
+|**ID processo**|ID di processo (PID) dell'esecuzione della profilatura.|  
+|**Nome processo**|Nome del processo.|  
+|**Nome modulo**|Nome del modulo che contiene la funzione.|  
 |**Percorso modulo**|Percorso del modulo che contiene la funzione.|  
 |**File di origine**|File di origine che contiene la definizione per questa funzione.|  
-|**Function Name**|Nome completo della funzione.|  
+|**Nome funzione**|Nome completo della funzione.|  
 |**Numero riga funzione**|Numero di riga dell'inizio di questa funzione nel file di origine.|  
-|**Function Address**|Indirizzo della funzione.|  
-|**Type**|Contesto della funzione:<br /><br /> -   **0** \- funzione corrente<br />-   **1**: funzione che chiama la funzione corrente<br />-   **2**: funzione chiamata dalla funzione corrente|  
+|**Indirizzo funzione**|Indirizzo della funzione.|  
+|**Type**|Il contesto della funzione:<br /><br /> -   **0**: la funzione corrente<br />-   **1**: una funzione che chiama la funzione corrente<br />-   **2**: una funzione chiamata dalla funzione corrente|  
 |**Nome funzione radice**|Nome della funzione corrente.|  
-|**Inclusive Samples**|-   Per la funzione corrente, numero di campioni che sono stati raccolti anche se questa funzione o una delle relative funzioni figlio era in esecuzione.<br />-   Per una funzione computer chiamante, numero di campioni inclusivi della funzione corrente che sono stati raccolti quando questa funzione ha chiamato la funzione corrente.<br />-   Per una funzione computer chiamato, numero di campioni inclusivi di questa funzione che sono stati raccolti quando la funzione corrente ha chiamato questa funzione.|  
-|**% campioni inclusivi**|Percentuale di tutti i campioni nell'esecuzione del profilo che costituivano campioni inclusivi di questa funzione.|  
-|**Exclusive Samples**|-   Per la funzione corrente, numero di campioni nell'esecuzione del profilo che sono stati raccolti durante l'esecuzione diretta di questa funzione, ovvero quando questa funzione si trovava nella parte alta dello stack di chiamate.  I campioni raccolti durante l'esecuzione delle funzioni figlio di questa funzione non sono inclusi nei conteggi esclusivi.<br />-   Per una funzione computer chiamante, numero di campioni esclusivi della funzione corrente che sono stati raccolti quando questa funzione ha chiamato la funzione corrente.<br />-   Per una funzione computer chiamato, numero di campioni esclusivi di questa funzione che sono stati raccolti quando la funzione corrente ha chiamato questa funzione.|  
-|**% campioni esclusivi**|Percentuale di tutti i campioni nell'esecuzione del profilo che costituivano campioni esclusivi di questa funzione.|  
+|**Esempi inclusivi**|- Per la funzione corrente, il numero di esempi raccolti anche se era in esecuzione questa funzione o una delle relative funzioni figlio.<br />- Per una funzione chiamante, il numero di esempi inclusivi della funzione corrente raccolti quando questa funzione ha chiamato la funzione corrente.<br />- Per una funzione chiamata, il numero di esempi inclusivi di questa funzione raccolti quando la funzione corrente ha chiamato questa funzione.|  
+|**% esempi inclusivi**|Percentuale di tutti gli esempi nell'esecuzione della profilatura che costituivano esempi inclusivi di questa funzione.|  
+|**Esempi esclusivi**|- Per la funzione corrente, il numero di esempi nell'esecuzione della profilatura raccolti quando era in corso l'esecuzione diretta di questa funzione, ovvero quando questa funzione era in cima allo stack di chiamate. Gli esempi raccolti durante l'esecuzione di funzioni figlio di questa funzione non sono inclusi nei conteggi esclusivi.<br />- Per una funzione chiamante, il numero di esempi esclusivi della funzione corrente raccolti quando questa funzione ha chiamato la funzione corrente.<br />- Per una funzione chiamata, il numero di esempi esclusivi di questa funzione raccolti quando la funzione corrente ha chiamato questa funzione.|  
+|**% esempi esclusivi**|Percentuale di tutti gli esempi nell'esecuzione della profilatura che costituivano esempi esclusivi di questa funzione.|  
   
-## Vedere anche  
- [Visualizzazione Chiamante\/chiamato \- Campionamento](../profiling/caller-callee-view-dotnet-memory-sampling-data.md)   
- [Visualizzazione Chiamante\/chiamato \- Strumentazione](../profiling/caller-callee-view-net-memory-instrumentation-data.md)   
- [Visualizzazione Chiamante\/chiamato](../profiling/caller-callee-view-instrumentation-data.md)
+## <a name="see-also"></a>Vedere anche  
+ [Visualizzazione Chiamante/chiamato: dati di campionamento di memoria .NET](../profiling/caller-callee-view-dotnet-memory-sampling-data.md)   
+ [Visualizzazione Chiamante/chiamato: dati di strumentazione di memoria .NET](../profiling/caller-callee-view-net-memory-instrumentation-data.md)   
+ [Visualizzazione Chiamante/chiamato: dati di strumentazione](../profiling/caller-callee-view-instrumentation-data.md)

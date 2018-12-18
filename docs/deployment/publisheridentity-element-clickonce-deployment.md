@@ -1,34 +1,36 @@
 ---
-title: "&lt;publisherIdentity&gt; Element (ClickOnce Deployment) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-deployment"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-helpviewer_keywords: 
-  - "publisherIdentity Element [ClickOnce deployment manifest], introduction"
-  - "required element for signed manifests [ClickOnce], publisherIdentity Element"
-  - "publisherIdentity Element [ClickOnce deployment manifest], syntax, elements, and attributes"
+title: '&lt;publisherIdentity&gt; elemento (distribuzione di ClickOnce) | Documenti Microsoft'
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: vs-ide-deployment
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- VB
+- CSharp
+- C++
+helpviewer_keywords:
+- publisherIdentity Element [ClickOnce deployment manifest], introduction
+- required element for signed manifests [ClickOnce], publisherIdentity Element
+- publisherIdentity Element [ClickOnce deployment manifest], syntax, elements, and attributes
 ms.assetid: 34c579db-d2f2-4b66-b9c8-47207f33d950
-caps.latest.revision: 11
-author: "stevehoag"
-ms.author: "shoag"
-manager: "wpickett"
-caps.handback.revision: 11
+caps.latest.revision: "11"
+author: stevehoag
+ms.author: shoag
+manager: wpickett
+ms.workload: multiple
+ms.openlocfilehash: 527ab7ae43790f7e824ead33fb601f0f8dee2bf0
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
-# &lt;publisherIdentity&gt; Element (ClickOnce Deployment)
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
+# <a name="ltpublisheridentitygt-element-clickonce-deployment"></a>&lt;publisherIdentity&gt; elemento (distribuzione di ClickOnce)
 Contiene informazioni sull'editore che ha firmato questo manifesto della distribuzione.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
 <publisherIdentity  
@@ -37,22 +39,22 @@ Contiene informazioni sull'editore che ha firmato questo manifesto della distrib
 />  
 ```  
   
-## Elementi e attributi  
- L'elemento `publisherIdentity` è obbligatorio per i manifesti firmati.  Nella tabella riportata di seguito sono indicati gli attributi supportati dall'elemento `publisherIdentity`.  
+## <a name="elements-and-attributes"></a>Elementi e attributi  
+ Il `publisherIdentity` elemento è obbligatorio per manifesti firmati. Nella tabella seguente vengono illustrati gli attributi di `publisherIdentity` supportato dall'elemento.  
   
 |Attributo|Descrizione|  
 |---------------|-----------------|  
-|`name`|Obbligatorio.  Descrive l'identità della parte che ha pubblicato questa applicazione.|  
-|`issuerKeyHash`|Obbligatorio.  Contiene l'hash SHA\-1 della chiave pubblica dell'autorità di certificazione.|  
+|`name`|Obbligatorio. Descrive l'identità dell'entità che ha pubblicato l'applicazione.|  
+|`issuerKeyHash`|Obbligatorio. Contiene l'hash SHA-1 della chiave pubblica dell'autorità di certificazione.|  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
   
-## Valore proprietà\/Valore restituito  
+## <a name="property-valuereturn-value"></a>Valore proprietà/Valore restituito  
   
-## Eccezioni  
+## <a name="exceptions"></a>Eccezioni  
   
-## Note  
+## <a name="remarks"></a>Note  
   
-## Requisiti  
+## <a name="requirements"></a>Requisiti  
   
-## Sottotitolo
+## <a name="subhead"></a>Sottotitolo

@@ -1,59 +1,60 @@
 ---
-title: "IDiaSession::findAcceleratorInlineesByLinenum | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
+title: IDiaSession::findAcceleratorInlineesByLinenum | Documenti Microsoft
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: vs-ide-debug
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
 ms.assetid: 386c87aa-f7b2-4d38-9dd6-fffba9ff01f0
-caps.latest.revision: 3
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.workload: multiple
+ms.openlocfilehash: 625c4368b1a05ae805a3df8cfe76574dfd332bb5
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
-# IDiaSession::findAcceleratorInlineesByLinenum
-[!INCLUDE[vs2017banner](../../code-quality/includes/vs2017banner.md)]
-
-Restituisce un'enumerazione di simboli per i frame inline che corrispondono alla posizione di origine specificata.  
+# <a name="idiasessionfindacceleratorinlineesbylinenum"></a>IDiaSession::findAcceleratorInlineesByLinenum
+Restituisce un'enumerazione dei simboli per il frame inline che corrispondono al percorso di origine specificato.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp#  
-HRESULT findAcceleratorInlineeLinesByName (   
-   IDiaSymbol*           parent,  
+```C++  
+HRESULT findAcceleratorInlineeLinesByName (   
+   IDiaSymbol*           parent,  
    IDiaSourceFile*       file,  
    DWORD                 linenum,  
    DWORD                 colnum,  
-   IDiaEnumLineNumbers** ppResult  
+   IDiaEnumLineNumbers** ppResult  
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `parent`  
- \[in\] `IDiaSymbol` che corrisponde alla funzione di uno stub di scelta rapida che deve essere presente.  
+ [in] Un `IDiaSymbol` che corrisponde alla funzione stub tasti di scelta rapida che deve essere eseguita la ricerca.  
   
  `file`  
- \[in\] `IDiaSourceFile` la posizione di origine.  
+ [in] Il `IDiaSourceFile` della posizione di origine.  
   
  `linenum`  
- \[in\] numero di riga della posizione di origine.  
+ [in] Il numero di riga della posizione di origine.  
   
  `colnum`  
- \[in\] numero di colonne della posizione di origine.  
+ [in] Il numero di colonna della posizione di origine.  
   
  `ppResult`  
- \[out\] puntatore A un puntatore a interfaccia `IDiaEnumLineNumbers` inizializzato con il risultato.  
+ [out] Un puntatore a un `IDiaEnumLineNumbers` puntatore a interfaccia che viene inizializzato con il risultato.  
   
-## Valore restituito  
- In caso di esito positivo, restituisce `S_OK`; in caso contrario, restituisce un codice errore.  
+## <a name="return-value"></a>Valore restituito  
+ Se ha esito positivo, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IDiaSession](../../debugger/debug-interface-access/idiasession.md)   
  [IDiaEnumLineNumbers](../../debugger/debug-interface-access/idiaenumlinenumbers.md)   
  [IDiaSymbol](../../debugger/debug-interface-access/idiasymbol.md)

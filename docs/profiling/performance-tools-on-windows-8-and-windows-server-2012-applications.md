@@ -4,45 +4,29 @@ ms.custom:
 ms.date: 06/19/2017
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- vs-ide-debug
+ms.technology: vs-ide-debug
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: a704215d-d252-4087-921b-ac81ebe2a9c9
-caps.latest.revision: 15
+caps.latest.revision: "15"
 author: mikejo5000
 ms.author: mikejo
 manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: Human Translation
-ms.sourcegitcommit: baf12bba10dfba15f10d75fd1f7a4cdc4000e441
-ms.openlocfilehash: a5d885f8604bdb52907adae4f231b41e0881017f
-ms.contentlocale: it-it
-ms.lasthandoff: 06/21/2017
-
+ms.workload: multiple
+ms.openlocfilehash: b82860f4bdbf206441591703137f15decb294269
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="performance-tools-on-windows-8-and-windows-server-2012-applications"></a>Strumenti per le prestazioni nelle applicazioni Windows 8 e Windows Server 2012
-Le funzionalità di protezione avanzata introdotte a partire da Windows 8 e Windows Server 2012 hanno richiesto modifiche significative delle modalità di raccolta dei dati in queste piattaforme con gli strumenti per le prestazioni di Visual Studio. Le app di Windows Store richiedono nuove tecniche di raccolta. Questo argomento descrive le modifiche agli strumenti per le prestazioni introdotte nelle piattaforme a partire da Windows 8 e Windows Server 2012.
+Le funzionalità di protezione avanzata introdotte a partire da Windows 8 e Windows Server 2012 hanno richiesto modifiche significative delle modalità di raccolta dei dati in queste piattaforme con gli strumenti per le prestazioni di Visual Studio. Le app UWP richiedono anche nuove tecniche di raccolta. Questo argomento descrive le modifiche agli strumenti per le prestazioni introdotte a partire dalle piattaforme Windows 8 e Windows Server 2012.
   
 > [!NOTE]
 >  Gli strumenti per le prestazioni per le altre versioni di Windows supportate (Windows 7, Windows Server 2008 R2) sono rimasti invariati.
   
-##  <a name="BKMK_In_this_topic"></a> Contenuto dell'argomento  
- [Raccolta di dati nelle app di Windows Store dall'IDE di Visual Studio](#BKMK_Profiling_Windows_Store_apps_from_the_Visual_Studio_IDE)  
+##  <a name="BKMK_In_this_topic"></a> In questo argomento  
+ [Raccolta di dati nelle app UWP dall'IDE di Visual Studio](#BKMK_Profiling_Windows_Store_apps_from_the_Visual_Studio_IDE)  
   
  [Raccolta di dati nelle app in esecuzione sul desktop di Windows 8 o in Windows Server 2012 dall'IDE di Visual Studio](#BKMK_Profiling_apps_running_on_the_Windows_8_desktop_or_on_Windows_Server_2012_from_the_Visual_Studio_IDE)  
   
@@ -52,10 +36,10 @@ Le funzionalità di protezione avanzata introdotte a partire da Windows 8 e Wind
   
  [Raccolta di dati di interazione tra livelli (TIP)](#BKMK_Collecting_tier_interaction__TIP__data)  
   
-##  <a name="BKMK_Profiling_Windows_Store_apps_from_the_Visual_Studio_IDE"></a> Raccolta di dati nelle app di Windows Store dall'IDE di Visual Studio  
- Quando si profila un'app di Windows Store scritta in JavaScript e in HTML 5, si raccolgono dati di strumentazione per il codice JavaScript. Quando si profila un'app di Windows Store o un componente scritto in Visual C++, Visual C# o Visual Basic, si raccolgono dati di campionamento per il codice nativo e il codice gestito. È possibile profilare l'applicazione localmente o in un computer remoto.  
+##  <a name="BKMK_Profiling_Windows_Store_apps_from_the_Visual_Studio_IDE"></a> Raccolta di dati nelle app UWP dall'IDE di Visual Studio  
+ Quando si profila un'app UWP scritta in JavaScript e HTML 5, si raccolgono dati di strumentazione per il codice JavaScript. Quando si profila un'app UWP o un componente scritto in Visual C++, Visual C# o Visual Basic, si raccolgono dati di campionamento per il codice nativo e il codice gestito. È possibile profilare l'applicazione localmente o in un computer remoto.  
   
- Le seguenti funzionalità e opzioni di profilatura non sono supportate nella profilatura di app di Windows Store:  
+ Le funzionalità e opzioni di profilatura seguenti non sono supportate per la profilatura di app UWP:  
   
 -   Profilatura di applicazioni JavaScript usando il metodo del campionamento.  
   
@@ -71,23 +55,23 @@ Le funzionalità di protezione avanzata introdotte a partire da Windows 8 e Wind
   
 -   Opzioni di strumentazione, ad esempio la raccolta dei dati dei contatori Windows e delle prestazioni o la specifica di opzioni della riga di comando aggiuntive.  
   
- Per altre informazioni sulla profilatura delle app di Windows Store, vedere gli argomenti seguenti:  
+ Per altre informazioni sulla profilatura delle app UWP, vedere gli argomenti seguenti:  
   
- [Eseguire applicazioni Windows Store in un computer locale](../debugger/run-windows-store-apps-on-the-local-machine.md)  
+ [Eseguire app UWP nel computer locale](../debugger/run-windows-store-apps-on-the-local-machine.md)  
   
- [Eseguire app di Windows Store in un computer remoto](../debugger/run-windows-store-apps-on-a-remote-machine.md)  
+ [Eseguire app UWP in un computer remoto](../debugger/run-windows-store-apps-on-a-remote-machine.md)  
   
- [Strumenti di profilatura](profiling-tools.md)  
+ [Profiling Tools](profiling-tools.md) (Strumenti di profilatura)  
   
 -   [Memoria JavaScript](../profiling/javascript-memory.md)
   
--   [Profilare codice Visual C++, Visual C# e Visual Basic nelle applicazioni Windows Store in un computer locale](http://msdn.microsoft.com/en-us/2d0c939e-0bac-48c5-b727-46f6c6113060)  
+-   [Profilare codice Visual C++, Visual C# e Visual Basic nelle app UWP in un computer locale](http://msdn.microsoft.com/en-us/2d0c939e-0bac-48c5-b727-46f6c6113060)  
   
--   [Profilare codice Visual C++, Visual C# e Visual Basic nelle applicazioni Windows Store in un dispositivo remoto](http://msdn.microsoft.com/en-us/b932a2be-11b0-40fd-b996-75c6b6a79d22)  
+-   [Profilare codice Visual C++, Visual C# e Visual Basic nelle app UWP in un dispositivo remoto](http://msdn.microsoft.com/en-us/b932a2be-11b0-40fd-b996-75c6b6a79d22)  
   
--   [Analizzare i dati relativi alle prestazioni per il codice Visual C++, Visual C# e Visual Basic nelle applicazioni Windows Store](http://msdn.microsoft.com/en-us/5de4a413-d924-425f-afc4-e1ecfb0fca18)  
+-   [Analizzare i dati relativi alle prestazioni per il codice Visual C++, Visual C# e Visual Basic nelle app UWP](http://msdn.microsoft.com/en-us/5de4a413-d924-425f-afc4-e1ecfb0fca18)  
   
- [Contenuto dell'argomento](#BKMK_In_this_topic)  
+ [In questo argomento](#BKMK_In_this_topic)  
   
 ##  <a name="BKMK_Profiling_apps_running_on_the_Windows_8_desktop_or_on_Windows_Server_2012_from_the_Visual_Studio_IDE"></a> Raccolta di dati nelle app in esecuzione sul desktop di Windows 8 o in Windows Server 2012 dall'IDE di Visual Studio  
  La profilatura mediante il metodo di strumentazione è rimasta invariata per Windows 8.  
@@ -106,7 +90,7 @@ Le funzionalità di protezione avanzata introdotte a partire da Windows 8 e Wind
   
 |Nome dello strumento|Descrizione|  
 |---------------|-----------------|  
-|[VSPerf](../profiling/vsperf.md)|Raccoglie i dati di profilatura dalle app di Windows Store e dalle applicazioni di Windows 8 Desktop e Windows Server 2012.|  
+|[VSPerf](../profiling/vsperf.md)|Raccoglie i dati di profilatura dalle app UWP e raccoglie campioni di dati di profilatura dalle applicazioni Windows 8 Desktop e Windows Server 2012.|  
 |[VSPerfCmd](../profiling/vsperfcmd.md)|Raccoglie i dati di profilatura della strumentazione, della concorrenza e dell'interazione tra livelli dalle applicazioni in esecuzione su Windows 8 Desktop o Windows Server 2012. Raccoglie tutti i tipi di dati di profilatura dalle versioni precedenti di Windows.|  
   
  Entrambi gli strumenti vengono installati con Visual Studio per l'uso nel computer locale.  
@@ -139,7 +123,7 @@ Le funzionalità di protezione avanzata introdotte a partire da Windows 8 e Wind
   
 1.  Per raccogliere dati di interazione tra livelli dalle app in esecuzione su Windows 8 Desktop o Windows Server 2012, è necessario usare il metodo di strumentazione.  
   
-2.  Non è possibile raccogliere dati di interazione tra livelli per le applicazioni Windows Store.  
+2.  Non è possibile raccogliere dati di interazione tra livelli per le app UWP.  
   
 3.  È possibile includere i dati di interazione tra livelli in tutti i metodi di profilatura su un'altra versione di Windows supportata.  
   

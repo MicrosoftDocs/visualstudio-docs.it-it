@@ -1,27 +1,30 @@
 ---
-title: "IActiveScriptParseProcedureOld::ParseProcedureText | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/18/2017"
-ms.prod: "windows-script-interfaces"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
+title: IActiveScriptParseProcedureOld::ParseProcedureText | Documenti Microsoft
+ms.custom: 
+ms.date: 01/18/2017
+ms.prod: windows-script-interfaces
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: reference
 apiname: IActiveScriptParseProcedureOld.ParseProcedureText
 apilocation: jscript.dll
-helpviewer_keywords: 
-  - "IActiveScriptParseProcedureOld::ParseProcedureText"
+helpviewer_keywords: IActiveScriptParseProcedureOld::ParseProcedureText
 ms.assetid: 21a21313-35ce-432d-b9a6-7999065f19ac
-caps.latest.revision: 8
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.openlocfilehash: cab546deb390535fa8ff71e116a0ad42d33cc104
+ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/27/2017
 ---
-# IActiveScriptParseProcedureOld::ParseProcedureText
-Analizzare il codice di creazione specificato e aggiunge una routine anonima allo spazio dei nomi.  
+# <a name="iactivescriptparseprocedureoldparseproceduretext"></a>IActiveScriptParseProcedureOld::ParseProcedureText
+Analizza la routine di codice specificato e aggiunge una routine anonima per lo spazio dei nomi.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
 HRESULT ParseProcedureText(  
@@ -37,58 +40,58 @@ HRESULT ParseProcedureText(
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `pstrCode`  
- \[in\] il testo della routine da valutare.  L'interpretazione di questa stringa dipende dal linguaggio di script.  
+ [in] Il testo della stored procedure da valutare. L'interpretazione di questa stringa varia a seconda del linguaggio di script.  
   
  `pstrFormalParams`  
- \[in\] nomi di parametro formale per la routine.  I nomi dei parametri devono essere separati da delimitatori appropriati per il modulo di gestione di script.  I nomi non devono essere racchiusi tra parentesi.  
+ [in] Nomi di parametri formali per la procedura. I nomi di parametro devono essere separati da delimitatori appropriati per il motore di script. I nomi non devono essere racchiusi tra parentesi.  
   
  `pstrItemName`  
- \[in\] il nome dell'elemento denominato che fornisce il contesto in cui la routine deve essere valutata.  Se questo parametro è `NULL`, il codice viene valutato nel contesto globale del motore di scripting.  
+ [in] Il nome dell'elemento denominata che fornisce il contesto in cui la procedura è da valutare. Se questo parametro è `NULL`, il codice viene valutato nel contesto globale del motore di script.  
   
  `punkContext`  
- \[in\] l'oggetto di contesto.  Questo oggetto è riservato da utilizzare in un ambiente di debug, in cui tale contesto può essere fornito dal debugger per rappresentare un contesto di esecuzione attivo.  Se questo parametro è `NULL`, il motore utilizza `pstrItemName` per identificare il contesto.  
+ [in] L'oggetto di contesto. Questo oggetto è riservato per l'utilizzo in un ambiente di debug, in questo contesto può essere fornito dal debugger per rappresentare un contesto di runtime attivo. Se questo parametro è `NULL`, il motore utilizza `pstrItemName` per identificare il contesto.  
   
  `pstrDelimiter`  
- \[in\] il delimitatore di fine della routine.  Quando `pstrCode` viene analizzato da un flusso di testo, l'host utilizza in genere un delimitatore, ad esempio due virgolette singole \('\), per rilevare la fine della routine.  Questo parametro specifica il delimitatore che l'host utilizzato, consentendo al motore di scripting fornire un determinato condizionale, pre\-elaborazione primitiva \(ad esempio, sostituendo una virgoletta \['\] con due virgolette semplici da utilizzare come delimitatore\).  Normalmente \(e\) se il motore di scripting utilizza queste informazioni dipendono dal motore di scripting.  Impostare questo parametro su `NULL` se l'host non utilizzi un delimitatore per contrassegnare la fine della routine.  
+ [in] Il delimitatore di fine di procedura. Quando `pstrCode` viene analizzata da un flusso di testo, l'host in genere viene utilizzato un delimitatore, ad esempio due virgolette singole ("), per rilevare la fine della routine. Questo parametro specifica il delimitatore che l'host utilizzato, consentendo di fornire alcuni condizionale, il motore di script di pre-elaborazione primitivi (ad esempio, la sostituzione di una virgoletta singola ['] con due virgolette singole per l'utilizzo come un delimitatore). Esattamente come (e se) utilizzati dal motore scripting questa informazioni dipendono dal motore di script. Impostare questo parametro su `NULL` se l'host non ha utilizzato un delimitatore per contrassegnare la fine della procedura.  
   
  `dwSourceContextCookie`  
- \[in\] valore definito dall'applicazione viene utilizzato per eseguire il debug.  
+ [in] Valore definito dall'applicazione che viene utilizzato a scopo di debug.  
   
  `ulStartingLineNumber`  
- \[in\] valore in base zero che specifica alla riga l'analisi verrà avviato.  
+ [in] Valore in base zero che specifica la riga in cui verrà avviata l'analisi.  
   
  `dwFlags`  
- \[in\] i flag associati alla routine.  Può essere una combinazione di questi valori.  
+ [in] Flag associati con la procedura. Può essere una combinazione di questi valori.  
   
 |Costante|Valore|Significato|  
-|--------------|------------|-----------------|  
-|SCRIPTPROC\_ISEXPRESSION|0x00000020|Indica che il codice in `pstrCode` è un'espressione che rappresenta il valore restituito dalla routine.|  
-|SCRIPTPROC\_IMPLICIT\_THIS|0x00000100|Indica che il puntatore `this` è incluso nella routine.|  
-|SCRIPTPROC\_IMPLICIT\_PARENTS|0x00000200|Indica che i calcoli del puntatore `this` sono inclusi nella routine.|  
+|--------------|-----------|-------------|  
+|SCRIPTPROC_ISEXPRESSION|0x00000020|Indica che il codice in `pstrCode` è un'espressione che rappresenta il valore restituito della procedura.|  
+|SCRIPTPROC_IMPLICIT_THIS|0x00000100|Indica che il `this` puntatore è incluso nell'ambito della procedura.|  
+|SCRIPTPROC_IMPLICIT_PARENTS|0x00000200|Indica che ai padri di `this` puntatore sono inclusi nell'ambito della procedura.|  
   
  `ppdisp`  
- \[out\] restituisce un wrapper di invio in cui il metodo predefinito è la routine analizzata da questo metodo.  
+ [out] Restituisce un wrapper di distribuzione in cui il metodo predefinito è la procedura analizzata da questo metodo.  
   
-## Valore restituito  
- Il metodo restituisce un tipo `HRESULT`.  I valori possibili sono, ma non sono limitati a, quelli nella tabella seguente.  
+## <a name="return-value"></a>Valore restituito  
+ Il metodo restituisce un tipo `HRESULT`. I valori possibili includono, ma non sono limitati a, quelli indicati nella tabella seguente.  
   
 |Valore|Descrizione|  
-|------------|-----------------|  
+|-----------|-----------------|  
 |`S_OK`|Il metodo è riuscito.|  
-|`E_INVALIDARG`|Un argomento non è valido.|  
-|`E_POINTER`|Un puntatore non valido è stato specificato.|  
-|`E_NOTIMPL`|Metodo non supportato.  Il motore di scripting non supporta l'aggiunta di runtime delle procedure allo spazio dei nomi.|  
-|`E_UNEXPECTED`|La chiamata non era prevista, ad esempio il motore di scripting è stato inizializzato o chiuso\).|  
-|`OLESCRIPT_E_SYNTAX`|Un errore di sintassi non si è verificata nella routine.|  
-|`S_FALSE`|Il motore di scripting non supporta un oggetto di invio; il parametro `ppdisp`è impostato su `NULL`.|  
+|`E_INVALIDARG`|Un argomento non valido.|  
+|`E_POINTER`|È stato specificato un puntatore non valido.|  
+|`E_NOTIMPL`|Questo metodo non è supportato. Il motore di script non supporta l'aggiunta in fase di esecuzione delle procedure per lo spazio dei nomi.|  
+|`E_UNEXPECTED`|La chiamata non era previsto (ad esempio, il motore di script è in stato non inizializzato o chiuso).|  
+|`OLESCRIPT_E_SYNTAX`|Si è verificato un errore di sintassi non specificato nella procedura.|  
+|`S_FALSE`|Il motore di script non supporta un oggetto di distribuzione. il `ppdisp`parametro è impostato su `NULL`.|  
   
-## Note  
- Nessun codice di script vengono valutate durante questa chiamata, piuttosto, la routine viene compilata in un metodo su `ppdisp` in cui può essere chiamata dallo script successive.  
+## <a name="remarks"></a>Note  
+ Nessun codice di script viene valutato durante la chiamata; invece, la procedura viene compilata in un metodo su `ppdisp` in cui può essere chiamato dallo script in un secondo momento.  
   
- Questa interfaccia è deprecata a favore dell'interfaccia `IActiveScriptParseProcedure`.  Il metodo `IActiveScriptParseProcedure::ParseProcedureText` è simile a questo metodo, ma consente il nome della routine da specificare.  In tutti i casi, `IActiveScriptParseProcedure::ParseProcedureText` deve essere utilizzato.  
+ Questa interfaccia è deprecata a favore del `IActiveScriptParseProcedure` interfaccia. Il `IActiveScriptParseProcedure::ParseProcedureText` metodo è simile a questo metodo, ma consente di specificare il nome di procedura. In tutti i casi, `IActiveScriptParseProcedure::ParseProcedureText` deve essere utilizzato.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Interfaccia IActiveScriptParseProcedureOld](../../winscript/reference/iactivescriptparseprocedureold-interface.md)   
  [IActiveScriptParseProcedure::ParseProcedureText](../../winscript/reference/iactivescriptparseprocedure-parseproceduretext.md)

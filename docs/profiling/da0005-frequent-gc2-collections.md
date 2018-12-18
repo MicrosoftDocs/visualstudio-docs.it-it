@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- vs-ide-debug
+ms.technology: vs-ide-debug
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
@@ -14,36 +13,22 @@ f1_keywords:
 - vs.performance.5
 - vs.performance.rules.DA0005
 ms.assetid: 8d3f267c-8a74-4cf4-91a5-0b06a76dc2bd
-caps.latest.revision: 11
+caps.latest.revision: "11"
 author: mikejo5000
 ms.author: mikejo
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 47057e9611b824c17077b9127f8d2f8b192d6eb8
-ms.openlocfilehash: 40c7e8f21c6e9c8ef212860a639a7e8e16381dc7
-ms.contentlocale: it-it
-ms.lasthandoff: 05/13/2017
-
+ms.workload: multiple
+ms.openlocfilehash: a8b529672868ac2ad3b8d1a9dd7faaeaefb98084
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="da0005-frequent-gc2-collections"></a>DA0005: Collection GC2 frequenti
 |||  
 |-|-|  
 |ID regola|DA0005|  
-|Categoria|Uso di .NET Framework|  
+|Category|Uso di .NET Framework|  
 |Metodo di profilatura|Memoria .NET|  
 |Messaggio|Molti degli oggetti vengono raccolti in Garbage Collection di generazione 2.|  
 |Tipo messaggio|Avviso|  

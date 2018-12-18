@@ -1,12 +1,10 @@
 ---
-title: Deploying an Office Solution by Using Windows Installer | Microsoft Docs
+title: Distribuzione di una soluzione Office tramite Windows Installer | Documenti Microsoft
 ms.custom: 
 ms.date: 02/02/2017
-ms.prod: visual-studio-dev14
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- office-development
+ms.technology: office-development
 ms.tgt_pltfrm: 
 ms.topic: article
 dev_langs:
@@ -20,189 +18,187 @@ helpviewer_keywords:
 - ClickOnce deployment [Office development in Visual Studio], MSI
 - publishing Office solutions [Office development in Visual Studio], setup project
 - Office applications [Office development in Visual Studio], MSI
-ms.assetid: 260dda48-f9d4-474c-8638-ecf5b2c2729d
-caps.latest.revision: 91
-author: kempb
-ms.author: kempb
+author: TerryGLee
+ms.author: tglee
 manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: eb5c9550fd29b0e98bf63a7240737da4f13f3249
-ms.openlocfilehash: c063e3b0be4fe33c2fc75eae8e04a491cdfca39e
-ms.contentlocale: it-it
-ms.lasthandoff: 08/30/2017
-
+ms.workload: office
+ms.openlocfilehash: 68ec55b1096f9e4244213cf4faeef5b904dd8fed
+ms.sourcegitcommit: f9fbf1f55f9ac14e4e5c6ae58c30dc1800ca6cda
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 01/10/2018
 ---
-# <a name="deploying-an-office-solution-by-using-windows-installer"></a>Deploying an Office Solution by Using Windows Installer
-Learn how to create a Windows Installer for your Office solution by using [!INCLUDE[vs_dev12](../vsto/includes/vs-dev12-md.md)].  
+# <a name="deploying-an-office-solution-by-using-windows-installer"></a>Distribuzione di una soluzione Office tramite Windows Installer
+Informazioni su come creare un file di Windows Installer per la soluzione Office mediante [!INCLUDE[vs_dev12](../vsto/includes/vs-dev12-md.md)].  
   
-By using Visual Studio to create a Windows Installer, you can deploy an Office solution that requires administrative access on the end user's computer. For example, you can use such a file to install a solution only once for all users of a computer. You can also deploy an Office solution by using ClickOnce, but that solution must be installed separately for each user of the computer.  
+Se si usa Visual Studio per creare un file di Windows Installer, è possibile distribuire una soluzione Office che richiede accesso amministrativo nel computer dell'utente finale. Ad esempio, è possibile usare tale file per installare una soluzione solo una volta per tutti gli utenti di un computer. È inoltre possibile distribuire una soluzione Office usando ClickOnce, ma tale soluzione deve essere installata separatamente per ogni utente del computer.  
   
   
-## <a name="in-this-topic"></a>In this topic  
+## <a name="in-this-topic"></a>Contenuto dell'argomento  
   
-- [Download VSTO Add-in samples](#Download)  
+- [Scaricare gli esempi di componente aggiuntivo VSTO](#Download)  
   
-- [Get InstallShield Limited Edition](#Obtain)  
+- [Ottenere InstallShield Limited Edition](#Obtain)  
   
-- [Decide how to grant trust to the solution](#ApplySecurity)  
+- [Scegliere come concedere l'attendibilità alla soluzione](#ApplySecurity)  
   
-- [Create a setup project](#Create)  
+- [Creare un progetto di installazione](#Create)  
   
-- [Add the project output](#Add)  
+- [Aggiungere l'output del progetto](#Add)  
   
-- [Add the deployment and application manifests](#AddD)  
+- [Aggiungere i manifesti dell'applicazione e della distribuzione](#AddD)  
   
-- [Configure the dependent components as prerequisites](#Configure)  
+- [Configurare i componenti dipendenti come prerequisiti](#Configure)  
   
 - [Specify where you want to deploy the solution on the user's computer](#Location)  
   
-- [Configure an VSTO Add-in](#ConfigureRegisitry)  
+- [Configurare un componente aggiuntivo VSTO](#ConfigureRegisitry)  
   
 - [Configure a document-level customization](#ConfigureDocument)  
   
 - [Build the setup project](#Build)  
   
-For more information about how to deploy an Office solution by using ClickOnce, see [Deploying an Office Solution by Using ClickOnce](../vsto/deploying-an-office-solution-by-using-clickonce.md).  
+Per ulteriori informazioni su come distribuire una soluzione Office tramite ClickOnce, vedere [distribuisce una soluzione Office tramite ClickOnce](../vsto/deploying-an-office-solution-by-using-clickonce.md).  
   
-For information about how to create a Windows Installer file by using [!INCLUDE[vs_dev10_long](../sharepoint/includes/vs-dev10-long-md.md)], see [Deploying a Visual Studio 2010 Tools for Office Solution Using Windows Installer](http://go.microsoft.com/fwlink/?LinkId=201807).  
-  
-  
-## <a name="Download"></a>Download samples  
-This topic refers to the following downloadable samples.  
+Per informazioni su come creare un file di Windows Installer con [!INCLUDE[vs_dev10_long](../sharepoint/includes/vs-dev10-long-md.md)], vedere [Distribuzione di una soluzione Visual Studio 2010 Tools per Office con Windows Installer](http://go.microsoft.com/fwlink/?LinkId=201807).  
   
   
+## <a name="Download"></a>Scaricare esempi  
+Questo argomento si riferisce ai seguenti esempi scaricabili.  
   
-|Sample<br /><br />|Description<br /><br />|  
+  
+  
+|Esempio<br /><br />|Descrizione<br /><br />|  
 |----------|---------------|  
-|[ExcelAddIn](http://go.microsoft.com/fwlink/?LinkID=275492)<br /><br />|An Excel VSTO Add-in that you can install on a computer that runs a 32-bit or 64-bit version of Office.<br /><br />|  
-|[ExcelWorkbook](http://go.microsoft.com/fwlink/?LinkID=275493)<br /><br />|An Excel document-level customization that you can install on a computer that runs a 32-bit or 64-bit version of Office.<br /><br />|  
+|[ExcelAddIn](http://go.microsoft.com/fwlink/?LinkID=275492)<br /><br />|Componente aggiuntivo VSTO di Excel che può essere installato in un computer che esegue una versione di Office a 32 o 64 bit.<br /><br />|  
+|[ExcelWorkbook](http://go.microsoft.com/fwlink/?LinkID=275493)<br /><br />|Personalizzazione a livello di documento di Excel che è possibile installare su un computer che esegue una versione di Office a 32 o a 64 bit.<br /><br />|  
   
-## <a name="ApplySecurity"></a>Decide how to grant trust to the solution  
-Before a solution can run on user computers, you must grant trust in either of the following ways, or users must respond to a trust prompt when they install the solution.  
+## <a name="ApplySecurity"></a>Scegliere come concedere l'attendibilità alla soluzione  
+Prima che una soluzione possa essere eseguita nei computer degli utenti, è necessario concedere l'attendibilità in una delle modalità seguenti oppure gli utenti devono rispondere a una richiesta di attendibilità quando installano la soluzione.  
   
   
-- Sign the manifests by using a certificate that identifies a known and trusted publisher. For more information, see [Trusting the Solution by Signing the Application and Deployment Manifests](../vsto/granting-trust-to-office-solutions.md#Signing).  
+- Firmare i manifesti con un certificato che identifica un editore conosciuto e attendibile. Per altre informazioni, vedere [Trusting the Solution by Signing the Application and Deployment Manifests](../vsto/granting-trust-to-office-solutions.md#Signing).  
   
-- Install the solution to the Program Files directory on the user's computer.  
+- Installare la soluzione nella directory programmi sul computer dell'utente.  
   
 > [!NOTE]  
-> For document-level customizations, the location of the document must also be trusted. For more information, see [Granting Trust to Documents](../vsto/granting-trust-to-documents.md).  
+> Per le personalizzazioni a livello di documento, anche il percorso del documento deve essere considerato attendibile. Per altre informazioni, vedere [Granting Trust to Documents](../vsto/granting-trust-to-documents.md).  
   
   
-## <a name="Obtain"></a>Get InstallShield Limited Edition  
-You can create a Windows Installer file by using InstallShield Limited Edition (ISLE), which is free if you've installed Visual Studio. ISLE replaces the functionality of the project templates for setup and deployment that previous versions of Visual Studio offered.  
+## <a name="Obtain"></a>Ottenere InstallShield Limited Edition  
+È possibile creare un file di Windows Installer tramite InstallShield Limited Edition (ISLE), che è gratuito se è stato installato Visual Studio. ISLE sostituisce la funzionalità dei modelli di progetto per l'installazione e la distribuzione offerta dalle versioni precedenti di Visual Studio.  
   
   
-#### <a name="to-get-installshield-limited-edition"></a>To get InstallShield Limited Edition  
+#### <a name="to-get-installshield-limited-edition"></a>Per ottenere InstallShield Limited Edition  
   
-1. On the menu bar, choose **File**, **New**, **Project**.  
+1. Nella barra dei menu scegliere **File**, **Nuovo**, **Progetto**.  
   
-   The **New Project** dialog box opens.  
+   Verrà visualizzata la finestra di dialogo **Nuovo progetto** .  
   
-2. In the templates pane, expand **Other Project Types**, and then choose the **Setup and Deployment** template.  
+2. Nel riquadro dei modelli espandere **Altri tipi di progetto**, quindi selezionare il modello **Installazione e distribuzione** .  
   
-3. In the list of project types for **Setup and Deployment**, choose **Enable InstallShield Limited Edition**, and then choose the **OK** button.  
+3. Nell'elenco dei tipi di progetto per **Installazione e distribuzione**scegliere **Abilita InstallShield Limited Edition**, quindi scegliere il pulsante **OK** .  
   
-   A page appears that provides information about how to get InstallShield Limited Edition.  
+   Viene visualizzata una pagina che fornisce informazioni su come ottenere InstallShield Limited Edition.  
   
-4. On that page, choose the **Go to the download web site** link.  
+4. In questa pagina scegliere il collegamento **Visitare il sito Web di download** .  
   
-5. On the download page for InstallShield Limited Edition, enter the required information into the appropriate fields, and then choose the **Download Now** link.  
+5. Nella pagina di download di InstallShield Limited Edition, immettere le informazioni necessarie nei campi appropriati, quindi scegliere il collegamento **Scarica ora** .  
   
-   After you download, install, and activate the product, the **InstallShield Limited Edition Project** template appears in Visual Studio.  
-  
-  
-## <a name="Create"></a>Create a setup project  
-  
-####   
-1. In [!INCLUDE[vsprvs](../sharepoint/includes/vsprvs-md.md)], open the Office project that you want to deploy.  
-  
-   The VSTO Add-in samples that are associated with this topic contain a project that's named **ExcelAddIn**. The document-level customization samples contain a project that's named **ExcelWorkbook**. This topic will refer to the Office project in your solution by using one of those two names.  
-  
-2. On the menu bar, choose **File**, **Add**, **New Project**.  
-  
-   The **Add New Project** dialog box opens.  
-  
-3. In the templates pane, expand **Other Project Types**, and then choose the **Setup and Deployment** template.  
-  
-4. In the list of project types for **Setup and Deployment**, choose **InstallShield Limited Edition Project**, name the project, and then choose the **OK** button.  
-  
-   The InstallShield setup project that you just created appears in your solution.  
-  
-   The samples for this topic contain a setup project that's named **OfficeAddInSetup**. This topic will refer to the setup project in your solution by using the same name.  
+   Dopo avere scaricato, installato e attivato il prodotto, in Visual Studio viene visualizzato il modello **Progetto InstallShield Limited Edition** .  
   
   
-## <a name="Add"></a>Add the project output  
-You configure the **OfficeAddInSetup** project to include the output of your Office project. For VSTO Add-in projects, the project output is the solution assembly only. For document-level customization projects, the project output includes not only the solution assembly but also the document itself.  
-  
-  
-#### <a name="to-add-the-project-output"></a>To add the project output  
-  
-1. In **Solution Explorer**, expand the **OfficeAddInSetup** project node, and then choose the **Project Assistant** file, which the following illustration shows.  
-  
-   ![Project Assistant File in Solution Explorer](../vsto/media/installshield-projectassistant.png "Project Assistant File in Solution Explorer")  
-  
-2. On the menu bar, choose **View**, **Open**.  
-  
-3. At the bottom of the **Project assistant** page, choose the **Application Files** button, which the following illustration shows.  
-  
-   ![The Application Files button.](../vsto/media/installshield-applicationfiles.png "The Application Files button.")  
-  
-4. In the **Application Files** page, choose the **Add Project Outputs** button.  
-  
-5. In the **Visual Studio Output Selector** dialog box, select the **Primary Output** check box, and then choose the **OK** button.  
-  
-  
-## <a name="AddD"></a>Add the deployment and application manifests  
+## <a name="Create"></a>Creare un progetto di installazione  
   
 ####   
-1. In the **Application Files** page, choose the **Add Files** button.  
+1. In [!INCLUDE[vsprvs](../sharepoint/includes/vsprvs-md.md)]aprire il progetto di Office che si desidera distribuire.  
   
-2. In the **Open** dialog box, browse to the output directory of the **ExcelAddIn** project.  
+   Gli esempi di componente aggiuntivo VSTO associati a questo argomento contengono un progetto chiamato **ExcelAddIn**. Gli esempi di personalizzazione a livello di documento contengono un progetto denominato **ExcelWorkbook**. In questo argomento sarà fatto riferimento al progetto di Office nella soluzione usando uno dei due nomi.  
   
-   Usually, the output directory is the **bin\release** subfolder of the project root directory, depending on the build configuration that you choose.  
+2. Nella barra dei menu scegliere **File**, **Aggiungi**, **Nuovo progetto**.  
   
-3. In the output directory, choose the **ExcelAddIn.vsto** and **ExcelAddIn.dll.manifest** files, and then choose the **Open** button.  
+   Verrà aperta la finestra di dialogo **Aggiungi nuovo progetto** .  
   
-   The **Application Files** page now contains the project output file, the deployment manifest, and the application manifest, as the following illustration shows.  
+3. Nel riquadro dei modelli espandere **Altri tipi di progetto**, quindi selezionare il modello **Installazione e distribuzione** .  
   
-   ![The output files of your setup project.](../vsto/media/installshield-outputfiles.png "The output files of your setup project.")  
+4. Nell'elenco dei tipi di progetto per **Installazione e distribuzione**scegliere **Progetto InstallShield Limited Edition**, assegnare un nome al progetto, quindi scegliere il pulsante **OK** .  
   
+   Il progetto di installazione di InstallShield appena creato verrà visualizzato nella soluzione.  
   
-## <a name="Configure"></a>Configure the dependent components as prerequisites  
-In your setup application, you must include not only the following components but also any other components that are required for your solution to run.  
-  
-  
-- The version of the .NET Framework that your Office solution targets.  
-  
-- The Microsoft Visual Studio 2010 Tools for Office Runtime.  
+   Gli esempi di questo argomento contengono un progetto di installazione denominato **OfficeAddInSetup**. In questo argomento sarà fatto riferimento al progetto di installazione nella soluzione usando lo stesso nome.  
   
   
-### <a name="add-the-net-framework-4-or-the-net-framework-45-as-a-prerequisite"></a>Add the .NET Framework 4 or the .NET Framework 4.5 as a Prerequisite  
+## <a name="Add"></a>Aggiungere l'output del progetto  
+Configurare il progetto **OfficeAddInSetup** per includere l'output del progetto di Office. Per i progetti di componente aggiuntivo VSTO, l'output del progetto è solo l'assembly della soluzione. Per i progetti di personalizzazione a livello di documento, l'output del progetto include non solo l'assembly della soluzione ma anche il documento stesso.  
+  
+  
+#### <a name="to-add-the-project-output"></a>Per aggiungere l'output del progetto  
+  
+1. In **Esplora soluzioni**, espandere il nodo del progetto **OfficeAddInSetup** , quindi scegliere il file **Project Assistant** illustrato nell'immagine seguente.  
+  
+   ![Assistente File in Esplora soluzioni del progetto](../vsto/media/installshield-projectassistant.png "File Assistant in Esplora soluzioni del progetto")  
+  
+2. Nella barra dei menu scegliere **Visualizza**, **Apri**.  
+  
+3. Nella parte inferiore della pagina **Project Assistant** , scegliere il pulsante **File applicazione** mostrato nell'immagine seguente.  
+  
+   ![Pulsante file applicazione. ] (../vsto/media/installshield-applicationfiles.png "Pulsante file applicazione.")  
+  
+4. Nella pagina **File applicazione** selezionare il pulsante **Aggiungi output progetto** .  
+  
+5. Nella finestra di dialogo **Selettore output di Visual Studio** selezionare la casella di controllo **Output primario** , quindi fare clic sul pulsante **OK** .  
+  
+  
+## <a name="AddD"></a>Aggiungere i manifesti dell'applicazione e della distribuzione  
+  
+####   
+1. Nella pagina **File applicazione** selezionare il pulsante **Aggiungi file** .  
+  
+2. Nella finestra di dialogo **Apri** individuare la directory di output del progetto **ExcelAddIn** .  
+  
+   In genere, la directory di output è la sottocartella **bin\release** della directory radice del progetto, a seconda della configurazione di compilazione selezionata.  
+  
+3. Nella directory di output selezionare i file **ExcelAddIn.vsto** e **ExcelAddIn.dll.manifest** , quindi scegliere il pulsante **Apri** .  
+  
+   La pagina **File applicazione** ora contiene il file di output del progetto, il manifesto di distribuzione e il manifesto dell'applicazione, come mostrato nella figura seguente.  
+  
+   ![I file di output del progetto di installazione. ] (../vsto/media/installshield-outputfiles.png "i file di output del progetto di installazione.")  
+  
+  
+## <a name="Configure"></a>Configurare i componenti dipendenti come prerequisiti  
+Nell'applicazione di installazione è necessario includere, oltre ai componenti seguenti, anche tutti gli altri necessari per consentire l'esecuzione della soluzione.  
+  
+  
+- Versione di .NET Framework a cui è destinata la soluzione Office.  
+  
+- Microsoft Visual Studio 2010 Tools per Office Runtime.  
+  
+  
+### <a name="add-the-net-framework-4-or-the-net-framework-45-as-a-prerequisite"></a>Aggiungere .NET Framework 4 o .NET Framework 4.5 come prerequisito  
   
 #####   
-1. In **Solution Explorer**, expand the **OfficeAddInSetup** project node, expand the **Specify Application Data** node, and then choose the **Redistributables** file, which the following illustration shows.  
+1. In **Esplora soluzioni**, espandere il nodo di progetto **OfficeAddInSetup** , espandere il nodo **Specifica dati applicazione** , quindi selezionare il file **Ridistribuibili** illustrato nell'immagine seguente.  
   
-   ![The Redistributables file in Solution Explorer](../vsto/media/installshield-redistributablesfile.png "The Redistributables file in Solution Explorer")  
+   ![File ridistribuibili in Esplora soluzioni](../vsto/media/installshield-redistributablesfile.png "ridistribuibili il file in Esplora soluzioni")  
   
-2. On the menu bar, choose **View**, **Open**.  
+2. Nella barra dei menu scegliere **Visualizza**, **Apri**.  
   
-   The **Redistributables** page opens.  
+   Verrà visualizzata la pagina **Ridistribuibili** .  
   
-3. In the list of redistributable components, select appropriate the check box for the version of the .NET Framework that your solution targets.  
+3. Nell'elenco di componenti ridistribuibili, selezionare la casella di controllo appropriata per la versione di .NET Framework a cui è destinata la soluzione.  
   
-   For example, if your solution targets the [!INCLUDE[net_v45](../vsto/includes/net-v45-md.md)], select the **Microsoft .NET Framework 4.5 Full** check box. A dialog box might appear asking whether you want to install the redistributable component, which InstallShield requires before you can add the component as a prerequisite. If this dialog box doesn't appear, the component already exists on your computer.  
+   Ad esempio, se la soluzione è destinata a [!INCLUDE[net_v45](../vsto/includes/net-v45-md.md)], selezionare la casella di controllo **Microsoft .NET Framework 4.5 Full** . Potrebbe essere visualizzata una finestra di dialogo in cui viene chiesto se si desidera installare il componente ridistribuibile che InstallShield richiede come prerequisito prima che sia possibile aggiungere il componente. Se non viene visualizzata questa finestra di dialogo, il componente esiste già nel computer in uso.  
   
-4. If this dialog box appears, choose the **No** button.  
-  
-  
-### <a name="AddToolsForOffice"></a>Add the Visual Studio 2010 Tools for Office Runtime  
-The **Redistributables** page contains an item that's named **Microsoft VSTO 2010 Runtime**, but it refers to an older version of the runtime. Therefore, you could manually create a configuration file that refers to the most recent version. You must then put that file into the same directory as the configuration files for all of the other items that appear in the **Redistributables** page.  
+4. Se viene visualizzata questa finestra di dialogo, selezionare il pulsante **No** .  
   
   
-##### <a name="to-add-the-visual-studio-2010-tools-for-office-runtime-as-a-prerequisite"></a>To add the Visual Studio 2010 Tools for Office Runtime as a Prerequisite  
+### <a name="AddToolsForOffice"></a>Aggiungere Visual Studio 2010 Tools per Office Runtime  
+La pagina **Ridistribuibili** contiene un elemento denominato **Runtime di Microsoft VSTO 2010**, ma fa riferimento a una versione precedente del runtime. Pertanto, è possibile creare manualmente un file di configurazione che fa riferimento alla versione più recente. È quindi necessario inserire il file nella stessa directory dei file di configurazione per tutti gli altri elementi visualizzati nella pagina **Ridistribuibili** .  
   
-1. Open Notepad, and then paste the following XML into a text file.  
+  
+##### <a name="to-add-the-visual-studio-2010-tools-for-office-runtime-as-a-prerequisite"></a>Per aggiungere Visual Studio 2010 Tools per Office Runtime come prerequisito  
+  
+1. Aprire il Blocco note, quindi incollare il seguente XML in un file di testo.  
   
   
    ```xml  
@@ -223,13 +219,13 @@ The **Redistributables** page contains an item that's named **Microsoft VSTO 201
    </SetupPrereq>  
    ```  
   
-2. Generate a GUID in Visual Studio. On the **Tools** menu, choose **Create GUID**.  
+2. Generare un GUID in Visual Studio. Scegliere **Crea GUID** dal menu **Strumenti**.  
   
-3. In the **GUID generator** program, choose the **Registry Format** option button, choose the **Copy** button, and then choose the **Exit** button.  
+3. Nel programma **Generatore di GUID** , scegliere il pulsante di opzione **Formato del registro di sistema** , scegliere il pulsante **Copia** , quindi scegliere il pulsante **Esci** .  
   
-4. In Notepad, replace the text **Your GUID goes here** by pasting the GUID in its place.  
+4. Nel Blocco note, sostituire il testo **Your GUID goes here** incollando il GUID al suo posto.  
   
-   The **&lt;properties&gt;** element of your file resembles the following.  
+   Verrà visualizzata la finestra di dialogo **&lt;properties&gt;** del file è simile all'esempio seguente.  
   
   
    ```xml  
@@ -237,313 +233,313 @@ The **Redistributables** page contains an item that's named **Microsoft VSTO 201
    </properties>  
    ```  
   
-5. On the menu bar in Notepad, choose **File**, **Save**.  
+5. Nella barra dei menu del Blocco note scegliere **File**, **Salva**.  
   
-6. In the **Save As** dialog box, browse to your **Desktop** folder.  
+6. Nella finestra di dialogo **Salva con nome** selezionare la cartella **Desktop** .  
   
-7. In the **Save as type** list, choose **All Files (&#42;.&#42;)**.  
+7. Nel **Salva come** scegliere **tutti i file (&#42;. &#42;)**.  
   
-8. In the **File name** box, enter **Visual Studio 2010 Tools for Office Runtime.prq**, and then choose the **Save** button.  
+8. Nella casella **Nome file** immettere **Visual Studio 2010 Tools per Office Runtime.prq**, quindi scegliere il pulsante **Salva** .  
   
    > [!NOTE]  
-   >    Make sure that you add **.prq** at the end of the file name to identify this file as a prerequisite file.  
+   >    Accertarsi di aggiungere **.prq** alla fine del nome file per identificare il file di prerequisiti.  
   
-9. Close Notepad.  
+9. Chiudere il Blocco note.  
   
-10. From your **Desktop** folder, copy the Visual Studio 2010 Tools for Office Runtime.prq file to one of the following directories on your computer.  
+10. Dalla cartella **Desktop** , copiare il file Visual Studio 2010 Tools per Office Runtime.prq in una delle seguenti directory nel computer.  
   
-   For 32-bit operating systems: %ProgramFiles%\InstallShield\2013LE\SetupPrerequisites\  
+   Per i sistemi operativi a 32 bit: %ProgramFiles%\InstallShield\2013LE\SetupPrerequisites\  
   
-   For 64-bit operating systems: %ProgramFiles(x86)%\2013LE\SetupPrerequisites\  
+   Per i sistemi operativi a 64 bit: % ProgramFiles (x86) %\2013LE\SetupPrerequisites\  
   
-11. In the **Redistributable** page of the InstallShield project, choose the **Refresh** button to refresh the list of redistributable components, as the following illustration shows.  
+11. Nella pagina **Ridistribuibile** del progetto InstallShield, scegliere il pulsante **Aggiorna** per aggiornare l'elenco dei componenti ridistribuibili, come mostrato nella figura seguente.  
   
-   ![The refresh button.](../vsto/media/installshield-refreshbutton.png "The refresh button.")  
+   ![Pulsante di aggiornamento. ] (../vsto/media/installshield-refreshbutton.png "Sul pulsante Aggiorna.")  
   
-12. In the list of redistributable components, select the **Visual Studio 2010 Tools for Office Runtime** check box.  
+12. Nell'elenco di componenti ridistribuibili, selezionare la casella di controllo **Visual Studio 2010 Tools per Office Runtime** .  
   
-   A dialog box might appear asking whether you want to install the redistributable component. If this dialog box doesn't appear, you can skip to the [Specify where you want to deploy the solution on the user's computer](#Location) section of this topic.  
+   Può essere visualizzata una finestra di dialogo in cui viene chiesto se si desidera installare il componente ridistribuibile. Se non viene visualizzata questa finestra di dialogo, è possibile passare al [in cui si desidera distribuire la soluzione nel computer dell'utente di specificare](#Location) sezione di questo argomento.  
   
-13. If this dialog box appears, choose the **No** button.  
+13. Se viene visualizzata questa finestra di dialogo, selezionare il pulsante **No** .  
   
   
-## <a name="Location"></a>Specify where to install the solution on the user's computer  
+## <a name="Location"></a>Specificare il percorso in cui installare la soluzione nel computer dell'utente  
   
 ####   
-1. In **Solution Explorer**, expand the **OfficeAddInSetup** node, expand the **Organize your Setup** node, and then choose the **General Information** file.  
+1. In **Esplora soluzioni**espandere il nodo **OfficeAddInSetup** , espandere il nodo **Organizza l'installazione** , quindi selezionare il file **Informazioni generali** .  
   
-2. On the menu bar, choose **View**, **Open**.  
+2. Nella barra dei menu scegliere **Visualizza**, **Apri**.  
   
-3. In the list of properties, choose the **Browse** button next to the **INSTALLDIR** property.  
+3. Nell'elenco di proprietà scegliere il pulsante **Sfoglia** accanto alla proprietà **INSTALLDIR** .  
   
-4. In the **Set INSTALLDIR** dialog box, choose a folder on the user's computer where you want to install the solution.  
+4. Nel **imposta INSTALLDIR** finestra di dialogo, scegliere una cartella nel computer dell'utente in cui si desidera installare la soluzione.  
   
    > [!NOTE]  
-   >    You can also create subdirectories in the **Set INSTALLDIR** dialog box by opening the shortcut menu for any folder in the list.  
+   >    È inoltre possibile creare sottodirectory nella finestra di dialogo **Imposta INSTALLDIR** aprendo il menu di scelta rapida per qualsiasi cartella dell'elenco.  
   
   
-## <a name="ConfigureRegisitry"></a>Configure an VSTO Add-in  
-You can specify whether you want your VSTO Add-in to be installed for all users of the computer (per-computer), or only for the user performing the installation (per-user).  
+## <a name="ConfigureRegisitry"></a>Configurare un componente aggiuntivo VSTO  
+È possibile specificare se installare il componente aggiuntivo VSTO per tutti gli utenti del computer (per computer) o soltanto per l'utente che esegue l'installazione (per utente).  
   
-If you want to support per-computer installations, create two separate installers. You can split installers based on the Office version (32-bit and 64-bit) or on the Windows version (32-bit and 64-bit) that the user is running.  
+Se si desidera supportare le installazioni per computer, creare due programmi di installazione separati. È possibile suddividere i programmi di installazione in base alla versione di Office (a 32 bit e a 64 bit) o alla versione di Windows (a 32 bit e a 64 bit) che usa l'utente.  
   
-Per-user installations require only one installer regardless of Office or Windows version.  
+Le installazioni per utente richiedono un solo programma di installazione indipendentemente dalla versione di Office o Windows.  
   
 > [!NOTE]  
-> This section applies only if you're deploying an VSTO Add-in. If you're deploying a document-level customization, you can immediately go to the [Configure a Document-Level Customization](#ConfigureDocument) section.  
+> In questa sezione si applica solo se si distribuisce un componente aggiuntivo VSTO. Se si distribuisce una personalizzazione a livello di documento, è possibile passare immediatamente al [configurare una personalizzazione a livello di documento](#ConfigureDocument) sezione.  
   
   
-#### <a name="to-specify-whether-you-want-to-support-per-user-or-per-computer-installations"></a>To specify whether you want to support per-user or per-computer installations  
+#### <a name="to-specify-whether-you-want-to-support-per-user-or-per-computer-installations"></a>Per specificare se si desidera supportare le installazioni per utente o per computer.  
   
-1. In **Solution Explorer**, expand the **OfficeAddInSetup** project node, expand the **Organize Your Setup** node, and then choose the **General Information** file.  
+1. In **Esplora soluzioni**espandere il nodo di progetto **OfficeAddInSetup** , espandere il nodo **Organizza l'installazione** , quindi selezionare il file **Informazioni generali** .  
   
-2. On the menu bar, choose **View**, **Open**.  
+2. Nella barra dei menu scegliere **Visualizza**, **Apri**.  
   
-   The properties of the setup project appear.  
+   Vengono visualizzate le proprietà del progetto di installazione.  
   
-3. In the list for the **AllUSERS** property, specify whether you want this solution to be installed for all users of the computer or for only the user who installs the solution.  
+3. Nell'elenco per la proprietà **AllUSERS** specificare se si desidera che questa soluzione venga installata per tutti gli utenti del computer o solo per l'utente che installa la soluzione.  
   
-   To install the VSTO Add-in for the current user, choose **ALLUSERS="" (Per-user installation)**. To install the VSTO Add-in for all users of the computer, choose **ALLUSERS=1 (Per-machine installation)**  
+   Per installare il componente aggiuntivo VSTO per l'utente corrente, scegliere **ALLUSERS = "" (installazione Per utente)**. Per installare il componente aggiuntivo VSTO per tutti gli utenti del computer, scegliere **ALLUSERS=1 (installazione per computer)**.  
   
-   In the next procedure, you'll create registry keys to enable the Office application to discover and load the VSTO Add-in. See [Registry Entries for VSTO Add-ins](../vsto/registry-entries-for-vsto-add-ins.md).  
+   Nella procedura successiva si creeranno le chiavi del Registro di sistema per consentire all'applicazione di Office di individuare e caricare il componente aggiuntivo VSTO. Vedere [Registry Entries for VSTO Add-ins](../vsto/registry-entries-for-vsto-add-ins.md).  
   
   
-#### <a name="to-create-registry-keys"></a>To create registry keys  
+#### <a name="to-create-registry-keys"></a>Per creare chiavi del Registro di sistema  
   
-1. In **Solution Explorer**, choose the **Project Assistant** node.  
+1. In **Esplora soluzioni**scegliere il nodo **Project Assistant** .  
   
-   On the menu bar, choose **View**, **Open**.  
+   Nella barra dei menu scegliere **Visualizza**, **Apri**.  
   
-2. At the bottom of the **Project assistant** page, choose the **Application Registry** button, which the following illustration shows.  
+2. Nella parte inferiore della pagina **Project Assistant** , scegliere il pulsante **Registro di sistema dell'applicazione** mostrato nell'immagine seguente.  
   
-   ![The Applicaiton Registry button.](../vsto/media/installshield-applicationregistry.gif "The Applicaiton Registry button.")  
+   ![Pulsante Registro applicazioni. ] (../vsto/media/installshield-applicationregistry.gif "Pulsante il registro applicazioni.")  
   
-   The **Application Registry** page appears.  
+   Viene visualizzata la pagina **Registro di sistema dell'applicazione** .  
   
-3. Under **Do you want to configure the registry data that your application will install?**, choose the **Yes** option button.  
+3. In **Si desidera configurare i dati del Registro di sistema che verranno installati dall'applicazione?**scegliere il pulsante di opzione **Sì** .  
   
-4. In the **Destination computer's Registry view** list, add the key hierarchy that enables the type of installer you want to create.  
+4. Nel **visualizzazione del Registro di sistema del computer di destinazione** elencare, aggiungere la gerarchia principale che attiva il tipo di programma di installazione che si desidera creare.  
   
-   The path that you configure in this section depends on whether you create a per-user installer or a per-computer installer.  
+   Il percorso che si configura in questa sezione varia se si crea un programma di installazione per utente o un programma di installazione per computer.  
   
-   **Per-user installer**  
+   **Programma di installazione per utente**  
   
    **HKEY_CURRENT_USER\Software\Microsoft\Office\Excel\Addins\SampleCompany.ExcelAddIn**  
   
-   **Per-computer installers based on Office version**  
+   **Programmi di installazione per computer in base alla versione di Office**  
   
   
   
-|Office version<br /><br />|InstallShield Configuration Path<br /><br />|  
+|Versione di Office<br /><br />|Percorso di configurazione di InstallShield<br /><br />|  
 |------------------|------------------------------------|  
-|32-bit<br /><br />|**HKEY_LOCAL_MACHINE\SOFTWARE(32-Bit)\Microsoft\Office\Excel\Addins\SampleCompany.ExcelAddIn**<br /><br />|  
-|64-bit<br /><br />|**HKEY_LOCAL_MACHINE\SOFTWARE(64-Bit)\Microsoft\Office\Excel\Addins\SampleCompany.ExcelAddIn**<br /><br />|  
-   **Per-computer installers based on Windows version**  
+|32 bit<br /><br />|**HKEY_LOCAL_MACHINE\Software(32-bit) \Microsoft\Office\Excel\Addins\SampleCompany.ExcelAddIn**<br /><br />|  
+|64 bit<br /><br />|**HKEY_LOCAL_MACHINE\Software(64-bit) \Microsoft\Office\Excel\Addins\SampleCompany.ExcelAddIn**<br /><br />|  
+   **Programmi di installazione per computer in base alla versione di Windows**  
   
   
   
-|Windows version<br /><br />|InstallShield Configuration Path<br /><br />|  
+|Versione di Windows<br /><br />|Percorso di configurazione di InstallShield<br /><br />|  
 |-------------------|------------------------------------|  
-|32-bit<br /><br />|**HKEY_LOCAL_MACHINE\SOFTWARE(32-Bit)\Microsoft\Office\Excel\Addins\SampleCompany.ExcelAddIn**<br /><br />|  
-|64-bit<br /><br />|**HKEY_LOCAL_MACHINE\SOFTWARE(32-Bit)\Microsoft\Office\Excel\Addins\SampleCompany.ExcelAddIn**<br /><br />**HKEY_LOCAL_MACHINE\SOFTWARE(64-Bit)\Microsoft\Office\Excel\Addins\SampleCompany.ExcelAddIn**<br /><br />|  
+|32 bit<br /><br />|**HKEY_LOCAL_MACHINE\Software(32-bit) \Microsoft\Office\Excel\Addins\SampleCompany.ExcelAddIn**<br /><br />|  
+|64 bit<br /><br />|**HKEY_LOCAL_MACHINE\Software(32-bit) \Microsoft\Office\Excel\Addins\SampleCompany.ExcelAddIn**<br /><br />**HKEY_LOCAL_MACHINE\Software(64-bit) \Microsoft\Office\Excel\Addins\SampleCompany.ExcelAddIn**<br /><br />|  
    > [!NOTE]  
-   >    An installer for 64-bit Windows requires two registry paths because it's possible for users to run 32-bit and 64-bit versions of Office on a computer that runs 64-bit Windows.  
+   >    Programma di installazione per Windows a 64 bit richiede due percorsi del Registro di sistema poiché è possibile che gli utenti eseguano le versioni a 32 bit e 64 bit di Office in un computer che esegue Windows a 64 bit.  
   
    > [!NOTE]  
-   >    As a best practice, start the name of your VSTO Add-in with the name of your company. This convention increases the chance that the key will be unique and decreases the chance of conflict with an VSTO Add-in from another supplier. Add-ins that have the same name can, for example, overwrite each other's registration keys. This approach can't guarantee that the key will be unique but can reduce potential name collisions.  
+   >    È buona norma che il nome del componente aggiuntivo VSTO inizi con il nome della società. Questa convenzione aumenta la probabilità che la chiave sia univoca e riduce la possibilità di conflitto con un componente aggiuntivo VSTO di un altro fornitore. I componenti aggiuntivi con lo stesso nome possono, ad esempio, sovrascrivere i rispettivi codici di registrazione. Questo approccio non può garantire che la chiave sia univoca ma può ridurre i potenziali conflitti di denominazione.  
   
-5. After you've created the hierarchy of keys, open the shortcut menu for the **SampleCompany.ExcelAddIn** key, choose **New**, and then choose **String Value**.  
+5. Dopo aver creato la gerarchia delle chiavi, aprire il menu di scelta rapida per il **samplecompany. ExcelAddIn** chiave, scegliere **New**, quindi scegliere **valore stringa**.  
   
-   The new string value appears in **the Destination computer's Registry data** list. The name of the string value is highlighted so that you can rename it.  
+   Viene visualizzato il nuovo valore stringa **dati del Registro di sistema del computer di destinazione** elenco. Il nome del valore stringa è evidenziato in modo che sia possibile rinominarlo.  
   
-6. Rename the value to **Description**.  
+6. Rinominare il valore in **Descrizione**.  
   
-7. Repeat this process to create the following values.  
+7. Ripetere la procedura per creare i seguenti valori:  
   
   
   
-|Value Type<br /><br />|Name<br /><br />|  
+|Tipo di valore<br /><br />|Nome<br /><br />|  
 |--------------|--------|  
-|String Value<br /><br />|**FriendlyName**<br /><br />|  
-|DWORD Value<br /><br />|**LoadBehavior**<br /><br />|  
-|String Value<br /><br />|**Manifest**<br /><br />|  
+|Valore stringa<br /><br />|**FriendlyName**<br /><br />|  
+|Valore DWORD<br /><br />|**LoadBehavior**<br /><br />|  
+|Valore stringa<br /><br />|**Manifesto**<br /><br />|  
   
-8. Open the shortcut menu for the **Description** value, and then choose **Modify**.  
+8. Aprire il menu di scelta rapida per il valore **Descrizione** , quindi scegliere **Modifica**.  
   
-   The **Edit Data** dialog box appears.  
+   Viene visualizzata la finestra di dialogo **Modifica dati** .  
   
-9. In the **Value data** text box, enter **Excel Demo Add-In**, and then choose the **OK** button.  
+9. Nella casella di testo **Dati valore** immettere **Componente aggiuntivo Demo Excel**, quindi scegliere il pulsante **OK** .  
   
-   This description appears when the user opens the Office application, opens the **Options** dialog box, and then, in the **Add-Ins** pane, chooses the VSTO Add-in.  
+   Questa descrizione viene visualizzata quando l'utente apre l'applicazione di Office, apre la finestra di dialogo **Opzioni** e quindi sceglie il componente aggiuntivo VSTO nel riquadro **Componenti aggiuntivi** .  
   
-10. Open the shortcut menu for the **FriendlyName** value, and then choose **Modify**.  
+10. Aprire il menu di scelta rapida per il valore **FriendlyName** , quindi scegliere **Modifica**.  
   
-   The **Edit Data** dialog box appears.  
+   Viene visualizzata la finestra di dialogo **Modifica dati** .  
   
-11. In the **Value data** text box, enter **Excel Demo Add-In**, and then choose the **OK** button.  
+11. Nella casella di testo **Dati valore** immettere **Componente aggiuntivo Demo Excel**, quindi scegliere il pulsante **OK** .  
   
-   This string appears in the **COM Add-Ins** dialog box in the Office application. By default, the value of the string is the VSTO Add-in ID.  
+   Questa stringa viene visualizzata nella finestra di dialogo **Componenti aggiuntivi COM** nell'applicazione di Office. Per impostazione predefinita, il valore della stringa è l'ID del componente aggiuntivo VSTO.  
   
-12. Open the shortcut menu for the **LoadBehavior** value, and then choose **Modify**.  
+12. Aprire il menu di scelta rapida per il valore **LoadBehavior** , quindi scegliere **Modifica**.  
   
-   The **Edit Data** dialog box appears.  
+   Viene visualizzata la finestra di dialogo **Modifica dati** .  
   
-13. In the **Value data** text box, enter **3**, and then choose the **OK** button.  
+13. Nella casella di testo **Dati valore** immettere **3**, quindi scegliere il pulsante **OK** .  
   
-   A value of 3 loads the VSTO Add-in when the application starts. For more information about LoadBehavior values, see [Registry Entries for VSTO Add-ins](../vsto/registry-entries-for-vsto-add-ins.md).  
+   Il valore 3 carica il componente aggiuntivo VSTO all'avvio dell'applicazione. Per altre informazioni sui valori LoadBehavior, vedere [Registry Entries for VSTO Add-ins](../vsto/registry-entries-for-vsto-add-ins.md).  
   
-14. Open the shortcut menu for the **Manifest** value, and then choose **Modify**.  
+14. Aprire il menu di scelta rapida per il valore **Manifesto** , quindi scegliere **Modifica**.  
   
-   The **Edit Data** dialog box appears.  
+   Viene visualizzata la finestra di dialogo **Modifica dati** .  
   
-15. In the **Value data** text box, enter **file:///[INSTALLDIR]ExcelAddIn.vsto|vstolocal**, and then choose the **OK** button.  
+15. Nella casella di testo **Dati valore** immettere **file:///[INSTALLDIR]ExcelAddIn.vsto|vstolocal**, quindi scegliere il pulsante **OK** .  
   
-   The Visual Studio 2010 Tools for Office Runtime uses this path to locate the deployment manifest. The **[INSTALLDIR]** portion of this path is a macro that maps to the **INSTALLDIR** property in the **General Information** property page of your InstallShield setup project. This property specifies the location on the target computer to install the VSTO Add-in. The **|vstolocal** suffix ensures that your solution is loaded from the installation folder, not the ClickOnce cache.  
+   Visual Studio 2010 Tools per Office Runtime usa questo percorso per individuare il manifesto di distribuzione. La parte **[INSTALLDIR]** di questo percorso è una macro che esegue il mapping alla proprietà **INSTALLDIR** nella pagina delle proprietà **Informazioni generali** del progetto di installazione di InstallShield. Questa proprietà specifica il percorso nel computer di destinazione per installare il componente aggiuntivo VSTO. Il suffisso **|vstolocal** garantisce che la soluzione venga caricata dalla cartella di installazione anziché dalla cache ClickOnce.  
   
 > [!IMPORTANT]  
-> If you create a custom form region in an VSTO Add-in for Outlook, you must create more registry entries to register the region with Outlook. For more information, see [Registry Entries for Outlook Form Regions](../vsto/registry-entries-for-vsto-add-ins.md#OutlookEntries).  
+> Se si crea un'area del modulo personalizzata in un componente aggiuntivo VSTO per Outlook, è necessario creare altre voci del Registro di sistema per registrare l'area in Outlook. Per altre informazioni, vedere [Registry Entries for Outlook Form Regions](../vsto/registry-entries-for-vsto-add-ins.md#OutlookEntries).  
   
   
 ## <a name="ConfigureDocument"></a>Configure a document-level customization  
-This section applies only if you're deploying a document-level customization. If you're deploying an VSTO Add-in, you can go immediately to the [Build the Setup Project](#Build) section.  
+In questa sezione si applica solo se si distribuisce una personalizzazione a livello di documento. Se si distribuisce un componente aggiuntivo VSTO, è possibile passare immediatamente al [compilare il progetto di installazione](#Build) sezione.  
   
-Document-level customizations don't use registry keys. Instead, custom document properties contain the location of the deployment manifest.  
+Personalizzazioni a livello di documento non usano le chiavi del Registro di sistema. Al contrario, le proprietà del documento personalizzate contengono la posizione del manifesto di distribuzione.  
   
-To modify custom properties, you create a program that removes the document-level customization from the document, modifies the appropriate properties, and then re-attaches customization to the document. You then create a custom action that runs the program, and you add that action to your setup project.  
+Per modificare le proprietà personalizzate, occorre creare un programma che rimuove la personalizzazione a livello di documento dal documento, modifica le proprietà appropriate, quindi aggiunge di nuovo la personalizzazione al documento. Occorre quindi creare un'azione personalizzata che esegue il programma e aggiungere tale azione al progetto di installazione.  
   
   
-#### <a name="to-create-a-program-that-modifies-document-properties"></a>To create a program that modifies document properties  
+#### <a name="to-create-a-program-that-modifies-document-properties"></a>Per creare un programma che modifica le proprietà del documento  
   
-1. On the menu bar, choose **File**, **Add**, **New Project**.  
+1. Nella barra dei menu scegliere **File**, **Aggiungi**, **Nuovo progetto**.  
   
-   The **Add New Project** dialog box appears.  
+   Verrà visualizzata la finestra di dialogo **Aggiungi nuovo progetto** .  
   
-2. In the templates pane, under the node for the language that you want to use, choose the **Windows** folder.  
+2. Nel riquadro dei modelli nel nodo per il linguaggio che si desidera usare, scegliere la cartella **Windows** .  
   
-3. In the list of project types for **Windows**, choose the **Console Application** template.  
+3. Nell'elenco dei tipi di progetto per **Windows**, scegliere il modello **Applicazione console** .  
   
-4. Name the project **SetExcelDocumentProperties**, and then choose the **OK** button.  
+4. Assegnare il nome **SetExcelDocumentProperties**al progetto, quindi selezionare il pulsante **OK** .  
   
-5. In **Solution Explorer**, choose the **Show All Files** button, open the shortcut menu for the **SetExcelDocumentProperties** project node, and then choose **Add Reference**.  
+5. In **Esplora soluzioni**, selezionare il pulsante **Mostra tutti i file** , aprire il menu di scelta rapida per il nodo di progetto **SetExcelDocumentProperties** , quindi scegliere **Aggiungi riferimento**.  
   
-6. In the **Reference Manager** dialog box, choose the **Extensions** tab, and then select the check box next to the following assemblies, and then choose the **OK** button.  
+6. Nella finestra di dialogo **Gestione riferimenti** scegliere la scheda **Estensioni** , quindi selezionare la casella di controllo accanto agli assembly seguenti, quindi scegliere il pulsante **OK** .  
   
   
    - Microsoft.VisualStudio.Tools.Applications.Runtime  
   
    - Microsoft.VisualStudio.Tools.Applications.ServerDocument  
   
-7. In **Solution Explorer**, choose the **Program.cs** file (for C# applications) or the **Module1.vb** file (for Visual Basic applications).  
+7. In **Esplora soluzioni**, scegliere il file **Program.cs** (per le applicazioni C#) o il file **Module1.vb** (per le applicazioni Visual Basic).  
   
-8. On the menu bar, choose **View**, **Open**.  
+8. Nella barra dei menu scegliere **Visualizza**, **Apri**.  
   
-9. Replace the contents of the entire file with the following code.  
+9. Sostituire tutti i contenuti dell'intero file con il codice seguente.  
   
-[!code-vb[Trin_CustomAction#1](../vsto/codesnippet/VisualBasic/setexceldocumentproperties/module1.vb#1)] [!code-csharp[Trin_CustomAction#1](../vsto/codesnippet/CSharp/setexceldocumentproperties/program.cs#1)]  
+[!code-vb[Trin_CustomAction#1](../vsto/codesnippet/VisualBasic/setexceldocumentproperties/module1.vb#1)]
+[!code-csharp[Trin_CustomAction#1](../vsto/codesnippet/CSharp/setexceldocumentproperties/program.cs#1)]  
   
-10. Compile the project.  
+10. Compilare il progetto.  
   
   
-#### <a name="to-add-a-custom-action-that-runs-your-program"></a>To add a custom action that runs your program  
+#### <a name="to-add-a-custom-action-that-runs-your-program"></a>Per aggiungere un'azione personalizzata che esegue il programma  
   
-1. In **Solution Explorer**, expand the **OfficeAddInSetup** project node, and then choose the **Project Assistant** file, which the following illustration shows.  
+1. In **Esplora soluzioni**, espandere il nodo del progetto **OfficeAddInSetup** , quindi scegliere il file **Project Assistant** illustrato nell'immagine seguente.  
   
-   ![Project Assistant File in Solution Explorer](../vsto/media/installshield-projectassistant.png "Project Assistant File in Solution Explorer")  
+   ![Assistente File in Esplora soluzioni del progetto](../vsto/media/installshield-projectassistant.png "File Assistant in Esplora soluzioni del progetto")  
   
-2. On the menu bar, choose **View**, **Open**.  
+2. Nella barra dei menu scegliere **Visualizza**, **Apri**.  
   
-3. At the bottom of the **Project assistant** page, choose the **Application Files** button, which the following illustration shows.  
+3. Nella parte inferiore della pagina **Project Assistant** , scegliere il pulsante **File applicazione** mostrato nell'immagine seguente.  
   
-   ![The Application Files button.](../vsto/media/installshield-applicationfiles.png "The Application Files button.")  
+   ![Pulsante file applicazione. ] (../vsto/media/installshield-applicationfiles.png "Pulsante file applicazione.")  
   
-4. In the **Application Files** page, choose the **Add Project Outputs** button.  
+4. Nella pagina **File applicazione** selezionare il pulsante **Aggiungi output progetto** .  
   
-   The **Visual Studio Output Selector** dialog box appears.  
+   Verrà aperta la finestra di dialogo **Selettore output di Visual Studio** .  
   
-5. Under the **SetExcelDocumentProperties** node, select the **Primary Output** check box, and then choose the **OK** button.  
+5. Nel nodo **SetExcelDocumentProperties** , selezionare la casella di controllo **Output primario** , quindi scegliere il pulsante **OK** .  
   
-6. In **Solution Explorer**, under the **OfficeAddInSetup** node, expand the **Define Setup Requirements and Actions** node, and then choose the **Custom Actions** folder.  
+6. In **Esplora soluzioni**, nel nodo **OfficeAddInSetup** , espandere il nodo **Definisci azioni e requisiti di installazione** , quindi selezionare la cartella **Azioni personalizzate** .  
   
-7. On the menu bar, choose **View**, **Open**.  
+7. Nella barra dei menu scegliere **Visualizza**, **Apri**.  
   
-   A list of events appear in a pane to the side of the screen.  
+   Verrà visualizzato un elenco di eventi in un riquadro laterale dello schermo.  
   
    > [!NOTE]  
-   >    Only a few events that appear in this list are available in InstallShield Limited Edition. In this procedure, you'll run the program by using the **After Setup Complete Success dialog** event.  
+   >    Solo alcuni eventi visualizzati in questo elenco sono disponibili in InstallShield Limited Edition. In questa procedura verrà eseguito il programma utilizzando il **finestra di dialogo programma di installazione avvenuto completamento** evento.  
   
-8. In the list of events, under **Custom Actions During Installation**, open the shortcut menu for the **After Setup Complete Success dialog** event, and then choose **New EXE**.  
+8. Nell'elenco di eventi, in **Azioni personalizzate durante l'installazione**, aprire il menu di scelta rapida per l'evento **Finestra di dialogo di avvenuto completamento dell'installazione** , quindi scegliere **Nuovo EXE**.  
   
-   A custom action that's named **NewCustomAction1** appears under the **After Setup Complete Success dialog** event. A set of properties for the custom action appears in a pane next to the events.  
+   Un'azione personalizzata denominata **NewCustomAction1** verrà visualizzata nell'evento **Finestra di dialogo di avvenuto completamento dell'installazione** . Un set di proprietà per l'azione personalizzata viene visualizzato in un riquadro accanto agli eventi.  
   
    > [!IMPORTANT]  
-   >    Two **After Setup Complete Success dialog** events appear in the list of events. Make sure that you choose the instance of the **After Setup Complete Success dialog** event that appears under the **Custom Actions During Installation** node.  
+   >    Due eventi **Finestra di dialogo di avvenuto completamento dell'installazione** vengono visualizzati nell'elenco degli eventi. Verificare di aver selezionato l'istanza dell'evento **Finestra di dialogo di avvenuto completamento dell'installazione** che viene visualizzato nel nodo **Azioni personalizzate durante l'installazione** .  
   
-9. In the list for the **Source Location** property, choose **Installed with the Product**.  
+9. Nell'elenco per la proprietà **Percorso di origine** , scegliere **Installato con il prodotto**.  
   
-10. Choose the **Browse** button next to the **File Name** property.  
+10. Selezionare il pulsante **Sfoglia** accanto alla proprietà **Nome file** .  
   
-11. In the **Browse for a Destination File** dialog box, browse to the **SetExcelDocumentProperties.Primary.output** file, and then choose the **Open** button.  
+11. Nella finestra di dialogo **Cerca file di destinazione** , individuare il file **SetExcelDocumentProperties.Primary.output** , quindi scegliere il pulsante **Apri** .  
   
-   The location of this file depends on the folder that you specified for the **INSTALLDIR** property of the setup project. For example, if you set that property to a folder that's named **[PersonalFolder]DemoWorkbookApp**, you can find the **SetExcelDocumentProperties.Primary.output** file by browsing to **[ProgramFilesFolder]\DemoWorkbookApp**.  
+   Il percorso del file dipende dalla cartella specificata per la proprietà **INSTALLDIR** del progetto di installazione. Ad esempio, se si imposta tale proprietà su una cartella denominata **[PersonalFolder]DemoWorkbookApp**, è possibile trovare il file **SetExcelDocumentProperties.Primary.output** cercando in **[ProgramFilesFolder]\DemoWorkbookApp**.  
   
-   In the next few steps, you'll get the solution ID of the document and then pass that ID as a parameter to the console application. You'll also pass the location of the document, the deployment manifest, and the document assembly.  
+   In passaggi successivi, viene di ottenere l'ID soluzione del documento e quindi passare tale ID come parametro per l'applicazione console. Inoltre, si passerà il percorso del documento, il manifesto di distribuzione e l'assembly del documento.  
   
-12. Open the shortcut menu for the **ExcelWorkbook** project, and then choose **Open Folder in Windows Explorer** or **Open Folder in File Explorer** depending on your operating system.  
+12. Aprire il menu di scelta rapida per il progetto **ExcelWorkbook** , quindi scegliere **Apri cartella in Esplora risorse** o **Apri cartella in Esplora file** in base al sistema operativo.  
   
-   The folder that contains your solution opens.  
+   Verrà aperta la cartella che contiene la soluzione.  
   
-13. Open the project file of your solution in Notepad. For Visual Basic projects, the name of the file is ExcelWorkbook.vbproj. For C# projects, the name of the file is ExcelWorkbook.csproj.  
+13. Aprire il file di progetto della soluzione nel Blocco note. Per i progetti di Visual Basic, il nome del file è ExcelWorkbook.vbproj. Per i progetti C#, il nome del file è ExcelWorkbook.csproj.  
   
-14. In the project file, search for the **&lt;SolutionID&gt;** element, copy its value to the Clipboard, and then close Notepad.  
+14. Nel file di progetto, cercare il  **&lt;IDSoluzione&gt;**  elemento, copiare il valore negli Appunti e quindi chiudere Blocco note.  
   
-   You pass this value into the console app as a parameter.  
+   Passare questo valore nell'applicazione console come parametro.  
   
-15. In the properties page of **NewCustomAction1**, set the **Command Line** property to the following line of text.  
+15. Nella pagina delle proprietà di **NewCustomAction1**impostare la proprietà **Riga di comando** nella seguente riga di testo.  
   
   
    ```  
    /assemblyLocation="[INSTALLDIR]ExcelWorkbook.dll" /deploymentManifestLocation="[INSTALLDIR]ExcelWorkbook.vsto" /documentLocation="[INSTALLDIR]ExcelWorkbook.xlsx" /solutionID="Your Solution ID"  
    ```  
   
-16. Replace **Your Solution ID** with the solution ID that you copied to the Clipboard.  
+16. Sostituire **Your Solution ID** con l'ID soluzione copiato negli Appunti.  
   
    > [!IMPORTANT]  
-   >    Test your installer to verify that the console application that this custom action runs can access documents in the [INSTALLDIR] directory. Some directories on the user's computer might require administrative access (for example, the Program Files directory). If you're deploying your solution to a directory that requires administrative access, you should open the **Properties** dialog box of the setup.exe file, choose the **Compatibility** tab, and then select the **Run this program as administrator** check box before you distribute the installer. If you don't want users to run the setup program with administrative permissions, set the [INSTALLDIR] property to a directory to which the user probably has access already, such as the **Documents** directory. For more information, see the [Specify Where You Want to Install the Solution on the user's computer](#Location) section of this topic.  
+   >    Testare il programma di installazione per verificare che l'applicazione console eseguita da questa azione personalizzata possa accedere ai documenti nella directory [INSTALLDIR]. Alcune directory nel computer dell'utente potrebbe richiedere l'accesso amministrativo (ad esempio, la directory di file di programma). Se si distribuisce la soluzione in una directory che richiede l'accesso amministrativo, è necessario aprire il **proprietà** la finestra di dialogo del file setup.exe, scegliere il **compatibilità** scheda e quindi selezionare il **Esegui questo programma come amministratore** casella di controllo prima di distribuire il programma di installazione. Se non si desidera che gli utenti eseguano il programma di installazione con autorizzazioni amministrative, è possibile impostare la proprietà [INSTALLDIR] in una directory a cui l'utente ha probabilmente accesso già fatto, ad esempio il **documenti** directory. Per ulteriori informazioni, vedere il [specificare dove si desidera installare la soluzione nel computer dell'utente](#Location) sezione di questo argomento.  
   
   
 ## <a name="Build"></a>Build the setup project  
   
 ####   
-1. In **Solution Explorer**, expand the **Prepare for Release** node, and then choose the **Releases** file.  
+1. In **Esplora soluzioni**espandere il nodo **Preparare la versione** , quindi selezionare il file **Versioni** .  
   
-2. On the menu bar, choose **View**, **Open**.  
+2. Nella barra dei menu scegliere **Visualizza**, **Apri**.  
   
-   The **Builds** explorer opens in a side pane so that you can choose the type of release that you want to create.  
+   In un riquadro laterale viene visualizzato Esplora **compilazioni** in cui è possibile scegliere il tipo di versione che si desidera creare.  
   
-3. In the **Builds** explorer, choose the **SingleImage** folder.  
+3. In Esplora **compilazioni** scegliere la cartella **SingleImage** .  
   
-4. In the pane next to the **Builds** explorer, choose the **Setup.exe** tab.  
+4. Nel riquadro accanto a Esplora **compilazioni** , scegliere la scheda **Setup.exe** .  
   
-5. In the **Setup.exe** property page, from the **InstallShield Prerequisites Location** list, choose **Download From The Web**.  
+5. Nella pagina delle proprietà **Setup.exe** , dall'elenco **Percorso prerequisiti InstallShield** , scegliere **Scarica dal Web**.  
   
-6. On the menu bar, choose **Build**, **Configuration Manager**.  
+6. Nella barra dei menu scegliere **Compilazione**, **Gestione configurazione**.  
   
-7. In the **Active solution configuration** list, choose **SingleImage**.  
+7. Nell'elenco **Configurazione soluzione attiva** , scegliere **SingleImage**.  
   
-8. In the **Project contexts** table, in the **Configuration** column of the **OfficeAddInSetup** project, choose **SingleImage**, and then choose the **Close** button.  
+8. Nella colonna **Configurazione** della tabella **Contesti progetto** all'interno del progetto **OfficeAddInSetup** , scegliere **SingleImage**, quindi fare clic sul pulsante **Chiudi** .  
   
-9. On the menu bar, choose **Build**, **Build OfficeAddInSetup**.  
+9. Nella barra dei menu scegliere **Compilazione**, **Compila OfficeAddInSetup**.  
   
-   After the build completes, you can locate the setup.exe file of the **OfficeAddInSetup** project at the following location: *OfficeAddInSetupProjectRoot***\OfficeAddInSetup\Express\SingleImage\DiskImages\DISK1\**  
+   Dopo il completamento della compilazione, è possibile individuare il file setup.exe del **OfficeAddInSetup** progetto nel percorso seguente: *OfficeAddInSetupProjectRoot***\ OfficeAddInSetup\Express\SingleImage\DiskImages\DISK1\**  
   
   
-## <a name="see-also"></a>See Also  
-[Office Solution Prerequisites for Deployment](http://msdn.microsoft.com/en-us/library/9f672809-43a3-40a1-9057-397ce3b5126e)  
-[Deploying an Office Solution](../vsto/deploying-an-office-solution.md)  
+## <a name="see-also"></a>Vedere anche  
+[Prerequisiti della soluzione Office per la distribuzione](http://msdn.microsoft.com/en-us/library/9f672809-43a3-40a1-9057-397ce3b5126e)  
+[Distribuzione di una soluzione Office](../vsto/deploying-an-office-solution.md)  
 [Registry Entries for VSTO Add-ins](../vsto/registry-entries-for-vsto-add-ins.md)  
-[Custom Document Properties Overview](../vsto/custom-document-properties-overview.md)  
-[Granting Trust to Office Solutions](../vsto/granting-trust-to-office-solutions.md)  
+[Panoramica delle proprietà personalizzate dei documenti](../vsto/custom-document-properties-overview.md)  
+[Concessione dell'attendibilità alle soluzioni Office](../vsto/granting-trust-to-office-solutions.md)  
 [Granting Trust to Documents](../vsto/granting-trust-to-documents.md)  
-[Deploying a Visual Studio 2010 Tools for Office Solution Using Windows Installer](http://go.microsoft.com/fwlink/?LinkId=201807)  
+[Distribuzione di una soluzione Visual Studio 2010 Tools per Office con Windows Installer](http://go.microsoft.com/fwlink/?LinkId=201807)  
   
-

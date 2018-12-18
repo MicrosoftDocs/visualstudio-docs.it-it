@@ -9,30 +9,17 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: 1b0c5c80-e5a6-4f69-a4a4-0e89a82d4de0
-caps.latest.revision: 11
+caps.latest.revision: 
 author: TerryGLee
 ms.author: tglee
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 47057e9611b824c17077b9127f8d2f8b192d6eb8
-ms.openlocfilehash: b0ef009dae267ca566a41bad3d6f0a9ef81cb02b
-ms.contentlocale: it-it
-ms.lasthandoff: 05/13/2017
-
+ms.workload:
+- multiple
+ms.openlocfilehash: 198ce949913dc7d35052e50c4bd13a559e8336e5
+ms.sourcegitcommit: b18844078a30d59014b48a9c247848dea188b0ee
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 01/29/2018
 ---
 # <a name="step-9-try-other-features"></a>Passaggio 9: provare altre funzionalità
 Per acquisire maggiore dimestichezza, provare a modificare icone e colori oppure aggiungere un timer di gioco o suoni. Per rendere più impegnativo il gioco, provare a ingrandire la lavagna e a regolare il timer.  
@@ -54,7 +41,7 @@ Per acquisire maggiore dimestichezza, provare a modificare icone e colori oppure
 -   Aggiungere un suono quando il giocatore trova una coppia, un altro suono quando il giocatore scopre due icone che non corrispondono e un terzo suono quando le icone vengono nuovamente nascoste dal programma.  
   
     > [!TIP]
-    >  Per riprodurre suoni, è possibile utilizzare lo spazio dei nomi System.media. Per altre informazioni, vedere [Play Sounds in Windows Forms App (C# .NET)](http://youtu.be/qOh4ooHg1UU) (Riprodurre suoni in app di Windows Forms (C# .NET)) o [How To Play Audio In Visual Basic](http://youtu.be/-4oPDeQrtMs) (Come riprodurre suoni in Visual Basic).  
+    >  Per riprodurre suoni, è possibile utilizzare lo spazio dei nomi System.media. Per altre informazioni, vedere [Play Sounds in Windows Forms App (C# )](http://youtu.be/qOh4ooHg1UU) (Riprodurre suoni in app di Windows Form - C# ) o [How To Play Audio In Visual Basic](http://youtu.be/-4oPDeQrtMs) (Come riprodurre suoni in Visual Basic).  
   
 -   Rendere più difficile il gioco ingrandendo la lavagna.  
   

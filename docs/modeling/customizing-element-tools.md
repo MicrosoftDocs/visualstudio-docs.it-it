@@ -1,33 +1,35 @@
 ---
-title: "Personalizzazione di strumenti elemento | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 6dac48b6-db68-4bcd-8aa2-422c2ad5d28b
-caps.latest.revision: 6
-author: "alancameronwills"
-ms.author: "awills"
-manager: "douge"
-caps.handback.revision: 6
+title: Personalizzazione elemento strumenti | Documenti Microsoft
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.topic: article
+author: gewarren
+ms.author: gewarren
+manager: ghogen
+ms.workload:
+- multiple
+ms.technology: vs-ide-modeling
+ms.openlocfilehash: 0797defab29289b424855f617ed7b6825800b5c7
+ms.sourcegitcommit: 205d15f4558315e585c67f33d5335d5b41d0fcea
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 02/09/2018
 ---
-# Personalizzazione di strumenti elemento
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
-In alcune definizioni DSL, si rappresenta un singolo concetto come un gruppo di elementi. Ad esempio, se si crea un modello in cui un componente dispone di un set fisso di porte, si desidera sempre le porte da creare contemporaneamente il proprio componente padre. Pertanto, è necessario personalizzare lo strumento di creazione di elemento in modo che crei un gruppo di elementi anziché di uno. A tale scopo, è possibile personalizzare come viene inizializzato lo strumento di creazione di elemento.  
+# <a name="customizing-element-tools"></a>Personalizzazione di strumenti elemento
+In alcune definizioni DSL, un singolo concetto è rappresentare come un gruppo di elementi. Ad esempio, se si crea un modello in cui un componente dispone di un set fisso di porte, è necessario sempre le porte da creare contemporaneamente il proprio componente padre. Pertanto, è necessario personalizzare lo strumento di creazione di elemento in modo che crei un gruppo di elementi invece di uno solo. A tale scopo, è possibile personalizzare il tipo di inizializzazione lo strumento di creazione di elemento.  
   
- È inoltre possibile sostituire cosa accade quando lo strumento viene trascinato nel diagramma o un elemento.  
+ È inoltre possibile sostituire cosa accade quando lo strumento viene trascinato il diagramma o un elemento.  
   
-## La personalizzazione del contenuto di uno strumento elemento  
- Ogni strumento elemento archivia un'istanza di un <xref:Microsoft.VisualStudio.Modeling.ElementGroupPrototype> \(EGP\), che contiene una versione serializzata di una o più elementi del modello e i collegamenti. Per impostazione predefinita, EGP di uno strumento elemento contiene un'istanza della classe specificato per lo strumento. È possibile modificare questa impostazione viene sottoposto a override *Linguaggioutente*`ToolboxHelper.CreateElementToolPrototype`. Questo metodo viene chiamato quando viene caricato il pacchetto DSL.  
+## <a name="customizing-the-content-of-an-element-tool"></a>La personalizzazione del contenuto di uno strumento dell'elemento  
+ Ogni strumento elemento archivia un'istanza di un <xref:Microsoft.VisualStudio.Modeling.ElementGroupPrototype> EGP (), che contiene una versione serializzata di uno o più elementi del modello e i collegamenti. Per impostazione predefinita, EGP di uno strumento dell'elemento contiene un'istanza della classe specificato per lo strumento. È possibile modificare questa impostazione viene sottoposto a override *YourLanguage*`ToolboxHelper.CreateElementToolPrototype`. Questo metodo viene chiamato quando viene caricato il pacchetto DSL.  
   
- Un parametro del metodo è l'ID della classe specificata nella definizione DSL. Quando viene chiamato il metodo con la classe che si è interessati, è possibile aggiungere elementi aggiuntivi nel EGP.  
+ Un parametro del metodo è l'ID della classe specificata nella definizione del linguaggio DSL. Quando viene chiamato il metodo con la classe che si è interessati, è possibile aggiungere elementi aggiuntivi nel EGP.  
   
- Deve includere il EGP incorporare collegamenti da un elemento principale per gli elementi sussidiari. È inoltre possibile utilizzare i collegamenti di riferimento.  
+ Deve includere il EGP incorporamento collegamenti da un elemento principale per gli elementi di filiale. È inoltre possibile utilizzare i collegamenti di riferimento.  
   
- Nell'esempio seguente viene creato un elemento principale e due elementi incorporati. La classe principale viene chiamata resistenza e dispone di due relazioni di incorporamento per gli elementi denominati Terminal. Le proprietà del ruolo incorporamento sono denominate Terminal1 e Terminal2 ed entrambi hanno una molteplicità di 1..1.  
+ L'esempio seguente crea un elemento principale e due elementi incorporati. La classe principale viene chiamata resistenza e dispone di due relazioni di incorporamento per gli elementi denominati Terminal. Proprietà del ruolo di incorporamento sono denominate Terminal1 e Terminal2 e prevedono una molteplicità di 1..1.  
   
 ```  
 using Microsoft.VisualStudio.Modeling; ...    
@@ -59,5 +61,5 @@ public partial class CircuitDiagramToolboxHelper
 }  
 ```  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Personalizzazione della creazione e dello spostamento di elementi](../modeling/customizing-element-creation-and-movement.md)

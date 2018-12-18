@@ -1,5 +1,5 @@
 ---
-title: 'Procedura: Usare l&quot;SDK del visualizzatore di concorrenza per creare marcatori | Microsoft Docs'
+title: 'Procedura: Usare l''SDK del visualizzatore di concorrenza per creare marcatori | Microsoft Docs'
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -9,31 +9,17 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: 19a45032-f8a7-4137-890e-2ceeec938b8d
-caps.latest.revision: 9
+caps.latest.revision: 
 author: mikejo5000
 ms.author: mikejo
 manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 11a9cee75f912c5fb31cf4a031644abe9c63d744
-ms.openlocfilehash: d705cd8146a0ccb43be54e2d825387699e157379
-ms.contentlocale: it-it
-ms.lasthandoff: 06/03/2017
-
+ms.workload:
+- multiple
+ms.openlocfilehash: 0f07afd0b97177ec6cae33d9ee372390c504f686
+ms.sourcegitcommit: 9a2f937e42305db6e3eaa7aadc235b0ba9aafc83
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 01/29/2018
 ---
 # <a name="how-to-use-the-concurrency-visualizer-markers-sdk"></a>Procedura: utilizzare l'SDK dei marcatori del visualizzatore di concorrenza
 Questo argomento illustra come usare l'SDK del visualizzatore di concorrenza per creare intervalli e scrivere flag, messaggi e avvisi.  
@@ -109,7 +95,7 @@ Questo argomento illustra come usare l'SDK del visualizzatore di concorrenza per
   
     ```  
   
-    ```CSharp  
+    ```csharp  
     using Microsoft.ConcurrencyVisualizer.Instrumentation;  
     ```  
   
@@ -135,7 +121,7 @@ Questo argomento illustra come usare l'SDK del visualizzatore di concorrenza per
   
     ```  
   
-    ```CSharp  
+    ```csharp  
   
     Span flagSpan = Markers.EnterSpan("flag span");  
     Markers.WriteFlag("Here is the flag.");  
@@ -176,7 +162,7 @@ Questo argomento illustra come usare l'SDK del visualizzatore di concorrenza per
     messageSeriesSpan.Leave()  
     ```  
   
-    ```CSharp  
+    ```csharp  
   
     MarkerSeries flagSeries = Markers.DefaultWriter.CreateMarkerSeries("flag series");  
     Span flagSeriesSpan = flagSeries.EnterSpan("flag span");  
@@ -197,5 +183,4 @@ Questo argomento illustra come usare l'SDK del visualizzatore di concorrenza per
      ![Visualizzatore di concorrenza con tre serie di marcatori personalizzati](../profiling/media/cvmarkerseriesmanaged.png "CvMarkerSeriesManaged")  
   
 ## <a name="see-also"></a>Vedere anche  
- [Concurrency Visualizer SDK](../profiling/concurrency-visualizer-sdk.md) (SDK del visualizzatore di concorrenza)
-
+ [SDK del visualizzatore di concorrenza](../profiling/concurrency-visualizer-sdk.md)

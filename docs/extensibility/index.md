@@ -4,14 +4,14 @@ author: jasongroce
 ms.author: apexprodleads
 ms.technology: vs-ide-sdk
 ms.topic: landing-page
-title: "Documentazione sull'estendibilità di Visual Studio"
+title: "Documentazione sull'estendibilità di Visual Studio | Microsoft Docs"
 description: "Informazioni sull'estendibilità di Visual Studio."
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 1f20a1f524efcd6f16b33ce6fd6887a6ed83c422
-ms.openlocfilehash: 814072a253d17466f270afa63629dd61d5868133
-ms.contentlocale: it-it
-ms.lasthandoff: 05/02/2017
-
+ms.workload: apexprodleads
+ms.openlocfilehash: 4467608e843a1a917b34937ab3bd16931e76eea3
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="visual-studio-extensibility-documentation"></a>Documentazione sull'estendibilità di Visual Studio
 

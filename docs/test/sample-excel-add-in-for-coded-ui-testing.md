@@ -1,38 +1,22 @@
 ---
-title: Componente aggiuntivo di Excel di esempio per i test codificati dell&quot;interfaccia utente | Microsoft Docs
+title: Componente aggiuntivo di Excel di esempio per i test codificati dell'interfaccia utente | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- vs-devops-test
+ms.technology: vs-devops-test
 ms.tgt_pltfrm: 
 ms.topic: article
-helpviewer_keywords:
-- coded UI tests, Excel Add-in sample
-ms.assetid: 2cd52d1a-4c35-43ca-8a84-9c79dabd907f
-caps.latest.revision: 16
-ms.author: douge
-manager: douge
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: 5658ecf52637a38bc3c2a5ad9e85b2edebf7d445
-ms.openlocfilehash: 52b0394f0e52b8b7b640611253dcef693b4eca3c
-ms.lasthandoff: 02/22/2017
-
+helpviewer_keywords: coded UI tests, Excel Add-in sample
+ms.author: gewarren
+manager: ghogen
+ms.workload: multiple
+author: gewarren
+ms.openlocfilehash: d6033b10ec7b8be4e44ad00c6f550d7237806234
+ms.sourcegitcommit: 7ae502c5767a34dc35e760ff02032f4902c7c02b
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 01/09/2018
 ---
 # <a name="sample-excel-add-in-for-coded-ui-testing"></a>Componente aggiuntivo di Excel di esempio per i test codificati dell'interfaccia utente
 Questo componente aggiuntivo di esempio per [!INCLUDE[ofprexcel](../test/includes/ofprexcel_md.md)] è specificamente progettato per supportare i test codificati dell'interfaccia utente dei fogli di lavoro di Excel registrati ed eseguiti in Visual Studio Enterprise. Per creare il componente aggiuntivo, si usa Visual Studio Tools per Office.  
@@ -64,4 +48,3 @@ Questo componente aggiuntivo di esempio per [!INCLUDE[ofprexcel](../test/include
  [Estensione di test codificati dell'interfaccia utente e registrazioni delle azioni per supportare Microsoft Excel](../test/extending-coded-ui-tests-and-action-recordings-to-support-microsoft-excel.md)   
  [Procedura dettagliata: Creazione del primo componente aggiuntivo VSTO per Excel](http://msdn.microsoft.com/Library/a855e2be-3ecf-4112-a7f5-ec0f7fad3b5f)   
  [Sviluppo di Office e SharePoint](/office-dev/office-dev/office-and-sharepoint-development-in-visual-studio)
-

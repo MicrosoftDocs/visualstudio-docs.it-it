@@ -1,12 +1,10 @@
 ---
-title: 'Walkthrough: Creating an External List in SharePoint by Using Business Data | Microsoft Docs'
+title: 'Procedura dettagliata: Creazione di un elenco esterno in SharePoint utilizzando i dati di Business | Documenti Microsoft'
 ms.custom: 
 ms.date: 02/02/2017
-ms.prod: visual-studio-dev14
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- office-development
+ms.technology: office-development
 ms.tgt_pltfrm: 
 ms.topic: article
 dev_langs:
@@ -23,282 +21,282 @@ helpviewer_keywords:
 - BDC [SharePoint development in Visual Studio], entity backed list
 - Business Data Connectivity service [SharePoint development in Visual Studio], entity backed list
 - Business Data Connectivity service [SharePoint development in Visual Studio], external list
-ms.assetid: 046cf234-705a-4a6f-91f8-c5c569ae0dd0
-caps.latest.revision: 38
-author: kempb
-ms.author: kempb
+author: TerryGLee
+ms.author: tglee
 manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: eb5c9550fd29b0e98bf63a7240737da4f13f3249
-ms.openlocfilehash: a83672695efad46c8205c056f35b841878fc0698
-ms.contentlocale: it-it
-ms.lasthandoff: 08/30/2017
-
+ms.workload: office
+ms.openlocfilehash: c0954665e8b088f969d59bdad0a2ef1207c95c8f
+ms.sourcegitcommit: f9fbf1f55f9ac14e4e5c6ae58c30dc1800ca6cda
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 01/10/2018
 ---
-# <a name="walkthrough-creating-an-external-list-in-sharepoint-by-using-business-data"></a>Walkthrough: Creating an External List in SharePoint by Using Business Data
-  The Business Data Connectivity (BDC) service enables SharePoint to display business data from back-end server applications, Web services, and databases.  
+# <a name="walkthrough-creating-an-external-list-in-sharepoint-by-using-business-data"></a>Procedura dettagliata: creazione di un elenco esterno in SharePoint tramite il servizio di integrazione applicativa dei dati
+  Il servizio di integrazione applicativa dei dati (BDC) consente di visualizzare i dati aziendali da applicazioni server back-end, servizi Web e database SharePoint.  
   
- This walkthrough shows you how to create a model for the BDC service that returns information about contacts in a sample database. You will then create an external list in SharePoint by using this model.  
+ Questa procedura dettagliata viene illustrato come creare un modello per il servizio di integrazione applicativa dei dati che restituisce informazioni sui contatti in un database di esempio. Si creerà quindi un elenco esterno in SharePoint utilizzando il modello corrente.  
   
- This walkthrough illustrates the following tasks:  
+ In questa procedura dettagliata vengono illustrate le attività seguenti:  
   
--   Creating a project.  
+-   Creazione di un progetto.  
   
--   Adding an entity to the model.  
+-   Aggiunta di un'entità al modello.  
   
--   Adding a finder method.  
+-   Aggiunta di un metodo finder.  
   
--   Adding a specific finder method.  
+-   Aggiunta di un metodo finder specifico.  
   
--   Testing the project.  
+-   Test del progetto.  
   
-## <a name="prerequisites"></a>Prerequisites  
- You need the following components to complete this walkthrough:  
+## <a name="prerequisites"></a>Prerequisiti  
+ Per completare la procedura dettagliata, è necessario disporre dei componenti seguenti:  
   
--   Supported editions of Windows and SharePoint. For more information, see [Requirements for Developing SharePoint Solutions](../sharepoint/requirements-for-developing-sharepoint-solutions.md).  
+-   Le edizioni supportate di Windows e SharePoint. Per ulteriori informazioni, vedere [requisiti per lo sviluppo di soluzioni SharePoint](../sharepoint/requirements-for-developing-sharepoint-solutions.md).  
   
--   [!INCLUDE[vsPro](../sharepoint/includes/vspro-md.md)], [!INCLUDE[vsUltLong](../sharepoint/includes/vsultlong-md.md)], or [!INCLUDE[vsPreLong](../sharepoint/includes/vsprelong-md.md)].  
+-   [!INCLUDE[vsPro](../sharepoint/includes/vspro-md.md)], [!INCLUDE[vsUltLong](../sharepoint/includes/vsultlong-md.md)] o [!INCLUDE[vsPreLong](../sharepoint/includes/vsprelong-md.md)].  
   
--   Access to the AdventureWorks sample database. For more information about how to install the AdventureWorks database, see [SQL Server Sample Databases](http://go.microsoft.com/fwlink/?LinkID=117483).  
+-   Accesso al database di esempio AdventureWorks. Per ulteriori informazioni su come installare il database AdventureWorks, vedere [database di esempio di SQL Server](http://go.microsoft.com/fwlink/?LinkID=117483).  
   
-## <a name="creating-a-project-that-contains-a-bdc-model"></a>Creating a Project that Contains a BDC Model  
+## <a name="creating-a-project-that-contains-a-bdc-model"></a>Creazione di un progetto contenente un modello BDC  
   
-#### <a name="to-create-a-project-that-contains-a-bdc-model"></a>To create a project that contains a BDC model  
+#### <a name="to-create-a-project-that-contains-a-bdc-model"></a>Per creare un progetto contenente un modello BDC  
   
-1.  On the menu bar in Visual Studio, choose **File**, **New**, **Project**.  
+1.  Nella barra dei menu in Visual Studio, scegliere **File**, **New**, **progetto**.  
   
-     The **New Project** dialog box opens.  
+     Verrà visualizzata la finestra di dialogo **Nuovo progetto** .  
   
-2.  Under either **Visual C#** or **Visual Basic**, expand the **SharePoint** node, and then choose the **2010** item.  
+2.  In presenza di **Visual c#** o **Visual Basic**, espandere il **SharePoint** nodo, quindi scegliere il **2010** elemento.  
   
-3.  In the **Templates** pane, choose **SharePoint 2010 Project**, name the project **AdventureWorksTest**, and then choose the **OK** button.  
+3.  Nel **modelli** riquadro scegliere **progetto SharePoint 2010**, denominare il progetto **AdventureWorksTest**, quindi scegliere il **OK** pulsante .  
   
-     The **SharePoint Customization Wizard** appears. In this wizard, you can specify the site that you'll use to debug the project and set the trust level of the solution.  
+     Il **Personalizzazione guidata SharePoint** viene visualizzato. In questa procedura guidata, è possibile specificare il sito che si utilizzerà per eseguire il debug del progetto e impostare il livello di attendibilità della soluzione.  
   
-4.  Choose the **Deploy as a farm solution** option button to set the trust level.  
+4.  Scegliere il **Distribuisci come soluzione farm** pulsante di opzione per impostare il livello di attendibilità.  
   
-5.  Choose the **Finish** button to accept the default local SharePoint site.  
+5.  Scegliere il **fine** pulsante per accettare il sito di SharePoint locale predefinito.  
   
-6.  In **Solution Explorer**, choose the SharePoint project node.  
+6.  In **Esplora**, scegliere il nodo di progetto SharePoint.  
   
-7.  On the menu bar, choose **Project**, **Add New Item**.  
+7.  Nella barra dei menu, scegliere **progetto**, **Aggiungi nuovo elemento**.  
   
-     The **Add New Item** dialog box opens.  
+     Viene aperta la finestra di dialogo **Aggiungi nuovo elemento**.  
   
-8.  In the **Templates** pane, choose **Business Data Connectivity Model (Farm Solution Only)**, name the project **AdventureWorksContacts**, and then choose the **Add** button.  
+8.  Nel **modelli** riquadro scegliere **(solo soluzione Farm) modello di integrazione applicativa dei dati aziendali**, denominare il progetto **AdventureWorksContacts**, quindi scegliere il **Aggiungi** pulsante.  
   
-## <a name="adding-data-access-classes-to-the-project"></a>Adding Data Access Classes to the Project  
+## <a name="adding-data-access-classes-to-the-project"></a>Classi di accesso dati aggiunta al progetto  
   
-#### <a name="to-add-data-access-classes-to-the-project"></a>To add data access classes to the project  
+#### <a name="to-add-data-access-classes-to-the-project"></a>Per aggiungere l'accesso ai dati di classi al progetto  
   
-1.  On the menu bar, choose **Tools**, **Connect to Database**.  
+1.  Nella barra dei menu, scegliere **strumenti**, **Connetti al Database**.  
   
-     The **Add Connection** dialog box opens.  
+     Il **Aggiungi connessione** verrà visualizzata la finestra di dialogo.  
   
-2.  Add a connection to the SQL Server AdventureWorks sample database.  
+2.  Aggiungere una connessione al database di esempio AdventureWorks di SQL Server.  
   
-     For more information, see [Add/Modify Connection (Microsoft SQL Server)](http://msdn.microsoft.com/en-us/fa400910-26c3-4df7-b9d1-115e688b4ea3).  
+     Per ulteriori informazioni, vedere [Aggiungi/Modifica connessione (Microsoft SQL Server)](http://msdn.microsoft.com/en-us/fa400910-26c3-4df7-b9d1-115e688b4ea3).  
   
-3.  In **Solution Explorer**, choose the project node.  
+3.  Scegliere il nodo di progetto in **Esplora soluzioni**.  
   
-4.  On the menu bar, choose **Project**, **Add New Item**.  
+4.  Nella barra dei menu, scegliere **progetto**, **Aggiungi nuovo elemento**.  
   
-5.  In the **Installed Templates** pane, choose the **Data** node.  
+5.  Nel **modelli installati** riquadro, scegliere il **dati** nodo.  
   
-6.  In the **Templates** pane, choose **LINQ to SQL Classes**.  
+6.  Nel **modelli** riquadro scegliere **classi LINQ to SQL**.  
   
-7.  In the **Name** box, specify **AdventureWorks**, and then choose the **Add** button.  
+7.  Nel **nome** specificare **AdventureWorks**, quindi scegliere il **Aggiungi** pulsante.  
   
-     A .dbml file is added to the project, and the Object Relational Designer (O/R Designer) opens.  
+     Verrà aggiunto al progetto un file con estensione dbml e verrà aperto Object Relational Designer (O/R Designer).  
   
-8.  On the menu bar, choose **View**, **Server Explorer**.  
+8.  Nella barra dei menu, scegliere **vista**, **Esplora Server**.  
   
-9. In **Server Explorer**, expand the node that represents the AdventureWorks sample database, and then expand the **Tables** node.  
+9. In **Esplora Server**, espandere il nodo che rappresenta il database di esempio AdventureWorks e quindi espandere il **tabelle** nodo.  
   
-10. Add the **Contact (Person)** table onto the O/R Designer.  
+10. Aggiungere il **Contact (Person)** tabella in Progettazione relazionale oggetti.  
   
-     An entity class is created and appears on the design surface. The entity class has properties that map to the columns in the Contact (Person) table.  
+     Viene creata una classe di entità, che verrà visualizzata nell'area di progettazione. La classe di entità dispone di proprietà che eseguono il mapping alle colonne della tabella Contact (Person).  
   
-## <a name="removing-the-default-entity-from-the-bdc-model"></a>Removing the Default Entity from the BDC Model  
- The **Business Data Connectivity Model** project adds a default entity named Entity1 to the model. Remove this entity. Later, you will add a new entity. Starting with an empty model reduces the number of steps required to complete the walkthrough.  
+## <a name="removing-the-default-entity-from-the-bdc-model"></a>Rimozione dell'entità predefinita dal modello di integrazione applicativa dei dati  
+ Il **modello di integrazione applicativa dei dati di Business** progetto aggiunge un'entità predefinita denominata Entity1 al modello. Rimuovere questa entità. In un secondo momento, si aggiungerà una nuova entità. A partire da un modello vuoto riduce il numero di passaggi necessari per completare la procedura dettagliata.  
   
-#### <a name="to-remove-the-default-entity-from-the-model"></a>To remove the default entity from the model  
+#### <a name="to-remove-the-default-entity-from-the-model"></a>Per rimuovere l'entità predefinita dal modello  
   
-1.  In **Solution Explorer**, expand the **BdcModel1** node, and then open the BdcModel1.bdcm file.  
+1.  In **Esplora**, espandere il **BdcModel1** nodo e quindi aprire il file Bdcmodel1.  
   
-2.  The Business Data Connectivity model file opens in the BDC designer.  
+2.  Consente di aprire il file del modello di integrazione applicativa dei dati di Business nella finestra di progettazione di integrazione applicativa dei dati.  
   
-3.  In the designer, open the shortcut menu for **Entity1**, and then choose **Delete**.  
+3.  Nella finestra di progettazione, aprire il menu di scelta rapida per **Entity1**, quindi scegliere **eliminare**.  
   
-4.  In **Solution Explorer**, open the shortcut menu for Entity1.vb (in Visual Basic) or Entity1.cs (in C#), and then choose **Delete**.  
+4.  In **Esplora**, aprire il menu di scelta rapida per Entity1. vb (in Visual Basic) o Entity1.cs (in c#) e quindi scegliere **eliminare**.  
   
-5.  Open the shortcut menu for Entity1Service.vb (in Visual Basic) or Entity1Service.cs (in C#), and then choose **Delete**.  
+5.  Aprire il menu di scelta rapida per Entity1Service. vb (in Visual Basic) o per Entity1Service.cs (in c#) e quindi scegliere **eliminare**.  
   
-## <a name="adding-an-entity-to-the-model"></a>Adding an Entity to the Model  
- Add an entity to the model. You can add entities from the Visual Studio **Toolbox** onto the BDC designer.  
+## <a name="adding-an-entity-to-the-model"></a>Aggiunta di un'entità al modello  
+ Aggiungere un'entità al modello. È possibile aggiungere entità da Visual Studio **della casella degli strumenti** nella finestra di progettazione di integrazione applicativa dei dati.  
   
-#### <a name="to-add-an-entity-to-the-model"></a>To add an Entity to the model  
+#### <a name="to-add-an-entity-to-the-model"></a>Per aggiungere un'entità al modello  
   
-1.  On the menu bar, choose **View**, **Toolbox**.  
+1.  Sulla barra dei menu scegliere **Visualizza**, **Casella degli strumenti**.  
   
-2.  On the **BusinessDataConnectivity** tab of the **Toolbox**, add an **Entity** onto the BDC designer.  
+2.  Nel **BusinessDataConnectivity** scheda della finestra di **della casella degli strumenti**, aggiungere un **entità** nella finestra di progettazione di integrazione applicativa dei dati.  
   
-     The new entity appears on the designer. Visual Studio adds a file that's named EntityService.vb (in Visual Basic) or EntityService.cs (in C#) to the project.  
+     La nuova entità viene visualizzata nella finestra di progettazione. Visual Studio aggiunge un file denominato EntityService. vb (in Visual Basic) o EntityService.cs (in c#) al progetto.  
   
-3.  On the menu bar, choose **View**, **Properties**, **Window**.  
+3.  Nella barra dei menu, scegliere **vista**, **proprietà**, **finestra**.  
   
-4.  In the **Properties** window, set the **Name** property value to **Contact**.  
+4.  Nel **proprietà** finestra, impostare il **nome** valore della proprietà da **contatto**.  
   
-5.  On the designer, open the shortcut menu for the entity, choose **Add**, and then choose **Identifier**.  
+5.  Nella finestra di progettazione, aprire il menu di scelta rapida per l'entità, scegliere **Aggiungi**, quindi scegliere **identificatore**.  
   
-     A new identifier appears on the entity.  
+     Verrà visualizzato un nuovo identificatore nell'entità.  
   
-6.  In the **Properties** window, change the name of the identifier to **ContactID**.  
+6.  Nel **proprietà** finestra, modificare il nome dell'identificatore di **ContactID**.  
   
-7.  In the **Type Name** list, choose **System.Int32**.  
+7.  Nel **nome del tipo** scegliere **System. Int32**.  
   
-## <a name="adding-a-specific-finder-method"></a>Adding a Specific Finder Method  
- To enable the BDC service to display a specific contact, you must add a Specific Finder method. The BDC service calls the Specific Finder method when a user chooses an item in a list and then chooses the **View Item** button on the Ribbon.  
+## <a name="adding-a-specific-finder-method"></a>Aggiunta di un metodo Finder specifico  
+ Per abilitare il servizio di integrazione applicativa dei dati visualizzare un contatto specifico, è necessario aggiungere un metodo Finder specifico. Il servizio di integrazione applicativa dei dati chiama il metodo Finder specifico quando un utente seleziona un elemento in un elenco e quindi sceglie il **Visualizza elemento** pulsante della barra multifunzione.  
   
- Add a Specific Finder method to the Contact entity by using the **BDC Method Details** window. To return a specific entity, add code to the method.  
+ Aggiungere un metodo Finder specifico all'entità Contact utilizzando il **Dettagli metodo di integrazione applicativa dei dati** finestra. Per restituire un'entità specifica, aggiungere codice al metodo.  
   
-#### <a name="to-add-a-specific-finder-method"></a>To add a Specific Finder method  
+#### <a name="to-add-a-specific-finder-method"></a>Per aggiungere un metodo Finder specifico  
   
-1.  On the BDC designer, choose the **Contact** entity.  
+1.  Nella finestra di progettazione di integrazione applicativa dei dati, scegliere il **contatto** entità.  
   
-2.  On the menu bar, choose **View**, **Other Windows**, **BDC Method Details**.  
+2.  Nella barra dei menu, scegliere **vista**, **altre finestre**, **Dettagli metodo di integrazione applicativa dei dati**.  
   
-     The BDC Method Details window opens.  
+     Verrà visualizzata la finestra Dettagli metodo di integrazione applicativa dei dati.  
   
-3.  In the **Add a Method** list, choose **Create Specific Finder Method**.  
+3.  Nel **aggiungere un metodo** scegliere **Crea metodo Finder specifico**.  
   
-     Visual Studio adds the following elements to the model. These elements appear in the **BDC Method Details** window.  
+     Visual Studio aggiunge i seguenti elementi al modello. Questi elementi vengono visualizzati nel **Dettagli metodo di integrazione applicativa dei dati** finestra.  
   
-    -   A method named ReadItem.  
+    -   Un metodo denominato ReadItem.  
   
-    -   An input parameter for the method.  
+    -   Un parametro di input per il metodo.  
   
-    -   A return parameter for the method.  
+    -   Un parametro restituito del metodo.  
   
-    -   A type descriptor for each parameter.  
+    -   Un descrittore di tipo per ogni parametro.  
   
-    -   A method instance for the method.  
+    -   Un'istanza del metodo per il metodo.  
   
-4.  In the **BDC Method Details** window, open the list that appears for the **Contact** type descriptor, and then choose **Edit**.  
+4.  Nel **Dettagli metodo di integrazione applicativa dei dati** finestra, aprire l'elenco visualizzato per il **contatto** descrittore di tipo e quindi scegliere **modifica**.  
   
-     The **BDC Explorer** opens and provides a hierarchical view of the model.  
+     Il **Esplora integrazione applicativa dei dati** apre e offre una visualizzazione gerarchica del modello.  
   
-5.  In the **Properties** window, open the list next to the **TypeName** property, choose the **Current Project** tab, and then choose the **Contact** property.  
+5.  Nel **proprietà** finestra, aprire l'elenco accanto al **TypeName** proprietà, scegliere il **progetto corrente** scheda e quindi scegliere il **contatto**proprietà.  
   
-6.  In the **BDC Explorer**, open the shortcut menu of the **Contact**, and then choose **Add Type Descriptor**.  
+6.  Nel **Esplora integrazione applicativa dei dati**, aprire il menu di scelta rapida del **contatto**, quindi scegliere **Aggiungi descrittore tipo**.  
   
-     A new type descriptor that's named **TypeDescriptor1** appears in the **BDC Explorer**.  
+     Un nuovo descrittore di tipo denominato **TypeDescriptor1** è presente il **Esplora integrazione applicativa dei dati**.  
   
-7.  In the **Properties** window, set the **Name** property value to **ContactID**.  
+7.  Nel **proprietà** finestra, impostare il **nome** valore della proprietà da **ContactID**.  
   
-8.  Open the list next to the **TypeName** property, and then choose **Int32**.  
+8.  Aprire l'elenco accanto al **TypeName** proprietà, quindi scegliere **Int32**.  
   
-9. Open the list next to the **Identifier** property, and then choose **ContactID**.  
+9. Aprire l'elenco accanto al **identificatore** proprietà, quindi scegliere **ContactID**.  
   
-10. Repeat step 6 to create a type descriptor for each of the following fields.  
+10. Ripetere il passaggio 6 per creare un descrittore di tipo per ognuno dei seguenti campi.  
   
-    |Name|Type Name|  
+    |nome|Nome tipo|  
     |----------|---------------|  
     |FirstName|System.String|  
     |LastName|System.String|  
-    |Phone|System.String|  
-    |EmailAddress|System.String|  
+    |Telefono|System.String|  
+    |emailAddress|System.String|  
     |EmailPromotion|System.Int32|  
     |NameStyle|System.Boolean|  
     |PasswordHash|System.String|  
     |PasswordSalt|System.String|  
   
-11. In the BDC designer, on the **Contact** entity, open the **ReadItem** method.  
+11. Nella finestra di progettazione di integrazione applicativa dei dati sul **contatto** entità, aprire il **ReadItem** metodo.  
   
-     The Contact service code file opens in Code Editor.  
+     Il file di codice del servizio di Contact verrà aperto nell'Editor di codice.  
   
-12. In the `ContactService` class, replace the `ReadItem` method with the following code. This code performs the following tasks:  
+12. Nel `ContactService` classe, sostituire il `ReadItem` (metodo) con il codice seguente. Mediante il codice vengono effettuate le seguenti attività:  
   
-    -   Retrieves a record from Contact table of the AdventureWorks database.  
+    -   Recupera un record dalla tabella Contact del database AdventureWorks.  
   
-    -   Returns a Contact entity to the BDC service.  
-  
-    > [!NOTE]  
-    >  Replace the value of the `ServerName` field with the name of your server.  
-  
-     [!code-csharp[SP_BDC#3](../sharepoint/codesnippet/CSharp/SP_BDC/bdcmodel1/contactservice.cs#3)]  [!code-vb[SP_BDC#3](../sharepoint/codesnippet/VisualBasic/sp_bdc/bdcmodel1/contactservice.vb#3)]  
-  
-## <a name="adding-a-finder-method"></a>Adding a Finder Method  
- To enable the BDC service to display the contacts in a list, you must add a Finder method. Add a Finder method to the Contact entity by using the **BDC Method Details** window. To return a collection of entities to the BDC service, add code to the method.  
-  
-#### <a name="to-add-a-finder-method"></a>To add a Finder method  
-  
-1.  In the BDC designer, choose the **Contact** entity.  
-  
-2.  In the **BDC Method Details** window, collapse the **ReadItem** node.  
-  
-3.  In the **Add a Method** list under the **ReadList** method, choose **Create Finder Method**.  
-  
-     Visual Studio adds a method, a return parameter, and a type descriptor.  
-  
-4.  In the BDC designer, on the **Contact** entity, open the **ReadList** method.  
-  
-     The code file for the Contact service opens in Code Editor.  
-  
-5.  In the `ContactService` class, replace the `ReadList` method with the following code. This code performs the following tasks:  
-  
-    -   Retrieves data from the Contacts table of the AdventureWorks database.  
-  
-    -   Returns a list of Contact entities to the BDC service.  
+    -   Restituisce un'entità Contact al servizio di integrazione applicativa dei dati.  
   
     > [!NOTE]  
-    >  Replace the value of the `ServerName` field with the name of your server.  
+    >  Sostituire il valore di `ServerName` campo con il nome del server.  
   
-     [!code-csharp[SP_BDC#2](../sharepoint/codesnippet/CSharp/SP_BDC/bdcmodel1/contactservice.cs#2)]  [!code-vb[SP_BDC#2](../sharepoint/codesnippet/VisualBasic/sp_bdc/bdcmodel1/contactservice.vb#2)]  
+     [!code-csharp[SP_BDC#3](../sharepoint/codesnippet/CSharp/SP_BDC/bdcmodel1/contactservice.cs#3)]
+     [!code-vb[SP_BDC#3](../sharepoint/codesnippet/VisualBasic/sp_bdc/bdcmodel1/contactservice.vb#3)]  
   
-## <a name="testing-the-project"></a>Testing the Project  
- When you run the project, the SharePoint site opens and Visual Studio adds your model to the Business Data Connectivity service. Create an external list in SharePoint that references the Contact entity. The data for contacts in the AdventureWorks database appear in the list.  
+## <a name="adding-a-finder-method"></a>Aggiunta di un metodo Finder  
+ Per abilitare il servizio di integrazione applicativa dei dati visualizzare un elenco di contatti, è necessario aggiungere un metodo Finder. Aggiungere un metodo Finder all'entità Contact tramite il **Dettagli metodo di integrazione applicativa dei dati** finestra. Per restituire una raccolta di entità per il servizio di integrazione applicativa dei dati, aggiungere codice al metodo.  
+  
+#### <a name="to-add-a-finder-method"></a>Per aggiungere un metodo Finder  
+  
+1.  Nella finestra di progettazione di integrazione applicativa dei dati, scegliere il **contatto** entità.  
+  
+2.  Nel **Dettagli metodo di integrazione applicativa dei dati** Comprimi finestra il **ReadItem** nodo.  
+  
+3.  Nel **aggiungere un metodo** elenco sotto il **ReadList** (metodo), scegliere **Crea metodo Finder**.  
+  
+     Visual Studio aggiunge un metodo, un parametro restituito e un descrittore di tipo.  
+  
+4.  Nella finestra di progettazione di integrazione applicativa dei dati sul **contatto** entità, aprire il **ReadList** metodo.  
+  
+     Il file di codice per il servizio di Contact verrà aperto nell'editor di codice.  
+  
+5.  Nel `ContactService` classe, sostituire il `ReadList` (metodo) con il codice seguente. Mediante il codice vengono effettuate le seguenti attività:  
+  
+    -   Recupera i dati dalla tabella Contacts del database AdventureWorks.  
+  
+    -   Restituisce un elenco di entità di contatto per il servizio di integrazione applicativa dei dati.  
+  
+    > [!NOTE]  
+    >  Sostituire il valore di `ServerName` campo con il nome del server.  
+  
+     [!code-csharp[SP_BDC#2](../sharepoint/codesnippet/CSharp/SP_BDC/bdcmodel1/contactservice.cs#2)]
+     [!code-vb[SP_BDC#2](../sharepoint/codesnippet/VisualBasic/sp_bdc/bdcmodel1/contactservice.vb#2)]  
+  
+## <a name="testing-the-project"></a>Test del progetto  
+ Quando si esegue il progetto, viene aperto il sito di SharePoint e Visual Studio viene aggiunto il modello per il servizio di integrazione applicativa dei dati aziendali. Creare un elenco esterno in SharePoint che fa riferimento all'entità di contatto. Nell'elenco sono presenti i dati per i contatti nel database AdventureWorks.  
   
 > [!NOTE]  
->  You might have to modify your security settings in SharePoint before you can debug your solution.  For more information, see [Designing a Business Data Connectivity Model](../sharepoint/designing-a-business-data-connectivity-model.md).  
+>  Potrebbe essere necessario modificare le impostazioni di sicurezza in SharePoint prima di poter eseguire il debug della soluzione.  Per ulteriori informazioni, vedere [progettazione di un modello di connettività dei dati di Business](../sharepoint/designing-a-business-data-connectivity-model.md).  
   
-#### <a name="to-test-the-project"></a>To test the project  
+#### <a name="to-test-the-project"></a>Per testare il progetto  
   
-1.  Choose the **F5** key.  
+1.  Premere **F5**.  
   
-     The SharePoint site opens.  
+     Apre il sito di SharePoint.  
   
-2.  On the **Site Actions** menu, choose the **More Options** command.  
+2.  Nel **Azioni sito** menu, scegliere il **altre opzioni** comando.  
   
-3.  On the **Create** page, choose the **External List** template, and then choose the **Create** button.  
+3.  Nel **crea** pagina, scegliere il **elenco esterno** , modello e quindi scegliere il **crea** pulsante.  
   
-4.  Name the custom list **Contacts**.  
+4.  Nome elenco personalizzato **contatti**.  
   
-5.  Choose the browse button next to the **External Content Type** field.  
+5.  Scegliere il pulsante Sfoglia accanto al **tipo di contenuto esterno** campo.  
   
-6.  In the **External Content Type Picker** dialog box, choose the **AdventureWorksContacts.BdcModel1.Contact** item, and then choose the **Create** button.  
+6.  Nel **Selezione tipo di contenuto esterno** finestra di dialogo scegliere la **AdventureWorksContacts.BdcModel1.Contact** elemento e quindi scegliere il **crea** pulsante.  
   
-     SharePoint creates an external list that contains contacts from the AdventureWorks sample database.  
+     In SharePoint viene creato un elenco esterno con i contatti del database di esempio AdventureWorks.  
   
-7.  To test the Specific Finder method, choose a contact in the list.  
+7.  Per testare il metodo Finder specifico, scegliere un contatto nell'elenco.  
   
-8.  On the Ribbon, choose the **Items** tab, and then choose the **View Item** command.  
+8.  Sulla barra multifunzione, scegliere il **elementi** scheda e quindi scegliere il **Visualizza elemento** comando.  
   
-     The details of the contact that you chose appear on a form.  
+     I dettagli del contatto selezionato verranno visualizzati in un form.  
   
-## <a name="next-steps"></a>Next Steps  
- You can learn more about how to design models for the BDC service in SharePoint from these topics:  
+## <a name="next-steps"></a>Passaggi successivi  
+ Per informazioni sulla progettazione di modelli per il servizio di integrazione applicativa dei dati in SharePoint, vedere gli argomenti seguenti:  
   
--   [How to: Add a Creator Method](../sharepoint/how-to-add-a-creator-method.md).  
+-   [Procedura: aggiungere un metodo Creator](../sharepoint/how-to-add-a-creator-method.md).  
   
--   [How to: Add an Updater Method](../sharepoint/how-to-add-an-updater-method.md).  
+-   [Procedura: aggiungere un metodo Updater](../sharepoint/how-to-add-an-updater-method.md).  
   
--   [How to: Add a Deleter Method](../sharepoint/how-to-add-a-deleter-method.md).  
+-   [Procedura: aggiungere un metodo Deleter](../sharepoint/how-to-add-a-deleter-method.md).  
   
-## <a name="see-also"></a>See Also  
- [Designing a Business Data Connectivity Model](../sharepoint/designing-a-business-data-connectivity-model.md)   
- [Creating a Business Data Connectivity Model](../sharepoint/creating-a-business-data-connectivity-model.md)   
- [BDC Model Design Tools Overview](../sharepoint/bdc-model-design-tools-overview.md)   
- [Integrating Business Data into SharePoint](../sharepoint/integrating-business-data-into-sharepoint.md)  
+## <a name="see-also"></a>Vedere anche  
+ [Progettazione di un modello di integrazione applicativa dei dati Business](../sharepoint/designing-a-business-data-connectivity-model.md)   
+ [Creazione di un modello di integrazione applicativa dei dati Business](../sharepoint/creating-a-business-data-connectivity-model.md)   
+ [Panoramica degli strumenti di progettazione del modello di integrazione applicativa dei dati](../sharepoint/bdc-model-design-tools-overview.md)   
+ [Integrazione di dati business in SharePoint](../sharepoint/integrating-business-data-into-sharepoint.md)  
   
   

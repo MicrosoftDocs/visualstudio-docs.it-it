@@ -1,27 +1,30 @@
 ---
-title: "IDebugDocumentHelper::DefineScriptBlock | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/18/2017"
-ms.prod: "windows-script-interfaces"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
+title: IDebugDocumentHelper::DefineScriptBlock | Documenti Microsoft
+ms.custom: 
+ms.date: 01/18/2017
+ms.prod: windows-script-interfaces
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: reference
 apiname: IDebugDocumentHelper.DefineScriptBlock
 apilocation: pdm.dll
-helpviewer_keywords: 
-  - "IDebugDocumentHelper::DefineScriptBlock"
+helpviewer_keywords: IDebugDocumentHelper::DefineScriptBlock
 ms.assetid: e4120377-f04f-44b1-950b-2beba06c9c12
-caps.latest.revision: 8
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.openlocfilehash: 3b6ec86dacc2e3a8f3d9e28a6db744b778ff01eb
+ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/27/2017
 ---
-# IDebugDocumentHelper::DefineScriptBlock
-Indica di supporto che un determinato intervallo di caratteri è un blocco di script che viene gestito nel motore di script specificato.  
+# <a name="idebugdocumenthelperdefinescriptblock"></a>IDebugDocumentHelper::DefineScriptBlock
+Indica che un determinato intervallo di caratteri è un blocco di script che viene gestito dal motore di script specificato per il supporto.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
 HRESULT DefineScriptBlock(  
@@ -33,37 +36,37 @@ HRESULT DefineScriptBlock(
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `ulCharOffset`  
- \[in\] posizione dell'inizio del blocco di script.  
+ [in] Posizione di inizio del blocco di script.  
   
  `cChars`  
- \[in\] numero di caratteri nel blocco di script.  
+ [in] Numero di caratteri nel blocco di script.  
   
  `pas`  
- \[in\] il modulo di gestione di script per questo blocco di script.  
+ [in] Il motore di script per questo blocco di script.  
   
  `fScriptlet`  
- \[in\] diminuisca che indica se il blocco di script è uno scriptlet.  
+ [in] Flag che indica se il blocco di script è scriptlet.  
   
  `pdwSourceContext`  
- \[out\] il contesto di origine del blocco di script.  
+ [out] Il contesto di origine per il blocco di script.  
   
-## Valore restituito  
- Il metodo restituisce un tipo `HRESULT`.  I valori possibili sono, ma non sono limitati a, quelli nella tabella seguente.  
+## <a name="return-value"></a>Valore restituito  
+ Il metodo restituisce un tipo `HRESULT`. I valori possibili includono, ma non sono limitati a, quelli indicati nella tabella seguente.  
   
 |Valore|Descrizione|  
-|------------|-----------------|  
+|-----------|-----------------|  
 |`S_OK`|Il metodo è riuscito.|  
   
-## Note  
- Uno SmartHost possibile utilizzare questo metodo quando i documenti contengono i blocchi di script incorporati.  Un motore di linguaggio possono utilizzare questo metodo se il codice contiene script incorporati per altri linguaggi.  
+## <a name="remarks"></a>Note  
+ Uno smart host è possibile utilizzare questo metodo quando i documenti contengono blocchi di script incorporati. Un motore di lingua è possibile utilizzare questo metodo quando il codice contiene script incorporati per le altre lingue.  
   
- Il modulo di gestione di script è responsabile di tutte le ricerche di contesto del codice e di colorazione della sintassi nel blocco di script.  
+ Il motore di script è responsabile di tutte le sintassi colorazione del codice contesto ricerche e nel blocco di script.  
   
- Il metodo `DefineScriptBlock` deve essere chiamato dopo che il testo è stato aggiunto ad esempio, utilizzando il metodo `IDebugDocumentHelper::AddDBCSText` \) ma prima che il blocco di script è stato analizzato \(ad esempio, utilizzando il metodo `IActiveScriptParse ::ParseScriptText` \).  
+ Il `DefineScriptBlock` deve essere chiamato dopo il testo è stato aggiunto (ad esempio, usando il `IDebugDocumentHelper::AddDBCSText` (metodo)) ma lo script prima di blocco è stato analizzato (ad esempio, usando il `IActiveScriptParse ::ParseScriptText` (metodo)).  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Interfaccia IDebugDocumentHelper](../../winscript/reference/idebugdocumenthelper-interface.md)   
  [IDebugDocumentHelper::AddDBCSText](../../winscript/reference/idebugdocumenthelper-adddbcstext.md)   
  [IDebugDocumentHelper::AddUnicodeText](../../winscript/reference/idebugdocumenthelper-addunicodetext.md)

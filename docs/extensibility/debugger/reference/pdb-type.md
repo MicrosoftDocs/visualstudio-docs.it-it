@@ -1,67 +1,68 @@
 ---
-title: "PDB_TYPE | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "PDB_TYPE"
-helpviewer_keywords: 
-  - "Struttura PDB_TYPE"
+title: PDB_TYPE | Documenti Microsoft
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: vs-ide-sdk
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: PDB_TYPE
+helpviewer_keywords: PDB_TYPE structure
 ms.assetid: 1c1bb772-77d6-4870-90b2-fd9247d0004e
-caps.latest.revision: 7
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: gregvanl
+ms.author: gregvanl
+manager: ghogen
+ms.workload: vssdk
+ms.openlocfilehash: f1c08df8cf56d81ebb22fbdf17f3d20084599b51
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
-# PDB_TYPE
-[!INCLUDE[vs2017banner](../../../code-quality/includes/vs2017banner.md)]
-
-Questa struttura specifica le informazioni su un tipo di campo ottenuto da un simbolo PDB.  
+# <a name="pdbtype"></a>PDB_TYPE
+Questa struttura consente di specificare informazioni su un tipo di campo eseguita da un simbolo PDB.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp#  
+```cpp  
 typedef struct _tagTYPE_PDB {  
-   ULONG32 ulAppDomainID;  
-   GUID    guidModule;  
-   DWORD   symid;  
+   ULONG32 ulAppDomainID;  
+   GUID    guidModule;  
+   DWORD   symid;  
 } PDB_TYPE;  
 ```  
   
-```c#  
+```csharp  
 public struct PDB_TYPE {  
-   public uint ulAppDomainID;  
-   public Guid guidModule;  
-   public uint symid;  
+   public uint ulAppDomainID;  
+   public Guid guidModule;  
+   public uint symid;  
 };  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  ulAppDomainID  
- ID dell'applicazione da cui il simbolo è stato acquistato.  Viene utilizzato per identificare in modo univoco un'istanza dell'applicazione.  
+ ID dell'applicazione da cui proviene il simbolo. Questo viene utilizzato per identificare in modo univoco un'istanza dell'applicazione.  
   
  guidModule  
  Il GUID del modulo che contiene questo campo.  
   
  symid  
- ID del simbolo che corrisponde a questo campo.  
+ L'ID del simbolo che corrisponde a questo campo.  
   
-## Note  
- Questa struttura viene visualizzata come parte dell'[TYPE\_INFO](../../../extensibility/debugger/reference/type-info.md) unione nella struttura quando il campo di `dwKind` della struttura di `TYPE_INFO` è impostato su `TYPE_KIND_PDB` \(un valore [dwTYPE\_KIND](../../../extensibility/debugger/reference/dwtype-kind.md) dell'enumerazione\).  
+## <a name="remarks"></a>Note  
+ Questa struttura viene visualizzato come parte dell'unione nel [TYPE_INFO](../../../extensibility/debugger/reference/type-info.md) struttura quando il `dwKind` campo il `TYPE_INFO` struttura è impostata su `TYPE_KIND_PDB` (compreso il [dwTYPE_KIND](../../../extensibility/debugger/reference/dwtype-kind.md) enumerazione).  
   
-## Requisiti  
- intestazione: sh.h  
+## <a name="requirements"></a>Requisiti  
+ Intestazione: sh.h  
   
- Spazio dei nomi: Microsoft.VisualStudio.Debugger.Interop  
+ Namespace: Microsoft.VisualStudio.Debugger.Interop  
   
  Assembly: Microsoft.VisualStudio.Debugger.Interop.dll  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Strutture e unioni](../../../extensibility/debugger/reference/structures-and-unions.md)   
- [TYPE\_INFO](../../../extensibility/debugger/reference/type-info.md)   
- [dwTYPE\_KIND](../../../extensibility/debugger/reference/dwtype-kind.md)
+ [TYPE_INFO](../../../extensibility/debugger/reference/type-info.md)   
+ [dwTYPE_KIND](../../../extensibility/debugger/reference/dwtype-kind.md)

@@ -1,61 +1,62 @@
 ---
-title: "IDebugCustomAttribute | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "IDebugCustomAttribute"
-helpviewer_keywords: 
-  - "Interfaccia IDebugCustomAttribute"
+title: IDebugCustomAttribute | Documenti Microsoft
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: vs-ide-sdk
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: IDebugCustomAttribute
+helpviewer_keywords: IDebugCustomAttribute interface
 ms.assetid: c5ae41e9-00b9-4cca-871d-b8de9ef390d1
-caps.latest.revision: 13
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 13
+caps.latest.revision: "13"
+author: gregvanl
+ms.author: gregvanl
+manager: ghogen
+ms.workload: vssdk
+ms.openlocfilehash: 48aeab8a09d4916c31c5e2b781427988cf352b25
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
-# IDebugCustomAttribute
-[!INCLUDE[vs2017banner](../../../code-quality/includes/vs2017banner.md)]
-
-Questa interfaccia rappresenta un attributo personalizzato e può fornire il nome, l'attività padre e il tipo della classe dell'attributo.  
+# <a name="idebugcustomattribute"></a>IDebugCustomAttribute
+Questa interfaccia rappresenta un attributo personalizzato può fornire il nome, un padre e il tipo di classe dell'attributo.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
-IDebugCustomAttribute : IUnknown  
+IDebugCustomAttribute : IUnknown  
 ```  
   
-## Note per gli implementatori  
- Un provider del simbolo implementa questa interfaccia per supportare gli attributi personalizzati associati a un simbolo.  In genere viene implementato nel relativo oggetto.  
+## <a name="notes-for-implementers"></a>Note per gli implementatori  
+ Un provider di simboli implementa questa interfaccia per supportare gli attributi personalizzati associati a un simbolo. Viene in genere implementato nel proprio oggetto.  
   
-## Note per i chiamanti  
- Una chiamata [Successivo](../../../extensibility/debugger/reference/ienumdebugcustomattributes-next.md) a restituisce questa interfaccia.  Una chiamata [EnumCustomAttributes](../../../extensibility/debugger/reference/idebugcustomattributequery2-enumcustomattributes.md) al metodo restituirà [IEnumDebugCustomAttributes](../../../extensibility/debugger/reference/ienumdebugcustomattributes.md) l'interfaccia.  
+## <a name="notes-for-callers"></a>Note per i chiamanti  
+ Una chiamata a [Avanti](../../../extensibility/debugger/reference/ienumdebugcustomattributes-next.md) restituisce questa interfaccia. Una chiamata al [EnumCustomAttributes](../../../extensibility/debugger/reference/idebugcustomattributequery2-enumcustomattributes.md) metodo restituisce il [IEnumDebugCustomAttributes](../../../extensibility/debugger/reference/ienumdebugcustomattributes.md) interfaccia.  
   
-## Metodi nell'ordine di Vtable  
- Nella tabella seguente sono elencati i metodi di `IDebugCustomAttribute`.  
+## <a name="methods-in-vtable-order"></a>Metodi nell'ordine Vtable  
+ Nella tabella seguente sono illustrati i metodi di `IDebugCustomAttribute`.  
   
 |Metodo|Descrizione|  
 |------------|-----------------|  
-|[GetParentField](../Topic/IDebugCustomAttribute::GetParentField.md)|Ottiene il campo il cui attributo corrente è collegato.|  
-|[GetAttributeTypeField](../../../extensibility/debugger/reference/idebugcustomattribute-getattributetypefield.md)|Ottiene il tipo della classe di attributi personalizzati.|  
+|[GetParentField](../../../extensibility/debugger/reference/idebugcustomattribute-getparentfield.md)|Ottiene il campo a cui è associato l'attributo corrente.|  
+|[GetAttributeTypeField](../../../extensibility/debugger/reference/idebugcustomattribute-getattributetypefield.md)|Ottiene il tipo di classe di attributo personalizzato.|  
 |[GetName](../../../extensibility/debugger/reference/idebugcustomattribute-getname.md)|Ottiene il nome dell'attributo personalizzato.|  
-|[GetAttributeBytes](../../../extensibility/debugger/reference/idebugcustomattribute-getattributebytes.md)|Ottiene informazioni su come BLOB di byte.|  
+|[GetAttributeBytes](../../../extensibility/debugger/reference/idebugcustomattribute-getattributebytes.md)|Ottiene le informazioni sugli attributi come un blob di byte.|  
   
-## Note  
- Un attributo personalizzato è una struttura per c\# che fornisce di metadati associato personalizzato a una classe o un metodo specifico.  
+## <a name="remarks"></a>Note  
+ Un attributo personalizzato è una struttura per c# che fornisce metadati personalizzati associati a una determinata classe o metodo.  
   
-## Requisiti  
- intestazione: sh.h  
+## <a name="requirements"></a>Requisiti  
+ Intestazione: sh.h  
   
- Spazio dei nomi: Microsoft.VisualStudio.Debugger.Interop  
+ Namespace: Microsoft.VisualStudio.Debugger.Interop  
   
  Assembly: Microsoft.VisualStudio.Debugger.Interop.dll  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Interfacce del Provider di simboli](../../../extensibility/debugger/reference/symbol-provider-interfaces.md)   
  [IDebugField](../../../extensibility/debugger/reference/idebugfield.md)   
  [IDebugCustomAttributeQuery2](../../../extensibility/debugger/reference/idebugcustomattributequery2.md)   

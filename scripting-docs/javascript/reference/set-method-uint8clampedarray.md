@@ -1,35 +1,40 @@
 ---
-title: "Metodo set (Uint8ClampedArray) | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/18/2017"
-ms.prod: "windows-client-threshold"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-javascript"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-dev_langs: 
-  - "JavaScript"
-  - "TypeScript"
-  - "DHTML"
+title: impostare il metodo (Uint8ClampedArray) | Documenti Microsoft
+ms.custom: 
+ms.date: 01/18/2017
+ms.prod: windows-client-threshold
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-javascript
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+dev_langs:
+- JavaScript
+- TypeScript
+- DHTML
 ms.assetid: 1298443d-5c4c-4329-9ad2-35e213dca157
-caps.latest.revision: 5
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 5
+caps.latest.revision: "5"
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.openlocfilehash: ed7635559e615746c577560f1a9266b26acd959d
+ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/27/2017
 ---
-# Metodo set (Uint8ClampedArray)
+# <a name="set-method-uint8clampedarray"></a>Metodo set (Uint8ClampedArray)
 Imposta un valore o una matrice di valori.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```javascript  
-uint8ClampedArray.set(index, value); uint8ClampedArray.set(array, offset);   
+```JavaScript  
+uint8ClampedArray.set(index, value);  
+uint8ClampedArray.set(array, offset);  
+  
 ```  
   
-## Parametri  
+## <a name="parameters"></a>Parametri  
  `index`  
  Indice della posizione da impostare.  
   
@@ -42,15 +47,15 @@ uint8ClampedArray.set(index, value); uint8ClampedArray.set(array, offset);
  `offset`  
  Indice nella matrice corrente in base al quale devono essere scritti i valori.  
   
-## Note  
- Se la matrice di input è una matrice tipizzata, le due matrici possono utilizzare lo stesso oggetto [ArrayBuffer](../../javascript/reference/arraybuffer-object.md) sottostante.  In questa situazione l'impostazione dei valori viene eseguita come se tutti i dati fossero stati prima copiati in un buffer temporaneo che non si sovrappone ad alcuna matrice e come se successivamente i dati presenti nel buffer temporaneo venissero copiati nella matrice corrente.  
+## <a name="remarks"></a>Note  
+ Se la matrice di input è una matrice tipizzata, le due matrici possono utilizzare sottostante stesso [ArrayBuffer](../../javascript/reference/arraybuffer-object.md). In questa situazione l'impostazione dei valori viene eseguita come se tutti i dati fossero stati prima copiati in un buffer temporaneo che non si sovrappone ad alcuna matrice e come se successivamente i dati presenti nel buffer temporaneo venissero copiati nella matrice corrente.  
   
  Se il valore ottenuto sommando l'offset e la lunghezza della matrice specificata non è compreso nell'intervallo per la matrice tipizzata corrente, viene generata un'eccezione.  
   
-## Esempio  
+## <a name="example"></a>Esempio  
  Nell'esempio seguente viene illustrato come impostare il primo elemento della matrice.  
   
-```javascript  
+```JavaScript  
 var req = new XMLHttpRequest();  
     req.open('GET', "http://www.example.com");  
     req.responseType = "arraybuffer";  
@@ -67,9 +72,9 @@ var req = new XMLHttpRequest();
   
 ```  
   
-## Requisiti  
+## <a name="requirements"></a>Requisiti  
  [!INCLUDE[jsv11_winonly](../../javascript/reference/includes/jsv11-winonly-md.md)]  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Oggetto ArrayBuffer](../../javascript/reference/arraybuffer-object.md)   
  [Oggetto Uint8ClampedArray](../../javascript/reference/uint8clampedarray-object-javascript.md)

@@ -1,29 +1,31 @@
 ---
-title: "T4 Assembly Directive | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 44949749-ce3c-4fb5-8690-a17f1564ac2f
-caps.latest.revision: 4
-author: "alancameronwills"
-ms.author: "awills"
-manager: "douge"
-caps.handback.revision: 4
+title: T4 Direttiva Assembly | Documenti Microsoft
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.topic: article
+author: gewarren
+ms.author: gewarren
+manager: ghogen
+ms.workload:
+- multiple
+ms.technology: vs-ide-modeling
+ms.openlocfilehash: 9f586931bd14089beca787c24d92bc2605c4d5de
+ms.sourcegitcommit: 205d15f4558315e585c67f33d5335d5b41d0fcea
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 02/09/2018
 ---
-# T4 Assembly Directive
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
-In un modello di testo della fase di progettazione di [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)], la direttiva `assembly` carica un assembly in modo che il codice del modello possa utilizzarne i tipi.  L'effetto è simile all'aggiunta di un riferimento all'assembly in un progetto di [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)].  
+# <a name="t4-assembly-directive"></a>Direttiva assembly T4
+In un modello di testo della fase di progettazione di [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)], la direttiva `assembly` carica un assembly in modo che il codice del modello possa utilizzarne i tipi. L'effetto è simile all'aggiunta di un riferimento all'assembly in un progetto di [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)].  
   
- Per cenni preliminari sulla scrittura dei modelli di testo, vedere [Writing a T4 Text Template](../modeling/writing-a-t4-text-template.md).  
+ Per una panoramica generale di scrittura di modelli di testo, vedere [scrittura di un modello di testo T4](../modeling/writing-a-t4-text-template.md).  
   
 > [!NOTE]
->  La direttiva `assembly` in un modello di testo \(pre\-elaborato\) della fase di esecuzione non è necessaria.  Aggiungere invece gli assembly necessari ai **Riferimenti** del progetto di [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)].  
+>  La direttiva `assembly` in un modello di testo (pre-elaborato) della fase di esecuzione non è necessaria. Aggiungere invece gli assembly necessari per il **riferimenti** del [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] progetto.  
   
-## Utilizzo della direttiva Assembly  
+## <a name="using-the-assembly-directive"></a>Utilizzo della direttiva Assembly  
  La sintassi della direttiva è la seguente:  
   
 ```  
@@ -32,19 +34,19 @@ In un modello di testo della fase di progettazione di [!INCLUDE[vsprvs](../code-
   
  Il nome dell'assembly deve essere uno dei seguenti:  
   
--   Il nome sicuro dell'assembly nella GAC, quale `System.Xml.dll`.  È inoltre possibile utilizzare la forma estesa, quale `name="System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"`.  Per ulteriori informazioni, vedere <xref:System.Reflection.AssemblyName>.  
+-   Il nome sicuro dell'assembly nella GAC, quale `System.Xml.dll`. È inoltre possibile utilizzare la forma estesa, quale `name="System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"`. Per altre informazioni, vedere <xref:System.Reflection.AssemblyName>.  
   
 -   Il percorso assoluto dell'assembly  
   
- È possibile utilizzare anche la sintassi `$(variableName)` per fare riferimento alle variabili [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)], quali `$(SolutionDir)` e `%VariableName%` per fare riferimento alle variabili di ambiente.  Ad esempio:  
+ È possibile utilizzare anche la sintassi `$(variableName)` per fare riferimento alle variabili [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)], quali `$(SolutionDir)` e `%VariableName%` per fare riferimento alle variabili di ambiente. Ad esempio:  
   
 ```  
 <#@ assembly name="$(SolutionDir)\MyProject\bin\Debug\SomeLibrary.Dll" #>  
 ```  
   
- La direttiva dell'assembly non ha alcun effetto in un modello di testo pre\-elaborato.  Al contrario, si consiglia di includere i riferimenti necessari nella sezione **Riferimenti** del progetto [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)].  Per ulteriori informazioni, vedere [Run\-Time Text Generation with T4 Text Templates](../modeling/run-time-text-generation-with-t4-text-templates.md).  
+ La direttiva dell'assembly non ha alcun effetto in un modello di testo pre-elaborato. Invece, includere i riferimenti necessari nella **riferimenti** sezione del [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] progetto. Per ulteriori informazioni, vedere [la generazione di testo in fase di esecuzione con modelli di testo T4](../modeling/run-time-text-generation-with-t4-text-templates.md).  
   
-## Assembly standard  
+## <a name="standard-assemblies"></a>Assembly standard  
  Gli assembly seguenti vengono caricati automaticamente, in modo che non sia necessario scrivere per essi direttive dell'assembly:  
   
 -   `Microsoft.VisualStudio.TextTemplating.1*.dll`  
@@ -53,7 +55,7 @@ In un modello di testo della fase di progettazione di [!INCLUDE[vsprvs](../code-
   
 -   `WindowsBase.dll`  
   
- Se si utilizza una direttiva personalizzata, il processore di direttiva potrebbe caricare assembly aggiuntivi.  Ad esempio, se si scrivono modelli per un linguaggio specifico di dominio \(DSL\), non è necessario scrivere direttive dell'assembly per gli assembly seguenti:  
+ Se si utilizza una direttiva personalizzata, il processore di direttiva potrebbe caricare assembly aggiuntivi. Ad esempio, se si scrivono modelli per un linguaggio DSL, non è necessario scrivere direttive dell'assembly per gli assembly seguenti:  
   
 -   `Microsoft.VisualStudio.Modeling.Sdk.1*.dll`  
   
@@ -63,10 +65,10 @@ In un modello di testo della fase di progettazione di [!INCLUDE[vsprvs](../code-
   
 -   Assembly contenente il modello DSL.  
   
-##  <a name="msbuild"></a> Utilizzo delle proprietà del progetto in MSBuild e Visual Studio  
- Le macro di Visual Studio, ad esempio $\(SolutionDir\), non funzionano in MSBuild.  Se si desidera trasformare i modelli nel computer di compilazione, è necessario utilizzare le proprietà del progetto.  
+##  <a name="msbuild"></a>Le proprietà di progetto in MSBuild e Visual Studio  
+ Macro di Visual Studio come $ (SolutionDir) non funzionano in MSBuild. Se si desidera trasformare i modelli nel computer di compilazione, è necessario utilizzare le proprietà del progetto.  
   
- Modificare il file con estensione csproj o vbproj per definire una proprietà del progetto.  In questo esempio viene definita una proprietà denominata `myLibFolder`:  
+ Modificare il file con estensione csproj o vbproj per definire una proprietà del progetto. In questo esempio viene definita una proprietà denominata `myLibFolder`:  
   
 ```xml  
 <!-- Define a project property, myLibFolder: -->  
@@ -83,11 +85,11 @@ In un modello di testo della fase di progettazione di [!INCLUDE[vsprvs](../code-
   
 ```  
   
- È ora possibile utilizzare la proprietà del progetto nei modelli di testo, che si convertono correttamente in Visual Studio e in MSBuild:  
+ È ora possibile usare la proprietà del progetto nei modelli di testo, che si trasformano correttamente in Visual Studio e in MSBuild:  
   
 ```  
 <#@ assembly name="$(myLibFolder)\MyLib.dll" #>  
 ```  
   
-## Vedere anche  
- [T4 Include Directive](../modeling/t4-include-directive.md)
+## <a name="see-also"></a>Vedere anche  
+ [Direttiva include T4](../modeling/t4-include-directive.md)

@@ -1,33 +1,34 @@
 ---
-title: "Elemento &lt;PackageFiles&gt; (programma di avvio automatico) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-deployment"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "FSharp"
-  - "VB"
-  - "CSharp"
-  - "C++"
-helpviewer_keywords: 
-  - "<PackageFiles> (elemento) [programma di avvio automatico]"
+title: '&lt;PackageFiles&gt; elemento (programma di avvio automatico) | Documenti Microsoft'
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: vs-ide-deployment
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- FSharp
+- VB
+- CSharp
+- C++
+helpviewer_keywords: <PackageFiles> element [bootstrapper]
 ms.assetid: 3ea252d7-18a3-47d8-af83-47feebcfe82b
-caps.latest.revision: 16
-author: "stevehoag"
-ms.author: "shoag"
-manager: "wpickett"
-caps.handback.revision: 16
+caps.latest.revision: "16"
+author: stevehoag
+ms.author: shoag
+manager: wpickett
+ms.workload: multiple
+ms.openlocfilehash: 25ba72b511782c450b882826a3e3af94a14f6e20
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
-# Elemento &lt;PackageFiles&gt; (programma di avvio automatico)
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
-L'elemento `PackageFiles` contiene gli elementi `PackageFile`, che definiscono i package di installazione eseguiti in seguito all'utilizzo dell'elemento `Command`.  
+# <a name="ltpackagefilesgt-element-bootstrapper"></a>&lt;PackageFiles&gt; elemento (programma di avvio automatico)
+Il `PackageFiles` elemento contiene `PackageFile` elementi, che definiscono i pacchetti di installazione eseguiti come risultato del `Command` elemento.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
 <PackageFiles  
@@ -43,28 +44,28 @@ L'elemento `PackageFiles` contiene gli elementi `PackageFile`, che definiscono i
 </PackageFiles>  
 ```  
   
-## Elementi e attributi  
- L'elemento `PackageFiles` presenta l'attributo seguente.  
+## <a name="elements-and-attributes"></a>Elementi e attributi  
+ Il `PackageFiles` elemento presenta l'attributo seguente.  
   
 |Attributo|Descrizione|  
 |---------------|-----------------|  
-|`CopyAllPackageFiles`|Parametro facoltativo.  Se è impostato a `false`, il programma di installazione scaricherà solo file a cui viene fatto riferimento dall'elemento `Command`.  Se è impostato su `true`, verranno scaricati tutti i file.<br /><br /> Se è impostato su `IfNotHomesite`, il programma di installazione si comporterà come se fosse impostato su `False` se `ComponentsLocation` è impostato su `HomeSite` e, in caso contrario, si comporterà come se fosse impostato su `True`.  Questa impostazione può essere utile per consentire l'esecuzione di package che corrispondono a programmi di avvio in base al proprio comportamento in uno scenario HomeSite.<br /><br /> L'impostazione predefinita è `true`.|  
+|`CopyAllPackageFiles`|Facoltativo. Se impostato su `false`, il programma di installazione scaricherà solo file a cui fa riferimento il `Command` elemento. Se impostato su `true`, tutti i file verranno scaricati.<br /><br /> Se impostato su `IfNotHomesite`, il programma di installazione si comporterà come se `False` se `ComponentsLocation` è impostato su `HomeSite`e in caso contrario si comporterà come se `True`. Questa impostazione può essere utile per consentire i pacchetti che sono a loro volta programmi di avvio automatico eseguire il proprio comportamento in uno scenario HomeSite.<br /><br /> Il valore predefinito è `true`.|  
   
-## PackageFile  
- L'elemento `PackageFile` è un elemento figlio di `PackageFiles`.  Un elemento `PackageFiles` deve contenere almeno un elemento `PackageFile`.  
+## <a name="packagefile"></a>PackageFile  
+ Il `PackageFile` è un elemento figlio del `PackageFiles` elemento. Oggetto `PackageFiles` l'elemento deve avere almeno un `PackageFile` elemento.  
   
- `PackageFile` presenta gli attributi seguenti.  
+ `PackageFile`presenta gli attributi seguenti.  
   
 |Attributo|Descrizione|  
 |---------------|-----------------|  
-|`Name`|Obbligatorio.  Nome del file del package.  Si tratta del nome a cui l'elemento `Command` farà riferimento al momento della definizione delle condizioni di installazione di un package.  Questo valore viene utilizzato anche come chiave della tabella `Strings` per recuperare il nome localizzato che verrà utilizzato da strumenti quale [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] per la descrizione del package.|  
-|`HomeSite`|Parametro facoltativo.  Percorso del package sul server remoto, se non è incluso nel programma di installazione.|  
-|`CopyOnBuild`|Parametro facoltativo.  Specifica se il programma di avvio automatico deve copiare il file del pacchetto sul disco in fase di compilazione.  L'impostazione predefinita è true.|  
-|`PublicKey`|Chiave pubblica crittografata del firmatario del certificato del package.  L'attributo è obbligatorio se viene utilizzato `HomeSite`, altrimenti è facoltativo.|  
-|`Hash`|Parametro facoltativo.  Hash SHA1 del file del pacchetto.  Viene utilizzato per verificare l'integrità del file al momento dell'installazione.  Se non è possibile calcolare l'hash identico dal file di package, il package non verrà installato.|  
+|`Name`|Obbligatorio. Il nome del file del pacchetto. Si tratta del nome che il `Command` elemento farà riferimento al momento della definizione di condizioni di installazione di un pacchetto. Questo valore viene inoltre utilizzato come chiave nel `Strings` tabella per recuperare il nome localizzato strumenti, ad esempio [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] verrà utilizzato per descrivere il pacchetto.|  
+|`HomeSite`|Facoltativo. Il percorso del pacchetto nel server remoto, se non è incluso con il programma di installazione.|  
+|`CopyOnBuild`|Facoltativo. Specifica se il programma di avvio automatico deve copiare il file del pacchetto sul disco in fase di compilazione. Il valore predefinito è true.|  
+|`PublicKey`|La chiave crittografata pubblica del firmatario certificato del pacchetto. Obbligatorio se `HomeSite` è utilizzata; in caso contrario, facoltativo.|  
+|`Hash`|Facoltativo. Un hash SHA1 del file del pacchetto. Viene utilizzato per verificare l'integrità del file al momento dell'installazione. Se non è possibile calcolare l'hash identico dal file di pacchetto, il pacchetto non essere installato.|  
   
-## Esempio  
- Nell'esempio di codice riportato di seguito vengono definiti package per il package ridistribuibile di [!INCLUDE[dnprdnshort](../code-quality/includes/dnprdnshort_md.md)] e le relative dipendenze, ad esempio Windows Installer.  
+## <a name="example"></a>Esempio  
+ L'esempio di codice seguente definisce pacchetti per il [!INCLUDE[dnprdnshort](../code-quality/includes/dnprdnshort_md.md)] pacchetto ridistribuibile e le relative dipendenze, ad esempio il programma di installazione di Windows.  
   
 ```  
 <PackageFiles>  
@@ -75,7 +76,7 @@ L'elemento `PackageFiles` contiene gli elementi `PackageFile`, che definiscono i
 </PackageFiles>  
 ```  
   
-## Vedere anche  
- [Elemento \<Product\>](../deployment/product-element-bootstrapper.md)   
- [Elemento \<Package\>](../deployment/package-element-bootstrapper.md)   
+## <a name="see-also"></a>Vedere anche  
+ [\<Prodotto > elemento](../deployment/product-element-bootstrapper.md)   
+ [\<Pacchetto > elemento](../deployment/package-element-bootstrapper.md)   
  [Riferimenti dello schema di prodotti e package](../deployment/product-and-package-schema-reference.md)

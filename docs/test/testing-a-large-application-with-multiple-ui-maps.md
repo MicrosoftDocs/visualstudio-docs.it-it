@@ -1,49 +1,35 @@
 ---
-title: "Test di un&quot;applicazione di grandi dimensioni con più mappe dell&quot;interfaccia utente | Microsoft Docs"
+title: "Test di un'applicazione di grandi dimensioni con più mappe dell'interfaccia utente | Microsoft Docs"
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- vs-devops-test
+ms.technology: vs-devops-test
 ms.tgt_pltfrm: 
 ms.topic: article
 helpviewer_keywords:
 - coded UI tests, multiple UI maps
 - coded UI tests, for large applications
-ms.assetid: 6e1ae9ec-e9b1-458a-bd96-0eb15e46f1d5
-caps.latest.revision: 22
-ms.author: douge
-manager: douge
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 5ab78b6b8eaa8156ed2c8a807b1d8a80e75afa84
-ms.openlocfilehash: 846860b7d61d9fbda6ca10793420b66fdab4a01f
-ms.contentlocale: it-it
-ms.lasthandoff: 05/19/2017
-
+author: gewarren
+ms.author: gewarren
+manager: ghogen
+ms.workload:
+- multiple
+ms.openlocfilehash: c2eff9fc8e8aedecb1fd9b99538fa600dbcc5eb1
+ms.sourcegitcommit: 69b898d8d825c1a2d04777abf6d03e03fefcd6da
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="testing-a-large-application-with-multiple-ui-maps"></a>Test di un'applicazione di grandi dimensioni con più mappe dell'interfaccia utente
+
 In questo argomento viene illustrato l'uso dei test codificati dell'interfaccia utente per il test di un'applicazione di grandi dimensioni con più mappe dell'interfaccia utente.  
   
  **Requisiti**  
   
 -   Visual Studio Enterprise  
   
- Quando si crea un nuovo test codificato dell'interfaccia utente, per impostazione predefinita, il framework di test di [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] genera il codice per il test in una classe <xref:Microsoft.VisualStudio.TestTools.UITest.Common.UIMap.UIMap>. Per altre informazioni sulla registrazione di test codificati dell'interfaccia utente, vedere [Creazione di test codificati dell'interfaccia utente](../test/use-ui-automation-to-test-your-code.md#VerifyingCodeUsingCUITCreate) e [Composizione di un test codificato dell'interfaccia utente](../test/anatomy-of-a-coded-ui-test.md).  
+ Quando si crea un nuovo test codificato dell'interfaccia utente, per impostazione predefinita il framework di test di Visual Studio genera il codice per il test in una classe <xref:Microsoft.VisualStudio.TestTools.UITest.Common.UIMap.UIMap>. Per altre informazioni sulla registrazione di test codificati dell'interfaccia utente, vedere [Creazione di test codificati dell'interfaccia utente](../test/use-ui-automation-to-test-your-code.md) e [Composizione di un test codificato dell'interfaccia utente](../test/anatomy-of-a-coded-ui-test.md).  
   
  Il codice generato per la mappa dell'interfaccia utente contiene una classe per ogni oggetto con cui il test interagisce. Per ogni metodo generato, viene generata una classe complementare per i parametri del metodo appositamente per quel metodo. Se l'applicazione contiene un numero elevato di oggetti, pagine, moduli e controlli, la mappa dell'interfaccia utente può raggiungere dimensioni significative. Inoltre, se più persone stanno operando sui test, l'applicazione può diventare difficile da gestire se è presente un solo file di mappa dell'interfaccia utente di grandi dimensioni.  
   
@@ -83,24 +69,25 @@ In questo argomento viene illustrato l'uso dei test codificati dell'interfaccia 
   
 4.  Scegliere **Aggiungi**.  
   
-     La finestra [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] viene ridotta a icona e viene visualizzata la finestra di dialogo **Generatore di test codificati dell'interfaccia utente**.  
+     La finestra di Visual Studio viene ridotta a icona e viene visualizzata la finestra di dialogo **Generatore di test codificati dell'interfaccia utente**.  
   
 5.  Registrare le azioni per il primo metodo e scegliere **Genera codice**.  
   
 6.  Dopo avere registrato tutte le azioni e le asserzioni per il primo componente o pagina e averli raggruppati in metodi, chiudere la finestra di dialogo **Generatore di test codificati dell'interfaccia utente**.  
   
 7.  Continuare a creare le mappe dell'interfaccia utente. Registrare le azioni e le asserzioni, raggrupparle in metodi per ogni componente e quindi generare il codice.  
-  
- In molti casi, la finestra di primo livello dell'applicazione rimane costante per tutte le procedure guidate, i moduli e le pagine. Sebbene ogni mappa dell'interfaccia utente abbia una classe per la finestra di primo livello, è probabile che tutte le mappe facciano riferimento alla stessa finestra di primo livello all'interno della quale sono in esecuzione tutti i componenti dell'applicazione. I test codificati dell'interfaccia utente eseguono la ricerca dei controlli in modo gerarchico dall'altro al basso, iniziando dalla finestra di primo livello in modo che in un'applicazione complessa la finestra di primo livello effettiva possa essere duplicata in ogni mappa dell'interfaccia utente. Se la finestra di primo livello effettiva viene duplicata, ogni cambiamento della finestra determina più modifiche. Questo può causare problemi di prestazioni nel passaggio da una mappa dell'interfaccia utente all'altra.  
-  
- Per attenuare questo effetto, è possibile usare il metodo `CopyFrom()` per garantire che la nuova finestra di primo livello in quella determinata mappa dell'interfaccia utente corrisponda alla finestra di primo livello principale.  
-  
-## <a name="example"></a>Esempio  
- L'esempio seguente fa parte di una classe di utilità che fornisce accesso a ogni componente e ai relativi controlli figlio che sono rappresentati dalle classi generati nelle varie mappe dell'interfaccia utente.  
-  
- In questo esempio, un'applicazione Web denominata `Contoso` ha una home page, una pagina per i prodotti (Product Page) e una pagina per il carrello (Shopping Cart Page). Ognuna di queste pagine condivide una finestra di primo livello che è la finestra del browser. È disponibile una mappa dell'interfaccia utente per ogni pagina e la classe di utilità presenta un codice simile al seguente:  
-  
-```  
+
+ In molti casi, la finestra di primo livello dell'applicazione rimane costante per tutte le procedure guidate, i moduli e le pagine. Sebbene ogni mappa dell'interfaccia utente abbia una classe per la finestra di primo livello, è probabile che tutte le mappe facciano riferimento alla stessa finestra di primo livello all'interno della quale sono in esecuzione tutti i componenti dell'applicazione. I test codificati dell'interfaccia utente eseguono la ricerca dei controlli in modo gerarchico dall'altro al basso, iniziando dalla finestra di primo livello in modo che in un'applicazione complessa la finestra di primo livello effettiva possa essere duplicata in ogni mappa dell'interfaccia utente. Se la finestra di primo livello effettiva viene duplicata, ogni cambiamento della finestra determina più modifiche. Questo può causare problemi di prestazioni nel passaggio da una mappa dell'interfaccia utente all'altra.
+
+ Per attenuare questo effetto, è possibile usare il metodo `CopyFrom()` per assicurarsi che la nuova finestra di primo livello in quella determinata mappa dell'interfaccia utente corrisponda alla finestra di primo livello principale.
+
+## <a name="example"></a>Esempio
+
+L'esempio seguente fa parte di una classe di utilità che fornisce accesso a ogni componente e ai relativi controlli figlio che sono rappresentati dalle classi generati nelle varie mappe dell'interfaccia utente.
+
+In questo esempio, un'applicazione Web denominata `Contoso` ha una home page, una pagina per i prodotti (Product Page) e una pagina per il carrello (Shopping Cart Page). Ognuna di queste pagine condivide una finestra di primo livello che è la finestra del browser. È disponibile una mappa dell'interfaccia utente per ogni pagina e la classe di utilità presenta un codice simile al seguente:
+
+```csharp
 using ContosoProject.UIMaps;  
 using ContosoProject.UIMaps.HomePageClasses;  
 using ContosoProject.UIMaps.ProductPageClasses;  
@@ -151,13 +138,13 @@ namespace ContosoProject
     // Continue to create properties for each page, getting the   
     // page object from the corresponding UI Map and copying the   
     // top level window properties from the Home Page.  
-}  
-```  
-  
-## <a name="see-also"></a>Vedere anche  
- <xref:Microsoft.VisualStudio.TestTools.UITest.Common.UIMap.UIMap>   
- <xref:Microsoft.VisualStudio.TestTools.UITesting.BrowserWindow.CopyFrom%2A>   
- [Usare l'automazione dell'interfaccia utente per testare il codice](../test/use-ui-automation-to-test-your-code.md)   
- [Creazione di test codificati dell'interfaccia utente](../test/use-ui-automation-to-test-your-code.md#VerifyingCodeUsingCUITCreate)   
- [Composizione di un test codificato dell'interfaccia utente](../test/anatomy-of-a-coded-ui-test.md)
+}
+```
 
+## <a name="see-also"></a>Vedere anche
+
+<xref:Microsoft.VisualStudio.TestTools.UITest.Common.UIMap.UIMap>  
+<xref:Microsoft.VisualStudio.TestTools.UITesting.BrowserWindow.CopyFrom%2A>  
+[Usare l'automazione dell'interfaccia utente per testare il codice](../test/use-ui-automation-to-test-your-code.md)  
+[Creazione di test codificati dell'interfaccia utente](../test/use-ui-automation-to-test-your-code.md)  
+[Composizione di un test codificato dell'interfaccia utente](../test/anatomy-of-a-coded-ui-test.md)

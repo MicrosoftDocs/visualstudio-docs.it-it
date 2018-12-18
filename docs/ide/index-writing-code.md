@@ -3,16 +3,15 @@ layout: LandingPage
 author: gewarren
 ms.author: gewarren
 ms.topic: landing-page
-title: Documentazione per la scrittura e la gestione del codice con Visual Studio
+title: Documentazione per la scrittura e la gestione del codice con Visual Studio | Microsoft Docs
 description: Informazioni su come usare l'editor del codice e altri strumenti in Visual Studio per scrivere, esplorare, gestire e migliorare il codice.
-ms.technology:
-- vs-ide-general
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 91fde66abf2f325ef0a6a0a2fd30e36981f44033
-ms.openlocfilehash: 041e8ca9989b88d4d237e1ae64a051483bc09fb2
-ms.contentlocale: it-it
-ms.lasthandoff: 03/08/2017
-
+ms.technology: vs-ide-general
+ms.workload: multiple
+ms.openlocfilehash: 5bc15e4bde117a474034ab4342dc43bc8db8e00f
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="write-and-manage-code-using-visual-studio-documentation"></a>Documentazione per la scrittura e la gestione del codice con Visual Studio
 
@@ -167,7 +166,7 @@ Informazioni su come usare l'editor del codice e altri strumenti in Visual Studi
 
 ---
 
-<h2>Riferimento</h2>
+<h2>Riferimenti</h2>
 <ul class="panelContent cardsW">
     <li>
         <div class="cardSize">
@@ -182,4 +181,3 @@ Informazioni su come usare l'editor del codice e altri strumenti in Visual Studi
         </div>
     </li>
 </ul>
-

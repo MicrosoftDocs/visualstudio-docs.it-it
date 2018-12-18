@@ -1,74 +1,75 @@
 ---
-title: "BP_PASSCOUNT_STYLE | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "BP_PASSCOUNT_STYLE"
-helpviewer_keywords: 
-  - "Struttura BP_PASSCOUNT_STYLE"
+title: BP_PASSCOUNT_STYLE | Documenti Microsoft
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: vs-ide-sdk
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: BP_PASSCOUNT_STYLE
+helpviewer_keywords: BP_PASSCOUNT_STYLE structure
 ms.assetid: 0a647047-e2d5-4724-a0b8-68108425ecad
-caps.latest.revision: 10
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: gregvanl
+ms.author: gregvanl
+manager: ghogen
+ms.workload: vssdk
+ms.openlocfilehash: e272c92bbcc7364c967fc37c1e57b915e6cb64ab
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
-# BP_PASSCOUNT_STYLE
-[!INCLUDE[vs2017banner](../../../code-quality/includes/vs2017banner.md)]
-
-Specifica la condizione associata al conteggio della sessione del punto di interruzione in modo che il punto di interruzione alla generazione.  
+# <a name="bppasscountstyle"></a>BP_PASSCOUNT_STYLE
+Specifica la condizione associata con il punto di interruzione passaggio che fa sì che il punto di interruzione da attivare.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp#  
-enum enum_BP_PASSCOUNT_STYLE {   
-   BP_PASSCOUNT_NONE             = 0x0000,  
-   BP_PASSCOUNT_EQUAL            = 0x0001,  
-   BP_PASSCOUNT_EQUAL_OR_GREATER = 0x0002,  
-   BP_PASSCOUNT_MOD              = 0x0003  
+```cpp  
+enum enum_BP_PASSCOUNT_STYLE {   
+   BP_PASSCOUNT_NONE             = 0x0000,  
+   BP_PASSCOUNT_EQUAL            = 0x0001,  
+   BP_PASSCOUNT_EQUAL_OR_GREATER = 0x0002,  
+   BP_PASSCOUNT_MOD              = 0x0003  
 };  
 typedef DWORD BP_PASSCOUNT_STYLE;  
 ```  
   
-```c#  
-public enum enum_BP_PASSCOUNT_STYLE {   
-   BP_PASSCOUNT_NONE             = 0x0000,  
-   BP_PASSCOUNT_EQUAL            = 0x0001,  
-   BP_PASSCOUNT_EQUAL_OR_GREATER = 0x0002,  
-   BP_PASSCOUNT_MOD              = 0x0003  
+```csharp  
+public enum enum_BP_PASSCOUNT_STYLE {   
+   BP_PASSCOUNT_NONE             = 0x0000,  
+   BP_PASSCOUNT_EQUAL            = 0x0001,  
+   BP_PASSCOUNT_EQUAL_OR_GREATER = 0x0002,  
+   BP_PASSCOUNT_MOD              = 0x0003  
 };  
 ```  
   
-## Membri  
- BP\_PASSCOUNT\_NONE  
- Non specifica stile di conteggio della sessione del punto di interruzione.  
+## <a name="members"></a>Membri  
+ BP_PASSCOUNT_NONE  
+ Specifica nessuno stile di conteggio di passaggio di punto di interruzione.  
   
- BP\_PASSCOUNT\_EQUAL  
- Consente di impostare lo stile di conteggio della sessione del punto di interruzione in modo che sia uguale a.  Le generazioni del punto di interruzione quando il numero di volte in cui il punto di interruzione è uguale raggiunti il conteggio della sessione.  
+ BP_PASSCOUNT_EQUAL  
+ Imposta lo stile di conteggio di passaggio di punto di interruzione deve essere uguale a. Il punto di interruzione viene generato quando il numero di volte in cui che viene raggiunto il punto di interruzione è uguale al conteggio di passaggio.  
   
- BP\_PASSCOUNT\_EQUAL\_OR\_GREATER  
- Consente di impostare lo stile di conteggio della sessione del punto di interruzione per essere uguale o maggiore.  Le generazioni del punto di interruzione quando il numero di volte viene raggiunto il punto di interruzione è uguale a o maggiore del numero della sessione.  
+ BP_PASSCOUNT_EQUAL_OR_GREATER  
+ Imposta lo stile di conteggio di passaggio di punto di interruzione su uguale o maggiore. Il punto di interruzione viene generato quando il numero di volte in cui che viene raggiunto il punto di interruzione è uguale o maggiore del numero di passaggio.  
   
- BP\_PASSCOUNT\_MOD  
- Specifica un conteggio della sessione di modulo.  Ad esempio, se il conteggio di sessione è di tipo `BP_PASSCOUNT_MOD` e il valore di conteggio della sessione è 4, le generazioni del punto di interruzione ogni volta che il numero di passaggi è un multiplo di 4.  
+ BP_PASSCOUNT_MOD  
+ Specifica un modulo di conteggio esecuzioni di test. Ad esempio, se il conteggio della sessione è di tipo `BP_PASSCOUNT_MOD` e passare il valore del conteggio è 4, il punto di interruzione di generato ogni volta che il numero di passaggi è un multiplo di 4.  
   
-## Note  
- Utilizzato per il membro di `stylePassCount` [BP\_PASSCOUNT](../../../extensibility/debugger/reference/bp-passcount.md) della struttura che è a sua volta un membro di [BP\_REQUEST\_INFO](../../../extensibility/debugger/reference/bp-request-info.md) e [BP\_REQUEST\_INFO2](../../../extensibility/debugger/reference/bp-request-info2.md) struttura.  
+## <a name="remarks"></a>Note  
+ Utilizzato per il `stylePassCount` appartenente il [BP_PASSCOUNT](../../../extensibility/debugger/reference/bp-passcount.md) struttura che a sua volta è un membro del [BP_REQUEST_INFO](../../../extensibility/debugger/reference/bp-request-info.md) e [BP_REQUEST_INFO2](../../../extensibility/debugger/reference/bp-request-info2.md) strutture.  
   
-## Requisiti  
- intestazione: msdbg.h  
+## <a name="requirements"></a>Requisiti  
+ Intestazione: msdbg.h  
   
- Spazio dei nomi: Microsoft.VisualStudio.Debugger.Interop  
+ Namespace: Microsoft.VisualStudio.Debugger.Interop  
   
  Assembly: Microsoft.VisualStudio.Debugger.Interop.dll  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Enumerazioni](../../../extensibility/debugger/reference/enumerations-visual-studio-debugging.md)   
- [BP\_PASSCOUNT](../../../extensibility/debugger/reference/bp-passcount.md)   
- [BP\_REQUEST\_INFO](../../../extensibility/debugger/reference/bp-request-info.md)   
- [BP\_REQUEST\_INFO2](../../../extensibility/debugger/reference/bp-request-info2.md)
+ [BP_PASSCOUNT](../../../extensibility/debugger/reference/bp-passcount.md)   
+ [BP_REQUEST_INFO](../../../extensibility/debugger/reference/bp-request-info.md)   
+ [BP_REQUEST_INFO2](../../../extensibility/debugger/reference/bp-request-info2.md)

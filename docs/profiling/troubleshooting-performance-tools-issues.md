@@ -1,50 +1,52 @@
 ---
-title: "Risoluzione dei problemi relativi agli strumenti di profilatura | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: Risoluzione dei problemi relativi agli strumenti per le prestazioni | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: vs-ide-debug
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 0b61cdf7-75b7-4abd-aff2-7bd997717626
-caps.latest.revision: 10
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.workload: multiple
+ms.openlocfilehash: 748f642e4bd150c8ec5819057b4ee3f7768893f0
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
-# Risoluzione dei problemi relativi agli strumenti di profilatura
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
-Durante l'utilizzo degli strumenti di profilatura è possibile riscontrare uno dei problemi seguenti:  
+# <a name="troubleshooting-performance-tools-issues"></a>Risoluzione dei problemi relativi agli strumenti per le prestazioni
+Quando si usano gli strumenti di profilatura, potrebbe verificarsi uno dei seguenti problemi:  
   
 -   [Non vengono raccolti dati dagli strumenti di profilatura](#NoDataCollected)  
   
--   [Nelle visualizzazioni e nei rapporti di prestazioni vengono visualizzati numeri anziché nomi di funzione](#NoSymbols)  
+-   [Nei report e nelle visualizzazioni delle prestazioni vengono visualizzati numeri invece dei nomi di funzione](#NoSymbols)  
   
 ##  <a name="NoDataCollected"></a> Non vengono raccolti dati dagli strumenti di profilatura  
- Dopo avere profilato un'applicazione, non viene creato un file dei dati di profilatura \(con estensione vsp\) e nella finestra Output o nella finestra di comando viene visualizzato il seguente avviso:  
+ Dopo aver eseguito la profilatura di un'applicazione, non viene creato alcun file di dati di profilatura (con estensione vsp) e viene visualizzato il seguente avviso nella finestra di output o nella finestra di comando:  
   
  PRF0025: Dati non raccolti.  
   
- Il problema potrebbe risalire a diverse cause:  
+ Le cause del problema possono essere diverse:  
   
--   Un processo profilato tramite il campionamento o il metodo di memoria .NET avvia un processo figlio che esegue il lavoro dell'applicazione.  In alcune applicazioni, ad esempio, viene letta la riga di comando per determinare se sono state avviate come applicazioni Windows o come applicazioni della riga di comando.  Se era necessaria un'applicazione Windows, il processo originale avvia un nuovo processo configurato come applicazione Windows e quello originale viene quindi chiuso.  Poiché i dati per i processi figlio non vengono raccolti automaticamente tramite gli strumenti di profilatura, non verrà raccolto alcun dato.  
+-   Un processo di cui è stata eseguita la profilatura tramite il campionamento o il metodo di memoria .NET avvia un processo figlio che diventa il processo che esegue le operazioni dell'applicazione. Alcune applicazioni, ad esempio, leggono la riga di comando per determinare se sono state avviate come un'applicazione Windows o come un'applicazione della riga di comando. Se è stata richiesta un'applicazione Windows, il processo originale avvia un nuovo processo configurato come un'applicazione Windows e quindi termina il processo originale. Poiché gli strumenti di profilatura non raccolgono automaticamente i dati per i processi figlio, non viene raccolto alcun dato.  
   
-     Per raccogliere i dati di profilatura in questa situazione, associare il profiler al processo figlio anziché utilizzarlo per avviare l'applicazione.  Per ulteriori informazioni, vedere [Procedura: Connettere e disconnettere il profiler a processi in esecuzione](../profiling/how-to-attach-and-detach-performance-tools-to-running-processes.md) e [Associa \(VSPerfCmd\)](../profiling/attach.md)  
+     Per raccogliere i dati di profilatura in questa situazione, collegare il profiler al processo figlio invece di avviare l'applicazione con il profiler. Per altre informazioni, vedere [Procedura: Connettere e disconnettere gli strumenti per le prestazioni ai processi in esecuzione](../profiling/how-to-attach-and-detach-performance-tools-to-running-processes.md) e [Attach (VSPerfCmd)](../profiling/attach.md)  
   
-##  <a name="NoSymbols"></a> Nelle visualizzazioni e nei rapporti di prestazioni vengono visualizzati numeri anziché nomi di funzione  
- Dopo avere profilato un'applicazione, vengono visualizzati numeri anziché nomi di funzione nei rapporti e nelle visualizzazioni.  
+##  <a name="NoSymbols"></a> Nei report e nelle visualizzazioni delle prestazioni vengono visualizzati numeri invece dei nomi di funzione  
+ Dopo aver eseguito la profilatura di un'applicazione, nei report e nelle visualizzazioni vengono visualizzati numeri anziché i nomi di funzione.  
   
- Questo problema è dovuto all'impossibilità di trovare, tramite il motore di analisi degli strumenti di profilatura, i file con estensione pdb in cui sono contenute informazioni sui simboli mappate alle informazioni sul codice sorgente, ad esempio nomi di funzione e numeri di riga al file compilato.  Per impostazione predefinita, il file con estensione pdb viene creato tramite il compilatore durante la compilazione dell'applicazione.  Un riferimento alla directory locale del file con estensione pdb viene archiviato nell'applicazione compilata.  Tramite il motore di analisi viene eseguita una ricerca del file con estensione pdb nella directory a cui si fa riferimento e quindi nel file in cui è incluso attualmente il file dell'applicazione.  Se il file con estensione pdb non viene individuato, vengono utilizzati gli offset anziché i nomi di funzione.  
+ Questo problema è causato dal fatto che il motore di analisi degli strumenti di profilatura non riesce a trovare i file PDB che contengono le informazioni sui simboli usate per eseguire il mapping delle informazioni sul codice sorgente, come nomi di funzione e numeri di riga, al file compilato. Per impostazione predefinita, il compilatore crea il file PDB quando viene compilato il file dell'applicazione. Un riferimento alla directory locale del file PDB viene archiviato nell'applicazione compilata. Il motore di analisi esegue una ricerca nella directory specificata dal riferimento per il file PDB e quindi nella directory che contiene i file dell'applicazione. Se il file PDB non viene trovato, il motore di analisi usa gli offset di funzione anziché i nomi di funzione.  
   
- È possibile risolvere il problema in uno dei due modi seguenti:  
+ È possibile risolvere il problema in due modi:  
   
--   Trovare i file con estensione pdb e posizionarli nella stessa directory dei file dell'applicazione.  
+-   Individuare i file PDB e posizionarli nella stessa directory dei file dell'applicazione.  
   
--   Incorporare le informazioni sui simboli nel file dei dati di profilatura \(con estensione vsp\).  Per ulteriori informazioni, vedere [Salvataggio delle informazioni sui simboli con i file di dati di profilatura](../profiling/saving-symbol-information-with-performance-data-files.md).  
+-   Incorporare le informazioni sui simboli nel file di dati di profilatura (con estensione VSP). Per altre informazioni, vedere [Salvataggio delle informazioni sui simboli con i file di dati di prestazioni](../profiling/saving-symbol-information-with-performance-data-files.md).  
   
 > [!NOTE]
->  Il motore di analisi richiede che la versione del file con estensione pdb corrisponda a quella del file dell'applicazione compilato.  Un file con estensione pdb generato da una compilazione precedente o successiva del file dell'applicazione non sarà utilizzabile.
+>  Il motore di analisi richiede che il file PDB sia della stessa versione del file dell'applicazione compilata. Non è possibile usare un file PDB di una compilazione precedente o successiva del file dell'applicazione.

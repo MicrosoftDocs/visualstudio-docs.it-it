@@ -1,49 +1,50 @@
 ---
-title: "Scheda Finestre, finestra di dialogo Opzioni messaggio | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "opzioni messaggio, Finestre"
+title: Scheda finestre, finestra di dialogo Opzioni messaggio | Documenti Microsoft
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: vs-ide-debug
+ms.tgt_pltfrm: 
+ms.topic: reference
+helpviewer_keywords: message options, Windows
 ms.assetid: 6e9cc5ca-24cc-49cf-aa22-c89733828f8c
-caps.latest.revision: 4
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.workload: multiple
+ms.openlocfilehash: 9c3795d26a8bd7bf4f4eb0ce9147ff081afa826e
+ms.sourcegitcommit: 9e6ff74da1afd8bd2f0e69387ce81f2a74619182
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 01/04/2018
 ---
-# Scheda Finestre, finestra di dialogo Opzioni messaggio
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
-Utilizzare la scheda **Finestre** per impostare l'ambito dei messaggi elencati in [Visualizzazione messaggi](../debugger/messages-view.md).  Per visualizzare la [finestra di dialogo Opzioni messaggio](../debugger/message-options-dialog-box.md), scegliere **Registra messaggi** dal menu **Spy**.  
+# <a name="windows-tab-message-options-dialog-box"></a>Scheda Finestre, finestra di dialogo Opzioni messaggio
+Utilizzare il **Windows** scheda per impostare l'ambito dei messaggi nel [visualizzazione messaggi](../debugger/messages-view.md). Per visualizzare il [finestra di dialogo Opzioni messaggio](../debugger/message-options-dialog-box.md), scegliere **messaggi di Log** dal **Spy** menu.  
   
- Nella scheda **Finestre** sono disponibili le impostazioni seguenti:  
+ Le impostazioni seguenti sono disponibili sul **Windows** scheda:  
   
  **Strumento di ricerca**  
- Strumento di trascinamento della selezione utilizzato per selezionare una finestra.  
+ Lo strumento di trascinamento e rilascio utilizzato per selezionare una finestra.  
   
- **Nascondi Spy\+\+**  
- Consente di rimuovere la finestra principale di Spy\+\+, mantenendo solo la finestra di dialogo **Opzioni messaggio** visibile in primo piano rispetto alle altre applicazioni.  
+ **Nascondi Spy + +**  
+ Rimuove la finestra principale di Spy + + e lascia il **Opzioni messaggio** la finestra di dialogo di primo piano rispetto alle altre applicazioni.  
   
- **Parent Window**  
- Consente di visualizzare i messaggi per la finestra selezionata e la relativa finestra padre diretta.  
+ **Finestra padre**  
+ Visualizzare i messaggi per la finestra selezionata e la relativa finestra padre.  
   
  **Finestra figlio**  
- Consente di visualizzare i messaggi per la finestra selezionata e tutte le relative finestre figlio, incluse le finestre figlio annidate.  
+ Visualizzare i messaggi per la finestra selezionata e tutte le finestre figlio, incluse le finestre figlio annidati.  
   
- **Finestre dello stesso thread**  
- Consente di visualizzare i messaggi per la finestra selezionata e tutte le altre finestre di proprietà dello stesso thread.  
+ **Finestre dello stesso Thread**  
+ Visualizzare i messaggi per la finestra selezionata e tutte le altre finestre appartenenti allo stesso thread.  
   
  **Finestre dello stesso processo**  
- Consente di visualizzare i messaggi per la finestra selezionata e tutte le altre finestre di proprietà dello stesso processo.  
+ Visualizzare i messaggi per la finestra selezionata e tutte le altre finestre appartenenti allo stesso processo.  
   
  **Tutte le finestre nel sistema**  
- Consente di visualizzare i messaggi relativi a tutte le finestre.  
+ Visualizzare i messaggi per tutte le finestre.  
   
- **Salva impostazioni come predefinite**  
- Consente di salvare le impostazioni precedenti per le finestre del nuovo flusso di messaggi.  Queste impostazioni vengono salvate anche alla chiusura di Spy\+\+.
+ **Salvare le impostazioni come predefinite**  
+ Salvare le impostazioni precedenti per nuove finestre di flusso di messaggio. Queste impostazioni vengono salvate anche quando si esce da Spy + +.

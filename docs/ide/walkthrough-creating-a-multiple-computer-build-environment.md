@@ -4,38 +4,23 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- vs-ide-general
+ms.technology: vs-ide-general
 ms.tgt_pltfrm: 
 ms.topic: article
 helpviewer_keywords:
 - MSBuild, building on multiple computers
 - build environment, MSBuild
 ms.assetid: ae5391b1-3eec-42f5-beb3-f28630615a9e
-caps.latest.revision: 7
+caps.latest.revision: "7"
 author: gewarren
 ms.author: gewarren
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.workload: multiple
+ms.openlocfilehash: 76b88d48b78ebab2058a2fa13feef327908f2b24
+ms.sourcegitcommit: 11740fed01cc602252ef698aaa11c07987b00570
 ms.translationtype: HT
-ms.sourcegitcommit: dc7a0c10390de67b56a83d2824224bed24125db0
-ms.openlocfilehash: 702be191610ce05e91d081fed9c70a135c72c971
-ms.contentlocale: it-it
-ms.lasthandoff: 07/17/2017
-
+ms.contentlocale: it-IT
+ms.lasthandoff: 01/12/2018
 ---
 # <a name="walkthrough-creating-a-multiple-computer-build-environment"></a>Procedura dettagliata: Creazione di un ambiente di compilazione con più computer
 
@@ -44,7 +29,6 @@ Per creare un ambiente di compilazione all'interno dell'organizzazione, è possi
 Questo documento non conferisce il diritto di ridistribuire il software esternamente o di fornire ambienti di compilazione a terze parti.  
   
 > Dichiarazione di non responsabilità<br /><br /> Questo documento viene offerto di base "così com'è". Mentre sono stati testati tutti i passi descritti, non è possibile testare in modo esaustivo ogni configurazione. Il documento verrà tenuto aggiornato il più possibile man mano che nuove informazioni saranno disponibili. Le informazioni contenute nel presente documento, inclusi gli URL e altri riferimenti a siti Web, possono essere soggette a modifiche senza preavviso. Microsoft non offre alcuna garanzia, esplicita o implicita, riguardo alle informazioni fornite in questo documento. L'utente le utilizza a proprio rischio.<br /><br /> Questo documento non fornisce alcun diritto legale su qualsiasi proprietà intellettuale di un qualsiasi prodotto Microsoft. È possibile copiare e utilizzare questo documento per scopi personali o come riferimento.<br /><br /> Non vi è alcun obbligo di fornire a Microsoft suggerimenti, commenti o altri feedback ("Feedback") relativi al documento. Le informazioni immesse volontariamente possono tuttavia essere utilizzate per prodotti Microsoft e specifiche correlate o altre documentazioni ("Opzioni di Microsoft") che a loro volta possono essere utilizzate da terze parti per compilare i propri prodotti. Pertanto, se vengono forniti feedback a Microsoft su qualsiasi versione di questo documento o sulle opzioni Microsoft a cui questi si riferiscono, si accettano le condizioni seguenti: (a) Microsoft può liberamente utilizzare, riprodurre, distribuire, concedere in licenza o commercializzare i feedback in ogni opzione Microsoft; (b) si concedono inoltre a terze parti, senza spese, i diritti necessari per utilizzare o interfacciare altri prodotti con le opzioni Microsoft che incorporano i feedback; e (c) non dovranno mai essere forniti a Microsoft feedback (i) che violano qualsiasi brevetto, copyright o altre proprietà o diritti intellettuali di terze parti o (ii) altri termini di licenza che impongano di incorporare o derivare tali feedback nelle opzioni Microsoft o in altre proprietà intellettuali Microsoft, per concederne una licenza o condividerle con terze parti.
-
 
 Questa procedura è stata convalidata per i sistemi operativi indicati di seguito, eseguendo MSBuild dalla riga di comando e utilizzando Team Foundation Build.  
   
@@ -62,7 +46,7 @@ Questa procedura è stata convalidata per i sistemi operativi indicati di seguit
   
  L'ambiente multicomputer non può essere utilizzato per compilare questi tipi di applicazioni:  
   
--   Applicazioni [!INCLUDE[win8_appname_long](../debugger/includes/win8_appname_long_md.md)]. Per compilare applicazioni [!INCLUDE[win8_appname_long](../debugger/includes/win8_appname_long_md.md)], è necessario installare Visual Studio nel computer di compilazione.  
+-   App UWP. Per compilare app UWP, è necessario installare Visual Studio nel computer di compilazione.  
   
 -   Applicazioni desktop destinate a .NET Framework 4 o versioni precedenti. Per compilare questi tipi di applicazioni, è necessario installare Visual Studio o gli assembly e gli strumenti di riferimento di .NET (da Windows 7.1 SDK) nel computer di compilazione.  
   
@@ -305,8 +289,8 @@ Questa procedura è stata convalidata per i sistemi operativi indicati di seguit
     |Argomento di vcvarsall.bat|Compilatore|Architettura del computer di compilazione|Architettura dell'output di compilazione|  
     |----------------------------|--------------|---------------------------------|-------------------------------|  
     |x86 (valore predefinito)|Nativo a 32 bit|x86, x64|x86|  
-    |x86_amd64|x64 incrociato|x86, x64|x64|  
-    |amd64|x64 nativo|x64|x64|  
+    |x86_amd64|x64 incrociato|x86, x64|X64|  
+    |amd64|x64 nativo|X64|X64|  
   
      Se vcvarsall.bat viene eseguito correttamente, ovvero se non viene visualizzato alcun messaggio di errore, è possibile ignorare il passaggio successivo e passare alla sezione [Installazione degli assembly di MSBuild nella Global Assembly Cache (GAC) nel computer di compilazione](../ide/walkthrough-creating-a-multiple-computer-build-environment.md#InstallingMSBuildToGAC) di questo documento.  
   

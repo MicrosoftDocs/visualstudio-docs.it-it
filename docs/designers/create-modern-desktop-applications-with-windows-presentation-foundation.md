@@ -1,24 +1,23 @@
 ---
 title: Creare moderne applicazioni desktop con Windows Presentation Foundation | Microsoft Docs
 ms.custom: 
-ms.date: 7/17/2017
+ms.date: 07/17/2017
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- vs-ide-designers
+ms.technology: vs-ide-designers
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: 8d6c7295-ff64-4681-b01c-5056e8504569
-caps.latest.revision: 3
+caps.latest.revision: "3"
 author: gewarren
 ms.author: gewarren
 manager: ghogen
+ms.workload: multiple
+ms.openlocfilehash: 830814b2103d101f04cee036befccf01df1e81dc
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
 ms.translationtype: HT
-ms.sourcegitcommit: 6d25db4639f2c8391c1e32542701ea359f560178
-ms.openlocfilehash: c454fae0dd607c0fddfe84add6d51d683dea1b46
-ms.contentlocale: it-it
-ms.lasthandoff: 07/18/2017
-
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="create-modern-desktop-applications-with-windows-presentation-foundation"></a>Creare moderne applicazioni desktop con Windows Presentation Foundation
 

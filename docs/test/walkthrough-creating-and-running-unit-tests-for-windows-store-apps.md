@@ -1,49 +1,32 @@
 ---
-title: 'Procedura dettagliata: Creazione ed esecuzione di unit test per le applicazioni Windows Store | Microsoft Docs'
+title: 'Procedura dettagliata: creazione ed esecuzione di unit test per app UWP | Microsoft Docs'
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- vs-devops-test
+ms.technology: vs-devops-test
 ms.tgt_pltfrm: 
 ms.topic: article
 helpviewer_keywords:
 - unit tests, creating
 - unit tests
-- unit tests, Windows Store apps
+- unit tests, UWP apps
 - unit tests, running
-ms.assetid: dd3e8a6a-b366-433e-a409-b9a9b89da89a
-caps.latest.revision: 21
-ms.author: douge
-manager: douge
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 47057e9611b824c17077b9127f8d2f8b192d6eb8
-ms.openlocfilehash: 11ae1d653bc34ccb9c8fd8834d134b7212bc4f9a
-ms.contentlocale: it-it
-ms.lasthandoff: 05/13/2017
-
+ms.author: gewarren
+manager: ghogen
+ms.workload: uwp
+author: gewarren
+ms.openlocfilehash: 82ba9f9419964d9c626a81f78cf7f8ccace57320
+ms.sourcegitcommit: 7ae502c5767a34dc35e760ff02032f4902c7c02b
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 01/09/2018
 ---
-# <a name="walkthrough-creating-and-running-unit-tests-for-windows-store-apps"></a>Procedura dettagliata: creazione ed esecuzione di unit test per le applicazioni Windows Store
+# <a name="walkthrough-creating-and-running-unit-tests-for-uwp-apps"></a>Procedura dettagliata: creazione ed esecuzione di unit test per app UWP
 In Visual Studio sono inclusi il supporto per gli unit test di app di [!INCLUDE[win8_appname_long](../debugger/includes/win8_appname_long_md.md)] gestite e i modelli della libreria di unit test per Visual C#, Visual Basic e Visual C++.  
   
 > [!TIP]
->  Per altre informazioni sullo sviluppo di app di [!INCLUDE[win8_appname_long](../debugger/includes/win8_appname_long_md.md)] , vedere [Introduzione alle app di Windows Store](http://go.microsoft.com/fwlink/?LinkID=241410).  
+>  Per altre informazioni sullo sviluppo di app di [!INCLUDE[win8_appname_long](../debugger/includes/win8_appname_long_md.md)], vedere [Introduzione alle app UWP](http://go.microsoft.com/fwlink/?LinkID=241410).  
   
  In Visual Studio sono disponibili le funzionalità di testing unità seguenti:  
   
@@ -62,13 +45,13 @@ In Visual Studio sono inclusi il supporto per gli unit test di app di [!INCLUDE[
   
 ##  <a name="CreateAndRunUnitTestWin8Tailored_Create"></a> Creare progetti di unit test  
   
-#### <a name="to-create-a-unit-test-project-for-a-windows-store-app"></a>Per creare un progetto di unit test per un'app di Windows Store  
+#### <a name="to-create-a-unit-test-project-for-a-uwp-app"></a>Per creare un progetto di unit test per un'app UWP  
   
 1.  Scegliere **Nuovo progetto** dal menu **File**.  
   
      Verrà visualizzata la finestra di dialogo Nuovo progetto.  
   
-2.  In Modelli, scegliere il linguaggio di programmazione con cui si desidera creare gli unit test, quindi scegliere la libreria di unit test per [!INCLUDE[win8_appname_long](../debugger/includes/win8_appname_long_md.md)] associata. Ad esempio, scegliere **Visual C#** , quindi scegliere **Windows Store**e infine selezionare **Libreria unit test (applicazioni Windows Store)**.  
+2.  In Modelli, scegliere il linguaggio di programmazione con cui si desidera creare gli unit test, quindi scegliere la libreria di unit test per [!INCLUDE[win8_appname_long](../debugger/includes/win8_appname_long_md.md)] associata. Ad esempio, scegliere **Visual C#**, **Windows Universal** e quindi **Libreria unit test (Universal Windows)**.  
   
     > [!NOTE]
     >  In Visual Studio sono inclusi i modelli della libreria di unit test per Visual C#, Visual Basic e Visual C++.  
@@ -90,7 +73,7 @@ In Visual Studio sono inclusi il supporto per gli unit test di app di [!INCLUDE[
 ##  <a name="CreateAndRunUnitTestWin8Tailored_Manifest"></a> Modificare il manifesto per il progetto di unit test  
  Può essere necessario modificare il manifesto per il progetto di unit test per fornire le funzionalità necessarie per eseguire l'app.  
   
-#### <a name="to-edit-the-unit-test-projects-windows-store-application-manifest-file"></a>Per modificare il file manifesto dell'applicazione di Windows Store del progetto di unit test  
+#### <a name="to-edit-the-unit-test-projects-uwp-application-manifest-file"></a>Per modificare il file manifesto dell'applicazione UWP del progetto di unit test  
   
 1.  In Esplora soluzioni, nel nuovo progetto di unit test per [!INCLUDE[win8_appname_long](../debugger/includes/win8_appname_long_md.md)] , fare clic con il pulsante destro del mouse sul file Package.appxmanifest e scegliere **Apri**.  
   
@@ -109,7 +92,7 @@ In Visual Studio sono inclusi il supporto per gli unit test di app di [!INCLUDE[
   
 ##  <a name="CreateAndRunUnitTestWin8Tailored_Code"></a> Scrivere il codice dello unit test  
   
-#### <a name="to-code-the-unit-test-for-a-windows-store-app"></a>Per scrivere il codice per lo unit test di un'app di Windows Store.  
+#### <a name="to-code-the-unit-test-for-a-uwp-app"></a>Per scrivere il codice per lo unit test di un'app UWP  
   
 1.  Nell'Editor di codice modificare lo unit test e aggiungere le asserzioni e la logica richieste per il test.  
   
@@ -147,7 +130,7 @@ In Visual Studio sono inclusi il supporto per gli unit test di app di [!INCLUDE[
     >   
     >  Inoltre, è possibile scegliere di **eseguire il debug dei test selezionati**, di **aprire il test**e di usare l'opzione **Proprietà** .  
     >   
-    >  ![Esplora unit test &#45; menu di scelta rapida unit test](~/test/media/unit_test_win8_unittestexplorer_contextmenu.png "Unit_Test_Win8_UnitTestExplorer_ContextMenu")  
+    >  ![Esplora unit test &#45; menu di scelta rapida unit test](../test/media/unit_test_win8_unittestexplorer_contextmenu.png "Unit_Test_Win8_UnitTestExplorer_ContextMenu")  
   
      Lo unit test viene eseguito. Al termine, in Esplora test viene visualizzato lo stato del test, il tempo trascorso e viene fornito un collegamento all'origine.  
   
@@ -156,7 +139,7 @@ In Visual Studio sono inclusi il supporto per gli unit test di app di [!INCLUDE[
 ## <a name="external-resources"></a>Risorse esterne  
   
 ### <a name="videos"></a>Video  
- [Channel 9: Unit testing your Windows Store apps built using XAML (Testing unità delle app di Windows Store scritte in XAML)](http://go.microsoft.com/fwlink/?LinkId=226285)  
+ [Channel 9: Unit testing your UWP apps built using XAML (Unit test delle app UWP compilate in XAML)](http://go.microsoft.com/fwlink/?LinkId=226285)  
   
 ### <a name="forums"></a>Forum  
  [Visual Studio Unit Testing (Testing unità con Visual Studio)](http://go.microsoft.com/fwlink/?LinkId=224477)  
@@ -165,6 +148,5 @@ In Visual Studio sono inclusi il supporto per gli unit test di app di [!INCLUDE[
  [MSDN Library - Creazione ed esecuzione di unit test per il codice esistente (Visual Studio 2010)](http://go.microsoft.com/fwlink/?LinkID=223683)  
   
 ## <a name="see-also"></a>Vedere anche  
- [Test delle applicazioni Store con Visual Studio](../test/testing-store-apps-with-visual-studio.md)   
- [Eseguire la compilazione e il test di un'applicazione Windows Store mediante Team Foundation Build](http://msdn.microsoft.com/Library/d0ca17bb-deae-4f3d-a18d-1a99bebceaa9)
-
+ [Test delle app UWP con Visual Studio](../test/testing-store-apps-with-visual-studio.md)   
+ [Eseguire la compilazione e il test di un'app UWP tramite Team Foundation Build](http://msdn.microsoft.com/Library/d0ca17bb-deae-4f3d-a18d-1a99bebceaa9)

@@ -1,16 +1,11 @@
 ---
-title: Create lookup tables in WPF applications | Microsoft Docs
+title: Creare tabelle di ricerca nelle applicazioni WPF | Documenti Microsoft
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- aspx
 helpviewer_keywords:
 - data [WPF], displaying
 - WPF, data binding in Visual Studio
@@ -20,66 +15,52 @@ helpviewer_keywords:
 - WPF Designer, data binding
 - data binding, WPF
 ms.assetid: 56a1fbff-c7e8-4187-a1c1-ffd17024bc1b
-caps.latest.revision: 16
-author: mikeblome
-ms.author: mblome
+caps.latest.revision: "16"
+author: gewarren
+ms.author: gewarren
 manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: HT
-ms.sourcegitcommit: 9e6c28d42bec272c6fd6107b4baf0109ff29197e
-ms.openlocfilehash: 35c99d7b903674af2e4d8b6f6e8c770d440d95c8
-ms.contentlocale: it-it
-ms.lasthandoff: 08/22/2017
-
+ms.technology: vs-data-tools
+ms.workload: data-storage
+ms.openlocfilehash: 4b403d3bbe2e42ee74af7a2f7babe8b2700dd0d4
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="create-lookup-tables-in-wpf-applications"></a>Create lookup tables in WPF applications
-The term *lookup table* (sometimes called a *lookup binding*) describes a control that displays information from one data table based on the value of a foreign-key field in another table. You can create a lookup table by dragging the main node of a parent table or object in the **Data Sources** window onto a control that is already bound to a column or property in a related child table.  
+# <a name="create-lookup-tables-in-wpf-applications"></a>Creare tabelle di ricerca nelle applicazioni WPF
+Il termine *tabella di ricerca* (detto anche un *associazione ricerca*) descrive il controllo che visualizza informazioni da una tabella dati in base al valore di un campo di chiave esterna in un'altra tabella. È possibile creare una tabella di ricerca trascinando il nodo principale di una tabella padre o oggetto di **origini dati** finestra in un controllo che è già associato a una colonna o proprietà in una tabella figlio correlata.  
   
- For example, consider a table of `Orders` in a sales database. Each record in the `Orders` table includes a `CustomerID` that indicates which customer placed the order. The `CustomerID` is a foreign key that points to a customer record in the `Customers` table. When you display a list of orders from the `Orders` table, you may want to display the actual customer name instead of the `CustomerID`. Because the customer name is in the `Customers` table, you need to create a lookup table to display the customer name. The lookup table uses the `CustomerID` value in the `Orders` record to navigate the relationship, and return the customer name.  
+Ad esempio, si consideri una tabella `Orders` in un database sales. Ogni record di `Orders` tabella include un `CustomerID` che indica il cliente che ha effettuato l'ordine. Il `CustomerID` è una chiave esterna che punta a un record cliente di `Customers` tabella. Quando si visualizza un elenco di ordini dal `Orders` tabella, si può essere utile visualizzare il nome effettivo del cliente anziché il `CustomerID`. Poiché il nome del cliente nel `Customers` tabella, è necessario creare una tabella di ricerca per visualizzare il nome del cliente. La tabella di ricerca utilizza il `CustomerID` valore il `Orders` registrare per esplorare la relazione e restituire il nome del cliente.  
   
-## <a name="to-create-a-lookup-table"></a>To create a lookup table  
+## <a name="to-create-a-lookup-table"></a>Per creare una tabella di ricerca  
   
-1.  Add one of the following types of data sources with related data to your project:  
+1.  Aggiungere uno dei seguenti tipi di origini dati con i dati correlati al progetto:  
   
-    -   Dataset or Entity Data Model. 
+    -   Set di dati o Entity Data Model. 
   
-    -   WCF Data Service, WCF service or Web service. For more information, see [How to: Connect to Data in a Service](../data-tools/how-to-connect-to-data-in-a-service.md).  
+    -   WCF Data Service, servizio WCF o un servizio Web. Per ulteriori informazioni, vedere [procedura: connettersi ai dati in un servizio](../data-tools/how-to-connect-to-data-in-a-service.md).  
   
-    -   Objects. For more information, see [Bind to objects in Visual Studio](bind-objects-in-visual-studio.md).  
-  
-    > [!NOTE]
-    >  Before you can create a lookup table, two related tables or objects must exist as a data source for the project.  
-  
-2.  Open the **WPF Designer**, and make sure that the designer contains a container that is a valid drop target for items in the **Data Sources** window.  
-  
-     For more information about valid drop targets, see [Bind WPF controls to data in Visual Studio](../data-tools/bind-wpf-controls-to-data-in-visual-studio.md).  
-  
-3.  On the **Data** menu, click **Show Data Sources** to open the **Data Sources** window.  
-  
-4.  Expand the nodes in the **Data Sources** window, until you can see the parent table or object and the related child table or object.  
+    -   Oggetti. Per ulteriori informazioni, vedere [associare agli oggetti in Visual Studio](bind-objects-in-visual-studio.md).  
   
     > [!NOTE]
-    >  The related child table or object is the node that appears as an expandable child node under the parent table or object.  
+    >  Prima di creare una tabella di ricerca, come un'origine dati per il progetto devono esistere due tabelle o oggetti correlati.  
   
-5.  Click the drop-down menu for the child node, and select **Details**.  
+2.  Aprire il **WPF Designer**e assicurarsi che la finestra di progettazione contiene un contenitore che è una destinazione di rilascio validi per gli elementi di **origini dati** finestra.  
   
-6.  Expand the child node.  
+     Per ulteriori informazioni sulle destinazioni di rilascio validi, vedere [WPF di associare i controlli a dati in Visual Studio](../data-tools/bind-wpf-controls-to-data-in-visual-studio.md).  
   
-7.  Under the child node, click the drop-down menu for the item that relates the child and parent data. (In the preceding example, this is the **CustomerID** node.) Select one of the following types of controls that support lookup binding:  
+3.  Nel **dati** menu, fare clic su **Mostra origini dati** per aprire la **origini dati** finestra.  
+  
+4.  Espandere i nodi di **origini dati** finestra, fino a quando non è possibile visualizzare la tabella padre o l'oggetto e la tabella figlio correlata o l'oggetto.  
+  
+    > [!NOTE]
+    >  La tabella figlio correlata o l'oggetto è il nodo che viene visualizzato come nodo figlio espandibile sotto la tabella padre o l'oggetto.  
+  
+5.  Fare clic sul menu a discesa per il nodo figlio e selezionare **dettagli**.  
+  
+6.  Espandere il nodo figlio.  
+  
+7.  Sotto il nodo figlio, fare clic sul menu di riepilogo a discesa per l'elemento che correla i dati padre e figlio. (Nell'esempio precedente, si tratta di **CustomerID** nodo.) Selezionare uno dei seguenti tipi di controlli che supportano l'associazione di ricerca:  
   
     -   **ComboBox**  
   
@@ -88,30 +69,29 @@ The term *lookup table* (sometimes called a *lookup binding*) describes a contro
     -   **ListView**  
   
         > [!NOTE]
-        >  If the **ListBox** or **ListView** control does not appear in the list, you can add these controls to the list. For information, see [Set the control to be created when dragging from the Data Sources window](../data-tools/set-the-control-to-be-created-when-dragging-from-the-data-sources-window.md).  
+        >  Se il **ListBox** o **ListView** controllo non viene visualizzato nell'elenco, è possibile aggiungere questi controlli all'elenco. Per informazioni, vedere [impostare il controllo da creare durante il trascinamento dalla finestra Origini dati](../data-tools/set-the-control-to-be-created-when-dragging-from-the-data-sources-window.md).  
   
-    -   Any custom control that derives from <xref:System.Windows.Controls.Primitives.Selector>.  
+    -   Qualsiasi controllo personalizzato deriva da <xref:System.Windows.Controls.Primitives.Selector>.  
   
         > [!NOTE]
-        >  For information about how to add custom controls to the list of controls you can select for items in the **Data Sources** window, see [Add custom controls to the Data Sources window](../data-tools/add-custom-controls-to-the-data-sources-window.md).  
+        >  Per informazioni su come aggiungere i controlli personalizzati per l'elenco dei controlli è possono selezionare per gli elementi di **origini dati** finestra, vedere [aggiungere controlli personalizzati alla finestra Origini dati](../data-tools/add-custom-controls-to-the-data-sources-window.md).  
   
-8.  Drag the child node from the **Data Sources** window onto a container in the WPF designer. (In the preceding example, the child node is the **Orders** node.)  
+8.  Trascinare il nodo figlio dal **origini dati** finestra su un contenitore nella finestra di progettazione WPF. (Nell'esempio precedente, il nodo figlio è il **ordini** nodo.)  
   
-     Visual Studio generates XAML that creates new data-bound controls for each of the items that you drag. The XAML also adds a new <xref:System.Windows.Data.CollectionViewSource> for the child table or object to the resources of the drop target. For some data sources, Visual Studio also generates code to load data into the table or object. For more information, see [Bind WPF controls to data in Visual Studio](../data-tools/bind-wpf-controls-to-data-in-visual-studio.md).  
+     Visual Studio genera XAML che crea i nuovi controlli associati a dati per ogni elemento che si trascina. Il codice XAML aggiunge inoltre un nuovo <xref:System.Windows.Data.CollectionViewSource> per l'oggetto per le risorse dell'obiettivo di rilascio o una tabella figlio. Per alcune origini dati, Visual Studio genera inoltre il codice per caricare dati nella tabella o dell'oggetto. Per ulteriori informazioni, vedere [WPF di associare i controlli a dati in Visual Studio](../data-tools/bind-wpf-controls-to-data-in-visual-studio.md).  
   
-9. Drag the parent node from the **Data Sources** window onto the lookup binding control that you created earlier. (In the preceding example, the parent node is the **Customers** node).  
+9. Trascinare il nodo padre di **origini dati** finestra al controllo di ricerca di associazione creato in precedenza. (Nell'esempio precedente, il nodo padre è il **clienti** nodo).  
   
-     Visual Studio sets some properties on the control to configure the lookup binding. The following table lists the properties that Visual Studio modifies. If necessary, you can change these properties in the XAML or in the **Properties** window.  
+     Visual Studio imposta alcune proprietà sul controllo per configurare l'associazione di ricerca. Nella tabella seguente sono elencate le proprietà modificate da Visual Studio. Se necessario, è possibile modificare queste proprietà in XAML o nel **proprietà** finestra.  
   
-    |Property|Explanation of setting|  
+    |Proprietà|Spiegazione dell'impostazione|  
     |--------------|----------------------------|  
-    |<xref:System.Windows.Controls.ItemsControl.ItemsSource%2A>|This property specifies the collection or binding that is used to get the data that is displayed in the control. Visual Studio sets this property to the <xref:System.Windows.Data.CollectionViewSource> for the parent data you dragged to the control.|  
-    |<xref:System.Windows.Controls.ItemsControl.DisplayMemberPath%2A>|This property specifies the path of the data item that is displayed in the control. Visual Studio sets this property to the first column or property in the parent data, after the primary key, that has a string data type.<br /><br /> If you want to display a different column or property in the parent data, change this property to the path of a different property.|  
-    |<xref:System.Windows.Controls.Primitives.Selector.SelectedValue%2A>|Visual Studio binds this property to the column or property of the child data that you dragged to the designer. This is the foreign key to the parent data.|  
-    |<xref:System.Windows.Controls.Primitives.Selector.SelectedValuePath%2A>|Visual Studio sets this property to the path of the column or property of the child data that is the foreign key to the parent data.|  
+    |<xref:System.Windows.Controls.ItemsControl.ItemsSource%2A>|Questa proprietà specifica la raccolta o associazione utilizzato per ottenere i dati che viene visualizzati nel controllo. Visual Studio imposta questa proprietà il <xref:System.Windows.Data.CollectionViewSource> per i dati padre è stato trascinato sul controllo.|  
+    |<xref:System.Windows.Controls.ItemsControl.DisplayMemberPath%2A>|Questa proprietà specifica il percorso dell'elemento di dati che viene visualizzato nel controllo. Visual Studio imposta questa proprietà per la prima colonna o proprietà dei dati padre, dopo la chiave primaria, con un tipo di dati stringa.<br /><br /> Se si desidera visualizzare una colonna diversa o una proprietà dei dati padre, è possibile modificare questa proprietà per il percorso di una proprietà diversa.|  
+    |<xref:System.Windows.Controls.Primitives.Selector.SelectedValue%2A>|Visual Studio la proprietà viene associata la colonna o proprietà dei dati che è stato trascinato nella finestra di progettazione figlio. Si tratta della chiave esterna per i dati padre.|  
+    |<xref:System.Windows.Controls.Primitives.Selector.SelectedValuePath%2A>|Visual Studio imposta questa proprietà per il percorso della colonna o proprietà dei dati figlio che rappresenta la chiave esterna per i dati padre.|  
   
-## <a name="see-also"></a>See Also  
- [Bind WPF controls to data in Visual Studio](../data-tools/bind-wpf-controls-to-data-in-visual-studio.md)   
- [Bind WPF controls to data in Visual Studio](../data-tools/bind-wpf-controls-to-data-in-visual-studio.md)   
- [Display related data in WPF applications](../data-tools/display-related-data-in-wpf-applications.md)   
- [Walkthrough: Displaying Related Data in a WPF Application](../data-tools/display-related-data-in-wpf-applications.md)
+## <a name="see-also"></a>Vedere anche
+[Associare controlli WPF ai dati in Visual Studio](../data-tools/bind-wpf-controls-to-data-in-visual-studio.md)   
+[Visualizzare i dati correlati nelle applicazioni WPF](../data-tools/display-related-data-in-wpf-applications.md)   
+[Procedura dettagliata: visualizzazione dei dati correlati in un'applicazione WPF](../data-tools/display-related-data-in-wpf-applications.md)

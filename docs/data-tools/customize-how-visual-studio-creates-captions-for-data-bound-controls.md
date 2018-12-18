@@ -1,144 +1,113 @@
 ---
-title: Customize how Visual Studio creates captions for data-bound controls | Microsoft Docs
+title: "Personalizzare la modalità Visual Studio crea le didascalie per controlli associati a dati | Documenti Microsoft"
 ms.custom: 
-ms.date: 11/04/2016
+ms.date: 11/03/2017
 ms.reviewer: 
 ms.suite: 
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- VB
-- CSharp
-- C++
-- aspx
 helpviewer_keywords:
 - Label captions, Data Sources window
 - smart captions
 - captions, data-bound
 - Data Sources Window, label captions
 ms.assetid: 6d4d15f8-4d78-42fd-af64-779ae98d62c8
-caps.latest.revision: 12
-author: mikeblome
-ms.author: mblome
+caps.latest.revision: "12"
+author: gewarren
+ms.author: gewarren
 manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: HT
-ms.sourcegitcommit: 9e6c28d42bec272c6fd6107b4baf0109ff29197e
-ms.openlocfilehash: 0a14212b85b1fa13fb61a7691689f5eb1f8e74de
-ms.contentlocale: it-it
-ms.lasthandoff: 08/22/2017
-
+ms.technology: vs-data-tools
+ms.workload: data-storage
+ms.openlocfilehash: 60d98d6b8cefc2f7fb7829d841001f92bd9063de
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="customize-how-visual-studio-creates-captions-for-data-bound-controls"></a>Customize how Visual Studio creates captions for data-bound controls
-When you drag items from the [Data Sources Window](add-new-data-sources.md) onto the Windows Forms Designer, a special consideration comes into play: the column names in the caption labels are reformatted into a more readable string when two or more words are found to be concatenated together. You can customize the way in which these labels are created, by setting the **SmartCaptionExpression**, **SmartCaptionReplacement**, and **SmartCaptionSuffix** values in the **HKEY_CURRENT_USER\Software\Microsoft\VisualStudio\10.0\Data Designers** registry key.  
+# <a name="customize-how-visual-studio-creates-captions-for-data-bound-controls"></a>Personalizzare la modalità Visual Studio crea le didascalie per controlli associati a dati
+Quando si trascinano elementi dal [finestra Origini dati](add-new-data-sources.md) in una finestra di progettazione, tenere presente che in: i nomi di colonna nelle etichette della didascalia vengono riformattati in una stringa più leggibile quando due o più parole risultano concatenate. È possibile personalizzare il modo in cui vengono create le etichette, impostando il **SmartCaptionExpression**, **SmartCaptionReplacement**, e **SmartCaptionSuffix** i valori in il **HKEY_CURRENT_USER\Software\Microsoft\VisualStudio\15.0\Data progettisti** chiave del Registro di sistema.  
   
 > [!NOTE]
->  This registry key does not exist until you create it.  
+> Questa chiave del Registro di sistema non esiste fino a quando non viene creata.  
   
- Smart captioning is controlled by the regular expression entered into the value of the **SmartCaptionExpression** value. Adding the **Data Designers** registry key overrides the default regular expression that controls caption labels. For more information about regular expressions, see [Using Regular Expressions in Visual Studio](../ide/using-regular-expressions-in-visual-studio.md).  
+Didascalia smart è controllata dall'espressione regolare inserito il valore di **SmartCaptionExpression** valore. Aggiunta di **finestre di progettazione dati** chiave del Registro di sistema esegue l'override dell'espressione regolare predefinita che controlla le etichette della didascalia. Per ulteriori informazioni sulle espressioni regolari, vedere [utilizzando espressioni regolari in Visual Studio](../ide/using-regular-expressions-in-visual-studio.md).  
   
- The following table describes the registry values that control caption labels.  
+Nella tabella seguente vengono descritti i valori del Registro di sistema che controllano le etichette della didascalia.  
   
-|Registry item|Description|  
+|Elemento Registro di sistema|Descrizione|  
 |-------------------|-----------------|  
-|**SmartCaptionExpression**|The regular expression used to match your patterns.|  
-|**SmartCaptionReplacement**|The format to display any groups matched in the **SmartCaptionExpression**.|  
-|**SmartCaptionSuffix**|An optional string to append to the end of the caption.|  
+|**SmartCaptionExpression**|L'espressione regolare utilizzata per la corrispondenza dei modelli.|  
+|**SmartCaptionReplacement**|Il formato di visualizzazione di una corrispondenza con tutti i gruppi di **SmartCaptionExpression**.|  
+|**SmartCaptionSuffix**|Stringa facoltativa da aggiungere alla fine della didascalia.|  
   
- The following table lists the internal default settings for these registry values.  
+La tabella seguente elenca le impostazioni predefinite interne per questi valori del Registro di sistema.  
   
-|Registry item|Default value|Explanation|  
+|Elemento Registro di sistema|Valore predefinito|Descrizione|  
 |-------------------|-------------------|-----------------|  
-|**SmartCaptionExpression**|(\\\p{Ll})(\\\p{Lu})&#124;_+|Matches a lowercase character followed by an uppercase character or an underscore.|  
-|**SmartCaptionReplacement**|$1 $2|The $1 represents any characters matched in the first parentheses of the expression, and the $2 represents any characters matched in the second parentheses. The replacement is the first match, a space, and then the second match.|  
-|**SmartCaptionSuffix**|:|Represents a character appended to the returned string. For example, if the caption is `Company Name`, the suffix makes it `Company Name:`|  
+|**SmartCaptionExpression**|(\\\p{Ll}) (\\\p{Lu}) &#124; _ +|Consente di ricercare un carattere minuscolo seguito da un carattere maiuscolo o un carattere di sottolineatura.|  
+|**SmartCaptionReplacement**|$1 $2|$1 rappresenta i caratteri di una corrispondenza con le parentesi prima dell'espressione e $2 rappresenta i caratteri di cui trovare una corrispondenza nella seconda parentesi. La sostituzione è la prima corrispondenza, uno spazio e quindi la seconda corrispondenza.|  
+|**SmartCaptionSuffix**|:|Rappresenta un carattere aggiunto alla stringa restituita. Ad esempio, se la didascalia è `Company Name`, il suffisso rende`Company Name:`|  
   
 > [!CAUTION]
->  You should be very careful when doing anything in the Registry Editor. Back up the registry before editing it. If you use the Registry Editor incorrectly, you can cause serious problems that may require you to reinstall your operating system. Microsoft does not guarantee that problems that you cause by using the Registry Editor incorrectly can be resolved. Use the Registry Editor at your own risk.  
+> È necessario prestare particolare attenzione nell'eseguire alcuna operazione nell'Editor del Registro di sistema. Eseguire il backup del Registro di sistema prima di modificarlo. Se si utilizza l'Editor del Registro di sistema in modo non corretto, può causare gravi problemi che potrebbero richiedere la reinstallazione del sistema operativo. Microsoft non garantisce che sia possono risolvere i problemi derivanti dall'errato utilizzo dell'Editor del Registro di sistema. L'utilizzo dell'editor del Registro di sistema è a rischio dell'utente.  
 >   
->  The following KnowledgeBase article contains instructions for backing up, editing, and restoring the registry: [Description of the Microsoft Windows registry](http://support.microsoft.com/default.aspx?scid=kb;en-us;256986) (http://support.microsoft.com/default.aspx?scid=kb;en-us;256986)  
+>  Il seguente articolo della Knowledge Base contiene istruzioni per il backup, la modifica e il ripristino del Registro di sistema: [descrizione del Registro di sistema Microsoft Windows](http://support.microsoft.com/default.aspx?scid=kb;en-us;256986) (http://support.microsoft.com/default.aspx?scid=kb;en-us; 256986)  
   
-### <a name="to-modify-the-smart-captioning-behavior-of-the-data-sources-window"></a>To modify the smart captioning behavior of the Data Sources window  
+### <a name="to-modify-the-smart-captioning-behavior-of-the-data-sources-window"></a>Per modificare il comportamento della didascalia smart della finestra Origini dati  
   
-1.  Open a command window by clicking **Start** and then **Run**.  
+1.  Aprire una finestra di comando facendo **avviare** e quindi **eseguire**.  
   
-2.  Type `regedit` in the **Run** dialog box, and click **OK**.  
+2.  Tipo `regedit` nel **eseguire** la finestra di dialogo e fare clic su **OK**.  
   
-3.  Expand the **HKEY_CURRENT_USER** node.  
+3.  Espandere il **HKEY_CURRENT_USER**, **Software*, **Microsoft**, **VisualStudio** nodo.  
   
-4.  Expand the **Software** node.  
+7.  Fare doppio clic su di **15.0** nodo e creare un nuovo **chiave** denominato `Data Designers`.  
   
-5.  Expand the **Microsoft** node.  
+8.  Fare doppio clic su di **finestre di progettazione dati** nodo e creare tre nuovi valori di stringa:
+
+    - `SmartCaptionExpression`
+    - `SmartCaptionReplacement`
+    - `SmartCaptionSuffix`
   
-6.  Expand the **VisualStudio** node.  
+11. Fare doppio clic su di **SmartCaptionExpression** valore e selezionare **modifica**.  
   
-7.  Right-click the **10.0** node, and create a new **Key** named `Data Designers`.  
+12. Immettere l'espressione regolare che si desidera il **origini dati** finestra da usare.  
   
-8.  Right-click the **Data Designers** node, and create a new **String Value** named `SmartCaptionExpression`.  
+13. Fare doppio clic su di **SmartCaptionReplacement** valore e selezionare **modifica**.  
   
-9. Right-click the **Data Designers** node, and create a new **String Value** named `SmartCaptionReplacement`.  
+14. Immettere la sostituzione stringa formattati nel modo in cui si desidera visualizzare i modelli corrispondenti nell'espressione regolare.  
   
-10. Right-click the **Data Designers** node, and create a new **String Value** named `SmartCaptionSuffix`.  
+15. Fare doppio clic su di **SmartCaptionSuffix** valore e selezionare **modifica**.  
   
-11. Right-click the **SmartCaptionExpression** item, and select **Modify**.  
+16. Immettere i caratteri che si desidera venga visualizzato alla fine della didascalia.  
   
-12. Enter the regular expression you want the **Data Sources** window to use.  
+    La volta successiva che si trascinano elementi dal **origini dati** finestra, le etichette della didascalia vengono create utilizzando i nuovi valori del Registro di sistema forniti.  
   
-13. Right-click the **SmartCaptionReplacement** item, and select **Modify**.  
+### <a name="to-turn-off-the-smart-captioning-feature"></a>Per disattivare la funzionalità di sottotitoli codificata intelligente  
   
-14. Enter the replacement string formatted the way you want to display the patterns matched in your regular expression.  
+1.  Aprire una finestra di comando facendo **avviare** e quindi **eseguire**.  
   
-15. Right-click the **SmartCaptionSuffix** item, and select **Modify**.  
+2.  Tipo `regedit` nel **eseguire** la finestra di dialogo e fare clic su **OK**.  
   
-16. Enter any characters you want to appear at the end of the caption.  
+3.  Espandere il **HKEY_CURRENT_USER**, **Software**, **Microsoft**, **VisualStudio** nodo.  
   
-     The next time you drag items from the **Data Sources** window, the caption labels are created using the new registry values provided.  
+7.  Fare doppio clic su di **15.0** nodo e creare un nuovo **chiave** denominato `Data Designers`.  
   
-### <a name="to-turn-off-the-smart-captioning-feature"></a>To turn off the smart captioning feature  
+8.  Fare doppio clic su di **finestre di progettazione dati** nodo e creare tre nuovi valori di stringa:
+
+    - `SmartCaptionExpression`
+    - `SmartCaptionReplacement`
+    - `SmartCaptionSuffix`
   
-1.  Open a command window by clicking **Start** and then **Run**.  
+11. Fare doppio clic su di **SmartCaptionExpression** elemento e selezionare **modifica**.  
   
-2.  Type `regedit` in the **Run** dialog box, and click **OK**.  
+12. Immettere `(.*)` per il valore. Ciò corrisponderà alla stringa intera.  
   
-3.  Expand the **HKEY_CURRENT_USER** node.  
+13. Fare doppio clic su di **SmartCaptionReplacement** elemento e selezionare **modifica**.  
   
-4.  Expand the **Software** node.  
+14. Immettere `$1` per il valore. Ciò consente di sostituire la stringa con il valore corrispondente, ovvero l'intera stringa, in modo che rimarrà invariata.  
   
-5.  Expand the **Microsoft** node.  
+    La volta successiva che si trascinano elementi dal **origini dati** finestra, le etichette della didascalia vengono create con didascalie non modificate.  
   
-6.  Expand the **VisualStudio** node.  
-  
-7.  Right-click the **10.0** node, and create a new **Key** named `Data Designers`.  
-  
-8.  Right-click the **Data Designers** node, and create a new **String Value** named `SmartCaptionExpression`.  
-  
-9. Right-click the **Data Designers** node, and create a new **String Value** named `SmartCaptionReplacement`.  
-  
-10. Right-click the **Data Designers** node, and create a new **String Value** named `SmartCaptionSuffix`.  
-  
-11. Right-click the **SmartCaptionExpression** item, and select **Modify**.  
-  
-12. Enter `(.*)` for the value. This will match the entire string.  
-  
-13. Right-click the **SmartCaptionReplacement** item, and select **Modify**.  
-  
-14. Enter `$1` for the value. This replaces the string with the matched value, which is the entire string so that it will remain unchanged.  
-  
-     The next time you drag items from the **Data Sources** window, the caption labels are created with unmodified captions.  
-  
-## <a name="see-also"></a>See Also  
- [Bind controls to data in Visual Studio](../data-tools/bind-controls-to-data-in-visual-studio.md)
+## <a name="see-also"></a>Vedere anche  
+[Associare controlli ai dati in Visual Studio](../data-tools/bind-controls-to-data-in-visual-studio.md)

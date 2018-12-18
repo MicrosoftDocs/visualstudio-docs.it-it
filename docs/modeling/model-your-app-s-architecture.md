@@ -1,42 +1,28 @@
 ---
-title: L&quot;architettura dell&quot;applicazione del modello | Documenti di Microsoft
+title: Modello dell'applicazione &#39; architettura s | Documenti Microsoft
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.tgt_pltfrm: 
 ms.topic: article
 helpviewer_keywords:
 - UML, modeling architecture
-ms.assetid: aedce746-9df5-49e1-9662-67eb1b83d313
-caps.latest.revision: 19
-author: alexhomer1
-ms.author: ahomer
-manager: douge
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: 08aabdfe0e268f93ef7723076375b7f65b15ccf3
-ms.openlocfilehash: 76db1dddef5b5a2ab7eca8f7d097d164896fe3a2
-ms.lasthandoff: 02/22/2017
-
+author: gewarren
+ms.author: gewarren
+manager: ghogen
+ms.workload:
+- multiple
+ms.technology: vs-ide-modeling
+ms.openlocfilehash: 3d77abff4595502ab27f56be10cb973361eef413
+ms.sourcegitcommit: 205d15f4558315e585c67f33d5335d5b41d0fcea
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 02/09/2018
 ---
-# <a name="model-your-app39s-architecture"></a>L'architettura dell'applicazione del modello
-Per garantire che il sistema software o l'applicazione soddisfi gli utenti è necessario, è possibile creare modelli in Visual Studio come parte della descrizione della struttura complessiva e il comportamento dell'applicazione o sistema software. Usando gli schemi è anche possibile descrivere modelli usati durante la progettazione. Questi modelli consentono di comprendere l'architettura esistente, discutere le modifiche e comunicare chiaramente le intenzioni.  
+# <a name="model-your-app39s-architecture"></a>Modello dell'applicazione &#39; architettura s
+Per garantire che il sistema software o l'applicazione soddisfa degli utenti è necessario, è possibile creare modelli in Visual Studio come parte della descrizione della struttura complessiva e il comportamento di sistema software o dell'applicazione. Usando gli schemi è anche possibile descrivere modelli usati durante la progettazione. Questi modelli consentono di comprendere l'architettura esistente, discutere le modifiche e comunicare chiaramente le intenzioni.  
   
- Per informazioni sulle versioni di Visual Studio che supportano questa funzionalità, vedere [supporto della versione per l'architettura e strumenti di modellazione](../modeling/what-s-new-for-design-in-visual-studio.md#VersionSupport).  
+ Per individuare le versioni di Visual Studio che supportano questa funzionalità, vedere [Version support for architecture and modeling tools](../modeling/what-s-new-for-design-in-visual-studio.md#VersionSupport).  
   
  Lo scopo di un modello è ridurre l'ambiguità che si verifica nelle descrizioni in linguaggio naturale e consentono all'utente e ai colleghi di visualizzare la progettazione e discutere le progettazioni alternative. Un modello deve essere usato insieme ad altri documenti o discussioni. Un modello di per sé non rappresenta una specifica completa dell'architettura.  
   
@@ -49,7 +35,7 @@ Per garantire che il sistema software o l'applicazione soddisfi gli utenti è ne
   
 -   [Schemi progettuali](#Patterns) e le convenzioni utilizzate in tutte le progettazioni dei componenti. Un modello descrive un particolare approccio per realizzare un obiettivo di programmazione. Usando gli stessi schemi in tutta una progettazione, il team può ridurre il costo delle modifiche e dello sviluppo di nuovo software.  
   
-##  <a name="a-namestructurea-high-level-design"></a><a name="Structure"></a>Progettazione di alto livello  
+##  <a name="Structure"></a>Progettazione di alto livello  
  Un progetto di alto livello descrive i componenti principali del sistema e il modo in cui interagiscono tra loro per raggiungere gli obiettivi della progettazione. Le attività nell'elenco seguente sono coinvolte nello sviluppo della progettazione di alto livello, anche se non necessariamente in una determinata sequenza.  
   
  Se si sta aggiornando il codice esistente, è possibile iniziare descrivendo i componenti principali. Verificare di comprendere le modifiche ai requisiti dell'utente e quindi aggiungere o modificare le interazioni tra i componenti. Se si sta sviluppando un nuovo sistema, iniziare individuando le funzionalità principali di esigenze degli utenti. È possibile esplorare le sequenze di interazioni per i casi di utilizzo principali e quindi consolidare le sequenze in una progettazione del componente.  
@@ -60,10 +46,10 @@ Per garantire che il sistema software o l'applicazione soddisfi gli utenti è ne
   
 -   [I modelli di architettura](#BigDecisions). Le scelte effettuate sulle tecnologie principali e gli elementi architettonici del sistema.  
   
--   Modello di dati di componenti e interfacce. È possibile creare diagrammi classi per descrivere le informazioni passate tra componenti e archiviate all'interno dei componenti.  
+-   Modello di dati dei componenti e le interfacce. È possibile creare diagrammi classi per descrivere le informazioni passate tra componenti e archiviate all'interno dei componenti.  
   
-##  <a name="a-namerequirementsa-understanding-the-requirements"></a><a name="Requirements"></a>Informazioni sui requisiti  
- La progettazione di alto livello di un'applicazione completa viene sviluppata più efficacemente con un modello requisiti o altra descrizione delle esigenze degli utenti. Per ulteriori informazioni sui modelli di requisiti, vedere [modello requisiti utente](../modeling/model-user-requirements.md).  
+##  <a name="Requirements"></a>Informazioni sui requisiti  
+ La progettazione di alto livello di un'applicazione completa viene sviluppata più efficacemente con un modello requisiti o altra descrizione delle esigenze degli utenti. Per ulteriori informazioni sui modelli di requisiti, vedere [modellare i requisiti utente](../modeling/model-user-requirements.md).  
   
  Se il sistema che si sta sviluppando è un componente in un sistema più grande, parte o tutti i requisiti potrebbero essere incorporati nelle interfacce di programmazione.  
   
@@ -81,7 +67,7 @@ Per garantire che il sistema software o l'applicazione soddisfi gli utenti è ne
   
  La quantità di dettagli che devono essere inseriti in un modello di requisiti o architettonico dipende dalla scala del progetto e dalle dimensioni e dalla distribuzione del team. Un piccolo team su un progetto breve non po' andare oltre il disegno di un diagramma classi dei concetti aziendali e alcuni schemi progettuali; un progetto di grandi dimensioni distribuito su più aree ha bisogno di più dettagli.  
   
-##  <a name="a-namebigdecisionsa-architectural-patterns"></a><a name="BigDecisions"></a>Modelli di architettura  
+##  <a name="BigDecisions"></a>Modelli di architettura  
  Nelle prime fasi di sviluppo è necessario scegliere le principali tecnologie e gli elementi da cui dipende la progettazione. Le aree in cui devono essere apportate queste scelte includono quanto segue:  
   
 -   Scelte di tecnologia di base, ad esempio la scelta tra un database e un file system e la scelta tra un'applicazione di rete e un client Web e così via.  
@@ -94,7 +80,7 @@ Per garantire che il sistema software o l'applicazione soddisfi gli utenti è ne
   
  Le selezioni effettuate influiscono sulla modalità di utilizzo e di interpretazione del modello architettonico. Ad esempio, in un sistema che usa un database, le associazioni in un diagramma classi potrebbero rappresentare relazioni o chiavi esterne nel database, mentre in un sistema basato su file XML, le associazioni potrebbero indicare riferimenti incrociati che usano XPath. In un sistema distribuito i messaggi in un diagramma di sequenza possono rappresentare messaggi su una connessione; in un'applicazione indipendente, possono rappresentare chiamate di funzione.  
   
-##  <a name="a-namepatternsa-design-patterns"></a><a name="Patterns"></a>Modelli di progettazione  
+##  <a name="Patterns"></a>Modelli di progettazione  
  Uno schema progettuale è una struttura sulla modalità di progettazione di un particolare aspetto del software, specialmente uno che ricorre in parti diverse del sistema. Adottando un approccio uniforme nel progetto, è possibile ridurre il costo di progettazione, garantire la coerenza nell'interfaccia utente e ridurre i costi di comprensione e modifica del codice.  
   
  Alcuni schemi progettuali generali, ad esempio Observer sono ben conosciuti e ampiamente applicabili. Sono anche disponibili modelli che possono essere applicati solo al progetto. Ad esempio, in un sistema di vendite Web, saranno disponibili diverse operazioni nel codice dove vengono apportate modifiche all'ordine del cliente. Per assicurarsi che lo stato dell'ordine venga visualizzato in modo accurato in ogni fase, tutte queste operazioni devono seguire un particolare protocollo per aggiornare il database.  
@@ -121,6 +107,6 @@ Per garantire che il sistema software o l'applicazione soddisfi gli utenti è ne
   
 ## <a name="see-also"></a>Vedere anche  
  [Visualizzare il codice](../modeling/visualize-code.md)   
- [Modello dei requisiti utente](../modeling/model-user-requirements.md)   
- [Sviluppare i test da un modello](../modeling/develop-tests-from-a-model.md)   
+ [Modellare i requisiti utente](../modeling/model-user-requirements.md)   
+ [Sviluppare test da un modello](../modeling/develop-tests-from-a-model.md)   
  [Usare modelli nel processo di sviluppo](../modeling/use-models-in-your-development-process.md)

@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- vs-ide-sdk
+ms.technology: msbuild
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
@@ -19,36 +18,23 @@ helpviewer_keywords:
 - Vbc task [MSBuild]
 - MSBuild, Vbc task
 ms.assetid: 595278b1-2782-4577-b1ba-b4b5ab5625a3
-caps.latest.revision: 19
-author: kempb
-ms.author: kempb
+caps.latest.revision: 
+author: Mikejo5000
+ms.author: mikejo
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 11a9cee75f912c5fb31cf4a031644abe9c63d744
-ms.openlocfilehash: d376d2f99ccfddb2d96797fa2db0e1ef3872f34b
-ms.contentlocale: it-it
-ms.lasthandoff: 06/03/2017
-
+ms.workload:
+- multiple
+ms.openlocfilehash: 01b38f523a3a1c97798cdd629290791ab5e480f8
+ms.sourcegitcommit: 205d15f4558315e585c67f33d5335d5b41d0fcea
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 02/09/2018
 ---
 # <a name="vbc-task"></a>Attività Vbc
 Esegue il wrapping di vbc.exe, un compilatore che genera file eseguibili con estensione exe, librerie a collegamento dinamico con estensione dll o moduli di codice con estensione netmodule. Per altre informazioni su vbc.exe, vedere [Visual Basic Command-Line Compiler](/dotnet/visual-basic/reference/command-line-compiler/index) (Compilatore della riga di comando di Visual Basic).  
   
 ## <a name="parameters"></a>Parametri  
- Nella tabella che segue vengono descritti i parametri dell'attività `Vbc`.  
+ Nella tabella che segue vengono descritti i parametri dell'attività `Vbc` .  
   
 |Parametro|Descrizione|  
 |---------------|-----------------|  

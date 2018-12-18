@@ -1,78 +1,80 @@
 ---
-title: "Stato | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: Status | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: vs-ide-debug
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: ba656fa4-ef9d-4d8c-a3b6-739c3b5d23ae
-caps.latest.revision: 7
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.workload: multiple
+ms.openlocfilehash: d1168fb27330f49a714e64478fc7ab167569dadb
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
-# Stato
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
-L'opzione **Status** di VSPerfCmd.exe visualizza informazioni sullo stato del profiler e sui processi attualmente profilati.  
+# <a name="status"></a>Status
+L'opzione **Status** di VSPerfCmd.exe visualizza informazioni sullo stato del profiler e di eventuali processi in corso di profilatura.  
   
- **Status** deve essere l'unica opzione specificata nella riga di comando.  È necessario inizializzare il profiler con l'opzione **Start** di VSPerfCmd.exe prima di visualizzare qualsiasi stato.  
+ L'opzione **Status** deve essere l'unica opzione specificata nella riga di comando. Il profiler deve essere inizializzato con l'opzione **Start** di VSPerfCmd.exe prima di poter visualizzare qualsiasi stato.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
 VSPerfCmd.exe /Status  
 ```  
   
-#### Parametri  
- Nessuno  
+#### <a name="parameters"></a>Parametri  
+ nessuno  
   
-## Note  
- L'opzione **Status** visualizza le informazioni di stato seguenti per il profiler.  
+## <a name="remarks"></a>Note  
+ L'opzione **Status** consente di visualizzare le informazioni sullo stato seguenti per il profiler.  
   
- **Output File Name**  
+ **Nome file di output**  
  Percorso e nome del file di dati del profiler corrente.  
   
- **Collection Mode**  
+ **Modalità di raccolta**  
  SAMPLE o TRACE  
   
- **Maximum Processes**  
- Numero massimo di processi di cui è possibile eseguire contemporaneamente il profilo e numero di processi attualmente attivi.  
+ **Numero massimo di processi**  
+ Numero massimo di processi di cui è possibile eseguire la profilatura contemporaneamente e il numero di processi attivi.  
   
- **Maximum Threads**  
- Numero massimo di thread di cui è possibile eseguire contemporaneamente il profilo.  
+ **Numero massimo di thread**  
+ Numero massimo di thead di cui è possibile eseguire la profilatura contemporaneamente.  
   
- **Number of Buffers**  
- Numero di buffer di memoria dedicato alla scrittura di dati di profilo.  
+ **Numero di buffer**  
+ Numero di buffer di memoria dedicati alla scrittura dei dati di profilatura.  
   
- **Size of Buffers**  
- Dimensione del buffer di memoria in byte.  
+ **Dimensione dei buffer**  
+ Dimensione di un buffer di memoria in byte.  
   
- L'opzione **Status** visualizza le seguenti informazioni di stato per ciascun processo attualmente profilato.  
+ L'opzione **Status** visualizza le informazioni sullo stato seguenti per ogni processo in corso di profilatura.  
   
- **Process**  
+ **Processo**  
  Nome del processo profilato.  
   
- **Process ID**  
+ **ID processo**  
  Identificatore di sistema del processo.  
   
- **Num Threads**  
- Numero di thread attualmente in esecuzione.  
+ **Num. thread**  
+ Numero di thread in esecuzione.  
   
- **Start\/Stop Count**  
- Conteggio del profiler interno principale per il controllo della raccolta dei dati per questo processo.  Il conteggio deve essere uguale a uno per la raccolta di dati.  Il conteggio Start\/Stop può essere modificato dalle API del profiler e dalle opzioni di VSPerfCmd **GlobalOn**, **GlobalOff**, **ProcessOn**, **ProcessOff**, **ThreadOn**e **ThreadOff**.  
+ **Conteggio Start/Stop**  
+ Conteggio del profiler interno principale per controllare la raccolta dei dati per questo processo. Il conteggio deve essere uguale a uno per raccogliere i dati. Il conteggio Start/Stop può essere modificato dalle API del profiler e dalle opzioni di VSPerfCmd **GlobalOn**, **GlobalOff**, **ProcessOn**, **ProcessOff**, **ThreadOn** e **ThreadOff**.  
   
- **Suspend\/Resume Count**  
- Conteggio del profiler interno secondario per il controllo della raccolta dei dati per questo processo.  Il conteggio deve essere minore di o uguale a zero per la raccolta dei dati.  Il conteggio **Suspend\/Resume** può essere modificato solo dalle API del profiler.  
+ **Conteggio Suspend/Resume**  
+ Conteggio del profiler interno secondario per controllare la raccolta dei dati per questo processo. Il conteggio deve essere minore o uguale a zero per raccogliere i dati. Il conteggio **Suspend/Resume** può essere modificato solo dalle API del profiler.  
   
- **Users with access rights to monitor**  
- Elenca i nomi degli utenti che hanno accesso al profiler.  È possibile concedere l'accesso ad altri utenti tramite l'opzione **Admin** di VSPerfCmd.exe  
+ **Utenti con diritti di accesso al monitor**  
+ Elenca i nomi degli utenti che hanno accesso al profiler. È possibile concedere l'accesso ad altri utenti tramite l'opzione **Admin** di VSPerfCmd.exe.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [VSPerfCmd](../profiling/vsperfcmd.md)   
  [Profilatura di applicazioni autonome](../profiling/command-line-profiling-of-stand-alone-applications.md)   
  [Profilatura di applicazioni Web ASP.NET](../profiling/command-line-profiling-of-aspnet-web-applications.md)   

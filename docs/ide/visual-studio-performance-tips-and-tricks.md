@@ -10,31 +10,17 @@ ms.topic: article
 helpviewer_keywords:
 - debugger
 ms.assetid: 2fbcb59e-e981-4b40-8b7a-c1140d31ec4b
-caps.latest.revision: 1
+caps.latest.revision: 
 author: gewarren
 ms.author: gewarren
 manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
+ms.workload:
+- multiple
+ms.openlocfilehash: 3a48166490cb48870e9e6341b0cba6dfc9f668fc
+ms.sourcegitcommit: 205d15f4558315e585c67f33d5335d5b41d0fcea
 ms.translationtype: HT
-ms.sourcegitcommit: 4306111cd49a5299bfa5d4e5e22b212bc7799fe2
-ms.openlocfilehash: fbaa543564506a99d3ed6833ec4d1f692fae43f7
-ms.contentlocale: it-it
-ms.lasthandoff: 09/06/2017
-
+ms.contentlocale: it-IT
+ms.lasthandoff: 02/09/2018
 ---
 # <a name="visual-studio-performance-tips-and-tricks"></a>Suggerimenti sulle prestazioni di Visual Studio
 
@@ -49,19 +35,11 @@ I suggerimenti per le prestazioni di Visual Studio si riferiscono a situazioni d
 
     Se si aggiorna il sistema da una versione di Windows a 32 bit a una versione a 64 bit, espandere la quantità di memoria virtuale disponibile per Visual Studio da 2 a 4 GB. Ciò consente a Visual Studio di gestire carichi di lavoro notevolmente più grandi anche tramite il processo a 32 bit.
 
-    Per altre informazioni, vedere [Limiti di memoria](https://msdn.microsoft.com/en-us/library/windows/desktop/aa366778(v=vs.85).aspx#memory_limits) e [Uso di /LARGEADDRESSAWARE in Windows a 64 bit](https://blogs.msdn.microsoft.com/oldnewthing/20050601-24/?p=35483/).
+    Per altre informazioni, vedere [Limiti di memoria](https://msdn.microsoft.com/library/windows/desktop/aa366778(v=vs.85).aspx#memory_limits) e [Uso di /LARGEADDRESSAWARE in Windows a 64 bit](https://blogs.msdn.microsoft.com/oldnewthing/20050601-24/?p=35483/).
 
 ## <a name="configure-solution-and-projects"></a>Configurare soluzione e progetti
 
 In caso di una soluzione molto grande con molti progetti, possono essere utili le ottimizzazioni seguenti:
-
-- **Abilitare il caricamento leggero soluzioni**
-
-    L'uso del **Caricamento leggero soluzioni** può migliorare le prestazioni di memoria e CPU rinviando il caricamenti di alcuni progetti all'interno della soluzione. È anche possibile abilitare questa funzionalità per una soluzione specifica. Questa opzione è disattivata per impostazione predefinita.
-
-    Per abilitare **Caricamento leggero soluzioni**, selezionare **Strumenti > Opzioni > Progetti e soluzioni > Caricamento leggero soluzioni**.
-
-    Alcune funzionalità dell'ambiente di sviluppo integrato non sono abilitate in questa modalità. Per determinare se questa scelta può essere utile, vedere [Tempo di caricamento più breve della soluzione](https://blogs.msdn.microsoft.com/visualstudio/2016/10/11/shorter-solution-load-time-in-visual-studio-15/) e [Ottimizzare il caricamento delle soluzioni](../ide/optimize-solution-loading-in-visual-studio).
 
 - **Scaricare progetti**
 
@@ -72,6 +50,7 @@ In caso di una soluzione molto grande con molti progetti, possono essere utili l
     È possibile suddividere la soluzione in diversi file di soluzione più piccoli con i progetti usati comunemente. Questo refactoring dovrebbe ridurre notevolmente utilizzo della memoria per il flusso di lavoro. Inoltre le soluzioni di dimensioni inferiori si caricano più velocemente.
 
 ## <a name="configure-debugging-options"></a>Configurare le opzioni di debug
+
 Se in genere si verificano problemi di memoria insufficiente durante le sessioni di debug, è possibile ottimizzare le prestazioni apportando una o più modifiche alla configurazione.
 
 - **Abilitare Just My Code**
@@ -96,9 +75,10 @@ Se in genere si verificano problemi di memoria insufficiente durante le sessioni
 
     Per disabilitare gli strumenti di diagnostica, avviare una sessione di debug, scegliere **Strumenti > Opzioni > Abilita strumenti di diagnostica** e deselezionare l'opzione.
 
-    Per altre informazioni, vedere [Strumenti di profilatura](https://docs.microsoft.com/en-us/visualstudio/profiling/profiling-tools).
+    Per altre informazioni, vedere [Strumenti di profilatura](../profiling/profiling-tools.md).
 
 ## <a name="disable-tools-and-extensions"></a>Disabilitare strumenti ed estensioni
+
 Alcuni strumenti o estensioni possono essere disattivati per migliorare le prestazioni.
 
 > [!TIP]
@@ -106,7 +86,7 @@ Alcuni strumenti o estensioni possono essere disattivati per migliorare le prest
 
 ### <a name="managed-language-services-roslyn"></a>Servizi di linguaggio gestiti (Roslyn)
 
-Per informazioni sulle prestazioni di Roslyn, vedere [Considerazioni sulle prestazioni di soluzioni di grandi dimensioni] (https://github.com/dotnet/roslyn/wiki/Performance-considerations-for-large-solutions).
+Per informazioni sulle prestazioni di .NET Compiler Platform ("Roslyn"), vedere [Considerazioni sulle prestazioni di soluzioni di grandi dimensioni] (https://github.com/dotnet/roslyn/wiki/Performance-considerations-for-large-solutions).
 
 - **Disabilitare l'analisi della soluzione completa**
 
@@ -148,8 +128,8 @@ Per imporre una Garbage Collection, usare il tasto di scelta rapida: **Ctrl+Alt+
 
 Se l'imposizione della Garbage Collection risulta particolarmente efficiente nel proprio scenario, compilare un report tramite lo strumento per il feedback di Visual Studio poiché questo comportamento è in genere sintomo di un bug.
 
-Per una descrizione dettagliata del Garbage Collector di CLR, vedere [Nozioni fondamentali sulla Garbage Collection](https://msdn.microsoft.com/en-us/library/ee787088(v=vs.110).aspx).
+Per una descrizione dettagliata del Garbage Collector di CLR, vedere [Nozioni fondamentali sulla Garbage Collection](/dotnet/standard/garbage-collection/fundamentals).
 
-## <a name="see-also"></a>Vedere anche  
- [IDE di Visual Studio](../ide/index.md)
+## <a name="see-also"></a>Vedere anche
 
+[IDE di Visual Studio](../ide/visual-studio-ide.md)

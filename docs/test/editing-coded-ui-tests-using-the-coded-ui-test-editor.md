@@ -1,42 +1,26 @@
 ---
-title: Modifica di test codificati dell&quot;interfaccia utente con l&quot;editor di test codificato dell&quot;interfaccia utente | Microsoft Docs
+title: Modifica di test codificati dell'interfaccia utente con l'editor di test codificato dell'interfaccia utente | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- vs-devops-test
+ms.technology: vs-devops-test
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
 - vs.codedUItest.testeditor
 helpviewer_keywords:
 - coded UI test, Coded UI Test Editor
-ms.assetid: 76435c4b-593e-43a3-a9fe-709a7f9f5e0f
-caps.latest.revision: 40
-ms.author: douge
-manager: douge
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 47057e9611b824c17077b9127f8d2f8b192d6eb8
-ms.openlocfilehash: 55fd09e8c704152b1c88050adc567f28f37a7047
-ms.contentlocale: it-it
-ms.lasthandoff: 05/13/2017
-
+ms.author: gewarren
+manager: ghogen
+ms.workload:
+- multiple
+author: gewarren
+ms.openlocfilehash: 0cb316475748033bb020a2f3065f9492a5a201ed
+ms.sourcegitcommit: 69b898d8d825c1a2d04777abf6d03e03fefcd6da
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="editing-coded-ui-tests-using-the-coded-ui-test-editor"></a>Modifica di test codificati dell'interfaccia utente con l'editor di test codificato dell'interfaccia utente
 L'Editor di test codificati dell'interfaccia utente consente di modificare facilmente i test. Con l'Editor di test codificati dell'interfaccia utente è possibile individuare, visualizzare e modificare le proprietà dei metodi di test e delle azioni dell'interfaccia utente. Inoltre, è possibile usare la mappa del controllo dell'interfaccia utente per visualizzare e modificare i corrispondenti controlli.  
@@ -48,7 +32,7 @@ L'Editor di test codificati dell'interfaccia utente consente di modificare facil
 ## <a name="why-should-i-do-this"></a>Perché si deve eseguire questa operazione?  
  Usare l'Editor di test codificati dell'interfaccia utente è più rapido ed efficiente che modificare il codice nei metodi di test codificato dell'interfaccia utente con l'editor del codice. Con l'Editor di test codificati dell'interfaccia utente, è possibile usare la barra degli strumenti e i menu di scelta rapida per individuare rapidamente e modificare i valori delle proprietà associati a controlli e azioni dell'interfaccia utente. Ad esempio, è possibile usare la barra degli strumenti dell'editor di test codificati dell'interfaccia utente per eseguire i comandi seguenti:  
   
- ![Editor di test codificati dell'interfaccia utente](~/test/media/uitesteditor.png "UITestEditor")  
+ ![Editor di test codificati dell'interfaccia utente](../test/media/uitesteditor.png "UITestEditor")  
   
 1.  [Trova](../ide/finding-and-replacing-text.md) consente di individuare controlli e azioni dell'interfaccia utente.  
   
@@ -79,7 +63,7 @@ L'Editor di test codificati dell'interfaccia utente consente di modificare facil
  In Esplora soluzioni aprire il menu di scelta rapida per **UIMap.uitest** e scegliere **Apri**. Il test codificato dell'interfaccia utente viene visualizzato nell'Editor test codificati dell'interfaccia utente. Ora è possibile visualizzare e modificare i metodi registrati, i le azioni e i corrispondenti controlli nel test codificato dell'interfaccia utente.  
   
 > [!TIP]
->  Quando si seleziona un'azione dell'interfaccia utente che si trova in un metodo nel riquadro **Azioni dell'interfaccia utente**, viene evidenziato il controllo corrispondente. È possibile modificare anche le proprietà delle azioni dell'interfaccia utente o dei controlli.  
+>  Quando si seleziona un'azione dell'interfaccia utente che si trova in un metodo nel riquadro **Azioni dell'interfaccia utente** , viene evidenziato il controllo corrispondente. È possibile modificare anche le proprietà delle azioni dell'interfaccia utente o dei controlli.  
   
  *Non viene visualizzato* l'Editor di test codificati dell'interfaccia utente  
  È possibile che si usi una versione di Visual Studio Enterprise precedente alla 2012. L'Editor di test codificati dell'interfaccia utente era disponibile anche in Visual Studio 2010 Feature Pack 2 con una sottoscrizione MSDN. [!INCLUDE[crdefault](../test/includes/crdefault_md.md)][Microsoft Visual Studio 2010 Feature Pack 2](http://go.microsoft.com/fwlink/?LinkID=204119).  
@@ -87,14 +71,14 @@ L'Editor di test codificati dell'interfaccia utente consente di modificare facil
 ##  <a name="CodedUITestEditor_EditActionAndControlProperties"></a> Modificare le proprietà delle azioni dell'interfaccia utente e le proprietà dei controlli corrispondenti  
  Usando l'Editor di test codificati dell'interfaccia utente, è possibile individuare rapidamente e visualizzare tutte le azioni dell'interfaccia utente nei metodi di test. Quando si seleziona l'azione dell'interfaccia utente nell'editor, il controllo corrispondente viene automaticamente evidenziato. Analogamente, se si seleziona un controllo, vengono evidenziate le azioni dell'interfaccia utente associate. Quando si seleziona un'azione dell'interfaccia utente o un controllo, è facile usare la finestra Proprietà per modificare le proprietà corrispondenti.  
   
- ![Proprietà delle azioni dell'interfaccia utente](../test/media/codeduiedituiaction.png "CodedUIEditUIAction")  
+ ![Proprietà dell'azione dell'interfaccia utente](../test/media/codeduiedituiaction.png "CodedUIEditUIAction")  
 Modificare le proprietà di un'azione dell'interfaccia utente  
   
  Per modificare le proprietà di un'azione dell'interfaccia utente, nel riquadro **Azioni dell'interfaccia utente** espandere il metodo di test contenente un'azione dell'interfaccia utente di cui si vogliono modificare le proprietà, selezionare l'azione dell'interfaccia utente e quindi modificare le proprietà usando la finestra Proprietà.  
   
  Ad esempio, se un server non è disponibile e al Web browser è associata l'azione dell'interfaccia utente **Vai a pagina Web http://Contoso1/default.aspx**, è possibile sostituire l'URL con `'http://Contoso2/default.aspx'`.  
   
- ![Proprietà dei controlli](../test/media/codeduitestcontrolprop.png "CodedUITestControlProp")  
+ ![Proprietà del controllo](../test/media/codeduitestcontrolprop.png "CodedUITestControlProp")  
 Modificare le proprietà del controllo  
   
  La modifica delle proprietà di un controllo è come quella delle azioni dell'interfaccia utente. Nel riquadro **Mappa del controllo dell'interfaccia utente** selezionare il controllo su cui intervenire e modificarne le proprietà usando la finestra Proprietà.  
@@ -106,17 +90,17 @@ Modificare le proprietà del controllo
  *Altre informazioni*  
  **Suggerimenti**  
   
--   ![Suggerimento](~/test/media/tip.png "Tip") Se la finestra Proprietà non viene visualizzata, tenere premuto **ALT** mentre si preme **INVIO** oppure, in alternativa, premere **F4**.  
+-   ![Suggerimento](../test/media/tip.png "Tip") Se la finestra Proprietà non viene visualizzata, tenere premuto **ALT** mentre si preme **INVIO** oppure, in alternativa, premere **F4**.  
   
--   ![Suggerimento](~/test/media/tip.png "Tip") Per annullare le modifiche apportate alle proprietà, scegliere **Annulla** dal menu **Modifica** oppure premere CTRL+Z.  
+-   ![Suggerimento](../test/media/tip.png "Tip") Per annullare le modifiche apportate alle proprietà, scegliere **Annulla** dal menu **Modifica** oppure premere CTRL+Z.  
   
--   ![Suggerimento](~/test/media/tip.png "Tip") È possibile usare il pulsante **Trova** sulla barra degli strumenti dell'editor di test codificati dell'interfaccia utente per aprire lo strumento Trova e sostituisci in Visual Studio. Quindi è possibile usare il controllo Trova per individuare l'azione dell'interfaccia utente nell'Editor di test codificati dell'interfaccia utente. Ad esempio, è possibile provare a cercare "Fare clic sul pulsante Accesso". Questo è utile nei test di grandi dimensioni. Si noti che non è possibile usare la funzionalità di sostituzione dello strumento Trova e sostituisci nell'Editor di test codificati dell'interfaccia utente. Per altre informazioni, vedere la sezione relativa al controllo di ricerca in [Ricerca e sostituzione di testo](../ide/finding-and-replacing-text.md).  
+-   ![Suggerimento](../test/media/tip.png "Tip") È possibile usare il pulsante **Trova** sulla barra degli strumenti dell'editor di test codificati dell'interfaccia utente per aprire lo strumento Trova e sostituisci in Visual Studio. Quindi è possibile usare il controllo Trova per individuare l'azione dell'interfaccia utente nell'Editor di test codificati dell'interfaccia utente. Ad esempio, è possibile provare a cercare "Fare clic sul pulsante Accesso". Questo è utile nei test di grandi dimensioni. Si noti che non è possibile usare la funzionalità di sostituzione dello strumento Trova e sostituisci nell'Editor di test codificati dell'interfaccia utente. Per altre informazioni, vedere la sezione relativa al controllo di ricerca in [Ricerca e sostituzione di testo](../ide/finding-and-replacing-text.md).  
   
--   ![Suggerimento](~/test/media/tip.png "Tip") A volte può essere difficile identificare la posizione dei controlli nell'interfaccia utente dell'applicazione sottoposta a test. Una delle funzionalità dell'Editor di test codificati dell'interfaccia utente consente di selezionare un controllo elencato nella mappa del controllo dell'interfaccia utente e visualizzarne la posizione nell'applicazione sottoposta a test. [!INCLUDE[crdefault](../test/includes/crdefault_md.md)][Individuazione di un controllo dell'interfaccia utente nell'applicazione sottoposta a test](#CodedUITestEditor_LocateUIControl) più avanti in questo argomento.  
+-   ![Suggerimento](../test/media/tip.png "Tip") A volte può essere difficile identificare la posizione dei controlli nell'interfaccia utente dell'applicazione sottoposta a test. Una delle funzionalità dell'Editor di test codificati dell'interfaccia utente consente di selezionare un controllo elencato nella mappa del controllo dell'interfaccia utente e visualizzarne la posizione nell'applicazione sottoposta a test. [!INCLUDE[crdefault](../test/includes/crdefault_md.md)][Individuazione di un controllo dell'interfaccia utente nell'applicazione sottoposta a test](#CodedUITestEditor_LocateUIControl) più avanti in questo argomento.  
   
--   ![Suggerimento](~/test/media/tip.png "Tip") Potrebbe essere necessario espandere il controllo contenitore in cui è presente il controllo da modificare. [!INCLUDE[crdefault](../test/includes/crdefault_md.md)][Individuazione di un controllo e dei discendenti](#CodedUITestEditor_LocateDecendants) più avanti in questo argomento.  
+-   ![Suggerimento](../test/media/tip.png "Tip") Potrebbe essere necessario espandere il controllo contenitore in cui è presente il controllo da modificare. [!INCLUDE[crdefault](../test/includes/crdefault_md.md)][Individuazione di un controllo e dei discendenti](#CodedUITestEditor_LocateDecendants) più avanti in questo argomento.  
   
-##  <a name="CodedUITestEditor_DeleteUIActions"></a> Eliminare le azioni indesiderate dell'interfaccia utente  
+##  <a name="CodedUITestEditor_DeleteUIActions"></a> Eliminare le azioni dell'interfaccia utente indesiderate  
  È possibile rimuovere facilmente le azioni indesiderate dell'interfaccia utente nel test codificato dell'interfaccia utente.  
   
  ![Eliminazione di un'azione dell'interfaccia utente](../test/media/codeduideleteuiaction.png "CodedUIDeleteUIAction")  
@@ -132,20 +116,20 @@ Modificare le proprietà del controllo
   
  Nel riquadro **Azioni dell'interfaccia utente** espandere il metodo di test che si vuole suddividere in due metodi distinti e selezionare l'azione dell'interfaccia utente con cui far iniziare il nuovo metodo di test. Aprire il menu di scelta rapida per l'azione dell'interfaccia utente e quindi scegliere **Suddividi in nuovo metodo**scegliere il pulsante **Suddividi in nuovo metodo** sulla barra degli strumenti dell'Editor di test codificati dell'interfaccia utente. Il nuovo metodo di test viene visualizzato nel riquadro Azioni dell'interfaccia utente che contiene le azioni dell'interfaccia utente a iniziare dall'azione in cui è stata specificata la suddivisione.  
   
- Dopo aver completato la suddivisione del metodo, salvare le modifiche apportate al file UIMap.Designer scegliendo **Salva** sulla barra degli strumenti di [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)].  
+ Dopo avere completato la suddivisione del metodo, salvare le modifiche nel file UIMap.Designer scegliendo **Salva** sulla barra degli strumenti di [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] .  
   
  *Altre informazioni*  
  **Problemi importanti**  
   
--   ![Icona di avviso](~/test/media/caution.gif "caution") **Avviso**: quando si suddivide un metodo, è necessario modificare qualsiasi codice che chiama il metodo esistente in modo che chiami anche il nuovo metodo che si sta per creare se si vuole che queste azioni dell'interfaccia utente siano incluse. Quando si suddivide un metodo, verrà visualizzata una finestra di dialogo di Microsoft Visual Studio che avvisa che è necessario modificare qualsiasi codice chiami il metodo esistente in modo che chiami anche il nuovo metodo che si sta per creare. Scegliere **Sì**.  
+-   ![Icona di avviso](../test/media/caution.gif "caution") **Avviso**: quando si suddivide un metodo, è necessario modificare qualsiasi codice che chiama il metodo esistente in modo che chiami anche il nuovo metodo che si sta per creare se si vuole che queste azioni dell'interfaccia utente siano incluse. Quando si suddivide un metodo, verrà visualizzata una finestra di dialogo di Microsoft Visual Studio che avvisa che è necessario modificare qualsiasi codice chiami il metodo esistente in modo che chiami anche il nuovo metodo che si sta per creare. Scegliere **Sì**.  
   
  **Suggerimenti**  
   
--   ![Suggerimento](~/test/media/tip.png "Tip") Per annullare la suddivisione, scegliere **Annulla** dal menu **Modifica** oppure premere CTRL+Z.  
+-   ![Suggerimento](../test/media/tip.png "Tip") Per annullare la suddivisione, scegliere **Annulla** dal menu **Modifica** oppure premere CTRL+Z.  
   
--   ![Suggerimento](~/test/media/tip.png "Tip") È possibile rinominare il nuovo metodo. Selezionarlo nel riquadro Azioni dell'interfaccia utente e scegliere il pulsante **Rinomina** sulla barra degli strumenti dell'Editor di test codificati dell'interfaccia utente.  
+-   ![Suggerimento](../test/media/tip.png "Tip") È possibile rinominare il nuovo metodo. Selezionarlo nel riquadro Azioni dell'interfaccia utente e scegliere il pulsante **Rinomina** sulla barra degli strumenti dell'Editor di test codificati dell'interfaccia utente.  
   
-     -oppure-  
+     oppure  
   
      Aprire il menu di scelta rapida per il nuovo metodo di test e scegliere **Rinomina**.  
   
@@ -156,39 +140,39 @@ Modificare le proprietà del controllo
   
  Nel riquadro **Azioni dell'interfaccia utente** selezionare il metodo di test che si vuole spostare nel file UIMap.cs o UIMap.vb per facilitare la funzionalità di codice personalizzato che non verrà sovrascritto quando il codice di test verrà ricompilato. Scegliere poi il pulsante **Sposta codice** sulla barra degli strumenti dell'Editor di test codificati dell'interfaccia utente o aprire il menu di scelta rapida per il metodo di test e scegliere **Sposta codice**. Il metodo di test verrà rimosso dal file UIMap.uitest e non verrà più visualizzato nel riquadro delle azioni dell'interfaccia utente. Per modificare il file di test spostato, aprire il file UIMap.cs o UIMap.vb da Esplora soluzioni.  
   
- Dopo aver completato lo spostamento del metodo, salvare le modifiche apportate al file UIMap.Designer scegliendo **Salva** sulla barra degli strumenti di [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)].  
+ Dopo avere completato lo spostamento del metodo, salvare le modifiche nel file UIMap.Designer scegliendo **Salva** sulla barra degli strumenti di [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] .  
   
  *Altre informazioni*  
  **Problemi importanti**  
   
--   ![Icona di avviso](~/test/media/caution.gif "caution") **Avviso**: dopo aver spostato il metodo, non è più possibile modificarlo tramite l'Editor di test codificati dell'interfaccia utente. È necessario aggiungere il codice personalizzato e gestirlo usando l'editor del codice. Quando si sposta un metodo, verrà visualizzata una finestra di dialogo di Microsoft Visual Studio che avvisa che il metodo verrà spostato dal file UIMap.uitest al file UIMap.cs o UIMap.vb e che non sarà più possibile modificare il metodo usando l'Editor di test codificati dell'interfaccia utente. Scegliere **Sì**.  
+-   ![Icona di avviso](../test/media/caution.gif "caution") **Avviso**: dopo aver spostato il metodo, non è più possibile modificarlo tramite l'Editor di test codificati dell'interfaccia utente. È necessario aggiungere il codice personalizzato e gestirlo usando l'editor di codice. Quando si sposta un metodo, verrà visualizzata una finestra di dialogo di Microsoft Visual Studio che avvisa che il metodo verrà spostato dal file UIMap.uitest al file UIMap.cs o UIMap.vb e che non sarà più possibile modificare il metodo usando l'Editor di test codificati dell'interfaccia utente. Scegliere **Sì**.  
   
  **Suggerimenti**  
   
--   ![Suggerimento](~/test/media/tip.png "Tip") Per annullare lo spostamento, scegliere **Annulla** dal menu **Modifica** oppure premere CTRL+Z. Tuttavia, è poi necessario rimuovere manualmente il codice dal file UIMap.cs o UIMap.vb.  
+-   ![Suggerimento](../test/media/tip.png "Tip") Per annullare lo spostamento, scegliere **Annulla** dal menu **Modifica** oppure premere CTRL+Z. Tuttavia, è poi necessario rimuovere manualmente il codice dal file UIMap.cs o UIMap.vb.  
   
 ##  <a name="CodedUITestEditor_LocateUIControl"></a> Locating a UI Control in the application under test  
  A volte può essere difficile identificare la posizione dei controlli nell'interfaccia utente dell'applicazione sottoposta a test. Una delle funzionalità dell'Editor di test codificati dell'interfaccia utente consente di selezionare un controllo elencato nella mappa del controllo dell'interfaccia utente e visualizzarne la posizione nell'applicazione sottoposta a test. La funzionalità **Individua controllo dell'interfaccia utente** nell'applicazione sottoposta a test consente anche di verificare le modifiche delle proprietà di ricerca apportate a un controllo.  
   
- ![Individuazione di un controllo dell'interfaccia utente](~/test/media/codeduilocatecontrol.png "CodedUILocateControl")  
+ ![Individuazione di un controllo dell'interfaccia utente](../test/media/codeduilocatecontrol.png "CodedUILocateControl")  
   
- ![Controllo individuato in un'applicazione sottoposta a test](~/test/media/codeduilocatecontrol2.png "CodedUILocateControl2")  
+ ![Controllo individuato in un'applicazione sottoposta a test](../test/media/codeduilocatecontrol2.png "CodedUILocateControl2")  
   
  Nel riquadro **Mappa del controllo dell'interfaccia utente** selezionare il controllo che si vuole individuare nell'applicazione associata al test. Aprire quindi il menu di scelta rapida per il controllo e quindi scegliere **Individua controllo dell'interfaccia utente**. Nell'applicazione di cui è in corso il test, il controllo viene identificato da un bordo blu.  
   
  *Altre informazioni*  
  **Problemi importanti**  
   
--   ![Icona di avviso](~/test/media/caution.gif "caution") **Avviso**: prima di individuare un controllo dell'interfaccia utente, verificare che l'applicazione associata al test sia in esecuzione.  
+-   ![Icona di avviso](../test/media/caution.gif "caution") **Avviso**: prima di individuare un controllo dell'interfaccia utente, verificare che l'applicazione associata al test sia in esecuzione.  
   
  **Suggerimenti**  
   
--   ![Suggerimento](~/test/media/tip.png "Tip") In alternativa, è possibile usare l'opzione **Individua tutto** per verificare che tutti i controlli all'interno di un contenitore possano essere individuati correttamente. Questa opzione viene descritta nella sezione successiva.  
+-   ![Suggerimento](../test/media/tip.png "Tip") In alternativa, è possibile usare l'opzione **Individua tutto** per verificare che tutti i controlli all'interno di un contenitore possano essere individuati correttamente. Questa opzione viene descritta nella sezione successiva.  
   
 ##  <a name="CodedUITestEditor_LocateDecendants"></a> Individuazione di un controllo e dei discendenti  
  È possibile verificare che tutti i controlli in un contenitore possano essere individuati correttamente nell'interfaccia utente dell'applicazione sottoposta a test. Può essere utile per la verifica delle eventuali modifiche delle proprietà di ricerca apportate nel contenitore. Inoltre, se sono state apportate modifiche considerevoli nell'interfaccia utente dell'applicazione sottoposta a test, è possibile verificare che le proprietà di ricerca del controllo esistenti siano ancora corrette.  
   
- ![Individuazione di tutti i controlli discendenti](~/test/media/codeduilocateall.png "CodedUILocateAll")  
+ ![Individuazione di tutti i controlli discendenti](../test/media/codeduilocateall.png "CodedUILocateAll")  
   
  ![Tutti i controlli individuati](../test/media/codeduilocateall2.png "CodedUILocateAll2")  
   
@@ -197,7 +181,7 @@ Modificare le proprietà del controllo
  *Altre informazioni*  
  **Problemi importanti**  
   
--   ![Icona di avviso](~/test/media/caution.gif "caution") **Avviso**: prima di individuare i controlli dell'interfaccia utente, verificare che l'applicazione associata al test sia in esecuzione.  
+-   ![Icona di avviso](../test/media/caution.gif "caution") **Avviso**: prima di individuare i controlli dell'interfaccia utente, verificare che l'applicazione associata al test sia in esecuzione.  
   
 ##  <a name="CodedUITestEditor_InsertDelay"></a> Inserimento di un ritardo prima di un'azione dell'interfaccia utente  
  Talvolta, potrebbe essere necessario fare in modo che il test attenda che si verifichino determinati eventi, ad esempio che venga visualizzata una finestra, venga nascosto l'indicatore di stato e così via. Usando l'Editor di test codificati dell'interfaccia utente, è possibile inserire un ritardo prima di un'azione dell'interfaccia utente per raggiungere questo risultato. È possibile specificare il numero di secondi di ritardo desiderati.  
@@ -213,11 +197,11 @@ Modificare le proprietà del controllo
  *Altre informazioni*  
  **Note**  
   
--   ![Prerequisito](~/test/media/prereq.png "Prereq") Se è necessario verificare che un controllo specifico sia disponibile prima di un'azione dell'interfaccia utente, è consigliabile valutare se aggiungere codice personalizzato al metodo di test usando il metodo UITestControl.WaitForControlXXX() appropriato. [!INCLUDE[crdefault](../test/includes/crdefault_md.md)][Impostazione dei test codificati dell'interfaccia utente per l'attesa di eventi specifici durante la riproduzione](../test/making-coded-ui-tests-wait-for-specific-events-during-playback.md).  
+-   ![Prerequisito](../test/media/prereq.png "Prereq") Se è necessario verificare che un controllo specifico sia disponibile prima di un'azione dell'interfaccia utente, è consigliabile valutare se aggiungere codice personalizzato al metodo di test usando il metodo UITestControl.WaitForControlXXX() appropriato. [!INCLUDE[crdefault](../test/includes/crdefault_md.md)][Making Coded UI Tests Wait For Specific Events During Playback](../test/making-coded-ui-tests-wait-for-specific-events-during-playback.md).  
   
  **Suggerimenti**  
   
--   ![Suggerimento](~/test/media/tip.png "Tip") Se la finestra Proprietà non viene visualizzata, tenere premuto ALT mentre si preme INVIO oppure, in alternativa, premere F4.  
+-   ![Suggerimento](../test/media/tip.png "Tip") Se la finestra Proprietà non viene visualizzata, tenere premuto ALT mentre si preme INVIO oppure, in alternativa, premere F4.  
   
 ## <a name="external-resources"></a>Risorse esterne  
   
@@ -232,10 +216,9 @@ Modificare le proprietà del controllo
 ### <a name="forum"></a>Forum  
  [Test di automazione dell'interfaccia utente di Visual Studio (include CodedUI)](http://go.microsoft.com/fwlink/?LinkID=224497)  
   
-## <a name="see-also"></a>Vedere anche  
- [Usare l'automazione dell'interfaccia utente per testare il codice](../test/use-ui-automation-to-test-your-code.md)   
- [Creazione di test codificati dell'interfaccia utente](../test/use-ui-automation-to-test-your-code.md#VerifyingCodeUsingCUITCreate)   
- [Creazione di un test codificato dell'interfaccia utente basato sui dati](../test/creating-a-data-driven-coded-ui-test.md)   
- [Generazione di un test codificato dell'interfaccia utente da una registrazione delle azioni esistente](/devops-test-docs/test/generating-a-coded-ui-test-from-an-existing-action-recording)   
- [Procedura dettagliata: Creazione, modifica e gestione di un test codificato dell'interfaccia utente](../test/walkthrough-creating-editing-and-maintaining-a-coded-ui-test.md)
+## <a name="see-also"></a>Vedere anche
 
+[Usare l'automazione dell'interfaccia utente per testare il codice](../test/use-ui-automation-to-test-your-code.md)  
+[Creazione di test codificati dell'interfaccia utente](../test/use-ui-automation-to-test-your-code.md)  
+[Creazione di un test codificati dell'interfaccia utente basato sui dati](../test/creating-a-data-driven-coded-ui-test.md)  
+[Procedura dettagliata: Creazione, modifica e gestione di un test codificato dell'interfaccia utente](../test/walkthrough-creating-editing-and-maintaining-a-coded-ui-test.md)

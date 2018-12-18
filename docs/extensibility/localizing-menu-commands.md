@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- vs-ide-sdk
+ms.technology: vs-ide-sdk
 ms.tgt_pltfrm: 
 ms.topic: article
 helpviewer_keywords:
@@ -16,29 +15,16 @@ helpviewer_keywords:
 - localize visual studio
 - localize vsct
 ms.assetid: b04ee0f6-82ea-47e6-853a-72382267d6da
-caps.latest.revision: 11
+caps.latest.revision: "11"
+author: gregvanl
 ms.author: gregvanl
 manager: ghogen
-translation.priority.mt:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.workload: vssdk
+ms.openlocfilehash: 77bd698149ca4e73b462fc3ada9256ba5911177e
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
 ms.translationtype: MT
-ms.sourcegitcommit: 4a36302d80f4bc397128e3838c9abf858a0b5fe8
-ms.openlocfilehash: 13910907c6041884cc0a1414fd0bfd82757a7639
-ms.contentlocale: it-it
-ms.lasthandoff: 09/26/2017
-
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="localizing-menu-commands"></a>Localizzazione dei comandi di Menu
 È possibile fornire il testo localizzato per menu e barra degli strumenti dei comandi di creazione di file con estensione vsct localizzato e localizzata per il pacchetto VSPackage e quindi aggiornare i file di progetto incorporare le modifiche in file con estensione resx.  
@@ -52,11 +38,11 @@ ms.lasthandoff: 09/26/2017
   
 2.  Creare una copia di *filename*. en-US.vsct per ogni lingua localizzata.  
   
-     Nome di ogni copia *filename*.* Impostazioni locali*vsct, in cui *internazionali* è un nome di impostazioni cultura specifiche. Per un elenco di valori di nome delle impostazioni cultura, vedere [ID impostazioni locali assegnati da Microsoft](https://msdn.microsoft.com/en-us/library/windows/apps/jj657969.aspx).  
+     Nome di ogni copia *filename*. *Impostazioni locali*vsct, in cui *internazionali* è un nome di impostazioni cultura specifiche. Per un elenco di valori di nome delle impostazioni cultura, vedere [ID impostazioni locali assegnati da Microsoft](https://msdn.microsoft.com/en-us/library/windows/apps/jj657969.aspx).  
   
-     Questi *filename*.* Impostazioni locali*file vsct conterrà il testo del menu localizzata per il pacchetto.  
+     Questi *filename*. *Impostazioni locali*file vsct conterrà il testo del menu localizzata per il pacchetto.  
   
-3.  Aprire ogni *filename*.* Impostazioni locali*file vsct per localizzare il testo.  
+3.  Aprire ogni *filename*. *Impostazioni locali*file vsct per localizzare il testo.  
   
     1.  Modificare il [ButtonText](../extensibility/buttontext-element.md) elemento i valori come appropriato per la lingua particolare.  
   

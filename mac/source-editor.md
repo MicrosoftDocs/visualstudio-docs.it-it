@@ -1,19 +1,17 @@
 ---
-title: Editor standard
+title: Editor standard | Microsoft Docs
 description: Uso dell'editor standard in Visual Studio per Mac
 author: asb3993
 ms.author: amburns
 ms.date: 04/14/2017
 ms.topic: article
 ms.assetid: A018A314-C1C4-4F36-BCB6-2D434208FCFE
+ms.openlocfilehash: f52e60c0ade8cebc78b3408b4ef81ef85fcd767b
+ms.sourcegitcommit: f40311056ea0b4677efcca74a285dbb0ce0e7974
 ms.translationtype: HT
-ms.sourcegitcommit: e2b7ff9126e1cc38ac2e58d6be339b656a024e7f
-ms.openlocfilehash: aa7635cd2593b871128c0588110f0bfdad5a82ec
-ms.contentlocale: it-it
-ms.lasthandoff: 08/11/2017
-
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/31/2017
 ---
-
 # <a name="source-editor"></a>Editor standard
 
 Un editor standard affidabile è essenziale per scrivere codice in modo conciso ed efficiente. Visual Studio per Mac offre un editor standard sofisticato, centrale per le interazioni con l'ambiente di sviluppo integrato. L'editor standard offre funzionalità necessarie per lavorare in modo agevole: da funzioni di base, come ad esempio evidenziazione della sintassi, frammenti di codice e riduzione del codice, ai vantaggi derivanti dall'integrazione del compilatore Roslyn, ad esempio il completamento di codice completamente funzionale IntelliSense.
@@ -84,7 +82,6 @@ Quando questa opzione è attivata, uno sviluppatore può posizionare il mouse su
 Anche il colore dell'evidenziazione è utile per indicare che qualcosa è assegnato o referenziato. Se qualcosa è assegnato, è evidenziato in rosso, se qualcosa è referenziato, è evidenziato in blu:
 
 ![](media/source-editor-image7.png)
-
 
 
 

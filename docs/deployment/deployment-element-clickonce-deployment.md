@@ -1,116 +1,117 @@
 ---
-title: "&lt;deployment&gt; Element (ClickOnce Deployment) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-deployment"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "urn:schemas-microsoft-com:asm.v2#subscription"
-  - "urn:schemas-microsoft-com:asm.v2#beforeApplicationStartup"
-  - "urn:schemas-microsoft-com:asm.v2#deploymentProvider"
-  - "urn:schemas-microsoft-com:asm.v2#update"
-  - "urn:schemas-microsoft-com:asm.v2#deployment"
-  - "urn:schemas-microsoft-com:asm.v2#expiration"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-helpviewer_keywords: 
-  - "<deployment> element [ClickOnce deployment manifest]"
+title: '&lt;distribuzione&gt; elemento (distribuzione di ClickOnce) | Documenti Microsoft'
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: vs-ide-deployment
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- urn:schemas-microsoft-com:asm.v2#subscription
+- urn:schemas-microsoft-com:asm.v2#beforeApplicationStartup
+- urn:schemas-microsoft-com:asm.v2#deploymentProvider
+- urn:schemas-microsoft-com:asm.v2#update
+- urn:schemas-microsoft-com:asm.v2#deployment
+- urn:schemas-microsoft-com:asm.v2#expiration
+dev_langs:
+- VB
+- CSharp
+- C++
+helpviewer_keywords: <deployment> element [ClickOnce deployment manifest]
 ms.assetid: 4fafa9c2-97a0-4cea-b8fd-9746dca33af4
-caps.latest.revision: 30
-author: "stevehoag"
-ms.author: "shoag"
-manager: "wpickett"
-caps.handback.revision: 30
+caps.latest.revision: "30"
+author: stevehoag
+ms.author: shoag
+manager: wpickett
+ms.workload: multiple
+ms.openlocfilehash: 0caff13f84208152b3fa2ff4e56a7a2c7f0b6dd7
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
-# &lt;deployment&gt; Element (ClickOnce Deployment)
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
-Identifica gli attributi utilizzati per la distribuzione degli aggiornamenti e l'esposizione al sistema.  
+# <a name="ltdeploymentgt-element-clickonce-deployment"></a>&lt;distribuzione&gt; elemento (distribuzione di ClickOnce)
+Identifica gli attributi usati per la distribuzione degli aggiornamenti e l'esposizione al sistema.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
   
-      <deployment   
+      <deployment   
    install  
    minimumRequiredVersion  
    mapFileExtensions  
    disallowUrlActivation  
    trustUrlParameters  
->   
-   <subscription>   
-         <update>   
-            <beforeApplicationStartup/>   
+>   
+   <subscription>   
+         <update>   
+            <beforeApplicationStartup/>   
             <expiration  
                maximumAge  
                unit  
             />  
-         </update>    
-   </subscription>   
-   <deploymentProvider   
-      codebase   
-   />   
+         </update>    
+   </subscription>   
+   <deploymentProvider   
+      codebase   
+   />   
 </deployment>  
 ```  
   
-## Elementi e attributi  
- L'elemento `deployment` è obbligatorio e si trova nello spazio dei nomi `urn:schemas-microsoft-com:asm.v1`.  e dispone degli attributi riportati di seguito.  
+## <a name="elements-and-attributes"></a>Elementi e attributi  
+ L'elemento `deployment` è obbligatorio e si trova nello spazio dei nomi `urn:schemas-microsoft-com:asm.v1`. L'elemento ha gli attributi seguenti.  
   
 |Attributo|Descrizione|  
 |---------------|-----------------|  
-|`install`|Obbligatorio.  Specifica se l'applicazione definisce una presenza nel menu di avviodi Windows e in **Installazione applicazioni** all'interno del Pannello di controllo.  I valori validi sono `true` e `false`.  Se si imposta `false`, in [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] verrà sempre eseguita la versione più recente dell'applicazione dalla rete e l'elemento `subscription` non verrà riconosciuto.|  
-|`minimumRequiredVersion`|Parametro facoltativo.  Specifica la versione minima dell'applicazione che è possibile eseguire sul client.  Se il numero di versione dell'applicazione è inferiore rispetto a quello specificato nel manifesto di distribuzione, l'applicazione non verrà eseguita.  I numeri di versione devono essere specificati nel formato `N.N.N.N`, dove `N` è un intero senza segno.  Se l'attributo `install` è impostato su `false`, l'attributo `minimumRequiredVersion` non deve essere impostato.|  
-|`mapFileExtensions`|Parametro facoltativo.  Il valore predefinito è `false`.  Se `true`, tutti i file nella distribuzione dovranno presentare l'estensione deploy.  [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] rimuoverà questa estensione dai file al momento del download dal server Web.  Se si pubblica l'applicazione mediante [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)], questa estensione verrà aggiunta automaticamente a tutti i file.  Questo parametro consente di scaricare tutti i file contenuti in una distribuzione [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] da un server Web che blocca la trasmissione dei file che terminano con estensioni non sicure, ad esempio .exe.|  
-|`disallowUrlActivation`|Parametro facoltativo.  Il valore predefinito è `false`.  Se è impostato su `true`, non sarà possibile avviare un'applicazione installata facendo clic sull'URL né inserendo l'URL in Internet Explorer.  Se l'attributo `install` non è presente, questo attributo verrà ignorato.|  
-|`trustURLParameters`|Parametro facoltativo.  Il valore predefinito è `false`.  Se è impostato su `true`, l'URL può contenere parametri di stringa di query da passare nell'applicazione, in modo simile agli argomenti della riga di comando che vengono passati a un'applicazione da riga di comando.  Per ulteriori informazioni, vedere [Procedura: recuperare informazioni sulle stringhe di query in un'applicazione ClickOnce online](../Topic/How%20to:%20Retrieve%20Query%20String%20Information%20in%20an%20Online%20ClickOnce%20Application.md).<br /><br /> Se l'attributo `disallowUrlActivation` è impostato su `true`, l'attributo `trustUrlParameters` deve essere escluso dal manifesto o impostato in modo esplicito su `false`.|  
+|`install`|Obbligatorio. Specifica se l'applicazione definisce una presenza di Windows **avviare** menu e nel Pannello di controllo **Aggiungi / Rimuovi programmi** dell'applicazione. I valori validi sono `true` e `false`. Se `false`, [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] eseguirà sempre la versione più recente dell'applicazione dalla rete e non riconosce il `subscription` elemento.|  
+|`minimumRequiredVersion`|Facoltativo. Specifica la versione minima dell'applicazione che è possibile eseguire sul client. Se il numero di versione dell'applicazione è inferiore al numero di versione specificato nel manifesto di distribuzione, l'applicazione non verrà eseguita. Numeri di versione devono essere specificati nel formato `N.N.N.N`, dove `N` è un intero senza segno. Se il `install` attributo `false`, `minimumRequiredVersion` non deve essere impostato.|  
+|`mapFileExtensions`|Facoltativo. Il valore predefinito è `false`. Se `true`, tutti i file nella distribuzione devono avere l'estensione. deploy. [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)]rimuoverà questa estensione questi file come download dal server Web. Se si pubblica l'applicazione utilizzando [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)], questa estensione aggiunta automaticamente a tutti i file. Questo parametro consente di tutti i file all'interno di un [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] distribuzione per essere scaricato da un server Web che impedisce la trasmissione dei file che terminano con "unsafe" estensioni, ad esempio .exe.|  
+|`disallowUrlActivation`|Facoltativo. Il valore predefinito è `false`. Se `true`, impedisce a un'applicazione installata facendo clic sull'URL o immettendo l'URL in Internet Explorer in corso l'avvio. Se il `install` attributo non è presente, questo attributo viene ignorato.|  
+|`trustURLParameters`|Facoltativo. Il valore predefinito è `false`. Se `true`, l'URL può contenere parametri di stringa di query che vengono passati all'applicazione, molto simili argomenti della riga di comando vengono passati a un'applicazione della riga di comando. Per ulteriori informazioni, vedere [procedura: recuperare le informazioni di stringa di Query in un'applicazione ClickOnce Online](../deployment/how-to-retrieve-query-string-information-in-an-online-clickonce-application.md).<br /><br /> Se il `disallowUrlActivation` attributo `true`, `trustUrlParameters` deve essere escluso dal manifesto o impostata esplicitamente su `false`.|  
   
- L'elemento `deployment` contiene inoltre gli elementi figlio riportati di seguito.  
+ Il `deployment` elemento contiene anche gli elementi figlio seguenti.  
   
-## sottoscrizione  
- Parametro facoltativo.  Contiene l'elemento `update`.  L'elemento `subscription` non contiene attributi.  Se l'elemento `subscription` non è presente, non verrà mai controllata la disponibilità di aggiornamenti per l'applicazione [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)].  Se l'attributo `install` dell'elemento `deployment` è impostato su `false`, l'elemento `subscription` verrà ignorato poiché per un'applicazione [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] avviata dalla rete viene sempre utilizzata la versione più recente.  
+## <a name="subscription"></a>Sottoscrizione  
+ Facoltativo. Contiene il `update` elemento. Il `subscription` elemento non ha attributi. Se il `subscription` elemento non esiste, il [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] applicazione mai analizzi gli aggiornamenti. Se il `install` attributo del `deployment` elemento è `false`, `subscription` elemento viene ignorato, poiché un [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] applicazione che viene sempre avviata dalla rete utilizza la versione più recente.  
   
-## update  
- Obbligatorio.  Questo elemento è un elemento figlio di `subscription` e contiene gli elementi `beforeApplicationStartup` o `expiration`.  `beforeApplicationStartup` e `expiration` non possono essere specificati nello stesso manifesto di distribuzione.  
+## <a name="update"></a>aggiorna  
+ Obbligatorio. Questo è un elemento figlio del `subscription` elemento e può essere il `beforeApplicationStartup` o `expiration` elemento. `beforeApplicationStartup`e `expiration` non possono essere specificati nel manifesto di distribuzione stessa.  
   
- L'elemento `update` non contiene attributi.  
+ Il `update` elemento non ha attributi.  
   
-## beforeApplicationStartup  
- Parametro facoltativo.  Questo elemento è un elemento figlio di `update` e non dispone di attributi.  Se l'elemento `beforeApplicationStartup` è presente, l'applicazione verrà bloccata durante il controllo della disponibilità di aggiornamenti per [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] nel caso in cui il client sia online.  Se l'elemento non è presente, innanzitutto [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] controllerà la disponibilità di aggiornamenti in base ai valori specificati per l'elemento `expiration`.  `beforeApplicationStartup` e `expiration` non possono essere specificati nello stesso manifesto di distribuzione.  
+## <a name="beforeapplicationstartup"></a>beforeApplicationStartup  
+ Facoltativo. Questo è un elemento figlio del `update` elemento e non ha attributi. Quando il `beforeApplicationStartup` elemento esiste, l'applicazione sarà bloccato quando [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] controlla gli aggiornamenti, se il client è online. Se questo elemento non esiste, [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] innanzitutto analizzi gli aggiornamenti in base ai valori specificati per il `expiration` elemento. `beforeApplicationStartup`e `expiration` non possono essere specificati nel manifesto di distribuzione stessa.  
   
-## expiration  
- Parametro facoltativo.  Questo elemento è un elemento figlio di `update` e non ha elementi figli.  `beforeApplicationStartup` e `expiration` non possono essere specificati nello stesso manifesto di distribuzione.  Quando si verifica il controllo dell'aggiornamento e viene rilevata una versione aggiornata, la nuova versione viene memorizzata nella cache mentre la versione esistente è in esecuzione.  La nuova versione viene quindi installata al successivo avvio dell'applicazione [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)].  
+## <a name="expiration"></a>scadenza  
+ Facoltativo. Questo è un elemento figlio del `update` elemento, e non ha elementi figlio. `beforeApplicationStartup`e `expiration` non possono essere specificati nel manifesto di distribuzione stessa. Quando si verifica la disponibilità di aggiornamenti e viene rilevata una versione aggiornata, la nuova versione memorizza nella cache mentre è in esecuzione la versione esistente. Installa al successivo avvio della nuova versione di [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] dell'applicazione.  
   
- L'elemento `expiration` supporta gli attributi riportati di seguito.  
-  
-|Attributo|Descrizione|  
-|---------------|-----------------|  
-|`maximumAge`|Obbligatorio.  Specifica il periodo di validità massimo dell'aggiornamento corrente trascorso il quale viene controllata la disponibilità di aggiornamenti.  L'unità di tempo è determinata dall'attributo `unit`.|  
-|`unit`|Obbligatorio.  Identifica l'unità di tempo per `maximumAge`.  Le unità valide sono `hours`, `days` e `weeks`.|  
-  
-## deploymentProvider  
- Per .NET Framework 2.0, l'elemento è obbligatorio se il manifesto di distribuzione contiene una sezione `subscription`.  Per .NET Framework 3.5 e successive versioni, questo elemento è facoltativo e verrà impostato come valore predefinito sul percorso del server e del file in cui è stato individuato il manifesto della distribuzione.  
-  
- Questo è un elemento figlio dell'elemento `deployment` e dispone dell'attributo riportato di seguito.  
+ Il `expiration` elemento supporta gli attributi seguenti.  
   
 |Attributo|Descrizione|  
 |---------------|-----------------|  
-|`codebase`|Obbligatorio.  Identifica il percorso URI \(Uniform Resource Identifier\) del manifesto di distribuzione utilizzato per l'aggiornamento dell'applicazione [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)].  Questo elemento consente anche di inoltrare i percorsi di aggiornamento per le installazioni basate su CD.  Deve essere un URI valido.|  
+|`maximumAge`|Obbligatorio. Identifica come precedente dovrebbe diventare l'aggiornamento corrente prima che l'applicazione esegue un controllo di aggiornamento. L'unità di tempo è determinata dal `unit` attributo.|  
+|`unit`|Obbligatorio. Identifica l'unità di tempo per `maximumAge`. Le unità valide sono `hours`, `days`, e `weeks`.|  
   
-## Note  
- È possibile configurare l'applicazione [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] in modo che la disponibilità di aggiornamenti venga controllata all'avvio, dopo l'avvio o non venga mai controllata.  Per controllare la disponibilità di aggiornamenti all'avvio, assicurarsi che l'elemento `beforeApplicationStartup` sia contenuto nell'elemento `update`.  Per analizzare la disponibilità di aggiornamenti dopo l'avvio, assicurarsi che l'elemento `expiration` sia presente nell'elemento `update` e che gli intervalli di aggiornamento siano stati specificati.  
+## <a name="deploymentprovider"></a>deploymentProvider  
+ Per .NET Framework 2.0, questo elemento è obbligatorio se il manifesto di distribuzione contiene un `subscription` sezione. Per .NET Framework 3.5 e versioni successive, questo elemento è facoltativo e utilizzerà il server e il percorso di file in cui è stato individuato il manifesto di distribuzione.  
   
- Per disabilitare il controllo della disponibilità di aggiornamenti, rimuovere l'elemento `subscription`.  Anche se nel manifesto di distribuzione viene specificato di non controllare mai la disponibilità di aggiornamenti, è comunque possibile eseguire tale controllo manualmente utilizzando il metodo <xref:System.Deployment.Application.ApplicationDeployment.CheckForUpdate%2A>.  
+ Questo elemento è figlio dell'elemento `deployment` e ha l'attributo seguente.  
   
- Per ulteriori informazioni sugli aggiornamenti di deploymentProvider, vedere [Choosing a ClickOnce Update Strategy](../deployment/choosing-a-clickonce-update-strategy.md).  
+|Attributo|Descrizione|  
+|---------------|-----------------|  
+|`codebase`|Obbligatorio. Identifica il percorso del manifesto di distribuzione che viene utilizzato per aggiornare, come un identificatore URI (Uniform Resource), il [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] dell'applicazione. Questo elemento consente inoltre di percorsi di aggiornamento per le installazioni basate sul CD di inoltro. Deve essere un URI valido.|  
   
-## Esempi  
- Nell'esempio di codice seguente viene illustrato un elemento `deployment` in un manifesto della distribuzione [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)].  Per indicare il percorso di aggiornamento preferito, viene utilizzato un elemento `deploymentProvider`.  
+## <a name="remarks"></a>Note  
+ È possibile configurare il [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] applicazione per analizzare gli aggiornamenti all'avvio, cercare gli aggiornamenti dopo l'avvio o non controllare mai gli aggiornamenti. Per analizzare gli aggiornamenti all'avvio, assicurarsi che il `beforeApplicationStartup` elemento esiste nel `update` elemento. Per eseguire la scansione degli aggiornamenti dopo l'avvio, assicurarsi che il `expiration` elemento esiste nel `update` elemento e che siano stati specificati gli intervalli di aggiornamento.  
+  
+ Per disabilitare il controllo degli aggiornamenti, rimuovere il `subscription` elemento. Quando si specifica nel manifesto di distribuzione per non analizzare mai gli aggiornamenti, eseguire manualmente è possibile verificare gli aggiornamenti tramite il <xref:System.Deployment.Application.ApplicationDeployment.CheckForUpdate%2A> metodo.  
+  
+ Per ulteriori informazioni sugli aggiornamenti di deploymentProvider, vedere [scelta di una strategia di aggiornamento ClickOnce](../deployment/choosing-a-clickonce-update-strategy.md).  
+  
+## <a name="examples"></a>Esempi  
+ Nell'esempio di codice seguente viene illustrato un `deployment` elemento in un [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] manifesto di distribuzione. Nell'esempio viene utilizzato un `deploymentProvider` elemento per indicare il percorso di aggiornamento preferito.  
   
 ```  
 <deployment install="true" minimumRequiredVersion="2.0.0.0" mapFileExtension="true" trustUrlParameters="true">  
@@ -123,5 +124,5 @@ Identifica gli attributi utilizzati per la distribuzione degli aggiornamenti e l
   </deployment>  
 ```  
   
-## Vedere anche  
- [ClickOnce Deployment Manifest](../deployment/clickonce-deployment-manifest.md)
+## <a name="see-also"></a>Vedere anche  
+ [Manifesto di distribuzione ClickOnce](../deployment/clickonce-deployment-manifest.md)

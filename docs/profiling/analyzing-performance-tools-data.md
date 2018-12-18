@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- vs-ide-debug
+ms.technology: vs-ide-debug
 ms.tgt_pltfrm: 
 ms.topic: article
 helpviewer_keywords:
@@ -17,31 +16,16 @@ helpviewer_keywords:
 - Profiling Tools,data views
 - Profiling Tools,reports
 ms.assetid: ae3e198a-b994-4ecb-a633-dec98bd4fd45
-caps.latest.revision: 41
+caps.latest.revision: "41"
 author: mikejo5000
 ms.author: mikejo
 manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 669bc5894727c207691a7e37937f432d98fee8b1
-ms.openlocfilehash: f67e927ad2fdaa934027507441222af4bbde3394
-ms.contentlocale: it-it
-ms.lasthandoff: 06/30/2017
-
+ms.workload: multiple
+ms.openlocfilehash: 33ae54490ab9dbb7015df1ce6bafc4794d8254ca
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="analyzing-performance-tools-data"></a>Analisi dei dati degli strumenti per le prestazioni
 I report sulle prestazioni degli strumenti di profilatura di [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] consentono di visualizzare e analizzare i problemi di prestazioni delle applicazioni. Questa sezione offre una panoramica dei report sulle prestazioni e delle visualizzazioni che è possibile usare per esaminare i dati sulle prestazioni.  
@@ -60,4 +44,6 @@ I report sulle prestazioni degli strumenti di profilatura di [!INCLUDE[vsprvs](.
  [Salvataggio ed esportazione dei dati degli strumenti per le prestazioni](../profiling/saving-and-exporting-performance-tools-data.md)  
   
 ## <a name="see-also"></a>Vedere anche  
- [Esplora prestazioni](../profiling/performance-explorer.md) [Profilatura in Visual Studio](../profiling/index.md) [Panoramica delle funzionalità di profilatura](../profiling/profiling-feature-tour.md)
+ [Esplora prestazioni](../profiling/performance-explorer.md)  
+ [Profilatura in Visual Studio](../profiling/index.md)  
+ [Tour delle funzionalità di profilatura](../profiling/profiling-feature-tour.md)

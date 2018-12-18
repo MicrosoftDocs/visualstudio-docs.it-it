@@ -1,33 +1,34 @@
 ---
-title: "Elemento &lt;Package&gt; (programma di avvio automatico) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-deployment"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "FSharp"
-  - "VB"
-  - "CSharp"
-  - "C++"
-helpviewer_keywords: 
-  - "<package> (elemento) [programma di avvio automatico]"
+title: '&lt;Pacchetto&gt; elemento (programma di avvio automatico) | Documenti Microsoft'
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: vs-ide-deployment
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- FSharp
+- VB
+- CSharp
+- C++
+helpviewer_keywords: <package> element [bootstrapper]
 ms.assetid: ecd06658-ad02-4440-bccd-88437b7fb816
-caps.latest.revision: 9
-author: "stevehoag"
-ms.author: "shoag"
-manager: "wpickett"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: stevehoag
+ms.author: shoag
+manager: wpickett
+ms.workload: multiple
+ms.openlocfilehash: 5281d53f213d2cb09f470484ddca2fbaa8cb4601
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
-# Elemento &lt;Package&gt; (programma di avvio automatico)
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
-`Package` è l'elemento XML di livello superiore in un file di package.  
+# <a name="ltpackagegt-element-bootstrapper"></a>&lt;Pacchetto&gt; elemento (programma di avvio automatico)
+Il `Package` è l'elemento XML di primo livello all'interno di un file del pacchetto.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
 <Package  
@@ -142,17 +143,17 @@ caps.handback.revision: 9
 </Package>  
 ```  
   
-## Elementi e attributi  
- L'elemento `Package` è obbligatorio  Gli attributi di cui dispone sono riportati di seguito.  
+## <a name="elements-and-attributes"></a>Elementi e attributi  
+ Il `Package` elemento è obbligatorio. Include gli attributi seguenti.  
   
 |Attributo|Descrizione|  
 |---------------|-----------------|  
-|`Culture`|Obbligatorio.  Definisce le impostazioni cultura per il package, che determinano la lingua da utilizzare.  Questo attributo costituisce una chiave per accedere all'elemento `Strings`, in cui vengono elencate le stringhe specifiche delle impostazioni cultura per i nomi dei prodotti e i messaggi di errore durante l'installazione.|  
-|`Name`|Obbligatorio.  Nome del package visualizzato per lo sviluppatore all'interno di uno strumento, ad esempio [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)].  Questo attributo costituisce una chiave per accedere all'elemento `Strings`, che deve contenere un elemento `String` in cui il valore delle proprietà `Name` e `Culture` corrisponde al valore delle proprietà `Name` e `Culture` di `Package`.|  
-|`LicenseAgreement`|Parametro facoltativo.  Specifica il nome del file del package di distribuzione che contiene il Contratto di licenza con l'utente finale \(EULA\).  Il file può essere in formato testo normale \(estensione txt\) o in formato Rich Text Format  \(estensione rtf\).|  
+|`Culture`|Obbligatorio. Definisce le impostazioni cultura per il pacchetto, che determina la lingua da utilizzare. Questo attributo è una chiave nel `Strings` elemento, che elenca le stringhe specifiche delle impostazioni cultura per i nomi dei prodotti e i messaggi di errore durante l'installazione.|  
+|`Name`|Obbligatorio. Il nome del pacchetto visualizzato per lo sviluppatore all'interno di uno strumento come [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)]. Questo attributo è una chiave nel `Strings` elemento, che deve contenere un `String` elemento con la `Name` e `Culture` proprietà impostate in modo che corrisponda il `Name` e `Culture` le proprietà di `Package`.|  
+|`LicenseAgreement`|Facoltativo. Specifica il nome del file nel pacchetto di distribuzione che contiene il contratto di licenza con l'utente finale (EULA).  Questo file può essere testo normale (con estensione txt) in formato testo. RTF (Rich Text)|  
   
-## Esempio  
- Nell'esempio di codice riportato di seguito viene illustrato un file di package completo per la ridistribuzione di [!INCLUDE[dnprdnlong](../code-quality/includes/dnprdnlong_md.md)].  
+## <a name="example"></a>Esempio  
+ Esempio di codice seguente viene illustrato un file di pacchetto completo per la ridistribuzione di [!INCLUDE[dnprdnlong](../code-quality/includes/dnprdnlong_md.md)].  
   
 ```  
 <?xml version="1.0" encoding="utf-8" ?>  
@@ -189,5 +190,5 @@ caps.handback.revision: 9
 </Package>  
 ```  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Riferimenti dello schema di prodotti e package](../deployment/product-and-package-schema-reference.md)

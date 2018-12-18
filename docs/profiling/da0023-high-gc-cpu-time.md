@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- vs-ide-debug
+ms.technology: vs-ide-debug
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
@@ -13,37 +12,22 @@ f1_keywords:
 - vs.performance.23
 - vs.performance.rules.DA0023
 ms.assetid: aba875fe-9cbc-418d-a2c4-6eb47519a5bb
-caps.latest.revision: 10
+caps.latest.revision: "10"
 author: mikejo5000
 ms.author: mikejo
 manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 47057e9611b824c17077b9127f8d2f8b192d6eb8
-ms.openlocfilehash: f6c92673d3e8e1db37d547a466dcee127f190ca5
-ms.contentlocale: it-it
-ms.lasthandoff: 05/13/2017
-
+ms.workload: multiple
+ms.openlocfilehash: f02670778e660d7ecffa83523804d0c377af8579
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="da0023-high-gc-cpu-time"></a>DA0024: Tempo CPU GC elevato
 |||  
 |-|-|  
 |ID regola|DA0023|  
-|Categoria|Uso di .NET Framework|  
+|Category|Uso di .NET Framework|  
 |Metodo di profilatura|Tutti|  
 |Messaggio|% tempo in GC elevata. Indica un sovraccarico di Garbage Collection che potrebbe incidere sulla velocità di risposta dell'applicazione. Per altri dettagli, è possibile raccogliere dati sull'allocazione di memoria .NET e informazioni sulla durata degli oggetti per comprendere il criterio di allocazione della memoria usata dall'applicazione.|  
 |Tipo regola|Informativo|  

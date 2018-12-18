@@ -1,137 +1,139 @@
 ---
-title: "Distribuzione MSI e VSIX di un linguaggio DSL | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 6ce16f06-1978-4e19-8cdc-441ee65a3fb2
-caps.latest.revision: 2
-author: "alancameronwills"
-ms.author: "awills"
-manager: "douge"
-caps.handback.revision: 2
+title: Distribuzione VSIX di un linguaggio DSL e MSI | Documenti Microsoft
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.topic: article
+author: gewarren
+ms.author: gewarren
+manager: ghogen
+ms.workload:
+- multiple
+ms.technology: vs-ide-modeling
+ms.openlocfilehash: de6b219610908503f37658ff977f042363fb8663
+ms.sourcegitcommit: 205d15f4558315e585c67f33d5335d5b41d0fcea
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 02/09/2018
 ---
-# Distribuzione MSI e VSIX di un linguaggio DSL
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
-È possibile installare un linguaggio specifico di dominio di diventi proprietaria del computer o in altri computer.  [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] il valore è già installato nel computer di destinazione.  
+# <a name="msi-and-vsix-deployment-of-a-dsl"></a>Distribuzione MSI e VSIX di un linguaggio DSL
+È possibile installare un linguaggio specifico di dominio nel proprio computer o in altri computer. [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)]deve essere già installato nel computer di destinazione.  
   
-##  <a name="which"></a> Scelta tra la distribuzione MSI e VSIX  
- Esistono due metodi per implementare un linguaggio specifico di dominio:  
+##  <a name="which"></a>Scelta tra VSIX e MSI distribuzione  
+ Esistono due metodi di distribuzione di un linguaggio specifico di dominio:  
   
-|Metodo|vantaggi|  
+|Metodo|Vantaggi|  
 |------------|--------------|  
-|\(VSX[!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] estensione\)|Molto semplice distribuire: Copiare ed eseguire **.vsix** file dal progetto DslPackage.<br /><br /> Per ulteriori informazioni vedere [Installazione e disinstallazione di un modello DSL utilizzando il VSX](#Installing).|  
-|MSI \(file MSI\)|-   Consente all'utente si apra [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] fare doppio clic su un file di modello DSL.<br />-   Associare un'icona al tipo di file DSL nel computer di destinazione.<br />-   Associa uno XSD \(XML Schema\) al tipo di file DSL.  In questo modo si evita gli avvisi quando il file viene caricato in [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)].<br /><br /> È necessario aggiungere un progetto di installazione alla soluzione per creare un file MSI.<br /><br /> Per ulteriori informazioni, vedere [Implementando un modello DSL utilizzando un file MSI](#msi).|  
+|VSX ([!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] estensione)|Molto facile da distribuire: copia ed eseguire il **VSIX** file dal progetto DslPackage.<br /><br /> Per ulteriori informazioni vedere [installazione e disinstallazione di un linguaggio DSL utilizzando il VSX](#Installing).|  
+|MSI (file di programma di installazione)|-Consente all'utente di aprire [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] facendo doppio clic su un file DSL.<br />-Consente di associare un'icona con il tipo di file DSL nel computer di destinazione.<br />-Associa uno schema XSD (XML schema) con il tipo di file DSL. Ciò consente di evitare gli avvisi quando viene caricato il file [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)].<br /><br /> È necessario aggiungere un progetto di installazione alla soluzione per creare un file MSI.<br /><br /> Per ulteriori informazioni, vedere [la distribuzione di un linguaggio DSL utilizzando un file con estensione MSI](#msi).|  
   
-##  <a name="Installing"></a> Installazione e disinstallazione di un modello DSL utilizzando il VSX  
- Quando il modello DSL è installato con questo metodo, l'utente può aprire un file di modello DSL da [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)], ma il file non può essere aperto da esplora risorse.  
+##  <a name="Installing"></a>Installazione e disinstallazione di un linguaggio DSL utilizzando il VSX  
+ Quando il modello DSL viene installato da questo metodo, l'utente può aprire un file DSL dall'interno [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)], ma non è possibile aprire il file da Esplora risorse.  
   
-#### Per installare un modello DSL utilizzando il VSX  
+#### <a name="to-install-a-dsl-by-using-the-vsx"></a>Per installare un linguaggio DSL utilizzando il VSX  
   
-1.  Nel computer, trovare **.vsix** archiviare compilato dal progetto del pacchetto DSL.  
+1.  Nel computer, trovare il **VSIX** file compilato dal progetto di pacchetto DSL.  
   
-    1.  in **Esplora soluzioni**, fare clic con il pulsante destro del mouse  **DslPackage** proiettare quindi fare clic su  **aprire la cartella in Esplora risorse**.  
+    1.  In **Esplora**, fare doppio clic su di **DslPackage** del progetto e quindi fare clic su **Apri cartella in Esplora risorse**.  
   
-    2.  Individuare il file **bin\\\*\\***Progetto***.DslPackage.vsix**  
+    2.  Individuare il file **bin\\\*\\***YourProject***. DslPackage.vsix**  
   
-2.  copiare **.vsix** file nel computer di destinazione in cui si desidera installare il modello DSL.  Si può trattare del computer in uso o di un altro computer.  
+2.  Copia il **VSIX** file nel computer di destinazione in cui si desidera installare del linguaggio DSL. Può trattarsi del computer in uso o di un altro computer.  
   
-    -   Il computer di destinazione deve avere una delle versioni di [!INCLUDE[vs_current_short](../code-quality/includes/vs_current_short_md.md)] che supporta DSLs in fase di esecuzione.  Per ulteriori informazioni, vedere [Edizioni di Visual Studio per la visualizzazione e modellazione di SDK](../modeling/supported-visual-studio-editions-for-visualization-amp-modeling-sdk.md).  
+    -   Nel computer di destinazione deve essere una delle edizioni di [!INCLUDE[vs_current_short](../code-quality/includes/vs_current_short_md.md)] DSL che supporta in fase di esecuzione. Per ulteriori informazioni, vedere [supportati edizioni di Visual Studio per Visualization and Modeling SDK](../modeling/supported-visual-studio-editions-for-visualization-amp-modeling-sdk.md).  
   
-    -   Il computer di destinazione deve avere una delle versioni di [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] originati  **DslPackage\\source.extensions.manifest**.  
+    -   Nel computer di destinazione deve essere una delle edizioni di [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] specificato in **DslPackage\source.extensions.manifest**.  
   
-3.  Nel computer di destinazione fare doppio clic sul file **.vsix**.  
+3.  Nel computer di destinazione, fare doppio clic su di **VSIX** file.  
   
-     Verrà visualizzato **Visual Studio Extension Installer** e verrà installata l'estensione.  
+     **Visual Studio Extension Installer** si apre e installa l'estensione.  
   
 4.  Avviare o riavviare [!INCLUDE[vs_current_short](../code-quality/includes/vs_current_short_md.md)].  
   
-5.  Per testare il modello DSL, utilizzare [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] per creare un nuovo file con estensione cui è definito per il linguaggio DSL.  
+5.  Per eseguire il test del linguaggio DSL, utilizzare [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] per creare un nuovo file con estensione definito per il modello DSL.  
   
-#### Per disinstallare un modello DSL che è stato installato utilizzando VSX  
+#### <a name="to-uninstall-a-dsl-that-was-installed-by-using-vsx"></a>Per disinstallare un linguaggio DSL che è stato installato tramite VSX  
   
-1.  Scegliere **Gestione estensioni** dal menu **Strumenti**.  
+1.  Nel **strumenti** menu, fare clic su **Extension Manager**.  
   
 2.  Espandere **Estensioni installate**.  
   
-3.  Selezionare l'estensione in cui il modello DSL è definito quindi fare clic su **disinstallare**.  
+3.  Selezionare l'estensione in cui è definito il DSL e quindi fare clic su **Disinstalla**.  
   
- Raramente, può verificarsi che un'estensione errata non venga caricata creando un rapporto nella finestra di errore. Tale estensione non viene però visualizzata in Gestione estensioni.  In tal caso, è possibile rimuovere l'estensione eliminando il file da:  
+ Raramente, un'estensione errata non viene caricata e crea un report nella finestra degli errori, ma non viene visualizzata in Gestione estensioni. In tal caso, è possibile rimuovere l'estensione eliminando il file da:  
   
- *LocalAppData* **\\Microsoft\\VisualStudio\\10.0\\Extensions**  
+ *LocalAppData* **\Microsoft\VisualStudio\10.0\Extensions**  
   
-##  <a name="msi"></a> Implementare un modello DSL in MSI  
- Definendo un file MSI \(Windows Installer\) per il linguaggio DSL, è possibile consentire agli utenti di aprire i file di modello DSL da esplora risorse.  È inoltre possibile associare un'icona e una breve descrizione con l'estensione di file.  Inoltre, il file MSI possibile installare uno XSD che può essere utilizzato per convalidare i file di modello DSL.  Se lo si desidera, è possibile aggiungere altri componenti in MSI che verrà installato contemporaneamente.  
+##  <a name="msi"></a>Distribuzione di un linguaggio DSL in un file MSI  
+ Mediante la definizione di un file MSI (programma di installazione di Windows) per il modello DSL, è possibile consentire agli utenti di aprire file DSL da Esplora risorse. Con l'estensione del nome file, è anche possibile associare un'icona e una breve descrizione. Inoltre, il file MSI è possibile installare uno schema XSD che può essere utilizzato per convalidare i file DSL. Se si desidera, è possibile aggiungere altri componenti in MSI che verranno installato nello stesso momento.  
   
- Per ulteriori informazioni sui file MSI e altre opzioni di distribuzione, vedere [Distribuzione di applicazioni, servizi e componenti](../deployment/deploying-applications-services-and-components.md).  
+ Per ulteriori informazioni sulle altre opzioni di distribuzione e i file MSI, vedere [distribuzione di applicazioni, servizi e componenti](../deployment/deploying-applications-services-and-components.md).  
   
- Per compilare un'applicazione MSI, aggiungere un progetto di installazione in [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] soluzione.  Il metodo più semplice di creare un progetto di installazione è utilizzare il modello di CreateMsiSetupProject.tt, che è possibile scaricare da [Sito VMSDK](http://go.microsoft.com/fwlink/?LinkID=186128).  
+ Per compilare un file MSI, si aggiunge un progetto di installazione per il [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] soluzione. Il metodo di creazione di un progetto di installazione più semplice consiste nell'utilizzare il modello CreateMsiSetupProject.tt, che è possibile scaricare dal [sito VMSDK](http://go.microsoft.com/fwlink/?LinkID=186128).  
   
-#### Per implementare un modello DSL in MSI  
+#### <a name="to-deploy-a-dsl-in-an-msi"></a>Per distribuire un linguaggio DSL in un file MSI  
   
-1.  set `InstalledByMsi` nel manifesto dell'estensione.  Ciò impedisce il VSX siano installati e disinstallazione di dal file MSI.  Ciò è importante se si comprenderanno altri componenti in MSI.  
+1.  Impostare `InstalledByMsi` nel manifesto dell'estensione. Ciò impedisce il VSX viene installato e disinstallato tranne per il file MSI. Questo è importante se si include altri componenti in MSI.  
   
-    1.  aprire DslPackage \\ source.extension.tt  
+    1.  Open DslPackage\source.extension.tt  
   
-    2.  Inserire prima la seguente riga `<SupportedProducts>`:  
+    2.  Inserire la riga seguente prima di `<SupportedProducts>`:  
   
         ```  
         <InstalledByMsi>true</InstalledByMsi>  
         ```  
   
-2.  Creare o modificare l'icona che rappresenterà il modello DSL in Esplora risorse.  Ad esempio, modifica **DslPackage\\Resources\\File.ico**  
+2.  Creare o modificare un'icona che rappresenta il modello DSL in Esplora risorse. Ad esempio, modificare **DslPackage\Resources\File.ico**  
   
-3.  Assicurarsi che i seguenti attributi del linguaggio DSL siano corretti:  
+3.  Assicurarsi che i seguenti attributi di tale linguaggio DSL siano corretti:  
   
-    -   Fare clic su sfoglia DSL il nodo radice e nella Finestra Proprietà, rivedere:  
+    -   In Esplora DSL fare clic sul nodo radice e nella finestra Proprietà controllare:  
   
         -   Descrizione  
   
         -   Versione  
   
-    -   Fare clic su **editor** nodo, quindi nella Finestra Proprietà fare clic su  **icona**.  Impostare il valore per fare riferimento a un file di icona in **DslPackage\\Resources**, ad esempio  **File.ico**  
+    -   Fare clic su di **Editor** nodo e nella finestra Proprietà fare clic su **icona**. Impostare il valore per fare riferimento a un file di icona in **DslPackage\Resources**, ad esempio **File.ico**  
   
-    -   In **Compilazione** menu, aprire  **Configuration Manager**quindi selezionare la configurazione che si desidera compilare, ad esempio  **rilasciare** o  **debug**.  
+    -   Nel **compilare** menu aprirlo **Configuration Manager**e selezionare la configurazione che si desidera compilare, ad esempio **versione** o **Debug** .  
   
-4.  andare a [La home page dell'SDK di visualizzazione e modellazione](http://go.microsoft.com/fwlink/?LinkID=186128)e da **download** scheda, download  **CreateMsiSetupProject.tt**.  
+4.  Passare a [home page di Visualization and Modeling SDK](http://go.microsoft.com/fwlink/?LinkID=186128)e dal **Scarica** scheda, scaricare **CreateMsiSetupProject.tt**.  
   
-5.  aggiungere **CreateMsiSetupProject.tt** al progetto di Dsl.  
+5.  Aggiungere **CreateMsiSetupProject.tt** al progetto Dsl.  
   
-     [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] verrà creato un file denominato  **CreateMsiSetupProject.vdproj**.  
+     [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] verrà creato un file denominato **CreateMsiSetupProject.vdproj**.  
   
-6.  in Esplora risorse, copiare il Dsl \\\*.vdproj to a new folder named Setup.  
+6.  In Esplora risorse, la copia Dsl\\vdproj in una nuova cartella denominata il programma di installazione.  
   
-     \(Se lo si desidera, è ora possibile escludere CreateMsiSetupProject.tt dal progetto di Dsl\).  
+     (Se si desidera, è possibile ora escludere CreateMsiSetupProject.tt dal progetto Dsl.)  
   
-7.  in **Esplora soluzioni**, aggiungere  **Setup\\\*.vdproj** come progetto esistente.  
+7.  In **Esplora**, aggiungere **installazione\\\*con estensione vdproj** di un progetto esistente.  
   
-8.  Scegliere **Dipendenze progetto** dal menu **Progetto**.  
+8.  Nel **progetto** menu, fare clic su **dipendenze progetto**.  
   
-     in **Dipendenze di progetto** la finestra di dialogo, selezionare il progetto di installazione.  
+     Nel **dipendenze progetto** finestra di dialogo, selezionare il progetto di installazione.  
   
-     selezionare la casella accanto a **DslPackage**.  
+     Selezionare la casella accanto a **DslPackage**.  
   
 9. Ricompilare la soluzione.  
   
 10. In Esplora risorse, individuare il file MSI generato nel progetto di installazione.  
   
-     Copiare il file MSI in un computer in cui si desidera installare il modello DSL.  Fare doppio clic sul file MSI.  Il programma di installazione verrà eseguito.  
+     Copiare il file con estensione MSI in un computer in cui si desidera installare il modello DSL. Fare doppio clic sul file con estensione MSI. Viene eseguito il programma di installazione.  
   
-11. Nel computer di destinazione, creare un nuovo file con estensione di file del modello DSL.  Verificare gli aspetti seguenti:  
+11. Nel computer di destinazione, creare un nuovo file con l'estensione del file di tale linguaggio DSL. Verificare che:  
   
-    -   Nella visualizzazione elenco di esplora risorse, viene visualizzato con l'icona e la descrizione che è definito.  
+    -   Nella visualizzazione elenco in Esplora risorse, il file viene visualizzato con un'icona e la descrizione è definito.  
   
-    -   Quando si fa doppio clic sul file, [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] verrà avviato e apre il file di modello DSL nell'editor DSL.  
+    -   Quando si fa doppio clic su file, [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] avvia e apre il file DSL nell'editor di linguaggio DSL.  
   
- Se si preferisce, è possibile creare il progetto di installazione manuale, anziché il modello di testo.  Per una procedura dettagliata che include questa procedura vedere il capitolo 5 di [Lab dell'SDK di visualizzazione e modellazione](http://go.microsoft.com/fwlink/?LinkId=208878).  
+ Se si preferisce, è possibile creare il progetto di installazione manualmente, anziché utilizzare il modello di testo. Per una procedura dettagliata che include la procedura vedere il capitolo 5 del [di visualizzazione e modellazione Lab SDK](http://go.microsoft.com/fwlink/?LinkId=208878).  
   
-#### Per disinstallare un modello DSL installata da un file MSI  
+#### <a name="to-uninstall-a-dsl-that-was-installed-from-an-msi"></a>Per disinstallare un linguaggio DSL che è stato installato da un file MSI  
   
-1.  In windows, aprire **programmi e funzionalità** il Pannello di controllo.  
+1.  In Windows, aprire il **programmi e funzionalità** Pannello di controllo.  
   
-2.  Per disinstallare il modello DSL.  
+2.  La disinstallazione del linguaggio DSL.  
   
 3.  Riavviare Visual Studio.

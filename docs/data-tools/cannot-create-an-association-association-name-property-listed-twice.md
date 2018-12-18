@@ -1,38 +1,42 @@
 ---
-title: "Impossibile creare un&#39;associazione &lt;nome associazione&gt;. La stessa propriet&#224; &#232; elencata pi&#249; volte | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/14/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "Impossibile creare un'associazione &lt;il nome dell'associazione&gt; -proprietà elencata due volte | Documenti Microsoft"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 3ced8bda-210e-4caf-9d8f-96cdbba19251
-caps.latest.revision: 2
-caps.handback.revision: 2
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: "2"
+author: gewarren
+ms.author: gewarren
+manager: ghogen
+ms.technology: vs-data-tools
+ms.workload: data-storage
+ms.openlocfilehash: 2e712f04bda918e9a73d6053b743963a52417f7a
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
-# Impossibile creare un&#39;associazione &lt;nome associazione&gt;. La stessa propriet&#224; &#232; elencata pi&#249; volte
-Impossibile creare un'associazione \<nome associazione\>.La stessa proprietà è elencata più volte: \<nome proprietà\>.  
+# <a name="cannot-create-an-association-ltassociation-namegt---property-listed-twice"></a>Impossibile creare un'associazione &lt;il nome dell'associazione&gt; -proprietà elencata due volte
+Impossibile creare un'associazione \<nome associazione >. La stessa proprietà è elencata più volte: \<nome proprietà >.  
   
- Le associazioni vengono definite dalle **Proprietà associazione** selezionate nella finestra di dialogo **Editor di associazione**.Le proprietà possono essere elencate una sola volta per ogni classe nell'associazione.  
+ Le associazioni vengono definite dall'oggetto selezionato **proprietà associazione** nel **Editor di associazione** la finestra di dialogo. Le proprietà possono essere elencate una sola volta per ogni classe nell'associazione.  
   
- La proprietà specificata nel messaggio viene visualizzata più volte nelle **Proprietà associazione** della classe padre o figlio.  
+ La proprietà nel messaggio viene visualizzato più di una volta nell'elemento padre o figlio della classe **proprietà associazione**.  
   
-### Risoluzione del problema  
+### <a name="to-resolve-this-condition"></a>Risoluzione del problema  
   
 -   Esaminare il messaggio e prendere nota della proprietà specificata in esso.  
   
--   Scegliere **OK** per chiudere la finestra del messaggio.  
+-   Fare clic su **OK** per chiudere la finestra di messaggio.  
   
--   Controllare le **Proprietà associazione** e rimuovere le voci duplicate.  
+-   Controllare il **proprietà associazione** e rimuovere le voci duplicate.  
   
--   Scegliere **OK**.  
+-   Fare clic su **OK**.  
   
-## Vedere anche  
- [Cenni preliminari su Progettazione relazionale oggetti](../Topic/LINQ%20to%20SQL%20Tools%20in%20Visual%20Studio1.md)   
- [Procedura: creare un'associazione \(relazione\) tra classi LINQ to SQL \(Progettazione relazionale oggetti\)](../data-tools/how-to-create-an-association-relationship-between-linq-to-sql-classes-o-r-designer.md)   
- [Procedura dettagliata: creazione di classi LINQ to SQL \(Progettazione relazionale oggetti\)](../Topic/Walkthrough:%20Creating%20LINQ%20to%20SQL%20Classes%20\(O-R%20Designer\).md)   
- [LINQ to SQL](../Topic/LINQ%20to%20SQL.md)
+## <a name="see-also"></a>Vedere anche
+[Messaggi di Object Relational Designer](../data-tools/o-r-designer-messages.md)  
+[Gli strumenti di LINQ to SQL in Visual Studio](../data-tools/linq-to-sql-tools-in-visual-studio2.md)  
+[Procedura: creare un'associazione tra classi LINQ to SQL (O/R Designer)](../data-tools/how-to-create-an-association-relationship-between-linq-to-sql-classes-o-r-designer.md)

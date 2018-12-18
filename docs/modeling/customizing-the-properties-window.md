@@ -1,135 +1,137 @@
 ---
-title: "Personalizzazione della finestra Propriet&#224; | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "Linguaggio specifico di dominio, Proprietà (finestra)"
-ms.assetid: b6658de5-4e85-4628-93b2-5cc12f63d25b
-caps.latest.revision: 20
-author: "alancameronwills"
-ms.author: "awills"
-manager: "douge"
-caps.handback.revision: 20
+title: "Personalizzazione della finestra proprietà | Documenti Microsoft"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.topic: article
+helpviewer_keywords:
+- Domain-Specific Language, Properties window
+author: gewarren
+ms.author: gewarren
+manager: ghogen
+ms.workload:
+- multiple
+ms.technology: vs-ide-modeling
+ms.openlocfilehash: 545c8181cdaa3f13d2de04f13101d2678f9fd0ab
+ms.sourcegitcommit: 205d15f4558315e585c67f33d5335d5b41d0fcea
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 02/09/2018
 ---
-# Personalizzazione della finestra Propriet&#224;
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
-È possibile personalizzare l'aspetto e il comportamento della finestra delle proprietà nel linguaggio specifico di \(DSL\) dominio in [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)].  Nella definizione di modello DSL, definire le proprietà di dominio in ogni classe di dominio.  Per impostazione predefinita, quando si seleziona un'istanza della classe, in un diagramma o in Esplora Risorse di modello, ogni proprietà del dominio è elencato nella finestra delle proprietà.  Ciò consente di visualizzare e modificare i valori delle proprietà del dominio, anche se non ne è stato eseguito il mapping per formare i campi nel diagramma.  
+# <a name="customizing-the-properties-window"></a>Personalizzazione della finestra Proprietà
+È possibile personalizzare l'aspetto e il comportamento della finestra proprietà nel linguaggio specifico di dominio (DSL) in [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)]. Nella definizione DSL, definire le proprietà del dominio su ogni classe di dominio. Per impostazione predefinita, quando si seleziona un'istanza della classe, in un diagramma o in Esplora modelli, ogni proprietà del dominio è elencato nella finestra Proprietà. Questo consente di visualizzare e modificare i valori delle proprietà di dominio, anche se non li mappata a campi di forma nel diagramma.  
   
-## nomi, descrizioni e categorie  
- **nome e nome visualizzato**.  Nella definizione di una proprietà del dominio, il nome visualizzato della proprietà è il nome visualizzato di runtime nella finestra delle proprietà.  Al contrario, il nome viene utilizzato quando si scrive il codice programma per aggiornare la proprietà.  Il nome deve essere un nome alfanumerico corretto di CLR, ma il nome visualizzato può contenere spazi.  
+## <a name="names-descriptions-and-categories"></a>I nomi, descrizioni e le categorie  
+ **Nome e il nome visualizzato**. Nella definizione di una proprietà di dominio, il nome visualizzato della proprietà è il nome visualizzato in fase di esecuzione nella finestra Proprietà. Al contrario, il nome viene utilizzato quando si scrive codice di programma per aggiornare la proprietà. Il nome deve essere un nome alfanumerico CLR corretto, ma il nome può contenere spazi.  
   
- Quando si imposta il nome di una proprietà nella definizione di modello DSL, il relativo nome visualizzato sarà automaticamente impostato a una copia del nome.  Se si scrive un nome rivestito Pascal come “FuelGauge„, il nome visualizzato conterrà automaticamente uno spazio: “Contatore di combustibile„.  Tuttavia, è possibile impostare il nome visualizzato in modo esplicito a un altro valore.  
+ Quando si imposta il nome di una proprietà nella definizione del linguaggio DSL, il nome visualizzato è automaticamente impostato su una copia del nome. Se si scrive un nome di maiuscole e minuscole Pascal, ad esempio "FuelGauge", il nome visualizzato conterrà automaticamente uno spazio: "Carburante misuratore". Tuttavia, è possibile impostare il nome visualizzato in modo esplicito a un altro valore.  
   
- **Descrizione**.  La descrizione di una proprietà del dominio viene visualizzato in due modi:  
+ **Descrizione**. La descrizione di una proprietà di dominio viene visualizzato in due posizioni:  
   
--   Nella parte inferiore della finestra delle proprietà quando l'utente seleziona la proprietà.  È possibile utilizzarlo per spiegare che la proprietà rappresenta.  
+-   Nella parte inferiore della finestra Proprietà quando l'utente seleziona la proprietà. È possibile utilizzare, per indicare all'utente la proprietà rappresenta.  
   
--   Nel codice programma generato.  Se si utilizzano le funzionalità di documentazione per disegnare la documentazione di API, verrà visualizzato con la descrizione della proprietà nell'API.  
+-   Nel codice programma generato. Se si utilizzano le funzionalità per la documentazione per estrarre la documentazione dell'API, viene visualizzato come descrizione di questa proprietà nell'API.  
   
- **Categoria**.  Una categoria è un'intestazione nella Finestra Proprietà.  
+ **Categoria**. Una categoria è un titolo nella finestra Proprietà.  
   
-## Esporre le funzionalità di stile  
- Alcune delle funzionalità dinamiche di elementi grafici possono essere rappresentate o *esposto* come proprietà di dominio.  Una funzionalità che è stata esposta in questo modo può essere aggiornata dall'utente e può più essere aggiornata dal codice programma.  
+## <a name="exposing-style-features"></a>Esposizione di funzionalità di stile  
+ Alcune delle funzionalità dinamica di elementi grafici possono essere rappresentati o *esposti* come proprietà di dominio. Una funzionalità che è stato esposto in questo modo può essere aggiornata dall'utente e più facilmente aggiornabili da codice programma.  
   
- Fare clic con il pulsante destro del mouse su una classe di forma nella definizione di modello DSL, quindi **aggiungere esposto**quindi scegliere una funzionalità.  
+ Fare doppio clic su una classe di forma nella definizione DSL, scegliere **aggiungere esposti**, quindi scegliere una funzionalità.  
   
- Le forme è possibile esporre **FillColor**,  **OutlineColor**,  **TextColor**,  **OutlineDashStyle**,  **OutlineThickness** e  **FillGradientMode** proprietà.  I connettori è possibile esporre **colore**`,`**TextColor**,  **DashStyle**e  **spessore** proprietà.  I diagrammi è possibile esporre **FillColor** e  **TextColor** proprietà.  
+ Sulle forme è possibile esporre il **FillColor**, **OutlineColor**, **TextColor**, **OutlineDashStyle**,  **OutlineThickness** e **FillGradientMode** proprietà. I connettori, è possibile esporre il **colore**`,`**TextColor**, **DashStyle**, e **spessore** proprietà. Nei diagrammi è possibile esporre il **FillColor** e **TextColor** proprietà.  
   
-## inoltrare: Visualizzazione delle proprietà degli elementi correlati  
- Quando l'utente del linguaggio DSL seleziona un elemento in un modello, le proprietà dell'elemento verranno visualizzate nella finestra delle proprietà.  Tuttavia, è anche possibile visualizzare le proprietà degli elementi correlati specificati.  Questa operazione è utile se è stato definito un gruppo di elementi che funziona con.  Ad esempio, è possibile definire un elemento principale e un elemento plug\-in facoltativo.  Se l'elemento principale è stato eseguito il mapping a una forma e l'altro no, è utile visualizzare tutte le relative proprietà come se fossero su un elemento.  
+## <a name="forwarding-displaying-properties-of-related-elements"></a>Inoltro: Visualizzazione delle proprietà di elementi correlati  
+ Quando l'utente di tale linguaggio DSL seleziona un elemento in un modello, le proprietà dell'elemento vengono visualizzate nella finestra Proprietà. Tuttavia, è inoltre possibile visualizzare le proprietà di elementi correlati specificati. Ciò è utile se è stato definito un gruppo di elementi che funziona insieme. Ad esempio, è possibile definire un elemento principale e un elemento facoltativo del plug-in. Se l'elemento principale viene eseguito il mapping a una forma e l'altro non lo è, è utile visualizzare tutte le relative proprietà, come se fossero per un solo elemento.  
   
- questo effetto è denominato *l'inoltro della proprietà*e si verifica automaticamente in molti casi.  In altri casi, è possibile raggiungere la proprietà che inoltrate definire un descrittore di tipo del dominio.  
+ Questo effetto è denominato *inoltro proprietà*, e viene eseguito automaticamente in molti casi. In altri casi, è possibile ottenere proprietà inoltro definendo un descrittore di tipo di dominio.  
   
-### Casi di inoltro di proprietà predefinito  
- Quando l'utente seleziona una forma o un connettore, o un elemento in Esplora Risorse, le proprietà verranno visualizzate nella Finestra Proprietà:  
+### <a name="default-property-forwarding-cases"></a>Casi di inoltro di proprietà predefiniti  
+ Quando l'utente seleziona una forma o connettore o da un elemento in Esplora risorse, le proprietà seguenti vengono visualizzate nella finestra Proprietà:  
   
--   Le proprietà del dominio definite nella classe di dominio dell'elemento del modello, inclusi quelli definiti nelle classi di base.  Un'eccezione è una proprietà del dominio per il quale è stato impostato **È visualizzabile** in  `False`.  
+-   Proprietà del dominio che sono definite nella classe di dominio dell'elemento del modello, inclusi quelli che sono definiti nelle classi di base. Un'eccezione è una proprietà di dominio per cui sono stati impostati **è esplorabile** a `False`.  
   
--   I nomi degli elementi collegati con relazioni con una molteplicità di 0..1.  Ciò fornisce un metodo pratico per visualizzare gli elementi collegati facoltativamente, anche se non definito un mapping del connettore per la relazione.  
+-   I nomi degli elementi collegati tramite relazioni che dispongono di una molteplicità di 0..1. Fornisce un metodo comodo per visualizzare facoltativamente collegati a elementi, anche se non è stato definito un mapping di connettore per la relazione.  
   
--   Proprietà del dominio della relazione che utilizza destinato all'elemento.  Poiché incorporando le relazioni in genere non viene visualizzata in modo esplicito, questo consente di visualizzare le relative proprietà.  
+-   Proprietà di dominio della relazione di incorporamento destinato l'elemento. Perché le relazioni di incorporamento in genere non vengono visualizzate in modo esplicito, questo consente all'utente di vedere le relative proprietà.  
   
--   Proprietà del dominio definite nella forma o sul connettore selezionata.  
+-   Proprietà di dominio vengono definite per la forma selezionata o il connettore.  
   
-### L'inoltro di aggiunta di proprietà  
- Per inoltrare una proprietà, definire un descrittore di tipo del dominio.  Se si dispone di una relazione di dominio tra due classi di dominio, è possibile utilizzare un descrittore di tipo del dominio per impostare una proprietà di dominio nella prima classe sul valore di una proprietà di dominio nella seconda classe di dominio.  Ad esempio, se si dispone di una relazione tra una classe di dominio del libro e una classe di dominio dell'autore, è possibile utilizzare un descrittore di tipo del dominio per impostare la proprietà del nome dell'autore di un libro visualizzati nella Finestra Proprietà quando l'utente seleziona il libro.  
+### <a name="adding-property-forwarding"></a>Aggiunta di proprietà inoltro  
+ Per l'inoltro di una proprietà, definire un descrittore di tipo di dominio. Se si dispone di una relazione di dominio tra due classi di dominio, è possibile utilizzare un descrittore di tipo di dominio per impostare una proprietà di dominio nella prima classe per il valore di una proprietà di dominio nella seconda classe di dominio. Ad esempio, se si dispone di una relazione tra un **Book** classe di dominio e un **autore** classe di dominio, è possibile utilizzare un descrittore di tipo di dominio per rendere il **nome** proprietà di un Libro **autore** vengono visualizzati nella finestra Proprietà quando l'utente seleziona il libro.  
   
 > [!NOTE]
->  Proprietà che inoltra le ha effetto solo sulla Finestra Proprietà quando l'utente sta modificando un modello.  Non definisce una proprietà del dominio della classe ricevente.  Se si desidera accedere alla proprietà inoltrare il dominio in altre parti della definizione di modello DSL o nel codice programma, è necessario accedere all'elemento di inoltro.  
+>  Inoltro proprietà interessa solo la finestra Proprietà quando l'utente sta modificando un modello. Definisce una proprietà di dominio non nella classe del ricevente. Se si desidera accedere alla proprietà dominio inoltrati in altre parti della definizione DSL o nel codice programma, è necessario accedere all'elemento di inoltro.  
   
- La procedura riportata di seguito si presuppone che sia stato creato un modello DSL.  I passaggi i primi riepilogano i prerequisiti.  
+ La procedura seguente si presuppone che sia stato creato un linguaggio DSL. I primi passaggi riepilogano i prerequisiti.  
   
-##### Per inoltrare una proprietà da un altro elemento  
+##### <a name="to-forward-a-property-from-another-element"></a>Per l'inoltro di una proprietà da un altro elemento  
   
-1.  Creare un oggetto [!INCLUDE[dsl](../modeling/includes/dsl_md.md)] soluzione contenente almeno due classi, che in questo esempio vengono chiamate Book e autore.  Deve essere disponibile una relazione di qualsiasi tipo tra il libro e autore.  
+1.  Creare un [!INCLUDE[dsl](../modeling/includes/dsl_md.md)] soluzione che contiene almeno due classi, che in questo esempio vengono chiamate **Book** e **autore**. Deve esistere una relazione di entrambi i tipi tra **Book** e **autore**.  
   
-     La molteplicità del ruolo di origine \(il ruolo sul lato del libro\) deve essere 0..1 o 1..1, in modo che ogni libro dispone di un autore.  
+     La molteplicità del ruolo di origine (il ruolo di **libro** lato) deve essere 1 o 1, 0..1 in modo che ogni **libro** dispone di uno **autore**.  
   
-2.  in **DSL Esplora Risorse**, fare clic con il pulsante destro del mouse sulla classe di dominio del libro quindi fare clic su  **Aggiungere un nuovo DomainTypeDescriptor**.  
+2.  In **Esplora DSL**, fare doppio clic su di **Book** classe di dominio e quindi fare clic su **aggiungere nuovo DomainTypeDescriptor**.  
   
-     un nodo denominato **Percorsi dei descrittori della proprietà personalizzata** viene visualizzata sotto  **descrittore di tipo personalizzato** nodo.  
+     Un nodo denominato **percorsi di descrittori di proprietà personalizzato** viene visualizzata sotto il **descrittore di tipo personalizzato** nodo.  
   
-3.  Fare clic con il pulsante destro del mouse **descrittore di tipo personalizzato** il nodo e quindi fare clic su  **Aggiungere un nuovo PropertyPath**.  
+3.  Fare doppio clic su di **descrittore di tipo personalizzato** nodo e quindi fare clic su **aggiungere nuovo PropertyPath**.  
   
-     Un nuovo percorso della proprietà viene visualizzata in **Percorsi dei descrittori della proprietà personalizzata** nodo.  
+     Un nuovo percorso della proprietà viene visualizzata sotto il **percorsi di descrittori di proprietà personalizzato** nodo.  
   
-4.  Selezionare il nuovo percorso di proprietà e in **proprietà** finestra, impostare  **Percorso della proprietà** il percorso dell'elemento del modello adatto.  
+4.  Selezionare il nuovo percorso di proprietà e il **proprietà** finestra, impostare **percorso per la proprietà** al percorso dell'elemento del modello appropriato.  
   
-     È possibile modificare il percorso in una visualizzazione struttura ad albero facendo clic sulla freccia giù a destra della proprietà.  Per ulteriori informazioni sui percorsi di dominio, vedere [Sintassi del percorso di dominio](../modeling/domain-path-syntax.md).  Quando è stata modificata, il percorso deve essere analogo a **BookReferencesAuthor.Author\/\! autore**.  
+     Facendo clic sulla freccia rivolta verso il basso a destra di questa proprietà, è possibile modificare il percorso in una visualizzazione albero. Per ulteriori informazioni sui percorsi di dominio, vedere [sintassi del percorso di dominio](../modeling/domain-path-syntax.md). Quando è stato modificato, il percorso dovrebbe essere simile **BookReferencesAuthor.Author/! Autore**.  
   
-5.  set **proprietà** in  **Name** proprietà del dominio dell'autore.  
+5.  Impostare **proprietà** per il **nome** proprietà dominio di **autore**.  
   
-6.  set **nome visualizzato** per creare nome.  
+6.  Impostare **nome visualizzato** a **creare nome**.  
   
-7.  Trasformazione di tutti i modelli, compilare ed eseguire il modello DSL.  
+7.  Trasforma tutti i modelli, compilare ed eseguire del linguaggio DSL.  
   
-8.  In un diagramma di modello, creare un libro, un autore e collegarle utilizzando la relazione di riferimento.  Selezionare l'elemento di pubblicazione e nella Finestra Proprietà viene visualizzato il nome dell'autore oltre alle proprietà del libro.  Modificare il nome dell'autore collegato, o collegare il libro a un autore diverso e osservare che il nome dell'autore del libro.  
+8.  In un diagramma del modello, creare un libro, un autore e collegarle utilizzando la relazione di riferimento. Selezionare l'elemento "book" e nella finestra proprietà si dovrebbe essere il nome dell'autore oltre alle proprietà del libro. Modificare il nome dell'autore, collegato o collegare il libro da un altro autore e osservare che il nome dell'autore del libro è stato modificato.  
   
-## Editor di proprietà personalizzati  
- La finestra della proprietà fornisce un'esperienza predefinita appropriata di modifica per il tipo di ogni proprietà del dominio.  Ad esempio, per un tipo enumerato, riceverà un elenco a discesa e per una proprietà numerica, l'utente può immettere le cifre.  Ciò è applicabile solo ai tipi incorporati.  Se si specifica un tipo esterno, l'utente potrà visualizzare i valori della proprietà, ma non modificarlo.  
+## <a name="custom-property-editors"></a>Editor di proprietà personalizzati  
+ Finestra delle proprietà fornisce un valore predefinito appropriato strumento di modifica per il tipo di ogni proprietà del dominio. Ad esempio, per un tipo enumerato, l'utente visualizza un elenco a discesa e per una proprietà numerica, l'utente può immettere cifre. Questo vale solo per i tipi incorporati. Se si specifica un tipo esterno, l'utente sarà in grado di visualizzare i valori delle proprietà, ma non modificarlo.  
   
- Tuttavia, è possibile specificare gli editor e tipi:  
+ Tuttavia, è possibile specificare gli editor e i tipi seguenti:  
   
-1.  Un altro editor utilizzato con un di tipo corrente.  Ad esempio, è possibile specificare un editor del percorso del file per una proprietà stringa.  
+1.  Un altro editor che viene usato con un tipo standard. Ad esempio, è possibile specificare un editor di percorso di file per una proprietà di stringa.  
   
-2.  Un tipo esterno della proprietà del dominio e un editor per.  
+2.  Un tipo esterno per la proprietà di dominio e un editor.  
   
-3.  Un editor di .NET quali l'editor del percorso del file, oppure è possibile creare diventi proprietaria editor di proprietà personalizzati.  
+3.  Un editor di .NET, ad esempio l'editor di percorso di file, oppure è possibile creare proprietà personalizzata dell'editor.  
   
-     Una conversione tra un tipo esterno e un tipo come stringa, con un editor predefinito.  
+     La conversione tra un tipo esterno e un tipo come stringa, che dispone di un editor predefinito.  
   
- In un linguaggio specifico di dominio, *tipo esterno* è qualsiasi tipo che non è uno dei tipi semplici \(quali boolean o Int32\) o della stringa.  
+ In un linguaggio DSL, un *tipo esterno* è qualsiasi tipo che non è uno dei tipi semplici (ad esempio, valore booleano o Int32) o stringa.  
   
-#### Per definire una proprietà di dominio che dispone di un tipo esterno  
+#### <a name="to-define-a-domain-property-that-has-an-external-type"></a>Per definire una proprietà di dominio che dispone di un tipo esterno  
   
-1.  in **Esplora soluzioni**, aggiungere un riferimento a un assembly \(DLL\) che contiene il tipo esterno, in  **Dsl** progetto.  
+1.  In **Esplora**, aggiungere un riferimento all'assembly (DLL) che contiene il tipo esterno, nel **Dsl** progetto.  
   
-     L'assembly può essere un assembly. tuttavia, o un assembly fornito dall'utente.  
+     L'assembly può essere un assembly .NET o un assembly fornito dall'utente.  
   
-2.  Aggiungere il tipo a **Tipi di dominio** elencare, a meno che non sia già stata ancora provveduto.  
+2.  Aggiungere il tipo per il **tipi di dominio** elenco, a meno che non è ancora stato fatto.  
   
-    1.  Aprire DslDefinition.dsl e in **DSL Esplora Risorse**, fare clic con il pulsante destro del mouse sul nodo radice e scegliere  **aggiungere il nuovo tipo esterno**.  
+    1.  Aprire DslDefinition.dsl e in **Esplora DSL**pulsante destro del mouse il nodo radice e quindi fare clic su **Aggiungi nuovo tipo esterno**.  
   
-         Una nuova voce verrà visualizzata in **Tipi di dominio** nodo.  
+         Una nuova voce viene visualizzata sotto il **tipi di dominio** nodo.  
   
         > [!WARNING]
-        >  La voce di menu è il nodo radice DSL, non **Tipi di dominio** nodo.  
+        >  La voce di menu per il nodo radice DSL, non il **tipi di dominio** nodo.  
   
-    2.  Impostare il nome e lo spazio dei nomi del nuovo tipo nella Finestra Proprietà.  
+    2.  Nella finestra Proprietà, impostare il nome e lo spazio dei nomi del nuovo tipo.  
   
-3.  Aggiungere una proprietà di dominio a una classe di dominio nel modo usuale.  
+3.  Aggiungere una proprietà di dominio a una classe di dominio nel modo consueto.  
   
-     Nella Finestra Proprietà, selezionare il tipo esterno dall'elenco a discesa in **tipo** campo.  
+     Nella finestra Proprietà, selezionare il tipo esterno dall'elenco a discesa nel **tipo** campo.  
   
- In questa fase, gli utenti possono visualizzare i valori della proprietà, ma non possono modificarlo.  I valori visualizzati sono ottenuti da `ToString()` funzione.  È possibile scrivere codice programma che imposta il valore della proprietà, ad esempio in un comando o in una regola.  
+ In questa fase, gli utenti possono visualizzare i valori della proprietà, ma non possono modificarlo. I valori visualizzati vengono ottenuti le `ToString()` (funzione). È possibile scrivere codice programma che imposta il valore della proprietà, ad esempio in un comando o una regola.  
   
-### impostare un editor di proprietà  
- Aggiungere un attributo CLR alla proprietà del dominio, nel formato seguente:  
+### <a name="setting-a-property-editor"></a>L'impostazione di un Editor di proprietà  
+ Aggiungere un attributo CLR per la proprietà domain, nel formato seguente:  
   
 ```  
 [System.ComponentModel.Editor (  
@@ -138,17 +140,17 @@ caps.handback.revision: 20
   
 ```  
   
- È possibile impostare l'attributo su una proprietà tramite **attributo personalizzato** voce nella Finestra Proprietà.  
+ È possibile impostare l'attributo su una proprietà tramite il **attributo personalizzato** voce nella finestra Proprietà.  
   
- il tipo di `AnEditor` deve essere derivato dal tipo specificato nel secondo.  Il secondo parametro deve corrispondere a <xref:System.Drawing.Design.UITypeEditor> o  <xref:System.ComponentModel.ComponentEditor>.  Per ulteriori informazioni, vedere <xref:System.ComponentModel.EditorAttribute>.  
+ Il tipo di `AnEditor` deve essere derivato dal tipo specificato nel secondo parametro. Il secondo parametro deve essere <xref:System.Drawing.Design.UITypeEditor> o <xref:System.ComponentModel.ComponentEditor>. Per altre informazioni, vedere <xref:System.ComponentModel.EditorAttribute>.  
   
- È possibile specificare diventi proprietaria l'editor, o un editor fornito in [!INCLUDE[dnprdnshort](../code-quality/includes/dnprdnshort_md.md)], ad esempio  <xref:System.Windows.Forms.Design.FileNameEditor> o  <xref:System.Drawing.Design.ImageEditor>.  Ad esempio, attenersi alla procedura seguente per impostare una proprietà in cui l'utente può immettere un nome file.  
+ È possibile specificare il proprio editor o un editor fornito nel [!INCLUDE[dnprdnshort](../code-quality/includes/dnprdnshort_md.md)], ad esempio <xref:System.Windows.Forms.Design.FileNameEditor> o <xref:System.Drawing.Design.ImageEditor>. Ad esempio, utilizzare la procedura seguente una proprietà in cui l'utente può immettere un nome di file.  
   
-##### Per definire una proprietà di dominio nome file  
+##### <a name="to-define-a-file-name-domain-property"></a>Per definire una proprietà di dominio del nome file  
   
-1.  Aggiungere una proprietà di dominio a una classe di dominio nella definizione di modello DSL.  
+1.  Aggiungere una proprietà di dominio a una classe di dominio nella propria definizione DSL.  
   
-2.  selezionare la nuova proprietà.  in **attributo personalizzato** il campo della Finestra Proprietà, immettere il seguente attributo.  Per immettere questo attributo, fare clic sui puntini di sospensione **\[...\]** quindi digitare separatamente il nome di attributo e parametri:  
+2.  Selezionare la nuova proprietà. Nel **attributo personalizzato** campo nella finestra Proprietà, immettere il seguente attributo. Per immettere questo attributo, fare clic sui puntini di sospensione **[…]**  e quindi immettere il nome dell'attributo e i parametri separatamente:  
   
     ```  
     [System.ComponentModel.Editor (  
@@ -157,31 +159,31 @@ caps.handback.revision: 20
   
     ```  
   
-3.  Lasciare il tipo della proprietà del dominio sul valore predefinito di **stringa**.  
+3.  Lasciare l'impostazione predefinita di tipo della proprietà dominio **stringa**.  
   
-4.  Per verificare l'editor, verificare che gli utenti possano aprire l'editor di nome file per modificare la proprietà del dominio.  
+4.  Per testare l'editor, verificare che gli utenti possono aprire l'editor di nome file per modificare le proprietà del dominio.  
   
-    1.  Premere CTRL\+F5 o F5.  Nella soluzione di debug, aprire un file di test.  Creare un elemento della classe di dominio e selezionarlo.  
+    1.  Premere CTRL + F5 o F5. Nella soluzione di debug, aprire un file di test. Creare un elemento della classe di dominio e selezionarlo.  
   
-    2.  Nella Finestra Proprietà selezionare la proprietà, il dominio.  Il campo di valore vengono illustrati i puntini di sospensione **\[...\]**.  
+    2.  Nella finestra Proprietà selezionare la proprietà di dominio. Il campo del valore Mostra i puntini di sospensione **[…]** .  
   
-    3.  Scegliere il pulsante con i puntini di sospensione.  Una finestra di dialogo File.  selezionare un file e chiudere la finestra di dialogo.  Il percorso del file è ora il valore della proprietà del dominio.  
+    3.  Fare clic sui puntini di sospensione. Verrà visualizzata una finestra di dialogo file. Selezionare un file e chiudere la finestra di dialogo. Il percorso del file è ora il valore della proprietà dominio.  
   
-### Definizione dell'editor di proprietà  
- È possibile definire diventi proprietaria l'editor.  A questo scopo per concedere all'utente o per modificare un tipo definito, o per modificare un di tipo corrente in modo speciale.  Ad esempio, è possibile consentire a chi introduca una stringa che rappresenta una formula.  
+### <a name="defining-your-own-property-editor"></a>Definizione di un editor di proprietà  
+ È possibile definire il proprio editor. È necessario farlo per consentire all'utente di modificare un tipo che è stato definito o per modificare un tipo di standard in modo speciale. Ad esempio, è possibile consentire all'utente di immettere una stringa che rappresenta una formula.  
   
- Definire un editor scrittura di una classe derivata da <xref:System.Drawing.Design.UITypeEditor>.  la classe deve eseguire l'override:  
+ Si definisce un editor scrivendo una classe derivata da <xref:System.Drawing.Design.UITypeEditor>. La classe deve eseguire l'override:  
   
 -   <xref:System.Drawing.Design.UITypeEditor.EditValue%2A>, per interagire con l'utente e aggiornare il valore della proprietà.  
   
--   <xref:System.Drawing.Design.UITypeEditor.GetEditStyle%2A>, per specificare se verrà aperta una finestra di dialogo o verrà visualizzato un menu a discesa.  
+-   <xref:System.Drawing.Design.UITypeEditor.GetEditStyle%2A>, per specificare se l'editor di aprire una finestra di dialogo o fornire un menu a discesa.  
   
- È anche possibile fornire una rappresentazione grafica del valore della proprietà visualizzate nella griglia delle proprietà.  A tale scopo, override `GetPaintValueSupported`e  `PaintValue`.  Per ulteriori informazioni, vedere <xref:System.Drawing.Design.UITypeEditor>.  
+ È anche possibile fornire una rappresentazione grafica del valore della proprietà che verrà visualizzato nella griglia delle proprietà. A tale scopo, eseguire l'override `GetPaintValueSupported`, e `PaintValue`.  Per altre informazioni, vedere <xref:System.Drawing.Design.UITypeEditor>.  
   
 > [!NOTE]
->  Aggiungere il codice in un file di codice distinto in **Dsl** progetto.  
+>  Aggiungere il codice in un file di codice separato nella **Dsl** progetto.  
   
- Di seguito è riportato un esempio:  
+ Ad esempio:  
   
 ```  
 internal class TextFileNameEditor : System.Windows.Forms.Design.FileNameEditor  
@@ -196,7 +198,7 @@ internal class TextFileNameEditor : System.Windows.Forms.Design.FileNameEditor
   
 ```  
   
- per utilizzare questo editor, impostare **attributo personalizzato** per una proprietà di un dominio a:  
+ Per utilizzare questo editor, impostare il **attributo personalizzato** di una proprietà di dominio per:  
   
 ```  
 [System.ComponentModel.Editor (  
@@ -205,15 +207,15 @@ internal class TextFileNameEditor : System.Windows.Forms.Design.FileNameEditor
   
 ```  
   
- Per ulteriori informazioni, vedere <xref:System.Drawing.Design.UITypeEditor>.  
+ Per altre informazioni, vedere <xref:System.Drawing.Design.UITypeEditor>.  
   
-## Creazione di un elenco a discesa di valori  
- È possibile fornire un elenco di valori che un utente scegliere da.  
+## <a name="providing-a-drop-down-list-of-values"></a>Fornisce un elenco di riepilogo a discesa di valori  
+ È possibile fornire un elenco di valori per un utente di scegliere.  
   
 > [!NOTE]
->  Questa tecnica viene fornito un elenco di valori che può cambiare in fase di esecuzione.  Se si desidera fornire un elenco che non cambia, considerare l'opportunità anziché utilizzando un tipo enumerato come tipo della proprietà del dominio.  
+>  Questa tecnica fornisce un elenco di valori che possono cambiare in fase di esecuzione. Se si desidera fornire un elenco che non cambia, considerare invece l'utilizzo di un tipo enumerato come il tipo della proprietà di dominio.  
   
- Per definire un elenco di valori standard, si aggiunge l'oggetto alla proprietà del dominio un attributo CLR che presenta il formato seguente:  
+ Per definire un elenco di valori standard, si aggiunge alla proprietà del dominio un attributo CLR che ha il formato seguente:  
   
 ```  
 [System.ComponentModel.TypeConverter   
@@ -221,9 +223,9 @@ internal class TextFileNameEditor : System.Windows.Forms.Design.FileNameEditor
   
 ```  
   
- Definire una classe che deriva da <xref:System.ComponentModel.TypeConverter>.  aggiungere il codice in un file separato in **Dsl** progetto.  Di seguito è riportato un esempio:  
+ Definire una classe che deriva da <xref:System.ComponentModel.TypeConverter>. Aggiungere il codice in un file separato nella **Dsl** progetto. Ad esempio:  
   
-```c#  
+```csharp  
 /// <summary>  
 /// Type converter that provides a list of values   
 /// to be displayed in the property grid.  
@@ -315,5 +317,5 @@ public class MyTypeConverter : System.ComponentModel.TypeConverter
   
 ```  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Esplorazione e aggiornamento di un modello nel codice del programma](../modeling/navigating-and-updating-a-model-in-program-code.md)

@@ -1,5 +1,5 @@
 ---
-title: Modello di Visual Studio Manifest Schema Reference | Documenti di Microsoft
+title: Modello di Visual Studio Manifest Schema Reference | Documenti Microsoft
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -7,45 +7,33 @@ ms.suite:
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: bc7d0a81-0df5-41a9-a912-1b30e5da1d13
-caps.latest.revision: 3
+caps.latest.revision: "3"
+author: gregvanl
 ms.author: gregvanl
 manager: ghogen
-translation.priority.mt:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: 512014c5070e4314ad2b7d0e8c5c404c43f32cd9
-ms.openlocfilehash: 0f4abf286dc8b1cf00e47468ddaa4831747a059d
-ms.lasthandoff: 02/22/2017
-
+ms.workload: vssdk
+ms.openlocfilehash: 87f676ef30da7c667c4ce2b688520a49ed1931c3
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="visual-studio-template-manifest-schema-reference"></a>Riferimenti dello Schema del manifesto modello Visual Studio
-Questo schema descrive il formato di file di manifesto (.vstman) modello di Visual Studio generati per i modelli di progetto o un elemento di Visual Studio e descrive la posizione e altre informazioni rilevanti relative al modello.  
+# <a name="visual-studio-template-manifest-schema-reference"></a>Riferimenti dello Schema manifesto dei modelli di Visual Studio
+Questo schema viene descritto il formato dei file manifesto (.vstman) modello Visual Studio generati per i modelli di progetto o un elemento di Visual Studio e descrive il percorso e altre informazioni rilevanti relative al modello.  
   
- : Perché sono presenti elementi separati e le directory di progetto, un manifesto mai deve contenere una combinazione dei modelli di elemento e progetto.  
+ : Poiché esistono elemento separato e le directory di progetto, un manifesto non debba mai in grado di contenere una combinazione dei modelli di elemento e progetto.  
   
 > [!IMPORTANT]
->  È disponibile a partire da Visual Studio 2017.  
+>  Il manifesto è disponibile a partire da Visual Studio 2017.  
   
 ## <a name="vstemplatemanifest-element"></a>Elemento VSTemplateManifest  
  L'elemento radice del manifesto.  
   
 ### <a name="attributes"></a>Attributi  
   
--   **Versione**: stringa che rappresenta la versione del manifesto del modello. Obbligatorio.  
+-   **Versione**: una stringa che rappresenta la versione del manifesto del modello. Obbligatorio.  
   
--   **Impostazioni locali**: stringa che rappresenta le impostazioni locali o le impostazioni locali del manifesto del modello. Il valore delle impostazioni locali si applica a tutti i modelli, è necessario utilizzare un manifesto distinto per ciascuna lingua. Facoltativo.  
+-   **Impostazioni locali**: stringa che rappresenta le impostazioni locali o impostazioni locali del manifesto del modello. Il valore delle impostazioni locali si applica a tutti i modelli, è necessario utilizzare un manifesto distinto per ognuna delle impostazioni locali. Facoltativo.  
   
 ### <a name="child-elements"></a>Elementi figlio  
   
@@ -57,43 +45,43 @@ Questo schema descrive il formato di file di manifesto (.vstman) modello di Visu
  Nessuno.  
   
 ## <a name="vstemplatecontainer"></a>VSTemplateContainer  
- Il contenitore del modello di elementi del manifesto. Un contenitore di modello per ogni modello che definisce un manifesto.  
+ Il contenitore del modello di manifesto elementi. Un contenitore di modello per ogni modello che definisce un manifesto.  
   
 ### <a name="attributes"></a>Attributi  
- **VSTemplateType** : un valore stringa che specifica il tipo di modello (`"Project"`, `"Item"`, o `"ProjectGroup"`). Richiesto  
+ **VSTemplateType** : un valore stringa che specifica il tipo del modello (`"Project"`, `"Item"`, o `"ProjectGroup"`). Obbligatorio  
   
 ### <a name="child-elements"></a>Elementi figlio  
   
--   **RelativePathOnDisk**: il percorso relativo del file di modello su disco. Questo percorso definisce anche la posizione del modello nell'albero del modello nella **nuovo progetto** o **nuovo elemento** finestra di dialogo. Per i modelli distribuiti come singoli file e una directory, questo percorso fa riferimento alla directory contenente i file di modello. Per i modelli distribuiti come file ZIP, questo percorso deve essere il percorso del file con estensione zip.  
+-   **RelativePathOnDisk**: il percorso relativo del file di modello su disco. Questo percorso definisce anche la posizione del modello nell'albero del modello nella **nuovo progetto** o **nuovo elemento** finestra di dialogo. Per i modelli distribuiti come singoli file e una directory, questo percorso fa riferimento alla directory contenente i file di modello. Per i modelli distribuiti come file con estensione zip, questo percorso deve essere il percorso del file con estensione zip.  
   
--   **VSTemplateHeader** : un [TemplateData](../extensibility/templatedata-element-visual-studio-templates.md) elemento che descrive l'intestazione.  
+-   **VSTemplateHeader** : A [TemplateData](../extensibility/templatedata-element-visual-studio-templates.md) elemento che descrive l'intestazione.  
   
 ### <a name="parent-element"></a>Elemento padre  
  **VSTemplateManifest**  
   
 ## <a name="vstemplatedir"></a>VSTemplateDir  
- Descrive la directory in cui si trova il modello. Un manifesto può contenere più **VSTemplateDir** voci per fornire nome localizzato e ordinamento per le directory di ordinamento per determinarne l'aspetto nella struttura di categoria di modello.  
+ Descrive la directory in cui si trova il modello. Un manifesto può contenere più **VSTemplateDir** voci per fornire il nome localizzato e ordinamento di ordinamento per le directory per controllare l'aspetto nell'albero delle categorie di modello.  
   
- A causa di progettazione, **VSTemplateDir** voci dovrebbero essere visualizzato solo nei manifesti specificati non locali.  
+ A causa delle loro configurazione, **VSTemplateDir** voci devono essere visualizzato solo in manifesti specificati non delle impostazioni locali.  
   
 ### <a name="attributes"></a>Attributi  
  Nessuno.  
   
 ### <a name="child-elements"></a>Elementi figlio  
   
--   **RelativePath**: il percorso del modello. Può esistere solo una voce per ogni percorso, il primo avrà la precedenza per tutti i manifesti.  
+-   **RelativePath**: il percorso del modello. Può esistere solo una voce per ogni percorso, il primo criterio avrà la precedenza per tutti i manifesti.  
   
--   **LocalizedName**: un **NameDescriptionIcon** elemento che specifica il nome localizzato. Facoltativo.  
+-   **LocalizedName**: A **NameDescriptionIcon** elemento che specifica il nome localizzato. Facoltativo.  
   
--   **SortOrder** : una stringa che specifica l'ordinamento. Facoltativo.  
+-   **SortOrder** : una stringa che specifica il tipo di ordinamento. Facoltativo.  
   
--   **ParentFolderOverrideName**: il nome della cartella padre sottoposto a override. Facoltativo. Questo elemento ha un **nome** attributo, ovvero un valore stringa che specifica il nome.  
+-   **ParentFolderOverrideName**: il nome della cartella padre sottoposto a override. Facoltativo. L'elemento ha un **nome** attributo, ovvero un valore stringa che specifica il nome.  
   
 ### <a name="parent-element"></a>Elemento padre  
  **VSTemplateManifest**  
   
 ## <a name="namedescriptionicon"></a>NameDescriptionIcon  
- Specifica il nome e descrizione, possibilmente per modelli localizzati. Vedere **LocalizedName** sopra.  
+ Specifica il nome e descrizione, probabilmente per i modelli localizzati. Vedere **LocalizedName** sopra.  
   
 ### <a name="attributes"></a>Attributi  
   
@@ -134,7 +122,7 @@ Questo schema descrive il formato di file di manifesto (.vstman) modello di Visu
   
 ```  
   
- Di seguito è riportato un esempio di un elemento .vstman del file di modello.  
+ Di seguito è riportato un esempio di file di un elemento modello .vstman.  
   
 ```  
 VSTemplateManifest Version="1.0" Locale="1033" xmlns="http://schemas.microsoft.com/developer/vstemplatemanifest/2015">  

@@ -4,36 +4,19 @@ ms.custom:
 ms.date: 05/02/2017
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- vs-devops-test
+ms.technology: vs-devops-test
 ms.tgt_pltfrm: 
 ms.topic: article
-helpviewer_keywords:
-- IntelliTest, Visual Studio IntelliTest developer testing tool
-ms.assetid: A7B98509-7ACA-4E25-BD1B-BBC98742F028
-caps.latest.revision: 56
-ms.author: douge
-manager: douge
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 45d36934cf1c46902cac566203cddf4a118b7fe4
-ms.openlocfilehash: a10125710bc36917842a26caebda5b5e7ac8b7fb
-ms.contentlocale: it-it
-ms.lasthandoff: 06/02/2017
-
+helpviewer_keywords: IntelliTest, Visual Studio IntelliTest developer testing tool
+ms.author: gewarren
+manager: ghogen
+ms.workload: multiple
+author: gewarren
+ms.openlocfilehash: 65f14d96bd495a1b3f8ca138176fbf805fdfeb67
+ms.sourcegitcommit: 7ae502c5767a34dc35e760ff02032f4902c7c02b
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 01/09/2018
 ---
 # <a name="overview-of-microsoft-intellitest"></a>Panoramica di Microsoft IntelliTest
 
@@ -72,7 +55,7 @@ IntelliTest trova gli input pertinenti al programma testato, pertanto è possibi
 
 Nell'esempio seguente vengono creati due vincoli sul parametro denominato **value**, in modo che IntelliTest generi la stringa desiderata.
 
-```
+```csharp
 using System;
 using Microsoft.Pex.Framework; 
 using Microsoft.VisualStudio.TestTools.UnitTesting; 
@@ -100,10 +83,9 @@ Dopo la compilazione e l'esecuzione IntelliTest genera un set di test come il se
 7. "Hello\0World!"
 8. "Hello World!"
 
-Per informazioni sulla posizione in cui vengono salvati i test generati, vedere [questo argomento](https://docs.microsoft.com/en-gb/visualstudio/test/generate-unit-tests-for-your-code-with-intellitest#Anchor_0).
-Il codice di test generato deve includere un test come il seguente:
+Leggere [Generare unit test con IntelliTest](../../test/generate-unit-tests-for-your-code-with-intellitest.md) per capire dove vengono salvati i test generati. Il codice di test generato deve includere un test come il seguente:
 
-```
+```csharp
 [TestMethod]
 [PexGeneratedBy(typeof(global::HelloWorldTest))]
 [PexRaisedException(typeof(Exception))]
@@ -115,8 +97,7 @@ public void HelloWorldThrowsException167()
 
 È facile!
 
-<a name="limitations"></a>
-## <a name="limitations"></a>Limitazioni
+## <a name="limitations"></a> Limitazioni
 
 In questa sezione vengono descritte le limitazioni di IntelliTest:
 
@@ -181,9 +162,8 @@ Dato che IntelliTest rileva e "rigenera" eccezioni in ogni metodo instrumentato,
 ## <a name="further-reading"></a>Ulteriori informazioni
 
 * [Post di blog introduttivo](https://blogs.msdn.microsoft.com/visualstudioalm/2014/11/19/introducing-smart-unit-tests/) su MSDN.
-* [Generare unit test per il codice con IntelliTest](https://docs.microsoft.com/en-gb/visualstudio/test/generate-unit-tests-for-your-code-with-intellitest)
+* [Generare unit test per il codice con IntelliTest](../../test/generate-unit-tests-for-your-code-with-intellitest.md)
 
 ## <a name="got-feedback"></a>Commenti?
 
 Pubblicare idee e richieste di funzionalità in **[UserVoice](https://visualstudio.uservoice.com/forums/121579-visual-studio-2015/category/157869-test-tools?query=IntelliTest)**.
-

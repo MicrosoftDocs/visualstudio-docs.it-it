@@ -1,27 +1,30 @@
 ---
-title: "IActiveScriptStringCompare::StrComp | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/18/2017"
-ms.prod: "windows-script-interfaces"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
+title: IActiveScriptStringCompare::StrComp | Documenti Microsoft
+ms.custom: 
+ms.date: 01/18/2017
+ms.prod: windows-script-interfaces
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: reference
 apiname: IActiveScriptStringCompare.StrComp
 apilocation: scrobj.dll
-helpviewer_keywords: 
-  - "Metodo StrComp, Interfaccia IActiveScriptStringCompare"
+helpviewer_keywords: StrComp method, IActiveScriptStringCompare interface
 ms.assetid: 124d1281-8037-4766-a2a1-61244ac1f114
-caps.latest.revision: 8
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.openlocfilehash: 1b92b29f4e40f5e8de567337957aabbcb3c057fd
+ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/27/2017
 ---
-# IActiveScriptStringCompare::StrComp
-Definisce il metodo di confronto di stringhe per il modulo di gestione di script.  
+# <a name="iactivescriptstringcomparestrcomp"></a>IActiveScriptStringCompare::StrComp
+Definisce il metodo di confronto di stringhe per il motore di script.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
 HRESULT StrComp(  
@@ -34,7 +37,7 @@ HRESULT StrComp(
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `bszStr1`  
  Prima stringa.  
   
@@ -42,22 +45,22 @@ HRESULT StrComp(
  Seconda stringa.  
   
  `iRet`  
- Risultato del confronto.  0 se`bszStr1` e `bszStr2`sono identici; \-1 se `bszStr1` \< `bszStr2`; 1 se `bszStr1` \> `bszStr2`.  
+ Il risultato del confronto. 0 se `bszStr1` e `bszStr2`sono identici, -1 se `bszStr1`  <  `bszStr2`; 1 se `bszStr1`  >  `bszStr2`.  
   
-## Valore restituito  
- Restituisce uno dei seguenti valori:  
+## <a name="return-value"></a>Valore restituito  
+ Restituisce uno dei valori seguenti:  
   
 |Valore restituito|Significato|  
-|-----------------------|-----------------|  
-|`S_OK`|Riuscita.|  
+|------------------|-------------|  
+|`S_OK`|Operazione completata.|  
 |`E_INVALIDARG`|Un argomento non è valido.|  
-|`E_UNEXPECTED`|La chiamata non era prevista, ad esempio il motore di scripting non è ancora stato caricato o non inizializzata\).|  
+|`E_UNEXPECTED`|La chiamata non era previsto (ad esempio, il motore di script non è ancora caricato o inizializzato).|  
   
-## Note  
- Questo metodo viene chiamato ogni volta che un confronto di stringhe viene eseguito.  
+## <a name="remarks"></a>Note  
+ Questo metodo viene chiamato ogni volta che viene eseguito un confronto tra stringhe.  
   
-## Esempio  
- Di seguito viene illustrato come eseguire l'overload della funzione di confronto di stringhe.  L'overload consentito quando si utilizza [IActiveScriptProperty::SetProperty](../../winscript/reference/iactivescriptproperty-setproperty.md) per impostare SCRIPTPROP\_STRINGCOMPAREINSTANCE.  
+## <a name="example"></a>Esempio  
+ Nell'esempio seguente viene illustrato come eseguire l'overload della funzione di confronto di string. L'overload è consentita quando si utilizza [IActiveScriptProperty::SetProperty](../../winscript/reference/iactivescriptproperty-setproperty.md) impostare SCRIPTPROP_STRINGCOMPAREINSTANCE.  
   
 ```cpp#  
 cpp_quote("// {58562769-ED52-42f7-8403-4963514E1F11}")  
@@ -94,5 +97,5 @@ interface IActiveScriptStringCompare : IUnknown
 }  
 ```  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Interfaccia IActiveScriptStringCompare](../../winscript/reference/iactivescriptstringcompare-interface.md)

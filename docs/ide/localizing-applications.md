@@ -11,39 +11,26 @@ ms.topic: article
 helpviewer_keywords:
 - Visual Basic code, international applications
 - globalization [Visual Studio], localizing applications
-- Visual C#, international applications
+- C#, international applications
 - applications [Visual Studio], localizing
 - localization [.NET Framework], applications
 ms.assetid: 879c20e0-8301-4f44-b520-97283848c965
-caps.latest.revision: 10
+caps.latest.revision: 
 author: gewarren
 ms.author: gewarren
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 3d32d11a430227800cb3ed53831a9565eb6adeb3
-ms.openlocfilehash: e165ec6487a17819313dacd819ca1147b9953339
-ms.contentlocale: it-it
-ms.lasthandoff: 05/30/2017
-
+ms.workload:
+- multiple
+ms.openlocfilehash: 92a7e56d05d0f9d71d51aa80fcc5d545b3baf061
+ms.sourcegitcommit: b18844078a30d59014b48a9c247848dea188b0ee
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 01/29/2018
 ---
 # <a name="localizing-applications"></a>Localizzazione di applicazioni
 La *localizzazione* è il processo di personalizzazione dell'applicazione per determinate impostazioni locali o cultura. La localizzazione consiste principalmente nella traduzione dell'interfaccia utente.  
   
-## <a name="in-this-section"></a>Contenuto della sezione  
+## <a name="in-this-section"></a>In questa sezione  
  [Organizzazione gerarchica di risorse per la localizzazione](../ide/hierarchical-organization-of-resources-for-localization.md)  
  Spiega in che modo vengono archiviate le risorse localizzate e come accedere alle risorse in Visual Studio.  
   
@@ -58,7 +45,7 @@ La *localizzazione* è il processo di personalizzazione dell'applicazione per de
   
 ## <a name="related-sections"></a>Sezioni correlate  
  [Introduzione alle applicazioni internazionali basate su .NET Framework](../ide/introduction-to-international-applications-based-on-the-dotnet-framework.md)  
- Illustra i concetti relativi allo sviluppo di software per un mercato internazionale con Visual Basic o Visual C#.  
+ Illustra i concetti relativi allo sviluppo di software per un mercato internazionale con Visual Basic o C#.  
   
  [Globalizzazione di Windows Form](/dotnet/framework/winforms/advanced/globalizing-windows-forms)  
  Offre collegamenti a pagine sulla creazione di applicazioni Windows che supportano più impostazioni cultura.  

@@ -1,27 +1,27 @@
 ---
 title: Progetti di esempio per R Tools per Visual Studio | Microsoft Docs
+description: Indice di una raccolta di esempi per iniziare con R e Visual Studio.
 ms.custom: 
-ms.date: 6/29/2017
+ms.date: 01/24/2018
 ms.reviewer: 
 ms.suite: 
 ms.technology:
 - devlang-r
-ms.devlang: r
+dev_langs:
+- R
 ms.tgt_pltfrm: 
 ms.topic: get-started-article
-ms.assetid: aa52ed0e-cdb5-4fb2-814c-c94cac2ffc6f
-caps.latest.revision: 1
 author: kraigb
 ms.author: kraigb
 manager: ghogen
+ms.workload:
+- data-science
+ms.openlocfilehash: f8bf96d4fcfdb29fdaf79fa5adba9b99375aaddd
+ms.sourcegitcommit: 205d15f4558315e585c67f33d5335d5b41d0fcea
 ms.translationtype: HT
-ms.sourcegitcommit: 712cc780388acc5e373f71d51fc8f1f42adb5bed
-ms.openlocfilehash: ec9862f9e7fcbd084d5e12c0467c8b608a5b4956
-ms.contentlocale: it-it
-ms.lasthandoff: 07/12/2017
-
+ms.contentlocale: it-IT
+ms.lasthandoff: 02/09/2018
 ---
-
 # <a name="r-tools-for-visual-studio-sample-projects"></a>Progetti di esempio di R Tools per Visual Studio
 
 Questa raccolta di esempi funge da introduzione a R, R Tools per Visual Studio (RTVS) e Microsoft R Server:
@@ -44,7 +44,6 @@ Questo esempio offre un'introduzione approfondita a R tramite la serie di commen
 
     ![Output dell'esempio 2-Introduction to ggplot2.R](media/samples-ggplot-output.png)
 
-
 ## <a name="microsoft-r-server-and-machine-learning"></a>Microsoft R Server e apprendimento automatico
 
 Questa raccolta di esempi illustra come usare R per creare modelli di apprendimento automatico e come sfruttare le funzionalità di [Microsoft R Server (MRS)](http://aka.ms/rtvs-msft-r). Installare MRS per eseguire gli script il cui titolo contiene `MRS` e dove indicato.
@@ -57,12 +56,13 @@ Come per tutti gli esempi, aprire il file, posizionare il cursore nella parte su
 
 - `Bike_Rental_Estimation_with_MRS` crea un modello di previsione della domanda per noleggi di biciclette basato su un set di dati cronologico, usando Microsoft R Server. 
 
-- `Data_Exploration` contiene tre script:  
-    - `Import Data from URL.R` illustra come caricare in R un file di dati identificato da URL.
-    - `Import Data from URL to xdf.R` illustra come caricare in Microsoft R Server un file di dati identificato da URL come xdf. (Richiede MRS).
-    - `Using ggplot2.R` è un'estensione dell'esempio `A First Look at R/2-Introduction to ggplot2.R`, con una panoramica più estesa della funzionalità di ggplot2, tra cui il tracciamento 3D interattivo.
+- `Data_Exploration` contiene tre script:
 
-        ![Output dell'uso dell'esempio ggplot2.R](media/samples-3d-interactive.png)
+  - `Import Data from URL.R` illustra come caricare in R un file di dati identificato da URL.
+  - `Import Data from URL to xdf.R` illustra come caricare in Microsoft R Server un file di dati identificato da URL come xdf. (Richiede MRS).
+  - `Using ggplot2.R` è un'estensione dell'esempio `A First Look at R/2-Introduction to ggplot2.R`, con una panoramica più estesa della funzionalità di ggplot2, tra cui il tracciamento 3D interattivo.
+
+      ![Output dell'uso dell'esempio ggplot2.R](media/samples-3d-interactive.png)
 
 - `Datasets` include tre file `.csv` usati da altri esempi
 - `Flight_Delays_Prediction_with_R` e `Flight_Delays_Prediction_with_MRS` illustrano come prevedere i ritardi dei voli con R, l'apprendimento automatico e lo storico delle prestazioni nei tempi stabiliti, nonché i dati meteorologici. 
@@ -93,4 +93,3 @@ Per un confronto tecnico di R con MRO e MRS, vedere [la discussione dettagliata 
 Nella figura seguente viene quindi confrontato il tempo trascorso in secondi usato per la creazione di modelli di regressione logistica per stimare ritardi dei voli di più di 15 minuti.  Il tempo trascorso usato in CRAN R aumenta notevolmente all'aumento di un numero ridotto di righe, mentre MRS aumenta solo di circa due volte. Per informazioni dettagliate su questo benchmark, vedere l'esempio `Benchmarks/rxGlm_benchmark.R`.
 
 ![Benchmark rxGlm](media/samples-rxGLM-benchmark.png)
-

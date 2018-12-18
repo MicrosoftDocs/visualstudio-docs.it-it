@@ -1,44 +1,47 @@
 ---
-title: "IDebugApplication::StartDebugSession | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/18/2017"
-ms.prod: "windows-script-interfaces"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
+title: IDebugApplication::StartDebugSession | Documenti Microsoft
+ms.custom: 
+ms.date: 01/18/2017
+ms.prod: windows-script-interfaces
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: reference
 apiname: IDebugApplication.StartDebugSession
 apilocation: pdm.dll
-helpviewer_keywords: 
-  - "IDebugApplication::StartDebugSession"
+helpviewer_keywords: IDebugApplication::StartDebugSession
 ms.assetid: 737f8424-bbcf-473f-9cf1-6601b9aa250d
-caps.latest.revision: 8
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.openlocfilehash: aea5caead4921206428c2f1f36b74d057c8cef36
+ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/27/2017
 ---
-# IDebugApplication::StartDebugSession
-Avvia l'ambiente di sviluppo integrato predefinito \(IDE\) del debugger e associa una sessione di debug a questa applicazione, se una non è già collegata.  
+# <a name="idebugapplicationstartdebugsession"></a>IDebugApplication::StartDebugSession
+Avvia l'ambiente di sviluppo integrato (IDE) debugger predefinito e collega una sessione di debug per questa applicazione, se non è ancora stato connesso.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
 HRESULT StartDebugSession();  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  Questo metodo non accetta parametri.  
   
-## Valore restituito  
- Il metodo restituisce un tipo `HRESULT`.  I valori possibili sono, ma non sono limitati a, quelli nella tabella seguente.  
+## <a name="return-value"></a>Valore restituito  
+ Il metodo restituisce un tipo `HRESULT`. I valori possibili includono, ma non sono limitati a, quelli indicati nella tabella seguente.  
   
 |Valore|Descrizione|  
-|------------|-----------------|  
+|-----------|-----------------|  
 |`S_OK`|Il metodo è riuscito.|  
   
-## Note  
- Questo metodo viene utilizzato per attivare il debug JIT.  
+## <a name="remarks"></a>Note  
+ Questo metodo viene utilizzato per implementare il debug just-in-time.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Interfaccia IDebugApplication](../../winscript/reference/idebugapplication-interface.md)

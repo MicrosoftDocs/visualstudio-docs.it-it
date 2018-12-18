@@ -1,68 +1,70 @@
 ---
-title: "Procedura: configurare progetti per piattaforme di destinazione multiple | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-general"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "piattaforme, modifica delle piattaforme di destinazione"
-  - "progetti [Visual Studio], piattaforme di destinazione"
+title: 'Procedura: Configurare progetti per piattaforme di destinazione multiple | Microsoft Docs'
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: vs-ide-general
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- projects [Visual Studio], targeting platforms
+- platforms, changing target platforms
 ms.assetid: affa2392-7aed-45ac-9ffa-1d8e0496d590
-caps.latest.revision: 9
-author: "kempb"
-ms.author: "kempb"
-manager: "ghogen"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: gewarren
+ms.author: gewarren
+manager: ghogen
+ms.workload: multiple
+ms.openlocfilehash: 7686e792d804af85bb8f9588f3ae78fd6b6ec3e3
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
-# Procedura: configurare progetti per piattaforme di destinazione multiple
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
-[!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] consente di destinare una soluzione a più architetture o piattaforme della CPU contemporaneamente.  Le proprietà per impostare questi si accede mediante la finestra di dialogo di **Gestione configurazione** .  
+# <a name="how-to-configure-projects-to-target-multiple-platforms"></a>Procedura: configurare progetti per piattaforme di destinazione multiple
+[!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] consente di creare una soluzione per architetture CPU o piattaforme di destinazione diverse. Le proprietà per questa impostazione sono disponibili nella finestra di dialogo **Gestione configurazione**.  
   
-## Individuazione della piattaforma di destinazione  
- La finestra di dialogo **Gestione configurazione** consente di creare e impostare configurazioni e piattaforme a livello di soluzione e a livello di progetto.  A ciascuna combinazione di configurazioni e destinazioni a livello di soluzione può essere associato un set di proprietà specifiche, che consentono ad esempio di passare con facilità da una configurazione di rilascio destinata a una piattaforma [!INCLUDE[vcprx64](../extensibility/internals/includes/vcprx64_md.md)] a una configurazione di rilascio destinata a una piattaforma x86 e a una configurazione di debug destinata una piattaforma x86.  
+## <a name="targeting-a-platform"></a>Impostazione di una piattaforma come destinazione  
+ La finestra di dialogo **Gestione configurazione** consente di creare e impostare configurazioni e piattaforme a livello di soluzione e progetto. Ogni combinazione di configurazioni a livello di soluzione e destinazioni può avere un solo set di proprietà associato consentendo di passare facilmente tra una configurazione di versione per una piattaforma [!INCLUDE[vcprx64](../extensibility/internals/includes/vcprx64_md.md)], una configurazione di versione per una piattaforma x86 e una configurazione di debug per una piattaforma x86.  
   
-#### Per impostare una configurazione per una piattaforma di destinazione differente  
+#### <a name="to-set-your-configuration-to-target-a-different-platform"></a>Per impostare una piattaforma diversa come destinazione della configurazione  
   
-1.  Scegliere **Gestione configurazione** dal menu **Compila**.  
+1.  Nel menu **Compila** fare clic su **Gestione configurazione**.  
   
-2.  Nella casella **Piattaforma soluzione attiva** selezionare la piattaforma a cui si desidera che la soluzione sia destinata oppure selezionare **\<Nuova\>** per creare una nuova piattaforma.  [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] compilerà l'applicazione individuare la piattaforma che viene impostata come piattaforma attiva nella finestra di dialogo di **Gestione configurazione** .  
+2.  Nella casella **Piattaforma soluzione attiva** selezionare la piattaforma che si vuole impostare come destinazione della soluzione oppure selezionare **\<Nuovo>** per creare una nuova piattaforma. [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] compila l'applicazione impostando come destinazione la piattaforma specificata come piattaforma attiva nella finestra di dialogo **Gestione configurazione**.  
   
-## Rimozione di una piattaforma  
- Se una piattaforma non è necessaria, è possibile rimuoverla utilizzando la finestra di dialogo Gestione configurazione.  Tutte le impostazioni di soluzione e di progetto configurate per tale combinazione di configurazione e destinazione verranno rimosse.  
+## <a name="removing-a-platform"></a>Rimozione di una piattaforma  
+ Se una piattaforma non è più necessaria, è possibile rimuoverla usando la finestra di dialogo Gestione configurazione. Verranno rimosse tutte le impostazioni di soluzione e progetto configurate per la combinazione di configurazione e destinazione.  
   
-#### Per rimuovere una piattaforma  
+#### <a name="to-remove-a-platform"></a>Per rimuovere una piattaforma  
   
-1.  Scegliere **Gestione configurazione** dal menu **Compila**.  
+1.  Nel menu **Compila** fare clic su **Gestione configurazione**.  
   
-2.  Nella casella **Piattaforma soluzione attiva** selezionare **\<Modifica\>**.  Viene aperta la finestra di dialogo **Modifica piattaforme soluzione**.  
+2.  Nella casella **Piattaforma soluzione attiva** selezionare **\<Modifica>**. Viene visualizzata la finestra di dialogo **Modifica piattaforme soluzione**.  
   
-3.  Selezionare la piattaforma che si desidera rimuovere e fare clic su **Rimuovi**.  
+3.  Fare clic sulla piattaforma da rimuovere e quindi su **Rimuovi**.  
   
-## Destinare una soluzione a più piattaforme  
- Poiché è possibile modificare le impostazioni in base alla combinazione di impostazioni di configurazione e di piattaforma, è possibile destinare una soluzione a più piattaforme.  
+## <a name="targeting-multiple-platforms-with-one-solution"></a>Impostazione di più piattaforme come destinazione di un'unica soluzione  
+ Poiché è possibile modificare le impostazioni in base alla combinazione di configurazione e piattaforma, è possibile impostare una soluzione con più piattaforme come destinazione .  
   
-#### Per destinare una soluzione a più piattaforme  
+#### <a name="to-target-multiple-platforms"></a>Per impostare più piattaforme come destinazione  
   
-1.  Utilizzare **Gestione configurazione** per aggiungere almeno due piattaforme di destinazione per la soluzione.  
+1.  Usare **Gestione configurazione** per aggiungere almeno due piattaforme di destinazione per la soluzione.  
   
-2.  Selezionare la piattaforma di destinazione dall'elenco a discesa **Piattaforma soluzione attiva**.  
+2.  Selezionare la piattaforma di destinazione dall'elenco **Piattaforma soluzione attiva**.  
   
 3.  Compilare la soluzione.  
   
-#### Per compilare più configurazioni di soluzioni contemporaneamente  
+#### <a name="to-build-multiple-solution-configurations-at-once"></a>Per creare più configurazioni di soluzione contemporaneamente  
   
-1.  Utilizzare **Gestione configurazione** per aggiungere almeno due piattaforme di destinazione per la soluzione.  
+1.  Usare **Gestione configurazione** per aggiungere almeno due piattaforme di destinazione per la soluzione.  
   
-2.  Utilizzare la finestra **Compilazione batch** per compilare più configurazioni di soluzioni contemporaneamente.  
+2.  Usare la finestra **Compilazione batch** per compilare più configurazioni di soluzione contemporaneamente.  
   
- È possibile che una piattaforma a livello di soluzione sia impostata, ad esempio, su [!INCLUDE[vcprx64](../extensibility/internals/includes/vcprx64_md.md)] e che i progetti contenuti nella soluzione non siano destinati alla stessa piattaforma.  Inoltre è possibile che la soluzione includa più progetti, ciascuno destinato a piattaforme differenti.  Nel caso si verifichi una di queste situazioni, si consiglia di creare una nuova configurazione con un nome descrittivo per evitare confusione.  
+ È possibile avere una piattaforma a livello di soluzione impostata ad esempio su [!INCLUDE[vcprx64](../extensibility/internals/includes/vcprx64_md.md)] e non avere all'interno della soluzione alcun progetto per la stessa piattaforma. È anche possibile avere più progetti nella soluzione ognuno con una piattaforma diversa come destinazione. In questi casi è consigliabile creare una nuova configurazione con un nome descrittivo per evitare confusione.  
   
-## Vedere anche  
- [Procedura: creare e modificare le configurazioni](../ide/how-to-create-and-edit-configurations.md)   
- [Informazioni sulle configurazioni della build](../ide/understanding-build-configurations.md)   
- [Compilazione e pulizia di progetti e soluzioni in Visual Studio](../ide/building-and-cleaning-projects-and-solutions-in-visual-studio.md)
+## <a name="see-also"></a>Vedere anche  
+ [Procedura: Creare e modificare le configurazioni](../ide/how-to-create-and-edit-configurations.md)   
+ [Understanding Build Configurations](../ide/understanding-build-configurations.md)  (Informazioni sulle configurazioni delle compilazioni)  
+ [Building and Cleaning Projects and Solutions in Visual Studio](../ide/building-and-cleaning-projects-and-solutions-in-visual-studio.md) (Compilazione e pulizia di progetti e soluzioni in Visual Studio)

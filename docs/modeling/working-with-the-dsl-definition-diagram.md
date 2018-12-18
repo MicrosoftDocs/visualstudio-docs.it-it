@@ -1,75 +1,77 @@
 ---
-title: "Utilizzo del diagramma di definizione DSL | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "vs.dsltools.dsldesigner.diagram"
-  - "vs.dsltools.dsldesigner.dsldiagram"
-helpviewer_keywords: 
-  - "Strumenti del linguaggio specifico di dominio, Bring Tree Here"
-  - "Strumenti del linguaggio specifico di dominio, diagramma"
-  - "Strumenti del linguaggio specifico di dominio, Show As Class"
-  - "Strumenti del linguaggio specifico di dominio, Show Map Lines"
-  - "Strumenti del linguaggio specifico di dominio, Split Tree"
-ms.assetid: 1a4c7a58-e134-438e-848e-efd98f92bf10
-caps.latest.revision: 21
-author: "alancameronwills"
-ms.author: "awills"
-manager: "douge"
-caps.handback.revision: 21
+title: Utilizzo del diagramma della definizione DSL | Documenti Microsoft
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.topic: article
+f1_keywords:
+- vs.dsltools.dsldesigner.diagram
+- vs.dsltools.dsldesigner.dsldiagram
+helpviewer_keywords:
+- Domain-Specific Language Tools, diagram
+- Domain-Specific Language Tools, Split Tree
+- Domain-Specific Language Tools, Show Map Lines
+- Domain-Specific Language Tools, Show As Class
+- Domain-Specific Language Tools, Bring Tree Here
+author: gewarren
+ms.author: gewarren
+manager: ghogen
+ms.workload:
+- multiple
+ms.technology: vs-ide-modeling
+ms.openlocfilehash: 603189cdc4ac65c4b12fae0e736025b622765c81
+ms.sourcegitcommit: 205d15f4558315e585c67f33d5335d5b41d0fcea
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 02/09/2018
 ---
-# Utilizzo del diagramma di definizione DSL
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
-Il diagramma di una definizione di [!INCLUDE[dsl](../modeling/includes/dsl_md.md)] è uno strumento importante per la definizione del linguaggio specifico di dominio \(DSL\).  Consente di aggiungere elementi al modello di dominio e definire relazioni sul diagramma ed è possibile modificare il layout del diagramma per renderlo più leggibile.  
+# <a name="working-with-the-dsl-definition-diagram"></a>Utilizzo del diagramma di definizione DSL
+Il diagramma di un [!INCLUDE[dsl](../modeling/includes/dsl_md.md)] definizione è uno strumento importante per la definizione di linguaggio specifico di dominio. Consente di aggiungere elementi al modello di dominio e definire relazioni sul diagramma ed è possibile modificare il layout del diagramma per renderlo più leggibile.  
   
-## Layout del diagramma  
- Il diagramma della definizione di [!INCLUDE[dsl](../modeling/includes/dsl_md.md)] è costituito da due partizioni, la partizione **Classes and Relationships** e la partizione **Diagram Elements**.  Nella partizione **Classes and Relationships** sono visualizzate classi di dominio, relazioni di dominio ed ereditarietà. Nella partizione **Diagram Elements** sono visualizzate classi di forma, classi di connettore, classi di corsia e il diagramma della finestra di progettazione generato.  
+## <a name="the-layout-of-the-diagram"></a>Layout del diagramma  
+ Il [!INCLUDE[dsl](../modeling/includes/dsl_md.md)] definizione diagramma dispone di due partizioni, la **classi e relazioni** partizione e **elementi del diagramma** partizione. Il **classi e relazioni** partizione consente di visualizzare le classi di dominio, relazioni di dominio e l'ereditarietà. Il **elementi del diagramma** partizione consente di visualizzare le classi di forma, connettore classi, classi corsia e il diagramma di progettazione generato.  
   
- Le classi di dominio possono essere visualizzate in più posizioni all'interno delle partizioni **Classes and Relationships**.  In una definizione di classe di dominio viene visualizzato un albero di ereditarietà se si tratta della classe di base per altre classi di dominio e un albero delle relazioni se si tratta dell'origine delle relazioni di incorporamento o riferimento.  I segnaposto delle classi di dominio vengono visualizzati come le destinazioni delle relazioni di incorporamento o riferimento.  Per impostazione predefinita, gli elementi segnaposto sono visualizzati con il raggruppamento **Domain Properties** compresso.  Per questi elementi, non vengono mostrati l'ereditarietà o le relazioni di incorporamento o riferimento.  
+ Classi di dominio possono essere visualizzati in più posizioni di **classi e relazioni** partizioni. In una definizione di classe di dominio viene visualizzato un albero di ereditarietà se si tratta della classe di base per altre classi di dominio e un albero delle relazioni se si tratta dell'origine delle relazioni di incorporamento o riferimento. I segnaposto delle classi di dominio vengono visualizzati come le destinazioni delle relazioni di incorporamento o riferimento. Per impostazione predefinita, vengono visualizzati gli elementi di segnaposto con il **proprietà dominio** raggruppamento compresso. Per questi elementi, non vengono mostrati l'ereditarietà o le relazioni di incorporamento o riferimento.  
   
- Quando si aggiunge una classe di dominio, questa viene visualizzata nella parte inferiore della partizione **Classes and Relationships**.  Quando si aggiunge una relazione di incorporamento o riferimento, questa viene posizionata a destra sotto la classe di dominio di origine.  
+ Quando si aggiunge una classe di dominio, viene visualizzato nella parte inferiore del **classi e relazioni** partizione. Quando si aggiunge una relazione di incorporamento o riferimento, questa viene posizionata a destra sotto la classe di dominio di origine.  
   
- Man mano che si aggiungono classi e relazioni di dominio, può risultare difficile individuare una classe di dominio specifica.  Per trovare una classe di dominio, fare clic con il pulsante destro del mouse su di essa in **DSL Explorer** e scegliere **Locate in Diagram**.  
+ Man mano che si aggiungono classi e relazioni di dominio, può risultare difficile individuare una classe di dominio specifica. È possibile trovare una classe di dominio facendo clic su esso nel **Esplora DSL** e quindi fare clic su **individua nel diagramma**.  
   
  Nelle sezioni seguenti viene descritto come modificare l'aspetto del diagramma per renderlo più leggibile.  
   
-## Copia di elementi  
+## <a name="copying-elements"></a>Copia di elementi  
  È possibile usare i comandi Copia, Taglia e Incolla sugli elementi nel diagramma della definizione DSL.  
   
-## Zoom avanti o indietro sul diagramma  
- È possibile eseguire lo zoom avanti o indietro sul diagramma usando la barra degli strumenti di **DSL Designer** per impostare il livello di zoom.  
+## <a name="zooming-in-or-out-on-the-diagram"></a>Zoom avanti o indietro sul diagramma  
+ È possibile ingrandire e rimpicciolire il diagramma utilizzando le **Progettazione DSL** barra degli strumenti per impostare il livello di zoom.  
   
-## Nascondere linee mappa  
- Le linee mappa sono linee tracciate tra una classe di dominio o una relazione di dominio e la forma o il connettore a cui è mappata.  È possibile nascondere le linee mappa facendo clic sul pulsante **Show Map Lines** sulla barra degli strumenti di **DSL Designer**.  Per visualizzare le linee, fare di nuovo clic sul pulsante.  
+## <a name="hiding-map-lines"></a>Nascondere linee mappa  
+ Le linee mappa sono linee tracciate tra una classe di dominio o una relazione di dominio e la forma o il connettore a cui è mappata. È possibile nascondere linee mappa facendo il **Mostra righe mappa** pulsante il **Progettazione DSL** barra degli strumenti. Per visualizzare le linee, fare di nuovo clic sul pulsante.  
   
-## Modifica del layout del diagramma  
- È possibile modificare il layout della partizione **Classes and Relationships** come indicato di seguito.  
+## <a name="changing-the-diagram-layout"></a>Modifica del layout del diagramma  
+ È possibile modificare il layout del **classi e relazioni** partizione come indicato di seguito.  
   
-### Expand\/Collapse  
- Per ridurre le dimensioni di un elemento forma di raggruppamento che rappresenta una classe di dominio o una forma fare clic con il pulsante destro del mouse su di esso e quindi scegliere **Collapse**.  Il raggruppamento **Domain Properties** della forma verrà nascosto.  Per visualizzare di nuovo il raggruppamento **Domain Properties**, fare clic con il pulsante destro del mouse sulla forma e scegliere **Expand**.  
+### <a name="expandcollapse"></a>Expand/Collapse  
+ È possibile ridurre le dimensioni di un elemento di raggruppamento forma che rappresenta una classe di dominio o una forma facendo clic destro e quindi facendo clic su **Comprimi**. In tal modo il **proprietà dominio** raggruppamento della forma. Per visualizzare il **proprietà dominio** raggruppamento nuovamente, fare clic sulla forma e quindi fare clic su **Espandi**.  
   
-### Move Up\/Move Down  
- Per spostare una classe di dominio o un elemento del diagramma verso l'alto o verso il basso nella partizione, fare clic con il pulsante destro del mouse sull'elemento e quindi scegliere **Move Up** o **Move Down**.  Se si sposta un elemento segnaposto visualizzato come destinazione di una relazione di incorporamento o riferimento, la relazione verrà spostata insieme all'elemento.  
+### <a name="move-updown"></a>Move Up/Move Down  
+ È possibile spostare una dominio classe o diagramma di un elemento verso l'alto o verso il basso nella partizione facendo clic l'elemento e quindi fare clic su **Sposta su** o **Sposta giù**. Se si sposta un elemento segnaposto visualizzato come destinazione di una relazione di incorporamento o riferimento, la relazione verrà spostata insieme all'elemento.  
   
-### Expand\/Collapse Relationships Tree  
- Se una classe di dominio riveste il ruolo di origine in relazioni di incorporamento o riferimento con altre classi di dominio, per nascondere le relazioni fare clic con il pulsante destro del mouse sulla definizione della classe di dominio e quindi scegliere **Collapse Relationships Tree**.  Per visualizzare le relazioni, fare clic sull'elemento della definizione e quindi su **Expand Relationships Tree**.  
+### <a name="expandcollapse-relationships-tree"></a>Expand/Collapse Relationships Tree  
+ Se una classe di dominio svolge il ruolo di origine nelle relazioni di incorporamento o un riferimento con altre classi di dominio, è possibile nascondere le relazioni facendo clic la definizione di classe di dominio e quindi fare clic su **Comprimi relazioni albero**. Per visualizzare le relazioni, il pulsante destro l'elemento della definizione e quindi fare clic su **espandere struttura ad albero di relazioni**.  
   
-### Expand\/Collapse Inheritance Tree  
- Se una classe di dominio rappresenta la classe di base per altre classi di dominio, per nascondere l'albero di ereditarietà fare clic con il pulsante destro del mouse sulla definizione della classe di dominio e quindi scegliere **Collapse Inheritance Tree**.  Per visualizzare l'albero di ereditarietà, fare clic sull'elemento della definizione e quindi su **Expand Inheritance Tree**.  
+### <a name="expandcollapse-inheritance-tree"></a>Expand/Collapse Inheritance Tree  
+ Se una classe di dominio è la classe di base di altre classi di dominio, è possibile nascondere l'albero di ereditarietà facendo clic la definizione di classe di dominio e quindi fare clic su **albero di ereditarietà Comprimi**. Per visualizzare l'albero di ereditarietà, il pulsante destro l'elemento della definizione e quindi fare clic su **espandere albero di ereditarietà**.  
   
-### Bring Tree Here  
- Per consolidare il diagramma, fare clic con il pulsante destro del mouse su una classe di dominio segnaposto e quindi scegliere **Bring Tree Here**.  La classe di dominio segnaposto diventa un elemento della definizione e visualizza gli alberi di ereditarietà e delle relazioni.  L'elemento della definizione precedente diventa un elemento segnaposto se costituisce la destinazione di una relazione o l'elemento figlio in una relazione di ereditarietà; in caso contrario, non viene più visualizzato.  
+### <a name="bring-tree-here"></a>Bring Tree Here  
+ È possibile consolidare il diagramma facendo clic su una classe di dominio segnaposto e scegliendo **portare albero qui**. La classe di dominio segnaposto diventa un elemento della definizione e visualizza gli alberi di ereditarietà e delle relazioni. L'elemento della definizione precedente diventa un elemento segnaposto se costituisce la destinazione di una relazione o l'elemento figlio in una relazione di ereditarietà; in caso contrario, non viene più visualizzato.  
   
-### Split Tree  
- Per suddividere gli alberi di ereditarietà o delle relazioni, fare clic con il pulsante destro del mouse sulla definizione della classe di dominio in cui sono visualizzati e quindi scegliere **Split Tree**.  L'elemento della definizione diventa un elemento segnaposto e la classe di dominio della definizione, insieme ai relativi alberi di ereditarietà e delle relazioni, è ora visualizzata nella parte inferiore della partizione.  
+### <a name="split-tree"></a>Split Tree  
+ È possibile interrompere le strutture ad albero di ereditarietà o relazioni facendo clic sulla definizione di classe dominio che li visualizza e quindi facendo clic su **della struttura di suddivisione**. L'elemento della definizione diventa un elemento segnaposto e la classe di dominio della definizione, insieme ai relativi alberi di ereditarietà e delle relazioni, è ora visualizzata nella parte inferiore della partizione.  
   
-### Show As Class  
- Se una relazione di dominio ha relazioni derivate o se ha relazioni di incorporamento o riferimento con altre relazioni di dominio, è possibile visualizzare la relazione come una classe. A questo scopo, fare clic con il pulsante destro del mouse sulla relazione e quindi scegliere **Show As Class**.  La relazione verrà visualizzata con un raggruppamento **Domain Properties** e mostrerà gli alberi di ereditarietà e delle relazioni.  
+### <a name="show-as-class"></a>Show As Class  
+ Se le relazioni è derivata da una relazione di dominio, o se dispone di incorporamento o riferimento relazioni con altre relazioni di dominio, è possibile visualizzare la relazione come classe facendo clic sulla relazione e quindi facendo clic su **Mostra come classe** . Verrà visualizzata la relazione con un **proprietà dominio** raggruppamento e verranno visualizzati gli alberi di ereditarietà e le relazioni.  
   
-## Vedere anche  
- [Domain\-Specific Language Tools Glossary](http://msdn.microsoft.com/it-it/ca5e84cb-a315-465c-be24-76aa3df276aa)
+## <a name="see-also"></a>Vedere anche  
+ [Glossario di strumenti di linguaggio specifico di dominio](http://msdn.microsoft.com/ca5e84cb-a315-465c-be24-76aa3df276aa)

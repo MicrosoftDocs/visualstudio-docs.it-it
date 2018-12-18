@@ -1,128 +1,73 @@
 ---
 title: Soluzioni e progetti in Visual Studio | Microsoft Docs
 ms.custom: 
-ms.date: 06/12/2017
+ms.date: 10/5/2017
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- vs-ide-general
+ms.technology: vs-ide-general
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
-- vs.savedeferredsaveprojectonclose
-- vs.untrustedtemplateopeningdocuments
-- Project Properties.FullPath
 - vs.addnewsolutionitem
 - vs.environment.projects
 - vs.openproject
-- vs.getopenfilename
 - vs.addnewitem
-- vs.encoding
 - vs.addexistingitem
-- Project Properties.URL
 - VS.SolutionExplorer
-- Project Properties.FileName
-- SolutionProperties.Name
-- VS.SaveChangesDlg
 - vs.newproject
-- VS.SolutionExplorer.Selection
-- SolutionProperties.Path
-- vs.getdirectoryname
 - vs.addexistingsolutionitem
-- SolutionProperties.Description
 - vs.environment.solutions
-- vs.saveordiscarddeferredsaveproject
 - VS.SolutionExplorer.Solutions
 helpviewer_keywords:
-- vs.solutionpropertypages
-- vs.solutionpropertypages.startupproject
-- vs.solutionpropertypages.configurationsettings
-- solution items, folder in Solution Explorer
-- solution items, shared
+- solution items [Visual Studio]
 - solutions [Visual Studio]
-- project items [Visual Studio], about project items
-- workspaces
+- project items [Visual Studio]
 - solutions [Visual Studio], designing
 - projects [Visual Studio]
-- solutions [Visual Studio], projects and
-- vs.solutionpropertypages.projectdependencies
-- applications [Visual Studio]
-- projects [Visual Studio], setting up
-- miscellaneous files
-ms.assetid: aeaf56cb-c2dd-47f6-b012-23b84b7a7254
-caps.latest.revision: 35
-author: kempb
-ms.author: kempb
+author: gewarren
+ms.author: gewarren
 manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 8ce85525f6af336682f6f8547c2f6c13dde73c8c
-ms.openlocfilehash: 28dfbb85790cfda2c3d840ce2d57468b5421bee0
-ms.contentlocale: it-it
-ms.lasthandoff: 06/23/2017
-
+ms.workload: multiple
+ms.openlocfilehash: 4d242a74bd1eaef86e3465d53aa148429af42f7e
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="solutions-and-projects-in-visual-studio"></a>Soluzioni e progetti in Visual Studio
-Quando si crea un’app, un’applicazione, un sito Web, uno script, un plug-in e così via in Visual Studio, si comincia con un *progetto*. In senso logico, un progetto contiene di tutti i file di codice sorgente, le icone, le immagini, i file di dati e qualsiasi altro elemento che verrà compilato in un programma eseguibile o in un sito Web in caso contrario, o necessario per eseguire la compilazione.  Un progetto contiene anche tutte le impostazioni del compilatore e altri file di configurazione che potrebbero essere necessari per i vari servizi o componenti con cui il programma comunicherà.
+
+## <a name="projects"></a>Progetti
+
+Quando si crea un’app, un sito Web, un plug-in e così via in Visual Studio, si comincia con un *progetto*. In senso logico, un progetto contiene tutti i file del codice sorgente, icone, immagini, file di dati e così via, compilati in un file eseguibile, una libreria o un sito Web. Un progetto contiene anche le impostazioni del compilatore e altri file di configurazione che potrebbero essere necessari per i vari servizi o componenti con cui il programma comunica.
 
 > [!NOTE]
->  Non è necessario usare progetti e soluzioni. È possibile semplicemente aprire i file in Visual Studio e iniziare a modificare il codice. Per altre informazioni, vedere [Open Any Folder with Visual Studio](https://blogs.msdn.microsoft.com/visualstudio/2016/04/12/open-any-folder-with-visual-studio-15-preview/) (Aprire una cartella con Visual Studio).
+> Non è necessario usare soluzioni o progetti in Visual Studio per modificare, compilare ed eseguire il debug del codice. È sufficiente aprire la cartella che contiene i file di origine in Visual Studio e iniziare ad apportare le modifiche. Per altre informazioni, vedere [Sviluppare codice in Visual Studio senza progetti o soluzioni](../ide/develop-code-in-visual-studio-without-projects-or-solutions.md).
 
+Un progetto è definito in un file XML con un'estensione di tipo VBPROJ, CSPROJ o VCXPROJ. Questo file contiene una gerarchia di cartelle virtuali e i percorsi a tutti gli elementi del progetto. Contiene anche le impostazioni di compilazione.
 
- In senso letterale, un progetto è un file XML (*.vbproj, \*.csproj, \*.vcxproj) che definisce una gerarchia di cartelle virtuali insieme ai percorsi di tutti gli elementi in essa contenuti e a tutte le impostazioni di compilazione. In Visual Studio, il file di progetto viene utilizzato da Esplora soluzioni per visualizzare il contenuto e le impostazioni del progetto. Quando si compila il progetto, il motore MSBuild utilizza il file di progetto per creare il file eseguibile. È inoltre possibile personalizzare progetti per produrre altri tipi di output.  
+> [!TIP]
+> Per esaminare il contenuto di un file di progetto in Visual Studio, scaricare prima il progetto selezionando il nome del progetto in Esplora soluzioni e scegliendo **Scarica progetto** dal menu di scelta rapida. Aprire di nuovo il menu di scelta rapida e scegliere **Modifica \<nomeprogetto\>**.
 
- Un progetto è contenuto, in senso logico e all’interno di un file system, in una *soluzione*che può contenere uno o più progetti, insieme alle informazioni di compilazione, alle impostazioni di finestra di Visual Studio ed eventuali file misti che non sono associati ad alcun progetto. In senso letterale, la soluzione è un file di testo con un formato univoco specifico. In genere, non è destinato a essere modificato manualmente.  
+In Visual Studio, il file di progetto viene utilizzato da Esplora soluzioni per visualizzare il contenuto e le impostazioni del progetto. Quando si compila il progetto, il motore MSBuild utilizza il file di progetto per creare il file eseguibile. È anche possibile personalizzare i progetti per produrre altri tipi di output.
 
- Una soluzione ha un file con estensione *suo* associato che archivia le impostazioni, le preferenze e le informazioni di configurazione per ogni utente che ha lavorato al progetto.  
+## <a name="solutions"></a>Soluzioni
 
- Nel diagramma seguente viene illustrata la relazione tra progetti e soluzioni e gli elementi in essi contenuti dal punto di vista logico.  
+Un progetto è contenuto all'interno di una *soluzione*. Una soluzione contiene uno o più progetti correlati, insieme alle informazioni di compilazione, alle impostazioni della finestra di Visual Studio e a vari file non associati a un progetto particolare. Una soluzione è descritta da un file di testo (estensione SLN) con un formato univoco specifico, di cui in genere non è prevista la modifica manuale.
 
- ![Progetti e soluzioni di Visual Studio](../ide/media/vside-project-diagram.png)  
+Una soluzione ha un file con estensione *suo* associato che archivia le impostazioni, le preferenze e le informazioni di configurazione per ogni utente che ha lavorato al progetto.
 
- È inoltre possibile creare modelli di progetto e modelli di elemento personalizzati. Per altre informazioni, vedere [Creazione di modelli di progetti e di elementi](../ide/creating-project-and-item-templates.md).  
+## <a name="creating-new-projects"></a>Creazione di nuovi progetti
 
-## <a name="creating-new-projects"></a>Creazione di nuovi progetti  
- Il modo più semplice per creare un nuovo progetto consiste nell’iniziare con un modello di progetto predefinito costituito da un set di file di codice generati in precedenza, file di configurazione, risorse e impostazioni che consentono di iniziare la creazione di un particolare tipo di applicazione o sito Web in un determinato linguaggio di programmazione. Questi modelli sono quelli visualizzati nella finestra di dialogo **Nuovo progetto** quando si sceglie **File &#124; Nuovo &#124; Progetto** o **File &#124; Nuovo &#124; Sito Web** dal menu principale e quindi si inizia a navigare. Per altre informazioni, vedere [Creazione di soluzioni e progetti](../ide/creating-solutions-and-projects.md).  
+Il modo più semplice per creare un nuovo progetto è iniziare da un modello di progetto per un tipo particolare di applicazione o sito Web. Un modello di progetto è costituito da un set di base di file di codice, file di configurazione, risorse e impostazioni già generati. Questi modelli sono quelli visualizzati nella finestra di dialogo **Nuovo progetto** o **Nuovo sito Web** quando si sceglie **File**, **Nuovo**, **Progetto** o **File**, **Nuovo**, **Sito Web**. Per altre informazioni, vedere [Creazione di soluzioni e progetti](../ide/creating-solutions-and-projects.md).
 
-## <a name="managing-projects-in-solution-explorer"></a>Gestione di progetti in Esplora soluzioni  
- Dopo aver creato un nuovo progetto, viene utilizzato **Esplora soluzioni** per visualizzare e gestire progetti e soluzioni e i relativi articoli associati. La figura seguente illustra Esplora soluzioni con una soluzione C# contenente due progetti.  
+È inoltre possibile creare modelli di progetto e modelli di elemento personalizzati. Per altre informazioni, vedere [Creazione di modelli di progetti e di elementi](../ide/creating-project-and-item-templates.md).
 
- ![Esplora soluzioni](../ide/media/vs2015_solution_explorer.png "vs2015_solution_explorer")  
+## <a name="managing-projects-in-solution-explorer"></a>Gestione di progetti in Esplora soluzioni
 
-## <a name="in-this-section"></a>Contenuto della sezione  
+Dopo aver creato un nuovo progetto, è possibile usare **Esplora soluzioni** per visualizzare e gestire il progetto e la soluzione, nonché gli elementi associati. La figura seguente illustra Esplora soluzioni con una soluzione C# contenente due progetti.
 
--   [Creazione di soluzioni e progetti](../ide/creating-solutions-and-projects.md)  
+![Esplora soluzioni](../ide/media/vs2015_solution_explorer.png "vs2015_solution_explorer")
 
--   [Aggiunta e rimozione di elementi di progetto](../ide/adding-and-removing-project-items.md)  
+## <a name="see-also"></a>Vedere anche
 
--   [Gestione delle proprietà di progetti e soluzioni](../ide/managing-project-and-solution-properties.md)  
-
--   [Gestione dei riferimenti in un progetto](../ide/managing-references-in-a-project.md)  
-
--   [Proprietà dell'applicazione](../ide/application-properties.md)  
-
--   [Gestione delle firme di assembly e manifesti](../ide/managing-assembly-and-manifest-signing.md)  
-
--   [Procedura: Specificare l'icona di un'applicazione (Visual Basic, C#)](../ide/how-to-specify-an-application-icon-visual-basic-csharp.md)  
-
--   [Sviluppo per una versione specifica di .NET Framework](../ide/targeting-a-specific-dotnet-framework-version.md)  
-
--   [Creazione di modelli di progetti e di elementi](../ide/creating-project-and-item-templates.md)  
-
-## <a name="see-also"></a>Vedere anche  
- [IDE di Visual Studio](../ide/visual-studio-ide.md)
-
+[IDE di Visual Studio](../ide/visual-studio-ide.md)

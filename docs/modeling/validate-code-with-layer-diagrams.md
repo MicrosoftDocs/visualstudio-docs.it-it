@@ -4,7 +4,6 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.tgt_pltfrm: 
 ms.topic: article
 helpviewer_keywords:
 - dependency diagrams, validating
@@ -18,31 +17,17 @@ helpviewer_keywords:
 - MSBuild, tasks
 - MSBuild, dependency diagrams
 - MSBuild, validating code
-ms.assetid: 70cbe55d-4b33-4355-b0a7-88c770a6f75c
-caps.latest.revision: 82
-author: alexhomer1
-ms.author: ahomer
-manager: douge
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 5581224b17a7b42f65b69f741f984a144d78fc26
-ms.openlocfilehash: 53c623ce7ab7126c22aaab856a439862252a5d56
-ms.contentlocale: it-it
-ms.lasthandoff: 04/04/2017
-
+author: gewarren
+ms.author: gewarren
+manager: ghogen
+ms.workload:
+- multiple
+ms.technology: vs-ide-modeling
+ms.openlocfilehash: 484afcd70717162719e9eaf8ace294cb1f71cbcd
+ms.sourcegitcommit: 205d15f4558315e585c67f33d5335d5b41d0fcea
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 02/09/2018
 ---
 # <a name="validate-code-with-dependency-diagrams"></a>Convalidare il codice con diagrammi di dipendenza
 
@@ -64,15 +49,15 @@ Per assicurarsi che non siano in conflitto con la progettazione codice, è possi
   
      Trovare codice o dipendenze che richiedono azioni quando si sposta il codice in un'architettura diversa.  
   
- **Requirements**  
+ **Requisiti**  
   
 -   Visual Studio  
   
 -   Visual Studio sul server Team Foundation Build in uso per convalidare il codice automaticamente con Team Foundation Build  
   
--   Una soluzione che include un progetto di modellazione con un diagramma di dipendenze. Questo diagramma dipendenza deve essere collegato agli elementi nei progetti Visual c# .NET o Visual Basic .NET che si desidera convalidare. Vedere [creare diagrammi dipendenza dal codice](../modeling/create-layer-diagrams-from-your-code.md).  
+-   Una soluzione che include un progetto di modellazione con un diagramma di dipendenze. Questo diagramma dipendenza deve essere collegato agli elementi nei progetti c# o Visual Basic che si desidera convalidare. Vedere [creare diagrammi dipendenza dal codice](../modeling/create-layer-diagrams-from-your-code.md).  
   
- Per le versioni di Visual Studio che supportano questa funzionalità, vedere [supporto della versione per l'architettura e strumenti di modellazione](../modeling/what-s-new-for-design-in-visual-studio.md#VersionSupport).  
+ Per individuare le versioni di Visual Studio che supportano questa funzionalità, vedere [Version support for architecture and modeling tools](../modeling/what-s-new-for-design-in-visual-studio.md#VersionSupport).  
   
  È possibile convalidare il codice manualmente da un diagramma di dipendenza aperto in Visual Studio o da un prompt dei comandi. È inoltre possibile convalidare il codice automaticamente quando sono in esecuzione compilazioni locali o Team Foundation Build. Vedere [Video di Channel 9: progettazione e convalidare l'architettura con diagrammi di dipendenza](http://go.microsoft.com/fwlink/?LinkID=252073).  
   
@@ -115,7 +100,7 @@ In questa versione di Visual Studio, convalida della dipendenza si verifica in t
 2.  In **Esplora livello**, esaminare il **supporta la convalida** colonna. Se il valore è false, l'elemento non supporta la convalida.  
   
 ##  <a name="IncludeReferences"></a>Includere altri progetti per la convalida e l'assembly .NET  
- Quando si trascinano elementi nel diagramma di dipendenza, i riferimenti agli assembly .NET corrispondente o progetti vengono aggiunti automaticamente al **riferimenti livello** cartella nel progetto di modellazione. Questa cartella contiene i riferimenti agli assembly e ai progetti analizzati durante la convalida. È possibile includere altri assembly .NET e progetti per la convalida senza trascinarli manualmente nel diagramma di dipendenza.  
+ Quando si trascinano elementi nel diagramma di dipendenza, i riferimenti a progetti o assembly di .NET corrispondenti vengono aggiunti automaticamente al **riferimenti livello** cartella nel progetto di modellazione. Questa cartella contiene i riferimenti agli assembly e ai progetti analizzati durante la convalida. È possibile includere altri assembly .NET e progetti per la convalida senza trascinarli manualmente nel diagramma di dipendenza.  
   
 1.  In **Esplora**, fare clic sul progetto di modellazione o **riferimenti livello** cartella e quindi fare clic su **Aggiungi riferimento**.  
   
@@ -136,7 +121,7 @@ In questa versione di Visual Studio, convalida della dipendenza si verifica in t
 2.  Per visualizzare l'origine di ogni errore, fare doppio clic su errore nel **elenco errori** finestra.  
   
     > [!NOTE]
-    >  In [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] potrebbe essere visualizzata una mappa codice anziché l'origine dell'errore. Questo errore si verifica quando il codice ha una dipendenza su un assembly che non viene specificato per il diagramma di dipendenze o al codice manca una dipendenza specificata nel diagramma di dipendenza. Esaminare la mappa codice o il codice per determinare se la dipendenza deve esistere. Per ulteriori informazioni sulle mappe del codice, vedere [mappare le dipendenze nelle soluzioni](../modeling/map-dependencies-across-your-solutions.md).  
+    >  [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] potrebbe essere visualizzata una mappa del codice anziché l'origine dell'errore. Questo errore si verifica quando il codice ha una dipendenza su un assembly che non viene specificato per il diagramma di dipendenze o al codice manca una dipendenza specificata nel diagramma di dipendenza. Esaminare la mappa del codice o il codice per determinare se la dipendenza deve esistere. Per ulteriori informazioni sulle mappe del codice, vedere [mappare le dipendenze nelle soluzioni](../modeling/map-dependencies-across-your-solutions.md).  
   
 3.  Per gestire gli errori, vedere [gestire errori di convalida](#ManageErrors).  
   
@@ -234,13 +219,13 @@ In questa versione di Visual Studio, convalida della dipendenza si verifica in t
   
  Per ulteriori informazioni sugli errori di convalida, vedere [individuare e risolvere gli errori di convalida livello](#UnderstandingValidationErrors). Per altre informazioni su [!INCLUDE[esprbuild](../misc/includes/esprbuild_md.md)], vedere:  
   
--   [Compilare l'applicazione](http://msdn.microsoft.com/Library/a971b0f9-7c28-479d-a37b-8fd7e27ef692)  
+-   [Compilazione e versione](/vsts/build-release/index)  
   
 -   [Utilizzare il modello predefinito per il processo di compilazione](http://msdn.microsoft.com/Library/43930b12-c21b-4599-a980-2995e3d16e31)  
   
 -   [Modificare una compilazione Legacy che si basa sull'UpgradeTemplate.xaml](http://msdn.microsoft.com/Library/ee1a8259-1dd1-4a10-9563-66c5446ef41c)  
   
--   [Personalizzare il modello di processo di compilazione](http://msdn.microsoft.com/Library/b94c58f2-ae6f-4245-bedb-82cd114f6039)  
+-   [Personalizzare il modello del processo di compilazione](http://msdn.microsoft.com/Library/b94c58f2-ae6f-4245-bedb-82cd114f6039)  
   
 -   [Monitorare lo stato di una compilazione in esecuzione](http://msdn.microsoft.com/Library/e51e3bad-2d1d-4b7b-bfcc-c43439c6c8ef)  
   
@@ -264,7 +249,7 @@ In questa versione di Visual Studio, convalida della dipendenza si verifica in t
   
 |**Sintassi**|**Descrizione**|  
 |----------------|---------------------|  
-|*Artefatton*(*Tipoartefatton*)|*Artefatton* è un elemento che è associato a un livello nel diagramma di dipendenza.<br /><br /> *Tipoelementon* è il tipo di *Artefatton*, ad esempio un **classe** o **metodo**, ad esempio:<br /><br /> MySolution.MyProject.MyClass.MyMethod(Metodo)|  
+|*ArtifactN*(*ArtifactTypeN*)|*Artefatton* è un elemento che è associato a un livello nel diagramma di dipendenza.<br /><br /> *Tipoelementon* è il tipo di *Artefatton*, ad esempio un **classe** o **metodo**, ad esempio:<br /><br /> MySolution.MyProject.MyClass.MyMethod(Metodo)|  
 |*NamespaceNameN*|Nome di uno spazio dei nomi.|  
 |*LayerNameN*|Il nome di un livello nel diagramma di dipendenza.|  
 |*Tipodipendenza*|Il tipo di relazione di dipendenza tra *Elemento1* e *elemento2*. Ad esempio, *Elemento1* ha un **chiamate** relazione con *elemento2*.|  
@@ -282,4 +267,3 @@ In questa versione di Visual Studio, convalida della dipendenza si verifica in t
 ## <a name="see-also"></a>Vedere anche  
  [Convalidare il sistema durante lo sviluppo](../modeling/validate-your-system-during-development.md)   
  [Video: Convalidare le dipendenze di architettura in tempo reale](https://sec.ch9.ms/sessions/69613110-c334-4f25-bb36-08e5a93456b5/170ValidateArchitectureDependenciesWithVisualStudio.mp4)   
-

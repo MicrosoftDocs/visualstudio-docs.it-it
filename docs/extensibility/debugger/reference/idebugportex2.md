@@ -4,37 +4,22 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- vs-ide-sdk
+ms.technology: vs-ide-sdk
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords:
-- IDebugPortEx2
-helpviewer_keywords:
-- IDebugPortEx2 interface
+f1_keywords: IDebugPortEx2
+helpviewer_keywords: IDebugPortEx2 interface
 ms.assetid: 144724d0-38ee-4c9b-87ca-8a504371182b
-caps.latest.revision: 13
+caps.latest.revision: "13"
+author: gregvanl
 ms.author: gregvanl
 manager: ghogen
-translation.priority.mt:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: ca7c86466fa23fb21a932f26dc24e37c71cf29b4
-ms.openlocfilehash: fa36bf7ae96058c4eb7c0462114af50fa08af656
-ms.lasthandoff: 04/05/2017
-
+ms.workload: vssdk
+ms.openlocfilehash: 8e7ee976d2dfb5872474090d4fabbd56f963faf8
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="idebugportex2"></a>IDebugPortEx2
 Questa interfaccia consente la sessione di debug il controllo di gestione (SDM), i programmi e i processi in esecuzione su una porta.  
@@ -66,7 +51,7 @@ IDebugPortEx2 : IUnknown
 ## <a name="remarks"></a>Note  
  Questa interfaccia è in genere privata tra i SDM e il fornitore della porta personalizzata.  
   
- Se si desidera, un motore di debug (DE) è possibile visualizzare per l'interfaccia del [IDebugPort2](../../../extensibility/debugger/reference/idebugport2.md) interfaccia passata al [LaunchSuspended](../../../extensibility/debugger/reference/idebugenginelaunch2-launchsuspended.md) e utilizzare [LaunchSuspended](../../../extensibility/debugger/reference/idebugportex2-launchsuspended.md) per avviare il programma. Tuttavia, non è un requisito, e un Germania è possibile eseguire qualsiasi necessarie per avviare il programma di richiesta.  
+ Se si desidera, un motore di debug (DE) è possibile visualizzare per l'interfaccia del [IDebugPort2](../../../extensibility/debugger/reference/idebugport2.md) interfaccia passata al [LaunchSuspended](../../../extensibility/debugger/reference/idebugenginelaunch2-launchsuspended.md) e utilizzare [LaunchSuspended](../../../extensibility/debugger/reference/idebugportex2-launchsuspended.md) per avviare il programma. Tuttavia, non è un requisito, e un Germania può effettuare qualsiasi necessarie per avviare il programma di richiesta.  
   
 ## <a name="requirements"></a>Requisiti  
  Intestazione: portpriv.h  

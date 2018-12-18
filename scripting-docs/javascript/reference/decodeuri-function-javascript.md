@@ -1,53 +1,54 @@
 ---
-title: "Funzione decodeURI (JavaScript) | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/18/2017"
-ms.prod: "windows-client-threshold"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-javascript"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "decodeURI"
-dev_langs: 
-  - "JavaScript"
-  - "TypeScript"
-  - "DHTML"
-helpviewer_keywords: 
-  - "decodeURI (metodo)"
+title: Funzione decodeURI (JavaScript) | Documenti Microsoft
+ms.custom: 
+ms.date: 01/18/2017
+ms.prod: windows-client-threshold
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-javascript
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords: decodeURI
+dev_langs:
+- JavaScript
+- TypeScript
+- DHTML
+helpviewer_keywords: decodeURI method
 ms.assetid: af6c81dc-10f4-4243-a7ce-d18ae3ea0fb8
-caps.latest.revision: 12
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 12
+caps.latest.revision: "12"
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.openlocfilehash: 97291142083ae88c7dc84d9cd08af5c3c39ff9e8
+ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/27/2017
 ---
-# Funzione decodeURI (JavaScript)
-Ottiene la versione decodificata di un URI \(Uniform Resource Identifier\) codificato.  
+# <a name="decodeuri-function-javascript"></a>Funzione decodeURI (JavaScript)
+Ottiene la versione non codificata di un codificato identificatore URI (Uniform Resource).  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
 decodeURI(URIstring)  
 ```  
   
-## Note  
- L'argomento `URIstring` obbligatorio è un valore che rappresenta un URI codificato.  
+## <a name="remarks"></a>Note  
+ Obbligatorio `URIstring` argomento è un valore che rappresenta un URI codificato.  
   
- Utilizza la funzione `decodeURI` invece della funzione `unescape` deprecata.  
+ Utilizzare il `decodeURI` funzione anziché deprecate `unescape` (funzione).  
   
- La funzione `decodeURI` restituisce un valore stringa.  
+ Il `decodeURI` funzione restituisce un valore stringa.  
   
- Se il valore di `URIString` non è valido, verrà restituito un URIError.  
+ Se il `URIString` non è valido, un URIError.  
   
- **Si applica a**: [Oggetto Global](../../javascript/reference/global-object-javascript.md)  
+ **Si applica a**: [oggetto globale](../../javascript/reference/global-object-javascript.md)  
   
-## Esempio  
- Il seguente codice prima codifica un componente URI e poi lo decodifica.  
+## <a name="example"></a>Esempio  
+ Il codice seguente consente innanzitutto di codificare un componente URI e lo decodifica.  
   
-```javascript  
+```JavaScript  
 var uriEncode = encodeURIComponent ("www.Not a URL.com");  
 var uriDecode = decodeURIComponent(uriEncode);  
   
@@ -60,10 +61,10 @@ document.write (uriDecode);
 // www.Not a URL.com  
 ```  
   
-## Requisiti  
+## <a name="requirements"></a>Requisiti  
  [!INCLUDE[jsv55](../../javascript/reference/includes/jsv55-md.md)]  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Funzione decodeURIComponent](../../javascript/reference/decodeuricomponent-function-javascript.md)   
  [Funzione encodeURI](../../javascript/reference/encodeuri-function-javascript.md)   
  [Oggetto Global](../../javascript/reference/global-object-javascript.md)

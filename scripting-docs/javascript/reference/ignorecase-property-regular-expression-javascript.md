@@ -1,52 +1,53 @@
 ---
-title: "Propriet&#224; ignoreCase (Regular Expression) (JavaScript) | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/18/2017"
-ms.prod: "windows-client-threshold"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-javascript"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "ignoreCase"
-dev_langs: 
-  - "JavaScript"
-  - "TypeScript"
-  - "DHTML"
-helpviewer_keywords: 
-  - "IgnoreCase (proprietà)"
+title: "Proprietà ignoreCase (Regular Expression) (JavaScript) | Documenti Microsoft"
+ms.custom: 
+ms.date: 01/18/2017
+ms.prod: windows-client-threshold
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-javascript
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords: ignoreCase
+dev_langs:
+- JavaScript
+- TypeScript
+- DHTML
+helpviewer_keywords: IgnoreCase property
 ms.assetid: 816f0df5-5a82-44a5-a4ab-dbc91fa76e61
-caps.latest.revision: 17
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 17
+caps.latest.revision: "17"
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.openlocfilehash: ae9fee8e6303fb944f59c11c173f9e8b7f7cc75a
+ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/27/2017
 ---
-# Propriet&#224; ignoreCase (Regular Expression) (JavaScript)
-Restituisce un valore booleano che indica lo stato del flag ignoreCase \(**i**\) utilizzato con un'espressione regolare.  L'impostazione predefinita è **false**.  Sola lettura.  
+# <a name="ignorecase-property-regular-expression-javascript"></a>Proprietà ignoreCase (Regular Expression) (JavaScript)
+Restituisce un valore booleano che indica lo stato del flag ignoreCase (**si**) utilizzato con un'espressione regolare. Valore predefinito è **false**. Sola lettura.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
   
 rgExp.ignoreCase  
 ```  
   
-## Note  
- Il riferimento `rgExp` obbligatorio è un'istanza dell'oggetto `RegExp`.  
+## <a name="remarks"></a>Note  
+ Obbligatorio `rgExp` riferimento è un'istanza di `RegExp` oggetto.  
   
- La proprietà **ignoreCase** restituisce **true** se il flag ignoreCase è impostato per un'espressione regolare, **false** in caso contrario.  
+ Il **ignoreCase** restituisce proprietà **true** se il contrassegno ignoreCase è impostato per un'espressione regolare e restituisce **false** in caso contrario.  
   
- Quando impostato, il flag ignoreCase indica che nella ricerca deve essere ignorata la differenza tra maiuscole e minuscole nella corrispondenza del criterio nella stringa cercata.  
+ Il contrassegno ignoreCase, quando utilizzato, indica che una ricerca deve ignorare maiuscole e minuscole quando corrispondenti al criterio all'interno della stringa di ricerca.  
   
-## Esempio  
- Nell'esempio seguente viene illustrato l'utilizzo della proprietà **ignoreCase**.  Se si passa "gi" alla funzione illustrata di seguito, tutte le istanze della parola "the" verranno sostituite dalla parola "a", inclusa la parola "The" iniziale.  Questo comportamento è determinato dal fatto che quando è impostato il flag ignoreCase, la ricerca ignora qualsiasi distinzione tra maiuscole e minuscole.  Ai fini della corrispondenza, pertanto, "T" equivale a "t".  
+## <a name="example"></a>Esempio  
+ Nell'esempio seguente viene illustrato l'utilizzo del **ignoreCase** proprietà. Se "gi" viene passato alla funzione illustrata di seguito, tutte le istanze della parola "cui" vengono sostituite con la parola "a", tra cui iniziale "The". Questo avviene perché con il set di flag ignoreCase, la ricerca ignora qualsiasi distinzione maiuscole/minuscole. Pertanto, "T" equivale "t" ai fini della corrispondenza.  
   
- Questa funzione restituisce i valori booleani che indicano lo stato dei flag dell'espressione regolare consentiti, ovvero **g**, **i** e **m**.  La funzione restituisce inoltre la stringa con tutte le sostituzioni apportate.  
+ Questa funzione restituisce i valori booleani che indicano lo stato dei flag di espressione regolare consentita, sono **g**, **si**, e **m**. Inoltre, la funzione restituisce la stringa con tutte le sostituzioni apportate.  
   
-```javascript  
+```JavaScript  
 function RegExpPropDemo(flag){  
     // The flag parameter is a string that contains  
     // g, i, or m. The flags can be combined.  
@@ -83,10 +84,10 @@ document.write(RegExpPropDemo("gi"));
 document.write(RegExpPropDemo("g"));  
 ```  
   
-## Esempio  
- Di seguito è riportato l'output risultante.  
+## <a name="example"></a>Esempio  
+ Di seguito è l'output risultante.  
   
-```javascript  
+```JavaScript  
 global: true  
 ignoreCase: true  
 multiline: false  
@@ -98,12 +99,12 @@ multiline: false
 Resulting String: The batter hit a ball with a bat and a fielder caught a ball with a glove.  
 ```  
   
-## Requisiti  
+## <a name="requirements"></a>Requisiti  
  [!INCLUDE[jsv55](../../javascript/reference/includes/jsv55-md.md)]  
   
- **Si applica a**: [Oggetto Regular Expression](../../javascript/reference/regular-expression-object-javascript.md)  
+ **Si applica a**: [oggetto di espressione regolare](../../javascript/reference/regular-expression-object-javascript.md)  
   
-## Vedere anche  
- [Proprietà global \(Regular Expression\)](../../javascript/reference/global-property-regular-expression-javascript.md)   
- [Proprietà multiline \(Regular Expression\)](../../javascript/reference/multiline-property-regular-expression-javascript.md)   
- [Regular Expression Syntax \(JavaScript\)](http://msdn.microsoft.com/it-it/ab0766e1-7037-45ed-aa23-706f58358c0e)
+## <a name="see-also"></a>Vedere anche  
+ [Proprietà Global (Regular Expression)](../../javascript/reference/global-property-regular-expression-javascript.md)   
+ [Proprietà Multiline (Regular Expression)](../../javascript/reference/multiline-property-regular-expression-javascript.md)   
+ [Sintassi di espressione regolare (JavaScript)](http://msdn.microsoft.com/en-us/ab0766e1-7037-45ed-aa23-706f58358c0e)

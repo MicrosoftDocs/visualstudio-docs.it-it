@@ -1,36 +1,38 @@
 ---
-title: "Cenni preliminari sul servizio di linguaggio legacy | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "servizi di linguaggio [framework gestito pacchetto], informazioni sui servizi di linguaggio"
+title: Cenni preliminari sul servizio di linguaggio legacy | Documenti Microsoft
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: vs-ide-sdk
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords: language services [managed package framework], about language services
 ms.assetid: bb44e27b-d228-463c-b2cf-cd5c24c7c1b5
-caps.latest.revision: 17
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 17
+caps.latest.revision: "17"
+author: gregvanl
+ms.author: gregvanl
+manager: ghogen
+ms.workload: vssdk
+ms.openlocfilehash: 05805e5cf4b21f4c7d233cab7dd8421ee76f626f
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
-# Cenni preliminari sul servizio di linguaggio legacy
-[!INCLUDE[vs2017banner](../../code-quality/includes/vs2017banner.md)]
-
-Un servizio di linguaggio fornisce il supporto dell'editor che consente di implementare determinate funzionalità di [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] .  Le classi gestite del servizio \(MPF\) di linguaggio del Framework del pacchetto forniscono un supporto completo per le funzionalità frequente\-utilizzate e il supporto parziale alle altre funzionalità.  
+# <a name="legacy-language-service-overview"></a>Cenni preliminari sul servizio di linguaggio legacy
+Un servizio di linguaggio fornisce il supporto di editor che consente di implementare determinati [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] funzionalità. Le classi del servizio di linguaggio del file system distribuito (MPF, Managed Package Framework) forniscono il supporto completo per le funzionalità di frequente e supporto parziale per altre funzionalità.  
   
-## Funzionalità completamente supportate nel MPF  
- Le classi del servizio di linguaggio di MPF supportano le funzionalità seguenti:  
+## <a name="fully-supported-features-in-the-mpf"></a>Funzionalità completamente supportate in MPF  
+ Le classi del servizio di linguaggio MPF supportano le funzionalità seguenti:  
   
 -   Evidenziazione della sintassi  
   
--   Struttura  
+-   struttura  
   
 -   Blocchi di commenti di codice  
   
--   Brace matching  
+-   Corrispondenza parentesi graffe  
   
 -   Frammenti di codice  
   
@@ -38,58 +40,58 @@ Un servizio di linguaggio fornisce il supporto dell'editor che consente di imple
   
 -   Informazioni sui parametri di IntelliSense  
   
--   informazioni rapide di IntelliSense  
+-   Informazioni rapide di IntelliSense  
   
--   Completamento dei membri di IntelliSense  
+-   Completamento di IntelliSense membro  
   
--   Completamento delle parole di IntelliSense  
+-   Completa parola di IntelliSense  
   
-## Funzionalità parzialmente supportate nel MPF  
- Il MPF fornisce supporto solo parzialmente per le seguenti funzionalità.  Ciò significa che è necessario implementare i metodi chiamati da MPF.  
+## <a name="partially-supported-features-in-the-mpf"></a>Funzionalità parzialmente supportate in MPF  
+ Il Framework MPF supporta solo parzialmente per le funzionalità seguenti. Ciò significa che è necessario implementare i metodi che vengono chiamati dal MPF.  
   
--   Formattazione del codice.  L'utente fornisce il codice che implementa il formattazione.  
+-   La formattazione di codice. Specificare il codice che implementa la riformattazione.  
   
--   Convalidando i punti di interruzione identificare gli intervalli valide di codice.  L'utente fornisce il codice che identifica gli intervalli di codice.  
+-   Convalida i punti di interruzione identificando gli intervalli di codice valido. Specificare il codice che identifica le estensioni di codice.  
   
--   Supporta la finestra di **automobili** del debugger per la visualizzazione delle variabili.  L'utente fornisce il codice che determina quali visualizzare nella finestra.  
+-   Supporto del debugger **Auto** finestra per la visualizzazione delle variabili. Specificare il codice che determina gli elementi da visualizzare nella finestra.  
   
--   Supporto del **barra di navigazione** per la navigazione rapida tra i tipi e i membri.  Implementate e restituiscono una classe di supporto che popola gli elenchi nelle caselle combinate di **barra di navigazione** .  
+-   Supporto di **barra di spostamento** per la navigazione rapida tra i tipi e membri. Implementare e restituire una classe helper che consente di popolare gli elenchi presenti nel **barra di spostamento** caselle combinate.  
   
-## Implementazione  
- È necessario completare i passaggi per implementare il servizio di linguaggio stesso e le funzionalità del servizio di linguaggio che si desidera supporto del linguaggio.  Questi passaggi vengono trattati i seguenti argomenti:  
+## <a name="implementation"></a>Implementazione  
+ È necessario completare diversi passaggi per implementare il servizio di linguaggio stesso e le funzionalità del linguaggio che si desidera supportare per la propria lingua. I singoli passaggi sono descritti negli argomenti seguenti:  
   
--   [Implementazione di un servizio di linguaggio](../../extensibility/internals/implementing-a-legacy-language-service2.md)  
+-   [Implementazione di un servizio di linguaggio Legacy](../../extensibility/internals/implementing-a-legacy-language-service2.md)  
   
--   [Registrazione di un servizio di linguaggio](../../extensibility/internals/registering-a-legacy-language-service1.md)  
+-   [Registrazione di un servizio di linguaggio Legacy](../../extensibility/internals/registering-a-legacy-language-service1.md)  
   
--   [Colorazione della sintassi in un servizio di linguaggio Legacy](../../extensibility/internals/syntax-colorizing-in-a-legacy-language-service.md)  
+-   [Colorazione della sintassi in un servizio di linguaggio legacy](../../extensibility/internals/syntax-colorizing-in-a-legacy-language-service.md)  
   
--   [Corrispondenza di parentesi in un servizio di linguaggio Legacy](../../extensibility/internals/brace-matching-in-a-legacy-language-service.md)  
+-   [Corrispondenza parentesi graffe in un servizio di linguaggio legacy](../../extensibility/internals/brace-matching-in-a-legacy-language-service.md)  
   
--   [La struttura in un servizio di linguaggio Legacy](../../extensibility/internals/outlining-in-a-legacy-language-service.md)  
+-   [Definizione della struttura in un servizio di linguaggio legacy](../../extensibility/internals/outlining-in-a-legacy-language-service.md)  
   
--   [Commenti di codice in un servizio di linguaggio Legacy](../../extensibility/internals/commenting-code-in-a-legacy-language-service.md)  
+-   [Aggiunta di commenti al codice in un servizio di linguaggio legacy](../../extensibility/internals/commenting-code-in-a-legacy-language-service.md)  
   
--   [La formattazione di codice in un servizio di linguaggio Legacy](../../extensibility/internals/reformatting-code-in-a-legacy-language-service.md)  
+-   [Riformattazione del codice in un servizio di linguaggio legacy](../../extensibility/internals/reformatting-code-in-a-legacy-language-service.md)  
   
--   [Proprietà personalizzate dei documenti in un servizio di linguaggio Legacy](../../extensibility/internals/custom-document-properties-in-a-legacy-language-service.md)  
+-   [Proprietà personalizzate dei documenti in un servizio di linguaggio legacy](../../extensibility/internals/custom-document-properties-in-a-legacy-language-service.md)  
   
--   [Supporto per i frammenti di codice in un servizio di linguaggio Legacy](../../extensibility/internals/support-for-code-snippets-in-a-legacy-language-service.md)  
+-   [Supporto per i frammenti di codice in un servizio di linguaggio legacy](../../extensibility/internals/support-for-code-snippets-in-a-legacy-language-service.md)  
   
--   [Supporto per la barra di spostamento in un servizio di linguaggio Legacy](../../extensibility/internals/support-for-the-navigation-bar-in-a-legacy-language-service.md)  
+-   [Supporto per la barra di spostamento in un servizio di linguaggio legacy](../../extensibility/internals/support-for-the-navigation-bar-in-a-legacy-language-service.md)  
   
--   [Completamento delle parole in un servizio di linguaggio Legacy](../../extensibility/internals/word-completion-in-a-legacy-language-service.md)  
+-   [Completamento delle parole in un servizio di linguaggio legacy](../../extensibility/internals/word-completion-in-a-legacy-language-service.md)  
   
--   [Completamento di membro in un servizio di linguaggio Legacy](../../extensibility/internals/member-completion-in-a-legacy-language-service.md)  
+-   [Completamento dei membri in un servizio di linguaggio legacy](../../extensibility/internals/member-completion-in-a-legacy-language-service.md)  
   
--   [Informazioni sui parametri in un servizio di linguaggio Legacy](../../extensibility/internals/parameter-info-in-a-legacy-language-service2.md)  
+-   [Informazioni sul parametro in un servizio di linguaggio Legacy](../../extensibility/internals/parameter-info-in-a-legacy-language-service2.md)  
   
--   [Informazioni rapide in un servizio di linguaggio Legacy](../../extensibility/internals/quick-info-in-a-legacy-language-service.md)  
+-   [Informazioni rapide in un servizio di linguaggio legacy](../../extensibility/internals/quick-info-in-a-legacy-language-service.md)  
   
--   [Supporto per la finestra Auto in un servizio di linguaggio Legacy](../../extensibility/internals/support-for-the-autos-window-in-a-legacy-language-service.md)  
+-   [Supporto per la finestra Auto in un servizio di linguaggio legacy](../../extensibility/internals/support-for-the-autos-window-in-a-legacy-language-service.md)  
   
--   [Convalida i punti di interruzione in un servizio di linguaggio Legacy](../../extensibility/internals/validating-breakpoints-in-a-legacy-language-service.md)  
+-   [Convalida dei punti di interruzione in un servizio di linguaggio legacy](../../extensibility/internals/validating-breakpoints-in-a-legacy-language-service.md)  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Implementazione di un servizio di linguaggio Legacy](../../extensibility/internals/implementing-a-legacy-language-service1.md)   
- [Estensibilità del servizio di linguaggio legacy](../../extensibility/internals/legacy-language-service-extensibility.md)
+ [Estendibilità dei servizi di linguaggio legacy](../../extensibility/internals/legacy-language-service-extensibility.md)

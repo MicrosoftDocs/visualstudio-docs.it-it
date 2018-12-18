@@ -1,29 +1,33 @@
 ---
-title: "Aggiunta di dati di interazione tra livelli dalla riga di comando | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "metodo di profilatura di interazione tra livelli"
-  - "strumenti per la profilatura, metodo di interazione tra livelli"
+title: Aggiunta di dati di interazione tra livelli dalla riga di comando | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: vs-ide-debug
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- tier interaction profiling method
+- profiling tools,tier interaction method
 ms.assetid: 5a35647f-03f2-4555-8eeb-fda7e0080e67
-caps.latest.revision: 9
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.workload: multiple
+ms.openlocfilehash: 2d639558434e077a6ae09ce79bad6252a10a3711
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="adding-tier-interaction-data-from-the-command-line"></a>Aggiunta di dati di interazione tra livelli dalla riga di comando
 La profilatura delle interazioni tra livelli offre informazioni aggiuntive sui tempi di esecuzione delle chiamate [!INCLUDE[vstecado](../data-tools/includes/vstecado_md.md)] sincrone nelle funzioni di applicazioni multilivello che comunicano con uno o più database.  
   
  **Windows 8 e Windows Server 2012**  
   
- Per raccogliere dati di interazione tra livelli nelle applicazioni desktop di Windows 8 e nelle applicazioni Windows Server 2012, è necessario utilizzare il metodo di strumentazione. La raccolta di dati di interazione tra livelli nelle applicazioni Windows Store non è supportata.  
+ Per raccogliere dati di interazione tra livelli nelle applicazioni desktop di Windows 8 e nelle applicazioni Windows Server 2012, è necessario utilizzare il metodo di strumentazione. La raccolta di dati di interazione tra livelli nelle app UWP non è supportata.  
   
  **Versioni di Visual Studio**  
   
@@ -151,8 +155,3 @@ vsperfaspnetcmd /tip /trace http://localhost/MyWebApp
 ```  
   
  Per altre informazioni su VSPerfASPNETCmd, vedere [Profilatura rapida di sito Web con VSPerfASPNETCmd](../profiling/rapid-web-site-profiling-with-vsperfaspnetcmd.md).
-
-
-<!--HONumber=Feb17_HO4-->
-
-

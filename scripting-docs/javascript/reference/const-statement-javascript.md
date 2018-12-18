@@ -1,59 +1,61 @@
 ---
-title: "Istruzione const (JavaScript) | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/18/2017"
-ms.prod: "windows-client-threshold"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-javascript"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "const_JavaScriptKeyword"
-dev_langs: 
-  - "JavaScript"
-  - "TypeScript"
-  - "DHTML"
-helpviewer_keywords: 
-  - "dichiarazione di variabili, istruzione const"
-  - "const (istruzione)"
+title: Istruzione const (JavaScript) | Documenti Microsoft
+ms.custom: 
+ms.date: 01/18/2017
+ms.prod: windows-client-threshold
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-javascript
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords: const_JavaScriptKeyword
+dev_langs:
+- JavaScript
+- TypeScript
+- DHTML
+helpviewer_keywords:
+- declaring variables, const statement
+- const statement
 ms.assetid: 3ad0840f-437f-4163-9571-86ecc5ddb987
-caps.latest.revision: 7
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.openlocfilehash: 68130cec4f1b1fe89d2fe3e673b28963d79aebde
+ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/27/2017
 ---
-# Istruzione const (JavaScript)
-Dichiara una variabile con ambito di blocco con un valore costante.  
+# <a name="const-statement-javascript"></a>Istruzione const (JavaScript)
+Dichiara una variabile con ambito blocco con un valore costante.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
 const constant1 = value1  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `constant1`  
- Nome della variabile che si sta dichiarando.  
+ Il nome della variabile viene dichiarata.  
   
  `value1`  
- Valore iniziale assegnato alla variabile.  
+ Il valore iniziale assegnato alla variabile.  
   
-## Note  
- Utilizzare l'istruzione `const` per dichiarare una variabile con un valore costante, l'ambito della quale è limitato al blocco in cui è dichiarata.  Il valore della variabile non può essere modificato.  
+## <a name="remarks"></a>Note  
+ Utilizzare il `const` istruzione per dichiarare una variabile con un valore costante, l'ambito dei quali è limitato al blocco in cui è dichiarato. Il valore della variabile non può essere modificato.  
   
- Una variabile dichiarata utilizzando `const` deve essere inizializzata al momento della dichiarazione.  
+ Una variabile dichiarata con `const` deve essere inizializzato quando vengono dichiarati.  
   
-## Esempio  
+## <a name="example"></a>Esempio  
  Nel codice seguente viene illustrato l'utilizzo dell'istruzione `const`.  
   
-```javascript  
+```JavaScript  
 var c = 10;  
 {  
-    const c = 2;  
-   // At this point, c = 2.  
+    const c = 2;  
+   // At this point, c = 2.  
 }  
 // At this point, c = 10.  
   
@@ -64,11 +66,11 @@ const myarray = new Array();
   
 ```  
   
-## Requisiti  
+## <a name="requirements"></a>Requisiti  
  [!INCLUDE[jsv11](../../javascript/reference/includes/jsv11-md.md)]  
   
-## Vedere anche  
- [Istruzione let](../../javascript/reference/let-statement-javascript.md)   
+## <a name="see-also"></a>Vedere anche  
+ [let (istruzione)](../../javascript/reference/let-statement-javascript.md)   
  [Operatore new](../../javascript/reference/new-operator-decrementjavascript.md)   
  [Oggetto Array](../../javascript/reference/array-object-javascript.md)   
  [Variabili](../../javascript/variables-javascript.md)

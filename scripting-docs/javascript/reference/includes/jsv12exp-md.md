@@ -1,3 +1,3 @@
-Supportato in Microsoft Edge \(browser Edge\) con funzionalità JavaScript sperimentali abilitate \(informazioni su:flag\). Vedere [Informazioni sulla versione](../../../javascript/reference/javascript-version-information.md).  
+Supportato in Microsoft Edge (browser Edge) con funzionalità JavaScript sperimentali abilitate (informazioni su:flag). Vedere [Informazioni sulla versione](../../../javascript/reference/javascript-version-information.md).  
   
  Non supportato nelle modalità documento seguenti: Quirks, standard di Internet Explorer 6, standard di Internet Explorer 7, standard di Internet Explorer 8, standard di Internet Explorer 9, standard di Internet Explorer 10, standard di Internet Explorer 11. Non supportato in Windows 8.1.

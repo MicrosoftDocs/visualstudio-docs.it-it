@@ -1,11 +1,10 @@
 ---
-title: 'Procedura: Visualizzare i numeri di riga nell&quot;editor | Microsoft Docs'
+title: 'Procedura: Visualizzare i numeri di riga nell''editor | Microsoft Docs'
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- vs-ide-general
+ms.technology: vs-ide-general
 ms.tgt_pltfrm: 
 ms.topic: article
 helpviewer_keywords:
@@ -14,31 +13,16 @@ helpviewer_keywords:
 - editors, line numbers
 - code, line number displaying
 ms.assetid: 40b38559-b8de-4041-91f2-68986767c976
-caps.latest.revision: 19
-author: kempb
-ms.author: kempb
+caps.latest.revision: "19"
+author: gewarren
+ms.author: gewarren
 manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 5ea9179ad37514ffad4876177b05150eecc22def
-ms.openlocfilehash: a5a1409f23121875d16d48dfc56c31e0dbe9efb4
-ms.contentlocale: it-it
-ms.lasthandoff: 05/24/2017
-
+ms.workload: multiple
+ms.openlocfilehash: 589330e05949567837561d4e732043dcc1ce67eb
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-display-line-numbers-in-the-editor"></a>Procedura: Visualizzare i numeri di riga nell'editor
 È possibile visualizzare o nascondere la numerazione delle righe nel codice.  
@@ -53,7 +37,9 @@ ms.lasthandoff: 05/24/2017
   
 1.  Nella barra dei menu scegliere **Strumenti**, **Opzioni**. Espandere il nodo **Editor di testo** e selezionare il nodo per il linguaggio in uso o **Tutti i linguaggi** per attivare i numeri di riga in tutti i linguaggi, oppure è possibile digitare il **numero di riga** nella casella **Avvio veloce**.  
   
-2.  ![Opzioni per la visualizzazione di numeri di riga nell'editor](../../ide/reference/media/vs_displaylinenumbers.png "VS_DisplayLineNumbers")  
+2.  Selezionare la casella di controllo **Numeri di riga**.
+
+    ![Opzioni per la visualizzazione di numeri di riga nell'editor](../../ide/reference/media/vs_displaylinenumbers.png "VS_DisplayLineNumbers")
   
 > [!NOTE]
 >  A seconda del linguaggio o delle impostazioni, è possibile che sia necessario selezionare la casella di controllo **Mostra tutte le impostazioni** nella finestra di dialogo **Opzioni** per visualizzare il sottonodo **Tutti i linguaggi**.  

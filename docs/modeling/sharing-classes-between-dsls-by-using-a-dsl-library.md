@@ -1,66 +1,70 @@
 ---
-title: "Condivisione di classi tra DSL utilizzando una libreria DSL | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-ms.assetid: 509bd96b-3e66-47f4-8642-771421d0d0d5
-caps.latest.revision: 7
-author: "alancameronwills"
-ms.author: "awills"
-manager: "douge"
-caps.handback.revision: 7
+title: Condivisione di classi tra DSL utilizzando una libreria DSL | Documenti Microsoft
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.topic: article
+author: gewarren
+ms.author: gewarren
+manager: ghogen
+ms.workload:
+- multiple
+ms.technology: vs-ide-modeling
+ms.openlocfilehash: a58726bdc4e6e139963ae8cca2d12f26e0696246
+ms.sourcegitcommit: 205d15f4558315e585c67f33d5335d5b41d0fcea
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 02/09/2018
 ---
-# Condivisione di classi tra DSL utilizzando una libreria DSL
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
-in [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] L'sdk di visualizzazione e modellazione di, è possibile creare una definizione completa DSL che è possibile includere in un altro linguaggio DSL.  Ciò consente di scomporre le parti in fattori comuni di simili modelli.  
+# <a name="sharing-classes-between-dsls-by-using-a-dsl-library"></a>Condivisione di classi tra DSL utilizzando una libreria DSL
+Nel [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] Visualization and Modeling SDK, è possibile creare una definizione DSL incompleta che è possibile importare in un altro linguaggio DSL. Ciò consente di suddividere le parti comuni di modelli simili.  
   
-## Creazione e utilizzo delle librerie DSL  
+## <a name="creating-and-using-dsl-libraries"></a>Creazione e utilizzo di librerie di DSL  
   
-#### Per creare una raccolta DSL  
+#### <a name="to-create-a-dsl-library"></a>Per creare una libreria di DSL  
   
-1.  Creare un nuovo progetto di modello DSL e scegliere il modello di soluzioni della raccolta DSL.  
+1.  Creare un nuovo progetto DSL e scegliere il modello di soluzione DSL libreria.  
   
-     Un singolo progetto di modello DSL verrà creato con un modello vuoto.  
+     Verrà creato un singolo progetto DSL con un modello vuoto.  
   
 2.  È possibile aggiungere classi di dominio, relazioni, forme e così via.  
   
-     Gli elementi della raccolta non è necessario formare una singola struttura ad albero che utilizza.  
+     Gli elementi nella raccolta non sono in modo da formare una singola struttura di incorporamento.  
   
-     Per definire una relazione che le utilità di importazione possono utilizzare, creare due classi di dominio e creare la relazione tra esse.  
+     Per definire una relazione che è possibile utilizzare l'utilità di importazione, creare due classi di dominio e creare la relazione tra di essi.  
   
-     Si consideri la possibilità di impostare **modificatore di ereditarietà** le classi di dominio a  `Abstract`.  
+     Impostare il **modificatore di ereditarietà** delle classi di dominio per `Abstract`.  
   
-3.  È possibile aggiungere gli elementi definiti nel modello DSL Esplora Risorse, quali generatori della connessione.  
+3.  È possibile aggiungere gli elementi definiti in Esplora DSL, ad esempio i generatori di connessione.  
   
-4.  È possibile aggiungere le personalizzazioni che richiedono ulteriore codice, come vincoli di convalida.  
+4.  È possibile aggiungere personalizzazioni che richiedono codice aggiuntivo, ad esempio i vincoli di convalida.  
   
-5.  Fare clic su **Trasformazione di tutti i modelli**.  
+5.  Fare clic su **Trasforma tutti i modelli**.  
   
 6.  Compilare il progetto.  
   
-7.  Quando si distribuisce il modello DSL per altri utenti da utilizzare, è necessario specificare sia l'assembly compilato \(DLL\) che il file `DslDefinition.dsl`.  È possibile trovare l'assembly compilato in una cartella a l `Dsl\bin\*`  
+7.  Quando si distribuisce il DSL per altri utenti possano utilizzare, è necessario specificare sia l'assembly compilato (DLL) e il file `DslDefinition.dsl`. È possibile trovare l'assembly compilato in una cartella`Dsl\bin\*`  
   
-#### Per importare una libreria DSL  
+#### <a name="to-import-a-dsl-library"></a>Per importare una libreria di DSL  
   
-1.  In un'altra definizione DSL, in **DSL Esplora Risorse**, fare clic con il pulsante destro del mouse sulla classe radice del modello DSL e quindi fare clic su  **aggiungere la nuova importazione di DslLibrary**.  
+1.  In un'altra definizione DSL, in **Esplora DSL**, la classe radice della DSL destro e quindi fare clic su **Aggiungi nuova importazione DslLibrary**.  
   
-2.  Nella Finestra Proprietà, impostare **Percorso del file** la raccolta.  È possibile utilizzare un percorso relativo o assoluto.  
+2.  Nella finestra Proprietà impostare il **percorso del File** della libreria. È possibile utilizzare un percorso assoluto o relativo.  
   
-     La raccolta inclusa nel modello DSL Esplora Risorse, in modalità di sola lettura.  
+     La libreria importata viene visualizzato in Esplora DSL, in modalità di sola lettura.  
   
-3.  È possibile utilizzare le classi importate come classi base.  Creare una classe di dominio nel modello DSL di importazione, quindi nella Finestra Proprietà impostare **Classe base** in una classe inclusa.  
+3.  È possibile utilizzare le classi importate come classi di base. Creare una classe di dominio nella DSL l'importazione e nella proprietà finestra, impostare **di una classe Base** a una classe importata.  
   
-4.  Trasformazione di selezionare tutti i modelli.  
+4.  Fare clic su Trasforma tutti i modelli.  
   
-5.  Aggiungere al progetto di modello DSL un riferimento a un assembly \(DLL\) che è stato compilato dal progetto libreria DSL.  
+5.  Aggiungere al progetto DSL un riferimento all'assembly (DLL) che è stato compilato il progetto di libreria DSL.  
   
 6.  Compilare la soluzione.  
   
- Una raccolta DSL possibile importare altre raccolte.  Quando si importa una libreria, le importazioni inoltre visualizzate automaticamente nel modello DSL Esplora Risorse.  
+ Una libreria DSL è possibile importare altre librerie. Quando si importa una libreria, in Esplora DSL vengono visualizzati automaticamente anche le importazioni.  
   
-## Vedere anche  
- [Procedura: definire un linguaggio specifico di dominio](../modeling/how-to-define-a-domain-specific-language.md)
+## <a name="see-also"></a>Vedere anche  
+ [Come definire un linguaggio specifico di dominio](../modeling/how-to-define-a-domain-specific-language.md)
+ 
+[!INCLUDE[modeling_sdk_info](includes/modeling_sdk_info.md)]

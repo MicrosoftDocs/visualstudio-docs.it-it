@@ -1,46 +1,32 @@
 ---
-title: Elemento UsedCommands | Documenti di Microsoft
+title: Elemento UsedCommands | Documenti Microsoft
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- vs-ide-sdk
+ms.technology: vs-ide-sdk
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords:
-- UsedCommands
+f1_keywords: UsedCommands
 helpviewer_keywords:
 - UsedCommands element (VSCT XML schema)
 - VSCT XML schema elements, UsedCommands
 ms.assetid: 5e000ee0-a919-46e9-9277-2a0659f1eb78
-caps.latest.revision: 13
+caps.latest.revision: "13"
+author: gregvanl
 ms.author: gregvanl
 manager: ghogen
-translation.priority.mt:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: 5db97d19b1b823388a465bba15d057b30ff0b3ce
-ms.openlocfilehash: 2988cc106a87f82dc2a670076e9ff396802b7644
-ms.lasthandoff: 02/22/2017
-
+ms.workload: vssdk
+ms.openlocfilehash: 35b8821a76926da6ea9cab8ca61ef8f62e5ec72d
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="usedcommands-element"></a>Elemento UsedCommands
 L'elemento UsedCommands Raggruppa gli elementi UsedCommand e altri raggruppamenti UsedCommands.  
   
- L'elemento UsedCommands è facoltativo. Se non è necessario chiamare i comandi definiti all'esterno del pacchetto, non è necessario includere in questa sezione del file vsct.  
+ L'elemento UsedCommands è facoltativo. Se non si chiama comandi definiti all'esterno del pacchetto, non è necessario includere in questa sezione nel file con estensione vsct.  
   
 ## <a name="syntax"></a>Sintassi  
   
@@ -69,7 +55,7 @@ L'elemento UsedCommands Raggruppa gli elementi UsedCommand e altri raggruppament
   
 |Elemento|Descrizione|  
 |-------------|-----------------|  
-|[Elemento CommandTable](../extensibility/commandtable-element.md)|Definisce tutti gli elementi che rappresentano i comandi (ad esempio, le voci di menu, menu, barre degli strumenti e caselle combinate) che fornisce un VSPackage all'ambiente di sviluppo integrato (IDE).|  
+|[Elemento CommandTable](../extensibility/commandtable-element.md)|Definisce tutti gli elementi che rappresentano i comandi (ad esempio, le voci di menu, menu, barre degli strumenti e caselle combinate) che un pacchetto VSPackage fornisce all'ambiente di sviluppo integrato (IDE).|  
   
 ## <a name="example"></a>Esempio  
   
@@ -83,4 +69,4 @@ L'elemento UsedCommands Raggruppa gli elementi UsedCommand e altri raggruppament
   
 ## <a name="see-also"></a>Vedere anche  
  [Elemento UsedCommand](../extensibility/usedcommand-element.md)   
- [Tabella di comandi di Visual Studio (. File Vsct)](../extensibility/internals/visual-studio-command-table-dot-vsct-files.md)
+ [File Visual Studio Command Table (VSCT)](../extensibility/internals/visual-studio-command-table-dot-vsct-files.md)

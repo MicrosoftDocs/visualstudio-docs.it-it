@@ -1,51 +1,53 @@
 ---
-title: "How to: Specify a Link for Technical Support | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-deployment"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "C++"
-helpviewer_keywords: 
-  - "Support URL property"
-  - "product support, specifying URL for ClickOnce applications"
-  - "Web pages, ClickOnce"
-  - "Web sites, creating for ClickOnce support"
-  - "ClickOnce deployment, specifying support Web page address"
-  - "customer support, ClickOnce applications"
-  - "URLs, ClickOnce applications"
+title: 'Procedura: specificare un collegamento per il supporto tecnico | Documenti Microsoft'
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: vs-ide-deployment
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- VB
+- CSharp
+- C++
+helpviewer_keywords:
+- Support URL property
+- product support, specifying URL for ClickOnce applications
+- Web pages, ClickOnce
+- Web sites, creating for ClickOnce support
+- ClickOnce deployment, specifying support Web page address
+- customer support, ClickOnce applications
+- URLs, ClickOnce applications
 ms.assetid: 500aebee-545e-4831-a78b-b8671a008015
-caps.latest.revision: 15
-author: "stevehoag"
-ms.author: "shoag"
-manager: "wpickett"
-caps.handback.revision: 15
+caps.latest.revision: "15"
+author: stevehoag
+ms.author: shoag
+manager: wpickett
+ms.workload: multiple
+ms.openlocfilehash: 3953148355321f4ed17d5d4f539c6f31c1a5872c
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
-# How to: Specify a Link for Technical Support
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
-Quando viene pubblicata un'applicazione [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)], la proprietà **URL di supporto** identifica una pagina Web o una condivisione file a cui gli utenti possono accedere per ottenere informazioni sull'applicazione.  Questa proprietà è facoltativa. Se viene fornita, l'URL verrà visualizzato accanto alla voce relativa all'applicazione nella finestra di dialogo **Installazione applicazioni**.  
+# <a name="how-to-specify-a-link-for-technical-support"></a>Procedura: specificare un collegamento per il supporto tecnico
+Quando si pubblica un [!INCLUDE[ndptecclick](../deployment/includes/ndptecclick_md.md)] applicazione, il **URL di supporto** proprietà identifica una pagina Web o una condivisione file in cui gli utenti possono accedere per ottenere informazioni sull'applicazione. Questa proprietà è facoltativa. Se specificato, verrà visualizzato l'URL in ingresso dell'applicazione **Aggiungi / Rimuovi programmi** la finestra di dialogo.  
   
- La proprietà **URL di supporto** può essere impostata nella scheda **Pubblica** di **Progettazione progetti**.  
+ Il **URL di supporto** proprietà può essere impostata sul **pubblica** pagina del **progettazione**.  
   
-### Per specificare un URL per il supporto  
+### <a name="to-specify-a-support-url"></a>Per specificare un URL di supporto  
   
 1.  Con un progetto selezionato in **Esplora soluzioni**, scegliere **Proprietà** dal menu **Progetto**.  
   
-2.  Fare clic sulla scheda **Pubblica**.  
+2.  Fare clic su di **pubblica** scheda.  
   
-3.  Scegliere il pulsante **Opzioni** per aprire la finestra di dialogo **Opzioni di pubblicazione**.  
+3.  Fare clic su di **opzioni** pulsante per aprire la **opzioni di pubblicazione** la finestra di dialogo.  
   
-4.  Fare clic su **Descrizione**.  
+4.  Fare clic su **descrizione**.  
   
-5.  Nel campo **URL di supporto** immettere il percorso completo di un sito Web, di una pagina Web o di una condivisione UNC.  
+5.  Nel **URL di supporto** immettere il percorso completo per una condivisione UNC, pagina Web o sito Web.  
   
-## Vedere anche  
- [Publishing ClickOnce Applications](../deployment/publishing-clickonce-applications.md)   
- [How to: Publish a ClickOnce Application using the Publish Wizard](../Topic/How%20to:%20Publish%20a%20ClickOnce%20Application%20using%20the%20Publish%20Wizard.md)
+## <a name="see-also"></a>Vedere anche  
+ [Pubblicazione di applicazioni ClickOnce](../deployment/publishing-clickonce-applications.md)   
+ [Procedura: Pubblicare un'applicazione ClickOnce mediante la Pubblicazione guidata](../deployment/how-to-publish-a-clickonce-application-using-the-publish-wizard.md)

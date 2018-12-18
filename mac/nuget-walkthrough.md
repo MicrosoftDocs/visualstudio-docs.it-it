@@ -1,19 +1,17 @@
 ---
-title: Procedura dettagliata - Inserimento di un pacchetto NuGet nel progetto
+title: 'Procedura dettagliata: inserimento di un pacchetto NuGet nel progetto | Microsoft Docs'
 description: "Questo documento descrive come includere un pacchetto NuGet in un progetto Xamarin. Illustra in modo dettagliato come trovare e scaricare un pacchetto e offre un'introduzione alle funzionalità di integrazione dell'IDE."
 author: asb3993
 ms.author: amburns
 ms.date: 04/14/2017
 ms.topic: article
 ms.assetid: 5C800815-0B13-4B27-B017-95FCEF1A0EA2
+ms.openlocfilehash: cb927b14e3637edd7e16c78fbed01fa4e9522652
+ms.sourcegitcommit: f40311056ea0b4677efcca74a285dbb0ce0e7974
 ms.translationtype: HT
-ms.sourcegitcommit: e2b7ff9126e1cc38ac2e58d6be339b656a024e7f
-ms.openlocfilehash: 0fa91c18592dee4f20832d7a0dad8aea069da93e
-ms.contentlocale: it-it
-ms.lasthandoff: 08/11/2017
-
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/31/2017
 ---
-
 # <a name="including-a-nuget-package-in-your-project"></a>Inserimento di un pacchetto NuGet nel progetto
 
 NuGet è il più diffuso strumento di gestione pacchetti per lo sviluppo .NET ed è integrato in Visual Studio per Mac e Visual Studio in Windows. È possibile cercare e aggiungere pacchetti nei progetti Xamarin.iOS e Xamarin.Android usando entrambi gli IDE.
@@ -118,5 +116,4 @@ La documentazione di NuGet illustra come [usare NuGet senza eseguire il commit d
 ![Ripristino automatico dei pacchetti](media/nuget-walkthrough-AutoRestore.png)
 
 Vedere la documentazione relativa al controllo del codice sorgente specifico per informazioni dettagliate su come escludere la directory `packages` dal controllo.
-
 

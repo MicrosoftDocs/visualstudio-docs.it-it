@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- vs-ide-general
+ms.technology: vs-ide-general
 ms.tgt_pltfrm: 
 ms.topic: article
 helpviewer_keywords:
@@ -13,21 +12,16 @@ helpviewer_keywords:
 - Devenv, /updateconfiguration switch
 - updateconfiguration Devenv switch
 ms.assetid: 9a1084cc-8b68-4ccc-aaea-f95939164338
-caps.latest.revision: 3
-author: kempb
-ms.author: kempb
+caps.latest.revision: "3"
+author: gewarren
+ms.author: gewarren
 manager: ghogen
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 5ea9179ad37514ffad4876177b05150eecc22def
-ms.openlocfilehash: 6e74ef38969cb62790629b34041ceef535ff6f9e
-ms.contentlocale: it-it
-ms.lasthandoff: 05/24/2017
-
+ms.workload: multiple
+ms.openlocfilehash: 0ec3bfc47829bce2fe5ad836c970cb28f8a1294e
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="updateconfiguration-devenvexe"></a>/Updateconfiguration (devenv.exe)
 Notifica a [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] che è necessario unire i pacchetti di [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] nel sistema e controllare se vi sono modifiche della cache MEF.  

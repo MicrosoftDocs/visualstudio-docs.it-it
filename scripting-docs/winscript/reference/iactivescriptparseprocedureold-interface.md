@@ -1,35 +1,38 @@
 ---
-title: "Interfaccia IActiveScriptParseProcedureOld | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/18/2017"
-ms.prod: "windows-script-interfaces"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
+title: Interfaccia IActiveScriptParseProcedureOld | Documenti Microsoft
+ms.custom: 
+ms.date: 01/18/2017
+ms.prod: windows-script-interfaces
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: reference
 apiname: IActiveScriptParseProcedureOld
 apilocation: scrobj.dll
-helpviewer_keywords: 
-  - "Interfaccia IActiveScriptParseProcedureOld"
+helpviewer_keywords: IActiveScriptParseProcedureOld interface
 ms.assetid: d94b391e-4c24-46da-a01f-2c134ca4f041
-caps.latest.revision: 8
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.openlocfilehash: 99cff9cd4d04c5d25489b6cc4c9b9af93792dc2a
+ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/27/2017
 ---
-# Interfaccia IActiveScriptParseProcedureOld
-Consente il testo del codice sorgente per le procedure vengano aggiunti allo script.  Per i linguaggi di script interpretati che non dispongono di un ambiente indipendente di creazione, come VBScript, questo fornisce un meccanismo alternativo \(diverso da `IActiveScriptParse` o `IPersist*`\) per aggiungere le routine di script allo spazio dei nomi.  
+# <a name="iactivescriptparseprocedureold-interface"></a>Interfaccia IActiveScriptParseProcedureOld
+Consente il testo del codice sorgente per le procedure da aggiungere allo script. Interpretato linguaggi di script che non dispongono di un ambiente di creazione indipendente, come VBScript, si fornisce un meccanismo alternativo (diverso da `IActiveScriptParse` o `IPersist*`) per aggiungere lo spazio dei nomi delle procedure di script.  
   
 > [!NOTE]
->  Questa interfaccia è deprecata a favore dell'interfaccia `IActiveScriptParseProcedure`.  
+>  Questa interfaccia è deprecata a favore del `IActiveScriptParseProcedure` interfaccia.  
   
-## Metodi  
- Oltre ai metodi ereditati da `IUnknown`, l'interfaccia `IActiveScriptParseProcedureOld` espone i metodi seguenti.  
+## <a name="methods"></a>Metodi  
+ Oltre ai metodi ereditati da `IUnknown`, `IActiveScriptParseProcedureOld` interfaccia espone i metodi seguenti.  
   
 |Metodo|Descrizione|  
 |------------|-----------------|  
-|[IActiveScriptParseProcedureOld::ParseProcedureText](../../winscript/reference/iactivescriptparseprocedureold-parseproceduretext.md)|Analizzare il codice di creazione specificato e aggiunge la routine allo spazio dei nomi.|  
+|[IActiveScriptParseProcedureOld::ParseProcedureText](../../winscript/reference/iactivescriptparseprocedureold-parseproceduretext.md)|Analizza la routine di codice specificato e aggiunge la procedura per lo spazio dei nomi.|  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IActiveScriptParseProcedure](../../winscript/reference/iactivescriptparseprocedure.md)

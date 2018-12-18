@@ -1,67 +1,68 @@
 ---
-title: "Procedura: aggiungere un parametro a un metodo"
-ms.custom: ""
-ms.date: "02/02/2017"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "office-development"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "VB"
-  - "CSharp"
-helpviewer_keywords: 
-  - "integrazione applicativa dei dati [sviluppo per SharePoint in Visual Studio], aggiunta di un metodo a un parametro"
-  - "integrazione applicativa dei dati [sviluppo per SharePoint in Visual Studio], parametri di metodo"
-  - "integrazione applicativa dei dati [sviluppo per SharePoint in Visual Studio], parametro"
-  - "servizio di integrazione applicativa dei dati [sviluppo per SharePoint in Visual Studio], aggiunta di un metodo a un parametro"
-  - "servizio di integrazione applicativa dei dati [sviluppo per SharePoint in Visual Studio], parametri di metodo"
-  - "servizio di integrazione applicativa dei dati [sviluppo per SharePoint in Visual Studio], parametro"
-ms.assetid: c5b6fd32-bf85-4b2a-a01e-f9199f0fb26e
-caps.latest.revision: 16
-author: "kempb"
-ms.author: "kempb"
-manager: "ghogen"
-caps.handback.revision: 16
+title: 'Procedura: aggiungere un parametro a un metodo | Documenti Microsoft'
+ms.custom: 
+ms.date: 02/02/2017
+ms.reviewer: 
+ms.suite: 
+ms.technology: office-development
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- VB
+- CSharp
+- VB
+- CSharp
+helpviewer_keywords:
+- Business Data Connectivity service [SharePoint development in Visual Studio], adding a method to a parameter
+- Business Data Connectivity service [SharePoint development in Visual Studio], parameter
+- BDC [SharePoint development in Visual Studio], adding a method to a parameter
+- BDC [SharePoint development in Visual Studio], parameter
+- Business Data Connectivity service [SharePoint development in Visual Studio], method parameters
+- BDC [SharePoint development in Visual Studio], method parameters
+author: TerryGLee
+ms.author: tglee
+manager: ghogen
+ms.workload: office
+ms.openlocfilehash: 388ce91d8500cf21c4a4989b8db9106a4d19693d
+ms.sourcegitcommit: f9fbf1f55f9ac14e4e5c6ae58c30dc1800ca6cda
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 01/10/2018
 ---
-# Procedura: aggiungere un parametro a un metodo
-  Utilizzare un parametro per passare informazioni al metodo o restituire informazioni da un metodo.  Tutti i metodi devono avere almeno un parametro.  Per ulteriori informazioni sulla progettazione di un parametro per supportare il tipo di metodo che si desidera creare, vedere [Progettazione di un modello di integrazione applicativa dei dati](../sharepoint/designing-a-business-data-connectivity-model.md).  
+# <a name="how-to-add-a-parameter-to-a-method"></a>Procedura: aggiungere un parametro a un metodo
+  Usare un parametro per passare le informazioni nel metodo o per restituire informazioni da un metodo. Tutti i metodi devono avere almeno un parametro. Per ulteriori informazioni sulla progettazione di un parametro per supportare il tipo di metodo che si desidera creare, vedere [progettazione di un modello di connettività dei dati di Business](../sharepoint/designing-a-business-data-connectivity-model.md).  
   
- Quando si aggiunge un parametro a un metodo, in Visual Studio viene aggiunto l'elemento `<Parameter>` all'XML del file modello nel progetto.  Per ulteriori informazioni sugli attributi di un elemento `<Parameter>`, vedere [Parametro](http://go.microsoft.com/fwlink/?LinkId=169284).  
+ Quando si aggiunge un parametro a un metodo, Visual Studio aggiunge il `<Parameter>` elemento al codice XML del file modello nel progetto. Per ulteriori informazioni sugli attributi di un `<Parameter>` elemento, vedere [parametro](http://go.microsoft.com/fwlink/?LinkId=169284).  
   
-### Per aggiungere un parametro a un metodo  
+### <a name="to-add-a-parameter-to-a-method"></a>Per aggiungere un parametro a un metodo  
   
 1.  Aggiungere un metodo a un'entità.  
   
-2.  Sulla barra dei menu, scegliere **Visualizza**, **Altre finestre**, **Dettagli metodo di integrazione applicativa dei dati**.  
+2.  Nella barra dei menu, scegliere **vista**, **altre finestre**, **Dettagli metodo di integrazione applicativa dei dati**.  
   
-     Viene visualizzata la finestra **Dettagli metodo di integrazione applicativa dei dati**.  Per ulteriori informazioni, vedere [Panoramica degli strumenti di progettazione del modello di integrazione applicativa dei dati](../sharepoint/bdc-model-design-tools-overview.md).  
+     Il **Dettagli metodo di integrazione applicativa dei dati** verrà visualizzata la finestra. Per ulteriori informazioni, vedere [panoramica degli strumenti di progettazione del modello di integrazione applicativa dei dati](../sharepoint/bdc-model-design-tools-overview.md).  
   
-3.  Nella finestra **Dettagli metodo di integrazione applicativa dei dati** espandere il nodo del metodo, quindi espandere il nodo **Parametri**.  
+3.  Nel **Dettagli metodo di integrazione applicativa dei dati** finestra, espandere il nodo del metodo e quindi espandere il **parametri** nodo.  
   
-4.  Nell'elenco **Aggiungi un parametro**, scegliere **Crea parametro**.  
+4.  Nel **aggiungere un parametro** scegliere **Crea parametro**.  
   
-     Un nuovo parametro verrà visualizzato sotto il nodo **Parametri**.  
+     Un nuovo parametro verrà visualizzata sotto il **parametri** nodo.  
   
-5.  Nella barra dei menu, scegliere **Visualizza**, **Finestra proprietà**.  
+5.  Nella barra dei menu, scegliere **vista**, **finestra proprietà**.  
   
-6.  Nel finestra **Proprietà** impostare la proprietà **Nome** su qualsiasi nome significativo.  Se, ad esempio, il metodo restituirà clienti, è possibile denominarlo GetCustomers.  
+6.  Nel **proprietà** finestra, impostare il **nome** proprietà a un nome significativo. Ad esempio, se il metodo restituirà i clienti, si potrebbe assegnare al metodo **GetCustomers**.  
   
-7.  Nella finestra **Dettagli metodo di integrazione applicativa dei dati** aprire l'elenco che viene visualizzato per la direzione del parametro, quindi selezionare **In**, **InOut**, **Out** o **Return**.  
+7.  Nel **Dettagli metodo di integrazione applicativa dei dati** finestra, aprire l'elenco visualizzato per la direzione del parametro e quindi scegliere **In**, **InOut**, **Out**, o **restituire**.  
   
-     Per ulteriori informazioni sulla direzione che è opportuno scegliere per il metodo di tipo in fase di creazione, vedere [Progettazione di un modello di integrazione applicativa dei dati](../sharepoint/designing-a-business-data-connectivity-model.md).  
+     Per ulteriori informazioni sulla direzione che scegliere per il tipo di metodo che si sta creando, vedere [progettazione di un modello di connettività dei dati di Business](../sharepoint/designing-a-business-data-connectivity-model.md).  
   
-8.  Modificare il descrittore di tipo del parametro.  Per ulteriori informazioni, vedere [How to: Define the Type Descriptor of a Parameter](../sharepoint/how-to-define-the-type-descriptor-of-a-parameter.md).  
+8.  Modificare il descrittore di tipo del parametro. Per ulteriori informazioni, vedere [procedura: definire il descrittore di tipo di parametro](../sharepoint/how-to-define-the-type-descriptor-of-a-parameter.md).  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Panoramica degli strumenti di progettazione del modello di integrazione applicativa dei dati](../sharepoint/bdc-model-design-tools-overview.md)   
- [Procedura: aggiungere un'entità al modello](../sharepoint/how-to-add-an-entity-to-a-model.md)   
- [How to: Define the Type Descriptor of a Parameter](../sharepoint/how-to-define-the-type-descriptor-of-a-parameter.md)   
- [Procedura: definire un'istanza di metodo](../sharepoint/how-to-define-a-method-instance.md)   
+ [Procedura: aggiungere un'entità a un modello](../sharepoint/how-to-add-an-entity-to-a-model.md)   
+ [Procedura: definire il descrittore di tipo di parametro](../sharepoint/how-to-define-the-type-descriptor-of-a-parameter.md)   
+ [Procedura: definire una metodo di istanza](../sharepoint/how-to-define-a-method-instance.md)   
  [Progettazione di un modello di integrazione applicativa dei dati](../sharepoint/designing-a-business-data-connectivity-model.md)  
   
   

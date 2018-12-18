@@ -1,69 +1,72 @@
 ---
-title: "Oggetto ArrayBuffer | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/18/2017"
-ms.prod: "windows-client-threshold"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-javascript"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-dev_langs: 
-  - "JavaScript"
-  - "TypeScript"
-  - "DHTML"
+title: Oggetto ArrayBuffer | Documenti Microsoft
+ms.custom: 
+ms.date: 01/18/2017
+ms.prod: windows-client-threshold
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-javascript
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+dev_langs:
+- JavaScript
+- TypeScript
+- DHTML
 ms.assetid: 9fda1261-f450-493b-b3db-ecfa9ca93cd7
-caps.latest.revision: 17
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 17
+caps.latest.revision: "17"
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.openlocfilehash: c253d63d12a4a5e71d1661aae560b74debecdd62
+ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/27/2017
 ---
-# Oggetto ArrayBuffer
-Rappresenta un buffer non elaborato di dati binari, usato per archiviare i dati per le diverse matrici tipizzate.  Gli oggetti `ArrayBuffers` non possono essere letti o scritti direttamente, ma possono essere passati a una matrice tipizzata o a [Oggetto DataView](../../javascript/reference/dataview-object.md) per interpretare il buffer non elaborato in base alle necessità.  
+# <a name="arraybuffer-object"></a>Oggetto ArrayBuffer
+Rappresenta un buffer non elaborato di dati binari, usato per archiviare i dati per le diverse matrici tipizzate. `ArrayBuffers`Impossibile leggere o scritti direttamente, ma possono essere passati a una matrice tipizzata o [oggetto DataView](../../javascript/reference/dataview-object.md) per interpretare il buffer non elaborato in base alle esigenze.  
   
- Per altre informazioni sulle matrici tipizzate, vedere [Matrici tipizzate](../../javascript/advanced/typed-arrays-javascript.md).  
+ Per ulteriori informazioni sulle matrici tipizzate, vedere [matrici tipizzate](../../javascript/advanced/typed-arrays-javascript.md).  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```javascript  
+```JavaScript  
   
 arrayBuffer = new ArrayBuffer(length);  
 ```  
   
-## Parametri  
+## <a name="parameters"></a>Parametri  
  `arrayBuffer`  
- Obbligatorio.  Nome della variabile a cui l'oggetto `ArrayBuffer` è assegnato.  
+ Obbligatorio. Nome della variabile a cui l'oggetto `ArrayBuffer` è assegnato.  
   
  `length`  
- La lunghezza del buffer.  I contenuti di ArrayBuffer vengono inizializzati a 0.  Se il numero di byte richiesti non può essere allocato, viene generata un'eccezione.  
+ La lunghezza del buffer. I contenuti di ArrayBuffer vengono inizializzati a 0. Se il numero di byte richiesti non può essere allocato, viene generata un'eccezione.  
   
-## Proprietà  
+## <a name="properties"></a>Proprietà  
  Nella tabella seguente sono elencate le proprietà dell'oggetto `ArrayBuffer`.  
   
 |Proprietà|Descrizione|  
-|---------------|-----------------|  
-|[Proprietà byteLength](../../javascript/reference/bytelength-property-arraybuffer.md)|Sola lettura.  La lunghezza di ArrayBuffer \(in byte\).|  
+|--------------|-----------------|  
+|[Proprietà byteLength](../../javascript/reference/bytelength-property-arraybuffer.md)|Sola lettura. La lunghezza di ArrayBuffer (in byte).|  
   
-## Funzioni  
+## <a name="functions"></a>Funzioni  
  Nella tabella seguente sono elencate le funzioni dell'oggetto `ArrayBuffer`.  
   
 |Proprietà|Descrizione|  
-|---------------|-----------------|  
-|[ArrayBuffer.isView Function](../../javascript/reference/arraybuffer-isview-function-arraybuffer.md)|Determina se un oggetto fornisce una visualizzazione del buffer.|  
+|--------------|-----------------|  
+|[Funzione arraybuffer. Isview](../../javascript/reference/arraybuffer-isview-function-arraybuffer.md)|Determina se un oggetto fornisce una visualizzazione del buffer.|  
   
-## Metodi  
+## <a name="methods"></a>Metodi  
  Nella tabella seguente sono elencati i metodi dell'oggetto `ArrayBuffer`:  
   
 |Proprietà|Descrizione|  
-|---------------|-----------------|  
+|--------------|-----------------|  
 |[Metodo slice](../../javascript/reference/slice-method-arraybuffer.md)|Restituisce una sezione di un oggetto `ArrayBuffer`.|  
   
-## Esempio  
- L'esempio seguente illustra come usare un oggetto ArrayBuffer per elaborare i dati binari acquisiti da [XMLHttpRequest](http://msdn.microsoft.com/library/ie/ms535874\(v=vs.85\).aspx).  È possibile usare [Oggetto DataView](../../javascript/reference/dataview-object.md) per ottenere i singoli valori.  
+## <a name="example"></a>Esempio  
+ Nell'esempio seguente viene illustrato come utilizzare un oggetto ArrayBuffer per elaborare i dati binari acquisiti da un [XMLHttpRequest](http://msdn.microsoft.com/library/ie/ms535874\(v=vs.85\).aspx). È possibile utilizzare un [oggetto DataView](../../javascript/reference/dataview-object.md) per ottenere i valori singoli.  
   
-```javascript  
+```JavaScript  
 var req = new XMLHttpRequest();  
     req.open('GET', "http://www.example.com");  
     req.responseType = "arraybuffer";  
@@ -83,8 +86,8 @@ var req = new XMLHttpRequest();
   
 ```  
   
-## Note  
- Per altre informazioni sull'utilizzo di `XmlHttpRequest`, vedere [XMLHttpRequest enhancements](http://msdn.microsoft.com/it-it/be09137c-6546-441b-b953-dcbf72b77069).  
+## <a name="remarks"></a>Note  
+ Per ulteriori informazioni sull'utilizzo `XmlHttpRequest`, vedere [miglioramenti a XMLHttpRequest](http://msdn.microsoft.com/en-us/be09137c-6546-441b-b953-dcbf72b77069).  
   
-## Requisiti  
+## <a name="requirements"></a>Requisiti  
  [!INCLUDE[jsv10](../../javascript/reference/includes/jsv10-md.md)]

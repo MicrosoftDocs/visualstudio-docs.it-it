@@ -1,74 +1,76 @@
 ---
-title: "Operatore di NOT logico (!) (JavaScript) | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/18/2017"
-ms.prod: "windows-client-threshold"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-javascript"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "!"
-dev_langs: 
-  - "JavaScript"
-  - "TypeScript"
-  - "DHTML"
-helpviewer_keywords: 
-  - "! operatore"
-  - "! operatore, informazioni sull'operatore !"
-  - "Operatore NOT logico"
+title: Logico NOT (operatore) (!) (JavaScript) | Documenti Microsoft
+ms.custom: 
+ms.date: 01/18/2017
+ms.prod: windows-client-threshold
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-javascript
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords: '!'
+dev_langs:
+- JavaScript
+- TypeScript
+- DHTML
+helpviewer_keywords:
+- Logical NOT operator
+- '! operator'
+- '! operator, about ! operator'
 ms.assetid: 68c3dc71-ae95-4293-9155-67405846d71d
-caps.latest.revision: 7
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.openlocfilehash: 29c27b9cd670989eb2112de5067e68bd09d76903
+ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/27/2017
 ---
-# Operatore di NOT logico (!) (JavaScript)
-Esegue una negazione logica in un'espressione.  
+# <a name="logical-not-operator--javascript"></a>Operatore di NOT logico (!) (JavaScript)
+Esegue una negazione logica su un'espressione.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
   
 result = !expression  
 ```  
   
-## Parametri  
- *result*  
+## <a name="parameters"></a>Parametri  
+ *risultato*  
  Qualsiasi variabile.  
   
- *expression*  
+ *espressione*  
  Qualsiasi espressione.  
   
-## Note  
- Nella tabella seguente viene illustrata la modalità di determinazione di *result*.  
+## <a name="remarks"></a>Note  
+ Nella tabella seguente viene illustrato come *risultato* è determinata.  
   
-|Se `expression` è|`result` sarà|  
-|-----------------------|-------------------|  
+|Se `expression` è|Quindi `result` è|  
+|------------------------|----------------------|  
 |True|False|  
 |False|True|  
   
- Con tutti gli operatori unari, quale l'operatore **\!**, le espressioni vengono valutate nel modo seguente:  
+ Tutti gli operatori unari, ad esempio il **!** operatore di valutare le espressioni come indicato di seguito:  
   
--   Se l'operatore viene applicato a espressioni undefined o `null`, verrà generato un errore di runtime.  
+-   Se applicato undefined o `null` viene generato un errore di run-time espressioni.  
   
 -   Gli oggetti vengono convertiti in stringhe.  
   
--   Le stringhe vengono convertite in numeri se possibile.  In caso contrario, verrà generato un errore di runtime.  
+-   Le stringhe vengono convertite in numeri, se possibile. In caso contrario, viene generato un errore di run-time.  
   
--   I valori booleani vengono considerati come numeri e precisamente come 0 nel caso di false, come 1 nel caso di true.  
+-   I valori booleani vengono considerati come numeri (0 se è false, 1 se è true).  
   
- L'operatore viene applicato al numero risultante.  
+ L'operatore viene applicato per il numero risultante.  
   
- Nel caso dell'operatore **\!**, se *expression* è diverso da zero, *result* sarà uguale a zero.  Se invece *expression* è uguale a zero, il valore di *result* sarà 1.  
+ Per il **!** operatore, se *espressione* è diverso da zero, *risultato* è zero. Se *espressione* è zero, *risultato* è 1.  
   
-## Requisiti  
+## <a name="requirements"></a>Requisiti  
  [!INCLUDE[jsv1](../../javascript/misc/includes/jsv1-md.md)]  
   
-## Vedere anche  
- [Operatore NOT bit per bit \(~\)](../../javascript/reference/bitwise-not-operator-decrement-tilde-javascript.md)   
- [Precedenza tra gli operatori](../../javascript/operator-subtractprecedence-javascript.md)   
- [Riepilogo degli operatori \(JavaScript\)](../../javascript/misc/operator-subtractsummary-javascript.md)
+## <a name="see-also"></a>Vedere anche  
+ [Bit per bit NOT (operatore) (~)](../../javascript/reference/bitwise-not-operator-decrement-tilde-javascript.md)   
+ [Precedenza tra operatori](../../javascript/operator-subtractprecedence-javascript.md)   
+ [Riepilogo degli operatori (JavaScript)](../../javascript/misc/operator-subtractsummary-javascript.md)

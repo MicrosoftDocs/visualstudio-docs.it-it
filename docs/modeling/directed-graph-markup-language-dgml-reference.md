@@ -1,45 +1,31 @@
 ---
-title: Diretto riferimento Graph Markup Language (DGML) | Documenti di Microsoft
+title: Diretto riferimento Graph Markup Language (DGML) | Documenti Microsoft
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.tgt_pltfrm: 
 ms.topic: article
-ms.assetid: cc3e4ae7-60fa-4e22-9227-98020b480b73
-caps.latest.revision: 8
-author: alexhomer1
-ms.author: ahomer
-manager: douge
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: 5db97d19b1b823388a465bba15d057b30ff0b3ce
-ms.openlocfilehash: c6aadef5b4f8e9ae8682779ccb9cb88d6ca2d3a2
-ms.lasthandoff: 02/22/2017
-
+author: gewarren
+ms.author: gewarren
+manager: ghogen
+ms.workload:
+- multiple
+ms.technology: vs-ide-modeling
+ms.openlocfilehash: cfa143669f757a3a71ddb89ea731ffbfc5059d24
+ms.sourcegitcommit: 205d15f4558315e585c67f33d5335d5b41d0fcea
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 02/09/2018
 ---
 # <a name="directed-graph-markup-language-dgml-reference"></a>Riferimento di Directed Graph Markup Language (DGML)
 Directed Graph Markup Language (DGML) descrive le informazioni usate per la visualizzazione e per eseguire l'analisi di complessità, ed è il formato usato per rendere persistenti le mappe codice in Visual Studio. Usa semplice codice XML per descrivere grafici diretti ciclici e aciclici. Un grafico diretto è un set di nodi connessi da collegamenti o bordi. I nodi e i collegamenti possono essere usati per rappresentare strutture di rete, ad esempio elementi in un progetto software.  
   
- Si noti che alcune versioni di Visual Studio supportano solo un sottoinsieme delle funzionalità DGML, vedere [supporto della versione per l'architettura e strumenti di modellazione](../modeling/what-s-new-for-design-in-visual-studio.md#VersionSupport).  
+ Si noti che alcune versioni di Visual Studio supporta solo un sottoinsieme di funzionalità DGML, vedere [supporto della versione per l'architettura e strumenti di modellazione](../modeling/what-s-new-for-design-in-visual-studio.md#VersionSupport).  
   
 > [!NOTE]
->  Quando si modifica un file con estensione dgml, IntelliSense consente di identificare gli attributi disponibili per ogni elemento e i relativi valori. Per specificare il colore in un attributo, usare nomi dei colori comuni, come "Blue", o valori ARGB esadecimali, come "#ffa0b1c3." In DGML viene usato un piccolo subset di formati di definizione dei colori WPF (Windows Presentation Foundation). Per ulteriori informazioni, vedere [classe Colors](http://go.microsoft.com/fwlink/?LinkId=182345).  
+>  Quando si modifica un file con estensione dgml, IntelliSense consente di identificare gli attributi disponibili per ogni elemento e i relativi valori. Per specificare il colore in un attributo, usare nomi dei colori comuni, come "Blue", o valori ARGB esadecimali, come "#ffa0b1c3." In DGML viene usato un piccolo subset di formati di definizione dei colori WPF (Windows Presentation Foundation). Per ulteriori informazioni, vedere [colori classe](http://go.microsoft.com/fwlink/?LinkId=182345).  
   
-##  <a name="a-namedgmla-dgml-syntax"></a><a name="DGML"></a>Sintassi DGML  
+##  <a name="DGML"></a>Sintassi DGML  
  Nella tabella seguente sono descritti i tipi di elementi usati in DGML:  
   
 -   `<DirectedGraph></DirectedGraph>`  
@@ -111,17 +97,17 @@ Directed Graph Markup Language (DGML) descrive le informazioni usate per la visu
   
      `Label`-Il nome visualizzato del nodo.  
   
-     Attributi di stile. Vedere [personalizzare le mappe codice modificando i file DGML](../modeling/customize-code-maps-by-editing-the-dgml-files.md).  
+     Attributi di stile. Vedere [Customize code maps by editing the DGML files](../modeling/customize-code-maps-by-editing-the-dgml-files.md).  
   
      `Category` - Nome di una categoria che identifica gli elementi che condividono questo attributo. Per altre informazioni, vedere l'elemento `<Category/>`.  
   
      `Property`- Nome di una proprietà che identifica gli elementi che hanno lo stesso valore della proprietà. Per altre informazioni, vedere l'elemento `<Property/>`.  
   
-     `Group`- Se il nodo contiene altri nodi, impostare questo attributo su `Expanded` o su `Collapsed`, per visualizzare o nascondere il relativo contenuto. Deve essere presente un elemento `<Link/>` che include l'attributo `Category="Contains"` e specifica il nodo padre come nodo di origine e il nodo figlio come nodo di destinazione. Vedere [gruppo elementi di codice](../modeling/customize-code-maps-by-editing-the-dgml-files.md#OrganizeNodes).  
+     `Group`- Se il nodo contiene altri nodi, impostare questo attributo su `Expanded` o su `Collapsed`, per visualizzare o nascondere il relativo contenuto. Deve essere presente un elemento `<Link/>` che include l'attributo `Category="Contains"` e specifica il nodo padre come nodo di origine e il nodo figlio come nodo di destinazione. Vedere [raggruppare gli elementi di codice](../modeling/customize-code-maps-by-editing-the-dgml-files.md#OrganizeNodes).  
   
-     `Visibility` - Impostare questo attributo su `Visible`, `Hidden` o `Collapsed`. Vengono usati `System.Windows.Visibility`. Vedere [nascondere o mostrare nodi e collegamenti](../modeling/browse-and-rearrange-code-maps.md#HidingShowing).  
+     `Visibility` - Impostare questo attributo su `Visible`, `Hidden` o `Collapsed`. Vengono usati `System.Windows.Visibility`. Vedere [Nascondi o Mostra nodi e collegamenti](../modeling/browse-and-rearrange-code-maps.md#HidingShowing).  
   
-     `Reference` - Impostare questo attributo per collegare un nodo a un documento o a un URL. Vedere [collegare documenti o URL a elementi di codice e collegamenti](../modeling/customize-code-maps-by-editing-the-dgml-files.md#AddReferences).  
+     `Reference` - Impostare questo attributo per collegare un nodo a un documento o a un URL. Vedere [documenti o gli URL di collegamento a elementi di codice e collegamenti](../modeling/customize-code-maps-by-editing-the-dgml-files.md#AddReferences).  
   
      Esempio:  
   
@@ -176,7 +162,7 @@ Directed Graph Markup Language (DGML) descrive le informazioni usate per la visu
   
      `Label` - Nome visualizzato del collegamento  
   
-     Attributi di stile. Vedere [personalizzare le mappe codice modificando i file DGML](../modeling/customize-code-maps-by-editing-the-dgml-files.md).  
+     Attributi di stile. Vedere [Customize code maps by editing the DGML files](../modeling/customize-code-maps-by-editing-the-dgml-files.md).  
   
      `Category` - Nome di una categoria che identifica gli elementi che condividono questo attributo. Per altre informazioni, vedere l'elemento `<Category/>`.  
   
@@ -231,9 +217,9 @@ Directed Graph Markup Language (DGML) descrive le informazioni usate per la visu
   
      `BasedOn` - Categoria padre da cui eredita l'oggetto `<Category/>` dell'elemento corrente.  
   
-     Nell'esempio per questo elemento la categoria `FailedTest` eredita l'attributo `Stroke` dalla categoria `PassedTest`. Vedere "per creare categorie gerarchiche" in [personalizzare le mappe codice modificando i file DGML](../modeling/customize-code-maps-by-editing-the-dgml-files.md).  
+     Nell'esempio per questo elemento la categoria `FailedTest` eredita l'attributo `Stroke` dalla categoria `PassedTest`. Vedere "per creare categorie gerarchiche" in [mappe del codice Personalizza modificando i file DGML](../modeling/customize-code-maps-by-editing-the-dgml-files.md).  
   
-     Le categorie forniscono inoltre il comportamento di base dei modelli che controlla l'aspetto di nodi e collegamenti quando vengono visualizzati in una mappa. Vedere [personalizzare le mappe codice modificando i file DGML](../modeling/customize-code-maps-by-editing-the-dgml-files.md).  
+     Le categorie forniscono inoltre il comportamento di base dei modelli che controlla l'aspetto di nodi e collegamenti quando vengono visualizzati in una mappa. Vedere [Customize code maps by editing the DGML files](../modeling/customize-code-maps-by-editing-the-dgml-files.md).  
   
      Esempio:  
   
@@ -286,7 +272,7 @@ Directed Graph Markup Language (DGML) descrive le informazioni usate per la visu
   
      Se si desidera che la proprietà da visualizzare nel **proprietà** finestra, utilizzare il `Label` proprietà per specificare il nome della proprietà visualizzato.  
   
-     Vedere [assegnare categorie a elementi di codice e collegamenti](../modeling/customize-code-maps-by-editing-the-dgml-files.md#AssignCategories).  
+     Vedere [assegnare le categorie per gli elementi di codice e collegamenti](../modeling/customize-code-maps-by-editing-the-dgml-files.md#AssignCategories).  
   
      Esempio:  
   
@@ -315,7 +301,7 @@ Directed Graph Markup Language (DGML) descrive le informazioni usate per la visu
     </DirectedGraph>  
     ```  
   
-###  <a name="a-nameaddaliasa-aliases-for-commonly-used-paths"></a><a name="AddAlias"></a>Alias per percorsi di uso comune  
+###  <a name="AddAlias"></a>Alias per i percorsi di uso comune  
  Sostituendo i percorsi d'uso comune con alias è possibile ridurre le dimensioni del file con estensione dgml e il tempo necessario per caricare o salvare il file. Per creare un alias, aggiungere una sezione `<Paths></Paths>` alla fine del file con estensione dgml. In questa sezione aggiungere un elemento `<Path/>` per definire un alias per il percorso:  
   
 ```xml  
@@ -324,7 +310,7 @@ Directed Graph Markup Language (DGML) descrive le informazioni usate per la visu
 </Paths>  
 ```  
   
- Per fare riferimento all'alias da un elemento nel file con estensione dgml, racchiudere il `Id` del \<percorso / > elemento con un segno di dollaro ($) e parentesi (()):  
+ Per fare riferimento all'alias da un elemento nel file con estensione dgml, racchiudere il `Id` del \<Path / > elemento con un segno di dollaro ($) e parentesi (()):  
   
 ```xml  
 <Nodes>  
@@ -336,6 +322,6 @@ Directed Graph Markup Language (DGML) descrive le informazioni usate per la visu
 ```  
   
 ## <a name="see-also"></a>Vedere anche  
- [Mappare le dipendenze delle soluzioni](../modeling/map-dependencies-across-your-solutions.md)   
+ [Mappare le dipendenze nelle soluzioni](../modeling/map-dependencies-across-your-solutions.md)   
  [Usare le mappe codice per il debug delle applicazioni](../modeling/use-code-maps-to-debug-your-applications.md)   
  [Trovare problemi potenziali usando gli analizzatore delle mappe del codice](../modeling/find-potential-problems-using-code-map-analyzers.md)

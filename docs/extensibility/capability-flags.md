@@ -1,41 +1,27 @@
 ---
-title: "Flag di capacità | Documenti di Microsoft"
+title: "Flag di capacità | Documenti Microsoft"
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- vs-ide-sdk
+ms.technology: vs-ide-sdk
 ms.tgt_pltfrm: 
 ms.topic: article
-helpviewer_keywords:
-- source control plug-ins, capability flags
+helpviewer_keywords: source control plug-ins, capability flags
 ms.assetid: a3f6071c-eac8-4bcd-8ffd-8d0a2d24a252
-caps.latest.revision: 24
+caps.latest.revision: "24"
+author: gregvanl
 ms.author: gregvanl
 manager: ghogen
-translation.priority.mt:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: 5db97d19b1b823388a465bba15d057b30ff0b3ce
-ms.openlocfilehash: a438320fbfefac1e0104cd13012ace9573aa3742
-ms.lasthandoff: 02/22/2017
-
+ms.workload: vssdk
+ms.openlocfilehash: ec5cedcec1d79cbc3a71410a1048f5014c8aa9e3
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="capability-flags"></a>Flag di capacità
-Il SCC_CAP_*xxx* flag sono flag di bit utilizzato per indicare le funzionalità di un plug-in del controllo del codice sorgente. Il SCC_EXCAP_*xxx* flag sono incrementali flag che indicano le funzionalità estese e risolvere in valori integer.  
+Il SCC_CAP_*xxx* flag sono flag di bit utilizzati per indicare le funzionalità di un plug-in controllo del codice sorgente. Il SCC_EXCAP_*xxx* flag sono incrementali flag che indicano funzionalità estese e risolvere in valori integer.  
   
 |Codice di funzionalità|Valore|Descrizione|  
 |---------------------|-----------|-----------------|  
@@ -54,18 +40,18 @@ Il SCC_CAP_*xxx* flag sono flag di bit utilizzato per indicare le funzionalità 
 |`SCC_CAP_COMMENTCHECKIN`|0x00001000L|Supporta un commento all'archiviazione.|  
 |`SCC_CAP_COMMENTADD`|0x00002000L|Supporta un commento su Aggiungi.|  
 |`SCC_CAP_COMMENTREMOVE`|0x00004000L|Supporta un commento su Rimuovi.|  
-|`SCC_CAP_TEXTOUT`|0x00008000L|Scrive il testo di una funzione di output fornito da IDE.|  
-|`SCC_CAP_ADD_STORELATEST`|0x00200000L|Supporta l'archiviazione dei file senza variazioni.|  
+|`SCC_CAP_TEXTOUT`|0x00008000L|Scrive il testo a una funzione di output fornito IDE.|  
+|`SCC_CAP_ADD_STORELATEST`|0x00200000L|Supporta l'archiviazione dei file senza delta.|  
 |`SCC_CAP_HISTORY_MULTFILE`|0x00400000L|Supporta più la cronologia di file.|  
 |`SCC_CAP_IGNORECASE`|0x00800000L|Supporta il confronto di file tra maiuscole e minuscole.|  
 |`SCC_CAP_IGNORESPACE`|0x01000000L|Supporta file di confronto che ignora gli spazi vuoti.|  
-|`SCC_CAP_POPULATELIST`|0x02000000L|Supporta la ricerca di file aggiuntivi.|  
-|`SCC_CAP_COMMENTPROJECT`|0x04000000L|Supporta i commenti su Crea progetto.|  
+|`SCC_CAP_POPULATELIST`|0x02000000L|Supporta la ricerca dei file aggiuntivi.|  
+|`SCC_CAP_COMMENTPROJECT`|0x04000000L|Supporta i commenti sulle creare progetto.|  
 |`SCC_CAP_DIFFALWAYS`|0x10000000L|Supporta diff in tutti gli stati se nel controllo.|  
-|`SCC_CAP_GET_NOUI`|0x20000000L|Plug-in non supporta un'interfaccia utente per Get, ma può comunque chiamare IDE [SccGet](../extensibility/sccget-function.md).|  
-|`SCC_CAP_REENTRANT`|0x40000000L|Plug-in è rientrante e thread-safe. Nella versione 1.0, Nessun plug-in sono stati considerati rientrante e thread-safe. Se questo bit viene impostato un plug-in 1.1, l'host è possibile aprire più progetti in parallelo.|  
+|`SCC_CAP_GET_NOUI`|0x20000000L|Plug-in non supporta un'interfaccia utente per Get, ma IDE potrebbe ancora chiamare [SccGet](../extensibility/sccget-function.md).|  
+|`SCC_CAP_REENTRANT`|0x40000000L|Plug-in è rientrante e thread-safe. Nella versione 1.0, Nessun plug-in si presuppone che siano rientranti e thread-safe. Se questo bit viene impostato un plug-in 1.1, l'host è possibile aprire più progetti in parallelo.|  
   
-## <a name="capability-bits-added-in-version-12"></a>Bit di capacità aggiunto nella versione 1.2  
+## <a name="capability-bits-added-in-version-12"></a>Funzionalità Bits aggiunto nella versione 1.2  
   
 |Codice di funzionalità|Valore|Descrizione|  
 |---------------------|-----------|-----------------|  
@@ -75,12 +61,12 @@ Il SCC_CAP_*xxx* flag sono flag di bit utilizzato per indicare le funzionalità 
 |`SCC_CAP_DIRECTORYSTATUS`|0x00080000L|Supporta il [SccDirQueryInfo](../extensibility/sccdirqueryinfo-function.md).|  
 |`SCC_CAP_DIRECTORYDIFF`|0x00100000L|Supporta il [SccDirDiff](../extensibility/sccdirdiff-function.md).|  
 |`SCC_CAP_MULTICHECKOUT`|0x08000000L|Supporta le estrazioni multiple in un file e [SccIsMultiCheckoutEnabled](../extensibility/sccismulticheckoutenabled-function.md).|  
-|`SCC_CAP_SCCFILE`|0x80000000L|Supporta il MSSCCPRJ. File SCC (soggetto a override utente o amministratore) e [SccWillCreateSccFile](../extensibility/sccwillcreatesccfile-function.md).|  
+|`SCC_CAP_SCCFILE`|0x80000000L|Supporta il MSSCCPRJ. File SCC (soggetto a override o l'utente amministratore) e [SccWillCreateSccFile](../extensibility/sccwillcreatesccfile-function.md).|  
   
-## <a name="capability-bits-added-in-version-13"></a>Bit di capacità aggiunti nella versione 1.3  
- Questi flag vengono passati uno alla volta per il [SccGetExtendedCapabilities](../extensibility/sccgetextendedcapabilities-function.md) funzione per determinare se la funzionalità è supportata.  
+## <a name="capability-bits-added-in-version-13"></a>Funzionalità Bits aggiunto nella versione 1.3  
+ Questi flag vengono passati a uno alla volta per il [SccGetExtendedCapabilities](../extensibility/sccgetextendedcapabilities-function.md) funzione per determinare se la funzionalità è supportata.  
   
-|Codice di funzionalità esteso|Valore|Descrizione|  
+|Codice funzionalità estesa|Valore|Descrizione|  
 |------------------------------|-----------|-----------------|  
 |`SCC_EXCAP_CHECKOUT_LOCALVER`|1|Supporta il `SCC_CHECKOUT_LOCALVER` opzione di estrazione.|  
 |`SCC_EXCAP_BACKGROUND_GET`|2|Supporta il [SccBackgroundGet](../extensibility/sccbackgroundget-function.md).|  
@@ -89,10 +75,10 @@ Il SCC_CAP_*xxx* flag sono flag di bit utilizzato per indicare le funzionalità 
 |`SCC_EXCAP_QUERYCHANGES`|5|Supporta l'enumerazione delle modifiche del file.|  
 |`SCC_EXCAP_ADD_FILES_FROM_SCC`|6|Supporta il [SccAddFilesFromSCC](../extensibility/sccaddfilesfromscc-function.md).|  
 |`SCC_EXCAP_GET_USER_OPTIONS`|7|Supporta il [SccGetUserOption](../extensibility/sccgetuseroption-function.md).|  
-|`SCC_EXCAP_THREADSAFE_QUERY_INFO`|8|Supporta la chiamata a SccQueryInfo su più thread.|  
+|`SCC_EXCAP_THREADSAFE_QUERY_INFO`|8|Supporta la chiamata di SccQueryInfo su più thread.|  
 |`SCC_EXCAP_REMOVE_DIR`|9|Supporta la funzione SccRemoveDir.|  
 |`SCC_EXCAP_DELETE_CHECKEDOUT`|10|Eliminare i file estratti.|  
 |`SCC_EXCAP_RENAME_CHECKEDOUT`|11|Rinominare i file estratti.|  
   
 ## <a name="see-also"></a>Vedere anche  
- [Plug-in del controllo codice sorgente](../extensibility/source-control-plug-ins.md)
+ [Plug-in del controllo del codice sorgente](../extensibility/source-control-plug-ins.md)

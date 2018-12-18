@@ -1,1 +1,0 @@
-Visual Studio 2013 Express per Windows

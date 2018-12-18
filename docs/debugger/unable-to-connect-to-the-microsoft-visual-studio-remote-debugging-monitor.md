@@ -7,7 +7,7 @@ ms.suite:
 ms.technology:
 - vs-ide-debug
 ms.tgt_pltfrm: 
-ms.topic: article
+ms.topic: reference
 f1_keywords:
 - vs.debug.error.remote_debug
 - vs.debug.error.firewall.remotemachine
@@ -16,32 +16,16 @@ dev_langs:
 - VB
 - FSharp
 - C++
-ms.assetid: a1d959fc-3817-491c-831b-e6b768a3877a
-caps.latest.revision: 14
 author: mikejo5000
 ms.author: mikejo
 manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: HT
-ms.sourcegitcommit: 1d4298d60886d8fe8b402b59b1838a4171532ab1
-ms.openlocfilehash: 454e6919c2f2bcd56153eb222fbf59b1ddc1080e
-ms.contentlocale: it-it
-ms.lasthandoff: 09/26/2017
-
+ms.workload:
+- multiple
+ms.openlocfilehash: 6efbb27052dc837ab10a74d8f43e949dfb816190
+ms.sourcegitcommit: d6327b978661c0a745bf4b59f32d8171607803a3
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="unable-to-connect-to-the-microsoft-visual-studio-remote-debugging-monitor"></a>Impossibile eseguire la connessione a Microsoft Visual Studio Remote Debugging Monitor
 Questo messaggio può verificarsi perché remote debugging monitor non è configurato correttamente nel computer remoto o il computer remoto sia accessibile a causa di problemi di rete o la presenza di un firewall.

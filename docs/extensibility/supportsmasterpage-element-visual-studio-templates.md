@@ -1,62 +1,68 @@
 ---
-title: "Elemento SupportsMasterPage (modelli di Visual Studio) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-general"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "http://schemas.microsoft.com/developer/vstemplate/2005#SupportsMasterPage"
-helpviewer_keywords: 
-  - "<SupportsMasterPage> (elemento) [modelli di Visual Studio]"
-  - "SupportsMasterPage (elemento) [modelli di Visual Studio]"
+title: Elemento SupportsMasterPage (modelli di Visual Studio) | Documenti Microsoft
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: vs-ide-general
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: http://schemas.microsoft.com/developer/vstemplate/2005#SupportsMasterPage
+helpviewer_keywords:
+- <SupportsMasterPage> element [Visual Studio Templates]
+- SupportsMasterPage element [Visual Studio Templates]
 ms.assetid: ce877a6a-9bba-4fd9-92fb-0a8dfec9e75b
-caps.latest.revision: 9
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: gregvanl
+ms.author: gregvanl
+manager: ghogen
+ms.workload: vssdk
+ms.openlocfilehash: 347a41c604913b21c5718642bc87c4cfa54ecfb5
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
-# Elemento SupportsMasterPage (modelli di Visual Studio)
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
-Specifica se la casella di controllo **Seleziona pagina master** sarà abilitata nella finestra di dialogo **Aggiungi nuovo elemento**.  
+# <a name="supportsmasterpage-element-visual-studio-templates"></a>Elemento SupportsMasterPage (modelli di Visual Studio)
+Specifica se la non di **Seleziona pagina Master** casella di controllo è stato attivato il **Aggiungi nuovo elemento** la finestra di dialogo.  
   
-## Sintassi  
+ \<VSTemplate >  
+ \<TemplateData >  
+ \<SupportsMasterPage >  
+  
+## <a name="syntax"></a>Sintassi  
   
 ```  
 <SupportsMasterPage> true/false </SupportsMasterPage>  
 ```  
   
-## Attributi ed elementi  
- Nelle seguenti sezioni sono illustrati attributi, elementi figlio ed elementi padre.  
+## <a name="attributes-and-elements"></a>Attributi ed elementi  
+ Nelle sezioni seguenti vengono descritti gli attributi, gli elementi figlio e gli elementi padre.  
   
-### Attributi  
+### <a name="attributes"></a>Attributi  
  Nessuno.  
   
-### Elementi figlio  
+### <a name="child-elements"></a>Elementi figlio  
  Nessuno.  
   
-### Elementi padre  
+### <a name="parent-elements"></a>Elementi padre  
   
 |Elemento|Descrizione|  
-|--------------|-----------------|  
-|[TemplateData](../extensibility/templatedata-element-visual-studio-templates.md)|Specifica i dati che classificano il modello e definisce la modalità di visualizzazione per la finestra di dialogo **Nuovo progetto** o **Nuovo elemento**.|  
+|-------------|-----------------|  
+|[TemplateData](../extensibility/templatedata-element-visual-studio-templates.md)|Specifica i dati che classificano il modello e definisce la modalità di visualizzazione per il **nuovo progetto** o **nuovo elemento** la finestra di dialogo.|  
   
-## Valore di testo  
+## <a name="text-value"></a>Valore di testo  
  È necessario specificare un valore di testo.  
   
- Il valore del testo deve essere `true` o `false`, ad indicare se la casella di controllo **Seleziona pagina master** sarà o non sarà abilitata nella finestra di dialogo **Aggiungi nuovo elemento**.  
+ Il testo deve essere `true` o `false`, a indicare o meno il **Seleziona pagina Master** casella di controllo è stato attivato il **Aggiungi nuovo elemento** la finestra di dialogo.  
   
-## Note  
- `SupportsMasterPage` è un elemento facoltativo.  Il valore predefinito è `false`.  
+## <a name="remarks"></a>Note  
+ `SupportsMasterPage` è un elemento facoltativo. Il valore predefinito è `false`.  
   
- L'elemento `SupportsMasterPage` è disponibile soltanto per i modelli di elemento Web.  
+ Il `SupportsMasterPage` elemento è disponibile solo per modelli di elementi di Web.  
   
-## Esempio  
- L'esempio riportato di seguito illustra i metadati per un progetto Web che supporta una pagina master.  
+## <a name="example"></a>Esempio  
+ Nell'esempio seguente vengono illustrati i metadati per un progetto Web che include il supporto per una pagina master.  
   
 ```  
 <VSTemplate Version="3.0.0" Type="Project"  
@@ -80,6 +86,6 @@ Specifica se la casella di controllo **Seleziona pagina master** sarà abilitata
 </VSTemplate>  
 ```  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Riferimenti allo schema dei modelli di Visual Studio](../extensibility/visual-studio-template-schema-reference.md)   
- [Creazione di un progetto e di modelli di elemento personalizzati](../ide/creating-project-and-item-templates.md)
+ [Creazione di modelli di progetti e di elementi](../ide/creating-project-and-item-templates.md)

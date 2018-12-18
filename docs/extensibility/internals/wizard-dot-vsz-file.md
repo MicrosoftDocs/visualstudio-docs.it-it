@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- vs-ide-sdk
+ms.technology: vs-ide-sdk
 ms.tgt_pltfrm: 
 ms.topic: article
 helpviewer_keywords:
@@ -13,29 +12,16 @@ helpviewer_keywords:
 - vsz files
 - wizards, files
 ms.assetid: 72e1d0f3-eef1-455e-b803-96827f030f50
-caps.latest.revision: 9
+caps.latest.revision: "9"
+author: gregvanl
 ms.author: gregvanl
 manager: ghogen
-translation.priority.mt:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: ca7c86466fa23fb21a932f26dc24e37c71cf29b4
-ms.openlocfilehash: 3b1ee351d5fbe66a5d74c07c0a7e5a60661d7fcb
-ms.contentlocale: it-it
-ms.lasthandoff: 04/05/2017
-
+ms.workload: vssdk
+ms.openlocfilehash: f70d41b353640a3b2b108a55f14b8737a7fe1f8d
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="wizard-vsz-file"></a>Procedura guidata (. File vsz)
 Ambiente di sviluppo integrato (IDE) Usa file vsz per avviare le procedure guidate. Questi file VSZ contengono informazioni utilizzate per determinare quale procedura guidata per chiamare l'IDE e le informazioni da passare alla procedura guidata.  
@@ -61,7 +47,7 @@ Param="WIZARDUI = FALSE"
   
  I parametri di attivare il file VSZ passare parametri personalizzati aggiuntivi per la procedura guidata. Ogni valore viene passato come un elemento di stringa in una matrice di varianti per la procedura guidata. Per ulteriori informazioni, vedere [parametri personalizzati](../../extensibility/internals/custom-parameters.md). Per informazioni su come utilizzare un file vsz per lo sviluppo di creazioni guidate personalizzate, vedere [. File VSZ (controllo progetto)](/cpp/ide/dot-vsz-file-project-control)  
   
- Per aggiungere un ID impostazioni locali predefinito nel file VSZ, specificare `FALLBACK_LCID`= xxxx, dove xxxx rappresenta l'ID delle impostazioni locali, ad esempio 1033 per l'inglese. Quando `FALLBACK_LCID` parametro è definito, la procedura guidata utilizza l'ID impostazioni locali di fallback specificato, se non viene trovato l'ID corrente.  
+ Per aggiungere un ID impostazioni locali predefinito nel file VSZ, specificare `FALLBACK_LCID`= xxxx, dove xxxx è l'ID delle impostazioni locali, ad esempio 1033 per l'inglese. Quando `FALLBACK_LCID` parametro è definito, la procedura guidata utilizza l'ID impostazioni locali di fallback specificato, se non viene trovato l'ID corrente.  
   
 ## <a name="see-also"></a>Vedere anche  
  [Parametri personalizzati](../../extensibility/internals/custom-parameters.md)   

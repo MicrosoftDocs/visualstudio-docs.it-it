@@ -11,32 +11,18 @@ ms.topic: article
 helpviewer_keywords:
 - ASP.NET, web applications, deployment, publishing
 ms.assetid: 3A13F685-531C-457D-A98E-631888011E4B
-caps.latest.revision: 1
+caps.latest.revision: 
 author: Mikejo5000
 ms.author: mikejo
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 5951e9c6b61e1cb868d792a5aee9389235cfef30
-ms.openlocfilehash: 6bc4d5116517402825317611c44d4b594ee79b2a
-ms.contentlocale: it-it
-ms.lasthandoff: 03/10/2017
-
+ms.workload:
+- multiple
+ms.openlocfilehash: 22c9aa56ab63d0c7c3b342e2c50cf81045580b54
+ms.sourcegitcommit: a07b789cc41ed72664f2c700c1f114476e7b0ddd
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 02/19/2018
 ---
-
 # Quali sono le opzioni di pubblicazione più adatte?
 
 Dall'interno di Visual Studio le applicazioni Web possono essere pubblicate direttamente nelle destinazioni seguenti:
@@ -48,26 +34,24 @@ Dall'interno di Visual Studio le applicazioni Web possono essere pubblicate dire
 
 Nella scheda **Pubblica** è possibile selezionare un profilo di pubblicazione esistente, importare un profilo esistente o crearne uno nuovo usando le opzioni descritte di seguito.
 
-## Servizio app di Azure
+## App Web di Servizio app di Azure
 
-[Servizio app di Azure](https://azure.microsoft.com/documentation/articles/app-service-value-prop-what-is/) consente agli sviluppatori di creare rapidamente un'ampia gamma di servizi e applicazioni Web scalabili senza gestire l'infrastruttura.
+Le [app Web di Servizio app di Azure](/azure/app-service/app-service-web-overview) (o semplicemente app Web) consentono agli sviluppatori di creare rapidamente un'ampia gamma di servizi e applicazioni Web scalabili senza gestire l'infrastruttura.
 
-Per le applicazioni Web in particolare, un servizio app è un contenitore per un'[*app Web*](https://azure.microsoft.com/en-us/documentation/articles/app-service-web-overview/) che si può paragonare a un host Web tradizionale. Vale a dire, un'app Web offre le risorse di elaborazione necessarie per eseguire il codice lato server e renderlo disponibile su Internet.
-
-Per determinare la potenza di calcolo di un'app Web, scegliere un [piano tariffario](https://azure.microsoft.com/documentation/articles/azure-web-sites-web-hosting-plans-in-depth-overview/) per il servizio app che la contiene. È possibile fare in modo che più app Web (e altri tipi di app) condividano lo stesso servizio app senza modificare il piano tariffario. Ad esempio, è possibile ospitare app Web di sviluppo, gestione temporanea e produzione insieme nello stesso servizio app.
+Per determinare la potenza di calcolo di un'app Web, scegliere un [piano tariffario](/azure/app-service/azure-web-sites-web-hosting-plans-in-depth-overview) per il servizio app che la contiene. È possibile fare in modo che più app Web (e altri tipi di app) condividano lo stesso servizio app senza modificare il piano tariffario. Ad esempio, è possibile ospitare app Web di sviluppo, gestione temporanea e produzione insieme nello stesso servizio app.
 
 Un servizio app viene eseguito nelle macchine virtuali ospitate nel cloud di Azure, ma tali macchine vengono gestite automaticamente. A ogni app Web di un servizio app verrà assegnato un URL \*.azurewebsites.net univoco. Tutti i piani tariffari diversi da quello gratuito consentono l'assegnazione di nomi di dominio personalizzati al sito.
 
-### Quando scegliere Servizio App di Azure
+### Quando scegliere le app Web di Servizio App di Azure
 
 - Si vuole distribuire un'applicazione Web accessibile via Internet.
 - Si vuole adeguare automaticamente l'applicazione Web in base alla richiesta senza doverla ridistribuire.
 - Non si vuole gestire l'infrastruttura di server, inclusi gli aggiornamenti software.
 - Non sono necessarie personalizzazioni a livello di computer sui server che ospitano l'applicazione Web.
 
-
 > Per usare Servizio app di Azure nel proprio centro dati o in altri computer locali, usare [Azure Stack](https://azure.microsoft.com/overview/azure-stack/).
 
+Per altre informazioni sulla pubblicazione di app ASP.NET Core, vedere [Pubblicare un'app Web ASP.NET Core in Servizio app di Azure con Visual Studio](/aspnet/core/tutorials/publish-to-azure-webapp-using-vs).
 
 ## Macchine virtuali di Azure
 
@@ -101,7 +85,7 @@ Si noti che se per qualsiasi motivo (ad esempio, l'accesso al computer) non si �
 - È necessaria solo una distribuzione locale dei test.
 - Si vuole esaminare e potenzialmente modificare in modo indipendente i file dell'applicazione prima di inviarli a un'altra destinazione di distribuzione.
 
-
+Per altre informazioni sulla distribuzione di app .NET Core, vedere [Distribuzione di app .NET Core con Visual Studio](/dotnet/core/deploying/deploy-with-vs).
 
 ## Destinazioni personalizzate
 
@@ -122,3 +106,4 @@ Visual Studio consente di creare qualsiasi numero di profili di distribuzione pe
 - Si vuole eseguire la distribuzione usando credenziali diverse da quelle usate in Visual Studio o quelle associate direttamente all'account Azure.
 - Si vuole eliminare i file dalla destinazione ogni volta che si esegue la distribuzione.
 
+Per altre informazioni sulla pubblicazione in IIS, vedere [IIS 8.0 Using ASP.NET 3.5 and ASP.NET 4.5](/iis/get-started/whats-new-in-iis-8/iis-80-using-aspnet-35-and-aspnet-45) (Uso di ASP.NET 3.5 e ASP.NET 4.5 in IIS 8.0) e [Remote Debug ASP.NET on a Remote IIS Computer](../../debugger/remote-debugging-aspnet-on-a-remote-iis-7-5-computer.md) (Debug remoto di ASP.NET in un computer IIS remoto).

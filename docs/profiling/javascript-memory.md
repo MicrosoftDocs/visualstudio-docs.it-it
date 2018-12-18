@@ -1,5 +1,5 @@
 ---
-title: Analizzare l&quot;utilizzo della memoria di JavaScript nelle app UWP | Microsoft Docs
+title: Analizzare l'utilizzo della memoria di JavaScript nelle app UWP | Microsoft Docs
 ms.custom: H1Hack27Feb2017
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -9,10 +9,7 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: article
 dev_langs:
-- CSharp
-- VB
-- FSharp
-- C++
+- JavaScript
 helpviewer_keywords:
 - dominators, memory analyzer (JavaScript)
 - memory leaks (JavaScript)
@@ -22,35 +19,20 @@ helpviewer_keywords:
 - JavaScript Memory Analyzer
 - analyzing memory, JavaScript
 - memory analyzer, JavaScript
-ms.assetid: 78f8532b-7b4e-4b50-b8b7-68ca0926dd4e
-caps.latest.revision: 49
+caps.latest.revision: 
 author: mikejo5000
 ms.author: mikejo
 manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 47057e9611b824c17077b9127f8d2f8b192d6eb8
-ms.openlocfilehash: 24250d68042f77a653fe9ef36c743dd4f32ee57c
-ms.contentlocale: it-it
-ms.lasthandoff: 05/13/2017
-
+ms.workload:
+- multiple
+ms.openlocfilehash: 00162ab0ad516391b98ee0a17fa9c9f7294c92b3
+ms.sourcegitcommit: 5d43e9590e2246084670b79269cc9d99124bb3df
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="analyze-javascript-memory-usage-in-uwp-apps"></a>Analizzare l'utilizzo della memoria di JavaScript nelle app UWP
-JavaScript Memory Analyzer, disponibile in Visual Studio, ti aiuta a comprendere l'utilizzo della memoria e a individuare le perdite di memoria nelle app di Windows Store create per Windows con JavaScript. Le app supportate includono le app di Windows universali.
+JavaScript Memory Analyzer, disponibile in Visual Studio, favorisce l'analisi dell'uso della memoria e il rilevamento delle perdite di memoria nelle app UWP create per Windows con JavaScript. Le app supportate includono le app di Windows universali.
   
  JavaScript Memory Analyzer è in grado di effettuare automaticamente queste operazioni:  
   
@@ -64,52 +46,30 @@ JavaScript Memory Analyzer, disponibile in Visual Studio, ti aiuta a comprendere
   
      Gli oggetti non creati nel codice dell'app vengono esclusi dal filtro. Puoi anche filtrare i dati in base al nome dell'oggetto.  
   
- Per un'esercitazione che consente di eseguire in modo guidato il processo di identificazione di una perdita di memoria in un'app in funzione, vedere [Procedura dettagliata: Trovare una perdita di memoria (JavaScript)](../profiling/walkthrough-find-a-memory-leak-javascript.md).  
-  
- Contenuto dell'argomento:  
-  
- [Eseguire JavaScript Memory Analyzer](#Run)   
- [Controllare l'utilizzo della memoria](#Check)   
- [Isolate a memory leak](#Isolate)   
- [Visualizzare il riepilogo dell'utilizzo della memoria in tempo reale](#LiveMemory)   
- [View a snapshot summary](#SnapshotSummary)   
- [Visualizzare i dettagli dello snapshot](#SnapshotDetails)   
- [Visualizzare le differenze di uno snapshot](#SnapshotDiff)   
- [Visualizzare gli oggetti in base al dominatore](#FoldObjects)   
- [Filtrare i dati in base all'identificatore](#Filter)   
- [Trovare un oggetto nella struttura ad albero di oggetti](#ShowInRootsView)   
- [Visualizzare riferimenti a oggetti condivisi](#References)   
- [Mostrare oggetti incorporati](#BuiltInValues)   
- [Salvare file delle sessioni di diagnostica](#Save)   
- [Associate source code with memory usage data](#JSConsoleCommands)   
- [Suggerimenti per l'identificazione dei problemi di memoria](#Tips)  
-  
 ##  <a name="Run"></a> Eseguire JavaScript Memory Analyzer  
- È possibile usare Memory Analyzer quando un'app di Windows Store funzionante è aperta in Visual Studio o installata in un computer che esegue [!INCLUDE[win8](../debugger/includes/win8_md.md)] o versione successiva.  
+ È possibile usare l'analizzatore di memoria quando un'app UWP funzionante è aperta in Visual Studio.
   
 #### <a name="to-run-the-memory-analyzer"></a>Per eseguire l'analizzatore di memoria  
   
 1.  Aprire Visual Studio.  
   
-2.  Se esegui l'app da Visual Studio, nell'elenco **Avvia debug** della barra degli strumenti **Standard** scegli la destinazione del debug per il tuo progetto, ovvero un emulatore Windows Phone oppure, per un'app di Windows Store, **Computer locale**, **Simulatore**o **Computer remoto**.  
-  
-     Per altre informazioni su queste opzioni, vedere [Eseguire app da Visual Studio](../debugger/run-store-apps-from-visual-studio.md).  
+2.  Se si esegue l'app da Visual Studio, nell'elenco **Avvia debug** della barra degli strumenti **Standard** scegliere la destinazione di debug per il progetto, ovvero **Computer locale** o **Dispositivo**.  
   
 3.  Nella barra dei menu scegliere **Debug** e quindi **Profiler prestazioni...**.  
   
      Per impostazione predefinita, viene analizzato il progetto di avvio corrente. Per modificare la destinazione di analisi, scegli **Cambia destinazione**.  
   
-     ![Cambia destinazione analisi](~/profiling/media/js_tools_target.png "JS_Tools_Target")  
+     ![Cambia destinazione analisi](../profiling/media/js_tools_target.png "JS_Tools_Target")  
   
      Sono disponibili le seguenti opzioni per la destinazione di analisi:  
   
     -   **Progetto di avvio**. Analizza il progetto di avvio corrente. Se esegui l'app in un computer remoto, devi scegliere questa opzione, ovvero quella predefinita.  
   
-    -   **App in esecuzione**. Consente di selezionare un'app Windows Store da un elenco di app in esecuzione. Non puoi usare questa opzione se esegui l'app in un computer remoto.  
+    -   **App in esecuzione**. Consente di selezionare un'app UWP da un elenco di app in esecuzione. Non puoi usare questa opzione se esegui l'app in un computer remoto.  
   
          Usa questa opzione per analizzare l'utilizzo della memoria delle app che esegui nel tuo computer quando non puoi accedere al codice sorgente.  
   
-    -   **App installata**. Consente di selezionare un'app Windows Store che desideri analizzare. Non puoi usare questa opzione se esegui l'app in un computer remoto.  
+    -   **App installata**. Consente di selezionare un'app UWP installata da analizzare. Non puoi usare questa opzione se esegui l'app in un computer remoto.  
   
          Usa questa opzione per analizzare l'utilizzo della memoria delle app installate nel tuo computer quando non puoi accedere al codice sorgente. Questa opzione può essere utile anche quando vuoi semplicemente analizzare l'utilizzo della memoria di qualsiasi app, al di là dello sviluppo delle tue.  
   
@@ -177,7 +137,7 @@ JavaScript Memory Analyzer, disponibile in Visual Studio, ti aiuta a comprendere
   
      Nella figura seguente viene illustrato un esempio di un secondo e di un terzo snapshot.  
   
-     ![Secondo e terzo snapshot](~/profiling/media/js_mem_leak_workflow.png "JS_Mem_Leak_Workflow")  
+     ![Secondo e terzo snapshot](../profiling/media/js_mem_leak_workflow.png "JS_Mem_Leak_Workflow")  
   
      Creando uno snapshot della linea di base e quindi un secondo e un terzo snapshot in questo flusso di lavoro, potrai escludere più facilmente le modifiche non associate a perdite di memoria. Ad esempio, potrebbero esserci modifiche previste, come l'aggiornamento delle intestazioni e dei piè di pagina di una pagina, che comportano modifiche nell'utilizzo della memoria, ma che potrebbero non essere correlate alle perdite di memoria.  
   
@@ -213,7 +173,7 @@ JavaScript Memory Analyzer, disponibile in Visual Studio, ti aiuta a comprendere
   
  Il grafico relativo alla memoria mostra una visualizzazione in tempo reale della memoria di processo dell'app, inclusi i byte privati, la memoria nativa e l'heap JavaScript. Il grafico relativo alla memoria è una visualizzazione scorrevole della memoria di processo. e ha l'aspetto seguente:  
   
- ![Grafico della memoria di JavaScript Memory Analyzer](~/profiling/media/js_mem_memory_graph.png "JS_Mem_Memory_Graph")  
+ ![Grafico della memoria di JavaScript Memory Analyzer](../profiling/media/js_mem_memory_graph.png "JS_Mem_Memory_Graph")  
   
  Se hai aggiunto contrassegni utente al codice dell'app (vedi [Associate source code with memory usage data](#JSConsoleCommands)), nel grafico relativo all'uso della memoria appare un triangolo capovolto che indica il punto iniziale di questa sezione del codice.  
   
@@ -252,7 +212,7 @@ JavaScript Memory Analyzer, disponibile in Visual Studio, ti aiuta a comprendere
   
  Questa figura mostra la visualizzazione Tipi in un dettaglio snapshot, con i dati sull'utilizzo della memoria ordinati in base alle dimensioni conservate.  
   
- ![Visualizzazione dei dettagli dello snapshot con problemi potenziali](~/profiling/media/js_mem_snapshot_details.png "JS_Mem_Snapshot_Details")  
+ ![Visualizzazione dei dettagli dello snapshot con problemi potenziali](../profiling/media/js_mem_snapshot_details.png "JS_Mem_Snapshot_Details")  
   
  Nella visualizzazione dei dettagli dello snapshot puoi esaminare i dati sull'utilizzo della memoria in base al tipo, alla radice o al dominatore scegliendo l'opzione desiderata sulla barra degli strumenti:  
   
@@ -308,7 +268,7 @@ JavaScript Memory Analyzer, disponibile in Visual Studio, ti aiuta a comprendere
   
 -   **Tutti gli oggetti nello snapshot #\<numero>**. Con questa impostazione di filtro non viene escluso nessuno oggetto sull'heap.  
   
- Per mostrare riferimenti a oggetti non corrispondenti al filtro **Ambito** corrente, selezionare **Mostra riferimenti non corrispondenti** nell'elenco delle impostazioni ![elenco a discesa Impostazioni in Memory Analyzer](~/profiling/media/js_mem_settings.png "JS_Mem_Settings") nell'angolo in alto a destra del riquadro. Se abiliti questa impostazioni, i riferimenti non corrispondenti saranno visualizzati in testo grigio.  
+ Per mostrare riferimenti a oggetti non corrispondenti al filtro **Ambito** corrente, selezionare **Mostra riferimenti non corrispondenti** nell'elenco delle impostazioni ![elenco a discesa Impostazioni in Memory Analyzer](../profiling/media/js_mem_settings.png "JS_Mem_Settings") nell'angolo in alto a destra del riquadro. Se abiliti questa impostazioni, i riferimenti non corrispondenti saranno visualizzati in testo grigio.  
   
 > [!TIP]
 >  Ti consigliamo di seguire la procedura descritta in [Isolate a memory leak](#Isolate) e quindi di usare gli oggetti rimasti dopo l'applicazione del filtro **Ambito** per identificare gli oggetti in cui si verificano perdite di memoria.  
@@ -316,7 +276,7 @@ JavaScript Memory Analyzer, disponibile in Visual Studio, ti aiuta a comprendere
 ##  <a name="FoldObjects"></a> Visualizzare gli oggetti in base al dominatore  
  Nelle visualizzazioni Tipi e Dominatori puoi scegliere se visualizzare gli oggetti ridotti nei rispettivi dominatori (visualizzazione predefinita della scheda Dominatori). Se è selezionata questa visualizzazione, solo i dominatori saranno mostrati nella visualizzazione di primo livello degli oggetti. Gli oggetti discendenti da oggetti non globali sono nascosti dalla visualizzazione di primo livello. Nel caso di alcune app, ciò può aiutare a chiarire quali sono gli oggetti che provocano una perdita di memoria, grazie alla riduzione di rumore nei dati.  
   
- Per attivare o disattivare la visualizzazione degli oggetti in base al dominatore, scegli il pulsante **Riduci gli oggetti in base a quello dominante** . ![Riduzione di oggetti nei relativi dominatori](~/profiling/media/js_mem_fold_objects.png "JS_Mem_Fold_Objects")  
+ Per attivare o disattivare la visualizzazione degli oggetti in base al dominatore, scegli il pulsante **Riduci gli oggetti in base a quello dominante** . ![Riduzione di oggetti nei relativi dominatori](../profiling/media/js_mem_fold_objects.png "JS_Mem_Fold_Objects")  
   
  Per altre informazioni sui dominatori, vedi [Visualizzare i dettagli dello snapshot](#SnapshotDetails).  
   
@@ -334,7 +294,7 @@ JavaScript Memory Analyzer, disponibile in Visual Studio, ti aiuta a comprendere
 > [!NOTE]
 >  I riferimenti circolari sono mostrati con un asterisco (*) e una descrizione informativa e non possono essere espansi. In caso contrario, impedirebbero di spostarsi verso l'alto nell'albero dei riferimenti e identificare gli oggetti che conservano memoria.  
   
- Per altre informazioni sull'identificazione di oggetti equivalenti, scegliere **Visualizza ID oggetto** nell'elenco delle impostazioni ![elenco a discesa Impostazioni in Memory Analyzer](~/profiling/media/js_mem_settings.png "JS_Mem_Settings") nell'angolo in alto a destra del riquadro superiore. Questa opzione consente di visualizzare gli ID oggetto accanto ai nomi degli oggetti nell'elenco **Identificatore/i** (gli ID vengono visualizzati in tutte le visualizzazioni, non solo nell'elenco dei riferimenti a oggetti). Gli oggetti con lo stesso ID sono riferimenti condivisi.  
+ Per altre informazioni sull'identificazione di oggetti equivalenti, scegliere **Visualizza ID oggetto** nell'elenco delle impostazioni ![elenco a discesa Impostazioni in Memory Analyzer](../profiling/media/js_mem_settings.png "JS_Mem_Settings") nell'angolo in alto a destra del riquadro superiore. Questa opzione consente di visualizzare gli ID oggetto accanto ai nomi degli oggetti nell'elenco **Identificatore/i** (gli ID vengono visualizzati in tutte le visualizzazioni, non solo nell'elenco dei riferimenti a oggetti). Gli oggetti con lo stesso ID sono riferimenti condivisi.  
   
  Di seguito viene mostrato l'elenco di riferimenti a oggetti per un elemento selezionato con ID visualizzati.  
   
@@ -343,7 +303,7 @@ JavaScript Memory Analyzer, disponibile in Visual Studio, ti aiuta a comprendere
 ##  <a name="BuiltInValues"></a> Mostrare oggetti incorporati  
  Per impostazione predefinita, le visualizzazioni Dominatori e Tipi mostrano solo gli oggetti creati nell'app. Questo ti consente di escludere le informazioni non necessarie e di isolare i problemi correlati all'app. Talvolta può comunque essere utile visualizzare tutti gli oggetti generati per l'app dal runtime JavaScript.  
   
- Per visualizzare questi oggetti, scegliere **Mostra incorporati** nell'elenco delle impostazioni ![elenco a discesa Impostazioni in Memory Analyzer](~/profiling/media/js_mem_settings.png "JS_Mem_Settings") nell'angolo in alto a destra del riquadro.  
+ Per visualizzare questi oggetti, scegliere **Mostra incorporati** nell'elenco delle impostazioni ![elenco a discesa Impostazioni in Memory Analyzer](../profiling/media/js_mem_settings.png "JS_Mem_Settings") nell'angolo in alto a destra del riquadro.  
   
 ##  <a name="Save"></a> Salvare file delle sessioni di diagnostica  
  I riepiloghi degli snapshot di diagnostica e le visualizzazioni dei dettagli associate vengono salvati come file con estensione diagsession. **Esplora soluzioni** visualizza le sessioni di diagnostica precedenti nella cartella Sessioni di diagnostica. In **Esplora soluzioni**puoi aprire sessioni precedenti oppure rimuovere o rinominare file.  
@@ -407,7 +367,7 @@ if (performance && performance.mark) {
   
 -   Guardare l'ultima parte di [questo video](http://channel9.msdn.com/Events/Build/2013/3-316) della conferenza Build 2013 su JavaScript Memory Analyzer.  
   
--   Leggere l'argomento [Gestione della memoria in app di Windows Store](http://msdn.microsoft.com/magazine/jj651575.aspx).  
+-   Vedere [Managing memory in UWP apps](http://msdn.microsoft.com/magazine/jj651575.aspx) (Gestione della memoria nelle app UWP).  
   
 -   Considerare la possibilità di modificare temporaneamente il codice per isolare i problemi. Può, ad esempio, essere necessario:  
   
@@ -416,6 +376,3 @@ if (performance && performance.mark) {
          Questi comandi consentono di isolare i problemi che non possono essere isolati acquisendo manualmente uno snapshot heap.  
   
     -   Creare un oggetto test e analizzarlo nelle visualizzazioni di JavaScript Memory Analyzer, ad esempio la visualizzazione Tipi. Ad esempio, puoi collegare un oggetto di grandi dimensioni a un altro oggetto per vedere se un oggetto o un elemento specifico è stato sottoposto a Garbage Collection.  
-  
-## <a name="see-also"></a>Vedere anche  
- [Procedura dettagliata: trovare una perdita di memoria (JavaScript)](../profiling/walkthrough-find-a-memory-leak-javascript.md)

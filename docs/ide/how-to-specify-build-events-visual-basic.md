@@ -15,29 +15,17 @@ helpviewer_keywords:
 - build events [Visual Studio]
 - builds [Visual Studio], events
 ms.assetid: 40dc83bf-a7c5-4a14-816a-fa0980b6e4c3
-caps.latest.revision: 26
-author: kempb
-ms.author: kempb
+caps.latest.revision: 
+author: gewarren
+ms.author: gewarren
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: 5db97d19b1b823388a465bba15d057b30ff0b3ce
-ms.openlocfilehash: 595995a0369ff74c4223e7a585c913bc90aca411
-ms.lasthandoff: 02/22/2017
-
+ms.workload:
+- multiple
+ms.openlocfilehash: 0fe2ab7f174f71933d474aa4737dc713c6540492
+ms.sourcegitcommit: b18844078a30d59014b48a9c247848dea188b0ee
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 01/29/2018
 ---
 # <a name="how-to-specify-build-events-visual-basic"></a>Procedura: specificare gli eventi di compilazione (Visual Basic)
 Gli eventi di compilazione in Visual Basic possono essere usati per eseguire script, macro o altre azioni come parte del processo di compilazione. Gli eventi di pre-compilazione si verificano prima della compilazione e gli eventi di post-compilazione si verificano dopo la compilazione.  
@@ -143,7 +131,7 @@ Gli eventi di compilazione in Visual Basic possono essere usati per eseguire scr
   
 1.  Creare un'applicazione Windows per il progetto da pubblicare. Nel menu **File** fare clic su **Nuovo** e quindi su **Progetto**.  
   
-2.  Nella finestra di dialogo **Nuovo progetto** del nodo **Visual Basic** selezionare **Windows** e quindi scegliere il modello **Applicazione Windows**. Denominare il progetto `VBWinApp`.  
+2.  Nella finestra di dialogo **Nuovo progetto** del nodo **Visual Basic** selezionare **Desktop classico di Windows** e quindi scegliere il modello **Applicazione Windows Forms**. Denominare il progetto `VBWinApp`.  
   
 3.  Con il progetto selezionato in **Esplora soluzioni**, scegliere **Proprietà** dal menu **Progetto**.  
   
@@ -179,9 +167,9 @@ Gli eventi di compilazione in Visual Basic possono essere usati per eseguire scr
     <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />  
     ```  
   
-## <a name="see-also"></a>Vedere anche  
- [Gestione delle proprietà di compilazione](http://msdn.microsoft.com/en-us/94308881-f10f-4caf-a729-f1028e596a2c)   
- [Pagina Compilazione, Creazione progetti (Visual Basic)](../ide/reference/compile-page-project-designer-visual-basic.md)   
- [Pagina Pubblica, Creazione progetti](../ide/reference/publish-page-project-designer.md)   
- [Finestra di dialogo Riga di comando eventi pre-compilazione/post-compilazione](../ide/reference/pre-build-event-post-build-event-command-line-dialog-box.md)   
- [Procedura: Specificare eventi di compilazione (C#)](../ide/how-to-specify-build-events-csharp.md)
+## <a name="see-also"></a>Vedere anche
+
+[Compilazione (pagina), Creazione progetti (Visual Basic)](../ide/reference/compile-page-project-designer-visual-basic.md)   
+[Pagina Pubblica, Creazione progetti](../ide/reference/publish-page-project-designer.md)   
+[Finestra di dialogo Riga di comando eventi pre-compilazione/post-compilazione](../ide/reference/pre-build-event-post-build-event-command-line-dialog-box.md)   
+[Procedura: Specificare eventi di compilazione (C#)](../ide/how-to-specify-build-events-csharp.md)

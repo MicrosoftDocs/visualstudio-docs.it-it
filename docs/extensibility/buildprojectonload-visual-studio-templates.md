@@ -1,5 +1,5 @@
 ---
-title: BuildProjectOnLoad (modelli di Visual Studio) | Documenti di Microsoft
+title: BuildProjectOnLoad (modelli di Visual Studio) | Documenti Microsoft
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -14,35 +14,24 @@ helpviewer_keywords:
 - <BuildOnLoad> element [Visual Studio Templates]
 - BuildOnLoad element [Visual Studio Templates]
 ms.assetid: 950f5fc1-d041-4090-9a5c-60844768a4cc
-caps.latest.revision: 10
+caps.latest.revision: 
+author: gregvanl
 ms.author: gregvanl
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: 5db97d19b1b823388a465bba15d057b30ff0b3ce
-ms.openlocfilehash: 1be6339ed3db61279f83b49a016d84d0b551c03d
-ms.lasthandoff: 02/22/2017
-
+ms.workload:
+- vssdk
+ms.openlocfilehash: 9b3fc7842e71ff1bff3bd3e362f0c12afcf4292f
+ms.sourcegitcommit: d6327b978661c0a745bf4b59f32d8171607803a3
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="buildprojectonload-visual-studio-templates"></a>BuildProjectOnLoad (modelli di Visual Studio)
 Specifica se compilare il progetto immediatamente dopo averlo creato.  
   
- \<VSTemplate >  
- \<TemplateData >  
- \<BuildProjectOnLoad >  
+ \<VSTemplate>  
+ \<TemplateData>  
+ \<BuildProjectOnLoad>  
   
 ## <a name="syntax"></a>Sintassi  
   
@@ -84,7 +73,7 @@ Specifica se compilare il progetto immediatamente dopo averlo creato.
         <Description>A basic template</Description>  
         <Icon>TemplateIcon.ico</Icon>  
         <ProjectType>CSharp</ProjectType>  
-        <BuildProjectOnload>true</BuildProjectOnLoad>  
+        <BuildProjectOnLoad>true</BuildProjectOnLoad>  
     </TemplateData>  
     <TemplateContent>  
         <Project File="MyTemplate.csproj">  
@@ -103,5 +92,5 @@ Specifica se compilare il progetto immediatamente dopo averlo creato.
   
 ## <a name="see-also"></a>Vedere anche  
  [Elemento TemplateContent (modelli di Visual Studio)](../extensibility/templatecontent-element-visual-studio-templates.md)   
- [Creazione di modelli di elemento e progetto](../ide/creating-project-and-item-templates.md)   
- [Visual Studio Template Schema Reference](../extensibility/visual-studio-template-schema-reference.md)
+ [Creazione di modelli di progetti e di elementi](../ide/creating-project-and-item-templates.md)   
+ [Riferimenti sullo schema dei modelli di Visual Studio](../extensibility/visual-studio-template-schema-reference.md)

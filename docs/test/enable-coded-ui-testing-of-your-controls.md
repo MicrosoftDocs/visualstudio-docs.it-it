@@ -4,49 +4,23 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- vs-devops-test
+ms.technology: vs-devops-test
 ms.tgt_pltfrm: 
 ms.topic: article
-ms.assetid: 5ef1188f-89dc-413d-801d-0efdaf9b0427
-caps.latest.revision: 22
-ms.author: douge
-manager: douge
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.author: gewarren
+manager: ghogen
+ms.workload: multiple
+author: gewarren
+ms.openlocfilehash: 782a68e61786121095d3bf730dbd053564bad1cf
+ms.sourcegitcommit: 7ae502c5767a34dc35e760ff02032f4902c7c02b
 ms.translationtype: HT
-ms.sourcegitcommit: 4a36302d80f4bc397128e3838c9abf858a0b5fe8
-ms.openlocfilehash: 00f7cd1d45bca63387acc7f38b39b1cb51b4b2be
-ms.contentlocale: it-it
-ms.lasthandoff: 09/26/2017
-
+ms.contentlocale: it-IT
+ms.lasthandoff: 01/09/2018
 ---
 # <a name="enable-coded-ui-testing-of-your-controls"></a>Abilitare il test codificato dell'interfaccia utente per i controlli
-Il controllo può essere testato più facilmente se si implementa il supporto per il framework dei test codificati dell'interfaccia utente. È possibile aggiungere gradualmente livelli crescenti di supporto. Si può iniziare supportando la registrazione, la riproduzione e la convalida delle proprietà. Sarà quindi possibile consentire al generatore di test codificati dell'interfaccia utente di riconoscere le proprietà personalizzate del controllo, nonché specificare classi personalizzate per accedere a tali proprietà dal codice generato. È anche possibile consentire al generatore di test codificati dell'interfaccia utente di acquisire le azioni nella modalità che più si avvicina di più allo scopo dell'azione registrata.  
-  
- **Contenuto dell'argomento:**  
-  
-1.  [Supportare registrazione, riproduzione e convalida delle proprietà implementando l'accessibilità](../test/enable-coded-ui-testing-of-your-controls.md#recordandplayback)  
-  
-2.  [Supportare la convalida delle proprietà personalizzate implementando un provider di proprietà](../test/enable-coded-ui-testing-of-your-controls.md#customproprties)  
-  
-3.  [Supportare la generazione di codice implementando una classe per accedere alle proprietà personalizzate](../test/enable-coded-ui-testing-of-your-controls.md#codegeneration)  
-  
-4.  [Supportare le azioni sensibili allo scopo implementando un filtro azioni](../test/enable-coded-ui-testing-of-your-controls.md#intentawareactions)  
-  
- ![CUIT&#95;Full](../test/media/cuit_full.png "CUIT_Full")  
+Il controllo può essere testato più facilmente se si implementa il supporto per il framework dei test codificati dell'interfaccia utente. È possibile aggiungere gradualmente livelli crescenti di supporto. Si può iniziare supportando la registrazione, la riproduzione e la convalida delle proprietà. Sarà quindi possibile consentire al generatore di test codificati dell'interfaccia utente di riconoscere le proprietà personalizzate del controllo, nonché specificare classi personalizzate per accedere a tali proprietà dal codice generato. È anche possibile consentire al generatore di test codificati dell'interfaccia utente di acquisire le azioni nella modalità che più si avvicina di più allo scopo dell'azione registrata.
+
+![CUIT&#95;Full](../test/media/cuit_full.png "CUIT_Full")  
   
 ##  <a name="recordandplayback"></a>Supportare registrazione, riproduzione e convalida delle proprietà implementando l'accessibilità  
  Il generatore di test codificati dell'interfaccia utente acquisisce informazioni sui controlli intercettati durante la registrazione e quindi genera il codice per riprodurre quella sessione. Se il controllo non supporta l'accessibilità, il generatore di test codificati dell'interfaccia utente acquisisce le azioni (quali i clic del mouse) usando le coordinate dello schermo. Quando il test viene riprodotto, il codice generato emetterà i clic del mouse nelle stesse coordinate dello schermo. Se, quando il test viene riprodotto, il controllo viene visualizzato in un punto diverso dello schermo, l'azione nel controllo da parte del codice generato non riuscirà. Ciò può dare luogo a errori se il test viene riprodotto in diverse configurazioni dello schermo, in ambienti diversi o dopo l'applicazione di modifiche al layout dell'interfaccia utente.  
@@ -101,10 +75,11 @@ Il controllo può essere testato più facilmente se si implementa il supporto pe
   
  ![CUIT&#95;CustomProps](../test/media/cuit_customprops.png "CUIT_CustomProps")  
   
-### <a name="to-support-custom-property-validation"></a>Per supportare la convalida delle proprietà personalizzate  
- ![CUIT&#95;Props](../test/media/cuit_props.png "CUIT_Props")  
-  
-1.  Eseguire l'override della proprietà <xref:System.Windows.Forms.AccessibleObject.Description%2A> dell'oggetto accessibile CurveLegend per passare valori di proprietà avanzate nella stringa di descrizione, separati dalla descrizione principale (e tra loro se si stanno implementando più proprietà) mediante caratteri di punto e virgola (;).  
+### <a name="to-support-custom-property-validation"></a>Per supportare la convalida delle proprietà personalizzate
+
+![CUIT&#95;Props](../test/media/cuit_props.png "CUIT_Props")
+
+1. Eseguire l'override della proprietà <xref:System.Windows.Forms.AccessibleObject.Description%2A> dell'oggetto accessibile CurveLegend per passare valori di proprietà avanzate nella stringa di descrizione, separati dalla descrizione principale (e tra loro se si stanno implementando più proprietà) mediante caratteri di punto e virgola (;).  
   
     ```csharp  
     public class CurveLegendAccessibleObject : AccessibleObject  
@@ -121,99 +96,87 @@ Il controllo può essere testato più facilmente se si implementa il supporto pe
         }  
     }  
     ```  
-  
-2.  Creare un pacchetto di estensione di test dell'interfaccia utente per il controllo creando un progetto libreria di classi e aggiungere riferimenti ad Accessibility, Microsoft.VisualStudio.TestTools.UITesting, Microsoft.VisualStudio.TestTools.UITest.Common e Microsoft.VisualStudio.TestTools.Extension. Modificare il valore per **Incorpora tipi di interoperabilità** per l'accessibilità impostandolo su **False**.  
-  
-3.  Aggiungere una classe di provider di proprietà che sia derivata da <xref:Microsoft.VisualStudio.TestTools.UITesting.UITestPropertyProvider>.  
-  
-    ```csharp  
-    using System;  
-    using System.Collections.Generic;  
-    using Accessibility;  
-    using Microsoft.VisualStudio.TestTools.UITesting;  
-    using Microsoft.VisualStudio.TestTools.UITest.Extension;  
-    using Microsoft.VisualStudio.TestTools.UITesting.WinControls;  
-    using Microsoft.VisualStudio.TestTools.UITest.Common;  
-  
-    namespace ChartControlExtensionPackage  
-    {  
-        public class ChartControlPropertyProvider : UITestPropertyProvider  
-        {  
-        }  
-    }  
-    ```  
-  
-4.  Implementare il provider di proprietà inserendo i nomi di proprietà e i descrittori di proprietà in un oggetto <xref:System.Collections.Generic.Dictionary%602>.  
-  
-<CodeContentPlaceHolder>3</CodeContentPlaceHolder>  
-5.  Eseguire l'override di <xref:Microsoft.VisualStudio.TestTools.UITesting.UITestPropertyProvider.GetControlSupportLevel%2A?displayProperty=fullName> per indicare che l'assembly fornisce supporto specifico del controllo per il controllo e per i relativi elementi figlio.  
-  
-<CodeContentPlaceHolder>4</CodeContentPlaceHolder>  
-6.  Eseguire l'override dei rimanenti metodi astratti di <xref:Microsoft.VisualStudio.TestTools.UITesting.UITestPropertyProvider?displayProperty=fullName>.  
-  
-<CodeContentPlaceHolder>5</CodeContentPlaceHolder>  
-7.  Aggiungere una classe del pacchetto di estensione che sia derivata da <xref:Microsoft.VisualStudio.TestTools.UITest.Extension.UITestExtensionPackage>.  
-  
-<CodeContentPlaceHolder>6</CodeContentPlaceHolder>  
-8.  Definire l'attributo `UITestExtensionPackage` per l'assembly.  
-  
-<CodeContentPlaceHolder>7</CodeContentPlaceHolder>  
-9. Nella classe del pacchetto di estensione, eseguire l'override di <xref:Microsoft.VisualStudio.TestTools.UITest.Extension.UITestExtensionPackage.GetService%2A?displayProperty=fullName> per restituire la classe del provider di proprietà, quando ne è richiesto uno.  
-  
-<CodeContentPlaceHolder>8</CodeContentPlaceHolder>  
-10. Eseguire l'override delle proprietà e dei metodi astratti rimanenti dell'oggetto <xref:Microsoft.VisualStudio.TestTools.UITest.Extension.UITestExtensionPackage>.  
-  
-<CodeContentPlaceHolder>9</CodeContentPlaceHolder>  
-11. Compilare i file binari e copiarli in **%Programmi%\File comuni\Microsoft Shared\VSTT\10.0\UITestExtensionPackages**.  
-  
+
+1. Creare un pacchetto di estensione di test dell'interfaccia utente per il controllo creando un progetto libreria di classi e aggiungere riferimenti ad Accessibility, Microsoft.VisualStudio.TestTools.UITesting, Microsoft.VisualStudio.TestTools.UITest.Common e Microsoft.VisualStudio.TestTools.Extension. Modificare il valore per **Incorpora tipi di interoperabilità** per l'accessibilità impostandolo su **False**.
+
+1. Aggiungere una classe di provider di proprietà che sia derivata da <xref:Microsoft.VisualStudio.TestTools.UITesting.UITestPropertyProvider>:
+
+    ```csharp
+    using System;
+    using System.Collections.Generic;
+    using Accessibility;
+    using Microsoft.VisualStudio.TestTools.UITesting;
+    using Microsoft.VisualStudio.TestTools.UITest.Extension;
+    using Microsoft.VisualStudio.TestTools.UITesting.WinControls;
+    using Microsoft.VisualStudio.TestTools.UITest.Common;
+
+    namespace ChartControlExtensionPackage
+    {
+        public class ChartControlPropertyProvider : UITestPropertyProvider
+        {
+        }
+    }
+    ```
+
+1. Implementare il provider di proprietà inserendo i nomi di proprietà e i descrittori di proprietà in un oggetto <xref:System.Collections.Generic.Dictionary%602>.
+
+1. Eseguire l'override di <xref:Microsoft.VisualStudio.TestTools.UITesting.UITestPropertyProvider.GetControlSupportLevel%2A?displayProperty=fullName> per indicare che l'assembly fornisce supporto specifico del controllo per il controllo e per i relativi elementi figlio.
+
+1. Eseguire l'override dei rimanenti metodi astratti di <xref:Microsoft.VisualStudio.TestTools.UITesting.UITestPropertyProvider?displayProperty=fullName>
+
+1. Aggiungere una classe del pacchetto di estensione che sia derivata da <xref:Microsoft.VisualStudio.TestTools.UITest.Extension.UITestExtensionPackage>.
+
+1. Definire l'attributo `UITestExtensionPackage` per l'assembly.
+
+1. Nella classe del pacchetto di estensione, eseguire l'override di <xref:Microsoft.VisualStudio.TestTools.UITest.Extension.UITestExtensionPackage.GetService%2A?displayProperty=fullName> per restituire la classe del provider di proprietà, quando ne è richiesto uno.
+
+1. Eseguire l'override delle proprietà e dei metodi astratti rimanenti dell'oggetto <xref:Microsoft.VisualStudio.TestTools.UITest.Extension.UITestExtensionPackage>.
+
+1. Compilare i file binari e copiarli in **%Programmi%\File comuni\Microsoft Shared\VSTT\10.0\UITestExtensionPackages**.  
+
 > [!NOTE]
->  Questo pacchetto di estensione verrà applicato a qualsiasi controllo di tipo "testo". Se si stanno testando più controlli dello stesso tipo, sarà necessario testarli separatamente e definire quali pacchetti di estensione vengono distribuiti quando si registrano i test.  
-  
-##  <a name="codegeneration"></a> Supportare la generazione di codice implementando una classe per accedere alle proprietà personalizzate  
- Quando il generatore di test codificati dell'interfaccia utente genera il codice da una registrazione della sessione, usa la classe <xref:Microsoft.VisualStudio.TestTools.UITesting.UITestControl> per accedere ai controlli dell'utente.  
-  
-<CodeContentPlaceHolder>10</CodeContentPlaceHolder>  
- Se è stato implementato un provider di proprietà per offrire accesso alle proprietà personalizzate del controllo, è possibile aggiungere una classe specializzata per accedere a tali proprietà, in modo da semplificare il codice generato.  
-  
-<CodeContentPlaceHolder>11</CodeContentPlaceHolder>  
-### <a name="to-add-a-specialized-class-to-access-your-control"></a>Per aggiungere una classe specializzata per accedere al proprio controllo  
- ![CUIT&#95;CodeGen](../test/media/cuit_codegen.png "CUIT_CodeGen")  
-  
-1.  Implementare una classe che sia derivata da <xref:Microsoft.VisualStudio.TestTools.UITesting.WinControls.WinControl> e aggiungere il tipo del controllo alla raccolta di proprietà di ricerca nel costruttore.  
-  
-<CodeContentPlaceHolder>12</CodeContentPlaceHolder>  
-2.  Implementare le proprietà personalizzate del controllo come proprietà della classe.  
-  
-<CodeContentPlaceHolder>13</CodeContentPlaceHolder>  
-3.  Eseguire l'override del metodo <xref:Microsoft.VisualStudio.TestTools.UITesting.UITestPropertyProvider.GetSpecializedClass%2A?displayProperty=fullName> del provider di proprietà per restituire il tipo della nuova classe per i controlli figlio dell'oggetto CurveLegend.  
-  
-<CodeContentPlaceHolder>14</CodeContentPlaceHolder>  
-4.  Eseguire l'override del metodo <xref:Microsoft.VisualStudio.TestTools.UITesting.UITestPropertyProvider.GetPropertyNamesClassType%2A> del provider di proprietà per restituire il tipo del metodo PropertyNames della nuova classe.  
-  
-<CodeContentPlaceHolder>15</CodeContentPlaceHolder>  
+> Questo pacchetto di estensione verrà applicato a qualsiasi controllo di tipo "testo". Se si stanno testando più controlli dello stesso tipo, sarà necessario testarli separatamente e definire quali pacchetti di estensione vengono distribuiti quando si registrano i test.
+
+##  <a name="codegeneration"></a> Supportare la generazione di codice implementando una classe per accedere alle proprietà personalizzate
+
+Quando il generatore di test codificati dell'interfaccia utente genera il codice da una registrazione della sessione, usa la classe <xref:Microsoft.VisualStudio.TestTools.UITesting.UITestControl> per accedere ai controlli dell'utente.
+
+Se è stato implementato un provider di proprietà per offrire accesso alle proprietà personalizzate del controllo, è possibile aggiungere una classe specializzata per accedere a tali proprietà, in modo da semplificare il codice generato.
+
+### <a name="to-add-a-specialized-class-to-access-your-control"></a>Per aggiungere una classe specializzata per accedere al proprio controllo
+
+![CUIT&#95;CodeGen](../test/media/cuit_codegen.png "CUIT_CodeGen")  
+
+1. Implementare una classe che sia derivata da <xref:Microsoft.VisualStudio.TestTools.UITesting.WinControls.WinControl> e aggiungere il tipo del controllo alla raccolta di proprietà di ricerca nel costruttore.  
+
+1. Implementare le proprietà personalizzate del controllo come proprietà della classe.  
+
+1. Eseguire l'override del metodo <xref:Microsoft.VisualStudio.TestTools.UITesting.UITestPropertyProvider.GetSpecializedClass%2A?displayProperty=fullName> del provider di proprietà per restituire il tipo della nuova classe per i controlli figlio dell'oggetto CurveLegend.  
+
+1. Eseguire l'override del metodo <xref:Microsoft.VisualStudio.TestTools.UITesting.UITestPropertyProvider.GetPropertyNamesClassType%2A> del provider di proprietà per restituire il tipo del metodo PropertyNames della nuova classe.
+
 ##  <a name="intentawareactions"></a> Supportare le azioni sensibili allo scopo implementando un filtro azioni  
  Quando Visual Studio registra un test, acquisisce ogni evento di mouse e tastiera. Tuttavia, in alcuni casi, lo scopo dell'azione può perdersi nella serie di eventi di mouse e tastiera. Ad esempio, se il controllo supporta il completamento automatico, lo stesso set di eventi di mouse e tastiera può comportare un valore diverso quando il test viene riprodotto in un ambiente diverso. È possibile aggiungere un plug-in del filtro azioni che sostituisce la serie di eventi di mouse e tastiera con una sola azione. In questo modo, è possibile sostituire la sequenza di eventi di mouse e tastiera derivanti dalla selezione di un valore con una sola azione che imposta il valore. Questa operazione consente di proteggere i test codificati dell'interfaccia utente dalle differenze nel completamento automatico da un ambiente a un altro.  
   
-### <a name="to-support-intent-aware-actions"></a>Per supportare le azioni sensibili allo scopo  
- ![CUIT&#95;Actions](../test/media/cuit_actions.png "CUIT_Actions")  
-  
-1.  Implementare una classe di filtro azioni che sia derivata da <xref:Microsoft.VisualStudio.TestTools.UITest.Common.UITestActionFilter>, eseguendo l'override delle proprietà <xref:Microsoft.VisualStudio.TestTools.UITest.Common.UITestActionFilter.ApplyTimeout%2A>, <xref:Microsoft.VisualStudio.TestTools.UITest.Common.UITestActionFilter.Category%2A>, <xref:Microsoft.VisualStudio.TestTools.UITest.Common.UITestActionFilter.Enabled%2A>, <xref:Microsoft.VisualStudio.TestTools.UITest.Common.UITestActionFilter.FilterType%2A>, <xref:Microsoft.VisualStudio.TestTools.UITest.Common.UITestActionFilter.Group%2A> e <xref:Microsoft.VisualStudio.TestTools.UITest.Common.UITestActionFilter.Name%2A>.  
-  
-<CodeContentPlaceHolder>16</CodeContentPlaceHolder>  
-2.  Eseguire l'override di <xref:Microsoft.VisualStudio.TestTools.UITest.Common.UITestActionFilter.ProcessRule%2A>. In questo esempio si sostituisce un'azione di doppio clic con un'azione di clic singolo.  
-  
-<CodeContentPlaceHolder>17</CodeContentPlaceHolder>  
-3.  Aggiungere il filtro azioni al metodo <xref:Microsoft.VisualStudio.TestTools.UITest.Extension.UITestExtensionPackage.GetService%2A> del pacchetto di estensione.  
-  
-<CodeContentPlaceHolder>18</CodeContentPlaceHolder>  
-4.  Compilare i file binari e copiarli in %Programmi%\File comuni\Microsoft Shared\VSTT\10.0\UITestExtensionPackages.  
-  
+### <a name="to-support-intent-aware-actions"></a>Per supportare le azioni sensibili allo scopo
+
+![CUIT&#95;Actions](../test/media/cuit_actions.png "CUIT_Actions")  
+
+1. Implementare una classe di filtro azioni che sia derivata da <xref:Microsoft.VisualStudio.TestTools.UITest.Common.UITestActionFilter>, eseguendo l'override delle proprietà <xref:Microsoft.VisualStudio.TestTools.UITest.Common.UITestActionFilter.ApplyTimeout%2A>, <xref:Microsoft.VisualStudio.TestTools.UITest.Common.UITestActionFilter.Category%2A>, <xref:Microsoft.VisualStudio.TestTools.UITest.Common.UITestActionFilter.Enabled%2A>, <xref:Microsoft.VisualStudio.TestTools.UITest.Common.UITestActionFilter.FilterType%2A>, <xref:Microsoft.VisualStudio.TestTools.UITest.Common.UITestActionFilter.Group%2A> e <xref:Microsoft.VisualStudio.TestTools.UITest.Common.UITestActionFilter.Name%2A>. 
+
+1. Eseguire l'override di <xref:Microsoft.VisualStudio.TestTools.UITest.Common.UITestActionFilter.ProcessRule%2A>. In questo esempio si sostituisce un'azione di doppio clic con un'azione di clic singolo.
+
+1. Aggiungere il filtro azioni al metodo <xref:Microsoft.VisualStudio.TestTools.UITest.Extension.UITestExtensionPackage.GetService%2A> del pacchetto di estensione.
+
+1. Compilare i file binari e copiarli in %Programmi%\File comuni\Microsoft Shared\VSTT\10.0\UITestExtensionPackages.
+
 > [!NOTE]
->  Il filtro azioni non dipende dall'implementazione di accessibilità o dal provider di proprietà.  
-  
-## <a name="debug-your-property-provider-or-action-filter"></a>Eseguire il debug del provider di proprietà o del filtro azioni  
- Il provider di proprietà e il filtro azioni sono distribuiti in un pacchetto di estensione che viene caricato ed eseguito dal generatore di test codificati dell'interfaccia utente in un processo distinto dall'applicazione.  
-  
+> Il filtro azioni non dipende dall'implementazione di accessibilità o dal provider di proprietà.
+
+## <a name="debug-your-property-provider-or-action-filter"></a>Eseguire il debug del provider di proprietà o del filtro azioni
+
+Il provider di proprietà e il filtro azioni sono distribuiti in un pacchetto di estensione che viene caricato ed eseguito dal generatore di test codificati dell'interfaccia utente in un processo distinto dall'applicazione.
+
 #### <a name="to-debug-your-property-provider-or-action-filter"></a>Per eseguire il debug del provider di proprietà o del filtro azioni  
   
 1.  Compilare la versione di debug del pacchetto di estensione copiare i file DLL e PDB in %Programmi%\File comuni\Microsoft Shared\VSTT\10.0\UITestExtensionPackages.  
@@ -238,4 +201,3 @@ Il controllo può essere testato più facilmente se si implementa il supporto pe
 ## <a name="see-also"></a>Vedere anche  
  <xref:System.Windows.Forms.AccessibleObject>   
  [Usare l'automazione dell'interfaccia utente per testare il codice](../test/use-ui-automation-to-test-your-code.md)
-

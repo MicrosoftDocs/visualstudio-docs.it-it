@@ -1,18 +1,16 @@
 ---
-title: Visual Studio per Mac Tools per Unity
+title: Visual Studio per Mac Tools per Unity | Microsoft Docs
 author: dantogno
 ms.author: v-davian
 ms.date: 07/17/2017
 ms.topic: article
 ms.assetid: 83FDD7A3-5D16-4B4B-9080-078E3FB5C623
+ms.openlocfilehash: eae1aa9526d515e7d02d8e1727da9634e0501662
+ms.sourcegitcommit: f40311056ea0b4677efcca74a285dbb0ce0e7974
 ms.translationtype: HT
-ms.sourcegitcommit: e2b7ff9126e1cc38ac2e58d6be339b656a024e7f
-ms.openlocfilehash: a9bd932341ab76feb9d91e96ac816ba6e1488064
-ms.contentlocale: it-it
-ms.lasthandoff: 08/11/2017
-
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/31/2017
 ---
-
 # <a name="visual-studio-for-mac-tools-for-unity"></a>Visual Studio per Mac Tools per Unity
 
 ![Immagine stilizzata di Unity e Visual Studio per Mac](media/vsmac-tools-unity-image1.png)
@@ -65,4 +63,3 @@ Questi collegamenti illustrano funzionalità utili per gli sviluppatori di Unity
 
 * [Personalizzazione dell'IDE](/visualstudio/mac/customizing-the-ide): informazioni su come [modificare il tema visivo](/visualstudio/mac/customizing-the-ide#dark-theme) o passare a uno schema di [tasti di scelta rapida](/visualstudio/mac/customizing-the-ide#key-bindings) più familiare.
 * [Editor standard](/visualstudio/mac/source-editor): informazioni su come scrivere in modo più veloce e semplice codice più efficiente con Visual Studio per Mac, inclusi [tasti di scelta rapida](/visualstudio/mac/keyboard-shortcuts) comuni.
-

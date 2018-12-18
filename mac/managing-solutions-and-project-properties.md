@@ -1,20 +1,19 @@
 ---
-title: "Gestione delle proprietà di progetti e soluzioni"
+title: "Gestione delle proprietà di progetti e soluzioni | Microsoft Docs"
 author: asb3993
 ms.author: amburns
 ms.date: 04/14/2017
 ms.topic: article
 ms.assetid: 75247EB8-323A-4AFD-A451-6703A03D5D1F
+ms.openlocfilehash: 8871ab002a94a9c0bbc0063a25b4dea9cb271142
+ms.sourcegitcommit: f40311056ea0b4677efcca74a285dbb0ce0e7974
 ms.translationtype: HT
-ms.sourcegitcommit: e2b7ff9126e1cc38ac2e58d6be339b656a024e7f
-ms.openlocfilehash: fefb6c5e67b21907150611b3639cc16c05812e1a
-ms.contentlocale: it-it
-ms.lasthandoff: 08/11/2017
-
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/31/2017
 ---
 # <a name="managing-project-and-solution-properties"></a>Gestione delle proprietà di progetti e soluzioni
 
-## <a name="project-options"></a>Opzioni del progetto 
+## <a name="project-options"></a>Opzioni del progetto
 
 Le opzioni del progetto sono specifiche di ogni progetto e influiscono sul modo in cui il progetto viene scritto, compilato ed eseguito. Ciò è in contrasto con le preferenze di Visual Studio per Mac, che rappresentano opzioni specifiche dell'utente, e con le opzioni della soluzione, che rappresentano le opzioni per l'intera soluzione. Le opzioni del progetto vengono archiviate nel file di progetto (con estensione csproj), in modo che altri sviluppatori possano compilare ed eseguire correttamente il progetto. In questo modo, molti sviluppatori possono lavorare allo stesso documento senza compromettere la formattazione del file.
 
@@ -45,4 +44,3 @@ Xamarin.iOS conterrà le opzioni relative alla firma del bundle, ad esempio il p
 Le opzioni della soluzione sono come le opzioni del progetto, ma riguardano l'intera soluzione. Consentono di impostare le informazioni sull'autore, le impostazioni di compilazione, gli stili di formattazione del codice e il controllo della versione e permettono di assegnare il progetto di avvio nella soluzione.  È possibile accedere alla finestra di dialogo Opzioni soluzione dalla voce di menu **Progetto > Opzioni soluzione**, dalla voce del menu di scelta rapida **Opzioni** della soluzione nel riquadro della soluzione oppure facendo doppio clic sulla soluzione nel riquadro della soluzione:
 
  ![Opzioni della soluzione](media/projects-and-solutions-image7.png)
-

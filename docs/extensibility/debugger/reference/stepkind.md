@@ -1,72 +1,73 @@
 ---
-title: "STEPKIND | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "STEPKIND"
-helpviewer_keywords: 
-  - "Enumerazione STEPKIND"
+title: STEPKIND | Documenti Microsoft
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: vs-ide-sdk
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: STEPKIND
+helpviewer_keywords: STEPKIND enumeration
 ms.assetid: d3d8cf76-24bf-455e-803e-0e3e28f0b262
-caps.latest.revision: 8
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: gregvanl
+ms.author: gregvanl
+manager: ghogen
+ms.workload: vssdk
+ms.openlocfilehash: 3a2b82bb70aa7bcf41dc6c8c827c318d78cf394e
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
-# STEPKIND
-[!INCLUDE[vs2017banner](../../../code-quality/includes/vs2017banner.md)]
-
-Specifica il tipo del passaggio per avanzare.  
+# <a name="stepkind"></a>STEPKIND
+Specifica il tipo di passaggio per l'esecuzione di istruzioni.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp#  
-enum enum_STEPKIND {   
-   STEP_INTO      = 0,  
-   STEP_OVER      = 1,  
-   STEP_OUT       = 2,  
-   STEP_BACKWARDS = 3  
+```cpp  
+enum enum_STEPKIND {   
+   STEP_INTO      = 0,  
+   STEP_OVER      = 1,  
+   STEP_OUT       = 2,  
+   STEP_BACKWARDS = 3  
 };  
 typedef DWORD STEPKIND;  
 ```  
   
-```c#  
-public enum enum_STEPKIND {   
-   STEP_INTO      = 0,  
-   STEP_OVER      = 1,  
-   STEP_OUT       = 2,  
-   STEP_BACKWARDS = 3  
+```csharp  
+public enum enum_STEPKIND {   
+   STEP_INTO      = 0,  
+   STEP_OVER      = 1,  
+   STEP_OUT       = 2,  
+   STEP_BACKWARDS = 3  
 };  
 ```  
   
-## Membri  
- STEP\_INTO  
- Passaggi di una funzione.  
+## <a name="members"></a>Membri  
+ STEP_INTO  
+ Passaggi in una funzione.  
   
- STEP\_OVER  
+ STEP_OVER  
  Esegue una funzione.  
   
- STEP\_OUT  
- passaggi da una funzione.  
+ STEP_OUT  
+ Passaggi di una funzione.  
   
- STEP\_BACKWARDS  
- Esegue il debug passo a passo indietro in una funzione.  
+ STEP_BACKWARDS  
+ Operazioni con le versioni precedenti in una funzione.  
   
-## Note  
- Passato come argomento [Passaggio](../../../extensibility/debugger/reference/idebugprocess3-step.md) al metodo.  
+## <a name="remarks"></a>Note  
+ Passata come argomento per il [passaggio](../../../extensibility/debugger/reference/idebugprocess3-step.md) metodo.  
   
-## Requisiti  
- intestazione: msdbg.h  
+## <a name="requirements"></a>Requisiti  
+ Intestazione: msdbg.h  
   
- Spazio dei nomi: Microsoft.VisualStudio.Debugger.Interop  
+ Namespace: Microsoft.VisualStudio.Debugger.Interop  
   
  Assembly: Microsoft.VisualStudio.Debugger.Interop.dll  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Enumerazioni](../../../extensibility/debugger/reference/enumerations-visual-studio-debugging.md)   
- [Passaggio](../../../extensibility/debugger/reference/idebugprocess3-step.md)
+ [Step](../../../extensibility/debugger/reference/idebugprocess3-step.md)

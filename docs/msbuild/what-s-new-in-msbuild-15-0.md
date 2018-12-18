@@ -4,34 +4,20 @@ ms.custom:
 ms.date: 03/01/2017
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- vs-ide-sdk
+ms.technology: msbuild
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: 9976b6fd-d052-4017-b848-35b5bf4b2f66
-caps.latest.revision: 23
-author: kempb
-ms.author: kempb
+author: Mikejo5000
+ms.author: mikejo
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-translationtype: Human Translation
-ms.sourcegitcommit: a42f5a30375192c89c9984e40ba0104da98d7253
-ms.openlocfilehash: 620d5739c450ddece13257bf7efa249ebf9c2a6a
-ms.lasthandoff: 03/07/2017
-
+ms.workload:
+- multiple
+ms.openlocfilehash: 81ee5566181a96ef36e8ce8f1545a22964301198
+ms.sourcegitcommit: f219ef323b8e1c9b61f2bfd4d3fad7e3d5fb3561
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="whats-new-in-msbuild-15"></a>Novità di MSBuild 15
 MSBuild è ora incluso in [.NET Core SDK](https://www.microsoft.com/net/download/core) e consente di compilare progetti .NET Core in Windows, macOS e Linux.  
@@ -53,7 +39,7 @@ MSBuild è ora incluso in [.NET Core SDK](https://www.microsoft.com/net/download
 -   Le proprietà `SDK35ToolsPath` e `SDK40ToolsPath` puntano a .NET Framework SDK, incluso in un pacchetto con questa versione di Visual Studio, ad esempio 10.0A per gli strumenti 4.X.  
 
 ## <a name="updates"></a>Aggiornamenti
-- Per l'[elemento Project](../msbuild/project-element-msbuild.md) è disponibile un nuovo attributo `SDK`. L'attributo `Xmlns` è ora facoltativo.
+- Per l'[elemento Project](../msbuild/project-element-msbuild.md) è disponibile un nuovo attributo `SDK`. L'attributo `Xmlns` è ora facoltativo. Per altre informazioni, vedere [Pacchetti, metadati e framework](/dotnet/core/packages) e [Aggiunte al formato csproj per .NET Core](/dotnet/core/tools/csproj).
 - Per l'[elemento Item](../msbuild/item-element-msbuild.md) esterno alle destinazioni è disponibile un nuovo attributo `Update`. È stata inoltre eliminata la restrizione relativa all'attributo `Remove`.
 - `Directory.Build.props` è un file definito dall'utente che specifica le personalizzazioni dei progetti in una directory. Questo file viene importato automaticamente da Microsoft.Common.props, a meno che la proprietà `ImportDirectoryBuildTargets` non sia impostata su **false**. `Directory.Build.targets` viene importato da Microsoft.Common.targets.
 - Eventuali metadati il cui nome non è in conflitto con l'elenco di attributi corrente possono essere espressi come un attributo. Per altre informazioni, vedere [Elemento Item](../msbuild/item-element-msbuild.md).
@@ -67,4 +53,3 @@ MSBuild è ora incluso in [.NET Core SDK](https://www.microsoft.com/net/download
 
 ## <a name="see-also"></a>Vedere anche
 [MSBuild](../msbuild/msbuild.md)
-

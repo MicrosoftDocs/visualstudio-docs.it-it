@@ -1,53 +1,54 @@
 ---
-title: "Finestra di dialogo Ricerca thread | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "Ricerca thread"
+title: Nella finestra di dialogo Ricerca thread | Documenti Microsoft
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: vs-ide-debug
+ms.tgt_pltfrm: 
+ms.topic: reference
+helpviewer_keywords: Thread Search
 ms.assetid: 52ecb289-9b86-455c-a52b-3dcd3f7255bf
-caps.latest.revision: 4
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.workload: multiple
+ms.openlocfilehash: 1f6cf674581b4e4368aab87e7ddd6c64096efe5e
+ms.sourcegitcommit: 9e6ff74da1afd8bd2f0e69387ce81f2a74619182
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 01/04/2018
 ---
-# Finestra di dialogo Ricerca thread
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
-Utilizzare questa finestra di dialogo per trovare e selezionare il nodo per un thread specifico in [Visualizzazione thread](../debugger/threads-view.md).  Per visualizzare questa finestra di dialogo, spostare lo stato attivo su una finestra di visualizzazione **Thread**.  Scegliere quindi **Trova thread** nel menu **Cerca**.  
+# <a name="thread-search-dialog-box"></a>Finestra di dialogo Ricerca thread
+Utilizzare questa finestra di dialogo per individuare e selezionare il nodo per un thread specifico in [visualizzazione thread](../debugger/threads-view.md). Per visualizzare questa finestra di dialogo, spostare lo stato attivo su un **thread** finestra di visualizzazione. Scegliere quindi **trova Thread** dal **ricerca** menu.  
   
  Sono disponibili le impostazioni seguenti:  
   
  **Thread**  
- ID thread da cercare.  
+ ID del thread per la ricerca.  
   
  **Modulo**  
  Stringa del modulo da cercare.  
   
- **Direzione di ricerca \(Su o Giù\)**  
- Direzione iniziale della ricerca.  
+ **Direzione della ricerca verso l'alto o verso il basso**  
+ La direzione iniziale della ricerca.  
   
-## Sezioni correlate  
+## <a name="related-sections"></a>Sezioni correlate  
  [Finestra di dialogo Proprietà thread](../debugger/thread-properties-dialog-box.md)  
- Utilizzata per visualizzare le proprietà di un thread selezionato nella visualizzazione thread.  
+ Consente di visualizzare le proprietà di un thread selezionato nella visualizzazione thread.  
   
- [Riferimenti per Spy\+\+](../debugger/spy-increment-reference.md)  
- Sono incluse le sezioni in cui vengono descritti tutti i menu e le finestre di dialogo di Spy\+\+.  
+ [riferimenti per Spy++](../debugger/spy-increment-reference.md)  
+ Include le sezioni che descrivono ogni Spy + + menu e finestra di dialogo.  
   
- [Ricerca di un thread nella visualizzazione thread](../debugger/how-to-search-for-a-thread-in-threads-view.md)  
- Viene illustrato come individuare un thread specifico nella visualizzazione thread.  
+ [Ricerca di un Thread nella visualizzazione thread](../debugger/how-to-search-for-a-thread-in-threads-view.md)  
+ Viene illustrato come trovare un thread specifico nella visualizzazione thread.  
   
- [Visualizzazione thread](../debugger/threads-view.md)  
- Viene mostrata una visualizzazione struttura ad albero dei thread attivi  
+ [Visualizzazione Thread](../debugger/threads-view.md)  
+ Visualizza una struttura di thread attivi  
   
- [Visualizzazioni di Spy\+\+](../debugger/spy-increment-views.md)  
- Vengono illustrate le visualizzazioni struttura ad albero di Spy\+\+ relative a finestre, messaggi, processi e thread.  
+ [Visualizzazioni di Spy++](../debugger/spy-increment-views.md)  
+ Vengono illustrate le visualizzazioni ad albero Spy + + di windows, i messaggi, thread e processi.  
   
- [Utilizzo di Spy\+\+](../debugger/using-spy-increment.md)  
- Vengono illustrati lo strumento Spy\+\+ e il relativo utilizzo.
+ [Uso di Spy++](../debugger/using-spy-increment.md)  
+ Vengono presentati lo strumento Spy + + e come può essere usato.

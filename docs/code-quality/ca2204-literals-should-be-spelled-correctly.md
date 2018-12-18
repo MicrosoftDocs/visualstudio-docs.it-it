@@ -1,59 +1,60 @@
 ---
-title: "CA2204: I valori letterali devono essere digitati in modo corretto | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-devops-test"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "Literals should be spelled correctly"
-  - "CA2204"
-  - "LiteralsShouldBeSpelledCorrectly"
-helpviewer_keywords: 
-  - "CA2204"
+title: 'CA2204: I valori letterali devono essere digitati correttamente | Documenti Microsoft'
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: vs-ide-code-analysis
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- Literals should be spelled correctly
+- CA2204
+- LiteralsShouldBeSpelledCorrectly
+helpviewer_keywords: CA2204
 ms.assetid: b0bbcbb6-c92d-4c14-8ef7-9c8b38c791a6
-caps.latest.revision: 19
-author: "stevehoag"
-ms.author: "shoag"
-manager: "wpickett"
-caps.handback.revision: 19
+caps.latest.revision: "19"
+author: gewarren
+ms.author: gewarren
+manager: ghogen
+ms.workload: multiple
+ms.openlocfilehash: ad1fb951f17d223f248c678738070d1c5b70ae7d
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
-# CA2204: I valori letterali devono essere digitati in modo corretto
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
+# <a name="ca2204-literals-should-be-spelled-correctly"></a>CA2204: I valori letterali devono essere digitati in modo corretto
 |||  
 |-|-|  
 |TypeName|LiteralsShouldBeSpelledCorrectly|  
 |CheckId|CA2204|  
-|Category|Microsoft.Usage|  
-|Breaking Change|Non sostanziale|  
+|Category|Microsoft. Usage|  
+|Modifica importante|Non importante|  
   
-## Causa  
- Un metodo passa una stringa letterale che viene utilizzata in un parametro o proprietà che richiede una stringa localizzata e la stringa letterale contiene una o più parole che non sono riconosciute dalla libreria del correttore ortografico Microsoft.  
+## <a name="cause"></a>Causa  
+ Un metodo passa una stringa letterale che viene utilizzata in un parametro o una proprietà che richiede una stringa localizzata e la stringa letterale contiene una o più parole che non sono riconosciute dalla libreria del correttore ortografico Microsoft.  
   
-## Descrizione della regola  
- Questa regola controlla una stringa letterale passata come un valore a un parametro o una proprietà quando uno o più dei casi seguenti è vero:  
+## <a name="rule-description"></a>Descrizione della regola  
+ Questa regola consente di controllare una stringa letterale che viene passata come un valore per un parametro o una proprietà quando uno o più delle seguenti condizioni sono true:  
   
--   L'attributo <xref:System.ComponentModel.LocalizableAttribute> del parametro o proprietà è impostato su true.  
+-   Il <xref:System.ComponentModel.LocalizableAttribute> attributo di parametro o la proprietà è impostata su true.  
   
--   Il parametro o il nome della proprietà contiene "Testo", "Messaggio" o "Barra del titolo."  
+-   Il nome di parametro o la proprietà contiene "Text", "Messaggio" o "Didascalia".  
   
--   Il nome del parametro di stringa passato a un metodo Console.Write o Console.WriteLine è "valore" o "formato."  
+-   Il nome del parametro di stringa che viene passato a un metodo Write o console. WriteLine è "value" o "format".  
   
- Questa regola analizza le parole che compongono la stringa letterale, suddividendo in token le parole composte, e controlla l'ortografia di ciascuna parola\/token.  Per informazioni sull'algoritmo di analisi, vedere [CA1704: Gli identificatori devono essere digitati correttamente](../code-quality/ca1704-identifiers-should-be-spelled-correctly.md).  
+ Questa regola analizza la stringa letterale in parole, suddivisione in token le parole composte e controlla l'ortografia di ciascuna parola/token. Per informazioni sull'algoritmo di analisi, vedere [CA1704: gli identificatori devono essere digitati correttamente](../code-quality/ca1704-identifiers-should-be-spelled-correctly.md).  
   
- Per impostazione predefinita, viene utilizzata la versione in lingua inglese \(en\) del correttore ortografico.  
+ Per impostazione predefinita, viene utilizzata la versione inglese (en) del correttore ortografico.  
   
-## Come correggere le violazioni  
- Per correggere una violazione di questa regola, correggere l'ortografia della parola o aggiungere la parola a un dizionario personalizzato.  Per ulteriori informazioni sulle modalità di utilizzo dei dizionari personalizzati, vedere [Procedura: Personalizzare il dizionario di analisi del codice](../code-quality/how-to-customize-the-code-analysis-dictionary.md).  
+## <a name="how-to-fix-violations"></a>Come correggere le violazioni  
+ Per correggere una violazione di questa regola, correggere l'ortografia della parola o aggiungere la parola al dizionario personalizzato. Per informazioni sull'utilizzo di dizionari personalizzati, vedere [procedura: personalizzare il dizionario di analisi codice](../code-quality/how-to-customize-the-code-analysis-dictionary.md).  
   
-## Esclusione di avvisi  
- Non escludere un avviso da questa regola.  L'utilizzo di una corretta ortografia consente di ridurre la curva di apprendimento richiesta per le nuove librerie software.  
+## <a name="when-to-suppress-warnings"></a>Esclusione di avvisi  
+ Non escludere un avviso da questa regola. Correttamente ortografia consente di ridurre la curva di apprendimento necessaria per le nuove librerie software.  
   
-## Regole correlate  
+## <a name="related-rules"></a>Regole correlate  
  [CA1704: Gli identificatori devono essere digitati correttamente](../code-quality/ca1704-identifiers-should-be-spelled-correctly.md)  
   
  [CA1703: Le stringhe di risorsa devono essere digitate correttamente](../code-quality/ca1703-resource-strings-should-be-spelled-correctly.md)

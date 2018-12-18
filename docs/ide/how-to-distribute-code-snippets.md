@@ -4,47 +4,32 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- vs-ide-general
+ms.technology: vs-ide-general
 ms.tgt_pltfrm: 
 ms.topic: article
-helpviewer_keywords:
-- code snippets, distributing
+helpviewer_keywords: code snippets, distributing
 ms.assetid: 5f717abd-e167-47ae-818c-6b0bae100ceb
-caps.latest.revision: 16
+caps.latest.revision: "16"
 author: gewarren
 ms.author: gewarren
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 47057e9611b824c17077b9127f8d2f8b192d6eb8
-ms.openlocfilehash: 8700d4814494aafb6558f354d5904ed647c1f5a7
-ms.contentlocale: it-it
-ms.lasthandoff: 05/13/2017
-
+dev_langs: VB
+ms.workload: multiple
+ms.openlocfilehash: 39f6006ec6dfe754efc58f2ccdc7b09d803de6b3
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="how-to-distribute-code-snippets"></a>Procedura: distribuire i frammenti di codice
 È sufficiente fornire i frammenti di codice ad altri utenti, che dovranno installarli nei computer con Gestione frammenti di codice. Se si hanno diversi frammenti da distribuire o si vuole distribuirli più ampiamente, tuttavia, è possibile includere il file di frammento in un'estensione di Visual Studio, che gli utenti di Visual Studio possono installare.  
 
- Per creare estensioni di Visual Studio, è necessario installare Visual Studio SDK. Individuare la versione di VSSDK che corrisponde all'installazione di Visual Studio in [Visual Studio Downloads](https://www.visualstudio.com/downloads/).  
+Per creare estensioni di Visual Studio, è necessario installare Visual Studio SDK. Individuare la versione di VSSDK che corrisponde all'installazione di Visual Studio in [Visual Studio Downloads](https://www.visualstudio.com/downloads/).  
 
 ## <a name="setting-up-the-extension"></a>Configurazione dell'estensione  
- In questa procedura si userà lo stesso frammento di codice Hello World creato in [Procedura dettagliata: creazione di un frammento di codice](../ide/walkthrough-creating-a-code-snippet.md). Il testo del file con estensione snippet è fornito. Non è quindi necessario tornare indietro e crearlo.  
+In questa procedura si userà lo stesso frammento di codice Hello World creato in [Procedura dettagliata: creazione di un frammento di codice](../ide/walkthrough-creating-a-code-snippet.md). Il testo del file con estensione snippet è fornito. Non è quindi necessario tornare indietro e crearlo.  
 
-1.  Creare un nuovo progetto VSIX denominato **TestSnippet**. (**File / Nuovo / Progetto / Visual C# (o Visual Basic / Extensibility**)  
+1.  Creare un nuovo progetto VSIX denominato **TestSnippet**. (**File**, **Nuovo**, **Progetto**, **Visual C# (o Visual Basic)**, **Extensibility**).  
 
 2.  Nel progetto **TestSnippet** aggiungere un nuovo file XML e denominarlo **VBCodeSnippet.snippet**. Sostituire il contenuto con quanto riportato di seguito.  
 
@@ -84,7 +69,7 @@ ms.lasthandoff: 05/13/2017
 
 1.  Aggiungere un file di testo alla cartella **HelloWorldVB** e denominarlo **HelloWorldVB.pkgdef**. Questo file consente di aggiungere alcune chiavi nel Registro di sistema. In questo caso viene aggiunta una nuova chiave a  
 
-     **HKCU\Software\Microsoft\VisualStudio\14.0\Languages\CodeExpansions\Basic**.  
+     **HKCU\Software\Microsoft\VisualStudio\15.0\Languages\CodeExpansions\Basic**.  
 
 2.  Aggiungere al file il codice seguente:  
 
@@ -94,13 +79,13 @@ ms.lasthandoff: 05/13/2017
     "HelloWorldVB"="$PackageFolder$"  
     ```  
 
-     Se si esamina questa chiave, è possibile visualizzare come specificare diverse lingue.  
+    Se si esamina questa chiave, è possibile visualizzare come specificare diverse lingue.  
 
 3.  Selezionare il file PKGDEF in Esplora soluzioni e nella finestra **Proprietà** assicurarsi che **Azione di compilazione** sia impostato su **Contenuto**, **Copia nella directory di output** sia impostato su **Copia sempre** e **Includi in VSIX** sia impostato su **true**.  
 
 4.  Aggiungere il file pkgdef come una risorsa nel manifesto VSIX. Nel file source.extension.vsixmanifest passare alla scheda **Asset** e fare clic su **Nuovo**.  
 
-5.  Nella finestra di dialogo **Aggiungi nuovo asset** impostare il **tipo** su **Microsoft.VisualStudio.VsPackage**, il **tipo** su **File in filesystem** e il **Percorso** su **HelloWorldVB.pkgdef** (che dovrebbe essere visualizzato nell'elenco a discesa).  
+5.  Nella finestra di dialogo **Aggiungi nuovo asset** impostare **Tipo** su **Microsoft.VisualStudio.VsPackage**, **Origine** su **File in filesystem** e **Percorso** su **HelloWorldVB.pkgdef** (che dovrebbe essere visualizzato nell'elenco a discesa).  
 
 ### <a name="testing-the-snippet"></a>Test del frammento di codice  
 
@@ -119,5 +104,4 @@ ms.lasthandoff: 05/13/2017
     ```  
 
 ## <a name="see-also"></a>Vedere anche  
- [Frammenti di codice](../ide/code-snippets.md)
-
+[Frammenti di codice](../ide/code-snippets.md)

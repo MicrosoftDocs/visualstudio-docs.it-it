@@ -1,69 +1,72 @@
 ---
-title: "Oggetto Proxy (JavaScript) | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/18/2017"
-ms.prod: "windows-client-threshold"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-javascript"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-dev_langs: 
-  - "JavaScript"
-  - "TypeScript"
-  - "DHTML"
+title: Oggetto proxy (JavaScript) | Documenti Microsoft
+ms.custom: 
+ms.date: 01/18/2017
+ms.prod: windows-client-threshold
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-javascript
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+dev_langs:
+- JavaScript
+- TypeScript
+- DHTML
 ms.assetid: 2b89abee-04fa-47e6-9676-980016cff5f8
-caps.latest.revision: 8
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.openlocfilehash: 489d329528e88c27df03ca0e6d6d1608a39446e1
+ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/27/2017
 ---
-# Oggetto Proxy (JavaScript)
+# <a name="proxy-object-javascript"></a>Oggetto Proxy (JavaScript)
 Abilita il comportamento personalizzato per un oggetto.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
 proxyObj = new Proxy(target, handler)  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `target`  
- Obbligatorio.  Oggetto o funzione che deve essere virtualizzato dal proxy.  
+ Obbligatorio. Oggetto o funzione che deve essere virtualizzato dal proxy.  
   
  `handler`  
- Obbligatorio.  Oggetto contenente metodi \(trap\) che implementano il comportamento personalizzato.  
+ Obbligatorio. Oggetto contenente metodi (trap) che implementano il comportamento personalizzato.  
   
-## Note  
- Gli oggetti `Proxy` vengono usati per intercettare le operazioni di basso livello interne su un altro oggetto.  Possono essere usati per l'intercettazione, la virtualizzazione di oggetti, la registrazione o il profiling e per altri scopi.  
+## <a name="remarks"></a>Note  
+ Gli oggetti `Proxy` vengono usati per intercettare le operazioni di basso livello interne su un altro oggetto. Possono essere usati per l'intercettazione, la virtualizzazione di oggetti, la registrazione o il profiling e per altri scopi.  
   
  Se nel parametro handler del proxy non è stato definito un trap per un'operazione specifica, l'operazione viene inoltrata al parametro target.  
   
- L'oggetto handler definisce i metodi \(trap\) seguenti per implementare il comportamento personalizzato.  Gli esempi seguenti non sono esaustivi.  Per supportare il comportamento predefinito condizionale nel metodo dell'oggetto handler, usare metodi di [Oggetto Reflect](../../javascript/reference/reflect-object-javascript.md).  
+ L'oggetto handler definisce i metodi (trap) seguenti per implementare il comportamento personalizzato. Gli esempi seguenti non sono esaustivi. Per supportare il comportamento predefinito condizionale nel metodo del gestore, utilizzare i metodi di [riflettere oggetto](../../javascript/reference/reflect-object-javascript.md).  
   
-|Sintassi del metodo \(trap\) di handler|Esempi di utilizzo|  
-|---------------------------------------------|------------------------|  
+|Sintassi del metodo (trap) di handler|Esempi di utilizzo|  
+|------------------------------------|-----------------------|  
 |`apply: function(target, thisArg, args)`|Trap per una chiamata di funzione.|  
 |`construct: function(target, args)`|Trap per un costruttore.|  
-|`defineProperty: function(target, propertyName, descriptor)`|Trap per [Funzione Object.defineProperty](../../javascript/reference/object-defineproperty-function-javascript.md).|  
+|`defineProperty: function(target, propertyName, descriptor)`|Trap per [funzione Object. DefineProperty](../../javascript/reference/object-defineproperty-function-javascript.md).|  
 |`deleteProperty: function(target, propertyName)`|Trap per l'istruzione `delete`.|  
-|`enumerate: function(target)`|Trap per l'istruzione [for…in](../../javascript/reference/for-dot-dot-dot-in-statement-javascript.md), [Object.getOwnPropertySymbols](../../javascript/reference/object-getownpropertysymbols-function-javascript.md), la funzione [Object.keys](../../javascript/reference/object-keys-function-javascript.md) e [JSON.stringify](../../javascript/reference/json-stringify-function-javascript.md).|  
-|`get: function(target, propertyName, receiver)`|Trap per qualsiasi proprietà [getter](../../javascript/creating-objects-javascript.md).|  
-|`getOwnPropertyDescriptor: function(target, propertyName)`|Trap per [Funzione Object.getOwnPropertyDescriptor](../../javascript/reference/object-getownpropertydescriptor-function-javascript.md).|  
-|`getPrototypeOf: function(target)`|Trap per [Funzione Object.getPrototypeOf](../../javascript/reference/object-getprototypeof-function-javascript.md).|  
-|`has: function(target, propertyName)`|Trap per l'operatore `in`, [Metodo hasOwnProperty \(Object\)](../../javascript/reference/hasownproperty-method-object-javascript.md) e altri metodi.|  
-|`isExtensible: function(target)`|Trap per [Funzione Object.isExtensible](../../javascript/reference/object-isextensible-function-javascript.md).|  
-|`ownKeys: function(target)`|Trap per [Funzione Object.getOwnPropertyNames](../../javascript/reference/object-getownpropertynames-function-javascript.md).|  
-|`preventExtensions: function(target)`|Trap per [Funzione Object.preventExtensions](../../javascript/reference/object-preventextensions-function-javascript.md).|  
-|`set: function(target, propertyName, value, receiver)`|Trap per qualsiasi proprietà [setter](../../javascript/creating-objects-javascript.md).|  
-|`setPrototypeOf: function(target, prototype)`|Trap per [Object.setPrototypeOf](../../javascript/reference/object-setprototypeof-function-javascript.md).|  
+|`enumerate: function(target)`|Trap per il [for.... in](../../javascript/reference/for-dot-dot-dot-in-statement-javascript.md) istruzione [Object. getownpropertysymbols](../../javascript/reference/object-getownpropertysymbols-function-javascript.md), [Object. Keys](../../javascript/reference/object-keys-function-javascript.md) funzione, e [JSON. stringify](../../javascript/reference/json-stringify-function-javascript.md).|  
+|`get: function(target, propertyName, receiver)`|Trap per qualsiasi [getter](../../javascript/creating-objects-javascript.md) proprietà.|  
+|`getOwnPropertyDescriptor: function(target, propertyName)`|Trap per [funzione Object. getOwnPropertyDescriptor](../../javascript/reference/object-getownpropertydescriptor-function-javascript.md).|  
+|`getPrototypeOf: function(target)`|Trap per [funzione Object. getprototypeof](../../javascript/reference/object-getprototypeof-function-javascript.md).|  
+|`has: function(target, propertyName)`|Trap per il `in` operatore [metodo hasOwnProperty (Object)](../../javascript/reference/hasownproperty-method-object-javascript.md)e altri metodi.|  
+|`isExtensible: function(target)`|Trap per [funzione Object. isextensible](../../javascript/reference/object-isextensible-function-javascript.md).|  
+|`ownKeys: function(target)`|Trap per [funzione Object. getownpropertynames](../../javascript/reference/object-getownpropertynames-function-javascript.md).|  
+|`preventExtensions: function(target)`|Trap per [funzione Object. preventextensions](../../javascript/reference/object-preventextensions-function-javascript.md).|  
+|`set: function(target, propertyName, value, receiver)`|Trap per qualsiasi [setter](../../javascript/creating-objects-javascript.md) proprietà.|  
+|`setPrototypeOf: function(target, prototype)`|Trap per [setprototypeof](../../javascript/reference/object-setprototypeof-function-javascript.md).|  
   
-## Esempio  
+## <a name="example"></a>Esempio  
  Nell'esempio di codice seguente viene illustrato come creare un proxy per un valore letterale dell'oggetto con il trap `get`.  
   
-```javascript  
+```JavaScript  
 var target = {};  
 var handler = {  
   get: function (receiver, name) {  
@@ -80,10 +83,10 @@ console.log(p.world);
   
 ```  
   
-## Esempio  
+## <a name="example"></a>Esempio  
  Nell'esempio di codice seguente viene illustrato come creare un proxy per una funzione con il trap `apply`.  
   
-```javascript  
+```JavaScript  
 var target = function () { return 'I am the target'; };  
 var handler = {  
   // This example includes a rest parameter.  
@@ -101,5 +104,5 @@ console.log(p()):
 // I am the proxy  
 ```  
   
-## Requisiti  
+## <a name="requirements"></a>Requisiti  
  [!INCLUDE[jsv12](../../javascript/reference/includes/jsv12-md.md)]

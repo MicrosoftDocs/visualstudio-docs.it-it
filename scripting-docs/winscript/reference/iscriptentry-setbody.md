@@ -1,27 +1,30 @@
 ---
-title: "IScriptEntry::SetBody | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/18/2017"
-ms.prod: "windows-script-interfaces"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
+title: IScriptEntry::SetBody | Documenti Microsoft
+ms.custom: 
+ms.date: 01/18/2017
+ms.prod: windows-script-interfaces
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: reference
 apiname: IScriptEntry.SetBody
 apilocation: scrobj.dll
-helpviewer_keywords: 
-  - "IScriptEntry::SetBody"
+helpviewer_keywords: IScriptEntry::SetBody
 ms.assetid: 719062e4-98e4-4a7b-946d-6e5dbbcc5225
-caps.latest.revision: 12
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 12
+caps.latest.revision: "12"
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.openlocfilehash: 06ee232aa730366e9a23e15cdc45f6734b9ef744
+ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/27/2017
 ---
-# IScriptEntry::SetBody
-Imposta il testo che è il corpo di un blocco di script `IScriptEntry` o di uno scriptlet `IScriptScriptlet`.  
+# <a name="iscriptentrysetbody"></a>IScriptEntry::SetBody
+Imposta il testo che si trova nel corpo di un `IScriptEntry` blocco di script o un `IScriptScriptlet` scriptlet.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
 HRESULT SetBody(  
@@ -29,23 +32,23 @@ HRESULT SetBody(
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `psz`  
- \[in\] per un blocco di script `IScriptEntry`, `psz` è il testo racchiuso tra i tag script.  
+ [in] Per un `IScriptEntry` blocco di script, `psz` è il testo racchiuso tra i tag di script.  
   
- Per un blocco funzione `IScriptEntry`, `psz` è il corpo della funzione.  
+ Per un `IScriptEntry` blocco funzione `psz` è il corpo della funzione.  
   
- Per un oggetto `IScriptScriptlet` \(che deriva da `IScriptEntry`\), `psz` è il testo dello script di scriptlet.  
+ Per un `IScriptScriptlet` oggetto (che deriva da `IScriptEntry`), `psz` è il testo dello script dello scriptlet.  
   
-## Valore restituito  
- Oggetto `HRESULT`.  I valori possibili sono, ma non sono limitati a, quelli nella tabella seguente.  
+## <a name="return-value"></a>Valore restituito  
+ Oggetto `HRESULT`. I valori possibili includono, ma non sono limitati a, quelli indicati nella tabella seguente.  
   
 |Valore|Descrizione|  
-|------------|-----------------|  
+|-----------|-----------------|  
 |`S_OK`|Il metodo è riuscito.|  
   
-## Note  
+## <a name="remarks"></a>Note  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Interfaccia IScriptEntry](../../winscript/reference/iscriptentry-interface.md)   
  [IScriptEntry::GetBody](../../winscript/reference/iscriptentry-getbody.md)

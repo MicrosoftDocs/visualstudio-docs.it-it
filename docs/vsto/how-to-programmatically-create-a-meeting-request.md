@@ -1,12 +1,10 @@
 ---
-title: 'How to: Programmatically Create a Meeting Request | Microsoft Docs'
+title: 'Procedura: creazione di una convocazione riunione a livello di codice | Documenti Microsoft'
 ms.custom: 
 ms.date: 02/02/2017
-ms.prod: visual-studio-dev14
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- office-development
+ms.technology: office-development
 ms.tgt_pltfrm: 
 ms.topic: article
 dev_langs:
@@ -16,28 +14,27 @@ helpviewer_keywords:
 - meeting requests [Office development in Visual Studio]
 - appointments [Office development in Visual Studio]
 - calendars [Office development in Visual Studio], meeting requests
-ms.assetid: 889f8fa4-c0d0-42be-9c16-9987b43008ab
-caps.latest.revision: 20
-author: kempb
-ms.author: kempb
+author: TerryGLee
+ms.author: tglee
 manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: eb5c9550fd29b0e98bf63a7240737da4f13f3249
-ms.openlocfilehash: 8a19f6437108e898b174101cb0965a280b9fd335
-ms.contentlocale: it-it
-ms.lasthandoff: 08/30/2017
-
+ms.workload: office
+ms.openlocfilehash: 7a3c161b837d0007655dd13043b94904f0b4ecd4
+ms.sourcegitcommit: f9fbf1f55f9ac14e4e5c6ae58c30dc1800ca6cda
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 01/10/2018
 ---
-# <a name="how-to-programmatically-create-a-meeting-request"></a>How to: Programmatically Create a Meeting Request
-  This example creates a meeting request in Microsoft Office Outlook and sends the request to a required attendee.  
+# <a name="how-to-programmatically-create-a-meeting-request"></a>Procedura: Creare una convocazione riunione a livello di codice
+  In questo esempio viene creata una convocazione riunione in Microsoft Office Outlook e viene inviata la convocazione a un partecipante richiesto.  
   
  [!INCLUDE[appliesto_olkallapp](../vsto/includes/appliesto-olkallapp-md.md)]  
   
-## <a name="example"></a>Example  
- [!code-csharp[Trin_Outlook_RL_MeetingRequest#1](../vsto/codesnippet/CSharp/Trin_Outlook_RL_MeetingRequest/thisaddin.cs#1)] [!code-vb[Trin_Outlook_RL_MeetingRequest#1](../vsto/codesnippet/VisualBasic/Trin_Outlook_RL_MeetingRequest/thisaddin.vb#1)]  
+## <a name="example"></a>Esempio  
+ [!code-csharp[Trin_Outlook_RL_MeetingRequest#1](../vsto/codesnippet/CSharp/Trin_Outlook_RL_MeetingRequest/thisaddin.cs#1)]
+ [!code-vb[Trin_Outlook_RL_MeetingRequest#1](../vsto/codesnippet/VisualBasic/Trin_Outlook_RL_MeetingRequest/thisaddin.vb#1)]  
   
-## <a name="see-also"></a>See Also  
- [Working with Calendar Items](../vsto/working-with-calendar-items.md)   
- [Getting Started Programming VSTO Add-ins](../vsto/getting-started-programming-vsto-add-ins.md)  
+## <a name="see-also"></a>Vedere anche  
+ [Utilizzo degli elementi di calendario](../vsto/working-with-calendar-items.md)   
+ [Introduzione alla programmazione dei componenti aggiuntivi VSTO](../vsto/getting-started-programming-vsto-add-ins.md)  
   
   

@@ -4,36 +4,21 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.tgt_pltfrm: 
 ms.topic: article
 helpviewer_keywords:
 - text templates, custom directive processors
 - walkthroughs [text templates], directive processor
-ms.assetid: b8f35a36-14e1-4467-8f5f-e01402af14d5
-caps.latest.revision: 74
-author: alancameronwills
-ms.author: awills
-manager: douge
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+author: gewarren
+ms.author: gewarren
+manager: ghogen
+ms.workload:
+- multiple
+ms.technology: vs-ide-modeling
+ms.openlocfilehash: 94008906dbc38a22e0f27de1a13acbccae8df7a4
+ms.sourcegitcommit: 205d15f4558315e585c67f33d5335d5b41d0fcea
 ms.translationtype: MT
-ms.sourcegitcommit: 4a36302d80f4bc397128e3838c9abf858a0b5fe8
-ms.openlocfilehash: 449a8d80eef26935251c265b526d8aacd471d147
-ms.contentlocale: it-it
-ms.lasthandoff: 09/26/2017
-
+ms.contentlocale: it-IT
+ms.lasthandoff: 02/09/2018
 ---
 # <a name="walkthrough-creating-a-custom-directive-processor"></a>Procedura dettagliata: creazione di un processore di direttiva personalizzato
 *Processori di direttiva* funzionano aggiungendo codice per il *classe della trasformazione generata*. Se si chiama un *direttiva* da un *modello di testo*, il resto del codice che scrive nel modello di testo può basarsi sulle funzionalità che la direttiva fornisce.  
@@ -104,9 +89,9 @@ End Property
   
 2.  Aggiungere riferimenti a questi assembly:  
   
-    -   **Microsoft.VisualStudio.TextTemplating. \*,0**  
+    -   **Microsoft.VisualStudio.TextTemplating.\*.0**  
   
-    -   **TextTemplating. \*,0**  
+    -   **Microsoft.VisualStudio.TextTemplating.Interfaces.\*.0**  
   
 3.  Sostituire il codice in **Class1** con il codice seguente. Questo codice definisce una classe CustomDirectiveProcessor che eredita dalla classe <xref:Microsoft.VisualStudio.TextTemplating.DirectiveProcessor> e implementa i metodi necessari.  
   
@@ -650,7 +635,7 @@ HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\VisualStudio\*.0\TextTemplatin
  In questa sezione, si aggiunge una chiave per il processore di direttiva personalizzato al Registro di sistema nella stessa posizione.  
   
 > [!CAUTION]
->  Una modifica errata del Registro di sistema può provocare gravi danni al sistema. Prima di apportare modifiche al Registro di sistema, eseguire il backup dei dati importanti presenti nel computer.  
+>  Eventuali modifiche non corrette al Registro di sistema possono danneggiare gravemente il sistema. Prima di apportare modifiche al Registro di sistema, eseguire il backup dei dati importanti presenti nel computer.  
   
 #### <a name="to-add-a-registry-key-for-the-directive-processor"></a>Per aggiungere una chiave del Registro di sistema per il processore di direttiva  
   
@@ -673,7 +658,7 @@ HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\VisualStudio\*.0\TextTemplatin
   
      La chiave del Registro di sistema deve contenere i valori seguenti:  
   
-    |Nome|Tipo|Dati|  
+    |nome|Tipo|Dati|  
     |----------|----------|----------|  
     |(Predefinito)|REG_SZ|(valore non impostato)|  
     |Classe|REG_SZ|CustomDP.CustomDirectiveProcessor|  
@@ -681,7 +666,7 @@ HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\VisualStudio\*.0\TextTemplatin
   
      Se si è inserito l'assembly nella GAC, i valori appariranno come indicato di seguito:  
   
-    |Nome|Tipo|Dati|  
+    |nome|Tipo|Dati|  
     |----------|----------|----------|  
     |(Predefinito)|REG_SZ|(valore non impostato)|  
     |Classe|REG_SZ|CustomDP.CustomDirectiveProcessor|  
@@ -983,4 +968,3 @@ HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\VisualStudio\*.0\TextTemplatin
 3.  Per visualizzare l'output in un browser, in **Esplora**, fare doppio clic su TestDP.htm e fare clic su **Visualizza nel Browser**.  
   
      L'output deve corrispondere al testo originale con la differenza che deve essere in formato HTML. Ogni nome di elemento deve essere visualizzato in grassetto.
-

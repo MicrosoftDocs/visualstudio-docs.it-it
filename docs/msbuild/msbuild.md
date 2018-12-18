@@ -4,38 +4,24 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- vs-ide-sdk
+ms.technology: msbuild
 ms.tgt_pltfrm: 
 ms.topic: article
 helpviewer_keywords:
 - MSBuild, about MSBuild
 - MSBuild, overview
 ms.assetid: e39f13f7-1e1d-4435-95ca-0c222bca071c
-caps.latest.revision: 59
-author: kempb
-ms.author: kempb
+caps.latest.revision: 
+author: Mikejo5000
+ms.author: mikejo
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 44e9d5e7af0994c494522a043c74046c6667abeb
-ms.openlocfilehash: 3b7d14a96683da16d1c7e6bae6a5226bfbaaa616
-ms.contentlocale: it-it
-ms.lasthandoff: 06/08/2017
-
+ms.workload:
+- multiple
+ms.openlocfilehash: f7fd044ccc50d5c988ae121a66a362158a750e17
+ms.sourcegitcommit: 205d15f4558315e585c67f33d5335d5b41d0fcea
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 02/09/2018
 ---
 # <a name="msbuild"></a>MSBuild
 [!INCLUDE[vstecmsbuildengine](../msbuild/includes/vstecmsbuildengine_md.md)] è una piattaforma per la compilazione di applicazioni. Questo motore, anche noto come MSBuild, fornisce un XML Schema per un file di progetto che controlla il modo in cui la piattaforma di compilazione elabora e compila il software. Visual Studio utilizza MSBuild, ma esso non dipende da Visual Studio. Richiamando msbuild.exe nel progetto o nel file della soluzione, è possibile orchestrare e compilare prodotti in ambienti in cui Visual Studio non è installato.  
@@ -65,7 +51,7 @@ ms.lasthandoff: 06/08/2017
  È possibile scrivere codice nell'IDE di Visual Studio ed eseguire le compilazioni tramite MSBuild. In alternativa, è possibile compilare il codice nell'IDE in un computer di sviluppo e usare una riga di comando di MSBuild per compilare il codice integrato da più sviluppatori.  
   
 > [!NOTE]
->  È possibile usare Team Foundation Build per compilare, testare e distribuire l'applicazione automaticamente. Il sistema di compilazione può eseguire le compilazioni automaticamente quando gli sviluppatori archiviano il codice, ad esempio come parte di una strategia di integrazione continuata, o secondo a una pianificazione, ad esempio una compilazione notturna di test di verifica compilazione. In Team Foundation Build il codice viene compilato tramite MSBuild. Per altre informazioni, vedere [Build the application](http://msdn.microsoft.com/Library/a971b0f9-7c28-479d-a37b-8fd7e27ef692) (Compilare l'applicazione).  
+>  È possibile usare Team Foundation Build per compilare, testare e distribuire l'applicazione automaticamente. Il sistema di compilazione può eseguire le compilazioni automaticamente quando gli sviluppatori archiviano il codice, ad esempio come parte di una strategia di integrazione continuata, o secondo a una pianificazione, ad esempio una compilazione notturna di test di verifica compilazione. In Team Foundation Build il codice viene compilato tramite MSBuild. Per altre informazioni, vedere [Compilazione e versione](/vsts/build-release/index).  
   
  Nel presente argomento viene fornita una panoramica di MSBuild. Per un'esercitazione introduttiva, vedere [Procedura dettagliata: Uso di MSBuild](../msbuild/walkthrough-using-msbuild.md).  
   
@@ -184,7 +170,7 @@ MSBuild.exe MyProj.proj /property:Configuration=Debug
  È possibile registrare errori di compilazione, avvisi e messaggi sulla console o in un altro dispositivo di output. Per altre informazioni, vedere [Recupero di log di compilazione](../msbuild/obtaining-build-logs-with-msbuild.md) e [Registrazione in MSBuild](../msbuild/logging-in-msbuild.md).  
   
 ##  <a name="BKMK_VisualStudio"></a> Uso di MSBuild in Visual Studio  
- In [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] viene usato il formato di file di progetto di [!INCLUDE[vstecmsbuild](../extensibility/internals/includes/vstecmsbuild_md.md)] per archiviare le informazioni di compilazione relative ai progetti gestiti. Le impostazioni di progetto aggiunte o modificate usando l'interfaccia [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] vengono riflesse nel file .*proj generato per ogni progetto. [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] utilizza un'istanza di hosting di [!INCLUDE[vstecmsbuild](../extensibility/internals/includes/vstecmsbuild_md.md)] per compilare progetti gestiti. Ciò significa che è possibile compilare un progetto gestito in [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] o al prompt dei comandi, anche se [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] non è installato, con risultati identici.  
+ [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] usa il formato di file di progetto di [!INCLUDE[vstecmsbuild](../extensibility/internals/includes/vstecmsbuild_md.md)] per archiviare le informazioni di compilazione relative ai progetti gestiti. Le impostazioni di progetto aggiunte o modificate usando l'interfaccia [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] vengono riflesse nel file .*proj generato per ogni progetto. [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] utilizza un'istanza di hosting di [!INCLUDE[vstecmsbuild](../extensibility/internals/includes/vstecmsbuild_md.md)] per compilare progetti gestiti. Ciò significa che è possibile compilare un progetto gestito in [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] o al prompt dei comandi, anche se [!INCLUDE[vsprvs](../code-quality/includes/vsprvs_md.md)] non è installato, con risultati identici.  
   
  Per un'esercitazione sull'uso di MSBuild in Visual Studio, vedere [Procedura dettagliata: Uso di MSBuild](../msbuild/walkthrough-using-msbuild.md).  
   
@@ -221,10 +207,8 @@ MSBuild.exe MyProj.proj /property:Configuration=Debug
 |[Registrazione a MSBuild](../msbuild/logging-in-msbuild.md)|Descrive come registrare eventi, messaggi ed errori.|  
 |[Risorse aggiuntive](../msbuild/additional-msbuild-resources.md)|Elenca risorse della community e di supporto che consentono di ottenere altre informazioni su MSBuild.|  
   
-## <a name="reference"></a>Riferimento  
+## <a name="reference"></a>Riferimenti  
  [Riferimenti a MSBuild](../msbuild/msbuild-reference.md)  
  Collegamenti ad argomenti che contengono informazioni di riferimento.  
   
- [Glossario](msbuild-glossary.md)
- Definisce termini comuni di MSBuild.
-
+ [Glossario](msbuild-glossary.md) Definisce i termini comuni di MSBuild.

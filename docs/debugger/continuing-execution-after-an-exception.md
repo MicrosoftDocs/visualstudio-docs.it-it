@@ -1,60 +1,51 @@
 ---
-title: "Continuazione dell&#39;esecuzione dopo un&#39;eccezione | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/05/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "FSharp"
-  - "VB"
-  - "CSharp"
-  - "C++"
-  - "JScript"
-  - "VB"
-  - "CSharp"
-  - "C++"
-helpviewer_keywords: 
-  - "debugger, eccezioni"
-  - "gestione eccezioni, continuazione dell'esecuzione"
-  - "Eccezioni (finestra di dialogo)"
-  - "eccezioni, continuazione dell'esecuzione"
-  - "esecuzione, continuazione dopo un'eccezione"
-  - "codice gestito, gestione eccezioni"
-  - "eccezioni gestite, continuazione dell'esecuzione"
-  - "esecuzione di programmi"
-  - "programmi, esecuzione"
-  - "threading [Visual Studio], continuazione dell'esecuzione dopo le eccezioni"
+title: Continuazione dell'esecuzione dopo un'eccezione | Documenti Microsoft
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: vs-ide-debug
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- CSharp
+- VB
+- FSharp
+- C++
+- JScript
+helpviewer_keywords:
+- managed exceptions, continuing execution after
+- exceptions, continuing execution after
+- debugger, exceptions
+- managed code, exception handling
+- exception handling, continuing execution after
+- execution, continuing after an exception
+- program execution
+- threading [Visual Studio], continuing execution after exceptions
+- Exceptions dialog box
+- programs, executing
 ms.assetid: 6fe97aac-2131-4615-bd92-d3afee741558
-caps.latest.revision: 25
-caps.handback.revision: 25
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
+caps.latest.revision: "25"
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.workload: multiple
+ms.openlocfilehash: 84ade967c00e33390402e16a1b2980277f89ed5a
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
-# Continuazione dell&#39;esecuzione dopo un&#39;eccezione
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
-Quando l'esecuzione viene interrotta dal debugger a causa di un'eccezione, viene visualizzata una finestra di dialogo.  Per impostazione predefinita, per Visual Basic o C\# viene visualizzata la finestra di dialogo [Exception Assistant](../Topic/Exception%20Assistant.md).  Per C\+\+, viene visualizzata la finestra di dialogo **Eccezione** precedente.  Se si utilizza Visual Basic o C\#, ma l'opzione **Informazioni sulle eccezioni** è stata disabilitata nella finestra di dialogo **Opzioni**, viene visualizzata la finestra di dialogo **Eccezione**.  
+# <a name="continuing-execution-after-an-exception"></a>Continuazione dell'esecuzione dopo un'eccezione
+Quando il debugger interrompe l'esecuzione a causa di un'eccezione, verrà visualizzato il **supporto eccezioni**, per impostazione predefinita. Se è stata disabilitata la **supporto eccezioni** nel **opzioni** nella finestra di dialogo verrà visualizzato il **eccezioni** (in c# o Visual Basic) o **eccezione**  la finestra di dialogo (C++).  
   
- Quando viene visualizzata la finestra di dialogo **Informazioni sulle eccezioni** o **Eccezione**, è possibile tentare di risolvere il problema che ha provocato l'eccezione.  
+ Quando il **supporto eccezioni** viene visualizzata, è possibile provare a risolvere il problema che ha causato l'eccezione.
   
-## Codice gestito  
- Nel codice gestito, è possibile continuare l'esecuzione nello stesso thread dopo un'eccezione non gestita.  La funzionalità **Informazioni sulle eccezioni** rimuove lo stack di chiamate fino al punto in cui è stata generata l'eccezione.  
+## <a name="managed-and-native-code"></a>Codice gestito e nativo  
+ Nel codice gestito e nativo, è possibile continuare l'esecuzione nello stesso thread dopo un'eccezione non gestita. Il **supporto eccezioni** rimuove lo stack di chiamate al punto in cui è stata generata l'eccezione.
   
-## Codice nativo  
- In C\/C\+\+ nativo, sono disponibili due opzioni:  
+## <a name="mixed-code"></a>Codice misto  
+ Se si rileva un'eccezione non gestita durante il debug di codice misto nativo e gestito, i vincoli del sistema operativo impediscono la rimozione dello stack di chiamate. Se si tenta di rimuovere lo stack di chiamate utilizzando il menu di scelta rapida, un messaggio di errore indica che il debugger non può eseguire la rimozione da un'eccezione non gestita durante il debug di codice misto.  
   
--   È possibile fare clic su **Interrompi** e tentare di risolvere il problema.  Nella modalità di interruzione, è possibile rimuovere lo stack di chiamate facendo clic con il pulsante destro del mouse su un frame nella finestra **Stack di chiamate** e selezionando **Rimuovi fino a questo frame** dal menu di scelta rapida.  Quando si continua il debug, se il problema non è stato risolto, verrà nuovamente visualizzata la finestra di dialogo **Eccezione**.  In caso contrario, la finestra di dialogo **Eccezione** non verrà più visualizzata.  
-  
--   È possibile fare clic su **Continua** per continuare l'esecuzione senza tentare di risolvere il problema.  In tal caso, verrà nuovamente visualizzata la finestra di dialogo **Eccezione**.  
-  
-## Codice misto  
- Se si rileva un'eccezione non gestita durante il debug di codice misto nativo e gestito, i vincoli del sistema operativo impediscono la rimozione dello stack di chiamate.  Se si tenta di rimuovere lo stack di chiamate utilizzando il menu di scelta rapida, un messaggio di errore indica che il debugger non può eseguire la rimozione da un'eccezione non gestita durante il debug di codice misto.  
-  
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Gestione delle eccezioni con il Debugger](../debugger/managing-exceptions-with-the-debugger.md)

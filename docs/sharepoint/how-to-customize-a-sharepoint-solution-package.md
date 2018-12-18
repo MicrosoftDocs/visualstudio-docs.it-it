@@ -1,99 +1,99 @@
 ---
-title: "Procedura: personalizzare un pacchetto della soluzione SharePoint"
-ms.custom: ""
-ms.date: "02/02/2017"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "office-development"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "VS.SharePointTools.RAD.PackageDesignerAdvanced"
-  - "VS.SharePointTools.RAD.PackageDesigner.Manifest"
-  - "VS.SharePointTools.RAD.PackageDesignerProperties"
-  - "VS.SharePointTools.RAD.PackageDesigner.SwitchView"
-dev_langs: 
-  - "VB"
-  - "CSharp"
-  - "VB"
-  - "CSharp"
-helpviewer_keywords: 
-  - "sviluppo per SharePoint in Visual Studio, pacchetti"
-ms.assetid: fd365f8c-8a80-4ce8-8e28-c0eb609f12f3
-caps.latest.revision: 20
-author: "kempb"
-ms.author: "kempb"
-manager: "ghogen"
-caps.handback.revision: 19
+title: 'Procedura: personalizzare un pacchetto di soluzione SharePoint | Documenti Microsoft'
+ms.custom: 
+ms.date: 02/02/2017
+ms.reviewer: 
+ms.suite: 
+ms.technology: office-development
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- VS.SharePointTools.RAD.PackageDesignerAdvanced
+- VS.SharePointTools.RAD.PackageDesigner.Manifest
+- VS.SharePointTools.RAD.PackageDesignerProperties
+- VS.SharePointTools.RAD.PackageDesigner.SwitchView
+dev_langs:
+- VB
+- CSharp
+- VB
+- CSharp
+helpviewer_keywords: SharePoint development in Visual Studio, packages
+author: TerryGLee
+ms.author: tglee
+manager: ghogen
+ms.workload: office
+ms.openlocfilehash: 277ceea1b908c5819608a1bdf1d6be97c2f6ce77
+ms.sourcegitcommit: f9fbf1f55f9ac14e4e5c6ae58c30dc1800ca6cda
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 01/10/2018
 ---
-# Procedura: personalizzare un pacchetto della soluzione SharePoint
-  Per creare e personalizzare un pacchetto \(con estensione wsp\) è possibile utilizzare la finestra di progettazione del pacchetto.  Ad esempio si possono aggiungere gli elementi e le funzionalità del progetto SharePoint, specificare se il server Web viene reimpostato quando la soluzione viene distribuita e impostare il tipo di server di distribuzione.  
+# <a name="how-to-customize-a-sharepoint-solution-package"></a>Procedura: personalizzare un pacchetto della soluzione SharePoint
+  È possibile utilizzare la finestra di progettazione del pacchetto per creare e personalizzare un pacchetto (con estensione wsp). Ad esempio, è possibile aggiungere elementi di progetto SharePoint e le funzionalità, specificare se il server Web viene reimpostato quando viene distribuita la soluzione e impostare il tipo di server di distribuzione.  
   
-## Apertura della finestra di progettazione del pacchetto  
+## <a name="opening-the-package-designer"></a>La finestra di progettazione del pacchetto  
   
-#### Per aprire la finestra di progettazione del pacchetto  
+#### <a name="to-open-the-package-designer"></a>Per aprire la finestra di progettazione del pacchetto  
   
--   In **Esplora soluzioni**, fare doppio clic su **Pacchetto**, oppure scegliere **Progettazione viste** dal menu di scelta rapida per **Pacchetto**.  
+-   In **Esplora**, fare doppio clic su **pacchetto**, oppure scegliere **Visualizza finestra di progettazione** nel menu di scelta rapida per **pacchetto**.  
   
-## Visualizzazione del file manifesto nel pacchetto  
- Per modificare e generare il file manifesto nel pacchetto è possibile utilizzare la finestra di progettazione del pacchetto.  Successivamente è possibile visualizzare il codice XML per questo file in Visual Studio.  
+## <a name="viewing-the-packaged-manifest-file"></a>Visualizzazione del File manifesto nel pacchetto  
+ È possibile utilizzare la finestra di progettazione del pacchetto per modificare e generare il file manifesto nel pacchetto. Quindi, è possibile visualizzare il codice XML per questo file in Visual Studio.  
   
-#### Per visualizzare il file di origine XML  
+#### <a name="to-view-the-xml-source-file"></a>Per visualizzare il file di origine XML  
   
-1.  In **Progettazione pacchetti**, scegliere **Manifesto**.  
+1.  Nel **Progettazione pacchetti**, scegliere **manifesto**.  
   
-#### Per visualizzare il file manifesto nel pacchetto tramite Esplora soluzioni  
+#### <a name="to-view-the-packaged-manifest-file-by-using-solution-explorer"></a>Per visualizzare il file manifesto nel pacchetto utilizzando Esplora soluzioni  
   
-1.  In **Esplora soluzioni** selezionare **Mostra tutti i file**.  
+1.  In **Esplora**, scegliere **Mostra tutti i file**.  
   
-2.  Espandere pacchetto, espandere Package.package e aprire il file Package.Template.xml.  
+2.  Espandere pacchetto package. package espandere e quindi aprire il file Package.Template.xml.  
   
     > [!NOTE]  
-    >  Quando si apre il file manifesto in formato XML per il modello del pacchetto, i file vengono automaticamente convalidati ed è possibile ignorare gli avvisi che vengono visualizzati nella finestra Elenco errori.  
+    >  Quando si apre il file manifesto XML per il modello di pacchetto, i file vengono convalidati automaticamente, ed è possibile ignorare gli avvisi visualizzati nella finestra Elenco errori.  
   
-## Modifica del modello di manifesto  
- Il codice XML per il file manifesto nel pacchetto può essere modificato nell'editor XML di Visual Studio o nel riquadro Modello di manifesto.  Per qualsiasi modifica al codice XML viene eseguito il merge all'interno del file manifesto per il pacchetto.  
+## <a name="changing-the-manifest-template"></a>La modifica del modello di manifesto  
+ È possibile modificare il codice XML per il file manifesto nel pacchetto nell'Editor XML di Visual Studio o nel riquadro modello di manifesto. Tutte le modifiche al codice XML vengono unite nel file manifesto nel pacchetto per il pacchetto.  
   
-#### Per modificare il modello di manifesto tramite l'editor XML  
+#### <a name="to-change-the-manifest-template-by-using-the-xml-editor"></a>Per modificare il modello di manifesto tramite l'Editor XML  
   
-1.  In **Progettazione pacchetti**, scegliere la scheda **Manifesto**, espandere il nodo **Opzioni di modifica** quindi scegliere il collegamento **Apri in XML Editor**.  
+1.  Nel **Progettazione pacchetti**, scegliere il **manifesto** scheda, espandere il **opzioni di modifica** nodo e quindi scegliere il **aperto nell'Editor XML** collegamento.  
   
-     Le modifiche apportate al codice XML vengono incluse al file manifesto nel pacchetto.  
+     Le modifiche al codice XML vengono unite nel file manifesto nel pacchetto.  
   
-#### Per modificare il modello di manifesto tramite il riquadro Modello di manifesto  
+#### <a name="to-change-the-manifest-template-by-using-the-manifest-template-pane"></a>Per modificare il modello di manifesto tramite il riquadro modello di manifesto  
   
-1.  In **Progettazione pacchetti**, scegliere la scheda **Manifesto**, espandere il nodo **Opzioni di modifica** quindi modificare l'XML visualizzato nel riquadro Modello di manifesto.  
+1.  Nel **Progettazione pacchetti**, scegliere il **manifesto** scheda, espandere il **opzioni di modifica** nodo e quindi modificare il codice XML che viene visualizzata nel riquadro modello di manifesto.  
   
-     Le modifiche apportate al codice XML vengono visualizzate nel riquadro **Anteprima del manifesto nel pacchetto**.  
+     Le modifiche al codice XML visualizzato nel **anteprima del manifesto nel pacchetto** riquadro.  
   
-## Sovrascrittura del file manifesto nel pacchetto  
- È possibile disabilitare la finestra di progettazione del pacchetto e creare manualmente il file manifest.xml.  Alla prima esecuzione di questa procedura, le impostazioni correnti della finestra di progettazione del pacchetto vengono salvate nel file XML del modello del pacchetto.  Successivamente, è possibile modificare o sovrascrivere il codice XML.  
+## <a name="overwriting-the-packaged-manifest-file"></a>Sovrascrivere il File manifesto nel pacchetto  
+ È possibile disattivare la finestra di progettazione del pacchetto e creare manualmente il file manifest. La prima volta che si esegue questa procedura, le impostazioni correnti nella finestra di progettazione del pacchetto vengono salvate in file XML del modello di pacchetto. Quindi, è possibile modificare o sovrascrivere il codice XML.  
   
 > [!NOTE]  
->  Se si aggiungono o rimuovono elementi e funzionalità del progetto SharePoint dal file XML mentre la finestra di progettazione del pacchetto è disabilitata, questi elementi e funzionalità del progetto non vengono inclusi nel pacchetto.  
+>  Se si aggiunge o rimuovere elementi di progetto SharePoint e funzionalità nel file XML, mentre la finestra di progettazione del pacchetto è disabilitato, questi elementi di progetto e la funzionalità non sono inclusi nel pacchetto.  
   
-#### Per sovrascrivere il file manifesto incluso nel pacchetto disabilitando la finestra di progettazione  
+#### <a name="to-overwrite-packaged-manifest-file-by-disabling-the-designer"></a>Per sovrascrivere il file manifesto disabilitando la finestra di progettazione  
   
-1.  In **Progettazione pacchetti**, selezionare la scheda **Manifesto**.  
+1.  Nel **Progettazione pacchetti**, scegliere il **manifesto** scheda.  
   
 2.  .  
   
-3.  Espandere il nodo **Opzioni di modifica**, scegliere il collegamento **Sovrascrivi l'XML generato e modifica manifesto nell'editor XML** quindi scegliere il pulsante **Sì**.  
+3.  Espandere il **opzioni di modifica** nodo, scegliere il **Sovrascrivi XML e modifica manifesto generato nell'editor XML** collegamento e quindi scegliere il **Sì** pulsante.  
   
-     Il modello viene aggiornato con il file manifesto attualmente incluso nel pacchetto.  
+     Il modello viene aggiornato con il file manifesto nel pacchetto corrente.  
   
-## Abilitazione della finestra di progettazione del pacchetto  
- È possibile riabilitare la finestra di progettazione del pacchetto per personalizzare il file manifest.xml.  
+## <a name="enabling-the-package-designer"></a>Abilitare la finestra di progettazione del pacchetto  
+ È possibile abilitare nuovamente la finestra di progettazione del pacchetto per personalizzare il file manifest.  
   
-#### Per riabilitare la finestra di progettazione  
+#### <a name="to-re-enable-the-designer"></a>Per abilitare nuovamente la finestra di progettazione  
   
-1.  In **Progettazione pacchetti**, scegliere il collegamento **Rimuovere le modifiche del manifesto e riabilitare la finestra di progettazione** quindi scegliere il pulsante **Sì**.  
+1.  Nel **Progettazione pacchetti**, scegliere il **Ignora modifiche al manifesto e riabilita la finestra di progettazione** collegamento e quindi scegliere il **Sì** pulsante.  
   
-     Il modello viene aggiornato con il testo originale e vengono perse tutte le modifiche apportate al codice XML.  
+     Il modello viene aggiornato con il testo originale e le modifiche al codice XML vengono perse.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Creazione del pacchetto e distribuzione delle soluzioni SharePoint](../sharepoint/packaging-and-deploying-sharepoint-solutions.md)  
   
   

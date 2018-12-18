@@ -1,50 +1,54 @@
 ---
-title: "CA2223: La differenza tra membri non deve limitarsi al tipo restituito | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-devops-test"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "MembersShouldDifferByMoreThanReturnType"
-  - "CA2223"
-helpviewer_keywords: 
-  - "CA2223"
-  - "MembersShouldDifferByMoreThanReturnType"
+title: "CA2223: Membri devono limitarsi al tipo restituito più di | Documenti Microsoft"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- vs-ide-code-analysis
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- MembersShouldDifferByMoreThanReturnType
+- CA2223
+helpviewer_keywords:
+- CA2223
+- MembersShouldDifferByMoreThanReturnType
 ms.assetid: eb326d9f-50d9-48cb-84be-d41c84a8fe09
-caps.latest.revision: 14
-author: "stevehoag"
-ms.author: "shoag"
-manager: "wpickett"
-caps.handback.revision: 14
+caps.latest.revision: 
+author: gewarren
+ms.author: gewarren
+manager: ghogen
+ms.workload:
+- multiple
+ms.openlocfilehash: 4c72475c76a85216499a389d12f090ef302fc143
+ms.sourcegitcommit: d6327b978661c0a745bf4b59f32d8171607803a3
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 02/01/2018
 ---
-# CA2223: La differenza tra membri non deve limitarsi al tipo restituito
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
+# <a name="ca2223-members-should-differ-by-more-than-return-type"></a>CA2223: La differenza tra membri non deve limitarsi al tipo restituito
 |||  
 |-|-|  
 |TypeName|MembersShouldDifferByMoreThanReturnType|  
 |CheckId|CA2223|  
 |Category|Microsoft.Usage|  
-|Breaking Change|Breaking|  
+|Modifica importante|Interruzione|  
   
-## Causa  
- Due membri pubblici o protetti presentano firme identiche ad eccezione del tipo restituito.  
+## <a name="cause"></a>Causa  
+ Due membri pubblici o protetti avere le firme sono identiche tranne che per il tipo restituito.  
   
-## Descrizione della regola  
- Nonostante il Common Language Runtime consenta l'utilizzo di tipi restituiti per differenziare membri altrimenti identici, questa funzionalità non è contenuta nella specifica CLS \(Common Language Specification\) né appartiene comunemente ai linguaggi di programmazione .NET.  Quando i membri differiscono solo per il tipo restituito, gli sviluppatori e gli strumenti di sviluppo potrebbero non essere in grado di distinguerli correttamente.  
+## <a name="rule-description"></a>Descrizione della regola  
+ Nonostante common language runtime consenta l'utilizzo di tipi restituiti per differenziare membri altrimenti identici, questa funzionalità non è incluso in Common Language Specification e non è una funzionalità comune dei linguaggi di programmazione .NET. Quando i membri differiscono solo per il tipo restituito, sviluppatori e gli strumenti di sviluppo potrebbero non distinguerli correttamente.  
   
-## Come correggere le violazioni  
- Per correggere una violazione di questa regola, modificare la progettazione dei membri in modo che si basino in modo univoco esclusivamente sui relativi nomi e tipi di parametro oppure non esporre i membri.  
+## <a name="how-to-fix-violations"></a>Come correggere le violazioni  
+ Per correggere una violazione di questa regola, è possibile modificare la progettazione dei membri in modo che sono univoci in base solo i nomi e tipi di parametro o di non esporre i membri.  
   
-## Esclusione di avvisi  
+## <a name="when-to-suppress-warnings"></a>Esclusione di avvisi  
  Non escludere un avviso da questa regola.  
   
-## Esempio  
- Nell'esempio riportato di seguito, in MSIL \(Microsoft Intermediate Language\), viene illustrato un tipo che viola la regola.  Si noti che questa regola non può essere violata utilizzando C\# o Visual Basic .NET.  
+## <a name="example"></a>Esempio  
+ Nell'esempio seguente, in Microsoft intermediate language (MSIL), viene illustrato un tipo che viola questa regola. Si noti che questa regola non può essere violata utilizzando c# o Visual Basic.  
   
 ```  
   

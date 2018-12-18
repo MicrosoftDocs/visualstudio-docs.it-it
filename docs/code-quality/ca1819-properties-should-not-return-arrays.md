@@ -1,11 +1,10 @@
 ---
-title: 'CA1819: Properties should not return arrays | Microsoft Docs'
+title: "CA1819: Le proprietà non devono restituire matrici | Documenti Microsoft"
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- vs-devops-test
+ms.technology: vs-ide-code-analysis
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
@@ -15,94 +14,84 @@ helpviewer_keywords:
 - PropertiesShouldNotReturnArrays
 - CA1819
 ms.assetid: 85fcf312-57f8-438a-8b10-34441fe0bdeb
-caps.latest.revision: 22
-author: stevehoag
-ms.author: shoag
-manager: wpickett
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: HT
-ms.sourcegitcommit: eb5c9550fd29b0e98bf63a7240737da4f13f3249
-ms.openlocfilehash: c8e145afcff87a0ac3250509758762db3d6e2de7
-ms.contentlocale: it-it
-ms.lasthandoff: 08/30/2017
-
+caps.latest.revision: "22"
+author: gewarren
+ms.author: gewarren
+manager: ghogen
+ms.workload: multiple
+ms.openlocfilehash: cc11a71b9f6a68db2d795694af0326561b235f8c
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
-# <a name="ca1819-properties-should-not-return-arrays"></a>CA1819: Properties should not return arrays
+# <a name="ca1819-properties-should-not-return-arrays"></a>CA1819: Le proprietà non devono restituire matrici
 |||  
 |-|-|  
 |TypeName|PropertiesShouldNotReturnArrays|  
 |CheckId|CA1819|  
-|Category|Microsoft.Performance|  
-|Breaking Change|Breaking|  
+|Category|Microsoft. Performance|  
+|Modifica importante|Interruzione|  
   
-## <a name="cause"></a>Cause  
- A public or protected property in a public type returns an array.  
+## <a name="cause"></a>Causa  
+ Una proprietà pubblica o protetta in un tipo pubblico restituisce una matrice.  
   
-## <a name="rule-description"></a>Rule Description  
- Arrays returned by properties are not write-protected, even if the property is read-only. To keep the array tamper-proof, the property must return a copy of the array. Typically, users will not understand the adverse performance implications of calling such a property. Specifically, they might use the property as an indexed property.  
+## <a name="rule-description"></a>Descrizione della regola  
+ Le matrici restituite dalle proprietà non sono protette in scrittura, anche se la proprietà è di sola lettura. Affinché la matrice sia protetta da eventuali alterazioni, la proprietà deve restituire una copia della matrice. In genere, gli utenti non comprendono le implicazioni negative sulle prestazioni derivanti dalla chiamata di tale proprietà. In particolare, è possibile utilizzare la proprietà come una proprietà indicizzata.  
   
-## <a name="how-to-fix-violations"></a>How to Fix Violations  
- To fix a violation of this rule, either make the property a method or change the property to return a collection.  
+## <a name="how-to-fix-violations"></a>Come correggere le violazioni  
+ Per correggere una violazione di questa regola, impostare la proprietà di un metodo o modificare la proprietà per restituire una raccolta.  
   
-## <a name="when-to-suppress-warnings"></a>When to Suppress Warnings  
- Attributes can contain properties that return arrays, but cannot contain properties that return collections. You can suppress a warning that is raised for a property of an attribute that is derived from the <xref:System.Attribute> class. Otherwise, do not suppress a warning from this rule.  
+## <a name="when-to-suppress-warnings"></a>Esclusione di avvisi  
+ Gli attributi possono contenere proprietà che restituiscono matrici, ma non possono contenere proprietà che restituiscono raccolte. È possibile eliminare un avviso che viene generato per una proprietà di un attributo derivato dalla <xref:System.Attribute> classe. In caso contrario, non escludere un avviso da questa regola.  
   
-## <a name="example-violation"></a>Example Violation  
+## <a name="example-violation"></a>Violazione di esempio  
   
-### <a name="description"></a>Description  
- The following example shows a property that violates this rule.  
+### <a name="description"></a>Descrizione  
+ Nell'esempio seguente viene illustrata una proprietà che viola questa regola.  
   
-### <a name="code"></a>Code  
- [!code-csharp[FxCop.Performance.PropertyArrayViolation#1](../code-quality/codesnippet/CSharp/ca1819-properties-should-not-return-arrays_1.cs)] [!code-vb[FxCop.Performance.PropertyArrayViolation#1](../code-quality/codesnippet/VisualBasic/ca1819-properties-should-not-return-arrays_1.vb)]  
+### <a name="code"></a>Codice  
+ [!code-csharp[FxCop.Performance.PropertyArrayViolation#1](../code-quality/codesnippet/CSharp/ca1819-properties-should-not-return-arrays_1.cs)]
+ [!code-vb[FxCop.Performance.PropertyArrayViolation#1](../code-quality/codesnippet/VisualBasic/ca1819-properties-should-not-return-arrays_1.vb)]  
   
-### <a name="comments"></a>Comments  
- To fix a violation of this rule, either make the property a method or change the property to return a collection instead of an array.  
+### <a name="comments"></a>Commenti  
+ Per correggere una violazione di questa regola, impostare la proprietà di un metodo o modificare la proprietà per restituire una raccolta invece di una matrice.  
   
-## <a name="change-the-property-to-a-method-example"></a>Change the Property to a Method Example  
+## <a name="change-the-property-to-a-method-example"></a>Modificare la proprietà per un esempio di metodo  
   
-### <a name="description"></a>Description  
- The following example fixes the violation by changing the property to a method.  
+### <a name="description"></a>Descrizione  
+ Nell'esempio seguente consente di correggere la violazione modificando la proprietà a un metodo.  
   
-### <a name="code"></a>Code  
- [!code-vb[FxCop.Performance.PropertyArrayFixedMethod#1](../code-quality/codesnippet/VisualBasic/ca1819-properties-should-not-return-arrays_2.vb)] [!code-csharp[FxCop.Performance.PropertyArrayFixedMethod#1](../code-quality/codesnippet/CSharp/ca1819-properties-should-not-return-arrays_2.cs)]  
+### <a name="code"></a>Codice  
+ [!code-vb[FxCop.Performance.PropertyArrayFixedMethod#1](../code-quality/codesnippet/VisualBasic/ca1819-properties-should-not-return-arrays_2.vb)]
+ [!code-csharp[FxCop.Performance.PropertyArrayFixedMethod#1](../code-quality/codesnippet/CSharp/ca1819-properties-should-not-return-arrays_2.cs)]  
   
-## <a name="return-a-collection-example"></a>Return a Collection Example  
+## <a name="return-a-collection-example"></a>Restituisce un raccolta di esempio  
   
-### <a name="description"></a>Description  
- The following example fixes the violation by changing the property to return a  
+### <a name="description"></a>Descrizione  
+ Nell'esempio seguente consente di correggere la violazione modificando la proprietà per restituire un  
   
  <xref:System.Collections.ObjectModel.ReadOnlyCollection%601?displayProperty=fullName>.  
   
-### <a name="code"></a>Code  
- [!code-csharp[FxCop.Performance.PropertyArrayFixedCollection#1](../code-quality/codesnippet/CSharp/ca1819-properties-should-not-return-arrays_3.cs)] [!code-vb[FxCop.Performance.PropertyArrayFixedCollection#1](../code-quality/codesnippet/VisualBasic/ca1819-properties-should-not-return-arrays_3.vb)]  
+### <a name="code"></a>Codice  
+ [!code-csharp[FxCop.Performance.PropertyArrayFixedCollection#1](../code-quality/codesnippet/CSharp/ca1819-properties-should-not-return-arrays_3.cs)]
+ [!code-vb[FxCop.Performance.PropertyArrayFixedCollection#1](../code-quality/codesnippet/VisualBasic/ca1819-properties-should-not-return-arrays_3.vb)]  
   
-## <a name="allowing-users-to-modify-a-property"></a>Allowing Users to Modify a Property  
+## <a name="allowing-users-to-modify-a-property"></a>Consentire agli utenti di modificare una proprietà  
   
-### <a name="description"></a>Description  
- You might want to allow the consumer of the class to modify a property. The following example shows a read/write property that violates this rule.  
+### <a name="description"></a>Descrizione  
+ Si potrebbe voler consentire al consumer della classe modificare una proprietà. Nell'esempio seguente viene illustrata una proprietà di lettura/scrittura che viola questa regola.  
   
-### <a name="code"></a>Code  
- [!code-csharp[FxCop.Performance.PropertyModifyViolation#1](../code-quality/codesnippet/CSharp/ca1819-properties-should-not-return-arrays_4.cs)] [!code-vb[FxCop.Performance.PropertyModifyViolation#1](../code-quality/codesnippet/VisualBasic/ca1819-properties-should-not-return-arrays_4.vb)]  
+### <a name="code"></a>Codice  
+ [!code-csharp[FxCop.Performance.PropertyModifyViolation#1](../code-quality/codesnippet/CSharp/ca1819-properties-should-not-return-arrays_4.cs)]
+ [!code-vb[FxCop.Performance.PropertyModifyViolation#1](../code-quality/codesnippet/VisualBasic/ca1819-properties-should-not-return-arrays_4.vb)]  
   
-### <a name="comments"></a>Comments  
- The following example fixes the violation by changing the property to return a <xref:System.Collections.ObjectModel.Collection%601?displayProperty=fullName>.  
+### <a name="comments"></a>Commenti  
+ Nell'esempio seguente consente di correggere la violazione modificando la proprietà per restituire un <xref:System.Collections.ObjectModel.Collection%601?displayProperty=fullName>.  
   
-### <a name="code"></a>Code  
- [!code-vb[FxCop.Performance.PropertyModifyFixed#1](../code-quality/codesnippet/VisualBasic/ca1819-properties-should-not-return-arrays_5.vb)] [!code-csharp[FxCop.Performance.PropertyModifyFixed#1](../code-quality/codesnippet/CSharp/ca1819-properties-should-not-return-arrays_5.cs)]  
+### <a name="code"></a>Codice  
+ [!code-vb[FxCop.Performance.PropertyModifyFixed#1](../code-quality/codesnippet/VisualBasic/ca1819-properties-should-not-return-arrays_5.vb)]
+ [!code-csharp[FxCop.Performance.PropertyModifyFixed#1](../code-quality/codesnippet/CSharp/ca1819-properties-should-not-return-arrays_5.cs)]  
   
-## <a name="related-rules"></a>Related Rules  
- [CA1024: Use properties where appropriate](../code-quality/ca1024-use-properties-where-appropriate.md)
+## <a name="related-rules"></a>Regole correlate  
+ [CA1024: Usare proprietà dove appropriato](../code-quality/ca1024-use-properties-where-appropriate.md)

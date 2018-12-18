@@ -1,51 +1,53 @@
 ---
-title: "La porta di notifica | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "porte, notifica"
+title: La porta di notifica | Documenti Microsoft
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: vs-ide-sdk
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords: ports, notification
 ms.assetid: f9fce48e-7d4e-4627-a0fb-77b75428146a
-caps.latest.revision: 9
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: gregvanl
+ms.author: gregvanl
+manager: ghogen
+ms.workload: vssdk
+ms.openlocfilehash: 154a5891d9a11dd77c92f3f297a2e905d40f0327
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
-# La porta di notifica
-[!INCLUDE[vs2017banner](../../code-quality/includes/vs2017banner.md)]
-
-Dopo aver avviato un programma, la porta deve essere passate, come segue:  
+# <a name="notifying-the-port"></a>La porta di notifica
+Dopo aver avviato un programma, la porta deve ricevere una notifica, come indicato di seguito:  
   
-1.  Quando una porta riceve un nuovo nodo del programma, invia un evento di creazione del programma di nuovo la sessione di debug.  l'evento porta con un'interfaccia che rappresenta il programma.  
+1.  Quando una porta riceve un nuovo nodo di programma, invia un evento di creazione del programma alla sessione di debug L'evento è caratterizzata da un'interfaccia che rappresenta il programma.  
   
-2.  La sessione di debug eseguire una query sul programma per l'identificatore del \(DE\) modulo di debug che può connettersi.  
+2.  La sessione di debug del programma per l'identificatore di un motore di debug (DE) che è possibile collegare a una query.  
   
-3.  I controlli della sessione di debug per verificare se il DE in elenco di DES valido per tale programma.  La sessione di debug ottiene questo elenco dalle impostazioni del programma attivo della soluzione, originariamente si passa dal package di debug.  
+3.  La sessione di debug controlla se la Germania sia incluso nell'elenco di DEs consentito per il programma. La sessione di debug, tale elenco viene dalle impostazioni del programma attivo della soluzione, origine passate al metodo tramite il pacchetto di debug.  
   
-     Il DE deve essere nell'elenco valido, o il DE non verrà connesso al programma.  
+     La Germania deve essere presente nell'elenco consentito, altrimenti la Germania non verrà collegato al programma.  
   
- A livello di codice, quando una porta innanzitutto riceve un nuovo nodo del programma, crea un'interfaccia di [IDebugProgram2](../../extensibility/debugger/reference/idebugprogram2.md) per rappresentare il programma.  
+ A livello di codice quando una porta riceve un nuovo nodo di programma, viene creato un [IDebugProgram2](../../extensibility/debugger/reference/idebugprogram2.md) interfaccia per rappresentare il programma.  
   
 > [!NOTE]
->  Questa operazione non deve essere confusa con l'interfaccia di `IDebugProgram2` creata in un secondo momento nel motore di \(DE\) debug.  
+>  Non deve essere confuso con il `IDebugProgram2` interfaccia creata in un secondo momento dal motore di debug (DE).  
   
- La porta invia un evento di creazione del programma di [IDebugProgramCreateEvent2](../../extensibility/debugger/reference/idebugprogramcreateevent2.md) di nuovo all'amministratore di debug della sessione \(SDM\) mediante un'interfaccia COM `IConnectionPoint` .  
+ La porta invia un [IDebugProgramCreateEvent2](../../extensibility/debugger/reference/idebugprogramcreateevent2.md) evento di creazione di programma al gestore di debug di sessione (SDM) tramite COM `IConnectionPoint` interfaccia.  
   
 > [!NOTE]
->  Questa operazione non deve essere confusa con l'interfaccia di `IDebugProgramCreateEvent2` , che viene inviata in un secondo momento da DE.  
+>  Non deve essere confuso con il `IDebugProgramCreateEvent2` interfaccia, che viene inviato in un secondo momento per la Germania.  
   
- Con l'interfaccia eventi stessa, la porta invia rispettivamente le interfacce di [IDebugPort2](../../extensibility/debugger/reference/idebugport2.md), di [IDebugProcess2](../../extensibility/debugger/reference/idebugprocess2.md)e di [IDebugProgram2](../../extensibility/debugger/reference/idebugprogram2.md) , che rappresentano la porta, il processo e il programma.  Lo SDM chiama [IDebugProgram2:: GetEngineInfo](../../extensibility/debugger/reference/idebugprogram2-getengineinfo.md) per ottenere il GUID di DE che può eseguire il debug del programma.  Il GUID è stato originariamente ottenuto dall'interfaccia di [IDebugProgramNode2](../../extensibility/debugger/reference/idebugprogramnode2.md) .  
+ Con l'interfaccia di evento stessa, la porta invia il [IDebugPort2](../../extensibility/debugger/reference/idebugport2.md), [IDebugProcess2](../../extensibility/debugger/reference/idebugprocess2.md), e [IDebugProgram2](../../extensibility/debugger/reference/idebugprogram2.md) interfacce che rappresentano la porta, elaborano, e programma, rispettivamente. Le chiamate SDM [IDebugProgram2::GetEngineInfo](../../extensibility/debugger/reference/idebugprogram2-getengineinfo.md) per ottenere il GUID della DE che è possibile eseguire il debug del programma. Il GUID è stato ottenuto in origine dal [IDebugProgramNode2](../../extensibility/debugger/reference/idebugprogramnode2.md) interfaccia.  
   
- I controlli di SDM verifica se il DE in elenco di DES valido.  Lo SDM ottiene questo elenco dalle impostazioni del programma attivo della soluzione, originariamente si passa dal package di debug.  Il DE deve essere nell'elenco valido, o non verrà connesso al programma.  
+ Il SDM controlla se la Germania sia incluso nell'elenco di DEs consentito. Il SDM ottiene questo elenco dalle impostazioni del programma attivo della soluzione, origine passate al metodo tramite il pacchetto di debug. La Germania deve essere presente nell'elenco consentito, altrimenti non verrà collegato al programma.  
   
- L'identità di DE è nota alla volta, lo SDM è pronta per associarlo al programma.  
+ Una volta che l'identità della DE è nota, il SDM è pronto per collegarlo al programma.  
   
-## Vedere anche  
- [Avviare un programma](../../extensibility/debugger/launching-a-program.md)   
- [Dopo il lancio di un collegamento](../../extensibility/debugger/attaching-after-a-launch.md)   
+## <a name="see-also"></a>Vedere anche  
+ [Un programma di avvio](../../extensibility/debugger/launching-a-program.md)   
+ [Dopo il lancio di un collegamento di](../../extensibility/debugger/attaching-after-a-launch.md)   
  [Attività di debug](../../extensibility/debugger/debugging-tasks.md)

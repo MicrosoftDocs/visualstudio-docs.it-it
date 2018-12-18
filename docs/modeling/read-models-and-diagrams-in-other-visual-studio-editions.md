@@ -1,61 +1,47 @@
 ---
-title: Leggere modelli e diagrammi nelle altre edizioni di Visual Studio | Documenti di Microsoft
+title: Leggere modelli e diagrammi in altre edizioni di Visual Studio | Documenti Microsoft
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.tgt_pltfrm: 
 ms.topic: article
 helpviewer_keywords:
 - models, versions of Visual Studio
-ms.assetid: 46eee279-a9e4-4742-a024-5bd2cf032b86
-caps.latest.revision: 20
-author: alexhomer1
-ms.author: ahomer
-manager: douge
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: 8f84f22444a5df5b9f4f4af44cd8ee9136403467
-ms.openlocfilehash: 9ffc4c39dee2da1d6daa051f478eac18d9670151
-ms.lasthandoff: 02/22/2017
-
+author: gewarren
+ms.author: gewarren
+manager: ghogen
+ms.workload:
+- multiple
+ms.technology: vs-ide-modeling
+ms.openlocfilehash: bec543b7adbf4ea27dca40be4ba51dc0eb622669
+ms.sourcegitcommit: 205d15f4558315e585c67f33d5335d5b41d0fcea
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 02/09/2018
 ---
 # <a name="read-models-and-diagrams-in-other-visual-studio-editions"></a>Leggere modelli e diagrammi in altre edizioni di Visual Studio
 Quando si apre un modello in una versione di Visual Studio che non supporta la creazione di modelli, il modello viene aperto in modalità di sola lettura. In questa modalità è possibile modificare il layout dei diagrammi, ma non modificare il modello.  
   
- Per informazioni sulle versioni di Visual Studio supportano la creazione di modelli, vedere [supporto della versione per l'architettura e strumenti di modellazione](../modeling/what-s-new-for-design-in-visual-studio.md#VersionSupport).  
+ Per le versioni di Visual Studio che supportano la creazione di modelli, vedere [supporto della versione per l'architettura e strumenti di modellazione](../modeling/what-s-new-for-design-in-visual-studio.md#VersionSupport).  
   
 ## <a name="obtaining-access-to-a-model-and-diagrams"></a>Accesso a un modello e ai diagrammi  
- Per leggere un diagramma di dipendenze, è necessario innanzitutto utilizzare Visual Studio per aprire il progetto di modello e quindi aprire il diagramma in esso contenuti.  
+ Per leggere un diagramma di dipendenze, è necessario innanzitutto utilizzare Visual Studio per aprire il progetto di modello e quindi aprire il diagramma all'interno di esso.  
   
- Per questo motivo, se si desidera leggere un diagramma di dipendenza, è inoltre necessario avere accesso al progetto di modello in cui è stato creato. Per eseguire questa operazione, è possibile accedere al progetto da [!INCLUDE[esprscc](../code-quality/includes/esprscc_md.md)] oppure ottenere una copia dei file di progetto.  
+ Per questo motivo, se si desidera leggere un diagramma di dipendenze, è inoltre necessario avere accesso al progetto di modello in cui è stato creato. Per eseguire questa operazione, è possibile accedere al progetto da [!INCLUDE[esprscc](../code-quality/includes/esprscc_md.md)] oppure ottenere una copia dei file di progetto.  
   
 > [!NOTE]
 >  Non si applica alle mappe codice e ai diagrammi classi .NET generati dal codice. Questi diagrammi possono essere visualizzati indipendentemente dal progetto di modellazione.  
   
- Per leggere un diagramma di dipendenze, il set minimo di file che è necessario è come segue:  
+ Per leggere un diagramma di dipendenze, il set minimo di file che è necessario è il seguente:  
   
--   I due file diagramma per il diagramma che si desidera leggere, ad esempio, **MyDiagram.classdiagram e MyDiagram.classdiagram.layout**.  
+-   I due file per il diagramma che si desidera leggere, ad esempio, diagramma **MyDiagram.classdiagram e MyDiagram.classdiagram.layout**.  
   
     > [!NOTE]
-    >  Per i diagrammi di dipendenza, è necessario anche il file denominato *MyDiagram***. MyDiagram**.  
+    >  Per i diagrammi di dipendenza, è necessario anche il file denominato * MyDiagram ***. MyDiagram**.  
   
 -   File di progetto di modellazione (**MyModel. modelproj**)  
   
--   Il file modello radice (**ModelDefinition\MyModel.uml**)  
+-   Il file del modello principale (**ModelDefinition\MyModel.uml**)  
   
 -   I file del pacchetto per qualsiasi pacchetto a cui fa riferimento nel diagramma (**ModelDefinition\MyPackage.uml**)  
   
@@ -68,11 +54,11 @@ Quando si apre un modello in una versione di Visual Studio che non supporta la c
   
  Queste modifiche possono essere salvate. Se si desidera rendere visibili ad altri utenti le modifiche, è necessario inviare almeno aggiornato **layout** file.  
   
-##  <a name="a-namerelatedtopicsa-related-topics"></a><a name="RelatedTopics"></a>Argomenti correlati  
+##  <a name="RelatedTopics"></a>Argomenti correlati  
   
 |Titolo|Descrizione|  
 |-----------|-----------------|  
-|[Diagrammi di dipendenza: riferimento](../modeling/layer-diagrams-reference.md)|Un diagramma livello mostra la struttura di un'architettura esistente o proposta. Dopo la scrittura del codice, è possibile convalidarlo automaticamente in base a un diagramma livello.|  
+|[Diagrammi delle dipendenze: riferimenti](../modeling/layer-diagrams-reference.md)|Un diagramma livello mostra la struttura di un'architettura esistente o proposta. Dopo la scrittura del codice, è possibile convalidarlo automaticamente in base a un diagramma livello.|  
   
 ## <a name="see-also"></a>Vedere anche  
  [Creare modelli per l'app](../modeling/create-models-for-your-app.md)

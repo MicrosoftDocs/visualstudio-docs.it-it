@@ -4,37 +4,23 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- vs-ide-sdk
+ms.technology: vs-ide-sdk
 ms.tgt_pltfrm: 
 ms.topic: article
 helpviewer_keywords:
 - VSIX galleries, private
 - private galleries, VSIX
 ms.assetid: b6b3dee7-91c5-4556-9f69-0d56b675e83b
-caps.latest.revision: 10
+caps.latest.revision: "10"
+author: gregvanl
 ms.author: gregvanl
 manager: ghogen
-translation.priority.mt:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.workload: vssdk
+ms.openlocfilehash: 5226ff7a4ed77333d2a6f9287f129c6a6d754cac
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
 ms.translationtype: MT
-ms.sourcegitcommit: 8ce054bf6149f0224785f4c3cd9274e86dc09d04
-ms.openlocfilehash: e4c49a19a9befad5d90b9526842786f49af0851b
-ms.contentlocale: it-it
-ms.lasthandoff: 09/06/2017
-
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="private-galleries"></a>Private Galleries
 È possibile condividere i controlli, modelli e strumenti che si sviluppano inserendoli in un *raccolta privata* sulla rete intranet per l'organizzazione, come indicato di seguito:  
@@ -54,7 +40,7 @@ ms.lasthandoff: 09/06/2017
   
 2.  Nel **ambiente** nodo, seleziona **estensioni e aggiornamenti**.  
   
-3.  Scegliere il pulsante **Aggiungi** .  
+3.  Scegliere il pulsante **Aggiungi**.  
   
 4.  Nel **nome** immettere un nome per la raccolta privata, ad esempio, `My Gallery`.  
   

@@ -1,72 +1,75 @@
 ---
-title: "Metodi tag HTML (JavaScript) | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/18/2017"
-ms.prod: "windows-client-threshold"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-javascript"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-dev_langs: 
-  - "JavaScript"
-  - "TypeScript"
-  - "DHTML"
-helpviewer_keywords: 
-  - "anchor (metodo) [JavaScript]"
-  - "big (metodo) [JavaScript]"
-  - "blink (metodo) [JavaScript]"
-  - "bold (metodo) [JavaScript]"
-  - "fixed (metodo) [JavaScript]"
-  - "fontcolor (metodo) [JavaScript]"
-  - "fontsize (metodo) [JavaScript]"
-  - "Metodi tag HTML [JavaScript]"
-  - "italics (metodo) [JavaScript]"
-  - "link (metodo) [JavaScript]"
-  - "small (metodo) [JavaScript]"
-  - "sub (metodo) [JavaScript]"
-  - "sup (metodo) [JavaScript]"
+title: Metodi Tag HTML (JavaScript) | Documenti Microsoft
+ms.custom: 
+ms.date: 01/18/2017
+ms.prod: windows-client-threshold
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-javascript
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+dev_langs:
+- JavaScript
+- TypeScript
+- DHTML
+helpviewer_keywords:
+- link method [JavaScript]
+- blink method [JavaScript]
+- fontsize method [JavaScript]
+- italics method [JavaScript]
+- sup method [JavaScript]
+- anchor method [JavaScript]
+- fixed method [JavaScript]
+- fontcolor method [JavaScript]
+- bold method [JavaScript]
+- small method [JavaScript]
+- HTML Tag methods [JavaScript]
+- sub method [JavaScript]
+- big method [JavaScript]
 ms.assetid: 50376223-be95-4aa4-9147-9e738a5d3cfa
-caps.latest.revision: 15
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 15
+caps.latest.revision: "15"
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.openlocfilehash: 7639bc609d8e9b7e4b212fe67ae40f81487d708e
+ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/27/2017
 ---
-# Metodi tag HTML (JavaScript)
-È possibile utilizzare i metodi di tag HTML per racchiudere il testo tra elementi HTML in un oggetto `String`.  
+# <a name="html-tag-methods-javascript"></a>Metodi tag HTML (JavaScript)
+È possibile utilizzare metodi tag HTML per posizionare gli elementi HTML attorno al testo in un `String` oggetto.  
   
-## Sintassi  
- Nella seguente tabella vengono elencate la sintassi e una descrizione di ciascun metodo di tag HTML.  
+## <a name="syntax"></a>Sintassi  
+ La tabella seguente elenca la sintassi e una descrizione di ogni metodo di tag HTML.  
   
- Nella colonna Sintassi `string1` è un oggetto `String` o un valore letterale stringa.  
+ Nella colonna sintassi `string1` è un `String` oggetto o un valore letterale.  
   
- La colonna Standard indica le raccomandazioni del [World Wide Web Consortium \(W3C\)](http://go.microsoft.com/fwlink/?LinkId=199553) per HTML 4. "  Sconsigliato" indica che l'elemento HTML è sconsigliato rispetto ai fogli di stile.  
+ Indica la colonna Standard [World Wide Web Consortium (W3C)](http://go.microsoft.com/fwlink/?LinkId=199553) indicazioni per HTML 4. "Sconsigliato" indica che l'elemento HTML è sconsigliato a favore di fogli di stile.  
   
-|Sintassi|Descrizione del metodo|Descrizione del parametro|Standard|  
-|--------------|----------------------------|-------------------------------|--------------|  
-|`string1`.anchor\(`name`\)|Racchiude il testo in un ancoraggio HTML con un attributo NAME.|Il parametro `name` rappresenta il testo da inserire nell'attributo NAME dell'ancoraggio HTML.||  
-|`string1`.big\(\)|Racchiude il testo tra i tag HTML \<BIG\>.||Sconsigliato|  
-|`string1`.blink\(\)|Racchiude il testo tra i tag HTML \<BLINK\>.  Il tag \<BLINK\> non è supportato in Internet Explorer.||Non standard|  
-|`string1`.bold\(\)|Racchiude il testo tra i tag HTML \<B\>.||Sconsigliato|  
-|`string1`.fixed\(\)|Racchiude il testo tra i tag HTML \<TT\>.||Sconsigliato|  
-|`string1`.fontcolor\(`color`\)|Racchiude il testo tra i tag HTML \<FONT\> con un attributo COLOR.|Il parametro `color` è un valore stringa contenente il valore esadecimale o il nome predefinito per un colore.  I nomi di colori predefiniti validi dipendono dal browser host di [!INCLUDE[javascript](../../javascript/includes/javascript-md.md)] e dalla relativa versione.|Deprecato|  
-|`string1`.fontsize\(`size`\)|Racchiude il testo tra i tag HTML \<FONT\> con un attributo SIZE.|Il parametro `size` è un Integer che specifica la dimensione del testo.  Gli Integer validi dipendono dal browser host di [!INCLUDE[javascript](../../javascript/includes/javascript-md.md)] e dalla relativa versione.|Deprecato|  
-|`string1`.italics\(\)|Racchiude il testo tra i tag HTML \<I\>.||Sconsigliato|  
-|`string1`.link\(`href`\)|Racchiude il testo in un ancoraggio HTML con un attributo HREF.|Il parametro `href` rappresenta il testo da inserire nell'attributo HREF dell'ancoraggio HTML.||  
-|`string1`.small\(\)|Racchiude il testo tra i tag HTML \<SMALL\>.||Sconsigliato|  
-|`string1`.strike\(\)|Racchiude il testo tra i tag HTML \<STRIKE\>.||Deprecato|  
-|`string1`.sub\(\)|Racchiude il testo tra i tag HTML \<SUB\>.|||  
-|`string1`.sup\(\)|Racchiude il testo tra i tag HTML \<SUP\>.|||  
+|Sintassi|Descrizione del metodo|Descrizione parametro|Standard|  
+|------------|------------------------|---------------------------|--------------|  
+|`string1`.Anchor (`name`)|Inserisce un ancoraggio HTML con un attributo NAME intorno al testo.|Il `name` parametro è il testo da inserire nell'attributo NAME dell'ancoraggio HTML.||  
+|`string1`.Big()|Codice HTML \<BIG > tag intorno al testo.||Sconsigliata|  
+|`string1`.blink()|Codice HTML \<BLINK > tag intorno al testo. Il \<BLINK > tag non è supportato in Internet Explorer.||Non in standard|  
+|`string1`.Bold()|Codice HTML \<B > il testo tra i tag.||Sconsigliata|  
+|`string1`.fixed()|Codice HTML \<TT > tag intorno al testo.||Sconsigliata|  
+|`string1`.fontcolor (`color`)|Codice HTML \<carattere > tag con un attributo COLOR intorno al testo.|Il `color` parametro è un valore stringa che contiene il valore esadecimale o il nome predefinito per un colore. I nomi predefiniti di colore validi dipendono il [!INCLUDE[javascript](../../javascript/includes/javascript-md.md)] host browser e la relativa versione.|Deprecato|  
+|`string1`.FontSize (`size`)|Codice HTML \<carattere > tag con un attributo di dimensione intorno al testo.|Il `size` parametro è un valore intero che specifica la dimensione del testo. Valori integer validi dipendono il [!INCLUDE[javascript](../../javascript/includes/javascript-md.md)] host browser e la relativa versione.|Deprecato|  
+|`string1`.italics()|Codice HTML \<I > il testo tra i tag.||Sconsigliata|  
+|`string1`. Link (`href`)|Inserisce un ancoraggio HTML che ha un attributo HREF intorno al testo.|Il `href` parametro è il testo da inserire nell'attributo HREF di ancoraggio HTML.||  
+|`string1`.Small()|Codice HTML \<SMALL > tag intorno al testo.||Sconsigliata|  
+|`string1`.Strike()|Codice HTML \<STRIKE > tag intorno al testo.||Deprecato|  
+|`string1`.Sub()|Codice HTML \<SUB > tag intorno al testo.|||  
+|`string1`.sup()|Codice HTML \<SUP > tag intorno al testo.|||  
   
-## Note  
- Non viene eseguito alcun controllo per determinare se i tag HTML sono già stati applicati alla stringa.  
+## <a name="remarks"></a>Note  
+ Per determinare se i tag HTML sono già stati applicati per la stringa viene eseguito alcun controllo.  
   
-## Esempio  
- Negli esempi seguenti viene illustrato come utilizzare i metodi di tag HTML.  
+## <a name="example"></a>Esempio  
+ Nell'esempio seguente viene illustrato come utilizzare i metodi di tag HTML.  
   
-```javascript  
+```JavaScript  
 // anchor method.  
 var strVariable = "This is an anchor.";  
 document.write(strVariable.anchor("Anchor1"));  
@@ -133,10 +136,10 @@ document.write(strVariable.sup());
 // Output: <SUP>This is a string.</SUP>  
 ```  
   
-## Requisiti  
+## <a name="requirements"></a>Requisiti  
  [!INCLUDE[jsv1](../../javascript/misc/includes/jsv1-md.md)]  
   
- **Si applica a**: [Oggetto String](../../javascript/reference/string-object-javascript.md)  
+ **Si applica a**: [oggetto stringa](../../javascript/reference/string-object-javascript.md)  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Oggetto String](../../javascript/reference/string-object-javascript.md)

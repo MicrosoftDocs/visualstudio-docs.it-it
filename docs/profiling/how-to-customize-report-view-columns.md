@@ -1,29 +1,30 @@
 ---
-title: "Procedura: Personalizzare le colonne della visualizzazione dei report degli strumenti per la profilatura | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "vs.test.columnchooser.dialogbox"
-helpviewer_keywords: 
-  - "strumenti per la profilatura, personalizzazione di report"
-  - "report di prestazioni, personalizzazione"
+title: 'Procedura: Personalizzare colonne delle visualizzazioni dei rapporti | Microsoft Docs'
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: vs-ide-debug
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: vs.test.columnchooser.dialogbox
+helpviewer_keywords:
+- profiling tools, customizing reports
+- performance reports, customizing
 ms.assetid: cb6f6d30-52a5-4d92-ab07-1d5ddb67884c
-caps.latest.revision: 18
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 18
+caps.latest.revision: "18"
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.workload: multiple
+ms.openlocfilehash: 5e5e83629bdb2b93db3a34ba577da4df84b119cc
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
-# Procedura: Personalizzare le colonne della visualizzazione dei report degli strumenti per la profilatura
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
-Gli strumenti per le prestazioni in Visual Studio Team System Development Edition sono completamente integrati nell'ambiente di sviluppo integrato \(IDE\) per fornire un'esperienza utente.  L'elenco seguente indica le visualizzazione personalizzabili aggiungendo, rimuovendo e ridisponendo le colonne:  
+# <a name="how-to-customize-report-view-columns"></a>Procedura: Personalizzare colonne della visualizzazione report
+Gli strumenti per le prestazioni in Visual Studio Team System Development Edition sono completamente integrati nell'ambiente di sviluppo integrato (IDE) per fornire un'esperienza utente. L'elenco seguente indica le visualizzazioni che possono essere personalizzate aggiungendo, rimuovendo e ridisponendo le colonne:  
   
 -   [Visualizzazione Moduli](../profiling/modules-view.md)  
   
@@ -31,11 +32,11 @@ Gli strumenti per le prestazioni in Visual Studio Team System Development Editio
   
 -   [Visualizzazione Righe](../profiling/lines-view.md)  
   
--   [Visualizzazione Puntatori all'istruzione](../profiling/instruction-pointers-ips-view.md)  
+-   [Visualizzazione Puntatore all'istruzione](../profiling/instruction-pointers-ips-view.md)  
   
--   [Visualizzazione Chiamante\/chiamato](../profiling/caller-callee-view.md)  
+-   [Visualizzazione Chiamante/Chiamato](../profiling/caller-callee-view.md)  
   
--   [Visualizzazione Struttura ad albero delle chiamate](../profiling/call-tree-view.md)  
+-   [Visualizzazione Albero delle chiamate](../profiling/call-tree-view.md)  
   
 -   [Visualizzazione Allocazioni](../profiling/dotnet-memory-allocations-view.md)  
   
@@ -45,16 +46,16 @@ Gli strumenti per le prestazioni in Visual Studio Team System Development Editio
   
 -   [Visualizzazione Processo](../profiling/process-view.md)  
   
-### Per personalizzare una visualizzazione di report  
+### <a name="to-customize-a-report-view"></a>Per personalizzare la visualizzazione di un rapporto  
   
-1.  Aprire la visualizzazione di report.  
+1.  Aprire la visualizzazione del rapporto.  
   
-2.  Fare clic con il pulsante destro del mouse sulla superficie della visualizzazione di report e quindi scegliere **Aggiungi\/Rimuovi colonne**.  
+2.  Fare clic con il pulsante destro del mouse sull'area della visualizzazione del rapporto e quindi fare clic su **Aggiungi/Rimuovi colonne**.  
   
-     Verrà visualizzata la finestra di dialogo **Aggiungi\/Rimuovi colonne**.  
+     Verrà visualizzata la finestra di dialogo **Aggiungi/Rimuovi colonne**.  
   
 3.  Selezionare le colonne da aggiungere.  
   
-4.  Fare clic sul pulsante freccia per riordinare colonne.  
+4.  Fare clic sul pulsante freccia per riordinare le colonne.  
   
-5.  Scegliere **OK**.
+5.  Fare clic su **OK**.

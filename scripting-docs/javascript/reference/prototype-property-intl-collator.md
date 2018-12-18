@@ -1,40 +1,43 @@
 ---
-title: "Propriet&#224; prototype (Intl.Collator) | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/18/2017"
-ms.prod: "windows-client-threshold"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-javascript"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-dev_langs: 
-  - "JavaScript"
-  - "TypeScript"
-  - "DHTML"
+title: "prototipo di proprietà (intl. Collator) | Documenti Microsoft"
+ms.custom: 
+ms.date: 01/18/2017
+ms.prod: windows-client-threshold
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-javascript
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+dev_langs:
+- JavaScript
+- TypeScript
+- DHTML
 ms.assetid: c1bbb523-fb55-4395-b357-34d91cf5bba0
-caps.latest.revision: 2
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 2
+caps.latest.revision: "2"
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.openlocfilehash: 696535afde8c497bc98fc2c81a03854d66add6f4
+ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/27/2017
 ---
-# Propriet&#224; prototype (Intl.Collator)
+# <a name="prototype-property-intlcollator"></a>Proprietà prototype (Intl.Collator)
 Restituisce un riferimento al prototipo per un'utilità di confronto.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```javascript  
+```JavaScript  
 collator.prototype  
 ```  
   
-## Note  
- L'argomento `collator` è il nome di un'utilità di confronto.  
+## <a name="remarks"></a>Note  
+ Il `collator` argomento è il nome dell'utilità di confronto.  
   
- Utilizzare la proprietà `prototype` per fornire un gruppo di funzioni di base a una classe di oggetti.  Le nuove istanze di un oggetto "ereditano" il funzionamento del prototipo assegnato all'oggetto.  
+ Usare la proprietà `prototype` per fornire un set di funzionalità di base a una classe di oggetti. Le nuove istanze di un oggetto "ereditano" il comportamento del prototipo assegnato all'oggetto.  
   
- Per aggiungere, ad esempio, un metodo all'oggetto `Intl.Collator` che restituisce il valore dell'elemento più grande del set, dichiarare la funzione, aggiungerla a `Intl.Collator.prototype`, quindi utilizzarla.  
+ Ad esempio, per aggiungere un metodo all'oggetto `Intl.Collator` che restituisce il valore dell'elemento più grande del set, dichiarare la funzione, aggiungerla a `Intl.Collator.prototype` e quindi usarla.  
   
-## Requisiti  
+## <a name="requirements"></a>Requisiti  
  [!INCLUDE[jsv11](../../javascript/reference/includes/jsv11-md.md)]

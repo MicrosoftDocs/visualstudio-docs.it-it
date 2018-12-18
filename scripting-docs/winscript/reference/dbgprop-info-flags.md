@@ -1,64 +1,66 @@
 ---
-title: "DBGPROP_INFO_FLAGS | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/18/2017"
-ms.prod: "windows-script-interfaces"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
+title: DBGPROP_INFO_FLAGS | Documenti Microsoft
+ms.custom: 
+ms.date: 01/18/2017
+ms.prod: windows-script-interfaces
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: reference
 apiname: DBGPROP_INFO_FLAGS
 apilocation: scrobj.dll
-f1_keywords: 
-  - "DBGPROP_INFO_FLAGS"
-helpviewer_keywords: 
-  - "DBGPROP_INFO_FLAGS"
+f1_keywords: DBGPROP_INFO_FLAGS
+helpviewer_keywords: DBGPROP_INFO_FLAGS
 ms.assetid: e9450a21-a802-4c3e-8b3d-8e202f555de1
-caps.latest.revision: 8
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.openlocfilehash: 9821cde6c159712ff44438b74eea0f8e01247155
+ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/27/2017
 ---
-# DBGPROP_INFO_FLAGS
-Utilizzata per specificare i campi `DebugPropertyInfo`  
+# <a name="dbgpropinfoflags"></a>DBGPROP_INFO_FLAGS
+Utilizzato per specificare `DebugPropertyInfo` campi  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
 enum {  
-   DBGPROP_INFO_NAME  =0x001,  
-   DBGPROP_INFO_TYPE  =0x002,  
-   DBGPROP_INFO_VALUE  =0x004,  
-   DBGPROP_INFO_FULLNAME  =0x020,  
-   DBGPROP_INFO_ATTRIBUTES  =0x008,  
-   DBGPROP_INFO_DEBUGPROP  =0x010,  
-   DBGPROP_INFO_AUTOEXPAND  =0x8000000  
+   DBGPROP_INFO_NAME  =0x001,  
+   DBGPROP_INFO_TYPE  =0x002,  
+   DBGPROP_INFO_VALUE  =0x004,  
+   DBGPROP_INFO_FULLNAME  =0x020,  
+   DBGPROP_INFO_ATTRIBUTES  =0x008,  
+   DBGPROP_INFO_DEBUGPROP  =0x010,  
+   DBGPROP_INFO_AUTOEXPAND  =0x8000000  
 };  
 ```  
   
-## Membri  
- DBGPROP\_INFORMATION\_NAME  
- Inizializza il campo `bstrName`.  
+## <a name="members"></a>Membri  
+ DBGPROP_INFO_NAME  
+ Inizializza il `bstrName` campo.  
   
- DBGPROP\_INFORMATION\_TYPE  
- Inizializza il campo `bstrType`.  
+ DBGPROP_INFO_TYPE  
+ Inizializza il `bstrType` campo.  
   
- DBGPROP\_INFORMATION\_VALUE  
- Inizializza il campo `bstrValue`.  
+ DBGPROP_INFO_VALUE  
+ Inizializza il `bstrValue` campo.  
   
- DBGPROP\_INFORMATION\_FULLNAME  
- Inizializza il campo `bstrFullName`.  
+ DBGPROP_INFO_FULLNAME  
+ Inizializza il `bstrFullName` campo.  
   
- DBGPROP\_INFORMATION\_ATTRIBUTES  
- Inizializza il campo `dwAttrib`.  
+ DBGPROP_INFO_ATTRIBUTES  
+ Inizializza il `dwAttrib` campo.  
   
- DBGPROP\_INFORMATION\_DEBUGPROP  
- Inizializza il campo `pDebugProp` contenente un'interfaccia `IDebugProperty`.  
+ DBGPROP_INFO_DEBUGPROP  
+ Inizializza il `pDebugProp` campo contenente un `IDebugProperty` interfaccia.  
   
- DBGPROP\_INFORMATION\_AUTOEXPAND  
- Specifica che il campo di valore deve contenere il valore automaticamente espanso, se disponibile, per questo tipo di oggetto.  
+ DBGPROP_INFO_AUTOEXPAND  
+ Specifica che il campo del valore deve contenere il valore di espansione automatica, se disponibile, per questo tipo di oggetto.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Struttura DebugPropertyInfo](../../winscript/reference/debugpropertyinfo-structure.md)   
  [Interfaccia IDebugProperty](../../winscript/reference/idebugproperty-interface.md)

@@ -4,43 +4,27 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- vs-devops-test
+ms.technology: vs-devops-test
 ms.tgt_pltfrm: 
 ms.topic: article
-ms.assetid: 20221de4-2a9e-4787-b99a-b5855bb90872
-caps.latest.revision: 16
-ms.author: douge
-manager: douge
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.author: gewarren
+manager: ghogen
+ms.workload: multiple
+author: gewarren
+ms.openlocfilehash: e154973c48bf0fd718b0361fd3bfbad8602e674d
+ms.sourcegitcommit: 7ae502c5767a34dc35e760ff02032f4902c7c02b
 ms.translationtype: HT
-ms.sourcegitcommit: 4a36302d80f4bc397128e3838c9abf858a0b5fe8
-ms.openlocfilehash: f68221fd37da500993e5afb9d3ee7e847f794a28
-ms.contentlocale: it-it
-ms.lasthandoff: 09/26/2017
-
+ms.contentlocale: it-IT
+ms.lasthandoff: 01/09/2018
 ---
 # <a name="code-generation-compilation-and-naming-conventions-in-microsoft-fakes"></a>Generazione del codice, compilazione e convenzioni di denominazione in Microsoft Fakes
 Questo argomento illustra problemi e opzioni di generazione e compilazione di codice Fakes e descrive le convenzioni di denominazione per tipi, membri e parametri generati da Fakes.  
   
- **Requirements**  
+ **Requisiti**  
   
 -   Visual Studio Enterprise  
   
-##  <a name="BKMK_In_this_topic"></a> Contenuto dell'argomento  
+##  <a name="BKMK_In_this_topic"></a> In questo argomento  
   
 -   [Generazione e compilazione di codice](#BKMK_Code_generation_and_compilation)  
   
@@ -322,4 +306,3 @@ attribute of the Assembly element in the .fakes:
   
 ## <a name="see-also"></a>Vedere anche  
  [Isolamento del codice sottoposto a test con Microsoft Fakes](../test/isolating-code-under-test-with-microsoft-fakes.md)
-

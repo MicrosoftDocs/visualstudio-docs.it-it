@@ -1,30 +1,36 @@
 ---
-title: "Elemento References (modelli di Visual Studio) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-general"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "http://schemas.microsoft.com/developer/vstemplate/2005#References"
-helpviewer_keywords: 
-  - "<References> (elemento) [modelli di Visual Studio]"
-  - "References (elemento) [modelli di Visual Studio]"
+title: Fa riferimento all'elemento (modelli di Visual Studio) | Documenti Microsoft
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: vs-ide-general
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: http://schemas.microsoft.com/developer/vstemplate/2005#References
+helpviewer_keywords:
+- <References> element [Visual Studio Templates]
+- References element [Visual Studio Templates]
 ms.assetid: 1969146d-46bf-422d-8d46-0e9493925003
-caps.latest.revision: 8
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: gregvanl
+ms.author: gregvanl
+manager: ghogen
+ms.workload: vssdk
+ms.openlocfilehash: ceee0091dc20938f9098985c2609f0a3d239c699
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
-# Elemento References (modelli di Visual Studio)
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
-Raggruppa i riferimenti agli assembly aggiunti dal modello ai progetti.  
+# <a name="references-element-visual-studio-templates"></a>Elemento References (modelli di Visual Studio)
+Raggruppa i riferimenti all'assembly che il modello consente di aggiungere ai progetti.  
   
-## Sintassi  
+ \<VSTemplate >  
+ \<TemplateContent >  
+ \<Riferimenti >  
+  
+## <a name="syntax"></a>Sintassi  
   
 ```  
 <References>  
@@ -34,31 +40,31 @@ Raggruppa i riferimenti agli assembly aggiunti dal modello ai progetti.
 </References>  
 ```  
   
-## Attributi ed elementi  
- Nelle seguenti sezioni sono illustrati attributi, elementi figlio ed elementi padre.  
+## <a name="attributes-and-elements"></a>Attributi ed elementi  
+ Nelle sezioni seguenti vengono descritti gli attributi, gli elementi figlio e gli elementi padre.  
   
-### Attributi  
+### <a name="attributes"></a>Attributi  
  Nessuno.  
   
-### Elementi figlio  
+### <a name="child-elements"></a>Elementi figlio  
   
 |Elemento|Descrizione|  
-|--------------|-----------------|  
-|[Riferimento](../extensibility/reference-element-visual-studio-templates.md)|Elemento obbligatorio.<br /><br /> Specifica il riferimento all'assembly da aggiungere quando l'elemento viene aggiunto a un progetto.  Devono essere presenti uno o più elementi `Reference` in un elemento `References`.|  
+|-------------|-----------------|  
+|[Reference](../extensibility/reference-element-visual-studio-templates.md)|Elemento obbligatorio.<br /><br /> Specifica il riferimento all'assembly da aggiungere quando l'elemento viene aggiunto a un progetto. Deve essere uno o più `Reference` elementi in un `References` elemento.|  
   
-### Elementi padre  
+### <a name="parent-elements"></a>Elementi padre  
   
 |Elemento|Descrizione|  
-|--------------|-----------------|  
+|-------------|-----------------|  
 |[TemplateContent](../extensibility/templatecontent-element-visual-studio-templates.md)|Specifica il contenuto del modello.|  
   
-## Note  
+## <a name="remarks"></a>Note  
  `References` è un elemento figlio facoltativo di `TemplateContent`.  
   
- È possibile utilizzare gli elementi `Reference` e `References` soltanto nei file .vstemplate che hanno un valore dell'attributo `Type` di `Item`.  
+ Il `Reference` e `References` elementi possono essere utilizzati solo nei file con estensione vstemplate che hanno un `Type` valore dell'attributo `Item`.  
   
-## Esempio  
- Nell'esempio riportato di seguito viene illustrato l'elemento `TemplateContent` di un modello di elemento.  Questo codice XML aggiunge i riferimenti agli assembly System.dll e System.Data.dll.  
+## <a name="example"></a>Esempio  
+ Nell'esempio seguente viene illustrato il `TemplateContent` elemento di un modello di elemento. Questo codice XML vengono aggiunti riferimenti agli assembly dll e System.Data.dll.  
   
 ```  
 <TemplateContent>  
@@ -78,6 +84,6 @@ Raggruppa i riferimenti agli assembly aggiunti dal modello ai progetti.
 </TemplateContent>  
 ```  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Riferimenti allo schema dei modelli di Visual Studio](../extensibility/visual-studio-template-schema-reference.md)   
- [Creazione di un progetto e di modelli di elemento personalizzati](../ide/creating-project-and-item-templates.md)
+ [Creazione di modelli di progetti e di elementi](../ide/creating-project-and-item-templates.md)

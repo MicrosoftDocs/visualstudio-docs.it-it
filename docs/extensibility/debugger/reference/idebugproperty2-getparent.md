@@ -1,48 +1,49 @@
 ---
-title: "IDebugProperty2::GetParent | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "IDebugProperty2::GetParent"
-helpviewer_keywords: 
-  - "IDebugProperty2::GetParent"
+title: IDebugProperty2::GetParent | Documenti Microsoft
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: vs-ide-sdk
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: IDebugProperty2::GetParent
+helpviewer_keywords: IDebugProperty2::GetParent
 ms.assetid: 58780469-fe25-4d84-9187-67940ca0767f
-caps.latest.revision: 10
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: gregvanl
+ms.author: gregvanl
+manager: ghogen
+ms.workload: vssdk
+ms.openlocfilehash: 3f33bf6fc0f7a93ed50f73766a9ed144bb0b9d8e
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
-# IDebugProperty2::GetParent
-[!INCLUDE[vs2017banner](../../../code-quality/includes/vs2017banner.md)]
-
-ottiene la proprietà padre di una proprietà.  
+# <a name="idebugproperty2getparent"></a>IDebugProperty2::GetParent
+Ottiene la proprietà padre di una proprietà.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp#  
-HRESULT GetParent (   
-   IDebugProperty2** ppParent  
+```cpp  
+HRESULT GetParent (   
+   IDebugProperty2** ppParent  
 );  
 ```  
   
-```c#  
-int GetParent (   
-   out IDebugProperty2 ppParent  
+```csharp  
+int GetParent (   
+   out IDebugProperty2 ppParent  
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `ppParent`  
- \[out\]  Restituisce [IDebugProperty2](../../../extensibility/debugger/reference/idebugproperty2.md) un oggetto che rappresenta il padre della proprietà.  
+ [out] Restituisce un [IDebugProperty2](../../../extensibility/debugger/reference/idebugproperty2.md) oggetto che rappresenta l'elemento padre della proprietà.  
   
-## Valore restituito  
- Se l'operazione riesce, restituisce `S_OK`; in caso contrario restituisce il codice di errore.  Restituisce `S_GETPARENT_NO_PARENT` se non c " è padre.  
+## <a name="return-value"></a>Valore restituito  
+ Se ha esito positivo, restituisce `S_OK`; in caso contrario, restituisce il codice di errore. Restituisce `S_GETPARENT_NO_PARENT` se è presente alcun padre.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IDebugProperty2](../../../extensibility/debugger/reference/idebugproperty2.md)

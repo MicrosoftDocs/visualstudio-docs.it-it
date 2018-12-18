@@ -1,12 +1,10 @@
 ---
-title: 'How to: Configure Inclusion List Security | Microsoft Docs'
+title: 'Procedura: configurare la protezione di elenco di inclusione | Documenti Microsoft'
 ms.custom: 
 ms.date: 02/02/2017
-ms.prod: visual-studio-dev14
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- office-development
+ms.technology: office-development
 ms.tgt_pltfrm: 
 ms.topic: article
 dev_langs:
@@ -15,65 +13,63 @@ dev_langs:
 helpviewer_keywords:
 - permissions [Office development in Visual Studio
 - inclusion lists [Office development in Visual Studio]
-ms.assetid: 0609d8f0-4630-4e17-aeb3-14f3134165cf
-caps.latest.revision: 26
-author: gewarren
-ms.author: gewarren
+author: TerryGLee
+ms.author: tglee
 manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: 4a36302d80f4bc397128e3838c9abf858a0b5fe8
-ms.openlocfilehash: ddda79fad6b114c7b91a4b05df82433fe59a0f3d
-ms.contentlocale: it-it
-ms.lasthandoff: 08/28/2017
-
+ms.workload: office
+ms.openlocfilehash: 0b95b85f028ac003cedb05248b6884c24ca32008
+ms.sourcegitcommit: f9fbf1f55f9ac14e4e5c6ae58c30dc1800ca6cda
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 01/10/2018
 ---
-# <a name="how-to-configure-inclusion-list-security"></a>How to: Configure Inclusion List Security
-  If you have Administrator permissions, you can configure the [!INCLUDE[ndptecclick](../vsto/includes/ndptecclick-md.md)] trust prompt to control whether end users are given the option of installing Office solutions by saving a trust decision to the inclusion list. For information about inclusion lists, see [Trusting Office Solutions by Using Inclusion Lists](../vsto/trusting-office-solutions-by-using-inclusion-lists.md).  
+# <a name="how-to-configure-inclusion-list-security"></a>Procedura: configurare la sicurezza dell'elenco di inclusione
+  Se si dispone delle autorizzazioni di amministratore, è possibile configurare il [!INCLUDE[ndptecclick](../vsto/includes/ndptecclick-md.md)] richiesta di attendibilità per controllare se gli utenti finali è data la possibilità di installare le soluzioni Office salvando una decisione di attendibilità per l'elenco di inclusione. Per informazioni sugli elenchi di inclusione, vedere [Trusting soluzioni di Office per gli elenchi di inclusione](../vsto/trusting-office-solutions-by-using-inclusion-lists.md).  
   
  [!INCLUDE[appliesto_all](../vsto/includes/appliesto-all-md.md)]  
   
- For solutions that are in each of five zones, you can set the following options:  
+ Per le soluzioni in ognuna delle cinque aree, è possibile impostare le opzioni seguenti:  
   
--   Enable the [!INCLUDE[ndptecclick](../vsto/includes/ndptecclick-md.md)] Trust Prompt Key and the inclusion list. You can allow end users to grant trust to Office solutions that are signed with any certificate.  
+-   Abilitare il [!INCLUDE[ndptecclick](../vsto/includes/ndptecclick-md.md)] chiave dei messaggi di richiesta di attendibilità e l'elenco di inclusione. È possibile consentire agli utenti finali di concedere l'attendibilità alle soluzioni Office firmate con un certificato.  
   
--   Restrict the [!INCLUDE[ndptecclick](../vsto/includes/ndptecclick-md.md)] Trust Prompt Key and the inclusion list. You can allow end users to install Office solutions that are signed with a certificate that identifies the publisher, but that is not already trusted.  
+-   Limitare il [!INCLUDE[ndptecclick](../vsto/includes/ndptecclick-md.md)] chiave dei messaggi di richiesta di attendibilità e l'elenco di inclusione. È possibile consentire agli utenti finali di installare le soluzioni Office firmate con un certificato che identifica il server di pubblicazione, ma che non è attendibile.  
   
--   Disable the [!INCLUDE[ndptecclick](../vsto/includes/ndptecclick-md.md)] Trust Prompt Key and the inclusion list. You can prevent end users from installing any Office solution that is not signed with an explicitly trusted certificate.  
+-   Disabilitare il [!INCLUDE[ndptecclick](../vsto/includes/ndptecclick-md.md)] chiave dei messaggi di richiesta di attendibilità e l'elenco di inclusione. È possibile impedire agli utenti finali di installazione di soluzioni Office che non sono firmato con un certificato attendibile in modo esplicito.  
   
-## <a name="enabling-the-inclusion-list"></a>Enabling the Inclusion List  
- Enable the inclusion list for a zone when you want end users to be presented with the option of installing and running any Office solution that comes from that zone.  
+## <a name="enabling-the-inclusion-list"></a>Abilitazione dell'elenco di inclusione  
+ Abilitare l'elenco di inclusione per una zona quando si desidera che gli utenti finali devono essere presentati con l'opzione di installazione e l'esecuzione di soluzioni Office che provengono da tale area.  
   
-#### <a name="to-enable-the-inclusion-list-by-using-the-registry-editor"></a>To enable the inclusion list by using the registry editor  
+#### <a name="to-enable-the-inclusion-list-by-using-the-registry-editor"></a>Per abilitare l'elenco di inclusione tramite l'editor del Registro di sistema  
   
-1.  Open the registry editor:  
+1.  Aprire l'editor del Registro di sistema:  
   
-    1.  Click **Start**, and then click **Run**.  
+    1.  Fare clic su **avviare**, quindi fare clic su **eseguire**.  
   
-    2.  In the **Open** box, type **regedt32.exe**, and then click **OK**.  
+    2.  Nel **aprire** digitare **regedt32.exe**, quindi fare clic su **OK**.  
   
-2.  Find the following registry key:  
+2.  Trovare la chiave del Registro di sistema seguente:  
   
-     \HKEY_LOCAL_MACHINE\SOFTWARE\MICROSOFT\\.NETFramework\Security\TrustManager\PromptingLevel  
+     \HKEY_LOCAL_MACHINE\SOFTWARE\MICROSOFT\\. NETFramework\Security\TrustManager\PromptingLevel  
   
-     If the key does not exist, create it.  
+     Se la chiave non esiste, crearla.  
   
-3.  Add the following subkeys as **String Value**, if they do not already exist, with the associated values.  
+3.  Aggiungere le seguenti sottochiavi come **valore stringa**, se non già presenti, con i valori associati.  
   
-    |String Value subkey|Value|  
+    |Sottochiave del valore stringa|Valore|  
     |-------------------------|-----------|  
     |**Internet**|**AuthenticodeRequired**|  
-    |**UntrustedSites**|**Disabled**|  
-    |**MyComputer**|**Enabled**|  
+    |**Siti non attendibili**|**Disabilitato**|  
+    |**Risorse del computer**|**Enabled**|  
     |**LocalIntranet**|**Enabled**|  
-    |**TrustedSites**|**Enabled**|  
+    |**Siti attendibili**|**Enabled**|  
   
-     By default, **Internet** has the value **AuthenticodeRequired** and **UntrustedSites** has the value **Disabled**.  
+     Per impostazione predefinita, **Internet** ha il valore **AuthenticodeRequired** e **siti non** ha il valore **disabilitato**.  
   
-#### <a name="to-enable-the-inclusion-list-programmatically"></a>To enable the inclusion list programmatically  
+#### <a name="to-enable-the-inclusion-list-programmatically"></a>Per abilitare l'elenco di inclusione a livello di codice  
   
-1.  Create a Visual Basic or Visual C# console application.  
+1.  Creare un'applicazione console Visual Basic o Visual c#.  
   
-2.  Open the Program.vb or Program.cs file for editing and add the following code.  
+2.  Aprire il file Program. vb o Program.cs per la modifica e aggiungere il codice seguente.  
   
     ```vb  
     Dim key As Microsoft.Win32.RegistryKey  
@@ -97,42 +93,42 @@ ms.lasthandoff: 08/28/2017
     key.Close();  
     ```  
   
-3.  Build and run the application.  
+3.  Compilare ed eseguire l'applicazione.  
   
-## <a name="restricting-the-inclusion-list"></a>Restricting the Inclusion List  
- Restrict the inclusion list so that solutions must be signed with Authenticode certificates that have known identity before users are prompted for a trust decision.  
+## <a name="restricting-the-inclusion-list"></a>Limitare l'elenco di inclusione  
+ Limitare l'elenco di inclusione in modo che le soluzioni devono essere firmate con certificati Authenticode con identità nota affinché gli utenti vengono richiesto di prendere una decisione di attendibilità.  
   
-#### <a name="to-restrict-the-inclusion-list"></a>To restrict the inclusion list  
+#### <a name="to-restrict-the-inclusion-list"></a>Per limitare l'elenco di inclusione  
   
-1.  Open the registry editor:  
+1.  Aprire l'editor del Registro di sistema:  
   
-    1.  Click **Start**, and then click **Run**.  
+    1.  Fare clic su **avviare**, quindi fare clic su **eseguire**.  
   
-    2.  In the **Open** box, type **regedt32.exe**, and then click **OK**.  
+    2.  Nel **aprire** digitare **regedt32.exe**, quindi fare clic su **OK**.  
   
-2.  Find the following registry key:  
+2.  Trovare la chiave del Registro di sistema seguente:  
   
-     \HKEY_LOCAL_MACHINE\SOFTWARE\MICROSOFT\\.NETFramework\Security\TrustManager\PromptingLevel  
+     \HKEY_LOCAL_MACHINE\SOFTWARE\MICROSOFT\\. NETFramework\Security\TrustManager\PromptingLevel  
   
-     If the key does not exist, create it.  
+     Se la chiave non esiste, crearla.  
   
-3.  Add the following subkeys as **String Value**, if they do not already exist, with the associated values.  
+3.  Aggiungere le seguenti sottochiavi come **valore stringa**, se non già presenti, con i valori associati.  
   
-    |String Value subkey|Value|  
+    |Sottochiave del valore stringa|Valore|  
     |-------------------------|-----------|  
-    |**UntrustedSites**|**Disabled**|  
+    |**Siti non attendibili**|**Disabilitato**|  
     |**Internet**|**AuthenticodeRequired**|  
-    |**MyComputer**|**AuthenticodeRequired**|  
+    |**Risorse del computer**|**AuthenticodeRequired**|  
     |**LocalIntranet**|**AuthenticodeRequired**|  
-    |**TrustedSites**|**AuthenticodeRequired**|  
+    |**Siti attendibili**|**AuthenticodeRequired**|  
   
-     By default, **Internet** has the value **AuthenticodeRequired** and **UntrustedSites** has the value **Disabled**.  
+     Per impostazione predefinita, **Internet** ha il valore **AuthenticodeRequired** e **siti non** ha il valore **disabilitato**.  
   
-#### <a name="to-restrict-the-inclusion-list-programmatically"></a>To restrict the inclusion list programmatically  
+#### <a name="to-restrict-the-inclusion-list-programmatically"></a>Per limitare l'elenco di inclusione a livello di codice  
   
-1.  Create a Visual Basic or Visual C# console application.  
+1.  Creare un'applicazione console Visual Basic o Visual c#.  
   
-2.  Open the Program.vb or Program.cs file for editing and add the following code.  
+2.  Aprire il file Program. vb o Program.cs per la modifica e aggiungere il codice seguente.  
   
     ```vb  
     Dim key As Microsoft.Win32.RegistryKey  
@@ -156,38 +152,38 @@ ms.lasthandoff: 08/28/2017
     key.Close();  
     ```  
   
-3.  Build and run the application.  
+3.  Compilare ed eseguire l'applicazione.  
   
-## <a name="disabling-the-inclusion-list"></a>Disabling the Inclusion List  
- You can disable the inclusion list so that end users can only install solutions that are signed with a trusted and known certificate.  
+## <a name="disabling-the-inclusion-list"></a>La disabilitazione dell'elenco di inclusione  
+ È possibile disabilitare l'elenco di inclusione in modo che gli utenti finali possono installare solo le soluzioni che sono firmate con un certificato attendibile e noto.  
   
-#### <a name="to-disable-the-inclusion-list"></a>To disable the inclusion list  
+#### <a name="to-disable-the-inclusion-list"></a>Per disabilitare l'elenco di inclusione  
   
-1.  Open the registry editor:  
+1.  Aprire l'editor del Registro di sistema:  
   
-    1.  Click **Start**, and then click **Run**.  
+    1.  Fare clic su **avviare**, quindi fare clic su **eseguire**.  
   
-    2.  In the **Open** box, type **regedt32.exe**, and then click **OK**.  
+    2.  Nel **aprire** digitare **regedt32.exe**, quindi fare clic su **OK**.  
   
-2.  Create the following registry key if this does not already exist:  
+2.  Se questa non esiste già, creare la chiave del Registro di sistema seguente:  
   
-     **\HKEY_LOCAL_MACHINE\SOFTWARE\MICROSOFT\\.NETFramework\Security\TrustManager\PromptingLevel**  
+     **\HKEY_LOCAL_MACHINE\SOFTWARE\MICROSOFT\\. NETFramework\Security\TrustManager\PromptingLevel**  
   
-3.  Add the following subkeys as **String Value**, if they do not already exist, with the associated values.  
+3.  Aggiungere le seguenti sottochiavi come **valore stringa**, se non già presenti, con i valori associati.  
   
-    |String Value subkey|Value|  
+    |Sottochiave del valore stringa|Valore|  
     |-------------------------|-----------|  
-    |**UntrustedSites**|**Disabled**|  
-    |**Internet**|**Disabled**|  
-    |**MyComputer**|**Disabled**|  
-    |**LocalIntranet**|**Disabled**|  
-    |**TrustedSites**|**Disabled**|  
+    |**Siti non attendibili**|**Disabilitato**|  
+    |**Internet**|**Disabilitato**|  
+    |**Risorse del computer**|**Disabilitato**|  
+    |**LocalIntranet**|**Disabilitato**|  
+    |**Siti attendibili**|**Disabilitato**|  
   
-#### <a name="to-disable-the-inclusion-list-programmatically"></a>To disable the inclusion list programmatically  
+#### <a name="to-disable-the-inclusion-list-programmatically"></a>Per disabilitare l'elenco di inclusione a livello di codice  
   
-1.  Create a Visual Basic or Visual C# console application.  
+1.  Creare un'applicazione console Visual Basic o Visual c#.  
   
-2.  Open the Program.vb or Program.cs file for editing and add the following code.  
+2.  Aprire il file Program. vb o Program.cs per la modifica e aggiungere il codice seguente.  
   
     ```vb  
     Dim key As Microsoft.Win32.RegistryKey  
@@ -212,10 +208,10 @@ ms.lasthandoff: 08/28/2017
   
     ```  
   
-3.  Build and run the application.  
+3.  Compilare ed eseguire l'applicazione.  
   
-## <a name="see-also"></a>See Also  
- [Trusting Office Solutions by Using Inclusion Lists](../vsto/trusting-office-solutions-by-using-inclusion-lists.md)   
- [Securing Office Solutions](../vsto/securing-office-solutions.md)  
+## <a name="see-also"></a>Vedere anche  
+ [Concessione dell'attendibilità soluzioni Office mediante gli elenchi di inclusione](../vsto/trusting-office-solutions-by-using-inclusion-lists.md)   
+ [Sicurezza delle soluzioni Office](../vsto/securing-office-solutions.md)  
   
   

@@ -1,52 +1,53 @@
 ---
-title: "IDebugObject::SetReferenceValue | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "IDebugObject::SetReferenceValue"
-helpviewer_keywords: 
-  - "Metodo IDebugObject::SetReferenceValue"
+title: IDebugObject::SetReferenceValue | Documenti Microsoft
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: vs-ide-sdk
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: IDebugObject::SetReferenceValue
+helpviewer_keywords: IDebugObject::SetReferenceValue method
 ms.assetid: 08c78a4e-98eb-41cb-8b75-02a6a43d49f7
-caps.latest.revision: 9
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: gregvanl
+ms.author: gregvanl
+manager: ghogen
+ms.workload: vssdk
+ms.openlocfilehash: 8045ef99ae500dac5baf2371d84c0503630dcc68
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
-# IDebugObject::SetReferenceValue
-[!INCLUDE[vs2017banner](../../../code-quality/includes/vs2017banner.md)]
-
-Imposta il valore di riferimento dell'oggetto.  
+# <a name="idebugobjectsetreferencevalue"></a>IDebugObject::SetReferenceValue
+Imposta il valore di riferimento di questo oggetto.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp#  
-HRESULT SetReferenceValue(   
-   IDebugObject* pObject  
+```cpp  
+HRESULT SetReferenceValue(   
+   IDebugObject* pObject  
 );  
 ```  
   
-```c#  
+```csharp  
 int SetReferenceValue(  
-   [In] IDebugObject pObject  
+   [In] IDebugObject pObject  
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `pObject`  
- \[in\]  [IDebugObject](../../../extensibility/debugger/reference/idebugobject.md) un oggetto che rappresenta il nuovo valore di riferimento.  
+ [in] Un [IDebugObject](../../../extensibility/debugger/reference/idebugobject.md) oggetto che rappresenta il nuovo valore di riferimento.  
   
-## Valore restituito  
- Se l'operazione riesce, restituisce S\_OK, in caso contrario, restituisce un codice di errore.  
+## <a name="return-value"></a>Valore restituito  
+ Se ha esito positivo, restituisce S_OK; in caso contrario, restituisce un codice di errore.  
   
-## Note  
- Questo metodo crea a questo [IDebugObject](../../../extensibility/debugger/reference/idebugobject.md) oggetto un riferimento al valore dell'oggetto specificato nel parametro di `pObject` , generando tramite qualsiasi riferimento precedente.  Si noti che questo oggetto di `IDebugObject` deve essere già un tipo di riferimento.  
+## <a name="remarks"></a>Note  
+ Questo metodo rende questa [IDebugObject](../../../extensibility/debugger/reference/idebugobject.md) un riferimento al valore dell'oggetto specificato nell'oggetto di `pObject` parametro, generando un'eccezione qualsiasi riferimento precedente. Si noti che questo `IDebugObject` oggetto deve essere già un tipo di riferimento.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IDebugObject](../../../extensibility/debugger/reference/idebugobject.md)   
  [GetValue](../../../extensibility/debugger/reference/idebugobject-getvalue.md)

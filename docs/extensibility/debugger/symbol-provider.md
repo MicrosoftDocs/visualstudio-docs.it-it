@@ -1,33 +1,36 @@
 ---
-title: "Provider di simboli | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "gestore dei simboli"
-  - "gestore dei simboli di debug [Debugging SDK]"
+title: Provider di simboli | Documenti Microsoft
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: vs-ide-sdk
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords:
+- symbol handler
+- debugging [Debugging SDK], symbol handler
 ms.assetid: 5fce651b-fead-4418-81b0-a011df7644ab
-caps.latest.revision: 17
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 17
+caps.latest.revision: "17"
+author: gregvanl
+ms.author: gregvanl
+manager: ghogen
+ms.workload: vssdk
+ms.openlocfilehash: e0f01e10050fcbdb5cf27390464ae6b8b3e62d64
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
-# Provider di simboli
-[!INCLUDE[vs2017banner](../../code-quality/includes/vs2017banner.md)]
-
-Un'implementazione dell'analizzatore di espressioni necessario accedere alle informazioni di debug sui simboli generati dal compilatore di linguaggio per valutare le variabili ed espressioni.  Viene eseguita questa operazione tramite le interfacce di provider dei simboli \(SP\), anche chiamare un gestore dei simboli.  
+# <a name="symbol-provider"></a>Provider di simboli
+Un'implementazione dell'analizzatore di espressioni deve accedere alle informazioni di debug sui simboli generate dal compilatore di linguaggio per valutare variabili ed espressioni. Esegue l'operazione usando le interfacce di un provider di simboli (SP), denominato anche un gestore di simboli.  
   
- [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] fornisce lo SPs per il codice gestito e il codice nativo utilizzando il formato di file di simboli del database \(PDB\) di programma.  A meno che non sia una stretta necessità di un programma di utilizzare i simboli archiviati in un formato personalizzato, è consigliabile utilizzare lo SPs fornito da [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)].  
+ [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)]fornisce SPs per codice gestito e codice nativo usando il formato di file di simboli di DataBase di programma (PDB). A meno che non vi è un nome sicuro, è necessario per il programma di utilizzare i simboli archiviati in un formato personalizzato, è consigliabile utilizzare la stored procedure fornite dal [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)].  
   
-## note di implementazione  
- I motori di debug di [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)]previsto per comunicare con lo SPs l'utilizzo delle interfacce \(CLR\) di Common Language Runtime.  Di conseguenza, uno SP che verrà utilizzata dai motori di debug di Visual Studio deve supportare CLR.  Un elenco completo di tutte le interfacce di debug di CLR è disponibile in debugref.doc, che fa parte di [!INCLUDE[winsdklong](../../deployment/includes/winsdklong_md.md)].  
+## <a name="implementation-notes"></a>Note di implementazione  
+ Il [!INCLUDE[vsprvs](../../code-quality/includes/vsprvs_md.md)] motori di debug prevedono di mettersi in contatto con la stored procedure utilizzando le interfacce di Common Language Runtime (CLR). Di conseguenza, un Service Pack che verranno usate con i motori di debug di Visual Studio deve supportare Common Language Runtime. Un elenco completo di tutte le interfacce di debug di CLR è reperibile in debugref.doc, che fa parte di [!INCLUDE[winsdklong](../../deployment/includes/winsdklong_md.md)].  
   
- Se SP funziona solo con il motore di debug personalizzato, è possibile implementare SP secondo necessità in base alle esigenze del motore di debug.  
+ Se il SP verranno usate solo con il motore di debug personalizzati, è possibile implementare il SP per adattarlo a seconda delle esigenze del motore di debug.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Componenti del debugger](../../extensibility/debugger/debugger-components.md)

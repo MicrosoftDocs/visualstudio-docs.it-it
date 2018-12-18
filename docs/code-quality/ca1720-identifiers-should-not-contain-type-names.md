@@ -1,47 +1,49 @@
 ---
-title: "CA1720: Gli identificatori non devono contenere nomi di tipo | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-devops-test"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "CA1720"
-  - "IdentifiersShouldNotContainTypeNames"
-helpviewer_keywords: 
-  - "IdentifiersShouldNotContainTypeNames"
-  - "CA1720"
+title: 'CA1720: Gli identificatori non devono contenere nomi di tipo | Documenti Microsoft'
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: vs-ide-code-analysis
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- CA1720
+- IdentifiersShouldNotContainTypeNames
+helpviewer_keywords:
+- IdentifiersShouldNotContainTypeNames
+- CA1720
 ms.assetid: c95ee48f-f23a-45f0-ac9e-a3c1ecfabdea
-caps.latest.revision: 15
-author: "stevehoag"
-ms.author: "shoag"
-manager: "wpickett"
-caps.handback.revision: 15
+caps.latest.revision: "15"
+author: gewarren
+ms.author: gewarren
+manager: ghogen
+ms.workload: multiple
+ms.openlocfilehash: ac50c390ca7a45cf5ef28f2d82d1f75fc5e2c1a0
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
-# CA1720: Gli identificatori non devono contenere nomi di tipo
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
+# <a name="ca1720-identifiers-should-not-contain-type-names"></a>CA1720: Gli identificatori non devono contenere nomi di tipo
 |||  
 |-|-|  
 |TypeName|IdentifiersShouldNotContainTypeNames|  
 |CheckId|CA1720|  
-|Category|Microsoft.Naming|  
-|Breaking Change|Breaking|  
+|Category|Microsoft. naming|  
+|Modifica importante|Interruzione|  
   
-## Causa  
- Il nome di un parametro in un membro visibile esternamente contiene un nome del tipo di dati.  
+## <a name="cause"></a>Causa  
+ Il nome di un parametro in un membro visibile esternamente contiene un nome di tipo di dati.  
   
- In alternativa  
+ oppure  
   
- Il nome di un membro visibile esternamente contiene un nome del tipo di dati specifico del linguaggio.  
+ Il nome di un membro visibile esternamente contiene un nome di tipo di dati specifico del linguaggio.  
   
-## Descrizione della regola  
- I nomi dei parametri e dei membri sono prevalentemente utilizzati per comunicare il loro significato piuttosto che per descriverne il tipo, il quale viene in genere fornito dagli strumenti di sviluppo.  Per i nomi dei membri, se è necessario utilizzare un nome del tipo di dati, utilizzare un nome indipendente dal linguaggio anziché uno specifico del linguaggio.  Anziché il nome del tipo C\# 'int', ad esempio, utilizzare il nome del tipo di dati indipendente dal linguaggio Int32.  
+## <a name="rule-description"></a>Descrizione della regola  
+ Nomi di parametri e membri meglio vengono utilizzati per comunicare il significato di to descrivono il tipo, il quale deve essere fornito dagli strumenti di sviluppo. Per i nomi dei membri, se è necessario utilizzare un nome di tipo di dati, utilizzare un nome indipendente dal linguaggio anziché uno specifico della lingua. Anziché il nome di tipo c# 'int', ad esempio, utilizzare il nome del tipo di dati indipendenti dal linguaggio Int32.  
   
- Ogni token discreto nel nome del parametro o del membro viene confrontato con i seguenti nomi del tipo di dati specifici del linguaggio senza distinzione tra maiuscole e minuscole:  
+ Ogni token discreti il nome del parametro o un membro viene confrontato con i nomi dei tipi di dati specifico del linguaggio seguenti, in modo tra maiuscole e minuscole:  
   
 -   Bool  
   
@@ -67,9 +69,9 @@ caps.handback.revision: 15
   
 -   ULong  
   
--   Unsigned  
+-   Senza segno  
   
--   Signed  
+-   Firmato  
   
 -   Float  
   
@@ -77,17 +79,17 @@ caps.handback.revision: 15
   
 -   Float64  
   
- I nomi di un parametro vengono inoltre confrontati con i seguenti nomi del tipo di dati indipendenti dal linguaggio senza distinzione tra maiuscole e minuscole:  
+ Inoltre, i nomi di parametro vengono inoltre confrontati con i seguenti nomi di tipo di dati indipendenti dal linguaggio e minuscole:  
   
 -   Object  
   
--   Obj  
+-   obj  
   
--   Boolean  
+-   Booleano  
   
 -   Char  
   
--   String  
+-   Stringa  
   
 -   SByte  
   
@@ -109,7 +111,7 @@ caps.handback.revision: 15
   
 -   IntPtr  
   
--   Ptr  
+-   PTR  
   
 -   Puntatore  
   
@@ -123,23 +125,23 @@ caps.handback.revision: 15
   
 -   Double  
   
--   Decimal  
+-   Decimale  
   
--   Guid  
+-   GUID  
   
-## Come correggere le violazioni  
- **Se generate rispetto a un parametro:**  
+## <a name="how-to-fix-violations"></a>Come correggere le violazioni  
+ **Se viene generato con un parametro:**  
   
- Sostituire l'identificatore del tipo di dati nel nome del parametro con un termine che ne descrive meglio il significato o con un termine più generico, ad esempio 'value'.  
+ Sostituire l'identificatore del tipo di dati del nome del parametro con un termine che meglio descrive il significato o un termine più generico, ad esempio 'value'.  
   
  **Se generate rispetto a un membro:**  
   
- Sostituire l'identificatore del tipo di dati specifico del linguaggio nel nome del membro con un termine che ne descrive meglio il significato, con un equivalente indipendente dal linguaggio oppure con un termine più generico, ad esempio 'value'.  
+ Sostituire l'identificatore del tipo di dati specifico del linguaggio nel nome del membro con un termine che meglio descrive il significato, un equivalente indipendente dal linguaggio o un termine più generico, ad esempio 'value'.  
   
-## Esclusione di avvisi  
- L'utilizzo occasionale di nomi di parametri e membri basati sul tipo potrebbe essere appropriato.  Tuttavia, per i nuovi sviluppi, non vi sono scenari noti in cui sia necessario escludere un avviso da questa regola.  Per le librerie fornite in precedenza, potrebbe essere necessario escludere un avviso da questa regola.  
+## <a name="when-to-suppress-warnings"></a>Esclusione di avvisi  
+ Uso occasionale di nomi di parametro e il membro tipo potrebbe essere appropriato. Tuttavia, per un nuovo sviluppo, non noto possono verificarsi scenari in cui è necessario escludere un avviso da questa regola. Per le librerie fornite in precedenza, potrebbe essere necessario escludere un avviso da questa regola.  
   
-## Regole correlate  
+## <a name="related-rules"></a>Regole correlate  
  [CA1709: Gli identificatori devono essere digitati correttamente con distinzione tra maiuscole e minuscole](../code-quality/ca1709-identifiers-should-be-cased-correctly.md)  
   
  [CA1708: Gli identificatori non si devono differenziare solo in base alle maiuscole e minuscole](../code-quality/ca1708-identifiers-should-differ-by-more-than-case.md)  

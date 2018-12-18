@@ -1,45 +1,47 @@
 ---
-title: "Prelettura del contenuto per le applicazioni Windows Store | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "FSharp"
-  - "VB"
-  - "CSharp"
-  - "C++"
-ms.assetid: b4481fef-3ebf-4f7d-9748-d43821a0ebac
-caps.latest.revision: 11
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 11
+title: Eseguire il debug utilizzando il contenuto di prelettura nelle App UWP | Documenti Microsoft
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: vs-ide-debug
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- CSharp
+- VB
+- FSharp
+- C++
+caps.latest.revision: "11"
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.workload: uwp
+ms.openlocfilehash: 6a0555e2a3ea600a1f5b11eaf95a48f4cfd7df3e
+ms.sourcegitcommit: 5d43e9590e2246084670b79269cc9d99124bb3df
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 01/19/2018
 ---
-# Prelettura del contenuto per le applicazioni Windows Store
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
-Per migliorare la velocità di risposta della tua app di Windows Store, puoi richiedere il precaricamento da parte di Windows di parte del contenuto Web, ad esempio immagini o pagine Web, nella cache [WinINet](http://msdn.microsoft.com/it-it/0a06f2af-957a-4dff-a8cc-187370181b5c) [WinINet](http://msdn.microsoft.com/library/aa383630.aspx) dell'app. Questa funzionalità, nota come "caricamento di contenuto in background", è particolarmente utile per il contenuto usato all'avvio, anche se puoi caricare in background altro contenuto usato di frequente. I metodi della classe [Windows.Networking.BackgroundTransfer.ContentPrefetcher](http://msdn.microsoft.com/library/windows/apps/windows.networking.backgroundtransfer.contentprefetcher.aspx) consentono di specificare gli URI del contenuto da caricare in background. Per esempi relativi all'aggiunta della funzionalità ContentPrefetcher, vedi il Windows SDK [Esempio di prelettura di contenuto](http://code.msdn.microsoft.com/windowsapps/ContentPrefetcher-Sample-432c8309).  
+# <a name="debug-uwp-apps-using-prefetched-content-in-visual-studio"></a>Debug di App UWP con contenuto di prelettura in Visual Studio
   
- Windows usa le regole euristiche per determinare quando e se eseguire la prelettura e quali risorse verranno scaricate. Le regole euristiche tengono conto delle condizioni di alimentazione e rete del sistema, della cronologia di utilizzo delle app utente e dei risultati dei precedenti tentativi di caricamento in background. In Visual Studio puoi usare il comando **Trigger prelettura applicazioni Windows Store** per forzare Windows a ignorare le regole euristiche ContentPrefetcher e a precaricare tutto il contenuto Web specificato. Questo può essere utile se desideri testare le prestazioni o il comportamento dell'app con la prelettura del contenuto in uno stato noto \(caricato o meno\).  
+ Per rendere più la risposta dell'app UWP, è possibile richiedere Windows per precaricare parte del contenuto web, ad esempio immagini o pagine web, all'app [WinINet](http://msdn.microsoft.com/library/0a06f2af-957a-4dff-a8cc-187370181b5c) cache. Questa funzionalità, nota come "caricamento di contenuto in background", È particolarmente utile per il contenuto usato all'avvio, ma è possibile caricare in background altro contenuto usato di frequente, troppo. I metodi del [Windows.Networking.BackgroundTransfer.ContentPrefetcher](/uwp/api/Windows.Networking.BackgroundTransfer.ContentPrefetcher) classe consentono di specificare l'URI del contenuto che si desidera precaricare. Vedi il Windows SDK [esempio prelettura di contenuto](http://code.msdn.microsoft.com/windowsapps/ContentPrefetcher-Sample-432c8309) per esempi relativi all'aggiunta della funzionalità ContentPrefetcher all'app.  
   
-## Per forzare il precaricamento delle risorse specificate di ContentPrefetcher  
- Questa procedura presuppone che tu abbia già impostato la funzionalità ContentPrefetcher e specificato gli URI di contenuto da precaricare nel progetto dell'app. Per forzare il precaricamento del contenuto quando le risorse specificate sono nuove o modificate, devi avviare e arrestare l'app prima di scegliere il comando **Trigger prelettura applicazioni Windows Store**. Prima di tutto esegui l'app per registrare gli URI. Il comando **Trigger prelettura applicazioni Windows Store** forza la funzionalità ContentPrefetcher a scaricare il contenuto e ad aggiungerlo nella cache. Nelle esecuzioni successive dell'app, puoi presupporre che il contenuto sia stato precaricato.  
+ Windows usa le regole euristiche per determinare quando e se caricare contenuto in background e quali risorse verranno scaricate. Le regole euristiche tengono conto delle condizioni di alimentazione e rete del sistema, della cronologia di utilizzo delle app utente e dei risultati dei precedenti tentativi di caricamento in background. In Visual Studio, è possibile utilizzare il **Trigger prelettura App di Windows Store** comando per forzare Windows a ignorare le regole euristiche ContentPrefetcher e a precaricare tutto il contenuto web specificato. Questo può essere utile se desideri testare le prestazioni o il comportamento dell'app con il contenuto da caricare in background in uno stato noto (caricato o meno).  
   
-1.  Avvia l'app per registrare gli URI del contenuto di prelettura con l'app. Scegli **Avvia debug**  \(Tasto di scelta rapida: F5\) dal menu **Debug**.  
+## <a name="to-force-preloading-of-contentprefetcher-specified-resources"></a>Per forzare il precaricamento delle risorse specificate di ContentPrefetcher  
+ Questa procedura presuppone che tu abbia già impostato la funzionalità ContentPrefetcher e specificato gli URI di contenuto da precaricare nel progetto dell'app. Per forzare il precaricamento del contenuto quando le risorse specificate sono nuove o modificate, devi avviare e arrestare l'app prima che venga scelto il **Trigger prelettura App di Windows Store** comando. Prima di tutto esegui l'app per registrare gli URI. **Trigger prelettura App di Windows Store** comando forza la funzionalità ContentPrefetcher a scaricare il contenuto e aggiungerlo nella cache. Nelle esecuzioni successive dell'app, puoi presupporre che il contenuto sia stato precaricato.  
   
-2.  Scegli **Termina debug** dal menu **Debug** \(Tasto di scelta rapida: MAIUSC\+F5\).  
+1.  Avvia l'app per registrare gli URI del contenuto caricati in background con l'app. Nel **Debug** menu, scegliere **Avvia debug** (tasto di scelta rapida: F5).  
   
-3.  Scegli **Altre destinazioni debug** dal menu **Debug**, quindi scegli **Trigger prelettura applicazioni Windows Store**.  
+2.  Nel **Debug** menu, scegliere **Termina debug** (tasto di scelta rapida: MAIUSC + F5).  
   
- Ora puoi eseguire testare, analizzare o eseguire il debug dell'app con le risorse Web in prelettura.  
+3.  Nel **Debug** menu, scegliere **altre destinazioni Debug** e quindi scegliere **Trigger prelettura App di Windows Store**.  
+  
+ Ora puoi eseguire testare, analizzare o eseguire il debug dell'app con le risorse Web caricate in background.  
   
 > [!NOTE]
 >  Ripeti questi passaggi quando aggiungi o modifichi il contenuto Web specificato.  
   
-## Vedere anche  
- [Post di blog: Trigger prelettura app di Windows in Visual Studio 2013 Update 2](http://blogs.msdn.com/b/visualstudioalm/archive/2014/02/06/triggering-prefetch-for-windows-store-apps-in-visual-studio-2013-update-2.aspx)
+## <a name="see-also"></a>Vedere anche  
+ [Post di blog: trigger prelettura per applicazioni Windows Store in Visual Studio 2013 Update 2](http://blogs.msdn.com/b/visualstudioalm/archive/2014/02/06/triggering-prefetch-for-windows-store-apps-in-visual-studio-2013-update-2.aspx)

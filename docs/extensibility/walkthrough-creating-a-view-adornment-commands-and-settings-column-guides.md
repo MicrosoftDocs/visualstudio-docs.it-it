@@ -4,34 +4,20 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- vs-ide-sdk
+ms.technology: vs-ide-sdk
 ms.tgt_pltfrm: 
 ms.topic: article
 ms.assetid: 4a2df0a3-42da-4f7b-996f-ee16a35ac922
-caps.latest.revision: 7
+caps.latest.revision: "7"
+author: gregvanl
 ms.author: gregvanl
 manager: ghogen
-translation.priority.mt:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.workload: vssdk
+ms.openlocfilehash: c7b59afc8d32cefd8877d18d91556230aef9a284
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
 ms.translationtype: MT
-ms.sourcegitcommit: 4a36302d80f4bc397128e3838c9abf858a0b5fe8
-ms.openlocfilehash: c1836489b1845bca9e57daf83fc97bafeaf9da72
-ms.contentlocale: it-it
-ms.lasthandoff: 09/26/2017
-
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="walkthrough-creating-a-view-adornment-commands-and-settings-column-guides"></a>Procedura dettagliata: Creazione di un'area di controllo di visualizzazione, comandi e le impostazioni (guide colonne)
 È possibile estendere l'editor di testo o codice di Visual Studio con i comandi e visualizzare gli effetti.  In questo argomento viene illustrato come iniziare con una funzionalità di estensione comuni, le guide di colonna.  Le guide di colonna sono visivamente chiara linee disegnate su visualizzazione dell'editor di testo che consentono di gestire il codice per la larghezza delle colonne specifiche.  Codice di formattazione specifica può essere importante per gli esempi si includere nei documenti, post di blog o report di bug.  
@@ -68,13 +54,13 @@ ms.lasthandoff: 09/26/2017
   
 -   È presente un `ColumnGuideCommands` oggetto che implementa i comandi dell'utente e i gestori di comando per i comandi dichiarati nel file vsct.  
   
- **VSIX**.  Utilizzare **File &#124; Nuovo... ** comando per creare un progetto.  Scegliere il nodo di estendibilità in c# nel riquadro di spostamento a sinistra e scegliere **progetto VSIX** nel riquadro di destra.  Immettere il nome ColumnGuides e scegliere **OK** per creare il progetto.  
+ **VSIX**.  Utilizzare **File &#124; Nuovo...**  comando per creare un progetto.  Scegliere il nodo di estendibilità in c# nel riquadro di spostamento a sinistra e scegliere **progetto VSIX** nel riquadro di destra.  Immettere il nome ColumnGuides e scegliere **OK** per creare il progetto.  
   
- **Visualizzare l'area di controllo**.  Premere il pulsante destro del puntatore sul nodo del progetto in Esplora soluzioni.  Scegliere il **aggiungere &#124; Nuovo elemento... ** comando per aggiungere un nuovo elemento dell'area di controllo di visualizzazione.  Scegliere **estendibilità &#124; Editor** nel riquadro di spostamento a sinistra e scegliere **dell'area di controllo del riquadro di visualizzazione Editor** nel riquadro di destra.  Immettere il nome ColumnGuideAdornment come il nome dell'elemento e scegliere **Aggiungi** per aggiungerlo.  
+ **Visualizzare l'area di controllo**.  Premere il pulsante destro del puntatore sul nodo del progetto in Esplora soluzioni.  Scegliere il **aggiungere &#124; Nuovo elemento...**  comando per aggiungere un nuovo elemento dell'area di controllo di visualizzazione.  Scegliere **estendibilità &#124; Editor** nel riquadro di spostamento a sinistra e scegliere **dell'area di controllo del riquadro di visualizzazione Editor** nel riquadro di destra.  Immettere il nome ColumnGuideAdornment come il nome dell'elemento e scegliere **Aggiungi** per aggiungerlo.  
   
  È possibile visualizzare il modello di elemento aggiunti due file al progetto (così come i riferimenti e così via): ColumnGuideAdornment.cs e ColumnGuideAdornmentTextViewCreationListener.cs.  I modelli solo un rettangolo di colore viola nella vista.  Di seguito si cambia un paio di righe nel listener di creazione di visualizzazione e sostituire il contenuto di ColumnGuideAdornment.cs.  
   
- **Comandi**.  Premere il pulsante destro del puntatore sul nodo del progetto in Esplora soluzioni.  Scegliere il **aggiungere &#124; Nuovo elemento... ** comando per aggiungere un nuovo elemento dell'area di controllo di visualizzazione.  Scegliere **estendibilità &#124; VSPackage** nel riquadro di spostamento a sinistra e scegliere **comando personalizzato** nel riquadro di destra.  Immettere il nome ColumnGuideCommands come il nome dell'elemento e scegliere **Aggiungi** per aggiungerlo.  Oltre ai riferimenti diversi, aggiungendo i comandi e un pacchetto aggiunto ColumnGuideCommands.cs ColumnGuideCommandsPackage.cs e ColumnGuideCommandsPackage.vsct.  Di seguito, si sostituirà il contenuto dei file e il cognome per definire e implementare i comandi.  
+ **Comandi**.  Premere il pulsante destro del puntatore sul nodo del progetto in Esplora soluzioni.  Scegliere il **aggiungere &#124; Nuovo elemento...**  comando per aggiungere un nuovo elemento dell'area di controllo di visualizzazione.  Scegliere **estendibilità &#124; VSPackage** nel riquadro di spostamento a sinistra e scegliere **comando personalizzato** nel riquadro di destra.  Immettere il nome ColumnGuideCommands come il nome dell'elemento e scegliere **Aggiungi** per aggiungerlo.  Oltre ai riferimenti diversi, aggiungendo i comandi e un pacchetto aggiunto ColumnGuideCommands.cs ColumnGuideCommandsPackage.cs e ColumnGuideCommandsPackage.vsct.  Di seguito, si sostituirà il contenuto dei file e il cognome per definire e implementare i comandi.  
   
 ## <a name="setting-up-the-text-view-creation-listener"></a>Configurare il Listener di creazione di visualizzazione testo  
  Aprire ColumnGuideAdornmentTextViewCreationListener.cs nell'editor.  Questo codice implementa un gestore per ogni volta che Visual Studio crea le visualizzazioni di testo.  Sono disponibili gli attributi che controllano quando viene chiamato il gestore a seconda delle caratteristiche della visualizzazione.  
@@ -532,7 +518,7 @@ namespace ColumnGuides
  Il codice del pacchetto è dichiarazioni standard che sono necessari rilevare che l'estensione sono disponibili comandi e dove posizionare i comandi di Visual Studio.  Quando il pacchetto è stato inizializzato, crea un'istanza della classe di implementazione di comandi.  Visualizzare i comandi di collegamento sopra per altre informazioni sui pacchetti relativi ai comandi.  
   
 ### <a name="a-common-commands-pattern"></a>Un modello comune di comandi  
- I comandi nell'estensione di guide di colonna sono un esempio di uno schema molto comune in Visual Studio.  Inserire i comandi correlati in un gruppo, e inserire tale gruppo in un menu principale, spesso con "`<CommandFlag>CommandWellOnly</CommandFlag>`" impostata per rendere invisibile il comando.  Inserire i comandi dei menu principale (ad esempio **modifica**) in questo modo fornisce nomi nice (ad esempio **Edit.AddColumnGuide**) che sono utili per individuare i comandi quando si assegnano nuovamente i tasti di scelta rapida in ** Opzioni degli strumenti** e il recupero di completamento quando si richiama i comandi di **finestra di comando**.  
+ I comandi nell'estensione di guide di colonna sono un esempio di uno schema molto comune in Visual Studio.  Inserire i comandi correlati in un gruppo, e inserire tale gruppo in un menu principale, spesso con "`<CommandFlag>CommandWellOnly</CommandFlag>`" impostata per rendere invisibile il comando.  Inserire i comandi dei menu principale (ad esempio **modifica**) in questo modo fornisce nomi nice (ad esempio **Edit.AddColumnGuide**) che sono utili per individuare i comandi quando si assegnano nuovamente i tasti di scelta rapida in  **Opzioni degli strumenti** e il recupero di completamento quando si richiama i comandi di **finestra di comando**.  
   
  Quindi aggiungere il gruppo di comandi al menu di scelta rapida o sub in cui si prevede di utente di utilizzare i comandi di menu.  Visual Studio vengono trattati `CommandWellOnly` come un flag di invisibilità per i menu principali.  Quando si posiziona lo stesso gruppo di comandi in un menu di scelta rapida o un sottomenu, i comandi sono visibili.  
   
@@ -1184,7 +1170,7 @@ namespace ColumnGuides
   
 ```  
   
- **Risolvere i riferimenti**.  Manca un riferimento a questo punto.  Premere il pulsante destro del puntatore sul nodo Riferimenti in Esplora soluzioni.  Scegliere il **Aggiungi... ** comando.  Il **Aggiungi riferimento** finestra di dialogo include una casella di ricerca nell'angolo superiore destro.  Immettere "editor" (senza le virgolette doppie).  Scegliere il **Microsoft.VisualStudio.Editor** elemento (è necessario selezionare la casella a sinistra dell'elemento, non è sufficiente seleziona l'elemento) e scegliere **OK** per aggiungere il riferimento.  
+ **Risolvere i riferimenti**.  Manca un riferimento a questo punto.  Premere il pulsante destro del puntatore sul nodo Riferimenti in Esplora soluzioni.  Scegliere il **Aggiungi...**  comando.  Il **Aggiungi riferimento** finestra di dialogo include una casella di ricerca nell'angolo superiore destro.  Immettere "editor" (senza le virgolette doppie).  Scegliere il **Microsoft.VisualStudio.Editor** elemento (è necessario selezionare la casella a sinistra dell'elemento, non è sufficiente seleziona l'elemento) e scegliere **OK** per aggiungere il riferimento.  
   
  **Inizializzazione**.  Quando si inizializza la classe del pacchetto, chiama `Initialize` nella classe di implementazione di comandi.  Il `ColumnGuideCommands` inizializzazione crea un'istanza della classe e Salva l'istanza di classe e il riferimento del pacchetto nei membri della classe.  
   

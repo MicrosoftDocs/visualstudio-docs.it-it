@@ -1,30 +1,30 @@
 ---
-title: "Funzione CvCreateMarkerSeriesWithCodePageA | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-debug"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "cvmakers/CvCreateMarkerSeriesWithCodePageA"
-helpviewer_keywords: 
-  - "CvCreateMarkerSeriesWithCodePageA (metodo)"
+title: Funzione CvCreateMarkerSeriesWithCodePageA | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: vs-ide-debug
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: cvmakers/CvCreateMarkerSeriesWithCodePageA
+helpviewer_keywords: CvCreateMarkerSeriesWithCodePageA method
 ms.assetid: 3d7ed601-2222-4be9-a557-f217db008753
-caps.latest.revision: 3
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.workload: multiple
+ms.openlocfilehash: d40f895133ce4fc36a40292d7931c47dd166e8e4
+ms.sourcegitcommit: f89ed5fc2e5078213e30a6ade4604e34df48181f
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 01/13/2018
 ---
-# Funzione CvCreateMarkerSeriesWithCodePageA
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
-Crea una serie di marcatori per un provider specificato e una tabella codici specificata.  Questa funzione può essere utilizzata per specificare la tabella codici in modo esplicito per il testo scritto da funzioni ANSI del marcatore API.  Impostare la tabella codici può essere utile nel caso in cui la traccia dello stack venga acquisita e quindi analizzata su computer con diversi linguaggi\/impostazioni locali.  Per impostazione predefinita viene utilizzata la tabella codici restituita dalla funzione GetACP\(\).  
+# <a name="cvcreatemarkerserieswithcodepagea-function"></a>Funzione CvCreateMarkerSeriesWithCodePageA
+Crea una serie di marcatori per un provider e una tabella codici specificati. Questa funzione può essere usata per specificare la tabella codici in modo esplicito per il testo scritto da funzioni ANSI dell'API dei marcatori. L'impostazione della tabella codici può risultare utile nel caso in cui la traccia venga acquisita e quindi analizzata in computer diversi con impostazioni locali/linguaggi diversi. Per impostazione predefinita viene usata la tabella codici restituita dalla funzione GetACP().  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
 HRESULT CvCreateMarkerSeriesWithCodePageA(  
@@ -35,24 +35,24 @@ HRESULT CvCreateMarkerSeriesWithCodePageA(
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `pProvider`  
- Oggetto provider già inizializzato da CvInitProvider.  Non può essere NULL.  
+ Oggetto provider preinizializzato tramite CvInitProvider. Non può essere NULL.  
   
  `pSeriesName`  
- Nome della stringa del marcatore .  Non può essere NULL ma è consentita la stringa vuota.  
+ Nome della serie di marcatori. Non può essere NULL, ma le stringhe vuote sono consentite.  
   
  `nTextCodePage`  
  Tabella codici valida.  
   
  `ppMarkerSeries`  
- L'indirizzo di una variabile di output che memorizzerà il contesto della stringa del marcatore.  Non può essere NULL.  
+ Indirizzo di una variabile di output in cui viene memorizzato il contesto della serie di marcatori. Non può essere NULL.  
   
-## Valore restituito  
- S\_OK quando la stringa del marcatore viene creata correttamente o codice di errore nel caso vi siano alcuni errori.  Utilizzare le macro SUCCEEDED\/FAILED per verificare la condizione di errore.  
+## <a name="return-value"></a>Valore restituito  
+ S_OK quando la serie di marcatori viene creata correttamente oppure codice dell'errore nel caso in cui si siano verificati errori. Usare le macro SUCCEEDED/FAILED per controllare la condizione di errore.  
   
-## Requisiti  
+## <a name="requirements"></a>Requisiti  
  **Intestazione:** cvmarkers.h  
   
-## Vedere anche  
- [riferimento alla libreria C\+\+](../profiling/cpp-library-reference.md)
+## <a name="see-also"></a>Vedere anche  
+ [Riferimento alla libreria C++](../profiling/cpp-library-reference.md)

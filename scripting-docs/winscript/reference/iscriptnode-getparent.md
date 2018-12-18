@@ -1,27 +1,30 @@
 ---
-title: "IScriptNode::GetParent | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/18/2017"
-ms.prod: "windows-script-interfaces"
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
+title: IScriptNode::GetParent | Documenti Microsoft
+ms.custom: 
+ms.date: 01/18/2017
+ms.prod: windows-script-interfaces
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: reference
 apiname: IScriptNode.GetParent
 apilocation: scrobj.dll
-helpviewer_keywords: 
-  - "IScriptNode::GetParent"
+helpviewer_keywords: IScriptNode::GetParent
 ms.assetid: 0fb813f6-ab94-46b2-b0cf-ef5d1cd38ae4
-caps.latest.revision: 7
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.openlocfilehash: 1da2f68de40a66b98b97ab7c7eb1d63748f1e07a
+ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/27/2017
 ---
-# IScriptNode::GetParent
-Restituisce l'oggetto `IScriptNode` che è il padre di un oggetto.  
+# <a name="iscriptnodegetparent"></a>IScriptNode::GetParent
+Restituisce il `IScriptNode` oggetto che rappresenta l'elemento padre di un oggetto.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
 HRESULT GetParent(  
@@ -29,22 +32,22 @@ HRESULT GetParent(
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `ppsnParent`  
- \[out\] l'indirizzo di una variabile che riceve un puntatore a un'interfaccia `IScriptNode` di istanze padre.  
+ [out] L'indirizzo di una variabile che riceve un puntatore di `IScriptNode` interfaccia dell'istanza padre.  
   
- Se la classe implementa `IScriptEntry` o `IScriptScriptlet`, un oggetto `IScriptNode` viene restituito.  
+ Se la classe implementa `IScriptEntry` o `IScriptScriptlet`, un `IScriptNode` viene restituito l'oggetto.  
   
- Se la classe implementa `IScriptNode`\(che rappresenti una pagina Web, viene restituito NULL.  
+ Se la classe implementa `IScriptNode` (che rappresenta una pagina Web), viene restituito NULL.  
   
-## Valore restituito  
- Oggetto `HRESULT`.  I valori possibili sono, ma non sono limitati a, quelli nella tabella seguente.  
+## <a name="return-value"></a>Valore restituito  
+ Oggetto `HRESULT`. I valori possibili includono, ma non sono limitati a, quelli indicati nella tabella seguente.  
   
 |Valore|Descrizione|  
-|------------|-----------------|  
+|-----------|-----------------|  
 |`S_OK`|Il metodo è riuscito.|  
   
-## Note  
+## <a name="remarks"></a>Note  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [Interfaccia IScriptNode](../../winscript/reference/iscriptnode-interface.md)

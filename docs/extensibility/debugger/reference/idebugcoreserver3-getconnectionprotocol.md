@@ -4,43 +4,27 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- vs-ide-sdk
+ms.technology: vs-ide-sdk
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords:
-- IDebugCoreServer3::GetConnectionProtocol
-helpviewer_keywords:
-- IDebugCoreServer3::GetConnectionProtocol
+f1_keywords: IDebugCoreServer3::GetConnectionProtocol
+helpviewer_keywords: IDebugCoreServer3::GetConnectionProtocol
 ms.assetid: 368ced5b-c5d9-4090-a5b4-26ff400d1a55
-caps.latest.revision: 8
+caps.latest.revision: "8"
+author: gregvanl
 ms.author: gregvanl
 manager: ghogen
-translation.priority.mt:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.workload: vssdk
+ms.openlocfilehash: dfa1b8c335d871c83aaf27e3929dd70e981450da
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
 ms.translationtype: MT
-ms.sourcegitcommit: 4a36302d80f4bc397128e3838c9abf858a0b5fe8
-ms.openlocfilehash: 8901f9fff01ecdfe21e3731df8b2d155fe250ac2
-ms.contentlocale: it-it
-ms.lasthandoff: 09/26/2017
-
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
-# IDebugCoreServer3::GetConnectionProtocol
+# <a name="idebugcoreserver3getconnectionprotocol"></a>IDebugCoreServer3::GetConnectionProtocol
 Restituisce un valore che indica il protocollo utilizzato per la comunicazione tra il server e il pacchetto di debug.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```cpp  
 HRESULT GetConnectionProtocol(  
@@ -54,13 +38,13 @@ int GetConnectionProtocol(
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `pProtocol`  
  [out] Restituisce uno dei valori di [CONNECTION_PROTOCOL](../../../extensibility/debugger/reference/connection-protocol.md) enumerazione.  
   
-## Valore restituito  
+## <a name="return-value"></a>Valore restituito  
  Se ha esito positivo, restituisce `S_OK`; in caso contrario, restituisce il codice di errore.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IDebugCoreServer3](../../../extensibility/debugger/reference/idebugcoreserver3.md)   
  [CONNECTION_PROTOCOL](../../../extensibility/debugger/reference/connection-protocol.md)

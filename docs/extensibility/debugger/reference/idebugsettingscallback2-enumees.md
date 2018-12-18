@@ -1,61 +1,63 @@
 ---
-title: "IDebugSettingsCallback2::EnumEEs | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "IDebugSettingsCallback2::EnumEEs"
+title: IDebugSettingsCallback2::EnumEEs | Documenti Microsoft
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: vs-ide-sdk
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords: IDebugSettingsCallback2::EnumEEs
 ms.assetid: 9f884c49-426f-461b-b547-9d909486e73f
-caps.latest.revision: 7
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: gregvanl
+ms.author: gregvanl
+manager: ghogen
+ms.workload: vssdk
+ms.openlocfilehash: 0572de1ab5909be2026df57a79f593a72860c876
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
-# IDebugSettingsCallback2::EnumEEs
-[!INCLUDE[vs2017banner](../../../code-quality/includes/vs2017banner.md)]
-
-Enumera gli analizzatori di espressioni disponibili forniti identificatori del produttore e di linguaggio.  
+# <a name="idebugsettingscallback2enumees"></a>IDebugSettingsCallback2::EnumEEs
+Enumera gli analizzatori di espressioni disponibili dato gli identificatori di lingua e fornitore.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
-```cpp#  
+```cpp  
 HRESULT EnumEEs(  
-   DWORD  celtBuffer,  
-   GUID*  rgguidLang,  
-   GUID*  rgguidVendor,  
-   DWORD* pceltEEs  
+   DWORD  celtBuffer,  
+   GUID*  rgguidLang,  
+   GUID*  rgguidVendor,  
+   DWORD* pceltEEs  
 );  
 ```  
   
-```c#  
+```csharp  
 public int EnumEEs(  
-   uint       celtBuffer,  
-   ref Guid   rgguidLang,  
-   ref Guid   rgguidVendor,  
-   ref uint[] pceltEEs  
+   uint       celtBuffer,  
+   ref Guid   rgguidLang,  
+   ref Guid   rgguidVendor,  
+   ref uint[] pceltEEs  
 );  
 ```  
   
-#### Parametri  
+#### <a name="parameters"></a>Parametri  
  `celtBuffer`  
- \[in\]  Numero di elementi nel buffer di `pceltEEs` .  
+ [in] Numero di elementi di `pceltEEs` buffer.  
   
  `rgguidLang`  
- \[in, out\]  identificatore univoco per il linguaggio di programmazione.  
+ [in, out] Identificatore univoco per il linguaggio di programmazione.  
   
  `rgguidVendor`  
- \[in, out\]  identificatore univoco per il fornitore.  
+ [in, out] Identificatore univoco per il fornitore.  
   
  `pceltEEs`  
- \[in, out\]  Matrice degli analizzatori di espressioni.  
+ [in, out] Matrice di analizzatori di espressioni.  
   
-## Valore restituito  
- Se l'operazione riesce, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
+## <a name="return-value"></a>Valore restituito  
+ Se ha esito positivo, restituisce `S_OK`; in caso contrario, restituisce un codice di errore.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  [IDebugSettingsCallback2](../../../extensibility/debugger/reference/idebugsettingscallback2.md)

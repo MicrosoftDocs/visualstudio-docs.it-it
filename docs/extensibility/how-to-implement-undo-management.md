@@ -1,51 +1,53 @@
 ---
-title: "Procedura: implementare la gestione di annullamento | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-ide-sdk"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-helpviewer_keywords: 
-  - "editor [Visual Studio SDK], legacy - annullare gestione"
+title: 'Procedura: implementare la gestione di annullamento | Documenti Microsoft'
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: vs-ide-sdk
+ms.tgt_pltfrm: 
+ms.topic: article
+helpviewer_keywords: editors [Visual Studio SDK], legacy - undo management
 ms.assetid: 1942245d-7a1d-4a11-b5e7-a3fe29f11c0b
-caps.latest.revision: 11
-ms.author: "gregvanl"
-manager: "ghogen"
-caps.handback.revision: 11
+caps.latest.revision: "11"
+author: gregvanl
+ms.author: gregvanl
+manager: ghogen
+ms.workload: vssdk
+ms.openlocfilehash: cf57b24d81e193294f5ab90f71af07b229ec5839
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
-# Procedura: implementare la gestione di annullamento
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
-L'interfaccia primaria utilizzata per la gestione di annullamento è <xref:Microsoft.VisualStudio.OLE.Interop.IOleUndoManager>, che viene implementata dall'ambiente.  Per supportare gestione di annullamento, di annullamento separate di utilizzo \(ovvero <xref:Microsoft.VisualStudio.OLE.Interop.IOleUndoUnit>, che possono contenere singoli passaggi più.  
+# <a name="how-to-implement-undo-management"></a>Procedura: implementare la gestione di annullamento
+L'interfaccia principale utilizzata per la gestione di annullamento è <xref:Microsoft.VisualStudio.OLE.Interop.IOleUndoManager>, che è implementata dall'ambiente. Per supportare la gestione di annullamento, implementare l'unità di annullamento separato (vale a dire <xref:Microsoft.VisualStudio.OLE.Interop.IOleUndoUnit>, che può contenere più i singoli passaggi.  
   
- Come implementare la gestione di annullamento varia a seconda che l'editor supporta più visualizzazioni o meno.  Le procedure per ogni implementazione sono dettagliate nelle sezioni seguenti.  
+ Modalità di implementazione di gestione di annullamento varia a seconda se l'editor supporta più viste o meno. Nelle sezioni seguenti vengono descritti in dettaglio le procedure per ogni implementazione.  
   
-## Casi in cui un editor supporta un singolo punto di vista  
- In questo scenario, l'editor non supporta più visualizzazioni.  È presente un editor e un documento e supportano l'annullamento su.  Utilizzare la procedura riportata di seguito per implementare la gestione di annullamento.  
+## <a name="cases-where-an-editor-supports-a-single-view"></a>Casi in cui un editor supporta una visualizzazione  
+ In questo scenario, l'editor non supporta più viste. È presente solo un editor e un documento e supportano l'annullamento. Utilizzare la procedura seguente per implementare la gestione di annullamento.  
   
-#### Per supportare gestione di annullamento per un editor di singolo\-visualizzazione  
+#### <a name="to-support-undo-management-for-a-single-view-editor"></a>Per supportare la gestione di rollback per un editor di sola visualizzazione  
   
-1.  Chiamata `QueryInterface` sull'interfaccia di `IServiceProvider` sulla struttura della finestra per `IOleUndoManager`, dall'oggetto del documento per accedere a gestione di annullamento \(`IID_IOLEUndoManager`\).  
+1.  Chiamare `QueryInterface` sul `IServiceProvider` interfaccia la cornice della finestra per `IOleUndoManager`, dall'oggetto documento vista per accedere al gestore di annullamento (`IID_IOLEUndoManager`).  
   
-2.  Quando una visualizzazione viene posizionato in una struttura della finestra, ottiene un puntatore di sito, che può utilizzare per chiamare `QueryInterface` per `IServiceProvider`.  
+2.  Quando una vista è collocata in una cornice di finestra, ottiene un puntatore a sito, che è possibile utilizzare per chiamare `QueryInterface` per `IServiceProvider`.  
   
-## Casi in cui un editor supporta più visualizzazioni  
- Se si dispone di documento e la separazione di visualizzazione, esiste in genere un amministratore di annullamento associato al documento stesso.  Tutte le unità di annullamento vengono inseriti in un amministratore di annullamento associato all'oggetto dati del documento.  
+## <a name="cases-where-an-editor-supports-multiple-views"></a>Casi in cui un editor supporta più viste  
+ Se si dispone di separazione di documento e la visualizzazione, è in genere un annullamento manager associato al documento stesso. Tutte le unità di annullamento vengono inserite nella gestione di un annullamento associato all'oggetto dati di documento.  
   
- Instead of the view querying for the undo manager, of which there is one for each view, the document data object calls <xref:Microsoft.VisualStudio.Shell.Interop.ILocalRegistry2.CreateInstance%2A> to instantiate the undo manager, specifying a class identifier of CLSID\_OLEUndoManager.  L'identificatore di classe definito nel file di OCUNDOID.h.  
+ Anziché l'esecuzione di query visualizzazione per il gestore di annullamento, che ne esista uno per ogni visualizzazione, i dati del documento object chiama <xref:Microsoft.VisualStudio.Shell.Interop.ILocalRegistry2.CreateInstance%2A> per creare un'istanza di gestione degli annullamenti, specificando un identificatore di classe di CLSID_OLEUndoManager. L'identificatore di classe è definita nel file OCUNDOID.h.  
   
- When using <xref:Microsoft.VisualStudio.Shell.Interop.ILocalRegistry2.CreateInstance%2A> to create your own undo manager instance, use the following procedure to hook your undo manager into the environment.  
+ Quando si utilizza <xref:Microsoft.VisualStudio.Shell.Interop.ILocalRegistry2.CreateInstance%2A> per creare la propria istanza di gestione di annullamento, usare la procedura seguente per associare il gestore di annullamento nell'ambiente.  
   
-#### Per associare il gestore di annullamento nell'ambiente  
+#### <a name="to-hook-your-undo-manager-into-the-environment"></a>Per associare il gestore di annullamento nell'ambiente  
   
-1.  Chiamare `QueryInterface` sull'oggetto restituito da <xref:Microsoft.VisualStudio.Shell.Interop.ILocalRegistry2> per `IID_IOleUndoManager`.  Archiviare il puntatore a <xref:Microsoft.VisualStudio.OLE.Interop.IOleUndoManager>.  
+1.  Chiamare `QueryInterface` sull'oggetto restituito da <xref:Microsoft.VisualStudio.Shell.Interop.ILocalRegistry2> per `IID_IOleUndoManager`. Archiviare il puntatore a <xref:Microsoft.VisualStudio.OLE.Interop.IOleUndoManager>.  
   
-2.  chiamare `QueryInterface` su `IOleUndoManager` per `IID_IOleCommandTarget`.  Archiviare il puntatore a <xref:Microsoft.VisualStudio.OLE.Interop.IOleCommandTarget>.  
+2.  Chiamare `QueryInterface` su `IOleUndoManager` per `IID_IOleCommandTarget`. Archiviare il puntatore a <xref:Microsoft.VisualStudio.OLE.Interop.IOleCommandTarget>.  
   
-3.  Relay your <xref:Microsoft.VisualStudio.OLE.Interop.IOleCommandTarget.QueryStatus%2A> and <xref:Microsoft.VisualStudio.OLE.Interop.IOleCommandTarget.Exec%2A> calls into the stored `IOleCommandTarget` interface for the following StandardCommandSet97 commands:  
+3.  Inoltro del <xref:Microsoft.VisualStudio.OLE.Interop.IOleCommandTarget.QueryStatus%2A> e <xref:Microsoft.VisualStudio.OLE.Interop.IOleCommandTarget.Exec%2A> chiama archiviato `IOleCommandTarget` interfaccia per i seguenti comandi StandardCommandSet97:  
   
     -   cmdidUndo  
   
@@ -59,26 +61,26 @@ L'interfaccia primaria utilizzata per la gestione di annullamento è <xref:Micro
   
     -   cmdidMultiLevelRedoList  
   
-4.  chiamata `QueryInterface` su `IOleUndoManager` per `IID_IVsChangeTrackingUndoManager`.  Archiviare il puntatore a <xref:Microsoft.VisualStudio.TextManager.Interop.IVsChangeTrackingUndoManager>.  
+4.  Chiamare `QueryInterface` su `IOleUndoManager` per `IID_IVsChangeTrackingUndoManager`. Archiviare il puntatore a <xref:Microsoft.VisualStudio.TextManager.Interop.IVsChangeTrackingUndoManager>.  
   
-     Use the pointer to <xref:Microsoft.VisualStudio.TextManager.Interop.IVsChangeTrackingUndoManager> to call the <xref:Microsoft.VisualStudio.TextManager.Interop.IVsChangeTrackingUndoManager.MarkCleanState%2A>, the <xref:Microsoft.VisualStudio.TextManager.Interop.IVsChangeTrackingUndoManager.AdviseTrackingClient%2A>, and the <xref:Microsoft.VisualStudio.TextManager.Interop.IVsChangeTrackingUndoManager.UnadviseTrackingClient%2A> methods.  
+     Utilizzare il puntatore a <xref:Microsoft.VisualStudio.TextManager.Interop.IVsChangeTrackingUndoManager> per chiamare il <xref:Microsoft.VisualStudio.TextManager.Interop.IVsChangeTrackingUndoManager.MarkCleanState%2A>, <xref:Microsoft.VisualStudio.TextManager.Interop.IVsChangeTrackingUndoManager.AdviseTrackingClient%2A>e <xref:Microsoft.VisualStudio.TextManager.Interop.IVsChangeTrackingUndoManager.UnadviseTrackingClient%2A> metodi.  
   
-5.  chiamata `QueryInterface` su `IOleUndoManager` per `IID_IVsLinkCapableUndoManager`.  
+5.  Chiamare `QueryInterface` su `IOleUndoManager` per `IID_IVsLinkCapableUndoManager`.  
   
-6.  Chiamare l'entity\_M:Microsoft.VisualStudio.TextManager.Interop.IVsLinkCapableUndoManager.AdviseLinkedUndoClient\(Microsoft.VisualStudio.TextManager.Interop.IVsLinkedUndoClient\) al documento, che deve implementare anche l'interfaccia di <xref:Microsoft.VisualStudio.TextManager.Interop.IVsLinkedUndoClient> .  Quando il documento viene chiuso, chiamare `IVsLinkCapableUndoManager::UnadviseLinkedUndoClient`.  
+6.  Chiamare <xref:Microsoft.VisualStudio.TextManager.Interop.IVsLinkCapableUndoManager.AdviseLinkedUndoClient%2A> con il documento, che deve inoltre implementare il <xref:Microsoft.VisualStudio.TextManager.Interop.IVsLinkedUndoClient> interfaccia. Quando la chiusura del documento, chiamare `IVsLinkCapableUndoManager::UnadviseLinkedUndoClient`.  
   
-7.  Quando il documento viene chiuso, chiamare `QueryInterface` sull'amministratore di annullamento per `IID_IVsLifetimeControlledObject`.  
+7.  Quando la chiusura del documento, chiamare `QueryInterface` in per la gestione degli annullamenti `IID_IVsLifetimeControlledObject`.  
   
 8.  Chiamare il metodo <xref:Microsoft.VisualStudio.TextManager.Interop.IVsLifetimeControlledObject.SeverReferencesToOwner%2A>.  
   
-9. Quando vengono apportate modifiche al documento, chiamare <xref:Microsoft.VisualStudio.OLE.Interop.IOleUndoManager.Add%2A> sull'amministratore a una classe di `OleUndoUnit` .  Il metodo di <xref:Microsoft.VisualStudio.OLE.Interop.IOleUndoManager.Add%2A> mantiene un riferimento all'oggetto, pertanto in genere è lo rilascia immediatamente dopo <xref:Microsoft.VisualStudio.OLE.Interop.IOleUndoManager.Add%2A>.  
+9. Quando vengono apportate modifiche al documento, chiamare <xref:Microsoft.VisualStudio.OLE.Interop.IOleUndoManager.Add%2A> del gestore con un `OleUndoUnit` classe. Il <xref:Microsoft.VisualStudio.OLE.Interop.IOleUndoManager.Add%2A> metodo mantiene un riferimento all'oggetto, generalmente rilascio subito dopo il <xref:Microsoft.VisualStudio.OLE.Interop.IOleUndoManager.Add%2A>.  
   
- La classe di `OleUndoManager` rappresenta una singola istanza di annullamento dello stack.  Pertanto, è presente un oggetto di annullamento dell'amministratore di entità di dati che viene rilevato per la fase di annullamento o la ripetizione.  
+ La `OleUndoManager` classe rappresenta un'istanza di stack singola operazione di annullamento. Pertanto, è disponibile un oggetto di gestione di annullamento per ogni entità di dati viene tenuta traccia per l'annullamento o ripetizione.  
   
 > [!NOTE]
->  Mentre l'oggetto di annullamento amministratore viene utilizzato ampiamente dall'editor di testo, è un componente generale che non include il supporto specifico all'editor di testo.  Se si desidera supportare undo a più livelli o la ripetizione, è possibile utilizzare questo oggetto a tale scopo.  
+>  Mentre l'oggetto di gestione di annullamento è ampiamente utilizzato da editor di testo, è un componente generale che non dispone di alcun supporto specifico per l'editor di testo. Se si desidera supportare l'annullamento a più livello o ripristino, è possibile utilizzare questo oggetto a tale scopo.  
   
-## Vedere anche  
+## <a name="see-also"></a>Vedere anche  
  <xref:Microsoft.VisualStudio.TextManager.Interop.IVsChangeTrackingUndoManager>   
  <xref:Microsoft.VisualStudio.TextManager.Interop.IVsLifetimeControlledObject>   
  [Procedura: cancellare lo Stack di annullamento](../extensibility/how-to-clear-the-undo-stack.md)

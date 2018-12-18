@@ -13,34 +13,19 @@ dev_langs:
 - VB
 - FSharp
 - C++
-ms.assetid: 24238fc0-40b8-4079-8579-698211db9a26
-caps.latest.revision: 13
+caps.latest.revision: 
 author: mikejo5000
 ms.author: mikejo
 manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 669bc5894727c207691a7e37937f432d98fee8b1
-ms.openlocfilehash: caa4a551c437a6d0479ff1a6fdd5526c6837721a
-ms.contentlocale: it-it
-ms.lasthandoff: 06/30/2017
-
+ms.workload:
+- multiple
+ms.openlocfilehash: 1d2f023900735b2e8f3f2235850ab55ec6237efc
+ms.sourcegitcommit: 5d43e9590e2246084670b79269cc9d99124bb3df
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 01/19/2018
 ---
-# <a name="memory-usage-without-the-debugger"></a>Utilizzo della memoria senza il debugger
+# <a name="analyze-memory-usage-without-the-visual-studio-debugger"></a>Analizzare l'utilizzo della memoria senza il debugger di Visual Studio
 È possibile usare lo strumento **Utilizzo memoria** senza debug per eseguire le operazioni seguenti:  
   
 -   Monitorare l'uso della memoria delle tue app direttamente in Visual Studio mentre sviluppi uno scenario.  
@@ -49,7 +34,7 @@ ms.lasthandoff: 06/30/2017
   
 -   Confrontare snapshot per trovare la causa principale dei problemi di memoria.  
   
- Questo argomento descrive come usare lo strumento Utilizzo memoria per analizzare un'app XAML universale di Windows. Se si vuole analizzare l'uso della memoria nelle app universali di Windows che usano JavaScript e HTML, vedere [Analizzare l'utilizzo della memoria (JavaScript)](http://msdn.microsoft.com/library/windows/apps/jj819176.aspx).  
+ Questo argomento descrive come usare lo strumento Utilizzo memoria per analizzare un'app XAML UWP. Se si vuole analizzare l'uso della memoria nelle app UWP che usano JavaScript e HTML, vedere [Analizzare l'utilizzo della memoria (JavaScript)](../profiling/javascript-memory.md).  
   
 ##  <a name="BKMK_Start_a_Memory_Usage_diagnostic_session"></a> Avviare una sessione di diagnostica con lo strumento Utilizzo memoria  
   
@@ -220,5 +205,8 @@ ms.lasthandoff: 06/30/2017
 |**Dimensione inclusiva (byte)**|Dimensione degli oggetti nello snapshot principale, inclusa la dimensione degli oggetti contenuti negli oggetti.|  
   
 ## <a name="see-also"></a>Vedere anche  
- [Memoria JavaScript](../profiling/javascript-memory.md) [Profilatura in Visual Studio](../profiling/index.md) [Panoramica sulle funzionalità di profilatura](../profiling/profiling-feature-tour.md) [Procedure consigliate per app di Windows Store scritte in C++, C# e Visual Basic](http://msdn.microsoft.com/library/windows/apps/hh750313.aspx)   
+ [Memoria JavaScript](../profiling/javascript-memory.md)  
+ [Profilatura in Visual Studio](../profiling/index.md)  
+ [Tour delle funzionalità di profilatura](../profiling/profiling-feature-tour.md)  
+ [Procedure consigliate per le prestazioni per app UWP scritte in C++, C# e Visual Basic](http://msdn.microsoft.com/library/windows/apps/hh750313.aspx)   
  [Diagnosing memory issues with the new Memory Usage Tool in Visual Studio](http://go.microsoft.com/fwlink/p/?LinkId=394706) (Diagnostica dei problemi di memoria con il nuovo strumento Utilizzo memoria in Visual Studio)

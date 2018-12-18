@@ -1,52 +1,53 @@
 ---
-title: "Propriet&#224; message (Error) (JavaScript) | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/18/2017"
-ms.prod: "windows-client-threshold"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-javascript"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "message"
-dev_langs: 
-  - "JavaScript"
-  - "TypeScript"
-  - "DHTML"
-helpviewer_keywords: 
-  - "Message (proprietà)"
+title: "Proprietà Message (Error) (JavaScript) | Documenti Microsoft"
+ms.custom: 
+ms.date: 01/18/2017
+ms.prod: windows-client-threshold
+ms.reviewer: 
+ms.suite: 
+ms.technology: devlang-javascript
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords: message
+dev_langs:
+- JavaScript
+- TypeScript
+- DHTML
+helpviewer_keywords: Message property
 ms.assetid: 8cab0392-e0db-4714-827c-47ab04e8b4f2
-caps.latest.revision: 16
-author: "mikejo5000"
-ms.author: "mikejo"
-manager: "ghogen"
-caps.handback.revision: 16
+caps.latest.revision: "16"
+author: mikejo5000
+ms.author: mikejo
+manager: ghogen
+ms.openlocfilehash: 9dbd2db6c6d31dc48d90c3b07d2388eacf73ae7a
+ms.sourcegitcommit: aadb9588877418b8b55a5612c1d3842d4520ca4c
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 10/27/2017
 ---
-# Propriet&#224; message (Error) (JavaScript)
+# <a name="message-property-error-javascript"></a>Proprietà message (Error) (JavaScript)
 Restituisce una stringa di messaggio di errore.  
   
-## Sintassi  
+## <a name="syntax"></a>Sintassi  
   
 ```  
   
 errorObj.message  
 ```  
   
-## Parametri  
+## <a name="parameters"></a>Parametri  
  `errorObj`  
- Obbligatorio.  Istanza dell'oggetto `Error`.  
+ Obbligatorio. Istanza di `Error` oggetto.  
   
-## Note  
- La proprietà `message` restituisce una stringa contenente un messaggio di errore associato a un errore specifico.  
+## <a name="remarks"></a>Note  
+ Il `message` proprietà restituisce una stringa che contiene un messaggio di errore associato a un errore specifico.  
   
- Le proprietà `description` e `message` forniscono la stessa funzionalità.  La proprietà `description` garantisce la compatibilità con le versioni precedenti. La proprietà `message` è conforme allo standard ECMA.  
+ Il `description` e `message` proprietà forniscono la stessa funzionalità. Il `description` proprietà fornisce la compatibilità; `message` è conforme allo standard ECMA.  
   
-## Esempio  
- Nell'esempio seguente viene generata un'eccezione TypeError e viene visualizzato il nome dell'errore e il relativo messaggio.  
+## <a name="example"></a>Esempio  
+ Nell'esempio seguente genera un'eccezione TypeError generata e visualizza il nome dell'errore e il relativo messaggio.  
   
-```javascript  
+```JavaScript  
 try  
 {  
     // Cause an error.  
@@ -63,20 +64,20 @@ catch(e)
 }  
 ```  
   
-## Esempio  
- L'output del codice è il seguente.  
+## <a name="example"></a>Esempio  
+ L'output di questo codice è come indicato di seguito.  
   
-```javascript  
+```JavaScript  
 Error Message: 'y' is undefined  
 Error Code: 5009  
 Error Name: TypeError  
 ```  
   
-## Requisiti  
+## <a name="requirements"></a>Requisiti  
  [!INCLUDE[jsv5](../../javascript/reference/includes/jsv5-md.md)]  
   
- **Si applica a**: [Oggetto Error](../../javascript/reference/error-object-javascript.md)  
+ **Si applica a**: [oggetto Error](../../javascript/reference/error-object-javascript.md)  
   
-## Vedere anche  
- [Proprietà description \(Error\)](../../javascript/reference/description-property-error-javascript.md)   
- [Proprietà name \(Error\)](../../javascript/reference/name-property-error-javascript.md)
+## <a name="see-also"></a>Vedere anche  
+ [Proprietà Description (Error)](../../javascript/reference/description-property-error-javascript.md)   
+ [Proprietà name (Error)](../../javascript/reference/name-property-error-javascript.md)

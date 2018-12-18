@@ -1,97 +1,98 @@
 ---
-title: "CA1710: Gli identificatori devono contenere il suffisso corretto | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/15/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "vs-devops-test"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "CA1710"
-  - "IdentifiersShouldHaveCorrectSuffix"
-helpviewer_keywords: 
-  - "IdentifiersShouldHaveCorrectSuffix"
-  - "CA1710"
+title: 'CA1710: Gli identificatori devono contenere il suffisso corretto | Documenti Microsoft'
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: vs-ide-code-analysis
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- CA1710
+- IdentifiersShouldHaveCorrectSuffix
+helpviewer_keywords:
+- IdentifiersShouldHaveCorrectSuffix
+- CA1710
 ms.assetid: 2b8e6dce-b4e8-4a66-ba9a-6b79be5bfe8c
-caps.latest.revision: 20
-caps.handback.revision: 20
-author: "stevehoag"
-ms.author: "shoag"
-manager: "wpickett"
+caps.latest.revision: "20"
+author: gewarren
+ms.author: gewarren
+manager: ghogen
+ms.workload: multiple
+ms.openlocfilehash: d1593800a2cde8ff0aa1bbecd169f5f3ebd601cb
+ms.sourcegitcommit: 32f1a690fc445f9586d53698fc82c7debd784eeb
+ms.translationtype: MT
+ms.contentlocale: it-IT
+ms.lasthandoff: 12/22/2017
 ---
-# CA1710: Gli identificatori devono contenere il suffisso corretto
-[!INCLUDE[vs2017banner](../code-quality/includes/vs2017banner.md)]
-
+# <a name="ca1710-identifiers-should-have-correct-suffix"></a>CA1710: Gli identificatori devono contenere il suffisso corretto
 |||  
 |-|-|  
 |TypeName|IdentifiersShouldHaveCorrectSuffix|  
 |CheckId|CA1710|  
-|Category|Microsoft.Naming|  
-|Breaking Change|Breaking|  
+|Category|Microsoft. naming|  
+|Modifica importante|Interruzione|  
   
-## Causa  
- Un identificatore non contiene il suffisso corretto.  
+## <a name="cause"></a>Causa  
+ Un identificatore non dispone del suffisso corretto.  
   
-## Descrizione della regola  
- Per convenzione i nomi dei tipi che estendono determinati tipi di base o che implementano determinate interfacce o dei tipi derivati da questi tipi contengono un suffisso associato al tipo di base o all'interfaccia.  
+## <a name="rule-description"></a>Descrizione della regola  
+ Per convenzione, i nomi dei tipi che estendono determinati tipi di base o che implementano determinate interfacce o dei tipi derivati da questi tipi hanno un suffisso associato al tipo di base o interfaccia.  
   
- Le convenzioni di denominazione forniscono un aspetto comune alle librerie che si avvalgono di Common Language Runtime.  In questo modo si riduce la curva di apprendimento necessaria per le nuove librerie software e i clienti possono confidare nel fatto che la libreria è stata sviluppata da un esperto nello sviluppo di codice gestito.  
+ Convenzioni di denominazione forniscono un aspetto comune per librerie destinate a common language runtime. In questo modo si riduce la curva di apprendimento che è necessario per le nuove librerie software e aumenta la confidenza di clienti che la libreria è stata sviluppata da un utente che ha esperienza nello sviluppo di codice gestito.  
   
- Nella tabella riportata di seguito sono elencati i tipi di base e le interfacce a cui sono associati suffissi.  
+ Nella tabella seguente sono elencati i tipi di base e interfacce che sono associati suffissi.  
   
-|Tipo di base\/Interfaccia|Suffisso|  
-|-------------------------------|--------------|  
+|Interfaccia di tipo di base|Suffisso|  
+|--------------------------|------------|  
 |<xref:System.Attribute?displayProperty=fullName>|Attributo|  
 |<xref:System.EventArgs?displayProperty=fullName>|EventArgs|  
 |<xref:System.Exception?displayProperty=fullName>|Eccezione|  
-|<xref:System.Collections.ICollection?displayProperty=fullName>|Collection|  
-|<xref:System.Collections.IDictionary?displayProperty=fullName>|Dictionary|  
-|<xref:System.Collections.IEnumerable?displayProperty=fullName>|Collection|  
-|<xref:System.Collections.Queue?displayProperty=fullName>|Collection o Queue|  
-|<xref:System.Collections.Stack?displayProperty=fullName>|Collection o Stack|  
-|<xref:System.Collections.Generic.ICollection%601?displayProperty=fullName>|Collection|  
-|<xref:System.Collections.Generic.IDictionary%602?displayProperty=fullName>|Dictionary|  
+|<xref:System.Collections.ICollection?displayProperty=fullName>|Raccolta|  
+|<xref:System.Collections.IDictionary?displayProperty=fullName>|Dizionario|  
+|<xref:System.Collections.IEnumerable?displayProperty=fullName>|Raccolta|  
+|<xref:System.Collections.Queue?displayProperty=fullName>|Raccolta o una coda|  
+|<xref:System.Collections.Stack?displayProperty=fullName>|Raccolta o Stack|  
+|<xref:System.Collections.Generic.ICollection%601?displayProperty=fullName>|Raccolta|  
+|<xref:System.Collections.Generic.IDictionary%602?displayProperty=fullName>|Dizionario|  
 |<xref:System.Data.DataSet?displayProperty=fullName>|DataSet|  
-|<xref:System.Data.DataTable?displayProperty=fullName>|Collection o DataTable|  
-|<xref:System.IO.Stream?displayProperty=fullName>|Stream|  
-|<xref:System.Security.IPermission?displayProperty=fullName>|Autorizzazione|  
+|<xref:System.Data.DataTable?displayProperty=fullName>|Raccolta o DataTable|  
+|<xref:System.IO.Stream?displayProperty=fullName>|Flusso|  
+|<xref:System.Security.IPermission?displayProperty=fullName>|Autorizzazioni|  
 |<xref:System.Security.Policy.IMembershipCondition?displayProperty=fullName>|Condizione|  
-|Delegato del gestore eventi.|EventHandler|  
+|Un delegato del gestore eventi.|EventHandler|  
   
- Per i tipi che implementano <xref:System.Collections.ICollection> e rappresentano un tipo generalizzato di struttura di dati, ad esempio dizionario, stack o coda, sono consentiti nomi che forniscono informazioni significative relative all'utilizzo previsto del tipo.  
+ I tipi che implementano <xref:System.Collections.ICollection> e sono un tipo generalizzato di struttura di dati, ad esempio un dizionario, stack o coda, sono consentiti nomi che fornisce informazioni significative relative all'utilizzo previsto del tipo.  
   
- I tipi che implementano <xref:System.Collections.ICollection> e rappresentano una raccolta di elementi specifici, presentano nomi che terminano con la parola "Collection".  Una raccolta di oggetti <xref:System.Collections.Queue>, ad esempio, presenterebbe il nome "QueueCollection".  Il suffisso "Collection" indica che i membri della raccolta possono essere enumerati utilizzando l'istruzione `foreach` \(`For Each` in [!INCLUDE[vbprvb](../code-quality/includes/vbprvb_md.md)]\).  
+ I tipi che implementano <xref:System.Collections.ICollection> e sono una raccolta di elementi specifici presentano nomi che terminano con la parola "Collection". Ad esempio, una raccolta di <xref:System.Collections.Queue> oggetti avrebbe il nome "QueueCollection". Il suffisso 'Collection' indica che i membri della raccolta possono essere enumerati utilizzando il `foreach` (`For Each` in [!INCLUDE[vbprvb](../code-quality/includes/vbprvb_md.md)]) istruzione.  
   
- I tipi che implementano <xref:System.Collections.IDictionary> presentano nomi che terminano con la parola "Dictionary" anche se il tipo implementa anche <xref:System.Collections.IEnumerable> o <xref:System.Collections.ICollection>.  Le convenzioni di denominazione dei suffissi "Collection" e "Dictionary" consentono agli utenti di fare distinzione tra i due modelli di enumerazione riportati di seguito.  
+ I tipi che implementano <xref:System.Collections.IDictionary> presentano nomi che terminano con la parola "Dictionary" anche se il tipo implementa inoltre <xref:System.Collections.IEnumerable> o <xref:System.Collections.ICollection>. Le convenzioni di denominazione suffisso "Collection" e "Dictionary" consentono di distinguere tra i seguenti due modelli di enumerazione.  
   
- I tipi con il suffisso "Collection" seguono questo modello di enumerazione.  
+ Tipi con il suffisso 'Collection' seguono questo modello di enumerazione.  
   
 ```  
 foreach(SomeType x in SomeCollection) { }  
 ```  
   
- I tipi con il suffisso "Dictionary" seguono questo modello di enumerazione.  
+ Tipi con il suffisso "Dictionary" seguono questo modello di enumerazione.  
   
 ```  
 foreach(SomeType x in SomeDictionary.Values) { }  
 ```  
   
- Un oggetto <xref:System.Data.DataSet> è dato da una raccolta di oggetti <xref:System.Data.DataTable> formati a loro volta da raccolte di oggetti <xref:System.Data.DataColumn?displayProperty=fullName> e <xref:System.Data.DataRow?displayProperty=fullName>, tra gli altri.  Queste raccolte implementano <xref:System.Collections.ICollection> tramite la classe base <xref:System.Data.InternalDataCollectionBase?displayProperty=fullName>.  
+ Oggetto <xref:System.Data.DataSet> oggetto è costituito da una raccolta di <xref:System.Data.DataTable> oggetti che sono costituiti da raccolte di <xref:System.Data.DataColumn?displayProperty=fullName> e <xref:System.Data.DataRow?displayProperty=fullName> oggetti, tra gli altri. Queste raccolte implementano <xref:System.Collections.ICollection> tramite la base <xref:System.Data.InternalDataCollectionBase?displayProperty=fullName> classe.  
   
-## Come correggere le violazioni  
+## <a name="how-to-fix-violations"></a>Come correggere le violazioni  
  Rinominare il tipo in modo da utilizzare come suffisso il termine corretto.  
   
-## Esclusione di avvisi  
- L'esclusione di un avviso è sicura per utilizzare il suffisso "Collection" se il tipo è una struttura dei dati generalizzata che può essere estesa o che contiene un set arbitrario di elementi diversi.  In questo caso, può essere opportuno utilizzare un nome che fornisca informazioni significative relative all'implementazione, alle prestazioni o ad altre caratteristiche della struttura di dati, ad esempio BinaryTree.  Nei casi in cui il tipo rappresenta una raccolta di un tipo specifico, ad esempio StringCollection, non escludere un avviso da questa regola poiché il suffisso indica che il tipo può essere enumerato con un'istruzione `foreach`.  
+## <a name="when-to-suppress-warnings"></a>Esclusione di avvisi  
+ È consigliabile escludere un avviso da utilizzare il suffisso "Collection" se il tipo è una struttura di dati generalizzata che può essere estesa o che conterrà un set arbitrario di elementi diversi. In questo caso, un nome che fornisce informazioni significative sull'implementazione, prestazioni o altre caratteristiche della struttura di dati potrebbe BinaryTree (ad esempio,). Nei casi in cui il tipo rappresenta una raccolta di un tipo specifico (ad esempio StringCollection), non escludere un avviso da questa regola perché il suffisso indica che il tipo può essere enumerato utilizzando un `foreach` istruzione.  
   
- Per gli altri suffissi, non escludere un avviso da questa regola.  Il suffisso consente di rendere evidente l'utilizzo previsto dal nome del tipo.  
+ Per gli altri suffissi, non escludere un avviso da questa regola. Il suffisso consente l'utilizzo previsto sia evidente dal nome del tipo.  
   
-## Regole correlate  
+## <a name="related-rules"></a>Regole correlate  
  [CA1711: Gli identificatori non devono contenere un suffisso non corretto](../code-quality/ca1711-identifiers-should-not-have-incorrect-suffix.md)  
   
-## Vedere anche  
- [Attributi](../Topic/Attributes1.md)   
- [Eventi e delegati](http://msdn.microsoft.com/it-it/d98fd58b-fa4f-4598-8378-addf4355a115)
+## <a name="see-also"></a>Vedere anche  
+ [Attributi](/dotnet/standard/design-guidelines/attributes)   
+ [Gestione e generazione di eventi](/dotnet/standard/events/index)  
